@@ -1,0 +1,24 @@
+export(mlRegressionBoosting)
+export(mlRegressionKnn)
+export(mlRegressionRandomForest)
+export(mlRegressionRegularized)
+export(mlClassificationBoosting)
+export(mlClassificationKnn)
+export(mlClassificationLda)
+export(mlClassificationRandomForest)
+export(mlClusteringDensityBased)
+export(mlClusteringFuzzyCMeans)
+export(mlClusteringHierarchical)
+export(mlClusteringKMeans)
+export(mlClusteringRandomForest)
+  import('AUC');
+  import('cluster');
+  import('colorspace');
+  import('dbscan');
+  import('e1071');
+  import('gbm');
+  import('ggdendro');
+  import('kknn');
+  import('randomForest');
+  import('ROCR');
+  import('Rtsne');
