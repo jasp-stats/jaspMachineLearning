@@ -4,7 +4,7 @@ import JASP.Module 	1.0
 Description
 {
 	title :			qsTr("Machine Learning")
-	name :			"Machine Learning"
+	name :			"MachineLearning"
 	description:	qsTr("A module for Machine Learning mastery")
 	version:		"0.1"
 	author:			"JASP Team"
