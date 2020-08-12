@@ -159,8 +159,8 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
 
   d <- data.frame(x = knnValues, y = knnDistances)
 
-  xBreaks <- JASPgraphs::getPrettyAxisBreaks(d$x, min.n = 4)
-  yBreaks <- JASPgraphs::getPrettyAxisBreaks(d$y, min.n = 4)
+  xBreaks <- jaspGraphs::getPrettyAxisBreaks(d$x, min.n = 4)
+  yBreaks <- jaspGraphs::getPrettyAxisBreaks(d$y, min.n = 4)
 
   yKnee <- try(findCutoff(knnValues, knnDistances, method = "curvature")[["y"]])
   if (inherits(yKnee, "try-error")) # this can cause a stackoverflow, in which case we abort and don't add it
@@ -180,8 +180,8 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
   }
   
   p <-  p + ggplot2::geom_segment(ggplot2::aes(x = xstart, xend = xend, y = ystart, yend = yend), data = lineData, linetype = 2, color = "darkgray") +
-        JASPgraphs::geom_line()
-  p <-  JASPgraphs::themeJasp(p)
+        jaspGraphs::geom_line()
+  p <-  jaspGraphs::themeJasp(p)
 
   kdistPlot$plotObject <- p
 }

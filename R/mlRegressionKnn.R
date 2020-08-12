@@ -220,21 +220,21 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state=NULL) {
     type <- rep(c(gettext("Validation set"), gettext("Training set")), each = length(yvalues1))
     d <- data.frame(x = xvalues, y = yvalues, type = type)
 
-    xBreaks <- JASPgraphs::getPrettyAxisBreaks(c(0, d$x), min.n = 4)
-    yBreaks <- JASPgraphs::getPrettyAxisBreaks(d$y, min.n = 4)
+    xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, d$x), min.n = 4)
+    yBreaks <- jaspGraphs::getPrettyAxisBreaks(d$y, min.n = 4)
 
     pointData <- data.frame(x = result[["nn"]], 
                             y = yvalues1[result[["nn"]]],
                             type = gettext("Validation set"))
 
     p <- ggplot2::ggplot(data = d, ggplot2::aes(x = x, y = y, linetype = type)) + 
-			JASPgraphs::geom_line() +
+			jaspGraphs::geom_line() +
 			ggplot2::scale_x_continuous(name = gettext("Number of Nearest Neighbors"), breaks = xBreaks, labels = xBreaks, limits = c(0, max(xBreaks))) + 
 			ggplot2::scale_y_continuous(name = ylabel, breaks = yBreaks, labels = yBreaks) +
 			ggplot2::labs(linetype = "") +
 			ggplot2::scale_linetype_manual(values = c(2,1)) + 
-			JASPgraphs::geom_point(data = pointData, ggplot2::aes(x = x, y = y, linetype = type), fill = "red")
-    p <- JASPgraphs::themeJasp(p, legend.position = "top")
+			jaspGraphs::geom_point(data = pointData, ggplot2::aes(x = x, y = y, linetype = type), fill = "red")
+    p <- jaspGraphs::themeJasp(p, legend.position = "top")
 
   } else if(options[["modelValid"]] != "validationManual"){
 
@@ -243,16 +243,16 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state=NULL) {
 	type <- rep(gettext("Training and validation set"), each = length(xvalues))
     d <- data.frame(x = xvalues, y = yvalues, type = type)
 
-    xBreaks <- JASPgraphs::getPrettyAxisBreaks(c(0, d$x), min.n = 4)
-    yBreaks <- JASPgraphs::getPrettyAxisBreaks(d$y, min.n = 4)
+    xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, d$x), min.n = 4)
+    yBreaks <- jaspGraphs::getPrettyAxisBreaks(d$y, min.n = 4)
       
     p <- ggplot2::ggplot(data = d, ggplot2::aes(x = x, y = y, linetype = type)) + 
-			JASPgraphs::geom_line() +
+			jaspGraphs::geom_line() +
 			ggplot2::scale_x_continuous(name = gettext("Number of Nearest Neighbors"), breaks = xBreaks, labels = xBreaks, limits = c(0, max(xBreaks))) + 
 			ggplot2::scale_y_continuous(name = ylabel, breaks = yBreaks, labels = yBreaks) + 
-			JASPgraphs::geom_point(ggplot2::aes(x = x, y = y, linetype = type), data = data.frame(x = result[["nn"]], y = yvalues[result[["nn"]]], type = gettext("Training and validation set")), fill = "red") +
+			jaspGraphs::geom_point(ggplot2::aes(x = x, y = y, linetype = type), data = data.frame(x = result[["nn"]], y = yvalues[result[["nn"]]], type = gettext("Training and validation set")), fill = "red") +
 			ggplot2::labs(linetype = "")
-    p <- JASPgraphs::themeJasp(p, legend.position = "top")
+    p <- jaspGraphs::themeJasp(p, legend.position = "top")
 
   }
 

@@ -75,11 +75,11 @@
   if (options[["testSetIndicatorVariable"]] != "" && options[["holdoutData"]] == "testSetIndicator") {
     
     if (options[["testSetIndicatorVariable"]] %in% predictors)
-      JASP:::.quitAnalysis(gettextf("The variable '%s' can't be both a predictor and a test set indicator.", options[["testSetIndicatorVariable"]]))
+      jaspBase:::.quitAnalysis(gettextf("The variable '%s' can't be both a predictor and a test set indicator.", options[["testSetIndicatorVariable"]]))
   
     indicatorVals <- unique(dataset[,.v(options[["testSetIndicatorVariable"]])])
     if (length(indicatorVals) != 2 || !all(0:1 %in% indicatorVals))
-      JASP:::.quitAnalysis(gettext("Your test set indicator should be binary, containing only 1 (included in test set) and 0 (excluded from test set)."))
+      jaspBase:::.quitAnalysis(gettext("Your test set indicator should be binary, containing only 1 (included in test set) and 0 (excluded from test set)."))
     
   }
   
@@ -435,14 +435,14 @@
   
   predPerformance <- data.frame(true = c(regressionResult[["testReal"]]), predicted = regressionResult[["testPred"]])
 
-  allBreaks <- JASPgraphs::getPrettyAxisBreaks(predPerformance[, 1], min.n = 4)
+  allBreaks <- jaspGraphs::getPrettyAxisBreaks(predPerformance[, 1], min.n = 4)
 
   p <- ggplot2::ggplot(data = predPerformance, mapping = ggplot2::aes(x = true, y = predicted)) +
-        JASPgraphs::geom_line(data = data.frame(x = c(allBreaks[1], allBreaks[length(allBreaks)]), y = c(allBreaks[1], allBreaks[length(allBreaks)])), mapping = ggplot2::aes(x = x, y = y), col = "darkred", size = 1) +
-        JASPgraphs::geom_point() +
+        jaspGraphs::geom_line(data = data.frame(x = c(allBreaks[1], allBreaks[length(allBreaks)]), y = c(allBreaks[1], allBreaks[length(allBreaks)])), mapping = ggplot2::aes(x = x, y = y), col = "darkred", size = 1) +
+        jaspGraphs::geom_point() +
         ggplot2::scale_x_continuous(gettext("Observed test values"), breaks = allBreaks, labels = allBreaks) +
         ggplot2::scale_y_continuous(gettext("Predicted test values"), breaks = allBreaks, labels = allBreaks)
-  p <- JASPgraphs::themeJasp(p)
+  p <- jaspGraphs::themeJasp(p)
 
   predictedPerformancePlot$plotObject <- p
 }
@@ -479,7 +479,7 @@
             ggplot2::ylab("") +
             ggplot2::scale_fill_manual(values = c("tomato2", "steelblue2")) +
             ggplot2::annotate("text", y = c(0, nTrain, nTrain + nTest), x = 1, label = c(gettextf("Train: %d", nTrain), gettextf("Test: %d", nTest), gettextf("Total: %d", nTrain + nTest)), size = 4, vjust = 0.5, hjust = -0.1) 
-      p <- JASPgraphs::themeJasp(p, xAxis = FALSE, yAxis = FALSE)
+      p <- jaspGraphs::themeJasp(p, xAxis = FALSE, yAxis = FALSE)
 
       p <- p + ggplot2::theme(axis.ticks = ggplot2::element_blank(), 
                               axis.text.y = ggplot2::element_blank(), 
@@ -506,7 +506,7 @@
             ggplot2::annotate("text", y = c(0, nTrain, nTrain + nValid, nTrain + nValid + nTest), x = 1, 
                               label = c(gettextf("Train: %d", nTrain), gettextf("Validation: %d", nValid), gettextf("Test: %d", nTest), gettextf("Total: %d", nTrain + nValid + nTest)), 
                               size = 4, vjust = 0.5, hjust = -0.1) 
-      p <- JASPgraphs::themeJasp(p, xAxis = FALSE, yAxis = FALSE)
+      p <- jaspGraphs::themeJasp(p, xAxis = FALSE, yAxis = FALSE)
 
       p <- p + ggplot2::theme(axis.ticks = ggplot2::element_blank(), 
                               axis.text.y = ggplot2::element_blank(), 
@@ -530,7 +530,7 @@
             ggplot2::annotate("text", y = c(0, nTrainAndValid, nTrainAndValid + nTest), x = 1, 
                               label = c(gettextf("Train and validation: %d", nTrainAndValid), gettextf("Test: %d", nTest), gettextf("Total: %d", nTrainAndValid + nTest)), 
                               size = 4, vjust = 0.5, hjust = -0.1) 
-      p <- JASPgraphs::themeJasp(p, xAxis = FALSE, yAxis = FALSE)
+      p <- jaspGraphs::themeJasp(p, xAxis = FALSE, yAxis = FALSE)
 
       p <- p + ggplot2::theme(axis.ticks = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank(), axis.text.x = ggplot2::element_blank())
 

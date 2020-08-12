@@ -232,17 +232,17 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
       type = rep(c(gettext("Validation set"), gettext("Training set")), each = length(values2))
     )
 
-    xBreaks <- JASPgraphs::getPrettyAxisBreaks(treesMSE[["trees"]], min.n = 4)
-    yBreaks <- JASPgraphs::getPrettyAxisBreaks(treesMSE[["error"]], min.n = 4)
+    xBreaks <- jaspGraphs::getPrettyAxisBreaks(treesMSE[["trees"]], min.n = 4)
+    yBreaks <- jaspGraphs::getPrettyAxisBreaks(treesMSE[["error"]], min.n = 4)
     
     p <- ggplot2::ggplot(data = treesMSE, mapping = ggplot2::aes(x = trees, y = error, linetype = type)) +
-          JASPgraphs::geom_line()
+          jaspGraphs::geom_line()
 
     p <- p + ggplot2::scale_x_continuous(name = gettext("Number of Trees"), labels = xBreaks, breaks = xBreaks) +
               ggplot2::scale_y_continuous(name = xTitle,                    labels = yBreaks, breaks = yBreaks) +
               ggplot2::labs(linetype = "") +
               ggplot2::scale_linetype_manual(values = c(2,1))
-    p <- JASPgraphs::themeJasp(p, legend.position = "top")
+    p <- jaspGraphs::themeJasp(p, legend.position = "top")
 
   } else {
 
@@ -252,16 +252,16 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
       type = rep(gettext("Training set"), each = length(values))
     )
 
-    xBreaks <- JASPgraphs::getPrettyAxisBreaks(treesMSE[["trees"]], min.n = 4)
-    yBreaks <- JASPgraphs::getPrettyAxisBreaks(treesMSE[["error"]], min.n = 4)
+    xBreaks <- jaspGraphs::getPrettyAxisBreaks(treesMSE[["trees"]], min.n = 4)
+    yBreaks <- jaspGraphs::getPrettyAxisBreaks(treesMSE[["error"]], min.n = 4)
     
     p <- ggplot2::ggplot(data = treesMSE, mapping = ggplot2::aes(x = trees, y = error, linetype = type)) +
-          JASPgraphs::geom_line()
+          jaspGraphs::geom_line()
 
     p <- p + ggplot2::scale_x_continuous(name = gettext("Number of Trees"), labels = xBreaks, breaks = xBreaks) +
               ggplot2::scale_y_continuous(name = xTitle,                    labels = yBreaks, breaks = yBreaks) +
               ggplot2::labs(linetype = "")
-    p <- JASPgraphs::themeJasp(p, legend.position = "top")    
+    p <- jaspGraphs::themeJasp(p, legend.position = "top")    
 
   }
 
@@ -288,7 +288,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   p <- ggplot2::ggplot(result[["varImp"]], ggplot2::aes(x = reorder(Variable, MeanIncrMSE), y = MeanIncrMSE)) +
       ggplot2::geom_bar(stat = "identity", fill = "grey", col = "black", size = .3) +
       ggplot2::labs(x = "", y = gettext("Mean Decrease in Accuracy"))
-  p <-JASPgraphs::themeJasp(p, horizontal = TRUE, xAxis = FALSE) + ggplot2::theme(axis.ticks.y = ggplot2::element_blank())
+  p <-jaspGraphs::themeJasp(p, horizontal = TRUE, xAxis = FALSE) + ggplot2::theme(axis.ticks.y = ggplot2::element_blank())
   
   plotDecreaseAccuracy$plotObject <- p
 }
@@ -313,7 +313,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   p <- ggplot2::ggplot(result[["varImp"]], ggplot2::aes(x = reorder(Variable, TotalDecrNodeImp), y = TotalDecrNodeImp)) +
         ggplot2::geom_bar(stat = "identity", fill = "grey", col = "black", size = .3) +
         ggplot2::labs(x = "", y = gettext("Total Increase in Node Purity"))
-  p <- JASPgraphs::themeJasp(p, horizontal = TRUE, xAxis = FALSE) + ggplot2::theme(axis.ticks.y = ggplot2::element_blank())
+  p <- jaspGraphs::themeJasp(p, horizontal = TRUE, xAxis = FALSE) + ggplot2::theme(axis.ticks.y = ggplot2::element_blank())
 
   plotIncreasePurity$plotObject <- p
 }

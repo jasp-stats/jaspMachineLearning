@@ -202,7 +202,7 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
   }
   
   p <- ggdendro::ggdendrogram(hc)
-  p <- JASPgraphs::themeJasp(p) + ggdendro::theme_dendro()
+  p <- jaspGraphs::themeJasp(p) + ggdendro::theme_dendro()
   dendrogram$plotObject <- p
 }
 

@@ -85,7 +85,7 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   
   # Error Check 2: The target variable should have at least 2 classes
   if (nlevels(dataset[, .v(options$target)]) < 2){
-    JASP:::.quitAnalysis(gettext("The target variable should have at least 2 classes."))
+    jaspBase:::.quitAnalysis(gettext("The target variable should have at least 2 classes."))
   }
   
 }
@@ -278,8 +278,8 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   
   plotMat <- matrix(list(), l, l)
   adjMargin <- ggplot2::theme(plot.margin = ggplot2::unit(c(.25, .40, .25, .25), "cm")) 
-  oldFontSize <- JASPgraphs::getGraphOption("fontsize")
-  JASPgraphs::setGraphOption("fontsize", .85 * oldFontSize)
+  oldFontSize <- jaspGraphs::getGraphOption("fontsize")
+  jaspGraphs::setGraphOption("fontsize", .85 * oldFontSize)
   
   startProgressbar(length(plotMat)+1)
   for (row in seq_len(l)) {
@@ -289,10 +289,10 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
             plotMat[[row, col]] <- .ldaDensityplot(classificationResult, options, col) + adjMargin # plot marginal (histogram with density estimator)
         } else {
           
-          p <- JASPgraphs::drawAxis(xName = "", yName = "", force = TRUE) + adjMargin
+          p <- jaspGraphs::drawAxis(xName = "", yName = "", force = TRUE) + adjMargin
           p <- p + ggplot2::xlab("")
           p <- p + ggplot2::ylab("")
-          p <- JASPgraphs::themeJasp(p)
+          p <- jaspGraphs::themeJasp(p)
           
           plotMat[[row, col]] <- p
         }
@@ -304,10 +304,10 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
           
         } else {
           
-          p <- JASPgraphs::drawAxis(xName = "", yName = "", force = TRUE) + adjMargin
+          p <- jaspGraphs::drawAxis(xName = "", yName = "", force = TRUE) + adjMargin
           p <- p + ggplot2::xlab("")
           p <- p + ggplot2::ylab("")
-          p <- JASPgraphs::themeJasp(p)
+          p <- jaspGraphs::themeJasp(p)
           
           plotMat[[row, col]] <- p
         }
@@ -316,19 +316,19 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
       if (col < row) {
         if (l < 7) {
           if (options[["plotStatistics"]]) {
-            p <- JASPgraphs::drawAxis(xName = "", yName = "", force = TRUE) + adjMargin
+            p <- jaspGraphs::drawAxis(xName = "", yName = "", force = TRUE) + adjMargin
             p <- p + ggplot2::xlab("")
             p <- p + ggplot2::ylab("")
-            p <- JASPgraphs::themeJasp(p)
+            p <- jaspGraphs::themeJasp(p)
             
             plotMat[[row, col]] <- p
           
           } else {
             
-            p <- JASPgraphs::drawAxis(xName = "", yName = "", force = TRUE) + adjMargin
+            p <- jaspGraphs::drawAxis(xName = "", yName = "", force = TRUE) + adjMargin
             p <- p + ggplot2::xlab("")
             p <- p + ggplot2::ylab("")
-            p <- JASPgraphs::themeJasp(p)
+            p <- jaspGraphs::themeJasp(p)
             
             plotMat[[row, col]] <- p
           }
@@ -341,12 +341,12 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
       }
     }
   }  
-  JASPgraphs::setGraphOption("fontsize", oldFontSize)
+  jaspGraphs::setGraphOption("fontsize", oldFontSize)
   # slightly adjust the positions of the labels left and above the plots.
   labelPos <- matrix(.5, 4, 2)
   labelPos[1, 1] <- .55
   labelPos[4, 2] <- .65
-  p <- JASPgraphs::ggMatrixPlot(plotList = plotMat, leftLabels = variables, topLabels = variables,
+  p <- jaspGraphs::ggMatrixPlot(plotList = plotMat, leftLabels = variables, topLabels = variables,
                                 scaleXYlabels = NULL, labelPos = labelPos)
   
   progressbarTick()
@@ -362,30 +362,30 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   )
   lda.fit.scaled[["V2"]] <- as.factor(lda.fit.scaled[["V2"]])
 
-  xBreaks <- JASPgraphs::getPrettyAxisBreaks(lda.fit.scaled[, "LD"], min.n = 4)
+  xBreaks <- jaspGraphs::getPrettyAxisBreaks(lda.fit.scaled[, "LD"], min.n = 4)
   
   if (length(colnames(classificationResult[["scaling"]])) == 1) {
 
     p <- ggplot2::ggplot(data = lda.fit.scaled, ggplot2::aes(x = LD, group = V2, color = V2, show.legend = TRUE)) +
-          JASPgraphs::geom_line(stat = "density") + 
+          jaspGraphs::geom_line(stat = "density") + 
           ggplot2::labs(color = options[["target"]]) + 
           ggplot2::theme(legend.key = ggplot2::element_blank()) +
           ggplot2::scale_color_manual(values = colorspace::qualitative_hcl(n = length(unique(target)))) +
           ggplot2::scale_x_continuous(name = "", breaks = xBreaks, limits = range(xBreaks)) +
           ggplot2::scale_y_continuous(name = gettext("Density"))
     
-    p <- JASPgraphs::themeJasp(p, legend.position = "right")
+    p <- jaspGraphs::themeJasp(p, legend.position = "right")
     p <- p + ggplot2::theme(axis.ticks.y = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank())
     p <- p + ggplot2::guides(color = ggplot2::guide_legend(override.aes = list(shape = 21)))
     
   } else {
 
     p <- ggplot2::ggplot(data = lda.fit.scaled, ggplot2::aes(x = LD, group = V2, color = V2)) +
-          JASPgraphs::geom_line(stat = "density") + 
+          jaspGraphs::geom_line(stat = "density") + 
           ggplot2::scale_color_manual(values = colorspace::qualitative_hcl(n = length(unique(target)))) +
           ggplot2::scale_x_continuous(name = "", breaks = xBreaks, limits = range(xBreaks)) +
           ggplot2::scale_y_continuous(name = gettext("Density"))
-    p <- JASPgraphs::themeJasp(p)
+    p <- jaspGraphs::themeJasp(p)
     p <- p + ggplot2::theme(axis.ticks.y = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank())
 
   }
@@ -402,16 +402,16 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   lda.data <- data.frame(pred.values, target = target)
   colnames(lda.data) <- c("x", "y", "target")
 
-  xBreaks <- JASPgraphs::getPrettyAxisBreaks(lda.data[, "x"], min.n = 4)
-  yBreaks <- JASPgraphs::getPrettyAxisBreaks(lda.data[, "y"], min.n = 4)
+  xBreaks <- jaspGraphs::getPrettyAxisBreaks(lda.data[, "x"], min.n = 4)
+  yBreaks <- jaspGraphs::getPrettyAxisBreaks(lda.data[, "y"], min.n = 4)
   
   p <- ggplot2::ggplot(lda.data, ggplot2::aes(x = x, y = y)) +
-        JASPgraphs::geom_point(ggplot2::aes(fill = target)) + 
+        jaspGraphs::geom_point(ggplot2::aes(fill = target)) + 
         ggplot2::labs(fill = options[["target"]]) + 
         ggplot2::scale_fill_manual(values = colorspace::qualitative_hcl(n = length(unique(target)))) +
         ggplot2::scale_x_continuous(name = "", breaks = xBreaks, limits = range(xBreaks)) + 
         ggplot2::scale_y_continuous(name = "", breaks = yBreaks, limits = range(yBreaks))
-  p <- JASPgraphs::themeJasp(p)    
+  p <- jaspGraphs::themeJasp(p)    
   
   return(p)
 }

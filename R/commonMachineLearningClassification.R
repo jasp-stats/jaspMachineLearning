@@ -343,8 +343,8 @@
   
   plotMat <- matrix(list(), l - 1, l - 1)
   adjMargin <- ggplot2::theme(plot.margin = ggplot2::unit(c(.25, .40, .25, .25), "cm")) 
-  oldFontSize <- JASPgraphs::getGraphOption("fontsize")
-  JASPgraphs::setGraphOption("fontsize", .85 * oldFontSize)
+  oldFontSize <- jaspGraphs::getGraphOption("fontsize")
+  jaspGraphs::setGraphOption("fontsize", .85 * oldFontSize)
   
   target <- dataset[, .v(options[["target"]])]
   startProgressbar(length(plotMat)+1)
@@ -352,10 +352,10 @@
   for (row in 2:l) {
     for (col in 1:(l-1)) {
       if (row == col) {     
-          p <- JASPgraphs::drawAxis(xName = "", yName = "", force = TRUE) + adjMargin
+          p <- jaspGraphs::drawAxis(xName = "", yName = "", force = TRUE) + adjMargin
           p <- p + ggplot2::xlab("")
           p <- p + ggplot2::ylab("")
-          p <- JASPgraphs::themeJasp(p)
+          p <- jaspGraphs::themeJasp(p)
           
           plotMat[[row, col]] <- p
       }  
@@ -366,10 +366,10 @@
           plotMat[[row-1, col]] <- .decisionBoundaryPlot(dataset, options, jaspResults, predictors, target, formula, l, type = type)
       } 
       if (col > row) {
-          p <- JASPgraphs::drawAxis(xName = "", yName = "", force = TRUE) + adjMargin
+          p <- jaspGraphs::drawAxis(xName = "", yName = "", force = TRUE) + adjMargin
           p <- p + ggplot2::xlab("")
           p <- p + ggplot2::ylab("")
-          p <- JASPgraphs::themeJasp(p)
+          p <- jaspGraphs::themeJasp(p)
           
           plotMat[[row, col]] <- p
       }
@@ -380,12 +380,12 @@
     }
   }
   
-  JASPgraphs::setGraphOption("fontsize", oldFontSize)
+  jaspGraphs::setGraphOption("fontsize", oldFontSize)
   # slightly adjust the positions of the labels left and above the plots.
   labelPos <- matrix(.5, 4, 2)
   labelPos[1, 1] <- .55
   labelPos[4, 2] <- .65
-  p <- JASPgraphs::ggMatrixPlot(plotList = plotMat, leftLabels = variables[-1], topLabels = variables[-length(variables)],
+  p <- jaspGraphs::ggMatrixPlot(plotList = plotMat, leftLabels = variables[-1], topLabels = variables[-length(variables)],
                                 scaleXYlabels = NULL, labelPos = labelPos)
   
   progressbarTick()
@@ -397,8 +397,8 @@
     x_min <- min(predictors[,1])-0.5; x_max <- max(predictors[,1])+0.5
     y_min <- min(predictors[,2])-0.5; y_max <- max(predictors[,2])+0.5
 
-    xBreaks <- JASPgraphs::getPrettyAxisBreaks(predictors[, 1], min.n = 4)
-    yBreaks <- JASPgraphs::getPrettyAxisBreaks(predictors[, 2], min.n = 4)
+    xBreaks <- jaspGraphs::getPrettyAxisBreaks(predictors[, 1], min.n = 4)
+    yBreaks <- jaspGraphs::getPrettyAxisBreaks(predictors[, 2], min.n = 4)
 
     x_min <- xBreaks[1]; x_max <- xBreaks[length(xBreaks)]
     y_min <- yBreaks[1]; y_max <- yBreaks[length(yBreaks)]
@@ -442,11 +442,11 @@
     p <- p + ggplot2::scale_x_continuous(name = "", breaks = xBreaks, limits = range(xBreaks))
     p <- p + ggplot2::scale_y_continuous(name = "", breaks = yBreaks, limits = range(yBreaks))
     if(options[["plotPoints"]])
-      p <- p + JASPgraphs::geom_point(data = pointData, ggplot2::aes(x = x, y = y, fill = target))
+      p <- p + jaspGraphs::geom_point(data = pointData, ggplot2::aes(x = x, y = y, fill = target))
     if(l <= 2){
-      p <- JASPgraphs::themeJasp(p, xAxis = TRUE, yAxis = TRUE, legend.position = "right")
+      p <- jaspGraphs::themeJasp(p, xAxis = TRUE, yAxis = TRUE, legend.position = "right")
     } else {
-      p <- JASPgraphs::themeJasp(p, xAxis = TRUE, yAxis = TRUE)
+      p <- jaspGraphs::themeJasp(p, xAxis = TRUE, yAxis = TRUE)
     }
     return(p)
 }
@@ -459,13 +459,13 @@
   lda.data <- data.frame(target = target, predictors = predictors)
   
   p <- ggplot2::ggplot(lda.data, ggplot2::aes(y = target, x = target, show.legend = TRUE)) +
-        JASPgraphs::geom_point(ggplot2::aes(fill = target), alpha = 0) +
+        jaspGraphs::geom_point(ggplot2::aes(fill = target), alpha = 0) +
         ggplot2::xlab("") +
         ggplot2::ylab("") +
         ggplot2::theme(legend.key = ggplot2::element_blank()) +
         ggplot2::labs(fill = options[["target"]]) + 
         ggplot2::scale_fill_manual(values = colorspace::qualitative_hcl(n = length(unique(target))))
-  p <- JASPgraphs::themeJasp(p, yAxis = FALSE, xAxis = FALSE, legend.position = "left")
+  p <- jaspGraphs::themeJasp(p, yAxis = FALSE, xAxis = FALSE, legend.position = "left")
   p <- p + ggplot2::theme(axis.ticks = ggplot2::element_blank(), axis.text.x = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank())
   p <- p + ggplot2::guides(fill = ggplot2::guide_legend(override.aes = list(alpha = 1)))
   
@@ -498,7 +498,7 @@
 
     linedata <- data.frame(x = c(0,1), y = c(0,1))
     p <- ggplot2::ggplot(linedata, ggplot2::aes(x = x, y = y)) +
-          JASPgraphs::geom_line(col = "black", linetype = 2) +
+          jaspGraphs::geom_line(col = "black", linetype = 2) +
           ggplot2::xlab(gettext("False positive rate")) +
           ggplot2::ylab(gettext("True positive rate"))
 
@@ -567,14 +567,14 @@
 
     rocData <- data.frame(x = rocXstore, y = rocYstore, name = rocNamestore)
     rocData <- na.omit(rocData) # Remove classes that are not in the test set
-    p <- p + JASPgraphs::geom_line(data = rocData, mapping = ggplot2::aes(x = x, y = y, col = name)) +
+    p <- p + jaspGraphs::geom_line(data = rocData, mapping = ggplot2::aes(x = x, y = y, col = name)) +
               ggplot2::scale_color_manual(values = colorspace::qualitative_hcl(n = length(lvls))) +
               ggplot2::scale_y_continuous(limits = c(0, 1.1), breaks = seq(0,1,0.2)) +
               ggplot2::scale_x_continuous(limits = c(0, 1), breaks = seq(0,1,0.2)) +
               ggplot2::labs(color = options[["target"]]) +
-              JASPgraphs::geom_point(data = data.frame(x = 0, y = 1), mapping = ggplot2::aes(x = x, y = y)) +
+              jaspGraphs::geom_point(data = data.frame(x = 0, y = 1), mapping = ggplot2::aes(x = x, y = y)) +
               ggrepel::geom_text_repel(data = data.frame(x = 0, y = 1), ggplot2::aes(label= gettext("Perfect separation"), x = x, y = y), hjust = -0.2, vjust = -0.8)
-    p <- JASPgraphs::themeJasp(p, legend.position = "right")
+    p <- jaspGraphs::themeJasp(p, legend.position = "right")
 
     rocCurve$plotObject <- p
 }
@@ -641,16 +641,16 @@
                   target = rep(target, each = length(xpts)),
                   observation = rep(1:n, each = length(xpts)))
 
-  xBreaks <- JASPgraphs::getPrettyAxisBreaks(d$x, min.n = 4)
-  yBreaks <- JASPgraphs::getPrettyAxisBreaks(d$y, min.n = 4)
+  xBreaks <- jaspGraphs::getPrettyAxisBreaks(d$x, min.n = 4)
+  yBreaks <- jaspGraphs::getPrettyAxisBreaks(d$y, min.n = 4)
 
   p <- ggplot2::ggplot(data = d, mapping = ggplot2::aes(x = x, y = y, color = target, group = observation)) +
-        JASPgraphs::geom_line(size = 0.2) +
+        jaspGraphs::geom_line(size = 0.2) +
         ggplot2::scale_x_continuous(name = "", breaks = xBreaks, labels = xBreaks) + 
         ggplot2::scale_y_continuous(name = "", breaks = yBreaks, labels = yBreaks) +
         ggplot2::labs(color = options[["target"]]) +
         ggplot2::guides(color = ggplot2::guide_legend(override.aes = list(size = 1)))
-  p <- JASPgraphs::themeJasp(p, legend.position = "right")
+  p <- jaspGraphs::themeJasp(p, legend.position = "right")
 
   andrewsCurve$plotObject <- p
 

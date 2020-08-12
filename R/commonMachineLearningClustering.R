@@ -366,9 +366,9 @@
         ggplot2::ylab(NULL) +
         ggplot2::scale_fill_manual(values = colorspace::qualitative_hcl(n = colSize))
   if(options[["legend"]]){
-    p <- JASPgraphs::themeJasp(p, legend.position = "right")
+    p <- jaspGraphs::themeJasp(p, legend.position = "right")
   } else {
-    p <- JASPgraphs::themeJasp(p)
+    p <- jaspGraphs::themeJasp(p)
   }
   p <- p + ggplot2::theme(axis.ticks = ggplot2::element_blank(), axis.text.x = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank())
   if(options[["labels"]])
@@ -408,8 +408,8 @@ if(!is.null(jaspResults[["optimPlot"]]) || !options[["withinssPlot"]] || options
 
   d <- data.frame(x = rep(2:options[["maxClusters"]], 3), y = values, type = type)
 
-  xBreaks <- JASPgraphs::getPrettyAxisBreaks(d$x, min.n = 4)
-  yBreaks <- JASPgraphs::getPrettyAxisBreaks(d$y, min.n = 4)
+  xBreaks <- jaspGraphs::getPrettyAxisBreaks(d$x, min.n = 4)
+  yBreaks <- jaspGraphs::getPrettyAxisBreaks(d$y, min.n = 4)
 
   yVals <- values[type == requiredPoint]
   pointData <- data.frame(x = clusterResult[['clusters']],
@@ -417,19 +417,19 @@ if(!is.null(jaspResults[["optimPlot"]]) || !options[["withinssPlot"]] || options
                           type = requiredPoint)
 
   p <- ggplot2::ggplot(data = d, ggplot2::aes(x = x, y = y, linetype = type)) +
-        JASPgraphs::geom_line() +
+        jaspGraphs::geom_line() +
         ggplot2::scale_x_continuous(name = gettext("Number of Clusters"), breaks = xBreaks, labels = xBreaks) +
         ggplot2::scale_y_continuous(name = "", breaks = yBreaks, labels = yBreaks) +
         ggplot2::scale_linetype_manual(values = c(3, 2, 1)) +
         ggplot2::labs(linetype = "")
   
   if(options[["optimizationCriterion"]] != "validationSilh"){
-    p <- p + JASPgraphs::geom_point(data = pointData, ggplot2::aes(x = x, y = y, linetype = type, fill = "red")) +
+    p <- p + jaspGraphs::geom_point(data = pointData, ggplot2::aes(x = x, y = y, linetype = type, fill = "red")) +
               ggplot2::scale_fill_manual(labels = gettextf("Lowest %s value", requiredPoint), values = "red") +
               ggplot2::labs(fill = "") 
   }
   
-  p <- JASPgraphs::themeJasp(p, legend.position = "top")
+  p <- jaspGraphs::themeJasp(p, legend.position = "top")
 
   optimPlot$plotObject <- p
 
@@ -515,7 +515,7 @@ if(!is.null(jaspResults[["optimPlot"]]) || !options[["withinssPlot"]] || options
     clusters <- as.factor(clusterResult[["pred.values"]])
     colorPalette <- colorspace::qualitative_hcl(n = length(unique(clusters)))
 
-    xBreaks <- JASPgraphs::getPrettyAxisBreaks(dataset[[.v(variable)]], min.n = 4)
+    xBreaks <- jaspGraphs::getPrettyAxisBreaks(dataset[[.v(variable)]], min.n = 4)
 
     plotData <- data.frame(Cluster = clusters, 
                            value = dataset[[.v(variable)]])
@@ -524,7 +524,7 @@ if(!is.null(jaspResults[["optimPlot"]]) || !options[["withinssPlot"]] || options
           ggplot2::geom_density(color = "transparent", alpha = 0.6) +
           ggplot2::ylab(gettext("Density")) +
           ggplot2::scale_x_continuous(name = variable, breaks = xBreaks, labels = xBreaks, limits = range(xBreaks))
-    p <- JASPgraphs::themeJasp(p, legend.position = "right") + 
+    p <- jaspGraphs::themeJasp(p, legend.position = "right") + 
           ggplot2::theme(axis.ticks.y = ggplot2::element_blank(), 
                          axis.text.y = ggplot2::element_blank())
     
@@ -581,7 +581,7 @@ if(!is.null(jaspResults[["optimPlot"]]) || !options[["withinssPlot"]] || options
                            lower = lowerValues,
                            upper = upperValues)
     
-    yBreaks <- JASPgraphs::getPrettyAxisBreaks(c(0, unlist(plotData[complete.cases(plotData), -c(1, 2)])), min.n = 4)
+    yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, unlist(plotData[complete.cases(plotData), -c(1, 2)])), min.n = 4)
     
     xBreaks <- (1:length(options[["predictors"]])) * (length(levels(clusters)) + 2)
     xBreaks <- xBreaks - (length(levels(clusters)) + 2)
@@ -599,12 +599,12 @@ if(!is.null(jaspResults[["optimPlot"]]) || !options[["withinssPlot"]] || options
     } else {
       p <- p + ggplot2::geom_segment(ggplot2::aes(x = 0, xend = max(plotData[["xCoord"]]), y = 0, yend = 0), linetype = 2) +
                 ggplot2::geom_errorbar(data = plotData, ggplot2::aes(x = xCoord, ymin=lower, ymax=upper), width = 0.2, size = 1) + 
-                JASPgraphs::geom_point(color = "black")
+                jaspGraphs::geom_point(color = "black")
     }
     
     p <- p + ggplot2::scale_x_continuous(name = "", breaks = xBreaks, labels = xLabels) +
       ggplot2::scale_y_continuous(name = gettext("Value"), breaks = yBreaks, labels = yBreaks, limits = range(yBreaks))
-    p <- JASPgraphs::themeJasp(p, legend.position = "right", sides = "l") + 
+    p <- jaspGraphs::themeJasp(p, legend.position = "right", sides = "l") + 
           ggplot2::theme(axis.ticks.x = ggplot2::element_blank(),
                           axis.text.x = ggplot2::element_text(angle = 20))
     
@@ -629,7 +629,7 @@ if(!is.null(jaspResults[["optimPlot"]]) || !options[["withinssPlot"]] || options
       
       plotData <- plotData[complete.cases(plotData), ]
 
-      yBreaks <- JASPgraphs::getPrettyAxisBreaks(c(0, unlist(plotData[, -1])), min.n = 4)
+      yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, unlist(plotData[, -1])), min.n = 4)
 
       p <- ggplot2::ggplot(plotData, ggplot2::aes(x = Cluster, y = value, fill = Cluster))
 
@@ -638,12 +638,12 @@ if(!is.null(jaspResults[["optimPlot"]]) || !options[["withinssPlot"]] || options
                   ggplot2::geom_errorbar(data = plotData, ggplot2::aes(x = Cluster, ymin=lower, ymax=upper), width = 0.2, size = 1)
       } else {
         p <- p + ggplot2::geom_errorbar(data = plotData, ggplot2::aes(x = Cluster, ymin=lower, ymax=upper), width = 0.2, size = 1) + 
-                  JASPgraphs::geom_point(color = "black")
+                  jaspGraphs::geom_point(color = "black")
       }
 
       p <- p + ggplot2::scale_x_discrete(name = gettext("Cluster"), breaks = xBreaks, labels = xBreaks) +
                 ggplot2::scale_y_continuous(name = variable, breaks = yBreaks, labels = yBreaks, limits = range(yBreaks))
-      p <- JASPgraphs::themeJasp(p, sides = "l") + 
+      p <- jaspGraphs::themeJasp(p, sides = "l") + 
             ggplot2::theme(axis.ticks.x = ggplot2::element_blank())
       
       clusterMeans[[variable]] <- createJaspPlot(plot = p, title = variable, height = 300, width = 500)

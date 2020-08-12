@@ -266,20 +266,20 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   d$ind         <- rep(.unv(rownames(coefs)), (nrow(d) / nrow(coefs)))
   d$lambda      <- rep(model$lambda, each = nrow(coefs))
 
-  xBreaks <- JASPgraphs::getPrettyAxisBreaks(d$lambda, min.n = 4)
-  yBreaks <- JASPgraphs::getPrettyAxisBreaks(d$values, min.n = 4)
+  xBreaks <- jaspGraphs::getPrettyAxisBreaks(d$lambda, min.n = 4)
+  yBreaks <- jaspGraphs::getPrettyAxisBreaks(d$values, min.n = 4)
 
   p <- ggplot2::ggplot(data = d, mapping = ggplot2::aes(x = lambda, y = values, colour = ind), show.legend = TRUE) +
-        JASPgraphs::geom_line() +
+        jaspGraphs::geom_line() +
         ggplot2::scale_x_continuous("\u03BB", breaks = xBreaks, labels = xBreaks) +
         ggplot2::scale_y_continuous(gettext("Coefficients"), breaks = yBreaks, labels = yBreaks) + 
         ggplot2::scale_color_manual(values = colorspace::qualitative_hcl(n = length(options[["predictors"]]))) +
         ggplot2::labs(color = "")
 
   if(options[["variableTraceLegend"]]){
-    p <- JASPgraphs::themeJasp(p, legend.position = "right")
+    p <- jaspGraphs::themeJasp(p, legend.position = "right")
   } else {
-    p <- JASPgraphs::themeJasp(p)
+    p <- jaspGraphs::themeJasp(p)
   }
   
   variableTrace$plotObject <- p
@@ -304,12 +304,12 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
 
   tempValues <- c(regressionResult[["cvMSELambda"]]$MSE - regressionResult[["cvMSELambda"]]$sd, regressionResult[["cvMSELambda"]]$MSE + regressionResult[["cvMSELambda"]]$sd)
 
-  xBreaks <- JASPgraphs::getPrettyAxisBreaks(regressionResult[["cvMSELambda"]]$lambda, min.n = 4)
-  yBreaks <- JASPgraphs::getPrettyAxisBreaks(tempValues, min.n = 4) 
+  xBreaks <- jaspGraphs::getPrettyAxisBreaks(regressionResult[["cvMSELambda"]]$lambda, min.n = 4)
+  yBreaks <- jaspGraphs::getPrettyAxisBreaks(tempValues, min.n = 4) 
   
   p <- ggplot2::ggplot(data = regressionResult[["cvMSELambda"]], mapping = ggplot2::aes(x = lambda, y = MSE)) +
         ggplot2::geom_ribbon(data = regressionResult[["cvMSELambda"]], mapping = ggplot2::aes(ymin = MSE - sd, ymax = MSE + sd), fill = "grey90") +
-        JASPgraphs::geom_line() +
+        jaspGraphs::geom_line() +
         ggplot2::scale_x_continuous("\u03BB", breaks = xBreaks, labels = xBreaks) +
         ggplot2::scale_y_continuous(gettextf("Cross-Validated %sMean Squared Error", "\n"), breaks = yBreaks, labels = yBreaks) +
         ggplot2::geom_vline(ggplot2::aes(xintercept = regressionResult[["model"]]$lambda.min, color = "lambdaMin"), linetype = "dashed") +
@@ -317,9 +317,9 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
         ggplot2::scale_color_manual(name = "", values = c(lambdaMin = "#14a1e3", lambda1se = "#99c454"), labels = c(lambdaMin = gettext("Min. CV MSE"), lambda1se = gettextf("%s 1 SE", "\u03BB")))
   
   if(options[["lambdaEvaluationLegend"]]){
-    p <- JASPgraphs::themeJasp(p, legend.position = "top")
+    p <- jaspGraphs::themeJasp(p, legend.position = "top")
   } else {
-    p <- JASPgraphs::themeJasp(p)
+    p <- jaspGraphs::themeJasp(p)
   }
   
   lambdaEvaluation$plotObject <- p
