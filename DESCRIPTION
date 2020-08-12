@@ -1,4 +1,4 @@
-Package: MachineLearning
+Package: jaspMachineLearning
 Type: Package
 Title: Machine Learning Module for JASP
 Version: 0.1
