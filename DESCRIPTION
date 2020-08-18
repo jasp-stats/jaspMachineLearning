@@ -8,4 +8,28 @@ Website: www.jasp-stats.org
 Maintainer: JASP Team <info@jasp-stats.org>
 Description: A module for Machine Learning mastery
 License: GPL (>= 2)
-Imports: AUC, cluster, colorspace, dbscan, e1071, gbm, ggdendro, kknn, randomForest, ROCR, Rtsne
+Encoding: UTF-8
+Imports:
+  AUC,
+  cluster,
+  colorspace,
+  dbscan,
+  e1071,
+  fpc,
+  gbm,
+  ggdendro,
+  ggplot2,
+  ggrepel,
+  glmnet,
+  jaspBase,
+  jaspGraphs,
+  kknn,
+  MASS,
+  plyr,
+  randomForest,
+  ROCR,
+  Rtsne,
+  signal
+Remotes:
+  jasp-stats/jaspBase,
+  jasp-stats/jaspGraphs
