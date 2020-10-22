@@ -13,18 +13,6 @@ Description
 	license:		"GPL (>= 2)"
 	icon:			"analysis-ml-ribbon.svg"
 
-	Package { name: "AUC"			}
-	Package { name: "cluster"		}
-	Package { name: "colorspace"	}
-	Package { name: "dbscan"		}
-	Package { name: "e1071"			}
-	Package { name: "gbm"			}
-	Package { name: "ggdendro"		}
-	Package { name: "kknn"			}
-	Package { name: "randomForest"	}
-	Package { name: "ROCR"			}
-	Package { name: "Rtsne"			}
-
 	GroupTitle
 	{
 		title:	qsTr("Regression")
