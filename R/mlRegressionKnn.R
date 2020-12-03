@@ -59,7 +59,7 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state=NULL) {
 	# Split the data into training and test sets
 	if(options[["holdoutData"]] == "testSetIndicator" && options[["testSetIndicatorVariable"]] != ""){
 		# Select observations according to a user-specified indicator (included when indicator = 1)
-		train.index             <- which(dataset[,.v(options[["testSetIndicatorVariable"]])] == 0)
+		train.index             <- which(dataset[,options[["testSetIndicatorVariable"]]] == 0)
 	} else {
 		# Sample a percentage of the total data set
 		train.index             <- sample.int(nrow(dataset), size = ceiling( (1 - options[['testDataManual']]) * nrow(dataset)))
@@ -97,10 +97,10 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state=NULL) {
 				
 				kfit_valid <- kknn::kknn(formula = formula, train = train, test = valid, k = i, 
 					distance = distance, kernel = weights, scale = FALSE)
-				errorStore[i] <- mean( (kfit_valid$fitted.values -  valid[,.v(options[["target"]])])^2 )
+				errorStore[i] <- mean( (kfit_valid$fitted.values -  valid[,options[["target"]]])^2 )
 				kfit_train <- kknn::kknn(formula = formula, train = train, test = train, k = i, 
 							distance = distance, kernel = weights, scale = FALSE)
-				trainErrorStore[i] <- mean( (kfit_train$fitted.values -  train[,.v(options[["target"]])])^2 )
+				trainErrorStore[i] <- mean( (kfit_train$fitted.values -  train[,options[["target"]]])^2 )
 				progressbarTick()
 
 			}
@@ -167,17 +167,17 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state=NULL) {
 	regressionResult[["nn"]]          	<- nn
 	regressionResult[["weights"]]     	<- weights
 	regressionResult[["distance"]]    	<- distance
-	regressionResult[['testMSE']]     	<- mean( (kfit_test$fitted.values -  test[,.v(options[["target"]])])^2 )
+	regressionResult[['testMSE']]     	<- mean( (kfit_test$fitted.values -  test[,options[["target"]]])^2 )
 	regressionResult[["ntrain"]]      	<- nrow(train)
 	regressionResult[["ntest"]]       	<- nrow(test)
-	regressionResult[["testReal"]]	  	<- test[, .v(options[["target"]])]
+	regressionResult[["testReal"]]	  	<- test[, options[["target"]]]
 	regressionResult[["testPred"]]		<- kfit_test$fitted.values
 	regressionResult[["testIndicatorColumn"]] <- testIndicatorColumn
 	regressionResult[["values"]] 		<- predictions
 
 	if(options[["modelOpt"]] != "optimizationManual"){
 		regressionResult[["accuracyStore"]] <- errorStore
-		regressionResult[['validMSE']]    <- mean( (kfit_valid$fitted.values -  valid[,.v(options[["target"]])])^2 )
+		regressionResult[['validMSE']]    <- mean( (kfit_valid$fitted.values -  valid[,options[["target"]]])^2 )
 		regressionResult[["nvalid"]]      <- nrow(valid)
 		regressionResult[["valid"]]       <- valid
 

@@ -84,7 +84,7 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
              all.target = options$target, observations.amount = '< 5', exitAnalysisIfErrors = TRUE)
   
   # Error Check 2: The target variable should have at least 2 classes
-  if (nlevels(dataset[, .v(options$target)]) < 2){
+  if (nlevels(dataset[, options$target]) < 2){
     jaspBase:::.quitAnalysis(gettext("The target variable should have at least 2 classes."))
   }
   
@@ -99,7 +99,7 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
 	# Split the data into training and test sets
 	if(options[["holdoutData"]] == "testSetIndicator" && options[["testSetIndicatorVariable"]] != ""){
 		# Select observations according to a user-specified indicator (included when indicator = 1)
-		train.index             <- which(dataset[,.v(options[["testSetIndicatorVariable"]])] == 0)
+		train.index             <- which(dataset[,options[["testSetIndicatorVariable"]]] == 0)
 	} else {
 		# Sample a percentage of the total data set
 		train.index             <- sample.int(nrow(dataset), size = ceiling( (1 - options[['testDataManual']]) * nrow(dataset)))
@@ -130,11 +130,11 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   classificationResult[["model"]]               <- ldafit
   classificationResult[["method"]]              <- method
   classificationResult[["scaling"]]             <- ldafit[["scaling"]]
-  classificationResult[['confTable']]           <- table('Pred' = pred_test[["class"]], 'Real' = test[,.v(options[["target"]])])
+  classificationResult[['confTable']]           <- table('Pred' = pred_test[["class"]], 'Real' = test[,options[["target"]]])
   classificationResult[['testAcc']]             <- sum(diag(prop.table(classificationResult[['confTable']])))
   classificationResult[["auc"]]                 <- auc
   classificationResult[["testPred"]]            <- pred_test[["class"]]
-  classificationResult[["testReal"]]            <- test[,.v(options[["target"]])]
+  classificationResult[["testReal"]]            <- test[,options[["target"]]]
   classificationResult[["meanTable"]]           <- ldafit[["means"]]
   classificationResult[["relInf"]]              <- summary(ldafit, plot = FALSE)
   classificationResult[["prior"]]               <- ldafit[["prior"]]
@@ -177,7 +177,7 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   groupmean <- (classificationResult[["model"]]$prior %*% classificationResult[["model"]]$means)
   constants <- (groupmean %*% classificationResult[["scaling"]])
 
-  row <- cbind(pred_level = c(gettext("(Constant)"), .unv(rownames(coefficients))), 
+  row <- cbind(pred_level = c(gettext("(Constant)"), rownames(coefficients)), 
                 as.data.frame(rbind(constants, coefficients)))
     
   coefficientsTable$addRows(row) 
@@ -232,7 +232,7 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
 
   classificationResult <- jaspResults[["classificationResult"]]$object
   groupMeans <- classificationResult[["meanTable"]]
-  colnames(groupMeans) <- .unv(colnames(groupMeans))
+  colnames(groupMeans) <- colnames(groupMeans)
   
   row <- cbind(target_level = rownames(groupMeans), as.data.frame(groupMeans))  
   meanTable$addRows(row)
@@ -355,10 +355,10 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   
 .ldaDensityplot <- function(classificationResult, options, col){
 
-  target <- classificationResult[["train"]][, .v(options[["target"]])]
+  target <- classificationResult[["train"]][, options[["target"]]]
   lda.fit.scaled <- cbind.data.frame(
     LD = .ldaModelMatrix(classificationResult[["model"]], classificationResult[["train"]]) %*% classificationResult[["scaling"]][, col],
-    V2 = classificationResult[["train"]][,.v(options[["target"]])]
+    V2 = classificationResult[["train"]][,options[["target"]]]
   )
   lda.fit.scaled[["V2"]] <- as.factor(lda.fit.scaled[["V2"]])
 
@@ -395,7 +395,7 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
 .ldaScatterPlot <- function(classificationResult, options, col){
 
   data <- classificationResult[["train"]]
-  target <- data[, .v(options[["target"]])]
+  target <- data[, options[["target"]]]
   model <- classificationResult[["model"]]
 
   pred.values <- stats::predict(model, newdata = data)$x[,c(col, col - 1)]
@@ -435,8 +435,8 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
 
   if(!ready)  return()
 
-  target <- as.numeric(dataset[, .v(options[["target"]])])
-  predictors <- as.matrix(dataset[, .v(options[["predictors"]])])
+  target <- as.numeric(dataset[, options[["target"]]])
+  predictors <- as.matrix(dataset[, options[["predictors"]]])
 
   tryCatch({
     manovaResult <- manova(predictors ~ target)
@@ -477,8 +477,8 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
 
   if(!ready)  return()
 
-  target <- dataset[, .v(options[["target"]])]
-  predictors <- dataset[, .v(options[["predictors"]])]
+  target <- dataset[, options[["target"]]]
+  predictors <- dataset[, options[["predictors"]]]
 
   testLabel <- "Box's M"
   boxSum <- .boxM(predictors, target)
@@ -502,8 +502,8 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
 
   if(!ready)  return()
 
-  target <- dataset[, .v(options[["target"]])]
-  predictors <- dataset[, .v(options[["predictors"]])]
+  target <- dataset[, options[["target"]]]
+  predictors <- dataset[, options[["predictors"]]]
 
   boxSum <- .boxM(predictors, target)
   corPooled <- cor(boxSum[["pooled"]])

@@ -57,7 +57,7 @@ mlClusteringKMeans <- function(jaspResults, dataset, options, ...) {
 
   if(options[["modelOpt"]] == "validationManual"){
     
-    kfit <- kmeans(dataset[, .v(options[["predictors"]])],
+    kfit <- kmeans(dataset[, options[["predictors"]]],
                    centers = options[['noOfClusters']],
                    iter.max = options[['noOfIterations']],
                    nstart = options[['noOfRandomSets']],
@@ -76,17 +76,17 @@ mlClusteringKMeans <- function(jaspResults, dataset, options, ...) {
     startProgressbar(length(clusterRange))
 
     for (i in clusterRange) {
-      kfit_tmp <- kmeans(dataset[, .v(options[["predictors"]])],
+      kfit_tmp <- kmeans(dataset[, options[["predictors"]]],
                    centers = i,
                    iter.max = options[['noOfIterations']],
                    nstart = options[['noOfRandomSets']],
                    algorithm = options[['algorithm']])
-      silh <- summary(cluster::silhouette(kfit_tmp$cluster, dist(dataset[, .v(options[["predictors"]])])))
+      silh <- summary(cluster::silhouette(kfit_tmp$cluster, dist(dataset[, options[["predictors"]]])))
       avg_silh[i - 1] <- silh[["avg.width"]]
 
       v_tmp <- kfit_tmp$centers
       clabels_tmp <- kfit_tmp$cluster
-      csumsqrs_tmp <- .sumsqr(dataset[, .v(options[["predictors"]])], v_tmp, clabels_tmp) 
+      csumsqrs_tmp <- .sumsqr(dataset[, options[["predictors"]]], v_tmp, clabels_tmp) 
       wssStore[i - 1] <- csumsqrs_tmp$tot.within.ss
 
       m <- ncol(kfit_tmp$centers)
@@ -104,7 +104,7 @@ mlClusteringKMeans <- function(jaspResults, dataset, options, ...) {
                             "validationAIC" = clusterRange[which.min(aicStore)],
                             "validationBIC" = clusterRange[which.min(bicStore)])
   
-  kfit <- kmeans(dataset[, .v(options[["predictors"]])],
+  kfit <- kmeans(dataset[, options[["predictors"]]],
                  centers = clusters,
                  iter.max = options[['noOfIterations']],
                  nstart = options[['noOfRandomSets']],
@@ -127,7 +127,7 @@ mlClusteringKMeans <- function(jaspResults, dataset, options, ...) {
   aic <- D + 2*m*k
   bic <- D + log(n)*m*k
 
-  silhouettes <- summary(cluster::silhouette(kfit$cluster, dist(dataset[, .v(options[["predictors"]])])))
+  silhouettes <- summary(cluster::silhouette(kfit$cluster, dist(dataset[, options[["predictors"]]])))
   Silh_score <- silhouettes[["avg.width"]]
   silh_scores <- silhouettes[["clus.avg.widths"]]
 

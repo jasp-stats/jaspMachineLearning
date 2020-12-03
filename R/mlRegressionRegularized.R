@@ -74,7 +74,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   }
   
   if(length(unlist(options[["predictors"]])) > 0 && options[["target"]] != "" && options[["scaleEqualSD"]])
-    dataset[,.v(c(options[["predictors"]], options[["target"]]))] <- .scaleNumericData(dataset[,.v(c(options[["predictors"]], options[["target"]])), drop = FALSE])
+    dataset[,c(options[["predictors"]], options[["target"]])] <- .scaleNumericData(dataset[,c(options[["predictors"]], options[["target"]]), drop = FALSE])
   
   return(dataset)
 }
@@ -97,7 +97,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   }
 
   if(options[["weights"]] != ""){
-    weights <- dataset[, .v(options[["weights"]])]
+    weights <- dataset[, options[["weights"]]]
   } else {
     weights <- rep(1, nrow(dataset))
   }
@@ -105,7 +105,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   # Split the data into training and test sets
 	if(options[["holdoutData"]] == "testSetIndicator" && options[["testSetIndicatorVariable"]] != ""){
     # Select observations according to a user-specified indicator (included when indicator = 1)
-		train.index             <- which(dataset[,.v(options[["testSetIndicatorVariable"]])] == 0)
+		train.index             <- which(dataset[,options[["testSetIndicatorVariable"]]] == 0)
 	} else {
     # Sample a percentage of the total data set
 		train.index             <- sample.int(nrow(dataset), size = ceiling( (1 - options[['testDataManual']]) * nrow(dataset)))
@@ -123,10 +123,10 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
 
     weights_train           <- weights[train.index]
 
-    train_pred <- as.matrix(train[,.v(options[["predictors"]])])
-    train_target <- train[, .v(options[["target"]])]
-    test_pred <- as.matrix(test[,.v(options[["predictors"]])])
-    test_target <- test[, .v(options[["target"]])]
+    train_pred <- as.matrix(train[,options[["predictors"]]])
+    train_target <- train[, options[["target"]]]
+    test_pred <- as.matrix(test[,options[["predictors"]]])
+    test_target <- test[, options[["target"]]]
 
     regfit_train <- glmnet::cv.glmnet(x = train_pred, y = train_target, nfolds = 10, type.measure = "deviance",
                                 family = "gaussian", weights = weights_train, offset = NULL, alpha = alpha, 
@@ -148,12 +148,12 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
     weights_train           <- weights[train.index]
     weights_train           <- weights_train[-valid.index]
 
-    train_pred <- as.matrix(train[,.v(options[["predictors"]])])
-    train_target <- train[, .v(options[["target"]])]
-    valid_pred <- as.matrix(valid[,.v(options[["predictors"]])])
-    valid_target <- valid[, .v(options[["target"]])]
-    test_pred <- as.matrix(test[,.v(options[["predictors"]])])
-    test_target <- test[, .v(options[["target"]])]
+    train_pred <- as.matrix(train[,options[["predictors"]]])
+    train_target <- train[, options[["target"]]]
+    valid_pred <- as.matrix(valid[,options[["predictors"]]])
+    valid_target <- valid[, options[["target"]]]
+    test_pred <- as.matrix(test[,options[["predictors"]]])
+    test_target <- test[, options[["target"]]]
     
     regfit_train <- glmnet::cv.glmnet(x = train_pred, y = train_target, nfolds = 10, type.measure = "deviance",
                                     family = "gaussian", weights = weights_train, offset = NULL, alpha = alpha, 
@@ -173,8 +173,8 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   }
   
   # Use the specified model to make predictions for dataset
-  predictions <- predict(regfit_train, newx = as.matrix(dataset[,.v(options[["predictors"]])]), s = lambda, type = "link", exact = TRUE,
-                          x = as.matrix(dataset[,.v(options[["predictors"]])]), y = dataset[, .v(options[["target"]])], weights = weights, offset = NULL,
+  predictions <- predict(regfit_train, newx = as.matrix(dataset[,options[["predictors"]]]), s = lambda, type = "link", exact = TRUE,
+                          x = as.matrix(dataset[,options[["predictors"]]]), y = dataset[, options[["target"]]], weights = weights, offset = NULL,
                           alpha = alpha, standardize = FALSE, intercept = options[["intercept"]], thresh = options[["thresh"]])
   
   regressionResult <- list()
@@ -182,8 +182,8 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   regressionResult[["lambda"]]              <- lambda
   regressionResult[["penalty"]]             <- penalty
   regressionResult[["alpha"]]               <- alpha
-  regressionResult[["testMSE"]]             <- mean( (as.numeric(pred_test) -  test[,.v(options[["target"]])])^2 )
-  regressionResult[["testReal"]]            <- test[,.v(options[["target"]])]
+  regressionResult[["testMSE"]]             <- mean( (as.numeric(pred_test) -  test[,options[["target"]]])^2 )
+  regressionResult[["testReal"]]            <- test[,options[["target"]]]
   regressionResult[["testPred"]]            <- as.numeric(pred_test)
   regressionResult[["ntrain"]]              <- nrow(train)
 	regressionResult[["ntest"]]               <- nrow(test)
@@ -194,7 +194,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   regressionResult[["values"]]              <- predictions
 
   if(options[["modelOpt"]] != "optimizationManual"){
-    regressionResult[["validMSE"]]          <- mean( (as.numeric(pred_valid) -  valid[,.v(options[["target"]])])^2 )
+    regressionResult[["validMSE"]]          <- mean( (as.numeric(pred_valid) -  valid[,options[["target"]]])^2 )
     regressionResult[["nvalid"]]            <- nrow(valid)
   }
   
@@ -232,10 +232,10 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   coefTab <- regressionResult[["coefTable"]]
 
   if(!options[["intercept"]]){
-    labs <- .unv(rownames(coefTab))[-1]
+    labs <- rownames(coefTab)[-1]
     values <- as.numeric(coefTab)[-1]
   } else {
-    labs <- c("(Intercept)", .unv(rownames(coefTab)[-1]))
+    labs <- c("(Intercept)", rownames(coefTab[-1]))
     values <- as.numeric(coefTab)
   }
   
@@ -263,7 +263,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   model         <- regressionResult[["model"]]$glmnet.fit
   coefs         <- as.matrix(regressionResult[["model"]]$glmnet.fit$beta)
   d             <- stack(as.data.frame(coefs))
-  d$ind         <- rep(.unv(rownames(coefs)), (nrow(d) / nrow(coefs)))
+  d$ind         <- rep(rownames(coefs), (nrow(d) / nrow(coefs)))
   d$lambda      <- rep(model$lambda, each = nrow(coefs))
 
   xBreaks <- jaspGraphs::getPrettyAxisBreaks(d$lambda, min.n = 4)

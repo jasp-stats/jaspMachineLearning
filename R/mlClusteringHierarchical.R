@@ -61,11 +61,11 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
   if(options[["modelOpt"]] == "validationManual"){
         
     if (options[["distance"]] == "Pearson correlation") {
-      distances <- as.dist(1 - cor(t(dataset[, .v(options[["predictors"]])]), method = "pearson"))
+      distances <- as.dist(1 - cor(t(dataset[, options[["predictors"]]]), method = "pearson"))
       distances[is.na(distances)] <- 1 # We impute the missing correlations with a 1, as 1 - 1 = 0
       hfit <- cutree(hclust(distances, method = options[["linkage"]]), k = options[['noOfClusters']])
     } else {
-      distances <- dist(dataset[, .v(options[["predictors"]])])
+      distances <- dist(dataset[, options[["predictors"]]])
       hfit <- cutree(hclust(distances, method = options[["linkage"]]), k = options[['noOfClusters']])
     }
 
@@ -84,24 +84,24 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
     for (i in clusterRange){
 
       if(options[["distance"]] == "Pearson correlation") {
-        distances <- as.dist(1 - cor(t(dataset[, .v(options[["predictors"]])]), method = "pearson"))
+        distances <- as.dist(1 - cor(t(dataset[, options[["predictors"]]]), method = "pearson"))
         distances[is.na(distances)] <- 1 # We impute the missing correlations with a 1, as 1 - 1 = 0
         hfit_tmp <- cutree(hclust(distances, method = options[["linkage"]]), k = i)
       } else {
-        distances <- dist(dataset[, .v(options[["predictors"]])])
+        distances <- dist(dataset[, options[["predictors"]]])
         hfit_tmp <- cutree(hclust(distances, method = options[["linkage"]]), k = i)
       }
       silh <- summary(cluster::silhouette(hfit_tmp, distances))
       avg_silh[i - 1] <- silh[["avg.width"]]
 
-      m <- dim(as.data.frame(dataset[, .v(options[["predictors"]])]))[2]
+      m <- dim(as.data.frame(dataset[, options[["predictors"]]]))[2]
 
       wss <- numeric(length(table(hfit_tmp)))
       for (j in 1:length(table(hfit_tmp))) {
         if (m == 1) {
-          wss[j] <- .ss(dataset[, .v(options[["predictors"]])][hfit_tmp == j])
+          wss[j] <- .ss(dataset[, options[["predictors"]]][hfit_tmp == j])
         } else {
-          wss[j] <- .ss(dataset[, .v(options[["predictors"]])][hfit_tmp == j,])
+          wss[j] <- .ss(dataset[, options[["predictors"]]][hfit_tmp == j,])
         }
       }
       wssStore[i - 1] <- sum(wss)
@@ -130,14 +130,14 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
   clusters <- clusters
   size <- as.data.frame(table(hfit))[,2]
 
-  m <- dim(as.data.frame(dataset[, .v(options[["predictors"]])]))[2]
+  m <- dim(as.data.frame(dataset[, options[["predictors"]]]))[2]
 
   wss <- numeric(length(table(hfit)))
   for (j in 1:length(table(hfit))) {
     if (m == 1) {
-      wss[j] <- .ss(dataset[, .v(options[["predictors"]])][hfit == j])
+      wss[j] <- .ss(dataset[, options[["predictors"]]][hfit == j])
     } else {
-      wss[j] <- .ss(dataset[, .v(options[["predictors"]])][hfit == j,])
+      wss[j] <- .ss(dataset[, options[["predictors"]]][hfit == j,])
     }
   }
 
@@ -158,7 +158,7 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
   clusterResult[["N"]] <- nrow(dataset)
   clusterResult[['size']] <- size
   clusterResult[['WSS']] <- wss
-  clusterResult[['TSS']] <- .tss(dist(dataset[, .v(options[["predictors"]])]))
+  clusterResult[['TSS']] <- .tss(dist(dataset[, options[["predictors"]]]))
   clusterResult[['BSS']] <- clusterResult[['TSS']] - sum(clusterResult[['WSS']])
   clusterResult[['AIC']] <- aic
   clusterResult[['BIC']] <- bic
@@ -192,8 +192,8 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
 
   if(options[["seedBox"]])  set.seed(options[["seed"]])
 
-  unique.rows <- which(!duplicated(dataset[, .v(options[["predictors"]])]))
-  data <- dataset[unique.rows, .v(options[["predictors"]])]
+  unique.rows <- which(!duplicated(dataset[, options[["predictors"]]]))
+  data <- dataset[unique.rows, options[["predictors"]]]
 
   if(options[["distance"]] == "Pearson correlation") {
     hc <- hclust(as.dist(1-cor(t(data), method="pearson")), method = options[["linkage"]])

@@ -317,7 +317,7 @@
   startProgressbar(2)
   progressbarTick()
 
-  unique.rows <- which(!duplicated(dataset[, .v(options[["predictors"]])]))
+  unique.rows <- which(!duplicated(dataset[, options[["predictors"]]]))
   if(is.null(jaspResults[["tsneOutput"]])){
     tsne_out <- Rtsne::Rtsne(as.matrix(dataset), perplexity = nrow(dataset) / 4, check_duplicates = FALSE)
     jaspResults[["tsneOutput"]] <- createJaspState(tsne_out)
@@ -515,10 +515,10 @@ if(!is.null(jaspResults[["optimPlot"]]) || !options[["withinssPlot"]] || options
     clusters <- as.factor(clusterResult[["pred.values"]])
     colorPalette <- colorspace::qualitative_hcl(n = length(unique(clusters)))
 
-    xBreaks <- jaspGraphs::getPrettyAxisBreaks(dataset[[.v(variable)]], min.n = 4)
+    xBreaks <- jaspGraphs::getPrettyAxisBreaks(dataset[[variable]], min.n = 4)
 
     plotData <- data.frame(Cluster = clusters, 
-                           value = dataset[[.v(variable)]])
+                           value = dataset[[variable]])
 
     p <- ggplot2::ggplot(plotData, ggplot2::aes(x = value, fill = Cluster)) +
           ggplot2::geom_density(color = "transparent", alpha = 0.6) +
@@ -618,9 +618,9 @@ if(!is.null(jaspResults[["optimPlot"]]) || !options[["withinssPlot"]] || options
       clusters <- as.factor(clusterResult[["pred.values"]])
       xBreaks <- as.numeric(levels(clusters))
       
-      clusterMeansData <- aggregate(dataset[[.v(variable)]], list(clusters), mean)
-      clusterSdData <- aggregate(dataset[[.v(variable)]], list(clusters), sd)
-      clusterLengthData <- aggregate(dataset[[.v(variable)]], list(clusters), length)
+      clusterMeansData <- aggregate(dataset[[variable]], list(clusters), mean)
+      clusterSdData <- aggregate(dataset[[variable]], list(clusters), sd)
+      clusterLengthData <- aggregate(dataset[[variable]], list(clusters), length)
 
       plotData <- data.frame(Cluster = clusterMeansData[, 1], 
                             value = clusterMeansData[, 2],

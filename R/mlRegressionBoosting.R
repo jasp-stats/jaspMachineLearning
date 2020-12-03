@@ -70,7 +70,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   # Split the data into training and test sets
   if(options[["holdoutData"]] == "testSetIndicator" && options[["testSetIndicatorVariable"]] != ""){
     # Select observations according to a user-specified indicator (included when indicator = 1)
-    train.index             <- which(dataset[,.v(options[["testSetIndicatorVariable"]])] == 0)
+    train.index             <- which(dataset[,options[["testSetIndicatorVariable"]]] == 0)
   } else {
     # Sample a percentage of the total data set
     train.index             <- sample.int(nrow(dataset), size = ceiling( (1 - options[['testDataManual']]) * nrow(dataset)))
@@ -141,19 +141,19 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   regressionResult[["noOfFolds"]]   <- noOfFolds
   regressionResult[["noOfTrees"]]   <- noOfTrees
   regressionResult[["method"]]      <- ifelse(options[["modelValid"]] == "validationManual", yes = "OOB", no = "")
-  regressionResult[['testMSE']]     <- mean((pred_test - test[,.v(options[["target"]])])^2)
+  regressionResult[['testMSE']]     <- mean((pred_test - test[,options[["target"]]])^2)
   regressionResult[["relInf"]]      <- summary(bfit, plot = FALSE)
   regressionResult[["ntrain"]]      <- nrow(train)
   regressionResult[["ntest"]]       <- nrow(test)
   regressionResult[["testPred"]]    <- pred_test
-  regressionResult[["testReal"]]    <- test[,.v(options[["target"]])]
+  regressionResult[["testReal"]]    <- test[,options[["target"]]]
   regressionResult[["train"]]       <- train
   regressionResult[["test"]]        <- test
   regressionResult[["testIndicatorColumn"]] <- testIndicatorColumn
   regressionResult[["values"]]      <- predictions
 
   if(options[["modelOpt"]] != "optimizationManual"){
-    regressionResult[['validMSE']]    <- mean((pred_valid - valid[,.v(options[["target"]])])^2)
+    regressionResult[['validMSE']]    <- mean((pred_valid - valid[,options[["target"]]])^2)
     regressionResult[["nvalid"]]      <- nrow(valid)
     regressionResult[["valid"]]       <- valid
   }
@@ -183,7 +183,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
                           "classification" = jaspResults[["classificationResult"]]$object,
                           "regression" = jaspResults[["regressionResult"]]$object)
 
-  classBoostRelInfTable[["predictor"]]  <- .unv(as.character(result[["relInf"]]$var))
+  classBoostRelInfTable[["predictor"]]  <- as.character(result[["relInf"]]$var)
   classBoostRelInfTable[["relIn"]]  <- result[["relInf"]]$rel.inf
 }
 
@@ -208,7 +208,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   oobDev <- data.frame(trees = 1:result[["model"]]$n.trees, oobImprove = result[["model"]]$oobag.improve, type = gettext("Training set"))
 
   if(purpose == "classification"){
-    if (nlevels(result[["test"]][,.v(options[["target"]])]) > 2L) {
+    if (nlevels(result[["test"]][,options[["target"]]]) > 2L) {
       ylab <- gettextf("OOB Change in %s Multinomial Deviance", "\n")
     } else {
       ylab <- gettextf("OOB Change in %s Binomial Deviance", "\n")
@@ -269,7 +269,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   )
 
   if(purpose == "classification"){
-    if (nlevels(result[["test"]][,.v(options[["target"]])]) > 2L) {
+    if (nlevels(result[["test"]][,options[["target"]]]) > 2L) {
       ylab <- gettext("Multinomial Deviance")
     } else {
       ylab <- gettext("Binomial Deviance")
@@ -323,7 +323,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
                         "classification" = jaspResults[["classificationResult"]]$object,
                         "regression" = jaspResults[["regressionResult"]]$object)
 
-  p <- ggplot2::ggplot(result[["relInf"]], ggplot2::aes(x = reorder(.unv(as.factor(var)), rel.inf), y = rel.inf)) +
+  p <- ggplot2::ggplot(result[["relInf"]], ggplot2::aes(x = reorder(as.factor(var), rel.inf), y = rel.inf)) +
         ggplot2::geom_bar(stat = "identity", fill = "gray", col = "black", size = .3) +
         ggplot2::labs(x = "", y = gettext("Relative Influence"))
   p <- jaspGraphs::themeJasp(p, horizontal = TRUE, xAxis = FALSE) + ggplot2::theme(axis.ticks.y = ggplot2::element_blank())

@@ -64,7 +64,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   # Split the data into training and test sets
   if(options[["holdoutData"]] == "testSetIndicator" && options[["testSetIndicatorVariable"]] != ""){
     # Select observations according to a user-specified indicator (included when indicator = 1)
-    train.index             <- which(dataset[,.v(options[["testSetIndicatorVariable"]])] == 0)
+    train.index             <- which(dataset[,options[["testSetIndicatorVariable"]]] == 0)
   } else {
     # Sample a percentage of the total data set
     train.index             <- sample.int(nrow(dataset), size = ceiling( (1 - options[['testDataManual']]) * nrow(dataset)))
@@ -80,10 +80,10 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
     train                   <- trainAndValid
     test                    <- dataset[-train.index, ]
 
-    train_predictors <- train[, .v(options[["predictors"]])]
-    train_target <- train[, .v(options[["target"]])]
-    test_predictors <- test[, .v(options[["predictors"]])]
-    test_target <- test[, .v(options[["target"]])]
+    train_predictors <- train[, options[["predictors"]]]
+    train_target <- train[, options[["target"]]]
+    test_predictors <- test[, options[["predictors"]]]
+    test_target <- test[, options[["target"]]]
 
     rfit_test <- randomForest::randomForest(x = train_predictors, y = train_target, xtest = test_predictors, ytest = test_target,
                                             ntree = options[["noOfTrees"]], mtry = noOfPredictors,
@@ -98,12 +98,12 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
     valid                   <- trainAndValid[valid.index, ]
     train                   <- trainAndValid[-valid.index, ]
 
-    train_predictors <- train[, .v(options[["predictors"]])]
-    train_target <- train[, .v(options[["target"]])]
-    valid_predictors <- valid[, .v(options[["predictors"]])]
-    valid_target <- valid[, .v(options[["target"]])]
-    test_predictors <- test[, .v(options[["predictors"]])]
-    test_target <- test[, .v(options[["target"]])]
+    train_predictors <- train[, options[["predictors"]]]
+    train_target <- train[, options[["target"]]]
+    valid_predictors <- valid[, options[["predictors"]]]
+    valid_target <- valid[, options[["target"]]]
+    test_predictors <- test[, options[["predictors"]]]
+    test_target <- test[, options[["target"]]]
 
     rfit_valid <- randomForest::randomForest(x = train_predictors, y = train_target, xtest = valid_predictors, ytest = valid_target,
                                     ntree = options[["maxTrees"]], mtry = noOfPredictors,
@@ -136,9 +136,9 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   regressionResult[["noOfTrees"]]           <- noOfTrees
   regressionResult[["predPerSplit"]]        <- noOfPredictors
   regressionResult[["bagFrac"]]             <- ceiling(options[["bagFrac"]]*nrow(dataset))
-  regressionResult[["testMSE"]]             <- mean((rfit_test$test[["predicted"]] - test[,.v(options[["target"]])])^2)
+  regressionResult[["testMSE"]]             <- mean((rfit_test$test[["predicted"]] - test[,options[["target"]]])^2)
   regressionResult[["testPred"]]            <- rfit_test$test[["predicted"]]
-  regressionResult[["testReal"]]            <- test[,.v(options[["target"]])]
+  regressionResult[["testReal"]]            <- test[,options[["target"]]]
   regressionResult[["oobError"]]            <- rfit_test$mse[length(rfit_test$mse)]
   regressionResult[["ntrain"]]              <- nrow(train)
   regressionResult[["ntest"]]               <- nrow(test)
@@ -147,13 +147,13 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   regressionResult[["testIndicatorColumn"]] <- testIndicatorColumn
   regressionResult[["values"]]              <- predictions
   regressionResult[["varImp"]]              <- plyr::arrange(data.frame(
-                                                            Variable = .unv(as.factor(names(rfit_test$importance[,1]))),
+                                                            Variable = as.factor(names(rfit_test$importance[,1])),
                                                             MeanIncrMSE = rfit_test$importance[, 1],
                                                             TotalDecrNodeImp = rfit_test$importance[, 2]
                                                           ), -TotalDecrNodeImp)
 
   if(options[["modelOpt"]] != "optimizationManual"){
-    regressionResult[['validMSE']]    <- mean((rfit_valid$test[["predicted"]] - valid[,.v(options[["target"]])])^2)
+    regressionResult[['validMSE']]    <- mean((rfit_valid$test[["predicted"]] - valid[,options[["target"]]])^2)
     regressionResult[["nvalid"]]      <- nrow(valid)
     regressionResult[["valid"]]       <- valid
     regressionResult[["rfit_valid"]]  <- rfit_valid

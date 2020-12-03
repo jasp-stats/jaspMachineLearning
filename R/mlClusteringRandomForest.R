@@ -60,7 +60,7 @@ mlClusteringRandomForest <- function(jaspResults, dataset, options, ...) {
 
 if(options[["modelOpt"]] == "validationManual"){
       
-    rfit <- randomForest::randomForest(x = dataset[, .v(options[["predictors"]])], 
+    rfit <- randomForest::randomForest(x = dataset[, options[["predictors"]]], 
 										y = NULL, 
 										ntree = options[["noOfTrees"]], 
 										proximity = TRUE, 
@@ -78,7 +78,7 @@ if(options[["modelOpt"]] == "validationManual"){
 
     startProgressbar(length(clusterRange))
 
-	rfit_tmp <- randomForest::randomForest(x = dataset[, .v(options[["predictors"]])], 
+	rfit_tmp <- randomForest::randomForest(x = dataset[, options[["predictors"]]], 
 									y = NULL, 
 									ntree = options[["noOfTrees"]], 
 									proximity = TRUE, 
@@ -88,17 +88,17 @@ if(options[["modelOpt"]] == "validationManual"){
     for (i in clusterRange) {
 
   	  pred.values <- cutree(hrfit_tmp, k = i)
-      silh <- summary(cluster::silhouette(pred.values, dist(dataset[, .v(options[["predictors"]])])))
+      silh <- summary(cluster::silhouette(pred.values, dist(dataset[, options[["predictors"]]])))
       avg_silh[i - 1] <- silh[["avg.width"]]
 
-	  m <- dim(as.data.frame(dataset[, .v(options[["predictors"]])]))[2]
+	  m <- dim(as.data.frame(dataset[, options[["predictors"]]]))[2]
   
     wss_tmp <- numeric(i)
     for(j in 1:i) {
       if (m == 1) {
-        wss_tmp[j] <- .ss(dataset[, .v(options[["predictors"]])][pred.values == j])
+        wss_tmp[j] <- .ss(dataset[, options[["predictors"]]][pred.values == j])
       } else {
-        wss_tmp[j] <- .ss(dataset[, .v(options[["predictors"]])][pred.values == j,])
+        wss_tmp[j] <- .ss(dataset[, options[["predictors"]]][pred.values == j,])
       }
     }
 
@@ -118,7 +118,7 @@ if(options[["modelOpt"]] == "validationManual"){
                             "validationAIC" = clusterRange[which.min(aicStore)],
                             "validationBIC" = clusterRange[which.min(bicStore)])
 
-	rfit <- randomForest::randomForest(x = dataset[, .v(options[["predictors"]])], 
+	rfit <- randomForest::randomForest(x = dataset[, options[["predictors"]]], 
 										y = NULL, 
 										ntree = options[["noOfTrees"]], 
 										proximity = TRUE, 
@@ -132,18 +132,18 @@ if(options[["modelOpt"]] == "validationManual"){
   clusters <- clusters
   size <- as.numeric(table(pred.values))
 
-  m <- dim(as.data.frame(dataset[, .v(options[["predictors"]])]))[2]
+  m <- dim(as.data.frame(dataset[, options[["predictors"]]]))[2]
   
   wss <- numeric(clusters)
   for(i in 1:clusters) {
     if (m == 1) {
-      wss[i] <- .ss(dataset[, .v(options[["predictors"]])][pred.values == i])
+      wss[i] <- .ss(dataset[, options[["predictors"]]][pred.values == i])
     } else {
-      wss[i] <- .ss(dataset[, .v(options[["predictors"]])][pred.values == i,])
+      wss[i] <- .ss(dataset[, options[["predictors"]]][pred.values == i,])
     }
   }
 
-  tss <- .tss(dist(dataset[, .v(options[["predictors"]])]))
+  tss <- .tss(dist(dataset[, options[["predictors"]]]))
 
   n <- length(pred.values)
   k <- clusters
@@ -151,7 +151,7 @@ if(options[["modelOpt"]] == "validationManual"){
   aic <- D + 2*m*k
   bic <- D + log(n)*m*k
 
-  silhouettes <- summary(cluster::silhouette(pred.values, dist(dataset[, .v(options[["predictors"]])])))
+  silhouettes <- summary(cluster::silhouette(pred.values, dist(dataset[, options[["predictors"]]])))
   Silh_score <- silhouettes[["avg.width"]]
   silh_scores <- silhouettes[["clus.avg.widths"]]
 
@@ -201,7 +201,7 @@ if(options[["modelOpt"]] == "validationManual"){
   fit <- clusterResult[["fit"]]
   varImp <- fit[["importance"]]
   ord <- order(varImp, decreasing = TRUE)
-  name <- .unv(rownames(varImp)[ord])
+  name <- rownames(varImp[ord])
   values <- as.numeric(varImp[ord])
   
   # Add data per column
