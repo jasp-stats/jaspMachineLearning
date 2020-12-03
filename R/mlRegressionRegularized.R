@@ -235,7 +235,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
     labs <- rownames(coefTab)[-1]
     values <- as.numeric(coefTab)[-1]
   } else {
-    labs <- c("(Intercept)", rownames(coefTab[-1]))
+    labs <- c("(Intercept)", rownames(coefTab)[-1])
     values <- as.numeric(coefTab)
   }
   
