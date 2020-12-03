@@ -201,7 +201,7 @@ if(options[["modelOpt"]] == "validationManual"){
   fit <- clusterResult[["fit"]]
   varImp <- fit[["importance"]]
   ord <- order(varImp, decreasing = TRUE)
-  name <- rownames(varImp[ord])
+  name <- rownames(varImp)[ord]
   values <- as.numeric(varImp[ord])
   
   # Add data per column
