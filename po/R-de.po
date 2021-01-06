@@ -1,0 +1,685 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: R 3.6.1\n"
+"Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
+"POT-Creation-Date: 2021-01-05 09:38\n"
+"PO-Revision-Date: 2020-12-03 09:42+0000\n"
+"Last-Translator: Thomas Langkamp <thomas.lassdiesonnerein@gmx.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/jasp/jasp-engine/"
+"de/>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
+"X-Generator: Weblate 4.4-dev\n"
+
+msgid "K-Nearest Neighbors Classification"
+msgstr "K-nächste-Nachbarn-Klassifikation"
+
+msgid "Linear Discriminant Classification"
+msgstr "Lineare Discriminanten-Klassifikation"
+
+msgid "Random Forest Classification"
+msgstr "Random-Forest-Klassifikation"
+
+msgid "Boosting Classification"
+msgstr "Boosting Klassifikation"
+
+msgid "Nearest neighbors"
+msgstr "Nächste-Nachbarn"
+
+msgid "Weights"
+msgstr "Gewichte"
+
+msgid "Distance"
+msgstr "Distanz"
+
+msgid "Linear Discriminants"
+msgstr "Lineare Diskriminanten"
+
+msgid "Method"
+msgstr "Methode"
+
+msgid "Trees"
+msgstr "Bäume"
+
+msgid "Predictors per split"
+msgstr "Vorhersagevariablen (UVs) pro Split"
+
+msgid "Shrinkage"
+msgstr "Schrumpfung"
+
+msgid "n(Train)"
+msgstr "n(Train)"
+
+msgid "n(Validation)"
+msgstr "n(Validation)"
+
+msgid "n(Test)"
+msgstr "n(Test)"
+
+msgid "Validation Accuracy"
+msgstr "Validierungs-Genauigkeit"
+
+msgid "Test Accuracy"
+msgstr "Test-Genauigkeit"
+
+msgid "OOB Accuracy"
+msgstr "OOB Genauigkeit"
+
+msgid "Please provide a target variable and at least %i predictor variable(s)."
+msgstr "Bitte gib eine Zielvariable und mindestens %i Prädiktorvariable(n) an."
+
+msgid ""
+"The model is optimized with respect to the <i>validation set accuracy</i>."
+msgstr "Das Modell ist optimiert auf <i>Prüfung der Exaktheit</i>."
+
+msgid ""
+"The optimum number of nearest neighbors is the maximum number. You might "
+"want to adjust the range of optimization."
+msgstr ""
+"Die optimale Anzahl der nächsten Nachbarn ist die maximale Anzahl. "
+"Möglicherweise möchtest Du den Optimierungsbereich anpassen."
+
+msgid "Manhattan"
+msgstr "Manhattan"
+
+msgid "Euclidean"
+msgstr "Euklidisch"
+
+msgid "Moment"
+msgstr "Moment"
+
+msgid "MLE"
+msgstr "MLE"
+
+msgid "MVE"
+msgstr "MVE"
+
+msgid "t"
+msgstr "t"
+
+msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
+msgstr "Das Modell ist optimiert auf <i>\"out of the box\" Exaktheit</i>."
+
+msgid "Confusion Matrix"
+msgstr "Konfusionsmatrix"
+
+msgid "Observed"
+msgstr "Beobachtet"
+
+msgid "Predicted"
+msgstr "Vorhergesagt"
+
+msgid "Decision Boundary Matrix"
+msgstr "Matrix der Entscheidungsgrenzen"
+
+msgid ""
+"Cannot create matrix: not enough numeric variables remain after removing "
+"factor variables. You need at least 2 numeric variables."
+msgstr ""
+"Konnte die Matrix nicht erstellen: Nicht genug numerische Variablen übrig "
+"nachdem Faktorvariablen entfernt wurden. Du benötigst mindestens 2 "
+"numerische Variablen."
+
+msgid "ROC Curves Plot"
+msgstr "ROC-Kurven-Grafik"
+
+msgid "False positive rate"
+msgstr "Falsch-positiv-Rate"
+
+msgid "True positive rate"
+msgstr "Richtig-positiv-Rate"
+
+msgid "Perfect separation"
+msgstr "Perfekte Trennung"
+
+msgid "Andrews Curves Plot"
+msgstr "Andrews-Kurven-Diagramm"
+
+msgid "Andrews curves require a minimum of 2 predictor variables."
+msgstr "Andrews Kurve benötigt ein Minimum von 2 Prädiktorvariablen."
+
+msgid "Box's M-test for Homogeneity of Covariance Matrices"
+msgstr "Box's M-test auf die Homogenität der Kovarianz-Matritzen"
+
+msgid "Evaluation Metrics"
+msgstr "Evaluationsmetriken"
+
+msgid "Precision"
+msgstr "Genauigkeit"
+
+msgid "Recall"
+msgstr "Trefferquote"
+
+msgid "F1 Score"
+msgstr "F1 Score"
+
+msgid "Support"
+msgstr "Träger"
+
+msgid "AUC"
+msgstr "AUC"
+
+msgid ""
+"Area Under Curve (AUC) is calculated for every class against all other "
+"classes."
+msgstr ""
+"Area Under Curve (AUC) wordt berekend voor iedere klasse tegenover alle "
+"andere klassen."
+
+msgid "Average / Total"
+msgstr "Mittelwert / Gesamt"
+
+msgid "Class Proportions"
+msgstr "Klassenverhältnisse"
+
+msgid "Data Set"
+msgstr "Datensatz"
+
+msgid "Training Set"
+msgstr "Trainings-Menge"
+
+msgid "Validation Set"
+msgstr "Validations-Menge"
+
+msgid "Training and Validation Set"
+msgstr "Trainings- und Validations-Menge"
+
+msgid "Test Set"
+msgstr "Test-Menge"
+
+msgid ""
+"You have specified more clusters than distinct data points. Please choose a "
+"number lower than %s."
+msgstr ""
+"Du hast mehr Cluster als Beobachtungen angegeben. Bitte wähle eine Zahl <%s."
+
+msgid ""
+"R package error: The hclust clustering algorithm from the stats R package "
+"cannot handle data that has 65536 or more rows. We are working on a solution "
+"for this problem. Please try another algorithm in the meantime."
+msgstr ""
+"Fehler in R-Paket: Der hclust-Clusteralgorithmus aus dem `stats` R-Paket "
+"kann keine Daten mit mehr als 65535 Zeilen verarbeiten. Wir arbeiten an "
+"einer Lösung für dieses Problem. Bitte wähle in der Zwischenzeit einen "
+"anderen Algorithmus."
+
+msgid "K-Means Clustering"
+msgstr "K-Means-Clustering"
+
+msgid "Fuzzy C-Means Clustering"
+msgstr "Fuzzy-C-Means-Clustering"
+
+msgid "Hierarchical Clustering"
+msgstr "Hierarchisches Clustering"
+
+msgid "Density-Based Clustering"
+msgstr "Dichtebasiertes Clustering"
+
+msgid "Random Forest Clustering"
+msgstr "Random-Forest-Clustering"
+
+msgid "Clusters"
+msgstr "Cluster"
+
+msgid "N"
+msgstr "N"
+
+msgid "R%s"
+msgstr "R%s"
+
+msgid "AIC"
+msgstr "AIC"
+
+msgid "BIC"
+msgstr "BIC"
+
+msgid "Please provide at least 2 variables."
+msgstr "Bitte gib mindestens 2 Variablen an."
+
+msgid "silhouette"
+msgstr "Silhouette"
+
+msgid "The model is optimized with respect to the <i>%s</i> value."
+msgstr "Das Modell ist im Hinblick auf den <i>%s</i>-Wert optimiert."
+
+msgid ""
+"The optimum number of clusters is the maximum number of clusters. You might "
+"want to adjust the range of optimization."
+msgstr ""
+"Die optimale Anzahl von Clustern ist die maximale Anzahl von Clustern. "
+"Möglicherweise möchtest Du den Optimierungsbereich anpassen."
+
+msgid ""
+"Your cluster model contains 0 clusters and only Noisepoints, we advise to "
+"change the Eps and MinPts parameters."
+msgstr ""
+
+msgid ""
+"Your cluster model contains 1 cluster and 0 Noisepoints. You could change "
+"the Eps and MinPts parameters."
+msgstr ""
+
+msgid "The variables in the model are <b>unstandardized</b>."
+msgstr "Die Variablen in dem Modell sind <b>unstandardisiert</b>."
+
+msgid "Cluster Information"
+msgstr "Cluster-Information"
+
+msgid "Cluster"
+msgstr "Cluster"
+
+msgid "Size"
+msgstr "Größe"
+
+msgid "Explained proportion within-cluster heterogeneity"
+msgstr "Erklärter Anteil innerhalb der Clusterheterogenität"
+
+msgid "Within sum of squares"
+msgstr "Innere Quadratsumme"
+
+msgid "Silhouette score"
+msgstr "Silhouette-Score"
+
+msgid "Centroid %s"
+msgstr "Zentroid %s"
+
+msgid "Noisepoints"
+msgstr ""
+
+msgid "The Between Sum of Squares of the %1$s cluster model is %2$s"
+msgstr "Die Zwischen-Quadratsumme von Clustermodell %1$s ist %2$s"
+
+msgid "The Total Sum of Squares of the %1$s cluster model is %2$s"
+msgstr "Die gesamte Quadratsumme von Clustermodell %1$s ist %2$s"
+
+msgid "Value"
+msgstr "Wert"
+
+msgid "Maximum diameter"
+msgstr "Maximaler Durchmesser"
+
+msgid "Minimum separation"
+msgstr "Minimale scheiding"
+
+msgid "Pearson's %s"
+msgstr "Pearsons %s"
+
+msgid "Dunn index"
+msgstr "Dunn-Index"
+
+msgid "Entropy"
+msgstr "Entropie"
+
+msgid "Calinski-Harabasz index"
+msgstr "Calinski-Harabasz-Index"
+
+msgid "All metrics are based on the <i>euclidean</i> distance."
+msgstr "Alle Metriken basieren auf der <i>Euklidischen</i> Distanz."
+
+msgid "Evaluation metrics cannot be computed when there is only 1 cluster."
+msgstr ""
+"Evaluationsmetriken können nicht berechnert werden wenn es nur 1 Cluster "
+"gibt."
+
+msgid "t-SNE Cluster Plot"
+msgstr "t-SNE Cluster-Abbildung"
+
+msgid "Noisepoint"
+msgstr "Punkte des Rauschens"
+
+msgid "Elbow Method Plot"
+msgstr "Ellenbogenmethode Abbildung"
+
+msgid "WSS"
+msgstr "WSS"
+
+msgid "Number of Clusters"
+msgstr "Anzahl Cluster"
+
+msgid "Lowest %s value"
+msgstr "Niedrigster Wert %s"
+
+msgid "Cluster Means"
+msgstr "Clustermittelwerte"
+
+msgid "Cluster %s"
+msgstr "Cluster %s"
+
+msgid "Cluster Density Plots"
+msgstr "Clusterdichte Abbildungen"
+
+msgid "Density"
+msgstr "Dichte"
+
+msgid "Cluster Mean Plots"
+msgstr "Clustermittelwerte Abbildungen"
+
+msgid "All predictors"
+msgstr "Alle Prädiktoren"
+
+msgid "The variable '%s' can't be both a predictor and a test set indicator."
+msgstr ""
+"Die Variable '%s' kann nicht gleichzeitig ein Prädiktor und ein "
+"Testsatzindikator sein."
+
+msgid ""
+"Your test set indicator should be binary, containing only 1 (included in "
+"test set) and 0 (excluded from test set)."
+msgstr ""
+"Ihr Testsatzindikator sollte binär sein und nur die Ziffern 1 (im Testsatz "
+"enthalten) und 0 (vom Testsatz ausgeschlossen) enthalten."
+
+msgid ""
+"You have specified more nearest neighbors than there are observations in the "
+"training set. Please choose a number lower than %d."
+msgstr ""
+"Sie haben mehr nächste Nachbarn angegeben, als Beobachtungen im "
+"Trainingssatz enthalten sind. Bitte wählen Sie eine Zahl unter %d."
+
+msgid ""
+"You have specified more folds than there are observations in the training "
+"and validation set. Please choose a number lower than %d."
+msgstr ""
+"Sie haben mehr Faltungen angegeben, als Beobachtungen im Trainings- und "
+"Validierungssatz enthalten. Bitte wählen Sie eine Zahl unter %d."
+
+msgid ""
+"The minimum number of observations per node is too large. Ensure that `2 * "
+"Min. observations in node + 1` > `Training data used per tree * available "
+"training data` (in this case the minimum can be %.3f at most)."
+msgstr ""
+
+msgid "K-Nearest Neighbors Regression"
+msgstr "K-nächste-Nachbarn Regression"
+
+msgid "Regularized Linear Regression"
+msgstr "Regularisierte lineare Regression"
+
+msgid "Random Forest Regression"
+msgstr "Random-Forest-Regression"
+
+msgid "Boosting Regression"
+msgstr "Boosting-Regression"
+
+msgid "Penalty"
+msgstr "Strafterm"
+
+msgid "Loss function"
+msgstr "Verlustfunktion"
+
+msgid "Validation MSE"
+msgstr "Validierungs-MSE"
+
+msgid "Test MSE"
+msgstr "Test-MSE"
+
+msgid "OOB Error"
+msgstr "OOB Fehler"
+
+msgid "Please provide a target variable and at least %d predictor variable(s)."
+msgstr "Bitte gib eine Zielvariable und mindestens %d Prädiktorvariable(n) an."
+
+msgid ""
+"The model is optimized with respect to the <i>validation set mean squared "
+"error</i>."
+msgstr ""
+"Das Modell ist optimiert auf den <i>Validierungssatz des mittleren "
+"quadratischen Fehlers</i>."
+
+msgid "When %s is set to 0 linear regression is performed."
+msgstr "Wenn %s auf 0 gesetzt ist, wird eine lineare Regression durchgeführt."
+
+msgid ""
+"The model is optimized with respect to the <i>out-of-bag mean squared error</"
+"i>."
+msgstr ""
+"Das Modell ist optimiert auf den <i>out-of-bag mittleren quadratischen "
+"Fehler</i>."
+
+msgid "Gaussian"
+msgstr "Gaußsch"
+
+msgid "Laplace"
+msgstr "Laplace"
+
+msgid "R%s cannot be computed due to lack of variance in the predictions.</i>"
+msgstr ""
+"R%s können aufgrund fehlender Varianz in den Vorhersagen nicht berechnet "
+"werden. </i>"
+
+msgid "Predictive Performance Plot"
+msgstr "Diagramm Vorhersageleistung"
+
+msgid "Observed test values"
+msgstr "Beobachtete Testwerte"
+
+msgid "Predicted test values"
+msgstr "Vorhergesagte Testwerte"
+
+msgid "Data Split"
+msgstr "Datenaufteilung"
+
+msgid "Train: %d"
+msgstr "Training: %d"
+
+msgid "Test: %d"
+msgstr "Test: %d"
+
+msgid "Total: %d"
+msgstr "Gesamt: %d"
+
+msgid "Validation: %d"
+msgstr "Validation: %d"
+
+msgid "Train and validation: %d"
+msgstr "Training und Validation: %d"
+
+msgid "Object passed to .scaleNumericData.matrix was not numeric!"
+msgstr "Objekt weitergegeben an .scaleNumericData. Matrix war nicht numerisch!"
+
+msgid "The target variable should have at least 2 classes."
+msgstr "Die Zielvariable muss mindestens 2 Klassen enthalten."
+
+msgid "Linear Discriminant Coefficients"
+msgstr "Lineare Diskriminanz-Koeffizienten"
+
+msgid "(Constant)"
+msgstr "(Konstant)"
+
+msgid "Prior and Posterior Class Probabilities"
+msgstr "Prior and Posterior Klassen-Wahrscheinlichkeiten"
+
+msgid "Prior"
+msgstr "Prior"
+
+msgid "Posterior"
+msgstr "Posterior"
+
+msgid "Class Means in Training Data"
+msgstr "Klassenmittelwerte in Trainingsdaten"
+
+msgid "Linear Discriminant Matrix"
+msgstr "Lineare Diskriminanzmatrix"
+
+msgid "Tests of Equality of Class Means"
+msgstr "Test auf Gleichheit der Klassenmittelwerte"
+
+msgid "The null hypothesis specifies equal class means."
+msgstr "Die Nullhypothese spezifiziert gleiche Klassenmittelwerte."
+
+msgid "Tests of Equality of Covariance Matrices"
+msgstr "Test auf Gleichheit der Kovarianzmatrizen"
+
+msgid "df"
+msgstr "df"
+
+msgid "p"
+msgstr "p"
+
+msgid "The null hypothesis specifies equal covariance matrices."
+msgstr "Die Nullhypothese spezifiziert gleiche Kovarianzmatrizen."
+
+msgid "Pooled Within-Class Matrices Correlations"
+msgstr ""
+
+msgid "K-Distance Plot"
+msgstr "K-Distanz-Plot"
+
+msgid "Points sorted by distance"
+msgstr "Punkte sortiert nach Distanz"
+
+msgid ""
+"%s-nearest neighbors \n"
+"distance"
+msgstr ""
+"%s-nächste Nachbarn \n"
+"Distanz"
+
+msgid "Maximum curvature = %s"
+msgstr "Maximale Krümmung = %s"
+
+msgid "End of recursion reached without converging"
+msgstr "Ende der Rekursion erreicht, ohne zu konvergieren"
+
+msgid "x and y must be numeric and finite. Missing values not allowed."
+msgstr ""
+"x und y müssen numerisch und endlich sein. Fehlende Werte sind nicht "
+"zulässig."
+
+msgid "x and y must be of equal length."
+msgstr "x und y müssen gleich lang sein."
+
+msgid "Need more points to find cutoff."
+msgstr "Benötige mehr Punkte, um Cutoff zu finden."
+
+msgid "Need to specify fraction of maximum slope."
+msgstr "Der Bruchteil der maximalen Steigung muss angeben werden."
+
+msgid ""
+"Fraction of maximum slope must be positive and be less than or equal to 1."
+msgstr ""
+"Der Bruchteil der maximalen Steigung muss positiv und kleiner oder gleich 1 "
+"sein."
+
+msgid "Method must be either 'first' or 'curvature'."
+msgstr ""
+
+msgid "Cutoff point is beyond range. Returning NA."
+msgstr "Der Grenzwert liegt außerhalb des Bereichs. Kein Wert zurückgeben."
+
+msgid "Dendogram"
+msgstr "Dendrogramm"
+
+msgid "Variable Importance"
+msgstr "Variablen-Wichtigkeit"
+
+msgid "Mean decrease in Gini Index"
+msgstr "Mittlere Abnahme des Gini-Index"
+
+msgid "Relative Influence"
+msgstr "Relativer Einfluß"
+
+msgid "Out-of-bag Improvement Plot"
+msgstr ""
+
+msgid "Training set"
+msgstr "Trainingset"
+
+msgid "OOB Change in %s Multinomial Deviance"
+msgstr ""
+
+msgid "OOB Change in %s Binomial Deviance"
+msgstr ""
+
+msgid "OOB Change in %s%s Deviance"
+msgstr ""
+
+msgid "Number of Trees"
+msgstr "Anzahl Bäume"
+
+msgid "Deviance Plot"
+msgstr "Devianz-Abbildung"
+
+msgid "Multinomial Deviance"
+msgstr "Multinomiale Devianz"
+
+msgid "Binomial Deviance"
+msgstr "Binomiale Devianz"
+
+msgid "%s Deviance"
+msgstr "%s Devianz"
+
+msgid "Relative Influence Plot"
+msgstr "Relativer Einfluß Abbildung"
+
+msgid "Classification Accuracy Plot"
+msgstr "Abbildung der Klassifizierungsgenauigkeit"
+
+msgid "Mean Squared Error Plot"
+msgstr "Abbildung mittlerer quadratische Fehler"
+
+msgid "Classification Accuracy"
+msgstr "Klassifikations-Genauigkeit"
+
+msgid "Mean Squared Error"
+msgstr "Mittlerer quadratischer Fehler"
+
+msgid "Validation set"
+msgstr "Validations-Menge"
+
+msgid "Number of Nearest Neighbors"
+msgstr "Anzahl von nächsten Nachbarn"
+
+msgid "Training and validation set"
+msgstr "Trainings- und Validations-Menge"
+
+msgid "Mean decrease in accuracy"
+msgstr "Mittlere Abnahme der Genauigkeit"
+
+msgid "Total increase in node purity"
+msgstr "Gesamtzunahme der Knotenreinheit"
+
+msgid "Out-of-bag Classification Accuracy Plot"
+msgstr ""
+
+msgid "Out-of-bag Mean Squared Error Plot"
+msgstr ""
+
+msgid "Out-of-bag %sClassification Accuracy"
+msgstr ""
+
+msgid "Out-of-bag %sMean Squared Error"
+msgstr ""
+
+msgid "Mean Decrease in Accuracy"
+msgstr "Mittlere Abnahme der Genauigkeit"
+
+msgid "Total Increase in Node Purity"
+msgstr ""
+
+msgid "Regression Coefficients"
+msgstr "Regression-Koeffizienten"
+
+msgid "Coefficient (%s)"
+msgstr "Koeffizienten (%s)"
+
+msgid "Variable Trace Plot"
+msgstr "Variablen-Verlaufsdiagramm"
+
+msgid "Coefficients"
+msgstr "Koeffizienten"
+
+msgid "Lambda Evaluation Plot"
+msgstr "Lambda-Evaluations-Abbildung"
+
+msgid "Cross-Validated %sMean Squared Error"
+msgstr ""
+
+msgid "Min. CV MSE"
+msgstr "Min. CV MSE"
+
+msgid "%s 1 SE"
+msgstr "%s 1 Std. Fehler"

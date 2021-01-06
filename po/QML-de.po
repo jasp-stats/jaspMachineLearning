@@ -1,0 +1,1853 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Language: en_US\n"
+"X-Source-Language: American English\n"
+"X-Qt-Contexts: true\n"
+
+msgctxt "Description|"
+msgid "Machine Learning"
+msgstr "Maschinelles Lernen"
+
+msgctxt "Description|"
+msgid "A module for Machine Learning mastery"
+msgstr "Ein Modul zur Meisterung von Maschinellem Lernen"
+
+msgctxt "Description|"
+msgid "Regression"
+msgstr "Regression"
+
+msgctxt "Description|"
+msgid "Boosting"
+msgstr "Boosting"
+
+msgctxt "Description|"
+msgid "Boosting Regression"
+msgstr "Boosting-Regression"
+
+msgctxt "Description|"
+msgid "K-Nearest Neighbors"
+msgstr "K-Nächste-Nachbarn"
+
+msgctxt "Description|"
+msgid "K-Nearest Neighbors Regression"
+msgstr "K-Nächste-Nachbarn-Regression"
+
+msgctxt "Description|"
+msgid "Random Forest"
+msgstr "Random-Forest"
+
+msgctxt "Description|"
+msgid "Random Forest Regression"
+msgstr "Random-Forest-Regression"
+
+msgctxt "Description|"
+msgid "Regularized Linear"
+msgstr "Regularisiert Linear"
+
+msgctxt "Description|"
+msgid "Regularized Linear Regression"
+msgstr "Regularisiert Lineare Regression"
+
+msgctxt "Description|"
+msgid "Classification"
+msgstr "Klassifikation"
+
+msgctxt "Description|"
+msgid "Boosting Classification"
+msgstr "Boosting Klassifikation"
+
+msgctxt "Description|"
+msgid "K-Nearest Neighbors Classification"
+msgstr "K-Nächste-Nachbar-Klassifikation"
+
+msgctxt "Description|"
+msgid "Linear Discriminant"
+msgstr "Lineare Diskriminanzfunktion"
+
+msgctxt "Description|"
+msgid "Linear Discriminant Classification"
+msgstr "Lineare-Diskriminanz-Klassifikation"
+
+msgctxt "Description|"
+msgid "Random Forest Classification"
+msgstr "Random-Forest-Klassifikation"
+
+msgctxt "Description|"
+msgid "Clustering"
+msgstr "Clustering"
+
+msgctxt "Description|"
+msgid "Density-Based"
+msgstr "Dichtebasiert"
+
+msgctxt "Description|"
+msgid "Density-Based Clustering"
+msgstr "Dichtebasiertes Clustering"
+
+msgctxt "Description|"
+msgid "Fuzzy C-Means"
+msgstr "Fuzzy-C-Means"
+
+msgctxt "Description|"
+msgid "Fuzzy C-Means Clustering"
+msgstr "Fuzzy-C-Means-Clustering"
+
+msgctxt "Description|"
+msgid "Hierarchical"
+msgstr "Hierarchisch"
+
+msgctxt "Description|"
+msgid "Hierarchical Clustering"
+msgstr "Hierarchisches Clustering"
+
+msgctxt "Description|"
+msgid "K-Means"
+msgstr "K-Means"
+
+msgctxt "Description|"
+msgid "K-Means Clustering"
+msgstr "K-Means-Clustering"
+
+msgctxt "Description|"
+msgid "Random Forest Clustering"
+msgstr "Random-Forest-Clustering"
+
+msgctxt "DataSplit|"
+msgid "Data Split Preferences"
+msgstr "Optionen Datenaufspaltung"
+
+msgctxt "DataSplit|"
+msgid "Holdout Test Data"
+msgstr "Testdaten vorenthalten"
+
+msgctxt "DataSplit|"
+msgid "Sample"
+msgstr "Stichprobe"
+
+msgctxt "DataSplit|"
+msgid "% of all data"
+msgstr "% von allen Daten"
+
+msgctxt "DataSplit|"
+msgid "Add generated indicator to data"
+msgstr "Erzeugten Indikator den Daten hinzufügen"
+
+msgctxt "DataSplit|"
+msgid "Column name: "
+msgstr "Spaltenname: "
+
+msgctxt "DataSplit|"
+msgid "Test set indicator:"
+msgstr "Testset-Indikator:"
+
+msgctxt "DataSplit|"
+msgid "None"
+msgstr "Keine"
+
+msgctxt "DataSplit|"
+msgid "Training and Validation Data"
+msgstr "Trainings- und Validationsdaten"
+
+msgctxt "DataSplit|"
+msgid "% for validation data"
+msgstr "% für Validationsdaten"
+
+msgctxt "DataSplit|"
+msgid "K-fold with"
+msgstr "K-fold mit"
+
+msgctxt "DataSplit|"
+msgid "folds"
+msgstr "Folds"
+
+msgctxt "DataSplit|"
+msgid "Leave-one-out"
+msgstr "Lass-einen-aus"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Target"
+msgstr "Ziel"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Predictors"
+msgstr "Prädiktoren"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Tables"
+msgstr "Tabellen"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Confusion matrix"
+msgstr "Konfusionsmatrix"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Display proportions"
+msgstr "Verhältnisse anzeigen"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Class proportions"
+msgstr "Klasseproporties"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Evaluation metrics"
+msgstr "Evaluationsmetriken"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Relative influence"
+msgstr "Relativer Einfluß"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Plots"
+msgstr "Abbildungen"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Data split"
+msgstr "Datenaufteilungen"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Out-of-bag improvement"
+msgstr "Out-of-bag-Verbesserung"
+
+msgctxt "mlClassificationBoosting|"
+msgid "ROC curves"
+msgstr "ROC-Kurven"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Andrews curves"
+msgstr "Andrews Kurven"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Deviance"
+msgstr "Devianz"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Decision boundary matrix"
+msgstr "Entscheidungsgrenzenmatrix"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Legend"
+msgstr "Legende"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Points"
+msgstr "Punkte"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Training Parameters"
+msgstr "Trainingsparameter"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Algorithmic Settings"
+msgstr "Algorithmus-Einstellungen"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Shrinkage:"
+msgstr "Schrumpfung:"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Interaction depth:"
+msgstr "Interaktionstiefe:"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Min. observations in node:"
+msgstr "Min. Beobachtungen pro Knoten:"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Training data used per tree:"
+msgstr "Benutzte Trainingsdaten pro Baum:"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Scale predictors"
+msgstr "Skalierungsprädiktoren"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Set seed:"
+msgstr "Startwert für Zufallszahlen setzen:"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Number of Trees"
+msgstr "Anzahl Bäume"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Fixed"
+msgstr "Fixiert"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Trees:"
+msgstr "Bäume:"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Optimized"
+msgstr "Optimiert"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Max. trees:"
+msgstr "Max. Bäume:"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Add predicted classes to data"
+msgstr "Vorhergesagte Klassen den Daten hinzufügen"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Column name: "
+msgstr "Spaltenname: "
+
+msgctxt "mlClassificationBoosting|"
+msgid "<b>Save Model</b>"
+msgstr "<b>Modell speichern</b>"
+
+msgctxt "mlClassificationKnn|"
+msgid "Target"
+msgstr "Ziel"
+
+msgctxt "mlClassificationKnn|"
+msgid "Predictors"
+msgstr "Prädiktoren"
+
+msgctxt "mlClassificationKnn|"
+msgid "Tables"
+msgstr "Tabellen"
+
+msgctxt "mlClassificationKnn|"
+msgid "Confusion matrix"
+msgstr "Konfusionsmatrix"
+
+msgctxt "mlClassificationKnn|"
+msgid "Display proportions"
+msgstr "Verhältnisse anzeigen"
+
+msgctxt "mlClassificationKnn|"
+msgid "Class proportions"
+msgstr "Klassenverhältnisse"
+
+msgctxt "mlClassificationKnn|"
+msgid "Evaluation metrics"
+msgstr "Evaluationsmetriken"
+
+msgctxt "mlClassificationKnn|"
+msgid "Plots"
+msgstr "Abbildungen"
+
+msgctxt "mlClassificationKnn|"
+msgid "Data split"
+msgstr "Datenaufteilung"
+
+msgctxt "mlClassificationKnn|"
+msgid "Classification accuracy"
+msgstr "Klassifikations-Genauigkeit"
+
+msgctxt "mlClassificationKnn|"
+msgid "ROC curves"
+msgstr "ROC-Kurven"
+
+msgctxt "mlClassificationKnn|"
+msgid "Andrews curves"
+msgstr "Andrews Kurven"
+
+msgctxt "mlClassificationKnn|"
+msgid "Decision boundary matrix"
+msgstr "Entscheidungsgrenzenmatrix"
+
+msgctxt "mlClassificationKnn|"
+msgid "Legend"
+msgstr "Legende"
+
+msgctxt "mlClassificationKnn|"
+msgid "Points"
+msgstr "Punkte"
+
+msgctxt "mlClassificationKnn|"
+msgid "Training Parameters"
+msgstr "Trainingsparameter"
+
+msgctxt "mlClassificationKnn|"
+msgid "Algorithmic Settings"
+msgstr "Algorithmus-Einstellungen"
+
+msgctxt "mlClassificationKnn|"
+msgid "Weights:"
+msgstr "Gewichte:"
+
+msgctxt "mlClassificationKnn|"
+msgid "Rectangular"
+msgstr "Rechteckig"
+
+msgctxt "mlClassificationKnn|"
+msgid "Epanechnikov"
+msgstr "Epanechnikov"
+
+msgctxt "mlClassificationKnn|"
+msgid "Biweight"
+msgstr "zweifach gewichtet"
+
+msgctxt "mlClassificationKnn|"
+msgid "Triweight"
+msgstr "dreifach gewichtet"
+
+msgctxt "mlClassificationKnn|"
+msgid "Cosine"
+msgstr "Kosinus"
+
+msgctxt "mlClassificationKnn|"
+msgid "Inverse"
+msgstr "Invers"
+
+msgctxt "mlClassificationKnn|"
+msgid "Gaussian"
+msgstr "Gaußsch"
+
+msgctxt "mlClassificationKnn|"
+msgid "Rank"
+msgstr "Rang"
+
+msgctxt "mlClassificationKnn|"
+msgid "Optimal"
+msgstr "Optimal"
+
+msgctxt "mlClassificationKnn|"
+msgid "Distance:"
+msgstr "Distanz:"
+
+msgctxt "mlClassificationKnn|"
+msgid "Euclidian"
+msgstr "Euklidisch"
+
+msgctxt "mlClassificationKnn|"
+msgid "Manhattan"
+msgstr "Manhattan"
+
+msgctxt "mlClassificationKnn|"
+msgid "Scale predictors"
+msgstr "Skalierungsprädiktoren"
+
+msgctxt "mlClassificationKnn|"
+msgid "Set seed:"
+msgstr "Startwert für Zufallszahlen setzen:"
+
+msgctxt "mlClassificationKnn|"
+msgid "Number of Nearest Neighbors"
+msgstr "Anzahl nächster Nachbarn"
+
+msgctxt "mlClassificationKnn|"
+msgid "Fixed"
+msgstr "Fixiert"
+
+msgctxt "mlClassificationKnn|"
+msgid "Nearest neighbors:"
+msgstr "Nächste Nachbarn:"
+
+msgctxt "mlClassificationKnn|"
+msgid "Optimized"
+msgstr "Optimiert"
+
+msgctxt "mlClassificationKnn|"
+msgid "Max. nearest neighbors:"
+msgstr "Max. nächste Nachbarn:"
+
+msgctxt "mlClassificationKnn|"
+msgid "Add predicted classes to data"
+msgstr "Vorhergesagte Klassen den Daten hinzufügen"
+
+msgctxt "mlClassificationKnn|"
+msgid "Column name: "
+msgstr "Spaltenname: "
+
+msgctxt "mlClassificationKnn|"
+msgid "<b>Save Model</b>"
+msgstr "<b>Modell speichern</b>"
+
+msgctxt "mlClassificationLda|"
+msgid "Target"
+msgstr "Ziel"
+
+msgctxt "mlClassificationLda|"
+msgid "Predictors"
+msgstr "Prädiktoren"
+
+msgctxt "mlClassificationLda|"
+msgid "Tables"
+msgstr "Tabellen"
+
+msgctxt "mlClassificationLda|"
+msgid "Confusion matrix"
+msgstr "Konfusionsmatrix"
+
+msgctxt "mlClassificationLda|"
+msgid "Display proportions"
+msgstr "Verhältnisse anzeigen"
+
+msgctxt "mlClassificationLda|"
+msgid "Class proportions"
+msgstr "Klassenverhältnisse"
+
+msgctxt "mlClassificationLda|"
+msgid "Evaluation metrics"
+msgstr "Evaluationsmetriken"
+
+msgctxt "mlClassificationLda|"
+msgid "Coefficients"
+msgstr "Koeffzienten"
+
+msgctxt "mlClassificationLda|"
+msgid "Prior and posterior probabilities"
+msgstr "Prior- und Posteriorwahrscheinlichkeiten"
+
+msgctxt "mlClassificationLda|"
+msgid "Class means training data"
+msgstr "Klassenmittelwerte Trainingsdaten"
+
+msgctxt "mlClassificationLda|"
+msgid "Assumption Checks"
+msgstr "Annahmeprüfungen"
+
+msgctxt "mlClassificationLda|"
+msgid "Equality of class means"
+msgstr "Gleichheit der Klassenmittelwerte"
+
+msgctxt "mlClassificationLda|"
+msgid "Equality of covariance matrices"
+msgstr "Gleichheit der Kovarianzmatrizen"
+
+msgctxt "mlClassificationLda|"
+msgid "Multicollinearity"
+msgstr "Multikollinearität"
+
+msgctxt "mlClassificationLda|"
+msgid "Plots"
+msgstr "Abbildungen"
+
+msgctxt "mlClassificationLda|"
+msgid "Data split"
+msgstr "Datenaufteilungen"
+
+msgctxt "mlClassificationLda|"
+msgid "ROC curves"
+msgstr "ROC-Kurve"
+
+msgctxt "mlClassificationLda|"
+msgid "Andrews curves"
+msgstr "Andrews Kurve"
+
+msgctxt "mlClassificationLda|"
+msgid "Linear discriminant matrix"
+msgstr "Lineare Diskriminanzmatrix"
+
+msgctxt "mlClassificationLda|"
+msgid "Densities"
+msgstr "Dichten"
+
+msgctxt "mlClassificationLda|"
+msgid "Scatter plots"
+msgstr "Streudiagramm"
+
+msgctxt "mlClassificationLda|"
+msgid "Decision boundary matrix"
+msgstr "Beslissingsseparatrix"
+
+msgctxt "mlClassificationLda|"
+msgid "Legend"
+msgstr "Legende"
+
+msgctxt "mlClassificationLda|"
+msgid "Points"
+msgstr "Punkte"
+
+msgctxt "mlClassificationLda|"
+msgid "Training Parameters"
+msgstr "Trainingsparameter"
+
+msgctxt "mlClassificationLda|"
+msgid "Algorithmic Settings"
+msgstr "Algorithmus-Einstellungen"
+
+msgctxt "mlClassificationLda|"
+msgid "Estimation method:"
+msgstr "Schätzmethode:"
+
+msgctxt "mlClassificationLda|"
+msgid "Scale predictors"
+msgstr "Skalierungsprädiktoren"
+
+msgctxt "mlClassificationLda|"
+msgid "Set seed: "
+msgstr "Startwert für Zufallszahlen setzen: "
+
+msgctxt "mlClassificationLda|"
+msgid "Add predicted classes to data"
+msgstr "Vorhergesagte Klassen den Daten hinzufügen"
+
+msgctxt "mlClassificationLda|"
+msgid "Column name: "
+msgstr "Spaltenname: "
+
+msgctxt "mlClassificationLda|"
+msgid "<b>Save Model</b>"
+msgstr "<b>Modell speichern</b>"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Target"
+msgstr "Zielt"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Predictors"
+msgstr "Prädiktoren"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Tables"
+msgstr "Tabellen"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Confusion matrix"
+msgstr "Konfusionsmatrix"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Display proportions"
+msgstr "Verhältnisse anzeigen"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Class proportions"
+msgstr "Klassenverhältnisse"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Evaluation metrics"
+msgstr "Evaluationsmetriken"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Variable importance"
+msgstr "Variablen-Wichtigkeit"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Plots"
+msgstr "Abbildungen"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Data split"
+msgstr "Datenaufteilung"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Out-of-bag accuracy"
+msgstr "Out-of-bag Genauigkeit"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "ROC curves"
+msgstr "ROC-Kurve"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Andrews curves"
+msgstr "Andrews Kurve"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Mean decrease in accuracy"
+msgstr "Mittlere Abnahme der Genauigkeit"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Total increase in node purity"
+msgstr "Gesamte Zunahme der Knotenreinheit"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Decision boundary matrix"
+msgstr "Entscheidungsgrenzenmatrix"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Legend"
+msgstr "Legende"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Points"
+msgstr "Punkte"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Training Parameters"
+msgstr "Trainingsparameter"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Algorithmic Settings"
+msgstr "Algorithmus-Einstellungen"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Training data used per tree:"
+msgstr "Benutzte Trainingsdaten pro Baum:"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Predictors per split:"
+msgstr "Prädiktoren pro Datenaufteilung:"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Auto"
+msgstr "Auto"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Manual"
+msgstr "Manuell"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Scale predictors"
+msgstr "Skalierungsprädiktoren"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Set seed:"
+msgstr "Startwert für Zufallszahlen setzen:"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Number of Trees"
+msgstr "Anzahl Bäume"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Fixed"
+msgstr "Fixiert"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Trees:"
+msgstr "Bäume:"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Optimized"
+msgstr "Optimiert"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Max. trees:"
+msgstr "Max. Bäume:"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Add predicted classes to data"
+msgstr "Vorhergesagte Klassen den Daten hinzufügen"
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Column name: "
+msgstr "Spaltenname: "
+
+msgctxt "mlClassificationRandomForest|"
+msgid "<b>Save Model</b>"
+msgstr "<b>Modell speichern</b>"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Variables"
+msgstr "Variablen"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Tables"
+msgstr "Tabellen"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Cluster means"
+msgstr "Cluster-Mittelwerte"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Cluster information"
+msgstr "Clusterinformation"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Within sum of squares"
+msgstr "Binnen-Quadratsumme"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Silhouette score"
+msgstr "Silhouette-Score"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Between sum of squares"
+msgstr "Zwischen-Quadratsumme"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Total sum of squares"
+msgstr "Gesamte Quadratsumme"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Evaluation metrics"
+msgstr "Evaluationsmetriken"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Plots"
+msgstr "Abbildungen"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "K-distance plot"
+msgstr "K-Distanz-Plot"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Display barplot"
+msgstr "Balkdendiagramm anzeigen"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Group into one figure"
+msgstr "In eine Abbildung gruppieren"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Cluster densities"
+msgstr "Cluster-Dichten"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "t-SNE cluster plot"
+msgstr "t-SNE Clusterplot"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Legend"
+msgstr "Legende"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Labels"
+msgstr "Labels"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Training Parameters"
+msgstr "Trainingsparameter"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Algorithmic Settings"
+msgstr "Algorithmus-Einstellungen"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Epsilon neighborhood size:"
+msgstr "Epsilon Nachbarschaftsbereich:"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Min. core points:"
+msgstr "Min. Kernpunkte:"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Distance:"
+msgstr "Distanz:"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Normal"
+msgstr "Normal"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Correlated"
+msgstr "Korreliert"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Scale variables"
+msgstr "Variablen skalieren"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Set seed:"
+msgstr "Startwert für Zufallszahlen setzen:"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Model Optimization"
+msgstr "Modelloptimierung"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Fixed"
+msgstr "Fixiert"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Add predicted clusters to data"
+msgstr "Vorhergesagte Cluser zu Daten hinzufügen"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Column name: "
+msgstr "Spaltenname: "
+
+msgctxt "mlClusteringDensityBased|"
+msgid "<b>Save Model</b>"
+msgstr "<b>Modell speichern</b>"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Variables"
+msgstr "Variablen"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Tables"
+msgstr "Tabellen"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Cluster means"
+msgstr "Cluster-Mittelwerte"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Cluster information"
+msgstr "Clusterinformatie"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Within sum of squares"
+msgstr "Binnen kwadratensom"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Silhouette score"
+msgstr "Silhouette-Score"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Centroids"
+msgstr "Centroïden"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Between sum of squares"
+msgstr "Tussen kwadratensom"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Total sum of squares"
+msgstr "Gesamte Quadratsumme"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Evaluation metrics"
+msgstr "Evaluationsmetriken"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Plots"
+msgstr "Abbildungen"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Elbow method"
+msgstr "Elleboogmethode"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Display barplot"
+msgstr "Balkdendiagramm anzeigen"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Group into one figure"
+msgstr "In eine Abbildung gruppieren"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Cluster densities"
+msgstr "Cluster-Dichten"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "t-SNE cluster plot"
+msgstr "T-SNE clustergrafiek"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Legend"
+msgstr "Legende"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Labels"
+msgstr "Labellen"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Training Parameters"
+msgstr "Trainingsparameter"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Algorithmic Settings"
+msgstr "Algorithmus-Einstellungen"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Max. iterations:"
+msgstr "Max. Iterationen:"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Fuzziness parameter:"
+msgstr "Fuzziness-Parameter:"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Scale variables"
+msgstr "Schaalvariabelen"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Set seed:"
+msgstr "Startwert für Zufallszahlen setzen:"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Cluster Determination"
+msgstr "Cluster-Bestimmung"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Fixed"
+msgstr "Fixiert"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Clusters:"
+msgstr "Cluster:"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Optimized according to"
+msgstr "Geoptimaliseerd volgens"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Max. clusters:"
+msgstr "Max. Cluster:"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Add predicted clusters to data"
+msgstr "Vorhergesagte Cluster zu Daten hinzufügen"
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Column name: "
+msgstr "Spaltenname: "
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "<b>Save Model</b>"
+msgstr "<b>Bewaar model</b>"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Variables"
+msgstr "Variablen"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Tables"
+msgstr "Tabellen"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Cluster means"
+msgstr "Cluster-Mittelwerte"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Cluster information"
+msgstr "Clusterinformation"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Within sum of squares"
+msgstr "Binnen-Quadratsumme"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Silhouette score"
+msgstr "Silhouette-Score"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Between sum of squares"
+msgstr "Zwischen-Quadratsumme"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Total sum of squares"
+msgstr "Gesamte Quadratsumme"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Evaluation metrics"
+msgstr "Evaluationsmetriken"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Plots"
+msgstr "Abbildungen"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Elbow method"
+msgstr "Ellenbogenmethode"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Dendrogram"
+msgstr "Dendrogramm"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Display barplot"
+msgstr "Balkdendiagramm anzeigen"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Group into one figure"
+msgstr "In eine Abbildung gruppieren"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Cluster densities"
+msgstr "Cluster-Dichten"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "t-SNE cluster plot"
+msgstr "t-SNE clustergrafiek"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Legend"
+msgstr "Legende"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Labels"
+msgstr "Labels"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Training Parameters"
+msgstr "Trainingsparameter"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Algorithmic Settings"
+msgstr "Algorithmus-Einstellungen"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Distance:"
+msgstr "Distanz:"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Euclidean"
+msgstr "Euklidisch"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Linkage:"
+msgstr "Linkage:"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Average"
+msgstr "Average"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Single"
+msgstr "Single"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Complete"
+msgstr "Complete"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Centroid"
+msgstr "Zentroid"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Median"
+msgstr "Median"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Ward.D"
+msgstr "Ward.D"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Ward.D2"
+msgstr "Ward.D2"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "McQuitty"
+msgstr "McQuitty"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Scale variables"
+msgstr "Variablen skalieren"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Set seed:"
+msgstr "Startwert für Zufallszahlen setzen:"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Cluster Determination"
+msgstr "Cluster-Bestimmung"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Fixed"
+msgstr "Fixiert"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Clusters:"
+msgstr "Cluster:"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Optimized according to"
+msgstr "Optimiert nach"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Max. clusters:"
+msgstr "Max. Cluster:"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Add predicted clusters to data"
+msgstr "Vorhergesagte Cluster zu Daten hinzufügen"
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Column name: "
+msgstr "Spaltenname: "
+
+msgctxt "mlClusteringHierarchical|"
+msgid "<b>Save Model</b>"
+msgstr "<b>Modell speichern</b>"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Variables"
+msgstr "Variablen"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Tables"
+msgstr "Tabellen"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Cluster means"
+msgstr "Cluster-Mittelwerte"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Cluster information"
+msgstr "Clusterinformation"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Within sum of squares"
+msgstr "Binnen-Quadratsumme"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Silhouette score"
+msgstr "Silhouette-Score"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Centroids"
+msgstr "Zentroide"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Between sum of squares"
+msgstr "Zwischen-Quadratsumme"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Total sum of squares"
+msgstr "Gesamte Quadratsumme"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Evaluation metrics"
+msgstr "Evaluationsmetriken"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Plots"
+msgstr "Abbildungen"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Elbow method"
+msgstr "Ellenbogenmethode"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Display barplot"
+msgstr "Balkdendiagramm anzeigen"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Group into one figure"
+msgstr "In eine Abbildung gruppieren"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Cluster densities"
+msgstr "Cluster dichtheden"
+
+msgctxt "mlClusteringKMeans|"
+msgid "t-SNE cluster plot"
+msgstr "t-SNE Clusterplot"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Legend"
+msgstr "Legende"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Labels"
+msgstr "Labels"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Training Parameters"
+msgstr "Trainingsparameter"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Algorithmic Settings"
+msgstr "Algorithmus-Einstellungen"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Max. iterations:"
+msgstr "Max. Iterationen:"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Random sets:"
+msgstr "Zufällige Mengen:"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Algorithm:"
+msgstr "Algorithmus:"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Scale variables"
+msgstr "Variablen skalieren"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Set seed:"
+msgstr "Startwert für Zufallszahlen setzen:"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Cluster Determination"
+msgstr "Cluster-Bestimmung"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Fixed"
+msgstr "Fixiert"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Clusters:"
+msgstr "Cluster:"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Optimized according to"
+msgstr "Geoptimaliseerd volgens"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Max. clusters:"
+msgstr "Max. Cluster:"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Add predicted clusters to data"
+msgstr "Vorhergesagte Cluster zu Daten hinzufügen"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Column name: "
+msgstr "Spaltenname: "
+
+msgctxt "mlClusteringKMeans|"
+msgid "<b>Save Model</b>"
+msgstr "<b>Bewaar model</b>"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Variables"
+msgstr "Variablen"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Tables"
+msgstr "Tabellen"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Cluster means"
+msgstr "Cluster gemiddelden"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Cluster information"
+msgstr "Clusterinformation"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Within sum of squares"
+msgstr "Binnen-Quadratsumme"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Silhouette score"
+msgstr "Silhouette-Score"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Between sum of squares"
+msgstr "Zwischen-Quadratsumme"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Total sum of squares"
+msgstr "Gesamte Quadratsumme"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Evaluation metrics"
+msgstr "Evaluationsmetriken"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Variable importance"
+msgstr "Variablenwichtigkeit"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Plots"
+msgstr "Abbildungen"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Elbow method"
+msgstr "Ellenbogenmethode"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Display barplot"
+msgstr "Balkdendiagramm anzeigen"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Group into one figure"
+msgstr "In eine Abbildung gruppieren"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Cluster densities"
+msgstr "Cluster-Dichten"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "t-SNE cluster plot"
+msgstr "t-SNE Clusterplot"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Legend"
+msgstr "Legende"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Labels"
+msgstr "Beschriftungen"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Training Parameters"
+msgstr "Trainingsparameter"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Algorithmic Settings"
+msgstr "Algorithmus-Einstellungen"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Trees:"
+msgstr "Bäume:"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Scale variables"
+msgstr "Variablen skalieren"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Set seed:"
+msgstr "Startwert für Zufallszahlen setzen:"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Cluster Determination"
+msgstr "Cluster-Bestimmung"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Fixed"
+msgstr "Fixiert"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Clusters:"
+msgstr "Cluster:"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Optimized according to"
+msgstr "Geoptimaliseerd volgens"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Max. clusters:"
+msgstr "Max. Cluster:"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Add predicted clusters to data"
+msgstr "Vorhergesagte Cluster zu Daten hinzufügen"
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Column name: "
+msgstr "Spaltenname: "
+
+msgctxt "mlClusteringRandomForest|"
+msgid "<b>Save Model</b>"
+msgstr "<b>Modell speichern</b>"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Target"
+msgstr "Ziel"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Predictors"
+msgstr "Prädiktoren"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Tables"
+msgstr "Tabellen"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Evaluation metrics"
+msgstr "Evaluationsmetriken"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Relative influence"
+msgstr "Relativer Einfluß"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Plots"
+msgstr "Abbildungen"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Data split"
+msgstr "Datenaufteilungen"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Out-of-bag improvement"
+msgstr "Out-of-bag Verbesserung"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Predictive performance"
+msgstr "Vorhersageleistung"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Deviance"
+msgstr "Devianz"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Training Parameters"
+msgstr "Trainingsparameter"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Algorithmic Settings"
+msgstr "Algoritme-instellingen"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Shrinkage:"
+msgstr "Schwund:"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Interaction depth:"
+msgstr "Interactiediepte:"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Min. observations in node:"
+msgstr "Min. observatie per knoop:"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Training data used per tree:"
+msgstr "Trainingsdata per boom:"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Loss function:"
+msgstr "Verliesfunctie:"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Scale variables"
+msgstr "Schaalvariabelen"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Set seed:"
+msgstr "Startwert für Zufallszahlen setzen:"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Number of Trees"
+msgstr "Anzahl Bäume"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Fixed"
+msgstr "Fixiert"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Trees:"
+msgstr "Bäume:"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Optimized"
+msgstr "Optimiert"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Max. trees:"
+msgstr "Max. Bäume:"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Add predicted values to data"
+msgstr "Vorhergesagte Werte zu Daten hinzufügen"
+
+msgctxt "mlRegressionBoosting|"
+msgid "Column name: "
+msgstr "Spaltenname: "
+
+msgctxt "mlRegressionBoosting|"
+msgid "<b>Save Model</b>"
+msgstr "<b>Modell speichern</b>"
+
+msgctxt "mlRegressionKnn|"
+msgid "Target"
+msgstr "Ziel"
+
+msgctxt "mlRegressionKnn|"
+msgid "Predictors"
+msgstr "Prädiktoren"
+
+msgctxt "mlRegressionKnn|"
+msgid "Tables"
+msgstr "Tabellen"
+
+msgctxt "mlRegressionKnn|"
+msgid "Evaluation metrics"
+msgstr "Evaluationsmetriken"
+
+msgctxt "mlRegressionKnn|"
+msgid "Plots"
+msgstr "Abbildungen"
+
+msgctxt "mlRegressionKnn|"
+msgid "Data split"
+msgstr "Datenaufteilung"
+
+msgctxt "mlRegressionKnn|"
+msgid "Mean squared error"
+msgstr "Mittlerer quadratischer Fehler"
+
+msgctxt "mlRegressionKnn|"
+msgid "Predictive performance"
+msgstr "Vorhersageleistung"
+
+msgctxt "mlRegressionKnn|"
+msgid "Training Parameters"
+msgstr "Trainingsparameter"
+
+msgctxt "mlRegressionKnn|"
+msgid "Algorithmic Settings"
+msgstr "Algorithmus-Einstellungen"
+
+msgctxt "mlRegressionKnn|"
+msgid "Weights:"
+msgstr "Gewichte:"
+
+msgctxt "mlRegressionKnn|"
+msgid "Rectangular"
+msgstr "Rechteckig"
+
+msgctxt "mlRegressionKnn|"
+msgid "Epanechnikov"
+msgstr "Epanechnikov"
+
+msgctxt "mlRegressionKnn|"
+msgid "Biweight"
+msgstr "zweifach gewichtet"
+
+msgctxt "mlRegressionKnn|"
+msgid "Triweight"
+msgstr "dreifach gewichtet"
+
+msgctxt "mlRegressionKnn|"
+msgid "Cosine"
+msgstr "Kosinus"
+
+msgctxt "mlRegressionKnn|"
+msgid "Inverse"
+msgstr "Invers"
+
+msgctxt "mlRegressionKnn|"
+msgid "Gaussian"
+msgstr "Gaußsch"
+
+msgctxt "mlRegressionKnn|"
+msgid "Rank"
+msgstr "Rang"
+
+msgctxt "mlRegressionKnn|"
+msgid "Optimal"
+msgstr "Optimal"
+
+msgctxt "mlRegressionKnn|"
+msgid "Distance:"
+msgstr "Distanz:"
+
+msgctxt "mlRegressionKnn|"
+msgid "Euclidian"
+msgstr "Euklidisch"
+
+msgctxt "mlRegressionKnn|"
+msgid "Scale variables"
+msgstr "Variablen skalieren"
+
+msgctxt "mlRegressionKnn|"
+msgid "Set seed:"
+msgstr "Startwert für Zufallszahlen setzen:"
+
+msgctxt "mlRegressionKnn|"
+msgid "Number of Nearest Neighbors"
+msgstr "Anzahl nächster Nachbarn"
+
+msgctxt "mlRegressionKnn|"
+msgid "Fixed"
+msgstr "Fixiert"
+
+msgctxt "mlRegressionKnn|"
+msgid "Nearest neighbors:"
+msgstr "Nächste Nachbarn:"
+
+msgctxt "mlRegressionKnn|"
+msgid "Optimized"
+msgstr "Optimiert"
+
+msgctxt "mlRegressionKnn|"
+msgid "Max. nearest neighbors:"
+msgstr "Max. nächste Nachbarn:"
+
+msgctxt "mlRegressionKnn|"
+msgid "Add predicted values to data"
+msgstr "Vorhergesagte Werte zu Daten hinzufügen"
+
+msgctxt "mlRegressionKnn|"
+msgid "Column name: "
+msgstr "Spaltenname: "
+
+msgctxt "mlRegressionKnn|"
+msgid "<b>Save Model</b>"
+msgstr "<b>Modell speichern</b>"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Target"
+msgstr "Ziel"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Predictors"
+msgstr "Prädiktoren"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Tables"
+msgstr "Tabellen"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Evaluation metrics"
+msgstr "Evaluationsmetriken"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Variable importance"
+msgstr "Wichtigkeit der Variable"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Plots"
+msgstr "Abbildungen"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Data split"
+msgstr "Datenaufteilung"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Out-of-bag error"
+msgstr "Out-of-bag-Fehler"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Predictive performance"
+msgstr "Vorhersageleistung"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Mean decrease in accuracy"
+msgstr "Gemittelte Abnahme der Genauigkeit"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Total increase in node purity"
+msgstr "Gesamte Steigerung der Knotenreinheit"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Training Parameters"
+msgstr "Trainingsparameter"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Algorithmic Settings"
+msgstr "Algorithmus-Einstellungen"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Training data used per tree:"
+msgstr "Benutzte Trainingsdaten pro Baum:"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Predictors per split:"
+msgstr "Prädiktoren pro Aufteilung:"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Auto"
+msgstr "Auto"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Manual"
+msgstr "Manuell"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Scale variables"
+msgstr "Variablen skalieren"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Set seed:"
+msgstr "Startwert für Zufallszahlen setzen:"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Number of Trees"
+msgstr "Anzahl Bäume"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Fixed"
+msgstr "Fixiert"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Trees:"
+msgstr "Bäume:"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Optimized"
+msgstr "Optimiert"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Max. trees:"
+msgstr "Max. Bäume:"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Add predicted values to data"
+msgstr "Vorhergesagte Werte zu Daten hinzufügen"
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Column name: "
+msgstr "Spaltenname: "
+
+msgctxt "mlRegressionRandomForest|"
+msgid "<b>Save Model</b>"
+msgstr "<b>Modell speichern</b>"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Target"
+msgstr "Ziel"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Predictors"
+msgstr "Prädiktoren"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Weights"
+msgstr "Gewichte"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Tables"
+msgstr "Tabellen"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Evaluation metrics"
+msgstr "Evaluationsmetriken"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Regression coefficients"
+msgstr "Regressionskoeffizienten"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Plots"
+msgstr "Abbildungen"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Data split"
+msgstr "Datenaufteilungen"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Predictive performance"
+msgstr "Vorhersageleistung"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Variable trace"
+msgstr "Variablenspur"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Legend"
+msgstr "Legende"
+
+msgctxt "mlRegressionRegularized|"
+msgid "λ evaluation"
+msgstr "λ Evaluation"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Training Parameters"
+msgstr "Trainingsparameter"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Algorithmic Settings"
+msgstr "Algorithmus-Einstellungen"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Convergence threshold:"
+msgstr "Konvergenz-Schwellwert:"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Penalty:"
+msgstr "Strafterm:"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Elastic net"
+msgstr "Elastisches Netz"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Elastic net parameter (α):"
+msgstr "Parameter elastisches Netz (α):"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Fit intercept"
+msgstr "Konstante anpassen"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Scale variables"
+msgstr "Variablen skalieren"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Set seed:"
+msgstr "Startwert für Zufallszahlen setzen:"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Lambda (λ)"
+msgstr "Lambda (λ)"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Fixed"
+msgstr "Fixiert"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Optimized"
+msgstr "Optimiert"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Largest λ within 1 SE of min."
+msgstr "Größtes λ innerhalb 1 Std.-Fehler von Min."
+
+msgctxt "mlRegressionRegularized|"
+msgid "Add predicted values to data"
+msgstr "Vorhergesagte Werte zu Daten hinzufügen"
+
+msgctxt "mlRegressionRegularized|"
+msgid "Column name: "
+msgstr "Spaltenname: "
+
+msgctxt "mlRegressionRegularized|"
+msgid "<b>Save Model</b>"
+msgstr "<b>Modell speichern</b>"
