@@ -16,7 +16,7 @@
 #
 
 mlClassificationKnn <- function(jaspResults, dataset, options, ...) {
-  
+  	library(kknn)
     # Preparatory work
     dataset <- .readDataClassificationAnalyses(dataset, options)
     .errorHandlingClassificationAnalyses(dataset, options, type = "knn")
