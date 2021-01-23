@@ -95,7 +95,7 @@
   classificationTable$dependOn(options =c("noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "validationDataManual",
                                           "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
                                           "estimationMethod", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode",
-                                          "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual"))
+                                          "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "saveModel"))
 
   # Add analysis-specific columns
   if (type == "knn") {
@@ -229,6 +229,9 @@
     classificationTable$addRows(row)
 
   }
+
+  if(options[["saveModel"]] && type %in% c("lda", "boosting", "randomForest"))
+    saveRDS(classificationResult[["model"]], options[["file"]])
 }
 
 .classificationConfusionTable <- function(dataset, options, jaspResults, ready, position){
