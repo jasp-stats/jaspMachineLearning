@@ -214,7 +214,8 @@
                                           "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
                                           "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "maxTrees",
                                           "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac", "intDepth", "nNode", "distance",
-                                          "testSetIndicatorVariable", "testSetIndicator", "validationDataManual","holdoutData", "testDataManual"))
+                                          "testSetIndicatorVariable", "testSetIndicator", "validationDataManual","holdoutData", "testDataManual",
+										  "saveModel"))
 
   # Add analysis-specific columns
   if(type == "knn"){
@@ -361,6 +362,9 @@
     regressionTable$addRows(row)
 
   }
+
+  if(options[["saveModel"]])
+    saveRDS(regressionResult[["model"]], options[["file"]])
 }
 
 .regressionGetDistributionFromDistance <- function(distance) {

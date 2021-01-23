@@ -230,7 +230,7 @@
 
   }
 
-  if(options[["saveModel"]] && type %in% c("lda", "boosting", "randomForest"))
+  if(options[["saveModel"]])
     saveRDS(classificationResult[["model"]], options[["file"]])
 }
 

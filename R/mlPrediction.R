@@ -18,16 +18,9 @@
 mlPrediction <- function(jaspResults, dataset, options, ...) {
   
   # Preparatory work
-  if(options[["file"]] != ""){
-    model <- try({ readRDS(options[["file"]]) })
-    if(!(class(model) %in% c("lda", "gbm", "randomForest")))
-      jaspBase:::.quitAnalysis(gettextf("The imported model (type: %1$s) is currently not supported in JASP.", class(model)))
-  } else {
-    model <- NULL
-  }
-  dataset <- .readDataSetToEnd(columns = options[["predictors"]])
-  if(options[["scaleEqualSD"]] && length(unlist(options[["predictors"]])) > 0)
-    dataset <- .scaleNumericData(dataset)
+  model 	<- .mlPredictionReadModel(options)
+  dataset 	<- .mlPredictionReadData(options)
+  type 		<- .mlPredictionModelType(model)
   
   # Check if analysis is ready
   ready <- .mlPredictionReady(model, dataset, options)
@@ -36,20 +29,50 @@ mlPrediction <- function(jaspResults, dataset, options, ...) {
   .mlPredictionModelSummaryTable(model, dataset, options, jaspResults, ready, position = 1)
   
   # Create a table containing the predicted values and predictors
-  .mlPredictionsTable(model, dataset, options, jaspResults, ready, position = 2)
+  .mlPredictionsTable(model, dataset, options, type, jaspResults, ready, position = 2)
   
   # Add predicted outcomes to data set
   .mlPredictionsAddPredictions(model, dataset, options, jaspResults, ready)
   
 }
 
+.mlPredictionReadModel <- function(options){
+	  if(options[["file"]] != ""){
+    model <- try({ readRDS(options[["file"]]) })
+    if(!(class(model) %in% c("lda", "gbm", "randomForest", "cv.glmnet")))
+      jaspBase:::.quitAnalysis(gettextf("The imported model (type: %1$s) is currently not supported in JASP.", class(model)))
+  } else {
+    model <- NULL
+  }
+  return(model)
+}
+
+.mlPredictionReadData <- function(options){
+	  dataset <- .readDataSetToEnd(columns = options[["predictors"]])
+  if(options[["scaleEqualSD"]] && length(unlist(options[["predictors"]])) > 0)
+    dataset <- .scaleNumericData(dataset)
+	return(dataset)
+}
+
+.mlPredictionModelType <- function(model){
+  type <- NULL
+  if(!is.null(model))
+	type <- switch(class(model),
+						"lda" = "classification",
+						"gbm" = switch(model$distribution$name, "gaussian" = "regression", "multinomial" = "classification"),
+						"randomForest" = model[["type"]],
+						"cv.glmnet" = "regression")
+	return(type)
+}
+
 .mlPredictionReady <- function(model, dataset, options){
   ready <- TRUE
   if(!is.null(model)){
-    modelVars <- switch(class(model),
-                        "lda" = decodeColNames(attr(model[["terms"]], "term.labels")),
-                        "gbm" = decodeColNames(attr(model[["Terms"]], "term.labels")),
-                        "randomForest" = decodeColNames(rownames(model[["importance"]])))
+  modelVars <- switch(class(model),
+                      "lda" = decodeColNames(attr(model[["terms"]], "term.labels")),
+                      "gbm" = decodeColNames(attr(model[["Terms"]], "term.labels")),
+                      "randomForest" = decodeColNames(rownames(model[["importance"]])),
+					  "cv.glmnet" = decodeColNames(rownames(model$glmnet.fit$beta)))
     presentVars <- decodeColNames(colnames(dataset))
     if(!all(modelVars %in% presentVars)){
       ready <- FALSE
@@ -65,11 +88,22 @@ mlPrediction <- function(jaspResults, dataset, options, ...) {
     return(jaspResults[["predictions"]]$object)
   } else {
     if(ready){
-      predictions <- switch(class(model),
-                            "lda" = MASS:::predict.lda(model, newdata = dataset)$class,
-                            "gbm" = colnames(gbm:::predict.gbm(model, newdata = dataset, n.trees = model[["n.trees"]], type = "response"))[apply(gbm:::predict.gbm(model, newdata = dataset, n.trees = model[["n.trees"]], type = "response"), 1, which.max)],
-                            "randomForest" = randomForest:::predict.randomForest(model, newdata = dataset))
-      jaspResults[["predictions"]] <- createJaspState(predictions)
+		if(class(model) == "lda"){
+			predictions <- MASS:::predict.lda(model, newdata = dataset)$class
+		} else if(class(model) == "gbm"){
+			if(model$distribution$name == "multinomial"){
+				tmp <- gbm:::predict.gbm(model, newdata = dataset, n.trees = model[["n.trees"]], type = "response")
+				predictions <- colnames(tmp)[apply(tmp, 1, which.max)]
+			} else {
+				predictions <- gbm:::predict.gbm(model, newdata = dataset, n.trees = model[["n.trees"]], type = "response")
+			}
+		} else if(class(model) == "randomForest"){
+			predictions <- randomForest:::predict.randomForest(model, newdata = dataset)
+		} else if(class(model) == "cv.glmnet"){
+			predictions <- glmnet:::predict.cv.glmnet(model, newx = data.matrix(dataset))
+			print(predictions)
+		}
+	  jaspResults[["predictions"]] <- createJaspState(predictions)
       jaspResults[["predictions"]]$dependOn(options = c("file", "predictors", "scaleEqualSD"))
       return(jaspResults[["predictions"]]$object)
     } else {
@@ -85,10 +119,13 @@ mlPrediction <- function(jaspResults, dataset, options, ...) {
   } else {
     modelTitle <- switch(class(model),
                          "lda" = "Linear Discriminant Classification",
-                         "gbm" = "Boosting Classification",
+                         "gbm" = switch(model$distribution$name,
+						 				"gaussian" = "Boosting Regression",
+										 "multinomial" = "Boosting Classification"),
                          "randomForest" = switch(model[["type"]], 
                                                  "classification" = "Random Forest Classification",
-                                                 "regression" = "Random Forest Regression"))
+                                                 "regression" = "Random Forest Regression"),
+						  "cv.glmnet" = "Regularized Linear Regression")
     table <- createJaspTable(gettextf("Loaded Model: %1$s", modelTitle))
   }
   
@@ -105,15 +142,18 @@ mlPrediction <- function(jaspResults, dataset, options, ...) {
   modelName <- switch(class(model),
                       "lda" = "LDA",
                       "gbm" = "Boosting",
-                      "randomForest" = "Random forest")
+                      "randomForest" = "Random forest",
+					  "cv.glmnet" = "Regularized")
   ntrain <- switch(class(model),
                    "lda" = model[["N"]],
                    "gbm" = model[["nTrain"]],
-                   "randomForest" = length(model[["y"]]))
+                   "randomForest" = length(model[["y"]]),
+				   "cv.glmnet" = model$glmnet.fit$nobs)
   modelVars <- switch(class(model),
                       "lda" = decodeColNames(attr(model[["terms"]], "term.labels")),
                       "gbm" = decodeColNames(attr(model[["Terms"]], "term.labels")),
-                      "randomForest" = decodeColNames(rownames(model[["importance"]])))
+                      "randomForest" = decodeColNames(rownames(model[["importance"]])),
+					  "cv.glmnet" = decodeColNames(rownames(model$glmnet.fit$beta)))
   presentVars <- decodeColNames(colnames(dataset))
   if(!all(modelVars %in% presentVars)){
     missingVars <- modelVars[which(!(modelVars %in% presentVars))]
@@ -128,6 +168,8 @@ mlPrediction <- function(jaspResults, dataset, options, ...) {
   } else if(class(model) == "randomForest"){
     table$addColumnInfo(name = "trees", title = "Trees", type = 'integer')
     table$addColumnInfo(name = "mtry", title = "Predictors per split", type = 'integer')
+  } else if(class(model) == "cv.glmnet"){
+	table$addColumnInfo(name = "lambda", title = "\u03BB", type = 'number')
   }
   
   table$addColumnInfo(name = "ntrain", title = "n(Train)", type = 'integer')
@@ -143,12 +185,14 @@ mlPrediction <- function(jaspResults, dataset, options, ...) {
   } else if(class(model) == "randomForest"){
     row[["trees"]] <- model[["ntree"]]
     row[["mtry"]] <- model[["mtry"]]
+  } else if(class(model) == "cv.glmnet"){
+	  row[["lambda"]] <- model[["lambda.min"]]
   }
+
   table$addRows(row)
-  
 }
 
-.mlPredictionsTable <- function(model, dataset, options, jaspResults, ready, position){
+.mlPredictionsTable <- function(model, dataset, options, type, jaspResults, ready, position){
   
   if(!is.null(jaspResults[["predictionsTable"]]) || !options[["predictionsTable"]]) 
     return()
@@ -158,7 +202,10 @@ mlPrediction <- function(jaspResults, dataset, options, ...) {
   table$position <- position
   
   table$addColumnInfo(name = "row", title = "Row number", type = 'integer')
-  table$addColumnInfo(name = "pred", title = "Predicted", type = 'string')
+  if(type == "classification")
+  	table$addColumnInfo(name = "pred", title = "Predicted", type = 'string')
+  if(type == "regression")
+  	table$addColumnInfo(name = "pred", title = "Predicted", type = 'number')
   
   jaspResults[["predictionsTable"]] <- table
   
@@ -168,10 +215,11 @@ mlPrediction <- function(jaspResults, dataset, options, ...) {
   predictions <- .mlPredictionsState(model, dataset, options, jaspResults, ready)
   
   if(options[["addPredictors"]]){
-    modelVars <- switch(class(model),
-                        "lda" = decodeColNames(attr(model[["terms"]], "term.labels")),
-                        "gbm" = decodeColNames(attr(model[["Terms"]], "term.labels")),
-                        "randomForest" = decodeColNames(rownames(model[["importance"]])))
+  modelVars <- switch(class(model),
+                      "lda" = decodeColNames(attr(model[["terms"]], "term.labels")),
+                      "gbm" = decodeColNames(attr(model[["Terms"]], "term.labels")),
+                      "randomForest" = decodeColNames(rownames(model[["importance"]])),
+					  "cv.glmnet" = decodeColNames(rownames(model$glmnet.fit$beta)))
     for(i in 1:length(modelVars)){
       columnName <- as.character(modelVars[i])
       if(is.numeric(dataset[, encodeColNames(columnName)])){
