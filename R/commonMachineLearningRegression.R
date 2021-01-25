@@ -363,8 +363,10 @@
 
   }
 
-  if(options[["saveModel"]])
-    saveRDS(regressionResult[["model"]], options[["file"]])
+  if(options[["saveModel"]]){
+	  class(regressionResult[["model"]]) <- c(class(regressionResult[["model"]]), "jaspRegression", "jaspMachineLearning")
+	  saveRDS(regressionResult[["model"]], options[["file"]])
+  }
 }
 
 .regressionGetDistributionFromDistance <- function(distance) {

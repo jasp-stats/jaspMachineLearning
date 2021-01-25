@@ -230,8 +230,10 @@
 
   }
 
-  if(options[["saveModel"]])
-    saveRDS(classificationResult[["model"]], options[["file"]])
+  if(options[["saveModel"]]){
+	  class(classificationResult[["model"]]) <- c(class(classificationResult[["model"]]), "jaspClassification", "jaspMachineLearning")
+	  saveRDS(classificationResult[["model"]], options[["file"]])
+  }
 }
 
 .classificationConfusionTable <- function(dataset, options, jaspResults, ready, position){

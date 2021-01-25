@@ -79,6 +79,7 @@ Form
 			{
 				name: 							"predictionsTable"
 				label:				 			"Predictions for new data"
+				checked:						true
 
 				CheckBox
 				{
