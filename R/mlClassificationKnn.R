@@ -71,7 +71,7 @@ mlClassificationKnn <- function(jaspResults, dataset, options, ...) {
 	# Split the data into training and test sets
 	if(options[["holdoutData"]] == "testSetIndicator" && options[["testSetIndicatorVariable"]] != ""){
 		# Select observations according to a user-specified indicator (included when indicator = 1)
-		train.index             <- which(dataset[,.v(options[["testSetIndicatorVariable"]])] == 0)
+		train.index             <- which(dataset[,options[["testSetIndicatorVariable"]]] == 0)
 	} else {
 		# Sample a percentage of the total data set
 		train.index             <- sample.int(nrow(dataset), size = ceiling( (1 - options[['testDataManual']]) * nrow(dataset)))
@@ -109,10 +109,10 @@ mlClassificationKnn <- function(jaspResults, dataset, options, ...) {
       for(i in nnRange){
           kfit_valid <- kknn::kknn(formula = formula, train = train, test = valid, k = i, 
               distance = options[['distanceParameterManual']], kernel = options[['weights']], scale = FALSE)
-          accuracyStore[i] <- sum(diag(prop.table(table(kfit_valid$fitted.values, valid[,.v(options[["target"]])]))))
+          accuracyStore[i] <- sum(diag(prop.table(table(kfit_valid$fitted.values, valid[,options[["target"]]]))))
           kfit_train <- kknn::kknn(formula = formula, train = train, test = train, k = i, 
 				      distance = options[['distanceParameterManual']], kernel = options[['weights']], scale = FALSE)
-			    trainAccuracyStore[i] <- sum(diag(prop.table(table(kfit_train$fitted.values, train[,.v(options[["target"]])]))))
+			    trainAccuracyStore[i] <- sum(diag(prop.table(table(kfit_train$fitted.values, train[,options[["target"]]]))))
           progressbarTick()
       }
 
@@ -181,12 +181,12 @@ mlClassificationKnn <- function(jaspResults, dataset, options, ...) {
   classificationResult[["nn"]]                  <- nn
   classificationResult[["weights"]]             <- weights
   classificationResult[["distance"]]            <- distance
-  classificationResult[['confTable']]           <- table('Pred' = kfit_test$fitted.values, 'Real' = test[,.v(options[["target"]])])
+  classificationResult[['confTable']]           <- table('Pred' = kfit_test$fitted.values, 'Real' = test[,options[["target"]]])
   classificationResult[['testAcc']]             <- sum(diag(prop.table(classificationResult[['confTable']])))
   classificationResult[["auc"]]                 <- auc
   classificationResult[["ntrain"]]              <- nrow(train)
   classificationResult[["ntest"]]               <- nrow(test)
-  classificationResult[["testReal"]]            <- test[,.v(options[["target"]])]
+  classificationResult[["testReal"]]            <- test[,options[["target"]]]
   classificationResult[["testPred"]]            <- kfit_test$fitted.values
   classificationResult[["train"]]               <- train 
   classificationResult[["test"]]                <- test 
@@ -197,7 +197,7 @@ mlClassificationKnn <- function(jaspResults, dataset, options, ...) {
     classificationResult[["accuracyStore"]]       <- accuracyStore
     classificationResult[["valid"]]               <- valid
     classificationResult[["nvalid"]]              <- nrow(valid)
-    classificationResult[["validationConfTable"]] <- table('Pred' = kfit_valid$fitted.values, 'Real' = valid[,.v(options[["target"]])])
+    classificationResult[["validationConfTable"]] <- table('Pred' = kfit_valid$fitted.values, 'Real' = valid[,options[["target"]]])
     classificationResult[['validAcc']]            <- sum(diag(prop.table(classificationResult[['validationConfTable']])))
 
     if(options[["modelValid"]] == "validationManual")

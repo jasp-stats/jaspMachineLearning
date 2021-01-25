@@ -20,10 +20,10 @@
     dataset <- .readDataClassificationRegressionAnalyses(dataset, options)
   
   if (length(unlist(options[["predictors"]])) > 0 && options[["scaleEqualSD"]])
-    dataset[,.v(options[["predictors"]])] <- .scaleNumericData(dataset[,.v(options[["predictors"]]), drop = FALSE])
+    dataset[,options[["predictors"]]] <- .scaleNumericData(dataset[,options[["predictors"]], drop = FALSE])
   
   if (options[["target"]] != "")
-    dataset[, .v(options[["target"]])] <- factor(dataset[, .v(options[["target"]])])
+    dataset[, options[["target"]]] <- factor(dataset[, options[["target"]]])
   
   return(dataset)
 }
@@ -44,8 +44,8 @@
 }
 
 .classificationFormula <- function(options, jaspResults){
-  predictors <- .v(options[["predictors"]])
-  target <- .v(options[["target"]])
+  predictors <- options[["predictors"]]
+  target <- options[["target"]]
   formula <- formula(paste(target, "~", paste(predictors, collapse=" + ")))
   jaspResults[["formula"]] <- createJaspState(formula)
   jaspResults[["formula"]]$dependOn(options = c("predictors", "target"))
@@ -269,7 +269,7 @@
     confusionTable$addColumnInfo(name = "obs_name",    title = "", type = "string")
     confusionTable$addColumnInfo(name = "varname_obs", title = "", type = "string")
 
-    factorLevels <- levels(dataset[, .v(options[["target"]])])
+    factorLevels <- levels(dataset[, options[["target"]]])
     
     confusionTable[["obs_name"]] <- c(gettext("Observed"), rep("", length(factorLevels) - 1))
     confusionTable[["varname_obs"]] <- factorLevels
@@ -320,7 +320,7 @@
   classificationResult <- jaspResults[["classificationResult"]]$object
 
   variables <- options[["predictors"]]
-  variables <- variables[ !sapply(dataset[, .v(variables)], is.factor) ] # remove factors from boundary plot
+  variables <- variables[ !sapply(dataset[, variables], is.factor) ] # remove factors from boundary plot
   l <- length(variables)
 
   if(l < 2){ # Need at least 2 numeric variables to create a matrix
@@ -346,7 +346,7 @@
   oldFontSize <- jaspGraphs::getGraphOption("fontsize")
   jaspGraphs::setGraphOption("fontsize", .85 * oldFontSize)
   
-  target <- dataset[, .v(options[["target"]])]
+  target <- dataset[, options[["target"]]]
   startProgressbar(length(plotMat)+1)
 
   for (row in 2:l) {
@@ -360,9 +360,9 @@
           plotMat[[row, col]] <- p
       }  
       if (col < row) {
-          predictors <- dataset[, .v(variables)]
+          predictors <- dataset[, variables]
           predictors <- predictors[, c(col, row)]
-          formula <- formula(paste(.v(options[["target"]]), "~", paste(colnames(predictors), collapse=" + ")))
+          formula <- formula(paste(options[["target"]], "~", paste(colnames(predictors), collapse=" + ")))
           plotMat[[row-1, col]] <- .decisionBoundaryPlot(dataset, options, jaspResults, predictors, target, formula, l, type = type)
       } 
       if (col > row) {
@@ -453,8 +453,8 @@
 
 .legendPlot <- function(dataset, options, col){
 
-  target <- dataset[, .v(options[["target"]])]
-  predictors <- dataset[, .v(options[["predictors"]])]
+  target <- dataset[, options[["target"]]]
+  predictors <- dataset[, options[["predictors"]]]
   predictors <- predictors[, 1]
   lda.data <- data.frame(target = target, predictors = predictors)
   
@@ -491,9 +491,9 @@
     train <- classificationResult[["train"]]
     test <- classificationResult[["test"]]
 
-    lvls <- levels(factor(train[, .v(options[["target"]])]))
+    lvls <- levels(factor(train[, options[["target"]]]))
 
-    predictors <- .v(options[["predictors"]])
+    predictors <- options[["predictors"]]
     formula <- formula(paste("levelVar", "~", paste(predictors, collapse=" + ")))
 
     linedata <- data.frame(x = c(0,1), y = c(0,1))
@@ -508,12 +508,12 @@
 
     for(i in 1:length(lvls)){
 
-      levelVar <- train[,.v(options[["target"]])] == lvls[i]
+      levelVar <- train[,options[["target"]]] == lvls[i]
       typeData <- cbind(train, levelVar = factor(levelVar))
-      column <- which(colnames(typeData) == .v(options[["target"]]))
+      column <- which(colnames(typeData) == options[["target"]])
       typeData <- typeData[, -column]
 
-      actual.class <- test[,.v(options[["target"]])] == lvls[i]
+      actual.class <- test[,options[["target"]]] == lvls[i]
 
       if(length(levels(factor(actual.class))) != 2){ # This variable is not in the test set, we should skip it
         next
@@ -601,8 +601,8 @@
     sample <- 1:nrow(dataset)
   }
 
-  predictors <- dataset[sample, .v(options[["predictors"]])]
-  target <- dataset[sample, .v(options[["target"]])]
+  predictors <- dataset[sample, options[["predictors"]]]
+  target <- dataset[sample, options[["target"]]]
 
   # Taken from function `andrewsplot()` in R package "andrewsplot", thanks!
   n <- nrow(predictors)
@@ -709,7 +709,7 @@
   validationMeasures$addFootnote(gettext("Area Under Curve (AUC) is calculated for every class against all other classes."))
 
   if(options[["target"]] != "")
-    validationMeasures[["group"]] <- c(levels(factor(dataset[, .v(options[["target"]])])), gettext("Average / Total"))
+    validationMeasures[["group"]] <- c(levels(factor(dataset[, options[["target"]]])), gettext("Average / Total"))
   
   jaspResults[["validationMeasures"]] <- validationMeasures
 
@@ -751,7 +751,7 @@
   support[length(support) + 1]        <- sum(support, na.rm = TRUE)
   auc[length(auc) + 1]                <- mean(auc, na.rm = TRUE)
 
-  validationMeasures[["group"]]       <- c(levels(factor(classificationResult[["test"]][, .v(options[["target"]])])), "Average / Total") # fill again to adjust for missing categories
+  validationMeasures[["group"]]       <- c(levels(factor(classificationResult[["test"]][, options[["target"]]])), "Average / Total") # fill again to adjust for missing categories
   validationMeasures[["precision"]]   <- precision
   validationMeasures[["recall"]]      <- recall
   validationMeasures[["f1"]]          <- f1
@@ -788,8 +788,8 @@
   classProportionsTable$addColumnInfo(name = "test", title = gettext("Test Set"), type = "number")
 
   if(options[["target"]] != ""){
-    classProportionsTable[["group"]] <- levels(factor(dataset[, .v(options[["target"]])]))
-    Dlevels <- levels(factor(dataset[, .v(options[["target"]])]))
+    classProportionsTable[["group"]] <- levels(factor(dataset[, options[["target"]]]))
+    Dlevels <- levels(factor(dataset[, options[["target"]]]))
   }
   
   jaspResults[["classProportionsTable"]] <- classProportionsTable
@@ -804,11 +804,11 @@
     validValues     <- rep(0, length(classProportionsTable[["group"]]))
   testValues      <- rep(0, length(classProportionsTable[["group"]]))
 
-  dataTable       <- prop.table(table(dataset[,.v(options[["target"]])]))
-  trainingTable   <- prop.table(table(classificationResult[["train"]][,.v(options[["target"]])]))
+  dataTable       <- prop.table(table(dataset[,options[["target"]]]))
+  trainingTable   <- prop.table(table(classificationResult[["train"]][,options[["target"]]]))
   if(options[["modelOpt"]] != "optimizationManual")
-    validTable      <- prop.table(table(classificationResult[["valid"]][,.v(options[["target"]])]))
-  testTable       <- prop.table(table(classificationResult[["test"]][,.v(options[["target"]])]))
+    validTable      <- prop.table(table(classificationResult[["valid"]][,options[["target"]]]))
+  testTable       <- prop.table(table(classificationResult[["test"]][,options[["target"]]]))
 
   for(i in 1:length(Dlevels)){
     # Dataset
@@ -859,22 +859,22 @@
 }
 
 .classificationCalcAUC <- function(test, train, options, class, ...) {
-  lvls <- levels(factor(test[, .v(options[["target"]])]))
+  lvls <- levels(factor(test[, options[["target"]]]))
   auc <- numeric(length(lvls)) 
 
-  predictorNames <- .v(options[["predictors"]])
+  predictorNames <- options[["predictors"]]
   AUCformula <- formula(paste("levelVar", "~", paste(predictorNames, collapse=" + ")))
   class(AUCformula) <- c(class(AUCformula), class)
 
   for (i in 1:length(lvls)) {
     
-    levelVar <- train[,.v(options[["target"]])] == lvls[i]
+    levelVar <- train[,options[["target"]]] == lvls[i]
     typeData <- cbind(train, levelVar = factor(levelVar))
-    typeData <- typeData[, -which(colnames(typeData) == .v(options[["target"]]))]
+    typeData <- typeData[, -which(colnames(typeData) == options[["target"]])]
     
     score <- .calcAUCScore(AUCformula, train = train, test = test, typeData = typeData, levelVar = levelVar, options = options, ...)
     
-    actual.class <- test[,.v(options[["target"]])] == lvls[i]
+    actual.class <- test[,options[["target"]]] == lvls[i]
     
     if (length(levels(factor(actual.class))) == 2) {
       pred <- ROCR::prediction(score, actual.class)

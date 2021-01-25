@@ -20,7 +20,7 @@
     dataset <- .readDataClassificationRegressionAnalyses(dataset, options)
   
   if (length(unlist(options[["predictors"]])) > 0 && options[["target"]] != "" && options[["scaleEqualSD"]])
-    dataset[,.v(c(options[["predictors"]], options[["target"]]))] <- .scaleNumericData(dataset[,.v(c(options[["predictors"]], options[["target"]])), drop = FALSE])
+    dataset[,c(options[["predictors"]], options[["target"]])] <- .scaleNumericData(dataset[,c(options[["predictors"]], options[["target"]]), drop = FALSE])
   
   return(dataset)
 }
@@ -77,7 +77,7 @@
     if (options[["testSetIndicatorVariable"]] %in% predictors)
       jaspBase:::.quitAnalysis(gettextf("The variable '%s' can't be both a predictor and a test set indicator.", options[["testSetIndicatorVariable"]]))
   
-    indicatorVals <- unique(dataset[,.v(options[["testSetIndicatorVariable"]])])
+    indicatorVals <- unique(dataset[,options[["testSetIndicatorVariable"]]])
     if (length(indicatorVals) != 2 || !all(0:1 %in% indicatorVals))
       jaspBase:::.quitAnalysis(gettext("Your test set indicator should be binary, containing only 1 (included in test set) and 0 (excluded from test set)."))
     
@@ -95,7 +95,7 @@
     return()
 
   if (options[["testSetIndicatorVariable"]] != "" && options[["holdoutData"]] == "testSetIndicator")
-    nTrainAndValid <- length(which(dataset[, .v(options[["testSetIndicatorVariable"]])] == 0))
+    nTrainAndValid <- length(which(dataset[, options[["testSetIndicatorVariable"]]] == 0))
   else
     nTrainAndValid <- ceiling(nrow(dataset) - nrow(dataset)*options[['testDataManual']])
 
@@ -162,8 +162,8 @@
 }
 
 .regressionFormula <- function(options, jaspResults){
-  predictors <- .v(options[["predictors"]])
-  target <- .v(options[["target"]])
+  predictors <- options[["predictors"]]
+  target <- options[["target"]]
   formula <- formula(paste(target, "~", paste(predictors, collapse=" + ")))
   jaspResults[["formula"]] <- createJaspState(formula)
   jaspResults[["formula"]]$dependOn(options = c("predictors", "target"))

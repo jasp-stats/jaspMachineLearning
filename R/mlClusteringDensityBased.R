@@ -56,29 +56,29 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
 .densityBasedClustering <- function(dataset, options, jaspResults){
  
   if (options[["distance"]] == "Correlated densities") {
-    dfit <- dbscan::dbscan(as.dist(1-cor(t(as.data.frame(dataset[, .v(options[["predictors"]])])), method = "pearson")), eps = options[['eps']], minPts = options[['minPts']])
+    dfit <- dbscan::dbscan(as.dist(1-cor(t(as.data.frame(dataset[, options[["predictors"]]])), method = "pearson")), eps = options[['eps']], minPts = options[['minPts']])
   } else {
-    dfit <- dbscan::dbscan(as.data.frame(dataset[, .v(options[["predictors"]])]), eps = options[['eps']], minPts = options[['minPts']])
+    dfit <- dbscan::dbscan(as.data.frame(dataset[, options[["predictors"]]]), eps = options[['eps']], minPts = options[['minPts']])
   }
 
   noisePoints <- length(dfit$cluster[dfit$cluster == 0])
   clusters <- ifelse(noisePoints > 0, yes = length(table(dfit$cluster)) - 1, no = length(table(dfit$cluster)))
 
-  m <- dim(as.data.frame(dataset[, .v(options[["predictors"]])]))[2]
+  m <- dim(as.data.frame(dataset[, options[["predictors"]]]))[2]
   
   wss <- numeric(clusters)
   for(i in 1:clusters) {
     if (m == 1) {
-      wss[i] <- .ss(dataset[, .v(options[["predictors"]])][dfit$cluster == i])
+      wss[i] <- .ss(dataset[, options[["predictors"]]][dfit$cluster == i])
     } else {
-      wss[i] <- .ss(dataset[, .v(options[["predictors"]])][dfit$cluster == i,])
+      wss[i] <- .ss(dataset[, options[["predictors"]]][dfit$cluster == i,])
     }
   }
 
   if(noisePoints > 0) {
-    tss <- .tss(dist(dataset[, .v(options[["predictors"]])][dfit$cluster != 0, ]))
+    tss <- .tss(dist(dataset[, options[["predictors"]]][dfit$cluster != 0, ]))
   } else {
-    tss <- .tss(dist(dataset[, .v(options[["predictors"]])]))
+    tss <- .tss(dist(dataset[, options[["predictors"]]]))
   }
 
   pred.values <- dfit$cluster
@@ -105,9 +105,9 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
   
   if (oneMark == 0 && zeroMark == 0){
     if(options[["distance"]] == "Normal densities"){
-      silhouettes <- summary(cluster::silhouette(dfit$cluster, dist(dataset[, .v(options[["predictors"]])])))
+      silhouettes <- summary(cluster::silhouette(dfit$cluster, dist(dataset[, options[["predictors"]]])))
     } else if(options[["distance"]] == "Correlated densities"){
-      silhouettes <- summary(cluster::silhouette(dfit$cluster, as.dist(1-cor(t(dataset[, .v(options[["predictors"]])])))))
+      silhouettes <- summary(cluster::silhouette(dfit$cluster, as.dist(1-cor(t(dataset[, options[["predictors"]]])))))
     }
   } else {
     silhouettes <- list("avg.width" = 0, "clus.avg.widths" = rep(0, max(1, clusters)))
@@ -146,8 +146,8 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
 
   if(!ready) return()
 
-  unique.rows <- which(!duplicated(dataset[, .v(options[["predictors"]])]))
-  data <- dataset[unique.rows, .v(options[["predictors"]])]
+  unique.rows <- which(!duplicated(dataset[, options[["predictors"]]]))
+  data <- dataset[unique.rows, options[["predictors"]]]
   if(options[["distance"]] == "Correlated densities"){
     knnDist <- dbscan::kNNdist(as.dist(1-cor(t(as.data.frame(data)), method = "pearson")), k = options[['minPts']])
   } else {

@@ -82,7 +82,7 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
   # Split the data into training and test sets
   if(options[["holdoutData"]] == "testSetIndicator" && options[["testSetIndicatorVariable"]] != ""){
     # Select observations according to a user-specified indicator (included when indicator = 1)
-    train.index             <- which(dataset[,.v(options[["testSetIndicatorVariable"]])] == 0)
+    train.index             <- which(dataset[,options[["testSetIndicatorVariable"]]] == 0)
   } else {
     # Sample a percentage of the total data set
     train.index             <- sample.int(nrow(dataset), size = ceiling( (1 - options[['testDataManual']]) * nrow(dataset)))
@@ -156,14 +156,14 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
   classificationResult[["formula"]]             <- formula
   classificationResult[["noOfFolds"]]           <- noOfFolds
   classificationResult[["noOfTrees"]]           <- noOfTrees
-  classificationResult[['confTable']]           <- table('Pred' = pred_test, 'Real' = test[,.v(options[["target"]])])
+  classificationResult[['confTable']]           <- table('Pred' = pred_test, 'Real' = test[,options[["target"]]])
   classificationResult[['testAcc']]             <- sum(diag(prop.table(classificationResult[['confTable']])))
   classificationResult[["relInf"]]              <- summary(bfit, plot = FALSE)
   classificationResult[["auc"]]                 <- auc 
   classificationResult[["ntrain"]]              <- nrow(train)
   classificationResult[["ntest"]]               <- nrow(test)
   classificationResult[["testPred"]]            <- pred_test
-  classificationResult[["testReal"]]            <- test[,.v(options[["target"]])]
+  classificationResult[["testReal"]]            <- test[,options[["target"]]]
   classificationResult[["train"]]               <- train
   classificationResult[["test"]]                <- test
   classificationResult[["method"]]              <- ifelse(options[["modelValid"]] == "validationManual", yes = "OOB", no = "")
@@ -171,7 +171,7 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
   classificationResult[["classes"]]             <- predictions
 
   if(options[["modelOpt"]] != "optimizationManual"){
-    classificationResult[["validationConfTable"]] <- table('Pred' = pred_valid, 'Real' = valid[,.v(options[["target"]])])
+    classificationResult[["validationConfTable"]] <- table('Pred' = pred_valid, 'Real' = valid[,options[["target"]]])
     classificationResult[['validAcc']]            <- sum(diag(prop.table(classificationResult[['validationConfTable']])))
     classificationResult[["nvalid"]]              <- nrow(valid)
     classificationResult[["valid"]]               <- valid
