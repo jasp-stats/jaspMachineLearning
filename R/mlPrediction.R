@@ -48,7 +48,7 @@ mlPrediction <- function(jaspResults, dataset, options, ...) {
 }
 
 .mlPredictionReadData <- function(options){
-	  dataset <- .readDataSetToEnd(columns = options[["predictors"]])
+	  dataset <- .readDataSetToEnd(columns = options[["predictors"]], exclude.na.listwise = options[["predictors"]])
   if(options[["scaleEqualSD"]] && length(unlist(options[["predictors"]])) > 0)
     dataset <- .scaleNumericData(dataset)
 	return(dataset)
@@ -173,6 +173,7 @@ mlPrediction <- function(jaspResults, dataset, options, ...) {
   }
   
   table$addColumnInfo(name = "ntrain", title = "n(Train)", type = 'integer')
+  table$addColumnInfo(name = "nnew", title = "n(New)", type = 'integer')
   
   row <- list()
   row[["model"]] <- modelName
@@ -188,6 +189,8 @@ mlPrediction <- function(jaspResults, dataset, options, ...) {
   } else if(class(model) == "cv.glmnet"){
 	  row[["lambda"]] <- model[["lambda.min"]]
   }
+  if(length(presentVars) > 0)
+	row[["nnew"]] <- nrow(dataset)
 
   table$addRows(row)
 }
@@ -202,10 +205,14 @@ mlPrediction <- function(jaspResults, dataset, options, ...) {
   table$position <- position
   
   table$addColumnInfo(name = "row", title = "Row number", type = 'integer')
-  if(type == "classification")
-  	table$addColumnInfo(name = "pred", title = "Predicted", type = 'string')
-  if(type == "regression")
-  	table$addColumnInfo(name = "pred", title = "Predicted", type = 'number')
+  if(!is.null(type)){
+	if(type == "classification")
+		table$addColumnInfo(name = "pred", title = "Predicted", type = 'string')
+	if(type == "regression")
+		table$addColumnInfo(name = "pred", title = "Predicted", type = 'number')
+  } else {
+	 table$addColumnInfo(name = "pred", title = "Predicted", type = 'number') 
+  }
   
   jaspResults[["predictionsTable"]] <- table
   
