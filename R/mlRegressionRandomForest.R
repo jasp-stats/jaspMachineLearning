@@ -131,6 +131,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
 
   # Create results object
   regressionResult <- list()
+  regressionResult[["model"]] 				<- rfit_test
   regressionResult[["rfit_test"]]           <- rfit_test
   regressionResult[["rfit_train"]]          <- rfit_train
   regressionResult[["noOfTrees"]]           <- noOfTrees

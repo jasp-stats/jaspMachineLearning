@@ -203,40 +203,64 @@ Form {
         }
     }
 
-    Item {
-        Layout.preferredHeight: addValues.height*2
-        Layout.fillWidth: 	true
-        Layout.columnSpan: 2
+	GroupBox 
+	{
 
-        CheckBox {
-            id: addValues
-            name: "addValues"
-            text: qsTr("Add predicted values to data")
-            enabled:    predictors.count > 1 && target.count > 0
-            anchors.top: parent.top
+		CheckBox 
+		{ 
+			id: 								modelSave  
+			name: 								"modelSave"
+			text: 								qsTr("Save trained model")
+			enabled: 							predictors.count > 1 && target.count > 0
+			onCheckedChanged:					if(!checked) saveModel.checked = false
 
-            ComputedColumnField { 
-                id: 		valueColumn
-                name: 		"valueColumn"
-				text: 		qsTr("Column name: ")
-                fieldWidth: 120
-                visible:    addValues.checked
-            }
+				FileSelector
+				{
+					id:							file
+					name:						"file"
+					label:  					qsTr("Save as: ")
+					filter:						"*.rds"
+					save:						true
+					fieldWidth:					180 * preferencesModel.uiScale 
+					visible:					modelSave.checked
+				}
+		}
 
-        }
-        
-        Button 
-        {
-            id: 			saveModel
-            anchors.right: 	parent.right
-            text: 			qsTr("<b>Save Model</b>")
-            enabled: 		predictors.count > 1 && target.count > 0
-            onClicked:      
-            {
+		RowLayout
+		{
+			Button
+			{
+				id: 							downloadModel
+				Layout.leftMargin:				25 * preferencesModel.uiScale
+				text: 							saveModel.checked ? qsTr("<b>Synchronize: On</b>") : qsTr("<b>Synchronize: Off</b>")
+				control.color: 					saveModel.checked ? "#1E90FF" : jaspTheme.buttonColorDisabled
+				control.textColor: 				saveModel.checked ? "white" : "black"
+				implicitHeight:					20 * preferencesModel.uiScale
+				onClicked: 						saveModel.click()
+				enabled:						predictors.count > 1 && target.count > 0 & modelSave.checked & file.value != ""
+				visible:						modelSave.checked
+			}
+			CheckBox
+			{
+				id:								saveModel
+				name:							"saveModel"
+				visible:						false
+			}	
+		}
+	}
 
-             }
-            debug: true	
-        }
-    }
+	CheckBox {
+		id: addValues
+		name: "addValues"
+		text: qsTr("Add predicted values to data")
+		enabled:    predictors.count > 1 && target.count > 0
 
+		ComputedColumnField { 
+			id: 		valueColumn
+			name: 		"valueColumn"
+			text: 		qsTr("Column name: ")
+			fieldWidth: 120
+			visible:    addValues.checked
+		}
+	}
 }

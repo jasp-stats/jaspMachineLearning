@@ -214,7 +214,8 @@
                                           "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
                                           "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "maxTrees",
                                           "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac", "intDepth", "nNode", "distance",
-                                          "testSetIndicatorVariable", "testSetIndicator", "validationDataManual","holdoutData", "testDataManual"))
+                                          "testSetIndicatorVariable", "testSetIndicator", "validationDataManual","holdoutData", "testDataManual",
+										  "saveModel"))
 
   # Add analysis-specific columns
   if(type == "knn"){
@@ -360,6 +361,11 @@
       row <- cbind(row, nvalid = nValid, validMSE = regressionResult[["validMSE"]])
     regressionTable$addRows(row)
 
+  }
+
+  if(options[["saveModel"]]){
+	  class(regressionResult[["model"]]) <- c(class(regressionResult[["model"]]), "jaspRegression", "jaspMachineLearning")
+	  saveRDS(regressionResult[["model"]], options[["file"]])
   }
 }
 
