@@ -218,7 +218,7 @@
                                           "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
                                           "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "maxTrees",
                                           "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac", "intDepth", "nNode", "distance",
-                                          "testSetIndicatorVariable", "testSetIndicator", "validationDataManual","holdoutData", "testDataManual", "saveModel",
+                                          "testSetIndicatorVariable", "testSetIndicator", "validationDataManual","holdoutData", "testDataManual", "saveModel", "file",
 										  "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"))
 
   # Add analysis-specific columns
@@ -386,9 +386,11 @@
     regressionTable$addRows(row)
   }
 
-  if(options[["saveModel"]]){
-	  class(regressionResult[["model"]]) <- c(class(regressionResult[["model"]]), "jaspRegression", "jaspMachineLearning")
-	  saveRDS(regressionResult[["model"]], options[["file"]])
+  if(options[["saveModel"]] && options[["file"]] != ""){
+      class(regressionResult[["model"]]) <- c(class(regressionResult[["model"]]), "jaspRegression", "jaspMachineLearning")
+      model <- regressionResult[["model"]]
+      model[["jaspVersion"]] <- .baseCitation
+      saveRDS(model, file = options[["file"]])
   }
 }
 

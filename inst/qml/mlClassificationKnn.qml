@@ -25,111 +25,152 @@ import "./common" as ML
 
 Form {
 
-    VariablesForm {
-        AvailableVariablesList { name: "variables" }
-        AssignedVariablesList {
-            id: target
-            name: "target"
-            title: qsTr("Target")
-            singleVariable: true
+	VariablesForm {
+		AvailableVariablesList { name: "variables" }
+		AssignedVariablesList {
+			id: target
+			name: "target"
+			title: qsTr("Target")
+			singleVariable: true
 			allowedColumns: ["ordinal", "nominal", "nominalText"]
-        }
-        AssignedVariablesList {
-            id: predictors
-            name: "predictors"
-            title: qsTr("Predictors")
+		}
+		AssignedVariablesList {
+			id: predictors
+			name: "predictors"
+			title: qsTr("Predictors")
 			allowedColumns: ["scale", "ordinal", "nominal", "nominalText"]
 			allowAnalysisOwnComputedColumns: false
-        }
-    }
-    
-    GroupBox {
-        title: qsTr("Tables")
-        
-        CheckBox { 
-            text: qsTr("Confusion matrix")
-            name: "confusionTable"
-            checked: true
+		}
+	}
 
-          CheckBox { 
-              text: qsTr("Display proportions")
-              name: "confusionProportions"
-              } 
-        }
+	GroupBox {
+		title: qsTr("Tables")
 
-        CheckBox {
-            text: qsTr("Class proportions")
-            name: "classProportionsTable"
-        }  
+		CheckBox {
+			text: qsTr("Confusion matrix")
+			name: "confusionTable"
+			checked: true
 
-        CheckBox {
-            text: qsTr("Evaluation metrics")
-            name: "validationMeasures"
-        }  
-    }
-    
-    GroupBox {
-        title: qsTr("Plots")
+			CheckBox {
+				text: qsTr("Display proportions")
+				name: "confusionProportions"
+			}
+		}
 
-        CheckBox { 
-            text: qsTr("Data split") 
-            name: "dataSplitPlot"
-            checked: true
-        }
-        
-        CheckBox { 
-            text: qsTr("Classification accuracy") 
-            name: "plotErrorVsK"
-            enabled: optimizeModel.checked 
-        }
+		CheckBox {
+			text: qsTr("Class proportions")
+			name: "classProportionsTable"
+		}
 
-        CheckBox { 
-            name: "rocCurve"
-            text: qsTr("ROC curves") 
-        }
+		CheckBox {
+			text: qsTr("Evaluation metrics")
+			name: "validationMeasures"
+		}
+	}
 
-        CheckBox { 
-            name: "andrewsCurve"
-            text: qsTr("Andrews curves") 
-        }
+	GroupBox {
+		title: qsTr("Plots")
 
-        CheckBox { 
-            name: "decisionBoundary"
-            text: qsTr("Decision boundary matrix")
+		CheckBox {
+			text: qsTr("Data split")
+			name: "dataSplitPlot"
+			checked: true
+		}
 
-            RowLayout {
+		CheckBox {
+			text: qsTr("Classification accuracy")
+			name: "plotErrorVsK"
+			enabled: optimizeModel.checked
+		}
 
-                CheckBox {
-                    name: "plotLegend"
-                    text: qsTr("Legend")
-                    checked: true 
-                } 
+		CheckBox {
+			name: "rocCurve"
+			text: qsTr("ROC curves")
+		}
 
-                CheckBox {
-                    name: "plotPoints"
-                    text: qsTr("Points")
-                    checked: true 
-                }
-            }
-        }
-    }
+		CheckBox {
+			name: "andrewsCurve"
+			text: qsTr("Andrews curves")
+		}
 
-    ML.DataSplit {
-        trainingValidationSplit: optimizeModel.checked 
-    }
-    
-    Section {
-        title: qsTr("Training Parameters")
-  
-        GroupBox {
-            title: qsTr("Algorithmic Settings")
+		CheckBox {
+			name: "decisionBoundary"
+			text: qsTr("Decision boundary matrix")
 
-            DropDown {
-                name: "weights"
-                indexDefaultValue: 0
-                label: qsTr("Weights:")
-                values:
-                [
+			RowLayout {
+
+				CheckBox {
+					name: "plotLegend"
+					text: qsTr("Legend")
+					checked: true
+				}
+
+				CheckBox {
+					name: "plotPoints"
+					text: qsTr("Points")
+					checked: true
+				}
+			}
+		}
+	}
+
+	GroupBox
+	{
+		title: 									qsTr("Export Results")
+
+		CheckBox {
+			id: addClasses
+			name: "addClasses"
+			text: qsTr("Add predicted classes to data")
+			enabled:    predictors.count > 0 && target.count > 0
+
+			ComputedColumnField {
+				id: 		classColumn
+				name: 		"classColumn"
+				text: 		qsTr("Column name: ")
+				placeholderText: 	qsTr("e.g., predicted")
+				fieldWidth: 120
+				visible:    addClasses.checked
+			}
+		}
+
+		CheckBox
+		{
+			id: 								saveModel
+			name: 								"saveModel"
+			text: 								qsTr("Save trained model")
+			enabled: 							predictors.count > 0 && target.count > 0
+
+			FileSelector
+			{
+				id:							file
+				name:						"file"
+				label:  					qsTr("Save as: ")
+				placeholderText: 			qsTr("model.jaspML")
+				filter:						"*.jaspML"
+				save:						true
+				fieldWidth:					180 * preferencesModel.uiScale
+				visible:					saveModel.checked
+			}
+		}
+	}
+
+	ML.DataSplit {
+		trainingValidationSplit: optimizeModel.checked
+	}
+
+	Section {
+		title: qsTr("Training Parameters")
+
+		GroupBox {
+			title: qsTr("Algorithmic Settings")
+
+			DropDown {
+				name: "weights"
+				indexDefaultValue: 0
+				label: qsTr("Weights:")
+				values:
+					[
 					{ label: qsTr("Rectangular"), value: "rectangular"},
 					{ label: qsTr("Epanechnikov"), value: "epanechnikov"},
 					{ label: qsTr("Biweight"), value: "biweight"},
@@ -139,135 +180,74 @@ Form {
 					{ label: qsTr("Gaussian"), value: "gaussian"},
 					{ label: qsTr("Rank"), value: "rank"},
 					{ label: qsTr("Optimal"), value: "optimal"}
-                ]
-            }
+				]
+			}
 
-            DropDown {
-                name: "distanceParameterManual"
-                indexDefaultValue: 0
-                label: qsTr("Distance:")
-                values:
-                [
+			DropDown {
+				name: "distanceParameterManual"
+				indexDefaultValue: 0
+				label: qsTr("Distance:")
+				values:
+					[
 					{ label: qsTr("Euclidian"), value: "2"},
 					{ label: qsTr("Manhattan"), value: "1"}
-                ]
-            }
-
-            CheckBox { 
-                text: qsTr("Scale predictors") 
-                name: "scaleEqualSD"
-                checked: true
-            }
-
-            CheckBox { 
-                name: "seedBox"
-                text: qsTr("Set seed:")
-                childrenOnSameRow: true
-
-                DoubleField  { 
-                    name: "seed"
-                    defaultValue: 1
-                    min: -999999
-                    max: 999999
-                    fieldWidth: 60 
-                }
-            }
-        }
-
-        RadioButtonGroup {
-            title: qsTr("Number of Nearest Neighbors")
-            name: "modelOpt"
-
-            RadioButton { 
-                text: qsTr("Fixed")                     
-                name: "optimizationManual" 
-
-                IntegerField { 
-                    name: "noOfNearestNeighbours"
-                    text: qsTr("Nearest neighbors:")
-                    defaultValue: 3
-                    min: 1
-                    max: 50000
-                    fieldWidth: 60
-                }
-            }
-            
-            RadioButton { 
-                id: optimizeModel
-                text: qsTr("Optimized")
-                name: "optimizationError"
-                checked: true 
-
-                IntegerField { 
-                    name: "maxK"
-                    text: qsTr("Max. nearest neighbors:") 
-                    defaultValue: 10 
-                    min: 1
-                    max: 50000
-                    fieldWidth: 60
-                }
-            }
-        }
-    }
-    
-	GroupBox 
-	{
-
-		CheckBox 
-		{ 
-			id: 								modelSave  
-			name: 								"modelSave"
-			text: 								qsTr("Save trained model")
-			enabled: 							predictors.count > 0 && target.count > 0
-			onCheckedChanged:					if(!checked) saveModel.checked = false
-
-				FileSelector
-				{
-					id:							file
-					name:						"file"
-					label:  					qsTr("Save as: ")
-					filter:						"*.rds"
-					save:						true
-					fieldWidth:					180 * preferencesModel.uiScale 
-					visible:					modelSave.checked
-				}
-		}
-
-		RowLayout
-		{
-			Button
-			{
-				id: 							downloadModel
-				Layout.leftMargin:				25 * preferencesModel.uiScale
-				text: 							saveModel.checked ? qsTr("<b>Synchronize: On</b>") : qsTr("<b>Synchronize: Off</b>")
-				control.color: 					saveModel.checked ? "#1E90FF" : jaspTheme.buttonColorDisabled
-				control.textColor: 				saveModel.checked ? "white" : "black"
-				implicitHeight:					20 * preferencesModel.uiScale
-				onClicked: 						saveModel.click()
-				enabled:						predictors.count > 0 && target.count > 0 & modelSave.checked & file.value != ""
-				visible:						modelSave.checked
+				]
 			}
-			CheckBox
-			{
-				id:								saveModel
-				name:							"saveModel"
-				visible:						false
-			}	
+
+			CheckBox {
+				text: qsTr("Scale predictors")
+				name: "scaleEqualSD"
+				checked: true
+			}
+
+			CheckBox {
+				name: "seedBox"
+				text: qsTr("Set seed:")
+				childrenOnSameRow: true
+
+				DoubleField  {
+					name: "seed"
+					defaultValue: 1
+					min: -999999
+					max: 999999
+					fieldWidth: 60
+				}
+			}
 		}
-	}
 
-	CheckBox {
-		id: addClasses
-		name: "addClasses"
-		text: qsTr("Add predicted classes to data")
-		enabled:    predictors.count > 0 && target.count > 0
+		RadioButtonGroup {
+			title: qsTr("Number of Nearest Neighbors")
+			name: "modelOpt"
 
-		ComputedColumnField { 
-			id: 		classColumn
-			name: 		"classColumn"
-			text: 		qsTr("Column name: ")
-			fieldWidth: 120
-			visible:    addClasses.checked
+			RadioButton {
+				text: qsTr("Fixed")
+				name: "optimizationManual"
+
+				IntegerField {
+					name: "noOfNearestNeighbours"
+					text: qsTr("Nearest neighbors:")
+					defaultValue: 3
+					min: 1
+					max: 50000
+					fieldWidth: 60
+				}
+			}
+
+			RadioButton {
+				id: optimizeModel
+				text: qsTr("Optimized")
+				name: "optimizationError"
+				checked: true
+
+				IntegerField {
+					name: "maxK"
+					text: qsTr("Max. nearest neighbors:")
+					defaultValue: 10
+					min: 1
+					max: 50000
+					fieldWidth: 60
+				}
+			}
 		}
 	}
 }

@@ -25,85 +25,108 @@ import "./common" as ML
 
 Form 
 {
-	columns: 									1
 
 	FileSelector
 	{
 		id:										file
 		name:									"file"
 		label:  								qsTr("Trained model:")
-		filter:									"*.rds"
+		filter:									"*.jaspML"
 		save:									true
-		fieldWidth:								180 * preferencesModel.uiScale 
+		fieldWidth:								180 * preferencesModel.uiScale
 		visible:								modelSave.checked
 	}
 
-    VariablesForm 
+	VariablesForm
 	{
 		enabled: 								file.value != ""
-        
-		AvailableVariablesList 
-		{ 
-			name: 								"variables" 
+
+		AvailableVariablesList
+		{
+			name: 								"variables"
 		}
 
-        AssignedVariablesList 
+		AssignedVariablesList
 		{
-            id: 								predictors
-            name: 								"predictors"
-            title: 								qsTr("New predictors")
+			id: 								predictors
+			name: 								"predictors"
+			title: 								qsTr("Predictors")
 			allowedColumns: 					["scale", "ordinal", "nominal", "nominalText"]
 			allowAnalysisOwnComputedColumns: 	false
-        }
-    }
-
-	GridLayout
-	{
-		GroupBox
-		{
-			title: 								qsTr("Algorithmic Settings")
-
-			CheckBox 
-			{ 
-				text: 							qsTr("Scale predictors") 
-				name: 							"scaleEqualSD"
-				checked: 						true
-			}
 		}
+	}
 
-		GroupBox 
+	GroupBox
+	{
+		title: 								qsTr("Algorithmic Settings")
+
+		CheckBox
 		{
-			title: 								qsTr("Tables")
+			text: 							qsTr("Scale predictors")
+			name: 							"scaleEqualSD"
+			checked: 						true
+		}
+	}
+
+	GroupBox
+	{
+		title: 								qsTr("Tables")
+
+		CheckBox
+		{
+			name: 							"predictionsTable"
+			label:				 			"Predictions for new data"
+			checked:						true
 
 			CheckBox
 			{
-				name: 							"predictionsTable"
-				label:				 			"Predictions for new data"
-				checked:						true
+				name: 						"addPredictors"
+				label:						"Add predictors"
+			}
+		}
 
-				CheckBox
-				{
-					name: 						"addPredictors"
-					label:						"Add predictors"
-				}
+		RowLayout
+		{
+			
+			IntegerField
+			{
+				name:						"pfrom"
+				text:						qsTr("From")
+				defaultValue:				1
+				min:						1
+				max:						dataSetModel.rowCount()
+			}
+
+			IntegerField
+			{
+				name:						"pto"
+				text:						qsTr("to")
+				defaultValue: 				20
+				max:						dataSetModel.rowCount()
+				min:						1
 			}
 		}
 	}
 
-	CheckBox 
+	GroupBox
 	{
-		id: 									addClasses
-		name: 									"addClasses"
-		text: 									qsTr("Add predicted outcomes to data")
-		enabled:    							predictors.count > 0 & file.value != ""
+		title:								qsTr("Export Results")
 
-		ComputedColumnField 
-		{ 
-			id: 								classColumn
-			name: 								"classColumn"
-			text: 								qsTr("Column name: ")
-			fieldWidth: 						120
-			visible:    						addClasses.checked
+		CheckBox
+		{
+			id: 									addClasses
+			name: 									"addClasses"
+			text: 									qsTr("Add predicted outcomes to data")
+			enabled:    							predictors.count > 0 & file.value != ""
+
+			ComputedColumnField
+			{
+				id: 								classColumn
+				name: 								"classColumn"
+				text: 								qsTr("Column name: ")
+				fieldWidth: 						120
+				visible:    						addClasses.checked
+			}
 		}
 	}
 }

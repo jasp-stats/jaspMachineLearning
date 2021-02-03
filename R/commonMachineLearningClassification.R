@@ -99,7 +99,7 @@
   classificationTable$dependOn(options = c("noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "validationDataManual",
                                           "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
                                           "estimationMethod", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode",
-                                          "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "saveModel",
+                                          "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "saveModel", "file",
 										  "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"))
 
   # Add analysis-specific columns
@@ -254,9 +254,11 @@
     classificationTable$addRows(row)
   }
 
-  if(options[["saveModel"]]){
-	  class(classificationResult[["model"]]) <- c(class(classificationResult[["model"]]), "jaspClassification", "jaspMachineLearning")
-	  saveRDS(classificationResult[["model"]], options[["file"]])
+  if(options[["saveModel"]] && options[["file"]] != ""){
+      class(classificationResult[["model"]]) <- c(class(classificationResult[["model"]]), "jaspClassification", "jaspMachineLearning")
+      model <- classificationResult[["model"]]
+      model[["jaspVersion"]] <- .baseCitation
+      saveRDS(model, file = options[["file"]])
   }
 }
 

@@ -126,7 +126,7 @@ Description
 	GroupTitle
 	{
 		title:	qsTr("Prediction")
-		icon: 	"analysis-ml-clustering.svg"
+		icon: 	"analysis-ml-prediction.svg"
 	}
 	Analysis
 	{

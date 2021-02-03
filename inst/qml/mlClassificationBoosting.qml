@@ -25,269 +25,249 @@ import "./common" as ML
 
 Form {
 
-    VariablesForm {
-        AvailableVariablesList { name: "allVariablesList" }
-        AssignedVariablesList  { 
-            id: target
-            name: "target"    
-            title: qsTr("Target")    
-            singleVariable: true
+	VariablesForm {
+		AvailableVariablesList { name: "allVariablesList" }
+		AssignedVariablesList  {
+			id: target
+			name: "target"
+			title: qsTr("Target")
+			singleVariable: true
 			allowedColumns: ["nominal", "nominalText", "ordinal"]
-        }
-        AssignedVariablesList { 
-            id: predictors
-            name: "predictors"
-            title: qsTr("Predictors")
+		}
+		AssignedVariablesList {
+			id: predictors
+			name: "predictors"
+			title: qsTr("Predictors")
 			allowedColumns: ["scale", "nominal", "nominalText", "ordinal"]
 			allowAnalysisOwnComputedColumns: false
-        }
-    }
-
-    GroupBox {
-        title: qsTr("Tables")
-
-        CheckBox { 
-            text: qsTr("Confusion matrix") 
-            name: "confusionTable"
-            checked: true
-
-            CheckBox { 
-                text: qsTr("Display proportions")
-                name: "confusionProportions"
-            } 
-        }
-
-        CheckBox {
-            text: qsTr("Class proportions")
-            name: "classProportionsTable"
-        }  
-
-        CheckBox {
-            text: qsTr("Evaluation metrics")
-            name: "validationMeasures"
-        } 
-
-        CheckBox { 
-            name: "classBoostRelInfTable"
-            text: qsTr("Relative influence")            
-        }
-    }
-
-    GroupBox {
-        title: qsTr("Plots")
-
-        CheckBox { 
-            text: qsTr("Data split") 
-            name: "dataSplitPlot"
-            checked: true
-        }
-
-        CheckBox { 
-            name: "plotOOBChangeDev"
-            text: qsTr("Out-of-bag improvement")      
-        }
-
-        CheckBox { 
-            name: "rocCurve"
-            text: qsTr("ROC curves") 
-        }
-
-        CheckBox { 
-            name: "andrewsCurve"
-            text: qsTr("Andrews curves") 
-        }
-
-        CheckBox { 
-            name: "plotDeviance"
-            text: qsTr("Deviance")             
-        }
-
-        CheckBox { 
-            name: "plotRelInf"
-            text: qsTr("Relative influence")   
-        }
-
-        CheckBox { 
-            name: "decisionBoundary"
-            text: qsTr("Decision boundary matrix")
-
-            RowLayout {
-
-                CheckBox {
-                    name: "plotLegend"
-                    text: qsTr("Legend")
-                    checked: true 
-                }
-
-                CheckBox {
-                    name: "plotPoints"
-                    text: qsTr("Points")
-                    checked: true 
-                }
-            }
-        }
-    }
-
-    
-    ML.DataSplit {
-        leaveOneOutVisible: false
-        trainingValidationSplit: optimizeModel.checked
-    }
-
-    Section {
-        title: qsTr("Training Parameters")
-  
-        GroupBox {
-            title: qsTr("Algorithmic Settings")
-
-            DoubleField  { 
-                name: "shrinkage"
-                text: qsTr("Shrinkage:")                    
-                defaultValue: 0.1 
-                min: 0
-                max: 1     
-                fieldWidth: 60 
-            }
-
-            IntegerField { 
-                name: "intDepth" 
-                text: qsTr("Interaction depth:")            
-                defaultValue: 1   
-                min: 1
-                max: 99    
-                fieldWidth: 60 
-            }
-
-            IntegerField { 
-                name: "nNode"    
-                text: qsTr("Min. observations in node:")
-                defaultValue: 10  
-                min: 1
-                max: 50000
-                fieldWidth: 60 
-            }
-
-            PercentField { 
-                name: "bagFrac"  
-                text: qsTr("Training data used per tree:")  
-                defaultValue: 50                                        
-            }
-
-            CheckBox { 
-                text: qsTr("Scale predictors") 
-                name: "scaleEqualSD"
-                checked: true
-            }
-
-            CheckBox { 
-                name: "seedBox"
-                text: qsTr("Set seed:")
-                childrenOnSameRow: true
-
-                DoubleField  { 
-                    name: "seed"
-                    defaultValue: 1
-                    min: -999999
-                    max: 999999
-                    fieldWidth: 60 
-                }
-            }
-        }
-
-        RadioButtonGroup {
-            title: qsTr("Number of Trees")
-            name: "modelOpt"
-
-            RadioButton { 
-                text: qsTr("Fixed")                     
-                name: "optimizationManual" 
-
-                IntegerField { 
-                    name: "noOfTrees"
-                    text: qsTr("Trees:")
-                    defaultValue: 100
-                    min: 1
-                    max: 50000
-                    fieldWidth: 60
-                }
-            }
-            
-            RadioButton { 
-                id: optimizeModel
-                text: qsTr("Optimized")
-                name: "optimizationOOB"
-                checked: true 
-
-                IntegerField { 
-                    name: "maxTrees"
-                    text: qsTr("Max. trees:") 
-                    defaultValue: 100
-                    min: 3
-                    max: 50000
-                    fieldWidth: 60
-                }
-            }
-        }
-    }
-
-	GroupBox 
-	{
-
-		CheckBox 
-		{ 
-			id: 								modelSave  
-			name: 								"modelSave"
-			text: 								qsTr("Save trained model")
-			enabled: 							predictors.count > 1 && target.count > 0
-			onCheckedChanged:					if(!checked) saveModel.checked = false
-
-				FileSelector
-				{
-					id:							file
-					name:						"file"
-					label:  					qsTr("Save as: ")
-					filter:						"*.rds"
-					save:						true
-					fieldWidth:					180 * preferencesModel.uiScale 
-					visible:					modelSave.checked
-				}
-		}
-
-		RowLayout
-		{
-			Button
-			{
-				id: 							downloadModel
-				Layout.leftMargin:				25 * preferencesModel.uiScale
-				text: 							saveModel.checked ? qsTr("<b>Synchronize: On</b>") : qsTr("<b>Synchronize: Off</b>")
-				control.color: 					saveModel.checked ? "#1E90FF" : jaspTheme.buttonColorDisabled
-				control.textColor: 				saveModel.checked ? "white" : "black"
-				implicitHeight:					20 * preferencesModel.uiScale
-				onClicked: 						saveModel.click()
-				enabled:						predictors.count > 1 && target.count > 0 & modelSave.checked & file.value != ""
-				visible:						modelSave.checked
-			}
-			CheckBox
-			{
-				id:								saveModel
-				name:							"saveModel"
-				visible:						false
-			}	
 		}
 	}
 
-	CheckBox {
-		id: addClasses
-		name: "addClasses"
-		text: qsTr("Add predicted classes to data")
-		enabled:    predictors.count > 1 && target.count > 0
+	GroupBox {
+		title: qsTr("Tables")
 
-		ComputedColumnField { 
-			id: 		classColumn
-			name: 		"classColumn"
-			text: 		qsTr("Column name: ")
-			fieldWidth: 120
-			visible:    addClasses.checked
+		CheckBox {
+			text: qsTr("Confusion matrix")
+			name: "confusionTable"
+			checked: true
+
+			CheckBox {
+				text: qsTr("Display proportions")
+				name: "confusionProportions"
+			}
+		}
+
+		CheckBox {
+			text: qsTr("Class proportions")
+			name: "classProportionsTable"
+		}
+
+		CheckBox {
+			text: qsTr("Evaluation metrics")
+			name: "validationMeasures"
+		}
+
+		CheckBox {
+			name: "classBoostRelInfTable"
+			text: qsTr("Relative influence")
+		}
+	}
+
+	GroupBox {
+		title: qsTr("Plots")
+
+		CheckBox {
+			text: qsTr("Data split")
+			name: "dataSplitPlot"
+			checked: true
+		}
+
+		CheckBox {
+			name: "plotOOBChangeDev"
+			text: qsTr("Out-of-bag improvement")
+		}
+
+		CheckBox {
+			name: "rocCurve"
+			text: qsTr("ROC curves")
+		}
+
+		CheckBox {
+			name: "andrewsCurve"
+			text: qsTr("Andrews curves")
+		}
+
+		CheckBox {
+			name: "plotDeviance"
+			text: qsTr("Deviance")
+		}
+
+		CheckBox {
+			name: "plotRelInf"
+			text: qsTr("Relative influence")
+		}
+
+		CheckBox {
+			name: "decisionBoundary"
+			text: qsTr("Decision boundary matrix")
+
+			RowLayout {
+
+				CheckBox {
+					name: "plotLegend"
+					text: qsTr("Legend")
+					checked: true
+				}
+
+				CheckBox {
+					name: "plotPoints"
+					text: qsTr("Points")
+					checked: true
+				}
+			}
+		}
+	}
+
+	GroupBox
+	{
+		title:				qsTr("Export Results")
+
+		CheckBox {
+			id: addClasses
+			name: "addClasses"
+			text: qsTr("Add predicted classes to data")
+			enabled:    predictors.count > 1 && target.count > 0
+
+			ComputedColumnField {
+				id: 		classColumn
+				name: 		"classColumn"
+				text: 		qsTr("Column name: ")
+				placeholderText: 	qsTr("e.g., predicted")
+				fieldWidth: 120
+				visible:    addClasses.checked
+			}
+		}
+
+		CheckBox
+		{
+			id: 								saveModel
+			name: 								"saveModel"
+			text: 								qsTr("Save trained model")
+			enabled: 							predictors.count > 1 && target.count > 0
+
+			FileSelector
+			{
+				id:							file
+				name:						"file"
+				label:  					qsTr("Save as: ")
+				placeholderText: 			qsTr("model.jaspML")
+				filter:						"*.jaspML"
+				save:						true
+				fieldWidth:					180 * preferencesModel.uiScale
+				visible:					saveModel.checked
+			}
+		}
+	}
+
+
+	ML.DataSplit {
+		leaveOneOutVisible: false
+		trainingValidationSplit: optimizeModel.checked
+	}
+
+	Section {
+		title: qsTr("Training Parameters")
+
+		GroupBox {
+			title: qsTr("Algorithmic Settings")
+
+			DoubleField  {
+				name: "shrinkage"
+				text: qsTr("Shrinkage:")
+				defaultValue: 0.1
+				min: 0
+				max: 1
+				fieldWidth: 60
+			}
+
+			IntegerField {
+				name: "intDepth"
+				text: qsTr("Interaction depth:")
+				defaultValue: 1
+				min: 1
+				max: 99
+				fieldWidth: 60
+			}
+
+			IntegerField {
+				name: "nNode"
+				text: qsTr("Min. observations in node:")
+				defaultValue: 10
+				min: 1
+				max: 50000
+				fieldWidth: 60
+			}
+
+			PercentField {
+				name: "bagFrac"
+				text: qsTr("Training data used per tree:")
+				defaultValue: 50
+			}
+
+			CheckBox {
+				text: qsTr("Scale predictors")
+				name: "scaleEqualSD"
+				checked: true
+			}
+
+			CheckBox {
+				name: "seedBox"
+				text: qsTr("Set seed:")
+				childrenOnSameRow: true
+
+				DoubleField  {
+					name: "seed"
+					defaultValue: 1
+					min: -999999
+					max: 999999
+					fieldWidth: 60
+				}
+			}
+		}
+
+		RadioButtonGroup {
+			title: qsTr("Number of Trees")
+			name: "modelOpt"
+
+			RadioButton {
+				text: qsTr("Fixed")
+				name: "optimizationManual"
+
+				IntegerField {
+					name: "noOfTrees"
+					text: qsTr("Trees:")
+					defaultValue: 100
+					min: 1
+					max: 50000
+					fieldWidth: 60
+				}
+			}
+
+			RadioButton {
+				id: optimizeModel
+				text: qsTr("Optimized")
+				name: "optimizationOOB"
+				checked: true
+
+				IntegerField {
+					name: "maxTrees"
+					text: qsTr("Max. trees:")
+					defaultValue: 100
+					min: 3
+					max: 50000
+					fieldWidth: 60
+				}
+			}
 		}
 	}
 }
