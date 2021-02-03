@@ -122,4 +122,16 @@ Description
 		title:	qsTr("Random Forest Clustering")
 		func:	"mlClusteringRandomForest"
 	}
+
+	GroupTitle
+	{
+		title:	qsTr("Prediction")
+		icon: 	"analysis-ml-clustering.svg"
+	}
+	Analysis
+	{
+		menu:	qsTr("Prediction")
+		title:	qsTr("Prediction")
+		func:	"mlPrediction"
+	}
 }

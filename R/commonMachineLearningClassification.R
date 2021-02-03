@@ -99,7 +99,7 @@
   classificationTable$dependOn(options = c("noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "validationDataManual",
                                           "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
                                           "estimationMethod", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode",
-                                          "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual",
+                                          "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "saveModel",
 										  "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"))
 
   # Add analysis-specific columns
@@ -252,6 +252,11 @@
     if (options[["modelOpt"]] != "optimizationManual")
       row <- cbind(row, nvalid = nValid, validAcc = classificationResult[["validAcc"]])
     classificationTable$addRows(row)
+  }
+
+  if(options[["saveModel"]]){
+	  class(classificationResult[["model"]]) <- c(class(classificationResult[["model"]]), "jaspClassification", "jaspMachineLearning")
+	  saveRDS(classificationResult[["model"]], options[["file"]])
   }
 }
 
