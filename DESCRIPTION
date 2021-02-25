@@ -9,6 +9,8 @@ Maintainer: JASP Team <info@jasp-stats.org>
 Description: A module for Machine Learning mastery
 License: GPL (>= 2)
 Encoding: UTF-8
+Depends:
+  kknn
 Imports:
   AUC,
   cluster,
@@ -23,7 +25,6 @@ Imports:
   glmnet,
   jaspBase,
   jaspGraphs,
-  kknn,
   MASS,
   plyr,
   randomForest,
