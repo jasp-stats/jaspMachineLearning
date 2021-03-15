@@ -1,16 +1,23 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-03-17 05:18+0000\n"
+"Last-Translator: Laura Durans <lauraadurans@gmail.com>\n"
+"Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/pt/>\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.5.2-dev\n"
 "X-Language: en_US\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
 
+#, fuzzy
 msgctxt "DataSplit|"
 msgid "Data Split Preferences"
-msgstr ""
+msgstr "Preferências de divisão de dados"
 
 msgctxt "DataSplit|"
 msgid "Holdout Test Data"
@@ -18,7 +25,7 @@ msgstr ""
 
 msgctxt "DataSplit|"
 msgid "Sample"
-msgstr ""
+msgstr "Amostra"
 
 msgctxt "DataSplit|"
 msgid "% of all data"
@@ -34,15 +41,15 @@ msgstr ""
 
 msgctxt "DataSplit|"
 msgid "None"
-msgstr ""
+msgstr "Nenhum"
 
 msgctxt "DataSplit|"
 msgid "Training and Validation Data"
-msgstr ""
+msgstr "Dados de treino e validação"
 
 msgctxt "DataSplit|"
 msgid "% for validation data"
-msgstr ""
+msgstr "% para dados de validação"
 
 msgctxt "DataSplit|"
 msgid "K-fold with"
@@ -62,7 +69,7 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "Predictors"
-msgstr ""
+msgstr "Preditores"
 
 #, fuzzy
 msgctxt "mlClassificationBoosting|"
@@ -75,19 +82,19 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "Display proportions"
-msgstr ""
+msgstr "Mostrar proporções"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Class proportions"
-msgstr ""
+msgstr "Proporções de categoria"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "Métricas de avaliação"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Relative influence"
-msgstr ""
+msgstr "Influência relativa"
 
 #, fuzzy
 msgctxt "mlClassificationBoosting|"
@@ -96,7 +103,7 @@ msgstr "Diagramas"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Data split"
-msgstr ""
+msgstr "Divisão de dados"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Out-of-bag improvement"
@@ -108,39 +115,39 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "Gráfico de Andrews"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Deviance"
-msgstr ""
+msgstr "Desvio"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Decision boundary matrix"
-msgstr ""
+msgstr "Matriz de limites de decisão"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Points"
-msgstr ""
+msgstr "Pontos"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parâmetros de treinamento"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Configurações do algoritmo"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Shrinkage:"
-msgstr ""
+msgstr "Encolhimento:"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Interaction depth:"
-msgstr ""
+msgstr "Profundidade da interação:"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Min. observations in node:"
@@ -148,43 +155,47 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "Training data used per tree:"
-msgstr ""
+msgstr "Dados de treinamento utilizados por árvore:"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Scale predictors"
-msgstr ""
+msgstr "Preditores de escala"
 
+#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Set seed:"
-msgstr ""
+msgstr "Definir semente:"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Number of Trees"
-msgstr ""
+msgstr "Número de árvores"
 
+#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Fixed"
-msgstr ""
+msgstr "Fixo"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Trees:"
-msgstr ""
+msgstr "Árvores:"
 
+#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Optimized"
-msgstr ""
+msgstr "Otimizado"
 
+#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Max. trees:"
-msgstr ""
+msgstr "Máximo de árvores:"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Add predicted classes to data"
-msgstr ""
+msgstr "Adicionar classes previstas aos dados"
 
 msgctxt "mlClassificationBoosting|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>Salvar Modelo</b>"
 
 msgctxt "mlClassificationKnn|"
 msgid "Target"
@@ -192,7 +203,7 @@ msgstr ""
 
 msgctxt "mlClassificationKnn|"
 msgid "Predictors"
-msgstr ""
+msgstr "Preditores"
 
 #, fuzzy
 msgctxt "mlClassificationKnn|"
@@ -205,15 +216,15 @@ msgstr ""
 
 msgctxt "mlClassificationKnn|"
 msgid "Display proportions"
-msgstr ""
+msgstr "Mostrar proporções"
 
 msgctxt "mlClassificationKnn|"
 msgid "Class proportions"
-msgstr ""
+msgstr "Proporções de categoria"
 
 msgctxt "mlClassificationKnn|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "Métricas de avaliação"
 
 #, fuzzy
 msgctxt "mlClassificationKnn|"
@@ -222,83 +233,85 @@ msgstr "Diagramas"
 
 msgctxt "mlClassificationKnn|"
 msgid "Data split"
-msgstr ""
+msgstr "Divisão dos dados"
 
 msgctxt "mlClassificationKnn|"
 msgid "Classification accuracy"
-msgstr ""
+msgstr "Precisão da classificação"
 
 msgctxt "mlClassificationKnn|"
 msgid "ROC curves"
-msgstr ""
+msgstr "Curva ROC"
 
 msgctxt "mlClassificationKnn|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "Gráfico de Andrews"
 
+#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Decision boundary matrix"
-msgstr ""
+msgstr "Matriz de limites de decisão"
 
 msgctxt "mlClassificationKnn|"
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 msgctxt "mlClassificationKnn|"
 msgid "Points"
-msgstr ""
+msgstr "Pontos"
 
 msgctxt "mlClassificationKnn|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parâmetros de treinamento"
 
 msgctxt "mlClassificationKnn|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Configurações do algoritmo"
 
 msgctxt "mlClassificationKnn|"
 msgid "Weights:"
-msgstr ""
+msgstr "Pesos:"
 
 msgctxt "mlClassificationKnn|"
 msgid "Distance:"
-msgstr ""
+msgstr "Distância:"
 
 msgctxt "mlClassificationKnn|"
 msgid "Scale predictors"
-msgstr ""
+msgstr "Preditores de escala"
 
 msgctxt "mlClassificationKnn|"
 msgid "Set seed:"
-msgstr ""
+msgstr "Definir semente:"
 
 msgctxt "mlClassificationKnn|"
 msgid "Number of Nearest Neighbors"
-msgstr ""
+msgstr "Número de vizinhos próximos"
 
 msgctxt "mlClassificationKnn|"
 msgid "Fixed"
-msgstr ""
+msgstr "Fixo"
 
 msgctxt "mlClassificationKnn|"
 msgid "Nearest neighbors:"
-msgstr ""
+msgstr "Vizinhos próximos:"
 
+#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Optimized"
-msgstr ""
+msgstr "Otimizado"
 
 msgctxt "mlClassificationKnn|"
 msgid "Max. nearest neighbors:"
-msgstr ""
+msgstr "Máx. vizinhos próximos:"
 
 msgctxt "mlClassificationKnn|"
 msgid "Add predicted classes to data"
-msgstr ""
+msgstr "Adicionar classes previstas aos dados"
 
 msgctxt "mlClassificationKnn|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>Salvar Modelo</b>"
 
 msgctxt "mlClassificationLda|"
 msgid "Target"
