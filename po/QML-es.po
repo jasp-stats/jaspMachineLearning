@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-03-13 16:02+0000\n"
+"PO-Revision-Date: 2021-03-17 05:18+0000\n"
 "Last-Translator: Paulina Elizabeth Robalino <paulina.e.robalino@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/es/>\n"
@@ -14,10 +14,9 @@ msgstr ""
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Machine Learning"
-msgstr "Aprendizaje automático"
+msgstr "Machine Learning"
 
 #, fuzzy
 msgctxt "Description|"
