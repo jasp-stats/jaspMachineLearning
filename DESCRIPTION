@@ -6,7 +6,7 @@ Date: 2020-04-08
 Author: JASP Team
 Website: www.jasp-stats.org
 Maintainer: JASP Team <info@jasp-stats.org>
-Description: A module for Machine Learning mastery
+Description: Explore the relation between variables using data-driven methods for regression, classification, and clustering
 License: GPL (>= 2)
 Encoding: UTF-8
 Depends:
