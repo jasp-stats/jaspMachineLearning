@@ -20,7 +20,7 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
   # Preparatory work
   dataset <- .readDataClusteringAnalyses(dataset, options)
   .errorHandlingClusteringAnalyses(dataset, options, type = "densitybased")
-  
+
   # Check if analysis is ready to run
   ready  <- .clusterAnalysesReady(options)
 
@@ -29,7 +29,7 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
 
   # If the user wants to add the clusters to the data set
   .clusteringAddClustersToData(dataset, options, jaspResults, ready)
-  
+
   # Create the cluster information table
   .clusterInformationTable(options, jaspResults, ready, position = 2, type = "densitybased")
 
@@ -38,7 +38,7 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
 
   # Create the cluster evaluation metrics table
   .clusterEvaluationMetrics(dataset, options, jaspResults, ready, position = 4)
-  
+
   # Create the k-distance plot
   .densityBasedClusteringKdistPlot(dataset, options, jaspResults, ready, position = 5)
 
@@ -54,7 +54,7 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
 }
 
 .densityBasedClustering <- function(dataset, options, jaspResults){
- 
+
   if (options[["distance"]] == "Correlated densities") {
     dfit <- dbscan::dbscan(as.dist(1-cor(t(as.data.frame(dataset[, options[["predictors"]]])), method = "pearson")), eps = options[['eps']], minPts = options[['minPts']])
   } else {
@@ -65,7 +65,7 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
   clusters <- ifelse(noisePoints > 0, yes = length(table(dfit$cluster)) - 1, no = length(table(dfit$cluster)))
 
   m <- dim(as.data.frame(dataset[, options[["predictors"]]]))[2]
-  
+
   wss <- numeric(clusters)
   for(i in 1:clusters) {
     if (m == 1) {
@@ -91,7 +91,7 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
   aic <- D + 2*m*k
   bic <- D + log(n)*m*k
 
-  nullClusters <- oneClusters <- 0 
+  nullClusters <- oneClusters <- 0
   for (i in 1:length(dfit$cluster)) {
     if (dfit$cluster[i] == 0) {
       nullClusters <- nullClusters + 1
@@ -99,10 +99,10 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
       oneClusters <- oneClusters + 1
     }
   }
-  
+
   zeroMark <- ifelse(nullClusters == length(dfit$cluster), yes = 1, no = 0)
   oneMark <- ifelse(oneClusters == length(dfit$cluster), yes = 1, no = 0)
-  
+
   if (oneMark == 0 && zeroMark == 0){
     if(options[["distance"]] == "Normal densities"){
       silhouettes <- summary(cluster::silhouette(dfit$cluster, dist(dataset[, options[["predictors"]]])))
@@ -167,18 +167,21 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
     suggestedLine <- NULL
   else
     suggestedLine <- data.frame(xstart = xBreaks[1], xend = xBreaks[length(xBreaks)], ystart = yKnee, yend = yKnee)
-  
+
   lineData <- data.frame(xstart = xBreaks[1], xend = xBreaks[length(xBreaks)], ystart = options[["eps"]], yend = options[["eps"]])
- 
-  p <-  ggplot2::ggplot(data = d, ggplot2::aes(x = x, y = y)) + 
+
+  p <-  ggplot2::ggplot(data = d, ggplot2::aes(x = x, y = y)) +
         ggplot2::scale_x_continuous(name = gettext("Points sorted by distance"), breaks = xBreaks) +
         ggplot2::scale_y_continuous(name = gettextf('%s-nearest neighbors \ndistance', options[['minPts']]), breaks = yBreaks)
-  
+
   if (!is.null(suggestedLine)) {
         p <-  p + ggplot2::geom_segment(ggplot2::aes(x = xstart, xend = xend, y = ystart, yend = yend), data = suggestedLine, linetype = 2, color = "darkred") +
-                  ggrepel::geom_text_repel(data = suggestedLine, ggplot2::aes(label= gettextf("Maximum curvature = %s", round(yend, 2)), x = xstart, y = yend), hjust = 0, vjust = -0.5, color = "darkred")
+          ggplot2::geom_text(data = suggestedLine, ggplot2::aes(label= gettextf("Maximum curvature = %s", round(yend, 2)), x = xstart, y = yend + 0.05 * abs(yend)),
+                             color = "darkred", vjust = "inward", hjust = "inward")
+      # ggrepel::geom_text_repel(data = suggestedLine, ggplot2::aes(label= gettextf("Maximum curvature = %s", round(yend, 2)), x = xstart, y = yend),
+      #                             vjust = "inward", hjust = "inward", color = "darkred")
   }
-  
+
   p <-  p + ggplot2::geom_segment(ggplot2::aes(x = xstart, xend = xend, y = ystart, yend = yend), data = lineData, linetype = 2, color = "darkgray") +
         jaspGraphs::geom_line()
   p <-  jaspGraphs::themeJasp(p)
@@ -190,7 +193,7 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
 # the algorithm should probably be rewritten in a way that does not require recursion
 findCutoff <- function (x, y, method = "first", frac.of.steepest.slope = 0.5) {
   stack <- Cstack_info()[names(Cstack_info()) == "eval_depth"] * 6 # each run adds 6 to the stack
-  if (getOption("expressions") <= (stack + 6)) 
+  if (getOption("expressions") <= (stack + 6))
     stop(gettext("End of recursion reached without converging"))
 
   is.invalid <- function(x) {
@@ -202,7 +205,7 @@ findCutoff <- function (x, y, method = "first", frac.of.steepest.slope = 0.5) {
   if (length(x) != length(y)) {
       stop(gettext("x and y must be of equal length."))
   }
-  
+
   new.x <- seq(from = min(x), to = max(x), length.out = length(x))
   sp <- smooth.spline(x, y)
   new.y <- predict(sp, new.x)$y
@@ -219,13 +222,13 @@ findCutoff <- function (x, y, method = "first", frac.of.steepest.slope = 0.5) {
       ts <- (max(new.x) - min(new.x))/length(new.x)
       p <- 3
       if (is.null(filt.length)) {
-          filt.length <- min(largest.odd.num.lte(length(new.x)), 
+          filt.length <- min(largest.odd.num.lte(length(new.x)),
               7)
       }
       if (filt.length <= p) {
           stop(gettext("Need more points to find cutoff."))
       }
-      signal::sgolayfilt(y, p = p, n = filt.length, ts = ts, 
+      signal::sgolayfilt(y, p = p, n = filt.length, ts = ts,
           ...)
   }
   first.deriv <- smoothen(new.y, m = 1)
@@ -241,17 +244,17 @@ findCutoff <- function (x, y, method = "first", frac.of.steepest.slope = 0.5) {
   if ((first.deriv.sign == -1) && (second.deriv.sign == -1)) {
       x.sign <- -1
   }
-  else if ((first.deriv.sign == -1) && (second.deriv.sign == 
+  else if ((first.deriv.sign == -1) && (second.deriv.sign ==
       1)) {
       y.sign <- -1
   }
-  else if ((first.deriv.sign == 1) && (second.deriv.sign == 
+  else if ((first.deriv.sign == 1) && (second.deriv.sign ==
       1)) {
       x.sign <- -1
       y.sign <- -1
   }
   if ((x.sign == -1) || (y.sign == -1)) {
-      results <- findCutoff(x.sign * x, y.sign * y, method = method, 
+      results <- findCutoff(x.sign * x, y.sign * y, method = method,
           frac.of.steepest.slope = frac.of.steepest.slope)
       return(list(x = x.sign * results$x, y = y.sign * results$y))
   }
@@ -260,7 +263,7 @@ findCutoff <- function (x, y, method = "first", frac.of.steepest.slope = 0.5) {
       if (is.invalid(frac.of.steepest.slope)) {
           stop(gettext("Need to specify fraction of maximum slope."))
       }
-      if (frac.of.steepest.slope <= 0 || frac.of.steepest.slope > 
+      if (frac.of.steepest.slope <= 0 || frac.of.steepest.slope >
           1) {
           stop(gettext("Fraction of maximum slope must be positive and be less than or equal to 1."))
       }
@@ -283,7 +286,7 @@ findCutoff <- function (x, y, method = "first", frac.of.steepest.slope = 0.5) {
   }
 }
 
-findInverse <- function (x, y, y0) 
+findInverse <- function (x, y, y0)
 {
     if (y0 < min(y) | max(y) < y0) {
         return(NA)

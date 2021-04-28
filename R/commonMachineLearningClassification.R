@@ -18,19 +18,19 @@
 .readDataClassificationAnalyses <- function(dataset, options) {
   if (is.null(dataset))
     dataset <- .readDataClassificationRegressionAnalyses(dataset, options)
-  
+
   if (length(unlist(options[["predictors"]])) > 0 && options[["scaleEqualSD"]])
     dataset[,options[["predictors"]]] <- .scaleNumericData(dataset[,options[["predictors"]], drop = FALSE])
-  
+
   if (options[["target"]] != "")
     dataset[, options[["target"]]] <- factor(dataset[, options[["target"]]])
-  
+
   return(dataset)
 }
 
 .errorHandlingClassificationAnalyses <- function(dataset, options, type) {
   .errorHandlingClassificationRegressionAnalyses(dataset, options, type)
-  
+
   # add checks specifically for classification analyses here
 }
 
@@ -60,7 +60,7 @@
 
   if(ready){
     .classificationFormula(options, jaspResults)
-    
+
   if(type == "knn"){
     classificationResult <- .knnClassification(dataset, options, jaspResults)
   } else if(type == "lda"){
@@ -103,24 +103,24 @@
     classificationTable$addColumnInfo(name = 'nn',       title = gettext('Nearest neighbors'), type = 'integer')
     classificationTable$addColumnInfo(name = 'weights',  title = gettext('Weights'),           type = 'string')
     classificationTable$addColumnInfo(name = 'distance', title = gettext('Distance'),          type = 'string')
-  
+
   } else if (type =="lda") {
 
     classificationTable$addColumnInfo(name = 'lda',    title = gettext('Linear Discriminants'), type = 'integer')
     classificationTable$addColumnInfo(name = 'method', title = gettext('Method'),               type = 'string')
-  
+
   } else if (type == "randomForest") {
-    
+
     classificationTable$addColumnInfo(name = 'trees', title = gettext('Trees'),                type = 'integer')
     classificationTable$addColumnInfo(name = 'preds', title = gettext('Predictors per split'), type = 'integer')
-  
+
   } else if (type == "boosting") {
 
     classificationTable$addColumnInfo(name = 'trees',     title = gettext('Trees'),     type = 'integer')
     classificationTable$addColumnInfo(name = 'shrinkage', title = gettext('Shrinkage'), type = 'number')
-  
+
   }
-  
+
   # Add common columns
   classificationTable$addColumnInfo(name = 'ntrain', title = gettext('n(Train)'), type = 'integer')
   if(options[["modelOpt"]] != "optimizationManual")
@@ -129,7 +129,7 @@
   if(options[["modelOpt"]] != "optimizationManual")
     classificationTable$addColumnInfo(name = 'validAcc', title = gettext('Validation Accuracy'), type = 'number')
   classificationTable$addColumnInfo(name = 'testAcc', title = gettext('Test Accuracy'), type = 'number')
-  
+
   # Add analysis-specific columns after common columns
   if(type == "randomForest"){
     classificationTable$addColumnInfo(name = 'oob', title = gettext('OOB Accuracy'), type = 'number')
@@ -141,7 +141,7 @@
     classificationTable$addFootnote(gettextf("Please provide a target variable and at least %i predictor variable(s).", requiredVars))
 
   jaspResults[["classificationTable"]] <- classificationTable
-  
+
   if(!ready)  return()
 
   .classification(dataset, options, jaspResults, ready, type = type)
@@ -162,7 +162,7 @@
       nTrain <- nTrain - 1
     }
   }
-  
+
   # Fill the table per analysis
   if(type == "knn"){
 
@@ -174,11 +174,11 @@
     }
 
     distance  <- ifelse(classificationResult[["distance"]] == 1, yes = gettext("Manhattan"), no = gettext("Euclidean"))
-    row <- data.frame(nn = classificationResult[["nn"]], 
-                      weights = classificationResult[["weights"]], 
-                      distance = distance, 
-                      ntrain = nTrain, 
-                      ntest = classificationResult[["ntest"]], 
+    row <- data.frame(nn = classificationResult[["nn"]],
+                      weights = classificationResult[["weights"]],
+                      distance = distance,
+                      ntrain = nTrain,
+                      ntest = classificationResult[["ntest"]],
                       testAcc = classificationResult[["testAcc"]])
     if(options[["modelOpt"]] != "optimizationManual")
       row <- cbind(row, nvalid = nValid, validAcc = classificationResult[["validAcc"]])
@@ -186,15 +186,15 @@
 
   } else if(type =="lda"){
 
-    method <- base::switch(options[["estimationMethod"]], 
-      "moment" = gettext("Moment"), 
-      "mle"    = gettext("MLE"), 
+    method <- base::switch(options[["estimationMethod"]],
+      "moment" = gettext("Moment"),
+      "mle"    = gettext("MLE"),
       "covMve" = gettext("MVE"),
       "t"      = gettext("t")
     )
-    row <- data.frame(lda = ncol(classificationResult[["scaling"]]), 
-                      method = method, 
-                      ntrain = nTrain, 
+    row <- data.frame(lda = ncol(classificationResult[["scaling"]]),
+                      method = method,
+                      ntrain = nTrain,
                       ntest = classificationResult[["ntest"]],
                       testAcc = classificationResult[["testAcc"]])
     classificationTable$addRows(row)
@@ -204,11 +204,11 @@
     if(options[["modelOpt"]] == "optimizationError")
       classificationTable$addFootnote(gettext("The model is optimized with respect to the <i>out-of-bag accuracy</i>."))
 
-    row <- data.frame(trees = classificationResult[["noOfTrees"]], 
-                      preds = classificationResult[["predPerSplit"]], 
-                      ntrain = nTrain, 
-                      ntest = classificationResult[["ntest"]], 
-                      testAcc = classificationResult[["testAcc"]], 
+    row <- data.frame(trees = classificationResult[["noOfTrees"]],
+                      preds = classificationResult[["predPerSplit"]],
+                      ntrain = nTrain,
+                      ntest = classificationResult[["ntest"]],
+                      testAcc = classificationResult[["testAcc"]],
                       oob = classificationResult[["oobAccuracy"]])
     if(options[["modelOpt"]] != "optimizationManual")
       row <- cbind(row, nvalid = nValid, validAcc = classificationResult[["validAcc"]])
@@ -219,9 +219,9 @@
     if(options[["modelOpt"]] == "optimizationOOB")
       classificationTable$addFootnote(gettext("The model is optimized with respect to the <i>out-of-bag accuracy</i>."))
 
-    row <- data.frame(trees = classificationResult[["noOfTrees"]], 
-                      shrinkage = options[["shrinkage"]], 
-                      ntrain = nTrain, 
+    row <- data.frame(trees = classificationResult[["noOfTrees"]],
+                      shrinkage = options[["shrinkage"]],
+                      ntrain = nTrain,
                       ntest = classificationResult[["ntest"]],
                       testAcc = classificationResult[["testAcc"]])
     if(options[["modelOpt"]] != "optimizationManual")
@@ -234,84 +234,84 @@
 .classificationConfusionTable <- function(dataset, options, jaspResults, ready, position){
 
   if (!is.null(jaspResults[["confusionTable"]]) || !options[["confusionTable"]]) return()
-  
+
   confusionTable <- createJaspTable(title = gettext("Confusion Matrix"))
   confusionTable$position <- position
   confusionTable$dependOn(options = c("noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "validationDataManual",
-                                      "target", "predictors", "seed", "seedBox", "confusionTable", "confusionProportions", "maxK", "noOfFolds", "modelValid", 
+                                      "target", "predictors", "seed", "seedBox", "confusionTable", "confusionProportions", "maxK", "noOfFolds", "modelValid",
                                       "estimationMethod", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode",
                                       "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual"))
-  
+
   jaspResults[["confusionTable"]] <- confusionTable
-  
+
   if(ready) {
 
     classificationResult <- jaspResults[["classificationResult"]]$object
-    
+
     confusionTable$addColumnInfo(name = "obs_name",    title = "", type = "string")
     confusionTable$addColumnInfo(name = "varname_obs", title = "", type = "string")
 
     confTable <- classificationResult[["confTable"]]
     if(options[["confusionProportions"]])
       confTable <- round(confTable / classificationResult[["ntest"]], 2)
-    
+
     confusionTable[["obs_name"]] <- c(gettext("Observed"), rep("", nrow(confTable)-1))
     confusionTable[["varname_obs"]] <- colnames(confTable)
-    
+
     for(i in 1:length(rownames(confTable))){
       name <- paste("varname_pred", i, sep = "")
       confusionTable$addColumnInfo(name = name, title = rownames(confTable)[i], type = "integer", overtitle = gettext("Predicted"))
-      confusionTable[[name]] <- confTable[i, ]  
+      confusionTable[[name]] <- confTable[i, ]
     }
-    
+
   } else if(options[["target"]] != "" && !ready) {
-    
+
     confusionTable$addColumnInfo(name = "obs_name",    title = "", type = "string")
     confusionTable$addColumnInfo(name = "varname_obs", title = "", type = "string")
 
     factorLevels <- levels(dataset[, options[["target"]]])
-    
+
     confusionTable[["obs_name"]] <- c(gettext("Observed"), rep("", length(factorLevels) - 1))
     confusionTable[["varname_obs"]] <- factorLevels
-    
-    for(i in 1:length(factorLevels)){ 
+
+    for(i in 1:length(factorLevels)){
       name <- paste("varname_pred", i, sep = "")
       confusionTable$addColumnInfo(name = name, title = factorLevels[i], type = "integer", overtitle = gettext("Predicted"))
-      confusionTable[[name]] <- rep(".", length(factorLevels)) 
+      confusionTable[[name]] <- rep(".", length(factorLevels))
     }
-    
+
   } else {
-    
+
     confusionTable$addColumnInfo(name = "obs_name"    ,  title = "" , type = "string")
     confusionTable$addColumnInfo(name = "varname_obs" ,  title = "" , type = "string")
     confusionTable$addColumnInfo(name = "varname_pred1", title = ".", type = "integer")
     confusionTable$addColumnInfo(name = "varname_pred2", title = ".", type = 'integer')
-    
+
     confusionTable[["obs_name"]] <- c(gettext("Observed"), "")
     confusionTable[["varname_obs"]] <- rep(".", 2)
     confusionTable[["varname_pred1"]] <- rep("", 2)
     confusionTable[["varname_pred2"]] <- rep("", 2)
-    
+
   }
-  
+
 }
 
 .classificationDecisionBoundaries <- function(dataset, options, jaspResults, ready, position, type){
 
   if (!is.null(jaspResults[["decisionBoundary"]]) || !options[["decisionBoundary"]]) return()
-  
+
   decisionBoundary <- createJaspPlot(title = gettext("Decision Boundary Matrix"), height = 400, width = 300)
   decisionBoundary$position <- position
   decisionBoundary$dependOn(options = c("decisionBoundary", "plotDensities", "plotStatistics", "trainingDataManual", "scaleEqualSD", "modelOpt",
-                                          "target", "predictors", "seed", "seedBox", "modelValid", "estimationMethod", 
+                                          "target", "predictors", "seed", "seedBox", "modelValid", "estimationMethod",
                                           "maxK", "noOfFolds", "modelValid", "noOfNearestNeighbors", "distanceParameterManual", "weights",
-                                          "plotLegend", "plotPoints", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", 
-                                          "shrinkage", "intDepth", "nNode", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", 
+                                          "plotLegend", "plotPoints", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors",
+                                          "shrinkage", "intDepth", "nNode", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
                                           "holdoutData", "testDataManual"))
-  jaspResults[["decisionBoundary"]] <- decisionBoundary 
+  jaspResults[["decisionBoundary"]] <- decisionBoundary
 
   if(!ready || length(options[["predictors"]]) < 2)  return()
-  
+
   .classificationFillDecisionBoundary(dataset, options, jaspResults, decisionBoundary, type)
 }
 
@@ -338,39 +338,39 @@
 
   decisionBoundary[["width"]]  <- width
   decisionBoundary[["height"]] <- height
-  
+
   cexText <- 1.6
-  
+
   plotMat <- matrix(list(), l - 1, l - 1)
-  adjMargin <- ggplot2::theme(plot.margin = ggplot2::unit(c(.25, .40, .25, .25), "cm")) 
+  adjMargin <- ggplot2::theme(plot.margin = ggplot2::unit(c(.25, .40, .25, .25), "cm"))
   oldFontSize <- jaspGraphs::getGraphOption("fontsize")
   jaspGraphs::setGraphOption("fontsize", .85 * oldFontSize)
-  
+
   target <- dataset[, options[["target"]]]
   startProgressbar(length(plotMat)+1)
 
   for (row in 2:l) {
     for (col in 1:(l-1)) {
-      if (row == col) {     
+      if (row == col) {
           p <- jaspGraphs::drawAxis(xName = "", yName = "", force = TRUE) + adjMargin
           p <- p + ggplot2::xlab("")
           p <- p + ggplot2::ylab("")
           p <- jaspGraphs::themeJasp(p)
-          
+
           plotMat[[row, col]] <- p
-      }  
+      }
       if (col < row) {
           predictors <- dataset[, variables]
           predictors <- predictors[, c(col, row)]
           formula <- formula(paste(options[["target"]], "~", paste(colnames(predictors), collapse=" + ")))
           plotMat[[row-1, col]] <- .decisionBoundaryPlot(dataset, options, jaspResults, predictors, target, formula, l, type = type)
-      } 
+      }
       if (col > row) {
           p <- jaspGraphs::drawAxis(xName = "", yName = "", force = TRUE) + adjMargin
           p <- p + ggplot2::xlab("")
           p <- p + ggplot2::ylab("")
           p <- jaspGraphs::themeJasp(p)
-          
+
           plotMat[[row, col]] <- p
       }
       if(l > 2)
@@ -379,7 +379,7 @@
       progressbarTick()
     }
   }
-  
+
   jaspGraphs::setGraphOption("fontsize", oldFontSize)
   # slightly adjust the positions of the labels left and above the plots.
   labelPos <- matrix(.5, 4, 2)
@@ -387,12 +387,12 @@
   labelPos[4, 2] <- .65
   p <- jaspGraphs::ggMatrixPlot(plotList = plotMat, leftLabels = variables[-1], topLabels = variables[-length(variables)],
                                 scaleXYlabels = NULL, labelPos = labelPos)
-  
+
   progressbarTick()
   decisionBoundary$plotObject <- p
 }
 
-.decisionBoundaryPlot <- function(dataset, options, jaspResults, predictors, target, formula, l, type){ 
+.decisionBoundaryPlot <- function(dataset, options, jaspResults, predictors, target, formula, l, type){
 
     x_min <- min(predictors[,1])-0.5; x_max <- max(predictors[,1])+0.5
     y_min <- min(predictors[,2])-0.5; y_max <- max(predictors[,2])+0.5
@@ -415,7 +415,7 @@
       ldafit <- MASS::lda(formula, data = dataset)
       preds <- predict(ldafit, newdata = grid)$class
     } else if(type == "knn"){
-      kfit <- kknn::train.kknn(formula = formula, data = dataset, ks = classificationResult[["nn"]], 
+      kfit <- kknn::train.kknn(formula = formula, data = dataset, ks = classificationResult[["nn"]],
                   distance = classificationResult[['distance']], kernel = classificationResult[['weights']], scale = FALSE)
       preds <- predict(kfit, newdata = grid)
     } else if(type == "randomForest"){
@@ -437,7 +437,7 @@
 
     p <- ggplot2::ggplot(data = gridData, mapping = ggplot2::aes(x = x, y = y)) +
           ggplot2::geom_tile(ggplot2::aes(fill = preds), alpha = 0.3, show.legend = FALSE) +
-          ggplot2::labs(fill = options[["target"]]) + 
+          ggplot2::labs(fill = options[["target"]]) +
           ggplot2::scale_fill_manual(values = colorspace::qualitative_hcl(n = length(unique(target))))
     p <- p + ggplot2::scale_x_continuous(name = "", breaks = xBreaks, limits = range(xBreaks))
     p <- p + ggplot2::scale_y_continuous(name = "", breaks = yBreaks, limits = range(yBreaks))
@@ -457,18 +457,18 @@
   predictors <- dataset[, options[["predictors"]]]
   predictors <- predictors[, 1]
   lda.data <- data.frame(target = target, predictors = predictors)
-  
+
   p <- ggplot2::ggplot(lda.data, ggplot2::aes(y = target, x = target, show.legend = TRUE)) +
         jaspGraphs::geom_point(ggplot2::aes(fill = target), alpha = 0) +
         ggplot2::xlab("") +
         ggplot2::ylab("") +
         ggplot2::theme(legend.key = ggplot2::element_blank()) +
-        ggplot2::labs(fill = options[["target"]]) + 
+        ggplot2::labs(fill = options[["target"]]) +
         ggplot2::scale_fill_manual(values = colorspace::qualitative_hcl(n = length(unique(target))))
   p <- jaspGraphs::themeJasp(p, yAxis = FALSE, xAxis = FALSE, legend.position = "left")
   p <- p + ggplot2::theme(axis.ticks = ggplot2::element_blank(), axis.text.x = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank())
   p <- p + ggplot2::guides(fill = ggplot2::guide_legend(override.aes = list(alpha = 1)))
-  
+
   return(p)
 }
 
@@ -486,7 +486,7 @@
 
     if(!ready) return()
 
-    classificationResult <- jaspResults[["classificationResult"]]$object 
+    classificationResult <- jaspResults[["classificationResult"]]$object
 
     train <- classificationResult[["train"]]
     test <- classificationResult[["test"]]
@@ -521,7 +521,7 @@
 
       if(type == "knn"){
 
-        kfit <- kknn::kknn(formula = formula, train = typeData, test = test, k = classificationResult[["nn"]], 
+        kfit <- kknn::kknn(formula = formula, train = typeData, test = test, k = classificationResult[["nn"]],
                     distance = classificationResult[['distance']], kernel = classificationResult[['weights']], scale = FALSE)
         score <- predict(kfit, test, type = 'prob')[, 'TRUE']
 
@@ -547,7 +547,7 @@
         score <- predict(bfit, newdata = test, n.trees = classificationResult[["noOfTrees"]], type = "response")
 
       } else if(type == "randomForest"){
-        
+
         column <- which(colnames(typeData) == "levelVar")
         typeData <- typeData[, -column]
         rfit <- randomForest::randomForest(x = typeData, y = factor(levelVar),
@@ -556,7 +556,7 @@
         score <- predict(rfit, test, type = "prob")[, 'TRUE']
 
       }
-  
+
       pred <- ROCR::prediction(score, actual.class)
       nbperf <- ROCR::performance(pred, "tpr", "fpr")
 
@@ -567,13 +567,15 @@
 
     rocData <- data.frame(x = rocXstore, y = rocYstore, name = rocNamestore)
     rocData <- na.omit(rocData) # Remove classes that are not in the test set
+
     p <- p + jaspGraphs::geom_line(data = rocData, mapping = ggplot2::aes(x = x, y = y, col = name)) +
               ggplot2::scale_color_manual(values = colorspace::qualitative_hcl(n = length(lvls))) +
               ggplot2::scale_y_continuous(limits = c(0, 1.1), breaks = seq(0,1,0.2)) +
               ggplot2::scale_x_continuous(limits = c(0, 1), breaks = seq(0,1,0.2)) +
               ggplot2::labs(color = options[["target"]]) +
               jaspGraphs::geom_point(data = data.frame(x = 0, y = 1), mapping = ggplot2::aes(x = x, y = y)) +
-              ggrepel::geom_text_repel(data = data.frame(x = 0, y = 1), ggplot2::aes(label= gettext("Perfect separation"), x = x, y = y), hjust = -0.2, vjust = -0.8)
+              ggrepel::geom_text_repel(data = data.frame(x = 0, y = 1), ggplot2::aes(label= gettext("Perfect separation"), x = x, y = y),
+                                       nudge_x = -0.1, nudge_y = 0.05, xlim = c(0, 1), ylim = c(0, 1.1))
     p <- jaspGraphs::themeJasp(p, legend.position = "right")
 
     rocCurve$plotObject <- p
@@ -646,7 +648,7 @@
 
   p <- ggplot2::ggplot(data = d, mapping = ggplot2::aes(x = x, y = y, color = target, group = observation)) +
         jaspGraphs::geom_line(size = 0.2) +
-        ggplot2::scale_x_continuous(name = "", breaks = xBreaks, labels = xBreaks) + 
+        ggplot2::scale_x_continuous(name = "", breaks = xBreaks, labels = xBreaks) +
         ggplot2::scale_y_continuous(name = "", breaks = yBreaks, labels = yBreaks) +
         ggplot2::labs(color = options[["target"]]) +
         ggplot2::guides(color = ggplot2::guide_legend(override.aes = list(size = 1)))
@@ -673,18 +675,18 @@
     names(mats) <- lev
     pooled <- Reduce("+", aux)/sum(dfs)
     logdet <- log(unlist(lapply(mats, det)))
-    minus2logM <- sum(dfs) * log(det(pooled)) - sum(logdet * 
+    minus2logM <- sum(dfs) * log(det(pooled)) - sum(logdet *
         dfs)
     sum1 <- sum(1/dfs)
-    Co <- (((2 * p^2) + (3 * p) - 1)/(6 * (p + 1) * (nlev - 1))) * 
+    Co <- (((2 * p^2) + (3 * p) - 1)/(6 * (p + 1) * (nlev - 1))) *
         (sum1 - (1/sum(dfs)))
     X2 <- minus2logM * (1 - Co)
     dfchi <- (choose(p, 2) + p) * (nlev - 1)
     pval <- pchisq(X2, dfchi, lower.tail = FALSE)
-    out <- structure(list(statistic = c(`Chi-Sq (approx.)` = X2), 
-        parameter = c(df = dfchi), p.value = pval, cov = mats, 
-        pooled = pooled, logDet = logdet, data.name = dname, 
-        method = gettext(" Box's M-test for Homogeneity of Covariance Matrices")), 
+    out <- structure(list(statistic = c(`Chi-Sq (approx.)` = X2),
+        parameter = c(df = dfchi), p.value = pval, cov = mats,
+        pooled = pooled, logDet = logdet, data.name = dname,
+        method = gettext(" Box's M-test for Homogeneity of Covariance Matrices")),
         class = c("htest", "boxM"))
     return(out)
 }
@@ -692,7 +694,7 @@
 .classificationEvaluationMetrics <- function(dataset, options, jaspResults, ready, position){
 
   if(!is.null(jaspResults[["validationMeasures"]]) || !options[["validationMeasures"]]) return()
-  
+
   validationMeasures <- createJaspTable(title = gettext("Evaluation Metrics"))
   validationMeasures$position <- position
   validationMeasures$dependOn(options = c("validationMeasures", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
@@ -710,7 +712,7 @@
 
   if(options[["target"]] != "")
     validationMeasures[["group"]] <- c(levels(factor(dataset[, options[["target"]]])), gettext("Average / Total"))
-  
+
   jaspResults[["validationMeasures"]] <- validationMeasures
 
   if(!ready)  return()
@@ -740,7 +742,7 @@
     support_tmp       <- length(which(real == lvls[i]))
 
     precision[i]      <- precision_tmp
-    recall[i]         <- recall_tmp 
+    recall[i]         <- recall_tmp
     f1[i]             <- f1_tmp
     support[i]        <- support_tmp
   }
@@ -762,7 +764,7 @@
 .classificationClassProportions <- function(dataset, options, jaspResults, ready, position){
 
   if(!is.null(jaspResults[["classProportionsTable"]]) || !options[["classProportionsTable"]]) return()
-  
+
   classProportionsTable <- createJaspTable(title = gettext("Class Proportions"))
   classProportionsTable$position <- position
   classProportionsTable$dependOn(options = c("classProportionsTable", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
@@ -784,19 +786,19 @@
       classProportionsTable$addColumnInfo(name = "train", title = gettext("Training and Validation Set"), type = "number")
     }
   }
-  
+
   classProportionsTable$addColumnInfo(name = "test", title = gettext("Test Set"), type = "number")
 
   if(options[["target"]] != ""){
     classProportionsTable[["group"]] <- levels(factor(dataset[, options[["target"]]]))
     Dlevels <- levels(factor(dataset[, options[["target"]]]))
   }
-  
+
   jaspResults[["classProportionsTable"]] <- classProportionsTable
 
   if(!ready)  return()
 
-  classificationResult <- jaspResults[["classificationResult"]]$object 
+  classificationResult <- jaspResults[["classificationResult"]]$object
 
   dataValues      <- rep(0, length(classProportionsTable[["group"]]))
   trainingValues  <- rep(0, length(classProportionsTable[["group"]]))
@@ -855,27 +857,27 @@
     if(.columnIsOrdinal(options$target))     jaspResults[["classColumn"]]$setOrdinal(classColumn)
     if(.columnIsNominal(options$target))     jaspResults[["classColumn"]]$setNominal(classColumn)
     if(.columnIsNominalText(options$target)) jaspResults[["classColumn"]]$setNominalText(classColumn)
-  }  
+  }
 }
 
 .classificationCalcAUC <- function(test, train, options, class, ...) {
   lvls <- levels(factor(test[, options[["target"]]]))
-  auc <- numeric(length(lvls)) 
+  auc <- numeric(length(lvls))
 
   predictorNames <- options[["predictors"]]
   AUCformula <- formula(paste("levelVar", "~", paste(predictorNames, collapse=" + ")))
   class(AUCformula) <- c(class(AUCformula), class)
 
   for (i in 1:length(lvls)) {
-    
+
     levelVar <- train[,options[["target"]]] == lvls[i]
     typeData <- cbind(train, levelVar = factor(levelVar))
     typeData <- typeData[, -which(colnames(typeData) == options[["target"]])]
-    
+
     score <- .calcAUCScore(AUCformula, train = train, test = test, typeData = typeData, levelVar = levelVar, options = options, ...)
-    
+
     actual.class <- test[,options[["target"]]] == lvls[i]
-    
+
     if (length(levels(factor(actual.class))) == 2) {
       pred <- ROCR::prediction(score, actual.class)
       auc[i] <- ROCR::performance(pred, "auc")@y.values[[1]]
@@ -883,7 +885,7 @@
       auc[i] <- 0 # Gets removed in table
     }
   }
-  
+
   return(auc)
 }
 

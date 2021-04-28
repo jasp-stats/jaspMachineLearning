@@ -52,3 +52,6 @@ state
 .Rproj.user/*
 Rproj.user
 .Rproj.user
+/.Rprofile
+/renv.lock
+/renv
