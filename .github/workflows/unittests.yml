@@ -29,6 +29,11 @@ jobs:
           r-version: ${{ matrix.config.r }}
 
       - uses: jasp-stats/jasp-actions/setup-test-env@master
+      
+      - name: Make sure igraph is installed from source
+        run: install.packages("igraph", type = "source", repos = "https://cloud.r-project.org/")
+        shell: Rscript {0}
+
 
       - name: Run unit tests
         run: source("tests/testthat.R")
