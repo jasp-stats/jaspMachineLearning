@@ -31,6 +31,7 @@ jobs:
       - uses: jasp-stats/jasp-actions/setup-test-env@master
       
       - name: Make sure igraph is installed from source
+        if: ${{ runner.os == 'Linux' }}
         run: install.packages("igraph", type = "source", repos = "https://cloud.r-project.org/")
         shell: Rscript {0}
 
