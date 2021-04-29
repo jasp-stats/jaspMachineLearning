@@ -12,8 +12,9 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - {os: windows-latest, r: "3.6.1"}
-          - {os: macOS-latest,   r: "3.6.1"}
+          - {os: windows-latest, r: "4.0.5"}
+          - {os: macOS-latest,   r: "4.0.5"}
+          - {os: ubuntu-20.04,   r: "4.0.5"}
 
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
@@ -28,6 +29,12 @@ jobs:
           r-version: ${{ matrix.config.r }}
 
       - uses: jasp-stats/jasp-actions/setup-test-env@master
+      
+      - name: Make sure igraph is installed from source
+        if: ${{ runner.os == 'Linux' }}
+        run: install.packages("igraph", type = "source", repos = "https://cloud.r-project.org/")
+        shell: Rscript {0}
+
 
       - name: Run unit tests
         run: source("tests/testthat.R")
