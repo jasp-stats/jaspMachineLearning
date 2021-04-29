@@ -172,7 +172,7 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
 
   p <-  ggplot2::ggplot(data = d, ggplot2::aes(x = x, y = y)) +
         ggplot2::scale_x_continuous(name = gettext("Points sorted by distance"), breaks = xBreaks) +
-        ggplot2::scale_y_continuous(name = gettextf('%s-nearest neighbors \ndistance', options[['minPts']]), breaks = yBreaks)
+        ggplot2::scale_y_continuous(name = gettextf('%s-nearest neighbors \ndistance', options[['minPts']]), breaks = yBreaks, limits = range(yBreaks))
 
   if (!is.null(suggestedLine)) {
         p <-  p + ggplot2::geom_segment(ggplot2::aes(x = xstart, xend = xend, y = ystart, yend = yend), data = suggestedLine, linetype = 2, color = "darkred") +
