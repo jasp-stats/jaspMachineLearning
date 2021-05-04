@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2021-03-06 14:49\n"
-"PO-Revision-Date: 2021-04-03 08:29+0000\n"
+"PO-Revision-Date: 2021-05-03 20:31+0000\n"
 "Last-Translator: Alex França <alex.tonante@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/pt/>\n"
@@ -12,13 +12,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.6-dev\n"
+"X-Generator: Weblate 4.7-dev\n"
 "X-Language: en_US\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
 
 msgid "K-Nearest Neighbors Classification"
-msgstr ""
+msgstr "Classificação de Vizinhos K-Nearest"
 
 msgid "Linear Discriminant Classification"
 msgstr ""
@@ -111,8 +111,9 @@ msgstr ""
 msgid "Confusion Matrix"
 msgstr ""
 
+#, fuzzy
 msgid "Observed"
-msgstr ""
+msgstr "Observado"
 
 msgid "Predicted"
 msgstr ""
@@ -295,6 +296,7 @@ msgstr ""
 msgid "The Total Sum of Squares of the %1$s cluster model is %2$s"
 msgstr ""
 
+#, fuzzy
 msgid "Value"
 msgstr "Valor"
 
@@ -311,8 +313,9 @@ msgstr "r de Pearson"
 msgid "Dunn index"
 msgstr ""
 
+#, fuzzy
 msgid "Entropy"
-msgstr ""
+msgstr "Entropia"
 
 msgid "Calinski-Harabasz index"
 msgstr ""
