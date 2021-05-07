@@ -13,10 +13,6 @@ msgid "Machine Learning"
 msgstr "Maschinelles Lernen"
 
 msgctxt "Description|"
-msgid "A module for Machine Learning mastery"
-msgstr "Ein Modul zur Meisterung von Maschinellem Lernen"
-
-msgctxt "Description|"
 msgid "Regression"
 msgstr "Regression"
 
@@ -1851,3 +1847,9 @@ msgstr "Spaltenname: "
 msgctxt "mlRegressionRegularized|"
 msgid "<b>Save Model</b>"
 msgstr "<b>Modell speichern</b>"
+
+msgctxt "Description|"
+msgid ""
+"Explore the relation between variables using data-driven methods for "
+"regression, classification, and clustering"
+msgstr ""

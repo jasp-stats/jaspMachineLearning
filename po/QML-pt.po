@@ -1,15 +1,9 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-04-25 14:31+0000\n"
-"Last-Translator: Pedro Afonso Cortez <cor.afonso@gmail.com>\n"
-"Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
-"jaspmachinelearning-qml/pt/>\n"
-"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.7-dev\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Language: en_US\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -108,9 +102,10 @@ msgctxt "mlClassificationBoosting|"
 msgid "Out-of-bag improvement"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "ROC curves"
-msgstr ""
+msgstr "Curva ROC"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Andrews curves"
@@ -316,9 +311,10 @@ msgctxt "mlClassificationLda|"
 msgid "Target"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Predictors"
-msgstr ""
+msgstr "Preditores"
 
 #, fuzzy
 msgctxt "mlClassificationLda|"
@@ -329,17 +325,20 @@ msgctxt "mlClassificationLda|"
 msgid "Confusion matrix"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Display proportions"
-msgstr ""
+msgstr "Mostrar proporções"
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Class proportions"
-msgstr ""
+msgstr "Proporções de categoria"
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "Métricas de avaliação"
 
 msgctxt "mlClassificationLda|"
 msgid "Coefficients"
@@ -378,13 +377,15 @@ msgctxt "mlClassificationLda|"
 msgid "Data split"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "ROC curves"
-msgstr ""
+msgstr "Curva ROC"
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "Gráfico de Andrews"
 
 msgctxt "mlClassificationLda|"
 msgid "Linear discriminant matrix"
@@ -398,53 +399,62 @@ msgctxt "mlClassificationLda|"
 msgid "Scatter plots"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Decision boundary matrix"
-msgstr ""
+msgstr "Matriz de limites de decisão"
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Points"
-msgstr ""
+msgstr "Pontos"
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parâmetros de treinamento"
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Configurações do algoritmo"
 
 msgctxt "mlClassificationLda|"
 msgid "Estimation method:"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Scale predictors"
-msgstr ""
+msgstr "Preditores de escala"
 
 msgctxt "mlClassificationLda|"
 msgid "Set seed: "
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Add predicted classes to data"
-msgstr ""
+msgstr "Adicionar classes previstas aos dados"
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>Salvar Modelo</b>"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Target"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Predictors"
-msgstr ""
+msgstr "Preditores"
 
 #, fuzzy
 msgctxt "mlClassificationRandomForest|"
@@ -455,17 +465,20 @@ msgctxt "mlClassificationRandomForest|"
 msgid "Confusion matrix"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Display proportions"
-msgstr ""
+msgstr "Mostrar proporções"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Class proportions"
-msgstr ""
+msgstr "Proporções de categoria"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "Métricas de avaliação"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Variable importance"
@@ -484,13 +497,15 @@ msgctxt "mlClassificationRandomForest|"
 msgid "Out-of-bag accuracy"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "ROC curves"
-msgstr ""
+msgstr "Curva ROC"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "Gráfico de Andrews"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Mean decrease in accuracy"
@@ -500,69 +515,84 @@ msgctxt "mlClassificationRandomForest|"
 msgid "Total increase in node purity"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Decision boundary matrix"
-msgstr ""
+msgstr "Matriz de limites de decisão"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Points"
-msgstr ""
+msgstr "Pontos"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parâmetros de treinamento"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Configurações do algoritmo"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Training data used per tree:"
-msgstr ""
+msgstr "Dados de treinamento utilizados por árvore:"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Predictors per split:"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Scale predictors"
-msgstr ""
+msgstr "Preditores de escala"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Set seed:"
-msgstr ""
+msgstr "Definir semente:"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Number of Trees"
-msgstr ""
+msgstr "Número de árvores"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Fixed"
-msgstr ""
+msgstr "Fixo"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Trees:"
-msgstr ""
+msgstr "Árvores:"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Optimized"
-msgstr ""
+msgstr "Otimizado"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Max. trees:"
-msgstr ""
+msgstr "Máximo de árvores:"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Add predicted classes to data"
-msgstr ""
+msgstr "Adicionar classes previstas aos dados"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>Salvar Modelo</b>"
 
 #, fuzzy
 msgctxt "mlClusteringDensityBased|"
@@ -594,9 +624,10 @@ msgctxt "mlClusteringDensityBased|"
 msgid "Total sum of squares"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "Métricas de avaliação"
 
 #, fuzzy
 msgctxt "mlClusteringDensityBased|"
@@ -611,21 +642,24 @@ msgctxt "mlClusteringDensityBased|"
 msgid "t-SNE cluster plot"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Labels"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parâmetros de treinamento"
 
+#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Configurações do algoritmo"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Epsilon neighborhood size:"
@@ -635,33 +669,37 @@ msgctxt "mlClusteringDensityBased|"
 msgid "Min. core points:"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Distance:"
-msgstr ""
+msgstr "Distância:"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Scale variables"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Set seed:"
-msgstr ""
+msgstr "Definir semente:"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Model Optimization"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Fixed"
-msgstr ""
+msgstr "Fixo"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Add predicted clusters to data"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>Salvar Modelo</b>"
 
 #, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
@@ -697,9 +735,10 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Total sum of squares"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "Métricas de avaliação"
 
 #, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
@@ -714,21 +753,24 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "t-SNE cluster plot"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Labels"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parâmetros de treinamento"
 
+#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Configurações do algoritmo"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Max. iterations:"
@@ -742,17 +784,19 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Scale variables"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Set seed:"
-msgstr ""
+msgstr "Definir semente:"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Cluster Determination"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Fixed"
-msgstr ""
+msgstr "Fixo"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Clusters:"
@@ -770,9 +814,10 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Add predicted clusters to data"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>Salvar Modelo</b>"
 
 #, fuzzy
 msgctxt "mlClusteringHierarchical|"
@@ -804,9 +849,10 @@ msgctxt "mlClusteringHierarchical|"
 msgid "Total sum of squares"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "Métricas de avaliação"
 
 #, fuzzy
 msgctxt "mlClusteringHierarchical|"
@@ -825,25 +871,29 @@ msgctxt "mlClusteringHierarchical|"
 msgid "t-SNE cluster plot"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Labels"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parâmetros de treinamento"
 
+#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Configurações do algoritmo"
 
+#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Distance:"
-msgstr ""
+msgstr "Distância:"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Linkage:"
@@ -853,17 +903,19 @@ msgctxt "mlClusteringHierarchical|"
 msgid "Scale variables"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Set seed:"
-msgstr ""
+msgstr "Definir semente:"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Cluster Determination"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Fixed"
-msgstr ""
+msgstr "Fixo"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Clusters:"
@@ -881,9 +933,10 @@ msgctxt "mlClusteringHierarchical|"
 msgid "Add predicted clusters to data"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>Salvar Modelo</b>"
 
 #, fuzzy
 msgctxt "mlClusteringKMeans|"
@@ -919,9 +972,10 @@ msgctxt "mlClusteringKMeans|"
 msgid "Total sum of squares"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "Métricas de avaliação"
 
 #, fuzzy
 msgctxt "mlClusteringKMeans|"
@@ -936,21 +990,24 @@ msgctxt "mlClusteringKMeans|"
 msgid "t-SNE cluster plot"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Labels"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parâmetros de treinamento"
 
+#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Configurações do algoritmo"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Max. iterations:"
@@ -968,17 +1025,19 @@ msgctxt "mlClusteringKMeans|"
 msgid "Scale variables"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Set seed:"
-msgstr ""
+msgstr "Definir semente:"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Cluster Determination"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Fixed"
-msgstr ""
+msgstr "Fixo"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Clusters:"
@@ -996,9 +1055,10 @@ msgctxt "mlClusteringKMeans|"
 msgid "Add predicted clusters to data"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>Salvar Modelo</b>"
 
 #, fuzzy
 msgctxt "mlClusteringRandomForest|"
@@ -1030,9 +1090,10 @@ msgctxt "mlClusteringRandomForest|"
 msgid "Total sum of squares"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "Métricas de avaliação"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Variable importance"
@@ -1051,41 +1112,47 @@ msgctxt "mlClusteringRandomForest|"
 msgid "t-SNE cluster plot"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Labels"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parâmetros de treinamento"
 
+#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Configurações do algoritmo"
 
+#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Trees:"
-msgstr ""
+msgstr "Árvores:"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Scale variables"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Set seed:"
-msgstr ""
+msgstr "Definir semente:"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Cluster Determination"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Fixed"
-msgstr ""
+msgstr "Fixo"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Clusters:"
@@ -1103,30 +1170,34 @@ msgctxt "mlClusteringRandomForest|"
 msgid "Add predicted clusters to data"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>Salvar Modelo</b>"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Target"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Predictors"
-msgstr ""
+msgstr "Preditores"
 
 #, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Tables"
 msgstr "Tabelas"
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "Métricas de avaliação"
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Relative influence"
-msgstr ""
+msgstr "Influência relativa"
 
 #, fuzzy
 msgctxt "mlRegressionBoosting|"
@@ -1145,33 +1216,39 @@ msgctxt "mlRegressionBoosting|"
 msgid "Predictive performance"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Deviance"
-msgstr ""
+msgstr "Desvio"
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parâmetros de treinamento"
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Configurações do algoritmo"
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Shrinkage:"
-msgstr ""
+msgstr "Encolhimento:"
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Interaction depth:"
-msgstr ""
+msgstr "Profundidade da interação:"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Min. observations in node:"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Training data used per tree:"
-msgstr ""
+msgstr "Dados de treinamento utilizados por árvore:"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Loss function:"
@@ -1181,54 +1258,63 @@ msgctxt "mlRegressionBoosting|"
 msgid "Scale variables"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Set seed:"
-msgstr ""
+msgstr "Definir semente:"
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Number of Trees"
-msgstr ""
+msgstr "Número de árvores"
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Fixed"
-msgstr ""
+msgstr "Fixo"
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Trees:"
-msgstr ""
+msgstr "Árvores:"
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Optimized"
-msgstr ""
+msgstr "Otimizado"
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Max. trees:"
-msgstr ""
+msgstr "Máximo de árvores:"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Add predicted values to data"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>Salvar Modelo</b>"
 
 msgctxt "mlRegressionKnn|"
 msgid "Target"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Predictors"
-msgstr ""
+msgstr "Preditores"
 
 #, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Tables"
 msgstr "Tabelas"
 
+#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "Métricas de avaliação"
 
 #, fuzzy
 msgctxt "mlRegressionKnn|"
@@ -1247,74 +1333,87 @@ msgctxt "mlRegressionKnn|"
 msgid "Predictive performance"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parâmetros de treinamento"
 
+#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Configurações do algoritmo"
 
+#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Weights:"
-msgstr ""
+msgstr "Pesos:"
 
+#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Distance:"
-msgstr ""
+msgstr "Distância:"
 
 msgctxt "mlRegressionKnn|"
 msgid "Scale variables"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Set seed:"
-msgstr ""
+msgstr "Definir semente:"
 
+#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Number of Nearest Neighbors"
-msgstr ""
+msgstr "Número de vizinhos próximos"
 
+#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Fixed"
-msgstr ""
+msgstr "Fixo"
 
+#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Nearest neighbors:"
-msgstr ""
+msgstr "Vizinhos próximos:"
 
+#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Optimized"
-msgstr ""
+msgstr "Otimizado"
 
+#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Max. nearest neighbors:"
-msgstr ""
+msgstr "Máx. vizinhos próximos:"
 
 msgctxt "mlRegressionKnn|"
 msgid "Add predicted values to data"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>Salvar Modelo</b>"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Target"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Predictors"
-msgstr ""
+msgstr "Preditores"
 
 #, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Tables"
 msgstr "Tabelas"
 
+#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "Métricas de avaliação"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Variable importance"
@@ -1345,17 +1444,20 @@ msgctxt "mlRegressionRandomForest|"
 msgid "Total increase in node purity"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parâmetros de treinamento"
 
+#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Configurações do algoritmo"
 
+#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Training data used per tree:"
-msgstr ""
+msgstr "Dados de treinamento utilizados por árvore:"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Predictors per split:"
@@ -1365,45 +1467,53 @@ msgctxt "mlRegressionRandomForest|"
 msgid "Scale variables"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Set seed:"
-msgstr ""
+msgstr "Definir semente:"
 
+#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Number of Trees"
-msgstr ""
+msgstr "Número de árvores"
 
+#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Fixed"
-msgstr ""
+msgstr "Fixo"
 
+#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Trees:"
-msgstr ""
+msgstr "Árvores:"
 
+#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Optimized"
-msgstr ""
+msgstr "Otimizado"
 
+#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Max. trees:"
-msgstr ""
+msgstr "Máximo de árvores:"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Add predicted values to data"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>Salvar Modelo</b>"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Target"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Predictors"
-msgstr ""
+msgstr "Preditores"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Weights"
@@ -1414,9 +1524,10 @@ msgctxt "mlRegressionRegularized|"
 msgid "Tables"
 msgstr "Tabelas"
 
+#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "Métricas de avaliação"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Regression coefficients"
@@ -1439,17 +1550,20 @@ msgctxt "mlRegressionRegularized|"
 msgid "Variable trace"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
+#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parâmetros de treinamento"
 
+#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Configurações do algoritmo"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Convergence threshold:"
@@ -1467,25 +1581,29 @@ msgctxt "mlRegressionRegularized|"
 msgid "Scale variables"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Set seed:"
-msgstr ""
+msgstr "Definir semente:"
 
+#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Fixed"
-msgstr ""
+msgstr "Fixo"
 
+#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Optimized"
-msgstr ""
+msgstr "Otimizado"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Add predicted values to data"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>Salvar Modelo</b>"
 
 msgctxt "mlClassificationKnn|"
 msgid "Rectangular"
@@ -1765,10 +1883,6 @@ msgctxt "Description|"
 msgid "Machine Learning"
 msgstr ""
 
-msgctxt "Description|"
-msgid "A module for Machine Learning mastery"
-msgstr ""
-
 #, fuzzy
 msgctxt "Description|"
 msgid "Regression"
@@ -1900,4 +2014,10 @@ msgstr ""
 
 msgctxt "mlRegressionRegularized|"
 msgid "Largest λ within 1 SE of min."
+msgstr ""
+
+msgctxt "Description|"
+msgid ""
+"Explore the relation between variables using data-driven methods for "
+"regression, classification, and clustering"
 msgstr ""

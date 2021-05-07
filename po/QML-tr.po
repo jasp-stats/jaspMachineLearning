@@ -10,10 +10,6 @@ msgid "Machine Learning"
 msgstr ""
 
 msgctxt "Description|"
-msgid "A module for Machine Learning mastery"
-msgstr ""
-
-msgctxt "Description|"
 msgid "Regression"
 msgstr ""
 
@@ -1847,4 +1843,10 @@ msgstr ""
 
 msgctxt "mlRegressionRegularized|"
 msgid "<b>Save Model</b>"
+msgstr ""
+
+msgctxt "Description|"
+msgid ""
+"Explore the relation between variables using data-driven methods for "
+"regression, classification, and clustering"
 msgstr ""
