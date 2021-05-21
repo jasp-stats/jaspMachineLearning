@@ -33,4 +33,5 @@ Imports:
   signal
 Remotes:
   jasp-stats/jaspBase,
-  jasp-stats/jaspGraphs
+  jasp-stats/jaspGraphs,
+  vandenman/kknn
