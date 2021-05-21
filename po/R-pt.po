@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2021-05-07 13:27\n"
-"PO-Revision-Date: 2021-05-03 20:31+0000\n"
+"POT-Creation-Date: 2021-03-06 14:49\n"
+"PO-Revision-Date: 2021-05-15 20:50+0000\n"
 "Last-Translator: Alex França <alex.tonante@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/pt/>\n"
@@ -101,7 +101,6 @@ msgstr "ML"
 msgid "MVE"
 msgstr ""
 
-#, fuzzy
 msgid "t"
 msgstr "t"
 
@@ -224,7 +223,6 @@ msgstr ""
 msgid "Clusters"
 msgstr ""
 
-#, fuzzy
 msgid "N"
 msgstr "N"
 
@@ -354,7 +352,6 @@ msgstr ""
 msgid "Cluster Density Plots"
 msgstr ""
 
-#, fuzzy
 msgid "Density"
 msgstr "Densidade"
 
@@ -510,11 +507,9 @@ msgstr ""
 msgid "Tests of Equality of Covariance Matrices"
 msgstr "Matriz de covariância residual"
 
-#, fuzzy
 msgid "df"
 msgstr "gl"
 
-#, fuzzy
 msgid "p"
 msgstr "p"
 
