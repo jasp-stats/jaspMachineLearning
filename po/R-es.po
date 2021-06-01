@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
 "POT-Creation-Date: 2021-01-05 09:38\n"
-"PO-Revision-Date: 2021-05-15 20:50+0000\n"
+"PO-Revision-Date: 2021-06-01 01:31+0000\n"
 "Last-Translator: Paulina Elizabeth Robalino <paulina.e.robalino@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/es/>\n"
@@ -86,7 +86,7 @@ msgid "Euclidean"
 msgstr ""
 
 msgid "Moment"
-msgstr ""
+msgstr "Momento"
 
 msgid "MLE"
 msgstr ""
@@ -104,10 +104,10 @@ msgid "Confusion Matrix"
 msgstr ""
 
 msgid "Observed"
-msgstr ""
+msgstr "Observado"
 
 msgid "Predicted"
-msgstr ""
+msgstr "Predijo"
 
 msgid "Decision Boundary Matrix"
 msgstr ""
@@ -215,7 +215,7 @@ msgid "N"
 msgstr "N"
 
 msgid "R%s"
-msgstr ""
+msgstr "R%s"
 
 msgid "AIC"
 msgstr ""
@@ -462,7 +462,7 @@ msgid "Prior and Posterior Class Probabilities"
 msgstr ""
 
 msgid "Prior"
-msgstr ""
+msgstr "Anterior"
 
 msgid "Posterior"
 msgstr "Posterior"
@@ -633,7 +633,7 @@ msgid "Variable Trace Plot"
 msgstr ""
 
 msgid "Coefficients"
-msgstr ""
+msgstr "Coeficientes"
 
 msgid "Lambda Evaluation Plot"
 msgstr ""
