@@ -58,8 +58,8 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
 
 .boostingRegression <- function(dataset, options, jaspResults){
 
-  assignFunctionInPackage(fakeGbmCrossValModelBuild, "gbmCrossValModelBuild", "gbm")
-  assignFunctionInPackage(fakeGbmCrossValErr,        "gbmCrossValErr",        "gbm")
+  jaspBase:::assignFunctionInPackage(fakeGbmCrossValModelBuild, "gbmCrossValModelBuild", "gbm")
+  jaspBase:::assignFunctionInPackage(fakeGbmCrossValErr,        "gbmCrossValErr",        "gbm")
 
   # Import model formula from jaspResults
   formula <- jaspResults[["formula"]]$object
@@ -329,4 +329,52 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   p <- jaspGraphs::themeJasp(p, horizontal = TRUE, xAxis = FALSE) + ggplot2::theme(axis.ticks.y = ggplot2::element_blank())
 
   plotRelInf$plotObject <- p
+}
+
+# identical to gbm::gbmCrossValModelBuild except it isn't parallel and so doesn't trigger a firewall message
+fakeGbmCrossValModelBuild <- function(cv.folds, cv.group, n.cores, i.train, x, y, offset,
+                                      distribution, w, var.monotone, n.trees, interaction.depth,
+                                      n.minobsinnode, shrinkage, bag.fraction, var.names, response.name,
+                                      group) {
+  # the first two lines create a parallel backend and trigger a firewall message
+  # cluster <- gbmCluster(n.cores)
+  # on.exit(parallel::stopCluster(cluster))
+  seeds <- as.integer(runif(cv.folds, -(2^31 - 1), 2^31))
+  # parallel::parLapply(cl = NULL, X = 1:cv.folds, fun = gbmDoFold,
+  #                     i.train, x, y, offset, distribution, w, var.monotone,
+  #                     n.trees, interaction.depth, n.minobsinnode, shrinkage,
+  #                     bag.fraction, cv.group, var.names, response.name, group,
+  #                     seeds)
+
+  # NOTE: gbm::gbmDoFold calls library(gbm, silent = TRUE) so we make another fake function
+  fakeGbmDoFold <- function(X, i.train, x, y, offset, distribution, w, var.monotone,
+                            n.trees, interaction.depth, n.minobsinnode, shrinkage, bag.fraction,
+                            cv.group, var.names, response.name, group, s) {
+    set.seed(s[[X]])
+    i <- order(cv.group == X)
+    x <- x[i.train, , drop = TRUE][i, , drop = FALSE]
+    y <- y[i.train][i]
+    offset <- offset[i.train][i]
+    nTrain <- length(which(cv.group != X))
+    group <- group[i.train][i]
+    res <- gbm::gbm.fit(x = x, y = y, offset = offset, distribution = distribution,
+                        w = w, var.monotone = var.monotone, n.trees = n.trees,
+                        interaction.depth = interaction.depth, n.minobsinnode = n.minobsinnode,
+                        shrinkage = shrinkage, bag.fraction = bag.fraction, nTrain = nTrain,
+                        keep.data = FALSE, verbose = FALSE, response.name = response.name,
+                        group = group)
+    res
+  }
+  lapply(X = 1:cv.folds, FUN = fakeGbmDoFold, i.train, x, y, offset, distribution, w, var.monotone, n.trees,
+         interaction.depth, n.minobsinnode, shrinkage, bag.fraction, cv.group, var.names, response.name, group, seeds)
+}
+
+# identical to gbm::gbmCrossValErr except it uses `rowSums(as.matrix(cv.error))/nTrain` instead of `rowSums(cv.error)/nTrain` (presumably also to deal with the lack of parallelness)
+fakeGbmCrossValErr <- function(cv.models, cv.folds, cv.group, nTrain, n.trees) {
+  in.group <- tabulate(cv.group, nbins = cv.folds)
+  cv.error <- vapply(1:cv.folds, function(index) {
+    model <- cv.models[[index]]
+    model$valid.error * in.group[[index]]
+  }, double(n.trees))
+  return(rowSums(as.matrix(cv.error))/nTrain)
 }

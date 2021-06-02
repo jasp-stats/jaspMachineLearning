@@ -70,8 +70,8 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
 
 .boostingClassification <- function(dataset, options, jaspResults) {
 
-  assignFunctionInPackage(fakeGbmCrossValModelBuild, "gbmCrossValModelBuild", "gbm")
-  assignFunctionInPackage(fakeGbmCrossValErr,        "gbmCrossValErr",        "gbm")
+  jaspBase:::assignFunctionInPackage(fakeGbmCrossValModelBuild, "gbmCrossValModelBuild", "gbm")
+  jaspBase:::assignFunctionInPackage(fakeGbmCrossValErr,        "gbmCrossValErr",        "gbm")
 
   # Import model formula from jaspResults
   formula <- jaspResults[["formula"]]$object
