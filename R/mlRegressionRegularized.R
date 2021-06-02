@@ -16,13 +16,13 @@
 #
 
 mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
-  
+
 	# Preparatory work
 	dataset <- .readDataRegularizedRegression(dataset, options)
 	.errorHandlingRegressionAnalyses(dataset, options, type = "regularized")
-	
+
 	# Check if analysis is ready to run
-	ready <- .regressionAnalysesReady(options, type = "regularized")	
+	ready <- .regressionAnalysesReady(options, type = "regularized")
 
 	# Compute results and create the model summary table
 	.regressionMachineLearningTable(dataset, options, jaspResults, ready, position = 1, type = "regularized")
@@ -50,15 +50,15 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
 
   # Create the lambda evaluation plot
   .regressionRegularizedLambdaEvaluation(options, jaspResults, ready, position = 7)
-  
+
 }
 
 # Read dataset
 .readDataRegularizedRegression <- function(dataset, options){
-  
+
   target                    <- NULL
   weights                   <- NULL
-  testSetIndicator          <- NULL 
+  testSetIndicator          <- NULL
   if(options[["target"]] != "")
     target                  <- options[["target"]]
   if(options[["weights"]] != "")
@@ -72,10 +72,10 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   if (is.null(dataset)){
     dataset <- .readAndAddCompleteRowIndices(dataset, columnsAsNumeric = variables.to.read)
   }
-  
+
   if(length(unlist(options[["predictors"]])) > 0 && options[["target"]] != "" && options[["scaleEqualSD"]])
     dataset[,c(options[["predictors"]], options[["target"]])] <- .scaleNumericData(dataset[,c(options[["predictors"]], options[["target"]]), drop = FALSE])
-  
+
   return(dataset)
 }
 
@@ -115,7 +115,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   # Create the generated test set indicator
   testIndicatorColumn <- rep(1, nrow(dataset))
   testIndicatorColumn[train.index] <- 0
-  
+
   if(options[["modelOpt"]] == "optimizationManual"){
     # Just create a train and a test set (no optimization)
 		train                   <- trainAndValid
@@ -129,9 +129,9 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
     test_target <- test[, options[["target"]]]
 
     regfit_train <- glmnet::cv.glmnet(x = train_pred, y = train_target, nfolds = 10, type.measure = "deviance",
-                                family = "gaussian", weights = weights_train, offset = NULL, alpha = alpha, 
+                                family = "gaussian", weights = weights_train, offset = NULL, alpha = alpha,
                                 standardize = FALSE, intercept = options[["intercept"]], thresh = options[["thresh"]])
-    
+
     lambda <- options[["lambda"]]
 
     pred_test <- predict(regfit_train, newx = test_pred, s = lambda, type = "link", exact = TRUE,
@@ -154,11 +154,11 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
     valid_target <- valid[, options[["target"]]]
     test_pred <- as.matrix(test[,options[["predictors"]]])
     test_target <- test[, options[["target"]]]
-    
+
     regfit_train <- glmnet::cv.glmnet(x = train_pred, y = train_target, nfolds = 10, type.measure = "deviance",
-                                    family = "gaussian", weights = weights_train, offset = NULL, alpha = alpha, 
+                                    family = "gaussian", weights = weights_train, offset = NULL, alpha = alpha,
                                     standardize = FALSE, intercept = options[["intercept"]], thresh = options[["thresh"]])
-    
+
     lambda <- base::switch(options[["modelOpt"]],
                             "optMin" = regfit_train[["lambda.min"]],
                             "opt1SE" = regfit_train[["lambda.1se"]])
@@ -171,12 +171,12 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
                           x = train_pred, y = train_target, weights = weights_train, offset = NULL,
                           alpha = alpha, standardize = FALSE, intercept = options[["intercept"]], thresh = options[["thresh"]])
   }
-  
+
   # Use the specified model to make predictions for dataset
   predictions <- predict(regfit_train, newx = as.matrix(dataset[,options[["predictors"]]]), s = lambda, type = "link", exact = TRUE,
                           x = as.matrix(dataset[,options[["predictors"]]]), y = dataset[, options[["target"]]], weights = weights, offset = NULL,
                           alpha = alpha, standardize = FALSE, intercept = options[["intercept"]], thresh = options[["thresh"]])
-  
+
   regressionResult <- list()
   regressionResult[["model"]]               <- regfit_train
   regressionResult[["lambda"]]              <- lambda
@@ -197,7 +197,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
     regressionResult[["validMSE"]]          <- mean( (as.numeric(pred_valid) -  valid[,options[["target"]]])^2 )
     regressionResult[["nvalid"]]            <- nrow(valid)
   }
-  
+
   return(regressionResult)
 }
 
@@ -212,7 +212,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
                                           "penalty", "alpha", "thresh", "intercept", "modelOpt", "lambda",
                                           "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
                                           "holdoutData", "testDataManual"))
-  
+
   coefTable$addColumnInfo(name = "var",  title = "", type = "string")
   coefTable$addColumnInfo(name = "coefs",  title = gettextf("Coefficient (%s)", "\u03B2"), type = "number")
 
@@ -224,7 +224,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
       varStrings <- c("(Intercept)", varStrings)
     coefTable[["var"]]   <- varStrings
   }
-  
+
   if(!ready)  return()
 
   regressionResult <- jaspResults[["regressionResult"]]$object
@@ -238,7 +238,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
     labs <- c("(Intercept)", rownames(coefTab)[-1])
     values <- as.numeric(coefTab)
   }
-  
+
   coefTable[["var"]]   <- labs
   coefTable[["coefs"]] <- values
 }
@@ -258,7 +258,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
 
   if(!ready) return()
 
-  regressionResult <- jaspResults[["regressionResult"]]$object  
+  regressionResult <- jaspResults[["regressionResult"]]$object
 
   model         <- regressionResult[["model"]]$glmnet.fit
   coefs         <- as.matrix(regressionResult[["model"]]$glmnet.fit$beta)
@@ -272,7 +272,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   p <- ggplot2::ggplot(data = d, mapping = ggplot2::aes(x = lambda, y = values, colour = ind), show.legend = TRUE) +
         jaspGraphs::geom_line() +
         ggplot2::scale_x_continuous("\u03BB", breaks = xBreaks, labels = xBreaks) +
-        ggplot2::scale_y_continuous(gettext("Coefficients"), breaks = yBreaks, labels = yBreaks) + 
+        ggplot2::scale_y_continuous(gettext("Coefficients"), breaks = yBreaks, labels = yBreaks) +
         ggplot2::scale_color_manual(values = colorspace::qualitative_hcl(n = length(options[["predictors"]]))) +
         ggplot2::labs(color = "")
 
@@ -281,7 +281,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   } else {
     p <- jaspGraphs::themeJasp(p)
   }
-  
+
   variableTrace$plotObject <- p
 }
 
@@ -300,13 +300,13 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
 
   if(!ready) return()
 
-  regressionResult <- jaspResults[["regressionResult"]]$object 
+  regressionResult <- jaspResults[["regressionResult"]]$object
 
   tempValues <- c(regressionResult[["cvMSELambda"]]$MSE - regressionResult[["cvMSELambda"]]$sd, regressionResult[["cvMSELambda"]]$MSE + regressionResult[["cvMSELambda"]]$sd)
 
   xBreaks <- jaspGraphs::getPrettyAxisBreaks(regressionResult[["cvMSELambda"]]$lambda, min.n = 4)
-  yBreaks <- jaspGraphs::getPrettyAxisBreaks(tempValues, min.n = 4) 
-  
+  yBreaks <- jaspGraphs::getPrettyAxisBreaks(tempValues, min.n = 4)
+
   p <- ggplot2::ggplot(data = regressionResult[["cvMSELambda"]], mapping = ggplot2::aes(x = lambda, y = MSE)) +
         ggplot2::geom_ribbon(data = regressionResult[["cvMSELambda"]], mapping = ggplot2::aes(ymin = MSE - sd, ymax = MSE + sd), fill = "grey90") +
         jaspGraphs::geom_line() +
@@ -315,12 +315,12 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
         ggplot2::geom_vline(ggplot2::aes(xintercept = regressionResult[["model"]]$lambda.min, color = "lambdaMin"), linetype = "dashed") +
         ggplot2::geom_vline(ggplot2::aes(xintercept = regressionResult[["model"]]$lambda.1se, color = "lambda1se"), linetype = "dashed") +
         ggplot2::scale_color_manual(name = "", values = c(lambdaMin = "#14a1e3", lambda1se = "#99c454"), labels = c(lambdaMin = gettext("Min. CV MSE"), lambda1se = gettextf("%s 1 SE", "\u03BB")))
-  
+
   if(options[["lambdaEvaluationLegend"]]){
     p <- jaspGraphs::themeJasp(p, legend.position = "top")
   } else {
     p <- jaspGraphs::themeJasp(p)
   }
-  
+
   lambdaEvaluation$plotObject <- p
 }

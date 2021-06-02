@@ -20,9 +20,9 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state=NULL) {
 	# Preparatory work
 	dataset <- .readDataRegressionAnalyses(dataset, options)
 	.errorHandlingRegressionAnalyses(dataset, options, type = "knn")
-	
+
 	# Check if analysis is ready to run
-	ready <- .regressionAnalysesReady(options, type = "knn")		
+	ready <- .regressionAnalysesReady(options, type = "knn")
 
 	# Compute results and create the model summary table
 	.regressionMachineLearningTable(dataset, options, jaspResults, ready, position = 1, type = "knn")
@@ -32,7 +32,7 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state=NULL) {
 
 	# Add test set indicator to data
   	.addTestIndicatorToData(options, jaspResults, ready, purpose = "regression")
-	
+
 	# Create the data split plot
 	.dataSplitPlot(dataset, options, jaspResults, ready, position = 2, purpose = "regression", type = "knn")
 
@@ -48,7 +48,7 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state=NULL) {
 }
 
 .knnRegression <- function(dataset, options, jaspResults, ready){
-	
+
 	# Import model formula from jaspResults
 	formula <- jaspResults[["formula"]]$object
 
@@ -69,13 +69,13 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state=NULL) {
 	# Create the generated test set indicator
 	testIndicatorColumn <- rep(1, nrow(dataset))
   	testIndicatorColumn[train.index] <- 0
-	
+
 	if(options[["modelOpt"]] == "optimizationManual"){
 		# Just create a train and a test set (no optimization)
 		train                   <- trainAndValid
 		test                    <- dataset[-train.index, ]
 
-		kfit_test <- kknn::kknn(formula = formula, train = train, test = test, k = options[['noOfNearestNeighbours']], 
+		kfit_test <- kknn::kknn(formula = formula, train = train, test = test, k = options[['noOfNearestNeighbours']],
 			distance = distance, kernel = weights, scale = FALSE)
 		nn <- options[['noOfNearestNeighbours']]
 
@@ -94,11 +94,11 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state=NULL) {
 			startProgressbar(length(nnRange))
 
 			for(i in nnRange){
-				
-				kfit_valid <- kknn::kknn(formula = formula, train = train, test = valid, k = i, 
+
+				kfit_valid <- kknn::kknn(formula = formula, train = train, test = valid, k = i,
 					distance = distance, kernel = weights, scale = FALSE)
 				errorStore[i] <- mean( (kfit_valid$fitted.values -  valid[,options[["target"]]])^2 )
-				kfit_train <- kknn::kknn(formula = formula, train = train, test = train, k = i, 
+				kfit_train <- kknn::kknn(formula = formula, train = train, test = train, k = i,
 							distance = distance, kernel = weights, scale = FALSE)
 				trainErrorStore[i] <- mean( (kfit_train$fitted.values -  train[,options[["target"]]])^2 )
 				progressbarTick()
@@ -107,7 +107,7 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state=NULL) {
 
 			nn <- base::switch(options[["modelOpt"]],
 								"optimizationError" = nnRange[which.min(errorStore)])
-			kfit_test <- kknn::kknn(formula = formula, train = train, test = test, k = nn, 
+			kfit_test <- kknn::kknn(formula = formula, train = train, test = test, k = nn,
 						distance = distance, kernel = weights, scale = FALSE)
 
 		} else if(options[["modelValid"]] == "validationKFold"){
@@ -140,7 +140,7 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state=NULL) {
 		} else if(options[["modelValid"]] == "validationLeaveOneOut"){
 
 			nnRange <- 1:options[["maxK"]]
-      		kfit_valid <- kknn::train.kknn(formula = formula, data = trainAndValid, ks = nnRange, scale = FALSE, distance = distance, kernel = weights)   
+      		kfit_valid <- kknn::train.kknn(formula = formula, data = trainAndValid, ks = nnRange, scale = FALSE, distance = distance, kernel = weights)
 			errorStore <- as.numeric(kfit_valid$MEAN.SQU)
 			nn <- base::switch(options[["modelOpt"]],
 								"optimizationError" = nnRange[which.min(errorStore)])
@@ -214,8 +214,8 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state=NULL) {
   if(options[["modelValid"]] == "validationManual"){
 
     xvalues <- rep(1:options[["maxK"]], 2)
-    yvalues1 <- result[["accuracyStore"]]  
-    yvalues2 <- result[["trainAccuracyStore"]] 
+    yvalues1 <- result[["accuracyStore"]]
+    yvalues2 <- result[["trainAccuracyStore"]]
     yvalues <- c(yvalues1, yvalues2)
     type <- rep(c(gettext("Validation set"), gettext("Training set")), each = length(yvalues1))
     d <- data.frame(x = xvalues, y = yvalues, type = type)
@@ -223,33 +223,33 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state=NULL) {
     xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, d$x), min.n = 4)
     yBreaks <- jaspGraphs::getPrettyAxisBreaks(d$y, min.n = 4)
 
-    pointData <- data.frame(x = result[["nn"]], 
+    pointData <- data.frame(x = result[["nn"]],
                             y = yvalues1[result[["nn"]]],
                             type = gettext("Validation set"))
 
-    p <- ggplot2::ggplot(data = d, ggplot2::aes(x = x, y = y, linetype = type)) + 
+    p <- ggplot2::ggplot(data = d, ggplot2::aes(x = x, y = y, linetype = type)) +
 			jaspGraphs::geom_line() +
-			ggplot2::scale_x_continuous(name = gettext("Number of Nearest Neighbors"), breaks = xBreaks, labels = xBreaks, limits = c(0, max(xBreaks))) + 
+			ggplot2::scale_x_continuous(name = gettext("Number of Nearest Neighbors"), breaks = xBreaks, labels = xBreaks, limits = c(0, max(xBreaks))) +
 			ggplot2::scale_y_continuous(name = ylabel, breaks = yBreaks, labels = yBreaks) +
 			ggplot2::labs(linetype = "") +
-			ggplot2::scale_linetype_manual(values = c(2,1)) + 
+			ggplot2::scale_linetype_manual(values = c(2,1)) +
 			jaspGraphs::geom_point(data = pointData, ggplot2::aes(x = x, y = y, linetype = type), fill = "red")
     p <- jaspGraphs::themeJasp(p, legend.position = "top")
 
   } else if(options[["modelValid"]] != "validationManual"){
 
     xvalues <- 1:options[["maxK"]]
-    yvalues <- result[["accuracyStore"]]     
+    yvalues <- result[["accuracyStore"]]
 	type <- rep(gettext("Training and validation set"), each = length(xvalues))
     d <- data.frame(x = xvalues, y = yvalues, type = type)
 
     xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, d$x), min.n = 4)
     yBreaks <- jaspGraphs::getPrettyAxisBreaks(d$y, min.n = 4)
-      
-    p <- ggplot2::ggplot(data = d, ggplot2::aes(x = x, y = y, linetype = type)) + 
+
+    p <- ggplot2::ggplot(data = d, ggplot2::aes(x = x, y = y, linetype = type)) +
 			jaspGraphs::geom_line() +
-			ggplot2::scale_x_continuous(name = gettext("Number of Nearest Neighbors"), breaks = xBreaks, labels = xBreaks, limits = c(0, max(xBreaks))) + 
-			ggplot2::scale_y_continuous(name = ylabel, breaks = yBreaks, labels = yBreaks) + 
+			ggplot2::scale_x_continuous(name = gettext("Number of Nearest Neighbors"), breaks = xBreaks, labels = xBreaks, limits = c(0, max(xBreaks))) +
+			ggplot2::scale_y_continuous(name = ylabel, breaks = yBreaks, labels = yBreaks) +
 			jaspGraphs::geom_point(ggplot2::aes(x = x, y = y, linetype = type), data = data.frame(x = result[["nn"]], y = yvalues[result[["nn"]]], type = gettext("Training and validation set")), fill = "red") +
 			ggplot2::labs(linetype = "")
     p <- jaspGraphs::themeJasp(p, legend.position = "top")

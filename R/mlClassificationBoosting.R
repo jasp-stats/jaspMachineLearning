@@ -16,11 +16,11 @@
 #
 
 mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
-  
+
   # Preparatory work
   dataset <- .readDataClassificationAnalyses(dataset, options)
   .errorHandlingClassificationAnalyses(dataset, options, type = "boosting")
-  
+
   # Check if analysis is ready to run
   ready <- .classificationAnalysesReady(options, type = "boosting")
 
@@ -65,7 +65,7 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
 
   # Decision boundaries
   .classificationDecisionBoundaries(dataset, options, jaspResults, ready, position = 12, type = "boosting")
-  
+
 }
 
 .boostingClassification <- function(dataset, options, jaspResults) {
@@ -106,7 +106,7 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
                       shrinkage = options[["shrinkage"]], interaction.depth = options[["intDepth"]],
                       cv.folds = noOfFolds, bag.fraction = options[["bagFrac"]], n.minobsinnode = options[["nNode"]],
                       distribution = "multinomial", n.cores = 1, keep.data = TRUE) # Multiple cores breaks modules in JASP, see: INTERNAL-jasp#372
- 
+
     noOfTrees <- options[["noOfTrees"]]
 
   } else if(options[["modelOpt"]] == "optimizationOOB"){
@@ -159,7 +159,7 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
   classificationResult[['confTable']]           <- table('Pred' = pred_test, 'Real' = test[,options[["target"]]])
   classificationResult[['testAcc']]             <- sum(diag(prop.table(classificationResult[['confTable']])))
   classificationResult[["relInf"]]              <- summary(bfit, plot = FALSE)
-  classificationResult[["auc"]]                 <- auc 
+  classificationResult[["auc"]]                 <- auc
   classificationResult[["ntrain"]]              <- nrow(train)
   classificationResult[["ntest"]]               <- nrow(test)
   classificationResult[["testPred"]]            <- pred_test
