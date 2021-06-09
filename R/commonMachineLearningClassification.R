@@ -352,9 +352,7 @@
   for (row in 2:l) {
     for (col in 1:(l-1)) {
       if (row == col) {
-          p <- jaspGraphs::drawAxis(xName = "", yName = "", force = TRUE) + adjMargin
-          p <- p + ggplot2::xlab("")
-          p <- p + ggplot2::ylab("")
+          p <- jaspGraphs::drawAxis(xName = NULL, yName = NULL, force = TRUE) + adjMargin
           p <- jaspGraphs::themeJasp(p)
 
           plotMat[[row, col]] <- p
@@ -366,9 +364,7 @@
           plotMat[[row-1, col]] <- .decisionBoundaryPlot(dataset, options, jaspResults, predictors, target, formula, l, type = type)
       }
       if (col > row) {
-          p <- jaspGraphs::drawAxis(xName = "", yName = "", force = TRUE) + adjMargin
-          p <- p + ggplot2::xlab("")
-          p <- p + ggplot2::ylab("")
+          p <- jaspGraphs::drawAxis(xName = NULL, yName = NULL, force = TRUE) + adjMargin
           p <- jaspGraphs::themeJasp(p)
 
           plotMat[[row, col]] <- p
@@ -385,6 +381,7 @@
   labelPos <- matrix(.5, 4, 2)
   labelPos[1, 1] <- .55
   labelPos[4, 2] <- .65
+
   p <- jaspGraphs::ggMatrixPlot(plotList = plotMat, leftLabels = variables[-1], topLabels = variables[-length(variables)],
                                 scaleXYlabels = NULL, labelPos = labelPos)
 
@@ -438,9 +435,9 @@
     p <- ggplot2::ggplot(data = gridData, mapping = ggplot2::aes(x = x, y = y)) +
           ggplot2::geom_tile(ggplot2::aes(fill = preds), alpha = 0.3, show.legend = FALSE) +
           ggplot2::labs(fill = options[["target"]]) +
-          ggplot2::scale_fill_manual(values = colorspace::qualitative_hcl(n = length(unique(target))))
-    p <- p + ggplot2::scale_x_continuous(name = "", breaks = xBreaks, limits = range(xBreaks))
-    p <- p + ggplot2::scale_y_continuous(name = "", breaks = yBreaks, limits = range(yBreaks))
+          ggplot2::scale_fill_manual(values = colorspace::qualitative_hcl(n = length(unique(target)))) +
+          ggplot2::scale_x_continuous(name = NULL, breaks = xBreaks, limits = range(xBreaks)) + 
+          ggplot2::scale_y_continuous(name = NULL, breaks = yBreaks, limits = range(yBreaks))
     if(options[["plotPoints"]])
       p <- p + jaspGraphs::geom_point(data = pointData, ggplot2::aes(x = x, y = y, fill = target))
     if(l <= 2){
@@ -460,14 +457,15 @@
 
   p <- ggplot2::ggplot(lda.data, ggplot2::aes(y = target, x = target, show.legend = TRUE)) +
         jaspGraphs::geom_point(ggplot2::aes(fill = target), alpha = 0) +
-        ggplot2::xlab("") +
-        ggplot2::ylab("") +
+        ggplot2::xlab(NULL) +
+        ggplot2::ylab(NULL) +
         ggplot2::theme(legend.key = ggplot2::element_blank()) +
         ggplot2::labs(fill = options[["target"]]) +
         ggplot2::scale_fill_manual(values = colorspace::qualitative_hcl(n = length(unique(target))))
-  p <- jaspGraphs::themeJasp(p, yAxis = FALSE, xAxis = FALSE, legend.position = "left")
-  p <- p + ggplot2::theme(axis.ticks = ggplot2::element_blank(), axis.text.x = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank())
-  p <- p + ggplot2::guides(fill = ggplot2::guide_legend(override.aes = list(alpha = 1)))
+  
+  p <- jaspGraphs::themeJasp(p, yAxis = FALSE, xAxis = FALSE, legend.position = "left") +
+        ggplot2::theme(axis.ticks = ggplot2::element_blank(), axis.text.x = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank()) +
+        ggplot2::guides(fill = ggplot2::guide_legend(override.aes = list(alpha = 1)))
 
   return(p)
 }
