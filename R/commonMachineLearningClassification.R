@@ -342,7 +342,6 @@
   cexText <- 1.6
 
   plotMat <- matrix(list(), l - 1, l - 1)
-  adjMargin <- ggplot2::theme(plot.margin = ggplot2::unit(c(.25, .40, .25, .25), "cm"))
   oldFontSize <- jaspGraphs::getGraphOption("fontsize")
   jaspGraphs::setGraphOption("fontsize", .85 * oldFontSize)
 
