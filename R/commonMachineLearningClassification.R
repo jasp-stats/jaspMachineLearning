@@ -351,26 +351,13 @@
 
   for (row in 2:l) {
     for (col in 1:(l-1)) {
-      if (row == col) {
-          p <- jaspGraphs::drawAxis(xName = NULL, yName = NULL, force = TRUE) + adjMargin
-          p <- jaspGraphs::themeJasp(p)
-
-          plotMat[[row, col]] <- p
-      }
       if (col < row) {
           predictors <- dataset[, variables]
           predictors <- predictors[, c(col, row)]
           formula <- formula(paste(options[["target"]], "~", paste(colnames(predictors), collapse=" + ")))
           plotMat[[row-1, col]] <- .decisionBoundaryPlot(dataset, options, jaspResults, predictors, target, formula, l, type = type)
       }
-      if (col > row) {
-          p <- jaspGraphs::drawAxis(xName = NULL, yName = NULL, force = TRUE) + adjMargin
-          p <- jaspGraphs::themeJasp(p)
-
-          plotMat[[row, col]] <- p
-      }
-      if(l > 2)
-      if(options[["plotLegend"]])
+      if(l > 2 && options[["plotLegend"]])
         plotMat[[1, 2]] <- .legendPlot(dataset, options, col)
       progressbarTick()
     }
@@ -441,7 +428,7 @@
     if(options[["plotPoints"]])
       p <- p + jaspGraphs::geom_point(data = pointData, ggplot2::aes(x = x, y = y, fill = target))
     if(l <= 2){
-      p <- jaspGraphs::themeJasp(p, xAxis = TRUE, yAxis = TRUE, legend.position = "right")
+      p <- jaspGraphs::themeJasp(p, xAxis = TRUE, yAxis = TRUE, legend.position = if(options[["plotLegend"]]) "right" else "none")
     } else {
       p <- jaspGraphs::themeJasp(p, xAxis = TRUE, yAxis = TRUE)
     }
