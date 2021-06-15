@@ -18,10 +18,10 @@
 .readDataRegressionAnalyses <- function(dataset, options, jaspResults){
   if (is.null(dataset))
     dataset <- .readDataClassificationRegressionAnalyses(dataset, options)
-  
+
   if (length(unlist(options[["predictors"]])) > 0 && options[["target"]] != "" && options[["scaleEqualSD"]])
     dataset[,c(options[["predictors"]], options[["target"]])] <- .scaleNumericData(dataset[,c(options[["predictors"]], options[["target"]]), drop = FALSE])
-  
+
   return(dataset)
 }
 
@@ -29,25 +29,25 @@
   target <- NULL
   if (options[["target"]] != "")
     target <- options[["target"]]
-  
+
   predictors <- NULL
   if (length(options[["predictors"]]) > 0)
     predictors <- unlist(options[["predictors"]])
-  
-  testSetIndicator <- NULL 
+
+  testSetIndicator <- NULL
   if (options[["testSetIndicatorVariable"]] != "" && options[["holdoutData"]] == "testSetIndicator")
     testSetIndicator <- options[["testSetIndicatorVariable"]]
-  
+
   return(.readAndAddCompleteRowIndices(dataset, columns = c(target, predictors), columnsAsNumeric = testSetIndicator))
 }
 
 .readAndAddCompleteRowIndices <- function(dataset, columns = NULL, columnsAsNumeric = NULL){
     dataset <- .readDataSetToEnd(columns = columns, columns.as.numeric = columnsAsNumeric)
-    
+
     complete.index      <- which(complete.cases(dataset))
     dataset             <- na.omit(dataset)
     rownames(dataset)   <- as.character(complete.index)
-    
+
     return(dataset)
 }
 
@@ -68,21 +68,21 @@
   if (options[["target"]] != "")
     target                  <- options[["target"]]
   variables.to.read         <- c(predictors, target)
-  
+
   if (length(variables.to.read) == 0)
     return()
-  
+
   if (options[["testSetIndicatorVariable"]] != "" && options[["holdoutData"]] == "testSetIndicator") {
-    
+
     if (options[["testSetIndicatorVariable"]] %in% predictors)
       jaspBase:::.quitAnalysis(gettextf("The variable '%s' can't be both a predictor and a test set indicator.", options[["testSetIndicatorVariable"]]))
-  
+
     indicatorVals <- unique(dataset[,options[["testSetIndicatorVariable"]]])
     if (length(indicatorVals) != 2 || !all(0:1 %in% indicatorVals))
       jaspBase:::.quitAnalysis(gettext("Your test set indicator should be binary, containing only 1 (included in test set) and 0 (excluded from test set)."))
-    
+
   }
-  
+
   customChecks <- .getCustomErrorChecksKnnBoosting(dataset, options, type)
   .hasErrors(dataset, type = c('infinity', 'observations'), custom = customChecks,
              all.target = variables.to.read,
@@ -116,11 +116,11 @@
         nTrain <- nTrainAndValid - 1
       valueToTest <- nTrain
     }
-    
+
     if (nn >= valueToTest)
       return(gettextf("You have specified more nearest neighbors than there are observations in the training set. Please choose a number lower than %d.", as.integer(valueToTest)))
   }
-  
+
   # check for too many folds (folds > nTrain+validation) before the analysis starts
   checkIfFoldsExceedValidation <- function() {
     if (options[["modelValid"]] == "validationKFold")  {
@@ -129,16 +129,16 @@
         return(gettextf("You have specified more folds than there are observations in the training and validation set. Please choose a number lower than %d.", as.integer(nTrainAndValid + 1)))
     }
   }
-  
+
   # check for too many observations in end nodes before the analysis starts
   checkMinObsNode <- function() {
     if (type != "boosting")
       return()
-      
+
     procentTrain <- (1 - options[["testDataManual"]])
     if (options[["modelOpt"]] == "optimizationOOB")
       procentTrain <- procentTrain * (1 - options[["validationDataManual"]])
-      
+
     nTrain <- nrow(dataset) * procentTrain
     bag.fraction <- options[["bagFrac"]]
     n.minobsinnode <- options[["nNode"]]
@@ -148,7 +148,7 @@
         nTrain * bag.fraction / 2 - 1
       ))
   }
-  
+
   return(list(checkNearestNeighbors, checkIfFoldsExceedValidation, checkMinObsNode))
 }
 
@@ -178,7 +178,7 @@
 
   if(ready){
     .regressionFormula(options, jaspResults)
-    
+
   if(type == "knn"){
     regressionResult <- .knnRegression(dataset, options, jaspResults)
   } else if(type == "regularized"){
@@ -234,7 +234,7 @@
 
     regressionTable$addColumnInfo(name = 'trees', title = gettext('Trees'),                type = 'integer')
     regressionTable$addColumnInfo(name = 'preds', title = gettext('Predictors per split'), type = 'integer')
-  
+
   } else if(type == "boosting"){
 
     regressionTable$addColumnInfo(name = 'trees',        title = gettext('Trees'),         type = 'integer')
@@ -267,7 +267,7 @@
     regressionTable$addFootnote(gettextf("Please provide a target variable and at least %d predictor variable(s).", requiredVars))
 
   jaspResults[["regressionTable"]] <- regressionTable
-  
+
   if(!ready)  return()
 
   .regressionMachineLearning(dataset, options, jaspResults, ready, type = type)
@@ -288,7 +288,7 @@
       nTrain <- nTrain - 1
     }
   }
-  
+
   # Fill the table per analysis
   if(type == "knn"){
 
@@ -299,10 +299,10 @@
       regressionTable$addFootnote(gettext("The optimum number of nearest neighbors is the maximum number. You might want to adjust the range of optimization."))
     }
 
-    distance  <- ifelse(regressionResult[["distance"]] == 1, yes = "Manhattan", no = "Euclidean")    
-    row <- data.frame(nn = regressionResult[["nn"]], 
-                      weights = regressionResult[["weights"]], 
-                      distance = distance, 
+    distance  <- ifelse(regressionResult[["distance"]] == 1, yes = "Manhattan", no = "Euclidean")
+    row <- data.frame(nn = regressionResult[["nn"]],
+                      weights = regressionResult[["weights"]],
+                      distance = distance,
                       ntrain = nTrain,
                       ntest = regressionResult[["ntest"]],
                       testMSE = regressionResult[["testMSE"]])
@@ -318,10 +318,10 @@
     if (regressionResult[["lambda"]] == 0)
       regressionTable$addFootnote(gettextf("When %s is set to 0 linear regression is performed.", "\u03BB"))
 
-    row <- data.frame(penalty = regressionResult[["penalty"]], 
-                      lambda = regressionResult[["lambda"]], 
-                      ntrain = nTrain, 
-                      ntest = regressionResult[["ntest"]], 
+    row <- data.frame(penalty = regressionResult[["penalty"]],
+                      lambda = regressionResult[["lambda"]],
+                      ntrain = nTrain,
+                      ntest = regressionResult[["ntest"]],
                       testMSE = regressionResult[["testMSE"]])
     if(options[["modelOpt"]] != "optimizationManual")
       row <- cbind(row, nvalid = nValid, validMSE = regressionResult[["validMSE"]])
@@ -334,11 +334,11 @@
     if(options[["modelOpt"]] == "optimizationError")
       regressionTable$addFootnote(gettext("The model is optimized with respect to the <i>out-of-bag mean squared error</i>."))
 
-    row <- data.frame(trees = regressionResult[["noOfTrees"]], 
-                      preds = regressionResult[["predPerSplit"]], 
+    row <- data.frame(trees = regressionResult[["noOfTrees"]],
+                      preds = regressionResult[["predPerSplit"]],
                       ntrain = nTrain,
                       ntest = regressionResult[["ntest"]],
-                      testMSE = regressionResult[["testMSE"]], 
+                      testMSE = regressionResult[["testMSE"]],
                       oob = regressionResult[["oobError"]])
     if(options[["modelOpt"]] != "optimizationManual")
       row <- cbind(row, nvalid = nValid, validMSE = regressionResult[["validMSE"]])
@@ -350,9 +350,9 @@
       regressionTable$addFootnote(gettext("The model is optimized with respect to the <i>out-of-bag mean squared error</i>."))
 
     distribution <- .regressionGetDistributionFromDistance(options[["distance"]])
-    row <- data.frame(trees = regressionResult[["noOfTrees"]], 
-                      shrinkage = options[["shrinkage"]], 
-                      distribution = distribution, 
+    row <- data.frame(trees = regressionResult[["noOfTrees"]],
+                      shrinkage = options[["shrinkage"]],
+                      distribution = distribution,
                       ntrain = nTrain,
                       ntest = regressionResult[["ntest"]],
                       testMSE = regressionResult[["testMSE"]])
@@ -365,9 +365,9 @@
 
 .regressionGetDistributionFromDistance <- function(distance) {
   return(switch(
-    distance, 
-    "tdist"    = gettext("t"), 
-    "gaussian" = gettext("Gaussian"), 
+    distance,
+    "tdist"    = gettext("t"),
+    "gaussian" = gettext("Gaussian"),
     "laplace"  = gettext("Laplace")
   ))
 }
@@ -375,7 +375,7 @@
 .regressionEvaluationMetrics <- function(dataset, options, jaspResults, ready, position){
 
   if(!is.null(jaspResults[["validationMeasures"]]) || !options[["validationMeasures"]]) return()
-  
+
   validationMeasures <- createJaspTable(title = "Evaluation Metrics")
   validationMeasures$position <- position
   validationMeasures$dependOn(options = c("validationMeasures", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
@@ -389,7 +389,7 @@
 
   measures <- c("MSE", "RMSE", "MAE", "MAPE", "R\u00B2")
   validationMeasures[["measures"]] <- measures
-  
+
   jaspResults[["validationMeasures"]] <- validationMeasures
 
   if(!ready)  return()
@@ -413,7 +413,7 @@
 
   if(is.na(r_squared))
     validationMeasures$addFootnote(gettextf("R%s cannot be computed due to lack of variance in the predictions.</i>", "\u00B2"))
-  
+
 }
 
 .regressionPredictedPerformancePlot <- function(options, jaspResults, ready, position){
@@ -432,7 +432,7 @@
   if(!ready) return()
 
   regressionResult <- jaspResults[["regressionResult"]]$object
-  
+
   predPerformance <- data.frame(true = c(regressionResult[["testReal"]]), predicted = regressionResult[["testPred"]])
 
   allBreaks <- jaspGraphs::getPrettyAxisBreaks(predPerformance[, 1], min.n = 4)
@@ -461,7 +461,7 @@
     result <- base::switch(purpose,
   						"classification" = jaspResults[["classificationResult"]]$object,
 						  "regression" = jaspResults[["regressionResult"]]$object)
-  
+
   if(options[["modelOpt"]] == "optimizationManual"){
     # For a fixed model, draw only a training and a test set
 
@@ -478,11 +478,11 @@
             ggplot2::xlab("") +
             ggplot2::ylab("") +
             ggplot2::scale_fill_manual(values = c("tomato2", "steelblue2")) +
-            ggplot2::annotate("text", y = c(0, nTrain, nTrain + nTest), x = 1, label = c(gettextf("Train: %d", nTrain), gettextf("Test: %d", nTest), gettextf("Total: %d", nTrain + nTest)), size = 4, vjust = 0.5, hjust = -0.1) 
+            ggplot2::annotate("text", y = c(0, nTrain, nTrain + nTest), x = 1, label = c(gettextf("Train: %d", nTrain), gettextf("Test: %d", nTest), gettextf("Total: %d", nTrain + nTest)), size = 4, vjust = 0.5, hjust = -0.1)
       p <- jaspGraphs::themeJasp(p, xAxis = FALSE, yAxis = FALSE)
 
-      p <- p + ggplot2::theme(axis.ticks = ggplot2::element_blank(), 
-                              axis.text.y = ggplot2::element_blank(), 
+      p <- p + ggplot2::theme(axis.ticks = ggplot2::element_blank(),
+                              axis.text.y = ggplot2::element_blank(),
                               axis.text.x = ggplot2::element_blank())
 
   } else {
@@ -503,13 +503,13 @@
             ggplot2::xlab("") +
             ggplot2::ylab("") +
             ggplot2::scale_fill_manual(values = c("tomato2", "darkgoldenrod2", "steelblue2")) +
-            ggplot2::annotate("text", y = c(0, nTrain, nTrain + nValid, nTrain + nValid + nTest), x = 1, 
-                              label = c(gettextf("Train: %d", nTrain), gettextf("Validation: %d", nValid), gettextf("Test: %d", nTest), gettextf("Total: %d", nTrain + nValid + nTest)), 
-                              size = 4, vjust = 0.5, hjust = -0.1) 
+            ggplot2::annotate("text", y = c(0, nTrain, nTrain + nValid, nTrain + nValid + nTest), x = 1,
+                              label = c(gettextf("Train: %d", nTrain), gettextf("Validation: %d", nValid), gettextf("Test: %d", nTest), gettextf("Total: %d", nTrain + nValid + nTest)),
+                              size = 4, vjust = 0.5, hjust = -0.1)
       p <- jaspGraphs::themeJasp(p, xAxis = FALSE, yAxis = FALSE)
 
-      p <- p + ggplot2::theme(axis.ticks = ggplot2::element_blank(), 
-                              axis.text.y = ggplot2::element_blank(), 
+      p <- p + ggplot2::theme(axis.ticks = ggplot2::element_blank(),
+                              axis.text.y = ggplot2::element_blank(),
                               axis.text.x = ggplot2::element_blank())
 
     } else {
@@ -527,9 +527,9 @@
             ggplot2::xlab("") +
             ggplot2::ylab("") +
             ggplot2::scale_fill_manual(values = c("tomato2", "seagreen2")) +
-            ggplot2::annotate("text", y = c(0, nTrainAndValid, nTrainAndValid + nTest), x = 1, 
-                              label = c(gettextf("Train and validation: %d", nTrainAndValid), gettextf("Test: %d", nTest), gettextf("Total: %d", nTrainAndValid + nTest)), 
-                              size = 4, vjust = 0.5, hjust = -0.1) 
+            ggplot2::annotate("text", y = c(0, nTrainAndValid, nTrainAndValid + nTest), x = 1,
+                              label = c(gettextf("Train and validation: %d", nTrainAndValid), gettextf("Test: %d", nTest), gettextf("Total: %d", nTrainAndValid + nTest)),
+                              size = 4, vjust = 0.5, hjust = -0.1)
       p <- jaspGraphs::themeJasp(p, xAxis = FALSE, yAxis = FALSE)
 
       p <- p + ggplot2::theme(axis.ticks = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank(), axis.text.x = ggplot2::element_blank())
@@ -558,7 +558,7 @@
                                                               "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
                                                               "holdoutData", "testDataManual", "testIndicatorColumn", "addIndicator"))
     jaspResults[["testIndicatorColumn"]]$setNominal(testIndicatorColumn)
-  }  
+  }
 }
 
 # these could also extend the S3 method scale although that could be somewhat unexpected
@@ -614,6 +614,6 @@
                                                               "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
                                                               "holdoutData", "testDataManual", "testIndicatorColumn"))
     jaspResults[["valueColumn"]]$setScale(valueColumn)
-  }  
+  }
 }
 

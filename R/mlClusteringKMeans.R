@@ -16,11 +16,11 @@
 #
 
 mlClusteringKMeans <- function(jaspResults, dataset, options, ...) {
-    
+
   # Preparatory work
   dataset <- .readDataClusteringAnalyses(dataset, options)
   .errorHandlingClusteringAnalyses(dataset, options, type = "kmeans")
-  
+
   # Check if analysis is ready to run
   ready  <- .clusterAnalysesReady(options)
 
@@ -29,7 +29,7 @@ mlClusteringKMeans <- function(jaspResults, dataset, options, ...) {
 
   # If the user wants to add the clusters to the data set
   .clusteringAddClustersToData(dataset, options, jaspResults, ready)
-  
+
   # Create the cluster information table
   .clusterInformationTable(options, jaspResults, ready, position = 2, type = "kmeans")
 
@@ -50,13 +50,13 @@ mlClusteringKMeans <- function(jaspResults, dataset, options, ...) {
 
   # Create the cluster plot
   .tsneClusterPlot(dataset, options, jaspResults, ready, position = 8, type = "kmeans")
-  
+
 }
 
 .kMeansClustering <- function(dataset, options, jaspResults, ready){
 
   if(options[["modelOpt"]] == "validationManual"){
-    
+
     kfit <- kmeans(dataset[, options[["predictors"]]],
                    centers = options[['noOfClusters']],
                    iter.max = options[['noOfIterations']],
@@ -86,7 +86,7 @@ mlClusteringKMeans <- function(jaspResults, dataset, options, ...) {
 
       v_tmp <- kfit_tmp$centers
       clabels_tmp <- kfit_tmp$cluster
-      csumsqrs_tmp <- .sumsqr(dataset[, options[["predictors"]]], v_tmp, clabels_tmp) 
+      csumsqrs_tmp <- .sumsqr(dataset[, options[["predictors"]]], v_tmp, clabels_tmp)
       wssStore[i - 1] <- csumsqrs_tmp$tot.within.ss
 
       m <- ncol(kfit_tmp$centers)
@@ -95,7 +95,7 @@ mlClusteringKMeans <- function(jaspResults, dataset, options, ...) {
       D <- kfit_tmp$tot.withinss
       aicStore[i - 1] <- D + 2*m*k
       bicStore[i - 1] <- D + log(n)*m*k
-      
+
       progressbarTick()
   }
 
@@ -103,7 +103,7 @@ mlClusteringKMeans <- function(jaspResults, dataset, options, ...) {
                             "validationSilh" = clusterRange[which.max(avg_silh)],
                             "validationAIC" = clusterRange[which.min(aicStore)],
                             "validationBIC" = clusterRange[which.min(bicStore)])
-  
+
   kfit <- kmeans(dataset[, options[["predictors"]]],
                  centers = clusters,
                  iter.max = options[['noOfIterations']],

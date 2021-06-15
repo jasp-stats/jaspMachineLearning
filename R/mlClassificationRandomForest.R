@@ -16,11 +16,11 @@
 #
 
 mlClassificationRandomForest <- function(jaspResults, dataset, options, ...) {
-  
+
   # Preparatory work
   dataset <- .readDataClassificationAnalyses(dataset, options)
   .errorHandlingClassificationAnalyses(dataset, options, type = "randomForest")
-  
+
   # Check if analysis is ready to run
   ready <- .classificationAnalysesReady(options, type = "randomForest")
 
@@ -65,11 +65,11 @@ mlClassificationRandomForest <- function(jaspResults, dataset, options, ...) {
 
   # Decision boundaries
   .classificationDecisionBoundaries(dataset, options, jaspResults, ready, position = 12, type = "randomForest")
-  
+
 }
 
 .randomForestClassification <- function(dataset, options, jaspResults) {
-  
+
   # Set model-specific parameters
   noOfPredictors <- base::switch(options[["noOfPredictors"]], "manual" = options[["numberOfPredictors"]], "auto" = floor(sqrt(length(options[["predictors"]]))))
 
@@ -102,7 +102,7 @@ mlClassificationRandomForest <- function(jaspResults, dataset, options, ...) {
                                             sampsize = ceiling(options[["bagFrac"]]*nrow(train)),
                                             importance = TRUE, keep.forest = TRUE)
     noOfTrees <- options[["noOfTrees"]]
-    
+
   } else if(options[["modelOpt"]] == "optimizationError"){
     # Create a train, validation and test set (optimization)
     valid.index             <- sample.int(nrow(trainAndValid), size = ceiling(options[['validationDataManual']] * nrow(trainAndValid)))

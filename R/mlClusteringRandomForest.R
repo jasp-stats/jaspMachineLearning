@@ -53,17 +53,17 @@ mlClusteringRandomForest <- function(jaspResults, dataset, options, ...) {
 
   # Create the cluster plot
   .tsneClusterPlot(dataset, options, jaspResults, ready, position = 9, type = "randomForest")
-  
+
 }
 
 .randomForestClustering <- function(dataset, options, jaspResults){
 
 if(options[["modelOpt"]] == "validationManual"){
-      
-    rfit <- randomForest::randomForest(x = dataset[, options[["predictors"]]], 
-										y = NULL, 
-										ntree = options[["noOfTrees"]], 
-										proximity = TRUE, 
+
+    rfit <- randomForest::randomForest(x = dataset[, options[["predictors"]]],
+										y = NULL,
+										ntree = options[["noOfTrees"]],
+										proximity = TRUE,
 										oob.prox = TRUE)
 
     clusters <- options[['noOfClusters']]
@@ -78,10 +78,10 @@ if(options[["modelOpt"]] == "validationManual"){
 
     startProgressbar(length(clusterRange))
 
-	rfit_tmp <- randomForest::randomForest(x = dataset[, options[["predictors"]]], 
-									y = NULL, 
-									ntree = options[["noOfTrees"]], 
-									proximity = TRUE, 
+	rfit_tmp <- randomForest::randomForest(x = dataset[, options[["predictors"]]],
+									y = NULL,
+									ntree = options[["noOfTrees"]],
+									proximity = TRUE,
 									oob.prox = TRUE)
 	hrfit_tmp <- hclust(as.dist(1 - rfit_tmp$proximity), method = "ward.D2")
 
@@ -92,7 +92,7 @@ if(options[["modelOpt"]] == "validationManual"){
       avg_silh[i - 1] <- silh[["avg.width"]]
 
 	  m <- dim(as.data.frame(dataset[, options[["predictors"]]]))[2]
-  
+
     wss_tmp <- numeric(i)
     for(j in 1:i) {
       if (m == 1) {
@@ -109,7 +109,7 @@ if(options[["modelOpt"]] == "validationManual"){
 	D <- sum(wss_tmp)
 	aicStore[i - 1] <- D + 2*m*k
 	bicStore[i - 1] <- D + log(n)*m*k
-      
+
     progressbarTick()
   }
 
@@ -118,10 +118,10 @@ if(options[["modelOpt"]] == "validationManual"){
                             "validationAIC" = clusterRange[which.min(aicStore)],
                             "validationBIC" = clusterRange[which.min(bicStore)])
 
-	rfit <- randomForest::randomForest(x = dataset[, options[["predictors"]]], 
-										y = NULL, 
-										ntree = options[["noOfTrees"]], 
-										proximity = TRUE, 
+	rfit <- randomForest::randomForest(x = dataset[, options[["predictors"]]],
+										y = NULL,
+										ntree = options[["noOfTrees"]],
+										proximity = TRUE,
 										oob.prox = TRUE)
 
   }
@@ -133,7 +133,7 @@ if(options[["modelOpt"]] == "validationManual"){
   size <- as.numeric(table(pred.values))
 
   m <- dim(as.data.frame(dataset[, options[["predictors"]]]))[2]
-  
+
   wss <- numeric(clusters)
   for(i in 1:clusters) {
     if (m == 1) {
@@ -182,13 +182,13 @@ if(options[["modelOpt"]] == "validationManual"){
 .randomForestClusteringVarImpTable <- function(options, jaspResults, ready, position){
 
   if (!is.null(jaspResults[["importanceTable"]]) || !options[["importanceTable"]]) return()
-  
+
   # Create table
   importanceTable <- createJaspTable(title = gettext("Variable Importance"))
   importanceTable$position <- position
   importanceTable$dependOn(options = c("predictors", "noOfClusters","noOfRandomSets", "noOfIterations", "algorithm", "modelOpt", "seed", "optimizationCriterion",
                                                       "maxClusters", "seedBox", "scaleEqualSD", "m", "distance", "linkage", "eps", "minPts", "noOfTrees", "maxTrees", "importanceTable"))
-  
+
   # Add column info
   importanceTable$addColumnInfo(name = "variable",  title = "", type = "string")
   importanceTable$addColumnInfo(name = "measure",  title = gettext("Mean decrease in Gini Index"), type = "number", format = "sf:4")
@@ -203,7 +203,7 @@ if(options[["modelOpt"]] == "validationManual"){
   ord <- order(varImp, decreasing = TRUE)
   name <- rownames(varImp)[ord]
   values <- as.numeric(varImp[ord])
-  
+
   # Add data per column
   row <- data.frame(variable = name, measure = values)
   importanceTable$addRows(row)

@@ -16,11 +16,11 @@
 #
 
 mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
-  
+
   # Preparatory work
   dataset <- .readDataClusteringAnalyses(dataset, options)
   .errorHandlingClusteringAnalyses(dataset, options, type = "hierarchical")
-  
+
   # Check if analysis is ready to run
   ready  <- .clusterAnalysesReady(options)
 
@@ -29,7 +29,7 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
 
   # If the user wants to add the clusters to the data set
   .clusteringAddClustersToData(dataset, options, jaspResults, ready)
-  
+
   # Create the cluster information table
   .clusterInformationTable(options, jaspResults, ready, position = 2, type = "hierarchical")
 
@@ -41,7 +41,7 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
 
   # Create the within sum of squares plot
   .elbowCurvePlot(dataset, options, jaspResults, ready, position = 5)
-  
+
   # Create dendrogram
   .hierarchicalClusteringDendogram(dataset, options, jaspResults, ready, position = 6)
 
@@ -53,13 +53,13 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
 
   # Create the cluster plot
   .tsneClusterPlot(dataset, options, jaspResults, ready, position = 9, type = "hierarchical")
-  
+
 }
 
 .hierarchicalClustering <- function(dataset, options, jaspResults){
-  
+
   if(options[["modelOpt"]] == "validationManual"){
-        
+
     if (options[["distance"]] == "Pearson correlation") {
       distances <- as.dist(1 - cor(t(dataset[, options[["predictors"]]]), method = "pearson"))
       distances[is.na(distances)] <- 1 # We impute the missing correlations with a 1, as 1 - 1 = 0
@@ -113,7 +113,7 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
       bic <- D + log(n)*m*k
       aicStore[i - 1] <- D + 2*m*k
       bicStore[i - 1] <- D + log(n)*m*k
-      
+
       progressbarTick()
     }
 
@@ -121,11 +121,11 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
                               "validationSilh" = clusterRange[which.max(avg_silh)],
                               "validationAIC" = clusterRange[which.min(aicStore)],
                               "validationBIC" = clusterRange[which.min(bicStore)])
-    
+
     hfit <- cutree(hclust(distances, method = options[["linkage"]]), k = clusters)
 
   }
-  
+
   pred.values <- hfit
   clusters <- clusters
   size <- as.data.frame(table(hfit))[,2]
@@ -148,7 +148,7 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
   bic <- D + log(n)*m*k
 
   silhouettes <- summary(cluster::silhouette(hfit, distances))
-  
+
   Silh_score <- silhouettes[["avg.width"]]
   silh_scores <- silhouettes[["clus.avg.widths"]]
 
@@ -200,7 +200,7 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
   } else {
     hc <- hclust(dist(data), method = options[["linkage"]])
   }
-  
+
   p <- ggdendro::ggdendrogram(hc)
   p <- jaspGraphs::themeJasp(p) + ggdendro::theme_dendro()
   dendrogram$plotObject <- p

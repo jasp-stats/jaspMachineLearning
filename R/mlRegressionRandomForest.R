@@ -16,11 +16,11 @@
 #
 
 mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
-  
+
 	# Preparatory work
 	dataset <- .readDataRegressionAnalyses(dataset, options)
 	.errorHandlingRegressionAnalyses(dataset, options, type = "randomForest")
-	
+
 	# Check if analysis is ready to run
 	ready <- .regressionAnalysesReady(options, type = "randomForest")
 
@@ -57,7 +57,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
 }
 
 .randomForestRegression <- function(dataset, options, jaspResults){
-  
+
   # Set model-specific parameters
   noOfPredictors <- base::switch(options[["noOfPredictors"]], "manual" = options[["numberOfPredictors"]], "auto" = floor(sqrt(length(options[["predictors"]]))))
 
@@ -125,7 +125,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
                                     ntree = noOfTrees, mtry = noOfPredictors,
                                     sampsize = ceiling(options[["bagFrac"]]*nrow(train)),
                                     importance = TRUE, keep.forest = TRUE)
-  
+
   # Use the specified model to make predictions for dataset
   predictions <- predict(rfit_test, newdata = dataset)
 
@@ -158,14 +158,14 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
     regressionResult[["valid"]]       <- valid
     regressionResult[["rfit_valid"]]  <- rfit_valid
   }
-   
+
   return(regressionResult)
 }
 
 .randomForestVariableImportance <- function(options, jaspResults, ready, position, purpose){
 
   if(!is.null(jaspResults[["tableVariableImportance"]]) || !options[["tableVariableImportance"]]) return()
-  
+
   tableVariableImportance <- createJaspTable(title = gettext("Variable Importance"))
   tableVariableImportance$position <- position
   tableVariableImportance$dependOn(options = c("tableVariableImportance", "scaleEqualSD", "target", "predictors", "modelOpt", "maxTrees",
@@ -175,7 +175,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   tableVariableImportance$addColumnInfo(name = "predictor",  title = " ", type = "string")
   tableVariableImportance$addColumnInfo(name = "MDiA",   title = gettext("Mean decrease in accuracy"),     type = "number")
   tableVariableImportance$addColumnInfo(name = "MDiNI",  title = gettext("Total increase in node purity"), type = "number")
-  
+
   jaspResults[["tableVariableImportance"]] <- tableVariableImportance
 
   if(!ready)  return()
@@ -185,11 +185,11 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
                           "regression" = jaspResults[["regressionResult"]]$object)
 
   varImpOrder <- sort(result[["rfit_test"]]$importance[,1], decr = TRUE, index.return = TRUE)$ix
-  
+
   tableVariableImportance[["predictor"]] <- as.character(result[["varImp"]]$Variable)
-  tableVariableImportance[["MDiA"]]      <- result[["varImp"]]$MeanIncrMSE    
+  tableVariableImportance[["MDiA"]]      <- result[["varImp"]]$MeanIncrMSE
   tableVariableImportance[["MDiNI"]]     <- result[["varImp"]]$TotalDecrNodeImp
-  
+
 }
 
 .randomForestTreesErrorPlot <- function(options, jaspResults, ready, position, purpose){
@@ -223,18 +223,18 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
     values2 <- base::switch(purpose,
                       "classification" = 1 - result[["rfit_valid"]]$err.rate[1:result[["noOfTrees"]],1],
                       "regression" = result[["rfit_valid"]]$mse[1:result[["noOfTrees"]]])
-    
+
     values <- c(values2, values)
 
     treesMSE <- data.frame(
       trees = rep(1:length(values2), 2),
-      error = values, 
+      error = values,
       type = rep(c(gettext("Validation set"), gettext("Training set")), each = length(values2))
     )
 
     xBreaks <- jaspGraphs::getPrettyAxisBreaks(treesMSE[["trees"]], min.n = 4)
     yBreaks <- jaspGraphs::getPrettyAxisBreaks(treesMSE[["error"]], min.n = 4)
-    
+
     p <- ggplot2::ggplot(data = treesMSE, mapping = ggplot2::aes(x = trees, y = error, linetype = type)) +
           jaspGraphs::geom_line()
 
@@ -248,20 +248,20 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
 
     treesMSE <- data.frame(
       trees = 1:length(values),
-      error = values, 
+      error = values,
       type = rep(gettext("Training set"), each = length(values))
     )
 
     xBreaks <- jaspGraphs::getPrettyAxisBreaks(treesMSE[["trees"]], min.n = 4)
     yBreaks <- jaspGraphs::getPrettyAxisBreaks(treesMSE[["error"]], min.n = 4)
-    
+
     p <- ggplot2::ggplot(data = treesMSE, mapping = ggplot2::aes(x = trees, y = error, linetype = type)) +
           jaspGraphs::geom_line()
 
     p <- p + ggplot2::scale_x_continuous(name = gettext("Number of Trees"), labels = xBreaks, breaks = xBreaks) +
               ggplot2::scale_y_continuous(name = xTitle,                    labels = yBreaks, breaks = yBreaks) +
               ggplot2::labs(linetype = "")
-    p <- jaspGraphs::themeJasp(p, legend.position = "top")    
+    p <- jaspGraphs::themeJasp(p, legend.position = "top")
 
   }
 
@@ -284,12 +284,12 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   result <- base::switch(purpose,
                         "classification" = jaspResults[["classificationResult"]]$object,
                         "regression" = jaspResults[["regressionResult"]]$object)
-  
+
   p <- ggplot2::ggplot(result[["varImp"]], ggplot2::aes(x = reorder(Variable, MeanIncrMSE), y = MeanIncrMSE)) +
       ggplot2::geom_bar(stat = "identity", fill = "grey", col = "black", size = .3) +
       ggplot2::labs(x = "", y = gettext("Mean Decrease in Accuracy"))
   p <-jaspGraphs::themeJasp(p, horizontal = TRUE, xAxis = FALSE) + ggplot2::theme(axis.ticks.y = ggplot2::element_blank())
-  
+
   plotDecreaseAccuracy$plotObject <- p
 }
 
@@ -309,7 +309,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   result <- base::switch(purpose,
                       "classification" = jaspResults[["classificationResult"]]$object,
                       "regression" = jaspResults[["regressionResult"]]$object)
-  
+
   p <- ggplot2::ggplot(result[["varImp"]], ggplot2::aes(x = reorder(Variable, TotalDecrNodeImp), y = TotalDecrNodeImp)) +
         ggplot2::geom_bar(stat = "identity", fill = "grey", col = "black", size = .3) +
         ggplot2::labs(x = "", y = gettext("Total Increase in Node Purity"))
