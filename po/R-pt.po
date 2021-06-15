@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2021-03-06 14:49\n"
-"PO-Revision-Date: 2021-05-23 12:32+0000\n"
+"PO-Revision-Date: 2021-06-15 09:20+0000\n"
 "Last-Translator: Alex França <alex.tonante@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/pt/>\n"
@@ -110,7 +110,6 @@ msgstr ""
 msgid "Confusion Matrix"
 msgstr ""
 
-#, fuzzy
 msgid "Observed"
 msgstr "Observado"
 
@@ -294,7 +293,6 @@ msgstr ""
 msgid "The Total Sum of Squares of the %1$s cluster model is %2$s"
 msgstr ""
 
-#, fuzzy
 msgid "Value"
 msgstr "Valor"
 
@@ -483,13 +481,11 @@ msgstr ""
 msgid "Prior and Posterior Class Probabilities"
 msgstr ""
 
-#, fuzzy
 msgid "Prior"
 msgstr "Anterior"
 
-#, fuzzy
 msgid "Posterior"
-msgstr "RÂ² Posterior"
+msgstr "Posterior"
 
 msgid "Class Means in Training Data"
 msgstr ""
@@ -660,9 +656,8 @@ msgstr ""
 msgid "Variable Trace Plot"
 msgstr ""
 
-#, fuzzy
 msgid "Coefficients"
-msgstr "Coeficiente de Mardia"
+msgstr "Coeficientes"
 
 msgid "Lambda Evaluation Plot"
 msgstr ""
