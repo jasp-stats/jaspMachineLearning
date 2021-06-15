@@ -32,6 +32,12 @@ Description
 	}
 	Analysis
 	{
+		menu:	qsTr("Neural Network")
+		title:	qsTr("Neural Network Regression")
+		func:	"mlRegressionNeuralNetwork"
+	}
+	Analysis
+	{
 		menu:	qsTr("Random Forest")
 		title:	qsTr("Random Forest Regression")
 		func:	"mlRegressionRandomForest"
@@ -66,6 +72,12 @@ Description
 		menu:	qsTr("Linear Discriminant")
 		title:	qsTr("Linear Discriminant Classification")
 		func: 	"mlClassificationLda"
+	}
+	Analysis
+	{
+		menu:	qsTr("Neural Network")
+		title:	qsTr("Neural Network Classification")
+		func: 	"mlClassificationNeuralNetwork"
 	}
 	Analysis
 	{

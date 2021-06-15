@@ -37,7 +37,7 @@
 .classificationAnalysesReady <- function(options, type){
   if(type == "lda" || type == "randomForest" || type == "boosting"){
     ready <- length(options[["predictors"]][options[["predictors"]] != ""]) >= 2 && options[["target"]] != ""
-  } else if(type == "knn"){
+  } else if(type == "knn" || type == "neuralnet"){
     ready <- length(options[["predictors"]][options[["predictors"]] != ""]) >= 1 && options[["target"]] != ""
   }
   return(ready)
@@ -69,13 +69,16 @@
     classificationResult <- .randomForestClassification(dataset, options, jaspResults)
   } else if(type == "boosting"){
     classificationResult <- .boostingClassification(dataset, options, jaspResults)
+  } else if (type == "neuralnet") {
+	classificationResult <- .neuralnetClassification(dataset, options, jaspResults)
   }
 
   jaspResults[["classificationResult"]] <- createJaspState(classificationResult)
   jaspResults[["classificationResult"]]$dependOn(options = c("noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "validationDataManual",
                                                             "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
                                                             "estimationMethod", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode",
-                                                            "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual"))
+                                                            "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", 
+															"threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax"))
   }
 }
 
@@ -87,15 +90,17 @@
     "knn"          = gettext("K-Nearest Neighbors Classification"),
     "lda"          = gettext("Linear Discriminant Classification"),
     "randomForest" = gettext("Random Forest Classification"),
-    "boosting"     = gettext("Boosting Classification")
+    "boosting"     = gettext("Boosting Classification"),
+	"neuralnet"    = gettext("Neural Network Classification")
   )
 
   classificationTable <- createJaspTable(title)
   classificationTable$position <- position
-  classificationTable$dependOn(options =c("noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "validationDataManual",
+  classificationTable$dependOn(options = c("noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "validationDataManual",
                                           "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
                                           "estimationMethod", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode",
-                                          "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual"))
+                                          "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual",
+										  "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax"))
 
   # Add analysis-specific columns
   if (type == "knn") {
@@ -119,6 +124,11 @@
     classificationTable$addColumnInfo(name = 'trees',     title = gettext('Trees'),     type = 'integer')
     classificationTable$addColumnInfo(name = 'shrinkage', title = gettext('Shrinkage'), type = 'number')
 
+  } else if (type == "neuralnet") {
+	
+    classificationTable$addColumnInfo(name = 'layers',     title = gettext('Hidden Layers'),     type = 'integer')
+	classificationTable$addColumnInfo(name = 'nodes',     title = gettext('Nodes'),     type = 'integer')
+
   }
 
   # Add common columns
@@ -136,7 +146,7 @@
   }
 
 # If no analysis is run, specify the required variables in a footnote
-  requiredVars <- ifelse(type == "knn", yes = 1L, no = 2L)
+  requiredVars <- if (type == "knn" || type == "neuralnet") 1L else 2L
   if(!ready)
     classificationTable$addFootnote(gettextf("Please provide a target variable and at least %i predictor variable(s).", requiredVars))
 
@@ -228,6 +238,14 @@
       row <- cbind(row, nvalid = nValid, validAcc = classificationResult[["validAcc"]])
     classificationTable$addRows(row)
 
+  } else if(type == "neuralnet") {
+	  classificationTable$addFootnote(gettext("The model is optimized with respect to the <i>sum of squares</i>."))
+	  row <- data.frame(layers = classificationResult[["nLayers"]],
+	                    nodes = classificationResult[["nNodes"]],
+						ntrain = nTrain,
+                        ntest = classificationResult[["ntest"]],
+                        testAcc = classificationResult[["testAcc"]])
+    classificationTable$addRows(row)
   }
 }
 
@@ -240,7 +258,8 @@
   confusionTable$dependOn(options = c("noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "validationDataManual",
                                       "target", "predictors", "seed", "seedBox", "confusionTable", "confusionProportions", "maxK", "noOfFolds", "modelValid",
                                       "estimationMethod", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode",
-                                      "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual"))
+                                      "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual",
+									  "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax"))
 
   jaspResults[["confusionTable"]] <- confusionTable
 
@@ -307,7 +326,8 @@
                                           "maxK", "noOfFolds", "modelValid", "noOfNearestNeighbors", "distanceParameterManual", "weights",
                                           "plotLegend", "plotPoints", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors",
                                           "shrinkage", "intDepth", "nNode", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-                                          "holdoutData", "testDataManual"))
+                                          "holdoutData", "testDataManual",
+										  "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax"))
   jaspResults[["decisionBoundary"]] <- decisionBoundary
 
   if(!ready || length(options[["predictors"]]) < 2)  return()
@@ -413,7 +433,22 @@
                         distribution = "multinomial", n.cores=1) #multiple cores breaks modules in JASP, see: INTERNAL-jasp#372
       probabilities <- gbm::predict.gbm(bfit, newdata = grid, n.trees = classificationResult[["noOfTrees"]], type = "response")
       preds <- colnames(probabilities)[apply(probabilities, 1, which.max)]
-    }
+    } else if(type == "neuralnet"){
+	    structure <- .getNeuralNetworkStructure(options)
+        nfit <- neuralnet::neuralnet(formula = formula, data = dataset, 
+										   hidden = structure,
+										   learningrate = options[["learningRate"]],
+										   threshold = options[["threshold"]],
+										   stepmax = options[["stepMax"]],
+										   rep = 1,
+										   startweights = NULL,
+										   algorithm = options[["algorithm"]],
+										   err.fct = "sse",# jaspResults[["errfct"]]$object,
+										   act.fct = jaspResults[["actfct"]]$object, 
+										   linear.output = if(options[["actfct"]] == "linear") TRUE else FALSE)
+		preds <- as.factor(max.col(predict(nfit, newdata = grid)))
+		levels(preds) <- unique(dataset[, options[["target"]]])
+	}
 
     gridData <- data.frame(x = grid[, 1], y = grid[, 2])
     pointData <- data.frame(x=predictors[, 1], y=predictors[, 2])
@@ -465,7 +500,8 @@
     rocCurve$dependOn(options = c("rocCurve", "trainingDataManual", "scaleEqualSD", "modelOpt", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
                                     "target", "predictors", "seed", "seedBox", "modelValid", "estimationMethod",
                                     "maxK", "noOfFolds", "modelValid", "noOfNearestNeighbors", "distanceParameterManual", "weights",
-                                    "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode", "holdoutData", "testDataManual"))
+                                    "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode", "holdoutData", "testDataManual",
+									"threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax"))
     jaspResults[["rocCurve"]] <- rocCurve
 
     if(!ready) return()
@@ -539,7 +575,23 @@
                    sampsize = classificationResult[["bagFrac"]], importance = TRUE, keep.forest = TRUE)
         score <- predict(rfit, test, type = "prob")[, 'TRUE']
 
-      }
+      } else if (type == "neuralnet") {
+
+    structure <- .getNeuralNetworkStructure(options)
+  nfit <- neuralnet::neuralnet(formula = formula, data = typeData, 
+										   hidden = structure,
+										   learningrate = options[["learningRate"]],
+										   threshold = options[["threshold"]],
+										   stepmax = options[["stepMax"]],
+										   rep = 1,
+										   startweights = NULL,
+										   algorithm = options[["algorithm"]],
+										   err.fct = "sse",# jaspResults[["errfct"]]$object,
+										   act.fct = jaspResults[["actfct"]]$object, 
+										   linear.output = if(options[["actfct"]] == "linear") TRUE else FALSE)
+  score <- max.col(predict(nfit, test))
+
+	}
 
       pred <- ROCR::prediction(score, actual.class)
       nbperf <- ROCR::performance(pred, "tpr", "fpr")
@@ -547,7 +599,8 @@
       rocXstore <- c(rocXstore, unlist(nbperf@x.values))
       rocYstore <- c(rocYstore, unlist(nbperf@y.values))
       rocNamestore <- c(rocNamestore, rep(lvls[i], length(unlist(nbperf@y.values))))
-    }
+
+	}
 
     rocData <- data.frame(x = rocXstore, y = rocYstore, name = rocNamestore)
     rocData <- na.omit(rocData) # Remove classes that are not in the test set
@@ -683,7 +736,8 @@
   validationMeasures$position <- position
   validationMeasures$dependOn(options = c("validationMeasures", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
                                                             "target", "predictors", "seed", "seedBox", "modelValid", "maxK", "noOfFolds", "modelValid", "holdoutData", "testDataManual",
-                                                            "estimationMethod", "shrinkage", "intDepth", "nNode", "validationDataManual", "testSetIndicatorVariable", "testSetIndicator"))
+                                                            "estimationMethod", "shrinkage", "intDepth", "nNode", "validationDataManual", "testSetIndicatorVariable", "testSetIndicator",
+															"threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax"))
 
   validationMeasures$addColumnInfo(name = "group",     title = "",                   type = "string")
   validationMeasures$addColumnInfo(name = "precision", title = gettext("Precision"), type = "number")
@@ -753,7 +807,8 @@
   classProportionsTable$position <- position
   classProportionsTable$dependOn(options = c("classProportionsTable", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
                                                             "target", "predictors", "seed", "seedBox", "modelValid", "maxK", "noOfFolds", "modelValid", "holdoutData", "testDataManual",
-                                                            "estimationMethod", "shrinkage", "intDepth", "nNode", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual"))
+                                                            "estimationMethod", "shrinkage", "intDepth", "nNode", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
+															"threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax"))
 
   classProportionsTable$addColumnInfo(name = "group",   title = "", type = "string")
   classProportionsTable$addColumnInfo(name = "dataset", title = gettext("Data Set"), type = "number")
@@ -834,7 +889,8 @@
     jaspResults[["classColumn"]] <- createJaspColumn(columnName=options[["classColumn"]])
     jaspResults[["classColumn"]]$dependOn(options = c("classColumn", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
                                                             "target", "predictors", "seed", "seedBox", "modelValid", "maxK", "noOfFolds", "modelValid", "holdoutData", "testDataManual",
-                                                            "estimationMethod", "shrinkage", "intDepth", "nNode", "validationDataManual", "testSetIndicatorVariable", "testSetIndicator"))
+                                                            "estimationMethod", "shrinkage", "intDepth", "nNode", "validationDataManual", "testSetIndicatorVariable", "testSetIndicator",
+															"threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax"))
 
     #make sure to create to classification column with the same type as the target!
     if(.columnIsScale(options$target))       jaspResults[["classColumn"]]$setScale(classColumn)
@@ -905,5 +961,22 @@
   rfit_auc <- randomForest::randomForest(x = typeData, y = factor(levelVar), ntree = noOfTrees, mtry = noOfPredictors,
                                     sampsize = ceiling(options[["bagFrac"]]*nrow(train)), importance = TRUE, keep.forest = TRUE)
   score <- predict(rfit_auc, test, type = "prob")[, 'TRUE']
+  return(score)
+}
+
+.calcAUCScore.nnClassification <- function(AUCformula, test, typeData, options, jaspResults, ...) {
+  structure <- .getNeuralNetworkStructure(options)
+  nfit_auc <- neuralnet::neuralnet(formula = AUCformula, data = typeData, 
+										   hidden = structure,
+										   learningrate = options[["learningRate"]],
+										   threshold = options[["threshold"]],
+										   stepmax = options[["stepMax"]],
+										   rep = 1,
+										   startweights = NULL,
+										   algorithm = options[["algorithm"]],
+										   err.fct = "sse",# jaspResults[["errfct"]]$object,
+										   act.fct = jaspResults[["actfct"]]$object, 
+										   linear.output = if(options[["actfct"]] == "linear") TRUE else FALSE)
+  score <- max.col(predict(nfit_auc, test))
   return(score)
 }

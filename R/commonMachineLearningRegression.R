@@ -155,7 +155,7 @@
 .regressionAnalysesReady <- function(options, type){
   if(type == "randomForest" || type == "boosting" || type == "regularized"){
     ready <- length(options[["predictors"]][options[["predictors"]] != ""]) >= 2 && options[["target"]] != ""
-  } else if(type == "knn"){
+  } else if(type == "knn" || type == "neuralnet"){
     ready <- length(options[["predictors"]][options[["predictors"]] != ""]) >= 1 && options[["target"]] != ""
   }
   return(ready)
@@ -187,6 +187,8 @@
     regressionResult <- .randomForestRegression(dataset, options, jaspResults)
   } else if(type == "boosting"){
     regressionResult <- .boostingRegression(dataset, options, jaspResults)
+  } else if(type == "neuralnet") {
+	regressionResult <- .neuralnetRegression(dataset, options, jaspResults)
   }
 
   jaspResults[["regressionResult"]] <- createJaspState(regressionResult)
@@ -194,7 +196,8 @@
                                                             "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "confusionProportions", "maxK", "noOfFolds", "modelValid",
                                                             "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac",
                                                             "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-                                                            "holdoutData", "testDataManual"))
+                                                            "holdoutData", "testDataManual",
+															"threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax"))
   }
 }
 
@@ -206,7 +209,8 @@
                       "knn" = gettext("K-Nearest Neighbors Regression"),
                       "regularized" = gettext("Regularized Linear Regression"),
                       "randomForest" = gettext("Random Forest Regression"),
-                      "boosting" = gettext("Boosting Regression"))
+                      "boosting" = gettext("Boosting Regression"),
+					  "neuralnet" = gettext("Neural Network Regression"))
 
   regressionTable <- createJaspTable(title)
   regressionTable$position <- position
@@ -214,7 +218,8 @@
                                           "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
                                           "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "maxTrees",
                                           "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac", "intDepth", "nNode", "distance",
-                                          "testSetIndicatorVariable", "testSetIndicator", "validationDataManual","holdoutData", "testDataManual"))
+                                          "testSetIndicatorVariable", "testSetIndicator", "validationDataManual","holdoutData", "testDataManual",
+										  "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax"))
 
   # Add analysis-specific columns
   if(type == "knn"){
@@ -241,6 +246,11 @@
     regressionTable$addColumnInfo(name = 'shrinkage',    title = gettext('Shrinkage'),     type = 'number')
     regressionTable$addColumnInfo(name = 'distribution', title = gettext('Loss function'), type = 'integer')
 
+  } else if (type == "neuralnet") {
+	
+    regressionTable$addColumnInfo(name = 'layers',     title = gettext('Hidden Layers'),     type = 'integer')
+	regressionTable$addColumnInfo(name = 'nodes',     title = gettext('Nodes'),     type = 'integer')
+
   }
 
   # Add common columns
@@ -262,7 +272,7 @@
   }
 
 # If no analysis is run, specify the required variables in a footnote
-  requiredVars <- if(type == "knn") 1L else 2L
+  requiredVars <- if(type == "knn" || type == "neuralnet") 1L else 2L
   if(!ready)
     regressionTable$addFootnote(gettextf("Please provide a target variable and at least %d predictor variable(s).", requiredVars))
 
@@ -360,6 +370,14 @@
       row <- cbind(row, nvalid = nValid, validMSE = regressionResult[["validMSE"]])
     regressionTable$addRows(row)
 
+  } else if(type == "neuralnet") {
+	  regressionTable$addFootnote(gettext("The model is optimized with respect to the <i>sum of squares</i>."))
+	  row <- data.frame(layers = regressionResult[["nLayers"]],
+	                    nodes = regressionResult[["nNodes"]],
+						ntrain = nTrain,
+                        ntest = regressionResult[["ntest"]],
+                        testMSE = regressionResult[["testMSE"]])
+    regressionTable$addRows(row)
   }
 }
 
@@ -382,7 +400,8 @@
                                                               "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "confusionProportions", "maxK", "noOfFolds", "modelValid",
                                                               "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac",
                                                               "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "maxTrees",
-                                                              "holdoutData", "testDataManual"))
+                                                              "holdoutData", "testDataManual",
+															  "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax"))
 
   validationMeasures$addColumnInfo(name = "measures", title = "", type = "string")
   validationMeasures$addColumnInfo(name = "values", title = gettext("Value"), type = "string")
@@ -426,7 +445,8 @@
                                                             "target", "predictors", "seed", "seedBox", "modelValid", "maxK", "noOfFolds", "modelValid", "predictedPerformancePlot",
                                                             "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac",
                                                             "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "maxTrees",
-                                                            "holdoutData", "testDataManual"))
+                                                            "holdoutData", "testDataManual",
+															"threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax"))
   jaspResults[["predictedPerformancePlot"]] <- predictedPerformancePlot
 
   if(!ready) return()
@@ -556,7 +576,8 @@
                                                               "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "confusionProportions", "maxK", "noOfFolds", "modelValid",
                                                               "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac",
                                                               "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-                                                              "holdoutData", "testDataManual", "testIndicatorColumn", "addIndicator"))
+                                                              "holdoutData", "testDataManual", "testIndicatorColumn", "addIndicator", 
+															  "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax"))
     jaspResults[["testIndicatorColumn"]]$setNominal(testIndicatorColumn)
   }
 }
@@ -612,7 +633,8 @@
                                                               "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
                                                               "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac",
                                                               "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-                                                              "holdoutData", "testDataManual", "testIndicatorColumn"))
+                                                              "holdoutData", "testDataManual", "testIndicatorColumn",
+															  "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax"))
     jaspResults[["valueColumn"]]$setScale(valueColumn)
   }
 }
