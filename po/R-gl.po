@@ -1,0 +1,752 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2021-05-07 13:27\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: gl_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Virgin-Header: remove this line if you change anything in the header.\n"
+"X-Language: gl_ES\n"
+"X-Source-Language: C\n"
+"X-Generator: Poedit 2.3\n"
+
+msgid "K-Nearest Neighbors Classification"
+msgstr "Clasificación dos K veciños máis próximos"
+
+msgid "Linear Discriminant Classification"
+msgstr "Clasificación discriminante linear"
+
+msgid "Random Forest Classification"
+msgstr "Clasificación en bosques aleatorios"
+
+msgid "Boosting Classification"
+msgstr "Clasificación de potenciación"
+
+#, fuzzy
+msgid "Nearest neighbors"
+msgstr "Veciños máis próximos:"
+
+msgid "Weights"
+msgstr "Ponderacións"
+
+#, fuzzy
+msgid "Distance"
+msgstr "Distancia:"
+
+#, fuzzy
+msgid "Linear Discriminants"
+msgstr "Discriminante linear"
+
+msgid "Method"
+msgstr "Método"
+
+#, fuzzy
+msgid "Trees"
+msgstr "Árbores:"
+
+#, fuzzy
+msgid "Predictors per split"
+msgstr "Preditores por separador:"
+
+#, fuzzy
+msgid "Shrinkage"
+msgstr "Contracción:"
+
+msgid "n(Train)"
+msgstr ""
+
+#, fuzzy
+msgid "n(Validation)"
+msgstr "Validación cruzada"
+
+#, fuzzy
+msgid "n(Test)"
+msgstr "Proba"
+
+#, fuzzy
+msgid "Validation Accuracy"
+msgstr "Precisión da clasificación"
+
+#, fuzzy
+msgid "Test Accuracy"
+msgstr "Precisión numérica"
+
+#, fuzzy
+msgid "OOB Accuracy"
+msgstr "Precisión numérica"
+
+msgid "Please provide a target variable and at least %i predictor variable(s)."
+msgstr ""
+
+msgid ""
+"The model is optimized with respect to the <i>validation set accuracy</i>."
+msgstr ""
+
+msgid ""
+"The optimum number of nearest neighbors is the maximum number. You might "
+"want to adjust the range of optimization."
+msgstr ""
+
+msgid "Manhattan"
+msgstr "Manhattan"
+
+msgid "Euclidean"
+msgstr "Euclídeo"
+
+msgid "Moment"
+msgstr ""
+
+#, fuzzy
+msgid "MLE"
+msgstr "ML"
+
+msgid "MVE"
+msgstr ""
+
+msgid "t"
+msgstr "t"
+
+msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
+msgstr ""
+
+#, fuzzy
+msgid "Confusion Matrix"
+msgstr "Matriz de desarranxo"
+
+msgid "Observed"
+msgstr "Observado"
+
+#, fuzzy
+msgid "Predicted"
+msgstr "Preditores"
+
+#, fuzzy
+msgid "Decision Boundary Matrix"
+msgstr "Matriz límite de decisión"
+
+msgid ""
+"Cannot create matrix: not enough numeric variables remain after removing "
+"factor variables. You need at least 2 numeric variables."
+msgstr ""
+
+#, fuzzy
+msgid "ROC Curves Plot"
+msgstr "Curvas ROC"
+
+#, fuzzy
+msgid "False positive rate"
+msgstr "Todo positivo"
+
+#, fuzzy
+msgid "True positive rate"
+msgstr "Todo positivo"
+
+msgid "Perfect separation"
+msgstr ""
+
+#, fuzzy
+msgid "Andrews Curves Plot"
+msgstr "Curvas de Andrew"
+
+msgid "Andrews curves require a minimum of 2 predictor variables."
+msgstr ""
+
+#, fuzzy
+msgid "Box's M-test for Homogeneity of Covariance Matrices"
+msgstr "Homoxeneidade das matrices de covarianzas"
+
+#, fuzzy
+msgid "Evaluation Metrics"
+msgstr "Métricas de avaliación"
+
+msgid "Precision"
+msgstr "Precisión"
+
+msgid "Recall"
+msgstr ""
+
+msgid "F1 Score"
+msgstr ""
+
+#, fuzzy
+msgid "Support"
+msgstr "Soster as rexións"
+
+msgid "AUC"
+msgstr "AUC"
+
+msgid ""
+"Area Under Curve (AUC) is calculated for every class against all other "
+"classes."
+msgstr ""
+
+#, fuzzy
+msgid "Average / Total"
+msgstr "Media"
+
+#, fuzzy
+msgid "Class Proportions"
+msgstr "Proporcións de clase"
+
+#, fuzzy
+msgid "Data Set"
+msgstr "Sincronizando o conxunto de datos"
+
+#, fuzzy
+msgid "Training Set"
+msgstr "Parámetros de adestramento"
+
+#, fuzzy
+msgid "Validation Set"
+msgstr "Non hai erro de verificación"
+
+#, fuzzy
+msgid "Training and Validation Set"
+msgstr "Datos de adestramento e validación"
+
+#, fuzzy
+msgid "Test Set"
+msgstr "Comprobar os resultados"
+
+msgid ""
+"You have specified more clusters than distinct data points. Please choose a "
+"number lower than %s."
+msgstr ""
+
+msgid ""
+"R package error: The hclust clustering algorithm from the stats R package "
+"cannot handle data that has 65536 or more rows. We are working on a solution "
+"for this problem. Please try another algorithm in the meantime."
+msgstr ""
+
+msgid "K-Means Clustering"
+msgstr "Conglomerados con medias K"
+
+msgid "Fuzzy C-Means Clustering"
+msgstr "Conglomerados con medias C borrosas"
+
+msgid "Hierarchical Clustering"
+msgstr "Conglomerados xerárquicos"
+
+msgid "Density-Based Clustering"
+msgstr "Conglomerados baseados na densidade"
+
+msgid "Random Forest Clustering"
+msgstr "Conglomerados en bosques aleatorios"
+
+#, fuzzy
+msgid "Clusters"
+msgstr "Conglomerados:"
+
+msgid "N"
+msgstr "N"
+
+msgid "R%s"
+msgstr ""
+
+msgid "AIC"
+msgstr "AIC"
+
+msgid "BIC"
+msgstr "BIC"
+
+msgid "Please provide at least 2 variables."
+msgstr ""
+
+#, fuzzy
+msgid "silhouette"
+msgstr "Puntuación de siluetas"
+
+msgid "The model is optimized with respect to the <i>%s</i> value."
+msgstr ""
+
+msgid ""
+"The optimum number of clusters is the maximum number of clusters. You might "
+"want to adjust the range of optimization."
+msgstr ""
+
+msgid ""
+"Your cluster model contains 0 clusters and only Noisepoints, we advise to "
+"change the Eps and MinPts parameters."
+msgstr ""
+
+msgid ""
+"Your cluster model contains 1 cluster and 0 Noisepoints. You could change "
+"the Eps and MinPts parameters."
+msgstr ""
+
+msgid "The variables in the model are <b>unstandardized</b>."
+msgstr ""
+
+#, fuzzy
+msgid "Cluster Information"
+msgstr "Información dos conglomerados"
+
+#, fuzzy
+msgid "Cluster"
+msgstr "Conglomerados:"
+
+msgid "Size"
+msgstr "Tamaño"
+
+msgid "Explained proportion within-cluster heterogeneity"
+msgstr ""
+
+msgid "Within sum of squares"
+msgstr "Suma de cadrados dentro"
+
+msgid "Silhouette score"
+msgstr "Puntuación de siluetas"
+
+#, fuzzy
+msgid "Centroid %s"
+msgstr "Centroides"
+
+msgid "Noisepoints"
+msgstr ""
+
+msgid "The Between Sum of Squares of the %1$s cluster model is %2$s"
+msgstr ""
+
+msgid "The Total Sum of Squares of the %1$s cluster model is %2$s"
+msgstr ""
+
+msgid "Value"
+msgstr "Valor"
+
+#, fuzzy
+msgid "Maximum diameter"
+msgstr "Máxima profundidade da árbore"
+
+#, fuzzy
+msgid "Minimum separation"
+msgstr "Rango mínimo"
+
+#, fuzzy
+msgid "Pearson's %s"
+msgstr "R de Pearson"
+
+msgid "Dunn index"
+msgstr ""
+
+#, fuzzy
+msgid "Entropy"
+msgstr "Entrada"
+
+msgid "Calinski-Harabasz index"
+msgstr ""
+
+msgid "All metrics are based on the <i>euclidean</i> distance."
+msgstr ""
+
+msgid "Evaluation metrics cannot be computed when there is only 1 cluster."
+msgstr ""
+
+#, fuzzy
+msgid "t-SNE Cluster Plot"
+msgstr "gráfica de conglomerados t-SNE"
+
+msgid "Noisepoint"
+msgstr ""
+
+#, fuzzy
+msgid "Elbow Method Plot"
+msgstr "Método do cóbado"
+
+#, fuzzy
+msgid "WSS"
+msgstr "MCP (WLS)"
+
+#, fuzzy
+msgid "Number of Clusters"
+msgstr "Número de conglomerados"
+
+#, fuzzy
+msgid "Lowest %s value"
+msgstr "Probar valor"
+
+#, fuzzy
+msgid "Cluster Means"
+msgstr "Medias dos conglomerados"
+
+#, fuzzy
+msgid "Cluster %s"
+msgstr "Conglomerados:"
+
+#, fuzzy
+msgid "Cluster Density Plots"
+msgstr "Densidades dos conglomerados"
+
+msgid "Density"
+msgstr "Densidade"
+
+#, fuzzy
+msgid "Cluster Mean Plots"
+msgstr "Medias dos conglomerados"
+
+#, fuzzy
+msgid "All predictors"
+msgstr "Preditores de escala"
+
+msgid "The variable '%s' can't be both a predictor and a test set indicator."
+msgstr ""
+
+msgid ""
+"Your test set indicator should be binary, containing only 1 (included in "
+"test set) and 0 (excluded from test set)."
+msgstr ""
+
+msgid ""
+"You have specified more nearest neighbors than there are observations in the "
+"training set. Please choose a number lower than %d."
+msgstr ""
+
+msgid ""
+"You have specified more folds than there are observations in the training "
+"and validation set. Please choose a number lower than %d."
+msgstr ""
+
+msgid ""
+"The minimum number of observations per node is too large. Ensure that `2 * "
+"Min. observations in node + 1` > `Training data used per tree * available "
+"training data` (in this case the minimum can be %.3f at most)."
+msgstr ""
+
+msgid "K-Nearest Neighbors Regression"
+msgstr "Regresión dos K veciños máis próximos"
+
+msgid "Regularized Linear Regression"
+msgstr "Regresión linear regularizada"
+
+msgid "Random Forest Regression"
+msgstr "Regresión de bosques aleatorios"
+
+msgid "Boosting Regression"
+msgstr "Regresión de potenciación"
+
+#, fuzzy
+msgid "Penalty"
+msgstr "Penalización:"
+
+#, fuzzy
+msgid "Loss function"
+msgstr "Función de perda:"
+
+#, fuzzy
+msgid "Validation MSE"
+msgstr "Non hai erro de verificación"
+
+#, fuzzy
+msgid "Test MSE"
+msgstr "Proba"
+
+#, fuzzy
+msgid "OOB Error"
+msgstr "Fallo OSF"
+
+msgid "Please provide a target variable and at least %d predictor variable(s)."
+msgstr ""
+
+msgid ""
+"The model is optimized with respect to the <i>validation set mean squared "
+"error</i>."
+msgstr ""
+
+msgid "When %s is set to 0 linear regression is performed."
+msgstr ""
+
+msgid ""
+"The model is optimized with respect to the <i>out-of-bag mean squared error</"
+"i>."
+msgstr ""
+
+msgid "Gaussian"
+msgstr "Normal"
+
+#, fuzzy
+msgid "Laplace"
+msgstr "Hiper-g de Laplace"
+
+msgid "R%s cannot be computed due to lack of variance in the predictions.</i>"
+msgstr ""
+
+#, fuzzy
+msgid "Predictive Performance Plot"
+msgstr "Capacidade preditiva"
+
+#, fuzzy
+msgid "Observed test values"
+msgstr "Valores observados"
+
+#, fuzzy
+msgid "Predicted test values"
+msgstr "Intervalos de predicións"
+
+#, fuzzy
+msgid "Data Split"
+msgstr "Separador de datos"
+
+msgid "Train: %d"
+msgstr ""
+
+#, fuzzy
+msgid "Test: %d"
+msgstr "Proba"
+
+#, fuzzy
+msgid "Total: %d"
+msgstr "Total"
+
+#, fuzzy
+msgid "Validation: %d"
+msgstr "% para datos de validación"
+
+#, fuzzy
+msgid "Train and validation: %d"
+msgstr "Datos de adestramento e validación"
+
+msgid "Object passed to .scaleNumericData.matrix was not numeric!"
+msgstr ""
+
+msgid "The target variable should have at least 2 classes."
+msgstr ""
+
+#, fuzzy
+msgid "Linear Discriminant Coefficients"
+msgstr "Clasificación discriminante linear"
+
+msgid "(Constant)"
+msgstr ""
+
+#, fuzzy
+msgid "Prior and Posterior Class Probabilities"
+msgstr "Probabilidades previas e posteriores"
+
+msgid "Prior"
+msgstr "Previo"
+
+#, fuzzy
+msgid "Posterior"
+msgstr "R² posterior"
+
+#, fuzzy
+msgid "Class Means in Training Data"
+msgstr "Datos de adestramento de medias de clase"
+
+#, fuzzy
+msgid "Linear Discriminant Matrix"
+msgstr "Matriz discriminante linear"
+
+#, fuzzy
+msgid "Tests of Equality of Class Means"
+msgstr "Igualdade de medias de clase"
+
+msgid "The null hypothesis specifies equal class means."
+msgstr ""
+
+#, fuzzy
+msgid "Tests of Equality of Covariance Matrices"
+msgstr "Igualdade de matrices de covarianzas"
+
+msgid "df"
+msgstr "gl"
+
+msgid "p"
+msgstr "p"
+
+msgid "The null hypothesis specifies equal covariance matrices."
+msgstr ""
+
+msgid "Pooled Within-Class Matrices Correlations"
+msgstr ""
+
+#, fuzzy
+msgid "K-Distance Plot"
+msgstr "Gráfica de distancia K"
+
+msgid "Points sorted by distance"
+msgstr ""
+
+#, fuzzy
+msgid ""
+"%s-nearest neighbors \n"
+"distance"
+msgstr "Veciños máis próximos:"
+
+msgid "Maximum curvature = %s"
+msgstr ""
+
+msgid "End of recursion reached without converging"
+msgstr ""
+
+msgid "x and y must be numeric and finite. Missing values not allowed."
+msgstr ""
+
+msgid "x and y must be of equal length."
+msgstr ""
+
+msgid "Need more points to find cutoff."
+msgstr ""
+
+msgid "Need to specify fraction of maximum slope."
+msgstr ""
+
+msgid ""
+"Fraction of maximum slope must be positive and be less than or equal to 1."
+msgstr ""
+
+msgid "Method must be either 'first' or 'curvature'."
+msgstr ""
+
+msgid "Cutoff point is beyond range. Returning NA."
+msgstr ""
+
+msgid "Dendrogram"
+msgstr "Dendrograma"
+
+#, fuzzy
+msgid "Variable Importance"
+msgstr "Importancia da variable"
+
+#, fuzzy
+msgid "Mean decrease in Gini Index"
+msgstr "A media decrece en precisión"
+
+#, fuzzy
+msgid "Relative Influence"
+msgstr "Influencia relativa"
+
+#, fuzzy
+msgid "Out-of-bag Improvement Plot"
+msgstr "Mellora \"descuberto o choio\""
+
+#, fuzzy
+msgid "Training set"
+msgstr "Parámetros de adestramento"
+
+#, fuzzy
+msgid "OOB Change in %s Multinomial Deviance"
+msgstr "Proba baiesiana multinomial"
+
+msgid "OOB Change in %s Binomial Deviance"
+msgstr ""
+
+msgid "OOB Change in %s%s Deviance"
+msgstr ""
+
+msgid "Number of Trees"
+msgstr "Número de árbores"
+
+#, fuzzy
+msgid "Deviance Plot"
+msgstr "Desviación"
+
+#, fuzzy
+msgid "Multinomial Deviance"
+msgstr "Proba Multinomial"
+
+#, fuzzy
+msgid "Binomial Deviance"
+msgstr "Comprobación Binomial"
+
+#, fuzzy
+msgid "%s Deviance"
+msgstr "Desviación"
+
+#, fuzzy
+msgid "Relative Influence Plot"
+msgstr "Influencia relativa"
+
+#, fuzzy
+msgid "Classification Accuracy Plot"
+msgstr "Precisión da clasificación"
+
+#, fuzzy
+msgid "Mean Squared Error Plot"
+msgstr "Erro cadrado medio"
+
+#, fuzzy
+msgid "Classification Accuracy"
+msgstr "Precisión da clasificación"
+
+#, fuzzy
+msgid "Mean Squared Error"
+msgstr "Erro cadrado medio"
+
+#, fuzzy
+msgid "Validation set"
+msgstr "Non hai erro de verificación"
+
+msgid "Number of Nearest Neighbors"
+msgstr "Número de veciños máis próximos"
+
+#, fuzzy
+msgid "Training and validation set"
+msgstr "Datos de adestramento e validación"
+
+msgid "Mean decrease in accuracy"
+msgstr "A media decrece en precisión"
+
+msgid "Total increase in node purity"
+msgstr "Incremento total da pureza do nodo"
+
+#, fuzzy
+msgid "Out-of-bag Classification Accuracy Plot"
+msgstr "Precisión da clasificación"
+
+#, fuzzy
+msgid "Out-of-bag Mean Squared Error Plot"
+msgstr "Erro \"descuberto o choio\""
+
+#, fuzzy
+msgid "Out-of-bag %sClassification Accuracy"
+msgstr "Precisión da clasificación"
+
+#, fuzzy
+msgid "Out-of-bag %sMean Squared Error"
+msgstr "Erro \"descuberto o choio\""
+
+#, fuzzy
+msgid "Mean Decrease in Accuracy"
+msgstr "A media decrece en precisión"
+
+#, fuzzy
+msgid "Total Increase in Node Purity"
+msgstr "Incremento total da pureza do nodo"
+
+msgid "Regression Coefficients"
+msgstr "Coeficientes da regresión"
+
+#, fuzzy
+msgid "Coefficient (%s)"
+msgstr "Coeficientes"
+
+#, fuzzy
+msgid "Variable Trace Plot"
+msgstr "Traza de variables"
+
+msgid "Coefficients"
+msgstr "Coeficientes"
+
+#, fuzzy
+msgid "Lambda Evaluation Plot"
+msgstr "Avaliación baiesiana"
+
+msgid "Cross-Validated %sMean Squared Error"
+msgstr ""
+
+msgid "Min. CV MSE"
+msgstr ""
+
+msgid "%s 1 SE"
+msgstr ""
+
