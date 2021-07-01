@@ -29,7 +29,7 @@ results <- jaspTools::runAnalysis("mlClassificationKnn", "wine.csv", options)
 test_that("Andrews Curves Plot matches", {
   plotName <- results[["results"]][["andrewsCurve"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "andrews-curves-plot", dir="mlClassificationKnn")
+  jaspTools::expect_equal_plots(testPlot, "andrews-curves-plot")
 })
 
 test_that("Class Proportions table results match", {
@@ -57,19 +57,19 @@ test_that("Confusion Matrix table results match", {
 test_that("Data Split plot matches", {
   plotName <- results[["results"]][["dataSplitPlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "data-split", dir="mlClassificationKnn")
+  jaspTools::expect_equal_plots(testPlot, "data-split")
 })
 
 test_that("Classification Accuracy Plot matches", {
   plotName <- results[["results"]][["plotErrorVsK"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "classification-accuracy-plot", dir="mlClassificationKnn")
+  jaspTools::expect_equal_plots(testPlot, "classification-accuracy-plot")
 })
 
 test_that("ROC Curves Plot matches", {
   plotName <- results[["results"]][["rocCurve"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "roc-curves-plot", dir="mlClassificationKnn")
+  jaspTools::expect_equal_plots(testPlot, "roc-curves-plot")
 })
 
 test_that("Evaluation Metrics table results match", {
