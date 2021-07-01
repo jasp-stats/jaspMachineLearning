@@ -78,7 +78,7 @@
                                                             "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
                                                             "estimationMethod", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode",
                                                             "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", 
-															"threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax"))
+															"threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"))
   }
 }
 
@@ -100,7 +100,7 @@
                                           "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
                                           "estimationMethod", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode",
                                           "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual",
-										  "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax"))
+										  "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"))
 
   # Add analysis-specific columns
   if (type == "knn") {
@@ -239,12 +239,18 @@
     classificationTable$addRows(row)
 
   } else if(type == "neuralnet") {
-	  classificationTable$addFootnote(gettext("The model is optimized with respect to the <i>sum of squares</i>."))
+    if (options[["modelOpt"]] == "optimizationManual") {
+      classificationTable$addFootnote(gettext("The model is optimized with respect to the <i>sum of squares</i>."))
+    } else if (options[["modelOpt"]] == "optimizationError") {
+      classificationTable$addFootnote(gettext("The model is optimized with respect to the <i>validation set accuracy</i>."))
+    }
 	  row <- data.frame(layers = classificationResult[["nLayers"]],
 	                    nodes = classificationResult[["nNodes"]],
 						ntrain = nTrain,
                         ntest = classificationResult[["ntest"]],
                         testAcc = classificationResult[["testAcc"]])
+    if(options[["modelOpt"]] != "optimizationManual")
+      row <- cbind(row, nvalid = nValid, validAcc = classificationResult[["validAcc"]])
     classificationTable$addRows(row)
   }
 }
@@ -259,7 +265,7 @@
                                       "target", "predictors", "seed", "seedBox", "confusionTable", "confusionProportions", "maxK", "noOfFolds", "modelValid",
                                       "estimationMethod", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode",
                                       "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual",
-									  "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax"))
+									  "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"))
 
   jaspResults[["confusionTable"]] <- confusionTable
 
@@ -327,7 +333,7 @@
                                           "plotLegend", "plotPoints", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors",
                                           "shrinkage", "intDepth", "nNode", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
                                           "holdoutData", "testDataManual",
-										  "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax"))
+										  "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"))
   jaspResults[["decisionBoundary"]] <- decisionBoundary
 
   if(!ready || length(options[["predictors"]]) < 2)  return()
@@ -501,7 +507,7 @@
                                     "target", "predictors", "seed", "seedBox", "modelValid", "estimationMethod",
                                     "maxK", "noOfFolds", "modelValid", "noOfNearestNeighbors", "distanceParameterManual", "weights",
                                     "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode", "holdoutData", "testDataManual",
-									"threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax"))
+									"threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"))
     jaspResults[["rocCurve"]] <- rocCurve
 
     if(!ready) return()
@@ -737,7 +743,7 @@
   validationMeasures$dependOn(options = c("validationMeasures", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
                                                             "target", "predictors", "seed", "seedBox", "modelValid", "maxK", "noOfFolds", "modelValid", "holdoutData", "testDataManual",
                                                             "estimationMethod", "shrinkage", "intDepth", "nNode", "validationDataManual", "testSetIndicatorVariable", "testSetIndicator",
-															"threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax"))
+															"threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"))
 
   validationMeasures$addColumnInfo(name = "group",     title = "",                   type = "string")
   validationMeasures$addColumnInfo(name = "precision", title = gettext("Precision"), type = "number")
@@ -808,7 +814,7 @@
   classProportionsTable$dependOn(options = c("classProportionsTable", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
                                                             "target", "predictors", "seed", "seedBox", "modelValid", "maxK", "noOfFolds", "modelValid", "holdoutData", "testDataManual",
                                                             "estimationMethod", "shrinkage", "intDepth", "nNode", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-															"threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax"))
+															"threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"))
 
   classProportionsTable$addColumnInfo(name = "group",   title = "", type = "string")
   classProportionsTable$addColumnInfo(name = "dataset", title = gettext("Data Set"), type = "number")
@@ -890,7 +896,7 @@
     jaspResults[["classColumn"]]$dependOn(options = c("classColumn", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
                                                             "target", "predictors", "seed", "seedBox", "modelValid", "maxK", "noOfFolds", "modelValid", "holdoutData", "testDataManual",
                                                             "estimationMethod", "shrinkage", "intDepth", "nNode", "validationDataManual", "testSetIndicatorVariable", "testSetIndicator",
-															"threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax"))
+															"threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"))
 
     #make sure to create to classification column with the same type as the target!
     if(.columnIsScale(options$target))       jaspResults[["classColumn"]]$setScale(classColumn)

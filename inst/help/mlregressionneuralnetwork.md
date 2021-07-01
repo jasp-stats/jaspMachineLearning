@@ -28,6 +28,9 @@ Feedforward neural networks are predictive algorithms inspired by the biological
 - Add generated indicator to data: Add the generated test set indicator from the option above to your data set. Requires a column name.
 - Test set indicator: Use an indicator variable to select data for the test set. This indicator should be a column in your data that consists of only 0 (excluded from the test set) and 1 (included in the test set). The data will then be split into a training (and validation if requested) set (0), and a test set (1) according to your indicator.
 
+#### Training and Validation Data
+- Sample *x*% for validation data: Randomly sample a percentage from the remaining data (after selecting the test set).
+
 ### Training Parameters 
 #### Algorithmic Settings
 - Activation function: Sets the activation function for the signal in each hidden layer. 
@@ -38,8 +41,9 @@ Feedforward neural networks are predictive algorithms inspired by the biological
 - Scale variables: Scales the continuous variables. Standardization ensures that values of variables from different scales range into a specific similar scale. As a result, standardizing provides numerical stability, which improves the clustering output. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
 - Set seed: Gives the option to set a seed for your analysis. Setting a seed will exclude random processes influencing an analysis. For example, setting a seed makes it possible to re-run analyses with the same data splits.
 
-#### Network Structure
-- Nodes: Specify the nodes in each hidden layer of the neural network.
+#### Network Topology
+- Manual: Specify the nodes in each hidden layer of the neural network.
+- Optimized: Optimize the topology of the network using a genetic algorithm.
 
 #### Add Predicted Values to Data
 Generates a new column in your dataset with the values of your regression result. This gives you the option to inspect, cluster, or predict the generated values.

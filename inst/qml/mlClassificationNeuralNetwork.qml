@@ -26,345 +26,484 @@ import "./common" as ML
 Form 
 {
 
-	VariablesForm
-	{
-		AvailableVariablesList
-		{
-			name: "variables"
-		}
+    VariablesForm
+    {
+        AvailableVariablesList
+        {
+            name: "variables"
+        }
 
-		AssignedVariablesList
-		{
-			id: target
-			name: "target"
-			title: qsTr("Target")
-			singleVariable: true
-			allowedColumns: ["ordinal", "nominal", "nominalText"]
-		}
+        AssignedVariablesList
+        {
+            id: target
+            name: "target"
+            title: qsTr("Target")
+            singleVariable: true
+            allowedColumns: ["ordinal", "nominal", "nominalText"]
+        }
 
-		AssignedVariablesList
-		{
-			id: predictors
-			name: "predictors"
-			title: qsTr("Predictors")
-			allowedColumns: ["scale"]
-			allowAnalysisOwnComputedColumns: false
-		}
-	}
+        AssignedVariablesList
+        {
+            id: predictors
+            name: "predictors"
+            title: qsTr("Predictors")
+            allowedColumns: ["scale"]
+            allowAnalysisOwnComputedColumns: false
+        }
+    }
 
-	GroupBox
-	{
-		title: qsTr("Tables")
+    GroupBox
+    {
+        title: qsTr("Tables")
 
-		CheckBox
-		{
-			text: qsTr("Confusion matrix")
-			name: "confusionTable"
-			checked: true
+        CheckBox
+        {
+            text: qsTr("Confusion matrix")
+            name: "confusionTable"
+            checked: true
 
-			CheckBox
-			{
-				text: qsTr("Display proportions")
-				name: "confusionProportions"
-			}
-		}
+            CheckBox
+            {
+                text: qsTr("Display proportions")
+                name: "confusionProportions"
+            }
+        }
 
-		CheckBox
-		{
-			text: qsTr("Class proportions")
-			name: "classProportionsTable"
-		}
+        CheckBox
+        {
+            text: qsTr("Class proportions")
+            name: "classProportionsTable"
+        }
 
-		CheckBox
-		{
-			text: qsTr("Evaluation metrics")
-			name: "validationMeasures"
-		}
+        CheckBox
+        {
+            text: qsTr("Evaluation metrics")
+            name: "validationMeasures"
+        }
 
-		CheckBox
-		{
-			name: "coefficientsTable"
-			text: qsTr("Network weights")
-		}
-	}
+        CheckBox
+        {
+            name: "coefficientsTable"
+            text: qsTr("Network weights")
+        }
+    }
 
-	GroupBox
-	{
-		title: qsTr("Plots")
+    GroupBox
+    {
+        title: qsTr("Plots")
 
-		CheckBox
-		{
-			text: qsTr("Data split")
-			name: "dataSplitPlot"
-			checked: true
-		}
+        CheckBox
+        {
+            text: qsTr("Data split")
+            name: "dataSplitPlot"
+            checked: true
+        }
 
-		CheckBox
-		{
-			name: "rocCurve"
-			text: qsTr("ROC curves")
-		}
+        CheckBox {
+            text: qsTr("Classification accuracy")
+            name: "plotError"
+            enabled: optimizeModel.checked
+        }
 
-		CheckBox
-		{
-			name: "andrewsCurve"
-			text: qsTr("Andrews curves")
-		}
+        CheckBox
+        {
+            name: "rocCurve"
+            text: qsTr("ROC curves")
+        }
 
-		CheckBox
-		{
-			name: "actFuncPlot"
-			text: qsTr("Activation function")
-		}
+        CheckBox
+        {
+            name: "andrewsCurve"
+            text: qsTr("Andrews curves")
+        }
 
-		CheckBox
-		{
-			name: "networkGraph"
-			text: qsTr("Network structure")
-		}
+        CheckBox
+        {
+            name: "actFuncPlot"
+            text: qsTr("Activation function")
+        }
 
-		CheckBox
-		{
-			name: "decisionBoundary"
-			text: qsTr("Decision boundary matrix")
+        CheckBox
+        {
+            name: "networkGraph"
+            text: qsTr("Network structure")
+        }
 
-			RowLayout
-			{
+        CheckBox
+        {
+            name: "decisionBoundary"
+            text: qsTr("Decision boundary matrix")
 
-				CheckBox
-				{
-					name: "plotLegend"
-					text: qsTr("Legend")
-					checked: true
-				}
+            RowLayout
+            {
 
-				CheckBox
-				{
-					name: "plotPoints"
-					text: qsTr("Points")
-					checked: true
-				}
-			}
-		}
-	}
+                CheckBox
+                {
+                    name: "plotLegend"
+                    text: qsTr("Legend")
+                    checked: true
+                }
 
-	ML.DataSplit
-	{
-		leaveOneOutVisible: false;
-		kFoldsVisible: false
-		trainingValidationSplit: false
-	}
+                CheckBox
+                {
+                    name: "plotPoints"
+                    text: qsTr("Points")
+                    checked: true
+                }
+            }
+        }
+    }
 
-	Section
-	{
-		title: qsTr("Training Parameters")
+    ML.DataSplit
+    {
+        leaveOneOutVisible: false
+        kFoldsVisible: false
+    }
 
-		GroupBox
-		{
-			title: qsTr("Algorithmic Settings")
+    Section
+    {
+        title: qsTr("Training Parameters")
 
-			DropDown
-			{
-				name: "actfct"
-				indexDefaultValue: 2
-				label: qsTr("Activation function")
-				values:
-					[
-					{ label: qsTr("Linear"), value: "linear"},
-					{ label: qsTr("Binary"), value: "binary"},
-					{ label: qsTr("Logistic sigmoid"), value: "sigmoid"},
-					{ label: qsTr("Sine"), value: "sin"},
-					{ label: qsTr("Cosine"), value: "cosin"},
-					{ label: qsTr("Inverse tangent"), value: "arctan"},
-					{ label: qsTr("Hyperbolic tangent"), value: "tanh"},
-					{ label: qsTr("Rectified linear unit (ReLU)"), value: "relu"},
-					{ label: qsTr("Softplus"), value: "softplus"},
-					{ label: qsTr("Softsign"), value: "softsign"},
-					{ label: qsTr("Exponential linear units (ELU)"), value: "elu"},
-					{ label: qsTr("Leaky rectified linear unit (LReLU)"), value: "lrelu"},
-					{ label: qsTr("Sigmoid linear unit (SiLU)"), value: "silu"},
-					{ label: qsTr("Mish"), value: "mish"},
-					{ label: qsTr("Gaussian"), value: "gaussian"},
-					{ label: qsTr("Gaussian error linear unit (GeLU)"), value: "gelu"}
-				]
-			}
+        GroupBox
+        {
+            title: qsTr("Algorithmic Settings")
 
-			DropDown
-			{
-				id: algorithm
-				name: "algorithm"
-				indexDefaultValue: 1
-				label: qsTr("Algorithm")
-				values:
-					[
-					{ label: qsTr("Backpropagation"), value: "backprop"},
-					{ label: qsTr("rprop+"), value: "rprop+"},
-					{ label: qsTr("rprop-"), value: "rprop-"},
-					{ label: qsTr("grprop-sag"), value: "sag"},
-					{ label: qsTr("grprop-slr"), value: "slr"}
-				]
-			}
+            DropDown
+            {
+                name: "actfct"
+                indexDefaultValue: 2
+                label: qsTr("Activation function")
+                values:
+                    [
+                    { label: qsTr("Linear"), value: "linear"},
+                    { label: qsTr("Binary"), value: "binary"},
+                    { label: qsTr("Logistic sigmoid"), value: "sigmoid"},
+                    { label: qsTr("Sine"), value: "sin"},
+                    { label: qsTr("Cosine"), value: "cosin"},
+                    { label: qsTr("Inverse tangent"), value: "arctan"},
+                    { label: qsTr("Hyperbolic tangent"), value: "tanh"},
+                    { label: qsTr("Rectified linear unit (ReLU)"), value: "relu"},
+                    { label: qsTr("Softplus"), value: "softplus"},
+                    { label: qsTr("Softsign"), value: "softsign"},
+                    { label: qsTr("Exponential linear units (ELU)"), value: "elu"},
+                    { label: qsTr("Leaky rectified linear unit (LReLU)"), value: "lrelu"},
+                    { label: qsTr("Sigmoid linear unit (SiLU)"), value: "silu"},
+                    { label: qsTr("Mish"), value: "mish"},
+                    { label: qsTr("Gaussian"), value: "gaussian"},
+                    { label: qsTr("Gaussian error linear unit (GeLU)"), value: "gelu"}
+                ]
+            }
 
-			DoubleField
-			{
-				Layout.leftMargin: 15
-				name: "learningRate"
-				label: qsTr("Learning rate")
-				defaultValue: 0.05
-				min: 0
-				enabled: algorithm.value == "backprop"
-				fieldWidth: 60
-			}
+            DropDown
+            {
+                id: algorithm
+                name: "algorithm"
+                indexDefaultValue: 1
+                label: qsTr("Algorithm")
+                values:
+                    [
+                    { label: qsTr("Backpropagation"), value: "backprop"},
+                    { label: qsTr("rprop+"), value: "rprop+"},
+                    { label: qsTr("rprop-"), value: "rprop-"},
+                    { label: qsTr("grprop-sag"), value: "sag"},
+                    { label: qsTr("grprop-slr"), value: "slr"}
+                ]
+            }
 
-			DropDown
-			{
-				name: "errfct"
-				debug: true
-				indexDefaultValue: 0
-				label: qsTr("Loss function")
-				values:
-					[
-					{ label: qsTr("Sum of squares"), value: "sse"},
-					{ label: qsTr("Cross-entropy"), value: "ce"}
-				]
-			}
+            DoubleField
+            {
+                Layout.leftMargin: 15 * preferencesModel.uiScale
+                name: "learningRate"
+                label: qsTr("Learning rate")
+                defaultValue: 0.05
+                min: 0
+                enabled: algorithm.value == "backprop"
+                fieldWidth: 60
+            }
 
-			DoubleField
-			{
-				name: "threshold"
-				label: qsTr("Stopping criteria loss function")
-				defaultValue: 1
-				min: 0
-				fieldWidth: 60
-			}
+            DropDown
+            {
+                name: "errfct"
+                debug: true
+                indexDefaultValue: 0
+                label: qsTr("Loss function")
+                values:
+                    [
+                    { label: qsTr("Sum of squares"), value: "sse"},
+                    { label: qsTr("Cross-entropy"), value: "ce"}
+                ]
+            }
 
-			IntegerField
-			{
-				name: "stepMax"
-				label: qsTr("Max. training repetitions")
-				defaultValue: 100000
-				min: 1
-				fieldWidth: 60
-			}
+            DoubleField
+            {
+                name: "threshold"
+                label: qsTr("Stopping criteria loss function")
+                defaultValue: 1
+                min: 0
+                fieldWidth: 60
+            }
 
-			CheckBox
-			{
-				text: qsTr("Scale predictors")
-				name: "scaleEqualSD"
-				checked: true
-			}
+            IntegerField
+            {
+                name: "stepMax"
+                label: qsTr("Max. training repetitions")
+                defaultValue: 100000
+                min: 1
+                fieldWidth: 60
+            }
 
-			CheckBox
-			{
-				name: "seedBox"
-				text: qsTr("Set seed:")
-				childrenOnSameRow: true
+            CheckBox
+            {
+                text: qsTr("Scale predictors")
+                name: "scaleEqualSD"
+                checked: true
+            }
 
-				DoubleField
-				{
-					name: "seed"
-					defaultValue: 1
-					min: -999999
-					max: 999999
-					fieldWidth: 60
-				}
-			}
+            CheckBox
+            {
+                name: "seedBox"
+                text: qsTr("Set seed")
+                childrenOnSameRow: true
 
-			RadioButtonGroup
-			{
-				name: "modelOpt"
-				visible: false
+                DoubleField
+                {
+                    name: "seed"
+                    defaultValue: 1
+                    min: -999999
+                    max: 999999
+                    fieldWidth: 60
+                }
+            }
+        }
 
-				RadioButton {
-					name: "optimizationManual"
-					checked: true
-				}
-			}
-		}
+        GroupBox
+        {
+            title: qsTr("Network Topology")
 
-		GroupBox
-		{
-			title: qsTr("Network Structure")
+            RadioButtonGroup
+            {
+                name: "modelOpt"
 
-			RowLayout
-			{
-				Label
-				{
-					text: qsTr("Nodes")
-					Layout.leftMargin: 130 * preferencesModel.uiScale
-					Layout.preferredWidth: 70 * preferencesModel.uiScale
-				}
-			}
+                RadioButton {
+                    name: "optimizationManual"
+                    text: qsTr("Manual")
+                    checked: true
 
-			ComponentsList
-			{
-				name:					"layers"
-				defaultValues: 			[1]
-				minimumItems:			1
-				rowComponent: 			RowLayout
-				{
-					Row
-					{
-						spacing:				4 * preferencesModel.uiScale
-						Layout.preferredWidth:	110 * preferencesModel.uiScale
-						Label
-						{
-							text: 				qsTr("Hidden layer ") + (rowIndex + 1)
-						}
-					}
-					Row
-					{
-						spacing: 4 * preferencesModel.uiScale
-						Layout.preferredWidth: 50 * preferencesModel.uiScale
-						IntegerField
-						{
-							id: nodes
-							name: "nodes"
-							useExternalBorder: true
-							min: 1
-							defaultValue: 1
-						}
-					}
-				}
-			}
-		}
-	}
+                    RowLayout
+                    {
+                        Label
+                        {
+                            text: qsTr("Nodes")
+                            Layout.leftMargin: 130 * preferencesModel.uiScale
+                            Layout.preferredWidth: 70 * preferencesModel.uiScale
+                        }
+                    }
 
-	Item
-	{
-		Layout.preferredHeight: 	addClasses.height*2
-		Layout.fillWidth: 	true
-		Layout.columnSpan: 2
+                    ComponentsList
+                    {
+                        name:					"layers"
+                        defaultValues: 			[1]
+                        minimumItems:			1
+                        rowComponent: 			RowLayout
+                        {
+                            Row
+                            {
+                                spacing:				4 * preferencesModel.uiScale
+                                Layout.preferredWidth:	110 * preferencesModel.uiScale
+                                Label
+                                {
+                                    text: 				qsTr("Hidden layer ") + (rowIndex + 1)
+                                }
+                            }
+                            Row
+                            {
+                                spacing: 4 * preferencesModel.uiScale
+                                Layout.preferredWidth: 50 * preferencesModel.uiScale
+                                IntegerField
+                                {
+                                    id: nodes
+                                    name: "nodes"
+                                    useExternalBorder: true
+                                    min: 1
+                                    defaultValue: 1
+                                }
+                            }
+                        }
+                    }
+                }
 
-		CheckBox
-		{
-			id: addClasses
-			name: "addClasses"
-			text: qsTr("Add predicted classes to data")
-			enabled:    predictors.count > 0 && target.count > 0
-			anchors.top: parent.top
+                RadioButton {
+                    id: optimizeModel
+                    text: qsTr("Optimized")
+                    name: "optimizationError"
+                    checked: true
 
-			ComputedColumnField
-			{
-				id: 		classColumn
-				name: 		"classColumn"
-				text: 		qsTr("Column name: ")
-				fieldWidth: 120
-				visible:    addClasses.checked
-			}
-		}
+                    GroupBox
+                    {
+                        IntegerField {
+                            id: genSize
+                            name: "genSize"
+                            text: qsTr("Population size")
+                            defaultValue: 20
+                            min: 2
+                            max: 50000
+                        }
 
-		Button
-		{
-			id: 			saveModel
-			anchors.right: 	parent.right
-			text: 			qsTr("<b>Save Model</b>")
-			enabled: 		predictors.count > 1 && target.count > 0
-			onClicked:
-			{
+                        IntegerField {
+                            name: "maxGen"
+                            text: qsTr("Generations")
+                            defaultValue: 20
+                            min: 1
+                            max: 50000
+                        }
 
-			}
-			debug: true
-		}
-	}
+                        IntegerField {
+                            name: "maxLayers"
+                            text: qsTr("Max. layers:")
+                            defaultValue: 10
+                            min: 1
+                            max: 50000
+                            visible: false
+                        }
+
+                        IntegerField {
+                            name: "maxNodes"
+                            text: qsTr("Max. nodes:")
+                            defaultValue: 10
+                            min: 1
+                            max: 50000
+                            visible: false
+                        }
+
+                        DropDown
+                        {
+                            id: selectionMethod
+                            name: "selectionMethod"
+                            indexDefaultValue: 0
+                            label: qsTr("Parent selection")
+                            values:
+                                [
+                                { label: qsTr("Roulette wheel"), value: "roulette"},
+                                { label: qsTr("Universal"), value: "universal"},
+                                { label: qsTr("Rank"), value: "rank"},
+                                { label: qsTr("Random"), value: "random"}
+                            ]
+                        }
+
+                        IntegerField {
+                            Layout.leftMargin: 15 * preferencesModel.uiScale
+                            name: "candidates"
+                            text: qsTr("Candidates")
+                            defaultValue: 5
+                            min: 1
+                            max: genSize.value
+                            enabled: selectionMethod.value == "tournament"
+                        }
+
+                        DropDown
+                        {
+                            name: "crossoverMethod"
+                            indexDefaultValue: 0
+                            label: qsTr("Crossover method")
+                            values:
+                                [
+                                { label: qsTr("Uniform"), value: "uniform"},
+                                { label: qsTr("One-point"), value: "onepoint"},
+                                { label: qsTr("Multi-point"), value: "multipoint"}
+                            ]
+                        }
+
+                        DropDown
+                        {
+                            name: "mutationMethod"
+                            indexDefaultValue: 0
+                            label: qsTr("Mutations")
+                            values:
+                                [
+                                { label: qsTr("Reset"), value: "random"},
+                                { label: qsTr("Swap"), value: "swap"},
+                                { label: qsTr("Scramble"), value: "scramble"},
+                                { label: qsTr("Inversion"), value: "inversion"}
+                            ]
+                        }
+
+                        PercentField
+                        {
+                            Layout.leftMargin: 15 * preferencesModel.uiScale
+                            name: "mutationRate"
+                            text: qsTr("Probability")
+                            defaultValue: 10
+                        }
+
+                        DropDown
+                        {
+                            name: "survivalMethod"
+                            indexDefaultValue: 0
+                            label: qsTr("Survival method")
+                            values:
+                                [
+                                { label: qsTr("Fitness-based"), value: "fitness"},
+                                { label: qsTr("Age-based"), value: "age"},
+                                { label: qsTr("Random"), value: "random"}
+                            ]
+                        }
+
+                        CheckBox
+                        {
+                            Layout.leftMargin: 15 * preferencesModel.uiScale
+                            id: elitism
+                            name: "elitism"
+                            label: qsTr("Elitism")
+                            checked: true
+                            childrenOnSameRow: true
+
+                            PercentField {
+                                name: "elitismProp"
+                                defaultValue: 10
+                                enabled: elitism.checked
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    Item
+    {
+        Layout.preferredHeight: 	addClasses.height*2
+        Layout.fillWidth: 	true
+        Layout.columnSpan: 2
+
+        CheckBox
+        {
+            id: addClasses
+            name: "addClasses"
+            text: qsTr("Add predicted classes to data")
+            enabled:    predictors.count > 0 && target.count > 0
+            anchors.top: parent.top
+
+            ComputedColumnField
+            {
+                id: 		classColumn
+                name: 		"classColumn"
+                text: 		qsTr("Column name: ")
+                fieldWidth: 120
+                visible:    addClasses.checked
+            }
+        }
+
+        Button
+        {
+            id: 			saveModel
+            anchors.right: 	parent.right
+            text: 			qsTr("<b>Save Model</b>")
+            enabled: 		predictors.count > 1 && target.count > 0
+            onClicked:
+            {
+
+            }
+            debug: true
+        }
+    }
 }
