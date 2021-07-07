@@ -27,19 +27,19 @@
 </defs>
 <g clip-path='url(#cpMTc1LjM2fDcyMC4wMHwyMC43MXw1MDcuMDk=)'>
 <rect x='175.36' y='20.71' width='544.64' height='486.39' style='stroke-width: 10.67; stroke: none;' />
-<rect x='200.12' y='26.69' width='494.12' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='200.12' y='66.56' width='221.97' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='200.12' y='106.42' width='140.51' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='200.12' y='146.29' width='129.21' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='200.12' y='186.16' width='129.06' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='200.12' y='226.03' width='111.21' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='200.12' y='265.89' width='104.29' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='200.12' y='305.76' width='92.69' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='200.12' y='345.63' width='82.56' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='200.12' y='385.50' width='78.39' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='200.12' y='425.37' width='65.00' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='200.12' y='465.23' width='51.72' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<line x1='199.80' y1='507.09' x2='554.10' y2='507.09' style='stroke-width: 0.64; stroke-linecap: butt;' />
+<rect x='200.12' y='26.69' width='495.13' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='200.12' y='66.56' width='222.42' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='200.12' y='106.42' width='140.80' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='200.12' y='146.29' width='129.47' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='200.12' y='186.16' width='129.33' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='200.12' y='226.03' width='111.43' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='200.12' y='265.89' width='104.51' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='200.12' y='305.76' width='92.88' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='200.12' y='345.63' width='82.73' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='200.12' y='385.50' width='78.55' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='200.12' y='425.37' width='65.13' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='200.12' y='465.23' width='51.83' height='35.88' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<line x1='199.80' y1='507.09' x2='554.82' y2='507.09' style='stroke-width: 0.64; stroke-linecap: butt;' />
 <rect x='175.36' y='20.71' width='544.64' height='486.39' style='stroke-width: 0.00; stroke: none;' />
 </g>
 <g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
@@ -58,11 +58,11 @@
 <text x='159.88' y='50.48' text-anchor='end' style='font-size: 17.00px; font-family: sans;' textLength='40.63px' lengthAdjust='spacingAndGlyphs'>Color</text>
 <polyline points='175.36,507.09 720.00,507.09 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt;' />
 <polyline points='200.12,515.60 200.12,507.09 ' style='stroke-width: 0.64; stroke-linecap: butt;' />
-<polyline points='376.95,515.60 376.95,507.09 ' style='stroke-width: 0.64; stroke-linecap: butt;' />
-<polyline points='553.78,515.60 553.78,507.09 ' style='stroke-width: 0.64; stroke-linecap: butt;' />
+<polyline points='377.31,515.60 377.31,507.09 ' style='stroke-width: 0.64; stroke-linecap: butt;' />
+<polyline points='554.50,515.60 554.50,507.09 ' style='stroke-width: 0.64; stroke-linecap: butt;' />
 <text x='200.12' y='534.27' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='9.46px' lengthAdjust='spacingAndGlyphs'>0</text>
-<text x='376.95' y='534.27' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='9.46px' lengthAdjust='spacingAndGlyphs'>5</text>
-<text x='553.78' y='534.27' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='18.91px' lengthAdjust='spacingAndGlyphs'>10</text>
+<text x='377.31' y='534.27' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='9.46px' lengthAdjust='spacingAndGlyphs'>5</text>
+<text x='554.50' y='534.27' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='18.91px' lengthAdjust='spacingAndGlyphs'>10</text>
 <text x='447.68' y='566.78' text-anchor='middle' style='font-size: 20.40px; font-family: sans;' textLength='263.09px' lengthAdjust='spacingAndGlyphs'>Total Increase in Node Purity</text>
 <text x='447.68' y='11.70' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='211.67px' lengthAdjust='spacingAndGlyphs'>total-increase-in-node-purity</text>
 </g>
