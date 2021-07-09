@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2021-05-07 13:27\n"
-"PO-Revision-Date: 2021-07-08 17:32+0000\n"
+"PO-Revision-Date: 2021-07-10 23:32+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/gl/>\n"
@@ -127,9 +127,8 @@ msgstr "Matriz de desarranxo"
 msgid "Observed"
 msgstr "Observado"
 
-#, fuzzy
 msgid "Predicted"
-msgstr "Preditores"
+msgstr "Predito"
 
 #, fuzzy
 msgid "Decision Boundary Matrix"
@@ -144,13 +143,11 @@ msgstr ""
 msgid "ROC Curves Plot"
 msgstr "Curvas ROC"
 
-#, fuzzy
 msgid "False positive rate"
-msgstr "Todo positivo"
+msgstr "Cociente de falso positivo"
 
-#, fuzzy
 msgid "True positive rate"
-msgstr "Todo positivo"
+msgstr "Cociente de positivo correcto"
 
 msgid "Perfect separation"
 msgstr ""
@@ -481,9 +478,8 @@ msgstr "Hiper-g de Laplace"
 msgid "R%s cannot be computed due to lack of variance in the predictions.</i>"
 msgstr ""
 
-#, fuzzy
 msgid "Predictive Performance Plot"
-msgstr "Capacidade preditiva"
+msgstr "Gráfica de Capacidade Preditiva"
 
 #, fuzzy
 msgid "Observed test values"
