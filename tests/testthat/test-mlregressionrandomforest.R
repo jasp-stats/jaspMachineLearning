@@ -30,31 +30,31 @@ results <- jaspTools::runAnalysis("mlRegressionRandomForest", "wine.csv", option
 test_that("Data Split plot matches", {
   plotName <- results[["results"]][["dataSplitPlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "data-split", dir="mlRegressionRandomForest")
+  jaspTools::expect_equal_plots(testPlot, "data-split")
 })
 
 test_that("Mean Decrease in Accuracy plot matches", {
   plotName <- results[["results"]][["plotDecreaseAccuracy"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "mean-decrease-in-accuracy", dir="mlRegressionRandomForest")
+  jaspTools::expect_equal_plots(testPlot, "mean-decrease-in-accuracy")
 })
 
 test_that("Total Increase in Node Purity plot matches", {
   plotName <- results[["results"]][["plotIncreasePurity"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "total-increase-in-node-purity", dir="mlRegressionRandomForest")
+  jaspTools::expect_equal_plots(testPlot, "total-increase-in-node-purity")
 })
 
 test_that("Out-of-bag Mean Squared Error Plot matches", {
   plotName <- results[["results"]][["plotTreesVsModelError"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "out-of-bag-mean-squared-error-plot", dir="mlRegressionRandomForest")
+  jaspTools::expect_equal_plots(testPlot, "out-of-bag-mean-squared-error-plot")
 })
 
 test_that("Predictive Performance Plot matches", {
   plotName <- results[["results"]][["predictedPerformancePlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "predictive-performance-plot", dir="mlRegressionRandomForest")
+  jaspTools::expect_equal_plots(testPlot, "predictive-performance-plot")
 })
 
 test_that("Random Forest Regression table results match", {

@@ -43,7 +43,7 @@ test_that("Cluster Information table results match", {
 test_that("All predictors plot matches", {
 	plotName <- results[["results"]][["clusterMeans"]][["collection"]][["clusterMeans_oneFigure"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "all-predictors", dir="mlClusteringRandomForest")
+	jaspTools::expect_equal_plots(testPlot, "all-predictors")
 })
 
 test_that("Random Forest Clustering table results match", {
@@ -66,12 +66,12 @@ test_that("Variable Importance table results match", {
 test_that("Elbow Method Plot matches", {
 	plotName <- results[["results"]][["optimPlot"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "elbow-method-plot", dir="mlClusteringRandomForest")
+	jaspTools::expect_equal_plots(testPlot, "elbow-method-plot")
 })
 
 test_that("t-SNE Cluster Plot matches", {
   skip("Does not reproduce on windows <-> osx")
 	plotName <- results[["results"]][["plot2dCluster"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "t-sne-cluster-plot", dir="mlClusteringRandomForest")
+	jaspTools::expect_equal_plots(testPlot, "t-sne-cluster-plot")
 })

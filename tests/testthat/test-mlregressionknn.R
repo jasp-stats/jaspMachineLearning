@@ -27,19 +27,19 @@ results <- jaspTools::runAnalysis("mlRegressionKnn", "wine.csv", options)
 test_that("Data Split plot matches", {
   plotName <- results[["results"]][["dataSplitPlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "data-split", dir="mlRegressionKnn")
+  jaspTools::expect_equal_plots(testPlot, "data-split")
 })
 
 test_that("Mean Squared Error Plot matches", {
   plotName <- results[["results"]][["plotErrorVsK"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "mean-squared-error-plot", dir="mlRegressionKnn")
+  jaspTools::expect_equal_plots(testPlot, "mean-squared-error-plot")
 })
 
 test_that("Predictive Performance Plot matches", {
   plotName <- results[["results"]][["predictedPerformancePlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "predictive-performance-plot", dir="mlRegressionKnn")
+  jaspTools::expect_equal_plots(testPlot, "predictive-performance-plot")
 })
 
 test_that("K-Nearest Neighbors Regression table results match", {

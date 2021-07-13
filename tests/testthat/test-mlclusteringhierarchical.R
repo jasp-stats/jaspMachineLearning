@@ -47,7 +47,7 @@ test_that("Cluster Information table results match", {
 test_that("All predictors plot matches", {
 	plotName <- results[["results"]][["clusterMeans"]][["collection"]][["clusterMeans_oneFigure"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "all-predictors", dir="mlClusteringHierarchical")
+	jaspTools::expect_equal_plots(testPlot, "all-predictors")
 })
 
 test_that("Hierarchical Clustering table results match", {
@@ -59,20 +59,20 @@ test_that("Hierarchical Clustering table results match", {
 test_that("Dendogram plot matches", {
 	plotName <- results[["results"]][["dendrogram"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "dendogram", dir="mlClusteringHierarchical")
+	jaspTools::expect_equal_plots(testPlot, "dendogram")
 })
 
 test_that("Elbow Method Plot matches", {
 	plotName <- results[["results"]][["optimPlot"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "elbow-method-plot", dir="mlClusteringHierarchical")
+	jaspTools::expect_equal_plots(testPlot, "elbow-method-plot")
 })
 
 test_that("t-SNE Cluster Plot matches", {
   skip("Does not reproduce on windows <-> osx")
 	plotName <- results[["results"]][["plot2dCluster"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "t-sne-cluster-plot", dir="mlClusteringHierarchical")
+	jaspTools::expect_equal_plots(testPlot, "t-sne-cluster-plot")
 })
 
 # Ward.D linkage

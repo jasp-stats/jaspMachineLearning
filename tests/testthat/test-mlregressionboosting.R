@@ -40,31 +40,31 @@ test_that("Relative Influence table results match", {
 test_that("Data Split plot matches", {
   plotName <- results[["results"]][["dataSplitPlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "data-split", dir="mlRegressionBoosting")
+  jaspTools::expect_equal_plots(testPlot, "data-split")
 })
 
 test_that("Deviance Plot matches", {
   plotName <- results[["results"]][["plotDeviance"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "deviance-plot", dir="mlRegressionBoosting")
+  jaspTools::expect_equal_plots(testPlot, "deviance-plot")
 })
 
 test_that("Out-of-bag Improvement Plot matches", {
   plotName <- results[["results"]][["plotOOBChangeDev"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "out-of-bag-improvement-plot", dir="mlRegressionBoosting")
+  jaspTools::expect_equal_plots(testPlot, "out-of-bag-improvement-plot")
 })
 
 test_that("Relative Influence Plot matches", {
   plotName <- results[["results"]][["plotRelInf"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "relative-influence-plot", dir="mlRegressionBoosting")
+  jaspTools::expect_equal_plots(testPlot, "relative-influence-plot")
 })
 
 test_that("Predictive Performance Plot matches", {
   plotName <- results[["results"]][["predictedPerformancePlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "predictive-performance-plot", dir="mlRegressionBoosting")
+  jaspTools::expect_equal_plots(testPlot, "predictive-performance-plot")
 })
 
 test_that("Boosting Regression table results match", {

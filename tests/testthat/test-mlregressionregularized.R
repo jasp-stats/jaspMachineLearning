@@ -42,19 +42,19 @@ test_that("Regression Coefficients table results match", {
 test_that("Data Split plot matches", {
   plotName <- results[["results"]][["dataSplitPlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "data-split", dir="mlRegressionRegularized")
+  jaspTools::expect_equal_plots(testPlot, "data-split")
 })
 
 test_that("Lambda Evaluation Plot matches", {
   plotName <- results[["results"]][["lambdaEvaluation"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "lambda-evaluation-plot", dir="mlRegressionRegularized")
+  jaspTools::expect_equal_plots(testPlot, "lambda-evaluation-plot")
 })
 
 test_that("Predictive Performance Plot matches", {
   plotName <- results[["results"]][["predictedPerformancePlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "predictive-performance-plot", dir="mlRegressionRegularized")
+  jaspTools::expect_equal_plots(testPlot, "predictive-performance-plot")
 })
 
 test_that("Regularized Linear Regression table results match", {
@@ -74,5 +74,5 @@ test_that("Evaluation Metrics table results match", {
 test_that("Variable Trace Plot matches", {
   plotName <- results[["results"]][["variableTrace"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "variable-trace-plot", dir="mlRegressionRegularized")
+  jaspTools::expect_equal_plots(testPlot, "variable-trace-plot")
 })

@@ -32,7 +32,7 @@ results <- jaspTools::runAnalysis("mlClassificationRandomForest", "wine.csv", op
 test_that("Andrews Curves Plot matches", {
   plotName <- results[["results"]][["andrewsCurve"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "andrews-curves-plot", dir="mlClassificationRandomForest")
+  jaspTools::expect_equal_plots(testPlot, "andrews-curves-plot")
 })
 
 test_that("Class Proportions table results match", {
@@ -59,31 +59,31 @@ test_that("Confusion Matrix table results match", {
 test_that("Data Split plot matches", {
   plotName <- results[["results"]][["dataSplitPlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "data-split", dir="mlClassificationRandomForest")
+  jaspTools::expect_equal_plots(testPlot, "data-split")
 })
 
 test_that("Mean Decrease in Accuracy plot matches", {
   plotName <- results[["results"]][["plotDecreaseAccuracy"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "mean-decrease-in-accuracy", dir="mlClassificationRandomForest")
+  jaspTools::expect_equal_plots(testPlot, "mean-decrease-in-accuracy")
 })
 
 test_that("Total Increase in Node Purity plot matches", {
   plotName <- results[["results"]][["plotIncreasePurity"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "total-increase-in-node-purity", dir="mlClassificationRandomForest")
+  jaspTools::expect_equal_plots(testPlot, "total-increase-in-node-purity")
 })
 
 test_that("Out-of-bag Classification Accuracy Plot matches", {
   plotName <- results[["results"]][["plotTreesVsModelError"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "out-of-bag-classification-accuracy-plot", dir="mlClassificationRandomForest")
+  jaspTools::expect_equal_plots(testPlot, "out-of-bag-classification-accuracy-plot")
 })
 
 test_that("ROC Curves Plot matches", {
   plotName <- results[["results"]][["rocCurve"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "roc-curves-plot", dir="mlClassificationRandomForest")
+  jaspTools::expect_equal_plots(testPlot, "roc-curves-plot")
 })
 
 test_that("Variable Importance table results match", {

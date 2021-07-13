@@ -32,7 +32,7 @@ results <- jaspTools::runAnalysis("mlClassificationBoosting", "wine.csv", option
 test_that("Andrews Curves Plot matches", {
   plotName <- results[["results"]][["andrewsCurve"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "andrews-curves-plot", dir="mlClassificationBoosting")
+  jaspTools::expect_equal_plots(testPlot, "andrews-curves-plot")
 })
 
 test_that("Relative Influence table results match", {
@@ -70,31 +70,31 @@ test_that("Confusion Matrix table results match", {
 test_that("Data Split plot matches", {
   plotName <- results[["results"]][["dataSplitPlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "data-split", dir="mlClassificationBoosting")
+  jaspTools::expect_equal_plots(testPlot, "data-split")
 })
 
 test_that("Deviance Plot matches", {
   plotName <- results[["results"]][["plotDeviance"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "deviance-plot", dir="mlClassificationBoosting")
+  jaspTools::expect_equal_plots(testPlot, "deviance-plot")
 })
 
 test_that("Out-of-bag Improvement Plot matches", {
   plotName <- results[["results"]][["plotOOBChangeDev"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "out-of-bag-improvement-plot", dir="mlClassificationBoosting")
+  jaspTools::expect_equal_plots(testPlot, "out-of-bag-improvement-plot")
 })
 
 test_that("Relative Influence Plot matches", {
   plotName <- results[["results"]][["plotRelInf"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "relative-influence-plot", dir="mlClassificationBoosting")
+  jaspTools::expect_equal_plots(testPlot, "relative-influence-plot")
 })
 
 test_that("ROC Curves Plot matches", {
   plotName <- results[["results"]][["rocCurve"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "roc-curves-plot", dir="mlClassificationBoosting")
+  jaspTools::expect_equal_plots(testPlot, "roc-curves-plot")
 })
 
 test_that("Evaluation Metrics table results match", {
