@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-07-15 17:32+0000\n"
+"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
+"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/gl/>\n"
+"Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.7.2-dev\n"
 "X-Language: gl_ES\n"
 "X-Source-Language: C\n"
 "X-Qt-Contexts: true\n"
@@ -266,7 +272,7 @@ msgstr "Precisión \"descuberto o choio\""
 
 msgctxt "mlClassificationLda|"
 msgid "Column name: "
-msgstr "Nome da columna: "
+msgstr "Nome de columna: "
 
 msgctxt "mlClassificationLda|"
 msgid "Evaluation metrics"
@@ -646,10 +652,9 @@ msgctxt "Description|"
 msgid "Regression"
 msgstr "Regresión"
 
-#, fuzzy
 msgctxt "DataSplit|"
 msgid "Column name: "
-msgstr "Nome da columna: "
+msgstr "Nome de columna: "
 
 #, fuzzy
 msgctxt "DataSplit|"
@@ -721,7 +726,6 @@ msgctxt "mlClassificationBoosting|"
 msgid "Andrews curves"
 msgstr "Curvas de Andrew"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Deviance"
 msgstr "Desviación"
@@ -811,10 +815,9 @@ msgctxt "mlClassificationBoosting|"
 msgid "Add predicted classes to data"
 msgstr "Engadir as clases preditas aos datos"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Column name: "
-msgstr "Nome da columna: "
+msgstr "Nome de columna: "
 
 #, fuzzy
 msgctxt "mlClassificationBoosting|"
@@ -1001,10 +1004,9 @@ msgctxt "mlClassificationKnn|"
 msgid "Add predicted classes to data"
 msgstr "Engadir as clases preditas aos datos"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Column name: "
-msgstr "Nome da columna: "
+msgstr "Nome de columna: "
 
 #, fuzzy
 msgctxt "mlClassificationKnn|"
@@ -1170,10 +1172,9 @@ msgctxt "mlClassificationRandomForest|"
 msgid "Add predicted classes to data"
 msgstr "Engadir as clases preditas aos datos"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Column name: "
-msgstr "Nome da columna: "
+msgstr "Nome de columna: "
 
 #, fuzzy
 msgctxt "mlClassificationRandomForest|"
@@ -1300,10 +1301,9 @@ msgctxt "mlClusteringDensityBased|"
 msgid "Add predicted clusters to data"
 msgstr "Engadir os conglomerados preditos aos datos"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Column name: "
-msgstr "Nome da columna: "
+msgstr "Nome de columna: "
 
 #, fuzzy
 msgctxt "mlClusteringDensityBased|"
@@ -1455,10 +1455,9 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Add predicted clusters to data"
 msgstr "Engadir os conglomerados preditos aos datos"
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Column name: "
-msgstr "Nome da columna: "
+msgstr "Nome de columna: "
 
 #, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
@@ -1600,10 +1599,9 @@ msgctxt "mlClusteringHierarchical|"
 msgid "Add predicted clusters to data"
 msgstr "Engadir os conglomerados preditos aos datos"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Column name: "
-msgstr "Nome da columna: "
+msgstr "Nome de columna: "
 
 #, fuzzy
 msgctxt "mlClusteringHierarchical|"
@@ -1745,10 +1743,9 @@ msgctxt "mlClusteringKMeans|"
 msgid "Add predicted clusters to data"
 msgstr "Engadir os conglomerados preditos aos datos"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Column name: "
-msgstr "Nome da columna: "
+msgstr "Nome de columna: "
 
 #, fuzzy
 msgctxt "mlClusteringKMeans|"
@@ -1810,10 +1807,9 @@ msgctxt "mlClusteringRandomForest|"
 msgid "Fixed"
 msgstr "Fixo"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Column name: "
-msgstr "Nome da columna: "
+msgstr "Nome de columna: "
 
 #, fuzzy
 msgctxt "mlClusteringRandomForest|"
@@ -1865,10 +1861,9 @@ msgctxt "mlRegressionBoosting|"
 msgid "Set seed:"
 msgstr "Establecer a semente:"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Column name: "
-msgstr "Nome da columna: "
+msgstr "Nome de columna: "
 
 #, fuzzy
 msgctxt "mlRegressionBoosting|"
@@ -1950,10 +1945,9 @@ msgctxt "mlRegressionKnn|"
 msgid "Add predicted values to data"
 msgstr "Engadir os valores preditos aos datos"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Column name: "
-msgstr "Nome da columna: "
+msgstr "Nome de columna: "
 
 #, fuzzy
 msgctxt "mlRegressionKnn|"
@@ -2060,10 +2054,9 @@ msgctxt "mlRegressionRandomForest|"
 msgid "Add predicted values to data"
 msgstr "Engadir os valores preditos aos datos"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Column name: "
-msgstr "Nome da columna: "
+msgstr "Nome de columna: "
 
 #, fuzzy
 msgctxt "mlRegressionRandomForest|"
@@ -2145,10 +2138,9 @@ msgctxt "mlRegressionRegularized|"
 msgid "Add predicted values to data"
 msgstr "Engadir os valores preditos aos datos"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Column name: "
-msgstr "Nome da columna: "
+msgstr "Nome de columna: "
 
 #, fuzzy
 msgctxt "mlRegressionRegularized|"
