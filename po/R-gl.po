@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2021-05-07 13:27\n"
-"PO-Revision-Date: 2021-07-13 21:20+0000\n"
+"PO-Revision-Date: 2021-07-15 19:34+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/gl/>\n"
@@ -176,9 +176,8 @@ msgstr ""
 msgid "F1 Score"
 msgstr ""
 
-#, fuzzy
 msgid "Support"
-msgstr "Soster as rexións"
+msgstr "Apoio"
 
 msgid "AUC"
 msgstr "AUC"
@@ -337,9 +336,8 @@ msgstr "R de Pearson"
 msgid "Dunn index"
 msgstr ""
 
-#, fuzzy
 msgid "Entropy"
-msgstr "Entrada"
+msgstr "Entropía"
 
 msgid "Calinski-Harabasz index"
 msgstr ""
@@ -642,9 +640,8 @@ msgstr ""
 msgid "Number of Trees"
 msgstr "Número de árbores"
 
-#, fuzzy
 msgid "Deviance Plot"
-msgstr "Desviación"
+msgstr "Gráfica de desviacións"
 
 #, fuzzy
 msgid "Multinomial Deviance"
@@ -654,9 +651,8 @@ msgstr "Proba Multinomial"
 msgid "Binomial Deviance"
 msgstr "Comprobación Binomial"
 
-#, fuzzy
 msgid "%s Deviance"
-msgstr "Desviación"
+msgstr "%s Desviación"
 
 #, fuzzy
 msgid "Relative Influence Plot"
