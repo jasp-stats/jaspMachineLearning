@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-07-19 09:33+0000\n"
+"PO-Revision-Date: 2021-07-19 17:57+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/gl/>\n"
@@ -620,7 +620,7 @@ msgstr "Densidades"
 
 msgctxt "mlClassificationLda|"
 msgid "Class means training data"
-msgstr "Datos de adestramento de medias de clase"
+msgstr "Medias de clase nos datos de adestramento"
 
 msgctxt "mlClassificationLda|"
 msgid "Set seed: "
@@ -744,10 +744,9 @@ msgctxt "mlClassificationBoosting|"
 msgid "Points"
 msgstr "Puntos"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Training Parameters"
-msgstr "Parámetros de adestramento"
+msgstr "Parámetros de Adestramento"
 
 #, fuzzy
 msgctxt "mlClassificationBoosting|"
@@ -769,7 +768,6 @@ msgctxt "mlClassificationBoosting|"
 msgid "Min. observations in node:"
 msgstr "Min. observacións no nodo:"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Training data used per tree:"
 msgstr "Datos de adestramento usados por árbore:"
@@ -893,10 +891,9 @@ msgctxt "mlClassificationKnn|"
 msgid "Points"
 msgstr "Puntos"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Training Parameters"
-msgstr "Parámetros de adestramento"
+msgstr "Parámetros de Adestramento"
 
 #, fuzzy
 msgctxt "mlClassificationKnn|"
@@ -1101,17 +1098,15 @@ msgctxt "mlClassificationRandomForest|"
 msgid "Points"
 msgstr "Puntos"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Training Parameters"
-msgstr "Parámetros de adestramento"
+msgstr "Parámetros de Adestramento"
 
 #, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Algorithmic Settings"
 msgstr "Configuracións algorítmicas"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Training data used per tree:"
 msgstr "Datos de adestramento usados por árbore:"
@@ -1260,10 +1255,9 @@ msgctxt "mlClusteringDensityBased|"
 msgid "Labels"
 msgstr "Etiquetas"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Training Parameters"
-msgstr "Parámetros de adestramento"
+msgstr "Parámetros de Adestramento"
 
 #, fuzzy
 msgctxt "mlClusteringDensityBased|"
@@ -1399,10 +1393,9 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Labels"
 msgstr "Etiquetas"
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Training Parameters"
-msgstr "Parámetros de adestramento"
+msgstr "Parámetros de Adestramento"
 
 #, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
@@ -1548,10 +1541,9 @@ msgctxt "mlClusteringHierarchical|"
 msgid "Labels"
 msgstr "Etiquetas"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Training Parameters"
-msgstr "Parámetros de adestramento"
+msgstr "Parámetros de Adestramento"
 
 #, fuzzy
 msgctxt "mlClusteringHierarchical|"
@@ -1692,10 +1684,9 @@ msgctxt "mlClusteringKMeans|"
 msgid "Labels"
 msgstr "Etiquetas"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Training Parameters"
-msgstr "Parámetros de adestramento"
+msgstr "Parámetros de Adestramento"
 
 #, fuzzy
 msgctxt "mlClusteringKMeans|"
@@ -1776,10 +1767,9 @@ msgctxt "mlClusteringRandomForest|"
 msgid "Legend"
 msgstr "Lenda"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Training Parameters"
-msgstr "Parámetros de adestramento"
+msgstr "Parámetros de Adestramento"
 
 #, fuzzy
 msgctxt "mlClusteringRandomForest|"
@@ -1845,10 +1835,9 @@ msgctxt "mlRegressionBoosting|"
 msgid "Data split"
 msgstr "Separador de datos"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Training Parameters"
-msgstr "Parámetros de adestramento"
+msgstr "Parámetros de Adestramento"
 
 #, fuzzy
 msgctxt "mlRegressionBoosting|"
@@ -1904,10 +1893,9 @@ msgctxt "mlRegressionKnn|"
 msgid "Predictive performance"
 msgstr "Capacidade preditiva"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Training Parameters"
-msgstr "Parámetros de adestramento"
+msgstr "Parámetros de Adestramento"
 
 #, fuzzy
 msgctxt "mlRegressionKnn|"
@@ -1993,17 +1981,15 @@ msgctxt "mlRegressionRandomForest|"
 msgid "Predictive performance"
 msgstr "Capacidade preditiva"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Training Parameters"
-msgstr "Parámetros de adestramento"
+msgstr "Parámetros de Adestramento"
 
 #, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Algorithmic Settings"
 msgstr "Configuracións algorítmicas"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Training data used per tree:"
 msgstr "Datos de adestramento usados por árbore:"
@@ -2102,10 +2088,9 @@ msgctxt "mlRegressionRegularized|"
 msgid "Legend"
 msgstr "Lenda"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Training Parameters"
-msgstr "Parámetros de adestramento"
+msgstr "Parámetros de Adestramento"
 
 #, fuzzy
 msgctxt "mlRegressionRegularized|"
