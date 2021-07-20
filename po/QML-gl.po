@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-07-19 17:57+0000\n"
+"PO-Revision-Date: 2021-07-20 19:07+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/gl/>\n"
@@ -188,7 +188,7 @@ msgstr "Configuracións algorítmicas"
 
 msgctxt "mlClassificationLda|"
 msgid "Andrews curves"
-msgstr "Curvas de Andrew"
+msgstr "Curvas de Andrews"
 
 msgctxt "mlClassificationLda|"
 msgid "<b>Save Model</b>"
@@ -647,6 +647,8 @@ msgid ""
 "Explore the relation between variables using data-driven methods for "
 "regression, classification, and clustering"
 msgstr ""
+"Analizar a relación entre as variables que utilizan métodos baseados en "
+"datos para análises de regresión, de clasificación e de conglomerados"
 
 msgctxt "Description|"
 msgid "Regression"
@@ -671,7 +673,6 @@ msgctxt "mlClassificationBoosting|"
 msgid "Predictors"
 msgstr "Preditores"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Tables"
 msgstr "Táboas"
@@ -720,10 +721,9 @@ msgctxt "mlClassificationBoosting|"
 msgid "ROC curves"
 msgstr "Curvas ROC"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Andrews curves"
-msgstr "Curvas de Andrew"
+msgstr "Curvas de Andrews"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Deviance"
@@ -831,7 +831,6 @@ msgctxt "mlClassificationKnn|"
 msgid "Predictors"
 msgstr "Preditores"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Tables"
 msgstr "Táboas"
@@ -871,10 +870,9 @@ msgctxt "mlClassificationKnn|"
 msgid "ROC curves"
 msgstr "Curvas ROC"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Andrews curves"
-msgstr "Curvas de Andrew"
+msgstr "Curvas de Andrews"
 
 #, fuzzy
 msgctxt "mlClassificationKnn|"
@@ -905,12 +903,10 @@ msgctxt "mlClassificationKnn|"
 msgid "Weights:"
 msgstr "Ponderacións:"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Rectangular"
 msgstr "Rectangular"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Epanechnikov"
 msgstr "Epanechnikov"
@@ -1023,7 +1019,6 @@ msgctxt "mlClassificationRandomForest|"
 msgid "Predictors"
 msgstr "Preditores"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Tables"
 msgstr "Táboas"
@@ -1068,10 +1063,9 @@ msgctxt "mlClassificationRandomForest|"
 msgid "ROC curves"
 msgstr "Curvas ROC"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Andrews curves"
-msgstr "Curvas de Andrew"
+msgstr "Curvas de Andrews"
 
 #, fuzzy
 msgctxt "mlClassificationRandomForest|"
@@ -1180,7 +1174,6 @@ msgctxt "mlClusteringDensityBased|"
 msgid "Variables"
 msgstr "Variables"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Tables"
 msgstr "Táboas"
@@ -1308,7 +1301,6 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Variables"
 msgstr "Variables"
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Tables"
 msgstr "Táboas"
@@ -1461,7 +1453,6 @@ msgctxt "mlClusteringHierarchical|"
 msgid "Variables"
 msgstr "Variables"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Tables"
 msgstr "Táboas"
@@ -1604,7 +1595,6 @@ msgctxt "mlClusteringKMeans|"
 msgid "Variables"
 msgstr "Variables"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Tables"
 msgstr "Táboas"
@@ -1747,7 +1737,6 @@ msgctxt "mlClusteringRandomForest|"
 msgid "Variables"
 msgstr "Variables"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Tables"
 msgstr "Táboas"
@@ -1815,7 +1804,6 @@ msgctxt "mlRegressionBoosting|"
 msgid "Predictors"
 msgstr "Preditores"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Tables"
 msgstr "Táboas"
@@ -1868,7 +1856,6 @@ msgctxt "mlRegressionKnn|"
 msgid "Predictors"
 msgstr "Preditores"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Tables"
 msgstr "Táboas"
@@ -1951,7 +1938,6 @@ msgctxt "mlRegressionRandomForest|"
 msgid "Predictors"
 msgstr "Preditores"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Tables"
 msgstr "Táboas"
@@ -2058,7 +2044,6 @@ msgctxt "mlRegressionRegularized|"
 msgid "Predictors"
 msgstr "Preditores"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Tables"
 msgstr "Táboas"
