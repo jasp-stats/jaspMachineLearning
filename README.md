@@ -15,12 +15,14 @@ The analyses in the Machine Learning module are structured in JASP in the follow
     -- Regression
        - Boosting
        - K-Nearest Neighbors
+       - Neural Network
        - Random Forest
        - Regularized Linear
     -- Classification
        - Boosting
        - K-Nearest Neighbors
        - Linear Discriminant
+       - Neural Network
        - Random Forest
     -- Clustering
        - Density-Based
