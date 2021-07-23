@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2021-05-07 13:27\n"
-"PO-Revision-Date: 2021-07-20 19:06+0000\n"
+"PO-Revision-Date: 2021-07-23 19:05+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/gl/>\n"
@@ -42,9 +42,8 @@ msgstr "Ponderacións"
 msgid "Distance"
 msgstr "Distancia"
 
-#, fuzzy
 msgid "Linear Discriminants"
-msgstr "Discriminante linear"
+msgstr "Discriminantes Lineais"
 
 msgid "Method"
 msgstr "Método"
@@ -59,14 +58,13 @@ msgid "Shrinkage"
 msgstr "Contracción"
 
 msgid "n(Train)"
-msgstr ""
+msgstr "n(Adestramento)"
 
 msgid "n(Validation)"
 msgstr "n(Validación)"
 
-#, fuzzy
 msgid "n(Test)"
-msgstr "Proba"
+msgstr "n(Proba)"
 
 msgid "Validation Accuracy"
 msgstr "Precisión da Validación"
@@ -115,9 +113,8 @@ msgstr "t"
 msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
 msgstr "O modelo optimízase respecto á <i>precisión \"descuberto o choio\"</i>."
 
-#, fuzzy
 msgid "Confusion Matrix"
-msgstr "Matriz de desarranxo"
+msgstr "Matriz de Desarranxo"
 
 msgid "Observed"
 msgstr "Observado"
@@ -125,24 +122,25 @@ msgstr "Observado"
 msgid "Predicted"
 msgstr "Predito"
 
-#, fuzzy
 msgid "Decision Boundary Matrix"
-msgstr "Matriz límite de decisión"
+msgstr "Matriz Límite de Decisión"
 
 msgid ""
 "Cannot create matrix: not enough numeric variables remain after removing "
 "factor variables. You need at least 2 numeric variables."
 msgstr ""
+"Non se pode xerar a matriz: non quedan variables numéricas abondo despois de "
+"eliminar as variables dos factores. Precisas de 2 variables numéricas, cando "
+"menos."
 
-#, fuzzy
 msgid "ROC Curves Plot"
-msgstr "Curvas ROC"
+msgstr "Gráfica de Curvas ROC"
 
 msgid "False positive rate"
-msgstr "Cociente do falsamente positivo"
+msgstr "Cociente de falsamente positivos"
 
 msgid "True positive rate"
-msgstr "Cociente do verdadeiramente positivo"
+msgstr "Cociente de verdadeiramente positivos"
 
 msgid "Perfect separation"
 msgstr "Separación perfecta"
@@ -163,10 +161,10 @@ msgid "Precision"
 msgstr "Precisión"
 
 msgid "Recall"
-msgstr ""
+msgstr "Lembranza"
 
 msgid "F1 Score"
-msgstr ""
+msgstr "Puntuación F1"
 
 msgid "Support"
 msgstr "Apoio"
@@ -178,18 +176,17 @@ msgid ""
 "Area Under Curve (AUC) is calculated for every class against all other "
 "classes."
 msgstr ""
+"A Área Baixo a Curva (AUC) calcúlase para cada clase contra tódalas outras "
+"clases."
 
-#, fuzzy
 msgid "Average / Total"
-msgstr "Media"
+msgstr "Media/Total"
 
-#, fuzzy
 msgid "Class Proportions"
-msgstr "Proporcións de clase"
+msgstr "Proporcións de Clase"
 
-#, fuzzy
 msgid "Data Set"
-msgstr "Sincronizando o conxunto de datos"
+msgstr "Conxunto de Datos"
 
 msgid "Training Set"
 msgstr "Conxunto de Adestramento"
@@ -200,20 +197,25 @@ msgstr "Conxunto de Verificacións"
 msgid "Training and Validation Set"
 msgstr "Conxunto de Adestramento e Validación"
 
-#, fuzzy
 msgid "Test Set"
-msgstr "Comprobar os resultados"
+msgstr "Conxunto de Probas"
 
 msgid ""
 "You have specified more clusters than distinct data points. Please choose a "
 "number lower than %s."
 msgstr ""
+"Indicaches máis conglomerados que puntos diferentes de datos. Por favor, "
+"escolle un número menor que %s."
 
 msgid ""
 "R package error: The hclust clustering algorithm from the stats R package "
 "cannot handle data that has 65536 or more rows. We are working on a solution "
 "for this problem. Please try another algorithm in the meantime."
 msgstr ""
+"Fallo no paquete de R: o algoritmo de conglomerado hclust do paquete de "
+"estatística R non pode manexar datos que están en 65536 filas ou máis. "
+"Estamos traballando nunha solución para este problema. Por favor, mentres "
+"tanto, intenta outro algoritmo."
 
 msgid "K-Means Clustering"
 msgstr "Conglomerados con medias K"
@@ -246,36 +248,40 @@ msgid "BIC"
 msgstr "BIC"
 
 msgid "Please provide at least 2 variables."
-msgstr ""
+msgstr "Por favor, proporciona 2 variables cando menos."
 
-#, fuzzy
 msgid "silhouette"
-msgstr "Puntuación de siluetas"
+msgstr "silueta"
 
 msgid "The model is optimized with respect to the <i>%s</i> value."
-msgstr ""
+msgstr "O modelo está optimizado con respecto ao valor de <i>%s</i>."
 
 msgid ""
 "The optimum number of clusters is the maximum number of clusters. You might "
 "want to adjust the range of optimization."
 msgstr ""
+"O número de conglomerados óptimo é o máximo número de conglomerados. "
+"Poderías axustar o rango de optimización."
 
 msgid ""
 "Your cluster model contains 0 clusters and only Noisepoints, we advise to "
 "change the Eps and MinPts parameters."
 msgstr ""
+"O teu modelo de conglomerados contén 0 Conglomerados e só Puntos "
+"atrapallados. Aconsellámoste trocar os parámetros Eps e MinPts."
 
 msgid ""
 "Your cluster model contains 1 cluster and 0 Noisepoints. You could change "
 "the Eps and MinPts parameters."
 msgstr ""
+"O teu modelo de conglomerados contén 1 Conglomerado e 0 Puntos atrapallados. "
+"Poderías trocar os parámetros Eps e MinPts."
 
 msgid "The variables in the model are <b>unstandardized</b>."
-msgstr ""
+msgstr "As variables do modelo están <b>sen tipificar</b>."
 
-#, fuzzy
 msgid "Cluster Information"
-msgstr "Información dos conglomerados"
+msgstr "Información dos Conglomerados"
 
 msgid "Cluster"
 msgstr "Conglomerados"
@@ -284,50 +290,46 @@ msgid "Size"
 msgstr "Tamaño"
 
 msgid "Explained proportion within-cluster heterogeneity"
-msgstr ""
+msgstr "Proporción explicada de Heteroxeneidade dentro do conglomerado"
 
 msgid "Within sum of squares"
-msgstr "Suma de cadrados dentro"
+msgstr "Suma de cadrados Dentro"
 
 msgid "Silhouette score"
 msgstr "Puntuación de siluetas"
 
-#, fuzzy
 msgid "Centroid %s"
-msgstr "Centroides"
+msgstr "Centroide %s"
 
 msgid "Noisepoints"
-msgstr ""
+msgstr "Puntos atrapallados"
 
 msgid "The Between Sum of Squares of the %1$s cluster model is %2$s"
-msgstr ""
+msgstr "A Suma de Cadrados Entre do modelo %1$s de conglomerados é %2$s"
 
 msgid "The Total Sum of Squares of the %1$s cluster model is %2$s"
-msgstr ""
+msgstr "A Suma de Cadrados Total do modelo %1$s de conglomerados é %2$s"
 
 msgid "Value"
 msgstr "Valor"
 
-#, fuzzy
 msgid "Maximum diameter"
-msgstr "Máxima profundidade da árbore"
+msgstr "Máximo diámetro"
 
-#, fuzzy
 msgid "Minimum separation"
-msgstr "Rango mínimo"
+msgstr "Mínima separación"
 
-#, fuzzy
 msgid "Pearson's %s"
-msgstr "R de Pearson"
+msgstr "%s de Pearson"
 
 msgid "Dunn index"
-msgstr ""
+msgstr "Índice de Dunn"
 
 msgid "Entropy"
 msgstr "Entropía"
 
 msgid "Calinski-Harabasz index"
-msgstr ""
+msgstr "Índice de Calinski-Harabasz"
 
 msgid "All metrics are based on the <i>euclidean</i> distance."
 msgstr "Tódalas métricas baséanse na distancia <i>euclídea</i>."
@@ -336,39 +338,32 @@ msgid "Evaluation metrics cannot be computed when there is only 1 cluster."
 msgstr ""
 "As métricas de avaliación non se poden calcular cando só hai 1 conglomerado."
 
-#, fuzzy
 msgid "t-SNE Cluster Plot"
-msgstr "gráfica de conglomerados t-SNE"
+msgstr "Gráfica de Conglomerados t-SNE"
 
 msgid "Noisepoint"
-msgstr ""
+msgstr "Punto atrapallado"
 
-#, fuzzy
 msgid "Elbow Method Plot"
-msgstr "Método do cóbado"
+msgstr "Gráfica do Método do Cóbado"
 
-#, fuzzy
 msgid "WSS"
-msgstr "MCP (WLS)"
+msgstr "WSS"
 
-#, fuzzy
 msgid "Number of Clusters"
-msgstr "Número de conglomerados"
+msgstr "Número de Conglomerados"
 
-#, fuzzy
 msgid "Lowest %s value"
-msgstr "Probar valor"
+msgstr "Valor %s máis pequeno"
 
-#, fuzzy
 msgid "Cluster Means"
-msgstr "Medias dos conglomerados"
+msgstr "Medias dos Conglomerados"
 
 msgid "Cluster %s"
 msgstr "Conglomerado %s"
 
-#, fuzzy
 msgid "Cluster Density Plots"
-msgstr "Densidades dos conglomerados"
+msgstr "Gráficas de Densidades dos Conglomerados"
 
 msgid "Density"
 msgstr "Densidade"
@@ -388,6 +383,8 @@ msgid ""
 "Your test set indicator should be binary, containing only 1 (included in "
 "test set) and 0 (excluded from test set)."
 msgstr ""
+"O teu indicador do conxunto de probas debera ser binario, contendo só 1 ("
+"incluído no conxunto de probas) e 0 (excluído do conxunto de probas)."
 
 msgid ""
 "You have specified more nearest neighbors than there are observations in the "
@@ -465,23 +462,21 @@ msgstr ""
 msgid "Gaussian"
 msgstr "Normal"
 
-#, fuzzy
 msgid "Laplace"
-msgstr "Hiper-g de Laplace"
+msgstr "Laplace"
 
 msgid "R%s cannot be computed due to lack of variance in the predictions.</i>"
 msgstr ""
+"Non pode calcularse o R%s debido á falla de varianza nas predicións.</i>"
 
 msgid "Predictive Performance Plot"
 msgstr "Gráfica de Capacidade Preditiva"
 
-#, fuzzy
 msgid "Observed test values"
-msgstr "Valores observados"
+msgstr "Valores observados das probas"
 
-#, fuzzy
 msgid "Predicted test values"
-msgstr "Intervalos de predicións"
+msgstr "Valores preditos das probas"
 
 msgid "Data Split"
 msgstr "Separador de Datos"
@@ -502,17 +497,16 @@ msgid "Train and validation: %d"
 msgstr "Adestramento e validación: %d"
 
 msgid "Object passed to .scaleNumericData.matrix was not numeric!"
-msgstr ""
+msgstr "O obxecto pasado a .scaleNumericData.matrix non era numérico!"
 
 msgid "The target variable should have at least 2 classes."
-msgstr ""
+msgstr "A variable obxectivo debe ter 2 clases, cando menos."
 
-#, fuzzy
 msgid "Linear Discriminant Coefficients"
-msgstr "Clasificación discriminante linear"
+msgstr "Coeficientes do Discriminante Linear"
 
 msgid "(Constant)"
-msgstr ""
+msgstr "(Constante)"
 
 msgid "Prior and Posterior Class Probabilities"
 msgstr "Probabilidades de Clase Previa e Posterior"
@@ -526,20 +520,17 @@ msgstr "Posterior"
 msgid "Class Means in Training Data"
 msgstr "Medias de Clase nos Datos de Adestramento"
 
-#, fuzzy
 msgid "Linear Discriminant Matrix"
-msgstr "Matriz discriminante linear"
+msgstr "Matriz do Discriminante Linear"
 
-#, fuzzy
 msgid "Tests of Equality of Class Means"
-msgstr "Igualdade de medias de clase"
+msgstr "Probas de Igualdade de Medias de Clase"
 
 msgid "The null hypothesis specifies equal class means."
-msgstr ""
+msgstr "A hipótese nula indica medias de clase iguais."
 
-#, fuzzy
 msgid "Tests of Equality of Covariance Matrices"
-msgstr "Igualdade de matrices de covarianzas"
+msgstr "Probas de Igualdade de Matrices de Covarianzas"
 
 msgid "df"
 msgstr "gl"
@@ -548,17 +539,16 @@ msgid "p"
 msgstr "p"
 
 msgid "The null hypothesis specifies equal covariance matrices."
-msgstr ""
+msgstr "A hipótese nula indica matrices de covarianzas iguais."
 
 msgid "Pooled Within-Class Matrices Correlations"
-msgstr ""
+msgstr "Correlacións das Matrices Combinadas Dentro de Clase"
 
-#, fuzzy
 msgid "K-Distance Plot"
-msgstr "Gráfica de distancia K"
+msgstr "Gráfica de Distancia K"
 
 msgid "Points sorted by distance"
-msgstr ""
+msgstr "Puntos ordenados segundo a distancia"
 
 msgid ""
 "%s-nearest neighbors \n"
@@ -568,29 +558,30 @@ msgstr ""
 "%s veciños máis próximos"
 
 msgid "Maximum curvature = %s"
-msgstr ""
+msgstr "Curvatura máxima = %s"
 
 msgid "End of recursion reached without converging"
-msgstr ""
+msgstr "Acadouse o final da recursividade sen converxer"
 
 msgid "x and y must be numeric and finite. Missing values not allowed."
 msgstr "x e y deben ser numéricos e finitos. Non se admiten valores ausentes."
 
 msgid "x and y must be of equal length."
-msgstr ""
+msgstr "x e y deben ter a mesma longura."
 
 msgid "Need more points to find cutoff."
 msgstr "Precísanse máis puntos para atopar o punto de corte."
 
 msgid "Need to specify fraction of maximum slope."
-msgstr ""
+msgstr "Precisas indicar a fracción da pendente máxima."
 
 msgid ""
 "Fraction of maximum slope must be positive and be less than or equal to 1."
 msgstr ""
+"A fracción da pendente máxima debe ser positiva, e menor ou igual que 1."
 
 msgid "Method must be either 'first' or 'curvature'."
-msgstr ""
+msgstr "O método debe ser 'primeiro' ou 'curvatura'."
 
 msgid "Cutoff point is beyond range. Returning NA."
 msgstr "O punto de corte está alén do rango. Devólvese NA."
@@ -598,17 +589,14 @@ msgstr "O punto de corte está alén do rango. Devólvese NA."
 msgid "Dendrogram"
 msgstr "Dendrograma"
 
-#, fuzzy
 msgid "Variable Importance"
-msgstr "Importancia da variable"
+msgstr "Importancia da Variable"
 
-#, fuzzy
 msgid "Mean decrease in Gini Index"
-msgstr "A media decrece en precisión"
+msgstr "Decrecemento da media no Índice de Gini"
 
-#, fuzzy
 msgid "Relative Influence"
-msgstr "Influencia relativa"
+msgstr "Influencia Relativa"
 
 msgid "Out-of-bag Improvement Plot"
 msgstr "Gráfica da Mellora \"Descuberto o Choio\""
@@ -616,47 +604,41 @@ msgstr "Gráfica da Mellora \"Descuberto o Choio\""
 msgid "Training set"
 msgstr "Conxunto de adestramento"
 
-#, fuzzy
 msgid "OOB Change in %s Multinomial Deviance"
-msgstr "Proba baiesiana multinomial"
+msgstr "Cambio OOB na Desviación Multinomial de %s"
 
 msgid "OOB Change in %s Binomial Deviance"
-msgstr ""
+msgstr "Cambio OOB na Desviación Binomial de %s"
 
 msgid "OOB Change in %s%s Deviance"
-msgstr ""
+msgstr "Cambio OOB na Desviación de %s%s"
 
 msgid "Number of Trees"
-msgstr "Número de árbores"
+msgstr "Número de Árbores"
 
 msgid "Deviance Plot"
 msgstr "Gráfica de desviacións"
 
-#, fuzzy
 msgid "Multinomial Deviance"
-msgstr "Proba Multinomial"
+msgstr "Desviación de Multinomial"
 
-#, fuzzy
 msgid "Binomial Deviance"
-msgstr "Comprobación Binomial"
+msgstr "Desviación de Binomial"
 
 msgid "%s Deviance"
 msgstr "%s Desviación"
 
-#, fuzzy
 msgid "Relative Influence Plot"
-msgstr "Influencia relativa"
+msgstr "Gráfica de Influencia Relativa"
 
-#, fuzzy
 msgid "Classification Accuracy Plot"
-msgstr "Precisión da clasificación"
+msgstr "Gráfica de Precisión da Clasificación"
 
 msgid "Mean Squared Error Plot"
 msgstr "Gráfica do Erro Cadrado Medio"
 
-#, fuzzy
 msgid "Classification Accuracy"
-msgstr "Precisión da clasificación"
+msgstr "Precisión da Clasificación"
 
 msgid "Mean Squared Error"
 msgstr "Erro Cadrado Medio"
@@ -665,13 +647,13 @@ msgid "Validation set"
 msgstr "Conxunto de validación"
 
 msgid "Number of Nearest Neighbors"
-msgstr "Número de veciños máis próximos"
+msgstr "Número de Veciños Máis Próximos"
 
 msgid "Training and validation set"
 msgstr "Conxunto de adestramento e validación"
 
 msgid "Mean decrease in accuracy"
-msgstr "A media decrece en precisión"
+msgstr "Decrecemento da media na precisión"
 
 msgid "Total increase in node purity"
 msgstr "Incremento total da pureza do nodo"
@@ -688,37 +670,32 @@ msgstr "Precisión da Clasificación %s \"Descuberto o Choio\""
 msgid "Out-of-bag %sMean Squared Error"
 msgstr "Erro Cadrado Medio %s \"Descuberto o Choio\""
 
-#, fuzzy
 msgid "Mean Decrease in Accuracy"
-msgstr "A media decrece en precisión"
+msgstr "Decrecemento da Media na Precisión"
 
-#, fuzzy
 msgid "Total Increase in Node Purity"
-msgstr "Incremento total da pureza do nodo"
+msgstr "Incremento Total da Pureza do Nodo"
 
 msgid "Regression Coefficients"
 msgstr "Coeficientes da regresión"
 
-#, fuzzy
 msgid "Coefficient (%s)"
-msgstr "Coeficientes"
+msgstr "Coeficiente (%s)"
 
-#, fuzzy
 msgid "Variable Trace Plot"
-msgstr "Traza de variables"
+msgstr "Gráfica da Traza das Variables"
 
 msgid "Coefficients"
 msgstr "Coeficientes"
 
-#, fuzzy
 msgid "Lambda Evaluation Plot"
-msgstr "Avaliación baiesiana"
+msgstr "Gráfica da Avaliación Lambda"
 
 msgid "Cross-Validated %sMean Squared Error"
 msgstr "Raíz do Erro %s Cadrado Medio con Verificación Cruzada"
 
 msgid "Min. CV MSE"
-msgstr ""
+msgstr "Min. CV ECM"
 
 msgid "%s 1 SE"
-msgstr ""
+msgstr "%s 1 EP"
