@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2021-05-07 13:27\n"
-"PO-Revision-Date: 2021-07-19 06:31+0000\n"
-"Last-Translator: Johannes Keyser <johanneskeyser@posteo.de>\n"
+"PO-Revision-Date: 2021-08-05 12:32+0000\n"
+"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/de/>\n"
 "Language: de\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
-"X-Generator: Weblate 4.7.2-dev\n"
+"X-Generator: Weblate 4.8-dev\n"
 
 msgid "K-Nearest Neighbors Classification"
 msgstr "K-nächste-Nachbarn-Klassifikation"
@@ -587,19 +587,19 @@ msgid "Relative Influence"
 msgstr "Relativer Einfluß"
 
 msgid "Out-of-bag Improvement Plot"
-msgstr ""
+msgstr "Out-of-bag-Verbesserungsdiagramm"
 
 msgid "Training set"
 msgstr "Trainingset"
 
 msgid "OOB Change in %s Multinomial Deviance"
-msgstr ""
+msgstr "OOB Änderung in %s Multinomialer Devianz"
 
 msgid "OOB Change in %s Binomial Deviance"
-msgstr ""
+msgstr "OOB Änderung in %s Binomialer Devianz"
 
 msgid "OOB Change in %s%s Deviance"
-msgstr ""
+msgstr "OOB Änderung in %s%s Devianz"
 
 msgid "Number of Trees"
 msgstr "Anzahl Bäume"
@@ -647,22 +647,22 @@ msgid "Total increase in node purity"
 msgstr "Gesamtzunahme der Knotenreinheit"
 
 msgid "Out-of-bag Classification Accuracy Plot"
-msgstr ""
+msgstr "Out-of-Bag-Klassifizierungsgenauigkeitsdiagramm"
 
 msgid "Out-of-bag Mean Squared Error Plot"
-msgstr ""
+msgstr "Out-of-bag mittlerer quadratischer Fehler-Diagramm"
 
 msgid "Out-of-bag %sClassification Accuracy"
-msgstr ""
+msgstr "Out-of-bag %sKlassifizierungsgenauigkeit"
 
 msgid "Out-of-bag %sMean Squared Error"
-msgstr ""
+msgstr "Out-of-bag %s Mittlerer quadratischer Fehler"
 
 msgid "Mean Decrease in Accuracy"
 msgstr "Mittlere Abnahme der Genauigkeit"
 
 msgid "Total Increase in Node Purity"
-msgstr ""
+msgstr "Gesamte Zunahme der Knotenreinheit"
 
 msgid "Regression Coefficients"
 msgstr "Regression-Koeffizienten"
