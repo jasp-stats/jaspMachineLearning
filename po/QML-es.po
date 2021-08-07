@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-08-08 23:33+0000\n"
+"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.8-dev\n"
 "X-Language: es\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -211,10 +217,9 @@ msgctxt "mlClassificationBoosting|"
 msgid "Predictors"
 msgstr "Predictores"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Tables"
-msgstr "Mesas"
+msgstr "Tablas"
 
 #, fuzzy
 msgctxt "mlClassificationBoosting|"
@@ -241,10 +246,9 @@ msgctxt "mlClassificationBoosting|"
 msgid "Relative influence"
 msgstr "Influencia relativa"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Plots"
-msgstr "Parcelas"
+msgstr "Gráficos"
 
 #, fuzzy
 msgctxt "mlClassificationBoosting|"
@@ -376,10 +380,9 @@ msgctxt "mlClassificationKnn|"
 msgid "Predictors"
 msgstr "Predictores"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Tables"
-msgstr "Mesas"
+msgstr "Tablas"
 
 #, fuzzy
 msgctxt "mlClassificationKnn|"
@@ -401,10 +404,9 @@ msgctxt "mlClassificationKnn|"
 msgid "Evaluation metrics"
 msgstr "Métricas de evaluación"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Plots"
-msgstr "Parcelas"
+msgstr "Gráficos"
 
 #, fuzzy
 msgctxt "mlClassificationKnn|"
@@ -576,10 +578,9 @@ msgctxt "mlClassificationLda|"
 msgid "Predictors"
 msgstr "Predictores"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Tables"
-msgstr "Mesas"
+msgstr "Tablas"
 
 #, fuzzy
 msgctxt "mlClassificationLda|"
@@ -618,7 +619,7 @@ msgstr "Clase significa datos de entrenamiento"
 
 msgctxt "mlClassificationLda|"
 msgid "Assumption Checks"
-msgstr "Verificaciones de supuestos"
+msgstr "Verificaciones de Supuestos"
 
 #, fuzzy
 msgctxt "mlClassificationLda|"
@@ -635,10 +636,9 @@ msgctxt "mlClassificationLda|"
 msgid "Multicollinearity"
 msgstr "Multicolinealidad"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Plots"
-msgstr "Parcelas"
+msgstr "Gráficos"
 
 #, fuzzy
 msgctxt "mlClassificationLda|"
@@ -735,10 +735,9 @@ msgctxt "mlClassificationRandomForest|"
 msgid "Predictors"
 msgstr "Predictores"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Tables"
-msgstr "Mesas"
+msgstr "Tablas"
 
 #, fuzzy
 msgctxt "mlClassificationRandomForest|"
@@ -760,17 +759,14 @@ msgctxt "mlClassificationRandomForest|"
 msgid "Evaluation metrics"
 msgstr "Métricas de evaluación"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Variable importance"
-msgstr "Importancia variable"
+msgstr "Importancia de la variable"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Plots"
-msgstr "Parcelas"
+msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Data split"
 msgstr "División de datos"
@@ -900,10 +896,9 @@ msgctxt "mlClusteringDensityBased|"
 msgid "Variables"
 msgstr "Variables"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Tables"
-msgstr "Mesas"
+msgstr "Tablas"
 
 #, fuzzy
 msgctxt "mlClusteringDensityBased|"
@@ -940,10 +935,9 @@ msgctxt "mlClusteringDensityBased|"
 msgid "Evaluation metrics"
 msgstr "Métricas de evaluación"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Plots"
-msgstr "Parcelas"
+msgstr "Gráficos"
 
 #, fuzzy
 msgctxt "mlClusteringDensityBased|"
@@ -1010,27 +1004,22 @@ msgctxt "mlClusteringDensityBased|"
 msgid "Normal"
 msgstr "Normal"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Correlated"
 msgstr "Correlacionado"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Scale variables"
 msgstr "Variables de escala"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Set seed:"
 msgstr "Establecer semilla:"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Model Optimization"
-msgstr "Optimización del modelo"
+msgstr "Optimización del Modelo"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Fixed"
 msgstr "Fijo"
@@ -1055,10 +1044,9 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Variables"
 msgstr "Variables"
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Tables"
-msgstr "Mesas"
+msgstr "Tablas"
 
 #, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
@@ -1100,10 +1088,9 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Evaluation metrics"
 msgstr "Métricas de evaluación"
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Plots"
-msgstr "Parcelas"
+msgstr "Gráficos"
 
 #, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
@@ -1215,10 +1202,9 @@ msgctxt "mlClusteringHierarchical|"
 msgid "Variables"
 msgstr "Variables"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Tables"
-msgstr "Mesas"
+msgstr "Tablas"
 
 #, fuzzy
 msgctxt "mlClusteringHierarchical|"
@@ -1255,10 +1241,9 @@ msgctxt "mlClusteringHierarchical|"
 msgid "Evaluation metrics"
 msgstr "Métricas de evaluación"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Plots"
-msgstr "Parcelas"
+msgstr "Gráficos"
 
 #, fuzzy
 msgctxt "mlClusteringHierarchical|"
@@ -1420,10 +1405,9 @@ msgctxt "mlClusteringKMeans|"
 msgid "Variables"
 msgstr "Variables"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Tables"
-msgstr "Mesas"
+msgstr "Tablas"
 
 #, fuzzy
 msgctxt "mlClusteringKMeans|"
@@ -1465,10 +1449,9 @@ msgctxt "mlClusteringKMeans|"
 msgid "Evaluation metrics"
 msgstr "Métricas de evaluación"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Plots"
-msgstr "Parcelas"
+msgstr "Gráficos"
 
 #, fuzzy
 msgctxt "mlClusteringKMeans|"
@@ -1585,10 +1568,9 @@ msgctxt "mlClusteringRandomForest|"
 msgid "Variables"
 msgstr "Variables"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Tables"
-msgstr "Mesas"
+msgstr "Tablas"
 
 #, fuzzy
 msgctxt "mlClusteringRandomForest|"
@@ -1630,10 +1612,9 @@ msgctxt "mlClusteringRandomForest|"
 msgid "Variable importance"
 msgstr "Importancia variable"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Plots"
-msgstr "Parcelas"
+msgstr "Gráficos"
 
 #, fuzzy
 msgctxt "mlClusteringRandomForest|"
@@ -1745,27 +1726,22 @@ msgctxt "mlRegressionBoosting|"
 msgid "Predictors"
 msgstr "Predictores"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Tables"
-msgstr "Mesas"
+msgstr "Tablas"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Evaluation metrics"
 msgstr "Métricas de evaluación"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Relative influence"
 msgstr "Influencia relativa"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Plots"
-msgstr "Parcelas"
+msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Data split"
 msgstr "División de datos"
@@ -1880,22 +1856,18 @@ msgctxt "mlRegressionKnn|"
 msgid "Predictors"
 msgstr "Predictores"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Tables"
-msgstr "Mesas"
+msgstr "Tablas"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Evaluation metrics"
 msgstr "Métricas de evaluación"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Plots"
-msgstr "Parcelas"
+msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Data split"
 msgstr "División de datos"
@@ -2040,27 +2012,22 @@ msgctxt "mlRegressionRandomForest|"
 msgid "Predictors"
 msgstr "Predictores"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Tables"
-msgstr "Mesas"
+msgstr "Tablas"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Evaluation metrics"
 msgstr "Métricas de evaluación"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Variable importance"
-msgstr "Importancia variable"
+msgstr "Importancia de la variable"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Plots"
-msgstr "Parcelas"
+msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Data split"
 msgstr "División de datos"
@@ -2175,15 +2142,13 @@ msgctxt "mlRegressionRegularized|"
 msgid "Predictors"
 msgstr "Predictores"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Weights"
-msgstr "Pesos"
+msgstr "Ponderaciones"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Tables"
-msgstr "Mesas"
+msgstr "Tablas"
 
 #, fuzzy
 msgctxt "mlRegressionRegularized|"
@@ -2195,10 +2160,9 @@ msgctxt "mlRegressionRegularized|"
 msgid "Regression coefficients"
 msgstr "Coeficientes de regresión"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Plots"
-msgstr "Parcelas"
+msgstr "Gráficos"
 
 #, fuzzy
 msgctxt "mlRegressionRegularized|"
