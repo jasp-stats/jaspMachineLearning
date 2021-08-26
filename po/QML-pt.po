@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2021-08-27 20:21+0000\n"
-"Last-Translator: Laura Durans <lauraadurans@gmail.com>\n"
+"Last-Translator: Alex França <alex.tonante@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/pt/>\n"
 "Language: pt\n"
@@ -1882,7 +1882,6 @@ msgctxt "Description|"
 msgid "Machine Learning"
 msgstr ""
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Regression"
 msgstr "Regressão"
