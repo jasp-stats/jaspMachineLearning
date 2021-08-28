@@ -1,15 +1,9 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-08-27 20:21+0000\n"
-"Last-Translator: Alex França <alex.tonante@gmail.com>\n"
-"Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
-"jaspmachinelearning-qml/pt/>\n"
-"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.8.1-dev\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Language: pt\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -192,9 +186,10 @@ msgctxt "mlClassificationBoosting|"
 msgid "<b>Save Model</b>"
 msgstr "<b>Salvar Modelo</b>"
 
+#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Target"
-msgstr ""
+msgstr "Objetivo"
 
 msgctxt "mlClassificationKnn|"
 msgid "Predictors"
@@ -306,9 +301,10 @@ msgctxt "mlClassificationKnn|"
 msgid "<b>Save Model</b>"
 msgstr "<b>Salvar Modelo</b>"
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Target"
-msgstr ""
+msgstr "Objetivo"
 
 #, fuzzy
 msgctxt "mlClassificationLda|"
@@ -446,9 +442,10 @@ msgctxt "mlClassificationLda|"
 msgid "<b>Save Model</b>"
 msgstr "<b>Salvar Modelo</b>"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Target"
-msgstr ""
+msgstr "Objetivo"
 
 #, fuzzy
 msgctxt "mlClassificationRandomForest|"
@@ -1174,9 +1171,10 @@ msgctxt "mlClusteringRandomForest|"
 msgid "<b>Save Model</b>"
 msgstr "<b>Salvar Modelo</b>"
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Target"
-msgstr ""
+msgstr "Objetivo"
 
 #, fuzzy
 msgctxt "mlRegressionBoosting|"
@@ -1296,9 +1294,10 @@ msgctxt "mlRegressionBoosting|"
 msgid "<b>Save Model</b>"
 msgstr "<b>Salvar Modelo</b>"
 
+#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Target"
-msgstr ""
+msgstr "Objetivo"
 
 #, fuzzy
 msgctxt "mlRegressionKnn|"
@@ -1395,9 +1394,10 @@ msgctxt "mlRegressionKnn|"
 msgid "<b>Save Model</b>"
 msgstr "<b>Salvar Modelo</b>"
 
+#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Target"
-msgstr ""
+msgstr "Objetivo"
 
 #, fuzzy
 msgctxt "mlRegressionRandomForest|"
@@ -1505,9 +1505,10 @@ msgctxt "mlRegressionRandomForest|"
 msgid "<b>Save Model</b>"
 msgstr "<b>Salvar Modelo</b>"
 
+#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Target"
-msgstr ""
+msgstr "Objetivo"
 
 #, fuzzy
 msgctxt "mlRegressionRegularized|"
