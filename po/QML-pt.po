@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-08-27 20:21+0000\n"
+"Last-Translator: Alex França <alex.tonante@gmail.com>\n"
+"Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/pt/>\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.8.1-dev\n"
 "X-Language: pt\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -22,7 +28,7 @@ msgstr "Amostra"
 
 msgctxt "DataSplit|"
 msgid "% of all data"
-msgstr ""
+msgstr "% de todos os dados"
 
 msgctxt "DataSplit|"
 msgid "Add generated indicator to data"
@@ -58,13 +64,12 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "Target"
-msgstr ""
+msgstr "Objetivo"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Predictors"
 msgstr "Preditores"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Tables"
 msgstr "Tabelas"
@@ -155,7 +160,6 @@ msgctxt "mlClassificationBoosting|"
 msgid "Scale predictors"
 msgstr "Preditores de escala"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Set seed:"
 msgstr "Definir semente:"
@@ -164,7 +168,6 @@ msgctxt "mlClassificationBoosting|"
 msgid "Number of Trees"
 msgstr "Número de árvores"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Fixed"
 msgstr "Fixo"
@@ -173,12 +176,10 @@ msgctxt "mlClassificationBoosting|"
 msgid "Trees:"
 msgstr "Árvores:"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Optimized"
 msgstr "Otimizado"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Max. trees:"
 msgstr "Máximo de árvores:"
@@ -241,7 +242,6 @@ msgctxt "mlClassificationKnn|"
 msgid "Andrews curves"
 msgstr "Gráfico de Andrews"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Decision boundary matrix"
 msgstr "Matriz de limites de decisão"
@@ -290,7 +290,6 @@ msgctxt "mlClassificationKnn|"
 msgid "Nearest neighbors:"
 msgstr "Vizinhos próximos:"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Optimized"
 msgstr "Otimizado"
@@ -1883,7 +1882,6 @@ msgctxt "Description|"
 msgid "Machine Learning"
 msgstr ""
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Regression"
 msgstr "Regressão"
