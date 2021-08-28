@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2021-03-06 14:49\n"
-"PO-Revision-Date: 2021-08-24 18:35+0000\n"
+"PO-Revision-Date: 2021-08-27 20:21+0000\n"
 "Last-Translator: Alex França <alex.tonante@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/pt/>\n"
@@ -114,7 +114,7 @@ msgid "Observed"
 msgstr "Observado"
 
 msgid "Predicted"
-msgstr ""
+msgstr "Previsto"
 
 msgid "Decision Boundary Matrix"
 msgstr ""
@@ -128,10 +128,10 @@ msgid "ROC Curves Plot"
 msgstr ""
 
 msgid "False positive rate"
-msgstr ""
+msgstr "Taxa de falsos positivos"
 
 msgid "True positive rate"
-msgstr ""
+msgstr "Taxa de positivos verdadeiros"
 
 msgid "Perfect separation"
 msgstr ""
@@ -226,7 +226,7 @@ msgid "N"
 msgstr "N"
 
 msgid "R%s"
-msgstr ""
+msgstr "R%s"
 
 msgid "AIC"
 msgstr "AIC"
@@ -308,7 +308,6 @@ msgstr "r de Pearson"
 msgid "Dunn index"
 msgstr ""
 
-#, fuzzy
 msgid "Entropy"
 msgstr "Entropia"
 
@@ -458,9 +457,8 @@ msgstr ""
 msgid "Total: %d"
 msgstr ""
 
-#, fuzzy
 msgid "Validation: %d"
-msgstr "Citação:"
+msgstr "Validação: %d"
 
 msgid "Train and validation: %d"
 msgstr ""
