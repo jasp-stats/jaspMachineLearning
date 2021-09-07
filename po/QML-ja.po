@@ -1,15 +1,21 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-09-07 11:34+0000\n"
+"Last-Translator: Koji Kosugi <kosugitti@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/ja/>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.8.1-dev\n"
 "X-Language: ja\n"
 "X-Qt-Contexts: true\n"
 
 msgctxt "Description|"
 msgid "Machine Learning"
-msgstr ""
+msgstr "機械学習"
 
 msgctxt "Description|"
 msgid "Regression"
@@ -17,191 +23,192 @@ msgstr "回帰"
 
 msgctxt "Description|"
 msgid "Boosting"
-msgstr ""
+msgstr "ブースティング"
 
 msgctxt "Description|"
 msgid "Boosting Regression"
-msgstr ""
+msgstr "ブースティング回帰"
 
 msgctxt "Description|"
 msgid "K-Nearest Neighbors"
-msgstr ""
+msgstr "K-近傍"
 
+#, fuzzy
 msgctxt "Description|"
 msgid "K-Nearest Neighbors Regression"
-msgstr ""
+msgstr "K-近傍回帰"
 
 msgctxt "Description|"
 msgid "Random Forest"
-msgstr ""
+msgstr "ランダムフォレスト"
 
 msgctxt "Description|"
 msgid "Random Forest Regression"
-msgstr ""
+msgstr "ランダムフォレスト回帰"
 
 msgctxt "Description|"
 msgid "Regularized Linear"
-msgstr ""
+msgstr "正則化線形モデル"
 
 msgctxt "Description|"
 msgid "Regularized Linear Regression"
-msgstr ""
+msgstr "正則化線形回帰"
 
 msgctxt "Description|"
 msgid "Classification"
-msgstr ""
+msgstr "分類"
 
 msgctxt "Description|"
 msgid "Boosting Classification"
-msgstr ""
+msgstr "ブースティング分類"
 
 msgctxt "Description|"
 msgid "K-Nearest Neighbors Classification"
-msgstr ""
+msgstr "K - 近傍分類"
 
 msgctxt "Description|"
 msgid "Linear Discriminant"
-msgstr ""
+msgstr "線形判別分析"
 
 msgctxt "Description|"
 msgid "Linear Discriminant Classification"
-msgstr ""
+msgstr "線形判別分類"
 
 msgctxt "Description|"
 msgid "Random Forest Classification"
-msgstr ""
+msgstr "ランダムフォレスト分類"
 
 msgctxt "Description|"
 msgid "Clustering"
-msgstr ""
+msgstr "クラスタ リング"
 
 msgctxt "Description|"
 msgid "Density-Based"
-msgstr ""
+msgstr "密度に基づいた"
 
 msgctxt "Description|"
 msgid "Density-Based Clustering"
-msgstr ""
+msgstr "密度に基づいたクラスタリング"
 
 msgctxt "Description|"
 msgid "Fuzzy C-Means"
-msgstr ""
+msgstr "ファジー C 平均"
 
 msgctxt "Description|"
 msgid "Fuzzy C-Means Clustering"
-msgstr ""
+msgstr "ファジー C 平均クラスタリング"
 
 msgctxt "Description|"
 msgid "Hierarchical"
-msgstr ""
+msgstr "階層的"
 
 msgctxt "Description|"
 msgid "Hierarchical Clustering"
-msgstr ""
+msgstr "階層的クラスタリング"
 
 msgctxt "Description|"
 msgid "K-Means"
-msgstr ""
+msgstr "K-平均"
 
 msgctxt "Description|"
 msgid "K-Means Clustering"
-msgstr ""
+msgstr "K-平均クラスタリング"
 
 msgctxt "Description|"
 msgid "Random Forest Clustering"
-msgstr ""
+msgstr "ランダムフォレスト クラスタリング"
 
 msgctxt "DataSplit|"
 msgid "Data Split Preferences"
-msgstr ""
+msgstr "データ分割設定"
 
 msgctxt "DataSplit|"
 msgid "Holdout Test Data"
-msgstr ""
+msgstr "ホールドアウトテストデータ"
 
 msgctxt "DataSplit|"
 msgid "Sample"
-msgstr ""
+msgstr "サンプル"
 
 msgctxt "DataSplit|"
 msgid "% of all data"
-msgstr ""
+msgstr "全データの％"
 
 msgctxt "DataSplit|"
 msgid "Add generated indicator to data"
-msgstr ""
+msgstr "生成されたインジケータをデータに追加"
 
 msgctxt "DataSplit|"
 msgid "Column name: "
-msgstr ""
+msgstr "列名: "
 
 msgctxt "DataSplit|"
 msgid "Test set indicator:"
-msgstr ""
+msgstr "テストセットインジケータ:"
 
 msgctxt "DataSplit|"
 msgid "None"
-msgstr ""
+msgstr "なし"
 
 msgctxt "DataSplit|"
 msgid "Training and Validation Data"
-msgstr ""
+msgstr "トレーニングと検証データ"
 
 msgctxt "DataSplit|"
 msgid "% for validation data"
-msgstr ""
+msgstr "検証データの％"
 
 msgctxt "DataSplit|"
 msgid "K-fold with"
-msgstr ""
+msgstr "Kフォールドで"
 
 msgctxt "DataSplit|"
 msgid "folds"
-msgstr ""
+msgstr "フォールド"
 
 msgctxt "DataSplit|"
 msgid "Leave-one-out"
-msgstr ""
+msgstr "リーブワンアウト"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Target"
-msgstr ""
+msgstr "ターゲット"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Predictors"
-msgstr ""
+msgstr "予測変数"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Confusion matrix"
-msgstr ""
+msgstr "混同行列"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Display proportions"
-msgstr ""
+msgstr "比率を表示する"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Class proportions"
-msgstr ""
+msgstr "クラスの比率"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評価指標"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Relative influence"
-msgstr ""
+msgstr "相対的な影響力"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Plots"
-msgstr ""
+msgstr "プロット"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Data split"
-msgstr ""
+msgstr "データの分割"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Out-of-bag improvement"
@@ -209,31 +216,31 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "ROC curves"
-msgstr ""
+msgstr "ROC曲線"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "アンドリュース曲線"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Deviance"
-msgstr ""
+msgstr "逸脱"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Decision boundary matrix"
-msgstr ""
+msgstr "決定境界行列"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Legend"
-msgstr ""
+msgstr "凡例"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Points"
-msgstr ""
+msgstr "ポイント"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "トレーニングパラメータ"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Algorithmic Settings"
@@ -241,471 +248,471 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "Shrinkage:"
-msgstr ""
+msgstr "縮小:"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Interaction depth:"
-msgstr ""
+msgstr "相互作用の深さ:"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Min. observations in node:"
-msgstr ""
+msgstr "ノード内の最小観測値:"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Training data used per tree:"
-msgstr ""
+msgstr "ツリーごとに使用されるトレーニング データ:"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Scale predictors"
-msgstr ""
+msgstr "スケール予測変数"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Set seed:"
-msgstr ""
+msgstr "シードを設定:"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Number of Trees"
-msgstr ""
+msgstr "ツリー数"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Fixed"
-msgstr ""
+msgstr "固定"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Trees:"
-msgstr ""
+msgstr "ツリー:"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Optimized"
-msgstr ""
+msgstr "最適化"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Max. trees:"
-msgstr ""
+msgstr "最大ツリー数:"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Add predicted classes to data"
-msgstr ""
+msgstr "予測されたクラスをデータに追加"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Column name: "
-msgstr ""
+msgstr "列名: "
 
 msgctxt "mlClassificationBoosting|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>モデルを保存</b>"
 
 msgctxt "mlClassificationKnn|"
 msgid "Target"
-msgstr ""
+msgstr "ターゲット"
 
 msgctxt "mlClassificationKnn|"
 msgid "Predictors"
-msgstr ""
+msgstr "予測変数"
 
 msgctxt "mlClassificationKnn|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlClassificationKnn|"
 msgid "Confusion matrix"
-msgstr ""
+msgstr "混同行列"
 
 msgctxt "mlClassificationKnn|"
 msgid "Display proportions"
-msgstr ""
+msgstr "比率を表示する"
 
 msgctxt "mlClassificationKnn|"
 msgid "Class proportions"
-msgstr ""
+msgstr "クラスの比率"
 
 msgctxt "mlClassificationKnn|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評価指標"
 
 msgctxt "mlClassificationKnn|"
 msgid "Plots"
-msgstr ""
+msgstr "プロット"
 
 msgctxt "mlClassificationKnn|"
 msgid "Data split"
-msgstr ""
+msgstr "データの分割"
 
 msgctxt "mlClassificationKnn|"
 msgid "Classification accuracy"
-msgstr ""
+msgstr "分類の正確性"
 
 msgctxt "mlClassificationKnn|"
 msgid "ROC curves"
-msgstr ""
+msgstr "ROC曲線"
 
 msgctxt "mlClassificationKnn|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "アンドリュース曲線"
 
 msgctxt "mlClassificationKnn|"
 msgid "Decision boundary matrix"
-msgstr ""
+msgstr "決定境界行列"
 
 msgctxt "mlClassificationKnn|"
 msgid "Legend"
-msgstr ""
+msgstr "凡例"
 
 msgctxt "mlClassificationKnn|"
 msgid "Points"
-msgstr ""
+msgstr "ポイント"
 
 msgctxt "mlClassificationKnn|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "トレーニングパラメータ"
 
 msgctxt "mlClassificationKnn|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "アルゴリズムの設定"
 
 msgctxt "mlClassificationKnn|"
 msgid "Weights:"
-msgstr ""
+msgstr "重み:"
 
 msgctxt "mlClassificationKnn|"
 msgid "Rectangular"
-msgstr ""
+msgstr "矩形"
 
 msgctxt "mlClassificationKnn|"
 msgid "Epanechnikov"
-msgstr ""
+msgstr "エパネチニコフ"
 
 msgctxt "mlClassificationKnn|"
 msgid "Biweight"
-msgstr ""
+msgstr "バイウェイト"
 
 msgctxt "mlClassificationKnn|"
 msgid "Triweight"
-msgstr ""
+msgstr "トライウェイト"
 
 msgctxt "mlClassificationKnn|"
 msgid "Cosine"
-msgstr ""
+msgstr "コサイン"
 
 msgctxt "mlClassificationKnn|"
 msgid "Inverse"
-msgstr ""
+msgstr "逆"
 
 msgctxt "mlClassificationKnn|"
 msgid "Gaussian"
-msgstr ""
+msgstr "ガウシアン"
 
 msgctxt "mlClassificationKnn|"
 msgid "Rank"
-msgstr ""
+msgstr "ランク"
 
 msgctxt "mlClassificationKnn|"
 msgid "Optimal"
-msgstr ""
+msgstr "最適"
 
 msgctxt "mlClassificationKnn|"
 msgid "Distance:"
-msgstr ""
+msgstr "距離:"
 
 msgctxt "mlClassificationKnn|"
 msgid "Euclidian"
-msgstr ""
+msgstr "ユークリッド"
 
 msgctxt "mlClassificationKnn|"
 msgid "Manhattan"
-msgstr ""
+msgstr "マンハッタン"
 
 msgctxt "mlClassificationKnn|"
 msgid "Scale predictors"
-msgstr ""
+msgstr "スケール予測変数"
 
 msgctxt "mlClassificationKnn|"
 msgid "Set seed:"
-msgstr ""
+msgstr "シードを設定:"
 
 msgctxt "mlClassificationKnn|"
 msgid "Number of Nearest Neighbors"
-msgstr ""
+msgstr "近傍の数"
 
 msgctxt "mlClassificationKnn|"
 msgid "Fixed"
-msgstr ""
+msgstr "固定"
 
 msgctxt "mlClassificationKnn|"
 msgid "Nearest neighbors:"
-msgstr ""
+msgstr "最近傍:"
 
 msgctxt "mlClassificationKnn|"
 msgid "Optimized"
-msgstr ""
+msgstr "最適化"
 
 msgctxt "mlClassificationKnn|"
 msgid "Max. nearest neighbors:"
-msgstr ""
+msgstr "最大最近傍数:"
 
 msgctxt "mlClassificationKnn|"
 msgid "Add predicted classes to data"
-msgstr ""
+msgstr "予測されたクラスをデータに追加"
 
 msgctxt "mlClassificationKnn|"
 msgid "Column name: "
-msgstr ""
+msgstr "列名: "
 
 msgctxt "mlClassificationKnn|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>モデルを保存</b>"
 
 msgctxt "mlClassificationLda|"
 msgid "Target"
-msgstr ""
+msgstr "ターゲット"
 
 msgctxt "mlClassificationLda|"
 msgid "Predictors"
-msgstr ""
+msgstr "予測変数"
 
 msgctxt "mlClassificationLda|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlClassificationLda|"
 msgid "Confusion matrix"
-msgstr ""
+msgstr "混同行列"
 
 msgctxt "mlClassificationLda|"
 msgid "Display proportions"
-msgstr ""
+msgstr "比率を表示する"
 
 msgctxt "mlClassificationLda|"
 msgid "Class proportions"
-msgstr ""
+msgstr "クラスの比率"
 
 msgctxt "mlClassificationLda|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評価指標"
 
 msgctxt "mlClassificationLda|"
 msgid "Coefficients"
-msgstr ""
+msgstr "係数"
 
 msgctxt "mlClassificationLda|"
 msgid "Prior and posterior probabilities"
-msgstr ""
+msgstr "事前確率と事後確率"
 
 msgctxt "mlClassificationLda|"
 msgid "Class means training data"
-msgstr ""
+msgstr "トレーニングデータのクラス平均"
 
 msgctxt "mlClassificationLda|"
 msgid "Assumption Checks"
-msgstr ""
+msgstr "仮定のチェック"
 
 msgctxt "mlClassificationLda|"
 msgid "Equality of class means"
-msgstr ""
+msgstr "クラス平均の等価性"
 
 msgctxt "mlClassificationLda|"
 msgid "Equality of covariance matrices"
-msgstr ""
+msgstr "共分散行列の等価性"
 
 msgctxt "mlClassificationLda|"
 msgid "Multicollinearity"
-msgstr ""
+msgstr "多重共線性"
 
 msgctxt "mlClassificationLda|"
 msgid "Plots"
-msgstr ""
+msgstr "プロット"
 
 msgctxt "mlClassificationLda|"
 msgid "Data split"
-msgstr ""
+msgstr "データの分割"
 
 msgctxt "mlClassificationLda|"
 msgid "ROC curves"
-msgstr ""
+msgstr "ROC曲線"
 
 msgctxt "mlClassificationLda|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "アンドリュース曲線"
 
 msgctxt "mlClassificationLda|"
 msgid "Linear discriminant matrix"
-msgstr ""
+msgstr "線形判別行列"
 
 msgctxt "mlClassificationLda|"
 msgid "Densities"
-msgstr ""
+msgstr "濃度"
 
 msgctxt "mlClassificationLda|"
 msgid "Scatter plots"
-msgstr ""
+msgstr "散布図"
 
 msgctxt "mlClassificationLda|"
 msgid "Decision boundary matrix"
-msgstr ""
+msgstr "決定境界行列"
 
 msgctxt "mlClassificationLda|"
 msgid "Legend"
-msgstr ""
+msgstr "凡例"
 
 msgctxt "mlClassificationLda|"
 msgid "Points"
-msgstr ""
+msgstr "ポイント"
 
 msgctxt "mlClassificationLda|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "トレーニングパラメータ"
 
 msgctxt "mlClassificationLda|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "アルゴリズムの設定"
 
 msgctxt "mlClassificationLda|"
 msgid "Estimation method:"
-msgstr ""
+msgstr "推定法:"
 
 msgctxt "mlClassificationLda|"
 msgid "Scale predictors"
-msgstr ""
+msgstr "スケール予測変数"
 
 msgctxt "mlClassificationLda|"
 msgid "Set seed: "
-msgstr ""
+msgstr "シードの設定: "
 
 msgctxt "mlClassificationLda|"
 msgid "Add predicted classes to data"
-msgstr ""
+msgstr "予測されたクラスをデータに追加"
 
 msgctxt "mlClassificationLda|"
 msgid "Column name: "
-msgstr ""
+msgstr "列名: "
 
 msgctxt "mlClassificationLda|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>モデルを保存</b>"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Target"
-msgstr ""
+msgstr "ターゲット"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Predictors"
-msgstr ""
+msgstr "予測変数"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Confusion matrix"
-msgstr ""
+msgstr "混同行列"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Display proportions"
-msgstr ""
+msgstr "比率を表示する"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Class proportions"
-msgstr ""
+msgstr "クラスの比率"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評価指標"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Variable importance"
-msgstr ""
+msgstr "変数の重要性"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Plots"
-msgstr ""
+msgstr "プロット"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Data split"
-msgstr ""
+msgstr "データの分割"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Out-of-bag accuracy"
-msgstr ""
+msgstr "アウトオブバッグの精度"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "ROC curves"
-msgstr ""
+msgstr "ROC曲線"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "アンドリュース曲線"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Mean decrease in accuracy"
-msgstr ""
+msgstr "精度低下の平均値"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Total increase in node purity"
-msgstr ""
+msgstr "トータルでのノード純度の向上"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Decision boundary matrix"
-msgstr ""
+msgstr "決定境界行列"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Legend"
-msgstr ""
+msgstr "凡例"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Points"
-msgstr ""
+msgstr "ポイント"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "トレーニングパラメータ"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "アルゴリズムの設定"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Training data used per tree:"
-msgstr ""
+msgstr "ツリーごとに使用されるトレーニング データ:"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Predictors per split:"
-msgstr ""
+msgstr "分割ごとの予測変数:"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Auto"
-msgstr ""
+msgstr "自動"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Manual"
-msgstr ""
+msgstr "手動"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Scale predictors"
-msgstr ""
+msgstr "スケール予測変数"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Set seed:"
-msgstr ""
+msgstr "シードを設定:"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Number of Trees"
-msgstr ""
+msgstr "ツリー数"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Fixed"
-msgstr ""
+msgstr "固定"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Trees:"
-msgstr ""
+msgstr "ツリー:"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Optimized"
-msgstr ""
+msgstr "最適化"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Max. trees:"
-msgstr ""
+msgstr "最大ツリー数:"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Add predicted classes to data"
