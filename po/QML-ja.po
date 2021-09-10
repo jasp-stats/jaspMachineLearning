@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-09-07 11:34+0000\n"
+"PO-Revision-Date: 2021-09-08 12:11+0000\n"
 "Last-Translator: Koji Kosugi <kosugitti@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/ja/>\n"
@@ -33,7 +33,6 @@ msgctxt "Description|"
 msgid "K-Nearest Neighbors"
 msgstr "K-近傍"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "K-Nearest Neighbors Regression"
 msgstr "K-近傍回帰"
@@ -212,7 +211,7 @@ msgstr "データの分割"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Out-of-bag improvement"
-msgstr ""
+msgstr "アウトオブバッグの改善"
 
 msgctxt "mlClassificationBoosting|"
 msgid "ROC curves"
@@ -244,7 +243,7 @@ msgstr "トレーニングパラメータ"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "アルゴリズムの設定"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Shrinkage:"
@@ -716,1146 +715,1146 @@ msgstr "最大ツリー数:"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Add predicted classes to data"
-msgstr ""
+msgstr "予測されたクラスをデータに追加"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Column name: "
-msgstr ""
+msgstr "列名: "
 
 msgctxt "mlClassificationRandomForest|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>モデルを保存</b>"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Variables"
-msgstr ""
+msgstr "変数"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Cluster means"
-msgstr ""
+msgstr "クラスター平均"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Cluster information"
-msgstr ""
+msgstr "クラスター情報"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Within sum of squares"
-msgstr ""
+msgstr "群内平方和"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Silhouette score"
-msgstr ""
+msgstr "シルエットスコア"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Between sum of squares"
-msgstr ""
+msgstr "群間平方和"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Total sum of squares"
-msgstr ""
+msgstr "総平方和"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評価指標"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Plots"
-msgstr ""
+msgstr "プロット"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "K-distance plot"
-msgstr ""
+msgstr "K-距離プロット"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Display barplot"
-msgstr ""
+msgstr "バープロットを表示する"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Group into one figure"
-msgstr ""
+msgstr "1つの図にグループ化"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Cluster densities"
-msgstr ""
+msgstr "クラスター密度"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "t-SNE cluster plot"
-msgstr ""
+msgstr "t-SNEクラスタープロット"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Legend"
-msgstr ""
+msgstr "凡例"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Labels"
-msgstr ""
+msgstr "ラベル"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "トレーニングパラメータ"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "アルゴリズムの設定"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Epsilon neighborhood size:"
-msgstr ""
+msgstr "イプシロン近隣サイズ："
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Min. core points:"
-msgstr ""
+msgstr "最小コアポイント:"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Distance:"
-msgstr ""
+msgstr "距離:"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Normal"
-msgstr ""
+msgstr "正規"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Correlated"
-msgstr ""
+msgstr "相関"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Scale variables"
-msgstr ""
+msgstr "スケール変数"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Set seed:"
-msgstr ""
+msgstr "シードを設定:"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Model Optimization"
-msgstr ""
+msgstr "モデルの最適化"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Fixed"
-msgstr ""
+msgstr "固定"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Add predicted clusters to data"
-msgstr ""
+msgstr "予測されたクラスターをデータに追加"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Column name: "
-msgstr ""
+msgstr "列名: "
 
 msgctxt "mlClusteringDensityBased|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>モデルを保存</b>"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Variables"
-msgstr ""
+msgstr "変数"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Cluster means"
-msgstr ""
+msgstr "クラスター平均"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Cluster information"
-msgstr ""
+msgstr "クラスター情報"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Within sum of squares"
-msgstr ""
+msgstr "群内平方和"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Silhouette score"
-msgstr ""
+msgstr "シルエットスコア"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Centroids"
-msgstr ""
+msgstr "重心"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Between sum of squares"
-msgstr ""
+msgstr "群間平方和"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Total sum of squares"
-msgstr ""
+msgstr "総平方和"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評価指標"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Plots"
-msgstr ""
+msgstr "プロット"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Elbow method"
-msgstr ""
+msgstr "エルボー法"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Display barplot"
-msgstr ""
+msgstr "バープロットを表示する"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Group into one figure"
-msgstr ""
+msgstr "1つの図にグループ化"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Cluster densities"
-msgstr ""
+msgstr "クラスター密度"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "t-SNE cluster plot"
-msgstr ""
+msgstr "t-SNEクラスタープロット"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Legend"
-msgstr ""
+msgstr "凡例"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Labels"
-msgstr ""
+msgstr "ラベル"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "トレーニングパラメータ"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "アルゴリズムの設定"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Max. iterations:"
-msgstr ""
+msgstr "最大反復数:"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Fuzziness parameter:"
-msgstr ""
+msgstr "ファジー度パラメータ:"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Scale variables"
-msgstr ""
+msgstr "スケール変数"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Set seed:"
-msgstr ""
+msgstr "シードを設定:"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Cluster Determination"
-msgstr ""
+msgstr "クラスターの決定"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Fixed"
-msgstr ""
+msgstr "固定"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Clusters:"
-msgstr ""
+msgstr "クラスター:"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Optimized according to"
-msgstr ""
+msgstr "次に従って最適化します"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Max. clusters:"
-msgstr ""
+msgstr "最大クラスター:"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Add predicted clusters to data"
-msgstr ""
+msgstr "予測されたクラスターをデータに追加"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Column name: "
-msgstr ""
+msgstr "列名: "
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>モデルを保存</b>"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Variables"
-msgstr ""
+msgstr "変数"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Cluster means"
-msgstr ""
+msgstr "クラスター平均"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Cluster information"
-msgstr ""
+msgstr "クラスター情報"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Within sum of squares"
-msgstr ""
+msgstr "群内平方和"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Silhouette score"
-msgstr ""
+msgstr "シルエットスコア"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Between sum of squares"
-msgstr ""
+msgstr "群間平方和"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Total sum of squares"
-msgstr ""
+msgstr "総平方和"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評価指標"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Plots"
-msgstr ""
+msgstr "プロット"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Elbow method"
-msgstr ""
+msgstr "エルボー法"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Dendrogram"
-msgstr ""
+msgstr "デンドログラム"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Display barplot"
-msgstr ""
+msgstr "バープロットを表示する"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Group into one figure"
-msgstr ""
+msgstr "1つの図にグループ化"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Cluster densities"
-msgstr ""
+msgstr "クラスター密度"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "t-SNE cluster plot"
-msgstr ""
+msgstr "t-SNEクラスタープロット"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Legend"
-msgstr ""
+msgstr "凡例"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Labels"
-msgstr ""
+msgstr "ラベル"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "トレーニングパラメータ"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "アルゴリズムの設定"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Distance:"
-msgstr ""
+msgstr "距離:"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Euclidean"
-msgstr ""
+msgstr "ユークリッド"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Linkage:"
-msgstr ""
+msgstr "リンケージ:"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Average"
-msgstr ""
+msgstr "平均"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Single"
-msgstr ""
+msgstr "シングル"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Complete"
-msgstr ""
+msgstr "完了"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Centroid"
-msgstr ""
+msgstr "重心"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Median"
-msgstr ""
+msgstr "中央値"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Ward.D"
-msgstr ""
+msgstr "Ward.D"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Ward.D2"
-msgstr ""
+msgstr "Ward.D2"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "McQuitty"
-msgstr ""
+msgstr "McQuitty"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Scale variables"
-msgstr ""
+msgstr "スケール変数"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Set seed:"
-msgstr ""
+msgstr "シードを設定:"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Cluster Determination"
-msgstr ""
+msgstr "クラスターの決定"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Fixed"
-msgstr ""
+msgstr "固定"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Clusters:"
-msgstr ""
+msgstr "クラスター:"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Optimized according to"
-msgstr ""
+msgstr "次に従って最適化します"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Max. clusters:"
-msgstr ""
+msgstr "最大クラスター:"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Add predicted clusters to data"
-msgstr ""
+msgstr "予測されたクラスターをデータに追加"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Column name: "
-msgstr ""
+msgstr "列名: "
 
 msgctxt "mlClusteringHierarchical|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>モデルを保存</b>"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Variables"
-msgstr ""
+msgstr "変数"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Cluster means"
-msgstr ""
+msgstr "クラスター平均"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Cluster information"
-msgstr ""
+msgstr "クラスター情報"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Within sum of squares"
-msgstr ""
+msgstr "群内平方和"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Silhouette score"
-msgstr ""
+msgstr "シルエットスコア"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Centroids"
-msgstr ""
+msgstr "重心"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Between sum of squares"
-msgstr ""
+msgstr "群間平方和"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Total sum of squares"
-msgstr ""
+msgstr "総平方和"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評価指標"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Plots"
-msgstr ""
+msgstr "プロット"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Elbow method"
-msgstr ""
+msgstr "エルボー法"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Display barplot"
-msgstr ""
+msgstr "バープロットを表示する"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Group into one figure"
-msgstr ""
+msgstr "1つの図にグループ化"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Cluster densities"
-msgstr ""
+msgstr "クラスター密度"
 
 msgctxt "mlClusteringKMeans|"
 msgid "t-SNE cluster plot"
-msgstr ""
+msgstr "t-SNEクラスタープロット"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Legend"
-msgstr ""
+msgstr "凡例"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Labels"
-msgstr ""
+msgstr "ラベル"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "トレーニングパラメータ"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "アルゴリズムの設定"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Max. iterations:"
-msgstr ""
+msgstr "最大反復数:"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Random sets:"
-msgstr ""
+msgstr "ランダムセット:"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Algorithm:"
-msgstr ""
+msgstr "アルゴリズム:"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Scale variables"
-msgstr ""
+msgstr "スケール変数"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Set seed:"
-msgstr ""
+msgstr "シードを設定:"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Cluster Determination"
-msgstr ""
+msgstr "クラスターの決定"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Fixed"
-msgstr ""
+msgstr "固定"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Clusters:"
-msgstr ""
+msgstr "クラスター:"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Optimized according to"
-msgstr ""
+msgstr "次に従って最適化します"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Max. clusters:"
-msgstr ""
+msgstr "最大クラスター:"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Add predicted clusters to data"
-msgstr ""
+msgstr "予測されたクラスターをデータに追加"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Column name: "
-msgstr ""
+msgstr "列名: "
 
 msgctxt "mlClusteringKMeans|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>モデルを保存</b>"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Variables"
-msgstr ""
+msgstr "変数"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Cluster means"
-msgstr ""
+msgstr "クラスター平均"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Cluster information"
-msgstr ""
+msgstr "クラスター情報"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Within sum of squares"
-msgstr ""
+msgstr "群内平方和"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Silhouette score"
-msgstr ""
+msgstr "シルエットスコア"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Between sum of squares"
-msgstr ""
+msgstr "群間平方和"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Total sum of squares"
-msgstr ""
+msgstr "総平方和"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評価指標"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Variable importance"
-msgstr ""
+msgstr "変数の重要性"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Plots"
-msgstr ""
+msgstr "プロット"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Elbow method"
-msgstr ""
+msgstr "エルボー法"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Display barplot"
-msgstr ""
+msgstr "バープロットを表示する"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Group into one figure"
-msgstr ""
+msgstr "1つの図にグループ化"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Cluster densities"
-msgstr ""
+msgstr "クラスター密度"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "t-SNE cluster plot"
-msgstr ""
+msgstr "t-SNEクラスタープロット"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Legend"
-msgstr ""
+msgstr "凡例"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Labels"
-msgstr ""
+msgstr "ラベル"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "トレーニングパラメータ"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "アルゴリズムの設定"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Trees:"
-msgstr ""
+msgstr "ツリー:"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Scale variables"
-msgstr ""
+msgstr "スケール変数"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Set seed:"
-msgstr ""
+msgstr "シードを設定:"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Cluster Determination"
-msgstr ""
+msgstr "クラスターの決定"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Fixed"
-msgstr ""
+msgstr "固定"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Clusters:"
-msgstr ""
+msgstr "クラスター:"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Optimized according to"
-msgstr ""
+msgstr "次に従って最適化します"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Max. clusters:"
-msgstr ""
+msgstr "最大クラスター:"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Add predicted clusters to data"
-msgstr ""
+msgstr "予測されたクラスターをデータに追加"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Column name: "
-msgstr ""
+msgstr "列名: "
 
 msgctxt "mlClusteringRandomForest|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>モデルを保存</b>"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Target"
-msgstr ""
+msgstr "ターゲット"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Predictors"
-msgstr ""
+msgstr "予測変数"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評価指標"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Relative influence"
-msgstr ""
+msgstr "相対的な影響力"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Plots"
-msgstr ""
+msgstr "プロット"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Data split"
-msgstr ""
+msgstr "データの分割"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Out-of-bag improvement"
-msgstr ""
+msgstr "アウトオブバッグの改善"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Predictive performance"
-msgstr ""
+msgstr "予測性能"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Deviance"
-msgstr ""
+msgstr "デビアンス"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "トレーニングパラメータ"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "アルゴリズムの設定"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Shrinkage:"
-msgstr ""
+msgstr "縮小:"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Interaction depth:"
-msgstr ""
+msgstr "相互作用の深さ:"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Min. observations in node:"
-msgstr ""
+msgstr "ノード内の最小観測値:"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Training data used per tree:"
-msgstr ""
+msgstr "ツリーごとに使用されるトレーニング データ:"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Loss function:"
-msgstr ""
+msgstr "損失関数:"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Scale variables"
-msgstr ""
+msgstr "スケール変数"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Set seed:"
-msgstr ""
+msgstr "シードを設定:"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Number of Trees"
-msgstr ""
+msgstr "ツリー数"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Fixed"
-msgstr ""
+msgstr "固定"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Trees:"
-msgstr ""
+msgstr "ツリー:"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Optimized"
-msgstr ""
+msgstr "最適化"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Max. trees:"
-msgstr ""
+msgstr "最大ツリー数:"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Add predicted values to data"
-msgstr ""
+msgstr "予測値をデータに加える"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Column name: "
-msgstr ""
+msgstr "列名: "
 
 msgctxt "mlRegressionBoosting|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>モデルを保存</b>"
 
 msgctxt "mlRegressionKnn|"
 msgid "Target"
-msgstr ""
+msgstr "ターゲット"
 
 msgctxt "mlRegressionKnn|"
 msgid "Predictors"
-msgstr ""
+msgstr "予測変数"
 
 msgctxt "mlRegressionKnn|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlRegressionKnn|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評価指標"
 
 msgctxt "mlRegressionKnn|"
 msgid "Plots"
-msgstr ""
+msgstr "プロット"
 
 msgctxt "mlRegressionKnn|"
 msgid "Data split"
-msgstr ""
+msgstr "データの分割"
 
 msgctxt "mlRegressionKnn|"
 msgid "Mean squared error"
-msgstr ""
+msgstr "平均2乗誤差"
 
 msgctxt "mlRegressionKnn|"
 msgid "Predictive performance"
-msgstr ""
+msgstr "予測性能"
 
 msgctxt "mlRegressionKnn|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "トレーニングパラメータ"
 
 msgctxt "mlRegressionKnn|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "アルゴリズムの設定"
 
 msgctxt "mlRegressionKnn|"
 msgid "Weights:"
-msgstr ""
+msgstr "重み:"
 
 msgctxt "mlRegressionKnn|"
 msgid "Rectangular"
-msgstr ""
+msgstr "矩形"
 
 msgctxt "mlRegressionKnn|"
 msgid "Epanechnikov"
-msgstr ""
+msgstr "エパネチニコフ"
 
 msgctxt "mlRegressionKnn|"
 msgid "Biweight"
-msgstr ""
+msgstr "バイウェイト"
 
 msgctxt "mlRegressionKnn|"
 msgid "Triweight"
-msgstr ""
+msgstr "トライウェイト"
 
 msgctxt "mlRegressionKnn|"
 msgid "Cosine"
-msgstr ""
+msgstr "コサイン"
 
 msgctxt "mlRegressionKnn|"
 msgid "Inverse"
-msgstr ""
+msgstr "逆"
 
 msgctxt "mlRegressionKnn|"
 msgid "Gaussian"
-msgstr ""
+msgstr "ガウシアン"
 
 msgctxt "mlRegressionKnn|"
 msgid "Rank"
-msgstr ""
+msgstr "ランク"
 
 msgctxt "mlRegressionKnn|"
 msgid "Optimal"
-msgstr ""
+msgstr "最適"
 
 msgctxt "mlRegressionKnn|"
 msgid "Distance:"
-msgstr ""
+msgstr "距離:"
 
 msgctxt "mlRegressionKnn|"
 msgid "Euclidian"
-msgstr ""
+msgstr "ユークリッド"
 
 msgctxt "mlRegressionKnn|"
 msgid "Scale variables"
-msgstr ""
+msgstr "スケール変数"
 
 msgctxt "mlRegressionKnn|"
 msgid "Set seed:"
-msgstr ""
+msgstr "シードを設定:"
 
 msgctxt "mlRegressionKnn|"
 msgid "Number of Nearest Neighbors"
-msgstr ""
+msgstr "近傍の数"
 
 msgctxt "mlRegressionKnn|"
 msgid "Fixed"
-msgstr ""
+msgstr "固定"
 
 msgctxt "mlRegressionKnn|"
 msgid "Nearest neighbors:"
-msgstr ""
+msgstr "最近傍:"
 
 msgctxt "mlRegressionKnn|"
 msgid "Optimized"
-msgstr ""
+msgstr "最適化"
 
 msgctxt "mlRegressionKnn|"
 msgid "Max. nearest neighbors:"
-msgstr ""
+msgstr "最大最近傍数:"
 
 msgctxt "mlRegressionKnn|"
 msgid "Add predicted values to data"
-msgstr ""
+msgstr "予測値をデータに加える"
 
 msgctxt "mlRegressionKnn|"
 msgid "Column name: "
-msgstr ""
+msgstr "列名: "
 
 msgctxt "mlRegressionKnn|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>モデルを保存</b>"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Target"
-msgstr ""
+msgstr "ターゲット"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Predictors"
-msgstr ""
+msgstr "予測変数"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評価指標"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Variable importance"
-msgstr ""
+msgstr "変数の重要性"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Plots"
-msgstr ""
+msgstr "プロット"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Data split"
-msgstr ""
+msgstr "データの分割"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Out-of-bag error"
-msgstr ""
+msgstr "アウトオブバッグエラー"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Predictive performance"
-msgstr ""
+msgstr "予測性能"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Mean decrease in accuracy"
-msgstr ""
+msgstr "精度低下の平均値"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Total increase in node purity"
-msgstr ""
+msgstr "トータルでのノード純度の向上"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "トレーニングパラメータ"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "アルゴリズムの設定"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Training data used per tree:"
-msgstr ""
+msgstr "ツリーごとに使用されるトレーニング データ:"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Predictors per split:"
-msgstr ""
+msgstr "分割ごとの予測変数:"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Auto"
-msgstr ""
+msgstr "自動"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Manual"
-msgstr ""
+msgstr "手動"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Scale variables"
-msgstr ""
+msgstr "スケール変数"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Set seed:"
-msgstr ""
+msgstr "シードを設定:"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Number of Trees"
-msgstr ""
+msgstr "ツリー数"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Fixed"
-msgstr ""
+msgstr "固定"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Trees:"
-msgstr ""
+msgstr "ツリー:"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Optimized"
-msgstr ""
+msgstr "最適化"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Max. trees:"
-msgstr ""
+msgstr "最大ツリー数:"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Add predicted values to data"
-msgstr ""
+msgstr "予測値をデータに加える"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Column name: "
-msgstr ""
+msgstr "列名: "
 
 msgctxt "mlRegressionRandomForest|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>モデルを保存</b>"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Target"
-msgstr ""
+msgstr "ターゲット"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Predictors"
-msgstr ""
+msgstr "予測変数"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Weights"
-msgstr ""
+msgstr "重み"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評価指標"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Regression coefficients"
-msgstr ""
+msgstr "回帰係数"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Plots"
-msgstr ""
+msgstr "プロット"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Data split"
-msgstr ""
+msgstr "データの分割"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Predictive performance"
-msgstr ""
+msgstr "予測性能"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Variable trace"
-msgstr ""
+msgstr "変数トレース"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Legend"
-msgstr ""
+msgstr "凡例"
 
 msgctxt "mlRegressionRegularized|"
 msgid "λ evaluation"
-msgstr ""
+msgstr "λ評価"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "トレーニングパラメータ"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "アルゴリズムの設定"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Convergence threshold:"
-msgstr ""
+msgstr "収束の閾値:"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Penalty:"
-msgstr ""
+msgstr "ペナルティ:"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Elastic net"
-msgstr ""
+msgstr "エラスティックネット"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Elastic net parameter (α):"
-msgstr ""
+msgstr "エラスティックネットパラメータ (α):"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Fit intercept"
-msgstr ""
+msgstr "切片を合わせる"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Scale variables"
-msgstr ""
+msgstr "スケール変数"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Set seed:"
-msgstr ""
+msgstr "シードを設定:"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Lambda (λ)"
-msgstr ""
+msgstr "ラムダ(λ)"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Fixed"
-msgstr ""
+msgstr "固定"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Optimized"
-msgstr ""
+msgstr "最適化"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Largest λ within 1 SE of min."
-msgstr ""
+msgstr "最小値から1SE以内の最大のλ"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Add predicted values to data"
-msgstr ""
+msgstr "予測値をデータに加える"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Column name: "
-msgstr ""
+msgstr "列名: "
 
 msgctxt "mlRegressionRegularized|"
 msgid "<b>Save Model</b>"
-msgstr ""
+msgstr "<b>モデルを保存</b>"
 
 msgctxt "Description|"
 msgid ""
 "Explore the relation between variables using data-driven methods for "
 "regression, classification, and clustering"
-msgstr ""
+msgstr "回帰、分類、クラスタリングなどのデータドリブンな手法を用いて、変数間の関係を探る"
