@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-09-11 22:44+0000\n"
-"Last-Translator: Koji Kosugi <kosugitti@gmail.com>\n"
+"PO-Revision-Date: 2021-09-14 08:38+0000\n"
+"Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/ja/>\n"
 "Language: ja\n"
@@ -131,7 +131,7 @@ msgstr "サンプル"
 
 msgctxt "DataSplit|"
 msgid "% of all data"
-msgstr "全データの％"
+msgstr "全データの%"
 
 msgctxt "DataSplit|"
 msgid "Add generated indicator to data"
@@ -155,7 +155,7 @@ msgstr "トレーニングと検証データ"
 
 msgctxt "DataSplit|"
 msgid "% for validation data"
-msgstr "検証データの％"
+msgstr "検証データの%"
 
 msgctxt "DataSplit|"
 msgid "K-fold with"
