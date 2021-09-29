@@ -1,8 +1,8 @@
 context("Machine Learning Fuzzy C-Means Clustering")
 
 options <- jaspTools::analysisOptions("mlClusteringFuzzyCMeans")
-options$addClusters <- FALSE
-options$clusterColumn <- ""
+options$addPredictions <- FALSE
+options$predictionsColumn <- ""
 options$clusterEvaluationMetrics <- TRUE
 options$modelOpt <- "validationOptimized"
 options$plot2dCluster <- TRUE

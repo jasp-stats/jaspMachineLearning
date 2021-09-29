@@ -218,7 +218,7 @@
                                           "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
                                           "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "maxTrees",
                                           "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac", "intDepth", "nNode", "distance",
-                                          "testSetIndicatorVariable", "testSetIndicator", "validationDataManual","holdoutData", "testDataManual", "saveModel", "file",
+                                          "testSetIndicatorVariable", "testSetIndicator", "validationDataManual","holdoutData", "testDataManual", "saveModel",
 										  "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"))
 
   # Add analysis-specific columns
@@ -276,8 +276,8 @@
   if(!ready)
     regressionTable$addFootnote(gettextf("Please provide a target variable and at least %d predictor variable(s).", requiredVars))
 
-  if (options[["file"]] != "") {
-    modelName <- basename(options[["file"]])
+  if (options[["savePath"]] != "") {
+    modelName <- basename(options[["savePath"]])
     if (options[["saveModel"]]) {
       regressionTable$addFootnote(gettextf("The fitted model is saved as <i>%1$s</i>.", modelName))
     } else {
@@ -395,11 +395,11 @@
     regressionTable$addRows(row)
   }
 
-  if(options[["saveModel"]] && options[["file"]] != ""){
+  if(options[["saveModel"]] && options[["savePath"]] != ""){
       class(regressionResult[["model"]]) <- c(class(regressionResult[["model"]]), "jaspRegression", "jaspMachineLearning")
       model <- regressionResult[["model"]]
       model[["jaspVersion"]] <- .baseCitation
-      saveRDS(model, file = options[["file"]])
+      saveRDS(model, file = options[["savePath"]])
   }
 }
 
@@ -642,16 +642,16 @@
 .scaleNumericData.default <- function(x, center = TRUE, scale = TRUE) return(x)
 
 .regressionAddValuesToData <- function(dataset, options, jaspResults, ready){
-  if(!ready || !options[["addValues"]] || options[["valueColumn"]] == "")  return()
+  if(!ready || !options[["addPredictions"]] || options[["predictionsColumn"]] == "")  return()
 
   regressionResult <- jaspResults[["regressionResult"]]$object
 
-  if(is.null(jaspResults[["valueColumn"]])){
+  if(is.null(jaspResults[["predictionsColumn"]])){
     predictions <- regressionResult[["values"]]
-    valueColumn <- rep(NA, max(as.numeric(rownames(dataset))))
-    valueColumn[as.numeric(rownames(dataset))] <- predictions
-    jaspResults[["valueColumn"]] <- createJaspColumn(columnName=options[["valueColumn"]])
-    jaspResults[["valueColumn"]]$dependOn(options = c("valueColumn", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "maxTrees",
+    predictionsColumn <- rep(NA, max(as.numeric(rownames(dataset))))
+    predictionsColumn[as.numeric(rownames(dataset))] <- predictions
+    jaspResults[["predictionsColumn"]] <- createJaspColumn(columnName=options[["predictionsColumn"]])
+    jaspResults[["predictionsColumn"]]$dependOn(options = c("predictionsColumn", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "maxTrees",
                                                               "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
                                                               "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac",
                                                               "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",

@@ -128,48 +128,8 @@ Form {
 		}
 	}
 
-	GroupBox
-	{
-		title:									qsTr("Export Results")
-
-		CheckBox {
-			id: addClasses
-			name: "addClasses"
-			text: qsTr("Add predicted classes to data")
-			enabled:    predictors.count > 1 && target.count > 0
-
-			ComputedColumnField {
-				id: 		classColumn
-				name: 		"classColumn"
-				text: 		qsTr("Column name: ")
-				placeholderText: 	qsTr("e.g., predicted")
-				fieldWidth: 120
-				visible:    addClasses.checked
-			}
-		}
-
-		Group
-		{
-			FileSelector
-			{
-				id:							file
-				name:						"file"
-				label:  					qsTr("Save as: ")
-				placeholderText: 			qsTr("model.jaspML")
-				filter:						"*.jaspML"
-				save:						true
-				fieldWidth:					180 * preferencesModel.uiScale
-			}
-
-			CheckBox
-			{
-				id: 								saveModel
-				name: 								"saveModel"
-				text: 								qsTr("Save trained model")
-				enabled: 							predictors.count > 1 && target.count > 0 && file.value != ""
-				Layout.leftMargin:					10 * preferencesModel.uiScale
-			}
-		}
+	ML.ExportResults {
+		enabled: predictors.count > 1 && target.count > 0
 	}
 
 	ML.DataSplit {

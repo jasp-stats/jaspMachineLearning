@@ -28,18 +28,17 @@ Form
 
 	FileSelector
 	{
-		id:										file
-		name:									"file"
+		id:										loadPath
+		name:									"loadPath"
 		label:  								qsTr("Trained model:")
 		filter:									"*.jaspML"
 		save:									true
 		fieldWidth:								180 * preferencesModel.uiScale
-		visible:								modelSave.checked
 	}
 
 	VariablesForm
 	{
-		enabled: 								file.value != ""
+		enabled: 								loadPath.value != ""
 
 		AvailableVariablesList
 		{
@@ -108,25 +107,8 @@ Form
 		}
 	}
 
-	GroupBox
-	{
-		title:									qsTr("Export Results")
-
-		CheckBox
-		{
-			id: 								addClasses
-			name: 								"addClasses"
-			text: 								qsTr("Add predicted outcomes to data")
-			enabled:							predictors.count > 0 & file.value != ""
-
-			ComputedColumnField
-			{
-				id: 							classColumn
-				name: 							"classColumn"
-				text: 							qsTr("Column name: ")
-				fieldWidth: 					120
-				visible:						addClasses.checked
-			}
-		}
+	ML.ExportResults {
+		enabled: 								predictors.count > 1
+		showSave: 								false
 	}
 }

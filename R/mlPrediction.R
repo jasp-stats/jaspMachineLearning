@@ -116,9 +116,9 @@ is.jaspMachineLearning <- function(x) {
 }
 
 .mlPredictionReadModel <- function(options) {
-  if (options[["file"]] != "") {
+  if (options[["loadPath"]] != "") {
     model <- try({
-      readRDS(options[["file"]])
+      readRDS(options[["loadPath"]])
     })
     if (!is.jaspMachineLearning(model)) {
       jaspBase:::.quitAnalysis(gettext("Error: The imported model is not created in JASP."))
@@ -161,7 +161,7 @@ is.jaspMachineLearning <- function(x) {
   } else {
     if (ready) {
       jaspResults[["predictions"]] <- createJaspState(.mlPredictionGetPredictions(model, dataset))
-      jaspResults[["predictions"]]$dependOn(options = c("file", "predictors", "scaleEqualSD"))
+      jaspResults[["predictions"]]$dependOn(options = c("loadPath", "predictors", "scaleEqualSD"))
       return(jaspResults[["predictions"]]$object)
     } else {
       return(NULL)
@@ -181,7 +181,7 @@ is.jaspMachineLearning <- function(x) {
     }
     table <- createJaspTable(gettextf("Loaded Model: %1$s", purpose))
   }
-  table$dependOn(options = c("predictors", "file"))
+  table$dependOn(options = c("predictors", "loadPath"))
   table$position <- position
   table$addColumnInfo(name = "model", title = gettext("Method"), type = "string")
   jaspResults[["modelSummaryTable"]] <- table
@@ -245,7 +245,7 @@ is.jaspMachineLearning <- function(x) {
   }
 
   table <- createJaspTable(gettext("Predictions for New Data"))
-  table$dependOn(options = c("predictors", "file", "predictionsTable", "addPredictors", "scaleEqualSD", "pfrom", "pto"))
+  table$dependOn(options = c("predictors", "loadPath", "predictionsTable", "addPredictors", "scaleEqualSD", "pfrom", "pto"))
   table$position <- position
   table$addColumnInfo(name = "row", title = gettext("Row"), type = "integer")
 
@@ -294,13 +294,13 @@ is.jaspMachineLearning <- function(x) {
 }
 
 .mlPredictionsAddPredictions <- function(model, dataset, options, jaspResults, ready) {
-  if (options[["addClasses"]] && is.null(jaspResults[["classColumn"]]) && options[["classColumn"]] != "" && ready) {
-    classColumn <- rep(NA, max(as.numeric(rownames(dataset))))
-    classColumn[as.numeric(rownames(dataset))] <- .mlPredictionsState(model, dataset, options, jaspResults, ready)
-    jaspResults[["classColumn"]] <- createJaspColumn(columnName = options[["classColumn"]])
-    jaspResults[["classColumn"]]$dependOn(options = c("classColumn", "predictors", "file", "scaleEqualSD", "addClasses"))
-    print(classColumn)
-    if (inherits(model, "jaspClassification")) jaspResults[["classColumn"]]$setNominal(classColumn)
-    if (inherits(model, "jaspRegression")) jaspResults[["classColumn"]]$setScale(classColumn)
+  if (options[["addPredictions"]] && is.null(jaspResults[["predictionsColumn"]]) && options[["predictionsColumn"]] != "" && ready) {
+    predictionsColumn <- rep(NA, max(as.numeric(rownames(dataset))))
+    predictionsColumn[as.numeric(rownames(dataset))] <- .mlPredictionsState(model, dataset, options, jaspResults, ready)
+    jaspResults[["predictionsColumn"]] <- createJaspColumn(columnName = options[["predictionsColumn"]])
+    jaspResults[["predictionsColumn"]]$dependOn(options = c("predictionsColumn", "predictors", "loadPath", "scaleEqualSD", "addPredictions"))
+    print(predictionsColumn)
+    if (inherits(model, "jaspClassification")) jaspResults[["predictionsColumn"]]$setNominal(predictionsColumn)
+    if (inherits(model, "jaspRegression")) jaspResults[["predictionsColumn"]]$setScale(predictionsColumn)
   }
 }

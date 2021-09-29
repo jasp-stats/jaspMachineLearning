@@ -436,18 +436,18 @@ if(!is.null(jaspResults[["optimPlot"]]) || !options[["withinssPlot"]] || options
 }
 
 .clusteringAddClustersToData <- function(dataset, options, jaspResults, ready){
-  if(!ready || !options[["addClusters"]] || options[["clusterColumn"]] == "")  return()
+  if(!ready || !options[["addPredictions"]] || options[["predictionsColumn"]] == "")  return()
 
   clusterResult <- jaspResults[["clusterResult"]]$object
 
-  if(is.null(jaspResults[["clusterColumn"]])){
+  if(is.null(jaspResults[["predictionsColumn"]])){
     predictions <- clusterResult[["pred.values"]]
-    clusterColumn <- rep(NA, max(as.numeric(rownames(dataset))))
-    clusterColumn[as.numeric(rownames(dataset))] <- predictions
-    jaspResults[["clusterColumn"]] <- createJaspColumn(columnName=options[["clusterColumn"]])
-    jaspResults[["clusterColumn"]]$dependOn(options = c("clusterColumn", "predictors", "noOfClusters","noOfRandomSets", "noOfIterations", "algorithm", "modelOpt", "seed",
+    predictionsColumn <- rep(NA, max(as.numeric(rownames(dataset))))
+    predictionsColumn[as.numeric(rownames(dataset))] <- predictions
+    jaspResults[["predictionsColumn"]] <- createJaspColumn(columnName=options[["predictionsColumn"]])
+    jaspResults[["predictionsColumn"]]$dependOn(options = c("predictionsColumn", "predictors", "noOfClusters","noOfRandomSets", "noOfIterations", "algorithm", "modelOpt", "seed",
                                                         "maxClusters", "seedBox", "scaleEqualSD", "m", "distance", "linkage", "eps", "minPts", "noOfTrees", "maxTrees", "optimizationCriterion"))
-    jaspResults[["clusterColumn"]]$setNominal(clusterColumn)
+    jaspResults[["predictionsColumn"]]$setNominal(predictionsColumn)
   }
 }
 

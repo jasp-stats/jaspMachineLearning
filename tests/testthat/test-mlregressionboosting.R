@@ -2,9 +2,10 @@ context("Machine Learning Boosting Regression")
 
 options <- jaspTools::analysisOptions("mlRegressionBoosting")
 options$addIndicator <- FALSE
-options$addValues <- FALSE
+options$addPredictions <- FALSE
 options$classBoostRelInfTable <- TRUE
-options$file <- ""
+options$savePath <- ""
+options$saveModel <- FALSE
 options$holdoutData <- "holdoutManual"
 options$modelOpt <- "optimizationOOB"
 options$modelValid <- "validationManual"
@@ -23,7 +24,7 @@ options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""
 options$validationDataManual <- 0.2
 options$validationMeasures <- TRUE
-options$valueColumn <- ""
+options$predictionsColumn <- ""
 set.seed(1)
 results <- jaspTools::runAnalysis("mlRegressionBoosting", "wine.csv", options)
 

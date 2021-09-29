@@ -2,9 +2,10 @@ context("Machine Learning Regularized Linear Regression")
 
 options <- jaspTools::analysisOptions("mlRegressionRegularized")
 options$addIndicator <- FALSE
-options$addValues <- FALSE
+options$addPredictions <- FALSE
 options$coefTable <- TRUE
-options$file <- ""
+options$savePath <- ""
+options$saveModel <- FALSE
 options$holdoutData <- "holdoutManual"
 options$lambdaEvaluation <- TRUE
 options$modelOpt <- "optMin"
@@ -22,7 +23,7 @@ options$testSetIndicatorVariable <- ""
 options$thresh <- 1e-07
 options$validationDataManual <- 0.2
 options$validationMeasures <- TRUE
-options$valueColumn <- ""
+options$predictionsColumn <- ""
 options$variableTrace <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlRegressionRegularized", "wine.csv", options)

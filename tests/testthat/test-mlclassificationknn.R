@@ -1,12 +1,13 @@
 context("Machine Learning KNN Classification")
 
 options <- jaspTools::analysisOptions("mlClassificationKnn")
-options$addClasses <- FALSE
+options$addPredictions <- FALSE
 options$addIndicator <- FALSE
 options$andrewsCurve <- TRUE
-options$classColumn <- ""
+options$predictionsColumn <- ""
 options$classProportionsTable <- TRUE
-options$file <- ""
+options$savePath <- ""
+options$saveModel <- FALSE
 options$holdoutData <- "holdoutManual"
 options$modelOpt <- "optimizationError"
 options$modelValid <- "validationManual"

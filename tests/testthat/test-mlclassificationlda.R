@@ -1,14 +1,15 @@
 context("Machine Learning LDA Classification")
 
 options <- jaspTools::analysisOptions("mlClassificationLda")
-options$addClasses <- FALSE
+options$addPredictions <- FALSE
 options$addIndicator <- FALSE
 options$andrewsCurve <- TRUE
 options$boxTest <- TRUE
-options$classColumn <- ""
+options$predictionsColumn <- ""
 options$classProportionsTable <- TRUE
 options$coefficientsTable <- TRUE
-options$file <- ""
+options$savePath <- ""
+options$saveModel <- FALSE
 options$holdoutData <- "holdoutManual"
 options$manovaTable <- TRUE
 options$matrixplot <- TRUE

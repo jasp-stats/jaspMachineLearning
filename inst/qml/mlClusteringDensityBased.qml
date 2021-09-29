@@ -21,6 +21,7 @@ import QtQuick.Layouts	1.3
 import JASP.Controls	1.0
 import JASP.Widgets		1.0
 
+import "./common" as ML
 
 Form {
 
@@ -128,26 +129,9 @@ Form {
 		}
 	}
 
-	GroupBox 
-	{
-		title:				qsTr("Export Results")
-
-		CheckBox {
-			id: addClusters
-			name: "addClusters"
-			text: qsTr("Add predicted clusters to data")
-			enabled:    predictors.count > 1
-			anchors.top: parent.top
-
-			ComputedColumnField {
-				id: 		clusterColumn
-				name: 		"clusterColumn"
-				text: 		qsTr("Column name: ")
-				fieldWidth: 120
-				visible:    addClusters.checked
-			}
-
-		}
+	ML.ExportResults {
+		enabled: 			predictors.count > 1
+		showSave: 			false
 	}
 
 	Section {

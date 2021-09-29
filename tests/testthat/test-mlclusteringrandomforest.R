@@ -1,8 +1,8 @@
 context("Machine Learning Random Forest Clustering")
 
 options <- jaspTools::analysisOptions("mlClusteringRandomForest")
-options$addClusters <- FALSE
-options$clusterColumn <- ""
+options$addPredictions <- FALSE
+options$predictionsColumn <- ""
 options$clusterEvaluationMetrics <- TRUE
 options$importanceTable <- TRUE
 options$modelOpt <- "validationOptimized"

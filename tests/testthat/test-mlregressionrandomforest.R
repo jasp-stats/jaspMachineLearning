@@ -2,8 +2,9 @@ context("Machine Learning Random Forest Regression")
 
 options <- jaspTools::analysisOptions("mlRegressionRandomForest")
 options$addIndicator <- FALSE
-options$addValues <- FALSE
-options$file <- ""
+options$addPredictions <- FALSE
+options$savePath <- ""
+options$saveModel <- FALSE
 options$holdoutData <- "holdoutManual"
 options$modelOpt <- "optimizationError"
 options$modelValid <- "validationManual"
@@ -23,7 +24,7 @@ options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""
 options$validationDataManual <- 0.2
 options$validationMeasures <- TRUE
-options$valueColumn <- ""
+options$predictionsColumn <- ""
 set.seed(1)
 results <- jaspTools::runAnalysis("mlRegressionRandomForest", "wine.csv", options)
 
