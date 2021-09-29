@@ -196,6 +196,10 @@ is.jaspMachineLearning <- function(x) {
     missingVars <- modelVars[which(!(modelVars %in% presentVars))]
     table$addFootnote(gettextf("The trained model is not applied because the the following predictors are missing: <i>%1$s</i>.", paste0(missingVars, collapse = ", ")))
   }
+  if (!all(presentVars %in% modelVars)) {
+    unusedVars <- presentVars[which(!(presentVars %in% modelVars))]
+    table$addFootnote(gettextf("The following predictors are unused because they are not a predictor variable in the trained model: <i>%1$s</i>.", paste0(unusedVars, collapse = ", ")))
+  }
 
   if (inherits(model, "lda")) {
     table$addColumnInfo(name = "ld", title = gettext("Linear Discriminants"), type = "integer")
@@ -240,10 +244,10 @@ is.jaspMachineLearning <- function(x) {
     return()
   }
 
-  table <- createJaspTable(gettext("Predictions for new data"))
+  table <- createJaspTable(gettext("Predictions for New Data"))
   table$dependOn(options = c("predictors", "file", "predictionsTable", "addPredictors", "scaleEqualSD", "pfrom", "pto"))
   table$position <- position
-  table$addColumnInfo(name = "row", title = gettext("Row number"), type = "integer")
+  table$addColumnInfo(name = "row", title = gettext("Row"), type = "integer")
 
   if (!is.null(model)) {
     if (inherits(model, "jaspClassification")) {
@@ -264,9 +268,9 @@ is.jaspMachineLearning <- function(x) {
 
   predictions <- .mlPredictionsState(model, dataset, options, jaspResults, ready)
   selection <- predictions[options[["pfrom"]]:options[["pto"]]]
+  modelVars <- .mlPredictionGetModelVars(model)
 
   if (options[["addPredictors"]]) {
-    modelVars <- options[["predictors"]]
     for (i in 1:length(modelVars)) {
       columnName <- as.character(modelVars[i])
       if (is.numeric(dataset[[columnName]])) {
@@ -277,15 +281,16 @@ is.jaspMachineLearning <- function(x) {
     }
   }
 
-  rows <- data.frame(row = options[["pfrom"]]:options[["pto"]], pred = selection)
+  rows <- list(row = options[["pfrom"]]:options[["pto"]], pred = selection)
   if (options[["addPredictors"]]) {
-    vars <- dataset[[options[["predictors"]]]]
-    vars <- vars[options[["pfrom"]]:options[["pto"]], ]
-    rows <- cbind(rows, vars)
-    colnames(rows) <- c("row", "pred", modelVars)
+    for (i in modelVars) {
+      var <- dataset[[i]]
+      var <- var[options[["pfrom"]]:options[["pto"]]]
+      rows[[i]] <- var
+    }
   }
 
-  table$addRows(rows)
+  table$setData(rows)
 }
 
 .mlPredictionsAddPredictions <- function(model, dataset, options, jaspResults, ready) {

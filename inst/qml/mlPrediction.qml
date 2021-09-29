@@ -101,7 +101,7 @@ Form
 			{
 				name:						"pto"
 				text:						qsTr("to")
-				defaultValue: 				20
+				defaultValue: 				dataSetModel.rowCount()
 				max:						dataSetModel.rowCount()
 				min:						1
 			}

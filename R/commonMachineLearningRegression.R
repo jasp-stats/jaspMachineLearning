@@ -276,6 +276,16 @@
   if(!ready)
     regressionTable$addFootnote(gettextf("Please provide a target variable and at least %d predictor variable(s).", requiredVars))
 
+  if (options[["file"]] != "") {
+    modelName <- strsplit(options[["file"]], split = "/")[[1]]
+    modelName <- modelName[length(modelName)]
+    if (options[["saveModel"]]) {
+      regressionTable$addFootnote(gettextf("The fitted model is saved as <i>%1$s</i>.", modelName))
+    } else {
+      regressionTable$addFootnote(gettext("The fitted model is not saved until 'save model' is enabled."))
+    }
+  }
+
   jaspResults[["regressionTable"]] <- regressionTable
 
   if(!ready)  return()

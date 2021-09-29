@@ -149,6 +149,16 @@
   requiredVars <- if (type == "knn" || type == "neuralnet") 1L else 2L
   if(!ready)
     classificationTable$addFootnote(gettextf("Please provide a target variable and at least %i predictor variable(s).", requiredVars))
+  
+  if (options[["file"]] != "") {
+    modelName <- strsplit(options[["file"]], split = "/")[[1]]
+    modelName <- modelName[length(modelName)]
+    if (options[["saveModel"]]) {
+      classificationTable$addFootnote(gettextf("The fitted model is saved as <i>%1$s</i>.", modelName))
+    } else {
+      classificationTable$addFootnote(gettext("The fitted model is not saved until 'save model' is enabled."))
+    }
+  }
 
   jaspResults[["classificationTable"]] <- classificationTable
 

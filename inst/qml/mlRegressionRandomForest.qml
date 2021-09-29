@@ -107,13 +107,8 @@ Form {
 			}
 		}
 
-		CheckBox
+		Group
 		{
-			id: 								saveModel
-			name: 								"saveModel"
-			text: 								qsTr("Save trained model")
-			enabled: 							predictors.count > 1 && target.count > 0
-
 			FileSelector
 			{
 				id:							file
@@ -123,7 +118,15 @@ Form {
 				filter:						"*.jaspML"
 				save:						true
 				fieldWidth:					180 * preferencesModel.uiScale
-				visible:					saveModel.checked
+			}
+
+			CheckBox
+			{
+				id: 								saveModel
+				name: 								"saveModel"
+				text: 								qsTr("Save trained model")
+				enabled: 							predictors.count > 1 && target.count > 0 && file.value != ""
+				Layout.leftMargin:					10 * preferencesModel.uiScale
 			}
 		}
 	}
