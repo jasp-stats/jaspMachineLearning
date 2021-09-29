@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 University of Amsterdam
+# Copyright (C) 2013-2021 University of Amsterdam
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -80,7 +80,7 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   # Split the data into training and test sets
   if (options[["holdoutData"]] == "testSetIndicator" && options[["testSetIndicatorVariable"]] != "") {
     # Select observations according to a user-specified indicator (included when indicator = 1)
-    train.index <- which(dataset[,options[["testSetIndicatorVariable"]]] == 0)
+    train.index <- which(dataset[, options[["testSetIndicatorVariable"]]] == 0)
   } else {
     # Sample a percentage of the total data set
     train.index <- sample.int(nrow(dataset), size = ceiling( (1 - options[['testDataManual']]) * nrow(dataset)))
@@ -177,8 +177,8 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
       }
       
       # Find out best performance
-      best_fit <- order(-fitness)[1]
-      structure <- population[[best_fit]]$structure # Best performing network structure
+      bestFitIndex <- order(fitness, decreasing = TRUE)[1]
+      structure <- population[[bestFitIndex]]$structure # Best performing network structure
       
       # For plotting we store the mean accuracy of the generation
       accuracyStore[gen] <- mean(fitness)
@@ -186,7 +186,7 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
       
       # Stop when maximum generations is reached
       if (gen == options[["maxGen"]])
-        break
+        break()
       
       # Stage 1: Select parents for crossover (population of k = 20 will give n = k / 3 = 7 parent pairs)
       parents <- .neuralNetworkOptim_selection(population, options)

@@ -37,7 +37,7 @@
 .classificationAnalysesReady <- function(options, type){
   if(type == "lda" || type == "randomForest" || type == "boosting"){
     ready <- length(options[["predictors"]][options[["predictors"]] != ""]) >= 2 && options[["target"]] != ""
-  } else if(type == "knn" || type == "neuralnet"){
+  } else if (type == "knn" || type == "neuralnet") {
     ready <- length(options[["predictors"]][options[["predictors"]] != ""]) >= 1 && options[["target"]] != ""
   }
   return(ready)
@@ -91,7 +91,7 @@
     "lda"          = gettext("Linear Discriminant Classification"),
     "randomForest" = gettext("Random Forest Classification"),
     "boosting"     = gettext("Boosting Classification"),
-	"neuralnet"    = gettext("Neural Network Classification")
+    "neuralnet"    = gettext("Neural Network Classification")
   )
 
   classificationTable <- createJaspTable(title)
@@ -125,9 +125,9 @@
     classificationTable$addColumnInfo(name = 'shrinkage', title = gettext('Shrinkage'), type = 'number')
 
   } else if (type == "neuralnet") {
-	
+
     classificationTable$addColumnInfo(name = 'layers',     title = gettext('Hidden Layers'),     type = 'integer')
-	classificationTable$addColumnInfo(name = 'nodes',     title = gettext('Nodes'),     type = 'integer')
+    classificationTable$addColumnInfo(name = 'nodes',     title = gettext('Nodes'),     type = 'integer')
 
   }
 
@@ -238,18 +238,18 @@
       row <- cbind(row, nvalid = nValid, validAcc = classificationResult[["validAcc"]])
     classificationTable$addRows(row)
 
-  } else if(type == "neuralnet") {
+  } else if (type == "neuralnet") {
     if (options[["modelOpt"]] == "optimizationManual") {
       classificationTable$addFootnote(gettext("The model is optimized with respect to the <i>sum of squares</i>."))
     } else if (options[["modelOpt"]] == "optimizationError") {
       classificationTable$addFootnote(gettext("The model is optimized with respect to the <i>validation set accuracy</i>."))
     }
-	  row <- data.frame(layers = classificationResult[["nLayers"]],
-	                    nodes = classificationResult[["nNodes"]],
-						ntrain = nTrain,
-                        ntest = classificationResult[["ntest"]],
-                        testAcc = classificationResult[["testAcc"]])
-    if(options[["modelOpt"]] != "optimizationManual")
+    row <- data.frame(layers = classificationResult[["nLayers"]],
+                      nodes = classificationResult[["nNodes"]],
+                      ntrain = nTrain,
+                      ntest = classificationResult[["ntest"]],
+                      testAcc = classificationResult[["testAcc"]])
+    if (options[["modelOpt"]] != "optimizationManual")
       row <- cbind(row, nvalid = nValid, validAcc = classificationResult[["validAcc"]])
     classificationTable$addRows(row)
   }
@@ -439,22 +439,22 @@
                         distribution = "multinomial", n.cores=1) #multiple cores breaks modules in JASP, see: INTERNAL-jasp#372
       probabilities <- gbm::predict.gbm(bfit, newdata = grid, n.trees = classificationResult[["noOfTrees"]], type = "response")
       preds <- colnames(probabilities)[apply(probabilities, 1, which.max)]
-    } else if(type == "neuralnet"){
-	    structure <- .getNeuralNetworkStructure(options)
+    } else if (type == "neuralnet") {
+        structure <- .getNeuralNetworkStructure(options)
         nfit <- neuralnet::neuralnet(formula = formula, data = dataset, 
-										   hidden = structure,
-										   learningrate = options[["learningRate"]],
-										   threshold = options[["threshold"]],
-										   stepmax = options[["stepMax"]],
-										   rep = 1,
-										   startweights = NULL,
-										   algorithm = options[["algorithm"]],
-										   err.fct = "sse",# jaspResults[["errfct"]]$object,
-										   act.fct = jaspResults[["actfct"]]$object, 
-										   linear.output = if(options[["actfct"]] == "linear") TRUE else FALSE)
-		preds <- as.factor(max.col(predict(nfit, newdata = grid)))
-		levels(preds) <- unique(dataset[, options[["target"]]])
-	}
+                                     hidden = structure,
+                                     learningrate = options[["learningRate"]],
+                                     threshold = options[["threshold"]],
+                                     stepmax = options[["stepMax"]],
+                                     rep = 1, # The rep parameter is nothing more than a wrapper for looping over creating a neural network.
+                                     startweights = NULL,
+                                     algorithm = options[["algorithm"]],
+                                     err.fct = "sse",# jaspResults[["errfct"]]$object, -> This does not work in the neuralnet package
+                                     act.fct = jaspResults[["actfct"]]$object, 
+                                     linear.output = if(options[["actfct"]] == "linear") TRUE else FALSE)
+        preds <- as.factor(max.col(predict(nfit, newdata = grid)))
+        levels(preds) <- unique(dataset[, options[["target"]]])
+    }
 
     gridData <- data.frame(x = grid[, 1], y = grid[, 2])
     pointData <- data.frame(x=predictors[, 1], y=predictors[, 2])
@@ -583,30 +583,28 @@
 
       } else if (type == "neuralnet") {
 
-    structure <- .getNeuralNetworkStructure(options)
-  nfit <- neuralnet::neuralnet(formula = formula, data = typeData, 
-										   hidden = structure,
-										   learningrate = options[["learningRate"]],
-										   threshold = options[["threshold"]],
-										   stepmax = options[["stepMax"]],
-										   rep = 1,
-										   startweights = NULL,
-										   algorithm = options[["algorithm"]],
-										   err.fct = "sse",# jaspResults[["errfct"]]$object,
-										   act.fct = jaspResults[["actfct"]]$object, 
-										   linear.output = if(options[["actfct"]] == "linear") TRUE else FALSE)
-  score <- max.col(predict(nfit, test))
-
-	}
+        structure <- .getNeuralNetworkStructure(options)
+        nfit <- neuralnet::neuralnet(formula = formula, data = typeData, 
+                                     hidden = structure,
+                                     learningrate = options[["learningRate"]],
+                                     threshold = options[["threshold"]],
+                                     stepmax = options[["stepMax"]],
+                                     rep = 1,
+                                     startweights = NULL,
+                                     algorithm = options[["algorithm"]],
+                                     err.fct = "sse",# jaspResults[["errfct"]]$object,
+                                     act.fct = jaspResults[["actfct"]]$object, 
+                                     linear.output = if(options[["actfct"]] == "linear") TRUE else FALSE)
+        score <- max.col(predict(nfit, test))
+      }
 
       pred <- ROCR::prediction(score, actual.class)
       nbperf <- ROCR::performance(pred, "tpr", "fpr")
-
       rocXstore <- c(rocXstore, unlist(nbperf@x.values))
       rocYstore <- c(rocYstore, unlist(nbperf@y.values))
       rocNamestore <- c(rocNamestore, rep(lvls[i], length(unlist(nbperf@y.values))))
 
-	}
+    }
 
     rocData <- data.frame(x = rocXstore, y = rocYstore, name = rocNamestore)
     rocData <- na.omit(rocData) # Remove classes that are not in the test set

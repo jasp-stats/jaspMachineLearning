@@ -155,7 +155,7 @@
 .regressionAnalysesReady <- function(options, type){
   if(type == "randomForest" || type == "boosting" || type == "regularized"){
     ready <- length(options[["predictors"]][options[["predictors"]] != ""]) >= 2 && options[["target"]] != ""
-  } else if(type == "knn" || type == "neuralnet"){
+  } else if (type == "knn" || type == "neuralnet") {
     ready <- length(options[["predictors"]][options[["predictors"]] != ""]) >= 1 && options[["target"]] != ""
   }
   return(ready)
@@ -187,7 +187,7 @@
     regressionResult <- .randomForestRegression(dataset, options, jaspResults)
   } else if(type == "boosting"){
     regressionResult <- .boostingRegression(dataset, options, jaspResults)
-  } else if(type == "neuralnet") {
+  } else if (type == "neuralnet") {
 	regressionResult <- .neuralnetRegression(dataset, options, jaspResults)
   }
 
@@ -210,7 +210,7 @@
                       "regularized" = gettext("Regularized Linear Regression"),
                       "randomForest" = gettext("Random Forest Regression"),
                       "boosting" = gettext("Boosting Regression"),
-					  "neuralnet" = gettext("Neural Network Regression"))
+                      "neuralnet" = gettext("Neural Network Regression"))
 
   regressionTable <- createJaspTable(title)
   regressionTable$position <- position
@@ -247,9 +247,9 @@
     regressionTable$addColumnInfo(name = 'distribution', title = gettext('Loss function'), type = 'integer')
 
   } else if (type == "neuralnet") {
-	
+
     regressionTable$addColumnInfo(name = 'layers',     title = gettext('Hidden Layers'),     type = 'integer')
-	regressionTable$addColumnInfo(name = 'nodes',     title = gettext('Nodes'),     type = 'integer')
+    regressionTable$addColumnInfo(name = 'nodes',     title = gettext('Nodes'),     type = 'integer')
 
   }
 
@@ -370,18 +370,18 @@
       row <- cbind(row, nvalid = nValid, validMSE = regressionResult[["validMSE"]])
     regressionTable$addRows(row)
 
-  } else if(type == "neuralnet") {
-	  if (options[["modelOpt"]] == "optimizationManual") {
+  } else if (type == "neuralnet") {
+    if (options[["modelOpt"]] == "optimizationManual") {
       regressionTable$addFootnote(gettext("The model is optimized with respect to the <i>sum of squares</i>."))
     } else if (options[["modelOpt"]] == "optimizationError") {
       regressionTable$addFootnote(gettext("The model is optimized with respect to the <i>validation set mean squared error</i>."))
     }
-	  row <- data.frame(layers = regressionResult[["nLayers"]],
-	                    nodes = regressionResult[["nNodes"]],
-						ntrain = nTrain,
-                        ntest = regressionResult[["ntest"]],
-                        testMSE = regressionResult[["testMSE"]])
-    if(options[["modelOpt"]] != "optimizationManual")
+    row <- data.frame(layers = regressionResult[["nLayers"]],
+                      nodes = regressionResult[["nNodes"]],
+                      ntrain = nTrain,
+                      ntest = regressionResult[["ntest"]],
+                      testMSE = regressionResult[["testMSE"]])
+    if (options[["modelOpt"]] != "optimizationManual")
       row <- cbind(row, nvalid = nValid, validMSE = regressionResult[["validMSE"]])
     regressionTable$addRows(row)
   }

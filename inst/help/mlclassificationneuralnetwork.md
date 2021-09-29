@@ -1,7 +1,7 @@
 Neural Network Classification
 ==========================
 
-Feedforward neural networks are predictive algorithms inspired by the biological neural networks that constitute brains. A neuron (node) that receives a signal then processes it and can send signals to neurons connected to it. The signal at a node is a real number, and the output of each node is computed by sending the signal trough the activation function. The number of nodes in the network is intrinsincly linked to model complexity, as high numbers increase the flexibility of the model.
+Feedforward neural networks are predictive algorithms inspired by the biological neural networks that constitute brains. A neuron (node) that receives a signal then processes it and can send signals to neurons connected to it. The signal at a node is a real number, and the output of each node is computed by sending the signal trough the activation function. The number of layers and nodes in the network is intrinsincly linked to model complexity, as high numbers increase the flexibility of the model.
 
 ### Assumptions
 - The target is a nominal or ordinal variable. 
@@ -21,15 +21,15 @@ Feedforward neural networks are predictive algorithms inspired by the biological
 
 #### Plots
 - Data split: Shows how the data is split into training (and validation), and test set.
-- Classification accuracy: Plots the number of nearest neighbors against the classification accuracy of the model. Accuracy is assessed for the training (and validation) set.
+- Classification accuracy: Plots the average classification accuracy of the population of neural networks against the number of generations in the evoluationary optimization algorithm. Accuracy is assessed for the training (and validation) set.
 - ROC curves: Displays ROC curves for each class predicted against all other classes.
-- Andrews curves: Is a way to visualize structure in high-dimensional data. Lines that cluster are observations that are more alike. 
+- Andrews curves: Visualizes structure in high-dimensional data. Lines that cluster are observations that are more alike.
 - Network structure: Creates a plot that visualizes the structure (nodes and edges) of the network.
-- Decision boundary matrix: Creates a *n* x *n* plot that visualizes how every observation would be classified if predicted through the current model. Boundaries between classes are visualized. Can only be made for numeric predictors.
+- Decision boundary matrix: Creates an *n* x *n* plot that visualizes how every observation would be classified if predicted through the current model. Boundaries between classes are visualized. Can only be made for numeric predictors.
 
 ### Data Split Preferences
 #### Holdout Test Data
-- Sample *x*% of all data: Choose a percentage to randomly sample from your data to derive prediction error. Generates an internal indicator variable that indicates whether the observation is included (1) or excluded (0) from the test set.
+- Sample *x*% of all data: Choose a percentage (*x*%) to randomly sample from your data to derive prediction error. Generates an internal indicator variable that indicates whether the observation is included (1) or excluded (0) from the test set.
 - Add generated indicator to data: Add the generated test set indicator from the option above to your data set. Requires a column name.
 - Test set indicator: Use an indicator variable to select data for the test set. This indicator should be a column in your data that consists of only 0 (excluded from the test set) and 1 (included in the test set). The data will then be split into a training (and validation if requested) set (0), and a test set (1) according to your indicator.
 
