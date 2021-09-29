@@ -6,6 +6,7 @@ options$addIndicator <- FALSE
 options$andrewsCurve <- TRUE
 options$classColumn <- ""
 options$classProportionsTable <- TRUE
+options$file <- ""
 options$holdoutData <- "holdoutManual"
 options$modelOpt <- "optimizationError"
 options$modelValid <- "validationManual"

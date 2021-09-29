@@ -7,6 +7,7 @@ options$andrewsCurve <- TRUE
 options$classBoostRelInfTable <- TRUE
 options$classColumn <- ""
 options$classProportionsTable <- TRUE
+options$file <- ""
 options$holdoutData <- "holdoutManual"
 options$modelOpt <- "optimizationOOB"
 options$modelValid <- "validationManual"

@@ -3,6 +3,7 @@ context("Machine Learning KNN Regression")
 options <- jaspTools::analysisOptions("mlRegressionKnn")
 options$addIndicator <- FALSE
 options$addValues <- FALSE
+options$file <- ""
 options$holdoutData <- "holdoutManual"
 options$modelOpt <- "optimizationError"
 options$modelValid <- "validationManual"

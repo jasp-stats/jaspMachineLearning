@@ -8,6 +8,7 @@ options$boxTest <- TRUE
 options$classColumn <- ""
 options$classProportionsTable <- TRUE
 options$coefficientsTable <- TRUE
+options$file <- ""
 options$holdoutData <- "holdoutManual"
 options$manovaTable <- TRUE
 options$matrixplot <- TRUE

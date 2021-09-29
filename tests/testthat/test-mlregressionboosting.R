@@ -4,6 +4,7 @@ options <- jaspTools::analysisOptions("mlRegressionBoosting")
 options$addIndicator <- FALSE
 options$addValues <- FALSE
 options$classBoostRelInfTable <- TRUE
+options$file <- ""
 options$holdoutData <- "holdoutManual"
 options$modelOpt <- "optimizationOOB"
 options$modelValid <- "validationManual"

@@ -4,6 +4,7 @@ options <- jaspTools::analysisOptions("mlRegressionRegularized")
 options$addIndicator <- FALSE
 options$addValues <- FALSE
 options$coefTable <- TRUE
+options$file <- ""
 options$holdoutData <- "holdoutManual"
 options$lambdaEvaluation <- TRUE
 options$modelOpt <- "optMin"

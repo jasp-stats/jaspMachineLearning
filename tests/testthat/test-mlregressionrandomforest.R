@@ -3,6 +3,7 @@ context("Machine Learning Random Forest Regression")
 options <- jaspTools::analysisOptions("mlRegressionRandomForest")
 options$addIndicator <- FALSE
 options$addValues <- FALSE
+options$file <- ""
 options$holdoutData <- "holdoutManual"
 options$modelOpt <- "optimizationError"
 options$modelValid <- "validationManual"
