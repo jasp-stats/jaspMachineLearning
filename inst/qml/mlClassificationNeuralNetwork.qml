@@ -182,15 +182,15 @@ Form
                     { label: qsTr("Cosine"), value: "cosin"},
                     { label: qsTr("Inverse tangent"), value: "arctan"},
                     { label: qsTr("Hyperbolic tangent"), value: "tanh"},
-                    { label: qsTr("Rectified linear unit (ReLU)"), value: "relu"},
+                    { label: qsTr("ReLU"), value: "relu"},
                     { label: qsTr("Softplus"), value: "softplus"},
                     { label: qsTr("Softsign"), value: "softsign"},
-                    { label: qsTr("Exponential linear units (ELU)"), value: "elu"},
-                    { label: qsTr("Leaky rectified linear unit (LReLU)"), value: "lrelu"},
-                    { label: qsTr("Sigmoid linear unit (SiLU)"), value: "silu"},
+                    { label: qsTr("ELU"), value: "elu"},
+                    { label: qsTr("LReLU"), value: "lrelu"},
+                    { label: qsTr("SiLU"), value: "silu"},
                     { label: qsTr("Mish"), value: "mish"},
                     { label: qsTr("Gaussian"), value: "gaussian"},
-                    { label: qsTr("Gaussian error linear unit (GeLU)"), value: "gelu"}
+                    { label: qsTr("GeLU"), value: "gelu"}
                 ]
             }
 

@@ -38,7 +38,23 @@ Feedforward neural networks are predictive algorithms inspired by the biological
 
 ### Training Parameters 
 #### Algorithmic Settings
-- Activation function: Sets the activation function for the signal in each hidden layer. 
+- Activation function: Sets the activation function for the signal in each hidden layer. Available options are:
+  - linear: *f(x) = x*
+  - Binary: *f(x) = 0 if x < 0, 1 if x > 0
+  - Logistic sigmoid: *f(x) = 1 / (1 + e^(-x))*
+  - Sine: *f(x) = sin(x)*
+  - Cosine: *f(x) = cos(x)*
+  - Inverse tangent: *f(x) = arctan(x)*
+  - Hyperbolic tangent: *f(x) = tanh(x)*
+  - ReLU: *f(x) =  0 if x < 0, x if x > 0*
+  - Softplus: *f(x) = log(1 + e^x)*
+  - Softsign: *f(x) = x / (abs(x) + 1)*
+  - ELU: *f(x) = e^x - 1 if x <= 0, x if x > 0*
+  - LReLU: *f(x) = 0.01 * x if x < 0, x if x > 0*
+  - SiLU: *f(x) = x / (1 + e^(-x))*
+  - Mish: *f(x) = x * tanh(log(1 + e^x))*
+  - Gaussian: *f(x) = e * (-x^2)*
+  - GeLU: *f(x) = 0.5 * x * (1 + tanh(sqrt(2 / pi) * (x + 0.044715 * x^3)))*
 - Algorithm: Sets the algorithm for the network training. The backpropagation option is standard for training neural networks, but other options are `rprop+` (default) for resilient backpropagation with backtracing, `rprop-` for resilient backpropagation without backtracing, `gprop-sag` for the globally convergent algorithm that modifies the learning rate associated with the smallest absolute gradient, or `gprop-slr` for the globally convergent algorithm that modifies the learning rate associated with the smallest learning rate itself.
 - Learning rate: The learning rate used by the backpropagation algorithm.
 - Stopping criteria loss function: The threshold for the partial derivatives of the error function as stopping criteria.
