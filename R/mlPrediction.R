@@ -284,7 +284,7 @@ is.jaspMachineLearning <- function(x) {
   rows <- list(row = options[["pfrom"]]:options[["pto"]], pred = selection)
   if (options[["addPredictors"]]) {
     for (i in modelVars) {
-      var <- dataset[[i]]
+      var <- if (is.numeric(dataset[[i]])) dataset[[i]] else levels(dataset[[i]])[dataset[[i]]]
       var <- var[options[["pfrom"]]:options[["pto"]]]
       rows[[i]] <- var
     }

@@ -151,8 +151,7 @@
     classificationTable$addFootnote(gettextf("Please provide a target variable and at least %i predictor variable(s).", requiredVars))
   
   if (options[["file"]] != "") {
-    modelName <- strsplit(options[["file"]], split = "/")[[1]]
-    modelName <- modelName[length(modelName)]
+    modelName <- basename(options[["file"]])
     if (options[["saveModel"]]) {
       classificationTable$addFootnote(gettextf("The fitted model is saved as <i>%1$s</i>.", modelName))
     } else {

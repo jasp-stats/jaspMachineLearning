@@ -52,36 +52,36 @@ Form
 			name: 								"predictors"
 			title: 								qsTr("Predictors")
 			allowedColumns: 					["scale", "ordinal", "nominal", "nominalText"]
-			allowAnalysisOwnComputedColumns: 	false
+			allowAnalysisOwnComputedColumns:	false
 		}
 	}
 
 	GroupBox
 	{
-		title: 								qsTr("Algorithmic Settings")
+		title: 									qsTr("Algorithmic Settings")
 
 		CheckBox
 		{
-			text: 							qsTr("Scale predictors")
-			name: 							"scaleEqualSD"
-			checked: 						true
+			text: 								qsTr("Scale predictors")
+			name: 								"scaleEqualSD"
+			checked: 							true
 		}
 	}
 
 	GroupBox
 	{
-		title: 								qsTr("Tables")
+		title: 									qsTr("Tables")
 
 		CheckBox
 		{
-			name: 							"predictionsTable"
-			label:				 			"Predictions for new data"
-			checked:						true
+			name: 								"predictionsTable"
+			label:				 				"Predictions for new data"
+			checked:							true
 
 			CheckBox
 			{
-				name: 						"addPredictors"
-				label:						"Add predictors"
+				name: 							"addPredictors"
+				label:							"Add predictors"
 			}
 		}
 
@@ -90,42 +90,42 @@ Form
 			
 			IntegerField
 			{
-				name:						"pfrom"
-				text:						qsTr("From")
-				defaultValue:				1
-				min:						1
-				max:						dataSetModel.rowCount()
+				name:							"pfrom"
+				text:							qsTr("From")
+				defaultValue:					1
+				min:							1
+				max:							dataSetModel.rowCount()
 			}
 
 			IntegerField
 			{
-				name:						"pto"
-				text:						qsTr("to")
-				defaultValue: 				dataSetModel.rowCount()
-				max:						dataSetModel.rowCount()
-				min:						1
+				name:							"pto"
+				text:							qsTr("to")
+				defaultValue:					20
+				max:							dataSetModel.rowCount()
+				min:							1
 			}
 		}
 	}
 
 	GroupBox
 	{
-		title:								qsTr("Export Results")
+		title:									qsTr("Export Results")
 
 		CheckBox
 		{
-			id: 									addClasses
-			name: 									"addClasses"
-			text: 									qsTr("Add predicted outcomes to data")
-			enabled:    							predictors.count > 0 & file.value != ""
+			id: 								addClasses
+			name: 								"addClasses"
+			text: 								qsTr("Add predicted outcomes to data")
+			enabled:							predictors.count > 0 & file.value != ""
 
 			ComputedColumnField
 			{
-				id: 								classColumn
-				name: 								"classColumn"
-				text: 								qsTr("Column name: ")
-				fieldWidth: 						120
-				visible:    						addClasses.checked
+				id: 							classColumn
+				name: 							"classColumn"
+				text: 							qsTr("Column name: ")
+				fieldWidth: 					120
+				visible:						addClasses.checked
 			}
 		}
 	}
