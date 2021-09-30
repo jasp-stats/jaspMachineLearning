@@ -54,6 +54,9 @@ is.jaspMachineLearning <- function(x) {
 .mlPredictionGetModelType.cv.glmnet <- function(model) {
   gettext("Regularized linear regression")
 }
+.mlPredictionGetModelType.nn <- function(model) {
+  gettext("Neural network")
+}
 
 # S3 method to identify the variables used for training the model
 .mlPredictionGetModelVars <- function(model) {
@@ -70,6 +73,9 @@ is.jaspMachineLearning <- function(x) {
 }
 .mlPredictionGetModelVars.cv.glmnet <- function(model) {
   rownames(model[["glmnet.fit"]][["beta"]])
+}
+.mlPredictionGetModelVars.nn <- function(model) {
+  model[["model.list"]][["variables"]]
 }
 
 # S3 method to make predictions using the model
@@ -97,6 +103,13 @@ is.jaspMachineLearning <- function(x) {
 .mlPredictionGetPredictions.cv.glmnet <- function(model, dataset) {
   as.numeric(glmnet:::predict.cv.glmnet(model, newx = data.matrix(dataset)))
 }
+.mlPredictionGetPredictions.nn <- function(model, dataset) {
+  if (inherits(model, "jaspClassification")) {
+    as.character(model[["model.list"]]$response[max.col(neuralnet:::predict.nn(model, newdata = dataset))])
+  } else if (inherits(model, "jaspRegression")) {
+    as.numeric(neuralnet:::predict.nn(model, newdata = dataset))
+  }
+}
 
 # S3 method to make find out number of observations in training data
 .mlPredictionGetTrainingN <- function(model) {
@@ -114,6 +127,9 @@ is.jaspMachineLearning <- function(x) {
 .mlPredictionGetTrainingN.cv.glmnet <- function(model) {
   model[["glmnet.fit"]][["nobs"]]
 }
+.mlPredictionGetTrainingN.nn <- function(model) {
+  nrow(model[["data"]])
+}
 
 .mlPredictionReadModel <- function(options) {
   if (options[["loadPath"]] != "") {
@@ -123,7 +139,7 @@ is.jaspMachineLearning <- function(x) {
     if (!is.jaspMachineLearning(model)) {
       jaspBase:::.quitAnalysis(gettext("Error: The imported model is not created in JASP."))
     }
-    if (!(any(c("lda", "gbm", "randomForest", "cv.glmnet") %in% class(model)))) { # Predictions for knn are not supported
+    if (!(any(c("lda", "gbm", "randomForest", "cv.glmnet", "nn") %in% class(model)))) { # Predictions for knn are not supported
       jaspBase:::.quitAnalysis(gettextf("The imported model (type: %1$s) is currently not supported in JASP.", paste(class(model), collapse = ", ")))
     }
     if (model[["jaspVersion"]] != .baseCitation) {

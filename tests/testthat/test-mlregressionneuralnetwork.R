@@ -2,7 +2,7 @@ context("Machine Learning Neural Network Regression")
 
 options <- analysisOptions("mlRegressionNeuralNetwork")
 options$addIndicator <- FALSE
-options$addValues <- FALSE
+options$addPredictions <- FALSE
 options$algorithm <- "backprop"
 options$coefficientsTable <- TRUE
 options$dataSplitPlot <- FALSE
@@ -10,8 +10,10 @@ options$holdoutData <- "holdoutManual"
 options$layers <- list(list(nodes = 1, value = "#"))
 options$modelOpt <- "optimizationManual"
 options$modelValid <- "validationManual"
-options$noOfFolds <- 5
+options$predictionsColumn <- ""
 options$predictors <- c("Sepal.Width", "Petal.Length", "Petal.Width")
+options$saveModel <- FALSE
+options$savePath <- ""
 options$seedBox <- TRUE
 options$target <- "Sepal.Length"
 options$testDataManual <- 0.2
@@ -20,7 +22,6 @@ options$testSetIndicatorVariable <- ""
 options$threshold <- 0.05
 options$validationDataManual <- 0.2
 options$validationMeasures <- TRUE
-options$valueColumn <- ""
 set.seed(1)
 results <- runAnalysis("mlRegressionNeuralNetwork", "iris.csv", options)
 

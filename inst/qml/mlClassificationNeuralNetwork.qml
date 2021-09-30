@@ -154,6 +154,10 @@ Form
         }
     }
 
+	ML.ExportResults {
+		enabled: predictors.count > 1 && target.count > 0
+	}
+
     ML.DataSplit
     {
         leaveOneOutVisible: false
@@ -466,44 +470,6 @@ Form
                     }
                 }
             }
-        }
-    }
-
-    Item
-    {
-        Layout.preferredHeight: 	addClasses.height*2
-        Layout.fillWidth: 	true
-        Layout.columnSpan: 2
-
-        CheckBox
-        {
-            id: addClasses
-            name: "addClasses"
-            text: qsTr("Add predicted classes to data")
-            enabled:    predictors.count > 0 && target.count > 0
-            anchors.top: parent.top
-
-            ComputedColumnField
-            {
-                id: 		classColumn
-                name: 		"classColumn"
-                text: 		qsTr("Column name: ")
-                fieldWidth: 120
-                visible:    addClasses.checked
-            }
-        }
-
-        Button
-        {
-            id: 			saveModel
-            anchors.right: 	parent.right
-            text: 			qsTr("<b>Save Model</b>")
-            enabled: 		predictors.count > 1 && target.count > 0
-            onClicked:
-            {
-
-            }
-            debug: true
         }
     }
 }

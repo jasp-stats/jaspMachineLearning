@@ -1,10 +1,9 @@
 context("Machine Learning Neural Network Classification")
 
 options <- analysisOptions("mlClassificationNeuralNetwork")
-options$addClasses <- FALSE
 options$addIndicator <- FALSE
+options$addPredictions <- FALSE
 options$algorithm <- "backprop"
-options$classColumn <- ""
 options$classProportionsTable <- TRUE
 options$coefficientsTable <- TRUE
 options$dataSplitPlot <- FALSE
@@ -12,8 +11,10 @@ options$holdoutData <- "holdoutManual"
 options$layers <- list(list(nodes = 1, value = "#"))
 options$modelOpt <- "optimizationManual"
 options$modelValid <- "validationManual"
-options$noOfFolds <- 5
+options$predictionsColumn <- ""
 options$predictors <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
+options$saveModel <- FALSE
+options$savePath <- ""
 options$seedBox <- TRUE
 options$target <- "Species"
 options$testDataManual <- 0.2
