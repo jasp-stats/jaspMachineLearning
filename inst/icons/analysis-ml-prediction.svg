@@ -28,8 +28,8 @@
    showgrid="false"
    showguides="false"
    inkscape:zoom="10.246154"
-   inkscape:cx="19.177928"
-   inkscape:cy="13.419669"
+   inkscape:cx="34.793543"
+   inkscape:cy="27.083333"
    inkscape:window-width="1920"
    inkscape:window-height="1001"
    inkscape:window-x="1791"
@@ -44,33 +44,6 @@
    inkscape:snap-global="false" />
 <g
    id="g78">
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 <rect
    style="fill:#1ab1e8;fill-opacity:1;stroke-width:12.1413;stroke-miterlimit:10"
    id="rect7385-8-1-8"
@@ -220,48 +193,50 @@
    style="stroke-width:0.990184" /><g
    id="g18-8"
    transform="matrix(1.4297447,0,0,1.3593497,-60.758916,-9.3382416)"><rect
-     x="52.856998"
-     y="29.961"
+     x="52.765984"
+     y="29.17123"
      fill="#c65000"
-     width="4"
-     height="12"
-     id="rect16-0" /></g><g
+     width="4.7281303"
+     height="13.507743"
+     id="rect16-0"
+     style="stroke-width:1.15349" /></g><g
    id="g22-5"
    transform="matrix(1.4297447,0,0,1.3593497,-60.758916,-9.3382416)"><rect
-     x="48.856998"
-     y="33.960999"
+     x="48.037853"
+     y="33.673809"
      fill="#c65000"
-     width="12"
-     height="4"
-     id="rect20-9" /></g><rect
-   x="9.0941219"
-   y="40.790485"
+     height="4.5025811"
+     id="rect20-9"
+     width="14.184392"
+     style="stroke-width:1.15349" /></g><rect
+   x="7.9229512"
+   y="40.898132"
    fill="#9d160c"
-   width="5.7189794"
-   height="1.4735349"
+   height="1.6586776"
    id="rect60-0"
-   style="stroke-width:1.3941" /><rect
-   x="20.53208"
-   y="40.790485"
+   style="stroke-width:1.60809"
+   width="6.7600203" /><rect
+   x="21.442991"
+   y="40.898132"
    fill="#9d160c"
-   width="5.7189794"
-   height="1.4735349"
+   height="1.6586776"
    id="rect62-8"
-   style="stroke-width:1.3941" /><rect
-   x="19.042286"
-   y="31.38924"
+   style="stroke-width:1.60809"
+   width="6.7600203" /><rect
+   x="19.682007"
+   y="30.315666"
    fill="#9d160c"
-   width="1.5498433"
-   height="5.4373984"
+   height="6.1205816"
    id="rect64-3"
-   style="stroke-width:1.3941" /><rect
-   x="19.042286"
-   y="40.790485"
+   style="stroke-width:1.60809"
+   width="1.8319653" /><rect
+   x="19.682007"
+   y="40.898132"
    fill="#9d160c"
-   width="1.5484135"
-   height="6.9109344"
+   height="7.7792602"
    id="rect66-7"
-   style="stroke-width:1.3941" /><g
+   style="stroke-width:1.60809"
+   width="1.8302753" /><g
    id="g22-5-4"
    transform="matrix(0.69094101,0,0,0.73160662,-27.703996,12.192947)" /><g
    id="g22-3"
