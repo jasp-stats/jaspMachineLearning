@@ -31,16 +31,16 @@ GroupBox
 
 	CheckBox 
 	{
-		id: 					addPredictions
-		name: 					"addPredictions"
-		text: 					qsTr("Add predictions to data")
+		id:						addPredictions
+		name:					"addPredictions"
+		text:					qsTr("Add predictions to data")
 
 		ComputedColumnField {
-			id: 				predictionsColumn
-			name: 				"predictionsColumn"
-			text: 				qsTr("Column name")
+			id:					predictionsColumn
+			name:				"predictionsColumn"
+			text:				qsTr("Column name")
 			placeholderText: 	qsTr("e.g., predicted")
-			fieldWidth: 		120
+			fieldWidth:			120
 			enabled:			addPredictions.checked
 		}
 	}
@@ -52,8 +52,8 @@ GroupBox
 		{
 			id:					savePath
 			name:				"savePath"
-			label:  			qsTr("Save as")
-			placeholderText: 	qsTr("model.jaspML")
+			label:				qsTr("Save as")
+			placeholderText:	qsTr("e.g., location/model.jaspML")
 			filter:				"*.jaspML"
 			save:				true
 			fieldWidth:			180 * preferencesModel.uiScale
@@ -61,9 +61,9 @@ GroupBox
 
 		CheckBox
 		{
-			id: 				saveModel
-			name: 				"saveModel"
-			text: 				qsTr("Save trained model")
+			id:					saveModel
+			name:				"saveModel"
+			text:				qsTr("Save trained model")
 			enabled:			show && savePath.value != ""
 			Layout.leftMargin:	10 * preferencesModel.uiScale
 		}

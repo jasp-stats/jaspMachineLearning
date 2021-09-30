@@ -107,7 +107,7 @@ Form
     }
 
 	ML.ExportResults {
-		enabled: predictors.count > 1 && target.count > 0
+		enabled: predictors.count > 0 && target.count > 0
 	}
 
     ML.DataSplit

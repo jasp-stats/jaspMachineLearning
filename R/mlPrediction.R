@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 University of Amsterdam
+# Copyright (C) 2013-2021 University of Amsterdam
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,20 +16,20 @@
 #
 
 mlPrediction <- function(jaspResults, dataset, options, ...) {
-
+  
   # Preparatory work
   model <- .mlPredictionReadModel(options)
   dataset <- .mlPredictionReadData(options)
-
+  
   # Check if analysis is ready
   ready <- .mlPredictionReady(model, dataset, options)
-
+  
   # Create a table summarizing the loaded model
   .mlPredictionModelSummaryTable(model, dataset, options, jaspResults, ready, position = 1)
-
+  
   # Create a table containing the predicted values and predictors
   .mlPredictionsTable(model, dataset, options, jaspResults, ready, position = 2)
-
+  
   # Add predicted outcomes to data set
   .mlPredictionsAddPredictions(model, dataset, options, jaspResults, ready)
 }
@@ -117,13 +117,13 @@ is.jaspMachineLearning <- function(x) {
       readRDS(options[["loadPath"]])
     })
     if (!is.jaspMachineLearning(model)) {
-      jaspBase:::.quitAnalysis(gettext("Error: The imported model is not created in JASP."))
+      jaspBase:::.quitAnalysis(gettext("Error: The trained model is not created in JASP."))
     }
     if (!(any(c("lda", "gbm", "randomForest", "cv.glmnet", "nn") %in% class(model)))) { # Predictions for knn are not supported
-      jaspBase:::.quitAnalysis(gettextf("The imported model (type: %1$s) is currently not supported in JASP.", paste(class(model), collapse = ", ")))
+      jaspBase:::.quitAnalysis(gettextf("The trained model (type: %1$s) is currently not supported in JASP.", paste(class(model), collapse = ", ")))
     }
     if (model[["jaspVersion"]] != .baseCitation) {
-      jaspBase:::.quitAnalysis(gettext("Error: The imported model is created using a different version of JASP."))
+      jaspBase:::.quitAnalysis(gettext("Error: The trained model is created using a different version of JASP."))
     }
   } else {
     model <- NULL
@@ -181,11 +181,11 @@ is.jaspMachineLearning <- function(x) {
   table$position <- position
   table$addColumnInfo(name = "model", title = gettext("Method"), type = "string")
   jaspResults[["modelSummaryTable"]] <- table
-
+  
   if (is.null(model)) {
     return()
   }
-
+  
   modelVars <- model[["jaspVars"]]
   presentVars <- decodeColNames(colnames(dataset))
   if (!all(modelVars %in% presentVars)) {
@@ -196,7 +196,7 @@ is.jaspMachineLearning <- function(x) {
     unusedVars <- presentVars[which(!(presentVars %in% modelVars))]
     table$addFootnote(gettextf("The following predictors are unused because they are not a predictor variable in the trained model: <i>%1$s</i>.", paste0(unusedVars, collapse = ", ")))
   }
-
+  
   if (inherits(model, "lda")) {
     table$addColumnInfo(name = "ld", title = gettext("Linear Discriminants"), type = "integer")
   } else if (inherits(model, "gbm")) {
@@ -208,14 +208,14 @@ is.jaspMachineLearning <- function(x) {
   } else if (inherits(model, "cv.glmnet")) {
     table$addColumnInfo(name = "lambda", title = "\u03BB", type = "number")
   }
-
+  
   table$addColumnInfo(name = "ntrain", title = gettext("n(Train)"), type = "integer")
   table$addColumnInfo(name = "nnew", title = gettext("n(New)"), type = "integer")
-
+  
   row <- list()
   row[["model"]] <- .mlPredictionGetModelType(model)
   row[["ntrain"]] <- .mlPredictionGetTrainingN(model)
-
+  
   if (inherits(model, "lda")) {
     row[["ld"]] <- ncol(model[["scaling"]])
   } else if (inherits(model, "gbm")) {
@@ -227,24 +227,25 @@ is.jaspMachineLearning <- function(x) {
   } else if (inherits(model, "cv.glmnet")) {
     row[["lambda"]] <- model[["lambda.min"]]
   }
-
+  
   if (length(presentVars) > 0) {
     row[["nnew"]] <- nrow(dataset)
   }
-
+  
   table$addRows(row)
 }
 
 .mlPredictionsTable <- function(model, dataset, options, jaspResults, ready, position) {
+  
   if (!is.null(jaspResults[["predictionsTable"]]) || !options[["predictionsTable"]]) {
     return()
   }
-
+  
   table <- createJaspTable(gettext("Predictions for New Data"))
   table$dependOn(options = c("predictors", "loadPath", "predictionsTable", "addPredictors", "scaleEqualSD", "pfrom", "pto"))
   table$position <- position
   table$addColumnInfo(name = "row", title = gettext("Row"), type = "integer")
-
+  
   if (!is.null(model)) {
     if (inherits(model, "jaspClassification")) {
       table$addColumnInfo(name = "pred", title = gettext("Predicted"), type = "string")
@@ -255,38 +256,33 @@ is.jaspMachineLearning <- function(x) {
   } else {
     table$addColumnInfo(name = "pred", title = gettext("Predicted"), type = "number")
   }
-
+  
   jaspResults[["predictionsTable"]] <- table
-
+  
   if (!ready) {
     return()
   }
-
+  
   predictions <- .mlPredictionsState(model, dataset, options, jaspResults, ready)
-  selection <- predictions[options[["pfrom"]]:options[["pto"]]]
-  modelVars <- model[["jaspVars"]]
-
+  indexes <- options[["pfrom"]]:options[["pto"]]
+  selection <- predictions[indexes]
+  cols <- list(row = indexes, pred = selection)
+  
   if (options[["addPredictors"]]) {
-    for (i in 1:length(modelVars)) {
-      columnName <- as.character(modelVars[i])
-      if (is.numeric(dataset[[columnName]])) {
-        table$addColumnInfo(name = columnName, title = columnName, type = "number")
+    for (i in encodeColNames(model[["jaspVars"]])) {
+      if (.columnIsNominalText(i)) {
+        table$addColumnInfo(name = i, title = i, type = "string")
+        var <- levels(dataset[[i]])[dataset[[i]]]
       } else {
-        table$addColumnInfo(name = columnName, title = columnName, type = "string")
+        table$addColumnInfo(name = i, title = i, type = "number")
+        var <- dataset[[i]]
       }
+      var <- var[indexes]
+      cols[[i]] <- var
     }
   }
-
-  rows <- list(row = options[["pfrom"]]:options[["pto"]], pred = selection)
-  if (options[["addPredictors"]]) {
-    for (i in modelVars) {
-      var <- if (is.numeric(dataset[[i]])) dataset[[i]] else levels(dataset[[i]])[dataset[[i]]]
-      var <- var[options[["pfrom"]]:options[["pto"]]]
-      rows[[i]] <- var
-    }
-  }
-
-  table$setData(rows)
+  
+  table$setData(cols)
 }
 
 .mlPredictionsAddPredictions <- function(model, dataset, options, jaspResults, ready) {
@@ -295,7 +291,6 @@ is.jaspMachineLearning <- function(x) {
     predictionsColumn[as.numeric(rownames(dataset))] <- .mlPredictionsState(model, dataset, options, jaspResults, ready)
     jaspResults[["predictionsColumn"]] <- createJaspColumn(columnName = options[["predictionsColumn"]])
     jaspResults[["predictionsColumn"]]$dependOn(options = c("predictionsColumn", "predictors", "loadPath", "scaleEqualSD", "addPredictions"))
-    print(predictionsColumn)
     if (inherits(model, "jaspClassification")) jaspResults[["predictionsColumn"]]$setNominal(predictionsColumn)
     if (inherits(model, "jaspRegression")) jaspResults[["predictionsColumn"]]$setScale(predictionsColumn)
   }

@@ -30,7 +30,8 @@ Form
 	{
 		id:										loadPath
 		name:									"loadPath"
-		label:  								qsTr("Trained model")
+		label:									qsTr("Trained model")
+		placeholderText:						qsTr("e.g., location/model.jaspML")
 		filter:									"*.jaspML"
 		save:									true
 		fieldWidth:								180 * preferencesModel.uiScale

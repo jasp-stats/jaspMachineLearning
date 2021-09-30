@@ -279,9 +279,9 @@
   if (options[["savePath"]] != "") {
     modelName <- basename(options[["savePath"]])
     if (options[["saveModel"]]) {
-      regressionTable$addFootnote(gettextf("The fitted model is saved as <i>%1$s</i>.", modelName))
+      regressionTable$addFootnote(gettextf("The trained model is saved as <i>%1$s</i>.", modelName))
     } else {
-      regressionTable$addFootnote(gettext("The fitted model is not saved until 'save model' is enabled."))
+      regressionTable$addFootnote(gettext("The trained model is not saved until 'Save trained model' is checked."))
     }
   }
 

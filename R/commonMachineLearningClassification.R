@@ -153,9 +153,9 @@
   if (options[["savePath"]] != "") {
     modelName <- basename(options[["savePath"]])
     if (options[["saveModel"]]) {
-      classificationTable$addFootnote(gettextf("The fitted model is saved as <i>%1$s</i>.", modelName))
+      classificationTable$addFootnote(gettextf("The trained model is saved as <i>%1$s</i>.", modelName))
     } else {
-      classificationTable$addFootnote(gettext("The fitted model is not saved until 'save model' is enabled."))
+      classificationTable$addFootnote(gettext("The trained model is not saved until 'Save trained model' is checked."))
     }
   }
 
@@ -267,7 +267,7 @@
     model <- classificationResult[["model"]]
     model[["jaspVars"]] <- decodeColNames(options[["predictors"]])
     model[["jaspVersion"]] <- .baseCitation
-    class(model) <- c(class(classificationResult[["model"]]), "jaspRegression", "jaspMachineLearning")
+    class(model) <- c(class(classificationResult[["model"]]), "jaspClassification", "jaspMachineLearning")
     saveRDS(model, file = options[["savePath"]])
   }
 }
