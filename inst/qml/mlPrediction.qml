@@ -30,7 +30,7 @@ Form
 	{
 		id:										loadPath
 		name:									"loadPath"
-		label:  								qsTr("Trained model:")
+		label:  								qsTr("Trained model")
 		filter:									"*.jaspML"
 		save:									true
 		fieldWidth:								180 * preferencesModel.uiScale
@@ -55,7 +55,7 @@ Form
 		}
 	}
 
-	GroupBox
+	Group
 	{
 		title: 									qsTr("Algorithmic Settings")
 
@@ -67,12 +67,13 @@ Form
 		}
 	}
 
-	GroupBox
+	Group
 	{
 		title: 									qsTr("Tables")
 
 		CheckBox
 		{
+			id:									predictionsTable
 			name: 								"predictionsTable"
 			label:				 				"Predictions for new data"
 			checked:							true
@@ -84,8 +85,10 @@ Form
 			}
 		}
 
-		RowLayout
-		{
+		Row
+		{	
+			spacing: 							5 * preferencesModel.uiScale
+			enabled:							predictionsTable.checked
 			
 			IntegerField
 			{

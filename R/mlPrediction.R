@@ -58,26 +58,6 @@ is.jaspMachineLearning <- function(x) {
   gettext("Neural network")
 }
 
-# S3 method to identify the variables used for training the model
-.mlPredictionGetModelVars <- function(model) {
-  UseMethod(".mlPredictionGetModelVars", model)
-}
-.mlPredictionGetModelVars.lda <- function(model) {
-  attr(model[["terms"]], "term.labels")
-}
-.mlPredictionGetModelVars.gbm <- function(model) {
-  attr(model[["Terms"]], "term.labels")
-}
-.mlPredictionGetModelVars.randomForest <- function(model) {
-  rownames(model[["importance"]])
-}
-.mlPredictionGetModelVars.cv.glmnet <- function(model) {
-  rownames(model[["glmnet.fit"]][["beta"]])
-}
-.mlPredictionGetModelVars.nn <- function(model) {
-  model[["model.list"]][["variables"]]
-}
-
 # S3 method to make predictions using the model
 .mlPredictionGetPredictions <- function(model, dataset) {
   UseMethod(".mlPredictionGetPredictions", model)
@@ -154,8 +134,8 @@ is.jaspMachineLearning <- function(x) {
 # also define methods for other objects
 .mlPredictionReady <- function(model, dataset, options) {
   if (!is.null(model)) {
-    modelVars <- .mlPredictionGetModelVars(model)
-    presentVars <- colnames(dataset)
+    modelVars <- model[["jaspVars"]]
+    presentVars <- decodeColNames(colnames(dataset))
     ready <- all(modelVars %in% presentVars)
   } else {
     ready <- FALSE
@@ -206,8 +186,8 @@ is.jaspMachineLearning <- function(x) {
     return()
   }
 
-  modelVars <- .mlPredictionGetModelVars(model)
-  presentVars <- colnames(dataset)
+  modelVars <- model[["jaspVars"]]
+  presentVars <- decodeColNames(colnames(dataset))
   if (!all(modelVars %in% presentVars)) {
     missingVars <- modelVars[which(!(modelVars %in% presentVars))]
     table$addFootnote(gettextf("The trained model is not applied because the the following predictors are missing: <i>%1$s</i>.", paste0(missingVars, collapse = ", ")))
@@ -284,7 +264,7 @@ is.jaspMachineLearning <- function(x) {
 
   predictions <- .mlPredictionsState(model, dataset, options, jaspResults, ready)
   selection <- predictions[options[["pfrom"]]:options[["pto"]]]
-  modelVars <- .mlPredictionGetModelVars(model)
+  modelVars <- model[["jaspVars"]]
 
   if (options[["addPredictors"]]) {
     for (i in 1:length(modelVars)) {
