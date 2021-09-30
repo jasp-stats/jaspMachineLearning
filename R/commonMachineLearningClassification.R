@@ -267,6 +267,7 @@
     model <- classificationResult[["model"]]
     model[["jaspVars"]] <- decodeColNames(options[["predictors"]])
     model[["jaspVersion"]] <- .baseCitation
+    model <- .decodeJaspMLobject(model)
     class(model) <- c(class(classificationResult[["model"]]), "jaspClassification", "jaspMachineLearning")
     saveRDS(model, file = options[["savePath"]])
   }
