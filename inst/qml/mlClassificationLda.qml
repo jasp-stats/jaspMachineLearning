@@ -25,239 +25,205 @@ import "./common" as ML
 
 Form {
 
-    VariablesForm {
-        AvailableVariablesList { name: "allVariablesList" }
-        AssignedVariablesList  { 
-            name: "target"    
-            title: qsTr("Target")         
-            singleVariable: true
+	VariablesForm {
+		AvailableVariablesList { name: "allVariablesList" }
+		AssignedVariablesList  {
+			name: "target"
+			title: qsTr("Target")
+			singleVariable: true
 			allowedColumns: ["nominal", "nominalText", "ordinal"]
-            id: target 
-        }
-        AssignedVariablesList  { 
-            name: "predictors"
-            title: qsTr("Predictors")
-            allowedColumns: ["scale", "ordinal"]
+			id: target
+		}
+		AssignedVariablesList  {
+			name: "predictors"
+			title: qsTr("Predictors")
+			allowedColumns: ["scale", "ordinal"]
 			allowAnalysisOwnComputedColumns: false
-            id: predictors                                        
-        }
-    }
+			id: predictors
+		}
+	}
 
-    ColumnLayout {
+	ColumnLayout {
 
-        GroupBox {
-            title: qsTr("Tables")
+		GroupBox {
+			title: qsTr("Tables")
 
-            CheckBox { 
-                text: qsTr("Confusion matrix") 
-                name: "confusionTable"
-                checked: true
+			CheckBox {
+				text: qsTr("Confusion matrix")
+				name: "confusionTable"
+				checked: true
 
-                CheckBox { 
-                    text: qsTr("Display proportions")
-                    name: "confusionProportions"
-                } 
-            }
+				CheckBox {
+					text: qsTr("Display proportions")
+					name: "confusionProportions"
+				}
+			}
 
-            CheckBox {
-                text: qsTr("Class proportions")
-                name: "classProportionsTable"
-            }  
+			CheckBox {
+				text: qsTr("Class proportions")
+				name: "classProportionsTable"
+			}
 
-            CheckBox {
-                text: qsTr("Evaluation metrics")
-                name: "validationMeasures"
-            }  
+			CheckBox {
+				text: qsTr("Evaluation metrics")
+				name: "validationMeasures"
+			}
 
-            CheckBox { 
-                name: "coefficientsTable"
-                text: qsTr("Coefficients")       
-            }
+			CheckBox {
+				name: "coefficientsTable"
+				text: qsTr("Coefficients")
+			}
 
-            CheckBox { 
-                name: "priorTable"
-                text: qsTr("Prior and posterior probabilities")
-            }
+			CheckBox {
+				name: "priorTable"
+				text: qsTr("Prior and posterior probabilities")
+			}
 
-            CheckBox { 
-                name: "meanTable"
-                text: qsTr("Class means training data")             
-            }
-        }
+			CheckBox {
+				name: "meanTable"
+				text: qsTr("Class means training data")
+			}
+		}
 
-        Divider { }
+		GroupBox {
+			title: qsTr("Assumption Checks")
 
-        GroupBox {
-            title: qsTr("Assumption Checks")
+			CheckBox {
+				name: "manovaTable"
+				text: qsTr("Equality of class means")
+			}
 
-            CheckBox { 
-                name: "manovaTable"
-                text: qsTr("Equality of class means")             
-            }
+			CheckBox {
+				name: "boxTest"
+				text: qsTr("Equality of covariance matrices")
+			}
 
-            CheckBox { 
-                name: "boxTest"
-                text: qsTr("Equality of covariance matrices")     
-            }
+			CheckBox {
+				name: "multicolTable"
+				text: qsTr("Multicollinearity")
+			}
+		}
+	}
 
-            CheckBox { 
-                name: "multicolTable"
-                text: qsTr("Multicollinearity")                   
-            }
-        }
-    }
+	GroupBox {
+		title: qsTr("Plots")
 
-    GroupBox {
-        title: qsTr("Plots")
+		CheckBox {
+			text: qsTr("Data split")
+			name: "dataSplitPlot"
+			checked: true
+		}
 
-        CheckBox { 
-            text: qsTr("Data split") 
-            name: "dataSplitPlot"
-            checked: true
-        }
+		CheckBox {
+			name: "rocCurve"
+			text: qsTr("ROC curves")
+		}
 
-        CheckBox { 
-            name: "rocCurve"
-            text: qsTr("ROC curves") 
-        }
+		CheckBox {
+			name: "andrewsCurve"
+			text: qsTr("Andrews curves")
+		}
 
-        CheckBox { 
-            name: "andrewsCurve"
-            text: qsTr("Andrews curves") 
-        }
+		CheckBox {
+			name: "matrixplot"
+			text: qsTr("Linear discriminant matrix")
 
-        CheckBox { 
-            name: "matrixplot"
-            text: qsTr("Linear discriminant matrix")
+			RowLayout {
 
-            RowLayout {
+				CheckBox {
+					name: "plotDensities"
+					text:qsTr("Densities")
+					checked: true
+				}
 
-                CheckBox { 
-                    name: "plotDensities"
-                    text:qsTr("Densities")
-                    checked: true
-                }
+				CheckBox {
+					name: "plotStatistics"
+					text: qsTr("Scatter plots")
+					checked: true
+				}
+			}
+		}
 
-                CheckBox { 
-                    name: "plotStatistics"
-                    text: qsTr("Scatter plots")
-                    checked: true
-                }
-            }
-        }
+		CheckBox {
+			name: "decisionBoundary"
+			text: qsTr("Decision boundary matrix")
 
-        CheckBox { 
-            name: "decisionBoundary"
-            text: qsTr("Decision boundary matrix")
+			RowLayout {
 
-            RowLayout {
+				CheckBox {
+					name: "plotLegend"
+					text: qsTr("Legend")
+					checked: true
+				}
 
-                CheckBox {
-                    name: "plotLegend"
-                    text: qsTr("Legend")
-                    checked: true 
-                }
+				CheckBox {
+					name: "plotPoints"
+					text: qsTr("Points")
+					checked: true
+				}
+			}
+		}
+	}
 
-                CheckBox {
-                    name: "plotPoints"
-                    text: qsTr("Points")
-                    checked: true 
-                }
-            }
-        }
-    }
+	ML.ExportResults {
+		enabled: predictors.count > 1 && target.count > 0
+	}
 
-    ML.DataSplit {
-        leaveOneOutVisible: false; 
-        kFoldsVisible: false
-        trainingValidationSplit: false
-    }
+	ML.DataSplit {
+		leaveOneOutVisible: false;
+		kFoldsVisible: false
+		trainingValidationSplit: false
+	}
 
-    Section {
-        title: qsTr("Training Parameters")
+	Section {
+		title: qsTr("Training Parameters")
 
-        GroupBox {
-            title: qsTr("Algorithmic Settings")
+		GroupBox {
+			title: qsTr("Algorithmic Settings")
 
-            DropDown {
-                name: "estimationMethod"
-                indexDefaultValue: 0
-                label: qsTr("Estimation method:")
-                values:
-                [
-                    { label: "Moment", value: "moment"},
-                    { label: "MLE", value: "mle"},
-                    { label: "MVE", value: "covMve"},
-                    { label: "t", value: "t"},
-                ]
-            }
+			DropDown {
+				name: "estimationMethod"
+				indexDefaultValue: 0
+				label: qsTr("Estimation method:")
+				values:
+					[
+					{ label: "Moment", value: "moment"},
+					{ label: "MLE", value: "mle"},
+					{ label: "MVE", value: "covMve"},
+					{ label: "t", value: "t"},
+				]
+			}
 
-            CheckBox { 
-                text: qsTr("Scale predictors") 
-                name: "scaleEqualSD"
-                checked: true
-            }
+			CheckBox {
+				text: qsTr("Scale predictors")
+				name: "scaleEqualSD"
+				checked: true
+			}
 
-            CheckBox { 
-                name: "seedBox"
-                text: qsTr("Set seed: ")
-                childrenOnSameRow: true
+			CheckBox {
+				name: "seedBox"
+				text: qsTr("Set seed: ")
+				childrenOnSameRow: true
 
-                DoubleField  { 
-                    name: "seed"
-                    defaultValue: 1
-                    min: -999999
-                    max: 999999
-                    fieldWidth: 60 
-                } 
-            }
-        }
+				DoubleField  {
+					name: "seed"
+					defaultValue: 1
+					min: -999999
+					max: 999999
+					fieldWidth: 60
+				}
+			}
+		}
 
-        RadioButtonGroup {
-            name: "modelOpt"
-            visible: false
+		RadioButtonGroup {
+			name: "modelOpt"
+			visible: false
 
-            RadioButton {                    
-                name: "optimizationManual" 
-                checked: true
-            }
-        }
-    }
-
-    Item {
-        Layout.preferredHeight: 	addClasses.height*2
-        Layout.fillWidth: 	true
-        Layout.columnSpan: 2
-
-        CheckBox {
-            id: addClasses
-            name: "addClasses"
-            text: qsTr("Add predicted classes to data")
-            enabled:    predictors.count > 1 && target.count > 0
-            anchors.top: parent.top
-
-            ComputedColumnField { 
-                id: 		classColumn
-                name: 		"classColumn"
-				text: 		qsTr("Column name: ")
-                fieldWidth: 120
-                visible:    addClasses.checked
-            }
-
-        }
-
-        Button 
-        {
-            id: 			saveModel
-            anchors.right: 	parent.right
-            text: 			qsTr("<b>Save Model</b>")
-            enabled: 		predictors.count > 0 && target.count > 0
-            onClicked:      
-            {
-                
-             }
-            debug: true	
-        }
-    }
+			RadioButton {
+				name: "optimizationManual"
+				checked: true
+			}
+		}
+	}
 }
 

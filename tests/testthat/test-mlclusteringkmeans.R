@@ -1,8 +1,8 @@
 context("Machine Learning K-Means Clustering")
 
 options <- jaspTools::analysisOptions("mlClusteringKMeans")
-options$addClusters <- FALSE
-options$clusterColumn <- ""
+options$addPredictions <- FALSE
+options$predictionsColumn <- ""
 options$clusterEvaluationMetrics <- TRUE
 options$modelOpt <- "validationOptimized"
 options$plot2dCluster <- TRUE

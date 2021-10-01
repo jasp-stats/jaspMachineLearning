@@ -25,215 +25,183 @@ import "./common" as ML
 
 Form {
 
-    VariablesForm {
-        AvailableVariablesList { name: "allVariablesList" }
-        AssignedVariablesList  { 
-            id: target
-            name: "target"     
-            title: qsTr("Target")         
-            singleVariable: true
-            allowedColumns: ["scale"]  
-        }
-        AssignedVariablesList { 
-            id: predictors
-            name: "predictors" 
-            title: qsTr("Predictors")
+	VariablesForm {
+		AvailableVariablesList { name: "allVariablesList" }
+		AssignedVariablesList  {
+			id: target
+			name: "target"
+			title: qsTr("Target")
+			singleVariable: true
+			allowedColumns: ["scale"]
+		}
+		AssignedVariablesList {
+			id: predictors
+			name: "predictors"
+			title: qsTr("Predictors")
 			allowedColumns: ["scale", "nominal", "nominalText", "ordinal"]
 			allowAnalysisOwnComputedColumns: false
-        }
-    }
+		}
+	}
 
-    GroupBox {
-        title: qsTr("Tables")
+	GroupBox {
+		title: qsTr("Tables")
 
-        CheckBox {
-            text: qsTr("Evaluation metrics")
-            name: "validationMeasures"
-        }  
+		CheckBox {
+			text: qsTr("Evaluation metrics")
+			name: "validationMeasures"
+		}
 
-        CheckBox { 
-            name: "classBoostRelInfTable"
-            text: qsTr("Relative influence")            
-        }
-    }
+		CheckBox {
+			name: "classBoostRelInfTable"
+			text: qsTr("Relative influence")
+		}
+	}
 
-    GroupBox {
-        title: qsTr("Plots")
+	GroupBox {
+		title: qsTr("Plots")
 
-        CheckBox { 
-            text: qsTr("Data split") 
-            name: "dataSplitPlot"
-            checked: true
-        }
+		CheckBox {
+			text: qsTr("Data split")
+			name: "dataSplitPlot"
+			checked: true
+		}
 
-        CheckBox { 
-            name: "plotOOBChangeDev"
-            text: qsTr("Out-of-bag improvement")      
-        }
+		CheckBox {
+			name: "plotOOBChangeDev"
+			text: qsTr("Out-of-bag improvement")
+		}
 
-        CheckBox { 
-            text: qsTr("Predictive performance") 
-            name: "predictedPerformancePlot"
-        }
+		CheckBox {
+			text: qsTr("Predictive performance")
+			name: "predictedPerformancePlot"
+		}
 
-        CheckBox { 
-            name: "plotDeviance"
-            text: qsTr("Deviance")             
-        }
+		CheckBox {
+			name: "plotDeviance"
+			text: qsTr("Deviance")
+		}
 
-        CheckBox { 
-            name: "plotRelInf"
-            text: qsTr("Relative influence")   
-        }
-    }
+		CheckBox {
+			name: "plotRelInf"
+			text: qsTr("Relative influence")
+		}
+	}
 
-    ML.DataSplit {
-        leaveOneOutVisible: false
-        trainingValidationSplit: optimizeModel.checked
-    }
+	ML.ExportResults {
+		enabled: predictors.count > 1 && target.count > 0
+	}
 
-    Section {
-        title: qsTr("Training Parameters")
-  
-        GroupBox {
-            title: qsTr("Algorithmic Settings")
+	ML.DataSplit {
+		leaveOneOutVisible: false
+		trainingValidationSplit: optimizeModel.checked
+	}
 
-            DoubleField  { 
-                name: "shrinkage"
-                text: qsTr("Shrinkage:")                    
-                defaultValue: 0.1 
-                min: 0
-                max: 1     
-                fieldWidth: 60 
-            }
+	Section {
+		title: qsTr("Training Parameters")
 
-            IntegerField { 
-                name: "intDepth" 
-                text: qsTr("Interaction depth:")            
-                defaultValue: 1   
-                min: 1
-                max: 99    
-                fieldWidth: 60 
-            }
+		GroupBox {
+			title: qsTr("Algorithmic Settings")
 
-            IntegerField { 
-                name: "nNode"    
-                text: qsTr("Min. observations in node:")
-                defaultValue: 10  
-                min: 1
-                max: 50000
-                fieldWidth: 60 
-            }
+			DoubleField  {
+				name: "shrinkage"
+				text: qsTr("Shrinkage:")
+				defaultValue: 0.1
+				min: 0
+				max: 1
+				fieldWidth: 60
+			}
 
-            PercentField { 
-                name: "bagFrac"  
-                text: qsTr("Training data used per tree:")  
-                defaultValue: 50                                        
-            }
+			IntegerField {
+				name: "intDepth"
+				text: qsTr("Interaction depth:")
+				defaultValue: 1
+				min: 1
+				max: 99
+				fieldWidth: 60
+			}
 
-            DropDown {
-                    name: "distance"
-                    indexDefaultValue: 0
-                    label: qsTr("Loss function:")
-                    
-                    values:
-                    [
-                        { label: "Gaussian", value: "gaussian"},
-                        { label: "Laplace", value: "laplace"},
-                        { label: "t", value: "tdist"}
-                    ]
-            }
+			IntegerField {
+				name: "nNode"
+				text: qsTr("Min. observations in node:")
+				defaultValue: 10
+				min: 1
+				max: 50000
+				fieldWidth: 60
+			}
 
-            CheckBox { 
-                text: qsTr("Scale variables") 
-                name: "scaleEqualSD"
-                checked: true
-            }
+			PercentField {
+				name: "bagFrac"
+				text: qsTr("Training data used per tree:")
+				defaultValue: 50
+			}
 
-            CheckBox { 
-                name: "seedBox"
-                text: qsTr("Set seed:")
-                childrenOnSameRow: true
+			DropDown {
+				name: "distance"
+				indexDefaultValue: 0
+				label: qsTr("Loss function:")
 
-                DoubleField  { 
-                    name: "seed"
-                    defaultValue: 1
-                    min: -999999
-                    max: 999999
-                    fieldWidth: 60 
-                }
-            }
-        }
+				values:
+					[
+					{ label: "Gaussian", value: "gaussian"},
+					{ label: "Laplace", value: "laplace"},
+					{ label: "t", value: "tdist"}
+				]
+			}
 
-        RadioButtonGroup {
-            title: qsTr("Number of Trees")
-            name: "modelOpt"
+			CheckBox {
+				text: qsTr("Scale variables")
+				name: "scaleEqualSD"
+				checked: true
+			}
 
-            RadioButton { 
-                text: qsTr("Fixed")                     
-                name: "optimizationManual" 
+			CheckBox {
+				name: "seedBox"
+				text: qsTr("Set seed:")
+				childrenOnSameRow: true
 
-                IntegerField { 
-                    name: "noOfTrees"
-                    text: qsTr("Trees:")
-                    defaultValue: 100
+				DoubleField  {
+					name: "seed"
+					defaultValue: 1
+					min: -999999
+					max: 999999
+					fieldWidth: 60
+				}
+			}
+		}
+
+		RadioButtonGroup {
+			title: qsTr("Number of Trees")
+			name: "modelOpt"
+
+			RadioButton {
+				text: qsTr("Fixed")
+				name: "optimizationManual"
+
+				IntegerField {
+					name: "noOfTrees"
+					text: qsTr("Trees:")
+					defaultValue: 100
 					min: 1
-                    max: 500000
-                    fieldWidth: 60
-                }
-            }
-            
-            RadioButton { 
-                id: optimizeModel
-                text: qsTr("Optimized")
-                name: "optimizationOOB"
-                checked: true 
+					max: 500000
+					fieldWidth: 60
+				}
+			}
 
-                IntegerField { 
-                    name: "maxTrees"
-                    text: qsTr("Max. trees:") 
-                    defaultValue: 100
+			RadioButton {
+				id: optimizeModel
+				text: qsTr("Optimized")
+				name: "optimizationOOB"
+				checked: true
+
+				IntegerField {
+					name: "maxTrees"
+					text: qsTr("Max. trees:")
+					defaultValue: 100
 					min: 3
-                    max: 500000
-                    fieldWidth: 60
-                }
-            }
-        }
-    }
-
-    Item {
-        Layout.preferredHeight: addValues.height*2
-        Layout.fillWidth: 	true
-        Layout.columnSpan: 2
-
-        CheckBox {
-            id: addValues
-            name: "addValues"
-            text: qsTr("Add predicted values to data")
-            enabled:    predictors.count > 1 && target.count > 0
-            anchors.top: parent.top
-
-            ComputedColumnField { 
-                id: 		valueColumn
-                name: 		"valueColumn"
-				text: 		qsTr("Column name: ")
-                fieldWidth: 120
-                visible:    addValues.checked
-            }
-
-        }
-
-        Button 
-        {
-            id: 			saveModel
-            anchors.right: 	parent.right
-            text: 			qsTr("<b>Save Model</b>")
-            enabled: 		predictors.count > 1 && target.count > 0
-            onClicked:      
-            {
-
-             }
-            debug: true	
-        }
-    }
+					max: 500000
+					fieldWidth: 60
+				}
+			}
+		}
+	}
 }

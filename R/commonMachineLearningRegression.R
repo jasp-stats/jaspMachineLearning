@@ -218,7 +218,7 @@
                                           "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
                                           "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "maxTrees",
                                           "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac", "intDepth", "nNode", "distance",
-                                          "testSetIndicatorVariable", "testSetIndicator", "validationDataManual","holdoutData", "testDataManual",
+                                          "testSetIndicatorVariable", "testSetIndicator", "validationDataManual","holdoutData", "testDataManual", "saveModel", "savePath",
 										  "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"))
 
   # Add analysis-specific columns
@@ -275,6 +275,15 @@
   requiredVars <- if(type == "knn" || type == "neuralnet") 1L else 2L
   if(!ready)
     regressionTable$addFootnote(gettextf("Please provide a target variable and at least %d predictor variable(s).", requiredVars))
+
+  if (options[["savePath"]] != "") {
+    modelName <- basename(options[["savePath"]])
+    if (options[["saveModel"]]) {
+      regressionTable$addFootnote(gettextf("The trained model is saved as <i>%1$s</i>.", modelName))
+    } else {
+      regressionTable$addFootnote(gettext("The trained model is not saved until 'Save trained model' is checked."))
+    }
+  }
 
   jaspResults[["regressionTable"]] <- regressionTable
 
@@ -384,6 +393,15 @@
     if (options[["modelOpt"]] != "optimizationManual")
       row <- cbind(row, nvalid = nValid, validMSE = regressionResult[["validMSE"]])
     regressionTable$addRows(row)
+  }
+
+  if (options[["saveModel"]] && options[["savePath"]] != "") {
+    model <- regressionResult[["model"]]
+    model[["jaspVars"]] <- decodeColNames(options[["predictors"]])
+    model[["jaspVersion"]] <- .baseCitation
+    model <- .decodeJaspMLobject(model)
+    class(model) <- c(class(regressionResult[["model"]]), "jaspRegression", "jaspMachineLearning")
+    saveRDS(model, file = options[["savePath"]])
   }
 }
 
@@ -626,16 +644,16 @@
 .scaleNumericData.default <- function(x, center = TRUE, scale = TRUE) return(x)
 
 .regressionAddValuesToData <- function(dataset, options, jaspResults, ready){
-  if(!ready || !options[["addValues"]] || options[["valueColumn"]] == "")  return()
+  if(!ready || !options[["addPredictions"]] || options[["predictionsColumn"]] == "")  return()
 
   regressionResult <- jaspResults[["regressionResult"]]$object
 
-  if(is.null(jaspResults[["valueColumn"]])){
+  if(is.null(jaspResults[["predictionsColumn"]])){
     predictions <- regressionResult[["values"]]
-    valueColumn <- rep(NA, max(as.numeric(rownames(dataset))))
-    valueColumn[as.numeric(rownames(dataset))] <- predictions
-    jaspResults[["valueColumn"]] <- createJaspColumn(columnName=options[["valueColumn"]])
-    jaspResults[["valueColumn"]]$dependOn(options = c("valueColumn", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "maxTrees",
+    predictionsColumn <- rep(NA, max(as.numeric(rownames(dataset))))
+    predictionsColumn[as.numeric(rownames(dataset))] <- predictions
+    jaspResults[["predictionsColumn"]] <- createJaspColumn(columnName=options[["predictionsColumn"]])
+    jaspResults[["predictionsColumn"]]$dependOn(options = c("predictionsColumn", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "maxTrees",
                                                               "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
                                                               "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac",
                                                               "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",

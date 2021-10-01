@@ -1,12 +1,14 @@
 context("Machine Learning Boosting Classification")
 
 options <- jaspTools::analysisOptions("mlClassificationBoosting")
-options$addClasses <- FALSE
+options$addPredictions <- FALSE
 options$addIndicator <- FALSE
 options$andrewsCurve <- TRUE
 options$classBoostRelInfTable <- TRUE
-options$classColumn <- ""
+options$predictionsColumn <- ""
 options$classProportionsTable <- TRUE
+options$savePath <- ""
+options$saveModel <- FALSE
 options$holdoutData <- "holdoutManual"
 options$modelOpt <- "optimizationOOB"
 options$modelValid <- "validationManual"

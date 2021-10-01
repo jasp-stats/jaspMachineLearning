@@ -1,8 +1,8 @@
 context("Machine Learning Hierarchical Clustering")
 
 options <- jaspTools::analysisOptions("mlClusteringHierarchical")
-options$addClusters <- FALSE
-options$clusterColumn <- ""
+options$addPredictions <- FALSE
+options$predictionsColumn <- ""
 options$clusterEvaluationMetrics <- TRUE
 options$dendrogram <- TRUE
 options$modelOpt <- "validationOptimized"
@@ -77,8 +77,8 @@ test_that("t-SNE Cluster Plot matches", {
 
 # Ward.D linkage
 options <- jaspTools::analysisOptions("mlClusteringHierarchical")
-options$addClusters <- FALSE
-options$clusterColumn <- ""
+options$addPredictions <- FALSE
+options$predictionsColumn <- ""
 options$clusterEvaluationMetrics <- TRUE
 options$linkage <- "ward.D"
 options$modelOpt <- "validationOptimized"
@@ -142,8 +142,8 @@ test_that("Hierarchical Clustering table results match", {
 
 # ward.D2 linkage
 options <- jaspTools::analysisOptions("mlClusteringHierarchical")
-options$addClusters <- FALSE
-options$clusterColumn <- ""
+options$addPredictions <- FALSE
+options$predictionsColumn <- ""
 options$clusterEvaluationMetrics <- TRUE
 options$linkage <- "ward.D"
 options$modelOpt <- "validationOptimized"
@@ -207,8 +207,8 @@ test_that("Hierarchical Clustering table results match", {
 
 # Median linkage
 options <- jaspTools::analysisOptions("mlClusteringHierarchical")
-options$addClusters <- FALSE
-options$clusterColumn <- ""
+options$addPredictions <- FALSE
+options$predictionsColumn <- ""
 options$clusterEvaluationMetrics <- TRUE
 options$linkage <- "median"
 options$modelOpt <- "validationOptimized"
@@ -256,8 +256,8 @@ test_that("Hierarchical Clustering table results match", {
 
 # McQuitty linkage
 options <- jaspTools::analysisOptions("mlClusteringHierarchical")
-options$addClusters <- FALSE
-options$clusterColumn <- ""
+options$addPredictions <- FALSE
+options$predictionsColumn <- ""
 options$clusterEvaluationMetrics <- TRUE
 options$linkage <- "mcquitty"
 options$modelOpt <- "validationOptimized"

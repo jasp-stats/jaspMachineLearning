@@ -147,6 +147,7 @@ mlClassificationRandomForest <- function(jaspResults, dataset, options, ...) {
 
   # Create results object
   classificationResult <- list()
+  classificationResult[["model"]]           	<- rfit_test
   classificationResult[["rfit_test"]]           <- rfit_test
   classificationResult[["rfit_train"]]          <- rfit_train
   classificationResult[["noOfTrees"]]           <- noOfTrees

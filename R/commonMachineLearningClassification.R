@@ -99,7 +99,7 @@
   classificationTable$dependOn(options = c("noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "validationDataManual",
                                           "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
                                           "estimationMethod", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode",
-                                          "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual",
+                                          "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "saveModel", "savePath",
 										  "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"))
 
   # Add analysis-specific columns
@@ -149,6 +149,15 @@
   requiredVars <- if (type == "knn" || type == "neuralnet") 1L else 2L
   if(!ready)
     classificationTable$addFootnote(gettextf("Please provide a target variable and at least %i predictor variable(s).", requiredVars))
+  
+  if (options[["savePath"]] != "") {
+    modelName <- basename(options[["savePath"]])
+    if (options[["saveModel"]]) {
+      classificationTable$addFootnote(gettextf("The trained model is saved as <i>%1$s</i>.", modelName))
+    } else {
+      classificationTable$addFootnote(gettext("The trained model is not saved until 'Save trained model' is checked."))
+    }
+  }
 
   jaspResults[["classificationTable"]] <- classificationTable
 
@@ -252,6 +261,15 @@
     if (options[["modelOpt"]] != "optimizationManual")
       row <- cbind(row, nvalid = nValid, validAcc = classificationResult[["validAcc"]])
     classificationTable$addRows(row)
+  }
+
+  if (options[["saveModel"]] && options[["savePath"]] != "") {
+    model <- classificationResult[["model"]]
+    model[["jaspVars"]] <- decodeColNames(options[["predictors"]])
+    model[["jaspVersion"]] <- .baseCitation
+    model <- .decodeJaspMLobject(model)
+    class(model) <- c(class(classificationResult[["model"]]), "jaspClassification", "jaspMachineLearning")
+    saveRDS(model, file = options[["savePath"]])
   }
 }
 
@@ -881,26 +899,26 @@
 }
 
 .classificationAddClassesToData <- function(dataset, options, jaspResults, ready){
-  if(!ready || !options[["addClasses"]] || options[["classColumn"]] == "")  return()
+  if(!ready || !options[["addPredictions"]] || options[["predictionsColumn"]] == "")  return()
 
   classificationResult <- jaspResults[["classificationResult"]]$object
 
-  if(is.null(jaspResults[["classColumn"]])){
+  if(is.null(jaspResults[["predictionsColumn"]])){
     predictions <- as.character(classificationResult[["classes"]])
-    classColumn <- rep(NA, max(as.numeric(rownames(dataset))))
-    classColumn[as.numeric(rownames(dataset))] <- predictions
-    classColumn <- factor(classColumn)
-    jaspResults[["classColumn"]] <- createJaspColumn(columnName=options[["classColumn"]])
-    jaspResults[["classColumn"]]$dependOn(options = c("classColumn", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
+    predictionsColumn <- rep(NA, max(as.numeric(rownames(dataset))))
+    predictionsColumn[as.numeric(rownames(dataset))] <- predictions
+    predictionsColumn <- factor(predictionsColumn)
+    jaspResults[["predictionsColumn"]] <- createJaspColumn(columnName=options[["predictionsColumn"]])
+    jaspResults[["predictionsColumn"]]$dependOn(options = c("predictionsColumn", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
                                                             "target", "predictors", "seed", "seedBox", "modelValid", "maxK", "noOfFolds", "modelValid", "holdoutData", "testDataManual",
                                                             "estimationMethod", "shrinkage", "intDepth", "nNode", "validationDataManual", "testSetIndicatorVariable", "testSetIndicator",
 															"threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"))
 
     #make sure to create to classification column with the same type as the target!
-    if(.columnIsScale(options$target))       jaspResults[["classColumn"]]$setScale(classColumn)
-    if(.columnIsOrdinal(options$target))     jaspResults[["classColumn"]]$setOrdinal(classColumn)
-    if(.columnIsNominal(options$target))     jaspResults[["classColumn"]]$setNominal(classColumn)
-    if(.columnIsNominalText(options$target)) jaspResults[["classColumn"]]$setNominalText(classColumn)
+    if(.columnIsScale(options$target))       jaspResults[["predictionsColumn"]]$setScale(predictionsColumn)
+    if(.columnIsOrdinal(options$target))     jaspResults[["predictionsColumn"]]$setOrdinal(predictionsColumn)
+    if(.columnIsNominal(options$target))     jaspResults[["predictionsColumn"]]$setNominal(predictionsColumn)
+    if(.columnIsNominalText(options$target)) jaspResults[["predictionsColumn"]]$setNominalText(predictionsColumn)
   }
 }
 

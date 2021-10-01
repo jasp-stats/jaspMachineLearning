@@ -4,7 +4,7 @@ Explore the relation between variables using data-driven methods for regression,
 
 ## Core Functionality
 
-The Machine Learning module bundles several `R` packages for machine learning into a general interface for training a predictive model and assessing its performance on holdout data. The module offers a variety of supervised an unsupervised learning methods whose parameters can be adjusted. Moreover, the module facilitates different data splitting methods for dividing data into a training, testing, and validation set.
+The Machine Learning module bundles several `R` packages for machine learning into a general interface for training a predictive model, assessing its performance on holdout data, and predicting new data. The module offers a variety of supervised and unsupervised learning methods whose parameters can be adjusted or optimized. Moreover, the module facilitates different data splitting methods for dividing data into a training, testing, and validation set.
 
 ## Module Structure
 
