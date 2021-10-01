@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 University of Amsterdam
+# Copyright (C) 2013-2021 University of Amsterdam
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,191 +18,145 @@
 mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
 
   # Preparatory work
-  dataset <- .readDataClusteringAnalyses(dataset, options)
-  .errorHandlingClusteringAnalyses(dataset, options, type = "hierarchical")
+  dataset <- .mlClusteringReadData(dataset, options)
+  .mlClusteringErrorHandling(dataset, options, type = "hierarchical")
 
   # Check if analysis is ready to run
-  ready  <- .clusterAnalysesReady(options)
+  ready <- .mlClusteringReady(options)
 
   # Compute results and create the model summary table
-  .clusteringTable(dataset, options, jaspResults, ready, position = 1, type = "hierarchical")
+  .mlClusteringTableSummary(dataset, options, jaspResults, ready, position = 1, type = "hierarchical")
 
   # If the user wants to add the clusters to the data set
-  .clusteringAddClustersToData(dataset, options, jaspResults, ready)
+  .mlClusteringAddPredictionsToData(dataset, options, jaspResults, ready)
 
   # Create the cluster information table
-  .clusterInformationTable(options, jaspResults, ready, position = 2, type = "hierarchical")
+  .mlClusteringTableInformation(options, jaspResults, ready, position = 2, type = "hierarchical")
 
   # Create the cluster means table
-  .clusterMeansTable(dataset, options, jaspResults, ready, position = 3)
+  .mlClusteringTableMeans(dataset, options, jaspResults, ready, position = 3)
 
   # Create the cluster evaluation metrics table
-  .clusterEvaluationMetrics(dataset, options, jaspResults, ready, position = 4)
+  .mlClusteringTableMetrics(dataset, options, jaspResults, ready, position = 4)
 
   # Create the within sum of squares plot
-  .elbowCurvePlot(dataset, options, jaspResults, ready, position = 5)
+  .mlClusteringPlotElbow(dataset, options, jaspResults, ready, position = 5)
 
   # Create dendrogram
-  .hierarchicalClusteringDendogram(dataset, options, jaspResults, ready, position = 6)
+  .mlClusteringHierarchicalDendogram(dataset, options, jaspResults, ready, position = 6)
 
   # Create the cluster means plot
-  .clusterMeansPlot(dataset, options, jaspResults, ready, position = 7)
+  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 7)
 
   # Create the cluster densities plot
-  .clusterDensitiesPlot(dataset, options, jaspResults, ready, position = 8)
+  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 8)
 
   # Create the cluster plot
-  .tsneClusterPlot(dataset, options, jaspResults, ready, position = 9, type = "hierarchical")
-
+  .mlClusteringPlotTsne(dataset, options, jaspResults, ready, position = 9, type = "hierarchical")
 }
 
-.hierarchicalClustering <- function(dataset, options, jaspResults){
-
-  if(options[["modelOpt"]] == "validationManual"){
-
+.hierarchicalClustering <- function(dataset, options, jaspResults) {
+  if (options[["modelOpt"]] == "validationManual") {
     if (options[["distance"]] == "Pearson correlation") {
       distances <- as.dist(1 - cor(t(dataset[, options[["predictors"]]]), method = "pearson"))
       distances[is.na(distances)] <- 1 # We impute the missing correlations with a 1, as 1 - 1 = 0
-      hfit <- cutree(hclust(distances, method = options[["linkage"]]), k = options[['noOfClusters']])
+      fit <- cutree(hclust(distances, method = options[["linkage"]]), k = options[["noOfClusters"]])
     } else {
       distances <- dist(dataset[, options[["predictors"]]])
-      hfit <- cutree(hclust(distances, method = options[["linkage"]]), k = options[['noOfClusters']])
+      fit <- cutree(hclust(distances, method = options[["linkage"]]), k = options[["noOfClusters"]])
     }
-
-    clusters <- options[['noOfClusters']]
-
+    clusters <- options[["noOfClusters"]]
   } else {
-
-    avg_silh <- numeric(options[["maxClusters"]] - 1)
+    avgSilh <- numeric(options[["maxClusters"]] - 1)
     wssStore <- numeric(options[["maxClusters"]] - 1)
     clusterRange <- 2:options[["maxClusters"]]
-    aicStore <-  numeric(options[["maxClusters"]] - 1)
-    bicStore <-  numeric(options[["maxClusters"]] - 1)
-
+    aicStore <- numeric(options[["maxClusters"]] - 1)
+    bicStore <- numeric(options[["maxClusters"]] - 1)
     startProgressbar(length(clusterRange))
-
-    for (i in clusterRange){
-
-      if(options[["distance"]] == "Pearson correlation") {
+    for (i in clusterRange) {
+      if (options[["distance"]] == "Pearson correlation") {
         distances <- as.dist(1 - cor(t(dataset[, options[["predictors"]]]), method = "pearson"))
         distances[is.na(distances)] <- 1 # We impute the missing correlations with a 1, as 1 - 1 = 0
-        hfit_tmp <- cutree(hclust(distances, method = options[["linkage"]]), k = i)
+        fit <- cutree(hclust(distances, method = options[["linkage"]]), k = i)
       } else {
         distances <- dist(dataset[, options[["predictors"]]])
-        hfit_tmp <- cutree(hclust(distances, method = options[["linkage"]]), k = i)
+        fit <- cutree(hclust(distances, method = options[["linkage"]]), k = i)
       }
-      silh <- summary(cluster::silhouette(hfit_tmp, distances))
-      avg_silh[i - 1] <- silh[["avg.width"]]
-
+      silh <- summary(cluster::silhouette(fit, distances))
+      avgSilh[i - 1] <- silh[["avg.width"]]
       m <- dim(as.data.frame(dataset[, options[["predictors"]]]))[2]
-
-      wss <- numeric(length(table(hfit_tmp)))
-      for (j in 1:length(table(hfit_tmp))) {
-        if (m == 1) {
-          wss[j] <- .ss(dataset[, options[["predictors"]]][hfit_tmp == j])
-        } else {
-          wss[j] <- .ss(dataset[, options[["predictors"]]][hfit_tmp == j,])
-        }
+      wss <- numeric(length(table(fit)))
+      for (j in 1:length(table(fit))) {
+        wss[j] <- if (m == 1) .ss(dataset[, options[["predictors"]]][fit == j]) else .ss(dataset[, options[["predictors"]]][fit == j, ])
       }
       wssStore[i - 1] <- sum(wss)
-
-      n = length(hfit_tmp)
-      k = length(table(hfit_tmp))
-      D = sum(wss)
-      aic <- D + 2*m*k
-      bic <- D + log(n)*m*k
-      aicStore[i - 1] <- D + 2*m*k
-      bicStore[i - 1] <- D + log(n)*m*k
-
+      aicStore[i - 1] <- sum(wss) + 2 * m * length(table(fit))
+      bicStore[i - 1] <- sum(wss) + log(length(fit)) * m * length(table(fit))
       progressbarTick()
     }
-
-    clusters <- base::switch(options[["optimizationCriterion"]],
-                              "validationSilh" = clusterRange[which.max(avg_silh)],
-                              "validationAIC" = clusterRange[which.min(aicStore)],
-                              "validationBIC" = clusterRange[which.min(bicStore)])
-
-    hfit <- cutree(hclust(distances, method = options[["linkage"]]), k = clusters)
-
+    clusters <- switch(options[["optimizationCriterion"]],
+      "validationSilh" = clusterRange[which.max(avgSilh)],
+      "validationAIC" = clusterRange[which.min(aicStore)],
+      "validationBIC" = clusterRange[which.min(bicStore)]
+    )
+    fit <- cutree(hclust(distances, method = options[["linkage"]]), k = clusters)
   }
-
-  pred.values <- hfit
-  clusters <- clusters
-  size <- as.data.frame(table(hfit))[,2]
-
+  size <- as.data.frame(table(fit))[, 2]
   m <- dim(as.data.frame(dataset[, options[["predictors"]]]))[2]
-
-  wss <- numeric(length(table(hfit)))
-  for (j in 1:length(table(hfit))) {
-    if (m == 1) {
-      wss[j] <- .ss(dataset[, options[["predictors"]]][hfit == j])
-    } else {
-      wss[j] <- .ss(dataset[, options[["predictors"]]][hfit == j,])
-    }
+  wss <- numeric(length(table(fit)))
+  for (j in 1:length(table(fit))) {
+    wss[j] <- if (m == 1) .ss(dataset[, options[["predictors"]]][fit == j]) else .ss(dataset[, options[["predictors"]]][fit == j, ])
   }
-
-  n = length(hfit)
-  k = length(table(hfit))
-  D = sum(wss)
-  aic <- D + 2*m*k
-  bic <- D + log(n)*m*k
-
-  silhouettes <- summary(cluster::silhouette(hfit, distances))
-
-  Silh_score <- silhouettes[["avg.width"]]
-  silh_scores <- silhouettes[["clus.avg.widths"]]
-
-  clusterResult <- list()
-  clusterResult[["pred.values"]] <- pred.values
-  clusterResult[['clusters']] <- clusters
-  clusterResult[["N"]] <- nrow(dataset)
-  clusterResult[['size']] <- size
-  clusterResult[['WSS']] <- wss
-  clusterResult[['TSS']] <- .tss(dist(dataset[, options[["predictors"]]]))
-  clusterResult[['BSS']] <- clusterResult[['TSS']] - sum(clusterResult[['WSS']])
-  clusterResult[['AIC']] <- aic
-  clusterResult[['BIC']] <- bic
-  clusterResult[['Silh_score']] <- Silh_score
-  clusterResult[['silh_scores']] <- silh_scores
-
-  if(options[["modelOpt"]] != "validationManual"){
-    clusterResult[['silhStore']] <- avg_silh
-    clusterResult[["aicStore"]] <- aicStore
-    clusterResult[["bicStore"]] <- bicStore
-    clusterResult[["wssStore"]] <- wssStore
+  silhouettes <- summary(cluster::silhouette(fit, distances))
+  result <- list()
+  result[["pred.values"]] <- fit
+  result[["clusters"]] <- clusters
+  result[["N"]] <- nrow(dataset)
+  result[["size"]] <- size
+  result[["WSS"]] <- wss
+  result[["TSS"]] <- .tss(dist(dataset[, options[["predictors"]]]))
+  result[["BSS"]] <- result[["TSS"]] - sum(result[["WSS"]])
+  result[["AIC"]] <- sum(wss) + 2 * m * length(table(fit))
+  result[["BIC"]] <- sum(wss) + log(length(fit)) * m * length(table(fit))
+  result[["Silh_score"]] <- silhouettes[["avg.width"]]
+  result[["silh_scores"]] <- silhouettes[["clus.avg.widths"]]
+  if (options[["modelOpt"]] != "validationManual") {
+    result[["silhStore"]] <- avgSilh
+    result[["aicStore"]] <- aicStore
+    result[["bicStore"]] <- bicStore
+    result[["wssStore"]] <- wssStore
   }
-
-  return(clusterResult)
+  return(result)
 }
 
-.hierarchicalClusteringDendogram <- function(dataset, options, jaspResults, ready, position){
-
-  if(!is.null(jaspResults[["dendrogram"]]) || !options[["dendrogram"]]) return()
-
-  dendrogram <- createJaspPlot(plot = NULL, title = gettext("Dendrogram"), width = 500, height = 300)
-  dendrogram$position <- position
-  dendrogram$dependOn(options = c("predictors", "noOfClusters","noOfRandomSets", "algorithm", "eps", "minPts", "distance",
-                                          "noOfIterations", "modelOpt", "ready", "seed", "plot2dCluster", "maxClusters", "scaleEqualSD", "seedBox",
-                                          "linkage", "m", "dendrogram", "optimizationCriterion"))
-  jaspResults[["dendrogram"]] <- dendrogram
-
-  if(!ready) return()
-
-  clusterResult <- jaspResults[["clusterResult"]]$object
-
-  if(options[["seedBox"]])  set.seed(options[["seed"]])
-
+.mlClusteringHierarchicalDendogram <- function(dataset, options, jaspResults, ready, position) {
+  if (!is.null(jaspResults[["dendrogram"]]) || !options[["dendrogram"]]) {
+    return()
+  }
+  plot <- createJaspPlot(plot = NULL, title = gettext("Dendrogram"), width = 400, height = 300)
+  plot$position <- position
+  plot$dependOn(options = c(
+    "predictors", "noOfClusters", "noOfRandomSets", "algorithm", "eps", "minPts", "distance",
+    "noOfIterations", "modelOpt", "ready", "seed", "plot2dCluster", "maxClusters", "scaleEqualSD", "seedBox",
+    "linkage", "m", "dendrogram", "optimizationCriterion"
+  ))
+  jaspResults[["dendrogram"]] <- plot
+  if (!ready) {
+    return()
+  }
+  if (options[["seedBox"]]) {
+    set.seed(options[["seed"]])
+  }
   unique.rows <- which(!duplicated(dataset[, options[["predictors"]]]))
   data <- dataset[unique.rows, options[["predictors"]]]
-
-  if(options[["distance"]] == "Pearson correlation") {
-    hc <- hclust(as.dist(1-cor(t(data), method="pearson")), method = options[["linkage"]])
+  if (options[["distance"]] == "Pearson correlation") {
+    hc <- hclust(as.dist(1 - cor(t(data), method = "pearson")), method = options[["linkage"]])
   } else {
     hc <- hclust(dist(data), method = options[["linkage"]])
   }
-
-  p <- ggdendro::ggdendrogram(hc)
-  p <- jaspGraphs::themeJasp(p) + ggdendro::theme_dendro()
-  dendrogram$plotObject <- p
+  p <- ggdendro::ggdendrogram(hc) +
+    jaspGraphs::geom_rangeframe() +
+    jaspGraphs::themeJaspRaw() +
+    ggdendro::theme_dendro()
+  plot$plotObject <- p
 }
-

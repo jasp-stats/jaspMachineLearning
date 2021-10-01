@@ -16,129 +16,131 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick			2.8
-import QtQuick.Layouts	1.3
-import JASP.Controls	1.0
-import JASP.Widgets		1.0
+import QtQuick									2.8
+import QtQuick.Layouts							1.3
+import JASP.Controls							1.0
+import JASP.Widgets								1.0
 
 
 Section
 {
-    property alias leaveOneOutVisible:              leaveOneOut.visible
-    property alias kFoldsVisible:                   kFolds.visible
-    property alias trainingValidationSplit:         trainingValidationSplit.visible
-    
-    title: qsTr("Data Split Preferences")
+	property alias leaveOneOutVisible:			leaveOneOut.visible
+	property alias kFoldsVisible:				kFolds.visible
+	property alias trainingValidationSplit:		trainingValidationSplit.visible
 
-    RadioButtonGroup 
-    {
-        title: qsTr("Holdout Test Data")
-        name: "holdoutData"
+	title: 										qsTr("Data Split Preferences")
 
-        RadioButton 
-        {
-            id: holdoutManual
-            name: "holdoutManual"
-            childrenOnSameRow: true
-            text: qsTr("Sample")
+	RadioButtonGroup
+	{
+		title: 									qsTr("Holdout Test Data")
+		name: 									"holdoutData"
 
-            RowLayout 
-            {
-                PercentField 
-                {    
-                    name: "testDataManual"
-                    defaultValue: 20
-                    min: 5
-                    max: 95 
-                    afterLabel: qsTr("% of all data")
-                }
-            }
-        }
+		RadioButton
+		{
+			id:									holdoutManual
+			name:								"holdoutManual"
+			childrenOnSameRow:					true
+			text:								qsTr("Sample")
 
-        CheckBox 
-        { 
-            id: addIndicator  
-            name: "addIndicator"
-            text: qsTr("Add generated indicator to data")
-            Layout.leftMargin: 20
-            enabled: holdoutManual.checked
+			Row
+			{
+				PercentField
+				{
+					name:						"testDataManual"
+					defaultValue:				20
+					min:						5
+					max:						95
+					afterLabel:					qsTr("% of all data")
+				}
+			}
+		}
 
-            ComputedColumnField 
-            { 
-                name: 		"testIndicatorColumn"
-				text: 		qsTr("Column name: ")
-                fieldWidth: 120
-                visible:    addIndicator.checked
-            }
-        }
+		CheckBox
+		{
+			id:									addIndicator
+			name:								"addIndicator"
+			text:								qsTr("Add generated indicator to data")
+			Layout.leftMargin:					20
+			enabled:							holdoutManual.checked
 
-        RadioButton 
-        {
-            name: "testSetIndicator"
-            label: qsTr("Test set indicator:")
-            childrenOnSameRow: true
+			ComputedColumnField
+			{
+				name:							"testIndicatorColumn"
+				text:							qsTr("Column name")
+				fieldWidth:						120
+				visible:						addIndicator.checked
+			}
+		}
 
-            DropDown 
-            {
-                id: testSetIndicatorVariable
-                name: "testSetIndicatorVariable"
-                showVariableTypeIcon: true
-                addEmptyValue: true
-                placeholderText: qsTr("None")
-            }
-        }
-    }
+		RadioButton
+		{
+			name: 								"testSetIndicator"
+			label: 								qsTr("Test set indicator")
+			childrenOnSameRow: 					true
 
-    RadioButtonGroup 
-    {
-        id: trainingValidationSplit
-        title: qsTr("Training and Validation Data")
-        name: "modelValid"
+			DropDown
+			{
+				id: 							testSetIndicatorVariable
+				name: 							"testSetIndicatorVariable"
+				showVariableTypeIcon: 			true
+				addEmptyValue: 					true
+				placeholderText: 				qsTr("None")
+			}
+		}
+	}
 
-        RadioButton 
-        {
-            name: "validationManual"
-            childrenOnSameRow: true
-            checked: true
-            text: qsTr("Sample")
+	RadioButtonGroup
+	{
+		id: 									trainingValidationSplit
+		title: 									qsTr("Training and Validation Data")
+		name: 									"modelValid"
 
-            RowLayout {
+		RadioButton
+		{
+			name: 								"validationManual"
+			childrenOnSameRow: 					true
+			checked: 							true
+			text: 								qsTr("Sample")
 
-                PercentField {
-                    name: "validationDataManual"
-                    defaultValue: 20
-                    min: 5
-                    max: 95
-                    afterLabel: qsTr("% for validation data")
-                }
-            }
-        }
+			Row 
+			{
+				PercentField 
+				{
+					name: 						"validationDataManual"
+					defaultValue: 				20
+					min: 						5
+					max: 						95
+					afterLabel: 				qsTr("% for validation data")
+				}
+			}
+		}
 
-        RadioButton 
-        { 
-            id: kFolds
-            name: "validationKFold"
-            childrenOnSameRow: true
-            text: qsTr("K-fold with")
+		RadioButton
+		{
+			id:									kFolds
+			name:								"validationKFold"
+			childrenOnSameRow:					true
+			text:								qsTr("K-fold with")
 
-            RowLayout 
-            {
+			Row
+			{
+				IntegerField 
+				{
+					name:						"noOfFolds"
+					defaultValue:				5
+					min:						2
+					max:						999
+					fieldWidth:					30
+					afterLabel:					qsTr("folds")
+				}
+			}
+		}
 
-                IntegerField {
-                    name: "noOfFolds"
-                    defaultValue: 5
-                    min: 2
-                    max: 999
-                    fieldWidth: 30
-                    afterLabel: qsTr("folds")
-                } 
-            }
-        }
-
-        RadioButton { 
-            id: leaveOneOut
-            text: qsTr("Leave-one-out")                 
-            name: "validationLeaveOneOut"
-        }
-    }
+		RadioButton 
+		{
+			id:									leaveOneOut
+			text:								qsTr("Leave-one-out")
+			name:								"validationLeaveOneOut"
+		}
+	}
 }

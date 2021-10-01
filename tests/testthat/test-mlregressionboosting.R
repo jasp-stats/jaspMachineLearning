@@ -40,7 +40,7 @@ test_that("Relative Influence table results match", {
 })
 
 test_that("Data Split plot matches", {
-  plotName <- results[["results"]][["dataSplitPlot"]][["data"]]
+  plotName <- results[["results"]][["plotDataSplit"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
   jaspTools::expect_equal_plots(testPlot, "data-split")
 })

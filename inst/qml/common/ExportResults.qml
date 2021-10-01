@@ -16,56 +16,58 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick					2.8
-import QtQuick.Layouts			1.3
-import JASP.Controls			1.0
-import JASP.Widgets				1.0
+import QtQuick						2.8
+import QtQuick.Layouts				1.3
+import JASP.Controls				1.0
+import JASP.Widgets					1.0
 
-GroupBox
+Group
 {
-	property alias enabled:		exportSection.enabled
-	property alias showSave:	saveGroup.visible
+	property alias enabled:			exportSection.enabled
+	property alias showSave:		saveGroup.visible
 
-	id:							exportSection
-	title:						qsTr("Export Results")
+	id:								exportSection
+	title:							qsTr("Export Results")
 
 	CheckBox 
 	{
-		id:						addPredictions
-		name:					"addPredictions"
-		text:					qsTr("Add predictions to data")
+		id:							addPredictions
+		name:						"addPredictions"
+		text:						qsTr("Add predictions to data")
 
-		ComputedColumnField {
-			id:					predictionsColumn
-			name:				"predictionsColumn"
-			text:				qsTr("Column name")
-			placeholderText: 	qsTr("e.g., predicted")
-			fieldWidth:			120
-			enabled:			addPredictions.checked
+		ComputedColumnField 
+		{
+			id:						predictionsColumn
+			name:					"predictionsColumn"
+			text:					qsTr("Column name")
+			placeholderText:		qsTr("e.g., predicted")
+			fieldWidth:				120
+			enabled:				addPredictions.checked
 		}
 	}
 
 	Group
 	{
-		id:						saveGroup
+		id:							saveGroup
+
 		FileSelector
 		{
-			id:					savePath
-			name:				"savePath"
-			label:				qsTr("Save as")
-			placeholderText:	qsTr("e.g., location/model.jaspML")
-			filter:				"*.jaspML"
-			save:				true
-			fieldWidth:			180 * preferencesModel.uiScale
+			id:						savePath
+			name:					"savePath"
+			label:					qsTr("Save as")
+			placeholderText:		qsTr("e.g., location/model.jaspML")
+			filter:					"*.jaspML"
+			save:					true
+			fieldWidth:				180 * preferencesModel.uiScale
 		}
 
 		CheckBox
 		{
-			id:					saveModel
-			name:				"saveModel"
-			text:				qsTr("Save trained model")
-			enabled:			show && savePath.value != ""
-			Layout.leftMargin:	10 * preferencesModel.uiScale
+			id:						saveModel
+			name:					"saveModel"
+			text:					qsTr("Save trained model")
+			enabled:				showSave && savePath.value != ""
+			Layout.leftMargin:		10 * preferencesModel.uiScale
 		}
 	}
 }

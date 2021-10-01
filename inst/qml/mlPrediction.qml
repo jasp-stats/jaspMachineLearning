@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2013-2018 University of Amsterdam
+// Copyright (C) 2013-2021 University of Amsterdam
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -33,62 +33,62 @@ Form
 		label:									qsTr("Trained model")
 		placeholderText:						qsTr("e.g., location/model.jaspML")
 		filter:									"*.jaspML"
-		save:									true
+		save:									false
 		fieldWidth:								180 * preferencesModel.uiScale
 	}
 
 	VariablesForm
 	{
-		enabled: 								loadPath.value != ""
+		enabled:								loadPath.value != ""
 
 		AvailableVariablesList
 		{
-			name: 								"variables"
+			name:								"variables"
 		}
 
 		AssignedVariablesList
 		{
-			id: 								predictors
-			name: 								"predictors"
-			title: 								qsTr("Predictors")
-			allowedColumns: 					["scale", "ordinal", "nominal", "nominalText"]
+			id:									predictors
+			name:								"predictors"
+			title:								qsTr("Predictors")
+			allowedColumns:						["scale", "ordinal", "nominal", "nominalText"]
 			allowAnalysisOwnComputedColumns:	false
 		}
 	}
 
 	Group
 	{
-		title: 									qsTr("Algorithmic Settings")
+		title:									qsTr("Algorithmic Settings")
 
 		CheckBox
 		{
-			text: 								qsTr("Scale predictors")
-			name: 								"scaleEqualSD"
-			checked: 							true
+			text:								qsTr("Scale predictors")
+			name:								"scaleEqualSD"
+			checked:							true
 		}
 	}
 
 	Group
 	{
-		title: 									qsTr("Tables")
+		title:									qsTr("Tables")
 
 		CheckBox
 		{
 			id:									predictionsTable
-			name: 								"predictionsTable"
+			name:								"predictionsTable"
 			label:				 				"Predictions for new data"
 			checked:							true
 
 			CheckBox
 			{
-				name: 							"addPredictors"
+				name:							"addPredictors"
 				label:							"Add predictors"
 			}
 		}
 
 		Row
 		{	
-			spacing: 							5 * preferencesModel.uiScale
+			spacing:							5 * preferencesModel.uiScale
 			enabled:							predictionsTable.checked
 			
 			IntegerField
@@ -112,7 +112,7 @@ Form
 	}
 
 	ML.ExportResults {
-		enabled: 								predictors.count > 1
-		showSave: 								false
+		enabled:								predictors.count > 1
+		showSave:								false
 	}
 }

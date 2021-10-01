@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2013-2018 University of Amsterdam
+// Copyright (C) 2013-2021 University of Amsterdam
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -16,213 +16,251 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick			2.8
-import QtQuick.Layouts	1.3
-import JASP.Controls	1.0
-import JASP.Widgets		1.0
+import QtQuick									2.8
+import QtQuick.Layouts							1.3
+import JASP.Controls							1.0
+import JASP.Widgets								1.0
 
 import "./common" as ML
 
-Form {
+Form 
+{
 
-	VariablesForm {
-		AvailableVariablesList {name: "variables"}
-		AssignedVariablesList {
-			id: predictors
-			name: "predictors"
-			title: qsTr("Variables")
-			allowedColumns: ["scale"]
-			allowAnalysisOwnComputedColumns: false
+	VariablesForm
+	{
+		AvailableVariablesList
+		{
+			name:								"variables"
+		}
+
+		AssignedVariablesList
+		{
+			id:									predictors
+			name:								"predictors"
+			title:								qsTr("Variables")
+			allowedColumns:						["scale"]
+			allowAnalysisOwnComputedColumns:	false
 		}
 	}
 
-	GroupBox {
-		title: qsTr("Tables")
+	Group
+	{
+		title:									qsTr("Tables")
 
-		CheckBox {
-			text: qsTr("Cluster means")
-			name: "tableClusterMeans"
+		CheckBox
+		{
+			text:								qsTr("Cluster means")
+			name:								"tableClusterMeans"
 		}
 
-		CheckBox {
-			id: clusterInfo
-			text: qsTr("Cluster information")
-			name: "tableClusterInformation"
-			checked: true
+		CheckBox
+		{
+			id:									clusterInfo
+			text:								qsTr("Cluster information")
+			name:								"tableClusterInformation"
+			checked:							true
 
-			CheckBox {
-				text: qsTr("Within sum of squares")
-				name: "tableClusterInfoWSS"
-				checked: true
+			CheckBox
+			{
+				text:							qsTr("Within sum of squares")
+				name:							"tableClusterInfoWSS"
+				checked:						true
 			}
 
-			CheckBox {
-				text: qsTr("Silhouette score")
-				name: "tableClusterInfoSilhouette"
+			CheckBox
+			{
+				text:							qsTr("Silhouette score")
+				name:							"tableClusterInfoSilhouette"
 			}
 
-			CheckBox {
-				text: qsTr("Between sum of squares")
-				name: "tableClusterInfoBetweenSumSquares"
+			CheckBox
+			{
+				text:							qsTr("Between sum of squares")
+				name:							"tableClusterInfoBetweenSumSquares"
 			}
 
-			CheckBox {
-				text: qsTr("Total sum of squares")
-				name: "tableClusterInfoTotalSumSquares"
-			}
-		}
-
-		CheckBox {
-			text: qsTr("Evaluation metrics")
-			name: "clusterEvaluationMetrics"
-		}
-
-		CheckBox {
-			text: qsTr("Variable importance")
-			name: "importanceTable"
-		}
-	}
-
-	GroupBox {
-		title: qsTr("Plots")
-
-		CheckBox {
-			text: qsTr("Elbow method")
-			name: "withinssPlot"
-			enabled: !validationManual.checked
-		}
-
-		CheckBox {
-			text: qsTr("Cluster means")
-			name: "plotClusterMeans"
-
-			CheckBox {
-				text: qsTr("Display barplot")
-				name: "showBars"
-				checked: true
-			}
-
-			CheckBox {
-				text: qsTr("Group into one figure")
-				name: "oneFigure"
-				checked: true
+			CheckBox
+			{
+				text:							qsTr("Total sum of squares")
+				name:							"tableClusterInfoTotalSumSquares"
 			}
 		}
 
-		CheckBox {
-			text: qsTr("Cluster densities")
-			name: "plotClusterDensities"
+		CheckBox
+		{
+			text:								qsTr("Evaluation metrics")
+			name:								"clusterEvaluationMetrics"
 		}
 
-		CheckBox {
-			text: qsTr("t-SNE cluster plot")
-			name: "plot2dCluster"
-
-			RowLayout {
-
-				CheckBox {
-					text: qsTr("Legend")
-					name: "legend"
-					checked: true
-				}
-
-				CheckBox {
-					text: qsTr("Labels")
-					name: "labels"
-				}
-			}
+		CheckBox
+		{
+			text:								qsTr("Variable importance")
+			name:								"importanceTable"
 		}
 	}
 
-	ML.ExportResults {
-		enabled: 			predictors.count > 1
-		showSave: 			false
+	Group
+	{
+		title:									qsTr("Plots")
+
+		CheckBox
+		{
+			text:								qsTr("Elbow method")
+			name:								"withinssPlot"
+			enabled:							!validationManual.checked
+		}
+
+		CheckBox
+		{
+			text:								qsTr("Cluster means")
+			name:								"plotClusterMeans"
+
+			CheckBox
+			{
+				text:							qsTr("Display barplot")
+				name:							"showBars"
+				checked:						true
+			}
+
+			CheckBox
+			{
+				text:							qsTr("Group into one figure")
+				name:							"oneFigure"
+				checked:						true
+			}
+		}
+
+		CheckBox
+		{
+			text:								qsTr("Cluster densities")
+			name:								"plotClusterDensities"
+		}
+
+		CheckBox
+		{
+			text:								qsTr("t-SNE cluster plot")
+			name:								"plot2dCluster"
+
+			Row
+			{
+				CheckBox
+				{
+					text:						qsTr("Legend")
+					name:						"legend"
+					checked:					true
+				}
+
+				CheckBox
+				{
+					text:						qsTr("Labels")
+					name:						"labels"
+				}
+			}
+		}
 	}
 
-	Section {
-		title: qsTr("Training Parameters")
+	ML.ExportResults
+	{
+		enabled:								predictors.count > 1
+		showSave:								false
+	}
 
-		GroupBox {
-			title: qsTr("Algorithmic Settings")
+	Section
+	{
+		title:									qsTr("Training Parameters")
 
-			IntegerField {
-				name: "noOfTrees"
-				text: qsTr("Trees:")
-				defaultValue: 1000
-				min: 1
-				max: 50000
-				fieldWidth: 60
+		Group
+		{
+			title:								qsTr("Algorithmic Settings")
+
+			IntegerField
+			{
+				name:							"noOfTrees"
+				text:							qsTr("Trees")
+				defaultValue:					1000
+				min:							1
+				max:							50000
+				fieldWidth:						60
 			}
 
-			CheckBox {
-				text: qsTr("Scale variables")
-				name: "scaleEqualSD"
-				checked: true
+			CheckBox
+			{
+				text:							qsTr("Scale variables")
+				name:							"scaleEqualSD"
+				checked:						true
 			}
 
-			CheckBox {
-				name: "seedBox"
-				text: qsTr("Set seed:")
-				childrenOnSameRow: true
+			CheckBox
+			{
+				name:							"seedBox"
+				text:							qsTr("Set seed")
+				childrenOnSameRow:				true
 
-				DoubleField  {
-					name: "seed"
-					defaultValue: 1
-					min: -999999
-					max: 999999
-					fieldWidth: 60
+				IntegerField
+				{
+					name:						"seed"
+					defaultValue:				1
+					min:						-999999
+					max:						999999
+					fieldWidth:					60
 				}
 			}
 		}
 
-		RadioButtonGroup {
-			title: qsTr("Cluster Determination")
-			name: "modelOpt"
+		RadioButtonGroup
+		{
+			title:								qsTr("Cluster Determination")
+			name:								"modelOpt"
 
-			RadioButton {
-				id: validationManual
-				text: qsTr("Fixed")
-				name: "validationManual"
+			RadioButton
+			{
+				id:								validationManual
+				text:							qsTr("Fixed")
+				name:							"validationManual"
 
-				IntegerField {
-					name: "noOfClusters"
-					text: qsTr("Clusters:")
-					defaultValue: 3
-					min: 2
-					max: 5000
-					fieldWidth: 60
-					enabled: validationManual.checked
+				IntegerField
+				{
+					name:						"noOfClusters"
+					text:						qsTr("Clusters")
+					defaultValue:				3
+					min:						2
+					max:						5000
+					enabled:					validationManual.checked
+					fieldWidth:					60
 				}
 			}
 
-			RadioButton {
-				text: qsTr("Optimized according to")
-				name: "validationOptimized"
-				childrenOnSameRow: true
-				checked: true
+			RadioButton
+			{
+				text:							qsTr("Optimized according to")
+				name:							"validationOptimized"
+				childrenOnSameRow:				true
+				checked:						true
 
-				DropDown {
-					name: "optimizationCriterion"
-					indexDefaultValue: 1
+				DropDown
+				{
+					name:						"optimizationCriterion"
+					indexDefaultValue:			1
 
 					values:
 						[
-						{ label: "AIC", value: "validationAIC"},
-						{ label: "BIC", value: "validationBIC"},
-						{ label: "Silhouette", value: "validationSilh"}
+						{ label: "AIC", 		value: "validationAIC"},
+						{ label: "BIC", 		value: "validationBIC"},
+						{ label: "Silhouette",	value: "validationSilh"}
 					]
 				}
 			}
 
-			IntegerField {
-				name: "maxClusters"
-				text: qsTr("Max. clusters:")
-				defaultValue: 10
-				min: 2
-				max: 5000
-				fieldWidth: 60
-				enabled: !validationManual.checked
-				Layout.leftMargin: 20
+			IntegerField
+			{
+				name:							"maxClusters"
+				text:							qsTr("Max. clusters")
+				defaultValue:					10
+				min:							2
+				max:							5000
+				enabled:						!validationManual.checked
+				Layout.leftMargin:				20
+				fieldWidth:						60
 			}
 		}
 	}

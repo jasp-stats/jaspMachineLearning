@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2013-2019 University of Amsterdam
+// Copyright (C) 2013-2021 University of Amsterdam
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -16,193 +16,229 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick			2.8
-import QtQuick.Layouts	1.3
-import JASP.Controls	1.0
-import JASP.Widgets		1.0
+import QtQuick									2.8
+import QtQuick.Layouts							1.3
+import JASP.Controls							1.0
+import JASP.Widgets								1.0
 
 import "./common" as ML
 
-Form {
+Form 
+{
 
-	VariablesForm {
-		AvailableVariablesList { name: "allVariablesList" }
-		AssignedVariablesList  {
-			id: target
-			name: "target"
-			title: qsTr("Target")
-			singleVariable: true
-			allowedColumns: ["scale"]
-		}
-		AssignedVariablesList {
-			id: predictors
-			name: "predictors"
-			title: qsTr("Predictors")
-			allowedColumns: ["scale", "ordinal"]
-			allowAnalysisOwnComputedColumns: false
-		}
-		AssignedVariablesList  {
-			name: "weights"
-			title: qsTr("Weights")
-			singleVariable: true
-			allowedColumns: ["scale"]
-		}
-	}
-
-	GroupBox {
-		title: qsTr("Tables")
-
-		CheckBox {
-			text: qsTr("Evaluation metrics")
-			name: "validationMeasures"
+	VariablesForm
+	{
+		AvailableVariablesList
+		{
+			name:								"variables"
 		}
 
-		CheckBox {
-			name: "coefTable"
-			text: qsTr("Regression coefficients")
+		AssignedVariablesList
+		{
+			id:									target
+			name:								"target"
+			title:								qsTr("Target")
+			singleVariable:						true
+			allowedColumns:						["scale"]
+		}
+
+		AssignedVariablesList
+		{
+			id:									predictors
+			name:								"predictors"
+			title:								qsTr("Predictors")
+			allowedColumns:						["scale", "ordinal"]
+			allowAnalysisOwnComputedColumns:	false
+		}
+
+		AssignedVariablesList
+		{
+			name:								"weights"
+			title:								qsTr("Weights")
+			singleVariable:						true
+			allowedColumns:						["scale"]
 		}
 	}
 
-	GroupBox {
-		title: qsTr("Plots")
+	Group
+	{
+		title:									qsTr("Tables")
 
-		CheckBox {
-			text: qsTr("Data split")
-			name: "dataSplitPlot"
-			checked: true
+		CheckBox
+		{
+			text:								qsTr("Evaluation metrics")
+			name:								"validationMeasures"
 		}
 
-		CheckBox {
-			name: "predictedPerformancePlot"
-			text: qsTr("Predictive performance")
+		CheckBox
+		{
+			name:								"coefTable"
+			text:								qsTr("Regression coefficients")
+		}
+	}
+
+	Group
+	{
+		title:									qsTr("Plots")
+
+		CheckBox
+		{
+			text:								qsTr("Data split")
+			name:								"dataSplitPlot"
+			checked:							true
 		}
 
-		CheckBox {
-			name: "variableTrace"
-			text: qsTr("Variable trace")
+		CheckBox
+		{
+			name:								"predictedPerformancePlot"
+			text:								qsTr("Predictive performance")
+		}
 
-			CheckBox {
-				name: "variableTraceLegend"
-				text: qsTr("Legend")
-				checked: true
+		CheckBox
+		{
+			name:								"variableTrace"
+			text:								qsTr("Variable trace")
+
+			CheckBox
+			{
+				name:							"variableTraceLegend"
+				text:							qsTr("Legend")
+				checked:						true
 			}
 		}
 
-		CheckBox {
-			name: "lambdaEvaluation"
-			text: qsTr("\u03BB evaluation")
+		CheckBox
+		{
+			name:								"lambdaEvaluation"
+			text:								qsTr("\u03BB evaluation")
 
-			CheckBox {
-				name: "lambdaEvaluationLegend"
-				text: qsTr("Legend")
-				checked: true
+			CheckBox
+			{
+				name:							"lambdaEvaluationLegend"
+				text:							qsTr("Legend")
+				checked:						true
 			}
 		}
 	}
 
-	ML.ExportResults {
-		enabled: predictors.count > 1 && target.count > 0
+	ML.ExportResults
+	{
+		enabled:								predictors.count > 1 && target.count > 0
 	}
 
-	ML.DataSplit {
-		leaveOneOutVisible: false;
-		kFoldsVisible: false
-		trainingValidationSplit: !fixedModel.checked
+	ML.DataSplit
+	{
+		leaveOneOutVisible:						false
+		kFoldsVisible:							false
+		trainingValidationSplit:				!fixedModel.checked
 	}
 
-	Section {
-		text: qsTr("Training Parameters")
+	Section
+	{
+		text:									qsTr("Training Parameters")
 
-		GroupBox {
-			title: qsTr("Algorithmic Settings")
+		Group
+		{
+			title:								qsTr("Algorithmic Settings")
 
-			DoubleField {
-				name: "thresh"
-				text: qsTr("Convergence threshold:")
-				defaultValue: 1e-7
-				min: 1e-999
-				max: 1
-				fieldWidth: 60
-				visible: false
+			DoubleField
+			{
+				name:							"thresh"
+				text:							qsTr("Convergence threshold")
+				defaultValue:					1e-7
+				min:							1e-999
+				max:							1
+				fieldWidth:						60
+				visible:						false
 			}
 
-			DropDown {
-				id: penalty
-				name: "penalty"
-				indexDefaultValue: 0
-				label: qsTr("Penalty:")
+			DropDown
+			{
+				id:								penalty
+				name:							"penalty"
+				indexDefaultValue:				0
+				label:							qsTr("Penalty")
 				values:
 					[
-					{ label: "Lasso", value: "lasso"},
-					{ label: "Ridge", value: "ridge"},
-					{ label: qsTr("Elastic net"), value: "elasticNet"}
+					{ label: qsTr("Lasso"),		value:"lasso"},
+					{ label: qsTr("Ridge"),		value:"ridge"},
+					{ label: qsTr("Elastic net"),value:"elasticNet"}
 				]
 			}
 
-			DoubleField {
-				name: "alpha"
-				text: qsTr("Elastic net parameter (α):")
-				defaultValue: 0.5
-				min: 0
-				max: 1
-				visible: penalty.currentIndex == 2
+			DoubleField
+			{
+				name:							"alpha"
+				text:							qsTr("Elastic net parameter (\u03B1)")
+				defaultValue:					0.5
+				min:							0
+				max:							1
+				visible:						penalty.currentIndex == 2
 			}
 
-			CheckBox {
-				name: "intercept"
-				text: qsTr("Fit intercept")
-				checked: true
+			CheckBox
+			{
+				name:							"intercept"
+				text:							qsTr("Fit intercept")
+				checked:						true
 			}
 
-			CheckBox {
-				text: qsTr("Scale variables")
-				name: "scaleEqualSD"
-				checked: true
+			CheckBox
+			{
+				text:							qsTr("Scale variables")
+				name:							"scaleEqualSD"
+				checked:						true
 			}
 
-			CheckBox {
-				name: "seedBox"
-				text: qsTr("Set seed:")
-				childrenOnSameRow: true
+			CheckBox
+			{
+				name:							"seedBox"
+				text:							qsTr("Set seed")
+				childrenOnSameRow:				true
 
-				DoubleField {
-					name: "seed"
-					defaultValue: 1
-					min: -999999
-					max: 999999
-					fieldWidth: 60
+				IntegerField
+				{
+					name:						"seed"
+					defaultValue:				1
+					min:						-999999
+					max:						999999
+					fieldWidth:					60
 				}
 			}
 		}
 
-		RadioButtonGroup {
-			title: qsTr("Lambda (\u03BB)")
-			name: "modelOpt"
+		RadioButtonGroup
+		{
+			title:								qsTr("Lambda (\u03BB)")
+			name:								"modelOpt"
 
-			RadioButton {
-				id: fixedModel
-				text: qsTr("Fixed")
-				name: "optimizationManual"
+			RadioButton
+			{
+				id:								fixedModel
+				text:							qsTr("Fixed")
+				name:							"optimizationManual"
 
-				DoubleField {
-					name: "lambda"
-					label: "\u03BB = "
-					defaultValue: 1
-					min: 0
-					max: 999999
-					fieldWidth: 60
+				DoubleField
+				{
+					name:						"lambda"
+					label:						"\u03BB = "
+					defaultValue:				1
+					min:						0
+					max:						999999
 				}
 			}
 
-			RadioButton {
-				text: qsTr("Optimized")
-				name: "optMin"
-				checked: true
+			RadioButton
+			{
+				text:							qsTr("Optimized")
+				name:							"optMin"
+				checked:						true
 			}
 
-			RadioButton {
-				text: qsTr("Largest \u03BB within 1 SE of min.")
-				name: "opt1SE"
+			RadioButton
+			{
+				text:							qsTr("Largest \u03BB within 1 SE of min")
+				name:							"opt1SE"
 			}
 		}
 	}

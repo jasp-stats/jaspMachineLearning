@@ -18,90 +18,82 @@
 mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
 
   # Preparatory work
-  dataset <- .readDataClassificationAnalyses(dataset, options)
-  .errorHandlingClassificationAnalyses(dataset, options, type = "neuralnet")
+  dataset <- .mlClassificationReadData(dataset, options)
+  .mlClassificationErrorHandling(dataset, options, type = "neuralnet")
 
   # Check if analysis is ready to run
-  ready <- .classificationAnalysesReady(options, type = "neuralnet")
+  ready <- .mlClassificationReady(options, type = "neuralnet")
 
   # Determine activation and loss function for the neural net
-  .getNeuralNetworkActFunction(options, jaspResults)
-  # .getNeuralNetworkLossFunction(options, jaspResults)
+  .mlNeuralNetworkActFunction(options, jaspResults)
+  # .mlNeuralNetworkLossFunction(options, jaspResults)
 
   # Compute results and create the model summary table
-  .classificationTable(dataset, options, jaspResults, ready, position = 1, type = "neuralnet")
+  .mlClassificationTableSummary(dataset, options, jaspResults, ready, position = 1, type = "neuralnet")
 
   # If the user wants to add the classes to the data set
-  .classificationAddClassesToData(dataset, options, jaspResults, ready)
+  .mlClassificationAddPredictionsToData(dataset, options, jaspResults, ready)
 
   # Add test set indicator to data
-  .addTestIndicatorToData(options, jaspResults, ready, purpose = "classification")
+  .mlAddTestIndicatorToData(options, jaspResults, ready, purpose = "classification")
 
   # Create the data split plot
-  .dataSplitPlot(dataset, options, jaspResults, ready, position = 2, purpose = "classification", type = "neuralnet")
+  .mlPlotDataSplit(dataset, options, jaspResults, ready, position = 2, purpose = "classification", type = "neuralnet")
 
   # Create the confusion table
-  .classificationConfusionTable(dataset, options, jaspResults, ready, position = 3)
+  .mlClassificationTableConfusion(dataset, options, jaspResults, ready, position = 3)
 
   # Create the class proportions table
-  .classificationClassProportions(dataset, options, jaspResults, ready, position = 4)
+  .mlClassificationTableProportions(dataset, options, jaspResults, ready, position = 4)
 
   # Create the validation measures table
-  .classificationEvaluationMetrics(dataset, options, jaspResults, ready, position = 5)
+  .mlClassificationTableMetrics(dataset, options, jaspResults, ready, position = 5)
 
   # Create the network weights table
-  .neuralNetworkTable(dataset, options, jaspResults, ready, purpose = "classification", position = 6)
+  .mlNeuralNetworkTableWeights(dataset, options, jaspResults, ready, purpose = "classification", position = 6)
 
   # Create the error plot
-  .nnErrorPlot(dataset, options, jaspResults, ready, position = 7, purpose = "classification")
+  .mlNeuralNetworkPlotError(dataset, options, jaspResults, ready, position = 7, purpose = "classification")
 
   # Create the ROC curve
-  .rocCurve(dataset, options, jaspResults, ready, position = 8, type = "neuralnet")
+  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 8, type = "neuralnet")
 
   # Create the Andrews curves
-  .classificationAndrewsCurves(dataset, options, jaspResults, ready, position = 9)
+  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 9)
 
   # Create the activation function plot
-  .neuralNetworkActivationFunctionPlot(options, jaspResults, position = 10)
+  .mlNeuralNetworkPlotActivationFunction(options, jaspResults, position = 10)
 
   # Create the network graph
-  .neuralNetworkGraph(dataset, options, jaspResults, ready, purpose = "classification", position = 11)
+  .mlNeuralNetworkPlotStructure(dataset, options, jaspResults, ready, purpose = "classification", position = 11)
 
   # Decision boundaries
-  .classificationDecisionBoundaries(dataset, options, jaspResults, ready, position = 12, type = "neuralnet")
+  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 12, type = "neuralnet")
 }
 
 .neuralnetClassification <- function(dataset, options, jaspResults) {
-
   # Import model formula from jaspResults
   formula <- jaspResults[["formula"]]$object
-
   # Split the data into training and test sets
   if (options[["holdoutData"]] == "testSetIndicator" && options[["testSetIndicatorVariable"]] != "") {
     # Select observations according to a user-specified indicator (included when indicator = 1)
-    train.index <- which(dataset[, options[["testSetIndicatorVariable"]]] == 0)
+    trainingIndex <- which(dataset[, options[["testSetIndicatorVariable"]]] == 0)
   } else {
     # Sample a percentage of the total data set
-    train.index <- sample.int(nrow(dataset), size = ceiling((1 - options[["testDataManual"]]) * nrow(dataset)))
+    trainingIndex <- sample.int(nrow(dataset), size = ceiling((1 - options[["testDataManual"]]) * nrow(dataset)))
   }
-  trainAndValid <- dataset[train.index, ]
-
+  trainingAndValidationSet <- dataset[trainingIndex, ]
   # Create the generated test set indicator
   testIndicatorColumn <- rep(1, nrow(dataset))
-  testIndicatorColumn[train.index] <- 0
-
+  testIndicatorColumn[trainingIndex] <- 0
   if (options[["modelOpt"]] == "optimizationManual") {
-    # Just create a train and a test set (no optimization)
-    train <- trainAndValid
-    test <- dataset[-train.index, ]
-
-    # Structure of hidden layers
+    trainingSet <- trainingAndValidationSet
+    testSet <- dataset[-trainingIndex, ]
     structure <- .getNeuralNetworkStructure(options)
-
     p <- try({
-      nfit_test <- neuralnet::neuralnet(
+      fit <- neuralnet::neuralnet(
         formula = formula,
-        data = train,
+        data = trainingSet,
         hidden = structure,
         learningrate = options[["learningRate"]],
         threshold = options[["threshold"]],
@@ -118,39 +110,29 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
       jaspBase:::.quitAnalysis(gettextf("An error occurred in the 'neuralnet' package: %1$s", .extractErrorMessage(p)))
     }
   } else if (options[["modelOpt"]] == "optimizationError") {
-    # Genetic optimization of network topology
-
-    # Create a train, validation and test set (optimization)
-    valid.index <- sample.int(nrow(trainAndValid), size = ceiling(options[["validationDataManual"]] * nrow(trainAndValid)))
-    test <- dataset[-train.index, ]
-    valid <- trainAndValid[valid.index, ]
-    train <- trainAndValid[-valid.index, ]
-
+    validationIndex <- sample.int(nrow(trainingAndValidationSet), size = ceiling(options[["validationDataManual"]] * nrow(trainingAndValidationSet)))
+    testSet <- dataset[-trainingIndex, ]
+    validationSet <- trainingAndValidationSet[validationIndex, ]
+    trainingSet <- trainingAndValidationSet[-validationIndex, ]
     accuracyStore <- numeric(options[["maxGen"]])
     trainAccuracyStore <- numeric(options[["maxGen"]])
-
     # For plotting
     plot_x <- numeric()
     plot_y <- numeric()
     plot_type <- character()
-
     startProgressbar(options[["maxGen"]], gettext("Optimizing network topology"))
-
     # First generation
-    population <- .neuralNetworkOptim_init(options)
-
+    population <- .mlNeuralNetworkOptimInit(options)
     # Fit and reproduce
     for (gen in 1:options[["maxGen"]]) {
       progressbarTick()
-
       fitness <- numeric(options[["genSize"]])
-      tmp_trainAccuracyStore <- numeric(options[["genSize"]])
-
+      subTrainErrorStore <- numeric(options[["genSize"]])
       for (i in 1:length(population)) {
         p <- try({
-          nfit_valid <- neuralnet::neuralnet(
+          fit <- neuralnet::neuralnet(
             formula = formula,
-            data = train,
+            data = trainingSet,
             hidden = population[[i]]$structure,
             learningrate = options[["learningRate"]],
             threshold = options[["threshold"]],
@@ -162,52 +144,44 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
             act.fct = jaspResults[["actfct"]]$object,
             linear.output = if (options[["actfct"]] == "linear") TRUE else FALSE
           )
+          validationPredictions <- levels(trainingSet[, options[["target"]]])[max.col(predict(fit, newdata = validationSet))]
         })
-
-        validPredictions <- levels(train[, options[["target"]]])[max.col(predict(nfit_valid, newdata = valid))]
-        fitness[i] <- sum(diag(prop.table(table(validPredictions, valid[, options[["target"]]]))))
-        trainPredictions <- levels(train[, options[["target"]]])[max.col(predict(nfit_valid, newdata = train))]
-        tmp_trainAccuracyStore[i] <- sum(diag(prop.table(table(trainPredictions, train[, options[["target"]]]))))
-
+        if (isTryError(p)) {
+          jaspBase:::.quitAnalysis(gettextf("An error occurred in the 'neuralnet' package: %1$s", .extractErrorMessage(p)))
+        }
+        fitness[i] <- sum(diag(prop.table(table(validationPredictions, validationSet[, options[["target"]]]))))
+        trainingPredictions <- levels(trainingSet[, options[["target"]]])[max.col(predict(fit, newdata = trainingSet))]
+        subTrainErrorStore[i] <- sum(diag(prop.table(table(trainingPredictions, trainingSet[, options[["target"]]]))))
         population[[i]][["fitness"]] <- fitness[i]
         population[[i]][["age"]] <- population[[i]][["age"]] + 1
-
         plot_x <- c(plot_x, gen, gen)
-        plot_y <- c(plot_y, fitness[i], tmp_trainAccuracyStore[i])
-        plot_type <- c(plot_type, "Validation", "Training")
+        plot_y <- c(plot_y, fitness[i], subTrainErrorStore[i])
+        plot_type <- c(plot_type, "Validation set", "Training set")
       }
-
       # Find out best performance
       bestFitIndex <- order(fitness, decreasing = TRUE)[1]
       structure <- population[[bestFitIndex]]$structure # Best performing network structure
-
       # For plotting we store the mean accuracy of the generation
       accuracyStore[gen] <- mean(fitness)
-      trainAccuracyStore[gen] <- mean(tmp_trainAccuracyStore)
-
+      trainAccuracyStore[gen] <- mean(subTrainErrorStore)
       # Stop when maximum generations is reached
       if (gen == options[["maxGen"]]) {
         break()
       }
-
       # Stage 1: Select parents for crossover (population of k = 20 will give n = k / 3 = 7 parent pairs)
-      parents <- .neuralNetworkOptim_selection(population, options)
-
+      parents <- .mlNeuralNetworkOptimSelection(population, options)
       # Stage 2: Crossover of parents into children (n = 7 parent pairs will give m = n * 2 = 14 children)
-      children <- .neuralNetworkOptim_crossover(parents, options)
-
+      children <- .mlNeuralNetworkOptimCrossover(parents, options)
       # Stage 3: Mutation of offspring (m = 14 children will remain m = 14 children)
-      children <- .neuralNetworkOptim_mutate(children, options)
-
+      children <- .mlNeuralNetworkOptimMutate(children, options)
       # Stage 4: Selection of survivors (k = 20 networks remain k = 20 networks)
-      population <- .neuralNetworkOptim_survivors(population, children, options)
+      population <- .mlNeuralNetworkOptimSurvivors(population, children, options)
     }
-
     # Fit best network structure after optimization
     p <- try({
-      nfit_test <- neuralnet::neuralnet(
+      fit <- neuralnet::neuralnet(
         formula = formula,
-        data = train,
+        data = trainingSet,
         hidden = structure,
         learningrate = options[["learningRate"]],
         threshold = options[["threshold"]],
@@ -223,49 +197,39 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
     if (isTryError(p)) {
       jaspBase:::.quitAnalysis(gettextf("An error occurred in the 'neuralnet' package: %1$s", .extractErrorMessage(p)))
     }
-
-    validPredictions <- levels(train[, options[["target"]]])[max.col(predict(nfit_test, newdata = valid))]
+    validationPredictions <- levels(trainingSet[, options[["target"]]])[max.col(predict(fit, newdata = validationSet))]
   }
-
-  # Calculate AUC
-  auc <- .classificationCalcAUC(test, train, options, "nnClassification", jaspResults = jaspResults)
-
   # Use the specified model to make predictions for dataset
-  predictions <- levels(train[, options[["target"]]])[max.col(predict(nfit_test, newdata = dataset))]
-  testPredictions <- levels(train[, options[["target"]]])[max.col(predict(nfit_test, newdata = test))]
-
+  dataPredictions <- levels(trainingSet[, options[["target"]]])[max.col(predict(fit, newdata = dataset))]
+  testPredictions <- levels(trainingSet[, options[["target"]]])[max.col(predict(fit, newdata = testSet))]
   # Create results object
-  classificationResult <- list()
-
-  classificationResult[["formula"]] <- formula
-  classificationResult[["structure"]] <- structure
-  classificationResult[["model"]] <- nfit_test
-  classificationResult[["nLayers"]] <- length(structure)
-  classificationResult[["nNodes"]] <- sum(structure)
-  classificationResult[["confTable"]] <- table("Pred" = testPredictions, "Real" = test[, options[["target"]]])
-  classificationResult[["testAcc"]] <- sum(diag(prop.table(classificationResult[["confTable"]])))
-  classificationResult[["auc"]] <- auc
-  classificationResult[["ntrain"]] <- nrow(train)
-  classificationResult[["ntest"]] <- nrow(test)
-  classificationResult[["testReal"]] <- test[, options[["target"]]]
-  classificationResult[["testPred"]] <- testPredictions
-  classificationResult[["train"]] <- train
-  classificationResult[["test"]] <- test
-  classificationResult[["testIndicatorColumn"]] <- testIndicatorColumn
-  classificationResult[["classes"]] <- predictions
-
+  result <- list()
+  result[["formula"]] <- formula
+  result[["structure"]] <- structure
+  result[["model"]] <- fit
+  result[["nLayers"]] <- length(structure)
+  result[["nNodes"]] <- sum(structure)
+  result[["confTable"]] <- table("Pred" = testPredictions, "Real" = testSet[, options[["target"]]])
+  result[["testAcc"]] <- sum(diag(prop.table(result[["confTable"]])))
+  result[["auc"]] <- .classificationCalcAUC(testSet, trainingSet, options, "nnClassification", jaspResults = jaspResults)
+  result[["ntrain"]] <- nrow(trainingSet)
+  result[["ntest"]] <- nrow(testSet)
+  result[["testReal"]] <- testSet[, options[["target"]]]
+  result[["testPred"]] <- testPredictions
+  result[["train"]] <- trainingSet
+  result[["test"]] <- testSet
+  result[["testIndicatorColumn"]] <- testIndicatorColumn
+  result[["classes"]] <- dataPredictions
   if (options[["modelOpt"]] != "optimizationManual") {
-    classificationResult[["accuracyStore"]] <- accuracyStore
-    classificationResult[["valid"]] <- valid
-    classificationResult[["nvalid"]] <- nrow(valid)
-    classificationResult[["validationConfTable"]] <- table("Pred" = validPredictions, "Real" = valid[, options[["target"]]])
-    classificationResult[["validAcc"]] <- sum(diag(prop.table(classificationResult[["validationConfTable"]])))
-    classificationResult[["plotFrame"]] <- data.frame(x = plot_x, y = plot_y, type = plot_type)
-
+    result[["accuracyStore"]] <- accuracyStore
+    result[["valid"]] <- validationSet
+    result[["nvalid"]] <- nrow(validationSet)
+    result[["validationConfTable"]] <- table("Pred" = validationPredictions, "Real" = validationSet[, options[["target"]]])
+    result[["validAcc"]] <- sum(diag(prop.table(result[["validationConfTable"]])))
+    result[["plotFrame"]] <- data.frame(x = plot_x, y = plot_y, type = plot_type)
     if (options[["modelValid"]] == "validationManual") {
-      classificationResult[["trainAccuracyStore"]] <- trainAccuracyStore
+      result[["trainAccuracyStore"]] <- trainAccuracyStore
     }
   }
-
-  return(classificationResult)
+  return(result)
 }

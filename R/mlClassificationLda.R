@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2019 University of Amsterdam
+# Copyright (C) 2013-2021 University of Amsterdam
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,248 +18,229 @@
 mlClassificationLda <- function(jaspResults, dataset, options, ...) {
 
   # Preparatory work
-  dataset <- .readDataClassificationAnalyses(dataset, options)
-  .errorHandlingClassificationAnalyses(dataset, options, type = "lda")
+  dataset <- .mlClassificationReadData(dataset, options)
+  .mlClassificationErrorHandling(dataset, options, type = "lda")
 
   # Check if analysis is ready to run
-  ready <- .classificationAnalysesReady(options, type = "lda")
+  ready <- .mlClassificationReady(options, type = "lda")
 
   # Compute results and create the model summary table
-  .classificationTable(dataset, options, jaspResults, ready, position = 1, type = "lda")
+  .mlClassificationTableSummary(dataset, options, jaspResults, ready, position = 1, type = "lda")
 
   # If the user wants to add the classes to the data set
-  .classificationAddClassesToData(dataset, options, jaspResults, ready)
+  .mlClassificationAddPredictionsToData(dataset, options, jaspResults, ready)
 
   # Add test set indicator to data
-  .addTestIndicatorToData(options, jaspResults, ready, purpose = "classification")
+  .mlAddTestIndicatorToData(options, jaspResults, ready, purpose = "classification")
 
   # Create the data split plot
-	.dataSplitPlot(dataset, options, jaspResults, ready, position = 2, purpose = "classification", type = "lda")
+  .mlPlotDataSplit(dataset, options, jaspResults, ready, position = 2, purpose = "classification", type = "lda")
 
   # Create the confusion table
-  .classificationConfusionTable(dataset, options, jaspResults, ready, position = 3)
+  .mlClassificationTableConfusion(dataset, options, jaspResults, ready, position = 3)
 
   # Create the class proportions table
-  .classificationClassProportions(dataset, options, jaspResults, ready, position = 4)
+  .mlClassificationTableProportions(dataset, options, jaspResults, ready, position = 4)
 
   # Create the validation measures table
-  .classificationEvaluationMetrics(dataset, options, jaspResults, ready, position = 5)
+  .mlClassificationTableMetrics(dataset, options, jaspResults, ready, position = 5)
 
   # Create the coefficients table
-  .ldaClassificationCoefficients(options, jaspResults, ready, position = 6)
+  .mlClassificationLdaTableCoef(options, jaspResults, ready, position = 6)
 
   # Create the prior and posterior table
-  .ldaClassificationPriorPosterior(options, jaspResults, ready, position = 7)
+  .mlClassificationLdaTablePriorPosterior(options, jaspResults, ready, position = 7)
 
   # Create the group means table
-  .ldaClassificationMeans(options, jaspResults, ready, position = 8)
+  .mlClassificationLdaTableMeans(options, jaspResults, ready, position = 8)
 
   # Create the test of equality of means table
-  .ldaEqualityOfClassMeans(dataset, options, jaspResults, ready, position = 9)
+  .mlClassificationLdaTableEqualityMeans(dataset, options, jaspResults, ready, position = 9)
 
   # Create the test of equality of covariance matrices table
-  .ldaEqualityOfCovarianceMatrices(dataset, options, jaspResults, ready, position = 10)
+  .mlClassificationLdaTableEqualityCovMat(dataset, options, jaspResults, ready, position = 10)
 
   # Create the multicollinearity table
-  .ldaMulticollinearity(dataset, options, jaspResults, ready, position = 11)
+  .mlClassificationLdaTableMulticollinearity(dataset, options, jaspResults, ready, position = 11)
 
   # Create the ROC curve
-  .rocCurve(dataset, options, jaspResults, ready, position = 12, type = "lda")
+  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 12, type = "lda")
 
   # Create the Andrews curves
-  .classificationAndrewsCurves(dataset, options, jaspResults, ready, position = 13)
+  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 13)
 
   # Create the LDA matrix plot
-  .ldaMatricesPlot(dataset, options, jaspResults, ready, position = 14)
+  .mlClassificationLdaPlotDiscriminants(dataset, options, jaspResults, ready, position = 14)
 
   # Decision boundaries
-  .classificationDecisionBoundaries(dataset, options, jaspResults, ready, position = 15, type = "lda")
-
+  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 15, type = "lda")
 }
 
 # Error handling
-.classLdaErrorHandling <- function(dataset, options){
+.classLdaErrorHandling <- function(dataset, options) {
   # Error Check 1: There should be at least 5 observations in the target variable
-  .hasErrors(dataset = dataset, type = c('observations', 'variance', 'infinity'),
-             all.target = options$target, observations.amount = '< 5', exitAnalysisIfErrors = TRUE)
-
+  .hasErrors(
+    dataset = dataset, type = c("observations", "variance", "infinity"),
+    all.target = options$target, observations.amount = "< 5", exitAnalysisIfErrors = TRUE
+  )
   # Error Check 2: The target variable should have at least 2 classes
-  if (nlevels(dataset[, options$target]) < 2){
+  if (nlevels(dataset[, options$target]) < 2) {
     jaspBase:::.quitAnalysis(gettext("The target variable should have at least 2 classes."))
   }
-
 }
 
 # Compute results
-.ldaClassification <- function(dataset, options, jaspResults){
-
+.ldaClassification <- function(dataset, options, jaspResults) {
   # Import model formula from jaspResults
-	formula <- jaspResults[["formula"]]$object
-
-	# Split the data into training and test sets
-	if(options[["holdoutData"]] == "testSetIndicator" && options[["testSetIndicatorVariable"]] != ""){
-		# Select observations according to a user-specified indicator (included when indicator = 1)
-		train.index             <- which(dataset[,options[["testSetIndicatorVariable"]]] == 0)
-	} else {
-		# Sample a percentage of the total data set
-		train.index             <- sample.int(nrow(dataset), size = ceiling( (1 - options[['testDataManual']]) * nrow(dataset)))
-	}
-	train                     <- dataset[train.index, ]
-  test                      <- dataset[-train.index, ]
-
+  formula <- jaspResults[["formula"]]$object
+  # Split the data into training and test sets
+  if (options[["holdoutData"]] == "testSetIndicator" && options[["testSetIndicatorVariable"]] != "") {
+    # Select observations according to a user-specified indicator (included when indicator = 1)
+    trainingIndex <- which(dataset[, options[["testSetIndicatorVariable"]]] == 0)
+  } else {
+    # Sample a percentage of the total data set
+    trainingIndex <- sample.int(nrow(dataset), size = ceiling((1 - options[["testDataManual"]]) * nrow(dataset)))
+  }
+  trainingSet <- dataset[trainingIndex, ]
+  testSet <- dataset[-trainingIndex, ]
   # Create the generated test set indicator
-	testIndicatorColumn <- rep(1, nrow(dataset))
-  testIndicatorColumn[train.index] <- 0
-
-  method <- base::switch(options[["estimationMethod"]],
-                          "moment" = "moment",
-                          "mle" = "mle",
-                          "covMve" = "mve",
-                          "t" = "t")
-  ldafit      <- MASS::lda(formula = formula, data = train, method = method, CV = FALSE)
-  pred_test   <- stats::predict(ldafit, newdata = test)
-
-  # Calculate AUC
-  auc <- .classificationCalcAUC(test, train, options, "ldaClassification", LDAmethod=method)
-
-  # Use the specified model to make predictions for dataset
-  predictions <- predict(ldafit, newdata = dataset)$class
-
+  testIndicatorColumn <- rep(1, nrow(dataset))
+  testIndicatorColumn[trainingIndex] <- 0
+  method <- switch(options[["estimationMethod"]],
+    "moment" = "moment",
+    "mle" = "mle",
+    "covMve" = "mve",
+    "t" = "t"
+  )
+  fit <- MASS::lda(formula = formula, data = trainingSet, method = method, CV = FALSE)
+  testPredictions <- stats::predict(fit, newdata = testSet)
   # Create results object
-  classificationResult <- list()
-  classificationResult[["model"]]               <- ldafit
-  classificationResult[["method"]]              <- method
-  classificationResult[["scaling"]]             <- ldafit[["scaling"]]
-  classificationResult[['confTable']]           <- table('Pred' = pred_test[["class"]], 'Real' = test[,options[["target"]]])
-  classificationResult[['testAcc']]             <- sum(diag(prop.table(classificationResult[['confTable']])))
-  classificationResult[["auc"]]                 <- auc
-  classificationResult[["testPred"]]            <- pred_test[["class"]]
-  classificationResult[["testReal"]]            <- test[,options[["target"]]]
-  classificationResult[["meanTable"]]           <- ldafit[["means"]]
-  classificationResult[["relInf"]]              <- summary(ldafit, plot = FALSE)
-  classificationResult[["prior"]]               <- ldafit[["prior"]]
-  classificationResult[["postprob"]]            <- colMeans(pred_test[["posterior"]])
-  classificationResult[["ntrain"]]              <- nrow(train)
-  classificationResult[["ntest"]]               <- nrow(test)
-  classificationResult[["train"]]               <- train
-  classificationResult[["test"]]                <- test
-  classificationResult[["testIndicatorColumn"]] <- testIndicatorColumn
-  classificationResult[["classes"]]             <- predictions
-
-  return(classificationResult)
+  result <- list()
+  result[["model"]] <- fit
+  result[["method"]] <- method
+  result[["scaling"]] <- fit[["scaling"]]
+  result[["confTable"]] <- table("Pred" = testPredictions[["class"]], "Real" = testSet[, options[["target"]]])
+  result[["testAcc"]] <- sum(diag(prop.table(result[["confTable"]])))
+  result[["auc"]] <- .classificationCalcAUC(testSet, trainingSet, options, "ldaClassification", LDAmethod = method)
+  result[["testPred"]] <- testPredictions[["class"]]
+  result[["testReal"]] <- testSet[, options[["target"]]]
+  result[["meanTable"]] <- fit[["means"]]
+  result[["relInf"]] <- summary(fit, plot = FALSE)
+  result[["prior"]] <- fit[["prior"]]
+  result[["postprob"]] <- colMeans(testPredictions[["posterior"]])
+  result[["ntrain"]] <- nrow(trainingSet)
+  result[["ntest"]] <- nrow(testSet)
+  result[["train"]] <- trainingSet
+  result[["test"]] <- testSet
+  result[["testIndicatorColumn"]] <- testIndicatorColumn
+  result[["classes"]] <- predict(fit, newdata = dataset)$class
+  return(result)
 }
 
-.ldaClassificationCoefficients <- function(options, jaspResults, ready, position){
-
-  if(!is.null(jaspResults[["coefficientsTable"]]) || !options[["coefficientsTable"]]) return()
-
-  coefficientsTable <- createJaspTable(title = gettext("Linear Discriminant Coefficients"))
-  coefficientsTable$position <- position
-  coefficientsTable$dependOn(options = c("coefficientsTable", "trainingDataManual", "scaleEqualSD", "modelOpt",
-                                          "target", "predictors", "seed", "seedBox", "modelValid", "estimationMethod",
-                                          "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-                                          "holdoutData", "testDataManual"))
-  coefficientsTable$addColumnInfo(name = "pred_level", title = "", type = "string")
-
-  jaspResults[["coefficientsTable"]] <- coefficientsTable
-
-  if(!ready)  return()
-
-  classificationResult <- jaspResults[["classificationResult"]]$object
-
-  for (ldacoef in colnames(classificationResult[["scaling"]])){
-    coefficientsTable$addColumnInfo(name = ldacoef, type = "number")
+.mlClassificationLdaTableCoef <- function(options, jaspResults, ready, position) {
+  if (!is.null(jaspResults[["coefficientsTable"]]) || !options[["coefficientsTable"]]) {
+    return()
   }
-
-  coefficients <- classificationResult[["scaling"]]
-
+  table <- createJaspTable(title = gettext("Linear Discriminant Coefficients"))
+  table$position <- position
+  table$dependOn(options = c(
+    "coefficientsTable", "trainingDataManual", "scaleEqualSD", "modelOpt",
+    "target", "predictors", "seed", "seedBox", "modelValid", "estimationMethod",
+    "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
+    "holdoutData", "testDataManual"
+  ))
+  table$addColumnInfo(name = "pred_level", title = "", type = "string")
+  jaspResults[["coefficientsTable"]] <- table
+  if (!ready) {
+    return()
+  }
+  state <- jaspResults[["classificationResult"]]$object
+  for (ldacoef in colnames(state[["scaling"]])) {
+    table$addColumnInfo(name = ldacoef, type = "number")
+  }
+  coefficients <- state[["scaling"]]
   # For constants see: https://stats.stackexchange.com/questions/166942/why-are-discriminant-analysis-results-in-r-lda-and-spss-different-constant-t
-  groupmean <- (classificationResult[["model"]]$prior %*% classificationResult[["model"]]$means)
-  constants <- (groupmean %*% classificationResult[["scaling"]])
-
-  row <- cbind(pred_level = c(gettext("(Constant)"), rownames(coefficients)),
-                as.data.frame(rbind(constants, coefficients)))
-
-  coefficientsTable$addRows(row)
+  groupmean <- (state[["model"]]$prior %*% state[["model"]]$means)
+  constants <- (groupmean %*% state[["scaling"]])
+  row <- cbind(
+    pred_level = c(gettext("(Constant)"), rownames(coefficients)),
+    as.data.frame(rbind(constants, coefficients))
+  )
+  table$addRows(row)
 }
 
-.ldaClassificationPriorPosterior <- function(options, jaspResults, ready, position){
-
-  if(!is.null(jaspResults[["priorTable"]]) || !options[["priorTable"]]) return()
-
-  priorTable <- createJaspTable(title = gettext("Prior and Posterior Class Probabilities"))
-  priorTable$position <- position
-  priorTable$dependOn(options = c("priorTable", "trainingDataManual", "scaleEqualSD", "modelOpt",
-                                          "target", "predictors", "seed", "seedBox", "modelValid", "estimationMethod",
-                                          "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-                                          "holdoutData", "testDataManual"))
-
-  priorTable$addColumnInfo(name = "typeprob",  title = "",                   type = "string")
-  priorTable$addColumnInfo(name = "prior",     title = gettext("Prior"),     type = "number")
-  priorTable$addColumnInfo(name = "posterior", title = gettext("Posterior"), type = "number")
-
-  jaspResults[["priorTable"]] <- priorTable
-
-  if(!ready)  return()
-
-  classificationResult <- jaspResults[["classificationResult"]]$object
-
-  levelPriors <- classificationResult[["prior"]]
-  levelPost <- classificationResult[["postprob"]]
-
-  row <- data.frame(typeprob = names(levelPriors), prior = levelPriors, posterior = levelPost)
-  priorTable$addRows(row)
-}
-
-.ldaClassificationMeans <- function(options, jaspResults, ready, position){
-
-  if(!is.null(jaspResults[["meanTable"]]) || !options[["meanTable"]]) return()
-
-  meanTable <- createJaspTable(title = gettext("Class Means in Training Data"))
-  meanTable$position <- position
-  meanTable$dependOn(options = c("meanTable", "trainingDataManual", "scaleEqualSD", "modelOpt", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-                                          "target", "predictors", "seed", "seedBox", "modelValid", "estimationMethod",
-                                          "holdoutData", "testDataManual"))
-
-  meanTable$addColumnInfo(name = "target_level", title = "", type = "string")
-  for (i in options[["predictors"]]){
-    meanTable$addColumnInfo(name = i, type = "number", title = i)
+.mlClassificationLdaTablePriorPosterior <- function(options, jaspResults, ready, position) {
+  if (!is.null(jaspResults[["priorTable"]]) || !options[["priorTable"]]) {
+    return()
   }
+  table <- createJaspTable(title = gettext("Prior and Posterior Class Probabilities"))
+  table$position <- position
+  table$dependOn(options = c(
+    "priorTable", "trainingDataManual", "scaleEqualSD", "modelOpt",
+    "target", "predictors", "seed", "seedBox", "modelValid", "estimationMethod",
+    "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
+    "holdoutData", "testDataManual"
+  ))
+  table$addColumnInfo(name = "typeprob", title = "", type = "string")
+  table$addColumnInfo(name = "prior", title = gettext("Prior"), type = "number")
+  table$addColumnInfo(name = "posterior", title = gettext("Posterior"), type = "number")
+  jaspResults[["priorTable"]] <- table
+  if (!ready) {
+    return()
+  }
+  state <- jaspResults[["classificationResult"]]$object
+  levelPriors <- state[["prior"]]
+  levelPost <- state[["postprob"]]
+  row <- data.frame(typeprob = names(levelPriors), prior = levelPriors, posterior = levelPost)
+  table$addRows(row)
+}
 
-  jaspResults[["meanTable"]] <- meanTable
-
-  if(!ready)  return()
-
-  classificationResult <- jaspResults[["classificationResult"]]$object
-  groupMeans <- classificationResult[["meanTable"]]
+.mlClassificationLdaTableMeans <- function(options, jaspResults, ready, position) {
+  if (!is.null(jaspResults[["meanTable"]]) || !options[["meanTable"]]) {
+    return()
+  }
+  table <- createJaspTable(title = gettext("Class Means in Training Data"))
+  table$position <- position
+  table$dependOn(options = c(
+    "meanTable", "trainingDataManual", "scaleEqualSD", "modelOpt", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
+    "target", "predictors", "seed", "seedBox", "modelValid", "estimationMethod",
+    "holdoutData", "testDataManual"
+  ))
+  table$addColumnInfo(name = "target_level", title = "", type = "string")
+  for (i in options[["predictors"]]) {
+    table$addColumnInfo(name = i, type = "number", title = i)
+  }
+  jaspResults[["meanTable"]] <- table
+  if (!ready) {
+    return()
+  }
+  state <- jaspResults[["classificationResult"]]$object
+  groupMeans <- state[["meanTable"]]
   colnames(groupMeans) <- colnames(groupMeans)
-
   row <- cbind(target_level = rownames(groupMeans), as.data.frame(groupMeans))
-  meanTable$addRows(row)
+  table$addRows(row)
 }
 
-.ldaMatricesPlot <- function(dataset, options, jaspResults, ready, position){
-
-  if (!is.null(jaspResults[["matrixplot"]]) || !options[["matrixplot"]]) return()
-
-  matrixplot <- createJaspPlot(title = gettext("Linear Discriminant Matrix"), height = 400, width = 300)
-  matrixplot$position <- position
-  matrixplot$dependOn(options = c("matrixplot", "plotDensities", "plotStatistics", "trainingDataManual", "scaleEqualSD", "modelOpt", "holdoutData", "testDataManual",
-                                          "target", "predictors", "seed", "seedBox", "modelValid", "estimationMethod", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual"))
-  jaspResults[["matrixplot"]] <- matrixplot
-
-  if(!ready)  return()
-
-  classificationResult <- jaspResults[["classificationResult"]]$object
-
-  .ldaFillMatrixPlot(dataset, options, jaspResults, classificationResult, matrixplot)
+.mlClassificationLdaPlotDiscriminants <- function(dataset, options, jaspResults, ready, position) {
+  if (!is.null(jaspResults[["matrixplot"]]) || !options[["matrixplot"]]) {
+    return()
+  }
+  plot <- createJaspPlot(title = gettext("Linear Discriminant Matrix"), height = 400, width = 300)
+  plot$position <- position
+  plot$dependOn(options = c(
+    "matrixplot", "plotDensities", "plotStatistics", "trainingDataManual", "scaleEqualSD", "modelOpt", "holdoutData", "testDataManual",
+    "target", "predictors", "seed", "seedBox", "modelValid", "estimationMethod", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual"
+  ))
+  jaspResults[["matrixplot"]] <- plot
+  if (!ready) {
+    return()
+  }
+  .ldaFillMatrixPlot(dataset, options, jaspResults, jaspResults[["classificationResult"]]$object, plot)
 }
 
-.ldaFillMatrixPlot <- function(dataset, options, jaspResults, classificationResult, matrixplot) {
-
+.ldaFillMatrixPlot <- function(dataset, options, jaspResults, classificationResult, plot) {
   variables <- colnames(classificationResult[["scaling"]])
   l <- length(variables)
-
   if (l <= 2 && (options[["plotDensities"]] || options[["plotStatistics"]])) {
     width <- 580
     height <- 580
@@ -270,71 +251,67 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
     width <- 250 * l
     height <- 250 * l
   }
-
-  matrixplot[["width"]]  <- width
-  matrixplot[["height"]] <- height
-
+  plot[["width"]] <- width
+  plot[["height"]] <- height
   cexText <- 1.6
-
   plotMat <- matrix(list(), l, l)
   adjMargin <- ggplot2::theme(plot.margin = ggplot2::unit(c(.25, .40, .25, .25), "cm"))
   oldFontSize <- jaspGraphs::getGraphOption("fontsize")
   jaspGraphs::setGraphOption("fontsize", .85 * oldFontSize)
-
-  startProgressbar(length(plotMat)+1)
+  startProgressbar(length(plotMat) + 1)
   for (row in seq_len(l)) {
     for (col in seq_len(l)) {
       if (row == col) {
         if (options[["plotDensities"]]) {
-            plotMat[[row, col]] <- .ldaDensityplot(classificationResult, options, col) + adjMargin # plot marginal (histogram with density estimator)
+          plotMat[[row, col]] <- .ldaDensityplot(classificationResult, options, col) + adjMargin # plot marginal (histogram with density estimator)
         } else {
-
-          p <- jaspGraphs::drawAxis(xName = "", yName = "", force = TRUE) + adjMargin
-          p <- p + ggplot2::xlab("")
-          p <- p + ggplot2::ylab("")
-          p <- jaspGraphs::themeJasp(p)
+          p <- jaspGraphs::drawAxis(xName = "", yName = "", force = TRUE) +
+            adjMargin +
+            ggplot2::xlab("") +
+            ggplot2::ylab("") +
+            jaspGraphs::geom_rangeframe() +
+            jaspGraphs::themeJaspRaw()
 
           plotMat[[row, col]] <- p
         }
       }
-
       if (col > row) {
         if (options[["plotStatistics"]]) {
-            plotMat[[row, col]] <- .ldaScatterPlot(classificationResult, options, col) + adjMargin # plot scatterplot
-
+          plotMat[[row, col]] <- .ldaScatterPlot(classificationResult, options, col) + adjMargin # plot scatterplot
         } else {
-
-          p <- jaspGraphs::drawAxis(xName = "", yName = "", force = TRUE) + adjMargin
-          p <- p + ggplot2::xlab("")
-          p <- p + ggplot2::ylab("")
-          p <- jaspGraphs::themeJasp(p)
+          p <- jaspGraphs::drawAxis(xName = "", yName = "", force = TRUE) +
+            adjMargin +
+            ggplot2::xlab("") +
+            ggplot2::ylab("") +
+            jaspGraphs::geom_rangeframe() +
+            jaspGraphs::themeJaspRaw()
 
           plotMat[[row, col]] <- p
         }
       }
-
       if (col < row) {
         if (l < 7) {
           if (options[["plotStatistics"]]) {
-            p <- jaspGraphs::drawAxis(xName = "", yName = "", force = TRUE) + adjMargin
-            p <- p + ggplot2::xlab("")
-            p <- p + ggplot2::ylab("")
-            p <- jaspGraphs::themeJasp(p)
+            p <- jaspGraphs::drawAxis(xName = "", yName = "", force = TRUE) +
+              adjMargin +
+              ggplot2::xlab("") +
+              ggplot2::ylab("") +
+              jaspGraphs::geom_rangeframe() +
+              jaspGraphs::themeJaspRaw()
 
             plotMat[[row, col]] <- p
-
           } else {
-
-            p <- jaspGraphs::drawAxis(xName = "", yName = "", force = TRUE) + adjMargin
-            p <- p + ggplot2::xlab("")
-            p <- p + ggplot2::ylab("")
-            p <- jaspGraphs::themeJasp(p)
+            p <- jaspGraphs::drawAxis(xName = "", yName = "", force = TRUE) +
+              adjMargin +
+              ggplot2::xlab("") +
+              ggplot2::ylab("") +
+              jaspGraphs::geom_rangeframe() +
+              jaspGraphs::themeJaspRaw()
 
             plotMat[[row, col]] <- p
           }
         }
-
-        if (col == 1 && row == 2){
+        if (col == 1 && row == 2) {
           plotMat[[2, 1]] <- .legendPlot(dataset, options, col)
         }
         progressbarTick()
@@ -346,193 +323,164 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   labelPos <- matrix(.5, 4, 2)
   labelPos[1, 1] <- .55
   labelPos[4, 2] <- .65
-  p <- jaspGraphs::ggMatrixPlot(plotList = plotMat, leftLabels = variables, topLabels = variables,
-                                scaleXYlabels = NULL, labelPos = labelPos)
-
+  p <- jaspGraphs::ggMatrixPlot(
+    plotList = plotMat, leftLabels = variables, topLabels = variables,
+    scaleXYlabels = NULL, labelPos = labelPos
+  )
   progressbarTick()
-  matrixplot$plotObject <- p
+  plot$plotObject <- p
 }
 
-.ldaDensityplot <- function(classificationResult, options, col){
-
+.ldaDensityplot <- function(classificationResult, options, col) {
   target <- classificationResult[["train"]][, options[["target"]]]
-  lda.fit.scaled <- cbind.data.frame(
+  ldaFitScaled <- cbind.data.frame(
     LD = .ldaModelMatrix(classificationResult[["model"]], classificationResult[["train"]]) %*% classificationResult[["scaling"]][, col],
-    V2 = classificationResult[["train"]][,options[["target"]]]
+    V2 = classificationResult[["train"]][, options[["target"]]]
   )
-  lda.fit.scaled[["V2"]] <- as.factor(lda.fit.scaled[["V2"]])
-
-  xBreaks <- jaspGraphs::getPrettyAxisBreaks(lda.fit.scaled[, "LD"], min.n = 4)
-
+  ldaFitScaled[["V2"]] <- as.factor(ldaFitScaled[["V2"]])
+  xBreaks <- jaspGraphs::getPrettyAxisBreaks(ldaFitScaled[, "LD"], min.n = 4)
   if (length(colnames(classificationResult[["scaling"]])) == 1) {
-
-    p <- ggplot2::ggplot(data = lda.fit.scaled, ggplot2::aes(x = LD, group = V2, color = V2, show.legend = TRUE)) +
-          jaspGraphs::geom_line(stat = "density") +
-          ggplot2::labs(color = options[["target"]]) +
-          ggplot2::theme(legend.key = ggplot2::element_blank()) +
-          ggplot2::scale_color_manual(values = colorspace::qualitative_hcl(n = length(unique(target)))) +
-          ggplot2::scale_x_continuous(name = "", breaks = xBreaks, limits = range(xBreaks)) +
-          ggplot2::scale_y_continuous(name = gettext("Density"))
-
-    p <- jaspGraphs::themeJasp(p, legend.position = "right")
-    p <- p + ggplot2::theme(axis.ticks.y = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank())
-    p <- p + ggplot2::guides(color = ggplot2::guide_legend(override.aes = list(shape = 21)))
-
+    p <- ggplot2::ggplot(data = ldaFitScaled, ggplot2::aes(x = LD, group = V2, color = V2, show.legend = TRUE)) +
+      jaspGraphs::geom_line(stat = "density") +
+      ggplot2::labs(color = options[["target"]]) +
+      ggplot2::theme(legend.key = ggplot2::element_blank()) +
+      ggplot2::scale_color_manual(values = .mlColorScheme(length(unique(target)))) +
+      ggplot2::scale_x_continuous(name = NULL, breaks = xBreaks, limits = range(xBreaks)) +
+      ggplot2::scale_y_continuous(name = gettext("Density")) +
+      jaspGraphs::geom_rangeframe() +
+      jaspGraphs::themeJaspRaw(legend.position = "right") +
+      ggplot2::theme(axis.ticks.y = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank()) +
+      ggplot2::guides(color = ggplot2::guide_legend(override.aes = list(shape = 21)))
   } else {
-
-    p <- ggplot2::ggplot(data = lda.fit.scaled, ggplot2::aes(x = LD, group = V2, color = V2)) +
-          jaspGraphs::geom_line(stat = "density") +
-          ggplot2::scale_color_manual(values = colorspace::qualitative_hcl(n = length(unique(target)))) +
-          ggplot2::scale_x_continuous(name = "", breaks = xBreaks, limits = range(xBreaks)) +
-          ggplot2::scale_y_continuous(name = gettext("Density"))
-    p <- jaspGraphs::themeJasp(p)
-    p <- p + ggplot2::theme(axis.ticks.y = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank())
-
+    p <- ggplot2::ggplot(data = ldaFitScaled, ggplot2::aes(x = LD, group = V2, color = V2)) +
+      jaspGraphs::geom_line(stat = "density") +
+      ggplot2::scale_color_manual(values = .mlColorScheme(length(unique(target)))) +
+      ggplot2::scale_x_continuous(name = NULL, breaks = xBreaks, limits = range(xBreaks)) +
+      ggplot2::scale_y_continuous(name = gettext("Density")) +
+      jaspGraphs::geom_rangeframe() +
+      jaspGraphs::themeJaspRaw() +
+      ggplot2::theme(axis.ticks.y = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank())
   }
   return(p)
 }
 
-.ldaScatterPlot <- function(classificationResult, options, col){
-
+.ldaScatterPlot <- function(classificationResult, options, col) {
   data <- classificationResult[["train"]]
   target <- data[, options[["target"]]]
   model <- classificationResult[["model"]]
-
-  pred.values <- stats::predict(model, newdata = data)$x[,c(col, col - 1)]
-  lda.data <- data.frame(pred.values, target = target)
-  colnames(lda.data) <- c("x", "y", "target")
-
-  xBreaks <- jaspGraphs::getPrettyAxisBreaks(lda.data[, "x"], min.n = 4)
-  yBreaks <- jaspGraphs::getPrettyAxisBreaks(lda.data[, "y"], min.n = 4)
-
-  p <- ggplot2::ggplot(lda.data, ggplot2::aes(x = x, y = y)) +
-        jaspGraphs::geom_point(ggplot2::aes(fill = target)) +
-        ggplot2::labs(fill = options[["target"]]) +
-        ggplot2::scale_fill_manual(values = colorspace::qualitative_hcl(n = length(unique(target)))) +
-        ggplot2::scale_x_continuous(name = "", breaks = xBreaks, limits = range(xBreaks)) +
-        ggplot2::scale_y_continuous(name = "", breaks = yBreaks, limits = range(yBreaks))
-  p <- jaspGraphs::themeJasp(p)
-
+  predictions <- stats::predict(model, newdata = data)$x[, c(col, col - 1)]
+  plotData <- data.frame(predictions, target = target)
+  colnames(plotData) <- c("x", "y", "target")
+  xBreaks <- jaspGraphs::getPrettyAxisBreaks(plotData[, "x"], min.n = 4)
+  yBreaks <- jaspGraphs::getPrettyAxisBreaks(plotData[, "y"], min.n = 4)
+  p <- ggplot2::ggplot(plotData, ggplot2::aes(x = x, y = y)) +
+    jaspGraphs::geom_point(ggplot2::aes(fill = target)) +
+    ggplot2::labs(fill = options[["target"]]) +
+    ggplot2::scale_fill_manual(values = .mlColorScheme(length(unique(target)))) +
+    ggplot2::scale_x_continuous(name = NULL, breaks = xBreaks, limits = range(xBreaks)) +
+    ggplot2::scale_y_continuous(name = NULL, breaks = yBreaks, limits = range(yBreaks)) +
+    jaspGraphs::geom_rangeframe() +
+    jaspGraphs::themeJaspRaw()
   return(p)
 }
 
-.ldaEqualityOfClassMeans <- function(dataset, options, jaspResults, ready, position){
-
-  if(!is.null(jaspResults[["manovaTable"]]) || !options[["manovaTable"]]) return()
-
-  manovaTable <- createJaspTable(title = gettext("Tests of Equality of Class Means"))
-  manovaTable$position <- position
-  manovaTable$dependOn(options = c("manovaTable", "scaleEqualSD", "target", "predictors"))
-  manovaTable$addColumnInfo(name = "model", title = "", type = "string")
-  manovaTable$addColumnInfo(name = "f", title = "F", type = "number")
-  manovaTable$addColumnInfo(name = "df1", title = "df1", type = "integer")
-  manovaTable$addColumnInfo(name = "df2", title = "df2", type = "integer")
-  manovaTable$addColumnInfo(name = "p", title = "p", type = "pvalue")
-
-  manovaTable$addFootnote(gettext("The null hypothesis specifies equal class means."))
-
-  jaspResults[["manovaTable"]] <- manovaTable
-
-  if(!ready)  return()
-
+.mlClassificationLdaTableEqualityMeans <- function(dataset, options, jaspResults, ready, position) {
+  if (!is.null(jaspResults[["manovaTable"]]) || !options[["manovaTable"]]) {
+    return()
+  }
+  table <- createJaspTable(title = gettext("Tests of Equality of Class Means"))
+  table$position <- position
+  table$dependOn(options = c("manovaTable", "scaleEqualSD", "target", "predictors"))
+  table$addColumnInfo(name = "model", title = "", type = "string")
+  table$addColumnInfo(name = "f", title = "F", type = "number")
+  table$addColumnInfo(name = "df1", title = "df1", type = "integer")
+  table$addColumnInfo(name = "df2", title = "df2", type = "integer")
+  table$addColumnInfo(name = "p", title = "p", type = "pvalue")
+  table$addFootnote(gettext("The null hypothesis specifies equal class means."))
+  jaspResults[["manovaTable"]] <- table
+  if (!ready) {
+    return()
+  }
   target <- as.numeric(dataset[, options[["target"]]])
   predictors <- as.matrix(dataset[, options[["predictors"]]])
-
-  tryCatch({
-    manovaResult <- manova(predictors ~ target)
-    manovaSummary <- summary(manovaResult, test="Wilks")
-
-    # Individual models
-    anovaSummary <- summary.aov(manovaResult)
-    for(i in 1:length(anovaSummary)){
-      sumTmp <- as.matrix(anovaSummary[[i]])
-      Fstat <- sumTmp[1, 4]
-      df1 <- sumTmp[1, 1]
-      df2 <- sumTmp[2, 1]
-      p <- sumTmp[1, 5]
-      row <- data.frame(model = options[["predictors"]][i], f = Fstat, df1 = df1, df2 = df2, p = p)
-      manovaTable$addRows(row)
-    }
-  }, error = function(e) manovaTable$setError(.extractErrorMessage(e))
+  tryCatch(
+    {
+      manovaResult <- manova(predictors ~ target)
+      manovaSummary <- summary(manovaResult, test = "Wilks")
+      # Individual models
+      anovaSummary <- summary.aov(manovaResult)
+      for (i in 1:length(anovaSummary)) {
+        sumTmp <- as.matrix(anovaSummary[[i]])
+        Fstat <- sumTmp[1, 4]
+        df1 <- sumTmp[1, 1]
+        df2 <- sumTmp[2, 1]
+        p <- sumTmp[1, 5]
+        row <- data.frame(model = options[["predictors"]][i], f = Fstat, df1 = df1, df2 = df2, p = p)
+        table$addRows(row)
+      }
+    },
+    error = function(e) table$setError(.extractErrorMessage(e))
   )
-
 }
 
-.ldaEqualityOfCovarianceMatrices <- function(dataset, options, jaspResults, ready, position){
-
-  if(!is.null(jaspResults[["boxTest"]]) || !options[["boxTest"]]) return()
-
-  boxTest <- createJaspTable(title = gettext("Tests of Equality of Covariance Matrices"))
-  boxTest$position <- position
-  boxTest$dependOn(options = c("boxTest", "scaleEqualSD", "target", "predictors"))
-
-  boxTest$addColumnInfo(name = "test", title = "",             type = "string")
-  boxTest$addColumnInfo(name = "x",    title = "\u03C7\u00B2", type = "number")
-  boxTest$addColumnInfo(name = "df",   title = gettext("df"),  type = "integer")
-  boxTest$addColumnInfo(name = "p",    title = gettext("p"),   type = "pvalue")
-
-  boxTest$addFootnote(gettext("The null hypothesis specifies equal covariance matrices."))
-
-  jaspResults[["boxTest"]] <- boxTest
-
-  if(!ready)  return()
-
-  target <- dataset[, options[["target"]]]
-  predictors <- dataset[, options[["predictors"]]]
-
-  testLabel <- "Box's M"
-  boxSum <- .boxM(predictors, target)
+.mlClassificationLdaTableEqualityCovMat <- function(dataset, options, jaspResults, ready, position) {
+  if (!is.null(jaspResults[["boxTest"]]) || !options[["boxTest"]]) {
+    return()
+  }
+  table <- createJaspTable(title = gettext("Tests of Equality of Covariance Matrices"))
+  table$position <- position
+  table$dependOn(options = c("boxTest", "scaleEqualSD", "target", "predictors"))
+  table$addColumnInfo(name = "test", title = "", type = "string")
+  table$addColumnInfo(name = "x", title = "\u03C7\u00B2", type = "number")
+  table$addColumnInfo(name = "df", title = gettext("df"), type = "integer")
+  table$addColumnInfo(name = "p", title = gettext("p"), type = "pvalue")
+  table$addFootnote(gettext("The null hypothesis specifies equal covariance matrices."))
+  jaspResults[["boxTest"]] <- table
+  if (!ready) {
+    return()
+  }
+  boxSum <- .boxM(dataset[, options[["predictors"]]], dataset[, options[["target"]]])
   chi <- as.numeric(boxSum[["statistic"]])
   df <- as.numeric(boxSum[["parameter"]])
   p <- as.numeric(boxSum[["p.value"]])
-
-  row <- data.frame(test = testLabel, x = chi, df = df, p = p)
-  boxTest$addRows(row)
+  row <- data.frame(test = "Box's M", x = chi, df = df, p = p)
+  table$addRows(row)
 }
 
-.ldaMulticollinearity <- function(dataset, options, jaspResults, ready, position){
-
-  if(!is.null(jaspResults[["multicolTable"]]) || !options[["multicolTable"]]) return()
-
-  multicolTable <- createJaspTable(title = gettext("Pooled Within-Class Matrices Correlations"))
-  multicolTable$position <- position
-  multicolTable$dependOn(options = c("multicolTable", "scaleEqualSD", "target", "predictors"))
-
-  jaspResults[["multicolTable"]] <- multicolTable
-
-  if(!ready)  return()
-
-  target <- dataset[, options[["target"]]]
-  predictors <- dataset[, options[["predictors"]]]
-
-  boxSum <- .boxM(predictors, target)
+.mlClassificationLdaTableMulticollinearity <- function(dataset, options, jaspResults, ready, position) {
+  if (!is.null(jaspResults[["multicolTable"]]) || !options[["multicolTable"]]) {
+    return()
+  }
+  table <- createJaspTable(title = gettext("Pooled Within-Class Matrices Correlations"))
+  table$position <- position
+  table$dependOn(options = c("multicolTable", "scaleEqualSD", "target", "predictors"))
+  jaspResults[["multicolTable"]] <- table
+  if (!ready) {
+    return()
+  }
+  boxSum <- .boxM(dataset[, options[["predictors"]]], dataset[, options[["target"]]])
   corPooled <- cor(boxSum[["pooled"]])
-
-  multicolTable$addColumnInfo(name = "empty", title = "", type = "string")
-
-  for(i in 1:ncol(corPooled)){
-    multicolTable$addColumnInfo(name = paste0("v", i), title = unlist(options[["predictors"]])[i], type = "number")
+  table$addColumnInfo(name = "empty", title = "", type = "string")
+  for (i in 1:ncol(corPooled)) {
+    table$addColumnInfo(name = paste0("v", i), title = unlist(options[["predictors"]])[i], type = "number")
   }
-
-  for(i in 1:nrow(corPooled)){
+  for (i in 1:nrow(corPooled)) {
     row <- data.frame(empty = unlist(options[["predictors"]])[i])
-    for(j in 1:ncol(corPooled)){
-      if(j <= i)
+    for (j in 1:ncol(corPooled)) {
+      if (j <= i) {
         row[[paste0("v", j)]] <- corPooled[j, i]
+      }
     }
-    multicolTable$addRows(row)
+    table$addRows(row)
   }
-
 }
 
 .ldaModelMatrix <- function(ldafit, data) {
-
   # adapted from MASS:::lda.formula
-
   x <- model.matrix(ldafit$terms, data)
   xint <- match("(Intercept)", colnames(x), nomatch = 0L)
-  if (xint > 0L)
+  if (xint > 0L) {
     x <- x[, -xint, drop = FALSE]
-  x
+  }
+  return(x)
 }
-
