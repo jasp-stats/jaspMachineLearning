@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-05-07 13:27\n"
+"POT-Creation-Date: 2021-10-02 03:23\n"
 "PO-Revision-Date: 2021-08-14 10:48+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
@@ -33,6 +33,10 @@ msgstr "Clasificación en bosques aleatorios"
 msgid "Boosting Classification"
 msgstr "Clasificación de potenciación"
 
+#, fuzzy
+msgid "Neural Network Classification"
+msgstr "Clasificación dos K veciños máis próximos"
+
 msgid "Nearest neighbors"
 msgstr "Veciños máis próximos"
 
@@ -57,6 +61,12 @@ msgstr "Preditores por separador"
 msgid "Shrinkage"
 msgstr "Contracción"
 
+msgid "Hidden Layers"
+msgstr ""
+
+msgid "Nodes"
+msgstr ""
+
 msgid "n(Train)"
 msgstr "n(Adestramento)"
 
@@ -79,6 +89,12 @@ msgid "Please provide a target variable and at least %i predictor variable(s)."
 msgstr ""
 "Por favor, proporciona unha variable como obxectivo e, cando menos, %i "
 "variable(s) preditora(s)."
+
+msgid "The trained model is saved as <i>%1$s</i>."
+msgstr ""
+
+msgid "The trained model is not saved until 'Save trained model' is checked."
+msgstr ""
 
 msgid ""
 "The model is optimized with respect to the <i>validation set accuracy</i>."
@@ -111,7 +127,13 @@ msgid "t"
 msgstr "t"
 
 msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
-msgstr "O modelo optimízase respecto á <i>precisión \"descuberto o choio\"</i>."
+msgstr ""
+"O modelo optimízase respecto á <i>precisión \"descuberto o choio\"</i>."
+
+#, fuzzy
+msgid "The model is optimized with respect to the <i>sum of squares</i>."
+msgstr ""
+"O modelo optimízase respecto á <i>precisión \"descuberto o choio\"</i>."
 
 msgid "Confusion Matrix"
 msgstr "Matriz de Desarranxo"
@@ -383,8 +405,8 @@ msgid ""
 "Your test set indicator should be binary, containing only 1 (included in "
 "test set) and 0 (excluded from test set)."
 msgstr ""
-"O teu indicador do conxunto de probas debera ser binario, contendo só 1 ("
-"incluído no conxunto de probas) e 0 (excluído do conxunto de probas)."
+"O teu indicador do conxunto de probas debera ser binario, contendo só 1 "
+"(incluído no conxunto de probas) e 0 (excluído do conxunto de probas)."
 
 msgid ""
 "You have specified more nearest neighbors than there are observations in the "
@@ -405,8 +427,8 @@ msgid ""
 "Min. observations in node + 1` > `Training data used per tree * available "
 "training data` (in this case the minimum can be %.3f at most)."
 msgstr ""
-"O número mínimo de observacións por nodo é longo de máis. Asegúrate de que `"
-"2 * Min. observacións no nodo + 1` > `Datos de adestramento utilizados por "
+"O número mínimo de observacións por nodo é longo de máis. Asegúrate de que "
+"`2 * Min. observacións no nodo + 1` > `Datos de adestramento utilizados por "
 "árbore * datos de adestramento dispoñibles` (neste caso o mínimo pode ser "
 "%.3f como moito)."
 
@@ -421,6 +443,10 @@ msgstr "Regresión de bosques aleatorios"
 
 msgid "Boosting Regression"
 msgstr "Regresión de potenciación"
+
+#, fuzzy
+msgid "Neural Network Regression"
+msgstr "Regresión dos K veciños máis próximos"
 
 msgid "Penalty"
 msgstr "Penalización"
@@ -439,8 +465,8 @@ msgstr "Erro OOB"
 
 msgid "Please provide a target variable and at least %d predictor variable(s)."
 msgstr ""
-"Por favor, proporciona unha variable obxectivo e, cando menos, %d variable(s)"
-" preditora(s)."
+"Por favor, proporciona unha variable obxectivo e, cando menos, %d "
+"variable(s) preditora(s)."
 
 msgid ""
 "The model is optimized with respect to the <i>validation set mean squared "
@@ -456,8 +482,8 @@ msgid ""
 "The model is optimized with respect to the <i>out-of-bag mean squared error</"
 "i>."
 msgstr ""
-"O modelo optimízase respecto ao <i>erro cadrado medio \"descuberto o choio\""
-"</i>."
+"O modelo optimízase respecto ao <i>erro cadrado medio \"descuberto o choio"
+"\"</i>."
 
 msgid "Gaussian"
 msgstr "Normal"
@@ -544,6 +570,12 @@ msgstr "A hipótese nula indica matrices de covarianzas iguais."
 msgid "Pooled Within-Class Matrices Correlations"
 msgstr "Correlacións das Matrices Combinadas Dentro de Clase"
 
+msgid "An error occurred in the 'neuralnet' package: %1$s"
+msgstr ""
+
+msgid "Optimizing network topology"
+msgstr ""
+
 msgid "K-Distance Plot"
 msgstr "Gráfica de Distancia K"
 
@@ -594,6 +626,66 @@ msgstr "Importancia da Variable"
 
 msgid "Mean decrease in Gini Index"
 msgstr "Decrecemento da media no Índice de Gini"
+
+#, fuzzy
+msgid "Linear discriminant"
+msgstr "Discriminantes Lineais"
+
+msgid "Boosting"
+msgstr ""
+
+#, fuzzy
+msgid "Random forest"
+msgstr "Conglomerados en bosques aleatorios"
+
+#, fuzzy
+msgid "Regularized linear regression"
+msgstr "Regresión linear regularizada"
+
+msgid "Neural network"
+msgstr ""
+
+msgid "Error: The trained model is not created in JASP."
+msgstr ""
+
+msgid "The trained model (type: %1$s) is currently not supported in JASP."
+msgstr ""
+
+msgid "Error: The trained model is created using a different version of JASP."
+msgstr ""
+
+msgid "Loaded Model"
+msgstr ""
+
+#, fuzzy
+msgid "Classification"
+msgstr "Clasificación de potenciación"
+
+#, fuzzy
+msgid "Regression"
+msgstr "Regresión de potenciación"
+
+msgid "Loaded Model: %1$s"
+msgstr ""
+
+msgid ""
+"The trained model is not applied because the the following predictors are "
+"missing: <i>%1$s</i>."
+msgstr ""
+
+msgid ""
+"The following predictors are unused because they are not a predictor "
+"variable in the trained model: <i>%1$s</i>."
+msgstr ""
+
+msgid "n(New)"
+msgstr ""
+
+msgid "Predictions for New Data"
+msgstr ""
+
+msgid "Row"
+msgstr ""
 
 msgid "Relative Influence"
 msgstr "Influencia Relativa"
@@ -651,6 +743,144 @@ msgstr "Número de Veciños Máis Próximos"
 
 msgid "Training and validation set"
 msgstr "Conxunto de adestramento e validación"
+
+#, fuzzy
+msgid "Network Weights"
+msgstr "Ponderacións"
+
+msgid "Node"
+msgstr ""
+
+msgid "Layer"
+msgstr ""
+
+#, fuzzy
+msgid "Weight"
+msgstr "Ponderacións"
+
+msgid "linear"
+msgstr ""
+
+msgid "binary step"
+msgstr ""
+
+msgid "logistic sigmoid"
+msgstr ""
+
+msgid "sine"
+msgstr ""
+
+msgid "cosine"
+msgstr ""
+
+msgid "inverse tangent"
+msgstr ""
+
+msgid "hyperbolic tangent"
+msgstr ""
+
+msgid "rectified linear unit (ReLU)"
+msgstr ""
+
+msgid "softplus"
+msgstr ""
+
+msgid "softsign"
+msgstr ""
+
+msgid "exponential linear unit (ELU)"
+msgstr ""
+
+msgid "leaky rectified linear unit (Leaky ReLU)"
+msgstr ""
+
+msgid "sigmoid linear unit (SiLU)"
+msgstr ""
+
+msgid "mish"
+msgstr ""
+
+#, fuzzy
+msgid "gaussian"
+msgstr "Normal"
+
+msgid "gaussian error linear unit (GeLU)"
+msgstr ""
+
+msgid "The weights are input for the %1$s activation function."
+msgstr ""
+
+msgid "Network Structure Plot"
+msgstr ""
+
+msgid "Intercept"
+msgstr ""
+
+msgid "Input layer"
+msgstr ""
+
+msgid "Output layer"
+msgstr ""
+
+msgid "Hidden layer %1$s"
+msgstr ""
+
+msgid "Linear"
+msgstr ""
+
+msgid "Binary"
+msgstr ""
+
+msgid "Logistic Sigmoid"
+msgstr ""
+
+msgid "Sine"
+msgstr ""
+
+msgid "Cosine"
+msgstr ""
+
+msgid "Inverse Tangent"
+msgstr ""
+
+msgid "Hyperbolic Tangent"
+msgstr ""
+
+msgid "ReLU"
+msgstr ""
+
+msgid "Softplus"
+msgstr ""
+
+msgid "Softsign"
+msgstr ""
+
+msgid "ELU"
+msgstr ""
+
+msgid "Leaky ReLU"
+msgstr ""
+
+msgid "SiLU"
+msgstr ""
+
+msgid "Mish"
+msgstr ""
+
+msgid "GeLU"
+msgstr ""
+
+msgid "%1$s Activation Function"
+msgstr ""
+
+msgid "Input"
+msgstr ""
+
+msgid "Output"
+msgstr ""
+
+msgid "Generation"
+msgstr ""
 
 msgid "Mean decrease in accuracy"
 msgstr "Decrecemento da media na precisión"

@@ -284,18 +284,6 @@ msgctxt "mlClassificationBoosting|"
 msgid "Max. trees:"
 msgstr "Max. Bäume:"
 
-msgctxt "mlClassificationBoosting|"
-msgid "Add predicted classes to data"
-msgstr "Vorhergesagte Klassen den Daten hinzufügen"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Column name: "
-msgstr "Spaltenname: "
-
-msgctxt "mlClassificationBoosting|"
-msgid "<b>Save Model</b>"
-msgstr "<b>Modell speichern</b>"
-
 msgctxt "mlClassificationKnn|"
 msgid "Target"
 msgstr "Ziel"
@@ -444,18 +432,6 @@ msgctxt "mlClassificationKnn|"
 msgid "Max. nearest neighbors:"
 msgstr "Max. nächste Nachbarn:"
 
-msgctxt "mlClassificationKnn|"
-msgid "Add predicted classes to data"
-msgstr "Vorhergesagte Klassen den Daten hinzufügen"
-
-msgctxt "mlClassificationKnn|"
-msgid "Column name: "
-msgstr "Spaltenname: "
-
-msgctxt "mlClassificationKnn|"
-msgid "<b>Save Model</b>"
-msgstr "<b>Modell speichern</b>"
-
 msgctxt "mlClassificationLda|"
 msgid "Target"
 msgstr "Ziel"
@@ -571,18 +547,6 @@ msgstr "Skalierungsprädiktoren"
 msgctxt "mlClassificationLda|"
 msgid "Set seed: "
 msgstr "Startwert für Zufallszahlen setzen: "
-
-msgctxt "mlClassificationLda|"
-msgid "Add predicted classes to data"
-msgstr "Vorhergesagte Klassen den Daten hinzufügen"
-
-msgctxt "mlClassificationLda|"
-msgid "Column name: "
-msgstr "Spaltenname: "
-
-msgctxt "mlClassificationLda|"
-msgid "<b>Save Model</b>"
-msgstr "<b>Modell speichern</b>"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Target"
@@ -708,18 +672,6 @@ msgctxt "mlClassificationRandomForest|"
 msgid "Max. trees:"
 msgstr "Max. Bäume:"
 
-msgctxt "mlClassificationRandomForest|"
-msgid "Add predicted classes to data"
-msgstr "Vorhergesagte Klassen den Daten hinzufügen"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Column name: "
-msgstr "Spaltenname: "
-
-msgctxt "mlClassificationRandomForest|"
-msgid "<b>Save Model</b>"
-msgstr "<b>Modell speichern</b>"
-
 msgctxt "mlClusteringDensityBased|"
 msgid "Variables"
 msgstr "Variablen"
@@ -831,18 +783,6 @@ msgstr "Modelloptimierung"
 msgctxt "mlClusteringDensityBased|"
 msgid "Fixed"
 msgstr "Fixiert"
-
-msgctxt "mlClusteringDensityBased|"
-msgid "Add predicted clusters to data"
-msgstr "Vorhergesagte Cluser zu Daten hinzufügen"
-
-msgctxt "mlClusteringDensityBased|"
-msgid "Column name: "
-msgstr "Spaltenname: "
-
-msgctxt "mlClusteringDensityBased|"
-msgid "<b>Save Model</b>"
-msgstr "<b>Modell speichern</b>"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Variables"
@@ -959,18 +899,6 @@ msgstr "Geoptimaliseerd volgens"
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Max. clusters:"
 msgstr "Max. Cluster:"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Add predicted clusters to data"
-msgstr "Vorhergesagte Cluster zu Daten hinzufügen"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Column name: "
-msgstr "Spaltenname: "
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "<b>Save Model</b>"
-msgstr "<b>Bewaar model</b>"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Variables"
@@ -1124,18 +1052,6 @@ msgctxt "mlClusteringHierarchical|"
 msgid "Max. clusters:"
 msgstr "Max. Cluster:"
 
-msgctxt "mlClusteringHierarchical|"
-msgid "Add predicted clusters to data"
-msgstr "Vorhergesagte Cluster zu Daten hinzufügen"
-
-msgctxt "mlClusteringHierarchical|"
-msgid "Column name: "
-msgstr "Spaltenname: "
-
-msgctxt "mlClusteringHierarchical|"
-msgid "<b>Save Model</b>"
-msgstr "<b>Modell speichern</b>"
-
 msgctxt "mlClusteringKMeans|"
 msgid "Variables"
 msgstr "Variablen"
@@ -1256,18 +1172,6 @@ msgctxt "mlClusteringKMeans|"
 msgid "Max. clusters:"
 msgstr "Max. Cluster:"
 
-msgctxt "mlClusteringKMeans|"
-msgid "Add predicted clusters to data"
-msgstr "Vorhergesagte Cluster zu Daten hinzufügen"
-
-msgctxt "mlClusteringKMeans|"
-msgid "Column name: "
-msgstr "Spaltenname: "
-
-msgctxt "mlClusteringKMeans|"
-msgid "<b>Save Model</b>"
-msgstr "<b>Bewaar model</b>"
-
 msgctxt "mlClusteringRandomForest|"
 msgid "Variables"
 msgstr "Variablen"
@@ -1380,18 +1284,6 @@ msgctxt "mlClusteringRandomForest|"
 msgid "Max. clusters:"
 msgstr "Max. Cluster:"
 
-msgctxt "mlClusteringRandomForest|"
-msgid "Add predicted clusters to data"
-msgstr "Vorhergesagte Cluster zu Daten hinzufügen"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "Column name: "
-msgstr "Spaltenname: "
-
-msgctxt "mlClusteringRandomForest|"
-msgid "<b>Save Model</b>"
-msgstr "<b>Modell speichern</b>"
-
 msgctxt "mlRegressionBoosting|"
 msgid "Target"
 msgstr "Ziel"
@@ -1487,18 +1379,6 @@ msgstr "Optimiert"
 msgctxt "mlRegressionBoosting|"
 msgid "Max. trees:"
 msgstr "Max. Bäume:"
-
-msgctxt "mlRegressionBoosting|"
-msgid "Add predicted values to data"
-msgstr "Vorhergesagte Werte zu Daten hinzufügen"
-
-msgctxt "mlRegressionBoosting|"
-msgid "Column name: "
-msgstr "Spaltenname: "
-
-msgctxt "mlRegressionBoosting|"
-msgid "<b>Save Model</b>"
-msgstr "<b>Modell speichern</b>"
 
 msgctxt "mlRegressionKnn|"
 msgid "Target"
@@ -1616,18 +1496,6 @@ msgctxt "mlRegressionKnn|"
 msgid "Max. nearest neighbors:"
 msgstr "Max. nächste Nachbarn:"
 
-msgctxt "mlRegressionKnn|"
-msgid "Add predicted values to data"
-msgstr "Vorhergesagte Werte zu Daten hinzufügen"
-
-msgctxt "mlRegressionKnn|"
-msgid "Column name: "
-msgstr "Spaltenname: "
-
-msgctxt "mlRegressionKnn|"
-msgid "<b>Save Model</b>"
-msgstr "<b>Modell speichern</b>"
-
 msgctxt "mlRegressionRandomForest|"
 msgid "Target"
 msgstr "Ziel"
@@ -1723,18 +1591,6 @@ msgstr "Optimiert"
 msgctxt "mlRegressionRandomForest|"
 msgid "Max. trees:"
 msgstr "Max. Bäume:"
-
-msgctxt "mlRegressionRandomForest|"
-msgid "Add predicted values to data"
-msgstr "Vorhergesagte Werte zu Daten hinzufügen"
-
-msgctxt "mlRegressionRandomForest|"
-msgid "Column name: "
-msgstr "Spaltenname: "
-
-msgctxt "mlRegressionRandomForest|"
-msgid "<b>Save Model</b>"
-msgstr "<b>Modell speichern</b>"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Target"
@@ -1836,18 +1692,6 @@ msgctxt "mlRegressionRegularized|"
 msgid "Largest λ within 1 SE of min."
 msgstr "Größtes λ innerhalb 1 Std.-Fehler von Min."
 
-msgctxt "mlRegressionRegularized|"
-msgid "Add predicted values to data"
-msgstr "Vorhergesagte Werte zu Daten hinzufügen"
-
-msgctxt "mlRegressionRegularized|"
-msgid "Column name: "
-msgstr "Spaltenname: "
-
-msgctxt "mlRegressionRegularized|"
-msgid "<b>Save Model</b>"
-msgstr "<b>Modell speichern</b>"
-
 msgctxt "Description|"
 msgid ""
 "Explore the relation between variables using data-driven methods for "
@@ -1855,3 +1699,718 @@ msgid ""
 msgstr ""
 "Untersuche die Beziehung zwischen Variablen mithilfe datengesteuerter "
 "Methoden für Regression, Klassifizierung und Clustering"
+
+msgctxt "Description|"
+msgid "Neural Network"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Neural Network Regression"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Neural Network Classification"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Prediction"
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "Export Results"
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "Add predictions to data"
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "Column name"
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "e.g., predicted"
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "Save as"
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "e.g., location/model.jaspML"
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "Save trained model"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Target"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Predictors"
+msgstr "Prädiktoren"
+
+#, fuzzy
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Tables"
+msgstr "Tabellen"
+
+#, fuzzy
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Confusion matrix"
+msgstr "Konfusionsmatrix"
+
+#, fuzzy
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Display proportions"
+msgstr "Verhältnisse anzeigen"
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Class proportions"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Evaluation metrics"
+msgstr "Evaluationsmetriken"
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Network weights"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Plots"
+msgstr "Abbildungen"
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Data split"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Classification accuracy"
+msgstr "Klassifikations-Genauigkeit"
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "ROC curves"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Andrews curves"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Activation function"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Network structure"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Decision boundary matrix"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Legend"
+msgstr "Legende"
+
+#, fuzzy
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Points"
+msgstr "Punkte"
+
+#, fuzzy
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Training Parameters"
+msgstr "Trainingsparameter"
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Linear"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Binary"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Logistic sigmoid"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Sine"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Cosine"
+msgstr "Kosinus"
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Inverse tangent"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Hyperbolic tangent"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "ReLU"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Softplus"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Softsign"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "ELU"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "LReLU"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "SiLU"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Mish"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Gaussian"
+msgstr "Gaußsch"
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "GeLU"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Algorithm"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Backpropagation"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "rprop+"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "rprop-"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "grprop-sag"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "grprop-slr"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Learning rate"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Loss function"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Sum of squares"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Cross-entropy"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Stopping criteria loss function"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Max. training repetitions"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Scale predictors"
+msgstr "Skalierungsprädiktoren"
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Set seed"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Network Topology"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Manual"
+msgstr "Manuell"
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Nodes"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Hidden layer "
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Optimized"
+msgstr "Optimiert"
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Population size"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Generations"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Max. layers:"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Max. nodes:"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Parent selection"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Roulette wheel"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Universal"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Rank"
+msgstr "Rang"
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Random"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Candidates"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Crossover method"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Uniform"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "One-point"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Multi-point"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Mutations"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Reset"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Swap"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Scramble"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Inversion"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Probability"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Survival method"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Fitness-based"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Age-based"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Elitism"
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "Trained model"
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "e.g., location/model.jaspML"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlPrediction|"
+msgid "Predictors"
+msgstr "Prädiktoren"
+
+msgctxt "mlPrediction|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlPrediction|"
+msgid "Scale predictors"
+msgstr "Skalierungsprädiktoren"
+
+#, fuzzy
+msgctxt "mlPrediction|"
+msgid "Tables"
+msgstr "Tabellen"
+
+msgctxt "mlPrediction|"
+msgid "From"
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "to"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Target"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Predictors"
+msgstr "Prädiktoren"
+
+#, fuzzy
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Tables"
+msgstr "Tabellen"
+
+#, fuzzy
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Evaluation metrics"
+msgstr "Evaluationsmetriken"
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Network weights"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Plots"
+msgstr "Abbildungen"
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Data split"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Mean squared error"
+msgstr "Mittlerer quadratischer Fehler"
+
+#, fuzzy
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Predictive performance"
+msgstr "Vorhersageleistung"
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Activation function"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Network structure"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Training Parameters"
+msgstr "Trainingsparameter"
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Linear"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Binary"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Logistic sigmoid"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Sine"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Cosine"
+msgstr "Kosinus"
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Inverse tangent"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Hyperbolic tangent"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "ReLU"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Softplus"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Softsign"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "ELU"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "LReLU"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "SiLU"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Mish"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Gaussian"
+msgstr "Gaußsch"
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "GeLU"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Algorithm"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Backpropagation"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "rprop+"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "rprop-"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "grprop-sag"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "grprop-slr"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Learning rate"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Loss function"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Sum of squares"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Cross-entropy"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Stopping criteria loss function"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Max. training repetitions"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Scale variables"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Set seed"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Network Topology"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Manual"
+msgstr "Manuell"
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Nodes"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Hidden layer "
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Optimized"
+msgstr "Optimiert"
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Population size"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Generations"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Max. layers:"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Max. nodes:"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Parent selection"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Roulette wheel"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Universal"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Rank"
+msgstr "Rang"
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Tournament"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Random"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Candidates"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Crossover method"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Uniform"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "One-point"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Multi-point"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Mutations"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Reset"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Swap"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Scramble"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Inversion"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Probability"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Survival method"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Fitness-based"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Age-based"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Elitism"
+msgstr ""

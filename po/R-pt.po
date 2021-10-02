@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2021-03-06 14:49\n"
+"POT-Creation-Date: 2021-10-02 03:23\n"
 "PO-Revision-Date: 2021-09-03 11:34+0000\n"
 "Last-Translator: Laura Durans <lauraadurans@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
@@ -29,6 +29,10 @@ msgstr ""
 msgid "Boosting Classification"
 msgstr ""
 
+#, fuzzy
+msgid "Neural Network Classification"
+msgstr "Classificação de Vizinhos K-Nearest"
+
 msgid "Nearest neighbors"
 msgstr ""
 
@@ -54,6 +58,12 @@ msgstr ""
 msgid "Shrinkage"
 msgstr ""
 
+msgid "Hidden Layers"
+msgstr ""
+
+msgid "Nodes"
+msgstr ""
+
 msgid "n(Train)"
 msgstr ""
 
@@ -74,6 +84,12 @@ msgid "OOB Accuracy"
 msgstr ""
 
 msgid "Please provide a target variable and at least %i predictor variable(s)."
+msgstr ""
+
+msgid "The trained model is saved as <i>%1$s</i>."
+msgstr ""
+
+msgid "The trained model is not saved until 'Save trained model' is checked."
 msgstr ""
 
 msgid ""
@@ -105,6 +121,9 @@ msgid "t"
 msgstr "t"
 
 msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
+msgstr ""
+
+msgid "The model is optimized with respect to the <i>sum of squares</i>."
 msgstr ""
 
 msgid "Confusion Matrix"
@@ -394,6 +413,9 @@ msgstr ""
 msgid "Boosting Regression"
 msgstr "Regressão"
 
+msgid "Neural Network Regression"
+msgstr ""
+
 msgid "Penalty"
 msgstr ""
 
@@ -512,6 +534,12 @@ msgstr ""
 msgid "Pooled Within-Class Matrices Correlations"
 msgstr ""
 
+msgid "An error occurred in the 'neuralnet' package: %1$s"
+msgstr ""
+
+msgid "Optimizing network topology"
+msgstr ""
+
 msgid "K-Distance Plot"
 msgstr ""
 
@@ -558,6 +586,62 @@ msgid "Variable Importance"
 msgstr ""
 
 msgid "Mean decrease in Gini Index"
+msgstr ""
+
+msgid "Linear discriminant"
+msgstr ""
+
+msgid "Boosting"
+msgstr ""
+
+msgid "Random forest"
+msgstr ""
+
+msgid "Regularized linear regression"
+msgstr ""
+
+msgid "Neural network"
+msgstr ""
+
+msgid "Error: The trained model is not created in JASP."
+msgstr ""
+
+msgid "The trained model (type: %1$s) is currently not supported in JASP."
+msgstr ""
+
+msgid "Error: The trained model is created using a different version of JASP."
+msgstr ""
+
+msgid "Loaded Model"
+msgstr ""
+
+msgid "Classification"
+msgstr ""
+
+#, fuzzy
+msgid "Regression"
+msgstr "Regressão"
+
+msgid "Loaded Model: %1$s"
+msgstr ""
+
+msgid ""
+"The trained model is not applied because the the following predictors are "
+"missing: <i>%1$s</i>."
+msgstr ""
+
+msgid ""
+"The following predictors are unused because they are not a predictor "
+"variable in the trained model: <i>%1$s</i>."
+msgstr ""
+
+msgid "n(New)"
+msgstr ""
+
+msgid "Predictions for New Data"
+msgstr ""
+
+msgid "Row"
 msgstr ""
 
 msgid "Relative Influence"
@@ -617,6 +701,143 @@ msgid "Number of Nearest Neighbors"
 msgstr ""
 
 msgid "Training and validation set"
+msgstr ""
+
+#, fuzzy
+msgid "Network Weights"
+msgstr "WLS Ponderado"
+
+msgid "Node"
+msgstr ""
+
+msgid "Layer"
+msgstr ""
+
+#, fuzzy
+msgid "Weight"
+msgstr "WLS Ponderado"
+
+msgid "linear"
+msgstr ""
+
+msgid "binary step"
+msgstr ""
+
+msgid "logistic sigmoid"
+msgstr ""
+
+msgid "sine"
+msgstr ""
+
+msgid "cosine"
+msgstr ""
+
+msgid "inverse tangent"
+msgstr ""
+
+msgid "hyperbolic tangent"
+msgstr ""
+
+msgid "rectified linear unit (ReLU)"
+msgstr ""
+
+msgid "softplus"
+msgstr ""
+
+msgid "softsign"
+msgstr ""
+
+msgid "exponential linear unit (ELU)"
+msgstr ""
+
+msgid "leaky rectified linear unit (Leaky ReLU)"
+msgstr ""
+
+msgid "sigmoid linear unit (SiLU)"
+msgstr ""
+
+msgid "mish"
+msgstr ""
+
+msgid "gaussian"
+msgstr ""
+
+msgid "gaussian error linear unit (GeLU)"
+msgstr ""
+
+msgid "The weights are input for the %1$s activation function."
+msgstr ""
+
+msgid "Network Structure Plot"
+msgstr ""
+
+msgid "Intercept"
+msgstr ""
+
+msgid "Input layer"
+msgstr ""
+
+msgid "Output layer"
+msgstr ""
+
+msgid "Hidden layer %1$s"
+msgstr ""
+
+msgid "Linear"
+msgstr ""
+
+msgid "Binary"
+msgstr ""
+
+msgid "Logistic Sigmoid"
+msgstr ""
+
+msgid "Sine"
+msgstr ""
+
+msgid "Cosine"
+msgstr ""
+
+msgid "Inverse Tangent"
+msgstr ""
+
+msgid "Hyperbolic Tangent"
+msgstr ""
+
+msgid "ReLU"
+msgstr ""
+
+msgid "Softplus"
+msgstr ""
+
+msgid "Softsign"
+msgstr ""
+
+msgid "ELU"
+msgstr ""
+
+msgid "Leaky ReLU"
+msgstr ""
+
+msgid "SiLU"
+msgstr ""
+
+msgid "Mish"
+msgstr ""
+
+msgid "GeLU"
+msgstr ""
+
+msgid "%1$s Activation Function"
+msgstr ""
+
+msgid "Input"
+msgstr ""
+
+msgid "Output"
+msgstr ""
+
+msgid "Generation"
 msgstr ""
 
 msgid "Mean decrease in accuracy"
