@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2021-10-02 03:23\n"
-"PO-Revision-Date: 2021-08-14 10:48+0000\n"
+"PO-Revision-Date: 2021-10-02 22:44+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/gl/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.8-dev\n"
+"X-Generator: Weblate 4.9-dev\n"
 "X-Virgin-Header: remove this line if you change anything in the header.\n"
 "X-Language: gl_ES\n"
 "X-Source-Language: C\n"
@@ -33,9 +33,8 @@ msgstr "Clasificación en bosques aleatorios"
 msgid "Boosting Classification"
 msgstr "Clasificación de potenciación"
 
-#, fuzzy
 msgid "Neural Network Classification"
-msgstr "Clasificación dos K veciños máis próximos"
+msgstr "Clasificación da Rede Neuronal"
 
 msgid "Nearest neighbors"
 msgstr "Veciños máis próximos"
@@ -62,10 +61,10 @@ msgid "Shrinkage"
 msgstr "Contracción"
 
 msgid "Hidden Layers"
-msgstr ""
+msgstr "Estratos Ocultos"
 
 msgid "Nodes"
-msgstr ""
+msgstr "Nodos"
 
 msgid "n(Train)"
 msgstr "n(Adestramento)"
@@ -91,10 +90,12 @@ msgstr ""
 "variable(s) preditora(s)."
 
 msgid "The trained model is saved as <i>%1$s</i>."
-msgstr ""
+msgstr "O modelo adestrado gárdase como <i>%1$s</i>."
 
 msgid "The trained model is not saved until 'Save trained model' is checked."
 msgstr ""
+"O modelo adestrado non se garda ata que se marque 'Gardar o modelo "
+"adestrado'."
 
 msgid ""
 "The model is optimized with respect to the <i>validation set accuracy</i>."
@@ -130,10 +131,8 @@ msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
 msgstr ""
 "O modelo optimízase respecto á <i>precisión \"descuberto o choio\"</i>."
 
-#, fuzzy
 msgid "The model is optimized with respect to the <i>sum of squares</i>."
-msgstr ""
-"O modelo optimízase respecto á <i>precisión \"descuberto o choio\"</i>."
+msgstr "O modelo optimízase respecto á <i>suma de cadrados\"</i>."
 
 msgid "Confusion Matrix"
 msgstr "Matriz de Desarranxo"
@@ -444,9 +443,8 @@ msgstr "Regresión de bosques aleatorios"
 msgid "Boosting Regression"
 msgstr "Regresión de potenciación"
 
-#, fuzzy
 msgid "Neural Network Regression"
-msgstr "Regresión dos K veciños máis próximos"
+msgstr "Regresión da Rede Neuronal"
 
 msgid "Penalty"
 msgstr "Penalización"
@@ -571,10 +569,10 @@ msgid "Pooled Within-Class Matrices Correlations"
 msgstr "Correlacións das Matrices Combinadas Dentro de Clase"
 
 msgid "An error occurred in the 'neuralnet' package: %1$s"
-msgstr ""
+msgstr "Aconteceu un fallo no paquete 'neuralnet': %1$s"
 
 msgid "Optimizing network topology"
-msgstr ""
+msgstr "Optimizando a topoloxía da rede"
 
 msgid "K-Distance Plot"
 msgstr "Gráfica de Distancia K"
@@ -627,65 +625,65 @@ msgstr "Importancia da Variable"
 msgid "Mean decrease in Gini Index"
 msgstr "Decrecemento da media no Índice de Gini"
 
-#, fuzzy
 msgid "Linear discriminant"
-msgstr "Discriminantes Lineais"
+msgstr "Discriminante linear"
 
 msgid "Boosting"
-msgstr ""
+msgstr "Potenciación"
 
-#, fuzzy
 msgid "Random forest"
-msgstr "Conglomerados en bosques aleatorios"
+msgstr "Bosque aleatorio"
 
-#, fuzzy
 msgid "Regularized linear regression"
 msgstr "Regresión linear regularizada"
 
 msgid "Neural network"
-msgstr ""
+msgstr "Rede neuronal"
 
 msgid "Error: The trained model is not created in JASP."
-msgstr ""
+msgstr "Fallo: O modelo adestrado non se creou en JASP."
 
 msgid "The trained model (type: %1$s) is currently not supported in JASP."
-msgstr ""
+msgstr "Actualmente non se admite o modelo adestrado (tipo: %1$s) en JASP."
 
 msgid "Error: The trained model is created using a different version of JASP."
 msgstr ""
+"Fallo: O modelo adestrado creouse utilizando unha versión distinta de JASP."
 
 msgid "Loaded Model"
-msgstr ""
+msgstr "Modelo Cargado"
 
-#, fuzzy
 msgid "Classification"
-msgstr "Clasificación de potenciación"
+msgstr "Clasificación"
 
-#, fuzzy
 msgid "Regression"
-msgstr "Regresión de potenciación"
+msgstr "Regresión"
 
 msgid "Loaded Model: %1$s"
-msgstr ""
+msgstr "Modelo Cargado: %1$s"
 
 msgid ""
 "The trained model is not applied because the the following predictors are "
 "missing: <i>%1$s</i>."
 msgstr ""
+"O modelo adestrado non se aplica porque faltan os seguintes preditores: "
+"<i>%1$s</i>."
 
 msgid ""
 "The following predictors are unused because they are not a predictor "
 "variable in the trained model: <i>%1$s</i>."
 msgstr ""
+"Non se usan os seguintes preditores porque non son variables preditoras no "
+"modelo adestrado: <i>%1$s</i>."
 
 msgid "n(New)"
-msgstr ""
+msgstr "n(Novo)"
 
 msgid "Predictions for New Data"
-msgstr ""
+msgstr "Predicións para os Datos Novos"
 
 msgid "Row"
-msgstr ""
+msgstr "Fila"
 
 msgid "Relative Influence"
 msgstr "Influencia Relativa"
@@ -744,143 +742,140 @@ msgstr "Número de Veciños Máis Próximos"
 msgid "Training and validation set"
 msgstr "Conxunto de adestramento e validación"
 
-#, fuzzy
 msgid "Network Weights"
-msgstr "Ponderacións"
+msgstr "Ponderacións da Rede"
 
 msgid "Node"
-msgstr ""
+msgstr "Nodo"
 
 msgid "Layer"
-msgstr ""
+msgstr "Estrato"
 
-#, fuzzy
 msgid "Weight"
-msgstr "Ponderacións"
+msgstr "Ponderación"
 
 msgid "linear"
-msgstr ""
+msgstr "linear"
 
 msgid "binary step"
-msgstr ""
+msgstr "paso binario"
 
 msgid "logistic sigmoid"
-msgstr ""
+msgstr "sigmoide loxística"
 
 msgid "sine"
-msgstr ""
+msgstr "seno"
 
 msgid "cosine"
-msgstr ""
+msgstr "coseno"
 
 msgid "inverse tangent"
-msgstr ""
+msgstr "tanxente inversa"
 
 msgid "hyperbolic tangent"
-msgstr ""
+msgstr "tanxente hiperbólica"
 
 msgid "rectified linear unit (ReLU)"
-msgstr ""
+msgstr "unidade linear corrixida (ReLU)"
 
 msgid "softplus"
-msgstr ""
+msgstr "softplus"
 
 msgid "softsign"
-msgstr ""
+msgstr "softsign"
 
 msgid "exponential linear unit (ELU)"
-msgstr ""
+msgstr "unidade linear exponencial (ELU)"
 
 msgid "leaky rectified linear unit (Leaky ReLU)"
-msgstr ""
+msgstr "unidade linear corrixida permeable (Leaky ReLU)"
 
 msgid "sigmoid linear unit (SiLU)"
-msgstr ""
+msgstr "unidade linear sigmoidal (SiLU)"
 
 msgid "mish"
-msgstr ""
+msgstr "mish"
 
-#, fuzzy
 msgid "gaussian"
 msgstr "Normal"
 
 msgid "gaussian error linear unit (GeLU)"
-msgstr ""
+msgstr "unidade linear de erro Normal (GeLU)"
 
 msgid "The weights are input for the %1$s activation function."
-msgstr ""
+msgstr "As ponderacións son entradas para a función %1$s de activación."
 
 msgid "Network Structure Plot"
-msgstr ""
+msgstr "Gráfica da Estrutura de Rede"
 
 msgid "Intercept"
-msgstr ""
+msgstr "Constante"
 
 msgid "Input layer"
-msgstr ""
+msgstr "Estrato de entrada"
 
 msgid "Output layer"
-msgstr ""
+msgstr "Estrato de saída"
 
 msgid "Hidden layer %1$s"
-msgstr ""
+msgstr "Estrato oculto %1$s"
 
 msgid "Linear"
-msgstr ""
+msgstr "Linear"
 
 msgid "Binary"
-msgstr ""
+msgstr "Binario"
 
 msgid "Logistic Sigmoid"
-msgstr ""
+msgstr "Sigmoide Loxística"
 
 msgid "Sine"
-msgstr ""
+msgstr "Seno"
 
 msgid "Cosine"
-msgstr ""
+msgstr "Coseno"
 
 msgid "Inverse Tangent"
-msgstr ""
+msgstr "Tanxente Inversa"
 
 msgid "Hyperbolic Tangent"
-msgstr ""
+msgstr "Tanxente Hiperbólica"
 
 msgid "ReLU"
-msgstr ""
+msgstr "ReLU"
 
 msgid "Softplus"
-msgstr ""
+msgstr "Softplus"
 
 msgid "Softsign"
-msgstr ""
+msgstr "Softsign"
 
 msgid "ELU"
-msgstr ""
+msgstr "ELU"
 
 msgid "Leaky ReLU"
-msgstr ""
+msgstr "LReLU"
 
 msgid "SiLU"
-msgstr ""
+msgstr "SiLU"
 
 msgid "Mish"
-msgstr ""
+msgstr "Mish"
 
 msgid "GeLU"
-msgstr ""
+msgstr "GeLU"
 
 msgid "%1$s Activation Function"
-msgstr ""
+msgstr "Función %1$s de Activación"
 
 msgid "Input"
-msgstr ""
+msgstr "Entrada"
 
 msgid "Output"
-msgstr ""
+msgstr "Saída de resultados"
 
 msgid "Generation"
-msgstr ""
+msgstr "Xeración"
 
 msgid "Mean decrease in accuracy"
 msgstr "Decrecemento da media na precisión"
