@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2021-10-02 03:23\n"
-"PO-Revision-Date: 2021-09-10 12:32+0000\n"
-"Last-Translator: Sophie Berkhout <s.w.berkhout@uu.nl>\n"
+"PO-Revision-Date: 2021-10-03 14:07+0000\n"
+"Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/nl/>\n"
 "Language: nl\n"
@@ -26,9 +26,8 @@ msgstr "Random Forest Classificatie"
 msgid "Boosting Classification"
 msgstr "Boosting Classificatie"
 
-#, fuzzy
 msgid "Neural Network Classification"
-msgstr "K-Dichtste Buren Classificatie"
+msgstr "Neuraal Netwerk Classificatie"
 
 msgid "Nearest neighbors"
 msgstr "Dichtste buren"
@@ -55,10 +54,10 @@ msgid "Shrinkage"
 msgstr "Krimping"
 
 msgid "Hidden Layers"
-msgstr ""
+msgstr "Verborgen Lagen"
 
 msgid "Nodes"
-msgstr ""
+msgstr "Nodes"
 
 msgid "n(Train)"
 msgstr "n(Train)"
@@ -83,10 +82,12 @@ msgstr ""
 "Geef a.u.b. een doelvariabele en minstens %i voorspellende variabele(n)."
 
 msgid "The trained model is saved as <i>%1$s</i>."
-msgstr ""
+msgstr "Het getrainde model is opgeslagen als <i>%1$s</i>."
 
 msgid "The trained model is not saved until 'Save trained model' is checked."
 msgstr ""
+"Het getrainde model wordt pas opgeslagen als 'Getraind model opslaan' is "
+"aangevinkt."
 
 msgid ""
 "The model is optimized with respect to the <i>validation set accuracy</i>."
@@ -120,9 +121,8 @@ msgstr "t"
 msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
 msgstr "Het model is geoptimaliseerd met de <i>out-of-bag precisie</i>."
 
-#, fuzzy
 msgid "The model is optimized with respect to the <i>sum of squares</i>."
-msgstr "Het model is geoptimaliseerd met de <i>out-of-bag precisie</i>."
+msgstr "Het model is geoptimaliseerd met betrekking tot de <i>kwadratensom</i>."
 
 msgid "Confusion Matrix"
 msgstr "Confusion Matrix"
@@ -432,9 +432,8 @@ msgstr "Random Forest Regressie"
 msgid "Boosting Regression"
 msgstr "Boosting Regressie"
 
-#, fuzzy
 msgid "Neural Network Regression"
-msgstr "K-Dichtste Buren Regressie"
+msgstr "Neuraal Netwerk Regressie"
 
 msgid "Penalty"
 msgstr "Straf"
@@ -559,10 +558,10 @@ msgid "Pooled Within-Class Matrices Correlations"
 msgstr "Pooled Within-Class Matricescorrelaties"
 
 msgid "An error occurred in the 'neuralnet' package: %1$s"
-msgstr ""
+msgstr "Er is een fout opgetreden in het 'neuralnet' pakket: %1$s"
 
 msgid "Optimizing network topology"
-msgstr ""
+msgstr "Netwerktopologie optimaliseren"
 
 msgid "K-Distance Plot"
 msgstr "K-Afstands Grafiek"
@@ -616,65 +615,65 @@ msgstr "Belang van variabele"
 msgid "Mean decrease in Gini Index"
 msgstr "Gemiddelde afname in Gini Index"
 
-#, fuzzy
 msgid "Linear discriminant"
-msgstr "Lineaire Discriminanten"
+msgstr "Lineaire discriminant"
 
 msgid "Boosting"
-msgstr ""
+msgstr "Boosting"
 
-#, fuzzy
 msgid "Random forest"
-msgstr "Random Forest Clustering"
+msgstr "Random forest"
 
-#, fuzzy
 msgid "Regularized linear regression"
 msgstr "Geregulariseerde Lineaire Regressie"
 
 msgid "Neural network"
-msgstr ""
+msgstr "Neuraal netwerk"
 
 msgid "Error: The trained model is not created in JASP."
-msgstr ""
+msgstr "Fout: Het getrainde model is niet gemaakt in JASP."
 
 msgid "The trained model (type: %1$s) is currently not supported in JASP."
 msgstr ""
+"Het getrainde model (type: %1$s) wordt momenteel niet ondersteund in JASP."
 
 msgid "Error: The trained model is created using a different version of JASP."
-msgstr ""
+msgstr "Fout: Het getrainde model is gemaakt met een andere versie van JASP."
 
 msgid "Loaded Model"
-msgstr ""
+msgstr "Geladen Model"
 
-#, fuzzy
 msgid "Classification"
-msgstr "Boosting Classificatie"
+msgstr "Classificatie"
 
-#, fuzzy
 msgid "Regression"
-msgstr "Boosting Regressie"
+msgstr "Regressie"
 
 msgid "Loaded Model: %1$s"
-msgstr ""
+msgstr "Geladen Model: %1$s"
 
 msgid ""
 "The trained model is not applied because the the following predictors are "
 "missing: <i>%1$s</i>."
 msgstr ""
+"Het getrainde model wordt niet toegepast omdat de volgende voorspellers "
+"ontbreken: <i>%1$s</i>."
 
 msgid ""
 "The following predictors are unused because they are not a predictor "
 "variable in the trained model: <i>%1$s</i>."
 msgstr ""
+"De volgende voorspellers zijn ongebruikt omdat ze geen voorspellende "
+"variabele zijn in het getrainde model: <i>%1$s</i>."
 
 msgid "n(New)"
-msgstr ""
+msgstr "n(Nieuw)"
 
 msgid "Predictions for New Data"
-msgstr ""
+msgstr "Voorspellingen voor Nieuwe Gegevens"
 
 msgid "Row"
-msgstr ""
+msgstr "Rij"
 
 msgid "Relative Influence"
 msgstr "Relatieve Invloed"
@@ -733,143 +732,140 @@ msgstr "Aantal Dichtsbijzijnde Buren"
 msgid "Training and validation set"
 msgstr "Trainings- en validatieset"
 
-#, fuzzy
 msgid "Network Weights"
-msgstr "Gewichten"
+msgstr "Netwerk Gewichten"
 
 msgid "Node"
-msgstr ""
+msgstr "Node"
 
 msgid "Layer"
-msgstr ""
+msgstr "Laag"
 
-#, fuzzy
 msgid "Weight"
-msgstr "Gewichten"
+msgstr "Gewicht"
 
 msgid "linear"
-msgstr ""
+msgstr "lineair"
 
 msgid "binary step"
-msgstr ""
+msgstr "binaire stap"
 
 msgid "logistic sigmoid"
-msgstr ""
+msgstr "logistische sigmoïde"
 
 msgid "sine"
-msgstr ""
+msgstr "sinus"
 
 msgid "cosine"
-msgstr ""
+msgstr "cosinus"
 
 msgid "inverse tangent"
-msgstr ""
+msgstr "inverse tangens"
 
 msgid "hyperbolic tangent"
-msgstr ""
+msgstr "hyperbolische tangens"
 
 msgid "rectified linear unit (ReLU)"
-msgstr ""
+msgstr "gerectificeerde lineaire eenheid (ReLU)"
 
 msgid "softplus"
-msgstr ""
+msgstr "softplus"
 
 msgid "softsign"
-msgstr ""
+msgstr "softsign"
 
 msgid "exponential linear unit (ELU)"
-msgstr ""
+msgstr "exponentiële lineaire eenheid (ELU)"
 
 msgid "leaky rectified linear unit (Leaky ReLU)"
-msgstr ""
+msgstr "lekkende gerectificeerde lineaire eenheid (lekkende ReLU)"
 
 msgid "sigmoid linear unit (SiLU)"
-msgstr ""
+msgstr "sigmoïde lineaire eenheid (SiLU)"
 
 msgid "mish"
-msgstr ""
+msgstr "mish"
 
-#, fuzzy
 msgid "gaussian"
-msgstr "Gaussische"
+msgstr "gaussische"
 
 msgid "gaussian error linear unit (GeLU)"
-msgstr ""
+msgstr "gaussische fout lineaire eenheid (GeLU)"
 
 msgid "The weights are input for the %1$s activation function."
-msgstr ""
+msgstr "De gewichten zijn input voor de %1$s activeringsfunctie."
 
 msgid "Network Structure Plot"
-msgstr ""
+msgstr "Netwerk Structuur Grafiek"
 
 msgid "Intercept"
-msgstr ""
+msgstr "Intercept"
 
 msgid "Input layer"
-msgstr ""
+msgstr "Invoerlaag"
 
 msgid "Output layer"
-msgstr ""
+msgstr "Uitvoerlaag"
 
 msgid "Hidden layer %1$s"
-msgstr ""
+msgstr "Verborgen laag %1$s"
 
 msgid "Linear"
-msgstr ""
+msgstr "Lineair"
 
 msgid "Binary"
-msgstr ""
+msgstr "Binair"
 
 msgid "Logistic Sigmoid"
-msgstr ""
+msgstr "Logistische Sigmoïde"
 
 msgid "Sine"
-msgstr ""
+msgstr "Sinus"
 
 msgid "Cosine"
-msgstr ""
+msgstr "Cosinus"
 
 msgid "Inverse Tangent"
-msgstr ""
+msgstr "Inverse Tangens"
 
 msgid "Hyperbolic Tangent"
-msgstr ""
+msgstr "Hyperbolische Tangens"
 
 msgid "ReLU"
-msgstr ""
+msgstr "ReLU"
 
 msgid "Softplus"
-msgstr ""
+msgstr "Softplus"
 
 msgid "Softsign"
-msgstr ""
+msgstr "Softsign"
 
 msgid "ELU"
-msgstr ""
+msgstr "ELU"
 
 msgid "Leaky ReLU"
-msgstr ""
+msgstr "Lekkende ReLU"
 
 msgid "SiLU"
-msgstr ""
+msgstr "SiLU"
 
 msgid "Mish"
-msgstr ""
+msgstr "Mish"
 
 msgid "GeLU"
-msgstr ""
+msgstr "GeLU"
 
 msgid "%1$s Activation Function"
-msgstr ""
+msgstr "%1$s Activeringsfunctie"
 
 msgid "Input"
-msgstr ""
+msgstr "Invoer"
 
 msgid "Output"
-msgstr ""
+msgstr "Uitvoer"
 
 msgid "Generation"
-msgstr ""
+msgstr "Generatie"
 
 msgid "Mean decrease in accuracy"
 msgstr "Gemiddelde afname in precisie"
