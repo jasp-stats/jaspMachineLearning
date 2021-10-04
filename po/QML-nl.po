@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-10-03 14:07+0000\n"
+"Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/nl/>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.9-dev\n"
 "X-Language: nl\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -1702,720 +1708,684 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Neural Network"
-msgstr ""
+msgstr "Neuraal Netwerk"
 
 msgctxt "Description|"
 msgid "Neural Network Regression"
-msgstr ""
+msgstr "Neuraal Netwerk Regressie"
 
 msgctxt "Description|"
 msgid "Neural Network Classification"
-msgstr ""
+msgstr "Neuraal Netwerk Classificatie"
 
 msgctxt "Description|"
 msgid "Prediction"
-msgstr ""
+msgstr "Voorspellen"
 
 msgctxt "ExportResults|"
 msgid "Export Results"
-msgstr ""
+msgstr "Exporteer resultaten"
 
 msgctxt "ExportResults|"
 msgid "Add predictions to data"
-msgstr ""
+msgstr "Voorspellingen toevoegen aan gegevens"
 
 msgctxt "ExportResults|"
 msgid "Column name"
-msgstr ""
+msgstr "Kolom naam"
 
 msgctxt "ExportResults|"
 msgid "e.g., predicted"
-msgstr ""
+msgstr "b.v., voorspeld"
 
 msgctxt "ExportResults|"
 msgid "Save as"
-msgstr ""
+msgstr "Opslaan als"
 
 msgctxt "ExportResults|"
 msgid "e.g., location/model.jaspML"
-msgstr ""
+msgstr "b.v., locatie/model.jaspML"
 
 msgctxt "ExportResults|"
 msgid "Save trained model"
-msgstr ""
+msgstr "Getraind model opslaan"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Target"
 msgstr "Doel"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Predictors"
 msgstr "Voorspellers"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Tables"
 msgstr "Tabellen"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Confusion matrix"
-msgstr "Verwarringsmatrix"
+msgstr "Confusion matrix"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Display proportions"
 msgstr "Toon proporties"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Class proportions"
-msgstr ""
+msgstr "Klasse proporties"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Evaluation metrics"
 msgstr "Evaluatiemetrieken"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Network weights"
-msgstr ""
+msgstr "Netwerk gewichten"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Plots"
 msgstr "Grafieken"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Data split"
 msgstr "Data splits"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Classification accuracy"
 msgstr "Classificatie precisie"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "ROC curves"
 msgstr "ROC kromme"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Andrews curves"
 msgstr "Andrews kromme"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Activation function"
-msgstr ""
+msgstr "Activeringsfunctie"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Network structure"
-msgstr ""
+msgstr "Netwerkstructuur"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Decision boundary matrix"
-msgstr "Beslissingsseparatrix"
+msgstr "Beslissingsgrens Matrix"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Legend"
 msgstr "Legenda"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Points"
 msgstr "Punten"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parameters trainen"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Algoritme Instellingen"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Linear"
-msgstr ""
+msgstr "Lineair"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Binary"
-msgstr ""
+msgstr "Binair"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Logistic sigmoid"
-msgstr ""
+msgstr "Logistische sigmoïde"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Sine"
-msgstr ""
+msgstr "Sinus"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Cosine"
 msgstr "Cosinus"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Inverse tangent"
-msgstr ""
+msgstr "Inverse tangens"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Hyperbolic tangent"
-msgstr ""
+msgstr "Hyperbolische tangens"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "ReLU"
-msgstr ""
+msgstr "ReLU"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Softplus"
-msgstr ""
+msgstr "Softplus"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Softsign"
-msgstr ""
+msgstr "Softsign"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "ELU"
-msgstr ""
+msgstr "ELU"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "LReLU"
-msgstr ""
+msgstr "LReLU"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "SiLU"
-msgstr ""
+msgstr "SiLU"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Mish"
-msgstr ""
+msgstr "Mish"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Gaussian"
 msgstr "Gaussische"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "GeLU"
-msgstr ""
+msgstr "GeLU"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Algorithm"
-msgstr ""
+msgstr "Algoritme"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Backpropagation"
-msgstr ""
+msgstr "Terugwaartse propagatie"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "rprop+"
-msgstr ""
+msgstr "rprop+"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "rprop-"
-msgstr ""
+msgstr "rprop-"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "grprop-sag"
-msgstr ""
+msgstr "grprop-sag"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "grprop-slr"
-msgstr ""
+msgstr "grprop-slr"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Learning rate"
-msgstr ""
+msgstr "Leertempo"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Loss function"
-msgstr ""
+msgstr "Verliesfunctie"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Sum of squares"
-msgstr ""
+msgstr "Kwadratensom"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Cross-entropy"
-msgstr ""
+msgstr "Cross-entropie"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Stopping criteria loss function"
-msgstr ""
+msgstr "Stopcriteria verliesfunctie"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Max. training repetitions"
-msgstr ""
+msgstr "Max. trainingsherhalingen"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Scale predictors"
-msgstr "Schaalvoorspellers"
+msgstr "Schaal voorspellers"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Set seed"
-msgstr ""
+msgstr "Gebruik toevalsgenerator beginwaarde"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Network Topology"
-msgstr ""
+msgstr "Netwerk Topologie"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Manual"
 msgstr "Handmatig"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Nodes"
-msgstr ""
+msgstr "Nodes"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Hidden layer "
-msgstr ""
+msgstr "Verborgen laag "
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Optimized"
 msgstr "Geoptimaliseerd"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Population size"
-msgstr ""
+msgstr "Populatiegrootte"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Generations"
-msgstr ""
+msgstr "Generaties"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Max. layers:"
-msgstr ""
+msgstr "Max. lagen:"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Max. nodes:"
-msgstr ""
+msgstr "Max. nodes:"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Parent selection"
-msgstr ""
+msgstr "Ouder selectie"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Roulette wheel"
-msgstr ""
+msgstr "Roulette wiel"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Universal"
-msgstr ""
+msgstr "Universeel"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Rank"
 msgstr "Rang"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Random"
-msgstr ""
+msgstr "Willekeurig"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Candidates"
-msgstr ""
+msgstr "Kandidaten"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Crossover method"
-msgstr ""
+msgstr "Cross-over methode"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Uniform"
-msgstr ""
+msgstr "Uniform"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "One-point"
-msgstr ""
+msgstr "Eén punt"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Multi-point"
-msgstr ""
+msgstr "Meerpunts"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Mutations"
-msgstr ""
+msgstr "Mutaties"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Reset"
-msgstr ""
+msgstr "Herstel"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Swap"
-msgstr ""
+msgstr "Wissel"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Scramble"
-msgstr ""
+msgstr "Hussel"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Inversion"
-msgstr ""
+msgstr "Inversie"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Probability"
-msgstr ""
+msgstr "Kans"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Survival method"
-msgstr ""
+msgstr "Overlevingsmethode"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Fitness-based"
-msgstr ""
+msgstr "Fitness-gebaseerd"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Age-based"
-msgstr ""
+msgstr "Leeftijdsgebonden"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Elitism"
-msgstr ""
+msgstr "Elitisme"
 
 msgctxt "mlPrediction|"
 msgid "Trained model"
-msgstr ""
+msgstr "Getraind model"
 
 msgctxt "mlPrediction|"
 msgid "e.g., location/model.jaspML"
-msgstr ""
+msgstr "b.v., locatie/model.jaspML"
 
-#, fuzzy
 msgctxt "mlPrediction|"
 msgid "Predictors"
 msgstr "Voorspellers"
 
 msgctxt "mlPrediction|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Algoritme Instellingen"
 
-#, fuzzy
 msgctxt "mlPrediction|"
 msgid "Scale predictors"
-msgstr "Schaalvoorspellers"
+msgstr "Schaal voorspellers"
 
-#, fuzzy
 msgctxt "mlPrediction|"
 msgid "Tables"
 msgstr "Tabellen"
 
 msgctxt "mlPrediction|"
 msgid "From"
-msgstr ""
+msgstr "Van"
 
 msgctxt "mlPrediction|"
 msgid "to"
-msgstr ""
+msgstr "tot"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Target"
 msgstr "Doel"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Predictors"
 msgstr "Voorspellers"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Tables"
 msgstr "Tabellen"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Evaluation metrics"
 msgstr "Evaluatiemetrieken"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Network weights"
-msgstr ""
+msgstr "Netwerk gewichten"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Plots"
 msgstr "Grafieken"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Data split"
 msgstr "Data splits"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Mean squared error"
 msgstr "Fout gemiddelde kwadraatsom"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Predictive performance"
-msgstr "Voorspellingsvermogen"
+msgstr "Voorspellend vermogen"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Activation function"
-msgstr ""
+msgstr "Activeringsfunctie"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Network structure"
-msgstr ""
+msgstr "Netwerkstructuur"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parameters trainen"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Algoritme Instellingen"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Linear"
-msgstr ""
+msgstr "Lineair"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Binary"
-msgstr ""
+msgstr "Binair"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Logistic sigmoid"
-msgstr ""
+msgstr "Logistische sigmoïde"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Sine"
-msgstr ""
+msgstr "Sinus"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Cosine"
 msgstr "Cosinus"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Inverse tangent"
-msgstr ""
+msgstr "Inverse tangens"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Hyperbolic tangent"
-msgstr ""
+msgstr "Hyperbolische tangens"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "ReLU"
-msgstr ""
+msgstr "ReLU"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Softplus"
-msgstr ""
+msgstr "Softplus"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Softsign"
-msgstr ""
+msgstr "Softsign"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "ELU"
-msgstr ""
+msgstr "ELU"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "LReLU"
-msgstr ""
+msgstr "LReLU"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "SiLU"
-msgstr ""
+msgstr "SiLU"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Mish"
-msgstr ""
+msgstr "Mish"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Gaussian"
 msgstr "Gaussische"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "GeLU"
-msgstr ""
+msgstr "GeLU"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Algorithm"
-msgstr ""
+msgstr "Algoritme"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Backpropagation"
-msgstr ""
+msgstr "Terugwaartse propagatie"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "rprop+"
-msgstr ""
+msgstr "rprop+"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "rprop-"
-msgstr ""
+msgstr "rprop+"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "grprop-sag"
-msgstr ""
+msgstr "grprop-sag"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "grprop-slr"
-msgstr ""
+msgstr "grprop-slr"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Learning rate"
-msgstr ""
+msgstr "Leertempo"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Loss function"
-msgstr ""
+msgstr "Verliesfunctie"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Sum of squares"
-msgstr ""
+msgstr "Kwadratensom"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Cross-entropy"
-msgstr ""
+msgstr "Cross-entropie"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Stopping criteria loss function"
-msgstr ""
+msgstr "Stopcriteria verliesfunctie"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Max. training repetitions"
-msgstr ""
+msgstr "Max. trainingsherhalingen"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Scale variables"
-msgstr ""
+msgstr "Schaal variabelen"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Set seed"
-msgstr ""
+msgstr "Gebruik toevalsgenerator beginwaarde"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Network Topology"
-msgstr ""
+msgstr "Netwerk Topologie"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Manual"
 msgstr "Handmatig"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Nodes"
-msgstr ""
+msgstr "Nodes"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Hidden layer "
-msgstr ""
+msgstr "Verborgen laag "
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Optimized"
 msgstr "Geoptimaliseerd"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Population size"
-msgstr ""
+msgstr "Populatiegrootte"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Generations"
-msgstr ""
+msgstr "Generaties"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Max. layers:"
-msgstr ""
+msgstr "Max. lagen:"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Max. nodes:"
-msgstr ""
+msgstr "Max. nodes:"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Parent selection"
-msgstr ""
+msgstr "Ouder selectie"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Roulette wheel"
-msgstr ""
+msgstr "Roulette wiel"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Universal"
-msgstr ""
+msgstr "Universeel"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Rank"
 msgstr "Rang"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Tournament"
-msgstr ""
+msgstr "Toernooi"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Random"
-msgstr ""
+msgstr "Willekeurig"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Candidates"
-msgstr ""
+msgstr "Kandidaten"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Crossover method"
-msgstr ""
+msgstr "Cross-over methode"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Uniform"
-msgstr ""
+msgstr "Uniform"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "One-point"
-msgstr ""
+msgstr "Eén-punt"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Multi-point"
-msgstr ""
+msgstr "Meerpunts"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Mutations"
-msgstr ""
+msgstr "Mutaties"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Reset"
-msgstr ""
+msgstr "Herstel"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Swap"
-msgstr ""
+msgstr "Wissel"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Scramble"
-msgstr ""
+msgstr "Hussel"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Inversion"
-msgstr ""
+msgstr "Inversie"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Probability"
-msgstr ""
+msgstr "Kans"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Survival method"
-msgstr ""
+msgstr "Overlevingsmethode"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Fitness-based"
-msgstr ""
+msgstr "Fitness-gebaseerd"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Age-based"
-msgstr ""
+msgstr "Leeftijdsgebonden"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Elitism"
-msgstr ""
+msgstr "Elitisme"
