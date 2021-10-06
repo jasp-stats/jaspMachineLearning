@@ -45,17 +45,20 @@ mlClassificationKnn <- function(jaspResults, dataset, options, ...) {
   # Create the validation measures table
   .mlClassificationTableMetrics(dataset, options, jaspResults, ready, position = 5)
 
+  # Create the weights plot
+  .mlKnnPlotWeights(options, jaspResults, position = 6)
+
   # Create the classification error plot
-  .mlKnnPlotError(dataset, options, jaspResults, ready, position = 6, purpose = "classification")
+  .mlKnnPlotError(dataset, options, jaspResults, ready, position = 7, purpose = "classification")
 
   # Create the ROC curve
-  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 7, type = "knn")
+  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 8, type = "knn")
 
   # Create the Andrews curves
-  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 8)
+  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 9)
 
   # Decision boundaries
-  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 9, type = "knn")
+  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 10, type = "knn")
 }
 
 .knnClassification <- function(dataset, options, jaspResults) {

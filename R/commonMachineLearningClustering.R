@@ -104,7 +104,9 @@
       "cmeans" = .cMeansClustering(dataset, options, jaspResults),
       "hierarchical" = .hierarchicalClustering(dataset, options, jaspResults),
       "densitybased" = .densityBasedClustering(dataset, options, jaspResults),
-      "randomForest" = .randomForestClustering(dataset, options, jaspResults)
+      "randomForest" = .randomForestClustering(dataset, options, jaspResults),
+      "kmedoids" = .kMedoidsClustering(dataset, options, jaspResults),
+      "kmedians" = .kMediansClustering(dataset, options, jaspResults)
     )
     jaspResults[["clusterResult"]] <- createJaspState(clusterResult)
     jaspResults[["clusterResult"]]$dependOn(options = c(
@@ -123,7 +125,9 @@
     "cmeans" = gettext("Fuzzy C-Means Clustering"),
     "hierarchical" = gettext("Hierarchical Clustering"),
     "densitybased" = gettext("Density-Based Clustering"),
-    "randomForest" = gettext("Random Forest Clustering")
+    "randomForest" = gettext("Random Forest Clustering"),
+    "kmedoids"     = gettext("K-Medoids Clustering"),
+    "kmedians"     = gettext("K-Medians Clustering")
   )
   table <- createJaspTable(title)
   table$position <- position
@@ -137,7 +141,12 @@
   table$addColumnInfo(name = "aic", title = gettext("AIC"), type = "number", format = "dp:2")
   table$addColumnInfo(name = "bic", title = gettext("BIC"), type = "number", format = "dp:2")
   table$addColumnInfo(name = "Silh", title = "Silhouette", type = "number", format = "dp:2")
-  table$addCitation("Hartigan, J. A., & Wong, M. A. (1979). Algorithm AS 136: A k-means clustering algorithm. Journal of the Royal Statistical Society. Series C (Applied Statistics), 28(1), 100-108.")
+  if (type == "kmeans") {
+    table$addCitation("Hartigan, J. A., & Wong, M. A. (1979). Algorithm AS 136: A k-means clustering algorithm. Journal of the Royal Statistical Society. Series C (Applied Statistics), 28(1), 100-108.")
+  } else if (type == "kmedians") {
+    table$addCitation("Cardot, H., Cenac, P. and Monnez, J-M. (2012). A fast and recursive algorithm for clustering large datasets with k-medians. Computational Statistics and Data Analysis, 56, 1434-1449.")
+    table$addCitation("Cardot, H., Cenac, P. and Zitt, P-A. (2013). Efficient and fast estimation of the geometric median in Hilbert spaces with an averaged stochastic gradient algorithm. Bernoulli, 19, 18-43.")
+  }
   if (!ready) {
     table$addFootnote(gettext("Please provide at least 2 variables."))
   }
@@ -204,10 +213,11 @@
     return()
   }
   clusterResult <- jaspResults[["clusterResult"]]$object
-  if (type == "kmeans" || type == "cmeans") {
+  if (type == "kmeans" || type == "cmeans" || type == "kmedoids" || type == "kmedians") {
     if (options[["tableClusterInfoCentroids"]]) {
       for (i in 1:length(options[["predictors"]])) {
-        table$addColumnInfo(name = paste0("centroid", i), title = gettextf("Centroid %s", options[["predictors"]][i]), type = "number", format = "dp:3")
+        title <- if (type == "kmedoids") gettextf("Medoid %s", options[["predictors"]][i]) else gettextf("Centroid %s", options[["predictors"]][i])
+        table$addColumnInfo(name = paste0("centroid", i), title = title, type = "number", format = "dp:3")
       }
     }
   }
@@ -236,7 +246,7 @@
   if (options[["tableClusterInfoSilhouette"]]) {
     row <- cbind(row, silh_scores = silh_scores)
   }
-  if (type == "kmeans" || type == "cmeans") {
+  if (type == "kmeans" || type == "cmeans" || type == "kmedoids" || type == "kmedians") {
     if (options[["tableClusterInfoCentroids"]]) {
       for (i in 1:length(options[["predictors"]])) {
         row <- cbind(row, "tmp" = clusterResult[["centroids"]][, i])
@@ -351,6 +361,18 @@
     )
     hfit <- hclust(as.dist(1 - fit$proximity), method = "ward.D2")
     predictions <- cutree(hfit, k = clusterResult[["clusters"]])
+    colSize <- clusterResult[["clusters"]]
+  } else if (type == "kmedoids") {
+    if (options[["algorithm"]] == "pam") {
+      fit <- cluster::pam(dataset, k = clusterResult[["clusters"]], metric = options[["distance"]], nstart = options[["noOfRandomSets"]])
+    } else {
+      fit <- cluster::clara(dataset, k = clusterResult[["clusters"]], metric = options[["distance"]], samples = options[["noOfIterations"]])
+    }
+    predictions <- fit$clustering
+    colSize <- clusterResult[["clusters"]]
+  } else if (type == "kmedians") {
+    fit <- Gmedian::kGmedian(dataset, ncenters = clusterResult[["clusters"]], nstart = options[["noOfIterations"]], nstartkmeans = options[["noOfRandomSets"]])
+    predictions <- fit$cluster
     colSize <- clusterResult[["clusters"]]
   }
   clusterAssignment <- factor(predictions, levels = sort(unique(predictions), decreasing = FALSE))

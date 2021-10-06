@@ -18,6 +18,7 @@ K-nearest neighbors is a method of regression that looks at the *k* number of pr
 
 #### Plots
 - Data split: Shows how the data is split into training (and validation), and test set.
+- Weight function: Shows how the weights are assigned as a function of the distance.
 - Mean squared error: Plots the number of nearest neighbors against the MSE of the model. Accuracy is assessed for the training (and validation) set.
 - Predictive performance: Shows the selected test set observations against their predicted values.
 

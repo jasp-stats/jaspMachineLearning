@@ -26,6 +26,12 @@ Description
 	}
 	Analysis
 	{
+		menu:	qsTr("Decision Tree")
+		title:	qsTr("Decision Tree Regression")
+		func:	"mlRegressionDecisionTree"
+	}
+	Analysis
+	{
 		menu:	qsTr("K-Nearest Neighbors")
 		title:	qsTr("K-Nearest Neighbors Regression")
 		func:	"mlRegressionKnn"
@@ -48,6 +54,12 @@ Description
 		title:	qsTr("Regularized Linear Regression")
 		func:	"mlRegressionRegularized"
 	}
+	Analysis
+	{
+		menu:	qsTr("Support Vector Machine")
+		title:	qsTr("Support Vector Machine Regression")
+		func:	"mlRegressionSvm"
+	}
 
 
 	GroupTitle
@@ -60,6 +72,12 @@ Description
 		menu:	qsTr("Boosting")
 		title:	qsTr("Boosting Classification")
 		func:	"mlClassificationBoosting"
+	}
+	Analysis
+	{
+		menu:	qsTr("Decision Tree")
+		title:	qsTr("Decision Tree Classification")
+		func:	"mlClassificationDecisionTree"
 	}
 	Analysis
 	{
@@ -84,6 +102,12 @@ Description
 		menu:	qsTr("Random Forest")
 		title:	qsTr("Random Forest Classification")
 		func:	"mlClassificationRandomForest"
+	}
+	Analysis
+	{
+		menu:	qsTr("Support Vector Machine")
+		title:	qsTr("Support Vector Machine Classification")
+		func:	"mlClassificationSvm"
 	}
 
 
@@ -115,6 +139,18 @@ Description
 		menu:	qsTr("K-Means")
 		title:	qsTr("K-Means Clustering")
 		func:	"mlClusteringKMeans"
+	}
+	Analysis
+	{
+		menu:	qsTr("K-Medians")
+		title:	qsTr("K-Medians Clustering")
+		func:	"mlClusteringKMedians"
+	}
+	Analysis
+	{
+		menu:	qsTr("K-Medoids")
+		title:	qsTr("K-Medoids Clustering")
+		func:	"mlClusteringKMedoids"
 	}
 	Analysis
 	{

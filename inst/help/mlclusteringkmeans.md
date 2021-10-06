@@ -88,5 +88,4 @@ Generates a new column in your dataset with the cluster labels of your cluster r
 
 ### Example 
 --- 
-- For an example data set go to `Open` --> `Data Library` --> `Machine Learning` --> `Iris`.  
-
+- For an example data set go to `Open` --> `Data Library` --> `Machine Learning` --> `Iris`.

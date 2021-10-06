@@ -77,6 +77,12 @@ Form
 
 		CheckBox
 		{
+			text:								qsTr("Weight function")
+			name:								"plotWeights"
+		}
+
+		CheckBox
+		{
 			text:								qsTr("Mean squared error")
 			name:								"plotErrorVsK"
 			enabled:							optimizeModel.checked
@@ -115,6 +121,7 @@ Form
 				values:
 					[
 					{ label: qsTr("Rectangular"), 	value: "rectangular"},
+					{ label: qsTr("Triangular"), 	value: "triangular"},
 					{ label: qsTr("Epanechnikov"), 	value: "epanechnikov"},
 					{ label: qsTr("Biweight"), 		value: "biweight"},
 					{ label: qsTr("Triweight"), 	value: "triweight"},

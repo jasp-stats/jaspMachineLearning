@@ -36,14 +36,17 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
   # Create the data split plot
   .mlPlotDataSplit(dataset, options, jaspResults, ready, position = 2, purpose = "regression", type = "knn")
 
+  # Create the weights plot
+  .mlKnnPlotWeights(options, jaspResults, position = 3)
+
   # Create the evaluation metrics table
-  .mlRegressionTableMetrics(dataset, options, jaspResults, ready, position = 3)
+  .mlRegressionTableMetrics(dataset, options, jaspResults, ready, position = 4)
 
   # Create the mean squared error plot
-  .mlKnnPlotError(dataset, options, jaspResults, ready, position = 4, purpose = "regression")
+  .mlKnnPlotError(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
 
   # Create the predicted performance plot
-  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 5)
+  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 6)
 }
 
 .knnRegression <- function(dataset, options, jaspResults, ready) {
@@ -234,6 +237,53 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
       jaspGraphs::geom_rangeframe() +
       jaspGraphs::themeJaspRaw(legend.position = "top")
   }
+  plot$plotObject <- p
+}
+
+.mlKnnPlotWeights <- function(options, jaspResults, position) {
+  if (!is.null(jaspResults[["plotWeights"]]) || !options[["plotWeights"]]) {
+    return()
+  }
+  weights <- switch(options[["weights"]],
+    "rectangular"  = gettext("Rectangular"),
+    "triangular"   = gettext("Triangular"),
+    "epanechnikov" = gettext("Epanechnikov"),
+    "biweight"     = gettext("Biweight"),
+    "triweight"    = gettext("Triweight"),
+    "cos"          = gettext("Cosine"),
+    "inv"          = gettext("Inverse"),
+    "gaussian"     = gettext("Gaussian"),
+    "rank"         = gettext("Rank"),
+    "optimal"      = gettext("Optimal")
+  )
+  plot <- createJaspPlot(title = gettextf("%1$s Weight Function", weights), width = 400, height = 300)
+  plot$position <- position
+  plot$dependOn(options = c("plotWeights", "weights"))
+  jaspResults[["plotWeights"]] <- plot
+  if (options[["weights"]] == "rank" || options[["weights"]] == "optimal") {
+    plot$setError(gettext("Plotting not possible: The selected weighting scheme cannot be visualized separately from the data."))
+    return()
+  }
+  # Weighting schemes from the kknn::kknn() function
+  func <- switch(options[["weights"]],
+    "rectangular"  = function(x) 1,
+    "triangular"   = function(x) 1 - x,
+    "epanechnikov" = function(x) 0.75 * (1 - x^2),
+    "biweight"     = function(x) stats::dbeta((x + 1) / 2, shape1 = 3, shape2 = 3),
+    "triweight"    = function(x) stats::dbeta((x + 1) / 2, shape1 = 4, shape2 = 4),
+    "cos"          = function(x) cos(x * pi / 2),
+    "inv"          = function(x) 1 / x,
+    "gaussian"     = function(x) stats::dnorm(x)
+  )
+  xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, 1), min.n = 4)
+  yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, 1), min.n = 4) # 0.001 for Inf at x = 0 in 'inv' weights
+  plotFunc <- function(x) func(x) / func(0.001)
+  p <- ggplot2::ggplot() +
+    ggplot2::stat_function(fun = plotFunc, size = 1, xlim = c(0.001, 1)) +
+    ggplot2::scale_x_continuous(name = gettext("Proportion of Max. Distance"), breaks = xBreaks, limits = c(0, 1)) +
+    ggplot2::scale_y_continuous(name = gettext("Relative Weight"), breaks = yBreaks, limits = c(0, 1)) +
+    jaspGraphs::geom_rangeframe() +
+    jaspGraphs::themeJaspRaw()
   plot$plotObject <- p
 }
 

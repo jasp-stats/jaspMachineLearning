@@ -104,10 +104,10 @@ test_that("Variable Importance table results match", {
 })
 
 test_that("Evaluation Metrics table results match", {
-  table <- results[["results"]][["validationMeasures"]][["data"]]
-  jaspTools::expect_equal_tables(table,
-                      list(0.993006993006993, 1, 1, 1, 1, 13, 0.998299319727891, 0.962962962962963,
-                           2, 1, 0.928571428571429, 14, 1, 0.941176470588235, 3, 0.888888888888889,
-                           1, 8, 0.997102104244961, 0.971739807033925, "Average / Total",
-                           0.974603174603175, 0.971428571428571, 35))
+	table <- results[["results"]][["validationMeasures"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(0.993006993006993, 1, 1, 1, 1, 13, 0.998299319727891, 0.962962962962963,
+			 2, 1, 0.928571428571429, 14, 1, 0.941176470588235, 3, 0.888888888888889,
+			 1, 8, 0.997102104244961, 0.971739807033925, "Average / Total",
+			 0.974603174603175, 0.971428571428571, 35))
 })

@@ -1,0 +1,70 @@
+context("Machine Learning Boosting Classification")
+
+options <- jaspTools::analysisOptions("mlClassificationDecisionTree")
+options$addIndicator <- FALSE
+options$addPredictions <- FALSE
+options$classProportionsTable <- TRUE
+options$holdoutData <- "holdoutManual"
+options$modelOpt <- "optimizationManual"
+options$modelValid <- "validationManual"
+options$noOfFolds <- 5
+options$predictionsColumn <- ""
+options$predictors <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
+options$saveModel <- FALSE
+options$savePath <- ""
+options$seedBox <- TRUE
+options$tableVariableImportance <- TRUE
+options$target <- "Species"
+options$testDataManual <- 0.2
+options$testIndicatorColumn <- ""
+options$testSetIndicatorVariable <- ""
+options$validationDataManual <- 0.2
+options$validationMeasures <- TRUE
+set.seed(1)
+results <- jaspTools::runAnalysis("mlClassificationDecisionTree", "iris.csv", options)
+
+
+test_that("Class Proportions table results match", {
+	table <- results[["results"]][["classProportionsTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(0.333333333333333, "setosa", 0.333333333333333, 0.333333333333333,
+			 0.333333333333333, "versicolor", 0.266666666666667, 0.35, 0.333333333333333,
+			 "virginica", 0.4, 0.316666666666667))
+})
+
+test_that("Decision Tree Classification table results match", {
+	table <- results[["results"]][["classificationTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(30, 120, 14, 0.933333333333333))
+})
+
+test_that("Confusion Matrix table results match", {
+	table <- results[["results"]][["confusionTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list("Observed", "setosa", 10, 0, 0, "", "versicolor", 0, 8, 0, "",
+			 "virginica", 0, 2, 10))
+})
+
+test_that("Data Split plot matches", {
+	plotName <- results[["results"]][["plotDataSplit"]][["data"]]
+	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+	jaspTools::expect_equal_plots(testPlot, "data-split")
+})
+
+test_that("Variable Importance table results match", {
+	table <- results[["results"]][["tableVariableImportance"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(34.6709290167624, "Petal.Width", 31.6571914083694, "Petal.Length",
+			 19.9269628140734, "Sepal.Length", 13.7449167607949, "Sepal.Width"
+			))
+})
+
+test_that("Evaluation Metrics table results match", {
+	table <- results[["results"]][["validationMeasures"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(1, 1, "setosa", 1, 1, 10, 0.954545454545454, 0.888888888888889,
+			 "versicolor", 0.8, 1, 8, 0.916666666666667, 0.909090909090909,
+			 "virginica", 1, 0.833333333333333, 12, 0.957070707070707, 0.934006734006734,
+			 "Average / Total", 0.946666666666667, 0.933333333333333, 30
+			))
+})

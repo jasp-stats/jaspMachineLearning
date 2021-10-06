@@ -164,7 +164,7 @@
 .mlRegressionReady <- function(options, type) {
   if (type == "randomForest" || type == "boosting" || type == "regularized") {
     ready <- length(options[["predictors"]][options[["predictors"]] != ""]) >= 2 && options[["target"]] != ""
-  } else if (type == "knn" || type == "neuralnet") {
+  } else if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm") {
     ready <- length(options[["predictors"]][options[["predictors"]] != ""]) >= 1 && options[["target"]] != ""
   }
   return(ready)
@@ -193,14 +193,16 @@
       "regularized" = .regularizedRegression(dataset, options, jaspResults),
       "randomForest" = .randomForestRegression(dataset, options, jaspResults),
       "boosting" = .boostingRegression(dataset, options, jaspResults),
-      "neuralnet" = .neuralnetRegression(dataset, options, jaspResults)
+      "neuralnet" = .neuralnetRegression(dataset, options, jaspResults),
+      "rpart" = .decisionTreeRegression(dataset, options, jaspResults),
+      "svm" = .svmRegression(dataset, options, jaspResults)
     )
     jaspResults[["regressionResult"]] <- createJaspState(regressionResult)
     jaspResults[["regressionResult"]]$dependOn(options = c(
       "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "maxTrees",
       "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "confusionProportions", "maxK", "noOfFolds", "modelValid",
       "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac",
-      "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
+      "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "nSplit",
       "holdoutData", "testDataManual",
       "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
     ))
@@ -216,7 +218,9 @@
     "regularized" = gettext("Regularized Linear Regression"),
     "randomForest" = gettext("Random Forest Regression"),
     "boosting" = gettext("Boosting Regression"),
-    "neuralnet" = gettext("Neural Network Regression")
+    "neuralnet" = gettext("Neural Network Regression"),
+    "rpart" = gettext("Decision Tree Regression"),
+    "svm" = gettext("Support Vector Machine Regression")
   )
   table <- createJaspTable(title)
   table$position <- position
@@ -224,7 +228,7 @@
     "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
     "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
     "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "maxTrees",
-    "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac", "intDepth", "nNode", "distance",
+    "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac", "intDepth", "nNode", "distance", "nSplit", "cost", "tolerance", "epsilon",
     "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "holdoutData", "testDataManual", "saveModel", "savePath",
     "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
   ))
@@ -249,6 +253,10 @@
   } else if (type == "neuralnet") {
     table$addColumnInfo(name = "layers", title = gettext("Hidden Layers"), type = "integer")
     table$addColumnInfo(name = "nodes", title = gettext("Nodes"), type = "integer")
+  } else if (type == "rpart") {
+    table$addColumnInfo(name = "splits", title = gettext("Splits"), type = "integer")
+  } else if (type == "svm") {
+    table$addColumnInfo(name = "vectors", title = gettext("Support Vectors"), type = "integer")
   }
   # Add common columns
   table$addColumnInfo(name = "nTrain", title = gettext("n(Train)"), type = "integer")
@@ -266,7 +274,7 @@
   }
   # If no analysis is run, specify the required variables in a footnote
   if (!ready) {
-    table$addFootnote(gettextf("Please provide a target variable and at least %d predictor variable(s).", if (type == "knn" || type == "neuralnet") 1L else 2L))
+    table$addFootnote(gettextf("Please provide a target variable and at least %d predictor variable(s).", if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm") 1L else 2L))
   }
   if (options[["savePath"]] != "") {
     if (options[["saveModel"]]) {
@@ -385,6 +393,23 @@
       row <- cbind(row, nValid = nValid, validMSE = regressionResult[["validMSE"]])
     }
     table$addRows(row)
+  } else if (type == "rpart") {
+    splits <- if (!is.null(regressionResult[["model"]]$splits)) nrow(regressionResult[["model"]]$splits) else 0
+    row <- data.frame(
+      splits = splits,
+      nTrain = nTrain,
+      ntest = regressionResult[["ntest"]],
+      testMSE = regressionResult[["testMSE"]]
+    )
+    table$addRows(row)
+  } else if (type == "svm") {
+    row <- data.frame(
+      vectors = nrow(regressionResult[["model"]]$SV),
+      nTrain = nTrain,
+      ntest = regressionResult[["ntest"]],
+      testMSE = regressionResult[["testMSE"]]
+    )
+    table$addRows(row)
   }
   # Save the model if requested
   if (options[["saveModel"]] && options[["savePath"]] != "") {
@@ -415,7 +440,7 @@
     "validationMeasures", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
     "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "confusionProportions", "maxK", "noOfFolds", "modelValid",
     "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac",
-    "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "maxTrees",
+    "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "maxTrees", "nSplit", "cost", "tolerance", "epsilon",
     "holdoutData", "testDataManual",
     "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
   ))
@@ -454,7 +479,7 @@
     "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
     "target", "predictors", "seed", "seedBox", "modelValid", "maxK", "noOfFolds", "modelValid", "predictedPerformancePlot",
     "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac",
-    "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "maxTrees",
+    "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "maxTrees", "nSplit", "cost", "tolerance", "epsilon",
     "holdoutData", "testDataManual",
     "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
   ))
@@ -568,7 +593,7 @@
       "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "maxTrees",
       "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "confusionProportions", "maxK", "noOfFolds", "modelValid",
       "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac",
-      "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
+      "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "nSplit", "cost", "tolerance", "epsilon",
       "holdoutData", "testDataManual", "testIndicatorColumn", "addIndicator",
       "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
     ))
@@ -632,7 +657,7 @@
       "predictionsColumn", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "maxTrees",
       "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
       "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac",
-      "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
+      "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "nSplit", "cost", "tolerance", "epsilon",
       "holdoutData", "testDataManual", "testIndicatorColumn",
       "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
     ))

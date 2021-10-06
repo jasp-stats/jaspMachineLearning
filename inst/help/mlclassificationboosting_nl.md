@@ -76,7 +76,7 @@ Genereert een nieuwe kolom in uw dataset met de klasselabels van uw classificati
 - AUC: Gebied onder de ROC kromme. Elke klasse is voorspeld tegen alle andere klassen. Zie ook ROC kromme.
 
 ### Referenties
--------
+---
 - James, G., Witten, D., Hastie, T., & Tibshirani, R. (2013). An introduction to statistical learning. Springer New York.
 
 ### R-packages 
@@ -86,5 +86,4 @@ Genereert een nieuwe kolom in uw dataset met de klasselabels van uw classificati
 
 ### Voorbeeld 
 --- 
-- Voor een dataset als voorbeeld ga naar `Open` --> `Bibliotheek` --> `Machine Learning` --> `Telco's Overstappende Klanten`.  
-
+- Voor een dataset als voorbeeld ga naar `Open` --> `Bibliotheek` --> `Machine Learning` --> `Telco's Overstappende Klanten`.
