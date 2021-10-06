@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2021-10-02 03:23\n"
-"PO-Revision-Date: 2021-10-03 14:07+0000\n"
+"PO-Revision-Date: 2021-10-05 12:03+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/de/>\n"
@@ -26,9 +26,8 @@ msgstr "Random-Forest-Klassifikation"
 msgid "Boosting Classification"
 msgstr "Boosting Klassifikation"
 
-#, fuzzy
 msgid "Neural Network Classification"
-msgstr "K-nächste-Nachbarn-Klassifikation"
+msgstr "Neuronale-Netzwerk-Klassifikation"
 
 msgid "Nearest neighbors"
 msgstr "Nächste-Nachbarn"
@@ -55,10 +54,10 @@ msgid "Shrinkage"
 msgstr "Schrumpfung"
 
 msgid "Hidden Layers"
-msgstr ""
+msgstr "Verdeckte Schichten"
 
 msgid "Nodes"
-msgstr ""
+msgstr "Knoten"
 
 msgid "n(Train)"
 msgstr "n(Train)"
@@ -82,10 +81,12 @@ msgid "Please provide a target variable and at least %i predictor variable(s)."
 msgstr "Bitte gib eine Zielvariable und mindestens %i Prädiktorvariable(n) an."
 
 msgid "The trained model is saved as <i>%1$s</i>."
-msgstr ""
+msgstr "Das trainierte Modell wird als <i>%1$s</i> gespeichert."
 
 msgid "The trained model is not saved until 'Save trained model' is checked."
 msgstr ""
+"Das trainierte Modell wird erst gespeichert, wenn die Option \"Trainiertes "
+"Modell speichern\" aktiviert ist."
 
 msgid ""
 "The model is optimized with respect to the <i>validation set accuracy</i>."
@@ -119,9 +120,10 @@ msgstr "t"
 msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
 msgstr "Das Modell ist optimiert auf <i>\"out of the box\" Exaktheit</i>."
 
-#, fuzzy
 msgid "The model is optimized with respect to the <i>sum of squares</i>."
-msgstr "Das Modell ist optimiert auf <i>\"out of the box\" Exaktheit</i>."
+msgstr ""
+"Das Modell ist hinsichtlich der <i>Summe der Abweichungsquadrate</i> "
+"optimiert."
 
 msgid "Confusion Matrix"
 msgstr "Konfusionsmatrix"
@@ -433,9 +435,8 @@ msgstr "Random-Forest-Regression"
 msgid "Boosting Regression"
 msgstr "Boosting-Regression"
 
-#, fuzzy
 msgid "Neural Network Regression"
-msgstr "K-nächste-Nachbarn Regression"
+msgstr "Neuronale-Netzwerk-Regression"
 
 msgid "Penalty"
 msgstr "Strafterm"
@@ -559,10 +560,10 @@ msgid "Pooled Within-Class Matrices Correlations"
 msgstr "Gepoolte klasseninterne Matrizenkorrelationen"
 
 msgid "An error occurred in the 'neuralnet' package: %1$s"
-msgstr ""
+msgstr "Im Paket 'neuralnet' ist ein Fehler aufgetreten: %1$s"
 
 msgid "Optimizing network topology"
-msgstr ""
+msgstr "Optimierung der Netzwerktopologie"
 
 msgid "K-Distance Plot"
 msgstr "K-Distanz-Plot"
@@ -618,65 +619,67 @@ msgstr "Variablen-Wichtigkeit"
 msgid "Mean decrease in Gini Index"
 msgstr "Mittlere Abnahme des Gini-Index"
 
-#, fuzzy
 msgid "Linear discriminant"
-msgstr "Lineare Diskriminanten"
+msgstr "Lineare Diskriminante"
 
 msgid "Boosting"
-msgstr ""
+msgstr "Boosting"
 
-#, fuzzy
 msgid "Random forest"
-msgstr "Random-Forest-Clustering"
+msgstr "Random-Forest"
 
-#, fuzzy
 msgid "Regularized linear regression"
 msgstr "Regularisierte lineare Regression"
 
 msgid "Neural network"
-msgstr ""
+msgstr "Neuronales Netz"
 
 msgid "Error: The trained model is not created in JASP."
-msgstr ""
+msgstr "Fehler: Das trainierte Modell ist nicht in JASP erstellt."
 
 msgid "The trained model (type: %1$s) is currently not supported in JASP."
 msgstr ""
+"Das trainierte Modell (Typ: %1$s) wird derzeit nicht von JASP unterstützt."
 
 msgid "Error: The trained model is created using a different version of JASP."
 msgstr ""
+"Fehler: Das trainierte Modell wurde mit einer anderen Version von JASP "
+"erstellt."
 
 msgid "Loaded Model"
-msgstr ""
+msgstr "Geladenes Modell"
 
-#, fuzzy
 msgid "Classification"
-msgstr "Boosting Klassifikation"
+msgstr "Klassifikation"
 
-#, fuzzy
 msgid "Regression"
-msgstr "Boosting-Regression"
+msgstr "Regression"
 
 msgid "Loaded Model: %1$s"
-msgstr ""
+msgstr "Geladenes Modell: %1$s"
 
 msgid ""
 "The trained model is not applied because the the following predictors are "
 "missing: <i>%1$s</i>."
 msgstr ""
+"Das trainierte Modell wird nicht angewendet, weil die folgenden Prädiktoren "
+"fehlen: <i>%1$s</i>."
 
 msgid ""
 "The following predictors are unused because they are not a predictor "
 "variable in the trained model: <i>%1$s</i>."
 msgstr ""
+"Die folgenden Prädiktoren werden nicht verwendet, da sie keine "
+"Prädiktorvariable im trainierten Modell sind: <i>%1$s</i>."
 
 msgid "n(New)"
-msgstr ""
+msgstr "n(Neu)"
 
 msgid "Predictions for New Data"
-msgstr ""
+msgstr "Vorhersagen für neue Daten"
 
 msgid "Row"
-msgstr ""
+msgstr "Zeile"
 
 msgid "Relative Influence"
 msgstr "Relativer Einfluß"
@@ -735,142 +738,140 @@ msgstr "Anzahl von nächsten Nachbarn"
 msgid "Training and validation set"
 msgstr "Trainings- und Validations-Menge"
 
-#, fuzzy
 msgid "Network Weights"
-msgstr "Gewichte"
+msgstr "Netzwerkgewichte"
 
 msgid "Node"
-msgstr ""
+msgstr "Knoten"
 
 msgid "Layer"
-msgstr ""
+msgstr "Schicht"
 
 msgid "Weight"
 msgstr "Gewichtung"
 
 msgid "linear"
-msgstr ""
+msgstr "linear"
 
 msgid "binary step"
-msgstr ""
+msgstr "binäre Stufe"
 
 msgid "logistic sigmoid"
-msgstr ""
+msgstr "logistische Sigmoid"
 
 msgid "sine"
-msgstr ""
+msgstr "Sinus"
 
 msgid "cosine"
-msgstr ""
+msgstr "Kosinus"
 
 msgid "inverse tangent"
-msgstr ""
+msgstr "Arkustangens"
 
 msgid "hyperbolic tangent"
-msgstr ""
+msgstr "Hyperbolischer Tangens"
 
 msgid "rectified linear unit (ReLU)"
-msgstr ""
+msgstr "rectified linear unit (ReLU)"
 
 msgid "softplus"
-msgstr ""
+msgstr "softplus"
 
 msgid "softsign"
-msgstr ""
+msgstr "softsign"
 
 msgid "exponential linear unit (ELU)"
-msgstr ""
+msgstr "exponential linear unit (ELU)"
 
 msgid "leaky rectified linear unit (Leaky ReLU)"
-msgstr ""
+msgstr "leaky rectified linear unit (Leaky ReLU)"
 
 msgid "sigmoid linear unit (SiLU)"
-msgstr ""
+msgstr "sigmoid linear unit (SiLU)"
 
 msgid "mish"
-msgstr ""
+msgstr "mish"
 
-#, fuzzy
 msgid "gaussian"
 msgstr "Gaußsch"
 
 msgid "gaussian error linear unit (GeLU)"
-msgstr ""
+msgstr "gaussian error linear unit (GeLU)"
 
 msgid "The weights are input for the %1$s activation function."
-msgstr ""
+msgstr "Die Gewichte werden für die Aktivierungsfunktion %1$s eingegeben."
 
 msgid "Network Structure Plot"
-msgstr ""
+msgstr "Netzwerkstrukturdiagramm"
 
 msgid "Intercept"
-msgstr ""
+msgstr "Konstante"
 
 msgid "Input layer"
-msgstr ""
+msgstr "Eingabeschicht"
 
 msgid "Output layer"
-msgstr ""
+msgstr "Ausgabeschicht"
 
 msgid "Hidden layer %1$s"
-msgstr ""
+msgstr "Verdeckte Schicht %1$s"
 
 msgid "Linear"
-msgstr ""
+msgstr "Linear"
 
 msgid "Binary"
-msgstr ""
+msgstr "Binär"
 
 msgid "Logistic Sigmoid"
-msgstr ""
+msgstr "Logistische Sigmoid"
 
 msgid "Sine"
-msgstr ""
+msgstr "Sinus"
 
 msgid "Cosine"
-msgstr ""
+msgstr "Kosinus"
 
 msgid "Inverse Tangent"
-msgstr ""
+msgstr "Arkustangens"
 
 msgid "Hyperbolic Tangent"
-msgstr ""
+msgstr "Hyperbolischer Tangens"
 
 msgid "ReLU"
-msgstr ""
+msgstr "ReLU"
 
 msgid "Softplus"
-msgstr ""
+msgstr "Softplus"
 
 msgid "Softsign"
-msgstr ""
+msgstr "Softsign"
 
 msgid "ELU"
-msgstr ""
+msgstr "ELU"
 
 msgid "Leaky ReLU"
-msgstr ""
+msgstr "Leaky ReLU"
 
 msgid "SiLU"
-msgstr ""
+msgstr "SiLU"
 
 msgid "Mish"
-msgstr ""
+msgstr "Mish"
 
 msgid "GeLU"
-msgstr ""
+msgstr "GeLU"
 
 msgid "%1$s Activation Function"
-msgstr ""
+msgstr "%1$s Aktivierungsfunktion"
 
 msgid "Input"
-msgstr ""
+msgstr "Eingabe"
 
 msgid "Output"
-msgstr ""
+msgstr "Ausgabe"
 
 msgid "Generation"
-msgstr ""
+msgstr "Generation"
 
 msgid "Mean decrease in accuracy"
 msgstr "Mittlere Abnahme der Genauigkeit"
@@ -906,7 +907,7 @@ msgid "Variable Trace Plot"
 msgstr "Variablen-Verlaufsdiagramm"
 
 msgid "Coefficients"
-msgstr "Koeffzienten"
+msgstr "Koeffizienten"
 
 msgid "Lambda Evaluation Plot"
 msgstr "Lambda-Evaluations-Abbildung"
