@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-10-11 20:05+0000\n"
+"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.9-dev\n"
 "X-Language: es\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -462,37 +468,30 @@ msgctxt "mlClassificationKnn|"
 msgid "Cosine"
 msgstr "Coseno"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Inverse"
-msgstr "Inverso"
+msgstr "Inversa"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Gaussian"
-msgstr "Gaussiano"
+msgstr "Normal"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Rank"
 msgstr "Rango"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Optimal"
 msgstr "Óptimo"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Distance:"
 msgstr "Distancia:"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Euclidian"
-msgstr "Euclidiano"
+msgstr "Euclídeo"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Manhattan"
 msgstr "Manhattan"
@@ -507,22 +506,18 @@ msgctxt "mlClassificationKnn|"
 msgid "Set seed:"
 msgstr "Establecer semilla:"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Number of Nearest Neighbors"
-msgstr "Número de vecinos más cercanos"
+msgstr "Número de Vecinos Más Cercanos"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Fixed"
 msgstr "Fijo"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Nearest neighbors:"
 msgstr "Vecinos más cercanos:"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Optimized"
 msgstr "Optimizado"
@@ -785,47 +780,38 @@ msgctxt "mlClassificationRandomForest|"
 msgid "Auto"
 msgstr "Auto"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Manual"
 msgstr "Manual"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Scale predictors"
 msgstr "Predictores de escala"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Set seed:"
 msgstr "Establecer semilla:"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Number of Trees"
-msgstr "Numero de arboles"
+msgstr "Número de Árboles"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Fixed"
 msgstr "Fijo"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Trees:"
 msgstr "Árboles:"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Optimized"
 msgstr "Optimizado"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Max. trees:"
 msgstr "Max. árboles:"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Variables"
 msgstr "Variables"
@@ -1766,62 +1752,50 @@ msgctxt "mlRegressionKnn|"
 msgid "Cosine"
 msgstr "Coseno"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Inverse"
-msgstr "Inverso"
+msgstr "Inversa"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Gaussian"
-msgstr "Gaussiano"
+msgstr "Normal"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Rank"
 msgstr "Rango"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Optimal"
 msgstr "Óptimo"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Distance:"
 msgstr "Distancia:"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Euclidian"
-msgstr "Euclidiano"
+msgstr "Euclídeo"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Scale variables"
 msgstr "Variables de escala"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Set seed:"
 msgstr "Establecer semilla:"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Number of Nearest Neighbors"
-msgstr "Número de vecinos más cercanos"
+msgstr "Número de Vecinos Más Cercanos"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Fixed"
 msgstr "Fijo"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Nearest neighbors:"
 msgstr "Vecinos más cercanos:"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Optimized"
 msgstr "Optimizado"
@@ -1906,52 +1880,42 @@ msgctxt "mlRegressionRandomForest|"
 msgid "Auto"
 msgstr "Auto"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Manual"
 msgstr "Manual"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Scale variables"
 msgstr "Variables de escala"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Set seed:"
 msgstr "Establecer semilla:"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Number of Trees"
-msgstr "Numero de arboles"
+msgstr "Número de Árboles"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Fixed"
 msgstr "Fijo"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Trees:"
 msgstr "Árboles:"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Optimized"
 msgstr "Optimizado"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Max. trees:"
 msgstr "Max. árboles:"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Target"
 msgstr "Objetivo"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Predictors"
 msgstr "Predictores"
@@ -2128,7 +2092,6 @@ msgctxt "mlClassificationNeuralNetwork|"
 msgid "Predictors"
 msgstr "Predictores"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Tables"
 msgstr "Tablas"
@@ -2272,10 +2235,9 @@ msgctxt "mlClassificationNeuralNetwork|"
 msgid "Mish"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Gaussian"
-msgstr "Gaussiano"
+msgstr "Normal"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "GeLU"
@@ -2342,7 +2304,6 @@ msgctxt "mlClassificationNeuralNetwork|"
 msgid "Network Topology"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Manual"
 msgstr "Manual"
@@ -2388,18 +2349,17 @@ msgctxt "mlClassificationNeuralNetwork|"
 msgid "Universal"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Rank"
 msgstr "Rango"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Random"
-msgstr ""
+msgstr "Aleatorio"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Candidates"
-msgstr ""
+msgstr "Candidatos"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Crossover method"
@@ -2480,35 +2440,30 @@ msgctxt "mlPrediction|"
 msgid "Scale predictors"
 msgstr "Predictores de escala"
 
-#, fuzzy
 msgctxt "mlPrediction|"
 msgid "Tables"
 msgstr "Tablas"
 
 msgctxt "mlPrediction|"
 msgid "From"
-msgstr ""
+msgstr "De"
 
 msgctxt "mlPrediction|"
 msgid "to"
-msgstr ""
+msgstr "a"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Target"
 msgstr "Objetivo"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Predictors"
 msgstr "Predictores"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Tables"
 msgstr "Tablas"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Evaluation metrics"
 msgstr "Métricas de evaluación"
@@ -2612,10 +2567,9 @@ msgctxt "mlRegressionNeuralNetwork|"
 msgid "Mish"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Gaussian"
-msgstr "Gaussiano"
+msgstr "Normal"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "GeLU"
@@ -2682,7 +2636,6 @@ msgctxt "mlRegressionNeuralNetwork|"
 msgid "Network Topology"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Manual"
 msgstr "Manual"
@@ -2728,22 +2681,21 @@ msgctxt "mlRegressionNeuralNetwork|"
 msgid "Universal"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Rank"
 msgstr "Rango"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Tournament"
-msgstr ""
+msgstr "Torneo"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Random"
-msgstr ""
+msgstr "Aleatorio"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Candidates"
-msgstr ""
+msgstr "Candidatos"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Crossover method"
