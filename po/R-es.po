@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
 "POT-Creation-Date: 2021-10-02 03:23\n"
-"PO-Revision-Date: 2021-08-08 23:32+0000\n"
+"PO-Revision-Date: 2021-10-11 20:05+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/es/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.8-dev\n"
+"X-Generator: Weblate 4.9-dev\n"
 
 msgid "K-Nearest Neighbors Classification"
 msgstr ""
@@ -401,19 +401,19 @@ msgid "Neural Network Regression"
 msgstr ""
 
 msgid "Penalty"
-msgstr ""
+msgstr "Penalización"
 
 msgid "Loss function"
-msgstr ""
+msgstr "Función de pérdida"
 
 msgid "Validation MSE"
-msgstr ""
+msgstr "ECM de la Validación"
 
 msgid "Test MSE"
-msgstr ""
+msgstr "ECM del contraste"
 
 msgid "OOB Error"
-msgstr ""
+msgstr "Error OOB"
 
 msgid "Please provide a target variable and at least %d predictor variable(s)."
 msgstr ""
@@ -432,10 +432,10 @@ msgid ""
 msgstr ""
 
 msgid "Gaussian"
-msgstr ""
+msgstr "Normal"
 
 msgid "Laplace"
-msgstr ""
+msgstr "Laplace"
 
 msgid "R%s cannot be computed due to lack of variance in the predictions.</i>"
 msgstr ""
@@ -483,7 +483,7 @@ msgid "Prior and Posterior Class Probabilities"
 msgstr ""
 
 msgid "Prior"
-msgstr "Anterior"
+msgstr "Previo"
 
 msgid "Posterior"
 msgstr "Posterior"
@@ -678,7 +678,7 @@ msgid "Validation set"
 msgstr ""
 
 msgid "Number of Nearest Neighbors"
-msgstr ""
+msgstr "Número de Vecinos Más Cercanos"
 
 msgid "Training and validation set"
 msgstr ""
@@ -693,9 +693,8 @@ msgstr ""
 msgid "Layer"
 msgstr ""
 
-#, fuzzy
 msgid "Weight"
-msgstr "Ponderaciones"
+msgstr "Ponderación"
 
 msgid "linear"
 msgstr ""
@@ -752,7 +751,7 @@ msgid "Network Structure Plot"
 msgstr ""
 
 msgid "Intercept"
-msgstr ""
+msgstr "Constante"
 
 msgid "Input layer"
 msgstr ""
