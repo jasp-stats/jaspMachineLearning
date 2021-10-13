@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-10-11 20:05+0000\n"
+"PO-Revision-Date: 2021-10-14 01:51+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/es/>\n"
@@ -775,7 +775,6 @@ msgctxt "mlClassificationRandomForest|"
 msgid "Predictors per split:"
 msgstr "Predictores por división:"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Auto"
 msgstr "Auto"
@@ -919,7 +918,6 @@ msgctxt "mlClusteringDensityBased|"
 msgid "Distance:"
 msgstr "Distancia:"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Normal"
 msgstr "Normal"
@@ -944,7 +942,6 @@ msgctxt "mlClusteringDensityBased|"
 msgid "Fixed"
 msgstr "Fijo"
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Variables"
 msgstr "Variables"
@@ -1087,7 +1084,6 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Max. clusters:"
 msgstr "Max. grupos:"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Variables"
 msgstr "Variables"
@@ -1423,7 +1419,6 @@ msgctxt "mlClusteringKMeans|"
 msgid "Max. clusters:"
 msgstr "Max. grupos:"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Variables"
 msgstr "Variables"
@@ -1875,7 +1870,6 @@ msgctxt "mlRegressionRandomForest|"
 msgid "Predictors per split:"
 msgstr "Predictores por división:"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Auto"
 msgstr "Auto"
@@ -2277,15 +2271,15 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Sum of squares"
-msgstr ""
+msgstr "Suma de cuadrados"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Cross-entropy"
-msgstr ""
+msgstr "Entropía cruzada"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Stopping criteria loss function"
-msgstr ""
+msgstr "Criterio de parada de la función de pérdida"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Max. training repetitions"
@@ -2609,15 +2603,15 @@ msgstr ""
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Sum of squares"
-msgstr ""
+msgstr "Suma de cuadrados"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Cross-entropy"
-msgstr ""
+msgstr "Entropía cruzada"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Stopping criteria loss function"
-msgstr ""
+msgstr "Criterio de parada de la función de pérdida"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Max. training repetitions"
