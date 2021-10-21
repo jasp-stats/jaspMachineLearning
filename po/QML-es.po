@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-10-21 17:01+0000\n"
+"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.9-dev\n"
 "X-Language: es\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -200,12 +206,10 @@ msgctxt "DataSplit|"
 msgid "Leave-one-out"
 msgstr "Dejar uno fuera"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Target"
 msgstr "Objetivo"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Predictors"
 msgstr "Predictores"
@@ -283,37 +287,30 @@ msgctxt "mlClassificationBoosting|"
 msgid "Points"
 msgstr "Puntos"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Training Parameters"
-msgstr "Parámetros de entrenamiento"
+msgstr "Parámetros de Entrenamiento"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Algorithmic Settings"
-msgstr "Configuración algorítmica"
+msgstr "Configuraciones Algorítmicas"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Shrinkage:"
 msgstr "Contracción:"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Interaction depth:"
-msgstr "Profundidad de interacción:"
+msgstr "Grado de interacción:"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Min. observations in node:"
-msgstr "Min. observaciones en el nodo:"
+msgstr "Mín. observaciones en el nodo:"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Training data used per tree:"
 msgstr "Datos de entrenamiento utilizados por árbol:"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Scale predictors"
 msgstr "Predictores de escala"
@@ -413,20 +410,17 @@ msgctxt "mlClassificationKnn|"
 msgid "Points"
 msgstr "Puntos"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Training Parameters"
-msgstr "Parámetros de entrenamiento"
+msgstr "Parámetros de Entrenamiento"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Algorithmic Settings"
-msgstr "Configuración algorítmica"
+msgstr "Configuraciones Algorítmicas"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Weights:"
-msgstr "Pesos:"
+msgstr "Ponderaciones:"
 
 msgctxt "mlClassificationKnn|"
 msgid "Rectangular"
@@ -478,7 +472,6 @@ msgctxt "mlClassificationKnn|"
 msgid "Manhattan"
 msgstr "Manhattan"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Scale predictors"
 msgstr "Predictores de escala"
@@ -508,12 +501,10 @@ msgctxt "mlClassificationKnn|"
 msgid "Max. nearest neighbors:"
 msgstr "Max. vecinos más cercanos:"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Target"
 msgstr "Objetivo"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Predictors"
 msgstr "Predictores"
@@ -625,37 +616,30 @@ msgctxt "mlClassificationLda|"
 msgid "Points"
 msgstr "Puntos"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Training Parameters"
-msgstr "Parámetros de entrenamiento"
+msgstr "Parámetros de Entrenamiento"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Algorithmic Settings"
-msgstr "Configuración algorítmica"
+msgstr "Configuraciones Algorítmicas"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Estimation method:"
 msgstr "Método de estimación:"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Scale predictors"
 msgstr "Predictores de escala"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Set seed: "
 msgstr "Establecer semilla: "
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Target"
 msgstr "Objetivo"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Predictors"
 msgstr "Predictores"
@@ -736,25 +720,21 @@ msgctxt "mlClassificationRandomForest|"
 msgid "Points"
 msgstr "Puntos"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Training Parameters"
-msgstr "Parámetros de entrenamiento"
+msgstr "Parámetros de Entrenamiento"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Algorithmic Settings"
-msgstr "Configuración algorítmica"
+msgstr "Configuraciones Algorítmicas"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Training data used per tree:"
 msgstr "Datos de entrenamiento utilizados por árbol:"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Predictors per split:"
-msgstr "Predictores por división:"
+msgstr "Predictores por separador:"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Auto"
@@ -861,32 +841,26 @@ msgctxt "mlClusteringDensityBased|"
 msgid "Legend"
 msgstr "Leyenda"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Labels"
 msgstr "Etiquetas"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Training Parameters"
-msgstr "Parámetros de entrenamiento"
+msgstr "Parámetros de Entrenamiento"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Algorithmic Settings"
-msgstr "Configuración algorítmica"
+msgstr "Configuraciones Algorítmicas"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Epsilon neighborhood size:"
-msgstr "Tamaño del vecindario de Epsilon:"
+msgstr "Tamaño del épsilon de proximidad:"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Min. core points:"
-msgstr "Min. puntos centrales:"
+msgstr "Mín. puntos del núcleo:"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Distance:"
 msgstr "Distancia:"
@@ -988,32 +962,26 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Legend"
 msgstr "Leyenda"
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Labels"
 msgstr "Etiquetas"
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Training Parameters"
-msgstr "Parámetros de entrenamiento"
+msgstr "Parámetros de Entrenamiento"
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Algorithmic Settings"
-msgstr "Configuración algorítmica"
+msgstr "Configuraciones Algorítmicas"
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Max. iterations:"
-msgstr "Max. iteraciones:"
+msgstr "Máx. iteraciones:"
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Fuzziness parameter:"
 msgstr "Parámetro de borrosidad:"
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Scale variables"
 msgstr "Variables de escala"
@@ -1112,57 +1080,46 @@ msgctxt "mlClusteringHierarchical|"
 msgid "Legend"
 msgstr "Leyenda"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Labels"
 msgstr "Etiquetas"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Training Parameters"
-msgstr "Parámetros de entrenamiento"
+msgstr "Parámetros de Entrenamiento"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Algorithmic Settings"
-msgstr "Configuración algorítmica"
+msgstr "Configuraciones Algorítmicas"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Distance:"
 msgstr "Distancia:"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Euclidean"
-msgstr "Euclidiana"
+msgstr "Euclídea"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Linkage:"
 msgstr "Enlace:"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Average"
 msgstr "Promedio"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Single"
-msgstr "Soltero"
+msgstr "Único"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Complete"
-msgstr "Completar"
+msgstr "Completo"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Centroid"
 msgstr "Centroide"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Median"
 msgstr "Mediana"
@@ -1171,7 +1128,6 @@ msgctxt "mlClusteringHierarchical|"
 msgid "Ward.D"
 msgstr "Ward.D"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Ward.D2"
 msgstr "Ward.D2"
@@ -1180,7 +1136,6 @@ msgctxt "mlClusteringHierarchical|"
 msgid "McQuitty"
 msgstr "McQuitty"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Scale variables"
 msgstr "Variables de escala"
@@ -1279,37 +1234,30 @@ msgctxt "mlClusteringKMeans|"
 msgid "Legend"
 msgstr "Leyenda"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Labels"
 msgstr "Etiquetas"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Training Parameters"
-msgstr "Parámetros de entrenamiento"
+msgstr "Parámetros de Entrenamiento"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Algorithmic Settings"
-msgstr "Configuración algorítmica"
+msgstr "Configuraciones Algorítmicas"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Max. iterations:"
-msgstr "Max. iteraciones:"
+msgstr "Máx. iteraciones:"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Random sets:"
-msgstr "Conjuntos aleatorios:"
+msgstr "Configuraciones aleatorias:"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Algorithm:"
 msgstr "Algoritmo:"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Scale variables"
 msgstr "Variables de escala"
@@ -1411,27 +1359,22 @@ msgctxt "mlClusteringRandomForest|"
 msgid "Legend"
 msgstr "Leyenda"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Labels"
 msgstr "Etiquetas"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Training Parameters"
-msgstr "Parámetros de entrenamiento"
+msgstr "Parámetros de Entrenamiento"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Algorithmic Settings"
-msgstr "Configuración algorítmica"
+msgstr "Configuraciones Algorítmicas"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Trees:"
 msgstr "Árboles:"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Scale variables"
 msgstr "Variables de escala"
@@ -1503,42 +1446,34 @@ msgctxt "mlRegressionBoosting|"
 msgid "Deviance"
 msgstr "Desviación"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Training Parameters"
-msgstr "Parámetros de entrenamiento"
+msgstr "Parámetros de Entrenamiento"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Algorithmic Settings"
-msgstr "Configuración algorítmica"
+msgstr "Configuraciones Algorítmicas"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Shrinkage:"
 msgstr "Contracción:"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Interaction depth:"
-msgstr "Profundidad de interacción:"
+msgstr "Grado de interacción:"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Min. observations in node:"
-msgstr "Min. observaciones en el nodo:"
+msgstr "Mín. observaciones en el nodo:"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Training data used per tree:"
 msgstr "Datos de entrenamiento utilizados por árbol:"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Loss function:"
 msgstr "Función de pérdida:"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Scale variables"
 msgstr "Variables de escala"
@@ -1601,20 +1536,17 @@ msgctxt "mlRegressionKnn|"
 msgid "Predictive performance"
 msgstr "Rendimiento predictivo"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Training Parameters"
-msgstr "Parámetros de entrenamiento"
+msgstr "Parámetros de Entrenamiento"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Algorithmic Settings"
-msgstr "Configuración algorítmica"
+msgstr "Configuraciones Algorítmicas"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Weights:"
-msgstr "Pesos:"
+msgstr "Ponderaciones:"
 
 msgctxt "mlRegressionKnn|"
 msgid "Rectangular"
@@ -1691,12 +1623,10 @@ msgctxt "mlRegressionKnn|"
 msgid "Max. nearest neighbors:"
 msgstr "Max. vecinos más cercanos:"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Target"
 msgstr "Objetivo"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Predictors"
 msgstr "Predictores"
@@ -1741,25 +1671,21 @@ msgctxt "mlRegressionRandomForest|"
 msgid "Total increase in node purity"
 msgstr "Aumento total de la pureza del nodo"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Training Parameters"
-msgstr "Parámetros de entrenamiento"
+msgstr "Parámetros de Entrenamiento"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Algorithmic Settings"
-msgstr "Configuración algorítmica"
+msgstr "Configuraciones Algorítmicas"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Training data used per tree:"
 msgstr "Datos de entrenamiento utilizados por árbol:"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Predictors per split:"
-msgstr "Predictores por división:"
+msgstr "Predictores por separador:"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Auto"
@@ -1852,42 +1778,34 @@ msgctxt "mlRegressionRegularized|"
 msgid "λ evaluation"
 msgstr "λ evaluación"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Training Parameters"
-msgstr "Parámetros de entrenamiento"
+msgstr "Parámetros de Entrenamiento"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Algorithmic Settings"
-msgstr "Configuración algorítmica"
+msgstr "Configuraciones Algorítmicas"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Convergence threshold:"
 msgstr "Umbral de convergencia:"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Penalty:"
-msgstr "Multa:"
+msgstr "Penalización:"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Elastic net"
 msgstr "Red elástica"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Elastic net parameter (α):"
 msgstr "Parámetro de red elástica (α):"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Fit intercept"
-msgstr "Ajustar intercepción"
+msgstr "Constante de ajuste"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Scale variables"
 msgstr "Variables de escala"
@@ -1962,12 +1880,10 @@ msgctxt "ExportResults|"
 msgid "Save trained model"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Target"
 msgstr "Objetivo"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Predictors"
 msgstr "Predictores"
@@ -2048,72 +1964,69 @@ msgctxt "mlClassificationNeuralNetwork|"
 msgid "Points"
 msgstr "Puntos"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Training Parameters"
-msgstr "Parámetros de entrenamiento"
+msgstr "Parámetros de Entrenamiento"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Algorithmic Settings"
-msgstr "Configuración algorítmica"
+msgstr "Configuraciones Algorítmicas"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Linear"
-msgstr ""
+msgstr "Lineal"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Binary"
-msgstr ""
+msgstr "Binario"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Logistic sigmoid"
-msgstr ""
+msgstr "Sigmoide Logística"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Sine"
-msgstr ""
+msgstr "Seno"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Cosine"
 msgstr "Coseno"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Inverse tangent"
-msgstr ""
+msgstr "Tangente inversa"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Hyperbolic tangent"
-msgstr ""
+msgstr "Tangente hiperbólica"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "ReLU"
-msgstr ""
+msgstr "ReLU"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Softplus"
-msgstr ""
+msgstr "Softplus"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Softsign"
-msgstr ""
+msgstr "Softsign"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "ELU"
-msgstr ""
+msgstr "ELU"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "LReLU"
-msgstr ""
+msgstr "LReLU"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "SiLU"
-msgstr ""
+msgstr "SiLU"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Mish"
-msgstr ""
+msgstr "Mish"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Gaussian"
@@ -2121,39 +2034,39 @@ msgstr "Normal"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "GeLU"
-msgstr ""
+msgstr "GeLU"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Algorithm"
-msgstr ""
+msgstr "Algoritmo"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Backpropagation"
-msgstr ""
+msgstr "Propagación cara atrás"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "rprop+"
-msgstr ""
+msgstr "rprop+"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "rprop-"
-msgstr ""
+msgstr "rprop-"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "grprop-sag"
-msgstr ""
+msgstr "grprop-sag"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "grprop-slr"
-msgstr ""
+msgstr "grprop-slr"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Learning rate"
-msgstr ""
+msgstr "Tasa de aprendizaje"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Loss function"
-msgstr ""
+msgstr "Función de pérdida"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Sum of squares"
@@ -2171,7 +2084,6 @@ msgctxt "mlClassificationNeuralNetwork|"
 msgid "Max. training repetitions"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Scale predictors"
 msgstr "Predictores de escala"
@@ -2182,7 +2094,7 @@ msgstr "Establecer semilla"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Network Topology"
-msgstr ""
+msgstr "Topología de la Red"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Manual"
@@ -2263,7 +2175,7 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Reset"
-msgstr "Reiniciar"
+msgstr "Restablecer"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Swap"
@@ -2310,12 +2222,10 @@ msgctxt "mlPrediction|"
 msgid "Predictors"
 msgstr "Predictores"
 
-#, fuzzy
 msgctxt "mlPrediction|"
 msgid "Algorithmic Settings"
-msgstr "Configuración algorítmica"
+msgstr "Configuraciones Algorítmicas"
 
-#, fuzzy
 msgctxt "mlPrediction|"
 msgid "Scale predictors"
 msgstr "Predictores de escala"
@@ -2380,72 +2290,69 @@ msgctxt "mlRegressionNeuralNetwork|"
 msgid "Network structure"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Training Parameters"
-msgstr "Parámetros de entrenamiento"
+msgstr "Parámetros de Entrenamiento"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Algorithmic Settings"
-msgstr "Configuración algorítmica"
+msgstr "Configuraciones Algorítmicas"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Linear"
-msgstr ""
+msgstr "Lineal"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Binary"
-msgstr ""
+msgstr "Binario"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Logistic sigmoid"
-msgstr ""
+msgstr "Sigmoide Logística"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Sine"
-msgstr ""
+msgstr "Seno"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Cosine"
 msgstr "Coseno"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Inverse tangent"
-msgstr ""
+msgstr "Tangente inversa"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Hyperbolic tangent"
-msgstr ""
+msgstr "Tangente hiperbólica"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "ReLU"
-msgstr ""
+msgstr "ReLU"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Softplus"
-msgstr ""
+msgstr "Softplus"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Softsign"
-msgstr ""
+msgstr "Softsign"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "ELU"
-msgstr ""
+msgstr "ELU"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "LReLU"
-msgstr ""
+msgstr "LReLU"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "SiLU"
-msgstr ""
+msgstr "SiLU"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Mish"
-msgstr ""
+msgstr "Mish"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Gaussian"
@@ -2453,39 +2360,39 @@ msgstr "Normal"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "GeLU"
-msgstr ""
+msgstr "GeLU"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Algorithm"
-msgstr ""
+msgstr "Algoritmo"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Backpropagation"
-msgstr ""
+msgstr "Propagación cara atrás"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "rprop+"
-msgstr ""
+msgstr "rprop+"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "rprop-"
-msgstr ""
+msgstr "rprop-"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "grprop-sag"
-msgstr ""
+msgstr "grprop-sag"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "grprop-slr"
-msgstr ""
+msgstr "grprop-slr"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Learning rate"
-msgstr ""
+msgstr "Tasa de aprendizaje"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Loss function"
-msgstr ""
+msgstr "Función de pérdida"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Sum of squares"
@@ -2503,7 +2410,6 @@ msgctxt "mlRegressionNeuralNetwork|"
 msgid "Max. training repetitions"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Scale variables"
 msgstr "Variables de escala"
@@ -2514,7 +2420,7 @@ msgstr "Establecer semilla"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Network Topology"
-msgstr ""
+msgstr "Topología de la Red"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Manual"
@@ -2599,7 +2505,7 @@ msgstr ""
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Reset"
-msgstr "Reiniciar"
+msgstr "Restablecer"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Swap"
