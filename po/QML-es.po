@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-10-21 17:01+0000\n"
+"PO-Revision-Date: 2021-10-22 11:38+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/es/>\n"
@@ -2159,19 +2159,19 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Uniform"
-msgstr ""
+msgstr "Uniforme"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "One-point"
-msgstr ""
+msgstr "Punto-Único"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Multi-point"
-msgstr ""
+msgstr "Punto-Múltiple"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Mutations"
-msgstr ""
+msgstr "Mutaciones"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Reset"
@@ -2489,19 +2489,19 @@ msgstr ""
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Uniform"
-msgstr ""
+msgstr "Uniforme"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "One-point"
-msgstr ""
+msgstr "Punto-Único"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Multi-point"
-msgstr ""
+msgstr "Punto-Múltiple"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Mutations"
-msgstr ""
+msgstr "Mutaciones"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Reset"
