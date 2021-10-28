@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2013-2019 University of Amsterdam
+// Copyright (C) 2013-2021 University of Amsterdam
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Affero General Public License as
@@ -16,190 +16,222 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick			2.8
-import QtQuick.Layouts	1.3
-import JASP.Controls	1.0
-import JASP.Widgets		1.0
+import QtQuick									2.8
+import QtQuick.Layouts							1.3
+import JASP.Controls							1.0
+import JASP.Widgets								1.0
 
 import "./common" as ML
 
-Form {
+Form 
+{
 
-	VariablesForm {
-		AvailableVariablesList { name: "allVariablesList" }
-		AssignedVariablesList  {
-			id: target
-			name: "target"
-			title: qsTr("Target")
-			singleVariable: true
-			allowedColumns: ["scale"]
-		}
-		AssignedVariablesList {
-			id: predictors
-			name: "predictors"
-			title: qsTr("Predictors")
-			allowedColumns: ["scale", "nominal", "nominalText", "ordinal"]
-			allowAnalysisOwnComputedColumns: false
-		}
-	}
-
-	GroupBox {
-		title: qsTr("Tables")
-
-		CheckBox {
-			text: qsTr("Evaluation metrics")
-			name: "validationMeasures"
+	VariablesForm
+	{
+		AvailableVariablesList
+		{
+			name:								"variables"
 		}
 
-		CheckBox {
-			name: "classBoostRelInfTable"
-			text: qsTr("Relative influence")
+		AssignedVariablesList
+		{
+			id:									target
+			name:								"target"
+			title:								qsTr("Target")
+			singleVariable:						true
+			allowedColumns:						["scale"]
+		}
+
+		AssignedVariablesList
+		{
+			id:									predictors
+			name:								"predictors"
+			title:								qsTr("Predictors")
+			allowedColumns:						["scale", "nominal", "nominalText", "ordinal"]
+			allowAnalysisOwnComputedColumns:	false
 		}
 	}
 
-	GroupBox {
-		title: qsTr("Plots")
+	Group
+	{
+		title:									qsTr("Tables")
 
-		CheckBox {
-			text: qsTr("Data split")
-			name: "dataSplitPlot"
-			checked: true
+		CheckBox
+		{
+			text:								qsTr("Evaluation metrics")
+			name:								"validationMeasures"
 		}
 
-		CheckBox {
-			name: "plotOOBChangeDev"
-			text: qsTr("Out-of-bag improvement")
-		}
-
-		CheckBox {
-			text: qsTr("Predictive performance")
-			name: "predictedPerformancePlot"
-		}
-
-		CheckBox {
-			name: "plotDeviance"
-			text: qsTr("Deviance")
-		}
-
-		CheckBox {
-			name: "plotRelInf"
-			text: qsTr("Relative influence")
+		CheckBox
+		{
+			name:								"classBoostRelInfTable"
+			text:								qsTr("Relative influence")
 		}
 	}
 
-	ML.ExportResults {
-		enabled: predictors.count > 1 && target.count > 0
+	Group
+	{
+		title:									qsTr("Plots")
+
+		CheckBox
+		{
+			text:								qsTr("Data split")
+			name:								"dataSplitPlot"
+			checked:							true
+		}
+
+		CheckBox
+		{
+			name:								"plotOOBChangeDev"
+			text:								qsTr("Out-of-bag improvement")
+		}
+
+		CheckBox
+		{
+			text:								qsTr("Predictive performance")
+			name:								"predictedPerformancePlot"
+		}
+
+		CheckBox
+		{
+			name:								"plotDeviance"
+			text:								qsTr("Deviance")
+		}
+
+		CheckBox
+		{
+			name:								"plotRelInf"
+			text:								qsTr("Relative influence")
+		}
 	}
 
-	ML.DataSplit {
-		leaveOneOutVisible: false
-		trainingValidationSplit: optimizeModel.checked
+	ML.ExportResults
+	{
+		enabled:								predictors.count > 1 && target.count > 0
 	}
 
-	Section {
-		title: qsTr("Training Parameters")
+	ML.DataSplit
+	{
+		leaveOneOutVisible:						false
+		trainingValidationSplit:				optimizeModel.checked
+	}
 
-		GroupBox {
-			title: qsTr("Algorithmic Settings")
+	Section
+	{
+		title:									qsTr("Training Parameters")
 
-			DoubleField  {
-				name: "shrinkage"
-				text: qsTr("Shrinkage:")
-				defaultValue: 0.1
-				min: 0
-				max: 1
-				fieldWidth: 60
+		Group
+		{
+			title:								qsTr("Algorithmic Settings")
+
+			DoubleField
+			{
+				name:							"shrinkage"
+				text:							qsTr("Shrinkage")
+				defaultValue:					0.1
+				min:							0
+				max:							1
 			}
 
-			IntegerField {
-				name: "intDepth"
-				text: qsTr("Interaction depth:")
-				defaultValue: 1
-				min: 1
-				max: 99
-				fieldWidth: 60
+			IntegerField
+			{
+				name:							"intDepth"
+				text:							qsTr("Interaction depth")
+				defaultValue:					1
+				min:							1
+				max:							99
 			}
 
-			IntegerField {
-				name: "nNode"
-				text: qsTr("Min. observations in node:")
-				defaultValue: 10
-				min: 1
-				max: 50000
-				fieldWidth: 60
+			IntegerField
+			{
+				name:							"nNode"
+				text:							qsTr("Min. observations in node")
+				defaultValue:					10
+				min:							1
+				max:							50000
 			}
 
-			PercentField {
-				name: "bagFrac"
-				text: qsTr("Training data used per tree:")
-				defaultValue: 50
+			PercentField 
+			{
+				name:							"bagFrac"
+				text:							qsTr("Training data used per tree")
+				defaultValue:					50
 			}
 
-			DropDown {
-				name: "distance"
-				indexDefaultValue: 0
-				label: qsTr("Loss function:")
+			DropDown
+			{
+				name:							"distance"
+				indexDefaultValue:				0
+				label:							qsTr("Loss function")
 
 				values:
 					[
-					{ label: "Gaussian", value: "gaussian"},
+					{ label: "Gaussian",value: "gaussian"},
 					{ label: "Laplace", value: "laplace"},
-					{ label: "t", value: "tdist"}
+					{ label: "t", 		value: "tdist"}
 				]
 			}
 
-			CheckBox {
-				text: qsTr("Scale variables")
-				name: "scaleEqualSD"
-				checked: true
+			CheckBox
+			{
+				text:							qsTr("Scale variables")
+				name:							"scaleEqualSD"
+				checked:						true
 			}
 
-			CheckBox {
-				name: "seedBox"
-				text: qsTr("Set seed:")
-				childrenOnSameRow: true
+			CheckBox
+			{
+				name:							"seedBox"
+				text:							qsTr("Set seed")
+				childrenOnSameRow:				true
 
-				DoubleField  {
-					name: "seed"
-					defaultValue: 1
-					min: -999999
-					max: 999999
-					fieldWidth: 60
+				IntegerField
+				{
+					name:						"seed"
+					defaultValue:				1
+					min:						-999999
+					max:						999999
+					fieldWidth:					60
 				}
 			}
 		}
 
-		RadioButtonGroup {
-			title: qsTr("Number of Trees")
-			name: "modelOpt"
+		RadioButtonGroup
+		{
+			title:								qsTr("Number of Trees")
+			name:								"modelOpt"
 
-			RadioButton {
-				text: qsTr("Fixed")
-				name: "optimizationManual"
+			RadioButton
+			{
+				text:							qsTr("Fixed")
+				name:							"optimizationManual"
 
-				IntegerField {
-					name: "noOfTrees"
-					text: qsTr("Trees:")
-					defaultValue: 100
-					min: 1
-					max: 500000
-					fieldWidth: 60
+				IntegerField 
+				{
+					name:						"noOfTrees"
+					text:						qsTr("Trees")
+					defaultValue:				100
+					min:						1
+					max:						500000
+					fieldWidth:					60
 				}
 			}
 
-			RadioButton {
-				id: optimizeModel
-				text: qsTr("Optimized")
-				name: "optimizationOOB"
-				checked: true
+			RadioButton
+			{
+				id:								optimizeModel
+				text:							qsTr("Optimized")
+				name:							"optimizationOOB"
+				checked:						true
 
-				IntegerField {
-					name: "maxTrees"
-					text: qsTr("Max. trees:")
-					defaultValue: 100
-					min: 3
-					max: 500000
-					fieldWidth: 60
+				IntegerField
+				{
+					name:						"maxTrees"
+					text:						qsTr("Max. trees")
+					defaultValue:				100
+					min:						3
+					max:						500000
+					fieldWidth:					60
 				}
 			}
 		}

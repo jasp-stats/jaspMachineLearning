@@ -21,55 +21,61 @@
 <rect x='0.00' y='0.00' width='720.00' height='576.00' style='stroke-width: 10.67; stroke: none;' />
 </g>
 <defs>
-  <clipPath id='cpMTc1LjM2fDcyMC4wMHwyMC43MXw1MDcuMDk='>
-    <rect x='175.36' y='20.71' width='544.64' height='486.39' />
+  <clipPath id='cpMTA0Ljg5fDcyMC4wMHwyMC43MXw1MTAuMTQ='>
+    <rect x='104.89' y='20.71' width='615.11' height='489.43' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpMTc1LjM2fDcyMC4wMHwyMC43MXw1MDcuMDk=)'>
-<rect x='175.36' y='20.71' width='544.64' height='486.39' style='stroke-width: 10.67; stroke: none;' />
-<rect x='218.94' y='26.24' width='476.30' height='33.16' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='218.94' y='63.08' width='304.32' height='33.16' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='218.94' y='99.93' width='213.72' height='33.16' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='218.94' y='136.78' width='157.15' height='33.16' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='218.94' y='173.62' width='110.98' height='33.16' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='218.94' y='210.47' width='34.73' height='33.16' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='218.94' y='247.32' width='28.72' height='33.16' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='218.94' y='284.17' width='23.40' height='33.16' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='218.94' y='321.01' width='18.11' height='33.16' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='218.94' y='357.86' width='10.30' height='33.16' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='217.14' y='394.71' width='1.80' height='33.16' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='216.50' y='431.56' width='2.44' height='33.16' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<rect x='200.12' y='468.40' width='18.83' height='33.16' style='stroke-width: 0.64; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
-<line x1='218.62' y1='507.09' x2='712.65' y2='507.09' style='stroke-width: 0.64; stroke-linecap: butt;' />
-<rect x='175.36' y='20.71' width='544.64' height='486.39' style='stroke-width: 0.00; stroke: none;' />
+<g clip-path='url(#cpMTA0Ljg5fDcyMC4wMHwyMC43MXw1MTAuMTQ=)'>
+<rect x='104.89' y='20.71' width='615.11' height='489.43' style='stroke-width: 10.67; stroke: none;' />
+<rect x='212.73' y='26.27' width='462.71' height='33.37' style='stroke-width: 1.07; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='212.73' y='63.35' width='295.64' height='33.37' style='stroke-width: 1.07; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='212.73' y='100.43' width='207.62' height='33.37' style='stroke-width: 1.07; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='212.73' y='137.50' width='152.66' height='33.37' style='stroke-width: 1.07; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='212.73' y='174.58' width='107.82' height='33.37' style='stroke-width: 1.07; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='212.73' y='211.66' width='33.74' height='33.37' style='stroke-width: 1.07; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='212.73' y='248.74' width='27.90' height='33.37' style='stroke-width: 1.07; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='212.73' y='285.82' width='22.73' height='33.37' style='stroke-width: 1.07; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='212.73' y='322.90' width='17.59' height='33.37' style='stroke-width: 1.07; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='212.73' y='359.97' width='10.01' height='33.37' style='stroke-width: 1.07; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='210.98' y='397.05' width='1.75' height='33.37' style='stroke-width: 1.07; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='210.36' y='434.13' width='2.37' height='33.37' style='stroke-width: 1.07; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<rect x='194.44' y='471.21' width='18.29' height='33.37' style='stroke-width: 1.07; stroke-linecap: square; stroke-linejoin: miter; fill: #BEBEBE;' />
+<line x1='132.53' y1='510.14' x2='692.36' y2='510.14' style='stroke-width: 0.64; stroke-linecap: butt;' />
+<rect x='104.89' y='20.71' width='615.11' height='489.43' style='stroke-width: 0.00; stroke: none;' />
 </g>
 <g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
-<polyline points='175.36,507.09 175.36,20.71 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt;' />
-<text x='159.88' y='490.84' text-anchor='end' style='font-size: 17.00px; font-family: sans;' textLength='107.75px' lengthAdjust='spacingAndGlyphs'>Nonflavanoids</text>
-<text x='159.88' y='453.99' text-anchor='end' style='font-size: 17.00px; font-family: sans;' textLength='126.66px' lengthAdjust='spacingAndGlyphs'>Proanthocyanins</text>
-<text x='159.88' y='417.14' text-anchor='end' style='font-size: 17.00px; font-family: sans;' textLength='61.44px' lengthAdjust='spacingAndGlyphs'>Phenols</text>
-<text x='159.88' y='380.29' text-anchor='end' style='font-size: 17.00px; font-family: sans;' textLength='87.89px' lengthAdjust='spacingAndGlyphs'>Magnesium</text>
-<text x='159.88' y='343.45' text-anchor='end' style='font-size: 17.00px; font-family: sans;' textLength='39.68px' lengthAdjust='spacingAndGlyphs'>Malic</text>
-<text x='159.88' y='306.60' text-anchor='end' style='font-size: 17.00px; font-family: sans;' textLength='29.30px' lengthAdjust='spacingAndGlyphs'>Ash</text>
-<text x='159.88' y='269.75' text-anchor='end' style='font-size: 17.00px; font-family: sans;' textLength='67.09px' lengthAdjust='spacingAndGlyphs'>Alcalinity</text>
-<text x='159.88' y='232.90' text-anchor='end' style='font-size: 17.00px; font-family: sans;' textLength='82.22px' lengthAdjust='spacingAndGlyphs'>Flavanoids</text>
-<text x='159.88' y='196.06' text-anchor='end' style='font-size: 17.00px; font-family: sans;' textLength='31.19px' lengthAdjust='spacingAndGlyphs'>Hue</text>
-<text x='159.88' y='159.21' text-anchor='end' style='font-size: 17.00px; font-family: sans;' textLength='56.69px' lengthAdjust='spacingAndGlyphs'>Dilution</text>
-<text x='159.88' y='122.36' text-anchor='end' style='font-size: 17.00px; font-family: sans;' textLength='52.92px' lengthAdjust='spacingAndGlyphs'>Proline</text>
-<text x='159.88' y='85.51' text-anchor='end' style='font-size: 17.00px; font-family: sans;' textLength='55.76px' lengthAdjust='spacingAndGlyphs'>Alcohol</text>
-<text x='159.88' y='48.67' text-anchor='end' style='font-size: 17.00px; font-family: sans;' textLength='40.63px' lengthAdjust='spacingAndGlyphs'>Color</text>
-<polyline points='175.36,507.09 720.00,507.09 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt;' />
-<polyline points='218.94,515.60 218.94,507.09 ' style='stroke-width: 0.64; stroke-linecap: butt;' />
-<polyline points='342.29,515.60 342.29,507.09 ' style='stroke-width: 0.64; stroke-linecap: butt;' />
-<polyline points='465.64,515.60 465.64,507.09 ' style='stroke-width: 0.64; stroke-linecap: butt;' />
-<polyline points='588.98,515.60 588.98,507.09 ' style='stroke-width: 0.64; stroke-linecap: butt;' />
-<polyline points='712.33,515.60 712.33,507.09 ' style='stroke-width: 0.64; stroke-linecap: butt;' />
-<text x='218.94' y='534.27' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='33.09px' lengthAdjust='spacingAndGlyphs'>0.00</text>
-<text x='342.29' y='534.27' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='33.09px' lengthAdjust='spacingAndGlyphs'>0.03</text>
-<text x='465.64' y='534.27' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='33.09px' lengthAdjust='spacingAndGlyphs'>0.06</text>
-<text x='588.98' y='534.27' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='33.09px' lengthAdjust='spacingAndGlyphs'>0.09</text>
-<text x='712.33' y='534.27' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='33.09px' lengthAdjust='spacingAndGlyphs'>0.12</text>
-<text x='447.68' y='566.78' text-anchor='middle' style='font-size: 20.40px; font-family: sans;' textLength='263.09px' lengthAdjust='spacingAndGlyphs'>Total Increase in Node Purity</text>
-<text x='447.68' y='11.70' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='211.67px' lengthAdjust='spacingAndGlyphs'>total-increase-in-node-purity</text>
+<polyline points='104.89,510.14 104.89,20.71 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt;' />
+<text x='89.41' y='492.02' text-anchor='end' style='font-size: 12.00px; font-family: sans;' textLength='76.06px' lengthAdjust='spacingAndGlyphs'>Nonflavanoids</text>
+<text x='89.41' y='454.94' text-anchor='end' style='font-size: 12.00px; font-family: sans;' textLength='89.41px' lengthAdjust='spacingAndGlyphs'>Proanthocyanins</text>
+<text x='89.41' y='417.87' text-anchor='end' style='font-size: 12.00px; font-family: sans;' textLength='43.37px' lengthAdjust='spacingAndGlyphs'>Phenols</text>
+<text x='89.41' y='380.79' text-anchor='end' style='font-size: 12.00px; font-family: sans;' textLength='62.04px' lengthAdjust='spacingAndGlyphs'>Magnesium</text>
+<text x='89.41' y='343.71' text-anchor='end' style='font-size: 12.00px; font-family: sans;' textLength='28.01px' lengthAdjust='spacingAndGlyphs'>Malic</text>
+<text x='89.41' y='306.63' text-anchor='end' style='font-size: 12.00px; font-family: sans;' textLength='20.69px' lengthAdjust='spacingAndGlyphs'>Ash</text>
+<text x='89.41' y='269.55' text-anchor='end' style='font-size: 12.00px; font-family: sans;' textLength='47.35px' lengthAdjust='spacingAndGlyphs'>Alcalinity</text>
+<text x='89.41' y='232.47' text-anchor='end' style='font-size: 12.00px; font-family: sans;' textLength='58.04px' lengthAdjust='spacingAndGlyphs'>Flavanoids</text>
+<text x='89.41' y='195.40' text-anchor='end' style='font-size: 12.00px; font-family: sans;' textLength='22.02px' lengthAdjust='spacingAndGlyphs'>Hue</text>
+<text x='89.41' y='158.32' text-anchor='end' style='font-size: 12.00px; font-family: sans;' textLength='40.02px' lengthAdjust='spacingAndGlyphs'>Dilution</text>
+<text x='89.41' y='121.24' text-anchor='end' style='font-size: 12.00px; font-family: sans;' textLength='37.35px' lengthAdjust='spacingAndGlyphs'>Proline</text>
+<text x='89.41' y='84.16' text-anchor='end' style='font-size: 12.00px; font-family: sans;' textLength='39.36px' lengthAdjust='spacingAndGlyphs'>Alcohol</text>
+<text x='89.41' y='47.08' text-anchor='end' style='font-size: 12.00px; font-family: sans;' textLength='28.68px' lengthAdjust='spacingAndGlyphs'>Color</text>
+<polyline points='104.89,510.14 720.00,510.14 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt;' />
+<polyline points='132.85,518.64 132.85,510.14 ' style='stroke-width: 0.64; stroke-linecap: butt;' />
+<polyline points='212.73,518.64 212.73,510.14 ' style='stroke-width: 0.64; stroke-linecap: butt;' />
+<polyline points='292.62,518.64 292.62,510.14 ' style='stroke-width: 0.64; stroke-linecap: butt;' />
+<polyline points='372.50,518.64 372.50,510.14 ' style='stroke-width: 0.64; stroke-linecap: butt;' />
+<polyline points='452.39,518.64 452.39,510.14 ' style='stroke-width: 0.64; stroke-linecap: butt;' />
+<polyline points='532.27,518.64 532.27,510.14 ' style='stroke-width: 0.64; stroke-linecap: butt;' />
+<polyline points='612.16,518.64 612.16,510.14 ' style='stroke-width: 0.64; stroke-linecap: butt;' />
+<polyline points='692.04,518.64 692.04,510.14 ' style='stroke-width: 0.64; stroke-linecap: butt;' />
+<text x='132.85' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='38.75px' lengthAdjust='spacingAndGlyphs'>-0.02</text>
+<text x='212.73' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='33.09px' lengthAdjust='spacingAndGlyphs'>0.00</text>
+<text x='292.62' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='33.09px' lengthAdjust='spacingAndGlyphs'>0.02</text>
+<text x='372.50' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='33.09px' lengthAdjust='spacingAndGlyphs'>0.04</text>
+<text x='452.39' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='33.09px' lengthAdjust='spacingAndGlyphs'>0.06</text>
+<text x='532.27' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='33.09px' lengthAdjust='spacingAndGlyphs'>0.08</text>
+<text x='612.16' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='33.09px' lengthAdjust='spacingAndGlyphs'>0.10</text>
+<text x='692.04' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='33.09px' lengthAdjust='spacingAndGlyphs'>0.12</text>
+<text x='412.44' y='567.49' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='219.24px' lengthAdjust='spacingAndGlyphs'>Total Increase in Node Purity</text>
+<text x='412.44' y='11.70' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='211.67px' lengthAdjust='spacingAndGlyphs'>total-increase-in-node-purity</text>
 </g>
 </svg>

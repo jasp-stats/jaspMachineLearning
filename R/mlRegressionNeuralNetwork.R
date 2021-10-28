@@ -19,44 +19,44 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
 
   # Preparatory work
   dataset <- .readDataRegressionAnalyses(dataset, options)
-  .errorHandlingRegressionAnalyses(dataset, options, type = "neuralnet")
+  .mlRegressionErrorHandling(dataset, options, type = "neuralnet")
 
   # Check if analysis is ready to run
-  ready <- .regressionAnalysesReady(options, type = "neuralnet")
+  ready <- .mlRegressionReady(options, type = "neuralnet")
 
   # Determine activation and loss function for the neural net
-  .getNeuralNetworkActFunction(options, jaspResults)
-  # .getNeuralNetworkLossFunction(options, jaspResults)
+  .mlNeuralNetworkActFunction(options, jaspResults)
+  # .mlNeuralNetworkLossFunction(options, jaspResults)
 
   # Compute results and create the model summary table
-  .regressionMachineLearningTable(dataset, options, jaspResults, ready, position = 1, type = "neuralnet")
+  .mlRegressionTableSummary(dataset, options, jaspResults, ready, position = 1, type = "neuralnet")
 
   # If the user wants to add the values to the data set
-  .regressionAddValuesToData(dataset, options, jaspResults, ready)
+  .mlRegressionAddPredictionsToData(dataset, options, jaspResults, ready)
 
   # Add test set indicator to data
-  .addTestIndicatorToData(options, jaspResults, ready, purpose = "regression")
+  .mlAddTestIndicatorToData(options, jaspResults, ready, purpose = "regression")
 
   # Create the data split plot
-  .dataSplitPlot(dataset, options, jaspResults, ready, position = 2, purpose = "regression", type = "neuralnet")
+  .mlPlotDataSplit(dataset, options, jaspResults, ready, position = 2, purpose = "regression", type = "neuralnet")
 
   # Create the evaluation metrics table
-  .regressionEvaluationMetrics(dataset, options, jaspResults, ready, position = 3)
+  .mlRegressionTableMetrics(dataset, options, jaspResults, ready, position = 3)
 
   # Create the network weights table
-  .neuralNetworkTable(dataset, options, jaspResults, ready, purpose = "regression", position = 4)
+  .mlNeuralNetworkTableWeights(dataset, options, jaspResults, ready, purpose = "regression", position = 4)
 
   # Create the error plot
-  .nnErrorPlot(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
+  .mlNeuralNetworkPlotError(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
 
   # Create the predicted performance plot
-  .regressionPredictedPerformancePlot(options, jaspResults, ready, position = 6)
+  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 6)
 
   # Create the activation function plot
-  .neuralNetworkActivationFunctionPlot(options, jaspResults, position = 7)
+  .mlNeuralNetworkPlotActivationFunction(options, jaspResults, position = 7)
 
   # Create the network graph
-  .neuralNetworkGraph(dataset, options, jaspResults, ready, purpose = "regression", position = 8)
+  .mlNeuralNetworkPlotStructure(dataset, options, jaspResults, ready, purpose = "regression", position = 8)
 }
 
 .getNeuralNetworkStructure <- function(options) {
@@ -67,7 +67,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   return(structure) # Vector of number of nodes in each layer
 }
 
-.getNeuralNetworkActFunction <- function(options, jaspResults) {
+.mlNeuralNetworkActFunction <- function(options, jaspResults) {
   # For an overview of these activation functions, see https://en.wikipedia.org/wiki/Activation_function
   if (options[["actfct"]] == "linear") {
     .ac <- function(x) x
@@ -105,7 +105,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   jaspResults[["actfct"]] <- createJaspState(.ac)
 }
 
-.getNeuralNetworkLossFunction <- function(options, jaspResults) {
+.mlNeuralNetworkLossFunction <- function(options, jaspResults) {
   # For an overview of these loss functions, see https://machinelearningmastery.com/loss-and-loss-functions-for-training-deep-learning-neural-networks/
   if (options[["errfct"]] == "sse") {
     .ec <- function(x, y) 1 / 2 * (y - x)^2
@@ -116,36 +116,30 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
 }
 
 .neuralnetRegression <- function(dataset, options, jaspResults) {
-
   # Import model formula from jaspResults
   formula <- jaspResults[["formula"]]$object
-
   # Split the data into training and test sets
   if (options[["holdoutData"]] == "testSetIndicator" && options[["testSetIndicatorVariable"]] != "") {
     # Select observations according to a user-specified indicator (included when indicator = 1)
-    train.index <- which(dataset[, options[["testSetIndicatorVariable"]]] == 0)
+    trainingIndex <- which(dataset[, options[["testSetIndicatorVariable"]]] == 0)
   } else {
     # Sample a percentage of the total data set
-    train.index <- sample.int(nrow(dataset), size = ceiling((1 - options[["testDataManual"]]) * nrow(dataset)))
+    trainingIndex <- sample.int(nrow(dataset), size = ceiling((1 - options[["testDataManual"]]) * nrow(dataset)))
   }
-  trainAndValid <- dataset[train.index, ]
-
+  trainingAndValidationSet <- dataset[trainingIndex, ]
   # Create the generated test set indicator
   testIndicatorColumn <- rep(1, nrow(dataset))
-  testIndicatorColumn[train.index] <- 0
-
+  testIndicatorColumn[trainingIndex] <- 0
   if (options[["modelOpt"]] == "optimizationManual") {
     # Just create a train and a test set (no optimization)
-    train <- trainAndValid
-    test <- dataset[-train.index, ]
-
+    trainingSet <- trainingAndValidationSet
+    testSet <- dataset[-trainingIndex, ]
     # Structure of neural network
     structure <- .getNeuralNetworkStructure(options)
-
     p <- try({
-      nfit_test <- neuralnet::neuralnet(
+      trainingFit <- neuralnet::neuralnet(
         formula = formula,
-        data = train,
+        data = trainingSet,
         hidden = structure,
         learningrate = options[["learningRate"]],
         threshold = options[["threshold"]],
@@ -162,39 +156,30 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
       jaspBase:::.quitAnalysis(gettextf("An error occurred in the 'neuralnet' package: %1$s", .extractErrorMessage(p)))
     }
   } else if (options[["modelOpt"]] == "optimizationError") {
-    # Genetic optimization of network topology
-
     # Create a train, validation and test set (optimization)
-    valid.index <- sample.int(nrow(trainAndValid), size = ceiling(options[["validationDataManual"]] * nrow(trainAndValid)))
-    test <- dataset[-train.index, ]
-    valid <- trainAndValid[valid.index, ]
-    train <- trainAndValid[-valid.index, ]
-
+    validationIndex <- sample.int(nrow(trainingAndValidationSet), size = ceiling(options[["validationDataManual"]] * nrow(trainingAndValidationSet)))
+    testSet <- dataset[-trainingIndex, ]
+    valid <- trainingAndValidationSet[validationIndex, ]
+    trainingSet <- trainingAndValidationSet[-validationIndex, ]
     errorStore <- numeric(options[["maxGen"]])
     trainErrorStore <- numeric(options[["maxGen"]])
-
     # For plotting
     plot_x <- numeric()
     plot_y <- numeric()
     plot_type <- character()
-
     startProgressbar(options[["maxGen"]], gettext("Optimizing network topology"))
-
     # First generation
-    population <- .neuralNetworkOptim_init(options)
-
+    population <- .mlNeuralNetworkOptimInit(options)
     # Fit and reproduce
     for (gen in 1:options[["maxGen"]]) {
       progressbarTick()
-
       fitness <- numeric(options[["genSize"]])
-      tmp_trainErrorStore <- numeric(options[["genSize"]])
-
+      subTrainErrorStore <- numeric(options[["genSize"]])
       for (i in 1:options[["genSize"]]) {
         p <- try({
-          nfit_valid <- neuralnet::neuralnet(
+          trainingFit <- neuralnet::neuralnet(
             formula = formula,
-            data = train,
+            data = trainingSet,
             hidden = population[[i]]$structure,
             learningrate = options[["learningRate"]],
             threshold = options[["threshold"]],
@@ -206,52 +191,44 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
             act.fct = jaspResults[["actfct"]]$object,
             linear.output = if (options[["actfct"]] == "linear") TRUE else FALSE
           )
+          validationPredictions <- predict(trainingFit, newdata = valid)
         })
-
-        validPredictions <- predict(nfit_valid, newdata = valid)
-        fitness[i] <- mean((validPredictions - valid[, options[["target"]]])^2)
-        trainPredictions <- predict(nfit_valid, newdata = train)
-        tmp_trainErrorStore[i] <- mean((trainPredictions - train[, options[["target"]]])^2)
-
+        if (isTryError(p)) {
+          jaspBase:::.quitAnalysis(gettextf("An error occurred in the 'neuralnet' package: %1$s", .extractErrorMessage(p)))
+        }
+        fitness[i] <- mean((validationPredictions - valid[, options[["target"]]])^2)
+        trainingPredictions <- predict(trainingFit, newdata = trainingSet)
+        subTrainErrorStore[i] <- mean((trainingPredictions - trainingSet[, options[["target"]]])^2)
         population[[i]][["fitness"]] <- 1 / fitness[i]
         population[[i]][["age"]] <- population[[i]][["age"]] + 1
-
         plot_x <- c(plot_x, gen, gen)
-        plot_y <- c(plot_y, fitness[i], tmp_trainErrorStore[i])
-        plot_type <- c(plot_type, "Validation", "Training")
+        plot_y <- c(plot_y, fitness[i], subTrainErrorStore[i])
+        plot_type <- c(plot_type, "Validation set", "Training set")
       }
-
       # Find out best performance
       bestFitIndex <- order(fitness, decreasing = TRUE)[1]
       structure <- population[[bestFitIndex]]$structure # Best performing network structure
-
       # For plotting we store the mean MSE of the generation
       errorStore[gen] <- mean(fitness)
-      trainErrorStore[gen] <- mean(tmp_trainErrorStore)
-
+      trainErrorStore[gen] <- mean(subTrainErrorStore)
       # Stop when maximum generations is reached
       if (gen == options[["maxGen"]]) {
         break()
       }
-
       # Stage 1: Select parents for crossover (population of k = 20 will give n = k / 3 = 7 parent pairs)
-      parents <- .neuralNetworkOptim_selection(population, options)
-
+      parents <- .mlNeuralNetworkOptimSelection(population, options)
       # Stage 2: Crossover of parents into children (n = 7 parent pairs will give m = n * 2 = 14 children)
-      children <- .neuralNetworkOptim_crossover(parents, options)
-
+      children <- .mlNeuralNetworkOptimCrossover(parents, options)
       # Stage 3: Mutation of offspring (m = 14 children will remain m = 14 children)
-      children <- .neuralNetworkOptim_mutate(children, options)
-
+      children <- .mlNeuralNetworkOptimMutate(children, options)
       # Stage 4: Selection of survivors (k = 20 networks remain k = 20 networks)
-      population <- .neuralNetworkOptim_survivors(population, children, options)
+      population <- .mlNeuralNetworkOptimSurvivors(population, children, options)
     }
-
     # Fit best network structure after optimization
     p <- try({
-      nfit_test <- neuralnet::neuralnet(
+      trainingFit <- neuralnet::neuralnet(
         formula = formula,
-        data = train,
+        data = trainingSet,
         hidden = structure,
         learningrate = options[["learningRate"]],
         threshold = options[["threshold"]],
@@ -259,71 +236,62 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
         rep = 1,
         startweights = NULL,
         algorithm = options[["algorithm"]],
-        err.fct = "sse", # jaspResults[["errfct"]]$object,
+        err.fct = "sse",
         act.fct = jaspResults[["actfct"]]$object,
         linear.output = if (options[["actfct"]] == "linear") TRUE else FALSE
       )
-      validPredictions <- predict(nfit_test, newdata = valid)
+      validationPredictions <- predict(trainingFit, newdata = valid)
     })
     if (isTryError(p)) {
       jaspBase:::.quitAnalysis(gettextf("An error occurred in the 'neuralnet' package: %1$s", .extractErrorMessage(p)))
     }
   }
-
   p <- try({
     # Use the specified model to make predictions for dataset
-    predictions <- predict(nfit_test, newdata = dataset)
-    testPredictions <- predict(nfit_test, newdata = test)
+    dataPredictions <- predict(trainingFit, newdata = dataset)
+    testPredictions <- predict(trainingFit, newdata = testSet)
   })
   if (isTryError(p)) {
     jaspBase:::.quitAnalysis(gettextf("An error occurred in the 'neuralnet' package: %1$s", .extractErrorMessage(p)))
   }
-
   # Create results object
-  regressionResult <- list()
-
-  regressionResult[["formula"]] <- formula
-  regressionResult[["structure"]] <- structure
-  regressionResult[["model"]] <- nfit_test
-  regressionResult[["nLayers"]] <- length(structure)
-  regressionResult[["nNodes"]] <- sum(structure)
-  regressionResult[["testMSE"]] <- mean((testPredictions - test[, options[["target"]]])^2)
-  regressionResult[["ntrain"]] <- nrow(train)
-  regressionResult[["ntest"]] <- nrow(test)
-  regressionResult[["testReal"]] <- test[, options[["target"]]]
-  regressionResult[["testPred"]] <- testPredictions
-  regressionResult[["train"]] <- train
-  regressionResult[["test"]] <- test
-  regressionResult[["testIndicatorColumn"]] <- testIndicatorColumn
-  regressionResult[["values"]] <- predictions
-
+  result <- list()
+  result[["formula"]] <- formula
+  result[["structure"]] <- structure
+  result[["model"]] <- trainingFit
+  result[["nLayers"]] <- length(structure)
+  result[["nNodes"]] <- sum(structure)
+  result[["testMSE"]] <- mean((testPredictions - testSet[, options[["target"]]])^2)
+  result[["ntrain"]] <- nrow(trainingSet)
+  result[["ntest"]] <- nrow(testSet)
+  result[["testReal"]] <- testSet[, options[["target"]]]
+  result[["testPred"]] <- testPredictions
+  result[["train"]] <- trainingSet
+  result[["test"]] <- testSet
+  result[["testIndicatorColumn"]] <- testIndicatorColumn
+  result[["values"]] <- dataPredictions
   if (options[["modelOpt"]] != "optimizationManual") {
-    regressionResult[["accuracyStore"]] <- errorStore
-    regressionResult[["validMSE"]] <- mean((validPredictions - valid[, options[["target"]]])^2)
-    regressionResult[["nvalid"]] <- nrow(valid)
-    regressionResult[["valid"]] <- valid
-    regressionResult[["plotFrame"]] <- data.frame(x = plot_x, y = plot_y, type = plot_type)
-
+    result[["accuracyStore"]] <- errorStore
+    result[["validMSE"]] <- mean((validationPredictions - valid[, options[["target"]]])^2)
+    result[["nvalid"]] <- nrow(valid)
+    result[["valid"]] <- valid
+    result[["plotFrame"]] <- data.frame(x = plot_x, y = plot_y, type = plot_type)
     if (options[["modelValid"]] == "validationManual") {
-      regressionResult[["trainAccuracyStore"]] <- trainErrorStore
+      result[["trainAccuracyStore"]] <- trainErrorStore
     }
   }
-
-  return(regressionResult)
+  return(result)
 }
 
-.neuralNetworkTable <- function(dataset, options, jaspResults, ready, purpose, position) {
+.mlNeuralNetworkTableWeights <- function(dataset, options, jaspResults, ready, purpose, position) {
   if (!is.null(jaspResults[["coefficientsTable"]]) || !options[["coefficientsTable"]]) {
     return()
   }
-
   result <- switch(purpose,
     "classification" = jaspResults[["classificationResult"]]$object,
     "regression" = jaspResults[["regressionResult"]]$object
   )
-
   structure <- result[["structure"]]
-
   table <- createJaspTable(title = gettext("Network Weights"))
   table$position <- position
   table$dependOn(options = c(
@@ -332,14 +300,12 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
     "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes",
     "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
   ))
-
   table$addColumnInfo(name = "fromNode", title = gettext("Node"), type = "string")
   table$addColumnInfo(name = "fromLayer", title = gettext("Layer"), type = "string")
   table$addColumnInfo(name = "separator", title = "", type = "string")
   table$addColumnInfo(name = "toNode", title = gettext("Node"), type = "string")
   table$addColumnInfo(name = "toLayer", title = gettext("Layer"), type = "string")
   table$addColumnInfo(name = "value", title = gettext("Weight"), type = "number")
-
   weights <- switch(options[["actfct"]],
     "linear"   = gettext("linear"),
     "binary"   = gettext("binary step"),
@@ -359,55 +325,45 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
     "gelu"     = gettext("gaussian error linear unit (GeLU)")
   )
   table$addFootnote(gettextf("The weights are input for the %1$s activation function.", weights))
-
   jaspResults[["coefficientsTable"]] <- table
-
   if (!ready) {
     return()
   }
-
   result <- switch(purpose,
     "classification" = jaspResults[["classificationResult"]]$object,
     "regression" = jaspResults[["regressionResult"]]$object
   )
-
   model <- result[["model"]]
   weights <- model$result.matrix
   index <- which(rownames(weights) == "steps")
   weights <- weights[-(1:index), ]
-
   weightNames <- names(weights)
   nodeNames <- strsplit(weightNames, split = "[.]to[.]")
-  from_node <- unlist(lapply(nodeNames, `[[`, 1))
-  to_node <- unlist(lapply(nodeNames, `[[`, 2))
-
-  layerNames <- strsplit(to_node, split = "layhid")
-  to_layer <- as.numeric(unlist(lapply(layerNames, `[[`, 1)))
-  to_layer[which(is.na(to_layer))] <- max(to_layer, na.rm = TRUE) + 1
-  from_layer <- to_layer - 1
-
+  startNode <- unlist(lapply(nodeNames, `[[`, 1))
+  endNode <- unlist(lapply(nodeNames, `[[`, 2))
+  layerNames <- strsplit(endNode, split = "layhid")
+  endLayer <- as.numeric(unlist(lapply(layerNames, `[[`, 1)))
+  endLayer[which(is.na(endLayer))] <- max(endLayer, na.rm = TRUE) + 1
+  startLayer <- endLayer - 1
   for (i in 1:length(structure)) {
-    from_node <- gsub(pattern = paste0(i, "layhid"), from_node, replacement = "Hidden ")
-    to_node <- gsub(pattern = paste0(i, "layhid"), to_node, replacement = "Hidden ")
+    startNode <- gsub(pattern = paste0(i, "layhid"), startNode, replacement = "Hidden ")
+    endNode <- gsub(pattern = paste0(i, "layhid"), endNode, replacement = "Hidden ")
   }
-
-  from_layer[which(from_layer == 0)] <- "input"
-  from_layer[which(from_node == "Intercept")] <- NA
-  to_layer[which(to_layer == max(to_layer))] <- "output"
-
-  table[["fromNode"]] <- from_node
-  table[["fromLayer"]] <- from_layer
-  table[["separator"]] <- rep("\u2192", length(from_node))
-  table[["toNode"]] <- to_node
-  table[["toLayer"]] <- to_layer
+  startLayer[which(startLayer == 0)] <- "input"
+  startLayer[which(startNode == "Intercept")] <- NA
+  endLayer[which(endLayer == max(endLayer))] <- "output"
+  table[["fromNode"]] <- startNode
+  table[["fromLayer"]] <- startLayer
+  table[["separator"]] <- rep("\u2192", length(startNode))
+  table[["toNode"]] <- endNode
+  table[["toLayer"]] <- endLayer
   table[["value"]] <- weights
 }
 
-.neuralNetworkGraph <- function(dataset, options, jaspResults, ready, purpose, position) {
+.mlNeuralNetworkPlotStructure <- function(dataset, options, jaspResults, ready, purpose, position) {
   if (!is.null(jaspResults[["networkGraph"]]) || !options[["networkGraph"]]) {
     return()
   }
-
   plot <- createJaspPlot(title = gettext("Network Structure Plot"), height = 500, width = 600)
   plot$position <- position
   plot$dependOn(options = c(
@@ -416,44 +372,35 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
     "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
   ))
   jaspResults[["networkGraph"]] <- plot
-
   if (!ready) {
     return()
   }
-
   result <- switch(purpose,
     "classification" = jaspResults[["classificationResult"]]$object,
     "regression" = jaspResults[["regressionResult"]]$object
   )
   model <- result[["model"]]
-
   structure <- result[["structure"]]
-
   weights <- model$result.matrix
   index <- which(rownames(weights) == "steps")
   weights <- weights[-(1:index), ]
-
   weightNames <- names(weights)
   nodeNames <- strsplit(weightNames, split = "[.]to[.]")
-  from_node <- unlist(lapply(nodeNames, `[[`, 1))
-  to_node <- unlist(lapply(nodeNames, `[[`, 2))
-
+  startNode <- unlist(lapply(nodeNames, `[[`, 1))
+  endNode <- unlist(lapply(nodeNames, `[[`, 2))
   for (i in 1:length(structure)) {
-    from_node <- gsub(pattern = paste0(i, "layhid"), from_node, replacement = paste0(i, "_Hidden "))
-    to_node <- gsub(pattern = paste0(i, "layhid"), to_node, replacement = paste0(i, "_Hidden "))
+    startNode <- gsub(pattern = paste0(i, "layhid"), startNode, replacement = paste0(i, "_Hidden "))
+    endNode <- gsub(pattern = paste0(i, "layhid"), endNode, replacement = paste0(i, "_Hidden "))
   }
-
-  allnames <- unique(c(from_node, to_node))
+  allnames <- unique(c(startNode, endNode))
   adjacency_matrix <- matrix(NA, nrow = length(allnames), ncol = length(allnames))
   rownames(adjacency_matrix) <- allnames
   colnames(adjacency_matrix) <- allnames
-
-  for (i in 1:length(from_node)) {
-    rowI <- which(rownames(adjacency_matrix) == from_node[i])
-    colI <- which(colnames(adjacency_matrix) == to_node[i])
+  for (i in 1:length(startNode)) {
+    rowI <- which(rownames(adjacency_matrix) == startNode[i])
+    colI <- which(colnames(adjacency_matrix) == endNode[i])
     adjacency_matrix[rowI, colI] <- weights[i]
   }
-
   y_inc <- 1 / (length(structure) + 1)
   if (length(options[["predictors"]]) == 1) {
     x_pos <- c(-0.3, 0.5) # x-location intercept and predictors
@@ -478,7 +425,6 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
     y_pos <- c(y_pos, -0.2)
   }
   posMat <- matrix(c(x_pos, y_pos), ncol = 2)
-
   groups <- list()
   groups[["Intercept"]] <- 1
   groups[["Predictors"]] <- 2:(length(options[["predictors"]]) + 1)
@@ -486,19 +432,16 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
     groups[[paste0("Layer ", i)]] <- (max(groups[[length(groups)]]) + 1):(max(groups[[length(groups)]]) + structure[i])
   }
   groups[["Target"]] <- (max(groups[[length(groups)]]) + 1):nrow(adjacency_matrix)
-
   # Code below is for ggplot network
   adjacency_matrix[which(is.na(adjacency_matrix))] <- 0
   net <- network::network(adjacency_matrix, directed = TRUE)
   plotNet <- ggnetwork::ggnetwork(net, layout = posMat, arrow.gap = 0.025)
-
   # Shape of the nodes
   shape <- c(24, rep(21, length(options[["predictors"]]) + sum(structure)))
   shape[which(unique(plotNet[["vertex.names"]]) %in% options[["predictors"]])] <- 22
   # Color of the nodes
   color <- c("#E69F00", rep("#56B4E9", length(options[["predictors"]]) + sum(structure)))
   color[which(unique(plotNet[["vertex.names"]]) %in% options[["predictors"]])] <- "#D55E00"
-
   if (purpose == "classification") {
     shape <- c(shape, rep(22, length(unique(dataset[, options[["target"]]]))))
     color <- c(color, rep("#009E73", length(unique(dataset[, options[["target"]]]))))
@@ -506,10 +449,8 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
     shape <- c(shape, 22)
     color <- c(color, "#009E73")
   }
-
   # y position of hidden layer text
   layer_yPos <- sort(unique(plotNet[grepl("Hidden", plotNet[["vertex.names"]], fixed = TRUE), ][["y"]]))
-
   p <- ggplot2::ggplot(plotNet, ggplot2::aes(x = x, y = y, xend = xend, yend = yend)) +
     ggnetwork::geom_edges(color = "darkgray", size = 0.2, arrow = ggplot2::arrow(length = ggplot2::unit(3, "pt"), type = "closed")) +
     ggnetwork::geom_nodes(size = 7, shape = shape, fill = color, stroke = 1) +
@@ -520,42 +461,17 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
     ggplot2::annotate("text",
       x = c(-0.10, 1.15, 1.15, rep(1.15, length(layer_yPos))), y = c(0.575, 1, 0, layer_yPos), size = 5,
       label = c(gettext("Intercept"), gettext("Input layer"), gettext("Output layer"), gettextf("Hidden layer %1$s", length(structure):1))
-    )
-  p <- jaspGraphs::themeJasp(p, sides = "") +
-    ggplot2::theme(
-      axis.ticks = ggplot2::element_blank(),
-      axis.text.x = ggplot2::element_blank(),
-      axis.text.y = ggplot2::element_blank()
-    )
+    ) +
+    jaspGraphs::geom_rangeframe(sides = "") +
+    jaspGraphs::themeJaspRaw() +
+    ggplot2::theme(axis.ticks = ggplot2::element_blank(), axis.text.x = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank())
   plot$plotObject <- p
-
-  # Code below is for qgraph network
-  #
-  # icons <- c("triangle", rep("square", length(groups[["Predictors"]])), rep("circle", sum(structure)), rep("square", length(groups[["Target"]])))
-  # plot$plotObject <- qgraph::qgraph(input = adjacency_matrix,
-  #                                   layout = posMat,
-  #                                   DoNotPlot = TRUE,
-  #                                   groups = groups,
-  #                                   nodeNames = rownames(adjacency_matrix),
-  #                                   labels = rep("", nrow(adjacency_matrix)), #if (options[["plotNetworkLegend"]]) 1:length(icons) else rownames(adjacency_matrix),
-  #                                   edge.labels = FALSE, #options[["plotEdgeLabels"]],
-  #                                   edge.label.color = "black",
-  #                                   edge.color = "darkgray",
-  #                                   lty = 1,
-  #                                   negDashed = FALSE,
-  #                                   fade = FALSE,
-  #                                   esize = 0,
-  #                                   palette = 'pastel',
-  #                                   usePCH = TRUE,
-  #                                   shape = icons,
-  #                                   legend = FALSE)#options[["plotNetworkLegend"]])
 }
 
-.neuralNetworkActivationFunctionPlot <- function(options, jaspResults, position) {
+.mlNeuralNetworkPlotActivationFunction <- function(options, jaspResults, position) {
   if (!is.null(jaspResults[["actFuncPlot"]]) || !options[["actFuncPlot"]]) {
     return()
   }
-
   weights <- switch(options[["actfct"]],
     "linear"   = gettext("Linear"),
     "binary"   = gettext("Binary"),
@@ -574,27 +490,23 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
     "gaussian" = gettext("Gaussian"),
     "gelu"     = gettext("GeLU")
   )
-
-  plot <- createJaspPlot(title = gettextf("%1$s Activation Function", weights), height = 300, width = 400)
+  plot <- createJaspPlot(title = gettextf("%1$s Activation Function", weights), width = 400, height = 300)
   plot$position <- position
   plot$dependOn(options = c("actFuncPlot", "actfct"))
   jaspResults[["actFuncPlot"]] <- plot
-
   ac <- jaspResults[["actfct"]]$object
-
   xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(-6, 6), min.n = 4)
   yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(-1, 1), min.n = 4)
-
   p <- ggplot2::ggplot() +
     ggplot2::stat_function(fun = ac, size = 1) +
     ggplot2::scale_x_continuous(name = gettext("Input"), breaks = xBreaks, limits = c(-6, 6)) +
-    ggplot2::scale_y_continuous(name = gettext("Output"), breaks = yBreaks, limits = c(-1, 1))
-  p <- jaspGraphs::themeJasp(p)
-
+    ggplot2::scale_y_continuous(name = gettext("Output"), breaks = yBreaks, limits = c(-1, 1)) +
+    jaspGraphs::geom_rangeframe() +
+    jaspGraphs::themeJaspRaw()
   plot$plotObject <- p
 }
 
-.neuralNetworkOptim_init <- function(options) {
+.mlNeuralNetworkOptimInit <- function(options) {
   # This function returns a population of random network structures
   # with a maximum number of hidden layers and maximum number of hidden nodes
   population <- list()
@@ -612,7 +524,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   return(population)
 }
 
-.neuralNetworkOptim_selection <- function(population, options) {
+.mlNeuralNetworkOptimSelection <- function(population, options) {
   # This function takes a list of neural network objects and returns m sets of parent
   # networks for crossover according to the selection method
   parents <- list()
@@ -644,7 +556,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   return(parents)
 }
 
-.neuralNetworkOptim_crossover <- function(parents, options) {
+.mlNeuralNetworkOptimCrossover <- function(parents, options) {
   # This function takes a list containing sets of parent networks
   # and crosses over their chromosomes (structure) according to the crossover method.
   children <- list()
@@ -682,7 +594,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   return(children)
 }
 
-.neuralNetworkOptim_mutate <- function(children, options) {
+.mlNeuralNetworkOptimMutate <- function(children, options) {
   # This function takes a list of child network structures
   # and mutates the number of nodes in their layers according to the mutation probability
   for (i in 1:length(children)) {
@@ -708,7 +620,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   return(children)
 }
 
-.neuralNetworkOptim_survivors <- function(population, children, options) {
+.mlNeuralNetworkOptimSurvivors <- function(population, children, options) {
   # This function takes a list of neural network structures and a vector of their fitness
   # and returns the networks with the higest fitness as elites.
   fitness <- unlist(population)[which(names(unlist(population)) == "fitness")]
@@ -734,17 +646,15 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   return(population)
 }
 
-.nnErrorPlot <- function(dataset, options, jaspResults, ready, position, purpose) {
+.mlNeuralNetworkPlotError <- function(dataset, options, jaspResults, ready, position, purpose) {
   if (!is.null(jaspResults[["plotError"]]) || !options[["plotError"]] || options[["modelOpt"]] == "optimizationManual") {
     return()
   }
-
-  plotTitle <- base::switch(purpose,
+  plotTitle <- switch(purpose,
     "classification" = gettext("Classification Accuracy Plot"),
     "regression" = gettext("Mean Squared Error Plot")
   )
-
-  plot <- createJaspPlot(plot = NULL, title = plotTitle, width = 500, height = 300)
+  plot <- createJaspPlot(plot = NULL, title = plotTitle, width = 400, height = 300)
   plot$position <- position
   plot$dependOn(options = c(
     "plotError", "scaleEqualSD", "target", "predictors", "seed", "seedBox", "holdoutData", "testDataManual", "validationDataManual",
@@ -752,44 +662,38 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
     "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
   ))
   jaspResults[["plotError"]] <- plot
-
   if (!ready) {
     return()
   }
-
-  result <- base::switch(purpose,
+  result <- switch(purpose,
     "classification" = jaspResults[["classificationResult"]]$object,
     "regression" = jaspResults[["regressionResult"]]$object
   )
-
-  ylabel <- base::switch(purpose,
+  ylabel <- switch(purpose,
     "classification" = gettext("Classification Accuracy"),
     "regression"     = gettext("Mean Squared Error")
   )
-
-  d <- result[["plotFrame"]]
-  d$x <- as.numeric(d$x)
-  d$y <- as.numeric(d$y)
-
-  xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, d$x), min.n = 4)
-  ylm1 <- loess(y ~ x, data = d[which(d$type == "Training"), ])
-  ylm2 <- loess(y ~ x, data = d[which(d$type == "Validation"), ])
-  pred1 <- predict(ylm1, newdata = d[which(d$type == "Training"), ], se = TRUE)
-  pred2 <- predict(ylm2, newdata = d[which(d$type == "Validation"), ], se = TRUE)
+  plotData <- result[["plotFrame"]]
+  plotData$x <- as.numeric(plotData$x)
+  plotData$y <- as.numeric(plotData$y)
+  xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, plotData$x), min.n = 4)
+  ylm1 <- loess(y ~ x, data = plotData[which(plotData$type == "Training set"), ])
+  ylm2 <- loess(y ~ x, data = plotData[which(plotData$type == "Validation set"), ])
+  pred1 <- predict(ylm1, newdata = plotData[which(plotData$type == "Training set"), ], se = TRUE)
+  pred2 <- predict(ylm2, newdata = plotData[which(plotData$type == "Validation set"), ], se = TRUE)
   lwr <- c(pred1$fit - 2.5 * pred1$se.fit, pred2$fit - 2.5 * pred2$se.fit)
   upr <- c(pred1$fit + 2.5 * pred1$se.fit, pred2$fit + 2.5 * pred2$se.fit)
   yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(lwr, upr), min.n = 4)
-
-  p <- ggplot2::ggplot(data = d, ggplot2::aes(x = x, y = y, linetype = type, fill = type)) +
+  p <- ggplot2::ggplot(data = plotData, ggplot2::aes(x = x, y = y, linetype = type, fill = type)) +
     ggplot2::geom_smooth(method = "loess", color = "black", se = TRUE, show.legend = FALSE) +
     ggplot2::geom_smooth(method = "loess", color = "black", se = FALSE) +
-    ggplot2::scale_x_continuous(name = gettext("Generation"), breaks = xBreaks, labels = xBreaks, limits = c(0, max(xBreaks))) +
-    ggplot2::scale_y_continuous(name = ylabel, breaks = yBreaks, labels = yBreaks, limits = range(yBreaks)) +
+    ggplot2::scale_x_continuous(name = gettext("Generation"), breaks = xBreaks, limits = c(0, max(xBreaks))) +
+    ggplot2::scale_y_continuous(name = ylabel, breaks = yBreaks, limits = range(yBreaks)) +
     ggplot2::labs(linetype = "") +
     ggplot2::scale_linetype_manual(values = c(2, 1)) +
-    ggplot2::scale_fill_manual(values = c("#cccccc", "#cccccc"), guide = "none") +
-    ggplot2::guides(color = ggplot2::guide_legend(override.aes = list(fill = NA)))
-  p <- jaspGraphs::themeJasp(p, legend.position = "top")
-
+    ggplot2::scale_fill_manual(values = c("lightgray", "darkgray"), guide = "none") +
+    ggplot2::guides(color = ggplot2::guide_legend(override.aes = list(fill = NA))) +
+    jaspGraphs::geom_rangeframe() +
+    jaspGraphs::themeJaspRaw(legend.position = "top")
   plot$plotObject <- p
 }

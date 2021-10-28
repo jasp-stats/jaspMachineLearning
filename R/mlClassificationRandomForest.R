@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2019 University of Amsterdam
+# Copyright (C) 2013-2021 University of Amsterdam
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,165 +18,148 @@
 mlClassificationRandomForest <- function(jaspResults, dataset, options, ...) {
 
   # Preparatory work
-  dataset <- .readDataClassificationAnalyses(dataset, options)
-  .errorHandlingClassificationAnalyses(dataset, options, type = "randomForest")
+  dataset <- .mlClassificationReadData(dataset, options)
+  .mlClassificationErrorHandling(dataset, options, type = "randomForest")
 
   # Check if analysis is ready to run
-  ready <- .classificationAnalysesReady(options, type = "randomForest")
+  ready <- .mlClassificationReady(options, type = "randomForest")
 
   # Compute results and create the model summary table
-  .classificationTable(dataset, options, jaspResults, ready, position = 1, type = "randomForest")
+  .mlClassificationTableSummary(dataset, options, jaspResults, ready, position = 1, type = "randomForest")
 
   # If the user wants to add the classes to the data set
-  .classificationAddClassesToData(dataset, options, jaspResults, ready)
+  .mlClassificationAddPredictionsToData(dataset, options, jaspResults, ready)
 
   # Add test set indicator to data
-  .addTestIndicatorToData(options, jaspResults, ready, purpose = "classification")
+  .mlAddTestIndicatorToData(options, jaspResults, ready, purpose = "classification")
 
   # Create the data split plot
-	.dataSplitPlot(dataset, options, jaspResults, ready, position = 2, purpose = "classification", type = "randomForest")
+  .mlPlotDataSplit(dataset, options, jaspResults, ready, position = 2, purpose = "classification", type = "randomForest")
 
   # Create the confusion table
-  .classificationConfusionTable(dataset, options, jaspResults, ready, position = 3)
+  .mlClassificationTableConfusion(dataset, options, jaspResults, ready, position = 3)
 
   # Create the class proportions table
-  .classificationClassProportions(dataset, options, jaspResults, ready, position = 4)
+  .mlClassificationTableProportions(dataset, options, jaspResults, ready, position = 4)
 
   # Create the validation measures table
-  .classificationEvaluationMetrics(dataset, options, jaspResults, ready, position = 5)
+  .mlClassificationTableMetrics(dataset, options, jaspResults, ready, position = 5)
 
   # Create the variable importance table
-  .randomForestVariableImportance(options, jaspResults, ready, position = 6, purpose = "classification")
+  .mlRandomForestTableVarImp(options, jaspResults, ready, position = 6, purpose = "classification")
 
   # Create the trees vs model error plot
-  .randomForestTreesErrorPlot(options, jaspResults, ready, position = 7, purpose = "classification")
+  .mlRandomForestPlotError(options, jaspResults, ready, position = 7, purpose = "classification")
 
   # Create the ROC curve
-  .rocCurve(dataset, options, jaspResults, ready, position = 8, type = "randomForest")
+  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 8, type = "randomForest")
 
   # Create the Andrews curves
-  .classificationAndrewsCurves(dataset, options, jaspResults, ready, position = 9)
+  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 9)
 
   # Create the mean decrease in accuracy plot
-  .randomForestPlotDecreaseAccuracy(options, jaspResults, ready, position = 10, purpose = "classification")
+  .mlRandomForestPlotDecreaseAccuracy(options, jaspResults, ready, position = 10, purpose = "classification")
 
   # Create the total increase in node purity plot
-  .randomForestPlotIncreasePurity(options, jaspResults, ready, position = 11, purpose = "classification")
+  .mlRandomForestPlotIncreasePurity(options, jaspResults, ready, position = 11, purpose = "classification")
 
   # Decision boundaries
-  .classificationDecisionBoundaries(dataset, options, jaspResults, ready, position = 12, type = "randomForest")
-
+  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 12, type = "randomForest")
 }
 
 .randomForestClassification <- function(dataset, options, jaspResults) {
-
   # Set model-specific parameters
-  noOfPredictors <- base::switch(options[["noOfPredictors"]], "manual" = options[["numberOfPredictors"]], "auto" = floor(sqrt(length(options[["predictors"]]))))
-
+  noOfPredictors <- switch(options[["noOfPredictors"]],
+    "manual" = options[["numberOfPredictors"]],
+    "auto" = floor(sqrt(length(options[["predictors"]])))
+  )
   # Split the data into training and test sets
-  if(options[["holdoutData"]] == "testSetIndicator" && options[["testSetIndicatorVariable"]] != ""){
+  if (options[["holdoutData"]] == "testSetIndicator" && options[["testSetIndicatorVariable"]] != "") {
     # Select observations according to a user-specified indicator (included when indicator = 1)
-    train.index             <- which(dataset[,options[["testSetIndicatorVariable"]]] == 0)
+    trainingIndex <- which(dataset[, options[["testSetIndicatorVariable"]]] == 0)
   } else {
     # Sample a percentage of the total data set
-    train.index             <- sample.int(nrow(dataset), size = ceiling( (1 - options[['testDataManual']]) * nrow(dataset)))
+    trainingIndex <- sample.int(nrow(dataset), size = ceiling((1 - options[["testDataManual"]]) * nrow(dataset)))
   }
-  trainAndValid           <- dataset[train.index, ]
-
+  trainingAndValidationSet <- dataset[trainingIndex, ]
   # Create the generated test set indicator
   testIndicatorColumn <- rep(1, nrow(dataset))
-  testIndicatorColumn[train.index] <- 0
-
-  if(options[["modelOpt"]] == "optimizationManual"){
+  testIndicatorColumn[trainingIndex] <- 0
+  if (options[["modelOpt"]] == "optimizationManual") {
     # Just create a train and a test set (no optimization)
-    train                   <- trainAndValid
-    test                    <- dataset[-train.index, ]
-
-    train_predictors        <- train[, options[["predictors"]]]
-    train_target            <- train[, options[["target"]]]
-    test_predictors         <- test[, options[["predictors"]]]
-    test_target             <- test[, options[["target"]]]
-
-    rfit_test <- randomForest::randomForest(x = train_predictors, y = train_target, xtest = test_predictors, ytest = test_target,
-                                            ntree = options[["noOfTrees"]], mtry = noOfPredictors,
-                                            sampsize = ceiling(options[["bagFrac"]]*nrow(train)),
-                                            importance = TRUE, keep.forest = TRUE)
+    trainingSet <- trainingAndValidationSet
+    testSet <- dataset[-trainingIndex, ]
+    testFit <- randomForest::randomForest(
+      x = trainingSet[, options[["predictors"]]], y = trainingSet[, options[["target"]]],
+      xtest = testSet[, options[["predictors"]]], ytest = testSet[, options[["target"]]],
+      ntree = options[["noOfTrees"]], mtry = noOfPredictors,
+      sampsize = ceiling(options[["bagFrac"]] * nrow(trainingSet)),
+      importance = TRUE, keep.forest = TRUE
+    )
     noOfTrees <- options[["noOfTrees"]]
-
-  } else if(options[["modelOpt"]] == "optimizationError"){
+  } else if (options[["modelOpt"]] == "optimizationError") {
     # Create a train, validation and test set (optimization)
-    valid.index             <- sample.int(nrow(trainAndValid), size = ceiling(options[['validationDataManual']] * nrow(trainAndValid)))
-    test                    <- dataset[-train.index, ]
-    valid                   <- trainAndValid[valid.index, ]
-    train                   <- trainAndValid[-valid.index, ]
-
-    train_predictors <- train[, options[["predictors"]]]
-    train_target <- train[, options[["target"]]]
-    valid_predictors <- valid[, options[["predictors"]]]
-    valid_target <- valid[, options[["target"]]]
-    test_predictors <- test[, options[["predictors"]]]
-    test_target <- test[, options[["target"]]]
-
-    rfit_valid <- randomForest::randomForest(x = train_predictors, y = train_target, xtest = valid_predictors, ytest = valid_target,
-                                        ntree = options[["maxTrees"]], mtry = noOfPredictors,
-                                        sampsize = ceiling(options[["bagFrac"]]*nrow(train)),
-                                        importance = TRUE, keep.forest = TRUE)
-    oobAccuracy <- 1 - rfit_valid$err.rate[, 1]
-    optimTrees <- which.max(oobAccuracy)
-
-    rfit_test <- randomForest::randomForest(x = train_predictors, y = train_target, xtest = test_predictors, ytest = test_target,
-                                            ntree = optimTrees, mtry = noOfPredictors,
-                                            sampsize = ceiling(options[["bagFrac"]]*nrow(train)),
-                                            importance = TRUE, keep.forest = TRUE)
-
-    noOfTrees <- optimTrees
-
+    validationIndex <- sample.int(nrow(trainingAndValidationSet), size = ceiling(options[["validationDataManual"]] * nrow(trainingAndValidationSet)))
+    testSet <- dataset[-trainingIndex, ]
+    validationSet <- trainingAndValidationSet[validationIndex, ]
+    trainingSet <- trainingAndValidationSet[-validationIndex, ]
+    validationFit <- randomForest::randomForest(
+      x = trainingSet[, options[["predictors"]]], y = trainingSet[, options[["target"]]],
+      xtest = validationSet[, options[["predictors"]]], ytest = validationSet[, options[["target"]]],
+      ntree = options[["maxTrees"]], mtry = noOfPredictors,
+      sampsize = ceiling(options[["bagFrac"]] * nrow(trainingSet)),
+      importance = TRUE, keep.forest = TRUE
+    )
+    oobAccuracy <- 1 - validationFit[["err.rate"]][, 1]
+    noOfTrees <- which.max(oobAccuracy)
+    testFit <- randomForest::randomForest(
+      x = trainingSet[, options[["predictors"]]], y = trainingSet[, options[["target"]]],
+      xtest = testSet[, options[["predictors"]]], ytest = testSet[, options[["target"]]],
+      ntree = noOfTrees, mtry = noOfPredictors,
+      sampsize = ceiling(options[["bagFrac"]] * nrow(trainingSet)),
+      importance = TRUE, keep.forest = TRUE
+    )
   }
-
   # Train a model on the training data
-  rfit_train <- randomForest::randomForest(x = train_predictors, y = train_target, xtest = train_predictors, ytest = train_target,
-                                    ntree = noOfTrees, mtry = noOfPredictors,
-                                    sampsize = ceiling(options[["bagFrac"]]*nrow(train)),
-                                    importance = TRUE, keep.forest = TRUE)
-
-  # Calculate AUC
-  auc <- .classificationCalcAUC(test, train, options, "randomForestClassification", dataset=dataset, noOfTrees=noOfTrees, noOfPredictors=noOfPredictors)
-
-  # Use the specified model to make predictions for dataset
-  predictions <- predict(rfit_test, newdata = dataset)
-
+  trainingFit <- randomForest::randomForest(
+    x = trainingSet[, options[["predictors"]]], y = trainingSet[, options[["target"]]],
+    xtest = trainingSet[, options[["predictors"]]], ytest = trainingSet[, options[["target"]]],
+    ntree = noOfTrees, mtry = noOfPredictors,
+    sampsize = ceiling(options[["bagFrac"]] * nrow(trainingSet)),
+    importance = TRUE, keep.forest = TRUE
+  )
   # Create results object
-  classificationResult <- list()
-  classificationResult[["model"]]           	<- rfit_test
-  classificationResult[["rfit_test"]]           <- rfit_test
-  classificationResult[["rfit_train"]]          <- rfit_train
-  classificationResult[["noOfTrees"]]           <- noOfTrees
-  classificationResult[["predPerSplit"]]        <- noOfPredictors
-  classificationResult[["bagFrac"]]             <- ceiling(options[["bagFrac"]]*nrow(dataset))
-  classificationResult[['confTable']]           <- table('Pred' = rfit_test$test[["predicted"]], 'Real' = test[,options[["target"]]])
-  classificationResult[['testAcc']]             <- sum(diag(prop.table(classificationResult[['confTable']])))
-  classificationResult[["auc"]]                 <- auc
-  classificationResult[["testPred"]]            <- rfit_test$test[["predicted"]]
-  classificationResult[["testReal"]]            <- test[,options[["target"]]]
-  classificationResult[["ntrain"]]              <- nrow(train)
-  classificationResult[["ntest"]]               <- nrow(test)
-  classificationResult[["train"]]               <- train
-  classificationResult[["test"]]                <- test
-  classificationResult[["testIndicatorColumn"]] <- testIndicatorColumn
-  classificationResult[["classes"]]             <- predictions
-  classificationResult[["oobAccuracy"]]         <- 1 - rfit_test$err.rate[length(rfit_test$err.rate)]
-  classificationResult[["varImp"]]              <- plyr::arrange(data.frame(Variable = as.factor(names(rfit_test$importance[,1])),
-                                                                            MeanIncrMSE  = rfit_test$importance[, 1],
-                                                                            TotalDecrNodeImp = rfit_test$importance[, 2]), -TotalDecrNodeImp)
-
-  if(options[["modelOpt"]] != "optimizationManual"){
-    classificationResult[["rfit_valid"]]          <- rfit_valid
-    classificationResult[["validationConfTable"]] <- table('Pred' = rfit_valid$test[["predicted"]], 'Real' = valid[,options[["target"]]])
-    classificationResult[['validAcc']]            <- sum(diag(prop.table(classificationResult[['validationConfTable']])))
-    classificationResult[["nvalid"]]              <- nrow(valid)
-    classificationResult[["valid"]]               <- valid
-    classificationResult[["oobValidStore"]]       <- oobAccuracy
+  result <- list()
+  result[["model"]] <- testFit
+  result[["rfit_test"]] <- testFit
+  result[["rfit_train"]] <- trainingFit
+  result[["noOfTrees"]] <- noOfTrees
+  result[["predPerSplit"]] <- noOfPredictors
+  result[["bagFrac"]] <- ceiling(options[["bagFrac"]] * nrow(dataset))
+  result[["confTable"]] <- table("Pred" = testFit$test[["predicted"]], "Real" = testSet[, options[["target"]]])
+  result[["testAcc"]] <- sum(diag(prop.table(result[["confTable"]])))
+  result[["auc"]] <- .classificationCalcAUC(testSet, trainingSet, options, "randomForestClassification", dataset = dataset, noOfTrees = noOfTrees, noOfPredictors = noOfPredictors)
+  result[["testPred"]] <- testFit$test[["predicted"]]
+  result[["testReal"]] <- testSet[, options[["target"]]]
+  result[["ntrain"]] <- nrow(trainingSet)
+  result[["ntest"]] <- nrow(testSet)
+  result[["train"]] <- trainingSet
+  result[["test"]] <- testSet
+  result[["testIndicatorColumn"]] <- testIndicatorColumn
+  result[["classes"]] <- predict(testFit, newdata = dataset)
+  result[["oobAccuracy"]] <- 1 - testFit[["err.rate"]][length(testFit[["err.rate"]])]
+  result[["varImp"]] <- plyr::arrange(data.frame(
+    Variable = as.factor(names(testFit[["importance"]][, 1])),
+    MeanIncrMSE = testFit[["importance"]][, 1],
+    TotalDecrNodeImp = testFit[["importance"]][, 2]
+  ), -TotalDecrNodeImp)
+  if (options[["modelOpt"]] != "optimizationManual") {
+    result[["rfit_valid"]] <- validationFit
+    result[["validationConfTable"]] <- table("Pred" = validationFit$test[["predicted"]], "Real" = validationSet[, options[["target"]]])
+    result[["validAcc"]] <- sum(diag(prop.table(result[["validationConfTable"]])))
+    result[["nvalid"]] <- nrow(validationSet)
+    result[["valid"]] <- validationSet
+    result[["oobValidStore"]] <- oobAccuracy
   }
-
-  return(classificationResult)
+  return(result)
 }
