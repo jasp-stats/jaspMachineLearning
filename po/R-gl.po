@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-10-02 03:23\n"
+"POT-Creation-Date: 2021-10-30 03:23\n"
 "PO-Revision-Date: 2021-10-21 17:01+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
@@ -157,10 +157,12 @@ msgstr ""
 msgid "ROC Curves Plot"
 msgstr "Gráfica de Curvas ROC"
 
-msgid "False positive rate"
+#, fuzzy
+msgid "False Positive Rate"
 msgstr "Cociente de falsos positivos"
 
-msgid "True positive rate"
+#, fuzzy
+msgid "True Positive Rate"
 msgstr "Cociente de verdadeiros positivos"
 
 msgid "Perfect separation"
@@ -374,7 +376,8 @@ msgstr "WSS"
 msgid "Number of Clusters"
 msgstr "Número de Conglomerados"
 
-msgid "Lowest %s value"
+#, fuzzy
+msgid "Lowest %s"
 msgstr "Valor %s máis pequeno"
 
 msgid "Cluster Means"
@@ -391,6 +394,10 @@ msgstr "Densidade"
 
 msgid "Cluster Mean Plots"
 msgstr "Gráficas das Medias dos Conglomerados"
+
+#, fuzzy
+msgid "Cluster Mean"
+msgstr "Medias dos Conglomerados"
 
 msgid "All predictors"
 msgstr "Tódolos preditores"
@@ -496,10 +503,12 @@ msgstr ""
 msgid "Predictive Performance Plot"
 msgstr "Gráfica de Capacidade Preditiva"
 
-msgid "Observed test values"
+#, fuzzy
+msgid "Observed Test Values"
 msgstr "Valores observados das probas"
 
-msgid "Predicted test values"
+#, fuzzy
+msgid "Predicted Test Values"
 msgstr "Valores preditos das probas"
 
 msgid "Data Split"
@@ -577,12 +586,14 @@ msgstr "Optimizando a topoloxía da rede"
 msgid "K-Distance Plot"
 msgstr "Gráfica de Distancia K"
 
-msgid "Points sorted by distance"
+#, fuzzy
+msgid "Points Sorted by Distance"
 msgstr "Puntos ordenados segundo a distancia"
 
+#, fuzzy
 msgid ""
-"%s-nearest neighbors \n"
-"distance"
+"%s-Nearest Neighbors \n"
+"Distance"
 msgstr ""
 "Distancia dos\n"
 "%s veciños máis próximos"
@@ -625,6 +636,10 @@ msgstr "Importancia da Variable"
 msgid "Mean decrease in Gini Index"
 msgstr "Decrecemento da media no Índice de Gini"
 
+#, fuzzy
+msgid "K-nearest neighbors"
+msgstr "Veciños máis próximos"
+
 msgid "Linear discriminant"
 msgstr "Discriminante linear"
 
@@ -666,8 +681,8 @@ msgid ""
 "The trained model is not applied because the the following predictors are "
 "missing: <i>%1$s</i>."
 msgstr ""
-"O modelo adestrado non se aplica porque faltan os seguintes preditores: "
-"<i>%1$s</i>."
+"O modelo adestrado non se aplica porque faltan os seguintes preditores: <i>"
+"%1$s</i>."
 
 msgid ""
 "The following predictors are unused because they are not a predictor "
@@ -675,6 +690,10 @@ msgid ""
 msgstr ""
 "Non se usan os seguintes preditores porque non son variables preditoras no "
 "modelo adestrado: <i>%1$s</i>."
+
+#, fuzzy
+msgid "Nearest Neighbors"
+msgstr "Veciños máis próximos"
 
 msgid "n(New)"
 msgstr "n(Novo)"
@@ -900,6 +919,15 @@ msgstr "Decrecemento da Media na Precisión"
 
 msgid "Total Increase in Node Purity"
 msgstr "Incremento Total da Pureza do Nodo"
+
+msgid "L2 (Ridge)"
+msgstr ""
+
+msgid "L1 (Lasso)"
+msgstr ""
+
+msgid "Elastic Net"
+msgstr ""
 
 msgid "Regression Coefficients"
 msgstr "Coeficientes da regresión"

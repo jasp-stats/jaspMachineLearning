@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
-"POT-Creation-Date: 2021-10-02 03:23\n"
+"POT-Creation-Date: 2021-10-30 03:23\n"
 "PO-Revision-Date: 2021-10-21 17:01+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
@@ -138,10 +138,10 @@ msgstr ""
 msgid "ROC Curves Plot"
 msgstr ""
 
-msgid "False positive rate"
+msgid "False Positive Rate"
 msgstr ""
 
-msgid "True positive rate"
+msgid "True Positive Rate"
 msgstr ""
 
 msgid "Perfect separation"
@@ -340,7 +340,7 @@ msgstr ""
 msgid "Number of Clusters"
 msgstr ""
 
-msgid "Lowest %s value"
+msgid "Lowest %s"
 msgstr ""
 
 msgid "Cluster Means"
@@ -356,6 +356,9 @@ msgid "Density"
 msgstr "Densidad"
 
 msgid "Cluster Mean Plots"
+msgstr ""
+
+msgid "Cluster Mean"
 msgstr ""
 
 msgid "All predictors"
@@ -443,11 +446,12 @@ msgstr ""
 msgid "Predictive Performance Plot"
 msgstr ""
 
-msgid "Observed test values"
+msgid "Observed Test Values"
 msgstr ""
 
-msgid "Predicted test values"
-msgstr ""
+#, fuzzy
+msgid "Predicted Test Values"
+msgstr "Predijo"
 
 msgid "Data Split"
 msgstr ""
@@ -524,12 +528,12 @@ msgstr ""
 msgid "K-Distance Plot"
 msgstr ""
 
-msgid "Points sorted by distance"
+msgid "Points Sorted by Distance"
 msgstr ""
 
 msgid ""
-"%s-nearest neighbors \n"
-"distance"
+"%s-Nearest Neighbors \n"
+"Distance"
 msgstr ""
 
 msgid "Maximum curvature = %s"
@@ -568,6 +572,10 @@ msgstr "Importancia de la Variable"
 
 msgid "Mean decrease in Gini Index"
 msgstr ""
+
+#, fuzzy
+msgid "K-nearest neighbors"
+msgstr "Número de Vecinos Más Cercanos"
 
 #, fuzzy
 msgid "Linear discriminant"
@@ -615,6 +623,10 @@ msgid ""
 "The following predictors are unused because they are not a predictor "
 "variable in the trained model: <i>%1$s</i>."
 msgstr ""
+
+#, fuzzy
+msgid "Nearest Neighbors"
+msgstr "Número de Vecinos Más Cercanos"
 
 msgid "n(New)"
 msgstr ""
@@ -840,6 +852,15 @@ msgid "Mean Decrease in Accuracy"
 msgstr ""
 
 msgid "Total Increase in Node Purity"
+msgstr ""
+
+msgid "L2 (Ridge)"
+msgstr ""
+
+msgid "L1 (Lasso)"
+msgstr ""
+
+msgid "Elastic Net"
 msgstr ""
 
 msgid "Regression Coefficients"

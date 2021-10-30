@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2021-10-02 03:23\n"
+"POT-Creation-Date: 2021-10-30 03:23\n"
 "PO-Revision-Date: 2021-10-05 12:03+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
@@ -148,10 +148,12 @@ msgstr ""
 msgid "ROC Curves Plot"
 msgstr "ROC-Kurven-Grafik"
 
-msgid "False positive rate"
+#, fuzzy
+msgid "False Positive Rate"
 msgstr "Falsch-positiv-Rate"
 
-msgid "True positive rate"
+#, fuzzy
+msgid "True Positive Rate"
 msgstr "Richtig-positiv-Rate"
 
 msgid "Perfect separation"
@@ -366,7 +368,8 @@ msgstr "WSS"
 msgid "Number of Clusters"
 msgstr "Anzahl Cluster"
 
-msgid "Lowest %s value"
+#, fuzzy
+msgid "Lowest %s"
 msgstr "Niedrigster Wert %s"
 
 msgid "Cluster Means"
@@ -383,6 +386,10 @@ msgstr "Dichte"
 
 msgid "Cluster Mean Plots"
 msgstr "Clustermittelwerte Abbildungen"
+
+#, fuzzy
+msgid "Cluster Mean"
+msgstr "Clustermittelwerte"
 
 msgid "All predictors"
 msgstr "Alle Prädiktoren"
@@ -487,10 +494,12 @@ msgstr ""
 msgid "Predictive Performance Plot"
 msgstr "Diagramm Vorhersageleistung"
 
-msgid "Observed test values"
+#, fuzzy
+msgid "Observed Test Values"
 msgstr "Beobachtete Testwerte"
 
-msgid "Predicted test values"
+#, fuzzy
+msgid "Predicted Test Values"
 msgstr "Vorhergesagte Testwerte"
 
 msgid "Data Split"
@@ -568,12 +577,14 @@ msgstr "Optimierung der Netzwerktopologie"
 msgid "K-Distance Plot"
 msgstr "K-Distanz-Plot"
 
-msgid "Points sorted by distance"
+#, fuzzy
+msgid "Points Sorted by Distance"
 msgstr "Punkte sortiert nach Distanz"
 
+#, fuzzy
 msgid ""
-"%s-nearest neighbors \n"
-"distance"
+"%s-Nearest Neighbors \n"
+"Distance"
 msgstr ""
 "%s-nächste Nachbarn \n"
 "Distanz"
@@ -618,6 +629,10 @@ msgstr "Variablen-Wichtigkeit"
 
 msgid "Mean decrease in Gini Index"
 msgstr "Mittlere Abnahme des Gini-Index"
+
+#, fuzzy
+msgid "K-nearest neighbors"
+msgstr "Nächste-Nachbarn"
 
 msgid "Linear discriminant"
 msgstr "Lineare Diskriminante"
@@ -671,6 +686,10 @@ msgid ""
 msgstr ""
 "Die folgenden Prädiktoren werden nicht verwendet, da sie keine "
 "Prädiktorvariable im trainierten Modell sind: <i>%1$s</i>."
+
+#, fuzzy
+msgid "Nearest Neighbors"
+msgstr "Nächste-Nachbarn"
 
 msgid "n(New)"
 msgstr "n(Neu)"
@@ -896,6 +915,15 @@ msgstr "Mittlere Abnahme der Genauigkeit"
 
 msgid "Total Increase in Node Purity"
 msgstr "Gesamte Zunahme der Knotenreinheit"
+
+msgid "L2 (Ridge)"
+msgstr ""
+
+msgid "L1 (Lasso)"
+msgstr ""
+
+msgid "Elastic Net"
+msgstr ""
 
 msgid "Regression Coefficients"
 msgstr "Regression-Koeffizienten"

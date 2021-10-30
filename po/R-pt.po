@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2021-10-02 03:23\n"
+"POT-Creation-Date: 2021-10-30 03:23\n"
 "PO-Revision-Date: 2021-09-03 11:34+0000\n"
 "Last-Translator: Laura Durans <lauraadurans@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
@@ -146,10 +146,12 @@ msgstr ""
 msgid "ROC Curves Plot"
 msgstr ""
 
-msgid "False positive rate"
+#, fuzzy
+msgid "False Positive Rate"
 msgstr "Taxa de falsos positivos"
 
-msgid "True positive rate"
+#, fuzzy
+msgid "True Positive Rate"
 msgstr "Taxa de positivos verdadeiros"
 
 msgid "Perfect separation"
@@ -355,7 +357,7 @@ msgstr "WLS"
 msgid "Number of Clusters"
 msgstr ""
 
-msgid "Lowest %s value"
+msgid "Lowest %s"
 msgstr ""
 
 msgid "Cluster Means"
@@ -371,6 +373,9 @@ msgid "Density"
 msgstr "Densidade"
 
 msgid "Cluster Mean Plots"
+msgstr ""
+
+msgid "Cluster Mean"
 msgstr ""
 
 msgid "All predictors"
@@ -460,11 +465,12 @@ msgid "Predictive Performance Plot"
 msgstr ""
 
 #, fuzzy
-msgid "Observed test values"
+msgid "Observed Test Values"
 msgstr "momentos observados"
 
-msgid "Predicted test values"
-msgstr ""
+#, fuzzy
+msgid "Predicted Test Values"
+msgstr "momentos observados"
 
 #, fuzzy
 msgid "Data Split"
@@ -543,13 +549,14 @@ msgstr ""
 msgid "K-Distance Plot"
 msgstr ""
 
-msgid "Points sorted by distance"
+msgid "Points Sorted by Distance"
 msgstr ""
 
+#, fuzzy
 msgid ""
-"%s-nearest neighbors \n"
-"distance"
-msgstr ""
+"%s-Nearest Neighbors \n"
+"Distance"
+msgstr "Classificação de Vizinhos K-Nearest"
 
 msgid "Maximum curvature = %s"
 msgstr ""
@@ -587,6 +594,10 @@ msgstr ""
 
 msgid "Mean decrease in Gini Index"
 msgstr ""
+
+#, fuzzy
+msgid "K-nearest neighbors"
+msgstr "Classificação de Vizinhos K-Nearest"
 
 msgid "Linear discriminant"
 msgstr ""
@@ -634,6 +645,10 @@ msgid ""
 "The following predictors are unused because they are not a predictor "
 "variable in the trained model: <i>%1$s</i>."
 msgstr ""
+
+#, fuzzy
+msgid "Nearest Neighbors"
+msgstr "Classificação de Vizinhos K-Nearest"
 
 msgid "n(New)"
 msgstr ""
@@ -862,6 +877,15 @@ msgid "Mean Decrease in Accuracy"
 msgstr ""
 
 msgid "Total Increase in Node Purity"
+msgstr ""
+
+msgid "L2 (Ridge)"
+msgstr ""
+
+msgid "L1 (Lasso)"
+msgstr ""
+
+msgid "Elastic Net"
 msgstr ""
 
 #, fuzzy

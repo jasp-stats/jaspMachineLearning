@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.16\n"
-"POT-Creation-Date: 2021-10-02 03:23\n"
+"POT-Creation-Date: 2021-10-30 03:23\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -130,10 +130,10 @@ msgstr ""
 msgid "ROC Curves Plot"
 msgstr ""
 
-msgid "False positive rate"
+msgid "False Positive Rate"
 msgstr ""
 
-msgid "True positive rate"
+msgid "True Positive Rate"
 msgstr ""
 
 msgid "Perfect separation"
@@ -319,7 +319,7 @@ msgstr ""
 msgid "Number of Clusters"
 msgstr ""
 
-msgid "Lowest %s value"
+msgid "Lowest %s"
 msgstr ""
 
 msgid "Cluster Means"
@@ -335,6 +335,9 @@ msgid "Density"
 msgstr ""
 
 msgid "Cluster Mean Plots"
+msgstr ""
+
+msgid "Cluster Mean"
 msgstr ""
 
 msgid "All predictors"
@@ -409,10 +412,10 @@ msgstr ""
 msgid "Predictive Performance Plot"
 msgstr ""
 
-msgid "Observed test values"
+msgid "Observed Test Values"
 msgstr ""
 
-msgid "Predicted test values"
+msgid "Predicted Test Values"
 msgstr ""
 
 msgid "Data Split"
@@ -490,10 +493,10 @@ msgstr ""
 msgid "K-Distance Plot"
 msgstr ""
 
-msgid "Points sorted by distance"
+msgid "Points Sorted by Distance"
 msgstr ""
 
-msgid "%s-nearest neighbors \ndistance"
+msgid "%s-Nearest Neighbors \nDistance"
 msgstr ""
 
 msgid "Maximum curvature = %s"
@@ -530,6 +533,9 @@ msgid "Variable Importance"
 msgstr ""
 
 msgid "Mean decrease in Gini Index"
+msgstr ""
+
+msgid "K-nearest neighbors"
 msgstr ""
 
 msgid "Linear discriminant"
@@ -572,6 +578,9 @@ msgid "The trained model is not applied because the the following predictors are
 msgstr ""
 
 msgid "The following predictors are unused because they are not a predictor variable in the trained model: <i>%1$s</i>."
+msgstr ""
+
+msgid "Nearest Neighbors"
 msgstr ""
 
 msgid "n(New)"
@@ -797,6 +806,15 @@ msgid "Mean Decrease in Accuracy"
 msgstr ""
 
 msgid "Total Increase in Node Purity"
+msgstr ""
+
+msgid "L2 (Ridge)"
+msgstr ""
+
+msgid "L1 (Lasso)"
+msgstr ""
+
+msgid "Elastic Net"
 msgstr ""
 
 msgid "Regression Coefficients"
