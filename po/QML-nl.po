@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-10-30 19:47+0000\n"
+"Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/nl/>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.9-dev\n"
 "X-Language: nl\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -26,11 +32,11 @@ msgstr "Boosting Regressie"
 
 msgctxt "Description|"
 msgid "K-Nearest Neighbors"
-msgstr "K-Naaste Buren"
+msgstr "K-Dichtste Buren"
 
 msgctxt "Description|"
 msgid "K-Nearest Neighbors Regression"
-msgstr "K-Naaste Buren Regressie"
+msgstr "K-Dichtste Buren Regressie"
 
 msgctxt "Description|"
 msgid "Random Forest"
@@ -58,7 +64,7 @@ msgstr "Boosting Classificatie"
 
 msgctxt "Description|"
 msgid "K-Nearest Neighbors Classification"
-msgstr "K-Naaste Buren Classificatie"
+msgstr "K-Dichtste Buren Classificatie"
 
 msgctxt "Description|"
 msgid "Linear Discriminant"
@@ -366,7 +372,7 @@ msgstr "Schaalvoorspellers"
 
 msgctxt "mlClassificationKnn|"
 msgid "Number of Nearest Neighbors"
-msgstr "Aantal naaste buren"
+msgstr "Aantal dichtste buren"
 
 msgctxt "mlClassificationKnn|"
 msgid "Fixed"
@@ -1254,7 +1260,7 @@ msgstr "Schaalvariabelen"
 
 msgctxt "mlRegressionKnn|"
 msgid "Number of Nearest Neighbors"
-msgstr "Aantal naaste buren"
+msgstr "Aantal dichtste buren"
 
 msgctxt "mlRegressionKnn|"
 msgid "Fixed"
@@ -2096,320 +2102,302 @@ msgctxt "mlRegressionNeuralNetwork|"
 msgid "Elitism"
 msgstr "Elitisme"
 
-#, fuzzy
 msgctxt "DataSplit|"
 msgid "Column name"
 msgstr "Kolom naam"
 
 msgctxt "DataSplit|"
 msgid "Test set indicator"
-msgstr ""
+msgstr "Test set indicator"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Shrinkage"
-msgstr ""
+msgstr "Krimping"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Interaction depth"
-msgstr ""
+msgstr "Interactie diepte"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Min. observations in node"
-msgstr ""
+msgstr "Min. observaties in node"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Training data used per tree"
-msgstr ""
+msgstr "Training data gebruikt per boom"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Set seed"
 msgstr "Gebruik toevalsgenerator beginwaarde"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Trees"
-msgstr ""
+msgstr "Bomen"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Max. trees"
-msgstr ""
+msgstr "Max. bomen"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Weights"
 msgstr "Gewichten"
 
 msgctxt "mlClassificationKnn|"
 msgid "Distance"
-msgstr ""
+msgstr "Afstand"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Set seed"
 msgstr "Gebruik toevalsgenerator beginwaarde"
 
 msgctxt "mlClassificationKnn|"
 msgid "Nearest neighbors"
-msgstr ""
+msgstr "Dichtste buren"
 
 msgctxt "mlClassificationKnn|"
 msgid "Max. nearest neighbors"
-msgstr ""
+msgstr "Max. dichtste buren"
 
 msgctxt "mlClassificationLda|"
 msgid "Estimation method"
-msgstr ""
+msgstr "Schattingsmethode"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Set seed"
 msgstr "Gebruik toevalsgenerator beginwaarde"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Max. layers"
-msgstr ""
+msgstr "Max. lagen"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Max. nodes"
-msgstr ""
+msgstr "Max. nodes"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Training data used per tree"
-msgstr ""
+msgstr "Training data gebruikt per boom"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Predictors per split"
-msgstr ""
+msgstr "Predictoren per split"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Set seed"
 msgstr "Gebruik toevalsgenerator beginwaarde"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Trees"
-msgstr ""
+msgstr "Bomen"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Max. trees"
-msgstr ""
+msgstr "Max. bomen"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Epsilon neighborhood size"
-msgstr ""
+msgstr "Epsilon buurtomvang"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Min. core points"
-msgstr ""
+msgstr "Min. kernpunten"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Distance"
-msgstr ""
+msgstr "Afstand"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Set seed"
 msgstr "Gebruik toevalsgenerator beginwaarde"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Max. iterations"
-msgstr ""
+msgstr "Max. iteraties"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Fuzziness parameter"
-msgstr ""
+msgstr "Vaagheidsparameter"
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Set seed"
 msgstr "Gebruik toevalsgenerator beginwaarde"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Clusters"
-msgstr ""
+msgstr "Clusters"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Max. clusters"
-msgstr ""
+msgstr "Max. clusters"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Distance"
-msgstr ""
+msgstr "Afstand"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Pearson"
-msgstr ""
+msgstr "Pearson"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Linkage"
-msgstr ""
+msgstr "Koppeling"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Set seed"
 msgstr "Gebruik toevalsgenerator beginwaarde"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Clusters"
-msgstr ""
+msgstr "Clusters"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Max. clusters"
-msgstr ""
+msgstr "Max. clusters"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Max. iterations"
-msgstr ""
+msgstr "Max. iteraties"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Random sets"
-msgstr ""
+msgstr "Willekeurige sets"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Algorithm"
 msgstr "Algoritme"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Set seed"
 msgstr "Gebruik toevalsgenerator beginwaarde"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Clusters"
-msgstr ""
+msgstr "Clusters"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Max. clusters"
-msgstr ""
+msgstr "Max. clusters"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Trees"
-msgstr ""
+msgstr "Bomen"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Set seed"
 msgstr "Gebruik toevalsgenerator beginwaarde"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Clusters"
-msgstr ""
+msgstr "Clusters"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Max. clusters"
-msgstr ""
+msgstr "Max. clusters"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Shrinkage"
-msgstr ""
+msgstr "Krimping"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Interaction depth"
-msgstr ""
+msgstr "Interactie diepte"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Min. observations in node"
-msgstr ""
+msgstr "Min. observaties in node"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Training data used per tree"
-msgstr ""
+msgstr "Training data gebruikt per boom"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Loss function"
 msgstr "Verliesfunctie"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Set seed"
 msgstr "Gebruik toevalsgenerator beginwaarde"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Trees"
-msgstr ""
+msgstr "Bomen"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Max. trees"
-msgstr ""
+msgstr "Max. bomen"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Weights"
 msgstr "Gewichten"
 
 msgctxt "mlRegressionKnn|"
 msgid "Distance"
-msgstr ""
+msgstr "Afstand"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Set seed"
 msgstr "Gebruik toevalsgenerator beginwaarde"
 
 msgctxt "mlRegressionKnn|"
 msgid "Nearest neighbors"
-msgstr ""
+msgstr "Dichtste buren"
 
 msgctxt "mlRegressionKnn|"
 msgid "Max. nearest neighbors"
-msgstr ""
+msgstr "Max. dichtste buren"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Max. layers"
-msgstr ""
+msgstr "Max. lagen"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Max. nodes"
-msgstr ""
+msgstr "Max. nodes"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Training data used per tree"
-msgstr ""
+msgstr "Training data gebruikt per boom"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Predictors per split"
-msgstr ""
+msgstr "Predictoren per split"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Set seed"
 msgstr "Gebruik toevalsgenerator beginwaarde"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Trees"
-msgstr ""
+msgstr "Bomen"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Max. trees"
-msgstr ""
+msgstr "Max. bomen"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Convergence threshold"
-msgstr ""
+msgstr "Convergentiedrempel"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Penalty"
-msgstr ""
+msgstr "Straf"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Lasso"
-msgstr ""
+msgstr "Lasso"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Ridge"
-msgstr ""
+msgstr "Ridge"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Elastic net parameter (α)"
-msgstr ""
+msgstr "Elastic net parameter (α)"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Set seed"
 msgstr "Gebruik toevalsgenerator beginwaarde"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Largest λ within 1 SE of min"
-msgstr ""
+msgstr "Grootste λ binnen 1 SE van min"
