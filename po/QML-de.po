@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-10-30 19:47+0000\n"
+"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.9-dev\n"
 "X-Language: de\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -2096,7 +2102,6 @@ msgctxt "mlRegressionNeuralNetwork|"
 msgid "Elitism"
 msgstr "Elitismus"
 
-#, fuzzy
 msgctxt "DataSplit|"
 msgid "Column name"
 msgstr "Spaltenname"
@@ -2107,7 +2112,7 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "Shrinkage"
-msgstr ""
+msgstr "Schrumpfung"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Interaction depth"
@@ -2115,84 +2120,79 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "Min. observations in node"
-msgstr ""
+msgstr "Min. Beobachtungen in Knoten"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Training data used per tree"
-msgstr ""
+msgstr "Trainingsdaten pro Baum"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Trees"
-msgstr ""
+msgstr "Bäume"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Max. trees"
-msgstr ""
+msgstr "Max. Bäume"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Weights"
 msgstr "Gewichte"
 
 msgctxt "mlClassificationKnn|"
 msgid "Distance"
-msgstr ""
+msgstr "Distanz"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
 
 msgctxt "mlClassificationKnn|"
 msgid "Nearest neighbors"
-msgstr ""
+msgstr "Nächste Nachbarn"
 
 msgctxt "mlClassificationKnn|"
 msgid "Max. nearest neighbors"
-msgstr ""
+msgstr "Max. nächste Nachbarn"
 
 msgctxt "mlClassificationLda|"
 msgid "Estimation method"
-msgstr ""
+msgstr "Schätzmethode"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Max. layers"
-msgstr ""
+msgstr "Max. Schichten"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Max. nodes"
-msgstr ""
+msgstr "Max. Knoten"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Training data used per tree"
-msgstr ""
+msgstr "Trainingsdaten pro Baum"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Predictors per split"
-msgstr ""
+msgstr "Prädiktoren pro Aufteilung"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Trees"
-msgstr ""
+msgstr "Bäume"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Max. trees"
-msgstr ""
+msgstr "Max. Bäume"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Epsilon neighborhood size"
@@ -2204,105 +2204,99 @@ msgstr ""
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Distance"
-msgstr ""
+msgstr "Distanz"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Max. iterations"
-msgstr ""
+msgstr "Max. Iterationen"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Fuzziness parameter"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Clusters"
-msgstr ""
+msgstr "Cluster"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Max. clusters"
-msgstr ""
+msgstr "Max. Cluster"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Distance"
-msgstr ""
+msgstr "Distanz"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Pearson"
-msgstr ""
+msgstr "Pearson"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Linkage"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Clusters"
-msgstr ""
+msgstr "Cluster"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Max. clusters"
-msgstr ""
+msgstr "Max. Cluster"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Max. iterations"
-msgstr ""
+msgstr "Max. Iterationen"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Random sets"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Algorithm"
 msgstr "Algorithmus"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Clusters"
-msgstr ""
+msgstr "Cluster"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Max. clusters"
-msgstr ""
+msgstr "Max. Cluster"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Trees"
-msgstr ""
+msgstr "Bäume"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Clusters"
-msgstr ""
+msgstr "Cluster"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Max. clusters"
-msgstr ""
+msgstr "Max. Cluster"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Shrinkage"
-msgstr ""
+msgstr "Schrumpfung"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Interaction depth"
@@ -2310,106 +2304,100 @@ msgstr ""
 
 msgctxt "mlRegressionBoosting|"
 msgid "Min. observations in node"
-msgstr ""
+msgstr "Min. Beobachtungen in Knoten"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Training data used per tree"
-msgstr ""
+msgstr "Trainingsdaten pro Baum"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Loss function"
-msgstr "Fehlerfunktion"
+msgstr "Verlustfunktion"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Trees"
-msgstr ""
+msgstr "Bäume"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Max. trees"
-msgstr ""
+msgstr "Max. Bäume"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Weights"
 msgstr "Gewichte"
 
 msgctxt "mlRegressionKnn|"
 msgid "Distance"
-msgstr ""
+msgstr "Distanz"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
 
 msgctxt "mlRegressionKnn|"
 msgid "Nearest neighbors"
-msgstr ""
+msgstr "Nächste Nachbarn"
 
 msgctxt "mlRegressionKnn|"
 msgid "Max. nearest neighbors"
-msgstr ""
+msgstr "Max. nächste Nachbarn"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Max. layers"
-msgstr ""
+msgstr "Max. Schichten"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Max. nodes"
-msgstr ""
+msgstr "Max. Knoten"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Training data used per tree"
-msgstr ""
+msgstr "Trainingsdaten pro Baum"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Predictors per split"
-msgstr ""
+msgstr "Prädiktoren pro Aufteilung"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Trees"
-msgstr ""
+msgstr "Bäume"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Max. trees"
-msgstr ""
+msgstr "Max. Bäume"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Convergence threshold"
-msgstr ""
+msgstr "Konvergenz-Grenzwert"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Penalty"
-msgstr ""
+msgstr "Strafterm"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Lasso"
-msgstr ""
+msgstr "Lasso"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Ridge"
-msgstr ""
+msgstr "Ridge"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Elastic net parameter (α)"
-msgstr ""
+msgstr "Parameter Elastisches Netz (α)"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Largest λ within 1 SE of min"
-msgstr ""
+msgstr "Größter λ innerhalb 1 SF des Min"
