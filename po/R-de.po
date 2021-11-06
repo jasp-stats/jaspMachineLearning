@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2021-10-30 03:23\n"
-"PO-Revision-Date: 2021-10-05 12:03+0000\n"
+"PO-Revision-Date: 2021-11-07 16:53+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/de/>\n"
@@ -148,11 +148,9 @@ msgstr ""
 msgid "ROC Curves Plot"
 msgstr "ROC-Kurven-Grafik"
 
-#, fuzzy
 msgid "False Positive Rate"
 msgstr "Falsch-positiv-Rate"
 
-#, fuzzy
 msgid "True Positive Rate"
 msgstr "Richtig-positiv-Rate"
 
@@ -368,9 +366,8 @@ msgstr "WSS"
 msgid "Number of Clusters"
 msgstr "Anzahl Cluster"
 
-#, fuzzy
 msgid "Lowest %s"
-msgstr "Niedrigster Wert %s"
+msgstr "Niedrigster %s"
 
 msgid "Cluster Means"
 msgstr "Clustermittelwerte"
@@ -387,9 +384,8 @@ msgstr "Dichte"
 msgid "Cluster Mean Plots"
 msgstr "Clustermittelwerte Abbildungen"
 
-#, fuzzy
 msgid "Cluster Mean"
-msgstr "Clustermittelwerte"
+msgstr "Clustermittelwert"
 
 msgid "All predictors"
 msgstr "Alle Prädiktoren"
@@ -494,11 +490,9 @@ msgstr ""
 msgid "Predictive Performance Plot"
 msgstr "Diagramm Vorhersageleistung"
 
-#, fuzzy
 msgid "Observed Test Values"
 msgstr "Beobachtete Testwerte"
 
-#, fuzzy
 msgid "Predicted Test Values"
 msgstr "Vorhergesagte Testwerte"
 
@@ -577,11 +571,9 @@ msgstr "Optimierung der Netzwerktopologie"
 msgid "K-Distance Plot"
 msgstr "K-Distanz-Plot"
 
-#, fuzzy
 msgid "Points Sorted by Distance"
 msgstr "Punkte sortiert nach Distanz"
 
-#, fuzzy
 msgid ""
 "%s-Nearest Neighbors \n"
 "Distance"
@@ -630,9 +622,8 @@ msgstr "Variablen-Wichtigkeit"
 msgid "Mean decrease in Gini Index"
 msgstr "Mittlere Abnahme des Gini-Index"
 
-#, fuzzy
 msgid "K-nearest neighbors"
-msgstr "Nächste-Nachbarn"
+msgstr "K-nächste-Nachbarn"
 
 msgid "Linear discriminant"
 msgstr "Lineare Diskriminante"
@@ -687,7 +678,6 @@ msgstr ""
 "Die folgenden Prädiktoren werden nicht verwendet, da sie keine "
 "Prädiktorvariable im trainierten Modell sind: <i>%1$s</i>."
 
-#, fuzzy
 msgid "Nearest Neighbors"
 msgstr "Nächste-Nachbarn"
 
@@ -917,13 +907,13 @@ msgid "Total Increase in Node Purity"
 msgstr "Gesamte Zunahme der Knotenreinheit"
 
 msgid "L2 (Ridge)"
-msgstr ""
+msgstr "L2 (Ridge)"
 
 msgid "L1 (Lasso)"
-msgstr ""
+msgstr "L1 (Lasso)"
 
 msgid "Elastic Net"
-msgstr ""
+msgstr "Elastisches Netz"
 
 msgid "Regression Coefficients"
 msgstr "Regression-Koeffizienten"
