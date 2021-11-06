@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2021-10-30 03:23\n"
-"PO-Revision-Date: 2021-10-10 16:02+0000\n"
+"PO-Revision-Date: 2021-11-07 16:53+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/nl/>\n"
@@ -148,13 +148,11 @@ msgstr ""
 msgid "ROC Curves Plot"
 msgstr "ROC Kurven Grafiek"
 
-#, fuzzy
 msgid "False Positive Rate"
-msgstr "Fout positieven"
+msgstr "Fout Positieven"
 
-#, fuzzy
 msgid "True Positive Rate"
-msgstr "Terecht-positieven"
+msgstr "Terecht Positieven"
 
 msgid "Perfect separation"
 msgstr "Perfecte scheiding"
@@ -366,9 +364,8 @@ msgstr "WSS"
 msgid "Number of Clusters"
 msgstr "Aantal Clusters"
 
-#, fuzzy
 msgid "Lowest %s"
-msgstr "Laagste %s waarde"
+msgstr "Laagste %s"
 
 msgid "Cluster Means"
 msgstr "Clustergemiddelden"
@@ -385,9 +382,8 @@ msgstr "Dichtheid"
 msgid "Cluster Mean Plots"
 msgstr "Cluster Gemiddelde Grafieken"
 
-#, fuzzy
 msgid "Cluster Mean"
-msgstr "Clustergemiddelden"
+msgstr "Clustergemiddelde"
 
 msgid "All predictors"
 msgstr "Alle voorspellers"
@@ -493,13 +489,11 @@ msgstr ""
 msgid "Predictive Performance Plot"
 msgstr "Grafiek Prestatievoorspelling"
 
-#, fuzzy
 msgid "Observed Test Values"
-msgstr "Geobserveerde toetswaarden"
+msgstr "Geobserveerde Testwaarden"
 
-#, fuzzy
 msgid "Predicted Test Values"
-msgstr "Voorspelde toetswaarden"
+msgstr "Voorspelde Testwaarden"
 
 msgid "Data Split"
 msgstr "Data Split"
@@ -576,17 +570,15 @@ msgstr "Netwerktopologie optimaliseren"
 msgid "K-Distance Plot"
 msgstr "K-Afstands Grafiek"
 
-#, fuzzy
 msgid "Points Sorted by Distance"
-msgstr "Punten gesorteerd op afstand"
+msgstr "Punten Gesorteerd op Afstand"
 
-#, fuzzy
 msgid ""
 "%s-Nearest Neighbors \n"
 "Distance"
 msgstr ""
-"%s-Dichtste buren \n"
-"afstand"
+"%s-Dichtste Buren \n"
+"Afstand"
 
 msgid "Maximum curvature = %s"
 msgstr "Maximale curvatuur = %s"
@@ -627,9 +619,8 @@ msgstr "Belang van variabele"
 msgid "Mean decrease in Gini Index"
 msgstr "Gemiddelde afname in Gini Index"
 
-#, fuzzy
 msgid "K-nearest neighbors"
-msgstr "Dichtste buren"
+msgstr "K-dichtste buren"
 
 msgid "Linear discriminant"
 msgstr "Lineaire discriminant"
@@ -682,9 +673,8 @@ msgstr ""
 "De volgende voorspellers zijn ongebruikt omdat ze geen voorspellende "
 "variabele zijn in het getrainde model: <i>%1$s</i>."
 
-#, fuzzy
 msgid "Nearest Neighbors"
-msgstr "Dichtste buren"
+msgstr "Dichtste Buren"
 
 msgid "n(New)"
 msgstr "n(Nieuw)"
@@ -912,13 +902,13 @@ msgid "Total Increase in Node Purity"
 msgstr "Totale Toename in Knoop Purity"
 
 msgid "L2 (Ridge)"
-msgstr ""
+msgstr "L2 (Ridge)"
 
 msgid "L1 (Lasso)"
-msgstr ""
+msgstr "L1 (Lasso)"
 
 msgid "Elastic Net"
-msgstr ""
+msgstr "Elastisch Net"
 
 msgid "Regression Coefficients"
 msgstr "Regressie Coëfficiënten"
