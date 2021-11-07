@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2021-10-30 03:23\n"
-"PO-Revision-Date: 2021-11-07 20:26+0000\n"
+"PO-Revision-Date: 2021-11-07 21:22+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/gl/>\n"
@@ -25,13 +25,13 @@ msgid "K-Nearest Neighbors Classification"
 msgstr "Clasificación dos K veciños máis próximos"
 
 msgid "Linear Discriminant Classification"
-msgstr "Clasificación discriminante linear"
+msgstr "Clasificación Discriminante Linear"
 
 msgid "Random Forest Classification"
-msgstr "Clasificación en bosques aleatorios"
+msgstr "Clasificación en Bosques Aleatorios"
 
 msgid "Boosting Classification"
-msgstr "Clasificación de potenciación"
+msgstr "Clasificación de Potenciación"
 
 msgid "Neural Network Classification"
 msgstr "Clasificación da Rede Neuronal"
@@ -82,7 +82,7 @@ msgid "Test Accuracy"
 msgstr "Precisión da Proba"
 
 msgid "OOB Accuracy"
-msgstr "Precisión OOB"
+msgstr "Precisión de OOB"
 
 msgid "Please provide a target variable and at least %i predictor variable(s)."
 msgstr ""
@@ -242,16 +242,16 @@ msgid "K-Means Clustering"
 msgstr "Conglomerados con medias K"
 
 msgid "Fuzzy C-Means Clustering"
-msgstr "Conglomerados con medias C borrosas"
+msgstr "Conglomerados con Medias C Borrosas"
 
 msgid "Hierarchical Clustering"
-msgstr "Conglomerados xerárquicos"
+msgstr "Conglomerados Xerárquicos"
 
 msgid "Density-Based Clustering"
-msgstr "Conglomerados baseados na densidade"
+msgstr "Conglomerados Baseados na Densidade"
 
 msgid "Random Forest Clustering"
-msgstr "Conglomerados en bosques aleatorios"
+msgstr "Conglomerados en Bosques Aleatorios"
 
 msgid "Clusters"
 msgstr "Conglomerados"
@@ -435,16 +435,16 @@ msgstr ""
 "%.3f como moito)."
 
 msgid "K-Nearest Neighbors Regression"
-msgstr "Regresión dos K veciños máis próximos"
+msgstr "Regresión dos K Veciños Máis Próximos"
 
 msgid "Regularized Linear Regression"
-msgstr "Regresión linear regularizada"
+msgstr "Regresión Linear Regularizada"
 
 msgid "Random Forest Regression"
-msgstr "Regresión de bosques aleatorios"
+msgstr "Regresión de Bosques Aleatorios"
 
 msgid "Boosting Regression"
-msgstr "Regresión de potenciación"
+msgstr "Regresión de Potenciación"
 
 msgid "Neural Network Regression"
 msgstr "Regresión da Rede Neuronal"
