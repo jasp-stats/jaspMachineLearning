@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-11-07 21:22+0000\n"
+"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.9-dev\n"
 "X-Language: es\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -21,40 +27,33 @@ msgctxt "Description|"
 msgid "Boosting"
 msgstr "Impulsar"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Boosting Regression"
-msgstr "Impulsar la regresión"
+msgstr "Regresión de Potenciación"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "K-Nearest Neighbors"
-msgstr "K-vecinos más cercanos"
+msgstr "K Vecinos Más Próximos"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "K-Nearest Neighbors Regression"
-msgstr "Regresión K-vecinos más cercanos"
+msgstr "Regresión de los K Vecinos Más Próximos"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Random Forest"
-msgstr "Bosque aleatorio"
+msgstr "Bosque Aleatorio"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Random Forest Regression"
-msgstr "Regresión aleatoria de bosque"
+msgstr "Regresión de Bosques Aleatorios"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Regularized Linear"
-msgstr "Lineal regularizado"
+msgstr "Lineal Regularizado"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Regularized Linear Regression"
-msgstr "Regresión lineal regularizada"
+msgstr "Regresión Lineal Regularizada"
 
 #, fuzzy
 msgctxt "Description|"
@@ -71,15 +70,13 @@ msgctxt "Description|"
 msgid "K-Nearest Neighbors Classification"
 msgstr "Clasificación K-Vecinos más cercanos"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Linear Discriminant"
-msgstr "Discriminante lineal"
+msgstr "Discriminante Lineal"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Linear Discriminant Classification"
-msgstr "Clasificación discriminante lineal"
+msgstr "Clasificación Discriminante Lineal"
 
 #, fuzzy
 msgctxt "Description|"
@@ -261,7 +258,6 @@ msgctxt "mlClassificationBoosting|"
 msgid "Decision boundary matrix"
 msgstr "Matriz de límites de decisión"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Legend"
 msgstr "Leyenda"
@@ -356,7 +352,6 @@ msgctxt "mlClassificationKnn|"
 msgid "Decision boundary matrix"
 msgstr "Matriz de límites de decisión"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Legend"
 msgstr "Leyenda"
@@ -497,7 +492,6 @@ msgctxt "mlClassificationLda|"
 msgid "Equality of covariance matrices"
 msgstr "Igualdad de matrices de covarianza"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Multicollinearity"
 msgstr "Multicolinealidad"
@@ -521,7 +515,6 @@ msgctxt "mlClassificationLda|"
 msgid "Andrews curves"
 msgstr "Curvas de Andrews"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Linear discriminant matrix"
 msgstr "Matriz discriminante lineal"
@@ -541,7 +534,6 @@ msgctxt "mlClassificationLda|"
 msgid "Decision boundary matrix"
 msgstr "Matriz de límites de decisión"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Legend"
 msgstr "Leyenda"
@@ -637,7 +629,6 @@ msgctxt "mlClassificationRandomForest|"
 msgid "Decision boundary matrix"
 msgstr "Matriz de límites de decisión"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Legend"
 msgstr "Leyenda"
@@ -743,7 +734,6 @@ msgctxt "mlClusteringDensityBased|"
 msgid "t-SNE cluster plot"
 msgstr "gráfico de clúster t-SNE"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Legend"
 msgstr "Leyenda"
@@ -848,7 +838,6 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "t-SNE cluster plot"
 msgstr "gráfico de clúster t-SNE"
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Legend"
 msgstr "Leyenda"
@@ -946,7 +935,6 @@ msgctxt "mlClusteringHierarchical|"
 msgid "t-SNE cluster plot"
 msgstr "gráfico de clúster t-SNE"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Legend"
 msgstr "Leyenda"
@@ -1080,7 +1068,6 @@ msgctxt "mlClusteringKMeans|"
 msgid "t-SNE cluster plot"
 msgstr "gráfico de clúster t-SNE"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Legend"
 msgstr "Leyenda"
@@ -1181,7 +1168,6 @@ msgctxt "mlClusteringRandomForest|"
 msgid "t-SNE cluster plot"
 msgstr "gráfico de clúster t-SNE"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Legend"
 msgstr "Leyenda"
@@ -1506,7 +1492,6 @@ msgctxt "mlRegressionRegularized|"
 msgid "Variable trace"
 msgstr "Traza variable"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Legend"
 msgstr "Leyenda"
@@ -1560,35 +1545,35 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Neural Network Regression"
-msgstr ""
+msgstr "Regresión de Red Neuronal"
 
 msgctxt "Description|"
 msgid "Neural Network Classification"
-msgstr ""
+msgstr "Clasificación de Red Neuronal"
 
 msgctxt "Description|"
 msgid "Prediction"
-msgstr ""
+msgstr "Predicción"
 
 msgctxt "ExportResults|"
 msgid "Export Results"
-msgstr ""
+msgstr "Exportar Resultados"
 
 msgctxt "ExportResults|"
 msgid "Add predictions to data"
-msgstr ""
+msgstr "Añadir las predicciones a los datos"
 
 msgctxt "ExportResults|"
 msgid "Column name"
-msgstr ""
+msgstr "Nombre de columna"
 
 msgctxt "ExportResults|"
 msgid "e.g., predicted"
-msgstr ""
+msgstr "p. ej., predicho"
 
 msgctxt "ExportResults|"
 msgid "Save as"
-msgstr ""
+msgstr "Guardar como"
 
 msgctxt "ExportResults|"
 msgid "e.g., location/model.jaspML"
@@ -1672,7 +1657,6 @@ msgctxt "mlClassificationNeuralNetwork|"
 msgid "Decision boundary matrix"
 msgstr "Matriz de límites de decisión"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Legend"
 msgstr "Leyenda"
@@ -2243,7 +2227,7 @@ msgstr "Elitismo"
 
 msgctxt "DataSplit|"
 msgid "Column name"
-msgstr ""
+msgstr "Nombre de columna"
 
 msgctxt "DataSplit|"
 msgid "Test set indicator"
@@ -2251,92 +2235,87 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "Shrinkage"
-msgstr ""
+msgstr "Contracción"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Interaction depth"
-msgstr ""
+msgstr "Profundidad de la interacción"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Min. observations in node"
-msgstr ""
+msgstr "Mín. observaciones en el nodo"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Training data used per tree"
-msgstr ""
+msgstr "Datos de entrenamiento utilizados por árbol"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Set seed"
 msgstr "Establecer semilla"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Trees"
-msgstr ""
+msgstr "Árboles"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Max. trees"
-msgstr ""
+msgstr "Máx. árboles"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Weights"
 msgstr "Ponderaciones"
 
 msgctxt "mlClassificationKnn|"
 msgid "Distance"
-msgstr ""
+msgstr "Distancia"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Set seed"
 msgstr "Establecer semilla"
 
 msgctxt "mlClassificationKnn|"
 msgid "Nearest neighbors"
-msgstr ""
+msgstr "Vecinos más próximos"
 
 msgctxt "mlClassificationKnn|"
 msgid "Max. nearest neighbors"
-msgstr ""
+msgstr "Máx. vecinos más próximos"
 
 msgctxt "mlClassificationLda|"
 msgid "Estimation method"
-msgstr ""
+msgstr "Método de estimación"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Set seed"
 msgstr "Establecer semilla"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Max. layers"
-msgstr ""
+msgstr "Máx. estratos"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Max. nodes"
-msgstr ""
+msgstr "Máx. nodos"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Training data used per tree"
-msgstr ""
+msgstr "Datos de entrenamiento utilizados por árbol"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Predictors per split"
-msgstr ""
+msgstr "Predictores por separador"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Set seed"
 msgstr "Establecer semilla"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Trees"
-msgstr ""
+msgstr "Árboles"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Max. trees"
-msgstr ""
+msgstr "Máx. árboles"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Epsilon neighborhood size"
@@ -2348,9 +2327,8 @@ msgstr ""
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Distance"
-msgstr ""
+msgstr "Distancia"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Set seed"
 msgstr "Establecer semilla"
@@ -2363,7 +2341,6 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Fuzziness parameter"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Set seed"
 msgstr "Establecer semilla"
@@ -2378,17 +2355,16 @@ msgstr ""
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Distance"
-msgstr ""
+msgstr "Distancia"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Pearson"
-msgstr ""
+msgstr "Pearson"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Linkage"
-msgstr ""
+msgstr "Enlace"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Set seed"
 msgstr "Establecer semilla"
@@ -2414,7 +2390,6 @@ msgctxt "mlClusteringKMeans|"
 msgid "Algorithm"
 msgstr "Algoritmo"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Set seed"
 msgstr "Establecer semilla"
@@ -2429,9 +2404,8 @@ msgstr ""
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Trees"
-msgstr ""
+msgstr "Árboles"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Set seed"
 msgstr "Establecer semilla"
@@ -2446,88 +2420,83 @@ msgstr ""
 
 msgctxt "mlRegressionBoosting|"
 msgid "Shrinkage"
-msgstr ""
+msgstr "Contracción"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Interaction depth"
-msgstr ""
+msgstr "Profundidad de la interacción"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Min. observations in node"
-msgstr ""
+msgstr "Mín. observaciones en el nodo"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Training data used per tree"
-msgstr ""
+msgstr "Datos de entrenamiento utilizados por árbol"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Loss function"
 msgstr "Función de pérdida"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Set seed"
 msgstr "Establecer semilla"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Trees"
-msgstr ""
+msgstr "Árboles"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Max. trees"
-msgstr ""
+msgstr "Máx. árboles"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Weights"
 msgstr "Ponderaciones"
 
 msgctxt "mlRegressionKnn|"
 msgid "Distance"
-msgstr ""
+msgstr "Distancia"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Set seed"
 msgstr "Establecer semilla"
 
 msgctxt "mlRegressionKnn|"
 msgid "Nearest neighbors"
-msgstr ""
+msgstr "Vecinos más próximos"
 
 msgctxt "mlRegressionKnn|"
 msgid "Max. nearest neighbors"
-msgstr ""
+msgstr "Máx. vecinos más próximos"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Max. layers"
-msgstr ""
+msgstr "Máx. estratos"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Max. nodes"
-msgstr ""
+msgstr "Máx. nodos"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Training data used per tree"
-msgstr ""
+msgstr "Datos de entrenamiento utilizados por árbol"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Predictors per split"
-msgstr ""
+msgstr "Predictores por separador"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Set seed"
 msgstr "Establecer semilla"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Trees"
-msgstr ""
+msgstr "Árboles"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Max. trees"
-msgstr ""
+msgstr "Máx. árboles"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Convergence threshold"
@@ -2535,25 +2504,24 @@ msgstr ""
 
 msgctxt "mlRegressionRegularized|"
 msgid "Penalty"
-msgstr ""
+msgstr "Penalización"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Lasso"
-msgstr ""
+msgstr "Lasso"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Ridge"
-msgstr ""
+msgstr "Cresta"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Elastic net parameter (α)"
-msgstr ""
+msgstr "Parámetro de la red elástica (α)"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Set seed"
 msgstr "Establecer semilla"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Largest λ within 1 SE of min"
-msgstr ""
+msgstr "Mayor λ dentro de 1 DT de mín"
