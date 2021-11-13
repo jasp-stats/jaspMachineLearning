@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-11-07 21:22+0000\n"
+"PO-Revision-Date: 2021-11-12 17:07+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/es/>\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9-dev\n"
+"X-Generator: Weblate 4.9.1-dev\n"
 "X-Language: es\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -199,27 +199,22 @@ msgctxt "mlClassificationBoosting|"
 msgid "Tables"
 msgstr "Tablas"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Confusion matrix"
-msgstr "Matriz de confusión"
+msgstr "Matriz de desorden"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Display proportions"
 msgstr "Mostrar proporciones"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Class proportions"
 msgstr "Proporciones de clase"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Evaluation metrics"
 msgstr "Métricas de evaluación"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Relative influence"
 msgstr "Influencia relativa"
@@ -228,35 +223,30 @@ msgctxt "mlClassificationBoosting|"
 msgid "Plots"
 msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Data split"
-msgstr "División de datos"
+msgstr "Separador de datos"
 
 #, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Out-of-bag improvement"
 msgstr "Mejora fuera de la bolsa"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "ROC curves"
 msgstr "Curvas ROC"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Andrews curves"
 msgstr "Curvas de Andrews"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Deviance"
 msgstr "Desviación"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Decision boundary matrix"
-msgstr "Matriz de límites de decisión"
+msgstr "Matriz límite de decisión"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Legend"
@@ -303,22 +293,18 @@ msgctxt "mlClassificationKnn|"
 msgid "Tables"
 msgstr "Tablas"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Confusion matrix"
-msgstr "Matriz de confusión"
+msgstr "Matriz de desorden"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Display proportions"
 msgstr "Mostrar proporciones"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Class proportions"
 msgstr "Proporciones de clase"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Evaluation metrics"
 msgstr "Métricas de evaluación"
@@ -327,30 +313,25 @@ msgctxt "mlClassificationKnn|"
 msgid "Plots"
 msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Data split"
-msgstr "División de datos"
+msgstr "Separador de datos"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Classification accuracy"
-msgstr "Precisión de clasificación"
+msgstr "Precisión de la clasificación"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "ROC curves"
 msgstr "Curvas ROC"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Andrews curves"
 msgstr "Curvas de Andrews"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Decision boundary matrix"
-msgstr "Matriz de límites de decisión"
+msgstr "Matriz límite de decisión"
 
 msgctxt "mlClassificationKnn|"
 msgid "Legend"
@@ -443,54 +424,45 @@ msgctxt "mlClassificationLda|"
 msgid "Tables"
 msgstr "Tablas"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Confusion matrix"
-msgstr "Matriz de confusión"
+msgstr "Matriz de desorden"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Display proportions"
 msgstr "Mostrar proporciones"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Class proportions"
 msgstr "Proporciones de clase"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Evaluation metrics"
 msgstr "Métricas de evaluación"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Coefficients"
 msgstr "Coeficientes"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Prior and posterior probabilities"
 msgstr "Probabilidades previas y posteriores"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Class means training data"
-msgstr "Clase significa datos de entrenamiento"
+msgstr "Medias de clase en datos de entrenamiento"
 
 msgctxt "mlClassificationLda|"
 msgid "Assumption Checks"
 msgstr "Verificaciones de Supuestos"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Equality of class means"
-msgstr "La igualdad de clases significa"
+msgstr "Igualdad de medias de clases"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Equality of covariance matrices"
-msgstr "Igualdad de matrices de covarianza"
+msgstr "Igualdad de matrices de covarianzas"
 
 msgctxt "mlClassificationLda|"
 msgid "Multicollinearity"
@@ -500,17 +472,14 @@ msgctxt "mlClassificationLda|"
 msgid "Plots"
 msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Data split"
-msgstr "División de datos"
+msgstr "Separador de datos"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "ROC curves"
 msgstr "Curvas ROC"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Andrews curves"
 msgstr "Curvas de Andrews"
@@ -519,20 +488,17 @@ msgctxt "mlClassificationLda|"
 msgid "Linear discriminant matrix"
 msgstr "Matriz discriminante lineal"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Densities"
 msgstr "Densidades"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Scatter plots"
-msgstr "Gráfico de dispersión"
+msgstr "Gráficos de dispersión"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Decision boundary matrix"
-msgstr "Matriz de límites de decisión"
+msgstr "Matriz límite de decisión"
 
 msgctxt "mlClassificationLda|"
 msgid "Legend"
@@ -567,22 +533,18 @@ msgctxt "mlClassificationRandomForest|"
 msgid "Tables"
 msgstr "Tablas"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Confusion matrix"
-msgstr "Matriz de confusión"
+msgstr "Matriz de desorden"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Display proportions"
 msgstr "Mostrar proporciones"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Class proportions"
 msgstr "Proporciones de clase"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Evaluation metrics"
 msgstr "Métricas de evaluación"
@@ -597,37 +559,32 @@ msgstr "Gráficos"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Data split"
-msgstr "División de datos"
+msgstr "Separador de datos"
 
 #, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Out-of-bag accuracy"
 msgstr "Precisión fuera de la bolsa"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "ROC curves"
 msgstr "Curvas ROC"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Andrews curves"
 msgstr "Curvas de Andrews"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Mean decrease in accuracy"
-msgstr "Disminución media de la precisión"
+msgstr "Disminución de la media en la precisión"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Total increase in node purity"
 msgstr "Aumento total de la pureza del nodo"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Decision boundary matrix"
-msgstr "Matriz de límites de decisión"
+msgstr "Matriz límite de decisión"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Legend"
@@ -1226,19 +1183,17 @@ msgstr "Gráficos"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Data split"
-msgstr "División de datos"
+msgstr "Separador de datos"
 
 #, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Out-of-bag improvement"
 msgstr "Mejora fuera de la bolsa"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Predictive performance"
-msgstr "Rendimiento predictivo"
+msgstr "Capacidad predictiva"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Deviance"
 msgstr "Desviación"
@@ -1289,17 +1244,15 @@ msgstr "Gráficos"
 
 msgctxt "mlRegressionKnn|"
 msgid "Data split"
-msgstr "División de datos"
+msgstr "Separador de datos"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Mean squared error"
-msgstr "Error medio cuadrado"
+msgstr "Error cuadrado medio"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Predictive performance"
-msgstr "Rendimiento predictivo"
+msgstr "Capacidad predictiva"
 
 msgctxt "mlRegressionKnn|"
 msgid "Training Parameters"
@@ -1393,24 +1346,21 @@ msgstr "Gráficos"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Data split"
-msgstr "División de datos"
+msgstr "Separador de datos"
 
 #, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Out-of-bag error"
 msgstr "Error fuera de la bolsa"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Predictive performance"
-msgstr "Rendimiento predictivo"
+msgstr "Capacidad predictiva"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Mean decrease in accuracy"
-msgstr "Disminución media de la precisión"
+msgstr "Disminución de la media en la precisión"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Total increase in node purity"
 msgstr "Aumento total de la pureza del nodo"
@@ -1463,12 +1413,10 @@ msgctxt "mlRegressionRegularized|"
 msgid "Tables"
 msgstr "Tablas"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Evaluation metrics"
 msgstr "Métricas de evaluación"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Regression coefficients"
 msgstr "Coeficientes de regresión"
@@ -1477,20 +1425,17 @@ msgctxt "mlRegressionRegularized|"
 msgid "Plots"
 msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Data split"
-msgstr "División de datos"
+msgstr "Separador de datos"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Predictive performance"
-msgstr "Rendimiento predictivo"
+msgstr "Capacidad predictiva"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Variable trace"
-msgstr "Traza variable"
+msgstr "Traza de variables"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Legend"
@@ -1595,67 +1540,57 @@ msgctxt "mlClassificationNeuralNetwork|"
 msgid "Tables"
 msgstr "Tablas"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Confusion matrix"
-msgstr "Matriz de confusión"
+msgstr "Matriz de desorden"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Display proportions"
 msgstr "Mostrar proporciones"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Class proportions"
 msgstr "Proporciones de clase"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Evaluation metrics"
 msgstr "Métricas de evaluación"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Network weights"
-msgstr ""
+msgstr "Ponderaciones de red"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Plots"
 msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Data split"
-msgstr "División de datos"
+msgstr "Separador de datos"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Classification accuracy"
-msgstr "Precisión de clasificación"
+msgstr "Precisión de la clasificación"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "ROC curves"
 msgstr "Curvas ROC"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Andrews curves"
 msgstr "Curvas de Andrews"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Activation function"
-msgstr ""
+msgstr "Función de activación"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Network structure"
-msgstr ""
+msgstr "Estructura de la red"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Decision boundary matrix"
-msgstr "Matriz de límites de decisión"
+msgstr "Matriz límite de decisión"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Legend"
@@ -1954,35 +1889,31 @@ msgstr "Métricas de evaluación"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Network weights"
-msgstr ""
+msgstr "Ponderaciones de red"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Plots"
 msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Data split"
-msgstr "División de datos"
+msgstr "Separador de datos"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Mean squared error"
-msgstr "Error medio cuadrado"
+msgstr "Error cuadrado medio"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Predictive performance"
-msgstr "Rendimiento predictivo"
+msgstr "Capacidad predictiva"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Activation function"
-msgstr ""
+msgstr "Función de activación"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Network structure"
-msgstr ""
+msgstr "Estructura de la red"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Training Parameters"
