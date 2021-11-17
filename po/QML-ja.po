@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-11-17 16:37+0000\n"
+"Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/ja/>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.9.1-dev\n"
 "X-Language: ja\n"
 "X-Qt-Contexts: true\n"
 
@@ -1429,286 +1435,264 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Neural Network"
-msgstr ""
+msgstr "ニューラルネットワーク"
 
 msgctxt "Description|"
 msgid "Neural Network Regression"
-msgstr ""
+msgstr "ニューラルネットワーク回帰"
 
 msgctxt "Description|"
 msgid "Neural Network Classification"
-msgstr ""
+msgstr "ニューラルネットワーク分類"
 
 msgctxt "Description|"
 msgid "Prediction"
-msgstr ""
+msgstr "予測"
 
 msgctxt "ExportResults|"
 msgid "Export Results"
-msgstr ""
+msgstr "結果のエクスポート"
 
 msgctxt "ExportResults|"
 msgid "Add predictions to data"
-msgstr ""
+msgstr "データに予測値を加える"
 
 msgctxt "ExportResults|"
 msgid "Column name"
-msgstr ""
+msgstr "列名"
 
 msgctxt "ExportResults|"
 msgid "e.g., predicted"
-msgstr ""
+msgstr "e.g., 予測"
 
 msgctxt "ExportResults|"
 msgid "Save as"
-msgstr ""
+msgstr "名前を付けて保存"
 
 msgctxt "ExportResults|"
 msgid "e.g., location/model.jaspML"
-msgstr ""
+msgstr "e.g., 場所/model.jaspML"
 
 msgctxt "ExportResults|"
 msgid "Save trained model"
-msgstr ""
+msgstr "学習済みモデルを保存"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Target"
 msgstr "ターゲット"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Predictors"
 msgstr "予測変数"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Confusion matrix"
 msgstr "混同行列"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Display proportions"
 msgstr "比率を表示する"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Class proportions"
 msgstr "クラスの比率"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Evaluation metrics"
 msgstr "評価指標"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Network weights"
-msgstr ""
+msgstr "ネットワーク重み"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Plots"
 msgstr "プロット"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Data split"
 msgstr "データの分割"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Classification accuracy"
 msgstr "分類の正確性"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "ROC curves"
 msgstr "ROC曲線"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Andrews curves"
 msgstr "アンドリュース曲線"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Activation function"
-msgstr ""
+msgstr "活性化関数"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Network structure"
-msgstr ""
+msgstr "ネットワーク構造"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Decision boundary matrix"
 msgstr "決定境界行列"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Legend"
 msgstr "凡例"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Points"
 msgstr "ポイント"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Training Parameters"
 msgstr "トレーニングパラメータ"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Algorithmic Settings"
 msgstr "アルゴリズムの設定"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Linear"
-msgstr ""
+msgstr "線形"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Binary"
-msgstr ""
+msgstr "2値"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Logistic sigmoid"
-msgstr ""
+msgstr "ロジスティックシグモイド"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Sine"
-msgstr ""
+msgstr "サイン"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Cosine"
 msgstr "コサイン"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Inverse tangent"
-msgstr ""
+msgstr "逆タンジェント"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Hyperbolic tangent"
-msgstr ""
+msgstr "ハイパーボリックタンジェント"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "ReLU"
-msgstr ""
+msgstr "レル"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Softplus"
-msgstr ""
+msgstr "ソフトプラス"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Softsign"
-msgstr ""
+msgstr "ソフトサイン"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "ELU"
-msgstr ""
+msgstr "エル"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "LReLU"
-msgstr ""
+msgstr "LReLU"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "SiLU"
-msgstr ""
+msgstr "SiLU"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Mish"
-msgstr ""
+msgstr "ミッシュ"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Gaussian"
 msgstr "正規"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "GeLU"
-msgstr ""
+msgstr "GeLU"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Algorithm"
-msgstr ""
+msgstr "アルゴリズム"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Backpropagation"
-msgstr ""
+msgstr "誤差逆伝播法"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "rprop+"
-msgstr ""
+msgstr "rprop+"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "rprop-"
-msgstr ""
+msgstr "rprop-"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "grprop-sag"
-msgstr ""
+msgstr "grprop-sag"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "grprop-slr"
-msgstr ""
+msgstr "grprop-slr"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Learning rate"
-msgstr ""
+msgstr "学習率"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Loss function"
-msgstr ""
+msgstr "損失関数"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Sum of squares"
-msgstr ""
+msgstr "平方和"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Cross-entropy"
-msgstr ""
+msgstr "クロスエントロピー"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Stopping criteria loss function"
-msgstr ""
+msgstr "停止基準 損失関数"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Max. training repetitions"
-msgstr ""
+msgstr "トレーニングの最大反復回数"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Scale predictors"
 msgstr "スケール予測変数"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Set seed"
-msgstr ""
+msgstr "seedの設定"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Network Topology"
-msgstr ""
+msgstr "ネットワークトポロジー"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Manual"
 msgstr "手動"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Nodes"
-msgstr ""
+msgstr "ノード"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Hidden layer "
-msgstr ""
+msgstr "隠れ層 "
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Optimized"
 msgstr "最適化"
