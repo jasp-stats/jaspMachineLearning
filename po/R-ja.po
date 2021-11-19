@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.1\n"
 "POT-Creation-Date: 2021-10-30 03:23\n"
-"PO-Revision-Date: 2021-11-10 04:46+0000\n"
+"PO-Revision-Date: 2021-11-18 18:52+0000\n"
 "Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/ja/>\n"
@@ -11,79 +11,79 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.9-dev\n"
+"X-Generator: Weblate 4.9.1-dev\n"
 
 msgid "K-Nearest Neighbors Classification"
-msgstr ""
+msgstr "K - 近傍分類"
 
 msgid "Linear Discriminant Classification"
-msgstr ""
+msgstr "線形判別分類"
 
 msgid "Random Forest Classification"
-msgstr ""
+msgstr "ランダムフォレスト分類"
 
 msgid "Boosting Classification"
-msgstr ""
+msgstr "ブースティング分類"
 
 msgid "Neural Network Classification"
-msgstr ""
+msgstr "ニューラルネットワーク分類"
 
 msgid "Nearest neighbors"
-msgstr ""
+msgstr "最近傍"
 
 msgid "Weights"
 msgstr "ウェイト"
 
 msgid "Distance"
-msgstr ""
+msgstr "距離"
 
 msgid "Linear Discriminants"
-msgstr ""
+msgstr "線形判別分析"
 
 msgid "Method"
 msgstr "方法"
 
 msgid "Trees"
-msgstr ""
+msgstr "ツリー"
 
 msgid "Predictors per split"
-msgstr ""
+msgstr "スプリットあたりの予測値"
 
 msgid "Shrinkage"
-msgstr ""
+msgstr "収縮"
 
 msgid "Hidden Layers"
-msgstr ""
+msgstr "隠れ層"
 
 msgid "Nodes"
-msgstr ""
+msgstr "ノード"
 
 msgid "n(Train)"
-msgstr ""
+msgstr "n(訓練)"
 
 msgid "n(Validation)"
-msgstr ""
+msgstr "n(検証)"
 
 msgid "n(Test)"
-msgstr ""
+msgstr "n(テスト)"
 
 msgid "Validation Accuracy"
-msgstr ""
+msgstr "検証精度"
 
 msgid "Test Accuracy"
-msgstr ""
+msgstr "テスト精度"
 
 msgid "OOB Accuracy"
-msgstr ""
+msgstr "OOB精度"
 
 msgid "Please provide a target variable and at least %i predictor variable(s)."
-msgstr ""
+msgstr "ターゲット変数と少なくとも%i個の予測変数（複数可）を指定してください."
 
 msgid "The trained model is saved as <i>%1$s</i>."
-msgstr ""
+msgstr "学習したモデルは<i>%1$s</i>として保存されます."
 
 msgid "The trained model is not saved until 'Save trained model' is checked."
-msgstr ""
+msgstr "学習したモデルは、'Save trained model'がチェックされるまで保存されません."
 
 msgid ""
 "The model is optimized with respect to the <i>validation set accuracy</i>."
