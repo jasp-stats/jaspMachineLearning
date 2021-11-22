@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-11-22 22:59+0000\n"
+"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.10-dev\n"
 "X-Language: es\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -671,10 +677,9 @@ msgctxt "mlClusteringDensityBased|"
 msgid "Display barplot"
 msgstr "Mostrar diagrama de barras"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Group into one figure"
-msgstr "Agrupar en una figura"
+msgstr "Agrupar en un gráfico"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Cluster densities"
@@ -775,10 +780,9 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Display barplot"
 msgstr "Mostrar diagrama de barras"
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Group into one figure"
-msgstr "Agrupar en una figura"
+msgstr "Agrupar en un gráfico"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Cluster densities"
@@ -1105,10 +1109,9 @@ msgctxt "mlClusteringRandomForest|"
 msgid "Display barplot"
 msgstr "Mostrar diagrama de barras"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Group into one figure"
-msgstr "Agrupar en una figura"
+msgstr "Agrupar en un gráfico"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Cluster densities"
