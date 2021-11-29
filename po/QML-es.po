@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-11-29 00:22+0000\n"
+"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.10-dev\n"
 "X-Language: es\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -16,10 +22,9 @@ msgctxt "Description|"
 msgid "Regression"
 msgstr "Regresión"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Boosting"
-msgstr "Impulsar"
+msgstr "Potenciación"
 
 msgctxt "Description|"
 msgid "Boosting Regression"
@@ -49,20 +54,17 @@ msgctxt "Description|"
 msgid "Regularized Linear Regression"
 msgstr "Regresión Lineal Regularizada"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Classification"
 msgstr "Clasificación"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Boosting Classification"
-msgstr "Impulsar la clasificación"
+msgstr "Clasificación de Potenciación"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "K-Nearest Neighbors Classification"
-msgstr "Clasificación K-Vecinos más cercanos"
+msgstr "Clasificación de los K-Vecinos más próximos"
 
 msgctxt "Description|"
 msgid "Linear Discriminant"
@@ -72,111 +74,90 @@ msgctxt "Description|"
 msgid "Linear Discriminant Classification"
 msgstr "Clasificación Discriminante Lineal"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Random Forest Classification"
-msgstr "Clasificación aleatoria de bosques"
+msgstr "Clasificación en Bosques Aleatorios"
 
 msgctxt "Description|"
 msgid "Clustering"
 msgstr "Conglomerados"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Density-Based"
-msgstr "Basado en densidad"
+msgstr "Basado en la Densidad"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Density-Based Clustering"
-msgstr "Agrupación basada en densidad"
+msgstr "Conglomerados Basados en la Densidad"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Fuzzy C-Means"
-msgstr "C-medias difusas"
+msgstr "Medias C Borrosas"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Fuzzy C-Means Clustering"
-msgstr "Agrupación difusa de medias C"
+msgstr "Conglomerados con Medias C Borrosas"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Hierarchical"
 msgstr "Jerárquico"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Hierarchical Clustering"
-msgstr "Agrupación jerárquica"
+msgstr "Conglomerados Jerárquicos"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "K-Means"
-msgstr "K-medias"
+msgstr "Medias K"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "K-Means Clustering"
-msgstr "Agrupación de K-medias"
+msgstr "Conglomerados con Medias K"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Random Forest Clustering"
-msgstr "Agrupación aleatoria de bosques"
+msgstr "Conglomerados en Bosques Aleatorios"
 
-#, fuzzy
 msgctxt "DataSplit|"
 msgid "Data Split Preferences"
-msgstr "Preferencias de división de datos"
+msgstr "Preferencias para Separar Datos"
 
-#, fuzzy
 msgctxt "DataSplit|"
 msgid "Holdout Test Data"
-msgstr "Datos de prueba de retención"
+msgstr "Retener los Datos de los Contrastes"
 
-#, fuzzy
 msgctxt "DataSplit|"
 msgid "Sample"
 msgstr "Muestra"
 
-#, fuzzy
 msgctxt "DataSplit|"
 msgid "% of all data"
 msgstr "% de todos los datos"
 
-#, fuzzy
 msgctxt "DataSplit|"
 msgid "Add generated indicator to data"
-msgstr "Agregar indicador generado a los datos"
+msgstr "Agregar el índice generado a los datos"
 
-#, fuzzy
 msgctxt "DataSplit|"
 msgid "None"
 msgstr "Ninguna"
 
-#, fuzzy
 msgctxt "DataSplit|"
 msgid "Training and Validation Data"
-msgstr "Datos de formación y validación"
+msgstr "Datos de entrenamiento y validación"
 
-#, fuzzy
 msgctxt "DataSplit|"
 msgid "% for validation data"
 msgstr "% para datos de validación"
 
-#, fuzzy
 msgctxt "DataSplit|"
 msgid "K-fold with"
-msgstr "Doblado en K con"
+msgstr "Plegado K con"
 
-#, fuzzy
 msgctxt "DataSplit|"
 msgid "folds"
 msgstr "pliegues"
 
-#, fuzzy
 msgctxt "DataSplit|"
 msgid "Leave-one-out"
 msgstr "Dejar uno fuera"
@@ -246,7 +227,6 @@ msgctxt "mlClassificationBoosting|"
 msgid "Legend"
 msgstr "Leyenda"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Points"
 msgstr "Puntos"
@@ -331,7 +311,6 @@ msgctxt "mlClassificationKnn|"
 msgid "Legend"
 msgstr "Leyenda"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Points"
 msgstr "Puntos"
@@ -352,16 +331,14 @@ msgctxt "mlClassificationKnn|"
 msgid "Epanechnikov"
 msgstr "Epanechnikov"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Biweight"
-msgstr "Bipeso"
+msgstr "Ponderación doble"
 
 msgctxt "mlClassificationKnn|"
 msgid "Triweight"
-msgstr "Triple ponderación"
+msgstr "Ponderación triple"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Cosine"
 msgstr "Coseno"
@@ -498,7 +475,6 @@ msgctxt "mlClassificationLda|"
 msgid "Legend"
 msgstr "Leyenda"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Points"
 msgstr "Puntos"
@@ -584,7 +560,6 @@ msgctxt "mlClassificationRandomForest|"
 msgid "Legend"
 msgstr "Leyenda"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Points"
 msgstr "Puntos"
@@ -661,15 +636,13 @@ msgctxt "mlClusteringDensityBased|"
 msgid "Plots"
 msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "K-distance plot"
 msgstr "Gráfico de distancia K"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Display barplot"
-msgstr "Mostrar diagrama de barras"
+msgstr "Mostrar gráfico de barras"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Group into one figure"
@@ -679,10 +652,9 @@ msgctxt "mlClusteringDensityBased|"
 msgid "Cluster densities"
 msgstr "Densidades de los conglomerados"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "t-SNE cluster plot"
-msgstr "gráfico de clúster t-SNE"
+msgstr "gráfico de conglomerados t-SNE"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Legend"
@@ -764,15 +736,13 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Plots"
 msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Elbow method"
 msgstr "Método del codo"
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Display barplot"
-msgstr "Mostrar diagrama de barras"
+msgstr "Mostrar gráfico de barras"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Group into one figure"
@@ -782,10 +752,9 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Cluster densities"
 msgstr "Densidades de los conglomerados"
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "t-SNE cluster plot"
-msgstr "gráfico de clúster t-SNE"
+msgstr "gráfico de conglomerados t-SNE"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Legend"
@@ -879,10 +848,9 @@ msgctxt "mlClusteringHierarchical|"
 msgid "Cluster densities"
 msgstr "Densidades de los conglomerados"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "t-SNE cluster plot"
-msgstr "gráfico de clúster t-SNE"
+msgstr "gráfico de conglomerados t-SNE"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Legend"
@@ -1012,10 +980,9 @@ msgctxt "mlClusteringKMeans|"
 msgid "Cluster densities"
 msgstr "Densidades de los conglomerados"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "t-SNE cluster plot"
-msgstr "gráfico de clúster t-SNE"
+msgstr "gráfico de conglomerados t-SNE"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Legend"
@@ -1093,15 +1060,13 @@ msgctxt "mlClusteringRandomForest|"
 msgid "Plots"
 msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Elbow method"
 msgstr "Método del codo"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Display barplot"
-msgstr "Mostrar diagrama de barras"
+msgstr "Mostrar gráfico de barras"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Group into one figure"
@@ -1111,10 +1076,9 @@ msgctxt "mlClusteringRandomForest|"
 msgid "Cluster densities"
 msgstr "Densidades de los conglomerados"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "t-SNE cluster plot"
-msgstr "gráfico de clúster t-SNE"
+msgstr "gráfico de conglomerados t-SNE"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Legend"
@@ -1261,16 +1225,14 @@ msgctxt "mlRegressionKnn|"
 msgid "Epanechnikov"
 msgstr "Epanechnikov"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Biweight"
-msgstr "Bipeso"
+msgstr "Ponderación doble"
 
 msgctxt "mlRegressionKnn|"
 msgid "Triweight"
-msgstr "Triple ponderación"
+msgstr "Ponderación triple"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Cosine"
 msgstr "Coseno"
@@ -1432,10 +1394,9 @@ msgctxt "mlRegressionRegularized|"
 msgid "Legend"
 msgstr "Leyenda"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "λ evaluation"
-msgstr "λ evaluación"
+msgstr "Evaluación de λ"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Training Parameters"
@@ -1474,10 +1435,12 @@ msgid ""
 "Explore the relation between variables using data-driven methods for "
 "regression, classification, and clustering"
 msgstr ""
+"Explorar la relación entre las variables que utilizan métodos basados en "
+"datos para análisis de regresión, de clasificación y de conglomerados"
 
 msgctxt "Description|"
 msgid "Neural Network"
-msgstr ""
+msgstr "Red Neuronal"
 
 msgctxt "Description|"
 msgid "Neural Network Regression"
@@ -1587,7 +1550,6 @@ msgctxt "mlClassificationNeuralNetwork|"
 msgid "Legend"
 msgstr "Leyenda"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Points"
 msgstr "Puntos"
@@ -2257,11 +2219,11 @@ msgstr "Establecer semilla"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Max. iterations"
-msgstr ""
+msgstr "Máx. iteraciones"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Fuzziness parameter"
-msgstr ""
+msgstr "Parámetro de borrosidad"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Set seed"
@@ -2269,11 +2231,11 @@ msgstr "Establecer semilla"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Clusters"
-msgstr ""
+msgstr "Conglomerados"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Max. clusters"
-msgstr ""
+msgstr "Máx. conglomerados"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Distance"
@@ -2293,21 +2255,20 @@ msgstr "Establecer semilla"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Clusters"
-msgstr ""
+msgstr "Conglomerados"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Max. clusters"
-msgstr ""
+msgstr "Máx. conglomerados"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Max. iterations"
-msgstr ""
+msgstr "Máx. iteraciones"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Random sets"
-msgstr ""
+msgstr "Conjuntos aleatorios"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Algorithm"
 msgstr "Algoritmo"
@@ -2318,11 +2279,11 @@ msgstr "Establecer semilla"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Clusters"
-msgstr ""
+msgstr "Conglomerados"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Max. clusters"
-msgstr ""
+msgstr "Máx. conglomerados"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Trees"
@@ -2334,11 +2295,11 @@ msgstr "Establecer semilla"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Clusters"
-msgstr ""
+msgstr "Conglomerados"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Max. clusters"
-msgstr ""
+msgstr "Máx. conglomerados"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Shrinkage"
