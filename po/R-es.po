@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
 "POT-Creation-Date: 2021-10-30 03:23\n"
-"PO-Revision-Date: 2021-11-22 22:59+0000\n"
+"PO-Revision-Date: 2021-11-29 00:22+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/es/>\n"
@@ -14,16 +14,16 @@ msgstr ""
 "X-Generator: Weblate 4.10-dev\n"
 
 msgid "K-Nearest Neighbors Classification"
-msgstr ""
+msgstr "Clasificación de los K-Vecinos más próximos"
 
 msgid "Linear Discriminant Classification"
-msgstr ""
+msgstr "Clasificación Discriminante Lineal"
 
 msgid "Random Forest Classification"
-msgstr ""
+msgstr "Clasificación en Bosques Aleatorios"
 
 msgid "Boosting Classification"
-msgstr ""
+msgstr "Clasificación de Potenciación"
 
 msgid "Neural Network Classification"
 msgstr "Clasificación de Red Neuronal"
@@ -160,50 +160,54 @@ msgid "Evaluation Metrics"
 msgstr ""
 
 msgid "Precision"
-msgstr ""
+msgstr "Precisión"
 
 msgid "Recall"
-msgstr ""
+msgstr "Recuerdo"
 
 msgid "F1 Score"
-msgstr ""
+msgstr "Puntuación F1"
 
 msgid "Support"
-msgstr ""
+msgstr "Apoyo"
 
 msgid "AUC"
-msgstr ""
+msgstr "AUC"
 
 msgid ""
 "Area Under Curve (AUC) is calculated for every class against all other "
 "classes."
 msgstr ""
+"El Área Bajo la Curva (AUC) se calcula para cada clase contra todas las "
+"otras clases."
 
 msgid "Average / Total"
-msgstr ""
+msgstr "Media/Total"
 
 msgid "Class Proportions"
-msgstr ""
+msgstr "Proporciones de Clase"
 
 msgid "Data Set"
-msgstr ""
+msgstr "Conjunto de Datos"
 
 msgid "Training Set"
-msgstr ""
+msgstr "Conjunto de Entrenamiento"
 
 msgid "Validation Set"
-msgstr ""
+msgstr "Conjunto de Verificación"
 
 msgid "Training and Validation Set"
-msgstr ""
+msgstr "Conjunto de Entrenamiento y Validación"
 
 msgid "Test Set"
-msgstr ""
+msgstr "Conjunto de Contraste"
 
 msgid ""
 "You have specified more clusters than distinct data points. Please choose a "
 "number lower than %s."
 msgstr ""
+"Se han indicado más conglomerados que puntos diferentes de datos. Por favor, "
+"escoge un número menor que %s."
 
 msgid ""
 "R package error: The hclust clustering algorithm from the stats R package "
@@ -212,22 +216,22 @@ msgid ""
 msgstr ""
 
 msgid "K-Means Clustering"
-msgstr ""
+msgstr "Conglomerados con Medias K"
 
 msgid "Fuzzy C-Means Clustering"
-msgstr ""
+msgstr "Conglomerados con Medias C Borrosas"
 
 msgid "Hierarchical Clustering"
-msgstr ""
+msgstr "Conglomerados Jerárquicos"
 
 msgid "Density-Based Clustering"
-msgstr ""
+msgstr "Conglomerados Basados en la Densidad"
 
 msgid "Random Forest Clustering"
-msgstr ""
+msgstr "Conglomerados en Bosques Aleatorios"
 
 msgid "Clusters"
-msgstr ""
+msgstr "Conglomerados"
 
 msgid "N"
 msgstr "N"
@@ -584,31 +588,32 @@ msgid "Linear discriminant"
 msgstr "Discriminantes Lineales"
 
 msgid "Boosting"
-msgstr ""
+msgstr "Potenciación"
 
 msgid "Random forest"
-msgstr ""
+msgstr "Bosque aleatorio"
 
 msgid "Regularized linear regression"
-msgstr ""
+msgstr "Regresión lineal regularizada"
 
 msgid "Neural network"
-msgstr ""
+msgstr "Red neuronal"
 
 msgid "Error: The trained model is not created in JASP."
-msgstr ""
+msgstr "Fallo: El modelo entrenado no se creó en JASP."
 
 msgid "The trained model (type: %1$s) is currently not supported in JASP."
-msgstr ""
+msgstr "Actualmente no se admite el modelo entrenado (tipo: %1$s) en JASP."
 
 msgid "Error: The trained model is created using a different version of JASP."
 msgstr ""
+"Fallo: El modelo entrenado se creó utilizando una versión distinta de JASP."
 
 msgid "Loaded Model"
-msgstr ""
+msgstr "Modelo Cargado"
 
 msgid "Classification"
-msgstr ""
+msgstr "Clasificación"
 
 msgid "Regression"
 msgstr "Regresión"
@@ -620,6 +625,8 @@ msgid ""
 "The trained model is not applied because the the following predictors are "
 "missing: <i>%1$s</i>."
 msgstr ""
+"El modelo entrenado no se aplica porque faltan los siguientes predictores: "
+"<i>%1$s</i>."
 
 msgid ""
 "The following predictors are unused because they are not a predictor "
@@ -637,7 +644,7 @@ msgid "Predictions for New Data"
 msgstr ""
 
 msgid "Row"
-msgstr ""
+msgstr "Fila"
 
 msgid "Relative Influence"
 msgstr ""
