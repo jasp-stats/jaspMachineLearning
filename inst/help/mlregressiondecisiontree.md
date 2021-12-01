@@ -35,6 +35,7 @@ Decision Trees is a supervised learning algorithm that uses a decision tree as a
 - Min. observations per split: The minimum number of observations that must exist in a node in order for a split to be attempted.
 - Min. observations in terminal: The minimum number of observations in any terminal node.
 - Max. interaction depth: Set the maximum depth of any node of the final tree.
+- Complexity parameter: Any split that does not decrease the overall lack of fit by a factor of this parameter is not attempted.
 - Scale variables: Scales the continuous variables. Standardization ensures that values of variables from different scales range into a specific similar scale. As a result, standardizing provides numerical stability, which improves the clustering output. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
 - Set seed: Gives the option to set a seed for your analysis. Setting a seed will exclude random processes influencing an analysis. For example, setting a seed makes it possible to re-run analyses with the same data splits.
 

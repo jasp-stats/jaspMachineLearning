@@ -103,7 +103,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   table$position <- position
   table$dependOn(options = c(
     "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "validationDataManual",
-    "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
+    "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid", "cp",
     "estimationMethod", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode", "cost", "tolerance", "epsilon",
     "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "saveModel", "savePath",
     "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
@@ -297,7 +297,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "validationDataManual",
     "target", "predictors", "seed", "seedBox", "confusionTable", "confusionProportions", "maxK", "noOfFolds", "modelValid",
     "estimationMethod", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode", "nSplit", "cost", "tolerance", "epsilon",
-    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual",
+    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "cp",
     "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
   ))
   jaspResults[["confusionTable"]] <- table
@@ -347,7 +347,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   plot$position <- position
   plot$dependOn(options = c(
     "decisionBoundary", "plotDensities", "plotStatistics", "trainingDataManual", "scaleEqualSD", "modelOpt",
-    "target", "predictors", "seed", "seedBox", "modelValid", "estimationMethod",
+    "target", "predictors", "seed", "seedBox", "modelValid", "estimationMethod", "cp",
     "maxK", "noOfFolds", "modelValid", "noOfNearestNeighbors", "distanceParameterManual", "weights",
     "plotLegend", "plotPoints", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors",
     "shrinkage", "intDepth", "nNode", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "nSplit", "cost", "tolerance", "epsilon",
@@ -471,7 +471,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     predictions <- as.factor(max.col(predict(fit, newdata = grid)))
     levels(predictions) <- unique(dataset[, options[["target"]]])
   } else if (type == "rpart") {
-    fit <- rpart::rpart(formula, data = dataset, method = "class", control = rpart::rpart.control(minsplit = options[["nSplit"]], minbucket = options[["nNode"]], maxdepth = options[["intDepth"]]))
+    fit <- rpart::rpart(formula, data = dataset, method = "class", control = rpart::rpart.control(minsplit = options[["nSplit"]], minbucket = options[["nNode"]], maxdepth = options[["intDepth"]], cp = options[["cp"]]))
     predictions <- as.factor(max.col(predict(fit, newdata = grid)))
     levels(predictions) <- unique(dataset[, options[["target"]]])
   } else if (type == "svm") {
@@ -525,7 +525,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   plot$position <- position
   plot$dependOn(options = c(
     "rocCurve", "trainingDataManual", "scaleEqualSD", "modelOpt", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "target", "predictors", "seed", "seedBox", "modelValid", "estimationMethod",
+    "target", "predictors", "seed", "seedBox", "modelValid", "estimationMethod", "cp",
     "maxK", "noOfFolds", "modelValid", "noOfNearestNeighbors", "distanceParameterManual", "weights",
     "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode", "holdoutData", "testDataManual", "nSplit", "cost", "tolerance", "epsilon",
     "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
@@ -607,7 +607,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       )
       score <- max.col(predict(fit, test))
     } else if (type == "rpart") {
-      fit <- rpart::rpart(formula, data = typeData, method = "class", control = rpart::rpart.control(minsplit = options[["nSplit"]], minbucket = options[["nNode"]], maxdepth = options[["intDepth"]]))
+      fit <- rpart::rpart(formula, data = typeData, method = "class", control = rpart::rpart.control(minsplit = options[["nSplit"]], minbucket = options[["nNode"]], maxdepth = options[["intDepth"]], cp = options[["cp"]]))
       score <- max.col(predict(fit, test))
     } else if (type == "svm") {
       fit <- e1071::svm(formula, data = typeData, type = "C-classification", kernel = options[["weights"]], cost = options[["cost"]], tolerance = options[["tolerance"]], epsilon = options[["epsilon"]], scale = FALSE)
@@ -748,7 +748,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   table$dependOn(options = c(
     "validationMeasures", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
     "target", "predictors", "seed", "seedBox", "modelValid", "maxK", "noOfFolds", "modelValid", "holdoutData", "testDataManual",
-    "estimationMethod", "shrinkage", "intDepth", "nNode", "validationDataManual", "testSetIndicatorVariable", "testSetIndicator", "nSplit", "cost", "tolerance", "epsilon",
+    "estimationMethod", "shrinkage", "intDepth", "nNode", "validationDataManual", "testSetIndicatorVariable", "testSetIndicator", "nSplit", "cost", "tolerance", "epsilon", "cp",
     "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
   ))
   table$addColumnInfo(name = "group", title = "", type = "string")
@@ -808,7 +808,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   table$position <- position
   table$dependOn(options = c(
     "classProportionsTable", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
-    "target", "predictors", "seed", "seedBox", "modelValid", "maxK", "noOfFolds", "modelValid", "holdoutData", "testDataManual",
+    "target", "predictors", "seed", "seedBox", "modelValid", "maxK", "noOfFolds", "modelValid", "holdoutData", "testDataManual", "cp",
     "estimationMethod", "shrinkage", "intDepth", "nNode", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "nSplit", "cost", "tolerance", "epsilon",
     "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
   ))
@@ -883,7 +883,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     jaspResults[["predictionsColumn"]] <- createJaspColumn(columnName = options[["predictionsColumn"]])
     jaspResults[["predictionsColumn"]]$dependOn(options = c(
       "predictionsColumn", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
-      "target", "predictors", "seed", "seedBox", "modelValid", "maxK", "noOfFolds", "modelValid", "holdoutData", "testDataManual",
+      "target", "predictors", "seed", "seedBox", "modelValid", "maxK", "noOfFolds", "modelValid", "holdoutData", "testDataManual", "cp",
       "estimationMethod", "shrinkage", "intDepth", "nNode", "validationDataManual", "testSetIndicatorVariable", "testSetIndicator", "nSplit", "cost", "tolerance", "epsilon",
       "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
     ))
@@ -977,7 +977,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 }
 
 .calcAUCScore.partClassification <- function(AUCformula, test, typeData, options, jaspResults, ...) {
-  fit <- rpart::rpart(AUCformula, data = typeData, method = "class", control = rpart::rpart.control(minsplit = options[["nSplit"]], minbucket = options[["nNode"]], maxdepth = options[["intDepth"]]))
+  fit <- rpart::rpart(AUCformula, data = typeData, method = "class", control = rpart::rpart.control(minsplit = options[["nSplit"]], minbucket = options[["nNode"]], maxdepth = options[["intDepth"]], cp = options[["cp"]]))
   score <- max.col(predict(fit, test))
   return(score)
 }

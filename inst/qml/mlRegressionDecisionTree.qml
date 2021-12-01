@@ -141,6 +141,15 @@ Form
 				defaultValue:					30
 			}
 
+			DoubleField
+			{
+				text:							qsTr("Complexity parameter")
+				name:							"cp"
+				min:							0
+				defaultValue:					0.01
+			}
+
+
 			CheckBox
 			{
 				text:							qsTr("Scale variables")

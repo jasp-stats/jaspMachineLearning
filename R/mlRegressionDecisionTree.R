@@ -71,7 +71,7 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   testSet <- dataset[-trainingIndex, ]
   trainingFit <- rpart::rpart(
     formula = formula, data = trainingSet, method = "anova", x = TRUE, y = TRUE,
-    control = rpart::rpart.control(minsplit = options[["nSplit"]], minbucket = options[["nNode"]], maxdepth = options[["intDepth"]])
+    control = rpart::rpart.control(minsplit = options[["nSplit"]], minbucket = options[["nNode"]], maxdepth = options[["intDepth"]], cp = options[["cp"]])
   )
   # Use the specified model to make predictions for dataset
   testPredictions <- predict(trainingFit, newdata = testSet)
@@ -99,7 +99,7 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   table$position <- position
   table$dependOn(options = c(
     "tableVariableImportance", "trainingDataManual", "scaleEqualSD", "target", "predictors", "seed", "seedBox",
-    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "nSplit", "nNode", "intDepth"
+    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "nSplit", "nNode", "intDepth", "cp"
   ))
   table$addColumnInfo(name = "predictor", title = " ", type = "string")
   table$addColumnInfo(name = "imp", title = gettext("Relative Importance"), type = "number")
@@ -124,7 +124,7 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   table$position <- position
   table$dependOn(options = c(
     "tableSplits", "trainingDataManual", "scaleEqualSD", "target", "predictors", "seed", "seedBox",
-    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "nSplit", "nNode", "intDepth"
+    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "nSplit", "nNode", "intDepth", "cp"
   ))
   table$addColumnInfo(name = "predictor", title = " ", type = "string")
   table$addColumnInfo(name = "index", title = gettext("Split Point"), type = "number")
@@ -157,7 +157,7 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   plot$position <- position
   plot$dependOn(options = c(
     "plotDecisionTree", "trainingDataManual", "scaleEqualSD", "target", "predictors", "seed", "seedBox",
-    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "nNode", "nSplit", "intDepth"
+    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "nNode", "nSplit", "intDepth", "cp"
   ))
   jaspResults[["plotDecisionTree"]] <- plot
   if (!ready) {
