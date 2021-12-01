@@ -195,7 +195,7 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   nodeNames[is.na(nodeNames)] <- labels
   p$data$info <- paste0(nodeNames, "\nn = ", p$data$nodesize)
   p <- p + ggparty::geom_edge() +
-    ggparty::geom_edge_label(mapping = ggplot2::aes(label = breaks_label)) +
+    ggparty::geom_edge_label(mapping = ggplot2::aes(label = paste(substr(breaks_label, start = 1, stop = 15))), fill = NA) +
     ggparty::geom_node_splitvar(mapping = ggplot2::aes(size = max(3, nodesize) / 2, label = info), fill = "white", col = "black") +
     ggparty::geom_node_label(mapping = ggplot2::aes(label = info, size = max(3, nodesize) / 2), ids = "terminal", fill = "white", col = "black") +
     ggplot2::scale_x_continuous(name = NULL, limits = c(min(p$data$x) - abs(0.1 * min(p$data$x)), max(p$data$x) * 1.1)) +
