@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2021-12-04 13:59+0000\n"
+"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.10-dev\n"
 "X-Language: es\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -196,10 +202,9 @@ msgctxt "mlClassificationBoosting|"
 msgid "Data split"
 msgstr "Separador de datos"
 
-#, fuzzy
 msgctxt "mlClassificationBoosting|"
 msgid "Out-of-bag improvement"
-msgstr "Mejora fuera de la bolsa"
+msgstr "Mejora \"descubierto el pastel\""
 
 msgctxt "mlClassificationBoosting|"
 msgid "ROC curves"
@@ -525,10 +530,9 @@ msgctxt "mlClassificationRandomForest|"
 msgid "Data split"
 msgstr "Separador de datos"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Out-of-bag accuracy"
-msgstr "Precisión fuera de la bolsa"
+msgstr "Precisión \"descubierto el pastel\""
 
 msgctxt "mlClassificationRandomForest|"
 msgid "ROC curves"
@@ -1134,10 +1138,9 @@ msgctxt "mlRegressionBoosting|"
 msgid "Data split"
 msgstr "Separador de datos"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Out-of-bag improvement"
-msgstr "Mejora fuera de la bolsa"
+msgstr "Mejora \"descubierto el pastel\""
 
 msgctxt "mlRegressionBoosting|"
 msgid "Predictive performance"
@@ -1295,10 +1298,9 @@ msgctxt "mlRegressionRandomForest|"
 msgid "Data split"
 msgstr "Separador de datos"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Out-of-bag error"
-msgstr "Error fuera de la bolsa"
+msgstr "Error \"descubierto el pastel\""
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Predictive performance"
@@ -1470,11 +1472,11 @@ msgstr "Guardar como"
 
 msgctxt "ExportResults|"
 msgid "e.g., location/model.jaspML"
-msgstr ""
+msgstr "p.e., posición/modelo.jaspML"
 
 msgctxt "ExportResults|"
 msgid "Save trained model"
-msgstr ""
+msgstr "Guardar el modelo entrenado"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Target"
@@ -1666,7 +1668,7 @@ msgstr "Criterio de parada de la función de pérdida"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Max. training repetitions"
-msgstr ""
+msgstr "Máx. repeticiones de entrenamiento"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Scale predictors"
@@ -1686,36 +1688,35 @@ msgstr "Manual"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Nodes"
-msgstr ""
+msgstr "Nodos"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Hidden layer "
-msgstr ""
+msgstr "Estrato oculto "
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Optimized"
 msgstr "Optimizado"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Population size"
-msgstr ""
+msgstr "Tamaño de la población"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Generations"
-msgstr ""
+msgstr "Generaciones"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Parent selection"
-msgstr ""
+msgstr "Selección de progenitor"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Roulette wheel"
-msgstr ""
+msgstr "Rueda de ruleta"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Universal"
-msgstr ""
+msgstr "Universal"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Rank"
@@ -1731,7 +1732,7 @@ msgstr "Candidatos"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Crossover method"
-msgstr ""
+msgstr "Método cruzado"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Uniform"
@@ -1787,13 +1788,12 @@ msgstr "Elitismo"
 
 msgctxt "mlPrediction|"
 msgid "Trained model"
-msgstr ""
+msgstr "Modelo entrenado"
 
 msgctxt "mlPrediction|"
 msgid "e.g., location/model.jaspML"
-msgstr ""
+msgstr "p.e., posición/modelo.jaspML"
 
-#, fuzzy
 msgctxt "mlPrediction|"
 msgid "Predictors"
 msgstr "Predictores"
@@ -1980,7 +1980,7 @@ msgstr "Criterio de parada de la función de pérdida"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Max. training repetitions"
-msgstr ""
+msgstr "Máx. repeticiones de entrenamiento"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Scale variables"
@@ -2000,36 +2000,35 @@ msgstr "Manual"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Nodes"
-msgstr ""
+msgstr "Nodos"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Hidden layer "
-msgstr ""
+msgstr "Estrato oculto "
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Optimized"
 msgstr "Optimizado"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Population size"
-msgstr ""
+msgstr "Tamaño de la población"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Generations"
-msgstr ""
+msgstr "Generaciones"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Parent selection"
-msgstr ""
+msgstr "Selección de progenitor"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Roulette wheel"
-msgstr ""
+msgstr "Rueda de ruleta"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Universal"
-msgstr ""
+msgstr "Universal"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Rank"
@@ -2049,7 +2048,7 @@ msgstr "Candidatos"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Crossover method"
-msgstr ""
+msgstr "Método cruzado"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Uniform"
@@ -2109,7 +2108,7 @@ msgstr "Nombre de columna"
 
 msgctxt "DataSplit|"
 msgid "Test set indicator"
-msgstr ""
+msgstr "Probar el indicador de conjunto"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Shrinkage"
@@ -2197,11 +2196,11 @@ msgstr "Máx. árboles"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Epsilon neighborhood size"
-msgstr ""
+msgstr "Tamaño del épsilon de vecindad"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Min. core points"
-msgstr ""
+msgstr "Mín. puntos del núcleo"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Distance"
@@ -2377,7 +2376,7 @@ msgstr "Máx. árboles"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Convergence threshold"
-msgstr ""
+msgstr "Umbral de convergencia"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Penalty"
