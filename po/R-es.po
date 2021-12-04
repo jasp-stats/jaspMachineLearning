@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
 "POT-Creation-Date: 2021-10-30 03:23\n"
-"PO-Revision-Date: 2021-11-29 00:22+0000\n"
+"PO-Revision-Date: 2021-12-04 13:59+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/es/>\n"
@@ -78,16 +78,22 @@ msgstr "Precisión de OOB"
 
 msgid "Please provide a target variable and at least %i predictor variable(s)."
 msgstr ""
+"Por favor, proporciona una variable como objetivo y, al menos, %i variable(s)"
+" predictora(s)."
 
 msgid "The trained model is saved as <i>%1$s</i>."
-msgstr ""
+msgstr "El modelo entrenado se guarda como <i>%1$s</i>."
 
 msgid "The trained model is not saved until 'Save trained model' is checked."
 msgstr ""
+"El modelo entrenado no se guarda hasta que se marque 'Guardar el modelo "
+"entrenado'."
 
 msgid ""
 "The model is optimized with respect to the <i>validation set accuracy</i>."
 msgstr ""
+"El modelo se optimiza respecto a la <i>precisión del conjunto de "
+"validaciones</i>."
 
 msgid ""
 "The optimum number of nearest neighbors is the maximum number. You might "
@@ -114,6 +120,8 @@ msgstr "t"
 
 msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
 msgstr ""
+"El modelo se optimiza respecto a la <i>precisión \"descubierto el pastel\""
+"</i>."
 
 msgid "The model is optimized with respect to the <i>sum of squares</i>."
 msgstr ""
@@ -439,6 +447,8 @@ msgid ""
 "The model is optimized with respect to the <i>out-of-bag mean squared error</"
 "i>."
 msgstr ""
+"El modelo se optimiza respecto al <i>error cuadrático medio \"descubierto el "
+"pastel\"</i>."
 
 msgid "Gaussian"
 msgstr "Normal"
@@ -455,9 +465,8 @@ msgstr ""
 msgid "Observed Test Values"
 msgstr ""
 
-#, fuzzy
 msgid "Predicted Test Values"
-msgstr "Predijo"
+msgstr "Valores Predichos de los Contrastes"
 
 msgid "Data Split"
 msgstr ""
@@ -579,13 +588,11 @@ msgstr "Importancia de la Variable"
 msgid "Mean decrease in Gini Index"
 msgstr ""
 
-#, fuzzy
 msgid "K-nearest neighbors"
-msgstr "Número de Vecinos Más Cercanos"
+msgstr "K vecinos más próximos"
 
-#, fuzzy
 msgid "Linear discriminant"
-msgstr "Discriminantes Lineales"
+msgstr "Discriminante lineal"
 
 msgid "Boosting"
 msgstr "Potenciación"
@@ -633,9 +640,8 @@ msgid ""
 "variable in the trained model: <i>%1$s</i>."
 msgstr ""
 
-#, fuzzy
 msgid "Nearest Neighbors"
-msgstr "Número de Vecinos Más Cercanos"
+msgstr "Vecinos Más Próximos"
 
 msgid "n(New)"
 msgstr ""
@@ -650,7 +656,7 @@ msgid "Relative Influence"
 msgstr ""
 
 msgid "Out-of-bag Improvement Plot"
-msgstr ""
+msgstr "Gráfico de la Mejora \"Descubierto el Pastel\""
 
 msgid "Training set"
 msgstr ""
@@ -703,9 +709,8 @@ msgstr "Número de Vecinos Más Cercanos"
 msgid "Training and validation set"
 msgstr ""
 
-#, fuzzy
 msgid "Network Weights"
-msgstr "Ponderaciones"
+msgstr "Ponderaciones de Red"
 
 msgid "Node"
 msgstr ""
@@ -846,16 +851,16 @@ msgid "Total increase in node purity"
 msgstr "Aumento total de la pureza del nodo"
 
 msgid "Out-of-bag Classification Accuracy Plot"
-msgstr ""
+msgstr "Gráfico de la Precisión de la Clasificación \"Descubierto el Pastel\""
 
 msgid "Out-of-bag Mean Squared Error Plot"
-msgstr ""
+msgstr "Gráfico del Error Cuadrático Medio \"Descubierto el Pastel\""
 
 msgid "Out-of-bag %sClassification Accuracy"
-msgstr ""
+msgstr "Precisión de la Clasificación %s \"Descubierto el Pastel\""
 
 msgid "Out-of-bag %sMean Squared Error"
-msgstr ""
+msgstr "Error Cuadrático Medio %s \"Descubierto el Pastel\""
 
 msgid "Mean Decrease in Accuracy"
 msgstr ""
