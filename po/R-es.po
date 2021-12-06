@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
 "POT-Creation-Date: 2021-10-30 03:23\n"
-"PO-Revision-Date: 2021-12-04 13:59+0000\n"
+"PO-Revision-Date: 2021-12-06 11:17+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/es/>\n"
@@ -99,21 +99,23 @@ msgid ""
 "The optimum number of nearest neighbors is the maximum number. You might "
 "want to adjust the range of optimization."
 msgstr ""
+"El número óptimo de vecinos más próximos es el número máximo. Quizás quieras "
+"ajustar el rango de la optimización."
 
 msgid "Manhattan"
-msgstr ""
+msgstr "Manhattan"
 
 msgid "Euclidean"
-msgstr ""
+msgstr "Euclídea"
 
 msgid "Moment"
 msgstr "Momento"
 
 msgid "MLE"
-msgstr ""
+msgstr "EMV"
 
 msgid "MVE"
-msgstr ""
+msgstr "EVM (MVE)"
 
 msgid "t"
 msgstr "t"
@@ -124,7 +126,7 @@ msgstr ""
 "</i>."
 
 msgid "The model is optimized with respect to the <i>sum of squares</i>."
-msgstr ""
+msgstr "El modelo se optimiza respecto a la <i>suma de cuadrados\"</i>."
 
 msgid "Confusion Matrix"
 msgstr "Matriz de Desorden"
@@ -136,36 +138,39 @@ msgid "Predicted"
 msgstr "Predijo"
 
 msgid "Decision Boundary Matrix"
-msgstr ""
+msgstr "Matriz Límite de Decisión"
 
 msgid ""
 "Cannot create matrix: not enough numeric variables remain after removing "
 "factor variables. You need at least 2 numeric variables."
 msgstr ""
+"No se puede generar la matriz: no quedan suficientes variables numéricas "
+"después de eliminar las variables de los factores. Necesitas al menos 2 "
+"variables numéricas."
 
 msgid "ROC Curves Plot"
-msgstr ""
+msgstr "Gráfico de Curvas ROC"
 
 msgid "False Positive Rate"
-msgstr ""
+msgstr "Ratio de Falsos Positivos"
 
 msgid "True Positive Rate"
-msgstr ""
+msgstr "Ratio de Verdaderos Positivos"
 
 msgid "Perfect separation"
-msgstr ""
+msgstr "Separación perfecta"
 
 msgid "Andrews Curves Plot"
-msgstr ""
+msgstr "Gráfico de Curvas de Andrews"
 
 msgid "Andrews curves require a minimum of 2 predictor variables."
-msgstr ""
+msgstr "Las curvas de Andrews requieren un mínimo de 2 variables predictoras."
 
 msgid "Box's M-test for Homogeneity of Covariance Matrices"
-msgstr ""
+msgstr "Contraste M de Box para Homogeneidad de las Matrices de Covarianzas"
 
 msgid "Evaluation Metrics"
-msgstr ""
+msgstr "Métricas de Evaluación"
 
 msgid "Precision"
 msgstr "Precisión"
@@ -222,6 +227,10 @@ msgid ""
 "cannot handle data that has 65536 or more rows. We are working on a solution "
 "for this problem. Please try another algorithm in the meantime."
 msgstr ""
+"Fallo en el paquete de R: el algoritmo de conglomerado hclust del paquete "
+"estadístico R no puede manejar datos que están en 65536 filas o más. Estamos "
+"trabajando en una solución para este problema. Por favor, mientras tanto, "
+"intenta otro algoritmo."
 
 msgid "K-Means Clustering"
 msgstr "Conglomerados con Medias K"
@@ -260,37 +269,43 @@ msgid "silhouette"
 msgstr "silueta"
 
 msgid "The model is optimized with respect to the <i>%s</i> value."
-msgstr ""
+msgstr "El modelo está optimizado con respecto al valor de <i>%s</i>."
 
 msgid ""
 "The optimum number of clusters is the maximum number of clusters. You might "
 "want to adjust the range of optimization."
 msgstr ""
+"O número óptimo de conglomerados es el máximo número de conglomerados. Se "
+"podría ajustar el rango de optimización."
 
 msgid ""
 "Your cluster model contains 0 clusters and only Noisepoints, we advise to "
 "change the Eps and MinPts parameters."
 msgstr ""
+"Su modelo de conglomerados contiene 0 Conglomerados y solo Puntos confusos. "
+"Se aconseja cambiar los parámetros Eps y MinPts."
 
 msgid ""
 "Your cluster model contains 1 cluster and 0 Noisepoints. You could change "
 "the Eps and MinPts parameters."
 msgstr ""
+"Su modelo de conglomerados contiene 1 Conglomerado y 0 Puntos confusos. Se "
+"aconseja cambiar los parámetros Eps y MinPts."
 
 msgid "The variables in the model are <b>unstandardized</b>."
-msgstr ""
+msgstr "Las variables del modelo están <b>sin tipificar</b>."
 
 msgid "Cluster Information"
-msgstr ""
+msgstr "Información de Conglomerados"
 
 msgid "Cluster"
-msgstr ""
+msgstr "Conglomerado"
 
 msgid "Size"
 msgstr "Tamaño"
 
 msgid "Explained proportion within-cluster heterogeneity"
-msgstr ""
+msgstr "Proporción explicada de Heterogeneidad dentro del conglomerado"
 
 msgid "Within sum of squares"
 msgstr "Suma de cuadrados Dentro"
@@ -302,28 +317,28 @@ msgid "Centroid %s"
 msgstr "Centroide %s"
 
 msgid "Noisepoints"
-msgstr ""
+msgstr "Puntos confusos"
 
 msgid "The Between Sum of Squares of the %1$s cluster model is %2$s"
-msgstr ""
+msgstr "La Suma de Cuadrados Entre del modelo %1$s de conglomerados es %2$s"
 
 msgid "The Total Sum of Squares of the %1$s cluster model is %2$s"
-msgstr ""
+msgstr "La Suma de Cuadrados Total del modelo %1$s de conglomerados es %2$s"
 
 msgid "Value"
 msgstr "Valor"
 
 msgid "Maximum diameter"
-msgstr ""
+msgstr "Máximo diámetro"
 
 msgid "Minimum separation"
-msgstr ""
+msgstr "Mínima separación"
 
 msgid "Pearson's %s"
-msgstr ""
+msgstr "%s de Pearson"
 
 msgid "Dunn index"
-msgstr ""
+msgstr "Índice de Dunn"
 
 msgid "Entropy"
 msgstr "Entropía"
@@ -343,64 +358,78 @@ msgid "t-SNE Cluster Plot"
 msgstr "Gráfico de Conglomerados t-SNE"
 
 msgid "Noisepoint"
-msgstr ""
+msgstr "Punto confuso"
 
 msgid "Elbow Method Plot"
-msgstr ""
+msgstr "Gráfico del Método del Codo"
 
 msgid "WSS"
-msgstr ""
+msgstr "WSS"
 
 msgid "Number of Clusters"
-msgstr ""
+msgstr "Número de Conglomerados"
 
 msgid "Lowest %s"
-msgstr ""
+msgstr "Menor %s"
 
 msgid "Cluster Means"
-msgstr ""
+msgstr "Medias de los Conglomerados"
 
 msgid "Cluster %s"
-msgstr ""
+msgstr "Conglomerado %s"
 
 msgid "Cluster Density Plots"
-msgstr ""
+msgstr "Gráficos de Densidades de los Conglomerados"
 
 msgid "Density"
 msgstr "Densidad"
 
 msgid "Cluster Mean Plots"
-msgstr ""
+msgstr "Gráficos de Medias de los Conglomerados"
 
 msgid "Cluster Mean"
-msgstr ""
+msgstr "Media de los Conglomerados"
 
 msgid "All predictors"
-msgstr ""
+msgstr "Todos los predictores"
 
 msgid "The variable '%s' can't be both a predictor and a test set indicator."
 msgstr ""
+"La variable '%s' no puede ser al mismo tiempo un predictor y un indicador "
+"del conjunto de contrastes."
 
 msgid ""
 "Your test set indicator should be binary, containing only 1 (included in "
 "test set) and 0 (excluded from test set)."
 msgstr ""
+"El indicador del conjunto de contrastes debería ser binario, conteniendo "
+"solo 1 (incluido en el conjunto de contrastes) y 0 (excluido del conjunto de "
+"contrastes)."
 
 msgid ""
 "You have specified more nearest neighbors than there are observations in the "
 "training set. Please choose a number lower than %d."
 msgstr ""
+"Se han indicado más vecinos más próximos que las observaciones que hay en el "
+"conjunto de entrenamiento. Por favor, escoja un número menor que %d."
 
 msgid ""
 "You have specified more folds than there are observations in the training "
 "and validation set. Please choose a number lower than %d."
 msgstr ""
+"Se han indicado más pliegues que el número de observaciones que hay en el "
+"conjunto de entrenamiento y validación. Por favor, escoja un número menor "
+"que %d."
 
 msgid ""
 "The minimum number of observations per node is too large. Ensure that `2 * "
 "Min. observations in node + 1` > `Training data used per tree * available "
 "training data` (in this case the minimum can be %.3f at most)."
 msgstr ""
+"El número mínimo de observaciones por nodo es demasiado grande. Asegúrese de "
+"que `2 * Min. observaciones en nodo + 1` > `Datos de entrenamiento "
+"utilizados por árbol * datos de entrenamiento disponibles` (en este caso el "
+"mínimo puede ser %.3f como mucho)."
 
 msgid "K-Nearest Neighbors Regression"
 msgstr "Regresión de los K Vecinos Más Próximos"
@@ -434,14 +463,18 @@ msgstr "Error OOB"
 
 msgid "Please provide a target variable and at least %d predictor variable(s)."
 msgstr ""
+"Por favor, proporcione una variable objetivo y, al menos, %d variable(s) "
+"predictora(s)."
 
 msgid ""
 "The model is optimized with respect to the <i>validation set mean squared "
 "error</i>."
 msgstr ""
+"El modelo se optimiza respecto al <i>error cuadrático medio del conjunto de "
+"verificaciones</i>."
 
 msgid "When %s is set to 0 linear regression is performed."
-msgstr ""
+msgstr "Cando se pone %s en 0, se realiza la regresión lineal."
 
 msgid ""
 "The model is optimized with respect to the <i>out-of-bag mean squared error</"
@@ -458,48 +491,50 @@ msgstr "Laplace"
 
 msgid "R%s cannot be computed due to lack of variance in the predictions.</i>"
 msgstr ""
+"No se puede calcular el R%s debido a la falta de varianza en las "
+"predicciones.</i>"
 
 msgid "Predictive Performance Plot"
-msgstr ""
+msgstr "Gráfico de Capacidad Predictiva"
 
 msgid "Observed Test Values"
-msgstr ""
+msgstr "Valores Observados de los Contrastes"
 
 msgid "Predicted Test Values"
 msgstr "Valores Predichos de los Contrastes"
 
 msgid "Data Split"
-msgstr ""
+msgstr "Separador de Datos"
 
 msgid "Train: %d"
-msgstr ""
+msgstr "Entrenamiento: %d"
 
 msgid "Test: %d"
-msgstr ""
+msgstr "Contraste: %d"
 
 msgid "Total: %d"
-msgstr ""
+msgstr "Total: %d"
 
 msgid "Validation: %d"
-msgstr ""
+msgstr "Validación: %d"
 
 msgid "Train and validation: %d"
-msgstr ""
+msgstr "Entrenamiento y validación: %d"
 
 msgid "Object passed to .scaleNumericData.matrix was not numeric!"
-msgstr ""
+msgstr "¡El objeto pasado a .scaleNumericData.matrix no era numérico!"
 
 msgid "The target variable should have at least 2 classes."
-msgstr ""
+msgstr "La variable objetivo debe tener al menos 2 clases."
 
 msgid "Linear Discriminant Coefficients"
-msgstr ""
+msgstr "Coeficientes del Discriminante Lineal"
 
 msgid "(Constant)"
-msgstr ""
+msgstr "(Constante)"
 
 msgid "Prior and Posterior Class Probabilities"
-msgstr ""
+msgstr "Probabilidades de Clase Previa y Posterior"
 
 msgid "Prior"
 msgstr "Previo"
@@ -508,19 +543,19 @@ msgid "Posterior"
 msgstr "Posterior"
 
 msgid "Class Means in Training Data"
-msgstr ""
+msgstr "Medias de Clase en los Datos de Entrenamiento"
 
 msgid "Linear Discriminant Matrix"
-msgstr ""
+msgstr "Matriz del Discriminante Lineal"
 
 msgid "Tests of Equality of Class Means"
-msgstr ""
+msgstr "Contrastes de Igualdad de Medias de Clase"
 
 msgid "The null hypothesis specifies equal class means."
-msgstr ""
+msgstr "La hipótesis nula indica medias de clase iguales."
 
 msgid "Tests of Equality of Covariance Matrices"
-msgstr ""
+msgstr "Contrastes de Igualdad de Matrices de Covarianzas"
 
 msgid "df"
 msgstr "gl"
@@ -529,55 +564,58 @@ msgid "p"
 msgstr "p"
 
 msgid "The null hypothesis specifies equal covariance matrices."
-msgstr ""
+msgstr "La hipótesis nula indica matrices de covarianzas iguales."
 
 msgid "Pooled Within-Class Matrices Correlations"
-msgstr ""
+msgstr "Correlaciones de las Matrices Combinadas Dentro de Clase"
 
 msgid "An error occurred in the 'neuralnet' package: %1$s"
-msgstr ""
+msgstr "Ocurrió un fallo en el paquete 'neuralnet': %1$s"
 
 msgid "Optimizing network topology"
-msgstr ""
+msgstr "Optimizando la topología de la red"
 
 msgid "K-Distance Plot"
-msgstr ""
+msgstr "Gráfico de Distancias K"
 
 msgid "Points Sorted by Distance"
-msgstr ""
+msgstr "Puntos Ordenados según la Distancia"
 
 msgid ""
 "%s-Nearest Neighbors \n"
 "Distance"
 msgstr ""
+"Distancia de los\n"
+"%s Vecinos Más Próximos"
 
 msgid "Maximum curvature = %s"
-msgstr ""
+msgstr "Curvatura máxima = %s"
 
 msgid "End of recursion reached without converging"
-msgstr ""
+msgstr "Se llegó al final de la recursividad sin converger"
 
 msgid "x and y must be numeric and finite. Missing values not allowed."
-msgstr ""
+msgstr "x e y deben ser numéricos y finitos. No se admiten valores ausentes."
 
 msgid "x and y must be of equal length."
-msgstr ""
+msgstr "x e y deben tener la misma longitud."
 
 msgid "Need more points to find cutoff."
-msgstr ""
+msgstr "Se necesitan más puntos para encontrar el punto de corte."
 
 msgid "Need to specify fraction of maximum slope."
-msgstr ""
+msgstr "Se necesita indicar la fracción de la pendiente máxima."
 
 msgid ""
 "Fraction of maximum slope must be positive and be less than or equal to 1."
 msgstr ""
+"La fracción de la pendiente máxima debe ser positiva, y menor o igual que 1."
 
 msgid "Method must be either 'first' or 'curvature'."
-msgstr ""
+msgstr "El método debe ser 'primero' o 'curvatura'."
 
 msgid "Cutoff point is beyond range. Returning NA."
-msgstr ""
+msgstr "El punto de corte está más allá del rango. Se devuelve NA."
 
 msgid "Dendrogram"
 msgstr "Dendrograma"
@@ -586,7 +624,7 @@ msgid "Variable Importance"
 msgstr "Importancia de la Variable"
 
 msgid "Mean decrease in Gini Index"
-msgstr ""
+msgstr "Decrecimiento de la media en el Índice de Gini"
 
 msgid "K-nearest neighbors"
 msgstr "K vecinos más próximos"
@@ -639,36 +677,38 @@ msgid ""
 "The following predictors are unused because they are not a predictor "
 "variable in the trained model: <i>%1$s</i>."
 msgstr ""
+"No se usan los siguientes predictores porque no son variables predictoras en "
+"el modelo entrenado: <i>%1$s</i>."
 
 msgid "Nearest Neighbors"
 msgstr "Vecinos Más Próximos"
 
 msgid "n(New)"
-msgstr ""
+msgstr "n(Nuevo)"
 
 msgid "Predictions for New Data"
-msgstr ""
+msgstr "Predicciones para los Datos Nuevos"
 
 msgid "Row"
 msgstr "Fila"
 
 msgid "Relative Influence"
-msgstr ""
+msgstr "Influencia Relativa"
 
 msgid "Out-of-bag Improvement Plot"
 msgstr "Gráfico de la Mejora \"Descubierto el Pastel\""
 
 msgid "Training set"
-msgstr ""
+msgstr "Conjunto de entrenamiento"
 
 msgid "OOB Change in %s Multinomial Deviance"
-msgstr ""
+msgstr "Cambio OOB en la Desviación Multinomial de %s"
 
 msgid "OOB Change in %s Binomial Deviance"
-msgstr ""
+msgstr "Cambio OOB en la Desviación Binomial de %s"
 
 msgid "OOB Change in %s%s Deviance"
-msgstr ""
+msgstr "Cambio OOB en la Desviación de %s%s"
 
 msgid "Number of Trees"
 msgstr "Número de Árboles"
@@ -683,85 +723,85 @@ msgid "Binomial Deviance"
 msgstr "Desviación de Binomial"
 
 msgid "%s Deviance"
-msgstr ""
+msgstr "%s Desviación"
 
 msgid "Relative Influence Plot"
-msgstr ""
+msgstr "Gráfico de Influencia Relativa"
 
 msgid "Classification Accuracy Plot"
-msgstr ""
+msgstr "Gráfico de Precisión de la Clasificación"
 
 msgid "Mean Squared Error Plot"
-msgstr ""
+msgstr "Gráfico del Error Cuadrático Medio"
 
 msgid "Classification Accuracy"
-msgstr ""
+msgstr "Precisión de la Clasificación"
 
 msgid "Mean Squared Error"
-msgstr ""
+msgstr "Error Cuadrático Medio"
 
 msgid "Validation set"
-msgstr ""
+msgstr "Conjunto de validación"
 
 msgid "Number of Nearest Neighbors"
 msgstr "Número de Vecinos Más Cercanos"
 
 msgid "Training and validation set"
-msgstr ""
+msgstr "Conjunto de entrenamiento y validación"
 
 msgid "Network Weights"
 msgstr "Ponderaciones de Red"
 
 msgid "Node"
-msgstr ""
+msgstr "Nodo"
 
 msgid "Layer"
-msgstr ""
+msgstr "Estrato"
 
 msgid "Weight"
 msgstr "Ponderación"
 
 msgid "linear"
-msgstr ""
+msgstr "lineal"
 
 msgid "binary step"
-msgstr ""
+msgstr "paso binario"
 
 msgid "logistic sigmoid"
-msgstr ""
+msgstr "sigmoide logística"
 
 msgid "sine"
-msgstr ""
+msgstr "seno"
 
 msgid "cosine"
-msgstr ""
+msgstr "coseno"
 
 msgid "inverse tangent"
-msgstr ""
+msgstr "tangente inversa"
 
 msgid "hyperbolic tangent"
-msgstr ""
+msgstr "tangente hiperbólica"
 
 msgid "rectified linear unit (ReLU)"
-msgstr ""
+msgstr "unidad lineal corregida (ReLU)"
 
 msgid "softplus"
-msgstr ""
+msgstr "softplus"
 
 msgid "softsign"
-msgstr ""
+msgstr "softsign"
 
 msgid "exponential linear unit (ELU)"
-msgstr ""
+msgstr "unidad lineal exponencial (ELU)"
 
 msgid "leaky rectified linear unit (Leaky ReLU)"
-msgstr ""
+msgstr "unidad lineal corregida permeable (Leaky ReLU)"
 
 msgid "sigmoid linear unit (SiLU)"
-msgstr ""
+msgstr "unidad lineal sigmoidal (SiLU)"
 
 msgid "mish"
-msgstr ""
+msgstr "mish"
 
 msgid "gaussian"
 msgstr "Normal"
@@ -770,22 +810,22 @@ msgid "gaussian error linear unit (GeLU)"
 msgstr "unidad lineal de error Normal (GeLU)"
 
 msgid "The weights are input for the %1$s activation function."
-msgstr ""
+msgstr "Las ponderaciones son entradas para la función %1$s de activación."
 
 msgid "Network Structure Plot"
-msgstr ""
+msgstr "Gráfico de la Estructura de Red"
 
 msgid "Intercept"
 msgstr "Constante"
 
 msgid "Input layer"
-msgstr ""
+msgstr "Estrato de entrada"
 
 msgid "Output layer"
-msgstr ""
+msgstr "Estrato de salida"
 
 msgid "Hidden layer %1$s"
-msgstr ""
+msgstr "Estrato oculto %1$s"
 
 msgid "Linear"
 msgstr "Lineal"
@@ -863,19 +903,19 @@ msgid "Out-of-bag %sMean Squared Error"
 msgstr "Error Cuadrático Medio %s \"Descubierto el Pastel\""
 
 msgid "Mean Decrease in Accuracy"
-msgstr ""
+msgstr "Decrecimiento de la Media en la Precisión"
 
 msgid "Total Increase in Node Purity"
-msgstr ""
+msgstr "Incremento Total de la Pureza del Nodo"
 
 msgid "L2 (Ridge)"
-msgstr ""
+msgstr "L2 (Cresta)"
 
 msgid "L1 (Lasso)"
-msgstr ""
+msgstr "L1 (Lasso)"
 
 msgid "Elastic Net"
-msgstr ""
+msgstr "Red Elástica"
 
 msgid "Regression Coefficients"
 msgstr "Coeficientes de Regresión"
@@ -884,19 +924,19 @@ msgid "Coefficient (%s)"
 msgstr "Coeficiente (%s)"
 
 msgid "Variable Trace Plot"
-msgstr ""
+msgstr "Gráfico de Trazo de las Variables"
 
 msgid "Coefficients"
 msgstr "Coeficientes"
 
 msgid "Lambda Evaluation Plot"
-msgstr ""
+msgstr "Gráfico de Evaluación Lambda"
 
 msgid "Cross-Validated %sMean Squared Error"
-msgstr ""
+msgstr "Raíz del Error %s Cuadrático Medio con Verificación Cruzada"
 
 msgid "Min. CV MSE"
-msgstr ""
+msgstr "Min. CV ECM"
 
 msgid "%s 1 SE"
-msgstr ""
+msgstr "%s 1 ET"
