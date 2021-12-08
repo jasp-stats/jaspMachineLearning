@@ -15,6 +15,14 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+.mlClusteringDependencies <- function(options) {
+  opt <- c(
+    "predictors", "noOfClusters", "noOfRandomSets", "noOfIterations", "algorithm", "modelOpt", "seed", "centers",
+    "maxClusters", "seedBox", "scaleEqualSD", "m", "distance", "linkage", "eps", "minPts", "noOfTrees", "maxTrees", "optimizationCriterion"
+  )
+  return(opt)
+}
+
 .mlClusteringReadData <- function(dataset, options) {
   predictors <- unlist(options[["predictors"]])
   predictors <- predictors[predictors != ""]
@@ -104,15 +112,10 @@
       "cmeans" = .cMeansClustering(dataset, options, jaspResults),
       "hierarchical" = .hierarchicalClustering(dataset, options, jaspResults),
       "densitybased" = .densityBasedClustering(dataset, options, jaspResults),
-      "randomForest" = .randomForestClustering(dataset, options, jaspResults),
-      "kmedoids" = .kMedoidsClustering(dataset, options, jaspResults),
-      "kmedians" = .kMediansClustering(dataset, options, jaspResults)
+      "randomForest" = .randomForestClustering(dataset, options, jaspResults)
     )
     jaspResults[["clusterResult"]] <- createJaspState(clusterResult)
-    jaspResults[["clusterResult"]]$dependOn(options = c(
-      "predictors", "noOfClusters", "noOfRandomSets", "noOfIterations", "algorithm", "modelOpt", "seed",
-      "maxClusters", "seedBox", "scaleEqualSD", "m", "distance", "linkage", "eps", "minPts", "noOfTrees", "maxTrees", "optimizationCriterion"
-    ))
+    jaspResults[["clusterResult"]]$dependOn(options = .mlClusteringDependencies(options))
   }
 }
 
@@ -121,20 +124,19 @@
     return()
   }
   title <- switch(type,
-    "kmeans" = gettext("K-Means Clustering"),
+    "kmeans" = switch(options[["centers"]],
+      "means" = gettext("K-Means Clustering"),
+      "medians" = gettext("K-Medians Clustering"),
+      "medoids" = gettext("K-Medoids Clustering")
+    ),
     "cmeans" = gettext("Fuzzy C-Means Clustering"),
     "hierarchical" = gettext("Hierarchical Clustering"),
     "densitybased" = gettext("Density-Based Clustering"),
-    "randomForest" = gettext("Random Forest Clustering"),
-    "kmedoids"     = gettext("K-Medoids Clustering"),
-    "kmedians"     = gettext("K-Medians Clustering")
+    "randomForest" = gettext("Random Forest Clustering")
   )
   table <- createJaspTable(title)
   table$position <- position
-  table$dependOn(options = c(
-    "predictors", "noOfClusters", "noOfRandomSets", "noOfIterations", "algorithm", "modelOpt", "seed", "optimizationCriterion",
-    "maxClusters", "seedBox", "scaleEqualSD", "m", "distance", "linkage", "eps", "minPts", "noOfTrees", "maxTrees"
-  ))
+  table$dependOn(options = .mlClusteringDependencies(options))
   table$addColumnInfo(name = "clusters", title = gettext("Clusters"), type = "integer")
   table$addColumnInfo(name = "n", title = gettext("N"), type = "integer")
   table$addColumnInfo(name = "measure", title = gettextf("R%s", "\u00B2"), type = "number", format = "dp:2")
@@ -191,12 +193,8 @@
     return()
   }
   table <- createJaspTable(gettext("Cluster Information"))
-  table$dependOn(options = c(
-    "tableClusterInformation", "predictors", "modelOpt", "noOfIterations",
-    "noOfClusters", "noOfRandomSets", "tableClusterInfoSize", "tableClusterInfoSilhouette", "optimizationCriterion",
-    "tableClusterInfoSumSquares", "tableClusterInfoCentroids", "scaleEqualSD", "tableClusterInfoWSS", "minPts", "eps",
-    "tableClusterInfoBetweenSumSquares", "tableClusterInfoTotalSumSquares", "maxClusters", "m", "linkage", "distance", "noOfTrees", "maxTrees"
-  ))
+  table$dependOn(options = c("tableClusterInformation", "tableClusterInfoWSS", "tableClusterInfoSilhouette", "tableClusterInfoCentroids", 
+                             "tableClusterInfoBetweenSumSquares", "tableClusterInfoTotalSumSquares", .mlClusteringDependencies(options)))
   table$position <- position
   table$transpose <- TRUE
   table$addColumnInfo(name = "cluster", title = gettext("Cluster"), type = "integer")
@@ -213,10 +211,10 @@
     return()
   }
   clusterResult <- jaspResults[["clusterResult"]]$object
-  if (type == "kmeans" || type == "cmeans" || type == "kmedoids" || type == "kmedians") {
+  if (type == "kmeans" || type == "cmeans") {
     if (options[["tableClusterInfoCentroids"]]) {
       for (i in 1:length(options[["predictors"]])) {
-        title <- if (type == "kmedoids") gettextf("Medoid %s", options[["predictors"]][i]) else gettextf("Centroid %s", options[["predictors"]][i])
+        title <- gettextf("Center %s", options[["predictors"]][i])
         table$addColumnInfo(name = paste0("centroid", i), title = title, type = "number", format = "dp:3")
       }
     }
@@ -246,7 +244,7 @@
   if (options[["tableClusterInfoSilhouette"]]) {
     row <- cbind(row, silh_scores = silh_scores)
   }
-  if (type == "kmeans" || type == "cmeans" || type == "kmedoids" || type == "kmedians") {
+  if (type == "kmeans" || type == "cmeans") {
     if (options[["tableClusterInfoCentroids"]]) {
       for (i in 1:length(options[["predictors"]])) {
         row <- cbind(row, "tmp" = clusterResult[["centroids"]][, i])
@@ -270,11 +268,7 @@
     return()
   }
   table <- createJaspTable(gettext("Evaluation Metrics"))
-  table$dependOn(options = c(
-    "clusterEvaluationMetrics", "predictors", "modelOpt", "noOfIterations",
-    "noOfClusters", "noOfRandomSets", "optimizationCriterion", "scaleEqualSD", "minPts", "eps",
-    "maxClusters", "m", "linkage", "distance", "noOfTrees", "maxTrees"
-  ))
+  table$dependOn(options = c("clusterEvaluationMetrics", .mlClusteringDependencies(options)))
   table$position <- position
   table$addColumnInfo(name = "metric", title = "", type = "string")
   table$addColumnInfo(name = "value", title = gettext("Value"), type = "number")
@@ -308,11 +302,7 @@
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("t-SNE Cluster Plot"), width = 450, height = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "predictors", "noOfClusters", "noOfRandomSets", "algorithm", "eps", "minPts", "distance",
-    "noOfIterations", "modelOpt", "ready", "seed", "plot2dCluster", "maxClusters", "scaleEqualSD", "seedBox",
-    "linkage", "m", "labels", "noOfTrees", "maxTrees", "legend", "optimizationCriterion"
-  ))
+  plot$dependOn(options = c("plot2dCluster", "labels", .mlClusteringDependencies(options)))
   jaspResults[["plot2dCluster"]] <- plot
   if (!ready) {
     return()
@@ -331,12 +321,23 @@
   } else {
     tsne <- jaspResults[["tsneOutput"]]$object
   }
-  if (type == "kmeans" || type == "cmeans") {
-    fit <- switch(type,
-      "kmeans" = kmeans(dataset, centers = clusterResult[["clusters"]], iter.max = options[["noOfIterations"]], nstart = options[["noOfRandomSets"]], algorithm = options[["algorithm"]]),
-      "cmeans" = e1071::cmeans(dataset, centers = clusterResult[["clusters"]], iter.max = options[["noOfIterations"]], m = options[["m"]])
-    )
+  if (type == "cmeans") {
+    fit <- e1071::cmeans(dataset, centers = clusterResult[["clusters"]], iter.max = options[["noOfIterations"]], m = options[["m"]])
     predictions <- fit$cluster
+    colSize <- clusterResult[["clusters"]]
+  } else if (type == "kmeans") {
+    if (options[["centers"]] == "means") {
+      fit <- kmeans(dataset, centers = clusterResult[["clusters"]], iter.max = options[["noOfIterations"]], nstart = options[["noOfRandomSets"]], algorithm = options[["algorithm"]])
+    } else if (options[["centers"]] == "medians") {
+      fit <- Gmedian::kGmedian(dataset, ncenters = clusterResult[["clusters"]], nstart = options[["noOfIterations"]], nstartkmeans = options[["noOfRandomSets"]])
+    } else if (options[["centers"]] == "medoids") {
+      if (options[["algorithm"]] == "pam") {
+        fit <- cluster::pam(dataset, k = clusterResult[["clusters"]], metric = options[["distance"]], nstart = options[["noOfRandomSets"]])
+      } else {
+        fit <- cluster::clara(dataset, k = clusterResult[["clusters"]], metric = options[["distance"]], samples = options[["noOfIterations"]])
+      }
+    }
+    predictions <- if (options[["centers"]] == "medoids") fit$clustering else fit$cluster
     colSize <- clusterResult[["clusters"]]
   } else if (type == "hierarchical") {
     if (options[["distance"]] == "Pearson correlation") {
@@ -361,18 +362,6 @@
     )
     hfit <- hclust(as.dist(1 - fit$proximity), method = "ward.D2")
     predictions <- cutree(hfit, k = clusterResult[["clusters"]])
-    colSize <- clusterResult[["clusters"]]
-  } else if (type == "kmedoids") {
-    if (options[["algorithm"]] == "pam") {
-      fit <- cluster::pam(dataset, k = clusterResult[["clusters"]], metric = options[["distance"]], nstart = options[["noOfRandomSets"]])
-    } else {
-      fit <- cluster::clara(dataset, k = clusterResult[["clusters"]], metric = options[["distance"]], samples = options[["noOfIterations"]])
-    }
-    predictions <- fit$clustering
-    colSize <- clusterResult[["clusters"]]
-  } else if (type == "kmedians") {
-    fit <- Gmedian::kGmedian(dataset, ncenters = clusterResult[["clusters"]], nstart = options[["noOfIterations"]], nstartkmeans = options[["noOfRandomSets"]])
-    predictions <- fit$cluster
     colSize <- clusterResult[["clusters"]]
   }
   clusterAssignment <- factor(predictions, levels = sort(unique(predictions), decreasing = FALSE))
@@ -403,11 +392,7 @@
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Elbow Method Plot"), width = 400, height = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "predictors", "noOfClusters", "noOfRandomSets", "algorithm", "eps", "minPts", "distance",
-    "noOfIterations", "modelOpt", "ready", "seed", "plot2dCluster", "maxClusters", "scaleEqualSD", "seedBox",
-    "linkage", "m", "withinssPlot", "noOfTrees", "maxTrees", "optimizationCriterion"
-  ))
+  plot$dependOn(options = c("withinssPlot", .mlClusteringDependencies(options)))
   jaspResults[["optimPlot"]] <- plot
   if (!ready) {
     return()
@@ -457,10 +442,7 @@
     predictionsColumn <- rep(NA, max(as.numeric(rownames(dataset))))
     predictionsColumn[as.numeric(rownames(dataset))] <- predictions
     jaspResults[["predictionsColumn"]] <- createJaspColumn(columnName = options[["predictionsColumn"]])
-    jaspResults[["predictionsColumn"]]$dependOn(options = c(
-      "predictionsColumn", "predictors", "noOfClusters", "noOfRandomSets", "noOfIterations", "algorithm", "modelOpt", "seed",
-      "maxClusters", "seedBox", "scaleEqualSD", "m", "distance", "linkage", "eps", "minPts", "noOfTrees", "maxTrees", "optimizationCriterion"
-    ))
+    jaspResults[["predictionsColumn"]]$dependOn(options = c("addPredictions", "predictionsColumn", .mlClusteringDependencies(options)))
     jaspResults[["predictionsColumn"]]$setNominal(predictionsColumn)
   }
 }
@@ -470,12 +452,7 @@
     return()
   }
   table <- createJaspTable(gettext("Cluster Means"))
-  table$dependOn(options = c(
-    "tableClusterMeans", "predictors", "modelOpt", "noOfIterations",
-    "noOfClusters", "noOfRandomSets", "tableClusterInfoSize", "tableClusterInfoSilhouette", "optimizationCriterion",
-    "tableClusterInfoSumSquares", "tableClusterInfoCentroids", "scaleEqualSD", "tableClusterInfoWSS", "minPts", "eps",
-    "tableClusterInfoBetweenSumSquares", "tableClusterInfoTotalSumSquares", "maxClusters", "m", "linkage", "distance", "noOfTrees", "maxTrees"
-  ))
+  table$dependOn(options = c("tableClusterMeans", .mlClusteringDependencies(options)))
   table$position <- position
   jaspResults[["clusterMeansTable"]] <- table
   if (!ready) {
@@ -507,12 +484,7 @@
     return()
   }
   plot <- createJaspContainer(gettext("Cluster Density Plots"))
-  plot$dependOn(options = c(
-    "plotClusterDensities", "predictors", "modelOpt", "noOfIterations",
-    "noOfClusters", "noOfRandomSets", "tableClusterInfoSize", "tableClusterInfoSilhouette", "optimizationCriterion",
-    "tableClusterInfoSumSquares", "tableClusterInfoCentroids", "scaleEqualSD", "tableClusterInfoWSS", "minPts", "eps",
-    "tableClusterInfoBetweenSumSquares", "tableClusterInfoTotalSumSquares", "maxClusters", "m", "linkage", "distance", "noOfTrees", "maxTrees"
-  ))
+  plot$dependOn(options = c("plotClusterDensities", .mlClusteringDependencies(options)))
   plot$position <- position
   jaspResults[["clusterDensities"]] <- plot
   if (!ready) {
@@ -544,12 +516,7 @@
     return()
   }
   plot <- createJaspContainer(gettext("Cluster Mean Plots"))
-  plot$dependOn(options = c(
-    "plotClusterMeans", "showBars", "oneFigure", "predictors", "modelOpt", "noOfIterations",
-    "noOfClusters", "noOfRandomSets", "tableClusterInfoSize", "tableClusterInfoSilhouette", "optimizationCriterion",
-    "tableClusterInfoSumSquares", "tableClusterInfoCentroids", "scaleEqualSD", "tableClusterInfoWSS", "minPts", "eps",
-    "tableClusterInfoBetweenSumSquares", "tableClusterInfoTotalSumSquares", "maxClusters", "m", "linkage", "distance", "noOfTrees", "maxTrees"
-  ))
+  plot$dependOn(options = c("plotClusterMeans", "showBars", "oneFigure", .mlClusteringDependencies(options)))
   plot$position <- position
   jaspResults[["clusterMeans"]] <- plot
   if (!ready) {

@@ -75,7 +75,7 @@ Form
 
 			CheckBox
 			{
-				text:							qsTr("Centroids")
+				text:							qsTr("Centers")
 				name:							"tableClusterInfoCentroids"
 			}
 
@@ -173,6 +173,52 @@ Form
 		{
 			title:								qsTr("Algorithmic Settings")
 
+			DropDown
+			{
+				id:								centers
+				name:							"centers"
+				indexDefaultValue:				0
+				label:							qsTr("Center type")
+				values:
+					[
+					{ label: "Means", 			value: "means"},
+					{ label: "Medians", 		value: "medians"},
+					{ label: "Medoids", 		value: "medoids"}
+				]
+			}
+
+			DropDown
+			{
+				id:								algorithm
+				name:							"algorithm"
+				indexDefaultValue:				0
+				label:							qsTr("Algorithm")
+				enabled:						centers.value  != "medians"
+				values: centers.value == "medoids" ? 
+					[
+						{ label: "PAM", 	value: "pam"},
+						{ label: "CLaRA", 	value: "clara"}
+					] : 
+					[
+						{ label: "Hartigan-Wong", 	value: "Hartigan-Wong"},
+						{ label: "Lloyd-Forgy", 	value: "Lloyd"},
+						{ label: "MacQueen", 		value: "MacQueen"}
+					]
+			}
+
+			DropDown
+			{
+				name:							"distance"
+				indexDefaultValue:				0
+				label:							qsTr("Distance")
+				enabled:						centers.value == "medoids"
+				values:
+					[
+					{ label: qsTr("Euclidean"), value: "euclidean"},
+					{ label: qsTr("Manhattan"), value: "manhattan"}
+				]
+			}
+
 			IntegerField
 			{
 				name:							"noOfIterations"
@@ -180,6 +226,7 @@ Form
 				defaultValue:					25
 				min:							1
 				max:							999999
+				enabled:						!(centers.value == "medoids" & algorithm.value == "pam")
 			}
 
 			IntegerField
@@ -189,19 +236,7 @@ Form
 				defaultValue:					25
 				min:							1
 				max:							999999
-			}
-
-			DropDown
-			{
-				name:							"algorithm"
-				indexDefaultValue:				0
-				label:							qsTr("Algorithm")
-				values:
-					[
-					{ label: "Hartigan-Wong", 	value: "Hartigan-Wong"},
-					{ label: "Lloyd-Forgy", 	value: "Lloyd"},
-					{ label: "MacQueen", 		value: "MacQueen"}
-				]
+				enabled:						!(centers.value == "medoids" & algorithm.value == "clara")
 			}
 
 			CheckBox

@@ -633,7 +633,7 @@
     predictionsColumn <- rep(NA, max(as.numeric(rownames(dataset))))
     predictionsColumn[as.numeric(rownames(dataset))] <- predictions
     jaspResults[["predictionsColumn"]] <- createJaspColumn(columnName = options[["predictionsColumn"]])
-    jaspResults[["predictionsColumn"]]$dependOn(options = c(.mlRegressionDependencies(options), "predictionsColumn"))
+    jaspResults[["predictionsColumn"]]$dependOn(options = c(.mlRegressionDependencies(options), "predictionsColumn", "addPredictions"))
     jaspResults[["predictionsColumn"]]$setScale(predictionsColumn)
   }
 }

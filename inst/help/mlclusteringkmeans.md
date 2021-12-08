@@ -31,9 +31,11 @@ K-means clustering is a hard partitioning algorithm which aims to partition data
 
 #### Training Parameters 
 #### Algorithmic Settings
+- Centers: Choose the type of centers for the clusters. Choosing the mean will apply a k-means algorithm, the median will apply a k-medians algorithm, and the medoid will apply a k-medoids algorithm.
+- Algorithm: Choose the algorithm you would like to use. At default, this is set to the 'Hartigan-Wong' algorithm. Different algorithms emphasize different parameters that influence the clustering output diversely.
+- Distance: Specify the used distance measurement used in k-medoids clustering. Euclidean distances are root sum-of-squares of differences, and manhattan distances are the sum of absolute differences.
 - Max. iterations: Sets the maximum number of iterations. The maximum number of iterations reflects the number of possible instances the algorithm iterates for finding the optimal clustering solution. At default, this is set to 25.
 - Random sets: Sets the maximum number of possible random sets used. The number of random sets reflects how many randomly chosen initial cluster assignments are used. At default, this is set to 25.
-- Algorithm: Choose the algorithm you would like to use. At default, this is set to the 'Hartigan-Wong' algorithm. Different algorithms emphasize different parameters that influence the clustering output diversely.
 - Scale variables: Scales the continuous variables. Standardization ensures that values of variables from different scales range into a specific similar scale. As a result, standardizing provides numerical stability, which improves the clustering output. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
 - Set seed: Gives the option to set a seed for your analysis. Setting a seed will exclude random processes influencing an analysis. For example, setting a seed makes it possible to re-run analyses with the same outcomes.
 

@@ -859,7 +859,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     predictionsColumn[as.numeric(rownames(dataset))] <- predictions
     predictionsColumn <- factor(predictionsColumn)
     jaspResults[["predictionsColumn"]] <- createJaspColumn(columnName = options[["predictionsColumn"]])
-    jaspResults[["predictionsColumn"]]$dependOn(options = c(.mlClassificationDependencies(options), "predictionsColumn"))
+    jaspResults[["predictionsColumn"]]$dependOn(options = c(.mlClassificationDependencies(options), "predictionsColumn", "addPredictions"))
     # make sure to create to classification column with the same type as the target!
     if (.columnIsScale(options$target)) jaspResults[["predictionsColumn"]]$setScale(predictionsColumn)
     if (.columnIsOrdinal(options$target)) jaspResults[["predictionsColumn"]]$setOrdinal(predictionsColumn)

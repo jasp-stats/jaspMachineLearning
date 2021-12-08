@@ -136,21 +136,9 @@ Description
 	}
 	Analysis
 	{
-		menu:	qsTr("K-Means")
-		title:	qsTr("K-Means Clustering")
+		menu:	qsTr("Neighborhood-Based")
+		title:	qsTr("Neighborhood-Based Clustering")
 		func:	"mlClusteringKMeans"
-	}
-	Analysis
-	{
-		menu:	qsTr("K-Medians")
-		title:	qsTr("K-Medians Clustering")
-		func:	"mlClusteringKMedians"
-	}
-	Analysis
-	{
-		menu:	qsTr("K-Medoids")
-		title:	qsTr("K-Medoids Clustering")
-		func:	"mlClusteringKMedoids"
 	}
 	Analysis
 	{

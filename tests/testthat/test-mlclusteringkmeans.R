@@ -1,23 +1,22 @@
 context("Machine Learning K-Means Clustering")
 
 options <- jaspTools::analysisOptions("mlClusteringKMeans")
-options$addPredictions <- FALSE
-options$predictionsColumn <- ""
-options$clusterEvaluationMetrics <- TRUE
-options$modelOpt <- "validationOptimized"
-options$plot2dCluster <- TRUE
 options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
-                           "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
-                           "Hue", "Dilution", "Proline")
-options$seedBox <- TRUE
-options$tableClusterInfoBetweenSumSquares <- TRUE
-options$tableClusterInfoCentroids <- TRUE
+    "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
+    "Hue", "Dilution", "Proline")
 options$tableClusterInfoSilhouette <- TRUE
+options$tableClusterInfoCentroids <- TRUE
+options$tableClusterInfoBetweenSumSquares <- TRUE
 options$tableClusterInfoTotalSumSquares <- TRUE
+options$clusterEvaluationMetrics <- TRUE
 options$withinssPlot <- TRUE
 options$plotClusterMeans <- TRUE
-options$showBars <- TRUE
-options$oneFigure <- TRUE
+options$plot2dCluster <- TRUE
+options$algorithm <- "Hartigan-Wong"
+options$seedBox <- TRUE
+options$modelOpt <- "validationOptimized"
+options$addPredictions <- FALSE
+options$predictionsColumn <- ""
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClusteringKMeans", "wine.csv", options)
 
@@ -82,4 +81,153 @@ test_that("t-SNE Cluster Plot matches", {
 	plotName <- results[["results"]][["plot2dCluster"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
 	jaspTools::expect_equal_plots(testPlot, "t-sne-cluster-plot")
+})
+
+context("Machine Learning K-Medians Clustering")
+
+options <- jaspTools::analysisOptions("mlClusteringKMeans")
+options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
+    "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
+    "Hue", "Dilution", "Proline")
+options$tableClusterInfoSilhouette <- TRUE
+options$tableClusterInfoCentroids <- TRUE
+options$tableClusterInfoBetweenSumSquares <- TRUE
+options$tableClusterInfoTotalSumSquares <- TRUE
+options$clusterEvaluationMetrics <- TRUE
+options$withinssPlot <- TRUE
+options$plotClusterMeans <- TRUE
+options$centers <- "medians"
+options$seedBox <- TRUE
+options$modelOpt <- "validationOptimized"
+options$addPredictions <- FALSE
+options$predictionsColumn <- ""
+set.seed(1)
+results <- jaspTools::runAnalysis("mlClusteringKMeans", "wine.csv", options)
+
+
+test_that("Evaluation Metrics table results match", {
+	table <- results[["results"]][["clusterEvaluationMetrics"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list("Maximum diameter", 8.51516001364652, "Minimum separation", 1.60632766808558,
+			 "Pearson's <unicode><unicode>", 0.570325980213938, "Dunn index",
+			 0.188643274525817, "Entropy", 1.36305780660858, "Calinski-Harabasz index",
+			 53.7349408737258))
+})
+
+test_that("Cluster Information table results match", {
+	table <- results[["results"]][["clusterInfoTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(-0.787973831989191, -0.821921669628806, 0.530773010236986, -0.0805575730926988,
+			 -0.713865760078925, -0.553765128287757, -0.726598012728438,
+			 -0.0359605164066285, -0.602766256172083, -0.508303564461616,
+			 -0.320923378757268, 0.298385992711599, -0.445055759278768, 1,
+			 0.336055246839718, 0.182454420501865, 53, 401.389760284746,
+			 1.03588876253043, 0.279433788122583, 0.434242690697805, 0.797855375549058,
+			 1.25147075609497, -0.328804813815894, 0.0896593337613188, -0.899978390422253,
+			 0.449999033232327, 0.909246344252296, 1.00360662271484, -0.640433365174497,
+			 0.639524522609801, 2, 0.183188099972413, 0.309145431831863,
+			 47, 218.802795749876, 0.14647504112479, 0.810569883643298, -1.16110320796736,
+			 -1.28943112185576, -0.418231489511521, 0.86593190868353, 0.211528918534768,
+			 0.579828808398242, -0.0314790776378002, -1.02744782006489, -1.21743762866723,
+			 0.527704078233325, -0.869664641448849, 3, 0.253673305985526,
+			 0.339691943444652, 49, 302.991452856957, 0.00327133148196856,
+			 -0.384707175875306, 0.693198071328121, 0.687916527934656, 0.407703241886847,
+			 -0.28530544941901, 1.00144785536574, 0.130057657179639, 0.359961249782629,
+			 0.639905468300686, 0.613046384559695, -0.380028830955218, 0.242674682193114,
+			 4, 0.227083347202342, -0.0196777717959873, 29, 271.231980917946
+			))
+})
+
+test_that("All predictors plot matches", {
+	plotName <- results[["results"]][["clusterMeans"]][["collection"]][["clusterMeans_oneFigure"]][["data"]]
+	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+	jaspTools::expect_equal_plots(testPlot, "all-predictors-2")
+})
+
+test_that("K-Medians Clustering table results match", {
+	table <- results[["results"]][["clusteringTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(0.23, 1298.42, 1463.87, 4, 0.470711342710878, 178))
+})
+
+test_that("Elbow Method Plot matches", {
+	plotName <- results[["results"]][["optimPlot"]][["data"]]
+	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+	jaspTools::expect_equal_plots(testPlot, "elbow-method-plot-2")
+})
+
+context("Machine Learning K-Medoids Clustering")
+
+options <- jaspTools::analysisOptions("mlClusteringKMeans")
+options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
+    "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
+    "Hue", "Dilution", "Proline")
+options$tableClusterInfoSilhouette <- TRUE
+options$tableClusterInfoCentroids <- TRUE
+options$tableClusterInfoBetweenSumSquares <- TRUE
+options$tableClusterInfoTotalSumSquares <- TRUE
+options$clusterEvaluationMetrics <- TRUE
+options$withinssPlot <- TRUE
+options$plotClusterMeans <- TRUE
+options$centers <- "medoids"
+options$seedBox <- TRUE
+options$modelOpt <- "validationOptimized"
+options$addPredictions <- FALSE
+options$predictionsColumn <- ""
+set.seed(1)
+results <- jaspTools::runAnalysis("mlClusteringKMeans", "wine.csv", options)
+
+
+test_that("Evaluation Metrics table results match", {
+	table <- results[["results"]][["clusterEvaluationMetrics"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list("Maximum diameter", 8.32828431318771, "Minimum separation", 1.3319097118158,
+			 "Pearson's <unicode><unicode>", 0.506782138443401, "Dunn index",
+			 0.159926061806841, "Entropy", 1.58843873936718, "Calinski-Harabasz index",
+			 43.9303597205423))
+})
+
+test_that("Cluster Information table results match", {
+	table <- results[["results"]][["clusterInfoTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(1.50202286496714, 0.570210142780351, -0.076341246291495, 0.983554958559391,
+			 0.708483474663071, -0.569619601201303, -0.242457832996962, -0.956694958673843,
+			 1.278378998074, 1.44585144042711, 0.971839512074906, -0.818410597429238,
+			 0.767177993092458, 1, 0.1238408435686, 0.217986939183351, 29,
+			 141.366978410927, 0.627451799892053, -0.370139805643522, 0.623658333354924,
+			 0.363828294405156, 1.10542546623392, -0.480105794355861, 1.03331269028942,
+			 -0.148206129522007, 0.718252323225578, 0.0877008044513121, 0.501302481111386,
+			 -0.577356400503032, -0.0889282576435221, 2, 0.235432859140199,
+			 0.0239752948508857, 38, 268.751657015799, -0.87533228375809,
+			 -0.930898949199043, 1.19240799181764, 0.180727234541404, -1.01265700078815,
+			 -0.829209641053084, -1.40887659714451, -1.04652705080182, -1.03214353567575,
+			 0.407265659975028, 0.471268202539246, -0.577356400503032, 0.312917533518265,
+			 3, 0.198290738977986, 0.0761447463431758, 29, 226.353130424698,
+			 -1.67599593488317, -0.974034267934083, 0.186158596075912, 0.194811931454,
+			 -0.212421945781311, -0.247369896557712, 0.340751549076813, 0.630338668920501,
+			 -1.1021593700318, -0.55142890659612, -0.339657318908522, 0.949320180029613,
+			 -0.420887824255433, 4, 0.178926950604445, 0.164662146424061,
+			 33, 204.248950785128, 0.393411655717031, 1.45017064497517, -1.78259022167964,
+			 -1.39675881966938, -0.307688023758316, 0.8088930242185, 0.0491468580399253,
+			 0.600394638211174, -0.542032695183377, -0.583385392148492, -1.27071995464485,
+			 0.708265983103406, -0.595603385630123, 5, 0.26350860770877,
+			 0.299304347024917, 49, 300.800726025614))
+})
+
+test_that("All predictors plot matches", {
+	plotName <- results[["results"]][["clusterMeans"]][["collection"]][["clusterMeans_oneFigure"]][["data"]]
+	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+	jaspTools::expect_equal_plots(testPlot, "all-predictors-3")
+})
+
+test_that("K-Medoids Clustering table results match", {
+	table <- results[["results"]][["clusteringTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(0.17, 1271.52, 1478.34, 5, 0.579748312323366, 178))
+})
+
+test_that("Elbow Method Plot matches", {
+	plotName <- results[["results"]][["optimPlot"]][["data"]]
+	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+	jaspTools::expect_equal_plots(testPlot, "elbow-method-plot-3")
 })
