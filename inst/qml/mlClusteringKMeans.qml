@@ -134,6 +134,13 @@ Form
 		{
 			text:								qsTr("Cluster densities")
 			name:								"plotClusterDensities"
+
+			CheckBox
+			{
+				text:							qsTr("Group into one figure")
+				name:							"oneFigureDensity"
+				checked:						true
+			}
 		}
 
 		CheckBox

@@ -25,6 +25,7 @@ Imports:
   ggnetwork,
   ggplot2,
   ggrepel,
+  ggridges,
   glmnet,
   jaspBase,
   jaspGraphs,

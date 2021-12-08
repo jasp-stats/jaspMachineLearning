@@ -193,8 +193,10 @@
     return()
   }
   table <- createJaspTable(gettext("Cluster Information"))
-  table$dependOn(options = c("tableClusterInformation", "tableClusterInfoWSS", "tableClusterInfoSilhouette", "tableClusterInfoCentroids", 
-                             "tableClusterInfoBetweenSumSquares", "tableClusterInfoTotalSumSquares", .mlClusteringDependencies(options)))
+  table$dependOn(options = c(
+    "tableClusterInformation", "tableClusterInfoWSS", "tableClusterInfoSilhouette", "tableClusterInfoCentroids",
+    "tableClusterInfoBetweenSumSquares", "tableClusterInfoTotalSumSquares", .mlClusteringDependencies(options)
+  ))
   table$position <- position
   table$transpose <- TRUE
   table$addColumnInfo(name = "cluster", title = gettext("Cluster"), type = "integer")
@@ -484,30 +486,45 @@
     return()
   }
   plot <- createJaspContainer(gettext("Cluster Density Plots"))
-  plot$dependOn(options = c("plotClusterDensities", .mlClusteringDependencies(options)))
+  plot$dependOn(options = c("plotClusterDensities", "oneFigureDensity", .mlClusteringDependencies(options)))
   plot$position <- position
   jaspResults[["clusterDensities"]] <- plot
   if (!ready) {
     return()
   }
   clusterResult <- jaspResults[["clusterResult"]]$object
-  for (variable in unlist(options[["predictors"]])) {
-    clusters <- as.factor(clusterResult[["pred.values"]])
-    xBreaks <- jaspGraphs::getPrettyAxisBreaks(dataset[[variable]], min.n = 4)
-    plotData <- data.frame(
-      cluster = clusters,
-      value = dataset[[variable]]
-    )
-    p <- ggplot2::ggplot(plotData, ggplot2::aes(x = value)) +
-      ggplot2::geom_density(mapping = ggplot2::aes(fill = cluster), color = "black", alpha = 0.6) +
-      ggplot2::scale_x_continuous(name = variable, breaks = xBreaks, limits = range(xBreaks)) +
-      ggplot2::scale_y_continuous(name = gettext("Density")) +
-      ggplot2::scale_fill_manual(name = gettext("Cluster"), values = .mlColorScheme(length(levels(clusters)))) +
-      jaspGraphs::geom_rangeframe() +
+  if (!options[["oneFigureDensity"]]) {
+    for (variable in unlist(options[["predictors"]])) {
+      clusters <- as.factor(clusterResult[["pred.values"]])
+      xBreaks <- jaspGraphs::getPrettyAxisBreaks(dataset[[variable]], min.n = 4)
+      plotData <- data.frame(
+        cluster = clusters,
+        value = dataset[[variable]]
+      )
+      p <- ggplot2::ggplot(plotData, ggplot2::aes(x = value)) +
+        ggplot2::geom_density(mapping = ggplot2::aes(fill = cluster), color = "black", alpha = 0.6) +
+        ggplot2::scale_x_continuous(name = variable, breaks = xBreaks, limits = range(xBreaks)) +
+        ggplot2::scale_y_continuous(name = gettext("Density")) +
+        ggplot2::scale_fill_manual(name = gettext("Cluster"), values = .mlColorScheme(length(levels(clusters)))) +
+        jaspGraphs::geom_rangeframe() +
+        jaspGraphs::themeJaspRaw(legend.position = "right") +
+        ggplot2::theme(axis.ticks.y = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank())
+      plot[[variable]] <- createJaspPlot(plot = p, title = variable, width = 400, height = 300)
+      plot[[variable]]$dependOn(optionContainsValue = list("predictors" = variable))
+    }
+  } else {
+    dataList <- c(dataset[, options[["predictors"]]])
+    plotData <- data.frame(value = unlist(dataList), variable = rep(options[["predictors"]], lengths(dataList)), cluster = rep(clusterResult[["pred.values"]], length(options[["predictors"]])))
+    xBreaks <- jaspGraphs::getPrettyAxisBreaks(plotData[["value"]])
+    p <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = value, y = factor(variable), height = ..density.., fill = factor(cluster))) +
+      ggridges::geom_density_ridges(stat = "density", alpha = .6) +
+      ggplot2::scale_fill_manual(name = gettext("Cluster"), values = .mlColorScheme(length(unique(clusterResult[["pred.values"]])))) +
+      ggplot2::scale_x_continuous(name = gettext("Value"), breaks = xBreaks, limits = range(xBreaks)) +
+      ggplot2::scale_y_discrete(name = gettext("Variable")) +
+      jaspGraphs::geom_rangeframe(sides = "b") +
       jaspGraphs::themeJaspRaw(legend.position = "right") +
-      ggplot2::theme(axis.ticks.y = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank())
-    plot[[variable]] <- createJaspPlot(plot = p, title = variable, width = 400, height = 300)
-    plot[[variable]]$dependOn(optionContainsValue = list("predictors" = variable))
+      ggplot2::theme(axis.ticks.y = ggplot2::element_blank())
+    plot[["oneFigure"]] <- createJaspPlot(plot = p, title = gettext("All Variables"), height = 150 * length(options[["predictors"]]), width = 800)
   }
 }
 
@@ -568,7 +585,7 @@
       jaspGraphs::geom_rangeframe(sides = "l") +
       jaspGraphs::themeJaspRaw(legend.position = "right") +
       ggplot2::theme(axis.ticks.x = ggplot2::element_blank(), axis.text.x = ggplot2::element_text(angle = 20))
-    plot[["oneFigure"]] <- createJaspPlot(plot = p, title = gettext("All predictors"), height = 400, width = 200 * length(options[["predictors"]]))
+    plot[["oneFigure"]] <- createJaspPlot(plot = p, title = gettext("All Variables"), height = 400, width = 200 * length(options[["predictors"]]))
   } else {
     for (variable in unlist(options[["predictors"]])) {
       clusters <- as.factor(clusterResult[["pred.values"]])
