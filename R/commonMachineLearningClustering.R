@@ -524,7 +524,7 @@
       jaspGraphs::geom_rangeframe(sides = "b") +
       jaspGraphs::themeJaspRaw(legend.position = "right") +
       ggplot2::theme(axis.ticks.y = ggplot2::element_blank())
-    plot[["oneFigure"]] <- createJaspPlot(plot = p, title = gettext("All Variables"), height = 150 * length(options[["predictors"]]), width = 800)
+    plot[["oneFigure"]] <- createJaspPlot(plot = p, title = gettext("All Variables"), height = 150 * length(options[["predictors"]]), width = 600)
   }
 }
 
