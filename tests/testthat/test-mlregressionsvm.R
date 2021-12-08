@@ -39,7 +39,7 @@ test_that("Predictive Performance Plot matches", {
 test_that("Support Vector Machine Regression table results match", {
 	table <- results[["results"]][["regressionTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(30, 120, 0.113927742055951, 117))
+		list(120, 30, 0.113927742055951, 117))
 })
 
 test_that("Support Vectors table results match", {

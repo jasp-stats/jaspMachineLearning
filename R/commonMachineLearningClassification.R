@@ -21,6 +21,20 @@ gettextf <- function(fmt, ..., domain = NULL) {
   return(sprintf(gettext(fmt, domain = domain), ...))
 }
 
+.mlClassificationDependencies <- function(options, includeSaveOptions = FALSE) {
+  opt <- c(
+    "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "validationDataManual",
+    "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid", "cp", "degree", "gamma",
+    "estimationMethod", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode", "cost", "tolerance", "epsilon",
+    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual",
+    "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
+  )
+  if (includeSaveOptions) {
+    opt <- c(opt, "saveModel", "savePath")
+  }
+  return(opt)
+}
+
 .mlClassificationReadData <- function(dataset, options) {
   if (is.null(dataset)) {
     dataset <- .readDataClassificationRegressionAnalyses(dataset, options)
@@ -76,13 +90,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       "svm" = .svmClassification(dataset, options, jaspResults)
     )
     jaspResults[["classificationResult"]] <- createJaspState(classificationResult)
-    jaspResults[["classificationResult"]]$dependOn(options = c(
-      "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "validationDataManual",
-      "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
-      "estimationMethod", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode", "cost", "tolerance", "epsilon",
-      "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual",
-      "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
-    ))
+    jaspResults[["classificationResult"]]$dependOn(options = .mlClassificationDependencies(options))
   }
 }
 
@@ -101,13 +109,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   )
   table <- createJaspTable(title)
   table$position <- position
-  table$dependOn(options = c(
-    "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "validationDataManual",
-    "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid", "cp",
-    "estimationMethod", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode", "cost", "tolerance", "epsilon",
-    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "saveModel", "savePath",
-    "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
-  ))
+  table$dependOn(options = .mlClassificationDependencies(options, includeSaveOptions = TRUE))
   # Add analysis-specific columns
   if (type == "knn") {
     table$addColumnInfo(name = "nn", title = gettext("Nearest neighbors"), type = "integer")
@@ -293,13 +295,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   table <- createJaspTable(title = gettext("Confusion Matrix"))
   table$position <- position
-  table$dependOn(options = c(
-    "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "validationDataManual",
-    "target", "predictors", "seed", "seedBox", "confusionTable", "confusionProportions", "maxK", "noOfFolds", "modelValid",
-    "estimationMethod", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode", "nSplit", "cost", "tolerance", "epsilon",
-    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "cp",
-    "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
-  ))
+  table$dependOn(options = c(.mlClassificationDependencies(options), "confusionTable"))
   jaspResults[["confusionTable"]] <- table
   if (ready) {
     classificationResult <- jaspResults[["classificationResult"]]$object
@@ -345,15 +341,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   plot <- createJaspPlot(title = gettext("Decision Boundary Matrix"), height = 400, width = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "decisionBoundary", "plotDensities", "plotStatistics", "trainingDataManual", "scaleEqualSD", "modelOpt",
-    "target", "predictors", "seed", "seedBox", "modelValid", "estimationMethod", "cp",
-    "maxK", "noOfFolds", "modelValid", "noOfNearestNeighbors", "distanceParameterManual", "weights",
-    "plotLegend", "plotPoints", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors",
-    "shrinkage", "intDepth", "nNode", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "nSplit", "cost", "tolerance", "epsilon",
-    "holdoutData", "testDataManual",
-    "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
-  ))
+  plot$dependOn(options = c(.mlClassificationDependencies(options), "decisionBoundary"))
   jaspResults[["decisionBoundary"]] <- plot
   if (!ready || length(options[["predictors"]]) < 2) {
     return()
@@ -475,7 +463,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
     predictions <- as.factor(max.col(predict(fit, newdata = grid)))
     levels(predictions) <- unique(dataset[, options[["target"]]])
   } else if (type == "svm") {
-    fit <- e1071::svm(formula, data = dataset, method = "C-classification", kernel = options[["weights"]], cost = options[["cost"]], tolerance = options[["tolerance"]], epsilon = options[["epsilon"]], scale = FALSE)
+    fit <- e1071::svm(formula,
+      data = dataset, method = "C-classification", kernel = options[["weights"]], cost = options[["cost"]], tolerance = options[["tolerance"]],
+      epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]], gamma = options[["gamma"]], coef0 = options[["cp"]]
+    )
     predictions <- predict(fit, newdata = grid)
   }
   gridData <- data.frame(x = grid[, 1], y = grid[, 2])
@@ -523,13 +514,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("ROC Curves Plot"), width = 450, height = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "rocCurve", "trainingDataManual", "scaleEqualSD", "modelOpt", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "target", "predictors", "seed", "seedBox", "modelValid", "estimationMethod", "cp",
-    "maxK", "noOfFolds", "modelValid", "noOfNearestNeighbors", "distanceParameterManual", "weights",
-    "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode", "holdoutData", "testDataManual", "nSplit", "cost", "tolerance", "epsilon",
-    "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
-  ))
+  plot$dependOn(options = c(.mlClassificationDependencies(options), "rocCurve"))
   jaspResults[["rocCurve"]] <- plot
   if (!ready) {
     return()
@@ -610,7 +595,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
       fit <- rpart::rpart(formula, data = typeData, method = "class", control = rpart::rpart.control(minsplit = options[["nSplit"]], minbucket = options[["nNode"]], maxdepth = options[["intDepth"]], cp = options[["cp"]]))
       score <- max.col(predict(fit, test))
     } else if (type == "svm") {
-      fit <- e1071::svm(formula, data = typeData, type = "C-classification", kernel = options[["weights"]], cost = options[["cost"]], tolerance = options[["tolerance"]], epsilon = options[["epsilon"]], scale = FALSE)
+      fit <- e1071::svm(formula,
+        data = typeData, type = "C-classification", kernel = options[["weights"]], cost = options[["cost"]], tolerance = options[["tolerance"]],
+        epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]], gamma = options[["gamma"]], coef0 = options[["cp"]]
+      )
       score <- as.numeric(predict(fit, test))
     }
     pred <- ROCR::prediction(score, actual.class)
@@ -745,12 +733,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   table <- createJaspTable(title = gettext("Evaluation Metrics"))
   table$position <- position
-  table$dependOn(options = c(
-    "validationMeasures", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
-    "target", "predictors", "seed", "seedBox", "modelValid", "maxK", "noOfFolds", "modelValid", "holdoutData", "testDataManual",
-    "estimationMethod", "shrinkage", "intDepth", "nNode", "validationDataManual", "testSetIndicatorVariable", "testSetIndicator", "nSplit", "cost", "tolerance", "epsilon", "cp",
-    "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
-  ))
+  table$dependOn(options = c(.mlClassificationDependencies(options), "validationMeasures"))
   table$addColumnInfo(name = "group", title = "", type = "string")
   table$addColumnInfo(name = "precision", title = gettext("Precision"), type = "number")
   table$addColumnInfo(name = "recall", title = gettext("Recall"), type = "number")
@@ -806,12 +789,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   table <- createJaspTable(title = gettext("Class Proportions"))
   table$position <- position
-  table$dependOn(options = c(
-    "classProportionsTable", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
-    "target", "predictors", "seed", "seedBox", "modelValid", "maxK", "noOfFolds", "modelValid", "holdoutData", "testDataManual", "cp",
-    "estimationMethod", "shrinkage", "intDepth", "nNode", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "nSplit", "cost", "tolerance", "epsilon",
-    "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
-  ))
+  table$dependOn(options = c(.mlClassificationDependencies(options), "classProportionsTable"))
   table$addColumnInfo(name = "group", title = "", type = "string")
   table$addColumnInfo(name = "dataset", title = gettext("Data Set"), type = "number")
   if (options[["modelOpt"]] == "optimizationManual") {
@@ -881,12 +859,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     predictionsColumn[as.numeric(rownames(dataset))] <- predictions
     predictionsColumn <- factor(predictionsColumn)
     jaspResults[["predictionsColumn"]] <- createJaspColumn(columnName = options[["predictionsColumn"]])
-    jaspResults[["predictionsColumn"]]$dependOn(options = c(
-      "predictionsColumn", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
-      "target", "predictors", "seed", "seedBox", "modelValid", "maxK", "noOfFolds", "modelValid", "holdoutData", "testDataManual", "cp",
-      "estimationMethod", "shrinkage", "intDepth", "nNode", "validationDataManual", "testSetIndicatorVariable", "testSetIndicator", "nSplit", "cost", "tolerance", "epsilon",
-      "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
-    ))
+    jaspResults[["predictionsColumn"]]$dependOn(options = c(.mlClassificationDependencies(options), "predictionsColumn"))
     # make sure to create to classification column with the same type as the target!
     if (.columnIsScale(options$target)) jaspResults[["predictionsColumn"]]$setScale(predictionsColumn)
     if (.columnIsOrdinal(options$target)) jaspResults[["predictionsColumn"]]$setOrdinal(predictionsColumn)
@@ -983,7 +956,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
 }
 
 .calcAUCScore.svmClassification <- function(AUCformula, test, typeData, options, jaspResults, ...) {
-  fit <- e1071::svm(AUCformula, data = typeData, type = "C-classification", kernel = options[["weights"]], cost = options[["cost"]], tolerance = options[["tolerance"]], epsilon = options[["epsilon"]], scale = FALSE)
+  fit <- e1071::svm(AUCformula,
+    data = typeData, type = "C-classification", kernel = options[["weights"]], cost = options[["cost"]], tolerance = options[["tolerance"]],
+    epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]], gamma = options[["gamma"]], coef0 = options[["cp"]]
+  )
   score <- as.numeric(predict(fit, test))
   return(score)
 }

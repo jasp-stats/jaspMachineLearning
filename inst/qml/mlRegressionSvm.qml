@@ -107,9 +107,10 @@ Form
 
 			DropDown
 			{
+				id:								weights
 				name:							"weights"
 				indexDefaultValue:				0
-				label:							qsTr("Kernel")
+				label:							qsTr("Weights")
 				values:
 					[
 					{ label: qsTr("Linear"),	value: "linear"},
@@ -117,6 +118,36 @@ Form
 					{ label: qsTr("Polynomial"),value: "polynomial"},
 					{ label: qsTr("Sigmoid"),	value: "sigmoid"}
 				]
+			}
+
+			DoubleField
+			{
+				name:							"degree"
+				text:							qsTr("Degree")
+				defaultValue:					3
+				min:							1
+				enabled:						weights.value == "polynomial"
+				Layout.leftMargin:				10 * preferencesModel.uiScale
+			}
+
+			DoubleField
+			{
+				name:							"gamma"
+				text:							qsTr("Gamma")
+				defaultValue:					1
+				min:							0
+				enabled:						weights.value != "linear"
+				Layout.leftMargin:				10 * preferencesModel.uiScale
+			}
+
+			DoubleField
+			{
+				name:							"cp"
+				text:							qsTr("r parameter")
+				defaultValue:					0
+				min:							0
+				enabled:						weights.value == "polynomial" | weights.value == "sigmoid"
+				Layout.leftMargin:				10 * preferencesModel.uiScale
 			}
 
 			DoubleField

@@ -64,7 +64,8 @@ mlRegressionSvm <- function(jaspResults, dataset, options, state = NULL) {
   # Just create a train and a test set (no optimization)
   testSet <- dataset[-trainingIndex, ]
   trainingFit <- e1071::svm(
-    formula = formula, data = trainingSet, type = "eps-regression", kernel = options[["weights"]], cost = options[["cost"]], tolerance = options[["tolerance"]], epsilon = options[["epsilon"]], scale = FALSE
+    formula = formula, data = trainingSet, type = "eps-regression", kernel = options[["weights"]], cost = options[["cost"]], tolerance = options[["tolerance"]],
+    epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]], gamma = options[["gamma"]], coef0 = options[["cp"]]
   )
   # Use the specified model to make predictions for dataset
   testPredictions <- predict(trainingFit, newdata = testSet)

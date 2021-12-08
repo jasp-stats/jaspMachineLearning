@@ -20,6 +20,21 @@
   return(colors)
 }
 
+.mlRegressionDependencies <- function(options, includeSaveOptions = FALSE) {
+  opt <- c(
+    "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "maxTrees",
+    "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "confusionProportions", "maxK", "noOfFolds", "modelValid",
+    "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac",
+    "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "nSplit",
+    "holdoutData", "testDataManual", "cp", "degree", "gamma",
+    "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
+  )
+  if (includeSaveOptions) {
+    opt <- c(opt, "saveModel", "savePath")
+  }
+  return(opt)
+}
+
 .readDataRegressionAnalyses <- function(dataset, options, jaspResults) {
   if (is.null(dataset)) {
     dataset <- .readDataClassificationRegressionAnalyses(dataset, options)
@@ -198,14 +213,7 @@
       "svm" = .svmRegression(dataset, options, jaspResults)
     )
     jaspResults[["regressionResult"]] <- createJaspState(regressionResult)
-    jaspResults[["regressionResult"]]$dependOn(options = c(
-      "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "maxTrees",
-      "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "confusionProportions", "maxK", "noOfFolds", "modelValid",
-      "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac",
-      "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "nSplit",
-      "holdoutData", "testDataManual", "cp",
-      "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
-    ))
+    jaspResults[["regressionResult"]]$dependOn(options = .mlRegressionDependencies(options, includeSaveOptions = TRUE))
   }
 }
 
@@ -224,14 +232,7 @@
   )
   table <- createJaspTable(title)
   table$position <- position
-  table$dependOn(options = c(
-    "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
-    "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
-    "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "maxTrees", "cp",
-    "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac", "intDepth", "nNode", "distance", "nSplit", "cost", "tolerance", "epsilon",
-    "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "holdoutData", "testDataManual", "saveModel", "savePath",
-    "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
-  ))
+  table$dependOn(options = .mlRegressionDependencies(options))
   # Add analysis-specific columns
   if (type == "knn") {
     table$addColumnInfo(name = "nn", title = gettext("Nearest neighbors"), type = "integer")
@@ -436,14 +437,7 @@
   }
   table <- createJaspTable(title = "Evaluation Metrics")
   table$position <- position
-  table$dependOn(options = c(
-    "validationMeasures", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
-    "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "confusionProportions", "maxK", "noOfFolds", "modelValid",
-    "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac",
-    "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "maxTrees", "nSplit", "cost", "tolerance", "epsilon",
-    "holdoutData", "testDataManual", "cp",
-    "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
-  ))
+  table$dependOn(options = c(.mlRegressionDependencies(options), "validationMeasures"))
   table$addColumnInfo(name = "measures", title = "", type = "string")
   table$addColumnInfo(name = "values", title = gettext("Value"), type = "string")
   measures <- c("MSE", "RMSE", "MAE", "MAPE", "R\u00B2")
@@ -475,14 +469,7 @@
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Predictive Performance Plot"), width = 400, height = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
-    "target", "predictors", "seed", "seedBox", "modelValid", "maxK", "noOfFolds", "modelValid", "predictedPerformancePlot",
-    "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac",
-    "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "maxTrees", "nSplit", "cost", "tolerance", "epsilon",
-    "holdoutData", "testDataManual", "cp",
-    "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
-  ))
+  plot$dependOn(options = c(.mlRegressionDependencies(options), "predictedPerformancePlot"))
   jaspResults[["predictedPerformancePlot"]] <- plot
   if (!ready) {
     return()
@@ -589,14 +576,7 @@
   if (is.null(jaspResults[["testIndicatorColumn"]])) {
     testIndicatorColumn <- result[["testIndicatorColumn"]]
     jaspResults[["testIndicatorColumn"]] <- createJaspColumn(columnName = options[["testIndicatorColumn"]])
-    jaspResults[["testIndicatorColumn"]]$dependOn(options = c(
-      "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "maxTrees",
-      "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "confusionProportions", "maxK", "noOfFolds", "modelValid",
-      "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac",
-      "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "nSplit", "cost", "tolerance", "epsilon",
-      "holdoutData", "testDataManual", "testIndicatorColumn", "addIndicator", "cp",
-      "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
-    ))
+    jaspResults[["testIndicatorColumn"]]$dependOn(options = c(.mlRegressionDependencies(options), "testIndicatorColumn", "addIndicator"))
     jaspResults[["testIndicatorColumn"]]$setNominal(testIndicatorColumn)
   }
 }
@@ -653,14 +633,7 @@
     predictionsColumn <- rep(NA, max(as.numeric(rownames(dataset))))
     predictionsColumn[as.numeric(rownames(dataset))] <- predictions
     jaspResults[["predictionsColumn"]] <- createJaspColumn(columnName = options[["predictionsColumn"]])
-    jaspResults[["predictionsColumn"]]$dependOn(options = c(
-      "predictionsColumn", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "maxTrees",
-      "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid",
-      "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "bagFrac",
-      "intDepth", "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "nSplit", "cost", "tolerance", "epsilon",
-      "holdoutData", "testDataManual", "testIndicatorColumn",
-      "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
-    ))
+    jaspResults[["predictionsColumn"]]$dependOn(options = c(.mlRegressionDependencies(options), "predictionsColumn"))
     jaspResults[["predictionsColumn"]]$setScale(predictionsColumn)
   }
 }
