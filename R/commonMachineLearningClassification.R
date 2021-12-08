@@ -341,7 +341,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   plot <- createJaspPlot(title = gettext("Decision Boundary Matrix"), height = 400, width = 300)
   plot$position <- position
-  plot$dependOn(options = c(.mlClassificationDependencies(options), "decisionBoundary"))
+  plot$dependOn(options = c(.mlClassificationDependencies(options), "decisionBoundary", "plotPoints", "plotLegend"))
   jaspResults[["decisionBoundary"]] <- plot
   if (!ready || length(options[["predictors"]]) < 2) {
     return()
@@ -469,16 +469,20 @@ gettextf <- function(fmt, ..., domain = NULL) {
     )
     predictions <- predict(fit, newdata = grid)
   }
+  shapes <- rep(21, nrow(dataset))
+  if (type == "svm") {
+    shapes[fit$index] <- 23
+  }
   gridData <- data.frame(x = grid[, 1], y = grid[, 2])
-  pointData <- data.frame(x = predictors[, 1], y = predictors[, 2])
+  pointData <- data.frame(x = predictors[, 1], y = predictors[, 2], target = target, shapes = shapes)
   p <- ggplot2::ggplot(data = gridData, mapping = ggplot2::aes(x = x, y = y)) +
-    ggplot2::geom_tile(ggplot2::aes(fill = predictions), alpha = 0.3, show.legend = FALSE) +
+    ggplot2::geom_tile(mapping = ggplot2::aes(fill = predictions), alpha = 0.3, show.legend = FALSE) +
     ggplot2::labs(fill = options[["target"]]) +
-    ggplot2::scale_fill_manual(values = .mlColorScheme(length(unique(target)))) +
+    ggplot2::scale_fill_manual(values = .mlColorScheme(n = length(unique(target)))) +
     ggplot2::scale_x_continuous(name = NULL, breaks = xBreaks, limits = range(xBreaks)) +
     ggplot2::scale_y_continuous(name = NULL, breaks = yBreaks, limits = range(yBreaks))
   if (options[["plotPoints"]]) {
-    p <- p + jaspGraphs::geom_point(data = pointData, ggplot2::aes(x = x, y = y, fill = target))
+    p <- p + jaspGraphs::geom_point(data = pointData, ggplot2::aes(x = x, y = y, fill = factor(target)), shape = shapes)
   }
   if (l <= 2) {
     p <- p + jaspGraphs::geom_rangeframe() +
