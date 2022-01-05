@@ -103,7 +103,7 @@
   }
   customChecks <- .getCustomErrorChecksKnnBoosting(dataset, options, type)
   .hasErrors(dataset,
-    type = c("infinity", "observations"), custom = customChecks,
+    type = c("infinity", "observations", "variance"), custom = customChecks,
     all.target = variables,
     observations.amount = "< 2",
     exitAnalysisIfErrors = TRUE
@@ -399,7 +399,7 @@
     row <- data.frame(
       splits = splits,
       nTrain = nTrain,
-      ntest = regressionResult[["ntest"]],
+      nTest = regressionResult[["ntest"]],
       testMSE = regressionResult[["testMSE"]]
     )
     table$addRows(row)
@@ -407,7 +407,7 @@
     row <- data.frame(
       vectors = nrow(regressionResult[["model"]]$SV),
       nTrain = nTrain,
-      ntest = regressionResult[["ntest"]],
+      nTest = regressionResult[["ntest"]],
       testMSE = regressionResult[["testMSE"]]
     )
     table$addRows(row)
@@ -590,7 +590,7 @@
   if (nrow(x) == 0) {
     return(x)
   }
-  idx <- sapply(x, is.numeric)
+  idx <- sapply(x, function(x) is.numeric(x) && length(unique(x)) > 1)
   x[, idx] <- scale(x[, idx, drop = FALSE], center, scale)
   attr(x, which = "scaled:center") <- NULL
   attr(x, which = "scaled:scale") <- NULL
@@ -612,7 +612,7 @@
   if (center) {
     x <- x - mean(x)
   }
-  if (scale) {
+  if (scale && length(unique(x)) > 1) {
     x <- x / sd(x)
   }
   return(x)

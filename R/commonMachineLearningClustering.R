@@ -146,8 +146,8 @@
   if (type == "kmeans") {
     table$addCitation("Hartigan, J. A., & Wong, M. A. (1979). Algorithm AS 136: A k-means clustering algorithm. Journal of the Royal Statistical Society. Series C (Applied Statistics), 28(1), 100-108.")
   } else if (type == "kmedians") {
-    table$addCitation("Cardot, H., Cenac, P. and Monnez, J-M. (2012). A fast and recursive algorithm for clustering large datasets with k-medians. Computational Statistics and Data Analysis, 56, 1434-1449.")
-    table$addCitation("Cardot, H., Cenac, P. and Zitt, P-A. (2013). Efficient and fast estimation of the geometric median in Hilbert spaces with an averaged stochastic gradient algorithm. Bernoulli, 19, 18-43.")
+    table$addCitation(c("Cardot, H., Cenac, P. and Monnez, J-M. (2012). A fast and recursive algorithm for clustering large datasets with k-medians. Computational Statistics and Data Analysis, 56, 1434-1449.",
+                        "Cardot, H., Cenac, P. and Zitt, P-A. (2013). Efficient and fast estimation of the geometric median in Hilbert spaces with an averaged stochastic gradient algorithm. Bernoulli, 19, 18-43."))
   }
   if (!ready) {
     table$addFootnote(gettext("Please provide at least 2 variables."))
@@ -215,7 +215,7 @@
   clusterResult <- jaspResults[["clusterResult"]]$object
   if (type == "kmeans" || type == "cmeans") {
     if (options[["tableClusterInfoCentroids"]]) {
-      for (i in 1:length(options[["predictors"]])) {
+      for (i in seq_along(options[["predictors"]])) {
         title <- gettextf("Center %s", options[["predictors"]][i])
         table$addColumnInfo(name = paste0("centroid", i), title = title, type = "number", format = "dp:3")
       }

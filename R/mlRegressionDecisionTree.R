@@ -111,6 +111,10 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
     "classification" = jaspResults[["classificationResult"]]$object,
     "regression" = jaspResults[["regressionResult"]]$object
   )
+  if (is.null(result[["model"]][["variable.importance"]])) {
+    table$addFootnote(gettext("No splits were made in the tree."))
+    return()
+  }
   varImpOrder <- sort(result[["model"]][["variable.importance"]], decreasing = TRUE)
   table[["predictor"]] <- as.character(names(varImpOrder))
   table[["imp"]] <- as.numeric(varImpOrder) / sum(as.numeric(varImpOrder)) * 100
@@ -168,44 +172,54 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
     "regression" = jaspResults[["regressionResult"]]$object
   )
   result[["model"]]$call$data <- result[["train"]] # Required
-  plotData <- partykit::as.party(result[["model"]])
-  p <- ggparty::ggparty(plotData)
-  # The following lines come from rpart:::print.rpart()
-  x <- result[["model"]]
-  frame <- x$frame
-  ylevel <- attr(x, "ylevels")
-  digits <- 3
-  tfun <- (x$functions)$print
-  if (!is.null(tfun)) {
-    if (is.null(frame$yval2)) {
-      yval <- tfun(frame$yval, ylevel, digits)
+  if (is.null(result[["model"]]$splits)) {
+    plot$setError(gettext("Plotting not possible: No splits were made in the tree."))
+    return()
+  }
+  ptry <- try({
+    plotData <- partykit::as.party(result[["model"]])
+    p <- ggparty::ggparty(plotData)
+    # The following lines come from rpart:::print.rpart()
+    x <- result[["model"]]
+    frame <- x$frame
+    ylevel <- attr(x, "ylevels")
+    digits <- 3
+    tfun <- (x$functions)$print
+    if (!is.null(tfun)) {
+      if (is.null(frame$yval2)) {
+        yval <- tfun(frame$yval, ylevel, digits)
+      } else {
+        yval <- tfun(frame$yval2, ylevel, digits)
+      }
     } else {
-      yval <- tfun(frame$yval2, ylevel, digits)
+      yval <- format(signif(frame$yval, digits))
     }
+    leafs <- which(x$frame$var == "<leaf>")
+    labels <- yval[leafs]
+    if (purpose == "classification") {
+      labels <- strsplit(labels, split = " ")
+      labels <- unlist(lapply(labels, `[[`, 1))
+    }
+    nodeNames <- p$data$splitvar
+    nodeNames[is.na(nodeNames)] <- labels
+    p$data$info <- paste0(nodeNames, "\nn = ", p$data$nodesize)
+    p <- p + ggparty::geom_edge() +
+      ggparty::geom_edge_label(mapping = ggplot2::aes(label = paste(substr(breaks_label, start = 1, stop = 15))), fill = NA) +
+      ggparty::geom_node_splitvar(mapping = ggplot2::aes(size = max(3, nodesize) / 2, label = info), fill = "white", col = "black") +
+      ggparty::geom_node_label(mapping = ggplot2::aes(label = info, size = max(3, nodesize) / 2), ids = "terminal", fill = "white", col = "black") +
+      ggplot2::scale_x_continuous(name = NULL, limits = c(min(p$data$x) - abs(0.1 * min(p$data$x)), max(p$data$x) * 1.1)) +
+      ggplot2::scale_y_continuous(name = NULL, limits = c(min(p$data$y) - abs(0.1 * min(p$data$y)), max(p$data$y) * 1.1)) +
+      jaspGraphs::geom_rangeframe(sides = "") +
+      jaspGraphs::themeJaspRaw() +
+      ggplot2::theme(
+        axis.ticks = ggplot2::element_blank(),
+        axis.text.x = ggplot2::element_blank(),
+        axis.text.y = ggplot2::element_blank()
+      )
+  })
+  if (isTryError(ptry)) {
+    plot$setError(gettext("Plotting not possible: An error occurred while creating this plot."))
   } else {
-    yval <- format(signif(frame$yval, digits))
+    plot$plotObject <- p
   }
-  leafs <- which(x$frame$var == "<leaf>")
-  labels <- yval[leafs]
-  if (purpose == "classification") {
-    labels <- strsplit(labels, split = " ")
-    labels <- unlist(lapply(labels, `[[`, 1))
-  }
-  nodeNames <- p$data$splitvar
-  nodeNames[is.na(nodeNames)] <- labels
-  p$data$info <- paste0(nodeNames, "\nn = ", p$data$nodesize)
-  p <- p + ggparty::geom_edge() +
-    ggparty::geom_edge_label(mapping = ggplot2::aes(label = paste(substr(breaks_label, start = 1, stop = 15))), fill = NA) +
-    ggparty::geom_node_splitvar(mapping = ggplot2::aes(size = max(3, nodesize) / 2, label = info), fill = "white", col = "black") +
-    ggparty::geom_node_label(mapping = ggplot2::aes(label = info, size = max(3, nodesize) / 2), ids = "terminal", fill = "white", col = "black") +
-    ggplot2::scale_x_continuous(name = NULL, limits = c(min(p$data$x) - abs(0.1 * min(p$data$x)), max(p$data$x) * 1.1)) +
-    ggplot2::scale_y_continuous(name = NULL, limits = c(min(p$data$y) - abs(0.1 * min(p$data$y)), max(p$data$y) * 1.1)) +
-    jaspGraphs::geom_rangeframe(sides = "") +
-    jaspGraphs::themeJaspRaw() +
-    ggplot2::theme(
-      axis.ticks = ggplot2::element_blank(),
-      axis.text.x = ggplot2::element_blank(),
-      axis.text.y = ggplot2::element_blank()
-    )
-  plot$plotObject <- p
 }
