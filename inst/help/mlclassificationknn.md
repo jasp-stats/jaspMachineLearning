@@ -20,6 +20,7 @@ K-nearest neighbors is a method of classification that looks at the *k* number o
 
 #### Plots
 - Data split: Shows how the data is split into training (and validation), and test set.
+- Weight function: Shows how the weights are assigned as a function of the distance.
 - Classification accuracy: Plots the number of nearest neighbors against the classification accuracy of the model. Accuracy is assessed for the training (and validation) set.
 - ROC curves: Displays ROC curves for each class predicted against all other classes.
 - Andrews curves: Is a way to visualize structure in high-dimensional data. Lines that cluster are observations that are more alike. 
@@ -80,7 +81,6 @@ Generates a new column in your dataset with the class labels of your classificat
 - kknn
 - ROCR
 
-### Example 
---- 
-- For an example data set go to `Open` --> `Data Library` --> `Machine Learning` --> `Telco Customer Churn`.  
-
+### Example
+---
+- For an example data set go to `Open` --> `Data Library` --> `Machine Learning` --> `Telco Customer Churn`.

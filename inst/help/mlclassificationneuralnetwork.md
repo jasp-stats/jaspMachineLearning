@@ -96,6 +96,6 @@ Generates a new column in your dataset with the class labels of your classificat
 - James, G., Witten, D., Hastie, T., & Tibshirani, R. (2013). An introduction to statistical learning. Springer New York.
 
 ### R-packages 
---- 
+---
 - neuralnet
 - ROCR

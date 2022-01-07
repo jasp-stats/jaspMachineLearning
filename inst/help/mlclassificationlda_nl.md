@@ -74,7 +74,5 @@ Genereert een nieuwe kolom in uw dataset met de klasselabels van uw classificati
 - ROCR
 
 ### Voorbeeld 
---- 
-- Voor een dataset als voorbeeld ga naar `Open` --> `Bibliotheek` --> `Machine Learning` --> `Wijnsoorten`.  
-
-
+---
+- Voor een dataset als voorbeeld ga naar `Open` --> `Bibliotheek` --> `Machine Learning` --> `Wijnsoorten`.

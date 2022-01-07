@@ -1,6 +1,6 @@
 context("Machine Learning Neural Network Classification")
 
-options <- analysisOptions("mlClassificationNeuralNetwork")
+options <- jaspTools::analysisOptions("mlClassificationNeuralNetwork")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
 options$algorithm <- "backprop"
@@ -24,7 +24,7 @@ options$threshold <- 0.05
 options$validationDataManual <- 0.2
 options$validationMeasures <- TRUE
 set.seed(1)
-results <- runAnalysis("mlClassificationNeuralNetwork", "iris.csv", options)
+results <- jaspTools::runAnalysis("mlClassificationNeuralNetwork", "iris.csv", options)
 
 
 test_that("Class Proportions table results match", {

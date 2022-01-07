@@ -85,4 +85,3 @@ Generates a new column in your dataset with the class labels of your classificat
 ### Example 
 --- 
 - For an example data set go to `Open` --> `Data Library` --> `Machine Learning` --> `Telco Customer Churn`.  
-

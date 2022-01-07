@@ -18,6 +18,7 @@ K-naaste buren is een regressiemethode die lijkt op het *k* aantal voorspellende
 
 #### Grafieken
 - Datasplit: Laat zien hoe de data is gesplitst in trainings- (en validatie-) en testset.
+- Gewichtsfunctie: laat zien hoe de gewichten worden toegekend als functie van de afstand.
 - Gemiddelde kwadraatsom fout: Plot het aantal naaste buren tegen de MSE van het model. Precisie is bepaald voor de trainingsset (en validatieset).
 - Voorspellingsvermogen: Laat de observaties van de geselecteerde testset tegen de voorspelde waarden zien.
 

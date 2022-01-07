@@ -54,12 +54,17 @@ mlClusteringKMeans <- function(jaspResults, dataset, options, ...) {
 
 .kMeansClustering <- function(dataset, options, jaspResults, ready) {
   if (options[["modelOpt"]] == "validationManual") {
-    fit <- kmeans(dataset[, options[["predictors"]]],
-      centers = options[["noOfClusters"]],
-      iter.max = options[["noOfIterations"]],
-      nstart = options[["noOfRandomSets"]],
-      algorithm = options[["algorithm"]]
-    )
+    if (options[["centers"]] == "means") {
+      fit <- kmeans(dataset[, options[["predictors"]]], centers = options[["noOfClusters"]], iter.max = options[["noOfIterations"]], nstart = options[["noOfRandomSets"]], algorithm = options[["algorithm"]])
+    } else if (options[["centers"]] == "medians") {
+      fit <- Gmedian::kGmedian(dataset[, options[["predictors"]]], ncenters = options[["noOfClusters"]], nstart = options[["noOfIterations"]], nstartkmeans = options[["noOfRandomSets"]])
+    } else if (options[["centers"]] == "medoids") {
+      if (options[["algorithm"]] == "pam") {
+        fit <- cluster::pam(dataset[, options[["predictors"]]], k = options[["noOfClusters"]], metric = options[["distance"]], nstart = options[["noOfRandomSets"]])
+      } else {
+        fit <- cluster::clara(dataset[, options[["predictors"]]], k = options[["noOfClusters"]], metric = options[["distance"]], samples = options[["noOfIterations"]])
+      }
+    }
     clusters <- options[["noOfClusters"]]
   } else {
     avgSilh <- numeric(options[["maxClusters"]] - 1)
@@ -69,18 +74,25 @@ mlClusteringKMeans <- function(jaspResults, dataset, options, ...) {
     bicStore <- numeric(options[["maxClusters"]] - 1)
     startProgressbar(length(clusterRange))
     for (i in clusterRange) {
-      fit <- kmeans(dataset[, options[["predictors"]]],
-        centers = i,
-        iter.max = options[["noOfIterations"]],
-        nstart = options[["noOfRandomSets"]],
-        algorithm = options[["algorithm"]]
-      )
-      silh <- summary(cluster::silhouette(fit$cluster, dist(dataset[, options[["predictors"]]])))
+      if (options[["centers"]] == "means") {
+        fit <- kmeans(dataset[, options[["predictors"]]], centers = i, iter.max = options[["noOfIterations"]], nstart = options[["noOfRandomSets"]], algorithm = options[["algorithm"]])
+      } else if (options[["centers"]] == "medians") {
+        fit <- Gmedian::kGmedian(dataset[, options[["predictors"]]], ncenters = i, nstart = options[["noOfIterations"]], nstartkmeans = options[["noOfRandomSets"]])
+      } else if (options[["centers"]] == "medoids") {
+        if (options[["algorithm"]] == "pam") {
+          fit <- cluster::pam(dataset[, options[["predictors"]]], k = i, metric = options[["distance"]], nstart = options[["noOfRandomSets"]])
+        } else {
+          fit <- cluster::clara(dataset[, options[["predictors"]]], k = i, metric = options[["distance"]], samples = options[["noOfIterations"]])
+        }
+      }
+	  predictions <- if (options[["centers"]] == "medoids") fit[["clustering"]] else fit[["cluster"]]
+      silh <- summary(cluster::silhouette(predictions, dist(dataset[, options[["predictors"]]])))
       avgSilh[i - 1] <- silh[["avg.width"]]
-      sumSquares <- .sumsqr(dataset[, options[["predictors"]]], fit[["centers"]], fit[["cluster"]])
+	  centers <- if (options[["centers"]] == "medoids") fit[["medoids"]] else fit[["centers"]]
+	  sumSquares <- .sumsqr(dataset[, options[["predictors"]]], centers, predictions)
       wssStore[i - 1] <- sumSquares[["tot.within.ss"]]
-      aicStore[i - 1] <- fit[["tot.withinss"]] + 2 * ncol(fit[["centers"]]) * nrow(fit[["centers"]])
-      bicStore[i - 1] <- fit[["tot.withinss"]] + log(length(fit[["cluster"]])) * ncol(fit[["centers"]]) * nrow(fit[["centers"]])
+      aicStore[i - 1] <- sumSquares[["tot.within.ss"]] + 2 * ncol(centers) * nrow(centers)
+      bicStore[i - 1] <- sumSquares[["tot.within.ss"]] + log(length(predictions)) * ncol(centers) * nrow(centers)
       progressbarTick()
     }
     clusters <- switch(options[["optimizationCriterion"]],
@@ -88,25 +100,34 @@ mlClusteringKMeans <- function(jaspResults, dataset, options, ...) {
       "validationAIC" = clusterRange[which.min(aicStore)],
       "validationBIC" = clusterRange[which.min(bicStore)]
     )
-    fit <- kmeans(dataset[, options[["predictors"]]],
-      centers = clusters,
-      iter.max = options[["noOfIterations"]],
-      nstart = options[["noOfRandomSets"]],
-      algorithm = options[["algorithm"]]
-    )
+    if (options[["centers"]] == "means") {
+      fit <- kmeans(dataset[, options[["predictors"]]], centers = clusters, iter.max = options[["noOfIterations"]], nstart = options[["noOfRandomSets"]], algorithm = options[["algorithm"]])
+    } else if (options[["centers"]] == "medians") {
+      fit <- Gmedian::kGmedian(dataset[, options[["predictors"]]], ncenters = clusters, nstart = options[["noOfIterations"]], nstartkmeans = options[["noOfRandomSets"]])
+    } else if (options[["centers"]] == "medoids") {
+      if (options[["algorithm"]] == "pam") {
+        fit <- cluster::pam(dataset[, options[["predictors"]]], k = clusters, metric = options[["distance"]], nstart = options[["noOfRandomSets"]])
+      } else {
+        fit <- cluster::clara(dataset[, options[["predictors"]]], k = clusters, metric = options[["distance"]], samples = options[["noOfIterations"]])
+      }
+    }
   }
-  silhouettes <- summary(cluster::silhouette(fit[["cluster"]], dist(dataset[, options[["predictors"]]])))
+  predictions <- if (options[["centers"]] == "medoids") fit[["clustering"]] else fit[["cluster"]]
+  centers <- if (options[["centers"]] == "medoids") fit[["medoids"]] else fit[["centers"]]
+  sumSquares <- .sumsqr(dataset[, options[["predictors"]]], centers, predictions)
+  silhouettes <- summary(cluster::silhouette(predictions, dist(dataset[, options[["predictors"]]])))
+  size <- switch(options[["centers"]], "means" = fit[["size"]], "medians" = fit[["size"]][, 1], "medoids" = fit[["clusinfo"]][, 1])
   result <- list()
-  result[["pred.values"]] <- fit[["cluster"]]
+  result[["pred.values"]] <- predictions
   result[["clusters"]] <- clusters
   result[["N"]] <- nrow(dataset)
-  result[["size"]] <- fit[["size"]]
-  result[["centroids"]] <- fit[["centers"]]
-  result[["WSS"]] <- fit[["withinss"]]
-  result[["TSS"]] <- fit[["totss"]]
-  result[["BSS"]] <- fit[["betweenss"]]
-  result[["AIC"]] <- fit[["tot.withinss"]] + 2 * ncol(fit[["centers"]]) * nrow(fit[["centers"]])
-  result[["BIC"]] <- fit[["tot.withinss"]] + log(length(fit[["cluster"]])) * ncol(fit[["centers"]]) * nrow(fit[["centers"]])
+  result[["size"]] <- size
+  result[["centroids"]] <- centers
+  result[["WSS"]] <- sumSquares[["wss"]]
+  result[["TSS"]] <- sumSquares[["tss"]]
+  result[["BSS"]] <- sumSquares[["bss"]]
+  result[["AIC"]] <- sumSquares[["tot.within.ss"]] + 2 * ncol(centers) * nrow(centers)
+  result[["BIC"]] <- sumSquares[["tot.within.ss"]] + log(length(predictions)) * ncol(centers) * nrow(centers)
   result[["Silh_score"]] <- silhouettes[["avg.width"]]
   result[["silh_scores"]] <- silhouettes[["clus.avg.widths"]]
   if (options[["modelOpt"]] != "validationManual") {

@@ -73,7 +73,5 @@ Generates a new column in your dataset with the class labels of your classificat
 - ROCR
 
 ### Example 
---- 
-- For an example data set go to `Open` --> `Data Library` --> `Machine Learning` --> `Wine Types`.  
-
-
+---
+- For an example data set go to `Open` --> `Data Library` --> `Machine Learning` --> `Wine Types`.

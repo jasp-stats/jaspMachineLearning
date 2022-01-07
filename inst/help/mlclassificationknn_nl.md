@@ -20,6 +20,7 @@ K-naaste buren is een classificatiemethode die kijkt naar het aantal, *k*, voors
 
 #### Grafieken
 - Datasplit: Laat zien hoe de data is gesplitst in trainings- (en validatie-) en testset.
+- Gewichtsfunctie: laat zien hoe de gewichten worden toegekend als functie van de afstand.
 - Classificatie Precisie: Plot het aantal naaste buren tegen de classificatie Precisie van het model. Precisie is verkregen met de trainingsset (en validatieset).
 - ROC kromme: Toont een ROC kromme voor elke klasse voorspelt tegenover alle andere klassen.
 - Andrews kromme: Een manier om de structuur in hoger dimensionele data te visualiseren. Lijnen die clusteren, zijn observaties die meer overeenkomen. 
@@ -81,6 +82,5 @@ Genereert een nieuwe kolom in uw dataset met de klasselabels van uw classificati
 - ROCR
 
 ### Voorbeeld 
---- 
-- Voor een dataset als voorbeeld ga naar `Open` --> `Bibliotheek` --> `Machine Learning` --> `Telco's Overstappende Klanten`.  
-
+---
+- Voor een dataset als voorbeeld ga naar `Open` --> `Bibliotheek` --> `Machine Learning` --> `Telco's Overstappende Klanten`.

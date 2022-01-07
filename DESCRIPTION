@@ -1,8 +1,8 @@
 Package: jaspMachineLearning
 Type: Package
 Title: Machine Learning Module for JASP
-Version: 0.16
-Date: 2021-09-30
+Version: 0.16.1
+Date: 2021-11-04
 Author: JASP Team
 Website: www.jasp-stats.org
 Maintainer: JASP Team <info@jasp-stats.org>
@@ -19,18 +19,23 @@ Imports:
   e1071,
   fpc,
   gbm,
+  Gmedian,
+  ggparty,
   ggdendro,
   ggnetwork,
   ggplot2,
   ggrepel,
+  ggridges,
   glmnet,
   jaspBase,
   jaspGraphs,
   MASS,
   neuralnet,
   network,
+  partykit,
   plyr,
   randomForest,
+  rpart,
   ROCR,
   Rtsne,
   signal

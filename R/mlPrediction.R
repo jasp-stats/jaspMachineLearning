@@ -60,6 +60,12 @@ is.jaspMachineLearning <- function(x) {
 .mlPredictionGetModelType.nn <- function(model) {
   gettext("Neural network")
 }
+.mlPredictionGetModelType.rpart <- function(model) {
+  gettext("Decision tree")
+}
+.mlPredictionGetModelType.svm <- function(model) {
+  gettext("Support vector machine")
+}
 
 # S3 method to make predictions using the model
 .mlPredictionGetPredictions <- function(model, dataset) {
@@ -100,6 +106,20 @@ is.jaspMachineLearning <- function(x) {
     as.numeric(neuralnet:::predict.nn(model, newdata = dataset))
   }
 }
+.mlPredictionGetPredictions.rpart <- function(model, dataset) {
+  if (inherits(model, "jaspClassification")) {
+    as.character(levels(factor(model[["data"]][, 1]))[max.col(rpart:::predict.rpart(model, newdata = dataset))])
+  } else if (inherits(model, "jaspRegression")) {
+    as.numeric(rpart:::predict.rpart(model, newdata = dataset))
+  }
+}
+.mlPredictionGetPredictions.svm <- function(model, dataset) {
+  if (inherits(model, "jaspClassification")) {
+    as.character(levels(factor(model[["data"]][, 1]))[e1071:::predict.svm(model, newdata = dataset)])
+  } else if (inherits(model, "jaspRegression")) {
+    as.numeric(e1071:::predict.svm(model, newdata = dataset))
+  }
+}
 
 # S3 method to make find out number of observations in training data
 .mlPredictionGetTrainingN <- function(model) {
@@ -122,6 +142,12 @@ is.jaspMachineLearning <- function(x) {
 }
 .mlPredictionGetTrainingN.nn <- function(model) {
   nrow(model[["data"]])
+}
+.mlPredictionGetTrainingN.rpart <- function(model) {
+  nrow(model[["x"]])
+}
+.mlPredictionGetTrainingN.svm <- function(model) {
+  length(model[["fitted"]])
 }
 
 # S3 method to decode the model variables in the result object
@@ -160,6 +186,18 @@ is.jaspMachineLearning <- function(x) {
   model[["model.list"]]$variables <- decodeColNames(model[["model.list"]]$variables)
   return(model)
 }
+.decodeJaspMLobject.rpart <- function(model) {
+  formula <- formula(paste(decodeColNames(as.character(model$terms)[2]), "~", paste0(decodeColNames(strsplit(as.character(model$terms)[3], split = " + ", fixed = TRUE)[[1]]), collapse = " + ")))
+  model$terms <- stats::terms(formula)
+  model$frame$var <- decodeColNames(model$frame$var)
+  rownames(model$splits) <- decodeColNames(rownames(model$splits))
+  return(model)
+}
+.decodeJaspMLobject.svm <- function(model) {
+  formula <- formula(paste(decodeColNames(as.character(model$terms)[2]), "~ 0 +", paste0(decodeColNames(strsplit(as.character(model$terms)[3], split = " + ", fixed = TRUE)[[1]]), collapse = " + ")))
+  model$terms <- stats::terms(formula)
+  return(model)
+}
 
 .mlPredictionReadModel <- function(options) {
   if (options[["loadPath"]] != "") {
@@ -169,7 +207,7 @@ is.jaspMachineLearning <- function(x) {
     if (!is.jaspMachineLearning(model)) {
       jaspBase:::.quitAnalysis(gettext("Error: The trained model is not created in JASP."))
     }
-    if (!(any(c("kknn", "lda", "gbm", "randomForest", "cv.glmnet", "nn") %in% class(model)))) {
+    if (!(any(c("kknn", "lda", "gbm", "randomForest", "cv.glmnet", "nn", "rpart", "svm") %in% class(model)))) {
       jaspBase:::.quitAnalysis(gettextf("The trained model (type: %1$s) is currently not supported in JASP.", paste(class(model), collapse = ", ")))
     }
     if (model[["jaspVersion"]] != .baseCitation) {

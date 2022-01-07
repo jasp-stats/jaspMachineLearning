@@ -13,6 +13,7 @@ options$modelOpt <- "optimizationError"
 options$modelValid <- "validationManual"
 options$noOfFolds <- 5
 options$plotErrorVsK <- TRUE
+options$plotWeights <- TRUE
 options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
                            "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
                            "Hue", "Dilution", "Proline")
@@ -68,6 +69,12 @@ test_that("Classification Accuracy Plot matches", {
   jaspTools::expect_equal_plots(testPlot, "classification-accuracy-plot")
 })
 
+test_that("Rectangular Weight Function plot matches", {
+	plotName <- results[["results"]][["plotWeights"]][["data"]]
+	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+	jaspTools::expect_equal_plots(testPlot, "rectangular-weight-function")
+})
+
 test_that("ROC Curves Plot matches", {
   plotName <- results[["results"]][["rocCurve"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
@@ -75,11 +82,11 @@ test_that("ROC Curves Plot matches", {
 })
 
 test_that("Evaluation Metrics table results match", {
-  table <- results[["results"]][["validationMeasures"]][["data"]]
-  jaspTools::expect_equal_tables(table,
-                      list(0.977272727272727, 0.962962962962963, 1, 0.928571428571429, 1,
-                           13, 0.928571428571429, 0.923076923076923, 2, 1, 0.857142857142857,
-                           14, 0.981481481481482, 0.941176470588235, 3, 0.888888888888889,
-                           1, 8, 0.962441879108546, 0.942028777322895, "Average / Total",
-                           0.948072562358277, 0.942857142857143, 35))
+	table <- results[["results"]][["validationMeasures"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(0.977272727272727, 0.962962962962963, 1, 0.928571428571429, 1,
+			 13, 0.928571428571429, 0.923076923076923, 2, 1, 0.857142857142857,
+			 14, 0.981481481481482, 0.941176470588235, 3, 0.888888888888889,
+			 1, 8, 0.962441879108546, 0.942028777322895, "Average / Total",
+			 0.948072562358277, 0.942857142857143, 35))
 })

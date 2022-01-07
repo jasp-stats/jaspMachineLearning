@@ -1,6 +1,6 @@
 context("Machine Learning Neural Network Regression")
 
-options <- analysisOptions("mlRegressionNeuralNetwork")
+options <- jaspTools::analysisOptions("mlRegressionNeuralNetwork")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
 options$algorithm <- "backprop"
@@ -23,7 +23,7 @@ options$threshold <- 0.05
 options$validationDataManual <- 0.2
 options$validationMeasures <- TRUE
 set.seed(1)
-results <- runAnalysis("mlRegressionNeuralNetwork", "iris.csv", options)
+results <- jaspTools::runAnalysis("mlRegressionNeuralNetwork", "iris.csv", options)
 
 
 test_that("Network Weights table results match", {
