@@ -878,17 +878,21 @@ gettextf <- function(fmt, ..., domain = NULL) {
   predictorNames <- options[["predictors"]]
   AUCformula <- formula(paste("levelVar", "~", paste(predictorNames, collapse = " + ")))
   class(AUCformula) <- c(class(AUCformula), class)
-  for (i in 1:length(lvls)) {
+  for (i in seq_along(lvls)) {
     levelVar <- train[, options[["target"]]] == lvls[i]
-    typeData <- cbind(train, levelVar = factor(levelVar))
-    typeData <- typeData[, -which(colnames(typeData) == options[["target"]])]
-    score <- .calcAUCScore(AUCformula, train = train, test = test, typeData = typeData, levelVar = levelVar, options = options, ...)
-    actual.class <- test[, options[["target"]]] == lvls[i]
-    if (length(levels(factor(actual.class))) == 2) {
-      pred <- ROCR::prediction(score, actual.class)
-      auc[i] <- ROCR::performance(pred, "auc")@y.values[[1]]
-    } else { # This variable is not in the test set, we should skip it
-      auc[i] <- 0 # Gets removed in table
+    if (all(!levelVar)) { # This class is not in the training set
+      auc[i] <- 0
+    } else {
+      typeData <- cbind(train, levelVar = factor(levelVar))
+      typeData <- typeData[, -which(colnames(typeData) == options[["target"]])]
+      score <- .calcAUCScore(AUCformula, train = train, test = test, typeData = typeData, levelVar = levelVar, options = options, ...)
+      actual.class <- test[, options[["target"]]] == lvls[i]
+      if (length(levels(factor(actual.class))) == 2) {
+        pred <- ROCR::prediction(score, actual.class)
+        auc[i] <- ROCR::performance(pred, "auc")@y.values[[1]]
+      } else { # This variable is not in the test set, we should skip it
+        auc[i] <- 0 # Gets removed in table
+      }
     }
   }
   return(auc)
