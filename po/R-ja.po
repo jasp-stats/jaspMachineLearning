@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.1\n"
-"POT-Creation-Date: 2021-10-30 03:23\n"
+"POT-Creation-Date: 2022-01-08 03:24\n"
 "PO-Revision-Date: 2021-11-22 22:59+0000\n"
 "Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
@@ -26,6 +26,14 @@ msgid "Boosting Classification"
 msgstr "ブースティング分類"
 
 msgid "Neural Network Classification"
+msgstr "ニューラルネットワーク分類"
+
+#, fuzzy
+msgid "Decision Tree Classification"
+msgstr "ブースティング分類"
+
+#, fuzzy
+msgid "Support Vector Machine Classification"
 msgstr "ニューラルネットワーク分類"
 
 msgid "Nearest neighbors"
@@ -58,6 +66,12 @@ msgstr "隠れ層"
 msgid "Nodes"
 msgstr "ノード"
 
+msgid "Splits"
+msgstr ""
+
+msgid "Support Vectors"
+msgstr ""
+
 msgid "n(Train)"
 msgstr "n(訓練)"
 
@@ -83,7 +97,8 @@ msgid "The trained model is saved as <i>%1$s</i>."
 msgstr "学習したモデルは<i>%1$s</i>として保存されます."
 
 msgid "The trained model is not saved until 'Save trained model' is checked."
-msgstr "学習したモデルは、'Save trained model'がチェックされるまで保存されません."
+msgstr ""
+"学習したモデルは、'Save trained model'がチェックされるまで保存されません."
 
 msgid ""
 "The model is optimized with respect to the <i>validation set accuracy</i>."
@@ -216,6 +231,12 @@ msgstr ""
 msgid "K-Means Clustering"
 msgstr ""
 
+msgid "K-Medians Clustering"
+msgstr ""
+
+msgid "K-Medoids Clustering"
+msgstr ""
+
 msgid "Fuzzy C-Means Clustering"
 msgstr ""
 
@@ -288,7 +309,7 @@ msgstr ""
 msgid "Silhouette score"
 msgstr ""
 
-msgid "Centroid %s"
+msgid "Center %s"
 msgstr ""
 
 msgid "Noisepoints"
@@ -357,13 +378,16 @@ msgstr ""
 msgid "Density"
 msgstr "密度"
 
+msgid "Variable"
+msgstr ""
+
+msgid "All Variables"
+msgstr ""
+
 msgid "Cluster Mean Plots"
 msgstr ""
 
 msgid "Cluster Mean"
-msgstr ""
-
-msgid "All predictors"
 msgstr ""
 
 msgid "The variable '%s' can't be both a predictor and a test set indicator."
@@ -403,6 +427,12 @@ msgid "Boosting Regression"
 msgstr ""
 
 msgid "Neural Network Regression"
+msgstr ""
+
+msgid "Decision Tree Regression"
+msgstr ""
+
+msgid "Support Vector Machine Regression"
 msgstr ""
 
 msgid "Penalty"
@@ -593,6 +623,12 @@ msgstr ""
 msgid "Neural network"
 msgstr ""
 
+msgid "Decision tree"
+msgstr ""
+
+msgid "Support vector machine"
+msgstr ""
+
 msgid "Error: The trained model is not created in JASP."
 msgstr ""
 
@@ -672,6 +708,33 @@ msgstr ""
 msgid "Relative Influence Plot"
 msgstr ""
 
+msgid "Relative Importance"
+msgstr ""
+
+msgid "No splits were made in the tree."
+msgstr ""
+
+msgid "Splits in Tree"
+msgstr ""
+
+msgid "Split Point"
+msgstr ""
+
+msgid "Obs. in Split"
+msgstr ""
+
+msgid "Improvement"
+msgstr ""
+
+msgid "Decision Tree Plot"
+msgstr ""
+
+msgid "Plotting not possible: No splits were made in the tree."
+msgstr ""
+
+msgid "Plotting not possible: An error occurred while creating this plot."
+msgstr ""
+
 msgid "Classification Accuracy Plot"
 msgstr ""
 
@@ -692,6 +755,50 @@ msgstr ""
 
 msgid "Training and validation set"
 msgstr ""
+
+msgid "Rectangular"
+msgstr ""
+
+msgid "Triangular"
+msgstr ""
+
+msgid "Epanechnikov"
+msgstr ""
+
+#, fuzzy
+msgid "Biweight"
+msgstr "重み"
+
+#, fuzzy
+msgid "Triweight"
+msgstr "重み"
+
+msgid "Cosine"
+msgstr ""
+
+msgid "Inverse"
+msgstr ""
+
+msgid "Rank"
+msgstr ""
+
+msgid "Optimal"
+msgstr ""
+
+msgid "%1$s Weight Function"
+msgstr ""
+
+msgid ""
+"Plotting not possible: The selected weighting scheme cannot be visualized "
+"separately from the data."
+msgstr ""
+
+msgid "Proportion of Max. Distance"
+msgstr ""
+
+#, fuzzy
+msgid "Relative Weight"
+msgstr "ウェイト"
 
 #, fuzzy
 msgid "Network Weights"
@@ -782,9 +889,6 @@ msgid "Logistic Sigmoid"
 msgstr ""
 
 msgid "Sine"
-msgstr ""
-
-msgid "Cosine"
 msgstr ""
 
 msgid "Inverse Tangent"

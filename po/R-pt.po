@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2021-10-30 03:23\n"
+"POT-Creation-Date: 2022-01-08 03:24\n"
 "PO-Revision-Date: 2021-09-03 11:34+0000\n"
 "Last-Translator: Laura Durans <lauraadurans@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
@@ -31,6 +31,14 @@ msgstr ""
 
 #, fuzzy
 msgid "Neural Network Classification"
+msgstr "Classificação de Vizinhos K-Nearest"
+
+#, fuzzy
+msgid "Decision Tree Classification"
+msgstr "Classificação de Vizinhos K-Nearest"
+
+#, fuzzy
+msgid "Support Vector Machine Classification"
 msgstr "Classificação de Vizinhos K-Nearest"
 
 msgid "Nearest neighbors"
@@ -62,6 +70,13 @@ msgid "Hidden Layers"
 msgstr ""
 
 msgid "Nodes"
+msgstr ""
+
+#, fuzzy
+msgid "Splits"
+msgstr "Dividir"
+
+msgid "Support Vectors"
 msgstr ""
 
 msgid "n(Train)"
@@ -228,6 +243,12 @@ msgstr ""
 msgid "K-Means Clustering"
 msgstr ""
 
+msgid "K-Medians Clustering"
+msgstr ""
+
+msgid "K-Medoids Clustering"
+msgstr ""
+
 msgid "Fuzzy C-Means Clustering"
 msgstr ""
 
@@ -301,7 +322,7 @@ msgstr "Soma dos quadrados"
 msgid "Silhouette score"
 msgstr ""
 
-msgid "Centroid %s"
+msgid "Center %s"
 msgstr ""
 
 msgid "Noisepoints"
@@ -372,13 +393,16 @@ msgstr ""
 msgid "Density"
 msgstr "Densidade"
 
+msgid "Variable"
+msgstr ""
+
+msgid "All Variables"
+msgstr ""
+
 msgid "Cluster Mean Plots"
 msgstr ""
 
 msgid "Cluster Mean"
-msgstr ""
-
-msgid "All predictors"
 msgstr ""
 
 msgid "The variable '%s' can't be both a predictor and a test set indicator."
@@ -419,6 +443,13 @@ msgid "Boosting Regression"
 msgstr "Regressão"
 
 msgid "Neural Network Regression"
+msgstr ""
+
+#, fuzzy
+msgid "Decision Tree Regression"
+msgstr "Regressão"
+
+msgid "Support Vector Machine Regression"
 msgstr ""
 
 msgid "Penalty"
@@ -614,6 +645,13 @@ msgstr ""
 msgid "Neural network"
 msgstr ""
 
+#, fuzzy
+msgid "Decision tree"
+msgstr "Regressão"
+
+msgid "Support vector machine"
+msgstr ""
+
 msgid "Error: The trained model is not created in JASP."
 msgstr ""
 
@@ -696,6 +734,33 @@ msgstr ""
 msgid "Relative Influence Plot"
 msgstr ""
 
+msgid "Relative Importance"
+msgstr ""
+
+msgid "No splits were made in the tree."
+msgstr ""
+
+msgid "Splits in Tree"
+msgstr ""
+
+msgid "Split Point"
+msgstr ""
+
+msgid "Obs. in Split"
+msgstr ""
+
+msgid "Improvement"
+msgstr ""
+
+msgid "Decision Tree Plot"
+msgstr ""
+
+msgid "Plotting not possible: No splits were made in the tree."
+msgstr ""
+
+msgid "Plotting not possible: An error occurred while creating this plot."
+msgstr ""
+
 msgid "Classification Accuracy Plot"
 msgstr ""
 
@@ -717,6 +782,50 @@ msgstr ""
 
 msgid "Training and validation set"
 msgstr ""
+
+msgid "Rectangular"
+msgstr ""
+
+msgid "Triangular"
+msgstr ""
+
+msgid "Epanechnikov"
+msgstr ""
+
+#, fuzzy
+msgid "Biweight"
+msgstr "WLS Ponderado"
+
+#, fuzzy
+msgid "Triweight"
+msgstr "WLS Ponderado"
+
+msgid "Cosine"
+msgstr ""
+
+msgid "Inverse"
+msgstr ""
+
+msgid "Rank"
+msgstr ""
+
+msgid "Optimal"
+msgstr ""
+
+msgid "%1$s Weight Function"
+msgstr ""
+
+msgid ""
+"Plotting not possible: The selected weighting scheme cannot be visualized "
+"separately from the data."
+msgstr ""
+
+msgid "Proportion of Max. Distance"
+msgstr ""
+
+#, fuzzy
+msgid "Relative Weight"
+msgstr "WLS Ponderado"
 
 #, fuzzy
 msgid "Network Weights"
@@ -808,9 +917,6 @@ msgid "Logistic Sigmoid"
 msgstr ""
 
 msgid "Sine"
-msgstr ""
-
-msgid "Cosine"
 msgstr ""
 
 msgid "Inverse Tangent"

@@ -685,10 +685,6 @@ msgid "Silhouette score"
 msgstr ""
 
 msgctxt "mlClusteringKMeans|"
-msgid "Centroids"
-msgstr ""
-
-msgctxt "mlClusteringKMeans|"
 msgid "Between sum of squares"
 msgstr ""
 
@@ -1382,14 +1378,6 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Hierarchical Clustering"
-msgstr ""
-
-msgctxt "Description|"
-msgid "K-Means"
-msgstr ""
-
-msgctxt "Description|"
-msgid "K-Means Clustering"
 msgstr ""
 
 msgctxt "Description|"
@@ -2423,4 +2411,500 @@ msgstr ""
 
 msgctxt "mlRegressionRegularized|"
 msgid "Largest λ within 1 SE of min"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Decision Tree"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Decision Tree Regression"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Support Vector Machine"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Support Vector Machine Regression"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Decision Tree Classification"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Support Vector Machine Classification"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Neighborhood-Based"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Neighborhood-Based Clustering"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Target"
+msgstr "Objetivo"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Predictors"
+msgstr "Preditores"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Tables"
+msgstr "Tabelas"
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Confusion matrix"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Display proportions"
+msgstr "Mostrar proporções"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Class proportions"
+msgstr "Proporções de categoria"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Evaluation metrics"
+msgstr "Métricas de avaliação"
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Splits in tree"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Variable importance"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Plots"
+msgstr "Diagramas"
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Data split"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "ROC curves"
+msgstr "Curva ROC"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Andrews curves"
+msgstr "Gráfico de Andrews"
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Decision tree"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Decision boundary matrix"
+msgstr "Matriz de limites de decisão"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Legend"
+msgstr "Legenda"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Points"
+msgstr "Pontos"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Training Parameters"
+msgstr "Parâmetros de treinamento"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Algorithmic Settings"
+msgstr "Configurações do algoritmo"
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Min. observations for split"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Min. observations in terminal"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Max. interaction depth"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Complexity parameter"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Scale predictors"
+msgstr "Preditores de escala"
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Set seed"
+msgstr ""
+
+msgctxt "mlClassificationKnn|"
+msgid "Weight function"
+msgstr ""
+
+msgctxt "mlClassificationKnn|"
+msgid "Triangular"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Target"
+msgstr "Objetivo"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Predictors"
+msgstr "Preditores"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Tables"
+msgstr "Tabelas"
+
+msgctxt "mlClassificationSvm|"
+msgid "Confusion matrix"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Display proportions"
+msgstr "Mostrar proporções"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Class proportions"
+msgstr "Proporções de categoria"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Evaluation metrics"
+msgstr "Métricas de avaliação"
+
+msgctxt "mlClassificationSvm|"
+msgid "Support vectors"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Plots"
+msgstr "Diagramas"
+
+msgctxt "mlClassificationSvm|"
+msgid "Data split"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "ROC curves"
+msgstr "Curva ROC"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Andrews curves"
+msgstr "Gráfico de Andrews"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Decision boundary matrix"
+msgstr "Matriz de limites de decisão"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Legend"
+msgstr "Legenda"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Points"
+msgstr "Pontos"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Training Parameters"
+msgstr "Parâmetros de treinamento"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Algorithmic Settings"
+msgstr "Configurações do algoritmo"
+
+msgctxt "mlClassificationSvm|"
+msgid "Weights"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Linear"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Radial"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Polynomial"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Sigmoid"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Degree"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Gamma parameter"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "r parameter"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Cost of contraints violation"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Tolerance of termination criterion"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Epsilon"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Scale predictors"
+msgstr "Preditores de escala"
+
+msgctxt "mlClassificationSvm|"
+msgid "Set seed"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Centers"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Center type"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Distance"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Euclidean"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Manhattan"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Target"
+msgstr "Objetivo"
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Predictors"
+msgstr "Preditores"
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Tables"
+msgstr "Tabelas"
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Evaluation metrics"
+msgstr "Métricas de avaliação"
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Splits in tree"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Variable importance"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Plots"
+msgstr "Diagramas"
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Data split"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Predictive performance"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Decision tree"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Training Parameters"
+msgstr "Parâmetros de treinamento"
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Algorithmic Settings"
+msgstr "Configurações do algoritmo"
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Min. observations for split"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Min. observations in terminal"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Max. interaction depth"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Complexity parameter"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Scale variables"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Set seed"
+msgstr ""
+
+msgctxt "mlRegressionKnn|"
+msgid "Weight function"
+msgstr ""
+
+msgctxt "mlRegressionKnn|"
+msgid "Triangular"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Target"
+msgstr "Objetivo"
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Predictors"
+msgstr "Preditores"
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Tables"
+msgstr "Tabelas"
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Evaluation metrics"
+msgstr "Métricas de avaliação"
+
+msgctxt "mlRegressionSvm|"
+msgid "Support vectors"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Plots"
+msgstr "Diagramas"
+
+msgctxt "mlRegressionSvm|"
+msgid "Data split"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Predictive performance"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Training Parameters"
+msgstr "Parâmetros de treinamento"
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Algorithmic Settings"
+msgstr "Configurações do algoritmo"
+
+msgctxt "mlRegressionSvm|"
+msgid "Weights"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Linear"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Radial"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Polynomial"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Sigmoid"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Degree"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Gamma"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "r parameter"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Cost of contraints violation"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Tolerance of termination criterion"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Epsilon"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Scale variables"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Set seed"
 msgstr ""

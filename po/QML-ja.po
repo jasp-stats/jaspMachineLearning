@@ -100,14 +100,6 @@ msgid "Hierarchical Clustering"
 msgstr "階層的クラスタリング"
 
 msgctxt "Description|"
-msgid "K-Means"
-msgstr "K-平均"
-
-msgctxt "Description|"
-msgid "K-Means Clustering"
-msgstr "K-平均クラスタリング"
-
-msgctxt "Description|"
 msgid "Random Forest Clustering"
 msgstr "ランダムフォレスト クラスタリング"
 
@@ -934,10 +926,6 @@ msgstr "群内平方和"
 msgctxt "mlClusteringKMeans|"
 msgid "Silhouette score"
 msgstr "シルエットスコア"
-
-msgctxt "mlClusteringKMeans|"
-msgid "Centroids"
-msgstr "重心"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Between sum of squares"
@@ -2394,3 +2382,520 @@ msgstr "seedの設定"
 msgctxt "mlRegressionRegularized|"
 msgid "Largest λ within 1 SE of min"
 msgstr "最小値から1SE以内の最大のλ"
+
+msgctxt "Description|"
+msgid "Decision Tree"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Decision Tree Regression"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Support Vector Machine"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Support Vector Machine Regression"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Decision Tree Classification"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Support Vector Machine Classification"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Neighborhood-Based"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Neighborhood-Based Clustering"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Target"
+msgstr "ターゲット"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Predictors"
+msgstr "予測変数"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Tables"
+msgstr "表"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Confusion matrix"
+msgstr "混同行列"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Display proportions"
+msgstr "比率を表示する"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Class proportions"
+msgstr "クラスの比率"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Evaluation metrics"
+msgstr "評価指標"
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Splits in tree"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Variable importance"
+msgstr "変数の重要性"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Plots"
+msgstr "プロット"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Data split"
+msgstr "データの分割"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "ROC curves"
+msgstr "ROC曲線"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Andrews curves"
+msgstr "アンドリュース曲線"
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Decision tree"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Decision boundary matrix"
+msgstr "決定境界行列"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Legend"
+msgstr "凡例"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Points"
+msgstr "ポイント"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Training Parameters"
+msgstr "トレーニングパラメータ"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Algorithmic Settings"
+msgstr "アルゴリズムの設定"
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Min. observations for split"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Min. observations in terminal"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Max. interaction depth"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Complexity parameter"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Scale predictors"
+msgstr "スケール予測変数"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Set seed"
+msgstr "seedの設定"
+
+msgctxt "mlClassificationKnn|"
+msgid "Weight function"
+msgstr ""
+
+msgctxt "mlClassificationKnn|"
+msgid "Triangular"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Target"
+msgstr "ターゲット"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Predictors"
+msgstr "予測変数"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Tables"
+msgstr "表"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Confusion matrix"
+msgstr "混同行列"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Display proportions"
+msgstr "比率を表示する"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Class proportions"
+msgstr "クラスの比率"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Evaluation metrics"
+msgstr "評価指標"
+
+msgctxt "mlClassificationSvm|"
+msgid "Support vectors"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Plots"
+msgstr "プロット"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Data split"
+msgstr "データの分割"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "ROC curves"
+msgstr "ROC曲線"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Andrews curves"
+msgstr "アンドリュース曲線"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Decision boundary matrix"
+msgstr "決定境界行列"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Legend"
+msgstr "凡例"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Points"
+msgstr "ポイント"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Training Parameters"
+msgstr "トレーニングパラメータ"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Algorithmic Settings"
+msgstr "アルゴリズムの設定"
+
+msgctxt "mlClassificationSvm|"
+msgid "Weights"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Linear"
+msgstr "線形"
+
+msgctxt "mlClassificationSvm|"
+msgid "Radial"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Polynomial"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Sigmoid"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Degree"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Gamma parameter"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "r parameter"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Cost of contraints violation"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Tolerance of termination criterion"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Epsilon"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Scale predictors"
+msgstr "スケール予測変数"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Set seed"
+msgstr "seedの設定"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Centers"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Center type"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClusteringKMeans|"
+msgid "Distance"
+msgstr "距離"
+
+#, fuzzy
+msgctxt "mlClusteringKMeans|"
+msgid "Euclidean"
+msgstr "ユークリッド"
+
+#, fuzzy
+msgctxt "mlClusteringKMeans|"
+msgid "Manhattan"
+msgstr "マンハッタン"
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Target"
+msgstr "ターゲット"
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Predictors"
+msgstr "予測変数"
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Tables"
+msgstr "表"
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Evaluation metrics"
+msgstr "評価指標"
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Splits in tree"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Variable importance"
+msgstr "変数の重要性"
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Plots"
+msgstr "プロット"
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Data split"
+msgstr "データの分割"
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Predictive performance"
+msgstr "予測性能"
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Decision tree"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Training Parameters"
+msgstr "トレーニングパラメータ"
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Algorithmic Settings"
+msgstr "アルゴリズムの設定"
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Min. observations for split"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Min. observations in terminal"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Max. interaction depth"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Complexity parameter"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Scale variables"
+msgstr "スケール変数"
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Set seed"
+msgstr "seedの設定"
+
+msgctxt "mlRegressionKnn|"
+msgid "Weight function"
+msgstr ""
+
+msgctxt "mlRegressionKnn|"
+msgid "Triangular"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Target"
+msgstr "ターゲット"
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Predictors"
+msgstr "予測変数"
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Tables"
+msgstr "表"
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Evaluation metrics"
+msgstr "評価指標"
+
+msgctxt "mlRegressionSvm|"
+msgid "Support vectors"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Plots"
+msgstr "プロット"
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Data split"
+msgstr "データの分割"
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Predictive performance"
+msgstr "予測性能"
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Training Parameters"
+msgstr "トレーニングパラメータ"
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Algorithmic Settings"
+msgstr "アルゴリズムの設定"
+
+msgctxt "mlRegressionSvm|"
+msgid "Weights"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Linear"
+msgstr "線形"
+
+msgctxt "mlRegressionSvm|"
+msgid "Radial"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Polynomial"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Sigmoid"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Degree"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Gamma"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "r parameter"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Cost of contraints violation"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Tolerance of termination criterion"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Epsilon"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Scale variables"
+msgstr "スケール変数"
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Set seed"
+msgstr "seedの設定"

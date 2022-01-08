@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2021-10-30 03:23\n"
+"POT-Creation-Date: 2022-01-08 03:24\n"
 "PO-Revision-Date: 2021-11-07 16:53+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
@@ -27,6 +27,14 @@ msgid "Boosting Classification"
 msgstr "Boosting Klassifikation"
 
 msgid "Neural Network Classification"
+msgstr "Neuronale-Netzwerk-Klassifikation"
+
+#, fuzzy
+msgid "Decision Tree Classification"
+msgstr "Boosting Klassifikation"
+
+#, fuzzy
+msgid "Support Vector Machine Classification"
 msgstr "Neuronale-Netzwerk-Klassifikation"
 
 msgid "Nearest neighbors"
@@ -58,6 +66,14 @@ msgstr "Verdeckte Schichten"
 
 msgid "Nodes"
 msgstr "Knoten"
+
+#, fuzzy
+msgid "Splits"
+msgstr "Datenaufteilung"
+
+#, fuzzy
+msgid "Support Vectors"
+msgstr "Träger"
 
 msgid "n(Train)"
 msgstr "n(Train)"
@@ -232,6 +248,14 @@ msgstr ""
 msgid "K-Means Clustering"
 msgstr "K-Means-Clustering"
 
+#, fuzzy
+msgid "K-Medians Clustering"
+msgstr "K-Means-Clustering"
+
+#, fuzzy
+msgid "K-Medoids Clustering"
+msgstr "K-Means-Clustering"
+
 msgid "Fuzzy C-Means Clustering"
 msgstr "Fuzzy-C-Means-Clustering"
 
@@ -310,7 +334,8 @@ msgstr "Innere Quadratsumme"
 msgid "Silhouette score"
 msgstr "Silhouette-Score"
 
-msgid "Centroid %s"
+#, fuzzy
+msgid "Center %s"
 msgstr "Zentroid %s"
 
 msgid "Noisepoints"
@@ -381,14 +406,17 @@ msgstr "Clusterdichte Abbildungen"
 msgid "Density"
 msgstr "Dichte"
 
+msgid "Variable"
+msgstr ""
+
+msgid "All Variables"
+msgstr ""
+
 msgid "Cluster Mean Plots"
 msgstr "Clustermittelwerte Abbildungen"
 
 msgid "Cluster Mean"
 msgstr "Clustermittelwert"
-
-msgid "All predictors"
-msgstr "Alle Prädiktoren"
 
 msgid "The variable '%s' can't be both a predictor and a test set indicator."
 msgstr ""
@@ -439,6 +467,14 @@ msgid "Boosting Regression"
 msgstr "Boosting-Regression"
 
 msgid "Neural Network Regression"
+msgstr "Neuronale-Netzwerk-Regression"
+
+#, fuzzy
+msgid "Decision Tree Regression"
+msgstr "Boosting-Regression"
+
+#, fuzzy
+msgid "Support Vector Machine Regression"
 msgstr "Neuronale-Netzwerk-Regression"
 
 msgid "Penalty"
@@ -640,6 +676,13 @@ msgstr "Regularisierte lineare Regression"
 msgid "Neural network"
 msgstr "Neuronales Netz"
 
+#, fuzzy
+msgid "Decision tree"
+msgstr "Genauigkeit"
+
+msgid "Support vector machine"
+msgstr ""
+
 msgid "Error: The trained model is not created in JASP."
 msgstr "Fehler: Das trainierte Modell ist nicht in JASP erstellt."
 
@@ -726,6 +769,35 @@ msgstr "%s Devianz"
 msgid "Relative Influence Plot"
 msgstr "Relativer Einfluß Abbildung"
 
+#, fuzzy
+msgid "Relative Importance"
+msgstr "Variablen-Wichtigkeit"
+
+msgid "No splits were made in the tree."
+msgstr ""
+
+msgid "Splits in Tree"
+msgstr ""
+
+msgid "Split Point"
+msgstr ""
+
+msgid "Obs. in Split"
+msgstr ""
+
+msgid "Improvement"
+msgstr ""
+
+#, fuzzy
+msgid "Decision Tree Plot"
+msgstr "Devianz-Abbildung"
+
+msgid "Plotting not possible: No splits were made in the tree."
+msgstr ""
+
+msgid "Plotting not possible: An error occurred while creating this plot."
+msgstr ""
+
 msgid "Classification Accuracy Plot"
 msgstr "Abbildung der Klassifizierungsgenauigkeit"
 
@@ -746,6 +818,53 @@ msgstr "Anzahl von nächsten Nachbarn"
 
 msgid "Training and validation set"
 msgstr "Trainings- und Validations-Menge"
+
+msgid "Rectangular"
+msgstr ""
+
+msgid "Triangular"
+msgstr ""
+
+msgid "Epanechnikov"
+msgstr ""
+
+#, fuzzy
+msgid "Biweight"
+msgstr "Gewichtung"
+
+#, fuzzy
+msgid "Triweight"
+msgstr "Gewichtung"
+
+msgid "Cosine"
+msgstr "Kosinus"
+
+#, fuzzy
+msgid "Inverse"
+msgstr "Arkustangens"
+
+msgid "Rank"
+msgstr ""
+
+msgid "Optimal"
+msgstr ""
+
+#, fuzzy
+msgid "%1$s Weight Function"
+msgstr "%1$s Aktivierungsfunktion"
+
+msgid ""
+"Plotting not possible: The selected weighting scheme cannot be visualized "
+"separately from the data."
+msgstr ""
+
+#, fuzzy
+msgid "Proportion of Max. Distance"
+msgstr "Punkte sortiert nach Distanz"
+
+#, fuzzy
+msgid "Relative Weight"
+msgstr "Relativer Einfluß"
 
 msgid "Network Weights"
 msgstr "Netzwerkgewichte"
@@ -836,9 +955,6 @@ msgstr "Logistische Sigmoid"
 
 msgid "Sine"
 msgstr "Sinus"
-
-msgid "Cosine"
-msgstr "Kosinus"
 
 msgid "Inverse Tangent"
 msgstr "Arkustangens"
@@ -938,3 +1054,6 @@ msgstr "Min. CV MSE"
 
 msgid "%s 1 SE"
 msgstr "%s 1 Std. Fehler"
+
+#~ msgid "All predictors"
+#~ msgstr "Alle Prädiktoren"

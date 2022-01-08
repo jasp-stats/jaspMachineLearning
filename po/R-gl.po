@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2021-10-30 03:23\n"
+"POT-Creation-Date: 2022-01-08 03:24\n"
 "PO-Revision-Date: 2021-12-06 11:17+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
@@ -34,6 +34,14 @@ msgid "Boosting Classification"
 msgstr "Clasificación de Potenciación"
 
 msgid "Neural Network Classification"
+msgstr "Clasificación da Rede Neuronal"
+
+#, fuzzy
+msgid "Decision Tree Classification"
+msgstr "Clasificación de Potenciación"
+
+#, fuzzy
+msgid "Support Vector Machine Classification"
 msgstr "Clasificación da Rede Neuronal"
 
 msgid "Nearest neighbors"
@@ -65,6 +73,14 @@ msgstr "Estratos Ocultos"
 
 msgid "Nodes"
 msgstr "Nodos"
+
+#, fuzzy
+msgid "Splits"
+msgstr "Separador de Datos"
+
+#, fuzzy
+msgid "Support Vectors"
+msgstr "Apoio"
 
 msgid "n(Train)"
 msgstr "n(Adestramento)"
@@ -241,6 +257,14 @@ msgstr ""
 msgid "K-Means Clustering"
 msgstr "Conglomerados con Medias K"
 
+#, fuzzy
+msgid "K-Medians Clustering"
+msgstr "Conglomerados con Medias K"
+
+#, fuzzy
+msgid "K-Medoids Clustering"
+msgstr "Conglomerados con Medias K"
+
 msgid "Fuzzy C-Means Clustering"
 msgstr "Conglomerados con Medias C Borrosas"
 
@@ -319,7 +343,8 @@ msgstr "Suma de cadrados Dentro"
 msgid "Silhouette score"
 msgstr "Puntuación de siluetas"
 
-msgid "Centroid %s"
+#, fuzzy
+msgid "Center %s"
 msgstr "Centroide %s"
 
 msgid "Noisepoints"
@@ -389,14 +414,17 @@ msgstr "Gráficas de Densidades dos Conglomerados"
 msgid "Density"
 msgstr "Densidade"
 
+msgid "Variable"
+msgstr ""
+
+msgid "All Variables"
+msgstr ""
+
 msgid "Cluster Mean Plots"
 msgstr "Gráficas das Medias dos Conglomerados"
 
 msgid "Cluster Mean"
 msgstr "Media dos Conglomerados"
-
-msgid "All predictors"
-msgstr "Tódolos preditores"
 
 msgid "The variable '%s' can't be both a predictor and a test set indicator."
 msgstr ""
@@ -447,6 +475,14 @@ msgid "Boosting Regression"
 msgstr "Regresión de Potenciación"
 
 msgid "Neural Network Regression"
+msgstr "Regresión da Rede Neuronal"
+
+#, fuzzy
+msgid "Decision Tree Regression"
+msgstr "Regresión de Potenciación"
+
+#, fuzzy
+msgid "Support Vector Machine Regression"
 msgstr "Regresión da Rede Neuronal"
 
 msgid "Penalty"
@@ -646,6 +682,13 @@ msgstr "Regresión linear regularizada"
 msgid "Neural network"
 msgstr "Rede neuronal"
 
+#, fuzzy
+msgid "Decision tree"
+msgstr "Precisión"
+
+msgid "Support vector machine"
+msgstr ""
+
 msgid "Error: The trained model is not created in JASP."
 msgstr "Fallo: O modelo adestrado non se creou en JASP."
 
@@ -730,6 +773,35 @@ msgstr "%s Desviación"
 msgid "Relative Influence Plot"
 msgstr "Gráfica de Influencia Relativa"
 
+#, fuzzy
+msgid "Relative Importance"
+msgstr "Importancia da Variable"
+
+msgid "No splits were made in the tree."
+msgstr ""
+
+msgid "Splits in Tree"
+msgstr ""
+
+msgid "Split Point"
+msgstr ""
+
+msgid "Obs. in Split"
+msgstr ""
+
+msgid "Improvement"
+msgstr ""
+
+#, fuzzy
+msgid "Decision Tree Plot"
+msgstr "Gráfica de Desviacións"
+
+msgid "Plotting not possible: No splits were made in the tree."
+msgstr ""
+
+msgid "Plotting not possible: An error occurred while creating this plot."
+msgstr ""
+
 msgid "Classification Accuracy Plot"
 msgstr "Gráfica de Precisión da Clasificación"
 
@@ -750,6 +822,53 @@ msgstr "Número de Veciños Máis Próximos"
 
 msgid "Training and validation set"
 msgstr "Conxunto de adestramento e validación"
+
+msgid "Rectangular"
+msgstr ""
+
+msgid "Triangular"
+msgstr ""
+
+msgid "Epanechnikov"
+msgstr ""
+
+#, fuzzy
+msgid "Biweight"
+msgstr "Ponderación"
+
+#, fuzzy
+msgid "Triweight"
+msgstr "Ponderación"
+
+msgid "Cosine"
+msgstr "Coseno"
+
+#, fuzzy
+msgid "Inverse"
+msgstr "Tanxente Inversa"
+
+msgid "Rank"
+msgstr ""
+
+msgid "Optimal"
+msgstr ""
+
+#, fuzzy
+msgid "%1$s Weight Function"
+msgstr "Función %1$s de Activación"
+
+msgid ""
+"Plotting not possible: The selected weighting scheme cannot be visualized "
+"separately from the data."
+msgstr ""
+
+#, fuzzy
+msgid "Proportion of Max. Distance"
+msgstr "Puntos Ordenados segundo a Distancia"
+
+#, fuzzy
+msgid "Relative Weight"
+msgstr "Influencia Relativa"
 
 msgid "Network Weights"
 msgstr "Ponderacións da Rede"
@@ -840,9 +959,6 @@ msgstr "Sigmoide Loxística"
 
 msgid "Sine"
 msgstr "Seno"
-
-msgid "Cosine"
-msgstr "Coseno"
 
 msgid "Inverse Tangent"
 msgstr "Tanxente Inversa"
@@ -942,3 +1058,6 @@ msgstr "Min. CV ECM"
 
 msgid "%s 1 SE"
 msgstr "%s 1 EP"
+
+#~ msgid "All predictors"
+#~ msgstr "Tódolos preditores"
