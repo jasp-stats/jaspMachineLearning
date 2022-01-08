@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-01-08 23:25+0000\n"
+"PO-Revision-Date: 2022-01-08 23:30+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/de/>\n"
@@ -2482,24 +2482,21 @@ msgctxt "mlClassificationDecisionTree|"
 msgid "Decision boundary matrix"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Legend"
 msgstr "Legende"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Points"
 msgstr "Punkte"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Training Parameters"
 msgstr "Trainingsparameter"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Algorithmus-Einstellungen"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Min. observations for split"
@@ -2521,48 +2518,42 @@ msgctxt "mlClassificationDecisionTree|"
 msgid "Scale predictors"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
 
 msgctxt "mlClassificationKnn|"
 msgid "Weight function"
-msgstr ""
+msgstr "Gewichtungsfunktion"
 
 msgctxt "mlClassificationKnn|"
 msgid "Triangular"
-msgstr ""
+msgstr "Dreieckig"
 
 msgctxt "mlClassificationSvm|"
 msgid "Target"
-msgstr ""
+msgstr "Ziel"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Predictors"
 msgstr "Prädiktoren"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Tables"
 msgstr "Tabellen"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Confusion matrix"
 msgstr "Konfusionsmatrix"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Display proportions"
 msgstr "Verhältnisse anzeigen"
 
 msgctxt "mlClassificationSvm|"
 msgid "Class proportions"
-msgstr ""
+msgstr "Klassen-Anteile"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Evaluation metrics"
 msgstr "Evaluationsmetriken"
@@ -2571,67 +2562,61 @@ msgctxt "mlClassificationSvm|"
 msgid "Support vectors"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "mlClassificationSvm|"
 msgid "Data split"
-msgstr ""
+msgstr "Datenaufteilung"
 
 msgctxt "mlClassificationSvm|"
 msgid "ROC curves"
-msgstr ""
+msgstr "ROC-Kurven"
 
 msgctxt "mlClassificationSvm|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "Andrews-Kurven"
 
 msgctxt "mlClassificationSvm|"
 msgid "Decision boundary matrix"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Legend"
 msgstr "Legende"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Points"
 msgstr "Punkte"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Training Parameters"
 msgstr "Trainingsparameter"
 
 msgctxt "mlClassificationSvm|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Algorithmus-Einstellungen"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Weights"
 msgstr "Gewichte"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Linear"
 msgstr "Linear"
 
 msgctxt "mlClassificationSvm|"
 msgid "Radial"
-msgstr ""
+msgstr "Radial"
 
 msgctxt "mlClassificationSvm|"
 msgid "Polynomial"
-msgstr ""
+msgstr "Polynomial"
 
 msgctxt "mlClassificationSvm|"
 msgid "Sigmoid"
-msgstr ""
+msgstr "Sigmoid"
 
 msgctxt "mlClassificationSvm|"
 msgid "Degree"
