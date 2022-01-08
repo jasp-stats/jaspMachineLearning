@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2022-01-08 23:25+0000\n"
+"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.10.1\n"
 "X-Language: de\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -2386,27 +2392,27 @@ msgstr "Größter λ innerhalb 1 SF des Min"
 
 msgctxt "Description|"
 msgid "Decision Tree"
-msgstr ""
+msgstr "Entscheidungsbaum"
 
 msgctxt "Description|"
 msgid "Decision Tree Regression"
-msgstr ""
+msgstr "Entscheidungsbaum-Regression"
 
 msgctxt "Description|"
 msgid "Support Vector Machine"
-msgstr ""
+msgstr "Support Vector Machine"
 
 msgctxt "Description|"
 msgid "Support Vector Machine Regression"
-msgstr ""
+msgstr "Support Vector Machine-Regression"
 
 msgctxt "Description|"
 msgid "Decision Tree Classification"
-msgstr ""
+msgstr "Entscheidungsbaum-Klassifizierung"
 
 msgctxt "Description|"
 msgid "Support Vector Machine Classification"
-msgstr ""
+msgstr "Support Vector Machine-Klassifizierung"
 
 msgctxt "Description|"
 msgid "Neighborhood-Based"
@@ -2418,33 +2424,28 @@ msgstr ""
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Target"
-msgstr ""
+msgstr "Ziel"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Predictors"
 msgstr "Prädiktoren"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Tables"
 msgstr "Tabellen"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Confusion matrix"
 msgstr "Konfusionsmatrix"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Display proportions"
 msgstr "Verhältnisse anzeigen"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Class proportions"
-msgstr ""
+msgstr "Klassen-Anteile"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Evaluation metrics"
 msgstr "Evaluationsmetriken"
@@ -2457,26 +2458,25 @@ msgctxt "mlClassificationDecisionTree|"
 msgid "Variable importance"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Data split"
-msgstr ""
+msgstr "Datenaufteilung"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "ROC curves"
-msgstr ""
+msgstr "ROC-Kurven"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "Andrews-Kurven"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Decision tree"
-msgstr ""
+msgstr "Entscheidungsbaum"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Decision boundary matrix"
