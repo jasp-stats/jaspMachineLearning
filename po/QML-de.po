@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-01-08 23:30+0000\n"
+"PO-Revision-Date: 2022-01-08 23:31+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/de/>\n"
@@ -2620,15 +2620,15 @@ msgstr "Sigmoid"
 
 msgctxt "mlClassificationSvm|"
 msgid "Degree"
-msgstr ""
+msgstr "Grad"
 
 msgctxt "mlClassificationSvm|"
 msgid "Gamma parameter"
-msgstr ""
+msgstr "Gamma-Parameter"
 
 msgctxt "mlClassificationSvm|"
 msgid "r parameter"
-msgstr ""
+msgstr "r-Parameter"
 
 msgctxt "mlClassificationSvm|"
 msgid "Cost of contraints violation"
