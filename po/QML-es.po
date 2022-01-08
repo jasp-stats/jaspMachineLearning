@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2022-01-08 23:25+0000\n"
+"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.10.1\n"
 "X-Language: es\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -2386,519 +2392,452 @@ msgstr "Mayor λ dentro de 1 DT de mín"
 
 msgctxt "Description|"
 msgid "Decision Tree"
-msgstr ""
+msgstr "Árbol de Decisión"
 
 msgctxt "Description|"
 msgid "Decision Tree Regression"
-msgstr ""
+msgstr "Regresión de Árbol de Decisión"
 
 msgctxt "Description|"
 msgid "Support Vector Machine"
-msgstr ""
+msgstr "Máquina de Vectores de Soporte"
 
 msgctxt "Description|"
 msgid "Support Vector Machine Regression"
-msgstr ""
+msgstr "Regresión de Máquinas de Vectores de Soporte"
 
 msgctxt "Description|"
 msgid "Decision Tree Classification"
-msgstr ""
+msgstr "Clasificación de Árbol de Decisión"
 
 msgctxt "Description|"
 msgid "Support Vector Machine Classification"
-msgstr ""
+msgstr "Clasificación de Máquinas de Vectores de Soporte"
 
 msgctxt "Description|"
 msgid "Neighborhood-Based"
-msgstr ""
+msgstr "Basado en la Vecindad"
 
 msgctxt "Description|"
 msgid "Neighborhood-Based Clustering"
-msgstr ""
+msgstr "Conglomerados Basados en la Vecindad"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Target"
 msgstr "Objetivo"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Predictors"
 msgstr "Predictores"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Tables"
 msgstr "Tablas"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Confusion matrix"
 msgstr "Matriz de desorden"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Display proportions"
 msgstr "Mostrar proporciones"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Class proportions"
 msgstr "Proporciones de clase"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Evaluation metrics"
 msgstr "Métricas de evaluación"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Splits in tree"
-msgstr ""
+msgstr "Separadores en el árbol"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Variable importance"
 msgstr "Importancia de la variable"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Plots"
 msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Data split"
 msgstr "Separador de datos"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "ROC curves"
 msgstr "Curvas ROC"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Andrews curves"
 msgstr "Curvas de Andrews"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Decision tree"
-msgstr ""
+msgstr "Árbol de decisión"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Decision boundary matrix"
 msgstr "Matriz límite de decisión"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Legend"
 msgstr "Leyenda"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Points"
 msgstr "Puntos"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Training Parameters"
 msgstr "Parámetros de Entrenamiento"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Algorithmic Settings"
 msgstr "Configuraciones Algorítmicas"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Min. observations for split"
-msgstr ""
+msgstr "Mín. observaciones para la separación"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Min. observations in terminal"
-msgstr ""
+msgstr "Mín. observaciones en el terminal"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Max. interaction depth"
-msgstr ""
+msgstr "Máx. profundidad de la interacción"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Complexity parameter"
-msgstr ""
+msgstr "Parámetro de complejidad"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Scale predictors"
 msgstr "Predictores de escala"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Set seed"
 msgstr "Establecer semilla"
 
 msgctxt "mlClassificationKnn|"
 msgid "Weight function"
-msgstr ""
+msgstr "Función de ponderación"
 
 msgctxt "mlClassificationKnn|"
 msgid "Triangular"
-msgstr ""
+msgstr "Triangular"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Target"
 msgstr "Objetivo"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Predictors"
 msgstr "Predictores"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Tables"
 msgstr "Tablas"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Confusion matrix"
 msgstr "Matriz de desorden"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Display proportions"
 msgstr "Mostrar proporciones"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Class proportions"
 msgstr "Proporciones de clase"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Evaluation metrics"
 msgstr "Métricas de evaluación"
 
 msgctxt "mlClassificationSvm|"
 msgid "Support vectors"
-msgstr ""
+msgstr "Vectores de soporte"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Plots"
 msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Data split"
 msgstr "Separador de datos"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "ROC curves"
 msgstr "Curvas ROC"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Andrews curves"
 msgstr "Curvas de Andrews"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Decision boundary matrix"
 msgstr "Matriz límite de decisión"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Legend"
 msgstr "Leyenda"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Points"
 msgstr "Puntos"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Training Parameters"
 msgstr "Parámetros de Entrenamiento"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Algorithmic Settings"
 msgstr "Configuraciones Algorítmicas"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Weights"
 msgstr "Ponderaciones"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Linear"
 msgstr "Lineal"
 
 msgctxt "mlClassificationSvm|"
 msgid "Radial"
-msgstr ""
+msgstr "Radial"
 
 msgctxt "mlClassificationSvm|"
 msgid "Polynomial"
-msgstr ""
+msgstr "Polinómico"
 
 msgctxt "mlClassificationSvm|"
 msgid "Sigmoid"
-msgstr ""
+msgstr "Sigmoide"
 
 msgctxt "mlClassificationSvm|"
 msgid "Degree"
-msgstr ""
+msgstr "Grado"
 
 msgctxt "mlClassificationSvm|"
 msgid "Gamma parameter"
-msgstr ""
+msgstr "Parámetro Gamma"
 
 msgctxt "mlClassificationSvm|"
 msgid "r parameter"
-msgstr ""
+msgstr "parámetro r"
 
 msgctxt "mlClassificationSvm|"
 msgid "Cost of contraints violation"
-msgstr ""
+msgstr "Coste de violar las restricciones"
 
 msgctxt "mlClassificationSvm|"
 msgid "Tolerance of termination criterion"
-msgstr ""
+msgstr "Tolerancia del criterio de finalización"
 
 msgctxt "mlClassificationSvm|"
 msgid "Epsilon"
-msgstr ""
+msgstr "Épsilon"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Scale predictors"
 msgstr "Predictores de escala"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Set seed"
 msgstr "Establecer semilla"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Centers"
-msgstr ""
+msgstr "Centros"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Center type"
-msgstr ""
+msgstr "Tipo de centro"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Distance"
 msgstr "Distancia"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Euclidean"
 msgstr "Euclídea"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Manhattan"
 msgstr "Manhattan"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Target"
 msgstr "Objetivo"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Predictors"
 msgstr "Predictores"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Tables"
 msgstr "Tablas"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Evaluation metrics"
 msgstr "Métricas de evaluación"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Splits in tree"
-msgstr ""
+msgstr "Separadores en el árbol"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Variable importance"
 msgstr "Importancia de la variable"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Plots"
 msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Data split"
 msgstr "Separador de datos"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Predictive performance"
 msgstr "Capacidad predictiva"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Decision tree"
-msgstr ""
+msgstr "Árbol de decisión"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Training Parameters"
 msgstr "Parámetros de Entrenamiento"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Algorithmic Settings"
 msgstr "Configuraciones Algorítmicas"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Min. observations for split"
-msgstr ""
+msgstr "Mín. observaciones para la separación"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Min. observations in terminal"
-msgstr ""
+msgstr "Mín. observaciones en el terminal"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Max. interaction depth"
-msgstr ""
+msgstr "Máx. profundidad de la interacción"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Complexity parameter"
-msgstr ""
+msgstr "Parámetro de complejidad"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Scale variables"
 msgstr "Variables de escala"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Set seed"
 msgstr "Establecer semilla"
 
 msgctxt "mlRegressionKnn|"
 msgid "Weight function"
-msgstr ""
+msgstr "Función de ponderación"
 
 msgctxt "mlRegressionKnn|"
 msgid "Triangular"
-msgstr ""
+msgstr "Triangular"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Target"
 msgstr "Objetivo"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Predictors"
 msgstr "Predictores"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Tables"
 msgstr "Tablas"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Evaluation metrics"
 msgstr "Métricas de evaluación"
 
 msgctxt "mlRegressionSvm|"
 msgid "Support vectors"
-msgstr ""
+msgstr "Vectores de soporte"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Plots"
 msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Data split"
 msgstr "Separador de datos"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Predictive performance"
 msgstr "Capacidad predictiva"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Training Parameters"
 msgstr "Parámetros de Entrenamiento"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Algorithmic Settings"
 msgstr "Configuraciones Algorítmicas"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Weights"
 msgstr "Ponderaciones"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Linear"
 msgstr "Lineal"
 
 msgctxt "mlRegressionSvm|"
 msgid "Radial"
-msgstr ""
+msgstr "Radial"
 
 msgctxt "mlRegressionSvm|"
 msgid "Polynomial"
-msgstr ""
+msgstr "Polinómico"
 
 msgctxt "mlRegressionSvm|"
 msgid "Sigmoid"
-msgstr ""
+msgstr "Sigmoide"
 
 msgctxt "mlRegressionSvm|"
 msgid "Degree"
-msgstr ""
+msgstr "Grado"
 
 msgctxt "mlRegressionSvm|"
 msgid "Gamma"
-msgstr ""
+msgstr "Gamma"
 
 msgctxt "mlRegressionSvm|"
 msgid "r parameter"
-msgstr ""
+msgstr "parámetro r"
 
 msgctxt "mlRegressionSvm|"
 msgid "Cost of contraints violation"
-msgstr ""
+msgstr "Coste de violar las restricciones"
 
 msgctxt "mlRegressionSvm|"
 msgid "Tolerance of termination criterion"
-msgstr ""
+msgstr "Tolerancia del criterio de finalización"
 
 msgctxt "mlRegressionSvm|"
 msgid "Epsilon"
-msgstr ""
+msgstr "Épsilon"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Scale variables"
 msgstr "Variables de escala"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Set seed"
 msgstr "Establecer semilla"
