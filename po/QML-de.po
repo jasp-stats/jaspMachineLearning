@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2022-01-09 23:54+0000\n"
+"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.10.1\n"
 "X-Language: de\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -2386,27 +2392,27 @@ msgstr "Größter λ innerhalb 1 SF des Min"
 
 msgctxt "Description|"
 msgid "Decision Tree"
-msgstr ""
+msgstr "Entscheidungsbaum"
 
 msgctxt "Description|"
 msgid "Decision Tree Regression"
-msgstr ""
+msgstr "Entscheidungsbaum-Regression"
 
 msgctxt "Description|"
 msgid "Support Vector Machine"
-msgstr ""
+msgstr "Support Vector Machine"
 
 msgctxt "Description|"
 msgid "Support Vector Machine Regression"
-msgstr ""
+msgstr "Support Vector Machine-Regression"
 
 msgctxt "Description|"
 msgid "Decision Tree Classification"
-msgstr ""
+msgstr "Entscheidungsbaum-Klassifizierung"
 
 msgctxt "Description|"
 msgid "Support Vector Machine Classification"
-msgstr ""
+msgstr "Support Vector Machine-Klassifizierung"
 
 msgctxt "Description|"
 msgid "Neighborhood-Based"
@@ -2418,33 +2424,28 @@ msgstr ""
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Target"
-msgstr ""
+msgstr "Ziel"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Predictors"
 msgstr "Prädiktoren"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Tables"
 msgstr "Tabellen"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Confusion matrix"
 msgstr "Konfusionsmatrix"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Display proportions"
 msgstr "Verhältnisse anzeigen"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Class proportions"
-msgstr ""
+msgstr "Klassen-Anteile"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Evaluation metrics"
 msgstr "Evaluationsmetriken"
@@ -2457,49 +2458,45 @@ msgctxt "mlClassificationDecisionTree|"
 msgid "Variable importance"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Data split"
-msgstr ""
+msgstr "Datenaufteilung"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "ROC curves"
-msgstr ""
+msgstr "ROC-Kurven"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "Andrews-Kurven"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Decision tree"
-msgstr ""
+msgstr "Entscheidungsbaum"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Decision boundary matrix"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Legend"
 msgstr "Legende"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Points"
 msgstr "Punkte"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Training Parameters"
 msgstr "Trainingsparameter"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Algorithmus-Einstellungen"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Min. observations for split"
@@ -2521,48 +2518,42 @@ msgctxt "mlClassificationDecisionTree|"
 msgid "Scale predictors"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
 
 msgctxt "mlClassificationKnn|"
 msgid "Weight function"
-msgstr ""
+msgstr "Gewichtungsfunktion"
 
 msgctxt "mlClassificationKnn|"
 msgid "Triangular"
-msgstr ""
+msgstr "Dreieckig"
 
 msgctxt "mlClassificationSvm|"
 msgid "Target"
-msgstr ""
+msgstr "Ziel"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Predictors"
 msgstr "Prädiktoren"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Tables"
 msgstr "Tabellen"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Confusion matrix"
 msgstr "Konfusionsmatrix"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Display proportions"
 msgstr "Verhältnisse anzeigen"
 
 msgctxt "mlClassificationSvm|"
 msgid "Class proportions"
-msgstr ""
+msgstr "Klassen-Anteile"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Evaluation metrics"
 msgstr "Evaluationsmetriken"
@@ -2571,97 +2562,90 @@ msgctxt "mlClassificationSvm|"
 msgid "Support vectors"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "mlClassificationSvm|"
 msgid "Data split"
-msgstr ""
+msgstr "Datenaufteilung"
 
 msgctxt "mlClassificationSvm|"
 msgid "ROC curves"
-msgstr ""
+msgstr "ROC-Kurven"
 
 msgctxt "mlClassificationSvm|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "Andrews-Kurven"
 
 msgctxt "mlClassificationSvm|"
 msgid "Decision boundary matrix"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Legend"
 msgstr "Legende"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Points"
 msgstr "Punkte"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Training Parameters"
 msgstr "Trainingsparameter"
 
 msgctxt "mlClassificationSvm|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Algorithmus-Einstellungen"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Weights"
 msgstr "Gewichte"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Linear"
 msgstr "Linear"
 
 msgctxt "mlClassificationSvm|"
 msgid "Radial"
-msgstr ""
+msgstr "Radial"
 
 msgctxt "mlClassificationSvm|"
 msgid "Polynomial"
-msgstr ""
+msgstr "Polynomial"
 
 msgctxt "mlClassificationSvm|"
 msgid "Sigmoid"
-msgstr ""
+msgstr "Sigmoid"
 
 msgctxt "mlClassificationSvm|"
 msgid "Degree"
-msgstr ""
+msgstr "Grad"
 
 msgctxt "mlClassificationSvm|"
 msgid "Gamma parameter"
-msgstr ""
+msgstr "Gamma-Parameter"
 
 msgctxt "mlClassificationSvm|"
 msgid "r parameter"
-msgstr ""
+msgstr "r-Parameter"
 
 msgctxt "mlClassificationSvm|"
 msgid "Cost of contraints violation"
-msgstr ""
+msgstr "Kosten bei Beschränkungsverletzung"
 
 msgctxt "mlClassificationSvm|"
 msgid "Tolerance of termination criterion"
-msgstr ""
+msgstr "Toleranz des Abbruchkriteriums"
 
 msgctxt "mlClassificationSvm|"
 msgid "Epsilon"
-msgstr ""
+msgstr "Epsilon"
 
 msgctxt "mlClassificationSvm|"
 msgid "Scale predictors"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
@@ -2674,36 +2658,30 @@ msgctxt "mlClusteringKMeans|"
 msgid "Center type"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Distance"
 msgstr "Distanz"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Euclidean"
 msgstr "Euklidisch"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Manhattan"
 msgstr "Manhattan"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Target"
-msgstr ""
+msgstr "Ziel"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Predictors"
 msgstr "Prädiktoren"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Tables"
 msgstr "Tabellen"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Evaluation metrics"
 msgstr "Evaluationsmetriken"
@@ -2716,32 +2694,29 @@ msgctxt "mlRegressionDecisionTree|"
 msgid "Variable importance"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Data split"
-msgstr ""
+msgstr "Datenaufteilung"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Predictive performance"
 msgstr "Vorhersageleistung"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Decision tree"
-msgstr ""
+msgstr "Entscheidungsbaum"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Training Parameters"
 msgstr "Trainingsparameter"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Algorithmus-Einstellungen"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Min. observations for split"
@@ -2757,40 +2732,36 @@ msgstr ""
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Complexity parameter"
-msgstr ""
+msgstr "Komplexitäts-Parameter"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Scale variables"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
 
 msgctxt "mlRegressionKnn|"
 msgid "Weight function"
-msgstr ""
+msgstr "Gewichtungsfunktion"
 
 msgctxt "mlRegressionKnn|"
 msgid "Triangular"
-msgstr ""
+msgstr "Dreieckig"
 
 msgctxt "mlRegressionSvm|"
 msgid "Target"
-msgstr ""
+msgstr "Ziel"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Predictors"
 msgstr "Prädiktoren"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Tables"
 msgstr "Tabellen"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Evaluation metrics"
 msgstr "Evaluationsmetriken"
@@ -2799,80 +2770,74 @@ msgctxt "mlRegressionSvm|"
 msgid "Support vectors"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "mlRegressionSvm|"
 msgid "Data split"
-msgstr ""
+msgstr "Datenaufteilung"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Predictive performance"
 msgstr "Vorhersageleistung"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Training Parameters"
 msgstr "Trainingsparameter"
 
 msgctxt "mlRegressionSvm|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Algorithmus-Einstellungen"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Weights"
 msgstr "Gewichte"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Linear"
 msgstr "Linear"
 
 msgctxt "mlRegressionSvm|"
 msgid "Radial"
-msgstr ""
+msgstr "Radial"
 
 msgctxt "mlRegressionSvm|"
 msgid "Polynomial"
-msgstr ""
+msgstr "Polynomial"
 
 msgctxt "mlRegressionSvm|"
 msgid "Sigmoid"
-msgstr ""
+msgstr "Sigmoid"
 
 msgctxt "mlRegressionSvm|"
 msgid "Degree"
-msgstr ""
+msgstr "Grad"
 
 msgctxt "mlRegressionSvm|"
 msgid "Gamma"
-msgstr ""
+msgstr "Gamma"
 
 msgctxt "mlRegressionSvm|"
 msgid "r parameter"
-msgstr ""
+msgstr "r-Parameter"
 
 msgctxt "mlRegressionSvm|"
 msgid "Cost of contraints violation"
-msgstr ""
+msgstr "Kosten bei Beschränkungsverletzung"
 
 msgctxt "mlRegressionSvm|"
 msgid "Tolerance of termination criterion"
-msgstr ""
+msgstr "Toleranz des Abbruchkriteriums"
 
 msgctxt "mlRegressionSvm|"
 msgid "Epsilon"
-msgstr ""
+msgstr "Epsilon"
 
 msgctxt "mlRegressionSvm|"
 msgid "Scale variables"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
