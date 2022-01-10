@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2022-01-08 03:24\n"
-"PO-Revision-Date: 2021-12-06 11:17+0000\n"
+"PO-Revision-Date: 2022-01-08 23:25+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/gl/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.10-dev\n"
+"X-Generator: Weblate 4.10.1\n"
 "X-Virgin-Header: remove this line if you change anything in the header.\n"
 "X-Language: gl_ES\n"
 "X-Source-Language: C\n"
@@ -36,13 +36,11 @@ msgstr "Clasificación de Potenciación"
 msgid "Neural Network Classification"
 msgstr "Clasificación da Rede Neuronal"
 
-#, fuzzy
 msgid "Decision Tree Classification"
-msgstr "Clasificación de Potenciación"
+msgstr "Clasificación de Árbore de Decisión"
 
-#, fuzzy
 msgid "Support Vector Machine Classification"
-msgstr "Clasificación da Rede Neuronal"
+msgstr "Clasificación de Máquinas de Vectores de Soporte"
 
 msgid "Nearest neighbors"
 msgstr "Veciños máis próximos"
@@ -74,13 +72,11 @@ msgstr "Estratos Ocultos"
 msgid "Nodes"
 msgstr "Nodos"
 
-#, fuzzy
 msgid "Splits"
-msgstr "Separador de Datos"
+msgstr "Separadores"
 
-#, fuzzy
 msgid "Support Vectors"
-msgstr "Apoio"
+msgstr "Vectores de Soporte"
 
 msgid "n(Train)"
 msgstr "n(Adestramento)"
@@ -255,18 +251,16 @@ msgstr ""
 "tanto, intenta outro algoritmo."
 
 msgid "K-Means Clustering"
-msgstr "Conglomerados con Medias K"
+msgstr "Conglomerados con K-Medias"
 
-#, fuzzy
 msgid "K-Medians Clustering"
-msgstr "Conglomerados con Medias K"
+msgstr "Conglomerados con K-Medianas"
 
-#, fuzzy
 msgid "K-Medoids Clustering"
-msgstr "Conglomerados con Medias K"
+msgstr "Conglomerados con K-Medoides"
 
 msgid "Fuzzy C-Means Clustering"
-msgstr "Conglomerados con Medias C Borrosas"
+msgstr "Conglomerados con C-Medias Borrosas"
 
 msgid "Hierarchical Clustering"
 msgstr "Conglomerados Xerárquicos"
@@ -343,9 +337,8 @@ msgstr "Suma de cadrados Dentro"
 msgid "Silhouette score"
 msgstr "Puntuación de siluetas"
 
-#, fuzzy
 msgid "Center %s"
-msgstr "Centroide %s"
+msgstr "Centro %s"
 
 msgid "Noisepoints"
 msgstr "Puntos confusos"
@@ -415,10 +408,10 @@ msgid "Density"
 msgstr "Densidade"
 
 msgid "Variable"
-msgstr ""
+msgstr "Variable"
 
 msgid "All Variables"
-msgstr ""
+msgstr "Tódalas Variables"
 
 msgid "Cluster Mean Plots"
 msgstr "Gráficas das Medias dos Conglomerados"
@@ -477,13 +470,11 @@ msgstr "Regresión de Potenciación"
 msgid "Neural Network Regression"
 msgstr "Regresión da Rede Neuronal"
 
-#, fuzzy
 msgid "Decision Tree Regression"
-msgstr "Regresión de Potenciación"
+msgstr "Regresión de Árbore de Decisión"
 
-#, fuzzy
 msgid "Support Vector Machine Regression"
-msgstr "Regresión da Rede Neuronal"
+msgstr "Regresión de Máquinas de Vectores de Soporte"
 
 msgid "Penalty"
 msgstr "Penalización"
@@ -682,12 +673,11 @@ msgstr "Regresión linear regularizada"
 msgid "Neural network"
 msgstr "Rede neuronal"
 
-#, fuzzy
 msgid "Decision tree"
-msgstr "Precisión"
+msgstr "Árbore de decisión"
 
 msgid "Support vector machine"
-msgstr ""
+msgstr "Máquina de vectores de soporte"
 
 msgid "Error: The trained model is not created in JASP."
 msgstr "Fallo: O modelo adestrado non se creou en JASP."
@@ -773,34 +763,35 @@ msgstr "%s Desviación"
 msgid "Relative Influence Plot"
 msgstr "Gráfica de Influencia Relativa"
 
-#, fuzzy
 msgid "Relative Importance"
-msgstr "Importancia da Variable"
+msgstr "Importancia Relativa"
 
 msgid "No splits were made in the tree."
-msgstr ""
+msgstr "Non se fixeron separacións na árbore."
 
 msgid "Splits in Tree"
-msgstr ""
+msgstr "Separacións na Árbore"
 
 msgid "Split Point"
-msgstr ""
+msgstr "Punto de Separación"
 
 msgid "Obs. in Split"
-msgstr ""
+msgstr "Obs. no Separador"
 
 msgid "Improvement"
-msgstr ""
+msgstr "Mellora"
 
-#, fuzzy
 msgid "Decision Tree Plot"
-msgstr "Gráfica de Desviacións"
+msgstr "Gráfica da Árbore de Decisión"
 
 msgid "Plotting not possible: No splits were made in the tree."
 msgstr ""
+"Non é posible a representación gráfica: non se fixeron separacións na árbore."
 
 msgid "Plotting not possible: An error occurred while creating this plot."
 msgstr ""
+"Non é posible a representación gráfica: aconteceu un fallo mentres se creaba "
+"esta gráfica."
 
 msgid "Classification Accuracy Plot"
 msgstr "Gráfica de Precisión da Clasificación"
@@ -824,51 +815,47 @@ msgid "Training and validation set"
 msgstr "Conxunto de adestramento e validación"
 
 msgid "Rectangular"
-msgstr ""
+msgstr "Rectangular"
 
 msgid "Triangular"
-msgstr ""
+msgstr "Triangular"
 
 msgid "Epanechnikov"
-msgstr ""
+msgstr "Epanechnikov"
 
-#, fuzzy
 msgid "Biweight"
-msgstr "Ponderación"
+msgstr "Ponderación dobre"
 
-#, fuzzy
 msgid "Triweight"
-msgstr "Ponderación"
+msgstr "Ponderación tripla"
 
 msgid "Cosine"
 msgstr "Coseno"
 
-#, fuzzy
 msgid "Inverse"
-msgstr "Tanxente Inversa"
+msgstr "Inversa"
 
 msgid "Rank"
-msgstr ""
+msgstr "Rango"
 
 msgid "Optimal"
-msgstr ""
+msgstr "Óptimo"
 
-#, fuzzy
 msgid "%1$s Weight Function"
-msgstr "Función %1$s de Activación"
+msgstr "Función %1$s de Ponderación"
 
 msgid ""
 "Plotting not possible: The selected weighting scheme cannot be visualized "
 "separately from the data."
 msgstr ""
+"Non é posible facer a gráfica: o esquema de ponderación escollido non se "
+"pode visualizar independentemente dos datos."
 
-#, fuzzy
 msgid "Proportion of Max. Distance"
-msgstr "Puntos Ordenados segundo a Distancia"
+msgstr "Proporción da Distancia Máxima"
 
-#, fuzzy
 msgid "Relative Weight"
-msgstr "Influencia Relativa"
+msgstr "Ponderación Relativa"
 
 msgid "Network Weights"
 msgstr "Ponderacións da Rede"

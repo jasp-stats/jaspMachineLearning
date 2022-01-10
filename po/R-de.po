@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2022-01-08 03:24\n"
-"PO-Revision-Date: 2021-11-07 16:53+0000\n"
+"PO-Revision-Date: 2022-01-08 23:25+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
-"X-Generator: Weblate 4.9-dev\n"
+"X-Generator: Weblate 4.10.1\n"
 
 msgid "K-Nearest Neighbors Classification"
 msgstr "K-nächste-Nachbarn-Klassifikation"
@@ -29,13 +29,11 @@ msgstr "Boosting Klassifikation"
 msgid "Neural Network Classification"
 msgstr "Neuronale-Netzwerk-Klassifikation"
 
-#, fuzzy
 msgid "Decision Tree Classification"
-msgstr "Boosting Klassifikation"
+msgstr "Entscheidungsbaum-Klassifizierung"
 
-#, fuzzy
 msgid "Support Vector Machine Classification"
-msgstr "Neuronale-Netzwerk-Klassifikation"
+msgstr "Support Vector Machine-Klassifikation"
 
 msgid "Nearest neighbors"
 msgstr "Nächste-Nachbarn"
@@ -67,13 +65,11 @@ msgstr "Verdeckte Schichten"
 msgid "Nodes"
 msgstr "Knoten"
 
-#, fuzzy
 msgid "Splits"
 msgstr "Datenaufteilung"
 
-#, fuzzy
 msgid "Support Vectors"
-msgstr "Träger"
+msgstr "Support Vectors"
 
 msgid "n(Train)"
 msgstr "n(Train)"
@@ -248,13 +244,11 @@ msgstr ""
 msgid "K-Means Clustering"
 msgstr "K-Means-Clustering"
 
-#, fuzzy
 msgid "K-Medians Clustering"
-msgstr "K-Means-Clustering"
+msgstr "K-Mediane-Clustering"
 
-#, fuzzy
 msgid "K-Medoids Clustering"
-msgstr "K-Means-Clustering"
+msgstr "K-Medoids-Clustering"
 
 msgid "Fuzzy C-Means Clustering"
 msgstr "Fuzzy-C-Means-Clustering"
@@ -407,10 +401,10 @@ msgid "Density"
 msgstr "Dichte"
 
 msgid "Variable"
-msgstr ""
+msgstr "Variable"
 
 msgid "All Variables"
-msgstr ""
+msgstr "Alle Variablen"
 
 msgid "Cluster Mean Plots"
 msgstr "Clustermittelwerte Abbildungen"
@@ -469,13 +463,11 @@ msgstr "Boosting-Regression"
 msgid "Neural Network Regression"
 msgstr "Neuronale-Netzwerk-Regression"
 
-#, fuzzy
 msgid "Decision Tree Regression"
-msgstr "Boosting-Regression"
+msgstr "Entscheidungsbaum-Regression"
 
-#, fuzzy
 msgid "Support Vector Machine Regression"
-msgstr "Neuronale-Netzwerk-Regression"
+msgstr "Support Vector Machine-Regression"
 
 msgid "Penalty"
 msgstr "Strafterm"
@@ -676,9 +668,8 @@ msgstr "Regularisierte lineare Regression"
 msgid "Neural network"
 msgstr "Neuronales Netz"
 
-#, fuzzy
 msgid "Decision tree"
-msgstr "Genauigkeit"
+msgstr "Entscheidungsbaum"
 
 msgid "Support vector machine"
 msgstr ""
@@ -769,9 +760,8 @@ msgstr "%s Devianz"
 msgid "Relative Influence Plot"
 msgstr "Relativer Einfluß Abbildung"
 
-#, fuzzy
 msgid "Relative Importance"
-msgstr "Variablen-Wichtigkeit"
+msgstr "Relative Wichtigkeit"
 
 msgid "No splits were made in the tree."
 msgstr ""
@@ -786,17 +776,18 @@ msgid "Obs. in Split"
 msgstr ""
 
 msgid "Improvement"
-msgstr ""
+msgstr "Verbesserung"
 
-#, fuzzy
 msgid "Decision Tree Plot"
-msgstr "Devianz-Abbildung"
+msgstr "Eintscheidungsbaum-Abbildung"
 
 msgid "Plotting not possible: No splits were made in the tree."
 msgstr ""
 
 msgid "Plotting not possible: An error occurred while creating this plot."
 msgstr ""
+"Diagramm unmöglich: Beim Erstellen dieses Diagramms ist ein Fehler "
+"aufgetreten."
 
 msgid "Classification Accuracy Plot"
 msgstr "Abbildung der Klassifizierungsgenauigkeit"
@@ -820,13 +811,13 @@ msgid "Training and validation set"
 msgstr "Trainings- und Validations-Menge"
 
 msgid "Rectangular"
-msgstr ""
+msgstr "Rechteckig"
 
 msgid "Triangular"
-msgstr ""
+msgstr "Dreieckig"
 
 msgid "Epanechnikov"
-msgstr ""
+msgstr "Epanechnikow"
 
 #, fuzzy
 msgid "Biweight"
@@ -844,27 +835,26 @@ msgid "Inverse"
 msgstr "Arkustangens"
 
 msgid "Rank"
-msgstr ""
+msgstr "Rang"
 
 msgid "Optimal"
-msgstr ""
+msgstr "Optimal"
 
-#, fuzzy
 msgid "%1$s Weight Function"
-msgstr "%1$s Aktivierungsfunktion"
+msgstr "%1$s Gewichtungsfunktion"
 
 msgid ""
 "Plotting not possible: The selected weighting scheme cannot be visualized "
 "separately from the data."
 msgstr ""
+"Diagramm unmöglich: Das gewählte Gewichtungsschema kann nicht getrennt von "
+"den Daten visualisiert werden."
 
-#, fuzzy
 msgid "Proportion of Max. Distance"
-msgstr "Punkte sortiert nach Distanz"
+msgstr "Anteil der max. Distanz"
 
-#, fuzzy
 msgid "Relative Weight"
-msgstr "Relativer Einfluß"
+msgstr "Relatives Gewicht"
 
 msgid "Network Weights"
 msgstr "Netzwerkgewichte"
