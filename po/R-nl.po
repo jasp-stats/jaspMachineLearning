@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2022-01-08 03:24\n"
-"PO-Revision-Date: 2021-11-07 16:53+0000\n"
+"PO-Revision-Date: 2022-01-10 23:46+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
-"X-Generator: Weblate 4.9-dev\n"
+"X-Generator: Weblate 4.10.1\n"
 
 msgid "K-Nearest Neighbors Classification"
 msgstr "K-Dichtste Buren Classificatie"
@@ -29,13 +29,11 @@ msgstr "Boosting Classificatie"
 msgid "Neural Network Classification"
 msgstr "Neuraal Netwerk Classificatie"
 
-#, fuzzy
 msgid "Decision Tree Classification"
-msgstr "Boosting Classificatie"
+msgstr "Beslisboom Classificatie"
 
-#, fuzzy
 msgid "Support Vector Machine Classification"
-msgstr "Neuraal Netwerk Classificatie"
+msgstr "Support Vector Machine Classificatie"
 
 msgid "Nearest neighbors"
 msgstr "Dichtste buren"
@@ -67,13 +65,11 @@ msgstr "Verborgen Lagen"
 msgid "Nodes"
 msgstr "Nodes"
 
-#, fuzzy
 msgid "Splits"
-msgstr "Data Split"
+msgstr "Splitsingen"
 
-#, fuzzy
 msgid "Support Vectors"
-msgstr "Ondersteuning"
+msgstr "Ondersteuningsvectoren"
 
 msgid "n(Train)"
 msgstr "n(Train)"
@@ -247,13 +243,11 @@ msgstr ""
 msgid "K-Means Clustering"
 msgstr "K-Means Clusteren"
 
-#, fuzzy
 msgid "K-Medians Clustering"
-msgstr "K-Means Clusteren"
+msgstr "K-Medians Clusteren"
 
-#, fuzzy
 msgid "K-Medoids Clustering"
-msgstr "K-Means Clusteren"
+msgstr "K-Medoids Clusteren"
 
 msgid "Fuzzy C-Means Clustering"
 msgstr "Fuzzy C-Gemiddelden Clusteren"
@@ -333,9 +327,8 @@ msgstr "Binnen Kwadratensom"
 msgid "Silhouette score"
 msgstr "Silhouette score"
 
-#, fuzzy
 msgid "Center %s"
-msgstr "Centroid %s"
+msgstr "Centrum %s"
 
 msgid "Noisepoints"
 msgstr "Noisepoints"
@@ -405,10 +398,10 @@ msgid "Density"
 msgstr "Dichtheid"
 
 msgid "Variable"
-msgstr ""
+msgstr "Variabele"
 
 msgid "All Variables"
-msgstr ""
+msgstr "Alle Variabelen"
 
 msgid "Cluster Mean Plots"
 msgstr "Cluster Gemiddelde Grafieken"
@@ -467,13 +460,11 @@ msgstr "Boosting Regressie"
 msgid "Neural Network Regression"
 msgstr "Neuraal Netwerk Regressie"
 
-#, fuzzy
 msgid "Decision Tree Regression"
-msgstr "Boosting Regressie"
+msgstr "Beslisboom Regressie"
 
-#, fuzzy
 msgid "Support Vector Machine Regression"
-msgstr "Neuraal Netwerk Regressie"
+msgstr "Support Vector Machine Regressie"
 
 msgid "Penalty"
 msgstr "Straf"
@@ -673,12 +664,11 @@ msgstr "Geregulariseerde Lineaire Regressie"
 msgid "Neural network"
 msgstr "Neuraal netwerk"
 
-#, fuzzy
 msgid "Decision tree"
-msgstr "Nauwkeurigheid"
+msgstr "Beslisboom"
 
 msgid "Support vector machine"
-msgstr ""
+msgstr "Support vector machine"
 
 msgid "Error: The trained model is not created in JASP."
 msgstr "Fout: Het getrainde model is niet gemaakt in JASP."
@@ -764,34 +754,33 @@ msgstr "%s Afwijking"
 msgid "Relative Influence Plot"
 msgstr "Relatieve Invloed Grafiek"
 
-#, fuzzy
 msgid "Relative Importance"
-msgstr "Belang van variabele"
+msgstr "Relatief Belang"
 
 msgid "No splits were made in the tree."
-msgstr ""
+msgstr "Er zijn geen splitsingen gemaakt in de boom."
 
 msgid "Splits in Tree"
-msgstr ""
+msgstr "Splitsingen in Boom"
 
 msgid "Split Point"
-msgstr ""
+msgstr "Splitsingspunt"
 
 msgid "Obs. in Split"
-msgstr ""
+msgstr "Obs. in Splitsing"
 
 msgid "Improvement"
-msgstr ""
+msgstr "Verbetering"
 
-#, fuzzy
 msgid "Decision Tree Plot"
-msgstr "Deviatie Grafiek"
+msgstr "Beslisboom Grafiek"
 
 msgid "Plotting not possible: No splits were made in the tree."
-msgstr ""
+msgstr "Plotten niet mogelijk: Er zijn geen splitsingen gemaakt in de boom."
 
 msgid "Plotting not possible: An error occurred while creating this plot."
 msgstr ""
+"Plotten niet mogelijk: Er is een fout opgetreden bij het maken van deze plot."
 
 msgid "Classification Accuracy Plot"
 msgstr "Classificatieprecisie Grafiek"
@@ -815,51 +804,47 @@ msgid "Training and validation set"
 msgstr "Trainings- en validatieset"
 
 msgid "Rectangular"
-msgstr ""
+msgstr "Rechthoekig"
 
 msgid "Triangular"
-msgstr ""
+msgstr "Driehoekig"
 
 msgid "Epanechnikov"
-msgstr ""
+msgstr "Epanechnikov"
 
-#, fuzzy
 msgid "Biweight"
-msgstr "Gewicht"
+msgstr "Bigewicht"
 
-#, fuzzy
 msgid "Triweight"
-msgstr "Gewicht"
+msgstr "Trigewicht"
 
 msgid "Cosine"
 msgstr "Cosinus"
 
-#, fuzzy
 msgid "Inverse"
-msgstr "Inverse Tangens"
+msgstr "Omgekeerd"
 
 msgid "Rank"
-msgstr ""
+msgstr "Rang"
 
 msgid "Optimal"
-msgstr ""
+msgstr "Optimaal"
 
-#, fuzzy
 msgid "%1$s Weight Function"
-msgstr "%1$s Activeringsfunctie"
+msgstr "%1$s Gewichtsfunctie"
 
 msgid ""
 "Plotting not possible: The selected weighting scheme cannot be visualized "
 "separately from the data."
 msgstr ""
+"Plotten niet mogelijk: Het geselecteerde wegingsschema kan niet afzonderlijk "
+"van de gegevens worden gevisualiseerd."
 
-#, fuzzy
 msgid "Proportion of Max. Distance"
-msgstr "Punten Gesorteerd op Afstand"
+msgstr "Proportie van Max. Afstand"
 
-#, fuzzy
 msgid "Relative Weight"
-msgstr "Relatieve Invloed"
+msgstr "Relatief Gewicht"
 
 msgid "Network Weights"
 msgstr "Netwerk Gewichten"
