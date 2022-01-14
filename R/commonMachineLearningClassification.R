@@ -737,6 +737,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   table <- createJaspTable(title = gettext("Evaluation Metrics"))
   table$position <- position
+  table$transpose <- TRUE
   table$dependOn(options = c(.mlClassificationDependencies(options), "validationMeasures"))
   table$addColumnInfo(name = "group", title = "", type = "string")
   table$addColumnInfo(name = "precision", title = gettext("Precision"), type = "number")
@@ -744,7 +745,17 @@ gettextf <- function(fmt, ..., domain = NULL) {
   table$addColumnInfo(name = "f1", title = gettext("F1 Score"), type = "number")
   table$addColumnInfo(name = "support", title = gettext("Support"), type = "integer")
   table$addColumnInfo(name = "auc", title = gettext("AUC"), type = "number")
-  table$addFootnote(gettext("Area Under Curve (AUC) is calculated for every class against all other classes."))
+  table$addColumnInfo(name = "tpr", title = gettext("True Positive Rate"), type = "number")
+  table$addColumnInfo(name = "tnr", title = gettext("True Negative Rate"), type = "number")
+  table$addColumnInfo(name = "ppv", title = gettext("Positive Predictive Value"), type = "number")
+  table$addColumnInfo(name = "npv", title = gettext("Negative Predictive Value"), type = "number")
+  table$addColumnInfo(name = "fnr", title = gettext("False Negative Rate"), type = "number")
+  table$addColumnInfo(name = "fpr", title = gettext("False Positive Rate"), type = "number")
+  table$addColumnInfo(name = "fdr", title = gettext("False Discovery Rate"), type = "number")
+  table$addColumnInfo(name = "for", title = gettext("False Omission Rate"), type = "number")
+  table$addColumnInfo(name = "ts", title = gettext("Threat Score"), type = "number")
+  table$addColumnInfo(name = "stp", title = gettext("Statistical Parity"), type = "number")
+  table$addFootnote(gettext("All metrics are calculated for every class against all other classes."))
   if (options[["target"]] != "") {
     table[["group"]] <- c(levels(factor(dataset[, options[["target"]]])), gettext("Average / Total"))
   }
@@ -761,8 +772,19 @@ gettextf <- function(fmt, ..., domain = NULL) {
   f1 <- rep(NA, length(lvls))
   support <- rep(NA, length(lvls))
   auc <- classificationResult[["auc"]]
+  tpr <- rep(NA, length(lvls))
+  tnr <- rep(NA, length(lvls))
+  ppv <- rep(NA, length(lvls))
+  npv <- rep(NA, length(lvls))
+  fnr <- rep(NA, length(lvls))
+  fpr <- rep(NA, length(lvls))
+  fdr <- rep(NA, length(lvls))
+  foor <- rep(NA, length(lvls))
+  ts <- rep(NA, length(lvls))
+  stp <- rep(NA, length(lvls))
   for (i in 1:length(lvls)) {
     TP <- length(which(pred == lvls[i] & real == lvls[i]))
+    TN <- length(which(pred != lvls[i] & real != lvls[i]))
     FN <- length(which(pred != lvls[i] & real == lvls[i]))
     FP <- length(which(pred == lvls[i] & real != lvls[i]))
     precision_tmp <- TP / (TP + FP)
@@ -773,18 +795,48 @@ gettextf <- function(fmt, ..., domain = NULL) {
     recall[i] <- recall_tmp
     f1[i] <- f1_tmp
     support[i] <- support_tmp
+    tpr[i] <- TP / (TP + FN)
+    tnr[i] <- TN / (TN + FP)
+    ppv[i] <- TP / (TP + FP)
+    npv[i] <- TN / (TN + FN)
+    fnr[i] <- FN / (FN + TP)
+    fpr[i] <- FP / (FP + TN)
+    fdr[i] <- FP / (FP + TP)
+    foor[i] <- FN / (FN + TN)
+    ts[i] <- TP / (FP + FN + FP)
+    stp[i] <- (TP + FP) / (TP + FN + FP + TN)
   }
   precision[length(precision) + 1] <- sum(precision * support, na.rm = TRUE) / sum(support, na.rm = TRUE)
   recall[length(recall) + 1] <- sum(recall * support, na.rm = TRUE) / sum(support, na.rm = TRUE)
   f1[length(f1) + 1] <- sum(f1 * support, na.rm = TRUE) / sum(support, na.rm = TRUE)
   support[length(support) + 1] <- sum(support, na.rm = TRUE)
   auc[length(auc) + 1] <- mean(auc, na.rm = TRUE)
+  tpr[length(tpr) + 1] <- mean(tpr, na.rm = TRUE)
+  tnr[length(tnr) + 1] <- mean(tnr, na.rm = TRUE)
+  ppv[length(ppv) + 1] <- mean(ppv, na.rm = TRUE)
+  npv[length(npv) + 1] <- mean(npv, na.rm = TRUE)
+  fnr[length(fnr) + 1] <- mean(fnr, na.rm = TRUE)
+  fpr[length(fpr) + 1] <- mean(fpr, na.rm = TRUE)
+  fdr[length(fdr) + 1] <- mean(fdr, na.rm = TRUE)
+  foor[length(foor) + 1] <- mean(foor, na.rm = TRUE)
+  ts[length(ts) + 1] <- mean(ts, na.rm = TRUE)
+  stp[length(stp) + 1] <- mean(stp, na.rm = TRUE)
   table[["group"]] <- c(levels(factor(classificationResult[["test"]][, options[["target"]]])), "Average / Total") # fill again to adjust for missing categories
   table[["precision"]] <- precision
   table[["recall"]] <- recall
   table[["f1"]] <- f1
   table[["support"]] <- support
   table[["auc"]] <- auc
+  table[["tpr"]] <- tpr
+  table[["tnr"]] <- tnr
+  table[["ppv"]] <- ppv
+  table[["npv"]] <- npv
+  table[["fnr"]] <- fnr
+  table[["fpr"]] <- fpr
+  table[["fdr"]] <- fdr
+  table[["for"]] <- foor
+  table[["ts"]] <- ts
+  table[["stp"]] <- stp
 }
 
 .mlClassificationTableProportions <- function(dataset, options, jaspResults, ready, position) {
