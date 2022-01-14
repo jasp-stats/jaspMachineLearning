@@ -740,14 +740,13 @@ gettextf <- function(fmt, ..., domain = NULL) {
   table$transpose <- TRUE
   table$dependOn(options = c(.mlClassificationDependencies(options), "validationMeasures"))
   table$addColumnInfo(name = "group", title = "", type = "string")
+  table$addColumnInfo(name = "support", title = gettext("Support"), type = "integer")
+  table$addColumnInfo(name = "accuracy", title = gettext("Accuracy"), type = "number")
   table$addColumnInfo(name = "precision", title = gettext("Precision"), type = "number")
   table$addColumnInfo(name = "recall", title = gettext("Recall"), type = "number")
   table$addColumnInfo(name = "f1", title = gettext("F1 Score"), type = "number")
-  table$addColumnInfo(name = "support", title = gettext("Support"), type = "integer")
-  table$addColumnInfo(name = "auc", title = gettext("AUC"), type = "number")
-  table$addColumnInfo(name = "tpr", title = gettext("True Positive Rate"), type = "number")
+  table$addColumnInfo(name = "auc", title = gettext("Area Under Curve (AUC)"), type = "number")
   table$addColumnInfo(name = "tnr", title = gettext("True Negative Rate"), type = "number")
-  table$addColumnInfo(name = "ppv", title = gettext("Positive Predictive Value"), type = "number")
   table$addColumnInfo(name = "npv", title = gettext("Negative Predictive Value"), type = "number")
   table$addColumnInfo(name = "fnr", title = gettext("False Negative Rate"), type = "number")
   table$addColumnInfo(name = "fpr", title = gettext("False Positive Rate"), type = "number")
@@ -767,14 +766,13 @@ gettextf <- function(fmt, ..., domain = NULL) {
   pred <- factor(classificationResult[["testPred"]])
   real <- factor(classificationResult[["testReal"]])
   lvls <- levels(as.factor(real))
+  support <- rep(NA, length(lvls))
+  accuracy <- rep(NA, length(lvls))
   precision <- rep(NA, length(lvls))
   recall <- rep(NA, length(lvls))
   f1 <- rep(NA, length(lvls))
-  support <- rep(NA, length(lvls))
   auc <- classificationResult[["auc"]]
-  tpr <- rep(NA, length(lvls))
   tnr <- rep(NA, length(lvls))
-  ppv <- rep(NA, length(lvls))
   npv <- rep(NA, length(lvls))
   fnr <- rep(NA, length(lvls))
   fpr <- rep(NA, length(lvls))
@@ -782,22 +780,18 @@ gettextf <- function(fmt, ..., domain = NULL) {
   foor <- rep(NA, length(lvls))
   ts <- rep(NA, length(lvls))
   stp <- rep(NA, length(lvls))
-  for (i in 1:length(lvls)) {
+  for (i in seq_along(lvls)) {
     TP <- length(which(pred == lvls[i] & real == lvls[i]))
     TN <- length(which(pred != lvls[i] & real != lvls[i]))
     FN <- length(which(pred != lvls[i] & real == lvls[i]))
     FP <- length(which(pred == lvls[i] & real != lvls[i]))
-    precision_tmp <- TP / (TP + FP)
-    recall_tmp <- TP / (TP + FN)
-    f1_tmp <- 2 * ((precision_tmp * recall_tmp) / (precision_tmp + recall_tmp))
-    support_tmp <- length(which(real == lvls[i]))
-    precision[i] <- precision_tmp
-    recall[i] <- recall_tmp
-    f1[i] <- f1_tmp
-    support[i] <- support_tmp
-    tpr[i] <- TP / (TP + FN)
+    support[i]  <- length(which(real == lvls[i]))
+    accuracy[i] <- (TP + TN) / (TP + FN + FP + TN)
+    precision[i] <- TP / (TP + FP)
+    recall[i] <- TP / (TP + FN)
+    f1[i] <- 2 * ((precision[i] * recall[i]) / (precision[i] + recall[i]))
+    # Source: https://github.com/ModelOriented/fairmodels
     tnr[i] <- TN / (TN + FP)
-    ppv[i] <- TP / (TP + FP)
     npv[i] <- TN / (TN + FN)
     fnr[i] <- FN / (FN + TP)
     fpr[i] <- FP / (FP + TN)
@@ -806,30 +800,28 @@ gettextf <- function(fmt, ..., domain = NULL) {
     ts[i] <- TP / (FP + FN + FP)
     stp[i] <- (TP + FP) / (TP + FN + FP + TN)
   }
-  precision[length(precision) + 1] <- sum(precision * support, na.rm = TRUE) / sum(support, na.rm = TRUE)
-  recall[length(recall) + 1] <- sum(recall * support, na.rm = TRUE) / sum(support, na.rm = TRUE)
-  f1[length(f1) + 1] <- sum(f1 * support, na.rm = TRUE) / sum(support, na.rm = TRUE)
   support[length(support) + 1] <- sum(support, na.rm = TRUE)
+  accuracy[length(accuracy) + 1] <- mean(accuracy, na.rm = TRUE)
+  precision[length(precision) + 1] <- sum(precision * support[seq_along(lvls)], na.rm = TRUE) / sum(support[seq_along(lvls)], na.rm = TRUE)
+  recall[length(recall) + 1] <- sum(recall * support[seq_along(lvls)], na.rm = TRUE) / sum(support[seq_along(lvls)], na.rm = TRUE)
+  f1[length(f1) + 1] <- sum(f1 * support[seq_along(lvls)], na.rm = TRUE) / sum(support[seq_along(lvls)], na.rm = TRUE)
   auc[length(auc) + 1] <- mean(auc, na.rm = TRUE)
-  tpr[length(tpr) + 1] <- mean(tpr, na.rm = TRUE)
   tnr[length(tnr) + 1] <- mean(tnr, na.rm = TRUE)
-  ppv[length(ppv) + 1] <- mean(ppv, na.rm = TRUE)
   npv[length(npv) + 1] <- mean(npv, na.rm = TRUE)
   fnr[length(fnr) + 1] <- mean(fnr, na.rm = TRUE)
   fpr[length(fpr) + 1] <- mean(fpr, na.rm = TRUE)
   fdr[length(fdr) + 1] <- mean(fdr, na.rm = TRUE)
   foor[length(foor) + 1] <- mean(foor, na.rm = TRUE)
   ts[length(ts) + 1] <- mean(ts, na.rm = TRUE)
-  stp[length(stp) + 1] <- mean(stp, na.rm = TRUE)
+  stp[length(stp) + 1] <- sum(stp, na.rm = TRUE)
   table[["group"]] <- c(levels(factor(classificationResult[["test"]][, options[["target"]]])), "Average / Total") # fill again to adjust for missing categories
+  table[["accuracy"]] <- accuracy
   table[["precision"]] <- precision
   table[["recall"]] <- recall
   table[["f1"]] <- f1
   table[["support"]] <- support
   table[["auc"]] <- auc
-  table[["tpr"]] <- tpr
   table[["tnr"]] <- tnr
-  table[["ppv"]] <- ppv
   table[["npv"]] <- npv
   table[["fnr"]] <- fnr
   table[["fpr"]] <- fpr
