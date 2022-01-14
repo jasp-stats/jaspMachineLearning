@@ -68,11 +68,21 @@ Generates a new column in your dataset with the class labels of your classificat
 - Test set accuracy: The classification accuracy on the test set.
 
 #### Evaluation Metrics
-- Precision: The ratio of correct positive predictions to the total predicted positives.
-- Recall: Ratio of correct positive predictions to the total positive observations.
-- F1 Score: The harmonic mean of the precision and recall scores.
 - Support: The number of class observations in the test set.
-- AUC: Area under the ROC curve. Every class is predicted against all other classes. See also ROC curves.
+- Accuracy: The ratio of correct predictions to the total predictions.
+- Precision (Positive Predictive Value): The ratio of correct positive predictions to the total predicted positives.
+- Recall (True Positive Rate): The ratio of correct positive predictions to the total positive classes.
+- False Positive Rate: The ratio of incorrect positive predictions to the total negative classes.
+- False Discovery Rate: The ratio of incorrect positive predictions to the predicted positive classes.
+- F1 Score: The harmonic mean of the precision and recall scores.
+- Area Under Curve (AUC): Area under the ROC curve. See also ROC curves.
+- Negative Predictive Value: The ratio of correct negative predictions to the total predicted negatives.
+- True Negative Rate: The ratio of correct negative predictions to the total negative classes.
+- False Negative Rate: The ratio of incorrect negative predictions to the total positive classes.
+- False Omission Rate: The ratio of incorrect negative predictions to the predicted negative classes.
+- Threat Score: The ratio of correctly predicted positives to all predicted and true positives.
+- Statistical Parity: The ratio of predicted positives to all predictions.
+
 
 ### References
 -------

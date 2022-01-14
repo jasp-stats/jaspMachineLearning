@@ -174,7 +174,10 @@ test_that("ROC Curves Plot matches", {
 test_that("Evaluation Metrics table results match", {
 	table <- results[["results"]][["validationMeasures"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(1, 1, 1, 1, 1, 13, 0.979591836734694, 1, 2, 1, 1, 14, 1, 1, 3,
-			 1, 1, 8, 0.993197278911565, 1, "Average / Total", 1, 1, 35
-			))
+		list(1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0.371428571428571, 13, 1, "<unicode><unicode><unicode>",
+			 1, 0.979591836734694, 1, 0, 0, 0, 0, 2, 1, 1, 1, 0.4, 14, 1,
+			 "<unicode><unicode><unicode>", 1, 1, 1, 0, 0, 0, 0, 3, 1, 1,
+			 1, 0.228571428571429, 8, 1, "<unicode><unicode><unicode>", 1,
+			 0.993197278911565, 1, 0, 0, 0, 0, "Average / Total", 1, 1, 1,
+			 1, 35, 1, "<unicode><unicode><unicode>"))
 })
