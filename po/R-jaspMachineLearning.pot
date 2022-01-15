@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.16.1\n"
-"POT-Creation-Date: 2022-01-08 03:24\n"
+"POT-Creation-Date: 2022-01-15 03:24\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -163,22 +163,46 @@ msgstr ""
 msgid "Evaluation Metrics"
 msgstr ""
 
-msgid "Precision"
+msgid "Support"
 msgstr ""
 
-msgid "Recall"
+msgid "Accuracy"
+msgstr ""
+
+msgid "Precision (Positive Predictive Value)"
+msgstr ""
+
+msgid "Recall (True Positive Rate)"
+msgstr ""
+
+msgid "False Discovery Rate"
 msgstr ""
 
 msgid "F1 Score"
 msgstr ""
 
-msgid "Support"
+msgid "Area Under Curve (AUC)"
 msgstr ""
 
-msgid "AUC"
+msgid "Negative Predictive Value"
 msgstr ""
 
-msgid "Area Under Curve (AUC) is calculated for every class against all other classes."
+msgid "True Negative Rate"
+msgstr ""
+
+msgid "False Negative Rate"
+msgstr ""
+
+msgid "False Omission Rate"
+msgstr ""
+
+msgid "Threat Score"
+msgstr ""
+
+msgid "Statistical Parity"
+msgstr ""
+
+msgid "All metrics are calculated for every class against all other classes."
 msgstr ""
 
 msgid "Average / Total"

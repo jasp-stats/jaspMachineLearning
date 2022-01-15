@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2022-01-08 03:24\n"
+"POT-Creation-Date: 2022-01-15 03:24\n"
 "PO-Revision-Date: 2021-09-03 11:34+0000\n"
 "Last-Translator: Laura Durans <lauraadurans@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
@@ -184,26 +184,53 @@ msgstr ""
 msgid "Evaluation Metrics"
 msgstr ""
 
-#, fuzzy
-msgid "Precision"
-msgstr "Regressão"
-
-msgid "Recall"
-msgstr ""
-
-msgid "F1 Score"
-msgstr ""
-
 msgid "Support"
 msgstr ""
 
 #, fuzzy
-msgid "AUC"
-msgstr "AIC"
+msgid "Accuracy"
+msgstr "Acuracia numerica"
 
-msgid ""
-"Area Under Curve (AUC) is calculated for every class against all other "
-"classes."
+msgid "Precision (Positive Predictive Value)"
+msgstr ""
+
+#, fuzzy
+msgid "Recall (True Positive Rate)"
+msgstr "Taxa de positivos verdadeiros"
+
+#, fuzzy
+msgid "False Discovery Rate"
+msgstr "Taxa de falsos positivos"
+
+msgid "F1 Score"
+msgstr ""
+
+msgid "Area Under Curve (AUC)"
+msgstr ""
+
+#, fuzzy
+msgid "Negative Predictive Value"
+msgstr "momentos observados"
+
+#, fuzzy
+msgid "True Negative Rate"
+msgstr "Taxa de positivos verdadeiros"
+
+#, fuzzy
+msgid "False Negative Rate"
+msgstr "Taxa de falsos positivos"
+
+#, fuzzy
+msgid "False Omission Rate"
+msgstr "Taxa de falsos positivos"
+
+msgid "Threat Score"
+msgstr ""
+
+msgid "Statistical Parity"
+msgstr ""
+
+msgid "All metrics are calculated for every class against all other classes."
 msgstr ""
 
 msgid "Average / Total"
@@ -1018,3 +1045,11 @@ msgstr ""
 
 msgid "%s 1 SE"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Precision"
+#~ msgstr "Regressão"
+
+#, fuzzy
+#~ msgid "AUC"
+#~ msgstr "AIC"

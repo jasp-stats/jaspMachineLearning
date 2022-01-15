@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
-"POT-Creation-Date: 2022-01-08 03:24\n"
+"POT-Creation-Date: 2022-01-15 03:24\n"
 "PO-Revision-Date: 2022-01-08 23:25+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
@@ -184,24 +184,55 @@ msgstr "Contraste M de Box para Homogeneidad de las Matrices de Covarianzas"
 msgid "Evaluation Metrics"
 msgstr "Métricas de Evaluación"
 
-msgid "Precision"
-msgstr "Precisión"
+msgid "Support"
+msgstr "Apoyo"
 
-msgid "Recall"
-msgstr "Recuerdo"
+#, fuzzy
+msgid "Accuracy"
+msgstr "Precisión de OOB"
+
+msgid "Precision (Positive Predictive Value)"
+msgstr ""
+
+#, fuzzy
+msgid "Recall (True Positive Rate)"
+msgstr "Ratio de Verdaderos Positivos"
+
+#, fuzzy
+msgid "False Discovery Rate"
+msgstr "Ratio de Falsos Positivos"
 
 msgid "F1 Score"
 msgstr "Puntuación F1"
 
-msgid "Support"
-msgstr "Apoyo"
+msgid "Area Under Curve (AUC)"
+msgstr ""
 
-msgid "AUC"
-msgstr "AUC"
+#, fuzzy
+msgid "Negative Predictive Value"
+msgstr "Valores Predichos de los Contrastes"
 
-msgid ""
-"Area Under Curve (AUC) is calculated for every class against all other "
-"classes."
+#, fuzzy
+msgid "True Negative Rate"
+msgstr "Ratio de Verdaderos Positivos"
+
+#, fuzzy
+msgid "False Negative Rate"
+msgstr "Ratio de Falsos Positivos"
+
+#, fuzzy
+msgid "False Omission Rate"
+msgstr "Ratio de Falsos Positivos"
+
+#, fuzzy
+msgid "Threat Score"
+msgstr "Puntuación F1"
+
+msgid "Statistical Parity"
+msgstr ""
+
+#, fuzzy
+msgid "All metrics are calculated for every class against all other classes."
 msgstr ""
 "El Área Bajo la Curva (AUC) se calcula para cada clase contra todas las "
 "otras clases."
@@ -1044,6 +1075,15 @@ msgstr "Min. CV ECM"
 
 msgid "%s 1 SE"
 msgstr "%s 1 ET"
+
+#~ msgid "Precision"
+#~ msgstr "Precisión"
+
+#~ msgid "Recall"
+#~ msgstr "Recuerdo"
+
+#~ msgid "AUC"
+#~ msgstr "AUC"
 
 #~ msgid "All predictors"
 #~ msgstr "Todos los predictores"

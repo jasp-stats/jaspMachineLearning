@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.1\n"
-"POT-Creation-Date: 2022-01-08 03:24\n"
+"POT-Creation-Date: 2022-01-15 03:24\n"
 "PO-Revision-Date: 2021-11-22 22:59+0000\n"
 "Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
@@ -176,24 +176,53 @@ msgstr ""
 msgid "Evaluation Metrics"
 msgstr ""
 
-msgid "Precision"
+msgid "Support"
 msgstr ""
 
-msgid "Recall"
+#, fuzzy
+msgid "Accuracy"
+msgstr "OOB精度"
+
+msgid "Precision (Positive Predictive Value)"
 msgstr ""
+
+#, fuzzy
+msgid "Recall (True Positive Rate)"
+msgstr "真陽性率"
+
+#, fuzzy
+msgid "False Discovery Rate"
+msgstr "偽陰性率"
 
 msgid "F1 Score"
 msgstr ""
 
-msgid "Support"
+msgid "Area Under Curve (AUC)"
 msgstr ""
 
-msgid "AUC"
+#, fuzzy
+msgid "Negative Predictive Value"
+msgstr "予測"
+
+#, fuzzy
+msgid "True Negative Rate"
+msgstr "真陽性率"
+
+#, fuzzy
+msgid "False Negative Rate"
+msgstr "偽陰性率"
+
+#, fuzzy
+msgid "False Omission Rate"
+msgstr "偽陰性率"
+
+msgid "Threat Score"
 msgstr ""
 
-msgid ""
-"Area Under Curve (AUC) is calculated for every class against all other "
-"classes."
+msgid "Statistical Parity"
+msgstr ""
+
+msgid "All metrics are calculated for every class against all other classes."
 msgstr ""
 
 msgid "Average / Total"

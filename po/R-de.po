@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2022-01-08 03:24\n"
+"POT-Creation-Date: 2022-01-15 03:24\n"
 "PO-Revision-Date: 2022-01-08 23:25+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
@@ -181,24 +181,55 @@ msgstr "Box's M-test auf die Homogenität der Kovarianz-Matritzen"
 msgid "Evaluation Metrics"
 msgstr "Evaluationsmetriken"
 
-msgid "Precision"
-msgstr "Genauigkeit"
+msgid "Support"
+msgstr "Träger"
 
-msgid "Recall"
-msgstr "Trefferquote"
+#, fuzzy
+msgid "Accuracy"
+msgstr "OOB Genauigkeit"
+
+msgid "Precision (Positive Predictive Value)"
+msgstr ""
+
+#, fuzzy
+msgid "Recall (True Positive Rate)"
+msgstr "Richtig-positiv-Rate"
+
+#, fuzzy
+msgid "False Discovery Rate"
+msgstr "Falsch-positiv-Rate"
 
 msgid "F1 Score"
 msgstr "F1 Score"
 
-msgid "Support"
-msgstr "Träger"
+msgid "Area Under Curve (AUC)"
+msgstr ""
 
-msgid "AUC"
-msgstr "AUC"
+#, fuzzy
+msgid "Negative Predictive Value"
+msgstr "Vorhergesagte Testwerte"
 
-msgid ""
-"Area Under Curve (AUC) is calculated for every class against all other "
-"classes."
+#, fuzzy
+msgid "True Negative Rate"
+msgstr "Richtig-positiv-Rate"
+
+#, fuzzy
+msgid "False Negative Rate"
+msgstr "Falsch-positiv-Rate"
+
+#, fuzzy
+msgid "False Omission Rate"
+msgstr "Falsch-positiv-Rate"
+
+#, fuzzy
+msgid "Threat Score"
+msgstr "F1 Score"
+
+msgid "Statistical Parity"
+msgstr ""
+
+#, fuzzy
+msgid "All metrics are calculated for every class against all other classes."
 msgstr ""
 "Area Under Curve (AUC) wordt berekend voor iedere klasse tegenover alle "
 "andere klassen."
@@ -1044,6 +1075,15 @@ msgstr "Min. CV MSE"
 
 msgid "%s 1 SE"
 msgstr "%s 1 Std. Fehler"
+
+#~ msgid "Precision"
+#~ msgstr "Genauigkeit"
+
+#~ msgid "Recall"
+#~ msgstr "Trefferquote"
+
+#~ msgid "AUC"
+#~ msgstr "AUC"
 
 #~ msgid "All predictors"
 #~ msgstr "Alle Prädiktoren"
