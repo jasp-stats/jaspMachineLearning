@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2022-01-15 03:24\n"
-"PO-Revision-Date: 2022-01-10 23:46+0000\n"
+"PO-Revision-Date: 2022-01-17 12:28+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/nl/>\n"
@@ -184,55 +184,46 @@ msgstr "Evaluatie Metriek"
 msgid "Support"
 msgstr "Ondersteuning"
 
-#, fuzzy
 msgid "Accuracy"
-msgstr "OOB Precisie"
+msgstr "Nauwkeurigheid"
 
 msgid "Precision (Positive Predictive Value)"
-msgstr ""
+msgstr "Precisie (Positief Voorspelde Waarde)"
 
-#, fuzzy
 msgid "Recall (True Positive Rate)"
-msgstr "Terecht Positieven"
+msgstr "Recall (Terecht Positieven)"
 
-#, fuzzy
 msgid "False Discovery Rate"
-msgstr "Fout Positieven"
+msgstr "Fout-ontdekkingspercentage"
 
 msgid "F1 Score"
 msgstr "F1 Score"
 
 msgid "Area Under Curve (AUC)"
-msgstr ""
+msgstr "Gebied Onder Kromme (AUC)"
 
-#, fuzzy
 msgid "Negative Predictive Value"
-msgstr "Voorspelde Testwaarden"
+msgstr "Negatieve Voorspellende Waarde"
 
-#, fuzzy
 msgid "True Negative Rate"
-msgstr "Terecht Positieven"
+msgstr "Terecht Negatieven"
 
-#, fuzzy
 msgid "False Negative Rate"
-msgstr "Fout Positieven"
+msgstr "Fout Negatieven"
 
-#, fuzzy
 msgid "False Omission Rate"
-msgstr "Fout Positieven"
+msgstr "Fout Weglatingspercentage"
 
-#, fuzzy
 msgid "Threat Score"
-msgstr "F1 Score"
+msgstr "Dreigingsscore"
 
 msgid "Statistical Parity"
-msgstr ""
+msgstr "Statistische Pariteit"
 
-#, fuzzy
 msgid "All metrics are calculated for every class against all other classes."
 msgstr ""
-"Area Under Curve (AUC) wordt berekend voor iedere klasse tegenover alle "
-"andere klassen."
+"Alle metrieken zijn berekend voor iedere klasse tegenover alle andere "
+"klassen."
 
 msgid "Average / Total"
 msgstr "Gemiddelde / Totaal"
