@@ -145,7 +145,7 @@ mlClassificationKnn <- function(jaspResults, dataset, options, ...) {
     } else if (options[["modelValid"]] == "validationLeaveOneOut") {
       nnRange <- 1:options[["maxK"]]
       validationFit <- kknn::train.kknn(formula = formula, data = trainingAndValidationSet, ks = nnRange, scale = FALSE, distance = options[["distanceParameterManual"]], kernel = options[["weights"]])
-      accuracyStore <- as.numeric(1 - kfit_valid$MISCLASS)
+      accuracyStore <- as.numeric(1 - validationFit$MISCLASS)
       nn <- switch(options[["modelOpt"]],
         "optimizationError" = nnRange[which.max(accuracyStore)]
       )
