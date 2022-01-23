@@ -109,7 +109,7 @@
     exitAnalysisIfErrors = TRUE
   )
   if (options[["target"]] != "" && length(options[["predictors"]]) > 0) {
-    predictorData <- dataset[, options[["predictors"]]]
+    predictorData <- dataset[, options[["predictors"]], drop = FALSE]
     if (sum(apply(predictorData, MARGIN = 2, FUN = function(x) is.character(x) || is.factor(x))) > 0) {
       factorVarsWithUniqueLevels <- which(apply(predictorData[, sapply(predictorData, function(x) is.character(x) || is.factor(x)), drop = FALSE], MARGIN = 2, FUN = function(x) length(x) == length(unique(x))))
       if (length(factorVarsWithUniqueLevels) == 1) {

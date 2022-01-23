@@ -204,9 +204,12 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
     distribution <- .regressionGetDistributionFromDistance(options[["distance"]])
     ylab <- gettextf("OOB Change in %s%s Deviance", "\n", distribution)
   }
-  if (nrow(oobDev) <= 5L) {
+  if (nrow(oobDev) <= 1) {
+    plot$setError(gettext("Plotting not possible: The forest consists of only a single tree."))
+    return()
+  } else if (nrow(oobDev) <= 5L) {
     geom <- jaspGraphs::geom_point
-    xBreaks <- 1:xend
+    xBreaks <- 1:5
   } else {
     geom <- jaspGraphs::geom_line
     xBreaks <- jaspGraphs::getPrettyAxisBreaks(oobDev[["trees"]], min.n = 4)
