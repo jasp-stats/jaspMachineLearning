@@ -77,7 +77,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
-    trainingFit <- randomForest::randomForest(
+    testFit <- randomForest::randomForest(
       x = trainingSet[, options[["predictors"]]], y = trainingSet[, options[["target"]]],
       xtest = testSet[, options[["predictors"]]], ytest = testSet[, options[["target"]]],
       ntree = options[["noOfTrees"]], mtry = noOfPredictors,
