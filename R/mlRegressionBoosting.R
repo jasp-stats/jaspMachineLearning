@@ -84,6 +84,9 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
     noOfFolds <- 0
+    if (nrow(trainingSet) * options[["bagFrac"]] <= 2 * options[["nNode"]] + 1) { # Error check from gbm::gbm.fit line 32
+      jaspBase:::.quitAnalysis(gettext("Analysis not possible: The training set is too small or the subsampling rate is too large. Increase the minimum number of observations per node or the training data used per tree."))
+    }
     trainingFit <- gbm::gbm(
       formula = formula, data = trainingAndValidationSet, n.trees = trees,
       shrinkage = options[["shrinkage"]], interaction.depth = options[["intDepth"]],
@@ -103,6 +106,9 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
       noOfFolds <- options[["noOfFolds"]]
       trainingSet <- trainingAndValidationSet
       validationSet <- trainingAndValidationSet
+    }
+    if (nrow(trainingSet) * options[["bagFrac"]] <= 2 * options[["nNode"]] + 1) { # Error check from gbm::gbm.fit line 32
+      jaspBase:::.quitAnalysis(gettext("Analysis not possible: The training set is too small or the subsampling rate is too large. Increase the minimum number of observations per node or the training data used per tree."))
     }
     trainingFit <- gbm::gbm(
       formula = formula, data = trainingSet, n.trees = trees,
@@ -205,7 +211,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
     ylab <- gettextf("OOB Change in %s%s Deviance", "\n", distribution)
   }
   if (nrow(oobDev) <= 1) {
-    plot$setError(gettext("Plotting not possible: The forest consists of only a single tree."))
+    plot$setError(gettext("Plotting not possible: The model is based on only a single tree."))
     return()
   } else if (nrow(oobDev) <= 5L) {
     geom <- jaspGraphs::geom_point
