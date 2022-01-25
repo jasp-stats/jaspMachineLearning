@@ -96,9 +96,7 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
     noOfFolds <- 0
-    if (nrow(trainingSet) * options[["bagFrac"]] <= 2 * options[["nNode"]] + 1) { # Error check from gbm::gbm.fit line 32
-      jaspBase:::.quitAnalysis(gettext("Analysis not possible: The training set is too small or the subsampling rate is too large. Increase the minimum number of observations per node or the training data used per tree."))
-    }
+    .mlBoostingCheckMinObsNode(options, trainingSet) # Check for min obs in nodes
     fit <- gbm::gbm(
       formula = formula, data = trainingSet, n.trees = trees,
       shrinkage = options[["shrinkage"]], interaction.depth = options[["intDepth"]],
@@ -119,9 +117,7 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
       trainingSet <- trainingAndValidationSet
       validationSet <- trainingAndValidationSet
     }
-    if (nrow(trainingSet) * options[["bagFrac"]] <= 2 * options[["nNode"]] + 1) { # Error check from gbm::gbm.fit line 32
-      jaspBase:::.quitAnalysis(gettext("Analysis not possible: The training set is too small or the subsampling rate is too large. Increase the minimum number of observations per node or the training data used per tree."))
-    }
+    .mlBoostingCheckMinObsNode(options, trainingSet) # Check for min obs in nodes
     fit <- gbm::gbm(
       formula = formula, data = trainingSet, n.trees = trees,
       shrinkage = options[["shrinkage"]], interaction.depth = options[["intDepth"]],

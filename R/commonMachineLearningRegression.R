@@ -165,26 +165,7 @@
       }
     }
   }
-  # check for too many observations in end nodes before the analysis starts
-  checkMinObsNode <- function() {
-    if (type != "boosting") {
-      return()
-    }
-    procentTrain <- (1 - options[["testDataManual"]])
-    if (options[["modelOpt"]] == "optimizationOOB") {
-      procentTrain <- procentTrain * (1 - options[["validationDataManual"]])
-    }
-    nTrain <- nrow(dataset) * procentTrain
-    bag.fraction <- options[["bagFrac"]]
-    n.minobsinnode <- options[["nNode"]]
-    if (nTrain * bag.fraction <= 2 * n.minobsinnode + 1) {
-      return(gettextf(
-        "The minimum number of observations per node is too large. Ensure that `2 * Min. observations in node + 1` > `Training data used per tree * available training data` (in this case the minimum can be %.3f at most).",
-        nTrain * bag.fraction / 2 - 1
-      ))
-    }
-  }
-  return(list(checkNearestNeighbors, checkIfFoldsExceedValidation, checkMinObsNode))
+  return(list(checkNearestNeighbors, checkIfFoldsExceedValidation))
 }
 
 .mlRegressionReady <- function(options, type) {

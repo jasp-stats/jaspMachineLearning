@@ -153,7 +153,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
       )
     })
     if (isTryError(p)) {
-      jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The neural network cannot not be trained on these data with the current activation function.\n\nAn error occurred in the 'neuralnet' package: %1$s.", .extractErrorMessage(p)))
+      jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["stepMax"]]))
     }
   } else if (options[["modelOpt"]] == "optimizationError") {
     # Create a train, validation and test set (optimization)
@@ -194,7 +194,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
           validationPredictions <- predict(trainingFit, newdata = valid)
         })
         if (isTryError(p)) {
-          jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The neural network cannot not be trained on these data with the current activation function.\n\nAn error occurred in the 'neuralnet' package: %1$s.", .extractErrorMessage(p)))
+          jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["stepMax"]]))
         }
         fitness[i] <- mean((validationPredictions - valid[, options[["target"]]])^2)
         trainingPredictions <- predict(trainingFit, newdata = trainingSet)
@@ -243,7 +243,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
       validationPredictions <- predict(trainingFit, newdata = valid)
     })
     if (isTryError(p)) {
-      jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The neural network cannot not be trained on these data with the current activation function.\n\nAn error occurred in the 'neuralnet' package: %1$s.", .extractErrorMessage(p)))
+      jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["stepMax"]]))
     }
   }
   p <- try({
@@ -252,7 +252,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
     testPredictions <- predict(trainingFit, newdata = testSet)
   })
   if (isTryError(p)) {
-    jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The neural network cannot not be trained on these data with the current activation function.\n\nAn error occurred in the 'neuralnet' package: %1$s.", .extractErrorMessage(p)))
+    jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["stepMax"]]))
   }
   # Create results object
   result <- list()

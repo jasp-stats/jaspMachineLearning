@@ -84,9 +84,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
     noOfFolds <- 0
-    if (nrow(trainingSet) * options[["bagFrac"]] <= 2 * options[["nNode"]] + 1) { # Error check from gbm::gbm.fit line 32
-      jaspBase:::.quitAnalysis(gettext("Analysis not possible: The training set is too small or the subsampling rate is too large. Increase the minimum number of observations per node or the training data used per tree."))
-    }
+    .mlBoostingCheckMinObsNode(options, trainingSet) # Check for min obs in nodes
     trainingFit <- gbm::gbm(
       formula = formula, data = trainingAndValidationSet, n.trees = trees,
       shrinkage = options[["shrinkage"]], interaction.depth = options[["intDepth"]],
@@ -107,9 +105,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
       trainingSet <- trainingAndValidationSet
       validationSet <- trainingAndValidationSet
     }
-    if (nrow(trainingSet) * options[["bagFrac"]] <= 2 * options[["nNode"]] + 1) { # Error check from gbm::gbm.fit line 32
-      jaspBase:::.quitAnalysis(gettext("Analysis not possible: The training set is too small or the subsampling rate is too large. Increase the minimum number of observations per node or the training data used per tree."))
-    }
+    .mlBoostingCheckMinObsNode(options, trainingSet) # Check for min obs in nodes
     trainingFit <- gbm::gbm(
       formula = formula, data = trainingSet, n.trees = trees,
       shrinkage = options[["shrinkage"]], interaction.depth = options[["intDepth"]],
@@ -380,4 +376,16 @@ fakeGbmCrossValErr <- function(cv.models, cv.folds, cv.group, nTrain, n.trees) {
     model$valid.error * in.group[[index]]
   }, double(n.trees))
   return(rowSums(as.matrix(cv.error)) / nTrain)
+}
+
+.mlBoostingCheckMinObsNode <- function(options, trainingSet) {
+  if (nrow(trainingSet) * options[["bagFrac"]] <= 2 * options[["nNode"]] + 1) {
+    jaspBase:::.quitAnalysis(gettextf(
+      "The minimum number of observations per node is too large. Ensure that `2 * Min. observations in node (%1$i) + 1` < `Training data used per tree (%2$s) * available training data (%3$i)` (in this case the minimum can be %4$i at most).",
+      options[["nNode"]], 
+      paste0(options[["bagFrac"]] * 100, "%"), 
+      nrow(trainingSet), 
+      floor((nrow(trainingSet) * options[["bagFrac"]] - 1) / 2)
+    ))
+  }
 }
