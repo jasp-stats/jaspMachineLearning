@@ -82,7 +82,7 @@ mlClusteringRandomForest <- function(jaspResults, dataset, options, ...) {
     hfit <- hclust(as.dist(1 - fit$proximity), method = "ward.D2")
     for (i in clusterRange) {
       predictions <- cutree(hfit, k = i)
-      silh <- summary(cluster::silhouette(predictions, dist(dataset[, options[["predictors"]]])))
+      silh <- summary(cluster::silhouette(predictions, .mlClusteringCalculateDistances(dataset[, options[["predictors"]]])))
       avgSilh[i - 1] <- silh[["avg.width"]]
       m <- dim(as.data.frame(dataset[, options[["predictors"]]]))[2]
       wssTmp <- numeric(i)
@@ -114,14 +114,14 @@ mlClusteringRandomForest <- function(jaspResults, dataset, options, ...) {
   for (i in 1:clusters) {
     wss[i] <- if (m == 1) .ss(dataset[, options[["predictors"]]][predictions == i]) else .ss(dataset[, options[["predictors"]]][predictions == i, ])
   }
-  silhouettes <- summary(cluster::silhouette(predictions, dist(dataset[, options[["predictors"]]])))
+  silhouettes <- summary(cluster::silhouette(predictions, .mlClusteringCalculateDistances(dataset[, options[["predictors"]]])))
   result <- list()
   result[["pred.values"]] <- predictions
   result[["clusters"]] <- clusters
   result[["N"]] <- nrow(dataset)
   result[["size"]] <- as.numeric(table(predictions))
   result[["WSS"]] <- wss
-  result[["TSS"]] <- .tss(dist(dataset[, options[["predictors"]]]))
+  result[["TSS"]] <- .tss(.mlClusteringCalculateDistances(dataset[, options[["predictors"]]]))
   result[["BSS"]] <- result[["TSS"]] - sum(result[["WSS"]])
   result[["AIC"]] <- sum(wss) + 2 * m * clusters
   result[["BIC"]] <- sum(wss) + log(length(predictions)) * m * clusters

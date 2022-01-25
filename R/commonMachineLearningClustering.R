@@ -280,7 +280,7 @@
   }
   clusterResult <- jaspResults[["clusterResult"]]$object
   clustering <- clusterResult[["pred.values"]]
-  distance <- dist(dataset)
+  distance <- .mlClusteringCalculateDistances(dataset)
   metrics <- fpc::cluster.stats(distance, clustering, silhouette = FALSE, sepindex = FALSE, sepwithnoise = FALSE)
   table[["metric"]] <- c(
     gettext("Maximum diameter"),
@@ -345,7 +345,7 @@
     if (options[["distance"]] == "Pearson correlation") {
       fit <- cutree(hclust(as.dist(1 - cor(t(dataset), method = "pearson")), method = options[["linkage"]]), k = clusterResult[["clusters"]])
     } else {
-      fit <- cutree(hclust(dist(dataset), method = options[["linkage"]]), k = clusterResult[["clusters"]])
+      fit <- cutree(hclust(.mlClusteringCalculateDistances(dataset), method = options[["linkage"]]), k = clusterResult[["clusters"]])
     }
     predictions <- fit
     colSize <- clusterResult[["clusters"]]
@@ -618,4 +618,14 @@
       plot[[variable]]$dependOn(optionContainsValue = list("predictors" = variable))
     }
   }
+}
+
+.mlClusteringCalculateDistances <- function(x) {
+  p <- try({
+    distx <- dist(x) # This scales terribly in terms of memory (O(n^2))
+  })
+  if (isTryError(p)) {
+    jaspBase:::.quitAnalysis(gettext("An error occurred in the analysis: You have run out of usable memory while calculating the distance matrix."))
+  }
+  return(distx)
 }

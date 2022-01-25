@@ -75,7 +75,7 @@ mlClusteringFuzzyCMeans <- function(jaspResults, dataset, options, ...) {
         m = options[["m"]],
         method = "ufcl"
       ) # method = "cmeans" can yield a number of clusters that is not equal to the requested number
-      silh <- summary(cluster::silhouette(fit$cluster, dist(dataset[, options[["predictors"]]])))
+      silh <- summary(cluster::silhouette(fit$cluster, .mlClusteringCalculateDistances(dataset[, options[["predictors"]]])))
       avgSilh[i - 1] <- silh[["avg.width"]]
       sumSquares <- .sumsqr(dataset[, options[["predictors"]]], fit[["centers"]], fit[["cluster"]])
       wssStore[i - 1] <- sumSquares[["tot.within.ss"]]
@@ -95,7 +95,7 @@ mlClusteringFuzzyCMeans <- function(jaspResults, dataset, options, ...) {
     )
   }
   sumSquares <- .sumsqr(dataset[, options[["predictors"]]], fit[["centers"]], fit[["cluster"]])
-  silhouettes <- summary(cluster::silhouette(fit[["cluster"]], dist(dataset[, options[["predictors"]]])))
+  silhouettes <- summary(cluster::silhouette(fit[["cluster"]], .mlClusteringCalculateDistances(dataset[, options[["predictors"]]])))
   result <- list()
   result[["pred.values"]] <- fit[["cluster"]]
   result[["clusters"]] <- clusters

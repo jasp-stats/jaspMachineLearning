@@ -78,7 +78,7 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
   oneMark <- oneClusters == length(predictions)
   if (!oneMark && !zeroMark) {
     if (options[["distance"]] == "Normal densities") {
-      silhouettes <- summary(cluster::silhouette(predictions, dist(dataset[, options[["predictors"]]])))
+      silhouettes <- summary(cluster::silhouette(predictions, .mlClusteringCalculateDistances(dataset[, options[["predictors"]]])))
     } else if (options[["distance"]] == "Correlated densities") {
       silhouettes <- summary(cluster::silhouette(predictions, as.dist(1 - cor(t(dataset[, options[["predictors"]]])))))
     }
@@ -91,7 +91,7 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
   result[["N"]] <- nrow(dataset)
   result[["size"]] <- as.data.frame(table(predictions))[, 2]
   result[["WSS"]] <- wss
-  result[["TSS"]] <- if (noisePoints > 0) .tss(dist(dataset[, options[["predictors"]]][fit[["cluster"]] != 0, ])) else .tss(dist(dataset[, options[["predictors"]]]))
+  result[["TSS"]] <- if (noisePoints > 0) .tss(.mlClusteringCalculateDistances(dataset[, options[["predictors"]]][fit[["cluster"]] != 0, ])) else .tss(.mlClusteringCalculateDistances(dataset[, options[["predictors"]]]))
   result[["BSS"]] <- result[["TSS"]] - sum(result[["WSS"]])
   result[["AIC"]] <- sum(wss) + 2 * m * clusters
   result[["BIC"]] <- sum(wss) + log(length(predictions)) * m * clusters
