@@ -96,6 +96,7 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
     noOfFolds <- 0
+    .mlBoostingCheckMinObsNode(options, trainingSet) # Check for min obs in nodes
     fit <- gbm::gbm(
       formula = formula, data = trainingSet, n.trees = trees,
       shrinkage = options[["shrinkage"]], interaction.depth = options[["intDepth"]],
@@ -116,6 +117,7 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
       trainingSet <- trainingAndValidationSet
       validationSet <- trainingAndValidationSet
     }
+    .mlBoostingCheckMinObsNode(options, trainingSet) # Check for min obs in nodes
     fit <- gbm::gbm(
       formula = formula, data = trainingSet, n.trees = trees,
       shrinkage = options[["shrinkage"]], interaction.depth = options[["intDepth"]],

@@ -30,6 +30,6 @@ The analyses in the Machine Learning module are structured in JASP in the follow
        - Density-Based
        - Fuzzy C-Means
        - Hierarchical
-       - K-Means
+       - Neighborhood-Based
        - Random Forest
 ```

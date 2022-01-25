@@ -34,7 +34,7 @@ Support Vector Machines is a supervised learning algorithm that maps training ex
 ### Training Parameters 
 #### Algorithmic Settings
 - Kernel: The kernel used in training and predicting. Possible kernels are 'linear', 'radial', 'polynomial', and 'sigmoid'.
-- Cost of contraints violation: the 'C'-constant of the regularization term.
+- Cost of constraints violation: the 'C'-constant of the regularization term.
 - Tolerance of information criterion: The tolerance of termination criterion.
 - Epsilon: The epsilon parameter in the insensitive-loss function.
 - Scale variables: Scales the continuous variables. Standardization ensures that values of variables from different scales range into a specific similar scale. As a result, standardizing provides numerical stability, which improves the clustering output. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.

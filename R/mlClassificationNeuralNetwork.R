@@ -107,7 +107,7 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
       )
     })
     if (isTryError(p)) {
-      jaspBase:::.quitAnalysis(gettextf("An error occurred in the 'neuralnet' package: %1$s", .extractErrorMessage(p)))
+      jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["stepMax"]]))
     }
   } else if (options[["modelOpt"]] == "optimizationError") {
     validationIndex <- sample.int(nrow(trainingAndValidationSet), size = ceiling(options[["validationDataManual"]] * nrow(trainingAndValidationSet)))
@@ -147,7 +147,7 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
           validationPredictions <- levels(trainingSet[, options[["target"]]])[max.col(predict(fit, newdata = validationSet))]
         })
         if (isTryError(p)) {
-          jaspBase:::.quitAnalysis(gettextf("An error occurred in the 'neuralnet' package: %1$s", .extractErrorMessage(p)))
+          jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["stepMax"]]))
         }
         fitness[i] <- sum(diag(prop.table(table(validationPredictions, validationSet[, options[["target"]]]))))
         trainingPredictions <- levels(trainingSet[, options[["target"]]])[max.col(predict(fit, newdata = trainingSet))]
@@ -195,7 +195,7 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
       )
     })
     if (isTryError(p)) {
-      jaspBase:::.quitAnalysis(gettextf("An error occurred in the 'neuralnet' package: %1$s", .extractErrorMessage(p)))
+      jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["stepMax"]]))
     }
     validationPredictions <- levels(trainingSet[, options[["target"]]])[max.col(predict(fit, newdata = validationSet))]
   }

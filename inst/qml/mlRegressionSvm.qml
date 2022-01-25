@@ -153,9 +153,9 @@ Form
 			DoubleField
 			{
 				name:							"cost"
-				text:							qsTr("Cost of contraints violation")
+				text:							qsTr("Cost of constraints violation")
 				defaultValue:					1
-				min:							0
+				min:							0.001
 			}
 
 			DoubleField
@@ -163,7 +163,7 @@ Form
 				name:							"tolerance"
 				text:							qsTr("Tolerance of termination criterion")
 				defaultValue:					0.001
-				min:							0
+				min:							0.001
 			}
 
 			DoubleField
@@ -171,7 +171,7 @@ Form
 				name:							"epsilon"
 				text:							qsTr("Epsilon")
 				defaultValue:					0.01
-				min:							0
+				min:							0.001
 			}
 
 			CheckBox

@@ -139,6 +139,7 @@ Form
 				name:							"intDepth"
 				min:							1
 				defaultValue:					30
+				max:							30
 			}
 
 			DoubleField

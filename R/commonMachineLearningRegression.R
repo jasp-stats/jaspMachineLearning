@@ -108,6 +108,18 @@
     observations.amount = "< 2",
     exitAnalysisIfErrors = TRUE
   )
+  if (options[["target"]] != "" && length(options[["predictors"]]) > 0) {
+    predictorData <- dataset[, options[["predictors"]], drop = FALSE]
+    predictorsAreFactors <- vapply(predictorData, FUN = function(x) is.character(x) || is.factor(x), FUN.VALUE = logical(1L))
+    if (any(predictorsAreFactors)) {
+      predictorFactorsWithUniqueLevels <- which(sapply(predictorData[, predictorsAreFactors, drop = FALSE], FUN = function(x) length(x) == length(unique(x))))
+      if (length(predictorFactorsWithUniqueLevels) == 1) {
+        jaspBase:::.quitAnalysis(gettextf("The predictor %1$s is a factor with unique levels, please remove this factor as a predictor.", names(predictorFactorsWithUniqueLevels)))
+      } else if (length(predictorFactorsWithUniqueLevels) > 1) {
+        jaspBase:::.quitAnalysis(gettextf("The predictors %1$s are factors with unique levels, please remove these factors as a predictor.", paste(names(predictorFactorsWithUniqueLevels), sep = "&")))
+      }
+    }
+  }
 }
 
 .getCustomErrorChecksKnnBoosting <- function(dataset, options, type) {
@@ -154,26 +166,7 @@
       }
     }
   }
-  # check for too many observations in end nodes before the analysis starts
-  checkMinObsNode <- function() {
-    if (type != "boosting") {
-      return()
-    }
-    procentTrain <- (1 - options[["testDataManual"]])
-    if (options[["modelOpt"]] == "optimizationOOB") {
-      procentTrain <- procentTrain * (1 - options[["validationDataManual"]])
-    }
-    nTrain <- nrow(dataset) * procentTrain
-    bag.fraction <- options[["bagFrac"]]
-    n.minobsinnode <- options[["nNode"]]
-    if (nTrain * bag.fraction <= 2 * n.minobsinnode + 1) {
-      return(gettextf(
-        "The minimum number of observations per node is too large. Ensure that `2 * Min. observations in node + 1` > `Training data used per tree * available training data` (in this case the minimum can be %.3f at most).",
-        nTrain * bag.fraction / 2 - 1
-      ))
-    }
-  }
-  return(list(checkNearestNeighbors, checkIfFoldsExceedValidation, checkMinObsNode))
+  return(list(checkNearestNeighbors, checkIfFoldsExceedValidation))
 }
 
 .mlRegressionReady <- function(options, type) {
