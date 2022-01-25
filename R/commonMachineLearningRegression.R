@@ -110,12 +110,13 @@
   )
   if (options[["target"]] != "" && length(options[["predictors"]]) > 0) {
     predictorData <- dataset[, options[["predictors"]], drop = FALSE]
-    if (sum(apply(predictorData, MARGIN = 2, FUN = function(x) is.character(x) || is.factor(x))) > 0) {
-      factorVarsWithUniqueLevels <- which(apply(predictorData[, sapply(predictorData, function(x) is.character(x) || is.factor(x)), drop = FALSE], MARGIN = 2, FUN = function(x) length(x) == length(unique(x))))
-      if (length(factorVarsWithUniqueLevels) == 1) {
-        jaspBase:::.quitAnalysis(gettextf("The predictor %1$s is a factor with unique levels, please remove this factor as a predictor.", names(factorVarsWithUniqueLevels)))
-      } else if (length(factorVarsWithUniqueLevels) > 1) {
-        jaspBase:::.quitAnalysis(gettextf("The predictors %1$s are factors with unique levels, please remove these factors as a predictor.", paste(names(factorVarsWithUniqueLevels), sep = "&")))
+    predictorsAreFactors <- vapply(predictorData, FUN = function(x) is.character(x) || is.factor(x), FUN.VALUE = logical(1L))
+    if (any(predictorsAreFactors)) {
+      predictorFactorsWithUniqueLevels <- which(sapply(predictorData[, predictorsAreFactors, drop = FALSE], FUN = function(x) length(x) == length(unique(x))))
+      if (length(predictorFactorsWithUniqueLevels) == 1) {
+        jaspBase:::.quitAnalysis(gettextf("The predictor %1$s is a factor with unique levels, please remove this factor as a predictor.", names(predictorFactorsWithUniqueLevels)))
+      } else if (length(predictorFactorsWithUniqueLevels) > 1) {
+        jaspBase:::.quitAnalysis(gettextf("The predictors %1$s are factors with unique levels, please remove these factors as a predictor.", paste(names(predictorFactorsWithUniqueLevels), sep = "&")))
       }
     }
   }
