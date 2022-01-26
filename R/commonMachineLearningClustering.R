@@ -624,8 +624,14 @@
   p <- try({
     distx <- dist(x) # This scales terribly in terms of memory (O(n^2))
   })
-  if (isTryError(p)) {
-    jaspBase:::.quitAnalysis(gettext("An error occurred in the analysis: You have run out of usable memory while calculating the distance matrix."))
+  if (isTryError(p) && "allocate" %in% strsplit(x = p[[1]], split = " ")[[1]]) {
+    jaspBase:::.quitAnalysis(gettextf("Insufficient RAM available to compute the distance matrix. The analysis tried to allocate %s Gb", .extractMemSizeFromError(p)))
+  } else if (isTryError(p)) {
+    jaspBase:::.quitAnalysis(gettextf("An error occurred in the analysis: %1$s", .extractErrorMessage(p)))
   }
   return(distx)
+}
+
+.extractMemSizeFromError <- function(p) {
+  unlist(regmatches(p[[1]], gregexpr("[[:digit:]]+\\.*[[:digit:]]*", p[[1]])))
 }
