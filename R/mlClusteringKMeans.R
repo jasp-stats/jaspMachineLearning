@@ -86,7 +86,7 @@ mlClusteringKMeans <- function(jaspResults, dataset, options, ...) {
         }
       }
 	  predictions <- if (options[["centers"]] == "medoids") fit[["clustering"]] else fit[["cluster"]]
-      silh <- summary(cluster::silhouette(predictions, dist(dataset[, options[["predictors"]]])))
+      silh <- summary(cluster::silhouette(predictions, .mlClusteringCalculateDistances(dataset[, options[["predictors"]]])))
       avgSilh[i - 1] <- silh[["avg.width"]]
 	  centers <- if (options[["centers"]] == "medoids") fit[["medoids"]] else fit[["centers"]]
 	  sumSquares <- .sumsqr(dataset[, options[["predictors"]]], centers, predictions)
@@ -115,7 +115,7 @@ mlClusteringKMeans <- function(jaspResults, dataset, options, ...) {
   predictions <- if (options[["centers"]] == "medoids") fit[["clustering"]] else fit[["cluster"]]
   centers <- if (options[["centers"]] == "medoids") fit[["medoids"]] else fit[["centers"]]
   sumSquares <- .sumsqr(dataset[, options[["predictors"]]], centers, predictions)
-  silhouettes <- summary(cluster::silhouette(predictions, dist(dataset[, options[["predictors"]]])))
+  silhouettes <- summary(cluster::silhouette(predictions, .mlClusteringCalculateDistances(dataset[, options[["predictors"]]])))
   size <- switch(options[["centers"]], "means" = fit[["size"]], "medians" = fit[["size"]][, 1], "medoids" = fit[["clusinfo"]][, 1])
   result <- list()
   result[["pred.values"]] <- predictions

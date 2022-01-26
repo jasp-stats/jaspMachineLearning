@@ -62,7 +62,7 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
       distances[is.na(distances)] <- 1 # We impute the missing correlations with a 1, as 1 - 1 = 0
       fit <- cutree(hclust(distances, method = options[["linkage"]]), k = options[["noOfClusters"]])
     } else {
-      distances <- dist(dataset[, options[["predictors"]]])
+      distances <- .mlClusteringCalculateDistances(dataset[, options[["predictors"]]])
       fit <- cutree(hclust(distances, method = options[["linkage"]]), k = options[["noOfClusters"]])
     }
     clusters <- options[["noOfClusters"]]
@@ -79,7 +79,7 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
         distances[is.na(distances)] <- 1 # We impute the missing correlations with a 1, as 1 - 1 = 0
         fit <- cutree(hclust(distances, method = options[["linkage"]]), k = i)
       } else {
-        distances <- dist(dataset[, options[["predictors"]]])
+        distances <- .mlClusteringCalculateDistances(dataset[, options[["predictors"]]])
         fit <- cutree(hclust(distances, method = options[["linkage"]]), k = i)
       }
       silh <- summary(cluster::silhouette(fit, distances))
@@ -114,7 +114,7 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
   result[["N"]] <- nrow(dataset)
   result[["size"]] <- size
   result[["WSS"]] <- wss
-  result[["TSS"]] <- .tss(dist(dataset[, options[["predictors"]]]))
+  result[["TSS"]] <- .tss(.mlClusteringCalculateDistances(dataset[, options[["predictors"]]]))
   result[["BSS"]] <- result[["TSS"]] - sum(result[["WSS"]])
   result[["AIC"]] <- sum(wss) + 2 * m * length(table(fit))
   result[["BIC"]] <- sum(wss) + log(length(fit)) * m * length(table(fit))
@@ -152,7 +152,7 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
   if (options[["distance"]] == "Pearson correlation") {
     hc <- hclust(as.dist(1 - cor(t(data), method = "pearson")), method = options[["linkage"]])
   } else {
-    hc <- hclust(dist(data), method = options[["linkage"]])
+    hc <- hclust(.mlClusteringCalculateDistances(data), method = options[["linkage"]])
   }
   p <- ggdendro::ggdendrogram(hc) +
     jaspGraphs::geom_rangeframe() +
