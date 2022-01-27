@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2022-01-15 03:24\n"
-"PO-Revision-Date: 2022-01-27 15:46+0000\n"
-"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
+"PO-Revision-Date: 2022-01-27 16:20+0000\n"
+"Last-Translator: Thomas Langkamp <thomas.lassdiesonnerein@gmx.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/de/>\n"
 "Language: de\n"
@@ -219,7 +219,7 @@ msgid "Threat Score"
 msgstr "Threat Score"
 
 msgid "Statistical Parity"
-msgstr ""
+msgstr "Statistische Parität"
 
 msgid "All metrics are calculated for every class against all other classes."
 msgstr ""
@@ -351,7 +351,6 @@ msgstr "Innere Quadratsumme"
 msgid "Silhouette score"
 msgstr "Silhouette-Score"
 
-#, fuzzy
 msgid "Center %s"
 msgstr "Zentroid %s"
 
@@ -853,7 +852,6 @@ msgstr "Trigewicht"
 msgid "Cosine"
 msgstr "Kosinus"
 
-#, fuzzy
 msgid "Inverse"
 msgstr "Inverse"
 
