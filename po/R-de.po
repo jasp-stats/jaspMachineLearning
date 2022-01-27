@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2022-01-15 03:24\n"
-"PO-Revision-Date: 2022-01-08 23:25+0000\n"
+"PO-Revision-Date: 2022-01-27 15:46+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
-"X-Generator: Weblate 4.10.1\n"
+"X-Generator: Weblate 4.11-dev\n"
 
 msgid "K-Nearest Neighbors Classification"
 msgstr "K-nächste-Nachbarn-Klassifikation"
@@ -184,55 +184,47 @@ msgstr "Evaluationsmetriken"
 msgid "Support"
 msgstr "Träger"
 
-#, fuzzy
 msgid "Accuracy"
-msgstr "OOB Genauigkeit"
+msgstr "Treffergenauigkeit"
 
 msgid "Precision (Positive Predictive Value)"
-msgstr ""
+msgstr "Genauigkeit (Positiver Vorhersagewert)"
 
-#, fuzzy
 msgid "Recall (True Positive Rate)"
-msgstr "Richtig-positiv-Rate"
+msgstr "Sensitivität (Richtig-positiv-Rate)"
 
-#, fuzzy
 msgid "False Discovery Rate"
-msgstr "Falsch-positiv-Rate"
+msgstr "Falscherkennungsrate"
 
 msgid "F1 Score"
 msgstr "F1 Score"
 
 msgid "Area Under Curve (AUC)"
-msgstr ""
+msgstr "Fläche unter der Kurve (AUC)"
 
-#, fuzzy
 msgid "Negative Predictive Value"
-msgstr "Vorhergesagte Testwerte"
+msgstr "Negativer Vorhersagewert"
 
-#, fuzzy
 msgid "True Negative Rate"
-msgstr "Richtig-positiv-Rate"
+msgstr "Richtig-negativ-Rate"
 
-#, fuzzy
 msgid "False Negative Rate"
-msgstr "Falsch-positiv-Rate"
+msgstr "Falsch-negativ-Rate"
 
-#, fuzzy
 msgid "False Omission Rate"
-msgstr "Falsch-positiv-Rate"
+msgstr "Falschauslassungsrate"
 
 #, fuzzy
 msgid "Threat Score"
-msgstr "F1 Score"
+msgstr "Threat Score"
 
 msgid "Statistical Parity"
 msgstr ""
 
-#, fuzzy
 msgid "All metrics are calculated for every class against all other classes."
 msgstr ""
-"Area Under Curve (AUC) wordt berekend voor iedere klasse tegenover alle "
-"andere klassen."
+"Alle Metriken werden für jede Klasse im Vergleich zu allen anderen Klassen "
+"berechnet."
 
 msgid "Average / Total"
 msgstr "Mittelwert / Gesamt"
@@ -703,7 +695,7 @@ msgid "Decision tree"
 msgstr "Entscheidungsbaum"
 
 msgid "Support vector machine"
-msgstr ""
+msgstr "Support-Vektor-Maschine"
 
 msgid "Error: The trained model is not created in JASP."
 msgstr "Fehler: Das trainierte Modell ist nicht in JASP erstellt."
@@ -795,16 +787,16 @@ msgid "Relative Importance"
 msgstr "Relative Wichtigkeit"
 
 msgid "No splits were made in the tree."
-msgstr ""
+msgstr "Im Baum wurden keine Aufteilungen gemacht."
 
 msgid "Splits in Tree"
-msgstr ""
+msgstr "Aufteilungen im Baum"
 
 msgid "Split Point"
-msgstr ""
+msgstr "Teilungspunkt"
 
 msgid "Obs. in Split"
-msgstr ""
+msgstr "Beob. in Aufteilung"
 
 msgid "Improvement"
 msgstr "Verbesserung"
@@ -813,7 +805,7 @@ msgid "Decision Tree Plot"
 msgstr "Eintscheidungsbaum-Abbildung"
 
 msgid "Plotting not possible: No splits were made in the tree."
-msgstr ""
+msgstr "Diagramm unmöglich: Im Baum wurden keine Aufteilungen gemacht."
 
 msgid "Plotting not possible: An error occurred while creating this plot."
 msgstr ""
@@ -852,18 +844,18 @@ msgstr "Epanechnikow"
 
 #, fuzzy
 msgid "Biweight"
-msgstr "Gewichtung"
+msgstr "Bigewicht"
 
 #, fuzzy
 msgid "Triweight"
-msgstr "Gewichtung"
+msgstr "Trigewicht"
 
 msgid "Cosine"
 msgstr "Kosinus"
 
 #, fuzzy
 msgid "Inverse"
-msgstr "Arkustangens"
+msgstr "Inverse"
 
 msgid "Rank"
 msgstr "Rang"
