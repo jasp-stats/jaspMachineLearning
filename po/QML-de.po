@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2022-01-27 16:20+0000\n"
+"Last-Translator: Thomas Langkamp <thomas.lassdiesonnerein@gmx.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.11-dev\n"
 "X-Language: de\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -506,7 +512,7 @@ msgstr "Evaluationsmetriken"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Variable importance"
-msgstr "Variablen-Wichtigkeit"
+msgstr "Wichtigkeit der Variable"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Plots"
@@ -722,7 +728,7 @@ msgstr "Abbildungen"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Elbow method"
-msgstr "Elleboogmethode"
+msgstr "Ellenbogenmethode"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Display barplot"
@@ -758,7 +764,7 @@ msgstr "Algorithmus-Einstellungen"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Scale variables"
-msgstr "Schaalvariabelen"
+msgstr "Variablen skalieren"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Cluster Determination"
@@ -1142,7 +1148,7 @@ msgstr "Algoritme-instellingen"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Scale variables"
-msgstr "Schaalvariabelen"
+msgstr "Variablen skalieren"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Number of Trees"
@@ -2410,11 +2416,11 @@ msgstr "Support Vector Machine-Klassifizierung"
 
 msgctxt "Description|"
 msgid "Neighborhood-Based"
-msgstr ""
+msgstr "Nachbarschaftsbasiert"
 
 msgctxt "Description|"
 msgid "Neighborhood-Based Clustering"
-msgstr ""
+msgstr "Nachbarschaftsbasiertes Clustering"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Target"
@@ -2446,11 +2452,11 @@ msgstr "Evaluationsmetriken"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Splits in tree"
-msgstr ""
+msgstr "Verästelung"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Variable importance"
-msgstr ""
+msgstr "Wichtigkeit der Variable"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Plots"
@@ -2474,7 +2480,7 @@ msgstr "Entscheidungsbaum"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Decision boundary matrix"
-msgstr ""
+msgstr "Entscheidungsgrenzenmatrix"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Legend"
@@ -2494,15 +2500,15 @@ msgstr "Algorithmus-Einstellungen"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Min. observations for split"
-msgstr ""
+msgstr "Min. Beobachtungen für Split"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Min. observations in terminal"
-msgstr ""
+msgstr "Min. Beobachtungen im Terminal"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Max. interaction depth"
-msgstr ""
+msgstr "Max. Interaktionstiefe"
 
 #, fuzzy
 msgctxt "mlClassificationDecisionTree|"
@@ -2511,7 +2517,7 @@ msgstr "Komplexitäts-Parameter"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Scale predictors"
-msgstr ""
+msgstr "Skalierungsprädiktoren"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Set seed"
@@ -2555,7 +2561,7 @@ msgstr "Evaluationsmetriken"
 
 msgctxt "mlClassificationSvm|"
 msgid "Support vectors"
-msgstr ""
+msgstr "Support-Vektoren"
 
 msgctxt "mlClassificationSvm|"
 msgid "Plots"
@@ -2575,7 +2581,7 @@ msgstr "Andrews-Kurven"
 
 msgctxt "mlClassificationSvm|"
 msgid "Decision boundary matrix"
-msgstr ""
+msgstr "Entscheidungsgrenzenmatrix"
 
 msgctxt "mlClassificationSvm|"
 msgid "Legend"
@@ -2639,7 +2645,7 @@ msgstr "Epsilon"
 
 msgctxt "mlClassificationSvm|"
 msgid "Scale predictors"
-msgstr ""
+msgstr "Skalierungsprädiktoren"
 
 msgctxt "mlClassificationSvm|"
 msgid "Set seed"
@@ -2647,11 +2653,11 @@ msgstr "Startwert für Zufallszahlen setzen"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Centers"
-msgstr ""
+msgstr "Zentren"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Center type"
-msgstr ""
+msgstr "Zentrumstyp"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Distance"
@@ -2683,11 +2689,11 @@ msgstr "Evaluationsmetriken"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Splits in tree"
-msgstr ""
+msgstr "Verästelung"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Variable importance"
-msgstr ""
+msgstr "Wichtigkeit der Variable"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Plots"
@@ -2715,15 +2721,15 @@ msgstr "Algorithmus-Einstellungen"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Min. observations for split"
-msgstr ""
+msgstr "Min. Beobachtungen für Split"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Min. observations in terminal"
-msgstr ""
+msgstr "Min. Beobachtungen im Terminal"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Max. interaction depth"
-msgstr ""
+msgstr "Max. Interaktionstiefe"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Complexity parameter"
@@ -2731,7 +2737,7 @@ msgstr "Komplexitäts-Parameter"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Scale variables"
-msgstr ""
+msgstr "Variablen skalieren"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Set seed"
@@ -2763,7 +2769,7 @@ msgstr "Evaluationsmetriken"
 
 msgctxt "mlRegressionSvm|"
 msgid "Support vectors"
-msgstr ""
+msgstr "Support-Vektoren"
 
 msgctxt "mlRegressionSvm|"
 msgid "Plots"
