@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2022-01-29 03:21+0000\n"
-"Last-Translator: Thomas Langkamp <thomas.lassdiesonnerein@gmx.de>\n"
+"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/de/>\n"
 "Language: de\n"
@@ -2644,7 +2644,7 @@ msgstr "Epsilon"
 
 msgctxt "mlClassificationSvm|"
 msgid "Scale predictors"
-msgstr "Skalierungsprädiktoren"
+msgstr "Prädiktoren skalieren"
 
 msgctxt "mlClassificationSvm|"
 msgid "Set seed"
