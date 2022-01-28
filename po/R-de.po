@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2022-01-15 03:24\n"
-"PO-Revision-Date: 2022-01-27 16:20+0000\n"
+"PO-Revision-Date: 2022-01-29 03:21+0000\n"
 "Last-Translator: Thomas Langkamp <thomas.lassdiesonnerein@gmx.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/de/>\n"
@@ -214,9 +214,8 @@ msgstr "Falsch-negativ-Rate"
 msgid "False Omission Rate"
 msgstr "Falschauslassungsrate"
 
-#, fuzzy
 msgid "Threat Score"
-msgstr "Threat Score"
+msgstr "Risikowert"
 
 msgid "Statistical Parity"
 msgstr "Statistische Parität"
@@ -841,13 +840,11 @@ msgstr "Dreieckig"
 msgid "Epanechnikov"
 msgstr "Epanechnikow"
 
-#, fuzzy
 msgid "Biweight"
-msgstr "Bigewicht"
+msgstr "Doppeltes Gewicht"
 
-#, fuzzy
 msgid "Triweight"
-msgstr "Trigewicht"
+msgstr "Dreifaches Gewicht"
 
 msgid "Cosine"
 msgstr "Kosinus"
