@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-01-27 16:20+0000\n"
-"Last-Translator: Thomas Langkamp <thomas.lassdiesonnerein@gmx.de>\n"
+"PO-Revision-Date: 2022-01-29 03:21+0000\n"
+"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/de/>\n"
 "Language: de\n"
@@ -1748,11 +1748,11 @@ msgstr "Swap"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Scramble"
-msgstr "Scramble"
+msgstr "Verschlüsselung"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Inversion"
-msgstr "Inversion"
+msgstr "Umkehrung"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Probability"
@@ -1928,7 +1928,7 @@ msgstr "Algorithmus"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Backpropagation"
-msgstr "Backpropagation"
+msgstr "Rückverbreitung"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "rprop+"
@@ -2064,11 +2064,11 @@ msgstr "Tausch"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Scramble"
-msgstr "Scramble"
+msgstr "Verschlüsselung"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Inversion"
-msgstr "Inversion"
+msgstr "Umkehrung"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Probability"
@@ -2510,7 +2510,6 @@ msgctxt "mlClassificationDecisionTree|"
 msgid "Max. interaction depth"
 msgstr "Max. Interaktionstiefe"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Complexity parameter"
 msgstr "Komplexitäts-Parameter"
@@ -2645,7 +2644,7 @@ msgstr "Epsilon"
 
 msgctxt "mlClassificationSvm|"
 msgid "Scale predictors"
-msgstr "Skalierungsprädiktoren"
+msgstr "Prädiktoren skalieren"
 
 msgctxt "mlClassificationSvm|"
 msgid "Set seed"
@@ -2837,7 +2836,7 @@ msgstr "Epsilon"
 
 msgctxt "mlRegressionSvm|"
 msgid "Scale variables"
-msgstr ""
+msgstr "Variablen skallieren"
 
 msgctxt "mlRegressionSvm|"
 msgid "Set seed"
