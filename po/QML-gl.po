@@ -2625,10 +2625,6 @@ msgid "r parameter"
 msgstr "parámetro r"
 
 msgctxt "mlClassificationSvm|"
-msgid "Cost of contraints violation"
-msgstr "Custo de violar as restricións"
-
-msgctxt "mlClassificationSvm|"
 msgid "Tolerance of termination criterion"
 msgstr "Tolerancia do criterio de finalización"
 
@@ -2817,10 +2813,6 @@ msgid "r parameter"
 msgstr "parámetro r"
 
 msgctxt "mlRegressionSvm|"
-msgid "Cost of contraints violation"
-msgstr "Custo de violar as restricións"
-
-msgctxt "mlRegressionSvm|"
 msgid "Tolerance of termination criterion"
 msgstr "Tolerancia do criterio de finalización"
 
@@ -2835,3 +2827,11 @@ msgstr "Variables de escala"
 msgctxt "mlRegressionSvm|"
 msgid "Set seed"
 msgstr "Establecer a semente"
+
+msgctxt "mlClassificationSvm|"
+msgid "Cost of constraints violation"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Cost of constraints violation"
+msgstr ""

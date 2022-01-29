@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.1\n"
-"POT-Creation-Date: 2022-01-15 03:24\n"
+"POT-Creation-Date: 2022-01-29 03:23\n"
 "PO-Revision-Date: 2021-11-22 22:59+0000\n"
 "Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
@@ -419,12 +419,30 @@ msgstr ""
 msgid "Cluster Mean"
 msgstr ""
 
+msgid ""
+"Insufficient RAM available to compute the distance matrix. The analysis "
+"tried to allocate %s Gb"
+msgstr ""
+
+msgid "An error occurred in the analysis: %1$s"
+msgstr ""
+
 msgid "The variable '%s' can't be both a predictor and a test set indicator."
 msgstr ""
 
 msgid ""
 "Your test set indicator should be binary, containing only 1 (included in "
 "test set) and 0 (excluded from test set)."
+msgstr ""
+
+msgid ""
+"The predictor %1$s is a factor with unique levels, please remove this factor "
+"as a predictor."
+msgstr ""
+
+msgid ""
+"The predictors %1$s are factors with unique levels, please remove these "
+"factors as a predictor."
 msgstr ""
 
 msgid ""
@@ -435,12 +453,6 @@ msgstr ""
 msgid ""
 "You have specified more folds than there are observations in the training "
 "and validation set. Please choose a number lower than %d."
-msgstr ""
-
-msgid ""
-"The minimum number of observations per node is too large. Ensure that `2 * "
-"Min. observations in node + 1` > `Training data used per tree * available "
-"training data` (in this case the minimum can be %.3f at most)."
 msgstr ""
 
 msgid "K-Nearest Neighbors Regression"
@@ -580,7 +592,9 @@ msgstr ""
 msgid "Pooled Within-Class Matrices Correlations"
 msgstr ""
 
-msgid "An error occurred in the 'neuralnet' package: %1$s"
+msgid ""
+"Analysis not possible: The algorithm did not converge within the maximum "
+"number of training repetitions (%1$s)."
 msgstr ""
 
 msgid "Optimizing network topology"
@@ -719,6 +733,9 @@ msgstr ""
 msgid "OOB Change in %s%s Deviance"
 msgstr ""
 
+msgid "Plotting not possible: The model is based on only a single tree."
+msgstr ""
+
 msgid "Number of Trees"
 msgstr ""
 
@@ -735,6 +752,13 @@ msgid "%s Deviance"
 msgstr ""
 
 msgid "Relative Influence Plot"
+msgstr ""
+
+msgid ""
+"The minimum number of observations per node is too large. Ensure that `2 * "
+"Min. observations in node (%1$i) + 1` < `Training data used per tree (%2$s) "
+"* available training data (%3$i)` (in this case the minimum can be %4$i at "
+"most)."
 msgstr ""
 
 msgid "Relative Importance"

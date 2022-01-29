@@ -2625,10 +2625,6 @@ msgid "r parameter"
 msgstr "r parameter"
 
 msgctxt "mlClassificationSvm|"
-msgid "Cost of contraints violation"
-msgstr "Kosten van overtreding van beperkingen"
-
-msgctxt "mlClassificationSvm|"
 msgid "Tolerance of termination criterion"
 msgstr "Tolerantie van beëindigingscriterium"
 
@@ -2817,10 +2813,6 @@ msgid "r parameter"
 msgstr "r parameter"
 
 msgctxt "mlRegressionSvm|"
-msgid "Cost of contraints violation"
-msgstr "Kosten van overtreding van beperkingen"
-
-msgctxt "mlRegressionSvm|"
 msgid "Tolerance of termination criterion"
 msgstr "Tolerantie van beëindigingscriterium"
 
@@ -2835,3 +2827,11 @@ msgstr "Schaal variabelen"
 msgctxt "mlRegressionSvm|"
 msgid "Set seed"
 msgstr "Gebruik toevalsgenerator beginwaarde"
+
+msgctxt "mlClassificationSvm|"
+msgid "Cost of constraints violation"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Cost of constraints violation"
+msgstr ""

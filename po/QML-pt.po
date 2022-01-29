@@ -2683,10 +2683,6 @@ msgid "r parameter"
 msgstr ""
 
 msgctxt "mlClassificationSvm|"
-msgid "Cost of contraints violation"
-msgstr ""
-
-msgctxt "mlClassificationSvm|"
 msgid "Tolerance of termination criterion"
 msgstr ""
 
@@ -2890,10 +2886,6 @@ msgid "r parameter"
 msgstr ""
 
 msgctxt "mlRegressionSvm|"
-msgid "Cost of contraints violation"
-msgstr ""
-
-msgctxt "mlRegressionSvm|"
 msgid "Tolerance of termination criterion"
 msgstr ""
 
@@ -2907,4 +2899,12 @@ msgstr ""
 
 msgctxt "mlRegressionSvm|"
 msgid "Set seed"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Cost of constraints violation"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Cost of constraints violation"
 msgstr ""
