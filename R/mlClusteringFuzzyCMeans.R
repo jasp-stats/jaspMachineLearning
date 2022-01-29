@@ -91,7 +91,7 @@ mlClusteringFuzzyCMeans <- function(jaspResults, dataset, options, ...) {
     fit <- e1071::cmeans(dataset[, options[["predictors"]]],
       centers = clusters,
       iter.max = options[["noOfIterations"]],
-      m = options[["m"]]
+      m = options[["m"]], method = "ufcl"
     )
   }
   sumSquares <- .sumsqr(dataset[, options[["predictors"]]], fit[["centers"]], fit[["cluster"]])
