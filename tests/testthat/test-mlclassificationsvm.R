@@ -1,4 +1,4 @@
-context("Machine Learning Boosting Classification")
+context("Machine Learning SVM Classification")
 
 options <- jaspTools::analysisOptions("mlClassificationSvm")
 options$addIndicator <- FALSE

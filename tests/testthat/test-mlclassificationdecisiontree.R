@@ -1,4 +1,4 @@
-context("Machine Learning Boosting Classification")
+context("Machine Learning Decision Tree Classification")
 
 options <- jaspTools::analysisOptions("mlClassificationDecisionTree")
 options$addIndicator <- FALSE
@@ -8,6 +8,7 @@ options$holdoutData <- "holdoutManual"
 options$modelOpt <- "optimizationManual"
 options$modelValid <- "validationManual"
 options$noOfFolds <- 5
+options$plotDecisionTree <- TRUE
 options$predictionsColumn <- ""
 options$predictors <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
 options$saveModel <- FALSE
@@ -49,6 +50,12 @@ test_that("Data Split plot matches", {
 	plotName <- results[["results"]][["plotDataSplit"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
 	jaspTools::expect_equal_plots(testPlot, "data-split")
+})
+
+test_that("Decision Tree Plot matches", {
+	plotName <- results[["results"]][["plotDecisionTree"]][["data"]]
+	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+	jaspTools::expect_equal_plots(testPlot, "decision-tree-plot")
 })
 
 test_that("Variable Importance table results match", {
