@@ -1,4 +1,4 @@
-context("Machine Learning Random Forest Regression")
+context("Machine Learning Decision Tree Regression")
 
 options <- jaspTools::analysisOptions("mlRegressionDecisionTree")
 options$addIndicator <- FALSE
@@ -7,6 +7,7 @@ options$holdoutData <- "holdoutManual"
 options$modelOpt <- "optimizationManual"
 options$modelValid <- "validationManual"
 options$noOfFolds <- 5
+options$plotDecisionTree <- TRUE
 options$predictedPerformancePlot <- TRUE
 options$predictionsColumn <- ""
 options$predictors <- c("Sepal.Width", "Petal.Length", "Petal.Width", "Species")
@@ -28,6 +29,12 @@ test_that("Data Split plot matches", {
 	plotName <- results[["results"]][["plotDataSplit"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
 	jaspTools::expect_equal_plots(testPlot, "data-split")
+})
+
+test_that("Decision Tree Plot matches", {
+	plotName <- results[["results"]][["plotDecisionTree"]][["data"]]
+	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+	jaspTools::expect_equal_plots(testPlot, "decision-tree-plot")
 })
 
 test_that("Predictive Performance Plot matches", {

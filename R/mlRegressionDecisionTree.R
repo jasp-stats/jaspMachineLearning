@@ -187,9 +187,9 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
     tfun <- (x$functions)$print
     if (!is.null(tfun)) {
       if (is.null(frame$yval2)) {
-        yval <- tfun(frame$yval, ylevel, digits)
+        yval <- tfun(frame$yval, ylevel, digits, nsmall = 20)
       } else {
-        yval <- tfun(frame$yval2, ylevel, digits)
+        yval <- tfun(frame$yval2, ylevel, digits, nsmall = 20)
       }
     } else {
       yval <- format(signif(frame$yval, digits))
@@ -218,7 +218,7 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
       )
   })
   if (isTryError(ptry)) {
-    plot$setError(gettext("Plotting not possible: An error occurred while creating this plot."))
+    plot$setError(gettextf("Plotting not possible: An error occurred while creating this plot: %s", .extractErrorMessage(ptry)))
   } else {
     plot$plotObject <- p
   }

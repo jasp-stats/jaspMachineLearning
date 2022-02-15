@@ -1,4 +1,4 @@
-context("Machine Learning Random Forest Regression")
+context("Machine Learning SVM Regression")
 
 options <- jaspTools::analysisOptions("mlRegressionSvm")
 options$target <- "Sepal.Length"
