@@ -218,7 +218,7 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
       )
   })
   if (isTryError(ptry)) {
-    plot$setError(gettext("Plotting not possible: An error occurred while creating this plot."))
+    plot$setError(gettextf("Plotting not possible: An error occurred while creating this plot: %s", .extractErrorMessage(ptry)))
   } else {
     plot$plotObject <- p
   }
