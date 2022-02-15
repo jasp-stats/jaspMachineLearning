@@ -187,9 +187,9 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
     tfun <- (x$functions)$print
     if (!is.null(tfun)) {
       if (is.null(frame$yval2)) {
-        yval <- tfun(frame$yval, ylevel, digits)
+        yval <- tfun(frame$yval, ylevel, digits, nsmall = 20)
       } else {
-        yval <- tfun(frame$yval2, ylevel, digits)
+        yval <- tfun(frame$yval2, ylevel, digits, nsmall = 20)
       }
     } else {
       yval <- format(signif(frame$yval, digits))
