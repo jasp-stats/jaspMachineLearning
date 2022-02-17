@@ -234,8 +234,18 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
     nodeNames <- p$data$splitvar
     nodeNames[is.na(nodeNames)] <- labels
     p$data$info <- paste0(nodeNames, "\nn = ", p$data$nodesize)
+    for (i in 2:length(p$data$breaks_label)) {
+      s <- strsplit(p$data$breaks_label[[i]], split = " ")
+      if (!("NA" %in% s[[1]])) { # That means that it is a non-numeric split
+        p$data$breaks_label[[i]] <- paste(p$data$breaks_label[[i]], collapse = " + ")
+      } else {
+        s[[1]][length(s[[1]])] <- format(as.numeric(s[[1]][length(s[[1]])]), digits = 3)
+        s <- paste0(s[[1]], collapse = " ")
+        p$data$breaks_label[[i]] <- s
+      }
+    }
     p <- p + ggparty::geom_edge() +
-      ggparty::geom_edge_label(mapping = ggplot2::aes(label = paste(substr(breaks_label, start = 1, stop = 15))), fill = NA) +
+      ggparty::geom_edge_label(fill = NA, col = "darkred") +
       ggparty::geom_node_splitvar(mapping = ggplot2::aes(size = max(3, nodesize) / 2, label = info), fill = "white", col = "black") +
       ggparty::geom_node_label(mapping = ggplot2::aes(label = info, size = max(3, nodesize) / 2), ids = "terminal", fill = "white", col = "black") +
       ggplot2::scale_x_continuous(name = NULL, limits = c(min(p$data$x) - abs(0.1 * min(p$data$x)), max(p$data$x) * 1.1)) +
