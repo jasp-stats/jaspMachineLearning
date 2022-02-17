@@ -127,12 +127,12 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   table <- createJaspTable(title = gettext("Splits in Tree"))
   table$position <- position
   table$dependOn(options = c(
-    "tableSplits", "trainingDataManual", "scaleEqualSD", "target", "predictors", "seed", "seedBox",
+    "tableSplits", "trainingDataManual", "scaleEqualSD", "target", "predictors", "seed", "seedBox", "tableSplitsTree",
     "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "nSplit", "nNode", "intDepth", "cp"
   ))
-  table$addColumnInfo(name = "predictor", title = " ", type = "string")
-  table$addColumnInfo(name = "index", title = gettext("Split Point"), type = "number")
+  table$addColumnInfo(name = "predictor", title = "", type = "string")
   table$addColumnInfo(name = "count", title = gettext("Obs. in Split"), type = "integer")
+  table$addColumnInfo(name = "index", title = gettext("Split Point"), type = "number")
   table$addColumnInfo(name = "improve", title = gettext("Improvement"), type = "number")
   jaspResults[["tableSplits"]] <- table
   if (!ready) {
@@ -145,12 +145,43 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   if (is.null(result[["model"]]$splits)) {
     table$addFootnote(gettext("No splits were made in the tree."))
     return()
+  } else if (options[["tableSplitsTree"]]) {
+    table$addFootnote(gettext("For each level of the tree, only the split with the highest improvement in deviance is shown."))
   }
   splits <- result[["model"]]$splits
-  table[["predictor"]] <- rownames(splits)
-  table[["index"]] <- splits[, 4]
-  table[["count"]] <- splits[, 1]
-  table[["improve"]] <- splits[, 3]
+  if (options[["tableSplitsTree"]]) {
+    # Only show the splits actually in the tree (aka with the highest OOB improvement)
+    splits <- splits[splits[, 1] > 0, ] # Discard the leaf splits 
+    df <- as.data.frame(splits)
+    df$names <- rownames(splits)
+    df$number <- 1:nrow(df)
+    df$group <- c(1, rep(NA, nrow(df) - 1))
+    for (i in 2:nrow(splits)) {
+      if (splits[i, 1] != splits[i - 1, 1]) {
+        df$group[i] <- df$group[i - 1] + 1
+      } else {
+        df$group[i] <- df$group[i - 1]
+      }
+    }
+    splitList <- split(df, f = df$group)
+    rows <- as.data.frame(matrix(0, nrow = length(splitList), ncol = 4))
+    for(i in 1:length(splitList)) {
+      maxImprove <- splitList[[i]][which.max(splitList[[i]][["improve"]]), ]
+      rows[i, 1] <- maxImprove$names
+      rows[i, 2] <- maxImprove$count
+      rows[i, 3] <- as.numeric(maxImprove$index)
+      rows[i, 4] <- as.numeric(maxImprove$improve)
+    }
+    table[["predictor"]] <- rows[, 1]
+    table[["count"]]     <- rows[, 2]
+    table[["index"]]     <- rows[, 3]
+    table[["improve"]]   <- rows[, 4]
+  } else {
+    table[["predictor"]] <- rownames(splits)
+    table[["count"]]     <- splits[, 1]
+    table[["index"]]     <- splits[, 4]
+    table[["improve"]]   <- splits[, 3]
+  }
 }
 
 .mlDecisionTreePlotTree <- function(dataset, options, jaspResults, ready, position, purpose) {

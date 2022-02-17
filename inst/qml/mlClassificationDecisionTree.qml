@@ -83,8 +83,15 @@ Form
 
 		CheckBox
 		{
-			text:								qsTr("Splits in tree")
+			text:								qsTr("Attempted splits")
 			name:								"tableSplits"
+
+			CheckBox
+			{
+				text:							qsTr("Only show splits in tree")
+				name:							"tableSplitsTree"
+				checked:						true
+			}
 		}
 
 		CheckBox
