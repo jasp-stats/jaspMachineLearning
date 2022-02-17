@@ -83,6 +83,12 @@ Form
 
 		CheckBox
 		{
+			text:								qsTr("Variable importance")
+			name:								"tableVariableImportance"
+		}
+
+		CheckBox
+		{
 			text:								qsTr("Attempted splits")
 			name:								"tableSplits"
 
@@ -92,12 +98,6 @@ Form
 				name:							"tableSplitsTree"
 				checked:						true
 			}
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Variable importance")
-			name:								"tableVariableImportance"
 		}
 	}
 

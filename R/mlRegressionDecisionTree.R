@@ -39,11 +39,11 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   # Create the evaluation metrics table
   .mlRegressionTableMetrics(dataset, options, jaspResults, ready, position = 3)
 
-  # Create the splits table
-  .mlDecisionTreeTableSplits(options, jaspResults, ready, position = 4, purpose = "regression")
-
   # Create the variable importance table
-  .mlDecisionTreeTableVarImp(options, jaspResults, ready, position = 5, purpose = "regression")
+  .mlDecisionTreeTableVarImp(options, jaspResults, ready, position = 4, purpose = "regression")
+
+  # Create the splits table
+  .mlDecisionTreeTableSplits(options, jaspResults, ready, position = 5, purpose = "regression")
 
   # Create the predicted performance plot
   .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 6)
