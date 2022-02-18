@@ -155,14 +155,7 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
     df <- as.data.frame(splits)
     df$names <- rownames(splits)
     df$number <- 1:nrow(df)
-    df$group <- c(1, rep(NA, nrow(df) - 1))
-    for (i in 2:nrow(splits)) {
-      if (splits[i, 1] != splits[i - 1, 1]) {
-        df$group[i] <- df$group[i - 1] + 1
-      } else {
-        df$group[i] <- df$group[i - 1]
-      }
-    }
+    df$group <- c(1, 1 + cumsum(splits[-1, 1] != splits[-nrow(df), 1]))
     splitList <- split(df, f = df$group)
     rows <- as.data.frame(matrix(0, nrow = length(splitList), ncol = 4))
     for(i in 1:length(splitList)) {
