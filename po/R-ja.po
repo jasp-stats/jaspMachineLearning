@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.1\n"
-"POT-Creation-Date: 2022-01-29 03:23\n"
+"POT-Creation-Date: 2022-02-19 03:23\n"
 "PO-Revision-Date: 2022-02-12 21:37+0000\n"
 "Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
@@ -783,7 +783,7 @@ msgstr ""
 msgid "Plotting not possible: No splits were made in the tree."
 msgstr ""
 
-msgid "Plotting not possible: An error occurred while creating this plot."
+msgid "Plotting not possible: An error occurred while creating this plot: %s"
 msgstr ""
 
 msgid "Classification Accuracy Plot"
