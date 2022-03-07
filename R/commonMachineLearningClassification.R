@@ -747,6 +747,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   table$addColumnInfo(name = "fpr", title = gettext("False Positive Rate"), type = "number")
   table$addColumnInfo(name = "fdr", title = gettext("False Discovery Rate"), type = "number")
   table$addColumnInfo(name = "f1", title = gettext("F1 Score"), type = "number")
+  table$addColumnInfo(name = "mcc", title = gettext("Matthews Correlation Coefficient"), type = "number")
   table$addColumnInfo(name = "auc", title = gettext("Area Under Curve (AUC)"), type = "number")
   table$addColumnInfo(name = "npv", title = gettext("Negative Predictive Value"), type = "number")
   table$addColumnInfo(name = "tnr", title = gettext("True Negative Rate"), type = "number")
@@ -771,6 +772,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   precision <- rep(NA, length(lvls))
   recall <- rep(NA, length(lvls))
   f1 <- rep(NA, length(lvls))
+  mcc <- rep(NA, length(lvls))
   auc <- classificationResult[["auc"]]
   tnr <- rep(NA, length(lvls))
   npv <- rep(NA, length(lvls))
@@ -790,6 +792,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     precision[i] <- TP / (TP + FP)
     recall[i] <- TP / (TP + FN)
     f1[i] <- 2 * ((precision[i] * recall[i]) / (precision[i] + recall[i]))
+    mcc[i] <- ((TP * TN) - (FP * FN)) / sqrt((TP + FP) * (TP + FN) * (TN + FP) * (TN + FN))
     # Source: https://github.com/ModelOriented/fairmodels
     tnr[i] <- TN / (TN + FP)
     npv[i] <- TN / (TN + FN)
@@ -805,6 +808,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   precision[length(precision) + 1] <- sum(precision * support[seq_along(lvls)], na.rm = TRUE) / sum(support[seq_along(lvls)], na.rm = TRUE)
   recall[length(recall) + 1] <- sum(recall * support[seq_along(lvls)], na.rm = TRUE) / sum(support[seq_along(lvls)], na.rm = TRUE)
   f1[length(f1) + 1] <- sum(f1 * support[seq_along(lvls)], na.rm = TRUE) / sum(support[seq_along(lvls)], na.rm = TRUE)
+  mcc[length(mcc) + 1] <- mean(mcc, na.rm = TRUE)
   auc[length(auc) + 1] <- mean(auc, na.rm = TRUE)
   tnr[length(tnr) + 1] <- mean(tnr, na.rm = TRUE)
   npv[length(npv) + 1] <- mean(npv, na.rm = TRUE)
@@ -819,6 +823,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   table[["precision"]] <- precision
   table[["recall"]] <- recall
   table[["f1"]] <- f1
+  table[["mcc"]] <- mcc
   table[["support"]] <- support
   table[["auc"]] <- auc
   table[["tnr"]] <- tnr
