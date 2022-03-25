@@ -28,7 +28,7 @@ options$testSetIndicatorVariable <- ""
 options$validationDataManual <- 0.2
 options$validationMeasures <- TRUE
 set.seed(1)
-results <- jaspTools::runAnalysis("mlClassificationRandomForest", "wine.csv", options)
+results <- jaspTools::runAnalysis("mlClassificationRandomForest", "wine.csv", options, makeTests = TRUE)
 
 
 test_that("Andrews Curves Plot matches", {
@@ -104,17 +104,18 @@ test_that("Variable Importance table results match", {
 })
 
 test_that("Evaluation Metrics table results match", {
-	table <- results[["results"]][["validationMeasures"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(1, 0.993006993006993, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0.371428571428571,
-			 13, 1, "<unicode><unicode><unicode>", 0.971428571428571, 0.998299319727891,
-			 0.962962962962963, 0, 0.0714285714285714, 0.0454545454545455,
-			 0, 2, 0.954545454545455, 1, 0.928571428571429, 0.371428571428571,
-			 14, 1, 13, 0.971428571428571, 1, 0.941176470588235, 0.111111111111111,
-			 0, 0, 0.037037037037037, 3, 1, 0.888888888888889, 1, 0.257142857142857,
-			 8, 0.962962962962963, 4, 0.980952380952381, 0.997102104244961,
-			 0.971739807033925, 0.037037037037037, 0.0238095238095238, 0.0151515151515152,
-			 0.0123456790123457, "Average / Total", 0.984848484848485, 0.974603174603175,
-			 0.971428571428571, 1, 35, 0.987654320987654, "<unicode><unicode><unicode>"
-			))
+  table <- results[["results"]][["validationMeasures"]][["data"]]
+  jaspTools::expect_equal_tables(table,
+    list(1, 0.993006993006993, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0.371428571428571,
+        13, 1, "<unicode><unicode><unicode>", 0.971428571428571, 0.998299319727891,
+        0.962962962962963, 0, 0.0714285714285714, 0.0454545454545455,
+        0, 2, 0.941468871691272, 0.954545454545455, 1, 0.928571428571429,
+        0.371428571428571, 14, 1, 13, 0.971428571428571, 1, 0.941176470588235,
+        0.111111111111111, 0, 0, 0.037037037037037, 3, 0.925184888651615,
+        1, 0.888888888888889, 1, 0.257142857142857, 8, 0.962962962962963,
+        4, 0.980952380952381, 0.997102104244961, 0.971739807033925,
+        0.037037037037037, 0.0238095238095238, 0.0151515151515152, 0.0123456790123457,
+        "Average / Total", 0.955551253447629, 0.984848484848485, 0.974603174603175,
+        0.971428571428571, 1, 35, 0.987654320987654, "<unicode><unicode><unicode>"))
 })
+

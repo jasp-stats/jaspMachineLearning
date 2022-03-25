@@ -66,12 +66,12 @@ test_that("Confusion Matrix table results match", {
 })
 
 test_that("Evaluation Metrics table results match", {
-	table <- results[["results"]][["validationMeasures"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(1, 1, 1, 0, 0, 0, 0, "setosa", 1, 1, 1, 0.333333333333333, 10,
-			 1, "<unicode><unicode><unicode>", 1, 0.693181818181818, 1, 0,
-			 0, 0, 0, "versicolor", 1, 1, 1, 0.266666666666667, 8, 1, "<unicode><unicode><unicode>",
-			 1, 1, 1, 0, 0, 0, 0, "virginica", 1, 1, 1, 0.4, 12, 1, "<unicode><unicode><unicode>",
-			 1, 0.897727272727273, 1, 0, 0, 0, 0, "Average / Total", 1, 1,
-			 1, 1, 30, 1, "<unicode><unicode><unicode>"))
+  table <- results[["results"]][["validationMeasures"]][["data"]]
+  jaspTools::expect_equal_tables(table,
+     list(1, 1, 1, 0, 0, 0, 0, "setosa", 1, 1, 1, 1, 0.333333333333333,
+        10, 1, "<unicode><unicode><unicode>", 1, 0.693181818181818,
+        1, 0, 0, 0, 0, "versicolor", 1, 1, 1, 1, 0.266666666666667,
+        8, 1, "<unicode><unicode><unicode>", 1, 1, 1, 0, 0, 0, 0, "virginica",
+        1, 1, 1, 1, 0.4, 12, 1, "<unicode><unicode><unicode>", 1, 0.897727272727273,
+        1, 0, 0, 0, 0, "Average / Total", 1, 1, 1, 1, 1, 30, 1, "<unicode><unicode><unicode>"))
 })
