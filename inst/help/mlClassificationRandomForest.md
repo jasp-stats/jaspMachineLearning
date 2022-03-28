@@ -73,6 +73,8 @@ Generates a new column in your dataset with the class labels of your classificat
 - False Positive Rate: The ratio of incorrect positive predictions to the total negative classes.
 - False Discovery Rate: The ratio of incorrect positive predictions to the predicted positive classes.
 - F1 Score: The harmonic mean of the precision and recall scores.
+- Matthews Correlation coefficient: An alternative to F1 or accuracy that is more reliable for imbalanced datasets.
+	see https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-6413-7
 - Area Under Curve (AUC): Area under the ROC curve. See also ROC curves.
 - Negative Predictive Value: The ratio of correct negative predictions to the total predicted negatives.
 - True Negative Rate: The ratio of correct negative predictions to the total negative classes.
