@@ -61,6 +61,8 @@ Genereert een nieuwe kolom in uw dataset met de klasselabels van uw classificati
 - Precision: Ratio van correcte positieve voorspellingen en het totaal aantal positieve voorspellingen.
 - Recall: Ratio van correcte positieve voorspellingen en het totale aantal positieve observaties.
 - F1 Score: Het harmonische gemiddelde van de precision- en recallscores.
+- Matthews Correlatiecoëfficiënt: Een alternatief voor F1 of nauwkeurigheid dat betrouwbaarder is voor onevenwichtige datasets.
+	zie https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-019-6413-7
 - Support: Het aantal observaties van een klasse in de testset.
 - AUC: Gebied onder de ROC kromme. Elke klasse is voorspeld tegen alle andere klassen. Zie ook ROC kromme.
 
