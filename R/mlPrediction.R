@@ -210,9 +210,6 @@ is.jaspMachineLearning <- function(x) {
     if (!(any(c("kknn", "lda", "gbm", "randomForest", "cv.glmnet", "nn", "rpart", "svm") %in% class(model)))) {
       jaspBase:::.quitAnalysis(gettextf("The trained model (type: %1$s) is currently not supported in JASP.", paste(class(model), collapse = ", ")))
     }
-    if (model[["jaspVersion"]] != .baseCitation) {
-      jaspBase:::.quitAnalysis(gettext("Error: The trained model is created using a different version of JASP."))
-    }
   } else {
     model <- NULL
   }
