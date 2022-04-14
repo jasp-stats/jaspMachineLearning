@@ -206,7 +206,7 @@
       "svm" = .svmRegression(dataset, options, jaspResults)
     )
     jaspResults[["regressionResult"]] <- createJaspState(regressionResult)
-    jaspResults[["regressionResult"]]$dependOn(options = .mlRegressionDependencies(options, includeSaveOptions = TRUE))
+    jaspResults[["regressionResult"]]$dependOn(options = .mlRegressionDependencies(options))
   }
 }
 
@@ -225,7 +225,7 @@
   )
   table <- createJaspTable(title)
   table$position <- position
-  table$dependOn(options = .mlRegressionDependencies(options))
+  table$dependOn(options = .mlRegressionDependencies(options, includeSaveOptions = TRUE))
   # Add analysis-specific columns
   if (type == "knn") {
     table$addColumnInfo(name = "nn", title = gettext("Nearest neighbors"), type = "integer")
