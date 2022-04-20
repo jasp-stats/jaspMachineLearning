@@ -476,7 +476,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   gridData <- data.frame(x = grid[, 1], y = grid[, 2])
   pointData <- data.frame(x = predictors[, 1], y = predictors[, 2], target = target, shapes = shapes)
   p <- ggplot2::ggplot(data = gridData, mapping = ggplot2::aes(x = x, y = y)) +
-    ggplot2::geom_tile(mapping = ggplot2::aes(fill = predictions), alpha = 0.3, show.legend = FALSE) +
+    ggplot2::geom_raster(mapping = ggplot2::aes(fill = predictions), alpha = 0.3, show.legend = FALSE) +
     ggplot2::labs(fill = options[["target"]]) +
     ggplot2::scale_fill_manual(values = .mlColorScheme(n = length(unique(target)))) +
     ggplot2::scale_x_continuous(name = NULL, breaks = xBreaks, limits = range(xBreaks)) +

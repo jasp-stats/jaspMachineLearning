@@ -39,11 +39,11 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   # Create the evaluation metrics table
   .mlRegressionTableMetrics(dataset, options, jaspResults, ready, position = 3)
 
-  # Create the splits table
-  .mlDecisionTreeTableSplits(options, jaspResults, ready, position = 4, purpose = "regression")
-
   # Create the variable importance table
-  .mlDecisionTreeTableVarImp(options, jaspResults, ready, position = 5, purpose = "regression")
+  .mlDecisionTreeTableVarImp(options, jaspResults, ready, position = 4, purpose = "regression")
+
+  # Create the splits table
+  .mlDecisionTreeTableSplits(options, jaspResults, ready, position = 5, purpose = "regression")
 
   # Create the predicted performance plot
   .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 6)
@@ -127,12 +127,12 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   table <- createJaspTable(title = gettext("Splits in Tree"))
   table$position <- position
   table$dependOn(options = c(
-    "tableSplits", "trainingDataManual", "scaleEqualSD", "target", "predictors", "seed", "seedBox",
+    "tableSplits", "trainingDataManual", "scaleEqualSD", "target", "predictors", "seed", "seedBox", "tableSplitsTree",
     "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "nSplit", "nNode", "intDepth", "cp"
   ))
-  table$addColumnInfo(name = "predictor", title = " ", type = "string")
-  table$addColumnInfo(name = "index", title = gettext("Split Point"), type = "number")
+  table$addColumnInfo(name = "predictor", title = "", type = "string")
   table$addColumnInfo(name = "count", title = gettext("Obs. in Split"), type = "integer")
+  table$addColumnInfo(name = "index", title = gettext("Split Point"), type = "number")
   table$addColumnInfo(name = "improve", title = gettext("Improvement"), type = "number")
   jaspResults[["tableSplits"]] <- table
   if (!ready) {
@@ -145,12 +145,35 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   if (is.null(result[["model"]]$splits)) {
     table$addFootnote(gettext("No splits were made in the tree."))
     return()
+  } else if (options[["tableSplitsTree"]]) {
+    table$addFootnote(gettext("For each level of the tree, only the split with the highest improvement in deviance is shown."))
   }
   splits <- result[["model"]]$splits
-  table[["predictor"]] <- rownames(splits)
-  table[["index"]] <- splits[, 4]
-  table[["count"]] <- splits[, 1]
-  table[["improve"]] <- splits[, 3]
+  if (options[["tableSplitsTree"]]) {
+    # Only show the splits actually in the tree (aka with the highest OOB improvement)
+    splits <- splits[splits[, 1] > 0, ] # Discard the leaf splits 
+    df <- as.data.frame(splits)
+    df$names <- rownames(splits)
+    df$group <- c(1, 1 + cumsum(splits[-1, 1] != splits[-nrow(df), 1]))
+    splitList <- split(df, f = df$group)
+    rows <- as.data.frame(matrix(0, nrow = length(splitList), ncol = 4))
+    for(i in 1:length(splitList)) {
+      maxImprove <- splitList[[i]][which.max(splitList[[i]][["improve"]]), ]
+      rows[i, 1] <- maxImprove$names
+      rows[i, 2] <- maxImprove$count
+      rows[i, 3] <- as.numeric(maxImprove$index)
+      rows[i, 4] <- as.numeric(maxImprove$improve)
+    }
+    table[["predictor"]] <- rows[, 1]
+    table[["count"]]     <- rows[, 2]
+    table[["index"]]     <- rows[, 3]
+    table[["improve"]]   <- rows[, 4]
+  } else {
+    table[["predictor"]] <- rownames(splits)
+    table[["count"]]     <- splits[, 1]
+    table[["index"]]     <- splits[, 4]
+    table[["improve"]]   <- splits[, 3]
+  }
 }
 
 .mlDecisionTreePlotTree <- function(dataset, options, jaspResults, ready, position, purpose) {
@@ -199,14 +222,30 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
     if (purpose == "classification") {
       labels <- strsplit(labels, split = " ")
       labels <- unlist(lapply(labels, `[[`, 1))
+      colors <- .mlColorScheme(length(unique(labels)))
+      cols <- colors[factor(labels)]
+      alpha <- 0.3
+    } else {
+      cols <- "white"
+      alpha <- 1
     }
     nodeNames <- p$data$splitvar
     nodeNames[is.na(nodeNames)] <- labels
     p$data$info <- paste0(nodeNames, "\nn = ", p$data$nodesize)
+    for (i in 2:length(p$data$breaks_label)) {
+      s <- strsplit(p$data$breaks_label[[i]], split = " ")
+      if (!("NA" %in% s[[1]])) { # That means that it is a non-numeric split
+        p$data$breaks_label[[i]] <- paste(p$data$breaks_label[[i]], collapse = " + ")
+      } else {
+        s[[1]][length(s[[1]])] <- format(as.numeric(s[[1]][length(s[[1]])]), digits = 3)
+        s <- paste0(s[[1]], collapse = " ")
+        p$data$breaks_label[[i]] <- s
+      }
+    }
     p <- p + ggparty::geom_edge() +
-      ggparty::geom_edge_label(mapping = ggplot2::aes(label = paste(substr(breaks_label, start = 1, stop = 15))), fill = NA) +
+      ggparty::geom_edge_label(fill = "white", col = "darkred") +
       ggparty::geom_node_splitvar(mapping = ggplot2::aes(size = max(3, nodesize) / 2, label = info), fill = "white", col = "black") +
-      ggparty::geom_node_label(mapping = ggplot2::aes(label = info, size = max(3, nodesize) / 2), ids = "terminal", fill = "white", col = "black") +
+      ggparty::geom_node_label(mapping = ggplot2::aes(label = info, size = max(3, nodesize) / 2), ids = "terminal", fill = cols, col = "black", alpha = alpha) +
       ggplot2::scale_x_continuous(name = NULL, limits = c(min(p$data$x) - abs(0.1 * min(p$data$x)), max(p$data$x) * 1.1)) +
       ggplot2::scale_y_continuous(name = NULL, limits = c(min(p$data$y) - abs(0.1 * min(p$data$y)), max(p$data$y) * 1.1)) +
       jaspGraphs::geom_rangeframe(sides = "") +

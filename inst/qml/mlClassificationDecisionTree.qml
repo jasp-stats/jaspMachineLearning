@@ -83,14 +83,21 @@ Form
 
 		CheckBox
 		{
-			text:								qsTr("Splits in tree")
-			name:								"tableSplits"
+			text:								qsTr("Variable importance")
+			name:								"tableVariableImportance"
 		}
 
 		CheckBox
 		{
-			text:								qsTr("Variable importance")
-			name:								"tableVariableImportance"
+			text:								qsTr("Attempted splits")
+			name:								"tableSplits"
+
+			CheckBox
+			{
+				text:							qsTr("Only show splits in tree")
+				name:							"tableSplitsTree"
+				checked:						true
+			}
 		}
 	}
 

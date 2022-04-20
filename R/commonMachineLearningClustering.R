@@ -323,64 +323,26 @@
   } else {
     tsne <- jaspResults[["tsneOutput"]]$object
   }
-  if (type == "cmeans") {
-    fit <- e1071::cmeans(dataset, centers = clusterResult[["clusters"]], iter.max = options[["noOfIterations"]], m = options[["m"]])
-    predictions <- fit$cluster
-    colSize <- clusterResult[["clusters"]]
-  } else if (type == "kmeans") {
-    if (options[["centers"]] == "means") {
-      fit <- kmeans(dataset, centers = clusterResult[["clusters"]], iter.max = options[["noOfIterations"]], nstart = options[["noOfRandomSets"]], algorithm = options[["algorithm"]])
-    } else if (options[["centers"]] == "medians") {
-      fit <- Gmedian::kGmedian(dataset, ncenters = clusterResult[["clusters"]], nstart = options[["noOfIterations"]], nstartkmeans = options[["noOfRandomSets"]])
-    } else if (options[["centers"]] == "medoids") {
-      if (options[["algorithm"]] == "pam") {
-        fit <- cluster::pam(dataset, k = clusterResult[["clusters"]], metric = options[["distance"]], nstart = options[["noOfRandomSets"]])
-      } else {
-        fit <- cluster::clara(dataset, k = clusterResult[["clusters"]], metric = options[["distance"]], samples = options[["noOfIterations"]])
-      }
-    }
-    predictions <- if (options[["centers"]] == "medoids") fit$clustering else fit$cluster
-    colSize <- clusterResult[["clusters"]]
-  } else if (type == "hierarchical") {
-    if (options[["distance"]] == "Pearson correlation") {
-      fit <- cutree(hclust(as.dist(1 - cor(t(dataset), method = "pearson")), method = options[["linkage"]]), k = clusterResult[["clusters"]])
-    } else {
-      fit <- cutree(hclust(.mlClusteringCalculateDistances(dataset), method = options[["linkage"]]), k = clusterResult[["clusters"]])
-    }
-    predictions <- fit
-    colSize <- clusterResult[["clusters"]]
-  } else if (type == "densitybased") {
-    if (options[["distance"]] == "Correlated densities") {
-      fit <- dbscan::dbscan(as.dist(1 - cor(t(dataset), method = "pearson")), eps = options[["eps"]], minPts = options[["minPts"]])
-    } else {
-      fit <- dbscan::dbscan(dataset, eps = options[["eps"]], minPts = options[["minPts"]])
-    }
-    predictions <- fit$cluster
-    colSize <- clusterResult[["clusters"]] + 1
-  } else if (type == "randomForest") {
-    fit <- randomForest::randomForest(
-      x = dataset, y = NULL, ntree = options[["noOfTrees"]],
-      proximity = TRUE, oob.prox = TRUE
-    )
-    hfit <- hclust(as.dist(1 - fit$proximity), method = "ward.D2")
-    predictions <- cutree(hfit, k = clusterResult[["clusters"]])
-    colSize <- clusterResult[["clusters"]]
-  }
-  clusterAssignment <- factor(predictions, levels = sort(unique(predictions), decreasing = FALSE))
+  predictions <- clusterResult[["pred.values"]]
+  ncolors <- clusterResult[["clusters"]]
   if (type == "densitybased") {
-    levels(clusterAssignment)[levels(clusterAssignment) == "0"] <- gettext("Noisepoint")
+    ncolors <- ncolors + 1
+    predictions[predictions == 0] <- gettext("Noisepoint")
   }
-  plotData <- data.frame(x = tsne$Y[, 1], y = tsne$Y[, 2], cluster = factor(clusterAssignment))
+  plotData <- data.frame(x = tsne$Y[, 1], y = tsne$Y[, 2], cluster = predictions[as.numeric(rownames(dataset))])
+  plotData$cluster <- factor(plotData$cluster)
   xBreaks <- jaspGraphs::getPrettyAxisBreaks(plotData$x)
   yBreaks <- jaspGraphs::getPrettyAxisBreaks(plotData$y)
   p <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x, y = y)) +
     jaspGraphs::geom_point(mapping = ggplot2::aes(fill = cluster)) +
     ggplot2::scale_x_continuous(name = NULL, limits = range(xBreaks)) +
     ggplot2::scale_y_continuous(name = NULL, limits = range(yBreaks)) +
-    ggplot2::scale_fill_manual(name = gettext("Cluster"), values = .mlColorScheme(colSize)) +
+    ggplot2::scale_fill_manual(name = gettext("Cluster"), values = .mlColorScheme(ncolors)) +
     jaspGraphs::geom_rangeframe() +
     jaspGraphs::themeJaspRaw(legend.position = if (options[["legend"]]) "right" else "none") +
-    ggplot2::theme(axis.ticks = ggplot2::element_blank(), axis.text.x = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank())
+    ggplot2::theme(axis.ticks = ggplot2::element_blank(), 
+                   axis.text.x = ggplot2::element_blank(), 
+                   axis.text.y = ggplot2::element_blank())
   if (options[["labels"]]) {
     p <- p + ggrepel::geom_text_repel(ggplot2::aes(label = rownames(dataset), x = x, y = y), hjust = -1, vjust = 1, data = plotData)
   }
