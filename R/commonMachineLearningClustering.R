@@ -423,7 +423,7 @@
     return()
   }
   table$addColumnInfo(name = "cluster", title = "", type = "number")
-  if (options[["predictors"]] != "") {
+  if (!identical(options[["predictors"]], "")) {
     for (i in 1:length(unlist(options[["predictors"]]))) {
       columnName <- as.character(options[["predictors"]][i])
       table$addColumnInfo(name = columnName, title = columnName, type = "number")
