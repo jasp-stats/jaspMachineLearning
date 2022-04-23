@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.16.1\n"
-"POT-Creation-Date: 2022-02-19 03:23\n"
+"POT-Creation-Date: 2022-04-23 03:27\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -179,6 +179,9 @@ msgid "False Discovery Rate"
 msgstr ""
 
 msgid "F1 Score"
+msgstr ""
+
+msgid "Matthews Correlation Coefficient"
 msgstr ""
 
 msgid "Area Under Curve (AUC)"
@@ -709,13 +712,16 @@ msgstr ""
 msgid "Splits in Tree"
 msgstr ""
 
-msgid "Split Point"
-msgstr ""
-
 msgid "Obs. in Split"
 msgstr ""
 
+msgid "Split Point"
+msgstr ""
+
 msgid "Improvement"
+msgstr ""
+
+msgid "For each level of the tree, only the split with the highest improvement in deviance is shown."
 msgstr ""
 
 msgid "Decision Tree Plot"

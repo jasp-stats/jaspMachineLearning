@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2022-02-19 03:23\n"
+"POT-Creation-Date: 2022-04-23 03:27\n"
 "PO-Revision-Date: 2022-02-05 03:20+0000\n"
 "Last-Translator: Sophie Berkhout <s.w.berkhout@gmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
@@ -198,6 +198,10 @@ msgstr "Fout-ontdekkingspercentage"
 
 msgid "F1 Score"
 msgstr "F1 Score"
+
+#, fuzzy
+msgid "Matthews Correlation Coefficient"
+msgstr "Regressie Coëfficiënten"
 
 msgid "Area Under Curve (AUC)"
 msgstr "Gebied Onder Kromme (AUC)"
@@ -818,14 +822,19 @@ msgstr "Er zijn geen splitsingen gemaakt in de boom."
 msgid "Splits in Tree"
 msgstr "Splitsingen in Boom"
 
-msgid "Split Point"
-msgstr "Splitsingspunt"
-
 msgid "Obs. in Split"
 msgstr "Obs. in Splitsing"
 
+msgid "Split Point"
+msgstr "Splitsingspunt"
+
 msgid "Improvement"
 msgstr "Verbetering"
+
+msgid ""
+"For each level of the tree, only the split with the highest improvement in "
+"deviance is shown."
+msgstr ""
 
 msgid "Decision Tree Plot"
 msgstr "Beslisboom Grafiek"

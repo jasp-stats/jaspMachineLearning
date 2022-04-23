@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-02-19 03:23\n"
+"POT-Creation-Date: 2022-04-23 03:27\n"
 "PO-Revision-Date: 2022-02-22 15:54+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
@@ -207,6 +207,10 @@ msgstr "Proporción de Falsos Achados"
 
 msgid "F1 Score"
 msgstr "Puntuación F1"
+
+#, fuzzy
+msgid "Matthews Correlation Coefficient"
+msgstr "Coeficientes da regresión"
 
 msgid "Area Under Curve (AUC)"
 msgstr "Área Baixo a Curva (ABC, AUC)"
@@ -827,14 +831,19 @@ msgstr "Non se fixeron separacións na árbore."
 msgid "Splits in Tree"
 msgstr "Separacións na Árbore"
 
-msgid "Split Point"
-msgstr "Punto de Separación"
-
 msgid "Obs. in Split"
 msgstr "Obs. no Separador"
 
+msgid "Split Point"
+msgstr "Punto de Separación"
+
 msgid "Improvement"
 msgstr "Mellora"
+
+msgid ""
+"For each level of the tree, only the split with the highest improvement in "
+"deviance is shown."
+msgstr ""
 
 msgid "Decision Tree Plot"
 msgstr "Gráfica da Árbore de Decisión"
