@@ -5,7 +5,7 @@ Decision Trees is a supervised learning algorithm that uses a decision tree as a
 
 ### Assumptions
 - The target is a nominal or ordinal variable. 
-- The predictor variables consist of continuous, nominal, or ordinal variables.
+- The feature variables consist of continuous, nominal, or ordinal variables.
 
 ### Input 
 -------
@@ -18,7 +18,7 @@ Decision Trees is a supervised learning algorithm that uses a decision tree as a
 - Class proportions: Displays a table that shows the proportions of each class in the data set, training (and validaton), and test set.
 - Evaluation metrics: Shows commonly used classification evaluation metrics like precision, recall, the F1-score, support and AUC (area under the ROC curve).
 - Splits in tree: Shows the split variables, their split point, and the number of observations (which are not missing and are of positive weight) sent left or right by the split. It also shows the improvement in deviance given by this split.
-- Variable importance: Shows the relative importance of the features.
+- Feature importance: Shows the relative importance of the features.
 
 #### Plots
 - Data split: Shows how the data is split into training (and validation), and test set.

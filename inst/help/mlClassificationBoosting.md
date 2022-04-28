@@ -1,11 +1,11 @@
 Boosting Classification
 ==========================
 
-Boosting works by sequentially adding features to an decision tree ensemble, each one correcting its predecessor. However, instead of changing the weights for every incorrect classified observation at every iteration, Boosting method tries to fit the new predictor to the residual errors made by the previous predictor.
+Boosting works by sequentially adding features to an decision tree ensemble, each one correcting its predecessor. However, instead of changing the weights for every incorrect classified observation at every iteration, Boosting method tries to fit the new feature to the residual errors made by the previous feature.
 
 ### Assumptions
 - The target variable is a nominal or ordinal variable.
-- The predictor variables consist of continuous, nominal, or ordinal variables.
+- The feature variables consist of continuous, nominal, or ordinal variables.
 
 ### Input 
 -------

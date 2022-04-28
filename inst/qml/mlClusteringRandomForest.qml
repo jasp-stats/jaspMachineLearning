@@ -94,7 +94,7 @@ Form
 
 		CheckBox
 		{
-			text:								qsTr("Variable importance")
+			text:								qsTr("Feature importance")
 			name:								"importanceTable"
 		}
 	}

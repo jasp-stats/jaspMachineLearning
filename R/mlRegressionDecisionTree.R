@@ -95,7 +95,7 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   if (!is.null(jaspResults[["tableVariableImportance"]]) || !options[["tableVariableImportance"]]) {
     return()
   }
-  table <- createJaspTable(title = gettext("Variable Importance"))
+  table <- createJaspTable(title = gettext("Feature Importance"))
   table$position <- position
   table$dependOn(options = c(
     "tableVariableImportance", "trainingDataManual", "scaleEqualSD", "target", "predictors", "seed", "seedBox",

@@ -5,7 +5,7 @@ Regularized linear regression is an adaptation of linear regression in which the
 
 ### Assumptions
 - The target variable is a continuous variable.
-- The predictor variables consist of continuous, nominal, or ordinal variables.
+- The feature variables consist of continuous, nominal, or ordinal variables.
 
 ### Input 
 -------
@@ -17,7 +17,7 @@ Regularized linear regression is an adaptation of linear regression in which the
 
 #### Tables  
 - Evaluation metrics: Shows commonly used regression evaluation metrics such as mean squared error (MSE), root mean squared error (RMSE) and R<sup>2</sup>.
-- Regression coefficients: Gives the regression coefficient for each predictor.
+- Regression coefficients: Gives the regression coefficient for each feature.
 
 #### Plots
 - Data split: Shows how the data is split into training (and validation), and test set.

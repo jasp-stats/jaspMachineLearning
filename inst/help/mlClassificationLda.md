@@ -5,7 +5,7 @@ Linear Discriminant Analysis (LDA) is a method of classification that aims to fi
 
 ### Assumptions
 - The target variable is a nominal or ordinal variable.
-- The predictor variables consist of continuous, nominal, or ordinal variables.
+- The feature variables consist of continuous, nominal, or ordinal variables.
 - Equality of class means: The class means should be equal, can be checked with the corresponding table.
 - Equality of covariance matrices: The covariance matrices should be equal, can be checked with the corresponding table.
 - Multicollinearity: The classes should not correlate within each other, can be checked with the corresponding table.

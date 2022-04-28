@@ -141,7 +141,7 @@ mlClusteringRandomForest <- function(jaspResults, dataset, options, ...) {
   if (!is.null(jaspResults[["importanceTable"]]) || !options[["importanceTable"]]) {
     return()
   }
-  table <- createJaspTable(title = gettext("Variable Importance"))
+  table <- createJaspTable(title = gettext("Feature Importance"))
   table$position <- position
   table$dependOn(options = c(
     "predictors", "noOfClusters", "noOfRandomSets", "noOfIterations", "algorithm", "modelOpt", "seed", "optimizationCriterion",

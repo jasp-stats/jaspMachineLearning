@@ -5,7 +5,7 @@ Feedforward neural networks are predictive algorithms inspired by the biological
 
 ### Assumptions
 - The target is a nominal or ordinal variable. 
-- The predictor variables consist of continuous variables.
+- The feature variables consist of continuous variables.
 
 ### Input 
 -------

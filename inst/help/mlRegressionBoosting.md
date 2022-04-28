@@ -1,11 +1,11 @@
 Boosting Regression
 ==========================
 
-Boosting works by sequentially adding features to an decision tree ensemble, each one correcting its predecessor. Boosting tries to fit the new predictor to the residual errors made by the previous predictor.
+Boosting works by sequentially adding features to an decision tree ensemble, each one correcting its predecessor. Boosting tries to fit the new feature to the residual errors made by the previous feature.
 
 ### Assumptions
 - The target variable is a continuous variable.
-- The predictor variables consist of continuous, nominal, or ordinal variables.
+- The feature variables consist of continuous, nominal, or ordinal variables.
 
 ### Input 
 -------

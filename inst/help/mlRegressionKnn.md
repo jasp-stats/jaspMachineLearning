@@ -1,11 +1,11 @@
 K-Nearest Neighbors Regression
 ==========================
 
-K-nearest neighbors is a method of regression that looks at the *k* number of predictor observations that are most similar to new observations to make a prediction for their values. The number of nearest neighbors is intrinsincly linked to model complexity, as small numbers increase the flexibility of the model.
+K-nearest neighbors is a method of regression that looks at the *k* number of feature observations that are most similar to new observations to make a prediction for their values. The number of nearest neighbors is intrinsincly linked to model complexity, as small numbers increase the flexibility of the model.
 
 ### Assumptions
 - The target variable is a continuous variable.
-- The predictor variables consist of continuous, nominal, or ordinal variables.
+- The feature variables consist of continuous, nominal, or ordinal variables.
 
 ### Input 
 -------

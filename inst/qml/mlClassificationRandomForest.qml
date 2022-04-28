@@ -83,7 +83,7 @@ Form {
 		CheckBox
 		{
 			name:								"tableVariableImportance"
-			text:								qsTr("Variable importance")
+			text:								qsTr("Feature importance")
 		}
 	}
 

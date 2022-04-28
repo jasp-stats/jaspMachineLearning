@@ -5,7 +5,7 @@ Support Vector Machines is a supervised learning algorithm that maps training ex
 
 ### Assumptions
 - The target variable is a continuous variable.
-- The predictor variables consist of continuous, nominal, or ordinal variables.
+- The feature variables consist of continuous, nominal, or ordinal variables.
 
 ### Input 
 -------

@@ -641,7 +641,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     return()
   }
   if (length(options[["predictors"]]) < 2) {
-    plot$setError(gettext("Andrews curves require a minimum of 2 predictor variables."))
+    plot$setError(gettext("Andrews curves require a minimum of 2 feature variables."))
     return()
   }
   if (nrow(dataset) > 500) {
