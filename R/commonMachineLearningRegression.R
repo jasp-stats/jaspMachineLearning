@@ -114,7 +114,7 @@
     if (any(predictorsAreFactors)) {
       predictorFactorsWithUniqueLevels <- which(sapply(predictorData[, predictorsAreFactors, drop = FALSE], FUN = function(x) length(x) == length(unique(x))))
       if (length(predictorFactorsWithUniqueLevels) == 1) {
-        jaspBase:::.quitAnalysis(gettextf("The features %1$s is a factor with unique levels, please remove this factor as a feature.", names(predictorFactorsWithUniqueLevels)))
+        jaspBase:::.quitAnalysis(gettextf("The feature %1$s is a factor with unique levels, please remove this factor as a feature.", names(predictorFactorsWithUniqueLevels)))
       } else if (length(predictorFactorsWithUniqueLevels) > 1) {
         jaspBase:::.quitAnalysis(gettextf("The features %1$s are factors with unique levels, please remove these factors as a feature.", paste(names(predictorFactorsWithUniqueLevels), sep = "&")))
       }
