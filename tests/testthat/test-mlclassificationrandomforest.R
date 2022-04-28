@@ -28,7 +28,7 @@ options$testSetIndicatorVariable <- ""
 options$validationDataManual <- 0.2
 options$validationMeasures <- TRUE
 set.seed(1)
-results <- jaspTools::runAnalysis("mlClassificationRandomForest", "wine.csv", options, makeTests = TRUE)
+results <- jaspTools::runAnalysis("mlClassificationRandomForest", "wine.csv", options)
 
 
 test_that("Andrews Curves Plot matches", {

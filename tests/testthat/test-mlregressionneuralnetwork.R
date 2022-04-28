@@ -48,6 +48,6 @@ test_that("Neural Network Regression table results match", {
 test_that("Evaluation Metrics table results match", {
 	table <- results[["results"]][["validationMeasures"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list("MSE", 0.424, "RMSE", 0.651, "MAE", 0.515, "MAPE", "87.06%", "R<unicode><unicode>",
+		list("MSE", 0.424, "RMSE", 0.651, "MAE / MAD", 0.515, "MAPE", "87.06%", "R<unicode><unicode>",
 			 0.591))
 })

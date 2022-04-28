@@ -54,7 +54,7 @@ Genereert een nieuwe kolom in uw dataset met de klasselabels van uw classificati
 #### Evaluatiemetrieken
 - MSE: De gemiddelde kwadraatsom fout van het model.
 - RMSE: De wortel van de kwadratische gemiddelde fout van het model.
-- MAE: De gemiddelde absolute fout van het model.
+- MAE / MAD: De gemiddelde absolute fout van het model.
 - MAPE: De gemiddelde absolute percentagefout van het model.
 - R<sup>2</sup>: De proportie variabelen van een afhankelijke variabele die is uitgelegd door de onafhankelijke variabele(n).
 

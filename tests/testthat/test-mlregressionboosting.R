@@ -79,6 +79,6 @@ test_that("Boosting Regression table results match", {
 test_that("Evaluation Metrics table results match", {
   table <- results[["results"]][["validationMeasures"]][["data"]]
   jaspTools::expect_equal_tables(table,
-                      list("MSE", 0.426, "RMSE", 0.653, "MAE", 0.524, "MAPE", "141.08%",
+                      list("MSE", 0.426, "RMSE", 0.653, "MAE / MAD", 0.524, "MAPE", "141.08%",
                            "R<unicode><unicode>", 0.652))
 })

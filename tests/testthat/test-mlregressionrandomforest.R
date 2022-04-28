@@ -83,6 +83,6 @@ test_that("Variable Importance table results match", {
 test_that("Evaluation Metrics table results match", {
   table <- results[["results"]][["validationMeasures"]][["data"]]
   jaspTools::expect_equal_tables(table,
-                      list("MSE", 0.484, "RMSE", 0.696, "MAE", 0.539, "MAPE", "169.83%",
+                      list("MSE", 0.484, "RMSE", 0.696, "MAE / MAD", 0.539, "MAPE", "169.83%",
                            "R<unicode><unicode>", 0.578))
 })

@@ -164,6 +164,6 @@ test_that("Support Vectors table results match", {
 test_that("Evaluation Metrics table results match", {
 	table <- results[["results"]][["validationMeasures"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list("MSE", 0.114, "RMSE", 0.338, "MAE", 0.284, "MAPE", "84.57%", "R<unicode><unicode>",
+		list("MSE", 0.114, "RMSE", 0.338, "MAE / MAD", 0.284, "MAPE", "84.57%", "R<unicode><unicode>",
 			 0.853))
 })

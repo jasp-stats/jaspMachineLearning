@@ -54,7 +54,7 @@ Generates a new column in your dataset with the values of your regression result
 #### Evaluation Metrics
 - MSE: The mean squared error of the model.
 - RMSE: The root mean squared error of the model.
-- MAE: The mean absolute error of the model.
+- MAE / MAD: The mean absolute error of the model.
 - MAPE: The mean absolute percentage error of the model.
 - R<sup>2</sup>: The proportion of the variance for a dependent variable that's explained by an independent variable or variables.
 
