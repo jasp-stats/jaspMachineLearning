@@ -46,7 +46,7 @@ Form
 		{
 			id:									predictors
 			name:								"predictors"
-			title:								qsTr("Predictors")
+			title:								qsTr("Features")
 			allowedColumns:						["scale", "nominal", "nominalText", "ordinal"]
 			allowAnalysisOwnComputedColumns:	false
 		}
@@ -141,7 +141,7 @@ Form
 					id:							noOfPredictors
 					name:						"noOfPredictors"
 					indexDefaultValue:			0
-					label:						qsTr("Predictors per split")
+					label:						qsTr("Features per split")
 					values:
 						[
 						{ label: qsTr("Auto"), 	value: "auto"},

@@ -11,7 +11,7 @@ Support Vector Machines is a supervised learning algorithm that maps training ex
 -------
 #### Assignment Box 
 - Target: In this box, the variable that needs to be predicted should be entered. 
-- Predictors: In this box, the variables that provide information about the target variable should be entered. 
+- Features: In this box, the variables that provide information about the target variable should be entered. 
 
 #### Tables  
 - Evaluation metrics: Shows commonly used classification evaluation metrics like mean squared error (MSE), root mean squared error (RMSE) and R<sup>2</sup>.

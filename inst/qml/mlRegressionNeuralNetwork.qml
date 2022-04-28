@@ -46,7 +46,7 @@ Form
 		{
 			id:											predictors
 			name:										"predictors"
-			title:										qsTr("Predictors")
+			title:										qsTr("Features")
 			allowedColumns:								["scale"]
 			allowAnalysisOwnComputedColumns:			false
 		}

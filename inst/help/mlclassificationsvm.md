@@ -11,7 +11,7 @@ Support Vector Machines is a supervised learning algorithm that maps training ex
 -------
 #### Assignment Box 
 - Target: In this box, the variable that needs to be predicted should be entered. 
-- Predictors: In this box, the variables that provide information about the target variable should be entered. 
+- Features: In this box, the variables that provide information about the target variable should be entered. 
 
 #### Tables  
 - Confusion matrix: Displays a table that shows the observed classes against the predicted classes. Used to assess model accuracy.
@@ -23,7 +23,7 @@ Support Vector Machines is a supervised learning algorithm that maps training ex
 - Data split: Shows how the data is split into training (and validation), and test set.
 - ROC curves: Displays ROC curves for each class predicted against all other classes.
 - Andrews curves: is a way to visualize structure in high-dimensional data. Lines that cluster are observations that are more alike. 
-- Decision boundary matrix: Creates a *n* x *n* plot that visualizes how every observation would be classified if predicted through the current model. Boundaries between classes are visualized. Can only be made for numeric predictors.
+- Decision boundary matrix: Creates a *n* x *n* plot that visualizes how every observation would be classified if predicted through the current model. Boundaries between classes are visualized. Can only be made for numeric features.
 
 ### Data Split Preferences
 #### Holdout Test Data

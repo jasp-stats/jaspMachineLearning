@@ -94,7 +94,7 @@
   }
   if (options[["testSetIndicatorVariable"]] != "" && options[["holdoutData"]] == "testSetIndicator") {
     if (options[["testSetIndicatorVariable"]] %in% predictors) {
-      jaspBase:::.quitAnalysis(gettextf("The variable '%s' can't be both a predictor and a test set indicator.", options[["testSetIndicatorVariable"]]))
+      jaspBase:::.quitAnalysis(gettextf("The variable '%s' can't be both a feature and a test set indicator.", options[["testSetIndicatorVariable"]]))
     }
     indicatorVals <- unique(dataset[, options[["testSetIndicatorVariable"]]])
     if (length(indicatorVals) != 2 || !all(0:1 %in% indicatorVals)) {
@@ -114,9 +114,9 @@
     if (any(predictorsAreFactors)) {
       predictorFactorsWithUniqueLevels <- which(sapply(predictorData[, predictorsAreFactors, drop = FALSE], FUN = function(x) length(x) == length(unique(x))))
       if (length(predictorFactorsWithUniqueLevels) == 1) {
-        jaspBase:::.quitAnalysis(gettextf("The predictor %1$s is a factor with unique levels, please remove this factor as a predictor.", names(predictorFactorsWithUniqueLevels)))
+        jaspBase:::.quitAnalysis(gettextf("The features %1$s is a factor with unique levels, please remove this factor as a feature.", names(predictorFactorsWithUniqueLevels)))
       } else if (length(predictorFactorsWithUniqueLevels) > 1) {
-        jaspBase:::.quitAnalysis(gettextf("The predictors %1$s are factors with unique levels, please remove these factors as a predictor.", paste(names(predictorFactorsWithUniqueLevels), sep = "&")))
+        jaspBase:::.quitAnalysis(gettextf("The features %1$s are factors with unique levels, please remove these factors as a feature.", paste(names(predictorFactorsWithUniqueLevels), sep = "&")))
       }
     }
   }
@@ -239,7 +239,7 @@
     table$addColumnInfo(name = "lambda", title = "\u03BB", type = "number")
   } else if (type == "randomForest") {
     table$addColumnInfo(name = "trees", title = gettext("Trees"), type = "integer")
-    table$addColumnInfo(name = "preds", title = gettext("Predictors per split"), type = "integer")
+    table$addColumnInfo(name = "preds", title = gettext("Features per split"), type = "integer")
   } else if (type == "boosting") {
     table$addColumnInfo(name = "trees", title = gettext("Trees"), type = "integer")
     table$addColumnInfo(name = "shrinkage", title = gettext("Shrinkage"), type = "number")
@@ -268,7 +268,7 @@
   }
   # If no analysis is run, specify the required variables in a footnote
   if (!ready) {
-    table$addFootnote(gettextf("Please provide a target variable and at least %d predictor variable(s).", if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm") 1L else 2L))
+    table$addFootnote(gettextf("Please provide a target variable and at least %d feature variable(s).", if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm") 1L else 2L))
   }
   if (options[["savePath"]] != "") {
     if (options[["saveModel"]]) {

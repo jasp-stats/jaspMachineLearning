@@ -11,13 +11,13 @@ Random Forest is a method of classification that creates a set of decision trees
 -------
 #### Assignment Box 
 - Target: In this box, the variable that needs to be predicted should be entered. 
-- Predictors: In this box, the variables that provide information about the target variable should be entered. 
+- Features: In this box, the variables that provide information about the target variable should be entered. 
 
 #### Tables  
 - Confusion matrix: Displays a table that shows the observed classes against the predicted classes. Used to assess model accuracy.
 - Class proportions: Displays a table that shows the proportions of each class in the data set, training (and validaton), and test set.
 - Evaluation metrics: Shows commonly used classification evaluation metrics like precision, recall, the F1-score, support and AUC (area under the ROC curve).
-- Variable importance: Shows the mean decrease in accuracy and total increase in node purity for all predictor variables. These are indicators of the importance of the predictors.
+- Variable importance: Shows the mean decrease in accuracy and total increase in node purity for all predictor variables. These are indicators of the importance of the features.
 
 #### Plots
 - Data split: Shows how the data is split into training (and validation), and test set.
@@ -26,7 +26,7 @@ Random Forest is a method of classification that creates a set of decision trees
 - Andrews curves: Is a way to visualize structure in high-dimensional data. Lines that cluster are observations that are more alike. 
 - Mean decrease in accuracy: Displays the variable mean decrease in accuracy for the model.
 - Total increase in node purity: Displays the variable total increase in node purity for the model.
-- Decision boundary matrix: Creates a *n* x *n* plot that visualizes how every observation would be classified if predicted through the current model. Boundaries between classes are visualized. Can only be made for numeric predictors.
+- Decision boundary matrix: Creates a *n* x *n* plot that visualizes how every observation would be classified if predicted through the current model. Boundaries between classes are visualized. Can only be made for numeric features.
 
 ### Data Split Preferences
 #### Holdout Test Data
@@ -40,7 +40,7 @@ Random Forest is a method of classification that creates a set of decision trees
 ### Training Parameters 
 #### Algorithmic Settings
 - Training data used per tree: Select the percentage of training data that is used to train each individual tree.
-- Predictors per split: Set the number of predictor variables that is used within each split in the decision trees. Auto defaults to  
+- Features per split: Set the number of predictor variables that is used within each split in the decision trees. Auto defaults to  
 - Scale variables: Scales the continuous variables. Standardization ensures that values of variables from different scales range into a specific similar scale. As a result, standardizing provides numerical stability, which improves the clustering output. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
 - Set seed: Gives the option to set a seed for your analysis. Setting a seed will exclude random processes influencing an analysis. For example, setting a seed makes it possible to re-run analyses with the same data splits.
 
@@ -57,7 +57,7 @@ Generates a new column in your dataset with the class labels of your classificat
 
 #### Random Forest Classification Model Table
 - The first column shows the number of trees.
-- Predictors per split: The number of predictors used at each split in the decision trees.
+- Features per split: The number of features used at each split in the decision trees.
 - n(Train): The number of observations in the training set.
 - n(Validation): The number of observations in the validation set (enabled when model is optimized).
 - n(Test): The number of observations in the test set.

@@ -12,7 +12,7 @@ Regularized linear regression is an adaptation of linear regression in which the
 
 #### Assignment Box 
 - Target: In this box, the variable that needs to be predicted should be entered. 
-- Predictors: In this box, the variables that provide information about the target variable should be entered. 
+- Features: In this box, the variables that provide information about the target variable should be entered. 
 - Weights: In this box, an optional variable containing case weights can be entered.
 
 #### Tables  

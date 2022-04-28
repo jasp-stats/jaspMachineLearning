@@ -45,7 +45,7 @@ Form {
 		{
 			id:									predictors
 			name:								"predictors"
-			title:								qsTr("Predictors")
+			title:								qsTr("Features")
 			allowedColumns:						["nominal", "nominalText", "ordinal", "scale"]
 			allowAnalysisOwnComputedColumns:	false
 		}
@@ -188,7 +188,7 @@ Form {
 					id:							noOfPredictors
 					name:						"noOfPredictors"
 					indexDefaultValue:			0
-					label:						qsTr("Predictors per split")
+					label:						qsTr("Features per split")
 					values:
 						[
 						{ label: qsTr("Auto"), 		value: "auto"},
@@ -208,7 +208,7 @@ Form {
 
 			CheckBox
 			{
-				text:							qsTr("Scale predictors")
+				text:							qsTr("Scale features")
 				name:							"scaleEqualSD"
 				checked:						true
 			}

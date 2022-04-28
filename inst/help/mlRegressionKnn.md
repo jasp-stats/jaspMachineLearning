@@ -11,7 +11,7 @@ K-nearest neighbors is a method of regression that looks at the *k* number of pr
 -------
 #### Assignment Box 
 - Target: In this box, the variable that needs to be predicted should be entered. 
-- Predictors: In this box, the variables that provide information about the target variable should be entered. 
+- Features: In this box, the variables that provide information about the target variable should be entered. 
 
 #### Tables  
 - Evaluation metrics: Shows commonly used classification evaluation metrics like mean squared error (MSE), root mean squared error (RMSE) and R<sup>2</sup>.

@@ -1,7 +1,7 @@
 Boosting Classification
 ==========================
 
-Boosting works by sequentially adding predictors to an decision tree ensemble, each one correcting its predecessor. However, instead of changing the weights for every incorrect classified observation at every iteration, Boosting method tries to fit the new predictor to the residual errors made by the previous predictor.
+Boosting works by sequentially adding features to an decision tree ensemble, each one correcting its predecessor. However, instead of changing the weights for every incorrect classified observation at every iteration, Boosting method tries to fit the new predictor to the residual errors made by the previous predictor.
 
 ### Assumptions
 - The target variable is a nominal or ordinal variable.
@@ -11,13 +11,13 @@ Boosting works by sequentially adding predictors to an decision tree ensemble, e
 -------
 #### Assignment Box 
 - Target: In this box, the variable that needs to be predicted should be entered. 
-- Predictors: In this box, the variables that provide information about the target variable should be entered. 
+- Features: In this box, the variables that provide information about the target variable should be entered. 
 
 #### Tables  
 - Confusion matrix: Displays a table that shows the observed classes against the predicted classes. Used to assess model accuracy.
 - Class proportions: Displays a table that shows the proportions of each class in the data set, training (and validaton), and test set.
 - Evaluation metrics: Shows commonly used classification evaluation metrics like precision, recall, the F1-score, support and AUC (area under the ROC curve).
-- Relative influence: Shows the relative influence of the predictors.
+- Relative influence: Shows the relative influence of the features.
 
 #### Plots
 - Data split: Shows how the data is split into training (and validation), and test set.
@@ -25,8 +25,8 @@ Boosting works by sequentially adding predictors to an decision tree ensemble, e
 - ROC curves: Displays ROC curves for each class predicted against all other classes.
 - Andrews curves: Is a way to visualize structure in high-dimensional data. Lines that cluster are observations that are more alike. 
 - Deviance: Shows the prediction error plotted against the number of trees.
-- Relative influence: Shows the relative influence of the predictors.
-- Decision boundary matrix: Creates a *n* x *n* plot that visualizes how every observation would be classified if predicted through the current model. Boundaries between classes are visualized. Can only be made for numeric predictors.
+- Relative influence: Shows the relative influence of the features.
+- Decision boundary matrix: Creates a *n* x *n* plot that visualizes how every observation would be classified if predicted through the current model. Boundaries between classes are visualized. Can only be made for numeric features.
 
 ### Data Split Preferences
 #### Holdout Test Data

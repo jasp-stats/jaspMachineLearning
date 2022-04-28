@@ -120,7 +120,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     table$addColumnInfo(name = "method", title = gettext("Method"), type = "string")
   } else if (type == "randomForest") {
     table$addColumnInfo(name = "trees", title = gettext("Trees"), type = "integer")
-    table$addColumnInfo(name = "preds", title = gettext("Predictors per split"), type = "integer")
+    table$addColumnInfo(name = "preds", title = gettext("Features per split"), type = "integer")
   } else if (type == "boosting") {
     table$addColumnInfo(name = "trees", title = gettext("Trees"), type = "integer")
     table$addColumnInfo(name = "shrinkage", title = gettext("Shrinkage"), type = "number")
@@ -148,7 +148,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   # If no analysis is run, specify the required variables in a footnote
   if (!ready) {
-    table$addFootnote(gettextf("Please provide a target variable and at least %i predictor variable(s).", if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm") 1L else 2L))
+    table$addFootnote(gettextf("Please provide a target variable and at least %i feature variable(s).", if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm") 1L else 2L))
   }
   if (options[["savePath"]] != "") {
     if (options[["saveModel"]]) {
