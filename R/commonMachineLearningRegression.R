@@ -433,7 +433,7 @@
   table$dependOn(options = c(.mlRegressionDependencies(options), "validationMeasures"))
   table$addColumnInfo(name = "measures", title = "", type = "string")
   table$addColumnInfo(name = "values", title = gettext("Value"), type = "string")
-  measures <- c("MSE", "RMSE", "MAE", "MAPE", "R\u00B2")
+  measures <- c("MSE", "RMSE", "MAE / MAD", "MAPE", "R\u00B2")
   table[["measures"]] <- measures
   jaspResults[["validationMeasures"]] <- table
   if (!ready) {
