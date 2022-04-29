@@ -391,7 +391,8 @@
     ggplot2::theme(legend.text = ggplot2::element_text(size = 12))
   if (options[["optimizationCriterion"]] != "validationSilh") {
     p <- p + jaspGraphs::geom_point(data = pointData, ggplot2::aes(x = x, y = y, fill = "red"), inherit.aes = FALSE) +
-      ggplot2::scale_fill_manual(name = NULL, labels = gettextf("Lowest %s", requiredPoint), values = "red")
+      ggplot2::scale_fill_manual(name = NULL, labels = gettextf("Lowest %s", requiredPoint), values = "red") +
+      ggplot2::guides(fill = ggplot2::guide_legend(order = 1), linetype = ggplot2::guide_legend(order = 2))
   }
   plot$plotObject <- p
 }
