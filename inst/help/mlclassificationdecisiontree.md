@@ -5,27 +5,27 @@ Decision Trees is a supervised learning algorithm that uses a decision tree as a
 
 ### Assumptions
 - The target is a nominal or ordinal variable. 
-- The predictor variables consist of continuous, nominal, or ordinal variables.
+- The feature variables consist of continuous, nominal, or ordinal variables.
 
 ### Input 
 -------
 #### Assignment Box 
 - Target: In this box, the variable that needs to be predicted should be entered. 
-- Predictors: In this box, the variables that provide information about the target variable should be entered. 
+- Features: In this box, the variables that provide information about the target variable should be entered. 
 
 #### Tables  
 - Confusion matrix: Displays a table that shows the observed classes against the predicted classes. Used to assess model accuracy.
 - Class proportions: Displays a table that shows the proportions of each class in the data set, training (and validaton), and test set.
 - Evaluation metrics: Shows commonly used classification evaluation metrics like precision, recall, the F1-score, support and AUC (area under the ROC curve).
 - Splits in tree: Shows the split variables, their split point, and the number of observations (which are not missing and are of positive weight) sent left or right by the split. It also shows the improvement in deviance given by this split.
-- Variable importance: Shows the relative importance of the predictors.
+- Feature importance: Shows the relative importance of the features.
 
 #### Plots
 - Data split: Shows how the data is split into training (and validation), and test set.
 - ROC curves: Displays ROC curves for each class predicted against all other classes.
 - Andrews curves: is a way to visualize structure in high-dimensional data. Lines that cluster are observations that are more alike.
 - Decision tree: Creates a plot that visualizes the decision tree and its leafs.
-- Decision boundary matrix: Creates a *n* x *n* plot that visualizes how every observation would be classified if predicted through the current model. Boundaries between classes are visualized. Can only be made for numeric predictors.
+- Decision boundary matrix: Creates a *n* x *n* plot that visualizes how every observation would be classified if predicted through the current model. Boundaries between classes are visualized. Can only be made for numeric features.
 
 ### Data Split Preferences
 #### Holdout Test Data

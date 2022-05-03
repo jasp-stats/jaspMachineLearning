@@ -5,13 +5,13 @@ Feedforward neural networks are predictive algorithms inspired by the biological
 
 ### Assumptions
 - The target is a nominal or ordinal variable. 
-- The predictor variables consist of continuous variables.
+- The feature variables consist of continuous variables.
 
 ### Input 
 -------
 #### Assignment Box 
 - Target: In this box, the variable that needs to be predicted should be entered. 
-- Predictors: In this box the variables that provide information about the target variable should be entered. 
+- Features: In this box the variables that provide information about the target variable should be entered. 
 
 #### Tables  
 - Confusion matrix: Displays a table that shows the observed classes against the predicted classes. Used to assess model accuracy.
@@ -25,7 +25,7 @@ Feedforward neural networks are predictive algorithms inspired by the biological
 - ROC curves: Displays ROC curves for each class predicted against all other classes.
 - Andrews curves: Visualizes structure in high-dimensional data. Lines that cluster are observations that are more alike.
 - Network structure: Creates a plot that visualizes the structure (nodes and edges) of the network.
-- Decision boundary matrix: Creates an *n* x *n* plot that visualizes how every observation would be classified if predicted through the current model. Boundaries between classes are visualized. Can only be made for numeric predictors.
+- Decision boundary matrix: Creates an *n* x *n* plot that visualizes how every observation would be classified if predicted through the current model. Boundaries between classes are visualized. Can only be made for numeric features.
 
 ### Data Split Preferences
 #### Holdout Test Data

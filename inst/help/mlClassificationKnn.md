@@ -1,17 +1,17 @@
 K-Nearest Neighbors Classification
 ==========================
 
-K-nearest neighbors is a method of classification that looks at the *k* number of predictor observations that are most similar to new observations to make a prediction for their class assignments. The number of nearest neighbors is intrinsincly linked to model complexity, as small numbers increase the flexibility of the model.
+K-nearest neighbors is a method of classification that looks at the *k* number of feature observations that are most similar to new observations to make a prediction for their class assignments. The number of nearest neighbors is intrinsincly linked to model complexity, as small numbers increase the flexibility of the model.
 
 ### Assumptions
 - The target is a nominal or ordinal variable. 
-- The predictor variables consist of continuous, nominal, or ordinal variables.
+- The feature variables consist of continuous, nominal, or ordinal variables.
 
 ### Input 
 -------
 #### Assignment Box 
 - Target: In this box, the variable that needs to be predicted should be entered. 
-- Predictors: In this box the variables that provide information about the target variable should be entered. 
+- Features: In this box the variables that provide information about the target variable should be entered. 
 
 #### Tables  
 - Confusion matrix: Displays a table that shows the observed classes against the predicted classes. Used to assess model accuracy.
@@ -24,7 +24,7 @@ K-nearest neighbors is a method of classification that looks at the *k* number o
 - Classification accuracy: Plots the number of nearest neighbors against the classification accuracy of the model. Accuracy is assessed for the training (and validation) set.
 - ROC curves: Displays ROC curves for each class predicted against all other classes.
 - Andrews curves: Is a way to visualize structure in high-dimensional data. Lines that cluster are observations that are more alike. 
-- Decision boundary matrix: Creates a *n* x *n* plot that visualizes how every observation would be classified if predicted through the current model. Boundaries between classes are visualized. Can only be made for numeric predictors.
+- Decision boundary matrix: Creates a *n* x *n* plot that visualizes how every observation would be classified if predicted through the current model. Boundaries between classes are visualized. Can only be made for numeric features.
 
 ### Data Split Preferences
 #### Holdout Test Data

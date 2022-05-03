@@ -37,7 +37,7 @@ Form
 		{
 			id:									predictors
 			name:								"predictors"
-			title:								qsTr("Variables")
+			title:								qsTr("Features")
 			allowedColumns:						["scale"]
 			allowAnalysisOwnComputedColumns:	false
 		}
@@ -94,7 +94,7 @@ Form
 
 		CheckBox
 		{
-			text:								qsTr("Variable importance")
+			text:								qsTr("Feature importance")
 			name:								"importanceTable"
 		}
 	}

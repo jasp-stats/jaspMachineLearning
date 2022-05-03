@@ -5,7 +5,7 @@ Linear Discriminant Analysis (LDA) is a method of classification that aims to fi
 
 ### Assumptions
 - The target variable is a nominal or ordinal variable.
-- The predictor variables consist of continuous, nominal, or ordinal variables.
+- The feature variables consist of continuous, nominal, or ordinal variables.
 - Equality of class means: The class means should be equal, can be checked with the corresponding table.
 - Equality of covariance matrices: The covariance matrices should be equal, can be checked with the corresponding table.
 - Multicollinearity: The classes should not correlate within each other, can be checked with the corresponding table.
@@ -14,7 +14,7 @@ Linear Discriminant Analysis (LDA) is a method of classification that aims to fi
 -------
 #### Assignment Box 
 - Target: In this box, the variable that needs to be predicted should be entered. 
-- Predictors: In this box, the variables that provide information about the target variable should be entered. 
+- Features: In this box, the variables that provide information about the target variable should be entered. 
 
 #### Tables  
 - Confusion matrix: Displays a table that shows the observed classes against the predicted classes. Used to assess model accuracy.
@@ -29,7 +29,7 @@ Linear Discriminant Analysis (LDA) is a method of classification that aims to fi
 - ROC curves: Displays ROC curves for each class predicted against all other classes.
 - Andrews curves: is a way to visualize structure in high-dimensional data. Lines that cluster are observations that are more alike. 
 - Linear discriminant matrix: Creates a matrix plot that visualizes the densities on the linear discriminants along with a scatterplot of variables on these discriminants.
-- Decision boundary matrix: Creates a *n* x *n* plot that visualizes how every observation would be classified if predicted through the current model. Boundaries between classes are visualized. Can only be made for numeric predictors.
+- Decision boundary matrix: Creates a *n* x *n* plot that visualizes how every observation would be classified if predicted through the current model. Boundaries between classes are visualized. Can only be made for numeric features.
 
 ### Data Split Preferences
 #### Holdout Test Data

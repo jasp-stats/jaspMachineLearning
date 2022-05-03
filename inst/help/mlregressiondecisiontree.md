@@ -5,18 +5,18 @@ Decision Trees is a supervised learning algorithm that uses a decision tree as a
 
 ### Assumptions
 - The target variable is a continuous variable.
-- The predictor variables consist of continuous, nominal, or ordinal variables.
+- The feature variables consist of continuous, nominal, or ordinal variables.
 
 ### Input 
 -------
 #### Assignment Box 
 - Target: In this box, the variable that needs to be predicted should be entered. 
-- Predictors: In this box, the variables that provide information about the target variable should be entered. 
+- Features: In this box, the variables that provide information about the target variable should be entered. 
 
 #### Tables  
 - Evaluation metrics: Shows commonly used classification evaluation metrics like mean squared error (MSE), root mean squared error (RMSE) and R<sup>2</sup>.
 - Splits in tree: Shows the split variables, their split point, and the number of observations (which are not missing and are of positive weight) sent left or right by the split. It also shows the improvement in deviance given by this split.
-- Variable importance: Shows the relative importance of the predictors.
+- Feature importance: Shows the relative importance of the features.
 
 #### Plots
 - Data split: Shows how the data is split into training (and validation), and test set.

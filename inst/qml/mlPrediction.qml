@@ -50,7 +50,7 @@ Form
 		{
 			id:									predictors
 			name:								"predictors"
-			title:								qsTr("Predictors")
+			title:								qsTr("Features")
 			allowedColumns:						["scale", "ordinal", "nominal", "nominalText"]
 			allowAnalysisOwnComputedColumns:	false
 		}
@@ -62,7 +62,7 @@ Form
 
 		CheckBox
 		{
-			text:								qsTr("Scale predictors")
+			text:								qsTr("Scale features")
 			name:								"scaleEqualSD"
 			checked:							true
 		}
@@ -82,7 +82,7 @@ Form
 			CheckBox
 			{
 				name:							"addPredictors"
-				label:							"Add predictors"
+				label:							"Add features"
 			}
 		}
 

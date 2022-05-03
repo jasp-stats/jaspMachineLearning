@@ -46,7 +46,7 @@ Form
 		{
 			id:									predictors
 			name:								"predictors"
-			title:								qsTr("Predictors")
+			title:								qsTr("Features")
 			allowedColumns:						["scale", "nominal", "nominalText", "ordinal"]
 			allowAnalysisOwnComputedColumns:	false
 		}
@@ -64,7 +64,7 @@ Form
 
 		CheckBox
 		{
-			text:								qsTr("Variable importance")
+			text:								qsTr("Feature importance")
 			name:								"tableVariableImportance"
 		}
 

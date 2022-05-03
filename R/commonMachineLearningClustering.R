@@ -150,7 +150,7 @@
                         "Cardot, H., Cenac, P. and Zitt, P-A. (2013). Efficient and fast estimation of the geometric median in Hilbert spaces with an averaged stochastic gradient algorithm. Bernoulli, 19, 18-43."))
   }
   if (!ready) {
-    table$addFootnote(gettext("Please provide at least 2 variables."))
+    table$addFootnote(gettext("Please provide at least 2 features."))
   }
   jaspResults[["clusteringTable"]] <- table
   if (!ready) {
@@ -179,7 +179,7 @@
     }
   }
   if (!options[["scaleEqualSD"]]) {
-    table$addFootnote(gettext("The variables in the model are <b>unstandardized</b>."))
+    table$addFootnote(gettext("The features in the model are <b>unstandardized</b>."))
   }
   row <- data.frame(
     clusters = clusterResult[["clusters"]], measure = clusterResult[["BSS"]] / clusterResult[["TSS"]], aic = round(clusterResult[["AIC"]], 2),
@@ -483,11 +483,11 @@
       ggridges::geom_density_ridges(stat = "density", alpha = .6) +
       ggplot2::scale_fill_manual(name = gettext("Cluster"), values = .mlColorScheme(length(unique(clusterResult[["pred.values"]])))) +
       ggplot2::scale_x_continuous(name = gettext("Value"), breaks = xBreaks, limits = range(xBreaks)) +
-      ggplot2::scale_y_discrete(name = gettext("Variable")) +
+      ggplot2::scale_y_discrete(name = gettext("Feature")) +
       jaspGraphs::geom_rangeframe(sides = "b") +
       jaspGraphs::themeJaspRaw(legend.position = "right") +
       ggplot2::theme(axis.ticks.y = ggplot2::element_blank())
-    plot[["oneFigure"]] <- createJaspPlot(plot = p, title = gettext("All Variables"), height = 150 * length(options[["predictors"]]), width = 600)
+    plot[["oneFigure"]] <- createJaspPlot(plot = p, title = gettext("All Features"), height = 150 * length(options[["predictors"]]), width = 600)
   }
 }
 
@@ -548,7 +548,7 @@
       jaspGraphs::geom_rangeframe(sides = "l") +
       jaspGraphs::themeJaspRaw(legend.position = "right") +
       ggplot2::theme(axis.ticks.x = ggplot2::element_blank(), axis.text.x = ggplot2::element_text(angle = 20))
-    plot[["oneFigure"]] <- createJaspPlot(plot = p, title = gettext("All Variables"), height = 400, width = 200 * length(options[["predictors"]]))
+    plot[["oneFigure"]] <- createJaspPlot(plot = p, title = gettext("All Features"), height = 400, width = 200 * length(options[["predictors"]]))
   } else {
     for (variable in unlist(options[["predictors"]])) {
       clusters <- as.factor(clusterResult[["pred.values"]])

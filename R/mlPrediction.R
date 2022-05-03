@@ -277,11 +277,11 @@ is.jaspMachineLearning <- function(x) {
   presentVars <- decodeColNames(colnames(dataset))
   if (!all(modelVars %in% presentVars)) {
     missingVars <- modelVars[which(!(modelVars %in% presentVars))]
-    table$addFootnote(gettextf("The trained model is not applied because the the following predictors are missing: <i>%1$s</i>.", paste0(missingVars, collapse = ", ")))
+    table$addFootnote(gettextf("The trained model is not applied because the the following features are missing: <i>%1$s</i>.", paste0(missingVars, collapse = ", ")))
   }
   if (!all(presentVars %in% modelVars)) {
     unusedVars <- presentVars[which(!(presentVars %in% modelVars))]
-    table$addFootnote(gettextf("The following predictors are unused because they are not a predictor variable in the trained model: <i>%1$s</i>.", paste0(unusedVars, collapse = ", ")))
+    table$addFootnote(gettextf("The following features are unused because they are not a feature variable in the trained model: <i>%1$s</i>.", paste0(unusedVars, collapse = ", ")))
   }
   if (inherits(model, "kknn")) {
     table$addColumnInfo(name = "nn", title = gettext("Nearest Neighbors"), type = "integer")
@@ -292,7 +292,7 @@ is.jaspMachineLearning <- function(x) {
     table$addColumnInfo(name = "shrinkage", title = gettext("Shrinkage"), type = "number")
   } else if (inherits(model, "randomForest")) {
     table$addColumnInfo(name = "trees", title = gettext("Trees"), type = "integer")
-    table$addColumnInfo(name = "mtry", title = gettext("Predictors per split"), type = "integer")
+    table$addColumnInfo(name = "mtry", title = gettext("Features per split"), type = "integer")
   } else if (inherits(model, "cv.glmnet")) {
     table$addColumnInfo(name = "lambda", title = "\u03BB", type = "number")
   }
