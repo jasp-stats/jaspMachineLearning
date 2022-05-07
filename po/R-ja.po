@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.1\n"
-"POT-Creation-Date: 2022-04-23 03:27\n"
+"POT-Creation-Date: 2022-05-07 03:28\n"
 "PO-Revision-Date: 2022-02-12 21:37+0000\n"
 "Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
@@ -54,7 +54,8 @@ msgstr "方法"
 msgid "Trees"
 msgstr "ツリー"
 
-msgid "Predictors per split"
+#, fuzzy
+msgid "Features per split"
 msgstr "スプリットあたりの予測値"
 
 msgid "Shrinkage"
@@ -90,7 +91,8 @@ msgstr "テスト精度"
 msgid "OOB Accuracy"
 msgstr "OOB精度"
 
-msgid "Please provide a target variable and at least %i predictor variable(s)."
+#, fuzzy
+msgid "Please provide a target variable and at least %i feature variable(s)."
 msgstr "ターゲット変数と少なくとも%i個の予測変数（複数可）を指定してください."
 
 msgid "The trained model is saved as <i>%1$s</i>."
@@ -167,7 +169,7 @@ msgstr ""
 msgid "Andrews Curves Plot"
 msgstr ""
 
-msgid "Andrews curves require a minimum of 2 predictor variables."
+msgid "Andrews curves require a minimum of 2 feature variables."
 msgstr ""
 
 msgid "Box's M-test for Homogeneity of Covariance Matrices"
@@ -294,7 +296,7 @@ msgstr "AIC"
 msgid "BIC"
 msgstr "BIC"
 
-msgid "Please provide at least 2 variables."
+msgid "Please provide at least 2 features."
 msgstr ""
 
 msgid "silhouette"
@@ -318,7 +320,7 @@ msgid ""
 "the Eps and MinPts parameters."
 msgstr ""
 
-msgid "The variables in the model are <b>unstandardized</b>."
+msgid "The features in the model are <b>unstandardized</b>."
 msgstr ""
 
 msgid "Cluster Information"
@@ -408,10 +410,10 @@ msgstr ""
 msgid "Density"
 msgstr "密度"
 
-msgid "Variable"
+msgid "Feature"
 msgstr ""
 
-msgid "All Variables"
+msgid "All Features"
 msgstr ""
 
 msgid "Cluster Mean Plots"
@@ -428,7 +430,7 @@ msgstr ""
 msgid "An error occurred in the analysis: %1$s"
 msgstr ""
 
-msgid "The variable '%s' can't be both a predictor and a test set indicator."
+msgid "The variable '%s' can't be both a feature and a test set indicator."
 msgstr ""
 
 msgid ""
@@ -437,13 +439,13 @@ msgid ""
 msgstr ""
 
 msgid ""
-"The predictor %1$s is a factor with unique levels, please remove this factor "
-"as a predictor."
+"There is only one observation in each level of the factor %1$s, please "
+"remove this factor as a feature."
 msgstr ""
 
 msgid ""
-"The predictors %1$s are factors with unique levels, please remove these "
-"factors as a predictor."
+"There is only one observation in each level of the factors %1$s, please "
+"remove these factors as a feature."
 msgstr ""
 
 msgid ""
@@ -492,8 +494,9 @@ msgstr ""
 msgid "OOB Error"
 msgstr ""
 
-msgid "Please provide a target variable and at least %d predictor variable(s)."
-msgstr ""
+#, fuzzy
+msgid "Please provide a target variable and at least %d feature variable(s)."
+msgstr "ターゲット変数と少なくとも%i個の予測変数（複数可）を指定してください."
 
 msgid ""
 "The model is optimized with respect to the <i>validation set mean squared "
@@ -643,7 +646,7 @@ msgstr ""
 msgid "Dendrogram"
 msgstr ""
 
-msgid "Variable Importance"
+msgid "Feature Importance"
 msgstr ""
 
 msgid "Mean decrease in Gini Index"
@@ -695,13 +698,13 @@ msgid "Loaded Model: %1$s"
 msgstr ""
 
 msgid ""
-"The trained model is not applied because the the following predictors are "
+"The trained model is not applied because the the following features are "
 "missing: <i>%1$s</i>."
 msgstr ""
 
 msgid ""
-"The following predictors are unused because they are not a predictor "
-"variable in the trained model: <i>%1$s</i>."
+"The following features are unused because they are not a feature variable in "
+"the trained model: <i>%1$s</i>."
 msgstr ""
 
 msgid "Nearest Neighbors"

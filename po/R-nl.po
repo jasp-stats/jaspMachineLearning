@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2022-04-23 03:27\n"
+"POT-Creation-Date: 2022-05-07 03:28\n"
 "PO-Revision-Date: 2022-04-26 08:09+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
@@ -53,7 +53,8 @@ msgstr "Methode"
 msgid "Trees"
 msgstr "Bomen"
 
-msgid "Predictors per split"
+#, fuzzy
+msgid "Features per split"
 msgstr "Voorspellers per split"
 
 msgid "Shrinkage"
@@ -89,7 +90,8 @@ msgstr "Toetsprecisie"
 msgid "OOB Accuracy"
 msgstr "OOB Precisie"
 
-msgid "Please provide a target variable and at least %i predictor variable(s)."
+#, fuzzy
+msgid "Please provide a target variable and at least %i feature variable(s)."
 msgstr ""
 "Geef a.u.b. een doelvariabele en minstens %i voorspellende variabele(n)."
 
@@ -172,7 +174,8 @@ msgstr "Perfecte scheiding"
 msgid "Andrews Curves Plot"
 msgstr "Andrews kromme"
 
-msgid "Andrews curves require a minimum of 2 predictor variables."
+#, fuzzy
+msgid "Andrews curves require a minimum of 2 feature variables."
 msgstr "Andrews kromme vereist minimaal 2 predictor variabelen."
 
 msgid "Box's M-test for Homogeneity of Covariance Matrices"
@@ -301,7 +304,8 @@ msgstr "AIC"
 msgid "BIC"
 msgstr "BIC"
 
-msgid "Please provide at least 2 variables."
+#, fuzzy
+msgid "Please provide at least 2 features."
 msgstr "Geef a.u.b. minstens 2 variabelen."
 
 msgid "silhouette"
@@ -331,7 +335,8 @@ msgstr ""
 "Het clustermodel bevat 1 cluster en 0 Noisepoints. U zou de Eps en MinPts "
 "parameters kunnen aanpassen."
 
-msgid "The variables in the model are <b>unstandardized</b>."
+#, fuzzy
+msgid "The features in the model are <b>unstandardized</b>."
 msgstr "De variabelen in het model zijn <b>ongestandaardiseerd</b>."
 
 msgid "Cluster Information"
@@ -422,10 +427,11 @@ msgstr "Cluster Dichtheid Grafieken"
 msgid "Density"
 msgstr "Dichtheid"
 
-msgid "Variable"
-msgstr "Variabele"
+msgid "Feature"
+msgstr ""
 
-msgid "All Variables"
+#, fuzzy
+msgid "All Features"
 msgstr "Alle Variabelen"
 
 msgid "Cluster Mean Plots"
@@ -444,7 +450,8 @@ msgstr ""
 msgid "An error occurred in the analysis: %1$s"
 msgstr "Er is een fout opgetreden in de analyse: %1$s"
 
-msgid "The variable '%s' can't be both a predictor and a test set indicator."
+#, fuzzy
+msgid "The variable '%s' can't be both a feature and a test set indicator."
 msgstr ""
 "De variable '%s' kan niet zowel een voorspellende variabele als setindicator "
 "zijn."
@@ -456,16 +463,18 @@ msgstr ""
 "Je toetssetsindicator moet binair zijn, met alleen 1 (meegenomen in "
 "toetsset) en 0 (niet meegenomen in toetsset)."
 
+#, fuzzy
 msgid ""
-"The predictor %1$s is a factor with unique levels, please remove this factor "
-"as a predictor."
+"There is only one observation in each level of the factor %1$s, please "
+"remove this factor as a feature."
 msgstr ""
 "De predictor %1$s is een factor met unieke niveaus, gelieve deze factor als "
 "predictor te verwijderen."
 
+#, fuzzy
 msgid ""
-"The predictors %1$s are factors with unique levels, please remove these "
-"factors as a predictor."
+"There is only one observation in each level of the factors %1$s, please "
+"remove these factors as a feature."
 msgstr ""
 "De predictors %1$s zijn factoren met unieke niveaus, gelieve deze factoren "
 "als predictors te verwijderen."
@@ -520,7 +529,8 @@ msgstr "Toets MSE"
 msgid "OOB Error"
 msgstr "OOB Fout"
 
-msgid "Please provide a target variable and at least %d predictor variable(s)."
+#, fuzzy
+msgid "Please provide a target variable and at least %d feature variable(s)."
 msgstr ""
 "Geef a.u.b. een doelvariabele en minstens %d voorspellende variabele(n)."
 
@@ -683,8 +693,9 @@ msgstr "Afkapwaarde ligt buiten bereik. Als resultaat wordt NA teruggegeven."
 msgid "Dendrogram"
 msgstr "Dendrogram"
 
-msgid "Variable Importance"
-msgstr "Belang van variabele"
+#, fuzzy
+msgid "Feature Importance"
+msgstr "Relatief Belang"
 
 msgid "Mean decrease in Gini Index"
 msgstr "Gemiddelde afname in Gini Index"
@@ -735,16 +746,18 @@ msgstr "Regressie"
 msgid "Loaded Model: %1$s"
 msgstr "Geladen Model: %1$s"
 
+#, fuzzy
 msgid ""
-"The trained model is not applied because the the following predictors are "
+"The trained model is not applied because the the following features are "
 "missing: <i>%1$s</i>."
 msgstr ""
 "Het getrainde model wordt niet toegepast omdat de volgende voorspellers "
 "ontbreken: <i>%1$s</i>."
 
+#, fuzzy
 msgid ""
-"The following predictors are unused because they are not a predictor "
-"variable in the trained model: <i>%1$s</i>."
+"The following features are unused because they are not a feature variable in "
+"the trained model: <i>%1$s</i>."
 msgstr ""
 "De volgende voorspellers zijn ongebruikt omdat ze geen voorspellende "
 "variabele zijn in het getrainde model: <i>%1$s</i>."
@@ -845,8 +858,8 @@ msgstr "Plotten niet mogelijk: Er zijn geen splitsingen gemaakt in de boom."
 
 msgid "Plotting not possible: An error occurred while creating this plot: %s"
 msgstr ""
-"Plotten niet mogelijk: Er is een fout opgetreden bij het maken van deze plot:"
-" %s."
+"Plotten niet mogelijk: Er is een fout opgetreden bij het maken van deze "
+"plot: %s."
 
 msgid "Classification Accuracy Plot"
 msgstr "Classificatieprecisie Grafiek"
@@ -1100,6 +1113,12 @@ msgstr "Min. CV MSE"
 
 msgid "%s 1 SE"
 msgstr "%s 1 Std. Fout"
+
+#~ msgid "Variable"
+#~ msgstr "Variabele"
+
+#~ msgid "Variable Importance"
+#~ msgstr "Belang van variabele"
 
 #~ msgid "Precision"
 #~ msgstr "Nauwkeurigheid"
