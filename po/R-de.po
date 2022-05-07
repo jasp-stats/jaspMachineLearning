@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2022-05-07 03:28\n"
-"PO-Revision-Date: 2022-04-24 21:10+0000\n"
+"PO-Revision-Date: 2022-05-08 09:10+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
-"X-Generator: Weblate 4.12.1-dev\n"
+"X-Generator: Weblate 4.12.1\n"
 
 msgid "K-Nearest Neighbors Classification"
 msgstr "K-nächste-Nachbarn-Klassifikation"
@@ -53,9 +53,8 @@ msgstr "Methode"
 msgid "Trees"
 msgstr "Bäume"
 
-#, fuzzy
 msgid "Features per split"
-msgstr "Vorhersagevariablen (UVs) pro Split"
+msgstr "Merkmale pro Aufteilung"
 
 msgid "Shrinkage"
 msgstr "Schrumpfung"
@@ -90,9 +89,9 @@ msgstr "Test-Genauigkeit"
 msgid "OOB Accuracy"
 msgstr "OOB Genauigkeit"
 
-#, fuzzy
 msgid "Please provide a target variable and at least %i feature variable(s)."
-msgstr "Bitte gib eine Zielvariable und mindestens %i Prädiktorvariable(n) an."
+msgstr ""
+"Bitte geben Sie eine Zielvariable und mindestens %i Merkmalsvariable(n) an."
 
 msgid "The trained model is saved as <i>%1$s</i>."
 msgstr "Das trainierte Modell wird als <i>%1$s</i> gespeichert."
@@ -174,9 +173,8 @@ msgstr "Perfekte Trennung"
 msgid "Andrews Curves Plot"
 msgstr "Andrews-Kurven-Diagramm"
 
-#, fuzzy
 msgid "Andrews curves require a minimum of 2 feature variables."
-msgstr "Andrews Kurve benötigt ein Minimum von 2 Prädiktorvariablen."
+msgstr "Andrews Kurve benötigt ein Minimum von 2 Merkmalsvariablen."
 
 msgid "Box's M-test for Homogeneity of Covariance Matrices"
 msgstr "Box's M-test auf die Homogenität der Kovarianz-Matritzen"
@@ -305,9 +303,8 @@ msgstr "AIC"
 msgid "BIC"
 msgstr "BIC"
 
-#, fuzzy
 msgid "Please provide at least 2 features."
-msgstr "Bitte gib mindestens 2 Variablen an."
+msgstr "Bitte geben Sie mindestens 2 Merkmale an."
 
 msgid "silhouette"
 msgstr "Silhouette"
@@ -336,9 +333,8 @@ msgstr ""
 "Das Clustermodell enthält 1 Cluster und 0 Noisepoints. Sie könnten die "
 "Parameter Eps und MinPts ändern."
 
-#, fuzzy
 msgid "The features in the model are <b>unstandardized</b>."
-msgstr "Die Variablen in dem Modell sind <b>unstandardisiert</b>."
+msgstr "Die Merkmale in dem Modell sind <b>unstandardisiert</b>."
 
 msgid "Cluster Information"
 msgstr "Cluster-Information"
@@ -430,11 +426,10 @@ msgid "Density"
 msgstr "Dichte"
 
 msgid "Feature"
-msgstr ""
+msgstr "Merkmal"
 
-#, fuzzy
 msgid "All Features"
-msgstr "Alle Variablen"
+msgstr "Alle Merkmale"
 
 msgid "Cluster Mean Plots"
 msgstr "Clustermittelwerte Abbildungen"
@@ -452,10 +447,9 @@ msgstr ""
 msgid "An error occurred in the analysis: %1$s"
 msgstr "In der Analyse ist ein Fehler aufgetreten: %1$s"
 
-#, fuzzy
 msgid "The variable '%s' can't be both a feature and a test set indicator."
 msgstr ""
-"Die Variable '%s' kann nicht gleichzeitig ein Prädiktor und ein "
+"Die Variable '%s' kann nicht gleichzeitig ein Merkmal und ein "
 "Testsatzindikator sein."
 
 msgid ""
@@ -465,21 +459,19 @@ msgstr ""
 "Ihr Testsatzindikator sollte binär sein und nur die Ziffern 1 (im Testsatz "
 "enthalten) und 0 (vom Testsatz ausgeschlossen) enthalten."
 
-#, fuzzy
 msgid ""
 "There is only one observation in each level of the factor %1$s, please "
 "remove this factor as a feature."
 msgstr ""
-"Der Prädiktor %1$s ist ein Faktor mit ausschließlich einzelnen Stufen, bitte "
-"entfernen Sie diesen Faktor als Prädiktor."
+"Es gibt nur eine Beobachtung in jeder Stufe des Faktors %1$s, bitte "
+"entfernen Sie diesen Faktor als Merkmal."
 
-#, fuzzy
 msgid ""
 "There is only one observation in each level of the factors %1$s, please "
 "remove these factors as a feature."
 msgstr ""
-"Die Prädiktoren %1$s sind Faktoren mit ausschließlich einzelnen Stufen, "
-"bitte entfernen Sie diese Faktoren als Prädiktoren."
+"Es gibt nur eine Beobachtung in jeder Stufe der Faktoren %1$s, bitte "
+"entfernen Sie diese Faktoren als Merkmal."
 
 msgid ""
 "You have specified more nearest neighbors than there are observations in the "
@@ -531,9 +523,9 @@ msgstr "Test-MSE"
 msgid "OOB Error"
 msgstr "OOB Fehler"
 
-#, fuzzy
 msgid "Please provide a target variable and at least %d feature variable(s)."
-msgstr "Bitte gib eine Zielvariable und mindestens %d Prädiktorvariable(n) an."
+msgstr ""
+"Bitte geben Sie eine Zielvariable und mindestens %i Merkmalsvariable(n) an."
 
 msgid ""
 "The model is optimized with respect to the <i>validation set mean squared "
@@ -696,9 +688,8 @@ msgstr "Der Grenzwert liegt außerhalb des Bereichs. Kein Wert zurückgeben."
 msgid "Dendrogram"
 msgstr "Dendrogramm"
 
-#, fuzzy
 msgid "Feature Importance"
-msgstr "Relative Wichtigkeit"
+msgstr "Merkmal-Wichtigkeit"
 
 msgid "Mean decrease in Gini Index"
 msgstr "Mittlere Abnahme des Gini-Index"
@@ -751,21 +742,19 @@ msgstr "Regression"
 msgid "Loaded Model: %1$s"
 msgstr "Geladenes Modell: %1$s"
 
-#, fuzzy
 msgid ""
 "The trained model is not applied because the the following features are "
 "missing: <i>%1$s</i>."
 msgstr ""
-"Das trainierte Modell wird nicht angewendet, weil die folgenden Prädiktoren "
+"Das trainierte Modell wird nicht angewendet, weil die folgenden Merkmale "
 "fehlen: <i>%1$s</i>."
 
-#, fuzzy
 msgid ""
 "The following features are unused because they are not a feature variable in "
 "the trained model: <i>%1$s</i>."
 msgstr ""
-"Die folgenden Prädiktoren werden nicht verwendet, da sie keine "
-"Prädiktorvariable im trainierten Modell sind: <i>%1$s</i>."
+"Die folgenden Merkmale werden nicht verwendet, da sie keine Merkmalsvariable "
+"im trainierten Modell sind: <i>%1$s</i>."
 
 msgid "Nearest Neighbors"
 msgstr "Nächste-Nachbarn"
