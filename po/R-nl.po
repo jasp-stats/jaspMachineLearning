@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2022-05-07 03:28\n"
-"PO-Revision-Date: 2022-05-09 07:15+0000\n"
+"PO-Revision-Date: 2022-05-10 08:15+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/nl/>\n"
@@ -89,10 +89,8 @@ msgstr "Toetsprecisie"
 msgid "OOB Accuracy"
 msgstr "OOB Precisie"
 
-#, fuzzy
 msgid "Please provide a target variable and at least %i feature variable(s)."
-msgstr ""
-"Geef a.u.b. een doelvariabele en minstens %i voorspellende variabele(n)."
+msgstr "Geef a.u.b. een doelvariabele en minstens %i kenmerkvariabele(n)."
 
 msgid "The trained model is saved as <i>%1$s</i>."
 msgstr "Het getrainde model is opgeslagen als <i>%1$s</i>."
@@ -173,9 +171,8 @@ msgstr "Perfecte scheiding"
 msgid "Andrews Curves Plot"
 msgstr "Andrews kromme"
 
-#, fuzzy
 msgid "Andrews curves require a minimum of 2 feature variables."
-msgstr "Andrews kromme vereist minimaal 2 predictor variabelen."
+msgstr "Andrews kromme vereist minimaal 2 kenmerken."
 
 msgid "Box's M-test for Homogeneity of Covariance Matrices"
 msgstr "Box's M-toets voor Homogeniteit van Covariantiematrixen"
@@ -303,9 +300,8 @@ msgstr "AIC"
 msgid "BIC"
 msgstr "BIC"
 
-#, fuzzy
 msgid "Please provide at least 2 features."
-msgstr "Geef a.u.b. minstens 2 variabelen."
+msgstr "Geef a.u.b. minstens 2 kenmerken."
 
 msgid "silhouette"
 msgstr "silhouette"
@@ -334,9 +330,8 @@ msgstr ""
 "Het clustermodel bevat 1 cluster en 0 Noisepoints. U zou de Eps en MinPts "
 "parameters kunnen aanpassen."
 
-#, fuzzy
 msgid "The features in the model are <b>unstandardized</b>."
-msgstr "De variabelen in het model zijn <b>ongestandaardiseerd</b>."
+msgstr "De kenmerken in het model zijn <b>ongestandaardiseerd</b>."
 
 msgid "Cluster Information"
 msgstr "Cluster Informatie"
@@ -427,11 +422,10 @@ msgid "Density"
 msgstr "Dichtheid"
 
 msgid "Feature"
-msgstr ""
+msgstr "Kenmerk"
 
-#, fuzzy
 msgid "All Features"
-msgstr "Alle Variabelen"
+msgstr "Alle Kenmerken"
 
 msgid "Cluster Mean Plots"
 msgstr "Cluster Gemiddelde Grafieken"
@@ -449,11 +443,9 @@ msgstr ""
 msgid "An error occurred in the analysis: %1$s"
 msgstr "Er is een fout opgetreden in de analyse: %1$s"
 
-#, fuzzy
 msgid "The variable '%s' can't be both a feature and a test set indicator."
 msgstr ""
-"De variable '%s' kan niet zowel een voorspellende variabele als setindicator "
-"zijn."
+"De variable '%s' kan niet zowel een kenmerk als een test set indicator zijn."
 
 msgid ""
 "Your test set indicator should be binary, containing only 1 (included in "
@@ -467,16 +459,16 @@ msgid ""
 "There is only one observation in each level of the factor %1$s, please "
 "remove this factor as a feature."
 msgstr ""
-"De predictor %1$s is een factor met unieke niveaus, gelieve deze factor als "
-"predictor te verwijderen."
+"Er is slechts één waarneming in elk niveau van de factor %1$s, gelieve deze "
+"factor als kenmerk te verwijderen."
 
 #, fuzzy
 msgid ""
 "There is only one observation in each level of the factors %1$s, please "
 "remove these factors as a feature."
 msgstr ""
-"De predictors %1$s zijn factoren met unieke niveaus, gelieve deze factoren "
-"als predictors te verwijderen."
+"Er is slechts één waarneming in elk niveau van de factoren %1$s, gelieve "
+"deze factoren als kenmerk te verwijderen."
 
 msgid ""
 "You have specified more nearest neighbors than there are observations in the "
@@ -528,10 +520,8 @@ msgstr "Toets MSE"
 msgid "OOB Error"
 msgstr "OOB Fout"
 
-#, fuzzy
 msgid "Please provide a target variable and at least %d feature variable(s)."
-msgstr ""
-"Geef a.u.b. een doelvariabele en minstens %d voorspellende variabele(n)."
+msgstr "Geef a.u.b. een doelvariabele en minstens %d kenmerkvariabele(n)."
 
 msgid ""
 "The model is optimized with respect to the <i>validation set mean squared "
@@ -692,9 +682,8 @@ msgstr "Afkapwaarde ligt buiten bereik. Als resultaat wordt NA teruggegeven."
 msgid "Dendrogram"
 msgstr "Dendrogram"
 
-#, fuzzy
 msgid "Feature Importance"
-msgstr "Relatief Belang"
+msgstr "Belang van Kenmerken"
 
 msgid "Mean decrease in Gini Index"
 msgstr "Gemiddelde afname in Gini Index"
@@ -745,21 +734,19 @@ msgstr "Regressie"
 msgid "Loaded Model: %1$s"
 msgstr "Geladen Model: %1$s"
 
-#, fuzzy
 msgid ""
 "The trained model is not applied because the the following features are "
 "missing: <i>%1$s</i>."
 msgstr ""
-"Het getrainde model wordt niet toegepast omdat de volgende voorspellers "
+"Het getrainde model wordt niet toegepast omdat de volgende kenmerken "
 "ontbreken: <i>%1$s</i>."
 
-#, fuzzy
 msgid ""
 "The following features are unused because they are not a feature variable in "
 "the trained model: <i>%1$s</i>."
 msgstr ""
-"De volgende voorspellers zijn ongebruikt omdat ze geen voorspellende "
-"variabele zijn in het getrainde model: <i>%1$s</i>."
+"De volgende kenmerken zijn ongebruikt omdat ze geen kenmerkvariabele zijn in "
+"het getrainde model: <i>%1$s</i>."
 
 msgid "Nearest Neighbors"
 msgstr "Dichtste Buren"
