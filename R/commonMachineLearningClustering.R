@@ -329,7 +329,7 @@
     ncolors <- ncolors + 1
     predictions[predictions == 0] <- gettext("Noisepoint")
   }
-  plotData <- data.frame(x = tsne$Y[, 1], y = tsne$Y[, 2], cluster = predictions[as.numeric(rownames(dataset))])
+  plotData <- data.frame(x = tsne$Y[, 1], y = tsne$Y[, 2], cluster = predictions)
   plotData$cluster <- factor(plotData$cluster)
   xBreaks <- jaspGraphs::getPrettyAxisBreaks(plotData$x)
   yBreaks <- jaspGraphs::getPrettyAxisBreaks(plotData$y)
