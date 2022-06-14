@@ -153,10 +153,6 @@ msgid "Target"
 msgstr "Ziel"
 
 msgctxt "mlClassificationBoosting|"
-msgid "Predictors"
-msgstr "Prädiktoren"
-
-msgctxt "mlClassificationBoosting|"
 msgid "Tables"
 msgstr "Tabellen"
 
@@ -225,10 +221,6 @@ msgid "Algorithmic Settings"
 msgstr "Algorithmus-Einstellungen"
 
 msgctxt "mlClassificationBoosting|"
-msgid "Scale predictors"
-msgstr "Skalierungsprädiktoren"
-
-msgctxt "mlClassificationBoosting|"
 msgid "Number of Trees"
 msgstr "Anzahl Bäume"
 
@@ -243,10 +235,6 @@ msgstr "Optimiert"
 msgctxt "mlClassificationKnn|"
 msgid "Target"
 msgstr "Ziel"
-
-msgctxt "mlClassificationKnn|"
-msgid "Predictors"
-msgstr "Prädiktoren"
 
 msgctxt "mlClassificationKnn|"
 msgid "Tables"
@@ -353,10 +341,6 @@ msgid "Manhattan"
 msgstr "Manhattan"
 
 msgctxt "mlClassificationKnn|"
-msgid "Scale predictors"
-msgstr "Skalierungsprädiktoren"
-
-msgctxt "mlClassificationKnn|"
 msgid "Number of Nearest Neighbors"
 msgstr "Anzahl nächster Nachbarn"
 
@@ -371,10 +355,6 @@ msgstr "Optimiert"
 msgctxt "mlClassificationLda|"
 msgid "Target"
 msgstr "Ziel"
-
-msgctxt "mlClassificationLda|"
-msgid "Predictors"
-msgstr "Prädiktoren"
 
 msgctxt "mlClassificationLda|"
 msgid "Tables"
@@ -472,17 +452,9 @@ msgctxt "mlClassificationLda|"
 msgid "Algorithmic Settings"
 msgstr "Algorithmus-Einstellungen"
 
-msgctxt "mlClassificationLda|"
-msgid "Scale predictors"
-msgstr "Skalierungsprädiktoren"
-
 msgctxt "mlClassificationRandomForest|"
 msgid "Target"
 msgstr "Zielt"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Predictors"
-msgstr "Prädiktoren"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Tables"
@@ -503,10 +475,6 @@ msgstr "Klassenverhältnisse"
 msgctxt "mlClassificationRandomForest|"
 msgid "Evaluation metrics"
 msgstr "Evaluationsmetriken"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Variable importance"
-msgstr "Wichtigkeit der Variable"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Plots"
@@ -565,10 +533,6 @@ msgid "Manual"
 msgstr "Manuell"
 
 msgctxt "mlClassificationRandomForest|"
-msgid "Scale predictors"
-msgstr "Skalierungsprädiktoren"
-
-msgctxt "mlClassificationRandomForest|"
 msgid "Number of Trees"
 msgstr "Anzahl Bäume"
 
@@ -579,10 +543,6 @@ msgstr "Fixiert"
 msgctxt "mlClassificationRandomForest|"
 msgid "Optimized"
 msgstr "Optimiert"
-
-msgctxt "mlClusteringDensityBased|"
-msgid "Variables"
-msgstr "Variablen"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Tables"
@@ -677,10 +637,6 @@ msgid "Fixed"
 msgstr "Fixiert"
 
 msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Variables"
-msgstr "Variablen"
-
-msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Tables"
 msgstr "Tabellen"
 
@@ -771,10 +727,6 @@ msgstr "Fixiert"
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Optimized according to"
 msgstr "Geoptimaliseerd volgens"
-
-msgctxt "mlClusteringHierarchical|"
-msgid "Variables"
-msgstr "Variablen"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Tables"
@@ -905,10 +857,6 @@ msgid "Optimized according to"
 msgstr "Optimiert nach"
 
 msgctxt "mlClusteringKMeans|"
-msgid "Variables"
-msgstr "Variablen"
-
-msgctxt "mlClusteringKMeans|"
 msgid "Tables"
 msgstr "Tabellen"
 
@@ -997,10 +945,6 @@ msgid "Optimized according to"
 msgstr "Geoptimaliseerd volgens"
 
 msgctxt "mlClusteringRandomForest|"
-msgid "Variables"
-msgstr "Variablen"
-
-msgctxt "mlClusteringRandomForest|"
 msgid "Tables"
 msgstr "Tabellen"
 
@@ -1031,10 +975,6 @@ msgstr "Gesamte Quadratsumme"
 msgctxt "mlClusteringRandomForest|"
 msgid "Evaluation metrics"
 msgstr "Evaluationsmetriken"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "Variable importance"
-msgstr "Variablenwichtigkeit"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Plots"
@@ -1097,10 +1037,6 @@ msgid "Target"
 msgstr "Ziel"
 
 msgctxt "mlRegressionBoosting|"
-msgid "Predictors"
-msgstr "Prädiktoren"
-
-msgctxt "mlRegressionBoosting|"
 msgid "Tables"
 msgstr "Tabellen"
 
@@ -1159,10 +1095,6 @@ msgstr "Optimiert"
 msgctxt "mlRegressionKnn|"
 msgid "Target"
 msgstr "Ziel"
-
-msgctxt "mlRegressionKnn|"
-msgid "Predictors"
-msgstr "Prädiktoren"
 
 msgctxt "mlRegressionKnn|"
 msgid "Tables"
@@ -1257,20 +1189,12 @@ msgid "Target"
 msgstr "Ziel"
 
 msgctxt "mlRegressionRandomForest|"
-msgid "Predictors"
-msgstr "Prädiktoren"
-
-msgctxt "mlRegressionRandomForest|"
 msgid "Tables"
 msgstr "Tabellen"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Evaluation metrics"
 msgstr "Evaluationsmetriken"
-
-msgctxt "mlRegressionRandomForest|"
-msgid "Variable importance"
-msgstr "Wichtigkeit der Variable"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Plots"
@@ -1331,10 +1255,6 @@ msgstr "Optimiert"
 msgctxt "mlRegressionRegularized|"
 msgid "Target"
 msgstr "Ziel"
-
-msgctxt "mlRegressionRegularized|"
-msgid "Predictors"
-msgstr "Prädiktoren"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Weights"
@@ -1463,10 +1383,6 @@ msgstr "Trainiertes Modell speichern"
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Target"
 msgstr "Ziel"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Predictors"
-msgstr "Prädiktoren"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Tables"
@@ -1653,10 +1569,6 @@ msgid "Max. training repetitions"
 msgstr "Max. Trainingswiederholungen"
 
 msgctxt "mlClassificationNeuralNetwork|"
-msgid "Scale predictors"
-msgstr "Prädiktoren skalieren"
-
-msgctxt "mlClassificationNeuralNetwork|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
 
@@ -1777,16 +1689,8 @@ msgid "e.g., location/model.jaspML"
 msgstr "z. B. Pfad/Modell.jaspML"
 
 msgctxt "mlPrediction|"
-msgid "Predictors"
-msgstr "Prädiktoren"
-
-msgctxt "mlPrediction|"
 msgid "Algorithmic Settings"
 msgstr "Algorithmus-Einstellungen"
-
-msgctxt "mlPrediction|"
-msgid "Scale predictors"
-msgstr "Prädiktoren skalieren"
 
 msgctxt "mlPrediction|"
 msgid "Tables"
@@ -1803,10 +1707,6 @@ msgstr "bis"
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Target"
 msgstr "Ziel"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Predictors"
-msgstr "Prädiktoren"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Tables"
@@ -2161,10 +2061,6 @@ msgid "Training data used per tree"
 msgstr "Trainingsdaten pro Baum"
 
 msgctxt "mlClassificationRandomForest|"
-msgid "Predictors per split"
-msgstr "Prädiktoren pro Aufteilung"
-
-msgctxt "mlClassificationRandomForest|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
 
@@ -2341,10 +2237,6 @@ msgid "Training data used per tree"
 msgstr "Trainingsdaten pro Baum"
 
 msgctxt "mlRegressionRandomForest|"
-msgid "Predictors per split"
-msgstr "Prädiktoren pro Aufteilung"
-
-msgctxt "mlRegressionRandomForest|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
 
@@ -2421,10 +2313,6 @@ msgid "Target"
 msgstr "Ziel"
 
 msgctxt "mlClassificationDecisionTree|"
-msgid "Predictors"
-msgstr "Prädiktoren"
-
-msgctxt "mlClassificationDecisionTree|"
 msgid "Tables"
 msgstr "Tabellen"
 
@@ -2443,14 +2331,6 @@ msgstr "Klassen-Anteile"
 msgctxt "mlClassificationDecisionTree|"
 msgid "Evaluation metrics"
 msgstr "Evaluationsmetriken"
-
-msgctxt "mlClassificationDecisionTree|"
-msgid "Splits in tree"
-msgstr "Verästelung"
-
-msgctxt "mlClassificationDecisionTree|"
-msgid "Variable importance"
-msgstr "Wichtigkeit der Variable"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Plots"
@@ -2509,10 +2389,6 @@ msgid "Complexity parameter"
 msgstr "Komplexitäts-Parameter"
 
 msgctxt "mlClassificationDecisionTree|"
-msgid "Scale predictors"
-msgstr "Skalierungsprädiktoren"
-
-msgctxt "mlClassificationDecisionTree|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
 
@@ -2527,10 +2403,6 @@ msgstr "Dreieckig"
 msgctxt "mlClassificationSvm|"
 msgid "Target"
 msgstr "Ziel"
-
-msgctxt "mlClassificationSvm|"
-msgid "Predictors"
-msgstr "Prädiktoren"
 
 msgctxt "mlClassificationSvm|"
 msgid "Tables"
@@ -2633,10 +2505,6 @@ msgid "Epsilon"
 msgstr "Epsilon"
 
 msgctxt "mlClassificationSvm|"
-msgid "Scale predictors"
-msgstr "Prädiktoren skalieren"
-
-msgctxt "mlClassificationSvm|"
 msgid "Set seed"
 msgstr "Startwert für Zufallszahlen setzen"
 
@@ -2665,24 +2533,12 @@ msgid "Target"
 msgstr "Ziel"
 
 msgctxt "mlRegressionDecisionTree|"
-msgid "Predictors"
-msgstr "Prädiktoren"
-
-msgctxt "mlRegressionDecisionTree|"
 msgid "Tables"
 msgstr "Tabellen"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Evaluation metrics"
 msgstr "Evaluationsmetriken"
-
-msgctxt "mlRegressionDecisionTree|"
-msgid "Splits in tree"
-msgstr "Verästelung"
-
-msgctxt "mlRegressionDecisionTree|"
-msgid "Variable importance"
-msgstr "Wichtigkeit der Variable"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Plots"
@@ -2743,10 +2599,6 @@ msgstr "Dreieckig"
 msgctxt "mlRegressionSvm|"
 msgid "Target"
 msgstr "Ziel"
-
-msgctxt "mlRegressionSvm|"
-msgid "Predictors"
-msgstr "Prädiktoren"
 
 msgctxt "mlRegressionSvm|"
 msgid "Tables"
@@ -2835,3 +2687,159 @@ msgstr "Kosten von Beschränkungsverletzung"
 msgctxt "mlRegressionSvm|"
 msgid "Cost of constraints violation"
 msgstr "Kosten von Beschränkungsverletzung"
+
+msgctxt "mlClassificationBoosting|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlClassificationBoosting|"
+msgid "Scale features"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Feature importance"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Attempted splits"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Only show splits in tree"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Scale features"
+msgstr ""
+
+msgctxt "mlClassificationKnn|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlClassificationKnn|"
+msgid "Scale features"
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid "Scale features"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Scale features"
+msgstr ""
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Feature importance"
+msgstr ""
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Features per split"
+msgstr ""
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Scale features"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Scale features"
+msgstr ""
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Feature importance"
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "Scale features"
+msgstr ""
+
+msgctxt "mlRegressionBoosting|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Feature importance"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Attempted splits"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Only show splits in tree"
+msgstr ""
+
+msgctxt "mlRegressionKnn|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Feature importance"
+msgstr ""
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Features per split"
+msgstr ""
+
+msgctxt "mlRegressionRegularized|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Features"
+msgstr ""
