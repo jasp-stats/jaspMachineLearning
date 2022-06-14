@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-06-14 21:04+0000\n"
+"PO-Revision-Date: 2022-06-14 22:21+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/de/>\n"
@@ -416,7 +416,7 @@ msgstr "Abbildungen"
 
 msgctxt "mlClassificationLda|"
 msgid "Data split"
-msgstr "Datenaufteilungen"
+msgstr "Datenaufteilung"
 
 msgctxt "mlClassificationLda|"
 msgid "ROC curves"
@@ -1060,7 +1060,7 @@ msgstr "Abbildungen"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Data split"
-msgstr "Datenaufteilungen"
+msgstr "Datenaufteilung"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Out-of-bag improvement"
@@ -1284,7 +1284,7 @@ msgstr "Abbildungen"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Data split"
-msgstr "Datenaufteilungen"
+msgstr "Datenaufteilung"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Predictive performance"
@@ -2380,7 +2380,7 @@ msgstr "Algorithmus-Einstellungen"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Min. observations for split"
-msgstr "Min. Beobachtungen für Split"
+msgstr "Min. Beobachtungen für Aufteilung"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Min. observations in terminal"
@@ -2572,7 +2572,7 @@ msgstr "Algorithmus-Einstellungen"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Min. observations for split"
-msgstr "Min. Beobachtungen für Split"
+msgstr "Min. Beobachtungen für Aufteilung"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Min. observations in terminal"
@@ -2712,11 +2712,11 @@ msgstr "Merkmal-Wichtigkeit"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Attempted splits"
-msgstr ""
+msgstr "Versuchte Aufteilungen"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Only show splits in tree"
-msgstr ""
+msgstr "Nur Aufteilungen im Baum anzeigen"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Scale features"
@@ -2756,7 +2756,7 @@ msgstr "Merkmal-Wichtigkeit"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Features per split"
-msgstr ""
+msgstr "Merkmale pro Aufteilung"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Scale features"
@@ -2816,11 +2816,11 @@ msgstr "Merkmal-Wichtigkeit"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Attempted splits"
-msgstr ""
+msgstr "Versuchte Aufteilungen"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Only show splits in tree"
-msgstr ""
+msgstr "Nur Aufteilungen im Baum anzeigen"
 
 msgctxt "mlRegressionKnn|"
 msgid "Features"
@@ -2840,7 +2840,7 @@ msgstr "Merkmal-Wichtigkeit"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Features per split"
-msgstr ""
+msgstr "Merkmale pro Aufteilung"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Features"
