@@ -315,7 +315,10 @@
   }
   startProgressbar(2)
   progressbarTick()
-  dataset <- unique(dataset)
+  duplicates <- which(duplicated(dataset))
+  if (length(duplicates) > 0) {
+    dataset <- dataset[-duplicates, ]
+  }
   if (is.null(jaspResults[["tsneOutput"]])) {
     tsne <- Rtsne::Rtsne(as.matrix(dataset), perplexity = nrow(dataset) / 4, check_duplicates = FALSE)
     jaspResults[["tsneOutput"]] <- createJaspState(tsne)
@@ -328,6 +331,9 @@
   if (type == "densitybased") {
     ncolors <- ncolors + 1
     predictions[predictions == 0] <- gettext("Noisepoint")
+  }
+  if (length(duplicates) > 0) {
+    predictions <- predictions[-duplicates]
   }
   plotData <- data.frame(x = tsne$Y[, 1], y = tsne$Y[, 2], cluster = predictions)
   plotData$cluster <- factor(plotData$cluster)
