@@ -125,7 +125,7 @@ Form
 
 		CheckBox
 		{
-			name:								"matrixplot"
+			name:								"matrixPlot"
 			text:								qsTr("Linear discriminant matrix")
 
 			Row

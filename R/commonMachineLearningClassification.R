@@ -27,7 +27,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     "target", "predictors", "seed", "setSeed", "validationLeaveOneOut", "maxNearestNeighbors", "noOfFolds", "modelValid", "complexityParameter", "degree", "gamma",
     "estimationMethod", "noOfTrees", "maxTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors", "shrinkage", "interactionDepth", "minObservationsInNode", "cost", "tolerance", "epsilon",
     "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual",
-    "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
+    "threshold", "algorithm", "learningRate", "lossFunction", "actfct", "layers", "maxTrainingRepetitions", "maxGenerations", "populationSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProportion", "candidates"
   )
   if (includeSaveOptions) {
     opt <- c(opt, "saveModel", "savePath")
@@ -448,11 +448,11 @@ gettextf <- function(fmt, ..., domain = NULL) {
       hidden = structure,
       learningrate = options[["learningRate"]],
       threshold = options[["threshold"]],
-      stepmax = options[["stepMax"]],
+      stepmax = options[["maxTrainingRepetitions"]],
       rep = 1, # The rep parameter is nothing more than a wrapper for looping over creating a neural network.
       startweights = NULL,
       algorithm = options[["algorithm"]],
-      err.fct = "sse", # jaspResults[["errfct"]]$object, -> This does not work in the neuralnet package
+      err.fct = "sse", # jaspResults[["lossFunction"]]$object, -> This does not work in the neuralnet package
       act.fct = jaspResults[["actfct"]]$object,
       linear.output = if (options[["actfct"]] == "linear") TRUE else FALSE
     )
@@ -586,11 +586,11 @@ gettextf <- function(fmt, ..., domain = NULL) {
         hidden = structure,
         learningrate = options[["learningRate"]],
         threshold = options[["threshold"]],
-        stepmax = options[["stepMax"]],
+        stepmax = options[["maxTrainingRepetitions"]],
         rep = 1,
         startweights = NULL,
         algorithm = options[["algorithm"]],
-        err.fct = "sse", # jaspResults[["errfct"]]$object,
+        err.fct = "sse", # jaspResults[["lossFunction"]]$object,
         act.fct = jaspResults[["actfct"]]$object,
         linear.output = if (options[["actfct"]] == "linear") TRUE else FALSE
       )
@@ -994,7 +994,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     hidden = structure,
     learningrate = options[["learningRate"]],
     threshold = options[["threshold"]],
-    stepmax = options[["stepMax"]],
+    stepmax = options[["maxTrainingRepetitions"]],
     rep = 1,
     startweights = NULL,
     algorithm = options[["algorithm"]],

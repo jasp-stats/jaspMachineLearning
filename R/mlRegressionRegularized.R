@@ -113,14 +113,14 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
       x = as.matrix(trainingSet[, options[["predictors"]]]), y = trainingSet[, options[["target"]]],
       nfolds = 10, type.measure = "deviance",
       family = "gaussian", weights = weights[trainingIndex], offset = NULL, alpha = alpha,
-      standardize = FALSE, intercept = options[["intercept"]], thresh = options[["thresh"]]
+      standardize = FALSE, intercept = options[["intercept"]], convergenceThreshold = options[["convergenceThreshold"]]
     )
     lambda <- options[["lambda"]]
     testPredictions <- predict(trainingFit,
       newx = as.matrix(testSet[, options[["predictors"]]]), s = lambda, type = "link", exact = TRUE,
       x = as.matrix(trainingSet[, options[["predictors"]]]), y = trainingSet[, options[["target"]]],
       weights = weights[trainingIndex], offset = NULL,
-      alpha = alpha, standardize = FALSE, intercept = options[["intercept"]], thresh = options[["thresh"]]
+      alpha = alpha, standardize = FALSE, intercept = options[["intercept"]], convergenceThreshold = options[["convergenceThreshold"]]
     )
   } else {
     # Create a train, validation and test set (optimization)
@@ -133,7 +133,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
       x = as.matrix(trainingSet[, options[["predictors"]]]), y = trainingSet[, options[["target"]]],
       nfolds = 10, type.measure = "deviance",
       family = "gaussian", weights = trainingWeights[-validationIndex], offset = NULL, alpha = alpha,
-      standardize = FALSE, intercept = options[["intercept"]], thresh = options[["thresh"]]
+      standardize = FALSE, intercept = options[["intercept"]], convergenceThreshold = options[["convergenceThreshold"]]
     )
     lambda <- switch(options[["modelOptimization"]],
       "optMin" = trainingFit[["lambda.min"]],
@@ -143,20 +143,20 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
       newx = as.matrix(validationSet[, options[["predictors"]]]), s = lambda, type = "link", exact = TRUE,
       x = as.matrix(trainingSet[, options[["predictors"]]]), y = trainingSet[, options[["target"]]],
       weights = trainingWeights[-validationIndex], offset = NULL,
-      alpha = alpha, standardize = FALSE, intercept = options[["intercept"]], thresh = options[["thresh"]]
+      alpha = alpha, standardize = FALSE, intercept = options[["intercept"]], convergenceThreshold = options[["convergenceThreshold"]]
     )
     testPredictions <- predict(trainingFit,
       newx = as.matrix(testSet[, options[["predictors"]]]), s = lambda, type = "link", exact = TRUE,
       x = as.matrix(trainingSet[, options[["predictors"]]]), y = trainingSet[, options[["target"]]],
       weights = trainingWeights[-validationIndex], offset = NULL,
-      alpha = alpha, standardize = FALSE, intercept = options[["intercept"]], thresh = options[["thresh"]]
+      alpha = alpha, standardize = FALSE, intercept = options[["intercept"]], convergenceThreshold = options[["convergenceThreshold"]]
     )
   }
   # Use the specified model to make predictions for dataset
   dataPredictions <- predict(trainingFit,
     newx = as.matrix(dataset[, options[["predictors"]]]), s = lambda, type = "link", exact = TRUE,
     x = as.matrix(dataset[, options[["predictors"]]]), y = dataset[, options[["target"]]], weights = weights, offset = NULL,
-    alpha = alpha, standardize = FALSE, intercept = options[["intercept"]], thresh = options[["thresh"]]
+    alpha = alpha, standardize = FALSE, intercept = options[["intercept"]], convergenceThreshold = options[["convergenceThreshold"]]
   )
   result <- list()
   result[["model"]] <- trainingFit
@@ -189,7 +189,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   table$dependOn(options = c(
     "coefTable", "trainingDataManual", "weights", "scaleVariables", "modelOptimization",
     "target", "predictors", "seed", "setSeed", "modelValid",
-    "penalty", "alpha", "thresh", "intercept", "modelOptimization", "lambda",
+    "penalty", "alpha", "convergenceThreshold", "intercept", "modelOptimization", "lambda",
     "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
     "holdoutData", "testDataManual"
   ))
@@ -228,7 +228,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   plot$dependOn(options = c(
     "variableTrace", "variableTraceLegend", "trainingDataManual", "weights", "scaleVariables", "modelOptimization",
     "target", "predictors", "seed", "setSeed", "modelValid",
-    "penalty", "alpha", "thresh", "intercept", "modelOptimization", "lambda",
+    "penalty", "alpha", "convergenceThreshold", "intercept", "modelOptimization", "lambda",
     "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
     "holdoutData", "testDataManual"
   ))
@@ -264,7 +264,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   plot$dependOn(options = c(
     "lambdaEvaluation", "lambdaEvaluationLegend", "trainingDataManual", "weights", "scaleVariables", "modelOptimization",
     "target", "predictors", "seed", "setSeed", "modelValid",
-    "penalty", "alpha", "thresh", "intercept", "modelOptimization", "lambda",
+    "penalty", "alpha", "convergenceThreshold", "intercept", "modelOptimization", "lambda",
     "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
     "holdoutData", "testDataManual"
   ))

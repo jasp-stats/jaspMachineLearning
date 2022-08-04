@@ -192,6 +192,27 @@ Upgrades
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
 		ChangeRename { from: "modelOpt";								to: "modelOptimization"				}
 
+		ChangeRename { from: "plotError";								to: "meanSquaredErrorPlot"			}
+		ChangeRename { from: "actFuncPlot";								to: "activationFunctionPlot"		}
+		ChangeRename { from: "errfct";									to: "lossFunction"					}
+		ChangeRename { from: "stepMax";									to: "maxTrainingRepetitions"		}
+		ChangeRename { from: "genSize";									to: "populationSize"				}
+		ChangeRename { from: "maxGen";									to: "maxGenerations"				}
+		ChangeRename { from: "elitismProp";								to: "elitismProportion"				}
+
+		ChangeJS
+		{
+			name: "lossFunction"
+			jsFunction: function(options)
+			{
+				switch options["lossFunction"]
+				{
+					case "sse"		return "sumOfSquares";
+					case "ce"		return "crossEntropy";
+				}
+			}
+		}
+
 	}
 
 	Upgrade
@@ -208,6 +229,27 @@ Upgrades
 		ChangeRename { from: "plotLegend";								to: "legendShown"					}
 		ChangeRename { from: "plotPoints";								to: "pointsShown"					}
 
+		ChangeRename { from: "plotError";								to: "meanSquaredErrorPlot"			}
+		ChangeRename { from: "actFuncPlot";								to: "activationFunctionPlot"		}
+		ChangeRename { from: "errfct";									to: "lossFunction"					}
+		ChangeRename { from: "stepMax";									to: "maxTrainingRepetitions"		}
+		ChangeRename { from: "genSize";									to: "populationSize"				}
+		ChangeRename { from: "maxGen";									to: "maxGenerations"				}
+		ChangeRename { from: "elitismProp";								to: "elitismProportion"				}
+
+		ChangeJS
+		{
+			name: "lossFunction"
+			jsFunction: function(options)
+			{
+				switch options["lossFunction"]
+				{
+					case "sse"		return "sumOfSquares";
+					case "ce"		return "crossEntropy";
+				}
+			}
+		}
+
 	}
 
 	Upgrade
@@ -222,6 +264,9 @@ Upgrades
 		ChangeRename { from: "modelOpt";								to: "modelOptimization"				}
 
 		ChangeRename { from: "cp";										to: "complexityParameter"			}
+
+		ChangeRename { from: "tableSupportVectors";						to: "supportVectorsTable"			}
+
 
 	}
 	
@@ -241,6 +286,8 @@ Upgrades
 
 		ChangeRename { from: "cp";										to: "complexityParameter"			}
 
+		ChangeRename { from: "tableSupportVectors";						to: "supportVectorsTable"			}
+
 	}
 	
 	Upgrade
@@ -253,6 +300,8 @@ Upgrades
 		ChangeRename { from: "scaleEqualSD";							to: "scaleVariables"				}
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
 		ChangeRename { from: "modelOpt";								to: "modelOptimization"				}
+
+		ChangeRename { from: "thresh";									to: "convergenceThreshold"			}
 
 	}
 
@@ -270,6 +319,8 @@ Upgrades
 		ChangeRename { from: "plotLegend";								to: "legendShown"					}
 		ChangeRename { from: "plotPoints";								to: "pointsShown"					}
 
+		ChangeRename { from: "matrixplot";								to: "matrixPlot"					}
+
 	}
 
 	Upgrade
@@ -281,6 +332,9 @@ Upgrades
 
 		ChangeRename { from: "scaleEqualSD";							to: "scaleVariables"				}
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
+
+		ChangeRename { from: "pfrom";									to: "fromIndex"						}
+		ChangeRename { from: "pto";										to: "toIndex"						}
 
 	}
 

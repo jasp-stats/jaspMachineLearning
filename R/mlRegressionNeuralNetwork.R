@@ -107,12 +107,12 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
 
 .mlNeuralNetworkLossFunction <- function(options, jaspResults) {
   # For an overview of these loss functions, see https://machinelearningmastery.com/loss-and-loss-functions-for-training-deep-learning-neural-networks/
-  if (options[["errfct"]] == "sse") {
+  if (options[["lossFunction"]] == "sumOfSquares") {
     .ec <- function(x, y) 1 / 2 * (y - x)^2
-  } else if (options[["errfct"]] == "ce") {
+  } else if (options[["lossFunction"]] == "crossEntropy") {
     .ec <- function(x, y) -(y * log(x) + (1 - y) * log(1 - x))
   }
-  jaspResults[["errfct"]] <- createJaspState(.ec)
+  jaspResults[["lossFunction"]] <- createJaspState(.ec)
 }
 
 .neuralnetRegression <- function(dataset, options, jaspResults) {
@@ -143,7 +143,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
         hidden = structure,
         learningrate = options[["learningRate"]],
         threshold = options[["threshold"]],
-        stepmax = options[["stepMax"]],
+        stepmax = options[["maxTrainingRepetitions"]],
         rep = 1,
         startweights = NULL,
         algorithm = options[["algorithm"]],
@@ -153,7 +153,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
       )
     })
     if (isTryError(p)) {
-      jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["stepMax"]]))
+      jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["maxTrainingRepetitions"]]))
     }
   } else if (options[["modelOptimization"]] == "optimizationError") {
     # Create a train, validation and test set (optimization)
@@ -161,21 +161,21 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
     testSet <- dataset[-trainingIndex, ]
     valid <- trainingAndValidationSet[validationIndex, ]
     trainingSet <- trainingAndValidationSet[-validationIndex, ]
-    errorStore <- numeric(options[["maxGen"]])
-    trainErrorStore <- numeric(options[["maxGen"]])
+    errorStore <- numeric(options[["maxGenerations"]])
+    trainErrorStore <- numeric(options[["maxGenerations"]])
     # For plotting
     plot_x <- numeric()
     plot_y <- numeric()
     plot_type <- character()
-    startProgressbar(options[["maxGen"]], gettext("Optimizing network topology"))
+    startProgressbar(options[["maxGenerations"]], gettext("Optimizing network topology"))
     # First generation
     population <- .mlNeuralNetworkOptimInit(options)
     # Fit and reproduce
-    for (gen in 1:options[["maxGen"]]) {
+    for (gen in 1:options[["maxGenerations"]]) {
       progressbarTick()
-      fitness <- numeric(options[["genSize"]])
-      subTrainErrorStore <- numeric(options[["genSize"]])
-      for (i in 1:options[["genSize"]]) {
+      fitness <- numeric(options[["populationSize"]])
+      subTrainErrorStore <- numeric(options[["populationSize"]])
+      for (i in 1:options[["populationSize"]]) {
         p <- try({
           trainingFit <- neuralnet::neuralnet(
             formula = formula,
@@ -183,7 +183,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
             hidden = population[[i]]$structure,
             learningrate = options[["learningRate"]],
             threshold = options[["threshold"]],
-            stepmax = options[["stepMax"]],
+            stepmax = options[["maxTrainingRepetitions"]],
             rep = 1,
             startweights = NULL,
             algorithm = options[["algorithm"]],
@@ -194,7 +194,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
           validationPredictions <- predict(trainingFit, newdata = valid)
         })
         if (isTryError(p)) {
-          jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["stepMax"]]))
+          jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["maxTrainingRepetitions"]]))
         }
         fitness[i] <- mean((validationPredictions - valid[, options[["target"]]])^2)
         trainingPredictions <- predict(trainingFit, newdata = trainingSet)
@@ -212,7 +212,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
       errorStore[gen] <- mean(fitness)
       trainErrorStore[gen] <- mean(subTrainErrorStore)
       # Stop when maximum generations is reached
-      if (gen == options[["maxGen"]]) {
+      if (gen == options[["maxGenerations"]]) {
         break()
       }
       # Stage 1: Select parents for crossover (population of k = 20 will give n = k / 3 = 7 parent pairs)
@@ -232,7 +232,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
         hidden = structure,
         learningrate = options[["learningRate"]],
         threshold = options[["threshold"]],
-        stepmax = options[["stepMax"]],
+        stepmax = options[["maxTrainingRepetitions"]],
         rep = 1,
         startweights = NULL,
         algorithm = options[["algorithm"]],
@@ -243,7 +243,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
       validationPredictions <- predict(trainingFit, newdata = valid)
     })
     if (isTryError(p)) {
-      jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["stepMax"]]))
+      jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["maxTrainingRepetitions"]]))
     }
   }
   p <- try({
@@ -252,7 +252,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
     testPredictions <- predict(trainingFit, newdata = testSet)
   })
   if (isTryError(p)) {
-    jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["stepMax"]]))
+    jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["maxTrainingRepetitions"]]))
   }
   # Create results object
   result <- list()
@@ -297,8 +297,8 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   table$dependOn(options = c(
     "coefficientsTable", "scaleVariables", "target", "predictors", "seed", "setSeed", "holdoutData", "testDataManual",
     "testSetIndicatorVariable", "testSetIndicator",
-    "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes",
-    "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
+    "threshold", "algorithm", "learningRate", "lossFunction", "actfct", "layers", "maxTrainingRepetitions", "maxGenerations", "populationSize", "maxLayers", "maxNodes",
+    "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProportion", "candidates"
   ))
   table$addColumnInfo(name = "fromNode", title = gettext("Node"), type = "string")
   table$addColumnInfo(name = "fromLayer", title = gettext("Layer"), type = "string")
@@ -368,8 +368,8 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   plot$position <- position
   plot$dependOn(options = c(
     "networkGraph", "target", "predictors", "layers", "modelOptimization",
-    "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism",
-    "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
+    "maxTrainingRepetitions", "maxGenerations", "populationSize", "maxLayers", "maxNodes", "mutationRate", "elitism",
+    "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProportion", "candidates"
   ))
   jaspResults[["networkGraph"]] <- plot
   if (!ready) {
@@ -469,7 +469,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
 }
 
 .mlNeuralNetworkPlotActivationFunction <- function(options, jaspResults, position) {
-  if (!is.null(jaspResults[["actFuncPlot"]]) || !options[["actFuncPlot"]]) {
+  if (!is.null(jaspResults[["activationFunctionPlot"]]) || !options[["activationFunctionPlot"]]) {
     return()
   }
   weights <- switch(options[["actfct"]],
@@ -492,8 +492,8 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   )
   plot <- createJaspPlot(title = gettextf("%1$s Activation Function", weights), width = 400, height = 300)
   plot$position <- position
-  plot$dependOn(options = c("actFuncPlot", "actfct"))
-  jaspResults[["actFuncPlot"]] <- plot
+  plot$dependOn(options = c("activationFunctionPlot", "actfct"))
+  jaspResults[["activationFunctionPlot"]] <- plot
   ac <- jaspResults[["actfct"]]$object
   xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(-6, 6), min.n = 4)
   yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(-1, 1), min.n = 4)
@@ -510,7 +510,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   # This function returns a population of random network structures
   # with a maximum number of hidden layers and maximum number of hidden nodes
   population <- list()
-  for (i in 1:options[["genSize"]]) {
+  for (i in 1:options[["populationSize"]]) {
     member <- list()
     member[["structure"]] <- sample.int(
       n = options[["maxNodes"]],
@@ -627,11 +627,11 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   # Elitism
   elites <- NULL
   if (options[["elitism"]]) {
-    eliteIndex <- order(-fitness)[1:ceiling(options[["genSize"]] * options[["elitismProp"]])]
+    eliteIndex <- order(-fitness)[1:ceiling(options[["populationSize"]] * options[["elitismProportion"]])]
     elites <- population[eliteIndex]
   }
   # Further replacements
-  required_nets <- options[["genSize"]] - length(elites) - length(children)
+  required_nets <- options[["populationSize"]] - length(elites) - length(children)
   population_without_elites <- population[-eliteIndex]
   if (options[["survivalMethod"]] == "age") {
     age <- unlist(population_without_elites)[which(names(unlist(population_without_elites)) == "age")]
@@ -647,7 +647,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
 }
 
 .mlNeuralNetworkPlotError <- function(dataset, options, jaspResults, ready, position, purpose) {
-  if (!is.null(jaspResults[["plotError"]]) || !options[["plotError"]] || options[["modelOptimization"]] == "optimizationManual") {
+  if (!is.null(jaspResults[["meanSquaredErrorPlot"]]) || !options[["meanSquaredErrorPlot"]] || options[["modelOptimization"]] == "optimizationManual") {
     return()
   }
   plotTitle <- switch(purpose,
@@ -657,11 +657,11 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   plot <- createJaspPlot(plot = NULL, title = plotTitle, width = 400, height = 300)
   plot$position <- position
   plot$dependOn(options = c(
-    "plotError", "scaleVariables", "target", "predictors", "seed", "setSeed", "holdoutData", "testDataManual", "validationDataManual",
+    "meanSquaredErrorPlot", "scaleVariables", "target", "predictors", "seed", "setSeed", "holdoutData", "testDataManual", "validationDataManual",
     "testSetIndicatorVariable", "testSetIndicator", "modelOptimization",
-    "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
+    "threshold", "algorithm", "learningRate", "lossFunction", "actfct", "layers", "maxTrainingRepetitions", "maxGenerations", "populationSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProportion", "candidates"
   ))
-  jaspResults[["plotError"]] <- plot
+  jaspResults[["meanSquaredErrorPlot"]] <- plot
   if (!ready) {
     return()
   }

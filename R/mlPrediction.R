@@ -325,7 +325,7 @@ is.jaspMachineLearning <- function(x) {
     return()
   }
   table <- createJaspTable(gettext("Predictions for New Data"))
-  table$dependOn(options = c("predictors", "loadPath", "predictionsTable", "addPredictors", "scaleVariables", "pfrom", "pto"))
+  table$dependOn(options = c("predictors", "loadPath", "predictionsTable", "addPredictors", "scaleVariables", "fromIndex", "toIndex"))
   table$position <- position
   table$addColumnInfo(name = "row", title = gettext("Row"), type = "integer")
   if (!is.null(model)) {
@@ -343,7 +343,7 @@ is.jaspMachineLearning <- function(x) {
     return()
   }
   predictions <- .mlPredictionsState(model, dataset, options, jaspResults, ready)
-  indexes <- options[["pfrom"]]:options[["pto"]]
+  indexes <- options[["fromIndex"]]:options[["toIndex"]]
   selection <- predictions[indexes]
   cols <- list(row = indexes, pred = selection)
   if (options[["addPredictors"]]) {

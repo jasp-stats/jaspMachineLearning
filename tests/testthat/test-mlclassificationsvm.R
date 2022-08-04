@@ -13,7 +13,7 @@ options$predictors <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Wi
 options$saveModel <- FALSE
 options$savePath <- ""
 options$setSeed <- TRUE
-options$tableSupportVectors <- TRUE
+options$supportVectorsTable <- TRUE
 options$target <- "Species"
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""
@@ -51,7 +51,7 @@ test_that("Data Split plot matches", {
 })
 
 test_that("Support Vectors table results match", {
-	table <- results[["results"]][["tableSupportVectors"]][["data"]]
+	table <- results[["results"]][["supportVectorsTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list(0.420325577865652, 0.394452647658782, -0.535383972794483, -0.13153881205026,
 			 3, 0.760211489886395, 0.394452647658782, 0.551485746412362,

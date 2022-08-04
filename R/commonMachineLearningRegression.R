@@ -24,10 +24,10 @@
   opt <- c(
     "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleVariables", "modelOptimization", "maxTrees",
     "target", "predictors", "seed", "setSeed", "validationLeaveOneOut", "confusionProportions", "maxNearestNeighbors", "noOfFolds", "modelValid",
-    "penalty", "alpha", "thresh", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "baggingFraction",
+    "penalty", "alpha", "convergenceThreshold", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "baggingFraction",
     "interactionDepth", "minObservationsInNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "minObservationsForSplit",
     "holdoutData", "testDataManual", "complexityParameter", "degree", "gamma",
-    "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
+    "threshold", "algorithm", "learningRate", "lossFunction", "actfct", "layers", "maxTrainingRepetitions", "maxGenerations", "populationSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProportion", "candidates"
   )
   if (includeSaveOptions) {
     opt <- c(opt, "saveModel", "savePath")

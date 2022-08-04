@@ -143,7 +143,7 @@ Form
 
 			DoubleField
 			{
-				name:							"thresh"
+				name:							"convergenceThreshold"
 				text:							qsTr("Convergence threshold")
 				defaultValue:					1e-7
 				min:							1e-999

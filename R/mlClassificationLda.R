@@ -222,16 +222,16 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
 }
 
 .mlClassificationLdaPlotDiscriminants <- function(dataset, options, jaspResults, ready, position) {
-  if (!is.null(jaspResults[["matrixplot"]]) || !options[["matrixplot"]]) {
+  if (!is.null(jaspResults[["matrixPlot"]]) || !options[["matrixPlot"]]) {
     return()
   }
   plot <- createJaspPlot(title = gettext("Linear Discriminant Matrix"), height = 400, width = 300)
   plot$position <- position
   plot$dependOn(options = c(
-    "matrixplot", "plotDensities", "plotStatistics", "trainingDataManual", "scaleVariables", "modelOptimization", "holdoutData", "testDataManual",
+    "matrixPlot", "plotDensities", "plotStatistics", "trainingDataManual", "scaleVariables", "modelOptimization", "holdoutData", "testDataManual",
     "target", "predictors", "seed", "setSeed", "modelValid", "estimationMethod", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual"
   ))
-  jaspResults[["matrixplot"]] <- plot
+  jaspResults[["matrixPlot"]] <- plot
   if (!ready) {
     return()
   }

@@ -65,7 +65,7 @@ Form
 		CheckBox
 		{
 			text:								qsTr("Support vectors")
-			name:								"tableSupportVectors"
+			name:								"supportVectorsTable"
 		}
 	}
 

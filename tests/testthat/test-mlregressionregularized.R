@@ -20,7 +20,7 @@ options$target <- "Alcohol"
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""
-options$thresh <- 1e-07
+options$convergenceThreshold <- 1e-07
 options$validationDataManual <- 0.2
 options$validationMeasures <- TRUE
 options$predictionsColumn <- ""

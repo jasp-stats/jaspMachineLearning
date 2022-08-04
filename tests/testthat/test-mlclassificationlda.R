@@ -12,7 +12,7 @@ options$savePath <- ""
 options$saveModel <- FALSE
 options$holdoutData <- "holdoutManual"
 options$manovaTable <- TRUE
-options$matrixplot <- TRUE
+options$matrixPlot <- TRUE
 options$meanTable <- TRUE
 options$modelOptimization <- "optimizationManual"
 options$modelValid <- "validationManual"
@@ -107,7 +107,7 @@ test_that("Tests of Equality of Class Means table results match", {
 })
 
 test_that("Linear Discriminant Matrix plot matches", {
-  plotName <- results[["results"]][["matrixplot"]][["data"]]
+  plotName <- results[["results"]][["matrixPlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
   jaspTools::expect_equal_plots(testPlot, "linear-discriminant-matrix")
 })

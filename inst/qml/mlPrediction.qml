@@ -93,7 +93,7 @@ Form
 			
 			IntegerField
 			{
-				name:							"pfrom"
+				name:							"fromIndex"
 				text:							qsTr("From")
 				defaultValue:					1
 				min:							1
@@ -102,7 +102,7 @@ Form
 
 			IntegerField
 			{
-				name:							"pto"
+				name:							"toIndex"
 				text:							qsTr("to")
 				defaultValue:					20
 				max:							dataSetModel.rowCount()
