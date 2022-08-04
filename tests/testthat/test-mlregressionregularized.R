@@ -8,14 +8,14 @@ options$savePath <- ""
 options$saveModel <- FALSE
 options$holdoutData <- "holdoutManual"
 options$lambdaEvaluation <- TRUE
-options$modelOpt <- "optMin"
+options$modelOptimization <- "optMin"
 options$modelValid <- "validationManual"
 options$noOfFolds <- 5
 options$predictedPerformancePlot <- TRUE
 options$predictors <- list("Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", "Flavanoids", 
                            "Nonflavanoids", "Proanthocyanins", "Color", "Hue", "Dilution", 
                            "Proline")
-options$seedBox <- TRUE
+options$setSeed <- TRUE
 options$target <- "Alcohol"
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""

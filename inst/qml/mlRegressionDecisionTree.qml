@@ -65,18 +65,18 @@ Form
 		CheckBox
 		{
 			text:								qsTr("Feature importance")
-			name:								"tableVariableImportance"
+			name:								"variableImportanceTable"
 		}
 
 		CheckBox
 		{
 			text:								qsTr("Attempted splits")
-			name:								"tableSplits"
+			name:								"splitsTable"
 
 			CheckBox
 			{
 				text:							qsTr("Only show splits in tree")
-				name:							"tableSplitsTree"
+				name:							"splitsTreeTable"
 				checked:						true
 			}
 		}
@@ -102,7 +102,7 @@ Form
 		CheckBox
 		{
 			text:								qsTr("Decision tree")
-			name:								"plotDecisionTree"
+			name:								"decisionTreePlot"
 		}
 	}
 
@@ -127,7 +127,7 @@ Form
 			IntegerField
 			{
 				text:							qsTr("Min. observations for split")
-				name:							"nSplit"
+				name:							"minObservationsForSplit"
 				min:							1
 				defaultValue:					20
 			}
@@ -135,7 +135,7 @@ Form
 			IntegerField
 			{
 				text:							qsTr("Min. observations in terminal")
-				name:							"nNode"
+				name:							"minObservationsInNode"
 				min:							1
 				defaultValue:					7
 			}
@@ -143,7 +143,7 @@ Form
 			IntegerField
 			{
 				text:							qsTr("Max. interaction depth")
-				name:							"intDepth"
+				name:							"interactionDepth"
 				min:							1
 				defaultValue:					30
 				max:							30
@@ -152,7 +152,7 @@ Form
 			DoubleField
 			{
 				text:							qsTr("Complexity parameter")
-				name:							"cp"
+				name:							"complexityParameter"
 				min:							0
 				defaultValue:					0.01
 			}
@@ -161,13 +161,13 @@ Form
 			CheckBox
 			{
 				text:							qsTr("Scale variables")
-				name:							"scaleEqualSD"
+				name:							"scaleVariables"
 				checked:						true
 			}
 
 			CheckBox
 			{
-				name:							"seedBox"
+				name:							"setSeed"
 				text:							qsTr("Set seed")
 				childrenOnSameRow:				true
 
@@ -184,7 +184,7 @@ Form
 
 		RadioButtonGroup
 		{
-			name:								"modelOpt"
+			name:								"modelOptimization"
 			visible:							false
 
 			RadioButton

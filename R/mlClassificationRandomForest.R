@@ -85,7 +85,7 @@ mlClassificationRandomForest <- function(jaspResults, dataset, options, ...) {
   # Create the generated test set indicator
   testIndicatorColumn <- rep(1, nrow(dataset))
   testIndicatorColumn[trainingIndex] <- 0
-  if (options[["modelOpt"]] == "optimizationManual") {
+  if (options[["modelOptimization"]] == "optimizationManual") {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
@@ -93,11 +93,11 @@ mlClassificationRandomForest <- function(jaspResults, dataset, options, ...) {
       x = trainingSet[, options[["predictors"]]], y = trainingSet[, options[["target"]]],
       xtest = testSet[, options[["predictors"]]], ytest = testSet[, options[["target"]]],
       ntree = options[["noOfTrees"]], mtry = noOfPredictors,
-      sampsize = ceiling(options[["bagFrac"]] * nrow(trainingSet)),
+      sampsize = ceiling(options[["baggingFraction"]] * nrow(trainingSet)),
       importance = TRUE, keep.forest = TRUE
     )
     noOfTrees <- options[["noOfTrees"]]
-  } else if (options[["modelOpt"]] == "optimizationError") {
+  } else if (options[["modelOptimization"]] == "optimizationError") {
     # Create a train, validation and test set (optimization)
     validationIndex <- sample.int(nrow(trainingAndValidationSet), size = ceiling(options[["validationDataManual"]] * nrow(trainingAndValidationSet)))
     testSet <- dataset[-trainingIndex, ]
@@ -107,7 +107,7 @@ mlClassificationRandomForest <- function(jaspResults, dataset, options, ...) {
       x = trainingSet[, options[["predictors"]]], y = trainingSet[, options[["target"]]],
       xtest = validationSet[, options[["predictors"]]], ytest = validationSet[, options[["target"]]],
       ntree = options[["maxTrees"]], mtry = noOfPredictors,
-      sampsize = ceiling(options[["bagFrac"]] * nrow(trainingSet)),
+      sampsize = ceiling(options[["baggingFraction"]] * nrow(trainingSet)),
       importance = TRUE, keep.forest = TRUE
     )
     oobAccuracy <- 1 - validationFit[["err.rate"]][, 1]
@@ -116,7 +116,7 @@ mlClassificationRandomForest <- function(jaspResults, dataset, options, ...) {
       x = trainingSet[, options[["predictors"]]], y = trainingSet[, options[["target"]]],
       xtest = testSet[, options[["predictors"]]], ytest = testSet[, options[["target"]]],
       ntree = noOfTrees, mtry = noOfPredictors,
-      sampsize = ceiling(options[["bagFrac"]] * nrow(trainingSet)),
+      sampsize = ceiling(options[["baggingFraction"]] * nrow(trainingSet)),
       importance = TRUE, keep.forest = TRUE
     )
   }
@@ -125,7 +125,7 @@ mlClassificationRandomForest <- function(jaspResults, dataset, options, ...) {
     x = trainingSet[, options[["predictors"]]], y = trainingSet[, options[["target"]]],
     xtest = trainingSet[, options[["predictors"]]], ytest = trainingSet[, options[["target"]]],
     ntree = noOfTrees, mtry = noOfPredictors,
-    sampsize = ceiling(options[["bagFrac"]] * nrow(trainingSet)),
+    sampsize = ceiling(options[["baggingFraction"]] * nrow(trainingSet)),
     importance = TRUE, keep.forest = TRUE
   )
   # Create results object
@@ -135,7 +135,7 @@ mlClassificationRandomForest <- function(jaspResults, dataset, options, ...) {
   result[["rfit_train"]] <- trainingFit
   result[["noOfTrees"]] <- noOfTrees
   result[["predPerSplit"]] <- noOfPredictors
-  result[["bagFrac"]] <- ceiling(options[["bagFrac"]] * nrow(dataset))
+  result[["baggingFraction"]] <- ceiling(options[["baggingFraction"]] * nrow(dataset))
   result[["confTable"]] <- table("Pred" = testFit$test[["predicted"]], "Real" = testSet[, options[["target"]]])
   result[["testAcc"]] <- sum(diag(prop.table(result[["confTable"]])))
   result[["auc"]] <- .classificationCalcAUC(testSet, trainingSet, options, "randomForestClassification", dataset = dataset, noOfTrees = noOfTrees, noOfPredictors = noOfPredictors)
@@ -153,7 +153,7 @@ mlClassificationRandomForest <- function(jaspResults, dataset, options, ...) {
     MeanIncrMSE = testFit[["importance"]][, 1],
     TotalDecrNodeImp = testFit[["importance"]][, 2]
   ), -TotalDecrNodeImp)
-  if (options[["modelOpt"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "optimizationManual") {
     result[["rfit_valid"]] <- validationFit
     result[["validationConfTable"]] <- table("Pred" = validationFit$test[["predicted"]], "Real" = validationSet[, options[["target"]]])
     result[["validAcc"]] <- sum(diag(prop.table(result[["validationConfTable"]])))

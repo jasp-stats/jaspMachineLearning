@@ -130,7 +130,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   # Create the generated test set indicator
   testIndicatorColumn <- rep(1, nrow(dataset))
   testIndicatorColumn[trainingIndex] <- 0
-  if (options[["modelOpt"]] == "optimizationManual") {
+  if (options[["modelOptimization"]] == "optimizationManual") {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
@@ -155,7 +155,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
     if (isTryError(p)) {
       jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["stepMax"]]))
     }
-  } else if (options[["modelOpt"]] == "optimizationError") {
+  } else if (options[["modelOptimization"]] == "optimizationError") {
     # Create a train, validation and test set (optimization)
     validationIndex <- sample.int(nrow(trainingAndValidationSet), size = ceiling(options[["validationDataManual"]] * nrow(trainingAndValidationSet)))
     testSet <- dataset[-trainingIndex, ]
@@ -270,7 +270,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   result[["test"]] <- testSet
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["values"]] <- dataPredictions
-  if (options[["modelOpt"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "optimizationManual") {
     result[["accuracyStore"]] <- errorStore
     result[["validMSE"]] <- mean((validationPredictions - valid[, options[["target"]]])^2)
     result[["nvalid"]] <- nrow(valid)
@@ -295,7 +295,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   table <- createJaspTable(title = gettext("Network Weights"))
   table$position <- position
   table$dependOn(options = c(
-    "coefficientsTable", "scaleEqualSD", "target", "predictors", "seed", "seedBox", "holdoutData", "testDataManual",
+    "coefficientsTable", "scaleVariables", "target", "predictors", "seed", "setSeed", "holdoutData", "testDataManual",
     "testSetIndicatorVariable", "testSetIndicator",
     "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes",
     "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
@@ -367,7 +367,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   plot <- createJaspPlot(title = gettext("Network Structure Plot"), height = 500, width = 600)
   plot$position <- position
   plot$dependOn(options = c(
-    "networkGraph", "target", "predictors", "layers", "modelOpt",
+    "networkGraph", "target", "predictors", "layers", "modelOptimization",
     "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism",
     "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
   ))
@@ -647,7 +647,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
 }
 
 .mlNeuralNetworkPlotError <- function(dataset, options, jaspResults, ready, position, purpose) {
-  if (!is.null(jaspResults[["plotError"]]) || !options[["plotError"]] || options[["modelOpt"]] == "optimizationManual") {
+  if (!is.null(jaspResults[["plotError"]]) || !options[["plotError"]] || options[["modelOptimization"]] == "optimizationManual") {
     return()
   }
   plotTitle <- switch(purpose,
@@ -657,8 +657,8 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   plot <- createJaspPlot(plot = NULL, title = plotTitle, width = 400, height = 300)
   plot$position <- position
   plot$dependOn(options = c(
-    "plotError", "scaleEqualSD", "target", "predictors", "seed", "seedBox", "holdoutData", "testDataManual", "validationDataManual",
-    "testSetIndicatorVariable", "testSetIndicator", "modelOpt",
+    "plotError", "scaleVariables", "target", "predictors", "seed", "setSeed", "holdoutData", "testDataManual", "validationDataManual",
+    "testSetIndicatorVariable", "testSetIndicator", "modelOptimization",
     "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
   ))
   jaspResults[["plotError"]] <- plot

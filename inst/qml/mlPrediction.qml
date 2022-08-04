@@ -63,7 +63,7 @@ Form
 		CheckBox
 		{
 			text:								qsTr("Scale features")
-			name:								"scaleEqualSD"
+			name:								"scaleVariables"
 			checked:							true
 		}
 	}

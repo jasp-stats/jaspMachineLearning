@@ -65,7 +65,7 @@ mlRegressionSvm <- function(jaspResults, dataset, options, state = NULL) {
   testSet <- dataset[-trainingIndex, ]
   trainingFit <- e1071::svm(
     formula = formula, data = trainingSet, type = "eps-regression", kernel = options[["weights"]], cost = options[["cost"]], tolerance = options[["tolerance"]],
-    epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]], gamma = options[["gamma"]], coef0 = options[["cp"]]
+    epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]], gamma = options[["gamma"]], coef0 = options[["complexityParameter"]]
   )
   # Use the specified model to make predictions for dataset
   testPredictions <- predict(trainingFit, newdata = testSet)
@@ -92,7 +92,7 @@ mlRegressionSvm <- function(jaspResults, dataset, options, state = NULL) {
   table <- createJaspTable(title = gettext("Support Vectors"))
   table$position <- position
   table$dependOn(options = c(
-    "tableSupportVectors", "trainingDataManual", "scaleEqualSD", "target", "predictors", "seed", "seedBox",
+    "tableSupportVectors", "trainingDataManual", "scaleVariables", "target", "predictors", "seed", "setSeed",
     "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "weights", "cost", "tolerance", "epsilon"
   ))
   table$addColumnInfo(name = "row", title = gettext("Row"), type = "string")

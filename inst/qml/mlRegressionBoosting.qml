@@ -64,7 +64,7 @@ Form
 
 		CheckBox
 		{
-			name:								"classBoostRelInfTable"
+			name:								"relativeInfluenceTable"
 			text:								qsTr("Relative influence")
 		}
 	}
@@ -82,7 +82,7 @@ Form
 
 		CheckBox
 		{
-			name:								"plotOOBChangeDev"
+			name:								"outOfBagImprovementPlot"
 			text:								qsTr("Out-of-bag improvement")
 		}
 
@@ -94,13 +94,13 @@ Form
 
 		CheckBox
 		{
-			name:								"plotDeviance"
+			name:								"deviancePlot"
 			text:								qsTr("Deviance")
 		}
 
 		CheckBox
 		{
-			name:								"plotRelInf"
+			name:								"relativeInfluencePlot"
 			text:								qsTr("Relative influence")
 		}
 	}
@@ -135,7 +135,7 @@ Form
 
 			IntegerField
 			{
-				name:							"intDepth"
+				name:							"interactionDepth"
 				text:							qsTr("Interaction depth")
 				defaultValue:					1
 				min:							1
@@ -144,7 +144,7 @@ Form
 
 			IntegerField
 			{
-				name:							"nNode"
+				name:							"minObservationsInNode"
 				text:							qsTr("Min. observations in node")
 				defaultValue:					10
 				min:							1
@@ -153,7 +153,7 @@ Form
 
 			PercentField 
 			{
-				name:							"bagFrac"
+				name:							"baggingFraction"
 				text:							qsTr("Training data used per tree")
 				defaultValue:					50
 			}
@@ -175,13 +175,13 @@ Form
 			CheckBox
 			{
 				text:							qsTr("Scale variables")
-				name:							"scaleEqualSD"
+				name:							"scaleVariables"
 				checked:						true
 			}
 
 			CheckBox
 			{
-				name:							"seedBox"
+				name:							"setSeed"
 				text:							qsTr("Set seed")
 				childrenOnSameRow:				true
 
@@ -199,7 +199,7 @@ Form
 		RadioButtonGroup
 		{
 			title:								qsTr("Number of Trees")
-			name:								"modelOpt"
+			name:								"modelOptimization"
 
 			RadioButton
 			{

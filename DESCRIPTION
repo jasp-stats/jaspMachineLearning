@@ -39,7 +39,11 @@ Imports:
   ROCR,
   Rtsne,
   signal
+Suggests:
+  jaspTools,
+  testthat
 Remotes:
   jasp-stats/jaspBase,
   jasp-stats/jaspGraphs,
+  jasp-stats/jaspTools,
   vandenman/kknn

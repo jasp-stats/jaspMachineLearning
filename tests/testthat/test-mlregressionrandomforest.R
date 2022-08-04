@@ -6,18 +6,18 @@ options$addPredictions <- FALSE
 options$savePath <- ""
 options$saveModel <- FALSE
 options$holdoutData <- "holdoutManual"
-options$modelOpt <- "optimizationError"
+options$modelOptimization <- "optimizationError"
 options$modelValid <- "validationManual"
 options$noOfFolds <- 5
-options$plotDecreaseAccuracy <- TRUE
-options$plotIncreasePurity <- TRUE
-options$plotTreesVsModelError <- TRUE
+options$accuracyDecreasePlot <- TRUE
+options$purityIncreasePlot <- TRUE
+options$treesVsModelErrorPlot <- TRUE
 options$predictedPerformancePlot <- TRUE
 options$predictors <- list("Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", "Flavanoids", 
                            "Nonflavanoids", "Proanthocyanins", "Color", "Hue", "Dilution", 
                            "Proline")
-options$seedBox <- TRUE
-options$tableVariableImportance <- TRUE
+options$setSeed <- TRUE
+options$variableImportanceTable <- TRUE
 options$target <- "Alcohol"
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""
@@ -36,19 +36,19 @@ test_that("Data Split plot matches", {
 })
 
 test_that("Mean Decrease in Accuracy plot matches", {
-  plotName <- results[["results"]][["plotDecreaseAccuracy"]][["data"]]
+  plotName <- results[["results"]][["accuracyDecreasePlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
   jaspTools::expect_equal_plots(testPlot, "mean-decrease-in-accuracy")
 })
 
 test_that("Total Increase in Node Purity plot matches", {
-  plotName <- results[["results"]][["plotIncreasePurity"]][["data"]]
+  plotName <- results[["results"]][["purityIncreasePlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
   jaspTools::expect_equal_plots(testPlot, "total-increase-in-node-purity")
 })
 
 test_that("Out-of-bag Mean Squared Error Plot matches", {
-  plotName <- results[["results"]][["plotTreesVsModelError"]][["data"]]
+  plotName <- results[["results"]][["treesVsModelErrorPlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
   jaspTools::expect_equal_plots(testPlot, "out-of-bag-mean-squared-error-plot")
 })
@@ -67,7 +67,7 @@ test_that("Random Forest Regression table results match", {
 })
 
 test_that("Variable Importance table results match", {
-  table <- results[["results"]][["tableVariableImportance"]][["data"]]
+  table <- results[["results"]][["variableImportanceTable"]][["data"]]
   jaspTools::expect_equal_tables(table,
                       list(0.475727661943587, 13.9713939210907, "Color", 0.133970922782775,
                            6.27626368698486, "Proline", 0.117761043024228, 3.97309320553953,

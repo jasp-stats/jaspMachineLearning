@@ -4,17 +4,17 @@ options <- jaspTools::analysisOptions("mlRegressionDecisionTree")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
 options$holdoutData <- "holdoutManual"
-options$modelOpt <- "optimizationManual"
+options$modelOptimization <- "optimizationManual"
 options$modelValid <- "validationManual"
 options$noOfFolds <- 5
-options$plotDecisionTree <- TRUE
+options$decisionTreePlot <- TRUE
 options$predictedPerformancePlot <- TRUE
 options$predictionsColumn <- ""
 options$predictors <- c("Sepal.Width", "Petal.Length", "Petal.Width", "Species")
 options$saveModel <- FALSE
 options$savePath <- ""
-options$seedBox <- TRUE
-options$tableVariableImportance <- TRUE
+options$setSeed <- TRUE
+options$variableImportanceTable <- TRUE
 options$target <- "Sepal.Length"
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""
@@ -32,7 +32,7 @@ test_that("Data Split plot matches", {
 })
 
 test_that("Decision Tree Plot matches", {
-	plotName <- results[["results"]][["plotDecisionTree"]][["data"]]
+	plotName <- results[["results"]][["decisionTreePlot"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
 	jaspTools::expect_equal_plots(testPlot, "decision-tree-plot")
 })
@@ -50,7 +50,7 @@ test_that("Decision Tree Regression table results match", {
 })
 
 test_that("Variable Importance table results match", {
-	table <- results[["results"]][["tableVariableImportance"]][["data"]]
+	table <- results[["results"]][["variableImportanceTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list(38.0537799528194, "Petal.Length", 27.0512145757421, "Petal.Width",
 			 21.2388630350472, "Species", 13.6561424363914, "Sepal.Width"

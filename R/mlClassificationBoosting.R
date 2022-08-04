@@ -73,7 +73,7 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
   # Import model formula from jaspResults
   formula <- jaspResults[["formula"]]$object
   # Set model-specific parameters
-  trees <- switch(options[["modelOpt"]],
+  trees <- switch(options[["modelOptimization"]],
     "optimizationManual" = options[["noOfTrees"]],
     "optimizationOOB" = options[["maxTrees"]]
   )
@@ -91,7 +91,7 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
   testIndicatorColumn[trainingIndex] <- 0
   # gbm expects the columns in the data to be in the same order as the variables...
   trainingAndValidationSet <- trainingAndValidationSet[, match(names(trainingAndValidationSet), all.vars(formula))]
-  if (options[["modelOpt"]] == "optimizationManual") {
+  if (options[["modelOptimization"]] == "optimizationManual") {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
@@ -99,12 +99,12 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
     .mlBoostingCheckMinObsNode(options, trainingSet) # Check for min obs in nodes
     fit <- gbm::gbm(
       formula = formula, data = trainingSet, n.trees = trees,
-      shrinkage = options[["shrinkage"]], interaction.depth = options[["intDepth"]],
-      cv.folds = noOfFolds, bag.fraction = options[["bagFrac"]], n.minobsinnode = options[["nNode"]],
+      shrinkage = options[["shrinkage"]], interaction.depth = options[["interactionDepth"]],
+      cv.folds = noOfFolds, bag.fraction = options[["baggingFraction"]], n.minobsinnode = options[["minObservationsInNode"]],
       distribution = "multinomial", n.cores = 1, keep.data = TRUE
     ) # Multiple cores breaks modules in JASP, see: INTERNAL-jasp#372
     noOfTrees <- options[["noOfTrees"]]
-  } else if (options[["modelOpt"]] == "optimizationOOB") {
+  } else if (options[["modelOptimization"]] == "optimizationOOB") {
     # Create a train, validation and test set (optimization)
     validationIndex <- sample.int(nrow(trainingAndValidationSet), size = ceiling(options[["validationDataManual"]] * nrow(trainingAndValidationSet)))
     testSet <- dataset[-trainingIndex, ]
@@ -120,15 +120,15 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
     .mlBoostingCheckMinObsNode(options, trainingSet) # Check for min obs in nodes
     fit <- gbm::gbm(
       formula = formula, data = trainingSet, n.trees = trees,
-      shrinkage = options[["shrinkage"]], interaction.depth = options[["intDepth"]],
-      cv.folds = noOfFolds, bag.fraction = options[["bagFrac"]], n.minobsinnode = options[["nNode"]],
+      shrinkage = options[["shrinkage"]], interaction.depth = options[["interactionDepth"]],
+      cv.folds = noOfFolds, bag.fraction = options[["baggingFraction"]], n.minobsinnode = options[["minObservationsInNode"]],
       distribution = "multinomial", n.cores = 1, keep.data = TRUE
     ) # Multiple cores breaks modules in JASP, see: INTERNAL-jasp#372
     noOfTrees <- gbm::gbm.perf(fit, plot.it = FALSE, method = "OOB")[1]
     fit <- gbm::gbm(
       formula = formula, data = trainingSet, n.trees = noOfTrees,
-      shrinkage = options[["shrinkage"]], interaction.depth = options[["intDepth"]],
-      cv.folds = noOfFolds, bag.fraction = options[["bagFrac"]], n.minobsinnode = options[["nNode"]],
+      shrinkage = options[["shrinkage"]], interaction.depth = options[["interactionDepth"]],
+      cv.folds = noOfFolds, bag.fraction = options[["baggingFraction"]], n.minobsinnode = options[["minObservationsInNode"]],
       distribution = "multinomial", n.cores = 1
     ) # Multiple cores breaks modules in JASP, see: INTERNAL-jasp#372
     validationProbs <- gbm::predict.gbm(fit, newdata = validationSet, n.trees = noOfTrees, type = "response")
@@ -157,7 +157,7 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
   result[["method"]] <- if (options[["modelValid"]] == "validationManual") "OOB" else ""
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["classes"]] <- dataPredictions
-  if (options[["modelOpt"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "optimizationManual") {
     result[["validationConfTable"]] <- table("Pred" = validationPredictions, "Real" = validationSet[, options[["target"]]])
     result[["validAcc"]] <- sum(diag(prop.table(result[["validationConfTable"]])))
     result[["nvalid"]] <- nrow(validationSet)

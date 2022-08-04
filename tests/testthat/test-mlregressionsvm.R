@@ -6,7 +6,7 @@ options$predictors <- c("Sepal.Width", "Petal.Length", "Petal.Width")
 options$validationMeasures <- TRUE
 options$tableSupportVectors <- TRUE
 options$predictedPerformancePlot <- TRUE
-options$modelOpt <- "optimizationManual"
+options$modelOptimization <- "optimizationManual"
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
 options$holdoutData <- "holdoutManual"
@@ -15,7 +15,7 @@ options$noOfFolds <- 5
 options$predictionsColumn <- ""
 options$saveModel <- FALSE
 options$savePath <- ""
-options$seedBox <- TRUE
+options$setSeed <- TRUE
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""

@@ -72,7 +72,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   if (is.null(dataset)) {
     dataset <- .readAndAddCompleteRowIndices(dataset, columnsAsNumeric = variables.to.read)
   }
-  if (length(unlist(options[["predictors"]])) > 0 && options[["target"]] != "" && options[["scaleEqualSD"]]) {
+  if (length(unlist(options[["predictors"]])) > 0 && options[["target"]] != "" && options[["scaleVariables"]]) {
     dataset[, c(options[["predictors"]], options[["target"]])] <- .scaleNumericData(dataset[, c(options[["predictors"]], options[["target"]]), drop = FALSE])
   }
   return(dataset)
@@ -105,7 +105,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   # Create the generated test set indicator
   testIndicatorColumn <- rep(1, nrow(dataset))
   testIndicatorColumn[trainingIndex] <- 0
-  if (options[["modelOpt"]] == "optimizationManual") {
+  if (options[["modelOptimization"]] == "optimizationManual") {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
@@ -135,7 +135,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
       family = "gaussian", weights = trainingWeights[-validationIndex], offset = NULL, alpha = alpha,
       standardize = FALSE, intercept = options[["intercept"]], thresh = options[["thresh"]]
     )
-    lambda <- switch(options[["modelOpt"]],
+    lambda <- switch(options[["modelOptimization"]],
       "optMin" = trainingFit[["lambda.min"]],
       "opt1SE" = trainingFit[["lambda.1se"]]
     )
@@ -173,7 +173,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   result[["cvMSELambda"]] <- data.frame(lambda = trainingFit[["lambda"]], MSE = trainingFit[["cvm"]], sd = trainingFit[["cvsd"]])
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["values"]] <- dataPredictions
-  if (options[["modelOpt"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "optimizationManual") {
     result[["validMSE"]] <- mean((as.numeric(validationPredictions) - validationSet[, options[["target"]]])^2)
     result[["nvalid"]] <- nrow(validationSet)
   }
@@ -187,9 +187,9 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   table <- createJaspTable(gettext("Regression Coefficients"))
   table$position <- position
   table$dependOn(options = c(
-    "coefTable", "trainingDataManual", "weights", "scaleEqualSD", "modelOpt",
-    "target", "predictors", "seed", "seedBox", "modelValid",
-    "penalty", "alpha", "thresh", "intercept", "modelOpt", "lambda",
+    "coefTable", "trainingDataManual", "weights", "scaleVariables", "modelOptimization",
+    "target", "predictors", "seed", "setSeed", "modelValid",
+    "penalty", "alpha", "thresh", "intercept", "modelOptimization", "lambda",
     "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
     "holdoutData", "testDataManual"
   ))
@@ -226,9 +226,9 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   plot <- createJaspPlot(plot = NULL, title = gettext("Variable Trace Plot"), width = 500, height = 300)
   plot$position <- position
   plot$dependOn(options = c(
-    "variableTrace", "variableTraceLegend", "trainingDataManual", "weights", "scaleEqualSD", "modelOpt",
-    "target", "predictors", "seed", "seedBox", "modelValid",
-    "penalty", "alpha", "thresh", "intercept", "modelOpt", "lambda",
+    "variableTrace", "variableTraceLegend", "trainingDataManual", "weights", "scaleVariables", "modelOptimization",
+    "target", "predictors", "seed", "setSeed", "modelValid",
+    "penalty", "alpha", "thresh", "intercept", "modelOptimization", "lambda",
     "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
     "holdoutData", "testDataManual"
   ))
@@ -262,9 +262,9 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   plot <- createJaspPlot(plot = NULL, title = gettext("Lambda Evaluation Plot"), width = 500, height = 300)
   plot$position <- position
   plot$dependOn(options = c(
-    "lambdaEvaluation", "lambdaEvaluationLegend", "trainingDataManual", "weights", "scaleEqualSD", "modelOpt",
-    "target", "predictors", "seed", "seedBox", "modelValid",
-    "penalty", "alpha", "thresh", "intercept", "modelOpt", "lambda",
+    "lambdaEvaluation", "lambdaEvaluationLegend", "trainingDataManual", "weights", "scaleVariables", "modelOptimization",
+    "target", "predictors", "seed", "setSeed", "modelValid",
+    "penalty", "alpha", "thresh", "intercept", "modelOptimization", "lambda",
     "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
     "holdoutData", "testDataManual"
   ))

@@ -209,13 +209,13 @@ Form
 			CheckBox
 			{
 				text:									qsTr("Scale variables")
-				name:									"scaleEqualSD"
+				name:									"scaleVariables"
 				checked:								true
 			}
 
 			CheckBox
 			{
-				name:									"seedBox"
+				name:									"setSeed"
 				text:									qsTr("Set seed")
 				childrenOnSameRow:						true
 
@@ -236,7 +236,7 @@ Form
 
 			RadioButtonGroup
 			{
-				name:									"modelOpt"
+				name:									"modelOptimization"
 
 				RadioButton 
 				{

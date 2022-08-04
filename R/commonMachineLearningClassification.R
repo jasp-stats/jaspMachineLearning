@@ -23,9 +23,9 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
 .mlClassificationDependencies <- function(options, includeSaveOptions = FALSE) {
   opt <- c(
-    "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt", "validationDataManual",
-    "target", "predictors", "seed", "seedBox", "validationLeaveOneOut", "maxK", "noOfFolds", "modelValid", "cp", "degree", "gamma",
-    "estimationMethod", "noOfTrees", "maxTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "shrinkage", "intDepth", "nNode", "cost", "tolerance", "epsilon",
+    "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleVariables", "modelOptimization", "validationDataManual",
+    "target", "predictors", "seed", "setSeed", "validationLeaveOneOut", "maxNearestNeighbors", "noOfFolds", "modelValid", "complexityParameter", "degree", "gamma",
+    "estimationMethod", "noOfTrees", "maxTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors", "shrinkage", "interactionDepth", "minObservationsInNode", "cost", "tolerance", "epsilon",
     "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual",
     "threshold", "algorithm", "learningRate", "errfct", "actfct", "layers", "stepMax", "maxGen", "genSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProp", "candidates"
   )
@@ -39,7 +39,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   if (is.null(dataset)) {
     dataset <- .readDataClassificationRegressionAnalyses(dataset, options)
   }
-  if (length(unlist(options[["predictors"]])) > 0 && options[["scaleEqualSD"]]) {
+  if (length(unlist(options[["predictors"]])) > 0 && options[["scaleVariables"]]) {
     dataset[, options[["predictors"]]] <- .scaleNumericData(dataset[, options[["predictors"]], drop = FALSE])
   }
   if (options[["target"]] != "") {
@@ -75,7 +75,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     return()
   }
   # set the seed so that every time the same set is chosen (to prevent random results) ##
-  if (options[["seedBox"]]) {
+  if (options[["setSeed"]]) {
     set.seed(options[["seed"]])
   }
   if (ready) {
@@ -134,11 +134,11 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   # Add common columns
   table$addColumnInfo(name = "nTrain", title = gettext("n(Train)"), type = "integer")
-  if (options[["modelOpt"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "optimizationManual") {
     table$addColumnInfo(name = "nValid", title = gettext("n(Validation)"), type = "integer")
   }
   table$addColumnInfo(name = "nTest", title = gettext("n(Test)"), type = "integer")
-  if (options[["modelOpt"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "optimizationManual") {
     table$addColumnInfo(name = "validAcc", title = gettext("Validation Accuracy"), type = "number")
   }
   table$addColumnInfo(name = "testAcc", title = gettext("Test Accuracy"), type = "number")
@@ -165,7 +165,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   .mlClassificationComputeResults(dataset, options, jaspResults, ready, type = type)
   classificationResult <- jaspResults[["classificationResult"]]$object
   nTrain <- classificationResult[["ntrain"]]
-  if (options[["modelOpt"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "optimizationManual") {
     nValid <- classificationResult[["nvalid"]]
     if (options[["modelValid"]] == "validationKFold") {
       # Adjust displayed train and test size for cross-validation
@@ -178,10 +178,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   # Fill the table per analysis
   if (type == "knn") {
-    if (options[["modelOpt"]] == "optimizationError") {
+    if (options[["modelOptimization"]] == "optimizationError") {
       table$addFootnote(gettext("The model is optimized with respect to the <i>validation set accuracy</i>."))
     }
-    if (classificationResult[["nn"]] == options[["maxK"]] && options[["modelOpt"]] != "validationManual") {
+    if (classificationResult[["nn"]] == options[["maxNearestNeighbors"]] && options[["modelOptimization"]] != "validationManual") {
       table$addFootnote(gettext("The optimum number of nearest neighbors is the maximum number. You might want to adjust the range of optimization."))
     }
     distance <- if (classificationResult[["distance"]] == 1) gettext("Manhattan") else gettext("Euclidean")
@@ -193,7 +193,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       nTest = classificationResult[["ntest"]],
       testAcc = classificationResult[["testAcc"]]
     )
-    if (options[["modelOpt"]] != "optimizationManual") {
+    if (options[["modelOptimization"]] != "optimizationManual") {
       row <- cbind(row, nValid = nValid, validAcc = classificationResult[["validAcc"]])
     }
     table$addRows(row)
@@ -213,7 +213,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     )
     table$addRows(row)
   } else if (type == "randomForest") {
-    if (options[["modelOpt"]] == "optimizationError") {
+    if (options[["modelOptimization"]] == "optimizationError") {
       table$addFootnote(gettext("The model is optimized with respect to the <i>out-of-bag accuracy</i>."))
     }
     row <- data.frame(
@@ -224,12 +224,12 @@ gettextf <- function(fmt, ..., domain = NULL) {
       testAcc = classificationResult[["testAcc"]],
       oob = classificationResult[["oobAccuracy"]]
     )
-    if (options[["modelOpt"]] != "optimizationManual") {
+    if (options[["modelOptimization"]] != "optimizationManual") {
       row <- cbind(row, nValid = nValid, validAcc = classificationResult[["validAcc"]])
     }
     table$addRows(row)
   } else if (type == "boosting") {
-    if (options[["modelOpt"]] == "optimizationOOB") {
+    if (options[["modelOptimization"]] == "optimizationOOB") {
       table$addFootnote(gettext("The model is optimized with respect to the <i>out-of-bag accuracy</i>."))
     }
     row <- data.frame(
@@ -239,14 +239,14 @@ gettextf <- function(fmt, ..., domain = NULL) {
       nTest = classificationResult[["ntest"]],
       testAcc = classificationResult[["testAcc"]]
     )
-    if (options[["modelOpt"]] != "optimizationManual") {
+    if (options[["modelOptimization"]] != "optimizationManual") {
       row <- cbind(row, nValid = nValid, validAcc = classificationResult[["validAcc"]])
     }
     table$addRows(row)
   } else if (type == "neuralnet") {
-    if (options[["modelOpt"]] == "optimizationManual") {
+    if (options[["modelOptimization"]] == "optimizationManual") {
       table$addFootnote(gettext("The model is optimized with respect to the <i>sum of squares</i>."))
-    } else if (options[["modelOpt"]] == "optimizationError") {
+    } else if (options[["modelOptimization"]] == "optimizationError") {
       table$addFootnote(gettext("The model is optimized with respect to the <i>validation set accuracy</i>."))
     }
     row <- data.frame(
@@ -256,7 +256,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       nTest = classificationResult[["ntest"]],
       testAcc = classificationResult[["testAcc"]]
     )
-    if (options[["modelOpt"]] != "optimizationManual") {
+    if (options[["modelOptimization"]] != "optimizationManual") {
       row <- cbind(row, nValid = nValid, validAcc = classificationResult[["validAcc"]])
     }
     table$addRows(row)
@@ -341,7 +341,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   plot <- createJaspPlot(title = gettext("Decision Boundary Matrix"), height = 400, width = 300)
   plot$position <- position
-  plot$dependOn(options = c(.mlClassificationDependencies(options), "decisionBoundary", "plotPoints", "plotLegend"))
+  plot$dependOn(options = c(.mlClassificationDependencies(options), "decisionBoundary", "pointsShown", "legendShown"))
   jaspResults[["decisionBoundary"]] <- plot
   if (!ready || length(options[["predictors"]]) < 2) {
     return()
@@ -381,7 +381,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         formula <- formula(paste(options[["target"]], "~", paste(colnames(predictors), collapse = " + ")))
         plotMat[[row - 1, col]] <- .decisionBoundaryPlot(dataset, options, jaspResults, predictors, target, formula, l, type = type)
       }
-      if (l > 2 && options[["plotLegend"]]) {
+      if (l > 2 && options[["legendShown"]]) {
         plotMat[[1, 2]] <- .legendPlot(dataset, options, col)
       }
       progressbarTick()
@@ -429,14 +429,14 @@ gettextf <- function(fmt, ..., domain = NULL) {
     fit <- randomForest::randomForest(
       x = predictors, y = target,
       ntree = classificationResult[["noOfTrees"]], mtry = classificationResult[["predPerSplit"]],
-      sampsize = classificationResult[["bagFrac"]], importance = TRUE, keep.forest = TRUE
+      sampsize = classificationResult[["baggingFraction"]], importance = TRUE, keep.forest = TRUE
     )
     predictions <- predict(fit, newdata = grid)
   } else if (type == "boosting") {
     fit <- gbm::gbm(
       formula = formula, data = dataset, n.trees = classificationResult[["noOfTrees"]],
-      shrinkage = options[["shrinkage"]], interaction.depth = options[["intDepth"]],
-      cv.folds = classificationResult[["noOfFolds"]], bag.fraction = options[["bagFrac"]], n.minobsinnode = options[["nNode"]],
+      shrinkage = options[["shrinkage"]], interaction.depth = options[["interactionDepth"]],
+      cv.folds = classificationResult[["noOfFolds"]], bag.fraction = options[["baggingFraction"]], n.minobsinnode = options[["minObservationsInNode"]],
       distribution = "multinomial", n.cores = 1
     ) # multiple cores breaks modules in JASP, see: INTERNAL-jasp#372
     probabilities <- gbm::predict.gbm(fit, newdata = grid, n.trees = classificationResult[["noOfTrees"]], type = "response")
@@ -459,13 +459,13 @@ gettextf <- function(fmt, ..., domain = NULL) {
     predictions <- as.factor(max.col(predict(fit, newdata = grid)))
     levels(predictions) <- unique(dataset[, options[["target"]]])
   } else if (type == "rpart") {
-    fit <- rpart::rpart(formula, data = dataset, method = "class", control = rpart::rpart.control(minsplit = options[["nSplit"]], minbucket = options[["nNode"]], maxdepth = options[["intDepth"]], cp = options[["cp"]]))
+    fit <- rpart::rpart(formula, data = dataset, method = "class", control = rpart::rpart.control(minsplit = options[["minObservationsForSplit"]], minbucket = options[["minObservationsInNode"]], maxdepth = options[["interactionDepth"]], cp = options[["complexityParameter"]]))
     predictions <- as.factor(max.col(predict(fit, newdata = grid)))
     levels(predictions) <- unique(dataset[, options[["target"]]])
   } else if (type == "svm") {
     fit <- e1071::svm(formula,
       data = dataset, method = "C-classification", kernel = options[["weights"]], cost = options[["cost"]], tolerance = options[["tolerance"]],
-      epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]], gamma = options[["gamma"]], coef0 = options[["cp"]]
+      epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]], gamma = options[["gamma"]], coef0 = options[["complexityParameter"]]
     )
     predictions <- predict(fit, newdata = grid)
   }
@@ -481,12 +481,12 @@ gettextf <- function(fmt, ..., domain = NULL) {
     ggplot2::scale_fill_manual(values = .mlColorScheme(n = length(unique(target)))) +
     ggplot2::scale_x_continuous(name = NULL, breaks = xBreaks, limits = range(xBreaks)) +
     ggplot2::scale_y_continuous(name = NULL, breaks = yBreaks, limits = range(yBreaks))
-  if (options[["plotPoints"]]) {
+  if (options[["pointsShown"]]) {
     p <- p + jaspGraphs::geom_point(data = pointData, ggplot2::aes(x = x, y = y, fill = factor(target)), shape = shapes)
   }
   if (l <= 2) {
     p <- p + jaspGraphs::geom_rangeframe() +
-      jaspGraphs::themeJaspRaw(legend.position = if (options[["plotLegend"]]) "right" else "none")
+      jaspGraphs::themeJaspRaw(legend.position = if (options[["legendShown"]]) "right" else "none")
   } else {
     p <- p + jaspGraphs::geom_rangeframe() +
       jaspGraphs::themeJaspRaw()
@@ -565,8 +565,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
       typeData <- cbind(typeData, levelVar = levelVar)
       fit <- gbm::gbm(
         formula = formula, data = typeData, n.trees = classificationResult[["noOfTrees"]],
-        shrinkage = options[["shrinkage"]], interaction.depth = options[["intDepth"]],
-        cv.folds = classificationResult[["noOfFolds"]], bag.fraction = options[["bagFrac"]], n.minobsinnode = options[["nNode"]],
+        shrinkage = options[["shrinkage"]], interaction.depth = options[["interactionDepth"]],
+        cv.folds = classificationResult[["noOfFolds"]], bag.fraction = options[["baggingFraction"]], n.minobsinnode = options[["minObservationsInNode"]],
         distribution = "bernoulli", n.cores = 1
       ) # multiple cores breaks modules in JASP, see: INTERNAL-jasp#372
       score <- predict(fit, newdata = test, n.trees = classificationResult[["noOfTrees"]], type = "response")
@@ -576,7 +576,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       fit <- randomForest::randomForest(
         x = typeData, y = factor(levelVar),
         ntree = classificationResult[["noOfTrees"]], mtry = classificationResult[["predPerSplit"]],
-        sampsize = classificationResult[["bagFrac"]], importance = TRUE, keep.forest = TRUE
+        sampsize = classificationResult[["baggingFraction"]], importance = TRUE, keep.forest = TRUE
       )
       score <- predict(fit, test, type = "prob")[, "TRUE"]
     } else if (type == "neuralnet") {
@@ -596,12 +596,12 @@ gettextf <- function(fmt, ..., domain = NULL) {
       )
       score <- max.col(predict(fit, test))
     } else if (type == "rpart") {
-      fit <- rpart::rpart(formula, data = typeData, method = "class", control = rpart::rpart.control(minsplit = options[["nSplit"]], minbucket = options[["nNode"]], maxdepth = options[["intDepth"]], cp = options[["cp"]]))
+      fit <- rpart::rpart(formula, data = typeData, method = "class", control = rpart::rpart.control(minsplit = options[["minObservationsForSplit"]], minbucket = options[["minObservationsInNode"]], maxdepth = options[["interactionDepth"]], cp = options[["complexityParameter"]]))
       score <- max.col(predict(fit, test))
     } else if (type == "svm") {
       fit <- e1071::svm(formula,
         data = typeData, type = "C-classification", kernel = options[["weights"]], cost = options[["cost"]], tolerance = options[["tolerance"]],
-        epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]], gamma = options[["gamma"]], coef0 = options[["cp"]]
+        epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]], gamma = options[["gamma"]], coef0 = options[["complexityParameter"]]
       )
       score <- as.numeric(predict(fit, test))
     }
@@ -635,7 +635,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Andrews Curves Plot"), width = 450, height = 300)
   plot$position <- position
-  plot$dependOn(options = c("andrewsCurve", "scaleEqualSD", "target", "predictors", "seed", "seedBox"))
+  plot$dependOn(options = c("andrewsCurve", "scaleVariables", "target", "predictors", "seed", "setSeed"))
   jaspResults[["andrewsCurve"]] <- plot
   if (!ready) {
     return()
@@ -845,7 +845,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   table$dependOn(options = c(.mlClassificationDependencies(options), "classProportionsTable"))
   table$addColumnInfo(name = "group", title = "", type = "string")
   table$addColumnInfo(name = "dataset", title = gettext("Data Set"), type = "number")
-  if (options[["modelOpt"]] == "optimizationManual") {
+  if (options[["modelOptimization"]] == "optimizationManual") {
     table$addColumnInfo(name = "train", title = gettext("Training Set"), type = "number")
   } else {
     if (options[["modelValid"]] == "validationManual") {
@@ -867,13 +867,13 @@ gettextf <- function(fmt, ..., domain = NULL) {
   classificationResult <- jaspResults[["classificationResult"]]$object
   dataValues <- rep(0, length(table[["group"]]))
   trainingValues <- rep(0, length(table[["group"]]))
-  if (options[["modelOpt"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "optimizationManual") {
     validValues <- rep(0, length(table[["group"]]))
   }
   testValues <- rep(0, length(table[["group"]]))
   dataTable <- prop.table(table(dataset[, options[["target"]]]))
   trainingTable <- prop.table(table(classificationResult[["train"]][, options[["target"]]]))
-  if (options[["modelOpt"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "optimizationManual") {
     validTable <- prop.table(table(classificationResult[["valid"]][, options[["target"]]]))
   }
   testTable <- prop.table(table(classificationResult[["test"]][, options[["target"]]]))
@@ -885,7 +885,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     trainingIndex <- which(names(trainingTable) == as.character(Dlevels)[i])
     trainingValues[trainingIndex] <- as.numeric(trainingTable)[trainingIndex]
     # Validation set
-    if (options[["modelOpt"]] != "optimizationManual") {
+    if (options[["modelOptimization"]] != "optimizationManual") {
       validIndex <- which(names(validTable) == as.character(Dlevels)[i])
       validValues[validIndex] <- as.numeric(validTable)[validIndex]
     }
@@ -895,7 +895,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   table[["dataset"]] <- dataValues
   table[["train"]] <- trainingValues
-  if (options[["modelOpt"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "optimizationManual") {
     table[["valid"]] <- validValues
   }
   table[["test"]] <- testValues
@@ -962,8 +962,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
   typeData$levelVar <- levelVar
   fit <- gbm::gbm(
     formula = AUCformula, data = typeData, n.trees = noOfTrees,
-    shrinkage = options[["shrinkage"]], interaction.depth = options[["intDepth"]],
-    cv.folds = noOfFolds, bag.fraction = options[["bagFrac"]], n.minobsinnode = options[["nNode"]],
+    shrinkage = options[["shrinkage"]], interaction.depth = options[["interactionDepth"]],
+    cv.folds = noOfFolds, bag.fraction = options[["baggingFraction"]], n.minobsinnode = options[["minObservationsInNode"]],
     distribution = "bernoulli", n.cores = 1
   ) # Multiple cores breaks modules in JASP, see: INTERNAL-jasp#372
   score <- predict(fit, newdata = test, n.trees = noOfTrees, type = "response")
@@ -980,7 +980,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   typeData <- typeData[, -which(colnames(typeData) == "levelVar")]
   fit <- randomForest::randomForest(
     x = typeData, y = factor(levelVar), ntree = noOfTrees, mtry = noOfPredictors,
-    sampsize = ceiling(options[["bagFrac"]] * nrow(train)), importance = TRUE, keep.forest = TRUE
+    sampsize = ceiling(options[["baggingFraction"]] * nrow(train)), importance = TRUE, keep.forest = TRUE
   )
   score <- predict(fit, test, type = "prob")[, "TRUE"]
   return(score)
@@ -1007,7 +1007,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 }
 
 .calcAUCScore.partClassification <- function(AUCformula, test, typeData, options, jaspResults, ...) {
-  fit <- rpart::rpart(AUCformula, data = typeData, method = "class", control = rpart::rpart.control(minsplit = options[["nSplit"]], minbucket = options[["nNode"]], maxdepth = options[["intDepth"]], cp = options[["cp"]]))
+  fit <- rpart::rpart(AUCformula, data = typeData, method = "class", control = rpart::rpart.control(minsplit = options[["minObservationsForSplit"]], minbucket = options[["minObservationsInNode"]], maxdepth = options[["interactionDepth"]], cp = options[["complexityParameter"]]))
   score <- max.col(predict(fit, test))
   return(score)
 }
@@ -1015,7 +1015,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
 .calcAUCScore.svmClassification <- function(AUCformula, test, typeData, options, jaspResults, ...) {
   fit <- e1071::svm(AUCformula,
     data = typeData, type = "C-classification", kernel = options[["weights"]], cost = options[["cost"]], tolerance = options[["tolerance"]],
-    epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]], gamma = options[["gamma"]], coef0 = options[["cp"]]
+    epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]], gamma = options[["gamma"]], coef0 = options[["complexityParameter"]]
   )
   score <- as.numeric(predict(fit, test))
   return(score)

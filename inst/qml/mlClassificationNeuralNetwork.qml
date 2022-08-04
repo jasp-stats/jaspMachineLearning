@@ -139,14 +139,14 @@ Form
 			{
 				CheckBox
 				{
-					name:							"plotLegend"
+					name:							"legendShown"
 					text:							qsTr("Legend")
 					checked:						true
 				}
 
 				CheckBox
 				{
-					name:							"plotPoints"
+					name:							"pointsShown"
 					text:							qsTr("Points")
 					checked:						true
 				}
@@ -258,13 +258,13 @@ Form
 			CheckBox
 			{
 				text:									qsTr("Scale features")
-				name:									"scaleEqualSD"
+				name:									"scaleVariables"
 				checked:								true
 			}
 
 			CheckBox 
 			{
-				name:									"seedBox"
+				name:									"setSeed"
 				text:									qsTr("Set seed")
 				childrenOnSameRow:						true
 
@@ -285,7 +285,7 @@ Form
 
 			RadioButtonGroup
 			{
-				name:									"modelOpt"
+				name:									"modelOptimization"
 
 				RadioButton
 				{

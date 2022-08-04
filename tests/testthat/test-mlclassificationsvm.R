@@ -5,14 +5,14 @@ options$addIndicator <- FALSE
 options$addPredictions <- FALSE
 options$classProportionsTable <- TRUE
 options$holdoutData <- "holdoutManual"
-options$modelOpt <- "optimizationManual"
+options$modelOptimization <- "optimizationManual"
 options$modelValid <- "validationManual"
 options$noOfFolds <- 5
 options$predictionsColumn <- ""
 options$predictors <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
 options$saveModel <- FALSE
 options$savePath <- ""
-options$seedBox <- TRUE
+options$setSeed <- TRUE
 options$tableSupportVectors <- TRUE
 options$target <- "Species"
 options$testDataManual <- 0.2

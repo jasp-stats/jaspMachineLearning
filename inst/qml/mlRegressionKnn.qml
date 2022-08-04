@@ -78,13 +78,13 @@ Form
 		CheckBox
 		{
 			text:								qsTr("Weight function")
-			name:								"plotWeights"
+			name:								"weightsPlot"
 		}
 
 		CheckBox
 		{
 			text:								qsTr("Mean squared error")
-			name:								"plotErrorVsK"
+			name:								"errorVsKPlot"
 			enabled:							optimizeModel.checked
 		}
 
@@ -141,20 +141,20 @@ Form
 				values:
 					[
 					{ label:qsTr("Euclidian"),	value:"2"},
-					{ label:"Manhattan",		value:"1"}
+					{ label:qsTr("Manhattan"),	value:"1"}
 				]
 			}
 
 			CheckBox
 			{
 				text:							qsTr("Scale variables")
-				name:							"scaleEqualSD"
+				name:							"scaleVariables"
 				checked:						true
 			}
 
 			CheckBox
 			{
-				name:							"seedBox"
+				name:							"setSeed"
 				text:							qsTr("Set seed")
 				childrenOnSameRow:				true
 
@@ -172,7 +172,7 @@ Form
 		RadioButtonGroup
 		{
 			title:								qsTr("Number of Nearest Neighbors")
-			name:								"modelOpt"
+			name:								"modelOptimization"
 
 			RadioButton
 			{
@@ -198,7 +198,7 @@ Form
 
 				IntegerField
 				{
-					name:						"maxK"
+					name:						"maxNearestNeighbors"
 					text:						qsTr("Max. nearest neighbors")
 					defaultValue:				10
 					min:						1

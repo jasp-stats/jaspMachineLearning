@@ -67,7 +67,7 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
   # Create the generated test set indicator
   testIndicatorColumn <- rep(1, nrow(dataset))
   testIndicatorColumn[trainingIndex] <- 0
-  if (options[["modelOpt"]] == "optimizationManual") {
+  if (options[["modelOptimization"]] == "optimizationManual") {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
@@ -76,14 +76,14 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
       distance = distance, kernel = weights, scale = FALSE
     )
     nn <- options[["noOfNearestNeighbours"]]
-  } else if (options[["modelOpt"]] == "optimizationError") {
+  } else if (options[["modelOptimization"]] == "optimizationError") {
     # Create a train, validation and test set (optimization)
     validationIndex <- sample.int(nrow(trainingAndValidationSet), size = ceiling(options[["validationDataManual"]] * nrow(trainingAndValidationSet)))
     testSet <- dataset[-trainingIndex, ]
     validationSet <- trainingAndValidationSet[validationIndex, ]
     trainingSet <- trainingAndValidationSet[-validationIndex, ]
     if (options[["modelValid"]] == "validationManual") {
-      nnRange <- 1:options[["maxK"]]
+      nnRange <- 1:options[["maxNearestNeighbors"]]
       errorStore <- numeric(length(nnRange))
       trainErrorStore <- numeric(length(nnRange))
       startProgressbar(length(nnRange))
@@ -100,7 +100,7 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
         trainErrorStore[i] <- mean((trainingFit$fitted.values - trainingSet[, options[["target"]]])^2)
         progressbarTick()
       }
-      nn <- switch(options[["modelOpt"]],
+      nn <- switch(options[["modelOptimization"]],
         "optimizationError" = nnRange[which.min(errorStore)]
       )
       testFit <- kknn::kknn(
@@ -108,7 +108,7 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
         distance = distance, kernel = weights, scale = FALSE
       )
     } else if (options[["modelValid"]] == "validationKFold") {
-      nnRange <- 1:options[["maxK"]]
+      nnRange <- 1:options[["maxNearestNeighbors"]]
       errorStore <- numeric(length(nnRange))
       startProgressbar(length(nnRange))
       for (i in nnRange) {
@@ -119,7 +119,7 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
         errorStore[i] <- mean((validationFit[[1]][, 1] - validationFit[[1]][, 2])^2)
         progressbarTick()
       }
-      nn <- switch(options[["modelOpt"]],
+      nn <- switch(options[["modelOptimization"]],
         "optimizationError" = nnRange[which.min(errorStore)]
       )
       validationFit <- kknn::cv.kknn(
@@ -131,10 +131,10 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
       trainingSet <- trainingAndValidationSet
       validationSet <- trainingAndValidationSet
     } else if (options[["modelValid"]] == "validationLeaveOneOut") {
-      nnRange <- 1:options[["maxK"]]
+      nnRange <- 1:options[["maxNearestNeighbors"]]
       validationFit <- kknn::train.kknn(formula = formula, data = trainingAndValidationSet, ks = nnRange, scale = FALSE, distance = distance, kernel = weights)
       errorStore <- as.numeric(validationFit$MEAN.SQU)
-      nn <- switch(options[["modelOpt"]],
+      nn <- switch(options[["modelOptimization"]],
         "optimizationError" = nnRange[which.min(errorStore)]
       )
       validationFit <- list(fitted.values = validationFit[["fitted.values"]][[1]])
@@ -160,7 +160,7 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
   result[["testPred"]] <- testFit$fitted.values
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["values"]] <- dataPredictions
-  if (options[["modelOpt"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "optimizationManual") {
     result[["accuracyStore"]] <- errorStore
     result[["validMSE"]] <- mean((validationFit$fitted.values - validationSet[, options[["target"]]])^2)
     result[["nvalid"]] <- nrow(validationSet)
@@ -173,7 +173,7 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
 }
 
 .mlKnnPlotError <- function(dataset, options, jaspResults, ready, position, purpose) {
-  if (!is.null(jaspResults[["plotErrorVsK"]]) || !options[["plotErrorVsK"]] || options[["modelOpt"]] == "optimizationManual") {
+  if (!is.null(jaspResults[["errorVsKPlot"]]) || !options[["errorVsKPlot"]] || options[["modelOptimization"]] == "optimizationManual") {
     return()
   }
   plotTitle <- switch(purpose,
@@ -183,11 +183,11 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
   plot <- createJaspPlot(plot = NULL, title = plotTitle, width = 400, height = 300)
   plot$position <- position
   plot$dependOn(options = c(
-    "plotErrorVsK", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleEqualSD", "modelOpt",
-    "target", "predictors", "seed", "seedBox", "modelValid", "maxK", "noOfFolds", "modelValid",
+    "errorVsKPlot", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleVariables", "modelOptimization",
+    "target", "predictors", "seed", "setSeed", "modelValid", "maxNearestNeighbors", "noOfFolds", "modelValid",
     "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "holdoutData", "testDataManual"
   ))
-  jaspResults[["plotErrorVsK"]] <- plot
+  jaspResults[["errorVsKPlot"]] <- plot
   if (!ready) {
     return()
   }
@@ -200,7 +200,7 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
     "regression"     = gettext("Mean Squared Error")
   )
   if (options[["modelValid"]] == "validationManual") {
-    xvalues <- rep(1:options[["maxK"]], 2)
+    xvalues <- rep(1:options[["maxNearestNeighbors"]], 2)
     yvalues1 <- result[["accuracyStore"]]
     yvalues2 <- result[["trainAccuracyStore"]]
     yvalues <- c(yvalues1, yvalues2)
@@ -222,7 +222,7 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
       jaspGraphs::geom_rangeframe() +
       jaspGraphs::themeJaspRaw(legend.position = "top")
   } else if (options[["modelValid"]] != "validationManual") {
-    xvalues <- 1:options[["maxK"]]
+    xvalues <- 1:options[["maxNearestNeighbors"]]
     yvalues <- result[["accuracyStore"]]
     type <- rep(gettext("Training and validation set"), each = length(xvalues))
     plotData <- data.frame(x = xvalues, y = yvalues, type = type)
@@ -241,7 +241,7 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
 }
 
 .mlKnnPlotWeights <- function(options, jaspResults, position) {
-  if (!is.null(jaspResults[["plotWeights"]]) || !options[["plotWeights"]]) {
+  if (!is.null(jaspResults[["weightsPlot"]]) || !options[["weightsPlot"]]) {
     return()
   }
   weights <- switch(options[["weights"]],
@@ -258,8 +258,8 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
   )
   plot <- createJaspPlot(title = gettextf("%1$s Weight Function", weights), width = 400, height = 300)
   plot$position <- position
-  plot$dependOn(options = c("plotWeights", "weights"))
-  jaspResults[["plotWeights"]] <- plot
+  plot$dependOn(options = c("weightsPlot", "weights"))
+  jaspResults[["weightsPlot"]] <- plot
   if (options[["weights"]] == "rank" || options[["weights"]] == "optimal") {
     plot$setError(gettext("Plotting not possible: The selected weighting scheme cannot be visualized separately from the data."))
     return()
