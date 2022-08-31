@@ -3,21 +3,21 @@ context("Machine Learning Fuzzy C-Means Clustering")
 options <- jaspTools::analysisOptions("mlClusteringFuzzyCMeans")
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
-options$clusterEvaluationMetrics <- TRUE
-options$modelOpt <- "validationOptimized"
-options$plot2dCluster <- TRUE
+options$tableClusterEvaluationMetrics <- TRUE
+options$clusterDeterminationMethod <- "optimized"
+options$tsneClusterPlot <- TRUE
 options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
                            "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
                            "Hue", "Dilution", "Proline")
-options$seedBox <- TRUE
-options$tableClusterInfoBetweenSumSquares <- TRUE
-options$tableClusterInfoCentroids <- TRUE
-options$tableClusterInfoSilhouette <- TRUE
-options$tableClusterInfoTotalSumSquares <- TRUE
-options$withinssPlot <- TRUE
-options$plotClusterMeans <- TRUE
-options$showBars <- TRUE
-options$oneFigure <- TRUE
+options$randomSeed <- TRUE
+options$tableClusterInformationBetweenSumOfSquares <- TRUE
+options$tableClusterInformationCentroids <- TRUE
+options$tableClusterInformationSilhouetteScore <- TRUE
+options$tableClusterInformationTotalSumOfSquares <- TRUE
+options$elbowMethodPlot <- TRUE
+options$clusterMeanPlot <- TRUE
+options$clusterMeanPlotBarPlot <- TRUE
+options$clusterMeanPlotSingleFigure <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClusteringFuzzyCMeans", "wine.csv", options)
 

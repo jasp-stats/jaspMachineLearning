@@ -53,10 +53,10 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
 }
 
 .densityBasedClustering <- function(dataset, options, jaspResults) {
-  if (options[["distance"]] == "Correlated densities") {
-    fit <- dbscan::dbscan(as.dist(1 - cor(t(as.data.frame(dataset[, options[["predictors"]]])), method = "pearson")), eps = options[["eps"]], minPts = options[["minPts"]])
+  if (options[["distance"]] == "correlatedDensities") {
+    fit <- dbscan::dbscan(as.dist(1 - cor(t(as.data.frame(dataset[, options[["predictors"]]])), method = "pearson")), eps = options[["epsilonNeighborhoodSize"]], minPts = options[["minCorePoints"]])
   } else {
-    fit <- dbscan::dbscan(as.data.frame(dataset[, options[["predictors"]]]), eps = options[["eps"]], minPts = options[["minPts"]])
+    fit <- dbscan::dbscan(as.data.frame(dataset[, options[["predictors"]]]), eps = options[["epsilonNeighborhoodSize"]], minPts = options[["minCorePoints"]])
   }
   noisePoints <- length(fit[["cluster"]][fit[["cluster"]] == 0])
   clusters <- ifelse(noisePoints > 0, yes = length(table(fit[["cluster"]])) - 1, no = length(table(fit[["cluster"]])))
@@ -77,9 +77,9 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
   zeroMark <- nullClusters == length(predictions)
   oneMark <- oneClusters == length(predictions)
   if (!oneMark && !zeroMark) {
-    if (options[["distance"]] == "Normal densities") {
+    if (options[["distance"]] == "normalDensities") {
       silhouettes <- summary(cluster::silhouette(predictions, .mlClusteringCalculateDistances(dataset[, options[["predictors"]]])))
-    } else if (options[["distance"]] == "Correlated densities") {
+    } else if (options[["distance"]] == "correlatedDensities") {
       silhouettes <- summary(cluster::silhouette(predictions, as.dist(1 - cor(t(dataset[, options[["predictors"]]])))))
     }
   } else {
@@ -104,38 +104,38 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
 }
 
 .mlClusteringDensityBasedPlotError <- function(dataset, options, jaspResults, ready, position) {
-  if (!is.null(jaspResults[["kdistPlot"]]) || !options[["k-distplot"]]) {
+  if (!is.null(jaspResults[["kdistPlot"]]) || !options[["kDistancePlot"]]) {
     return()
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("K-Distance Plot"), width = 400, height = 300)
   plot$position <- position
-  plot$dependOn(options = c("predictors", "eps", "minPts", "modelOpt", "seed", "scaleEqualSD", "ready", "k-distplot", "distance"))
+  plot$dependOn(options = c("predictors", "epsilonNeighborhoodSize", "minCorePoints", "clusterDeterminationMethod", "randomSeedValue", "equalSdScale", "ready", "kDistancePlot", "distance"))
   jaspResults[["kdistPlot"]] <- plot
   if (!ready) {
     return()
   }
   uniqueRows <- which(!duplicated(dataset[, options[["predictors"]]]))
   data <- dataset[uniqueRows, options[["predictors"]]]
-  if (options[["distance"]] == "Correlated densities") {
-    knnDist <- dbscan::kNNdist(as.dist(1 - cor(t(as.data.frame(data)), method = "pearson")), k = options[["minPts"]])
+  if (options[["distance"]] == "correlatedDensities") {
+    knnDist <- dbscan::kNNdist(as.dist(1 - cor(t(as.data.frame(data)), method = "pearson")), k = options[["minCorePoints"]])
   } else {
-    knnDist <- dbscan::kNNdist(data, k = options[["minPts"]])
+    knnDist <- dbscan::kNNdist(data, k = options[["minCorePoints"]])
   }
   knnValues <- seq(from = 1, to = length(knnDist), by = 1)
   knnDistances <- sort(knnDist)
   plotData <- data.frame(x = knnValues, y = knnDistances)
   xBreaks <- jaspGraphs::getPrettyAxisBreaks(plotData$x, min.n = 4)
-  yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, plotData$y, options[["eps"]]), min.n = 4)
+  yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, plotData$y, options[["epsilonNeighborhoodSize"]]), min.n = 4)
   yKnee <- try(findCutoff(knnValues, knnDistances, method = "curvature")[["y"]])
   if (inherits(yKnee, "try-error")) { # this can cause a stackoverflow, in which case we abort and don't add it
     suggestedLine <- NULL
   } else {
     suggestedLine <- data.frame(xstart = xBreaks[1], xend = xBreaks[length(xBreaks)], ystart = yKnee, yend = yKnee)
   }
-  lineData <- data.frame(xstart = xBreaks[1], xend = xBreaks[length(xBreaks)], ystart = options[["eps"]], yend = options[["eps"]])
+  lineData <- data.frame(xstart = xBreaks[1], xend = xBreaks[length(xBreaks)], ystart = options[["epsilonNeighborhoodSize"]], yend = options[["epsilonNeighborhoodSize"]])
   p <- ggplot2::ggplot(data = plotData, ggplot2::aes(x = x, y = y)) +
     ggplot2::scale_x_continuous(name = gettext("Points Sorted by Distance"), breaks = xBreaks, limits = c(0, max(xBreaks))) +
-    ggplot2::scale_y_continuous(name = gettextf("%s-Nearest Neighbors \nDistance", options[["minPts"]]), breaks = yBreaks, limits = range(yBreaks))
+    ggplot2::scale_y_continuous(name = gettextf("%s-Nearest Neighbors \nDistance", options[["minCorePoints"]]), breaks = yBreaks, limits = range(yBreaks))
   if (!is.null(suggestedLine)) {
     p <- p + ggplot2::geom_segment(ggplot2::aes(x = xstart, xend = xend, y = ystart, yend = yend), data = suggestedLine, linetype = "dashed", color = "darkred") +
       ggplot2::geom_text(

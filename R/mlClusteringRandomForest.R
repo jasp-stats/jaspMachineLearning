@@ -56,26 +56,26 @@ mlClusteringRandomForest <- function(jaspResults, dataset, options, ...) {
 }
 
 .randomForestClustering <- function(dataset, options, jaspResults) {
-  if (options[["modelOpt"]] == "validationManual") {
+  if (options[["clusterDeterminationMethod"]] == "manual") {
     fit <- randomForest::randomForest(
       x = dataset[, options[["predictors"]]],
       y = NULL,
-      ntree = options[["noOfTrees"]],
+      ntree = options[["numberOfTrees"]],
       proximity = TRUE,
       oob.prox = TRUE
     )
-    clusters <- options[["noOfClusters"]]
+    clusters <- options[["clusterDeterminationMethodManualNumberOfClusters"]]
   } else {
-    avgSilh <- numeric(options[["maxClusters"]] - 1)
-    wssStore <- numeric(options[["maxClusters"]] - 1)
-    clusterRange <- 2:options[["maxClusters"]]
-    aicStore <- numeric(options[["maxClusters"]] - 1)
-    bicStore <- numeric(options[["maxClusters"]] - 1)
+    avgSilh <- numeric(options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]] - 1)
+    wssStore <- numeric(options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]] - 1)
+    clusterRange <- 2:options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]]
+    aicStore <- numeric(options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]] - 1)
+    bicStore <- numeric(options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]] - 1)
     startProgressbar(length(clusterRange))
     fit <- randomForest::randomForest(
       x = dataset[, options[["predictors"]]],
       y = NULL,
-      ntree = options[["noOfTrees"]],
+      ntree = options[["numberOfTrees"]],
       proximity = TRUE,
       oob.prox = TRUE
     )
@@ -94,15 +94,15 @@ mlClusteringRandomForest <- function(jaspResults, dataset, options, ...) {
       bicStore[i - 1] <- sum(wssTmp) + log(length(predictions)) * m * i
       progressbarTick()
     }
-    clusters <- switch(options[["optimizationCriterion"]],
-      "validationSilh" = clusterRange[which.max(avgSilh)],
-      "validationAIC" = clusterRange[which.min(aicStore)],
-      "validationBIC" = clusterRange[which.min(bicStore)]
+    clusters <- switch(options[["clusterDeterminationMethodOptimizedTypeOptimization"]],
+      "silhouette" = clusterRange[which.max(avgSilh)],
+      "aic" = clusterRange[which.min(aicStore)],
+      "bic" = clusterRange[which.min(bicStore)]
     )
     fit <- randomForest::randomForest(
       x = dataset[, options[["predictors"]]],
       y = NULL,
-      ntree = options[["noOfTrees"]],
+      ntree = options[["numberOfTrees"]],
       proximity = TRUE,
       oob.prox = TRUE
     )
@@ -128,7 +128,7 @@ mlClusteringRandomForest <- function(jaspResults, dataset, options, ...) {
   result[["Silh_score"]] <- silhouettes[["avg.width"]]
   result[["silh_scores"]] <- silhouettes[["clus.avg.widths"]]
   result[["fit"]] <- fit
-  if (options[["modelOpt"]] != "validationManual") {
+  if (options[["clusterDeterminationMethod"]] != "manual") {
     result[["silhStore"]] <- avgSilh
     result[["aicStore"]] <- aicStore
     result[["bicStore"]] <- bicStore
@@ -138,14 +138,14 @@ mlClusteringRandomForest <- function(jaspResults, dataset, options, ...) {
 }
 
 .mlClusteringRandomForestTableVarImp <- function(options, jaspResults, ready, position) {
-  if (!is.null(jaspResults[["importanceTable"]]) || !options[["importanceTable"]]) {
+  if (!is.null(jaspResults[["importanceTable"]]) || !options[["featureImportanceTable"]]) {
     return()
   }
   table <- createJaspTable(title = gettext("Feature Importance"))
   table$position <- position
   table$dependOn(options = c(
-    "predictors", "noOfClusters", "noOfRandomSets", "noOfIterations", "algorithm", "modelOpt", "seed", "optimizationCriterion",
-    "maxClusters", "seedBox", "scaleEqualSD", "m", "distance", "linkage", "eps", "minPts", "noOfTrees", "maxTrees", "importanceTable"
+    "predictors", "clusterDeterminationMethodManualNumberOfClusters", "noOfRandomSets", "maxNumberIterations", "algorithm", "clusterDeterminationMethod", "randomSeedValue", "clusterDeterminationMethodOptimizedTypeOptimization",
+    "clusterDeterminationMethodOptimizedMaxNumberOfClusters", "randomSeed", "equalSdScale", "fuzzinessParameter", "distance", "linkage", "epsilonNeighborhoodSize", "minCorePoints", "numberOfTrees", "maxTrees", "featureImportanceTable"
   ))
   table$addColumnInfo(name = "variable", title = "", type = "string")
   table$addColumnInfo(name = "measure", title = gettext("Mean decrease in Gini Index"), type = "number", format = "sf:4")

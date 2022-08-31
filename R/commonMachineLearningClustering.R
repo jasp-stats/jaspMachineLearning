@@ -17,8 +17,8 @@
 
 .mlClusteringDependencies <- function(options) {
   opt <- c(
-    "predictors", "noOfClusters", "noOfRandomSets", "noOfIterations", "algorithm", "modelOpt", "seed", "centers",
-    "maxClusters", "seedBox", "scaleEqualSD", "m", "distance", "linkage", "eps", "minPts", "noOfTrees", "maxTrees", "optimizationCriterion"
+    "predictors", "clusterDeterminationMethodManualNumberOfClusters", "noOfRandomSets", "maxNumberIterations", "algorithm", "clusterDeterminationMethod", "randomSeedValue", "centers",
+    "clusterDeterminationMethodOptimizedMaxNumberOfClusters", "randomSeed", "equalSdScale", "fuzzinessParameter", "distance", "linkage", "epsilonNeighborhoodSize", "minCorePoints", "numberOfTrees", "maxTrees", "clusterDeterminationMethodOptimizedTypeOptimization"
   )
   return(opt)
 }
@@ -29,7 +29,7 @@
   if (is.null(dataset)) {
     dataset <- .readAndAddCompleteRowIndices(dataset, predictors)
   }
-  if (options[["scaleEqualSD"]] && length(unlist(options[["predictors"]])) > 0) {
+  if (options[["equalSdScale"]] && length(unlist(options[["predictors"]])) > 0) {
     dataset <- .scaleNumericData(dataset)
   }
   return(dataset)
@@ -49,9 +49,9 @@
 .getCustomErrorChecksClustering <- function(dataset, options, type) {
   checkClusters <- function() {
     if (type != "densitybased") {
-      clusters <- switch(options[["modelOpt"]],
-        "validationManual" = options[["noOfClusters"]],
-        "validationOptimized" = options[["maxClusters"]]
+      clusters <- switch(options[["clusterDeterminationMethod"]],
+        "manual" = options[["clusterDeterminationMethodManualNumberOfClusters"]],
+        "optimized" = options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]]
       )
       if (clusters > (nrow(dataset) - 1)) {
         return(gettextf("You have specified more clusters than distinct data points. Please choose a number lower than %s.", nrow(dataset)))
@@ -103,8 +103,8 @@
     return()
   }
   # set the seed so that every time the same set is chosen (to prevent random results) ##
-  if (options[["seedBox"]]) {
-    set.seed(options[["seed"]])
+  if (options[["randomSeed"]]) {
+    set.seed(options[["randomSeedValue"]])
   }
   if (ready) {
     clusterResult <- switch(type,
@@ -158,15 +158,15 @@
   }
   .mlClusteringComputeResults(dataset, options, jaspResults, ready, type = type)
   clusterResult <- jaspResults[["clusterResult"]]$object
-  if (options[["modelOpt"]] != "validationManual") {
-    criterion <- switch(options[["optimizationCriterion"]],
-      "validationAIC" = gettext("AIC"),
-      "validationBIC" = gettext("BIC"),
-      "validationSilh" = gettext("silhouette")
+  if (options[["clusterDeterminationMethod"]] != "manual") {
+    criterion <- switch(options[["clusterDeterminationMethodOptimizedTypeOptimization"]],
+      "aic" = gettext("AIC"),
+      "bic" = gettext("BIC"),
+      "silhouette" = gettext("silhouette")
     )
     table$addFootnote(gettextf("The model is optimized with respect to the <i>%s</i> value.", criterion))
   }
-  if (clusterResult[["clusters"]] == options[["maxClusters"]] && options[["modelOpt"]] != "validationManual") {
+  if (clusterResult[["clusters"]] == options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]] && options[["clusterDeterminationMethod"]] != "manual") {
     message <- gettext("The optimum number of clusters is the maximum number of clusters. You might want to adjust the range of optimization.")
     table$addFootnote(message)
   }
@@ -178,7 +178,7 @@
       table$addFootnote(gettext("Your cluster model contains 1 cluster and 0 Noisepoints. You could change the Eps and MinPts parameters."), colNames = "clusters")
     }
   }
-  if (!options[["scaleEqualSD"]]) {
+  if (!options[["equalSdScale"]]) {
     table$addFootnote(gettext("The features in the model are <b>unstandardized</b>."))
   }
   row <- data.frame(
@@ -194,18 +194,18 @@
   }
   table <- createJaspTable(gettext("Cluster Information"))
   table$dependOn(options = c(
-    "tableClusterInformation", "tableClusterInfoWSS", "tableClusterInfoSilhouette", "tableClusterInfoCentroids",
-    "tableClusterInfoBetweenSumSquares", "tableClusterInfoTotalSumSquares", .mlClusteringDependencies(options)
+    "tableClusterInformation", "tableClusterInformationWithinSumOfSquares", "tableClusterInformationSilhouetteScore", "tableClusterInformationCentroids",
+    "tableClusterInformationBetweenSumOfSquares", "tableClusterInformationTotalSumOfSquares", .mlClusteringDependencies(options)
   ))
   table$position <- position
   table$transpose <- TRUE
   table$addColumnInfo(name = "cluster", title = gettext("Cluster"), type = "integer")
   table$addColumnInfo(name = "size", title = gettext("Size"), type = "integer")
   table$addColumnInfo(name = "percentage", title = gettext("Explained proportion within-cluster heterogeneity"), type = "number")
-  if (options[["tableClusterInfoWSS"]]) {
+  if (options[["tableClusterInformationWithinSumOfSquares"]]) {
     table$addColumnInfo(name = "withinss", title = gettext("Within sum of squares"), type = "number")
   }
-  if (options[["tableClusterInfoSilhouette"]]) {
+  if (options[["tableClusterInformationSilhouetteScore"]]) {
     table$addColumnInfo(name = "silh_scores", title = gettext("Silhouette score"), type = "number")
   }
   jaspResults[["clusterInfoTable"]] <- table
@@ -214,7 +214,7 @@
   }
   clusterResult <- jaspResults[["clusterResult"]]$object
   if (type == "kmeans" || type == "cmeans") {
-    if (options[["tableClusterInfoCentroids"]]) {
+    if (options[["tableClusterInformationCentroids"]]) {
       for (i in seq_along(options[["predictors"]])) {
         title <- gettextf("Center %s", options[["predictors"]][i])
         table$addColumnInfo(name = paste0("centroid", i), title = title, type = "number", format = "dp:3")
@@ -240,14 +240,14 @@
     size = size,
     percentage = withinss / sum(withinss)
   )
-  if (options[["tableClusterInfoWSS"]]) {
+  if (options[["tableClusterInformationWithinSumOfSquares"]]) {
     row <- cbind(row, withinss = withinss)
   }
-  if (options[["tableClusterInfoSilhouette"]]) {
+  if (options[["tableClusterInformationSilhouetteScore"]]) {
     row <- cbind(row, silh_scores = silh_scores)
   }
   if (type == "kmeans" || type == "cmeans") {
-    if (options[["tableClusterInfoCentroids"]]) {
+    if (options[["tableClusterInformationCentroids"]]) {
       for (i in 1:length(options[["predictors"]])) {
         row <- cbind(row, "tmp" = clusterResult[["centroids"]][, i])
         colnames(row)[length(colnames(row))] <- paste0("centroid", i)
@@ -255,22 +255,22 @@
     }
   }
   table$addRows(row)
-  if (options[["tableClusterInfoBetweenSumSquares"]]) {
+  if (options[["tableClusterInformationBetweenSumOfSquares"]]) {
     message <- gettextf("The Between Sum of Squares of the %1$s cluster model is %2$s", clusterResult[["clusters"]], round(clusterResult[["BSS"]], 2))
     table$addFootnote(message)
   }
-  if (options[["tableClusterInfoTotalSumSquares"]]) {
+  if (options[["tableClusterInformationTotalSumOfSquares"]]) {
     message <- gettextf("The Total Sum of Squares of the %1$s cluster model is %2$s", clusterResult[["clusters"]], round(clusterResult[["TSS"]], 2))
     table$addFootnote(message)
   }
 }
 
 .mlClusteringTableMetrics <- function(dataset, options, jaspResults, ready, position) {
-  if (!is.null(jaspResults[["clusterEvaluationMetrics"]]) || !options[["clusterEvaluationMetrics"]]) {
+  if (!is.null(jaspResults[["clusterEvaluationMetrics"]]) || !options[["tableClusterEvaluationMetrics"]]) {
     return()
   }
   table <- createJaspTable(gettext("Evaluation Metrics"))
-  table$dependOn(options = c("clusterEvaluationMetrics", .mlClusteringDependencies(options)))
+  table$dependOn(options = c("tableClusterEvaluationMetrics", .mlClusteringDependencies(options)))
   table$position <- position
   table$addColumnInfo(name = "metric", title = "", type = "string")
   table$addColumnInfo(name = "value", title = gettext("Value"), type = "number")
@@ -299,19 +299,19 @@
 }
 
 .mlClusteringPlotTsne <- function(dataset, options, jaspResults, ready, position, type) {
-  if (!is.null(jaspResults[["plot2dCluster"]]) || !options[["plot2dCluster"]]) {
+  if (!is.null(jaspResults[["plot2dCluster"]]) || !options[["tsneClusterPlot"]]) {
     return()
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("t-SNE Cluster Plot"), width = 450, height = 300)
   plot$position <- position
-  plot$dependOn(options = c("plot2dCluster", "labels", .mlClusteringDependencies(options)))
+  plot$dependOn(options = c("tsneClusterPlot", "tsneClusterPlotLabels", .mlClusteringDependencies(options)))
   jaspResults[["plot2dCluster"]] <- plot
   if (!ready) {
     return()
   }
   clusterResult <- jaspResults[["clusterResult"]]$object
-  if (options[["seedBox"]]) {
-    set.seed(options[["seed"]])
+  if (options[["randomSeed"]]) {
+    set.seed(options[["randomSeedValue"]])
   }
   startProgressbar(2)
   progressbarTick()
@@ -322,7 +322,7 @@
   if (is.null(jaspResults[["tsneOutput"]])) {
     tsne <- Rtsne::Rtsne(as.matrix(dataset), perplexity = nrow(dataset) / 4, check_duplicates = FALSE)
     jaspResults[["tsneOutput"]] <- createJaspState(tsne)
-    jaspResults[["tsneOutput"]]$dependOn(options = c("predictors", "seedBox", "seed"))
+    jaspResults[["tsneOutput"]]$dependOn(options = c("predictors", "randomSeed", "randomSeedValue"))
   } else {
     tsne <- jaspResults[["tsneOutput"]]$object
   }
@@ -345,11 +345,11 @@
     ggplot2::scale_y_continuous(name = NULL, limits = range(yBreaks)) +
     ggplot2::scale_fill_manual(name = gettext("Cluster"), values = .mlColorScheme(ncolors)) +
     jaspGraphs::geom_rangeframe() +
-    jaspGraphs::themeJaspRaw(legend.position = if (options[["legend"]]) "right" else "none") +
+    jaspGraphs::themeJaspRaw(legend.position = if (options[["tsneClusterPlotLegend"]]) "right" else "none") +
     ggplot2::theme(axis.ticks = ggplot2::element_blank(), 
                    axis.text.x = ggplot2::element_blank(), 
                    axis.text.y = ggplot2::element_blank())
-  if (options[["labels"]]) {
+  if (options[["tsneClusterPlotLabels"]]) {
     p <- p + ggrepel::geom_text_repel(ggplot2::aes(label = rownames(dataset), x = x, y = y), hjust = -1, vjust = 1, data = plotData)
   }
   progressbarTick()
@@ -357,12 +357,12 @@
 }
 
 .mlClusteringPlotElbow <- function(dataset, options, jaspResults, ready, position) {
-  if (!is.null(jaspResults[["optimPlot"]]) || !options[["withinssPlot"]] || options[["modelOpt"]] == "validationManual") {
+  if (!is.null(jaspResults[["optimPlot"]]) || !options[["elbowMethodPlot"]] || options[["clusterDeterminationMethod"]] == "manual") {
     return()
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Elbow Method Plot"), width = 400, height = 300)
   plot$position <- position
-  plot$dependOn(options = c("withinssPlot", .mlClusteringDependencies(options)))
+  plot$dependOn(options = c("elbowMethodPlot", .mlClusteringDependencies(options)))
   jaspResults[["optimPlot"]] <- plot
   if (!ready) {
     return()
@@ -373,12 +373,12 @@
   bic <- clusterResult[["bicStore"]]
   values <- c(wss, aic, bic)
   type <- rep(c(gettext("WSS"), gettext("AIC"), gettext("BIC")), each = length(wss))
-  requiredPoint <- switch(options[["optimizationCriterion"]],
-    "validationAIC" = gettext("AIC"),
-    "validationBIC" = gettext("BIC"),
-    "validationSilh" = ""
+  requiredPoint <- switch(options[["clusterDeterminationMethodOptimizedTypeOptimization"]],
+    "aic" = gettext("AIC"),
+    "bic" = gettext("BIC"),
+    "silhouette" = ""
   )
-  plotData <- data.frame(x = rep(2:options[["maxClusters"]], 3), y = values, type = type)
+  plotData <- data.frame(x = rep(2:options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]], 3), y = values, type = type)
   xBreaks <- jaspGraphs::getPrettyAxisBreaks(plotData$x, min.n = 4)
   yBreaks <- jaspGraphs::getPrettyAxisBreaks(plotData$y, min.n = 4)
   yVals <- values[type == requiredPoint]
@@ -395,7 +395,7 @@
     jaspGraphs::geom_rangeframe() +
     jaspGraphs::themeJaspRaw(legend.position = "top") +
     ggplot2::theme(legend.text = ggplot2::element_text(size = 12))
-  if (options[["optimizationCriterion"]] != "validationSilh") {
+  if (options[["clusterDeterminationMethodOptimizedTypeOptimization"]] != "silhouette") {
     p <- p + jaspGraphs::geom_point(data = pointData, ggplot2::aes(x = x, y = y, fill = "red"), inherit.aes = FALSE) +
       ggplot2::scale_fill_manual(name = NULL, labels = gettextf("Lowest %s", requiredPoint), values = "red") +
       ggplot2::guides(fill = ggplot2::guide_legend(order = 1), linetype = ggplot2::guide_legend(order = 2))
@@ -451,18 +451,18 @@
 }
 
 .mlClusteringPlotDensities <- function(dataset, options, jaspResults, ready, position) {
-  if (!is.null(jaspResults[["clusterDensities"]]) || !options[["plotClusterDensities"]]) {
+  if (!is.null(jaspResults[["clusterDensities"]]) || !options[["clusterDensityPlot"]]) {
     return()
   }
   plot <- createJaspContainer(gettext("Cluster Density Plots"))
-  plot$dependOn(options = c("plotClusterDensities", "oneFigureDensity", .mlClusteringDependencies(options)))
+  plot$dependOn(options = c("clusterDensityPlot", "clusterDensityPlotSingleFigure", .mlClusteringDependencies(options)))
   plot$position <- position
   jaspResults[["clusterDensities"]] <- plot
   if (!ready) {
     return()
   }
   clusterResult <- jaspResults[["clusterResult"]]$object
-  if (!options[["oneFigureDensity"]]) {
+  if (!options[["clusterDensityPlotSingleFigure"]]) {
     for (variable in unlist(options[["predictors"]])) {
       clusters <- as.factor(clusterResult[["pred.values"]])
       xBreaks <- jaspGraphs::getPrettyAxisBreaks(dataset[[variable]], min.n = 4)
@@ -498,18 +498,18 @@
 }
 
 .mlClusteringPlotMeans <- function(dataset, options, jaspResults, ready, position) {
-  if (!is.null(jaspResults[["clusterMeans"]]) || !options[["plotClusterMeans"]]) {
+  if (!is.null(jaspResults[["clusterMeans"]]) || !options[["clusterMeanPlot"]]) {
     return()
   }
   plot <- createJaspContainer(gettext("Cluster Mean Plots"))
-  plot$dependOn(options = c("plotClusterMeans", "showBars", "oneFigure", .mlClusteringDependencies(options)))
+  plot$dependOn(options = c("clusterMeanPlot", "clusterMeanPlotBarPlot", "clusterMeanPlotSingleFigure", .mlClusteringDependencies(options)))
   plot$position <- position
   jaspResults[["clusterMeans"]] <- plot
   if (!ready) {
     return()
   }
   clusterResult <- jaspResults[["clusterResult"]]$object
-  if (options[["oneFigure"]]) {
+  if (options[["clusterMeanPlotSingleFigure"]]) {
     clusters <- as.factor(clusterResult[["pred.values"]])
     xBreaks <- c(1, (as.numeric(levels(clusters)) + 1) * length(options[["predictors"]]))
     clusterMeansData <- aggregate(dataset, list(clusters), mean)
@@ -541,7 +541,7 @@
     xLabels <- options[["predictors"]]
     plotData <- plotData[complete.cases(plotData), ]
     p <- ggplot2::ggplot(plotData, ggplot2::aes(x = xCoord, y = value, fill = Cluster))
-    if (options[["showBars"]]) {
+    if (options[["clusterMeanPlotBarPlot"]]) {
       p <- p + ggplot2::geom_bar(color = "black", stat = "identity") +
         ggplot2::geom_errorbar(data = plotData, ggplot2::aes(x = xCoord, ymin = lower, ymax = upper), width = 0.2, size = 1)
     } else {
@@ -571,7 +571,7 @@
       plotData <- plotData[complete.cases(plotData), ]
       yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, unlist(plotData[, -1])), min.n = 4)
       p <- ggplot2::ggplot(plotData, ggplot2::aes(x = Cluster, y = value, fill = Cluster))
-      if (options[["showBars"]]) {
+      if (options[["clusterMeanPlotBarPlot"]]) {
         p <- p + ggplot2::geom_bar(color = "black", stat = "identity") +
           ggplot2::geom_errorbar(data = plotData, ggplot2::aes(x = Cluster, ymin = lower, ymax = upper), width = 0.2, size = 1)
       } else {
