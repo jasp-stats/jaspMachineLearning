@@ -28,8 +28,8 @@ Form
 
 	FileSelector
 	{
-		id:										loadPath
-		name:									"loadPath"
+		id:										trainedModelFilePath
+		name:									"trainedModelFilePath"
 		label:									qsTr("Trained model")
 		placeholderText:						qsTr("e.g., location/model.jaspML")
 		filter:									"*.jaspML"
@@ -39,7 +39,7 @@ Form
 
 	VariablesForm
 	{
-		enabled:								loadPath.value != ""
+		enabled:								trainedModelFilePath.value != ""
 
 		AvailableVariablesList
 		{
@@ -81,15 +81,14 @@ Form
 
 			CheckBox
 			{
-				name:							"addPredictors"
+				name:							"predictionsTableFeatures"
 				label:							"Add features"
 			}
-		}
 
-		Row
-		{	
-			spacing:							5 * preferencesModel.uiScale
-			enabled:							predictionsTable.checked
+			Row
+			{	
+				spacing:							5 * preferencesModel.uiScale
+				enabled:							predictionsTable.checked
 			
 			IntegerField
 			{

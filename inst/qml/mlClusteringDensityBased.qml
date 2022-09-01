@@ -203,7 +203,7 @@ Form
 					[
 					{ label: qsTr("Normal"), 	value: "normalDensities"},
 					{ label: qsTr("Correlated"),value: "correlatedDensities"}
-				]
+					]
 			}
 
 			CheckBox

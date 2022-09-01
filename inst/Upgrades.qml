@@ -669,6 +669,4 @@ Upgrades
 		ChangeRename { from: "pfrom";												to: "predictionsTableFeaturesFromValue"}
 		ChangeRename { from: "pto";													to: "predictionsTableFeaturesToValue"}
 	}
-
-
 }
