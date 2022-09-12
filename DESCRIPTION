@@ -1,8 +1,8 @@
 Package: jaspMachineLearning
 Type: Package
 Title: Machine Learning Module for JASP
-Version: 0.16.3
-Date: 2022-04-28
+Version: 0.16.4
+Date: 2022-09-12
 Author: JASP Team
 Website: www.jasp-stats.org
 Maintainer: JASP Team <info@jasp-stats.org>
