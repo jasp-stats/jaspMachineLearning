@@ -8,8 +8,8 @@ Upgrades
 	{
 
 		functionName:		"mlRegressionBoosting"
-		fromVersion:		"0.16.3"
-		toVersion:			"0.16.4"
+		fromVersion:		"0.16.4"
+		toVersion:			"0.17.0"
 
 		ChangeRename { from: "classBoostRelInfTable";					to: "relativeInfluenceTable"		}
 
@@ -30,8 +30,8 @@ Upgrades
 	{
 
 		functionName:		"mlClassificationBoosting"
-		fromVersion:		"0.16.3"
-		toVersion:			"0.16.4"
+		fromVersion:		"0.16.4"
+		toVersion:			"0.17.0"
 
 		ChangeRename { from: "classBoostRelInfTable";					to: "relativeInfluenceTable"		}
 		ChangeRename { from: "plotOOBChangeDev";						to: "outOfBagImprovementPlot"		}
@@ -53,8 +53,8 @@ Upgrades
 	{
 
 		functionName:		"mlRegressionDecisionTree"
-		fromVersion:		"0.16.3"
-		toVersion:			"0.16.4"
+		fromVersion:		"0.16.4"
+		toVersion:			"0.17.0"
 
 		ChangeRename { from: "intDepth";								to: "interactionDepth"				}
 		ChangeRename { from: "nNode";									to: "minObservationsInNode"			}
@@ -76,8 +76,8 @@ Upgrades
 	{
 
 		functionName:		"mlClassificationDecisionTree"
-		fromVersion:		"0.16.3"
-		toVersion:			"0.16.4"
+		fromVersion:		"0.16.4"
+		toVersion:			"0.17.0"
 
 		ChangeRename { from: "intDepth";								to: "interactionDepth"				}
 		ChangeRename { from: "nNode";									to: "minObservationsInNode"			}
@@ -102,8 +102,8 @@ Upgrades
 	{
 
 		functionName:		"mlRegressionRandomForest"
-		fromVersion:		"0.16.3"
-		toVersion:			"0.16.4"
+		fromVersion:		"0.16.4"
+		toVersion:			"0.17.0"
 
 		ChangeRename { from: "bagFrac";									to: "baggingFraction"				}
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
@@ -122,8 +122,8 @@ Upgrades
 	{
 
 		functionName:		"mlClassificationRandomForest"
-		fromVersion:		"0.16.3"
-		toVersion:			"0.16.4"
+		fromVersion:		"0.16.4"
+		toVersion:			"0.17.0"
 
 		ChangeRename { from: "bagFrac";									to: "baggingFraction"				}
 		ChangeRename { from: "scaleEqualSD";							to: "scaleVariables"				}
@@ -146,8 +146,8 @@ Upgrades
 	{
 
 		functionName:		"mlRegressionKnn"
-		fromVersion:		"0.16.3"
-		toVersion:			"0.16.4"
+		fromVersion:		"0.16.4"
+		toVersion:			"0.17.0"
 
 		ChangeRename { from: "scaleEqualSD";							to: "scaleVariables"				}
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
@@ -163,8 +163,8 @@ Upgrades
 	{
 
 		functionName:		"mlClassificationKnn"
-		fromVersion:		"0.16.3"
-		toVersion:			"0.16.4"
+		fromVersion:		"0.16.4"
+		toVersion:			"0.17.0"
 
 		ChangeRename { from: "scaleEqualSD";							to: "scaleVariables"				}
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
@@ -185,8 +185,8 @@ Upgrades
 	{
 
 		functionName:		"mlRegressionNeuralNetwork"
-		fromVersion:		"0.16.3"
-		toVersion:			"0.16.4"
+		fromVersion:		"0.16.4"
+		toVersion:			"0.17.0"
 
 		ChangeRename { from: "scaleEqualSD";							to: "scaleVariables"				}
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
@@ -207,8 +207,8 @@ Upgrades
 			{
 				switch options["lossFunction"]
 				{
-					case "sse"		return "sumOfSquares";
-					case "ce"		return "crossEntropy";
+					case "sse":		return "sumOfSquares";
+					case "ce":		return "crossEntropy";
 				}
 			}
 		}
@@ -219,8 +219,8 @@ Upgrades
 	{
 
 		functionName:		"mlClassificationNeuralNetwork"
-		fromVersion:		"0.16.3"
-		toVersion:			"0.16.4"
+		fromVersion:		"0.16.4"
+		toVersion:			"0.17.0"
 
 		ChangeRename { from: "scaleEqualSD";							to: "scaleVariables"				}
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
@@ -244,8 +244,8 @@ Upgrades
 			{
 				switch options["lossFunction"]
 				{
-					case "sse"		return "sumOfSquares";
-					case "ce"		return "crossEntropy";
+					case "sse":		return "sumOfSquares";
+					case "ce":		return "crossEntropy";
 				}
 			}
 		}
@@ -256,8 +256,8 @@ Upgrades
 	{
 
 		functionName:		"mlRegressionSvm"
-		fromVersion:		"0.16.3"
-		toVersion:			"0.16.4"
+		fromVersion:		"0.16.4"
+		toVersion:			"0.17.0"
 
 		ChangeRename { from: "scaleEqualSD";							to: "scaleVariables"				}
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
@@ -274,8 +274,8 @@ Upgrades
 	{
 
 		functionName:		"mlClassificationSvm"
-		fromVersion:		"0.16.3"
-		toVersion:			"0.16.4"
+		fromVersion:		"0.16.4"
+		toVersion:			"0.17.0"
 
 		ChangeRename { from: "scaleEqualSD";							to: "scaleVariables"				}
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
@@ -294,8 +294,8 @@ Upgrades
 	{
 
 		functionName:		"mlRegressionRegularized"
-		fromVersion:		"0.16.3"
-		toVersion:			"0.16.4"
+		fromVersion:		"0.16.4"
+		toVersion:			"0.17.0"
 
 		ChangeRename { from: "scaleEqualSD";							to: "scaleVariables"				}
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
@@ -309,8 +309,8 @@ Upgrades
 	{
 
 		functionName:		"mlClassificationLda"
-		fromVersion:		"0.16.3"
-		toVersion:			"0.16.4"
+		fromVersion:		"0.16.4"
+		toVersion:			"0.17.0"
 
 		ChangeRename { from: "scaleEqualSD";							to: "scaleVariables"				}
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
@@ -327,8 +327,8 @@ Upgrades
 	{
 
 		functionName:		"mlPrediction"
-		fromVersion:		"0.16.3"
-		toVersion:			"0.16.4"
+		fromVersion:		"0.16.4"
+		toVersion:			"0.17.0"
 
 		ChangeRename { from: "scaleEqualSD";							to: "scaleVariables"				}
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
