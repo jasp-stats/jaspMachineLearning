@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-10-30 19:47+0000\n"
+"PO-Revision-Date: 2022-10-16 10:38+0000\n"
 "Last-Translator: Changya Hu <changyahu@gmail.com>\n"
 "Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
 "jasp/jaspmachinelearning-qml/zh_Hant/>\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.9-dev\n"
+"X-Generator: Weblate 4.15-dev\n"
 "X-Qt-Contexts: true\n"
 
 msgctxt "Description|"
@@ -22,19 +22,19 @@ msgstr "迴歸分析"
 
 msgctxt "Description|"
 msgid "Boosting"
-msgstr ""
+msgstr "提升"
 
 msgctxt "Description|"
 msgid "Boosting Regression"
-msgstr ""
+msgstr "提升迴歸分析"
 
 msgctxt "Description|"
 msgid "K-Nearest Neighbors"
-msgstr ""
+msgstr "K-近鄰演算法"
 
 msgctxt "Description|"
 msgid "K-Nearest Neighbors Regression"
-msgstr ""
+msgstr "K-近鄰演算法迴歸分析"
 
 msgctxt "Description|"
 msgid "Random Forest"
@@ -46,11 +46,11 @@ msgstr "隨機森林迴歸分析"
 
 msgctxt "Description|"
 msgid "Regularized Linear"
-msgstr ""
+msgstr "正則化線性"
 
 msgctxt "Description|"
 msgid "Regularized Linear Regression"
-msgstr ""
+msgstr "正則化線性迴歸分析"
 
 msgctxt "Description|"
 msgid "Classification"
@@ -58,79 +58,79 @@ msgstr "分類"
 
 msgctxt "Description|"
 msgid "Boosting Classification"
-msgstr ""
+msgstr "提升分類分析"
 
 msgctxt "Description|"
 msgid "K-Nearest Neighbors Classification"
-msgstr ""
+msgstr "K-近鄰演算法分類"
 
 msgctxt "Description|"
 msgid "Linear Discriminant"
-msgstr ""
+msgstr "線性區別分析"
 
 msgctxt "Description|"
 msgid "Linear Discriminant Classification"
-msgstr ""
+msgstr "線性區別分類分析"
 
 msgctxt "Description|"
 msgid "Random Forest Classification"
-msgstr ""
+msgstr "隨機森林分類分析"
 
 msgctxt "Description|"
 msgid "Clustering"
-msgstr ""
+msgstr "集群分析"
 
 msgctxt "Description|"
 msgid "Density-Based"
-msgstr ""
+msgstr "密度基礎"
 
 msgctxt "Description|"
 msgid "Density-Based Clustering"
-msgstr ""
+msgstr "密度基礎集群分析"
 
 msgctxt "Description|"
 msgid "Fuzzy C-Means"
-msgstr ""
+msgstr "模糊C-平均數"
 
 msgctxt "Description|"
 msgid "Fuzzy C-Means Clustering"
-msgstr ""
+msgstr "模糊C-平均數集群分析"
 
 msgctxt "Description|"
 msgid "Hierarchical"
-msgstr ""
+msgstr "階層"
 
 msgctxt "Description|"
 msgid "Hierarchical Clustering"
-msgstr ""
+msgstr "階層集群分析"
 
 msgctxt "Description|"
 msgid "K-Means"
-msgstr ""
+msgstr "K-平均數"
 
 msgctxt "Description|"
 msgid "K-Means Clustering"
-msgstr ""
+msgstr "K-平均數集群分析"
 
 msgctxt "Description|"
 msgid "Random Forest Clustering"
-msgstr ""
+msgstr "隨機森林集群分析"
 
 msgctxt "DataSplit|"
 msgid "Data Split Preferences"
-msgstr ""
+msgstr "資料切割偏好設定"
 
 msgctxt "DataSplit|"
 msgid "Holdout Test Data"
-msgstr ""
+msgstr "保留測試資料"
 
 msgctxt "DataSplit|"
 msgid "Sample"
-msgstr ""
+msgstr "樣本"
 
 msgctxt "DataSplit|"
 msgid "% of all data"
-msgstr ""
+msgstr "%所有資料"
 
 msgctxt "DataSplit|"
 msgid "Add generated indicator to data"
@@ -138,103 +138,103 @@ msgstr ""
 
 msgctxt "DataSplit|"
 msgid "None"
-msgstr ""
+msgstr "無"
 
 msgctxt "DataSplit|"
 msgid "Training and Validation Data"
-msgstr ""
+msgstr "訓練並驗證資料"
 
 msgctxt "DataSplit|"
 msgid "% for validation data"
-msgstr ""
+msgstr "%為驗證資料"
 
 msgctxt "DataSplit|"
 msgid "K-fold with"
-msgstr ""
+msgstr "K折基於"
 
 msgctxt "DataSplit|"
 msgid "folds"
-msgstr ""
+msgstr "折"
 
 msgctxt "DataSplit|"
 msgid "Leave-one-out"
-msgstr ""
+msgstr "留一法"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Target"
-msgstr ""
+msgstr "目標"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Predictors"
-msgstr ""
+msgstr "預測變數"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Confusion matrix"
-msgstr ""
+msgstr "混淆矩陣"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Display proportions"
-msgstr ""
+msgstr "顯示比例"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Class proportions"
-msgstr ""
+msgstr "類別比例"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評估指標"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Relative influence"
-msgstr ""
+msgstr "相對影響力"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Plots"
-msgstr ""
+msgstr "圖"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Data split"
-msgstr ""
+msgstr "資料切割"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Out-of-bag improvement"
-msgstr ""
+msgstr "袋外提升"
 
 msgctxt "mlClassificationBoosting|"
 msgid "ROC curves"
-msgstr ""
+msgstr "ROC曲線"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "Andrews曲線"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Deviance"
-msgstr ""
+msgstr "離差量數"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Decision boundary matrix"
-msgstr ""
+msgstr "決策邊界矩陣"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Legend"
-msgstr ""
+msgstr "圖例"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Points"
-msgstr ""
+msgstr "點"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "訓練參數"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "演算法設定"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Scale predictors"
@@ -258,7 +258,7 @@ msgstr ""
 
 msgctxt "mlClassificationKnn|"
 msgid "Predictors"
-msgstr ""
+msgstr "預測變數"
 
 msgctxt "mlClassificationKnn|"
 msgid "Tables"
@@ -266,7 +266,7 @@ msgstr ""
 
 msgctxt "mlClassificationKnn|"
 msgid "Confusion matrix"
-msgstr ""
+msgstr "混淆矩陣"
 
 msgctxt "mlClassificationKnn|"
 msgid "Display proportions"
@@ -294,15 +294,15 @@ msgstr ""
 
 msgctxt "mlClassificationKnn|"
 msgid "ROC curves"
-msgstr ""
+msgstr "ROC曲線"
 
 msgctxt "mlClassificationKnn|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "Andrews曲線"
 
 msgctxt "mlClassificationKnn|"
 msgid "Decision boundary matrix"
-msgstr ""
+msgstr "決策邊界矩陣"
 
 msgctxt "mlClassificationKnn|"
 msgid "Legend"
@@ -394,7 +394,7 @@ msgstr ""
 
 msgctxt "mlClassificationLda|"
 msgid "Confusion matrix"
-msgstr ""
+msgstr "混淆矩陣"
 
 msgctxt "mlClassificationLda|"
 msgid "Display proportions"
@@ -446,15 +446,15 @@ msgstr ""
 
 msgctxt "mlClassificationLda|"
 msgid "ROC curves"
-msgstr ""
+msgstr "ROC曲線"
 
 msgctxt "mlClassificationLda|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "Andrews曲線"
 
 msgctxt "mlClassificationLda|"
 msgid "Linear discriminant matrix"
-msgstr ""
+msgstr "線性區別矩陣"
 
 msgctxt "mlClassificationLda|"
 msgid "Densities"
@@ -466,7 +466,7 @@ msgstr ""
 
 msgctxt "mlClassificationLda|"
 msgid "Decision boundary matrix"
-msgstr ""
+msgstr "決策邊界矩陣"
 
 msgctxt "mlClassificationLda|"
 msgid "Legend"
@@ -502,7 +502,7 @@ msgstr ""
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Confusion matrix"
-msgstr ""
+msgstr "混淆矩陣"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Display proportions"
@@ -534,11 +534,11 @@ msgstr ""
 
 msgctxt "mlClassificationRandomForest|"
 msgid "ROC curves"
-msgstr ""
+msgstr "ROC曲線"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "Andrews曲線"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Mean decrease in accuracy"
@@ -550,7 +550,7 @@ msgstr ""
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Decision boundary matrix"
-msgstr ""
+msgstr "決策邊界矩陣"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Legend"
@@ -1488,7 +1488,7 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Confusion matrix"
-msgstr ""
+msgstr "混淆矩陣"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Display proportions"
@@ -1520,11 +1520,11 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "ROC curves"
-msgstr ""
+msgstr "ROC曲線"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "Andrews曲線"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Activation function"
@@ -1536,7 +1536,7 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Decision boundary matrix"
-msgstr ""
+msgstr "決策邊界矩陣"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Legend"
@@ -1672,7 +1672,7 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Set seed"
-msgstr ""
+msgstr "設定種子值"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Network Topology"
@@ -1984,7 +1984,7 @@ msgstr ""
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Set seed"
-msgstr ""
+msgstr "設定種子值"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Network Topology"
@@ -2124,7 +2124,7 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "Set seed"
-msgstr ""
+msgstr "設定種子值"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Trees"
@@ -2144,7 +2144,7 @@ msgstr ""
 
 msgctxt "mlClassificationKnn|"
 msgid "Set seed"
-msgstr ""
+msgstr "設定種子值"
 
 msgctxt "mlClassificationKnn|"
 msgid "Nearest neighbors"
@@ -2160,7 +2160,7 @@ msgstr ""
 
 msgctxt "mlClassificationLda|"
 msgid "Set seed"
-msgstr ""
+msgstr "設定種子值"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Max. layers"
@@ -2180,7 +2180,7 @@ msgstr ""
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Set seed"
-msgstr ""
+msgstr "設定種子值"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Trees"
@@ -2204,7 +2204,7 @@ msgstr ""
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Set seed"
-msgstr ""
+msgstr "設定種子值"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Max. iterations"
@@ -2216,7 +2216,7 @@ msgstr ""
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Set seed"
-msgstr ""
+msgstr "設定種子值"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Clusters"
@@ -2240,7 +2240,7 @@ msgstr ""
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Set seed"
-msgstr ""
+msgstr "設定種子值"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Clusters"
@@ -2264,7 +2264,7 @@ msgstr ""
 
 msgctxt "mlClusteringKMeans|"
 msgid "Set seed"
-msgstr ""
+msgstr "設定種子值"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Clusters"
@@ -2280,7 +2280,7 @@ msgstr ""
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Set seed"
-msgstr ""
+msgstr "設定種子值"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Clusters"
@@ -2312,7 +2312,7 @@ msgstr ""
 
 msgctxt "mlRegressionBoosting|"
 msgid "Set seed"
-msgstr ""
+msgstr "設定種子值"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Trees"
@@ -2328,11 +2328,11 @@ msgstr ""
 
 msgctxt "mlRegressionKnn|"
 msgid "Distance"
-msgstr ""
+msgstr "距離"
 
 msgctxt "mlRegressionKnn|"
 msgid "Set seed"
-msgstr ""
+msgstr "設定種子值"
 
 msgctxt "mlRegressionKnn|"
 msgid "Nearest neighbors"
@@ -2360,7 +2360,7 @@ msgstr ""
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Set seed"
-msgstr ""
+msgstr "設定種子值"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Trees"
@@ -2384,7 +2384,7 @@ msgstr ""
 
 msgctxt "mlRegressionRegularized|"
 msgid "Ridge"
-msgstr ""
+msgstr "脊"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Elastic net parameter (α)"
@@ -2392,7 +2392,7 @@ msgstr ""
 
 msgctxt "mlRegressionRegularized|"
 msgid "Set seed"
-msgstr ""
+msgstr "設定種子值"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Largest λ within 1 SE of min"
