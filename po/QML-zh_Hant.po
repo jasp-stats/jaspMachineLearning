@@ -1749,7 +1749,7 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Reset"
-msgstr ""
+msgstr "重置"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Swap"
@@ -2065,7 +2065,7 @@ msgstr ""
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Reset"
-msgstr ""
+msgstr "重置"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Swap"
