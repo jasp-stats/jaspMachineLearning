@@ -115,6 +115,8 @@ Upgrades
 		ChangeRename { from: "plotDecreaseAccuracy";					to: "accuracyDecreasePlot"			}
 		ChangeRename { from: "plotIncreasePurity";						to: "purityIncreasePlot"			}
 
+		ChangeRename { from: "scaleEqualSD";							to: "scaleVariables"				}
+
 	}
 
 
@@ -172,7 +174,6 @@ Upgrades
 
 		ChangeRename { from: "plotLegend";								to: "legendShown"					}
 		ChangeRename { from: "plotPoints";								to: "pointsShown"					}
-		ChangeRename { from: "nSplit";									to: "minObservationsForSplit"		}
 
 		ChangeRename { from: "plotWeights";								to: "weightsPlot"					}
 		ChangeRename { from: "plotErrorVsK";							to: "errorVsKPlot"					}
@@ -205,7 +206,7 @@ Upgrades
 			name: "lossFunction"
 			jsFunction: function(options)
 			{
-				switch options["lossFunction"]
+				switch (options["lossFunction"])
 				{
 					case "sse":		return "sumOfSquares";
 					case "ce":		return "crossEntropy";
@@ -242,7 +243,7 @@ Upgrades
 			name: "lossFunction"
 			jsFunction: function(options)
 			{
-				switch options["lossFunction"]
+				switch (options["lossFunction"])
 				{
 					case "sse":		return "sumOfSquares";
 					case "ce":		return "crossEntropy";
