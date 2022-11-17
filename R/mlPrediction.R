@@ -233,7 +233,7 @@ is.jaspMachineLearning <- function(x) {
 
 .mlPredictionReadData <- function(options) {
   dataset <- .readDataSetToEnd(columns = options[["predictors"]], exclude.na.listwise = options[["predictors"]])
-  if (options[["scaleEqualSD"]] && length(unlist(options[["predictors"]])) > 0) {
+  if (options[["scaleVariables"]] && length(unlist(options[["predictors"]])) > 0) {
     dataset <- .scaleNumericData(dataset)
   }
   return(dataset)
@@ -246,7 +246,7 @@ is.jaspMachineLearning <- function(x) {
     if (ready) {
       colnames(dataset) <- decodeColNames(colnames(dataset))
       jaspResults[["predictions"]] <- createJaspState(.mlPredictionGetPredictions(model, dataset))
-      jaspResults[["predictions"]]$dependOn(options = c("loadPath", "predictors", "scaleEqualSD"))
+      jaspResults[["predictions"]]$dependOn(options = c("loadPath", "predictors", "scaleVariables"))
       return(jaspResults[["predictions"]]$object)
     } else {
       return(NULL)
@@ -325,7 +325,7 @@ is.jaspMachineLearning <- function(x) {
     return()
   }
   table <- createJaspTable(gettext("Predictions for New Data"))
-  table$dependOn(options = c("predictors", "loadPath", "predictionsTable", "addPredictors", "scaleEqualSD", "pfrom", "pto"))
+  table$dependOn(options = c("predictors", "loadPath", "predictionsTable", "addPredictors", "scaleVariables", "fromIndex", "toIndex"))
   table$position <- position
   table$addColumnInfo(name = "row", title = gettext("Row"), type = "integer")
   if (!is.null(model)) {
@@ -343,7 +343,7 @@ is.jaspMachineLearning <- function(x) {
     return()
   }
   predictions <- .mlPredictionsState(model, dataset, options, jaspResults, ready)
-  indexes <- options[["pfrom"]]:options[["pto"]]
+  indexes <- options[["fromIndex"]]:options[["toIndex"]]
   selection <- predictions[indexes]
   cols <- list(row = indexes, pred = selection)
   if (options[["addPredictors"]]) {
@@ -367,7 +367,7 @@ is.jaspMachineLearning <- function(x) {
     predictionsColumn <- rep(NA, max(as.numeric(rownames(dataset))))
     predictionsColumn[as.numeric(rownames(dataset))] <- .mlPredictionsState(model, dataset, options, jaspResults, ready)
     jaspResults[["predictionsColumn"]] <- createJaspColumn(columnName = options[["predictionsColumn"]])
-    jaspResults[["predictionsColumn"]]$dependOn(options = c("predictionsColumn", "predictors", "loadPath", "scaleEqualSD", "addPredictions"))
+    jaspResults[["predictionsColumn"]]$dependOn(options = c("predictionsColumn", "predictors", "loadPath", "scaleVariables", "addPredictions"))
     if (inherits(model, "jaspClassification")) jaspResults[["predictionsColumn"]]$setNominal(predictionsColumn)
     if (inherits(model, "jaspRegression")) jaspResults[["predictionsColumn"]]$setScale(predictionsColumn)
   }

@@ -4,9 +4,9 @@ options <- jaspTools::analysisOptions("mlRegressionSvm")
 options$target <- "Sepal.Length"
 options$predictors <- c("Sepal.Width", "Petal.Length", "Petal.Width")
 options$validationMeasures <- TRUE
-options$tableSupportVectors <- TRUE
+options$supportVectorsTable <- TRUE
 options$predictedPerformancePlot <- TRUE
-options$modelOpt <- "optimizationManual"
+options$modelOptimization <- "optimizationManual"
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
 options$holdoutData <- "holdoutManual"
@@ -15,7 +15,7 @@ options$noOfFolds <- 5
 options$predictionsColumn <- ""
 options$saveModel <- FALSE
 options$savePath <- ""
-options$seedBox <- TRUE
+options$setSeed <- TRUE
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""
@@ -43,7 +43,7 @@ test_that("Support Vector Machine Regression table results match", {
 })
 
 test_that("Support Vectors table results match", {
-	table <- results[["results"]][["tableSupportVectors"]][["data"]]
+	table <- results[["results"]][["supportVectorsTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list(-1.27910398223806, -1.31105214820513, 0.786173830160855, 1, 0.420325577865652,
 			 0.132067294448949, -0.590395133155817, 2, 0.420325577865652,

@@ -86,7 +86,7 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   # Create the generated test set indicator
   testIndicatorColumn <- rep(1, nrow(dataset))
   testIndicatorColumn[trainingIndex] <- 0
-  if (options[["modelOpt"]] == "optimizationManual") {
+  if (options[["modelOptimization"]] == "optimizationManual") {
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
     structure <- .getNeuralNetworkStructure(options)
@@ -97,7 +97,7 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
         hidden = structure,
         learningrate = options[["learningRate"]],
         threshold = options[["threshold"]],
-        stepmax = options[["stepMax"]],
+        stepmax = options[["maxTrainingRepetitions"]],
         rep = 1,
         startweights = NULL,
         algorithm = options[["algorithm"]],
@@ -107,27 +107,27 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
       )
     })
     if (isTryError(p)) {
-      jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["stepMax"]]))
+      jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["maxTrainingRepetitions"]]))
     }
-  } else if (options[["modelOpt"]] == "optimizationError") {
+  } else if (options[["modelOptimization"]] == "optimizationError") {
     validationIndex <- sample.int(nrow(trainingAndValidationSet), size = ceiling(options[["validationDataManual"]] * nrow(trainingAndValidationSet)))
     testSet <- dataset[-trainingIndex, ]
     validationSet <- trainingAndValidationSet[validationIndex, ]
     trainingSet <- trainingAndValidationSet[-validationIndex, ]
-    accuracyStore <- numeric(options[["maxGen"]])
-    trainAccuracyStore <- numeric(options[["maxGen"]])
+    accuracyStore <- numeric(options[["maxGenerations"]])
+    trainAccuracyStore <- numeric(options[["maxGenerations"]])
     # For plotting
     plot_x <- numeric()
     plot_y <- numeric()
     plot_type <- character()
-    startProgressbar(options[["maxGen"]], gettext("Optimizing network topology"))
+    startProgressbar(options[["maxGenerations"]], gettext("Optimizing network topology"))
     # First generation
     population <- .mlNeuralNetworkOptimInit(options)
     # Fit and reproduce
-    for (gen in 1:options[["maxGen"]]) {
+    for (gen in 1:options[["maxGenerations"]]) {
       progressbarTick()
-      fitness <- numeric(options[["genSize"]])
-      subTrainErrorStore <- numeric(options[["genSize"]])
+      fitness <- numeric(options[["populationSize"]])
+      subTrainErrorStore <- numeric(options[["populationSize"]])
       for (i in 1:length(population)) {
         p <- try({
           fit <- neuralnet::neuralnet(
@@ -136,18 +136,18 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
             hidden = population[[i]]$structure,
             learningrate = options[["learningRate"]],
             threshold = options[["threshold"]],
-            stepmax = options[["stepMax"]],
+            stepmax = options[["maxTrainingRepetitions"]],
             rep = 1,
             startweights = NULL,
             algorithm = options[["algorithm"]],
-            err.fct = "sse", # jaspResults[["errfct"]]$object,
+            err.fct = "sse", # jaspResults[["lossFunction"]]$object,
             act.fct = jaspResults[["actfct"]]$object,
             linear.output = if (options[["actfct"]] == "linear") TRUE else FALSE
           )
           validationPredictions <- levels(trainingSet[, options[["target"]]])[max.col(predict(fit, newdata = validationSet))]
         })
         if (isTryError(p)) {
-          jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["stepMax"]]))
+          jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["maxTrainingRepetitions"]]))
         }
         fitness[i] <- sum(diag(prop.table(table(validationPredictions, validationSet[, options[["target"]]]))))
         trainingPredictions <- levels(trainingSet[, options[["target"]]])[max.col(predict(fit, newdata = trainingSet))]
@@ -165,7 +165,7 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
       accuracyStore[gen] <- mean(fitness)
       trainAccuracyStore[gen] <- mean(subTrainErrorStore)
       # Stop when maximum generations is reached
-      if (gen == options[["maxGen"]]) {
+      if (gen == options[["maxGenerations"]]) {
         break()
       }
       # Stage 1: Select parents for crossover (population of k = 20 will give n = k / 3 = 7 parent pairs)
@@ -185,7 +185,7 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
         hidden = structure,
         learningrate = options[["learningRate"]],
         threshold = options[["threshold"]],
-        stepmax = options[["stepMax"]],
+        stepmax = options[["maxTrainingRepetitions"]],
         rep = 1,
         startweights = NULL,
         algorithm = options[["algorithm"]],
@@ -195,7 +195,7 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
       )
     })
     if (isTryError(p)) {
-      jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["stepMax"]]))
+      jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["maxTrainingRepetitions"]]))
     }
     validationPredictions <- levels(trainingSet[, options[["target"]]])[max.col(predict(fit, newdata = validationSet))]
   }
@@ -220,7 +220,7 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   result[["test"]] <- testSet
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["classes"]] <- dataPredictions
-  if (options[["modelOpt"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "optimizationManual") {
     result[["accuracyStore"]] <- accuracyStore
     result[["valid"]] <- validationSet
     result[["nvalid"]] <- nrow(validationSet)

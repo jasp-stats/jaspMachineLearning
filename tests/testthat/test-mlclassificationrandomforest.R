@@ -9,18 +9,18 @@ options$classProportionsTable <- TRUE
 options$savePath <- ""
 options$saveModel <- FALSE
 options$holdoutData <- "holdoutManual"
-options$modelOpt <- "optimizationError"
+options$modelOptimization <- "optimizationError"
 options$modelValid <- "validationManual"
 options$noOfFolds <- 5
-options$plotDecreaseAccuracy <- TRUE
-options$plotIncreasePurity <- TRUE
-options$plotTreesVsModelError <- TRUE
+options$accuracyDecreasePlot <- TRUE
+options$purityIncreasePlot <- TRUE
+options$treesVsModelErrorPlot <- TRUE
 options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
                            "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
                            "Hue", "Dilution", "Proline")
 options$rocCurve <- TRUE
-options$seedBox <- TRUE
-options$tableVariableImportance <- TRUE
+options$setSeed <- TRUE
+options$variableImportanceTable <- TRUE
 options$target <- "Type"
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""
@@ -65,19 +65,19 @@ test_that("Data Split plot matches", {
 })
 
 test_that("Mean Decrease in Accuracy plot matches", {
-  plotName <- results[["results"]][["plotDecreaseAccuracy"]][["data"]]
+  plotName <- results[["results"]][["accuracyDecreasePlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
   jaspTools::expect_equal_plots(testPlot, "mean-decrease-in-accuracy")
 })
 
 test_that("Total Increase in Node Purity plot matches", {
-  plotName <- results[["results"]][["plotIncreasePurity"]][["data"]]
+  plotName <- results[["results"]][["purityIncreasePlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
   jaspTools::expect_equal_plots(testPlot, "total-increase-in-node-purity")
 })
 
 test_that("Out-of-bag Classification Accuracy Plot matches", {
-  plotName <- results[["results"]][["plotTreesVsModelError"]][["data"]]
+  plotName <- results[["results"]][["treesVsModelErrorPlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
   jaspTools::expect_equal_plots(testPlot, "out-of-bag-classification-accuracy-plot")
 })
@@ -89,7 +89,7 @@ test_that("ROC Curves Plot matches", {
 })
 
 test_that("Variable Importance table results match", {
-  table <- results[["results"]][["tableVariableImportance"]][["data"]]
+  table <- results[["results"]][["variableImportanceTable"]][["data"]]
   jaspTools::expect_equal_tables(table,
                       list(0.0929184156013314, 0.11584466455711, "Color", 0.0746170330176111,
                            0.0740156345749835, "Alcohol", 0.227882931822773, 0.0519798563590929,

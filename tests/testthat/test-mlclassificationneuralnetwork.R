@@ -9,13 +9,13 @@ options$coefficientsTable <- TRUE
 options$dataSplitPlot <- FALSE
 options$holdoutData <- "holdoutManual"
 options$layers <- list(list(nodes = 1, value = "#"))
-options$modelOpt <- "optimizationManual"
+options$modelOptimization <- "optimizationManual"
 options$modelValid <- "validationManual"
 options$predictionsColumn <- ""
 options$predictors <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
 options$saveModel <- FALSE
 options$savePath <- ""
-options$seedBox <- TRUE
+options$setSeed <- TRUE
 options$target <- "Species"
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""

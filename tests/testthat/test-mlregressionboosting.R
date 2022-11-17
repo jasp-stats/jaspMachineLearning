@@ -3,21 +3,21 @@ context("Machine Learning Boosting Regression")
 options <- jaspTools::analysisOptions("mlRegressionBoosting")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
-options$classBoostRelInfTable <- TRUE
+options$relativeInfluenceTable <- TRUE
 options$savePath <- ""
 options$saveModel <- FALSE
 options$holdoutData <- "holdoutManual"
-options$modelOpt <- "optimizationOOB"
+options$modelOptimization <- "optimizationOOB"
 options$modelValid <- "validationManual"
 options$noOfFolds <- 5
-options$plotDeviance <- TRUE
-options$plotOOBChangeDev <- TRUE
-options$plotRelInf <- TRUE
+options$deviancePlot <- TRUE
+options$outOfBagImprovementPlot <- TRUE
+options$relativeInfluencePlot <- TRUE
 options$predictedPerformancePlot <- TRUE
 options$predictors <- list("Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", "Flavanoids", 
                            "Nonflavanoids", "Proanthocyanins", "Color", "Hue", "Dilution", 
                            "Proline")
-options$seedBox <- TRUE
+options$setSeed <- TRUE
 options$target <- "Alcohol"
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""
@@ -30,7 +30,7 @@ results <- jaspTools::runAnalysis("mlRegressionBoosting", "wine.csv", options)
 
 
 test_that("Relative Influence table results match", {
-  table <- results[["results"]][["classBoostRelInfTable"]][["data"]]
+  table <- results[["results"]][["relativeInfluenceTable"]][["data"]]
   jaspTools::expect_equal_tables(table,
                       list("Color", 60.3564909956942, "Proline", 28.9359792394392, "Phenols",
                            4.02747773147275, "Flavanoids", 2.65410848555859, "Hue", 1.59224895077339,
@@ -46,19 +46,19 @@ test_that("Data Split plot matches", {
 })
 
 test_that("Deviance Plot matches", {
-  plotName <- results[["results"]][["plotDeviance"]][["data"]]
+  plotName <- results[["results"]][["deviancePlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
   jaspTools::expect_equal_plots(testPlot, "deviance-plot")
 })
 
 test_that("Out-of-bag Improvement Plot matches", {
-  plotName <- results[["results"]][["plotOOBChangeDev"]][["data"]]
+  plotName <- results[["results"]][["outOfBagImprovementPlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
   jaspTools::expect_equal_plots(testPlot, "out-of-bag-improvement-plot")
 })
 
 test_that("Relative Influence Plot matches", {
-  plotName <- results[["results"]][["plotRelInf"]][["data"]]
+  plotName <- results[["results"]][["relativeInfluencePlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
   jaspTools::expect_equal_plots(testPlot, "relative-influence-plot")
 })

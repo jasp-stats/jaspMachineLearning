@@ -65,7 +65,7 @@ Form
 		CheckBox
 		{
 			text:								qsTr("Support vectors")
-			name:								"tableSupportVectors"
+			name:								"supportVectorsTable"
 		}
 	}
 
@@ -142,7 +142,7 @@ Form
 
 			DoubleField
 			{
-				name:							"cp"
+				name:							"complexityParameter"
 				text:							qsTr("r parameter")
 				defaultValue:					0
 				min:							0
@@ -177,13 +177,13 @@ Form
 			CheckBox
 			{
 				text:							qsTr("Scale variables")
-				name:							"scaleEqualSD"
+				name:							"scaleVariables"
 				checked:						true
 			}
 
 			CheckBox
 			{
-				name:							"seedBox"
+				name:							"setSeed"
 				text:							qsTr("Set seed")
 				childrenOnSameRow:				true
 
@@ -200,7 +200,7 @@ Form
 
 		RadioButtonGroup
 		{
-			name:								"modelOpt"
+			name:								"modelOptimization"
 			visible:							false
 
 			RadioButton

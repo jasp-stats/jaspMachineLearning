@@ -71,7 +71,7 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   testSet <- dataset[-trainingIndex, ]
   trainingFit <- rpart::rpart(
     formula = formula, data = trainingSet, method = "anova", x = TRUE, y = TRUE,
-    control = rpart::rpart.control(minsplit = options[["nSplit"]], minbucket = options[["nNode"]], maxdepth = options[["intDepth"]], cp = options[["cp"]])
+    control = rpart::rpart.control(minsplit = options[["minObservationsForSplit"]], minbucket = options[["minObservationsInNode"]], maxdepth = options[["interactionDepth"]], cp = options[["complexityParameter"]])
   )
   # Use the specified model to make predictions for dataset
   testPredictions <- predict(trainingFit, newdata = testSet)
@@ -92,18 +92,18 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
 }
 
 .mlDecisionTreeTableVarImp <- function(options, jaspResults, ready, position, purpose) {
-  if (!is.null(jaspResults[["tableVariableImportance"]]) || !options[["tableVariableImportance"]]) {
+  if (!is.null(jaspResults[["variableImportanceTable"]]) || !options[["variableImportanceTable"]]) {
     return()
   }
   table <- createJaspTable(title = gettext("Feature Importance"))
   table$position <- position
   table$dependOn(options = c(
-    "tableVariableImportance", "trainingDataManual", "scaleEqualSD", "target", "predictors", "seed", "seedBox",
-    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "nSplit", "nNode", "intDepth", "cp"
+    "variableImportanceTable", "trainingDataManual", "scaleVariables", "target", "predictors", "seed", "setSeed",
+    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "minObservationsForSplit", "minObservationsInNode", "interactionDepth", "complexityParameter"
   ))
   table$addColumnInfo(name = "predictor", title = " ", type = "string")
   table$addColumnInfo(name = "imp", title = gettext("Relative Importance"), type = "number")
-  jaspResults[["tableVariableImportance"]] <- table
+  jaspResults[["variableImportanceTable"]] <- table
   if (!ready) {
     return()
   }
@@ -121,20 +121,20 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
 }
 
 .mlDecisionTreeTableSplits <- function(options, jaspResults, ready, position, purpose) {
-  if (!is.null(jaspResults[["tableSplits"]]) || !options[["tableSplits"]]) {
+  if (!is.null(jaspResults[["splitsTable"]]) || !options[["splitsTable"]]) {
     return()
   }
   table <- createJaspTable(title = gettext("Splits in Tree"))
   table$position <- position
   table$dependOn(options = c(
-    "tableSplits", "trainingDataManual", "scaleEqualSD", "target", "predictors", "seed", "seedBox", "tableSplitsTree",
-    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "nSplit", "nNode", "intDepth", "cp"
+    "splitsTable", "trainingDataManual", "scaleVariables", "target", "predictors", "seed", "setSeed", "splitsTreeTable",
+    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "minObservationsForSplit", "minObservationsInNode", "interactionDepth", "complexityParameter"
   ))
   table$addColumnInfo(name = "predictor", title = "", type = "string")
   table$addColumnInfo(name = "count", title = gettext("Obs. in Split"), type = "integer")
   table$addColumnInfo(name = "index", title = gettext("Split Point"), type = "number")
   table$addColumnInfo(name = "improve", title = gettext("Improvement"), type = "number")
-  jaspResults[["tableSplits"]] <- table
+  jaspResults[["splitsTable"]] <- table
   if (!ready) {
     return()
   }
@@ -145,11 +145,11 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   if (is.null(result[["model"]]$splits)) {
     table$addFootnote(gettext("No splits were made in the tree."))
     return()
-  } else if (options[["tableSplitsTree"]]) {
+  } else if (options[["splitsTreeTable"]]) {
     table$addFootnote(gettext("For each level of the tree, only the split with the highest improvement in deviance is shown."))
   }
   splits <- result[["model"]]$splits
-  if (options[["tableSplitsTree"]]) {
+  if (options[["splitsTreeTable"]]) {
     # Only show the splits actually in the tree (aka with the highest OOB improvement)
     splits <- splits[splits[, 1] > 0, ] # Discard the leaf splits 
     df <- as.data.frame(splits)
@@ -177,16 +177,16 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
 }
 
 .mlDecisionTreePlotTree <- function(dataset, options, jaspResults, ready, position, purpose) {
-  if (!is.null(jaspResults[["plotDecisionTree"]]) || !options[["plotDecisionTree"]]) {
+  if (!is.null(jaspResults[["decisionTreePlot"]]) || !options[["decisionTreePlot"]]) {
     return()
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Decision Tree Plot"), width = 600, height = 500)
   plot$position <- position
   plot$dependOn(options = c(
-    "plotDecisionTree", "trainingDataManual", "scaleEqualSD", "target", "predictors", "seed", "seedBox",
-    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "nNode", "nSplit", "intDepth", "cp"
+    "decisionTreePlot", "trainingDataManual", "scaleVariables", "target", "predictors", "seed", "setSeed",
+    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "minObservationsInNode", "minObservationsForSplit", "interactionDepth", "complexityParameter"
   ))
-  jaspResults[["plotDecisionTree"]] <- plot
+  jaspResults[["decisionTreePlot"]] <- plot
   if (!ready) {
     return()
   }

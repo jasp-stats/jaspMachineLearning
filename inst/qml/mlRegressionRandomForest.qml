@@ -64,7 +64,7 @@ Form
 
 		CheckBox
 		{
-			name:								"tableVariableImportance"
+			name:								"variableImportanceTable"
 			text:								qsTr("Feature importance")
 		}
 	}
@@ -82,7 +82,7 @@ Form
 
 		CheckBox
 		{
-			name:								"plotTreesVsModelError"
+			name:								"treesVsModelErrorPlot"
 			text:								qsTr("Out-of-bag error")
 		}
 
@@ -94,13 +94,13 @@ Form
 
 		CheckBox
 		{
-			name:								"plotDecreaseAccuracy"
+			name:								"accuracyDecreasePlot"
 			text:								qsTr("Mean decrease in accuracy")
 		}
 
 		CheckBox
 		{
-			name:								"plotIncreasePurity"
+			name:								"purityIncreasePlot"
 			text:								qsTr("Total increase in node purity")
 		}
 	}
@@ -127,7 +127,7 @@ Form
 
 			PercentField
 			{
-				name:							"bagFrac"
+				name:							"baggingFraction"
 				text:							qsTr("Training data used per tree")
 				defaultValue:					50
 				min:							5
@@ -162,13 +162,13 @@ Form
 			CheckBox 
 			{
 				text:							qsTr("Scale variables")
-				name:							"scaleEqualSD"
+				name:							"scaleVariables"
 				checked:						true
 			}
 
 		CheckBox
 		{
-			name:								"seedBox"
+			name:								"setSeed"
 			text:								qsTr("Set seed")
 			childrenOnSameRow:					true
 
@@ -186,7 +186,7 @@ Form
 	RadioButtonGroup
 	{
 		title:									qsTr("Number of Trees")
-		name:									"modelOpt"
+		name:									"modelOptimization"
 
 		RadioButton
 		{

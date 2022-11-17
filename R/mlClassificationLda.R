@@ -144,8 +144,8 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   table <- createJaspTable(title = gettext("Linear Discriminant Coefficients"))
   table$position <- position
   table$dependOn(options = c(
-    "coefficientsTable", "trainingDataManual", "scaleEqualSD", "modelOpt",
-    "target", "predictors", "seed", "seedBox", "modelValid", "estimationMethod",
+    "coefficientsTable", "trainingDataManual", "scaleVariables", "modelOptimization",
+    "target", "predictors", "seed", "setSeed", "modelValid", "estimationMethod",
     "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
     "holdoutData", "testDataManual"
   ))
@@ -176,8 +176,8 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   table <- createJaspTable(title = gettext("Prior and Posterior Class Probabilities"))
   table$position <- position
   table$dependOn(options = c(
-    "priorTable", "trainingDataManual", "scaleEqualSD", "modelOpt",
-    "target", "predictors", "seed", "seedBox", "modelValid", "estimationMethod",
+    "priorTable", "trainingDataManual", "scaleVariables", "modelOptimization",
+    "target", "predictors", "seed", "setSeed", "modelValid", "estimationMethod",
     "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
     "holdoutData", "testDataManual"
   ))
@@ -202,8 +202,8 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   table <- createJaspTable(title = gettext("Class Means in Training Data"))
   table$position <- position
   table$dependOn(options = c(
-    "meanTable", "trainingDataManual", "scaleEqualSD", "modelOpt", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "target", "predictors", "seed", "seedBox", "modelValid", "estimationMethod",
+    "meanTable", "trainingDataManual", "scaleVariables", "modelOptimization", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
+    "target", "predictors", "seed", "setSeed", "modelValid", "estimationMethod",
     "holdoutData", "testDataManual"
   ))
   table$addColumnInfo(name = "target_level", title = "", type = "string")
@@ -222,16 +222,16 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
 }
 
 .mlClassificationLdaPlotDiscriminants <- function(dataset, options, jaspResults, ready, position) {
-  if (!is.null(jaspResults[["matrixplot"]]) || !options[["matrixplot"]]) {
+  if (!is.null(jaspResults[["matrixPlot"]]) || !options[["matrixPlot"]]) {
     return()
   }
   plot <- createJaspPlot(title = gettext("Linear Discriminant Matrix"), height = 400, width = 300)
   plot$position <- position
   plot$dependOn(options = c(
-    "matrixplot", "plotDensities", "plotStatistics", "trainingDataManual", "scaleEqualSD", "modelOpt", "holdoutData", "testDataManual",
-    "target", "predictors", "seed", "seedBox", "modelValid", "estimationMethod", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual"
+    "matrixPlot", "plotDensities", "plotStatistics", "trainingDataManual", "scaleVariables", "modelOptimization", "holdoutData", "testDataManual",
+    "target", "predictors", "seed", "setSeed", "modelValid", "estimationMethod", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual"
   ))
-  jaspResults[["matrixplot"]] <- plot
+  jaspResults[["matrixPlot"]] <- plot
   if (!ready) {
     return()
   }
@@ -390,7 +390,7 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   }
   table <- createJaspTable(title = gettext("Tests of Equality of Class Means"))
   table$position <- position
-  table$dependOn(options = c("manovaTable", "scaleEqualSD", "target", "predictors"))
+  table$dependOn(options = c("manovaTable", "scaleVariables", "target", "predictors"))
   table$addColumnInfo(name = "model", title = "", type = "string")
   table$addColumnInfo(name = "f", title = "F", type = "number")
   table$addColumnInfo(name = "df1", title = "df1", type = "integer")
@@ -429,7 +429,7 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   }
   table <- createJaspTable(title = gettext("Tests of Equality of Covariance Matrices"))
   table$position <- position
-  table$dependOn(options = c("boxTest", "scaleEqualSD", "target", "predictors"))
+  table$dependOn(options = c("boxTest", "scaleVariables", "target", "predictors"))
   table$addColumnInfo(name = "test", title = "", type = "string")
   table$addColumnInfo(name = "x", title = "\u03C7\u00B2", type = "number")
   table$addColumnInfo(name = "df", title = gettext("df"), type = "integer")
@@ -453,7 +453,7 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   }
   table <- createJaspTable(title = gettext("Pooled Within-Class Matrices Correlations"))
   table$position <- position
-  table$dependOn(options = c("multicolTable", "scaleEqualSD", "target", "predictors"))
+  table$dependOn(options = c("multicolTable", "scaleVariables", "target", "predictors"))
   jaspResults[["multicolTable"]] <- table
   if (!ready) {
     return()

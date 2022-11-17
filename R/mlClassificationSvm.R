@@ -77,7 +77,7 @@ mlClassificationSvm <- function(jaspResults, dataset, options, ...) {
   testSet <- dataset[-trainingIndex, ]
   trainingFit <- e1071::svm(
     formula = formula, data = trainingSet, type = "C-classification", kernel = options[["weights"]], cost = options[["cost"]], tolerance = options[["tolerance"]],
-    epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]], gamma = options[["gamma"]], coef0 = options[["cp"]]
+    epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]], gamma = options[["gamma"]], coef0 = options[["complexityParameter"]]
   )
   # Use the specified model to make predictions for dataset
   testPredictions <- predict(trainingFit, newdata = testSet)

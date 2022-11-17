@@ -6,15 +6,15 @@ options$addPredictions <- FALSE
 options$savePath <- ""
 options$saveModel <- FALSE
 options$holdoutData <- "holdoutManual"
-options$modelOpt <- "optimizationError"
+options$modelOptimization <- "optimizationError"
 options$modelValid <- "validationManual"
 options$noOfFolds <- 5
-options$plotErrorVsK <- TRUE
+options$errorVsKPlot <- TRUE
 options$predictedPerformancePlot <- TRUE
 options$predictors <- list("Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", "Flavanoids", 
                            "Nonflavanoids", "Proanthocyanins", "Color", "Hue", "Dilution", 
                            "Proline")
-options$seedBox <- TRUE
+options$setSeed <- TRUE
 options$target <- "Alcohol"
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""
@@ -33,7 +33,7 @@ test_that("Data Split plot matches", {
 })
 
 test_that("Mean Squared Error Plot matches", {
-  plotName <- results[["results"]][["plotErrorVsK"]][["data"]]
+  plotName <- results[["results"]][["errorVsKPlot"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
   jaspTools::expect_equal_plots(testPlot, "mean-squared-error-plot")
 })

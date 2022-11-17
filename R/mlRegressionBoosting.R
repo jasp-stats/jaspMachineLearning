@@ -61,7 +61,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   # Import model formula from jaspResults
   formula <- jaspResults[["formula"]]$object
   # Set model-specific parameters
-  trees <- switch(options[["modelOpt"]],
+  trees <- switch(options[["modelOptimization"]],
     "optimizationManual" = options[["noOfTrees"]],
     "optimizationOOB" = options[["maxTrees"]]
   )
@@ -79,7 +79,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   testIndicatorColumn[trainingIndex] <- 0
   # gbm expects the columns in the data to be in the same order as the variables...
   trainingAndValidationSet <- trainingAndValidationSet[, match(names(trainingAndValidationSet)[which(names(trainingAndValidationSet) %in% all.vars(formula))], all.vars(formula))]
-  if (options[["modelOpt"]] == "optimizationManual") {
+  if (options[["modelOptimization"]] == "optimizationManual") {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
@@ -87,12 +87,12 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
     .mlBoostingCheckMinObsNode(options, trainingSet) # Check for min obs in nodes
     trainingFit <- gbm::gbm(
       formula = formula, data = trainingAndValidationSet, n.trees = trees,
-      shrinkage = options[["shrinkage"]], interaction.depth = options[["intDepth"]],
-      cv.folds = noOfFolds, bag.fraction = options[["bagFrac"]],
-      n.minobsinnode = options[["nNode"]], distribution = options[["distance"]], n.cores = 1
+      shrinkage = options[["shrinkage"]], interaction.depth = options[["interactionDepth"]],
+      cv.folds = noOfFolds, bag.fraction = options[["baggingFraction"]],
+      n.minobsinnode = options[["minObservationsInNode"]], distribution = options[["distance"]], n.cores = 1
     ) # Multiple cores breaks modules in JASP, see: INTERNAL-jasp#372
     noOfTrees <- options[["noOfTrees"]]
-  } else if (options[["modelOpt"]] == "optimizationOOB") {
+  } else if (options[["modelOptimization"]] == "optimizationOOB") {
     # Create a train, validation and test set (optimization)
     validationIndex <- sample.int(nrow(trainingAndValidationSet), size = ceiling(options[["validationDataManual"]] * nrow(trainingAndValidationSet)))
     testSet <- dataset[-trainingIndex, ]
@@ -108,15 +108,15 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
     .mlBoostingCheckMinObsNode(options, trainingSet) # Check for min obs in nodes
     trainingFit <- gbm::gbm(
       formula = formula, data = trainingSet, n.trees = trees,
-      shrinkage = options[["shrinkage"]], interaction.depth = options[["intDepth"]],
-      cv.folds = noOfFolds, bag.fraction = options[["bagFrac"]],
-      n.minobsinnode = options[["nNode"]], distribution = options[["distance"]], n.cores = 1
+      shrinkage = options[["shrinkage"]], interaction.depth = options[["interactionDepth"]],
+      cv.folds = noOfFolds, bag.fraction = options[["baggingFraction"]],
+      n.minobsinnode = options[["minObservationsInNode"]], distribution = options[["distance"]], n.cores = 1
     ) # Multiple cores breaks modules in JASP, see: INTERNAL-jasp#372
     noOfTrees <- gbm::gbm.perf(trainingFit, plot.it = FALSE, method = "OOB")[1] # pick the optimal number of trees
     trainingFit <- gbm::gbm(
       formula = formula, data = trainingSet, n.trees = noOfTrees,
-      shrinkage = options[["shrinkage"]], interaction.depth = options[["intDepth"]],
-      cv.folds = noOfFolds, bag.fraction = options[["bagFrac"]], n.minobsinnode = options[["nNode"]],
+      shrinkage = options[["shrinkage"]], interaction.depth = options[["interactionDepth"]],
+      cv.folds = noOfFolds, bag.fraction = options[["baggingFraction"]], n.minobsinnode = options[["minObservationsInNode"]],
       distribution = options[["distance"]], n.cores = 1
     ) # Multiple cores breaks modules in JASP, see: INTERNAL-jasp#372
     validationPredictions <- gbm::predict.gbm(trainingFit, validationSet, n.trees = noOfTrees, type = "response")
@@ -141,7 +141,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   result[["test"]] <- testSet
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["values"]] <- dataPredictions
-  if (options[["modelOpt"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "optimizationManual") {
     result[["validMSE"]] <- mean((validationPredictions - validationSet[, options[["target"]]])^2)
     result[["nvalid"]] <- nrow(validationSet)
     result[["valid"]] <- validationSet
@@ -150,20 +150,20 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
 }
 
 .mlBoostingTableRelInf <- function(options, jaspResults, ready, position, purpose) {
-  if (!options[["classBoostRelInfTable"]] || !is.null(jaspResults[["classBoostRelInfTable"]])) {
+  if (!options[["relativeInfluenceTable"]] || !is.null(jaspResults[["relativeInfluenceTable"]])) {
     return()
   }
   table <- createJaspTable(title = gettext("Relative Influence"))
   table$position <- position
   table$dependOn(options = c(
-    "classBoostRelInfTable", "target", "predictors", "modelOpt", "maxTrees", "intDepth", "shrinkage",
-    "noOfTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "seed", "seedBox", "modelValid",
-    "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
+    "relativeInfluenceTable", "target", "predictors", "modelOptimization", "maxTrees", "interactionDepth", "shrinkage",
+    "noOfTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors", "seed", "setSeed", "modelValid",
+    "minObservationsInNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
     "holdoutData", "testDataManual"
   ))
   table$addColumnInfo(name = "predictor", title = "", type = "string")
   table$addColumnInfo(name = "relIn", title = gettext("Relative Influence"), type = "number")
-  jaspResults[["classBoostRelInfTable"]] <- table
+  jaspResults[["relativeInfluenceTable"]] <- table
   if (!ready) {
     return()
   }
@@ -176,18 +176,18 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
 }
 
 .mlBoostingPlotOobImprovement <- function(options, jaspResults, ready, position, purpose) {
-  if (!is.null(jaspResults[["plotOOBChangeDev"]]) || !options[["plotOOBChangeDev"]]) {
+  if (!is.null(jaspResults[["outOfBagImprovementPlot"]]) || !options[["outOfBagImprovementPlot"]]) {
     return()
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Out-of-bag Improvement Plot"), width = 400, height = 300)
   plot$position <- position
   plot$dependOn(options = c(
-    "plotOOBChangeDev", "target", "predictors", "modelOpt", "maxTrees", "intDepth", "shrinkage",
-    "noOfTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "seed", "seedBox", "modelValid",
-    "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
+    "outOfBagImprovementPlot", "target", "predictors", "modelOptimization", "maxTrees", "interactionDepth", "shrinkage",
+    "noOfTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors", "seed", "setSeed", "modelValid",
+    "minObservationsInNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
     "holdoutData", "testDataManual"
   ))
-  jaspResults[["plotOOBChangeDev"]] <- plot
+  jaspResults[["outOfBagImprovementPlot"]] <- plot
   if (!ready) {
     return()
   }
@@ -236,18 +236,18 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
 }
 
 .mlBoostingPlotDeviance <- function(options, jaspResults, ready, position, purpose) {
-  if (!is.null(jaspResults[["plotDeviance"]]) || !options[["plotDeviance"]]) {
+  if (!is.null(jaspResults[["deviancePlot"]]) || !options[["deviancePlot"]]) {
     return()
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Deviance Plot"), width = 450, height = 300)
   plot$position <- position
   plot$dependOn(options = c(
-    "plotDeviance", "target", "predictors", "modelOpt", "maxTrees", "intDepth", "shrinkage",
-    "noOfTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "seed", "seedBox", "modelValid",
-    "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
+    "deviancePlot", "target", "predictors", "modelOptimization", "maxTrees", "interactionDepth", "shrinkage",
+    "noOfTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors", "seed", "setSeed", "modelValid",
+    "minObservationsInNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
     "holdoutData", "testDataManual"
   ))
-  jaspResults[["plotDeviance"]] <- plot
+  jaspResults[["deviancePlot"]] <- plot
   if (!ready) {
     return()
   }
@@ -296,18 +296,18 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
 }
 
 .mlBoostingPlotRelInf <- function(options, jaspResults, ready, position, purpose) {
-  if (!is.null(jaspResults[["plotRelInf"]]) || !options[["plotRelInf"]]) {
+  if (!is.null(jaspResults[["relativeInfluencePlot"]]) || !options[["relativeInfluencePlot"]]) {
     return()
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Relative Influence Plot"), width = 450, height = 300)
   plot$position <- position
   plot$dependOn(options = c(
-    "plotRelInf", "target", "predictors", "modelOpt", "maxTrees", "intDepth", "shrinkage",
-    "noOfTrees", "bagFrac", "noOfPredictors", "numberOfPredictors", "seed", "seedBox", "modelValid",
-    "nNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
+    "relativeInfluencePlot", "target", "predictors", "modelOptimization", "maxTrees", "interactionDepth", "shrinkage",
+    "noOfTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors", "seed", "setSeed", "modelValid",
+    "minObservationsInNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
     "holdoutData", "testDataManual"
   ))
-  jaspResults[["plotRelInf"]] <- plot
+  jaspResults[["relativeInfluencePlot"]] <- plot
   if (!ready) {
     return()
   }
@@ -379,13 +379,13 @@ fakeGbmCrossValErr <- function(cv.models, cv.folds, cv.group, nTrain, n.trees) {
 }
 
 .mlBoostingCheckMinObsNode <- function(options, trainingSet) {
-  if (nrow(trainingSet) * options[["bagFrac"]] <= 2 * options[["nNode"]] + 1) {
+  if (nrow(trainingSet) * options[["baggingFraction"]] <= 2 * options[["minObservationsInNode"]] + 1) {
     jaspBase:::.quitAnalysis(gettextf(
       "The minimum number of observations per node is too large. Ensure that `2 * Min. observations in node (%1$i) + 1` < `Training data used per tree (%2$s) * available training data (%3$i)` (in this case the minimum can be %4$i at most).",
-      options[["nNode"]], 
-      paste0(options[["bagFrac"]] * 100, "%"), 
+      options[["minObservationsInNode"]], 
+      paste0(options[["baggingFraction"]] * 100, "%"), 
       nrow(trainingSet), 
-      floor((nrow(trainingSet) * options[["bagFrac"]] - 1) / 2)
+      floor((nrow(trainingSet) * options[["baggingFraction"]] - 1) / 2)
     ))
   }
 }

@@ -79,7 +79,7 @@ mlClassificationKnn <- function(jaspResults, dataset, options, ...) {
   # Create the generated test set indicator
   testIndicatorColumn <- rep(1, nrow(dataset))
   testIndicatorColumn[trainingIndex] <- 0
-  if (options[["modelOpt"]] == "optimizationManual") {
+  if (options[["modelOptimization"]] == "optimizationManual") {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
@@ -88,14 +88,14 @@ mlClassificationKnn <- function(jaspResults, dataset, options, ...) {
       distance = distance, kernel = weights, scale = FALSE
     )
     nn <- options[["noOfNearestNeighbours"]]
-  } else if (options[["modelOpt"]] == "optimizationError") {
+  } else if (options[["modelOptimization"]] == "optimizationError") {
     # Create a train, validation and test set (optimization)
     validationIndex <- sample.int(nrow(trainingAndValidationSet), size = ceiling(options[["validationDataManual"]] * nrow(trainingAndValidationSet)))
     testSet <- dataset[-trainingIndex, ]
     validationSet <- trainingAndValidationSet[validationIndex, ]
     trainingSet <- trainingAndValidationSet[-validationIndex, ]
     if (options[["modelValid"]] == "validationManual") {
-      nnRange <- 1:options[["maxK"]]
+      nnRange <- 1:options[["maxNearestNeighbors"]]
       accuracyStore <- numeric(length(nnRange))
       trainAccuracyStore <- numeric(length(nnRange))
       startProgressbar(length(nnRange))
@@ -112,7 +112,7 @@ mlClassificationKnn <- function(jaspResults, dataset, options, ...) {
         trainAccuracyStore[i] <- sum(diag(prop.table(table(trainingFit$fitted.values, trainingSet[, options[["target"]]]))))
         progressbarTick()
       }
-      nn <- switch(options[["modelOpt"]],
+      nn <- switch(options[["modelOptimization"]],
         "optimizationError" = nnRange[which.max(accuracyStore)]
       )
       testFit <- kknn::kknn(
@@ -120,7 +120,7 @@ mlClassificationKnn <- function(jaspResults, dataset, options, ...) {
         distance = options[["distanceParameterManual"]], kernel = options[["weights"]], scale = FALSE
       )
     } else if (options[["modelValid"]] == "validationKFold") {
-      nnRange <- 1:options[["maxK"]]
+      nnRange <- 1:options[["maxNearestNeighbors"]]
       accuracyStore <- numeric(length(nnRange))
       startProgressbar(length(nnRange))
       for (i in nnRange) {
@@ -131,7 +131,7 @@ mlClassificationKnn <- function(jaspResults, dataset, options, ...) {
         accuracyStore[i] <- sum(diag(prop.table(table(validationFit[[1]][, 1], validationFit[[1]][, 2]))))
         progressbarTick()
       }
-      nn <- switch(options[["modelOpt"]],
+      nn <- switch(options[["modelOptimization"]],
         "optimizationError" = nnRange[which.max(accuracyStore)]
       )
       validationFit <- kknn::cv.kknn(
@@ -143,10 +143,10 @@ mlClassificationKnn <- function(jaspResults, dataset, options, ...) {
       trainingSet <- trainingAndValidationSet
       validationSet <- trainingAndValidationSet
     } else if (options[["modelValid"]] == "validationLeaveOneOut") {
-      nnRange <- 1:options[["maxK"]]
+      nnRange <- 1:options[["maxNearestNeighbors"]]
       validationFit <- kknn::train.kknn(formula = formula, data = trainingAndValidationSet, ks = nnRange, scale = FALSE, distance = options[["distanceParameterManual"]], kernel = options[["weights"]])
       accuracyStore <- as.numeric(1 - validationFit$MISCLASS)
-      nn <- switch(options[["modelOpt"]],
+      nn <- switch(options[["modelOptimization"]],
         "optimizationError" = nnRange[which.max(accuracyStore)]
       )
       validationFit <- list(fitted.values = validationFit[["fitted.values"]][[1]])
@@ -174,7 +174,7 @@ mlClassificationKnn <- function(jaspResults, dataset, options, ...) {
   result[["test"]] <- testSet
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["classes"]] <- predict(kknn::kknn(formula = formula, train = trainingSet, test = dataset, k = nn, distance = distance, kernel = weights, scale = FALSE))
-  if (options[["modelOpt"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "optimizationManual") {
     result[["accuracyStore"]] <- accuracyStore
     result[["valid"]] <- validationSet
     result[["nvalid"]] <- nrow(validationSet)

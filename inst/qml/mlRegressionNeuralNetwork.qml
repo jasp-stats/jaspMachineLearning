@@ -82,7 +82,7 @@ Form
 
 		CheckBox {
 			text:										qsTr("Mean squared error")
-			name:										"plotError"
+			name:										"meanSquaredErrorPlot"
 			enabled:									optimizeModel.checked
 		}
 
@@ -94,7 +94,7 @@ Form
 
 		CheckBox
 		{
-			name:										"actFuncPlot"
+			name:										"activationFunctionPlot"
 			text:										qsTr("Activation function")
 		}
 
@@ -178,14 +178,14 @@ Form
 
 			DropDown
 			{
-				name:									"errfct"
+				name:									"lossFunction"
 				debug:									true
 				indexDefaultValue:						0
 				label:									qsTr("Loss function")
 				values:
 					[
-					{ label:qsTr("Sum of squares"),	value: "sse"},
-					{ label:qsTr("Cross-entropy"),	value: "ce"}
+					{ label:qsTr("Sum of squares"),	value: "sumOfSquares"},
+					{ label:qsTr("Cross-entropy"),	value: "crossEntropy"}
 				]
 			}
 
@@ -199,7 +199,7 @@ Form
 
 			IntegerField
 			{
-				name:									"stepMax"
+				name:									"maxTrainingRepetitions"
 				label:									qsTr("Max. training repetitions")
 				defaultValue:							100000
 				min:									1
@@ -209,13 +209,13 @@ Form
 			CheckBox
 			{
 				text:									qsTr("Scale variables")
-				name:									"scaleEqualSD"
+				name:									"scaleVariables"
 				checked:								true
 			}
 
 			CheckBox
 			{
-				name:									"seedBox"
+				name:									"setSeed"
 				text:									qsTr("Set seed")
 				childrenOnSameRow:						true
 
@@ -236,7 +236,7 @@ Form
 
 			RadioButtonGroup
 			{
-				name:									"modelOpt"
+				name:									"modelOptimization"
 
 				RadioButton 
 				{
@@ -300,8 +300,8 @@ Form
 					{
 						IntegerField
 						{
-							id:							genSize
-							name:						"genSize"
+							id:							populationSize
+							name:						"populationSize"
 							text:						qsTr("Population size")
 							defaultValue:				20
 							min:						2
@@ -310,7 +310,7 @@ Form
 
 						IntegerField
 						{
-							name:						"maxGen"
+							name:						"maxGenerations"
 							text:						qsTr("Generations")
 							defaultValue:				10
 							min:						1
@@ -360,7 +360,7 @@ Form
 							text:									qsTr("Candidates")
 							defaultValue:							5
 							min:									1
-							max:									genSize.value
+							max:									populationSize.value
 							enabled:								selectionMethod.value == "tournament"
 						}
 
@@ -423,7 +423,7 @@ Form
 
 							PercentField
 							{
-								name:								"elitismProp"
+								name:								"elitismProportion"
 								defaultValue:						10
 							}
 						}
