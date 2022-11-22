@@ -329,8 +329,8 @@ Upgrades
 	{
 
 		functionName:		"mlClusteringDensityBased"
-		fromVersion:		"0.16.3"
-		toVersion:			"0.16.4"
+		fromVersion:		"0.16.4"
+		toVersion:			"0.17.0"
 
 		ChangeRename { from: "tableClusterInfoWSS";									to: "tableClusterInformationWithinSumOfSquares"}
 		ChangeRename { from: "tableClusterInfoSilhouette";							to: "tableClusterInformationSilhouetteScore"}
@@ -354,10 +354,11 @@ Upgrades
 			name: "distance"
 			jsFunction: function(options)
 			{
-				switch options["distance"]
+				switch (options["distance"])
 				{
-					case "Normal densities"											return "normalDensities";
-					case "Correlated densities"										return "correlatedDensities";
+					case "Normal densities":		return "normalDensities";
+					case "Correlated densities":	return "correlatedDensities";
+					default:						return options["distance"];									
 				}
 			}
 		}
@@ -372,9 +373,10 @@ Upgrades
 			name: "clusterDeterminationMethod"
 			jsFunction: function(options)
 			{
-				switch options["clusterDeterminationMethod"]
+				switch (options["clusterDeterminationMethod"])
 				{
-					case "validationManual"											return "manual";
+					case "validationManual":			return "manual";
+					default:							return options["clusterDeterminationMethod"];
 				}
 			}
 		}
@@ -385,8 +387,8 @@ Upgrades
 	{
 
 		functionName:		"mlClusteringFuzzyCMeans"
-		fromVersion:		"0.16.3"
-		toVersion:			"0.16.4"
+		fromVersion:		"0.16.4"
+		toVersion:			"0.17.0"
 
 		ChangeRename { from: "tableClusterInfoWSS";									to: "tableClusterInformationWithinSumOfSquares"}
 		ChangeRename { from: "tableClusterInfoSilhouette";							to: "tableClusterInformationSilhouetteScore"}
@@ -415,10 +417,11 @@ Upgrades
 			name: "clusterDeterminationMethod"
 			jsFunction: function(options)
 			{
-				switch options["clusterDeterminationMethod"]
+				switch (options["clusterDeterminationMethod"])
 				{
-					case "validationManual"											return "manual";
-					case "validationOptimized"										return "optimized";
+					case "validationManual":		return "manual";
+					case "validationOptimized":		return "optimized";
+					default:						return options["clusterDeterminationMethod"]
 				}
 			}
 		}
@@ -431,11 +434,11 @@ Upgrades
 			name: "clusterDeterminationMethodOptimizedTypeOptimization"
 			jsFunction: function(options)
 			{
-				switch options["clusterDeterminationMethodOptimizedTypeOptimization"]
+				switch (options["clusterDeterminationMethodOptimizedTypeOptimization"])
 				{
-					case "validationAIC"											return "aic";
-					case "validationBIC"											return "bic";
-					case "validationSilh"											return "silhouette";
+					case "validationAIC":			return "aic";
+					case "validationBIC":			return "bic";
+					case "validationSilh":			return "silhouette";
 				}
 			}
 		}
@@ -448,8 +451,8 @@ Upgrades
 	{
 
 		functionName:		"mlClusteringHierarchical"
-		fromVersion:		"0.16.3"
-		toVersion:			"0.16.4"
+		fromVersion:		"0.16.4"
+		toVersion:			"0.17.0"
 
 		ChangeRename { from: "tableClusterInfoWSS";									to: "tableClusterInformationWithinSumOfSquares"}
 		ChangeRename { from: "tableClusterInfoSilhouette";							to: "tableClusterInformationSilhouetteScore"}
@@ -471,10 +474,10 @@ Upgrades
 			name: "distance"
 			jsFunction: function(options)
 			{
-				switch options["distance"]
+				switch (options["distance"])
 				{
-					case "Euclidean"											return "euclidean";
-					case "Pearson correlation"									return "pearsonCorrelation";
+					case "Euclidean":				return "euclidean";
+					case "Pearson correlation":		return "pearsonCorrelation";
 				}
 			}
 		}
@@ -484,10 +487,11 @@ Upgrades
 			name: "linkage"
 			jsFunction: function(options)
 			{
-				switch options["linkage"]
+				switch (options["linkage"])
 				{
-					case "ward.D"											return "wardD";
-					case "ward.D2"											return "wardD2";
+					case "ward.D":				return "wardD";
+					case "ward.D2":				return "wardD2";
+					default:					return options["linkage"];
 				}
 			}
 		}
@@ -502,10 +506,10 @@ Upgrades
 			name: "clusterDeterminationMethod"
 			jsFunction: function(options)
 			{
-				switch options["clusterDeterminationMethod"]
+				switch (options["clusterDeterminationMethod"])
 				{
-					case "validationManual"											return "manual";
-					case "validationOptimized"										return "optimized";
+					case "validationManual":					return "manual";
+					case "validationOptimized":					return "optimized";
 				}
 			}
 		}
@@ -518,11 +522,11 @@ Upgrades
 			name: "clusterDeterminationMethodOptimizedTypeOptimization"
 			jsFunction: function(options)
 			{
-				switch options["clusterDeterminationMethodOptimizedTypeOptimization"]
+				switch (options["clusterDeterminationMethodOptimizedTypeOptimization"])
 				{
-					case "validationAIC"											return "aic";
-					case "validationBIC"											return "bic";
-					case "validationSilh"											return "silhouette";
+					case "validationAIC":		return "aic";
+					case "validationBIC":		return "bic";
+					case "validationSilh":		return "silhouette";
 				}
 			}
 		}
@@ -535,8 +539,8 @@ Upgrades
 	{
 
 		functionName:		"mlClusteringKMeans"
-		fromVersion:		"0.16.3"
-		toVersion:			"0.16.4"
+		fromVersion:		"0.16.4"
+		toVersion:			"0.17.0"
 
 		ChangeRename { from: "tableClusterInfoWSS";									to: "tableClusterInformationWithinSumOfSquares"}
 		ChangeRename { from: "tableClusterInfoSilhouette";							to: "tableClusterInformationSilhouetteScore"}
@@ -554,7 +558,6 @@ Upgrades
 		ChangeRename { from: "legend";												to: "tsneClusterPlotLegend"}
 		ChangeRename { from: "labels";												to: "tsneClusterPlotLabels"}
 		ChangeRename { from: "noOfIterations";										to: "maxNumberIterations"}
-		ChangeRename { from: "m";													to: "fuzzinessParameter"}
 		ChangeRename { from: "scaleEqualSD";										to: "equalSdScale"}
 		ChangeRename { from: "seedBox";												to: "randomSeed"}
 		ChangeRename { from: "seed";												to: "randomSeedValue"}
@@ -565,10 +568,10 @@ Upgrades
 			name: "clusterDeterminationMethod"
 			jsFunction: function(options)
 			{
-				switch options["clusterDeterminationMethod"]
+				switch (options["clusterDeterminationMethod"])
 				{
-					case "validationManual"											return "manual";
-					case "validationOptimized"										return "optimized";
+					case "validationManual":		return "manual";
+					case "validationOptimized":		return "optimized";
 				}
 			}
 		}
@@ -581,11 +584,11 @@ Upgrades
 			name: "clusterDeterminationMethodOptimizedTypeOptimization"
 			jsFunction: function(options)
 			{
-				switch options["clusterDeterminationMethodOptimizedTypeOptimization"]
+				switch (options["clusterDeterminationMethodOptimizedTypeOptimization"])
 				{
-					case "validationAIC"											return "aic";
-					case "validationBIC"											return "bic";
-					case "validationSilh"											return "silhouette";
+					case "validationAIC":											return "aic";
+					case "validationBIC":											return "bic";
+					case "validationSilh":											return "silhouette";
 				}
 			}
 		}
@@ -597,8 +600,8 @@ Upgrades
 	Upgrade
 	{
 		functionName:		"mlClusteringRandomForest"
-		fromVersion:		"0.16.3"
-		toVersion:			"0.16.4"
+		fromVersion:		"0.16.4"
+		toVersion:			"0.17.0"
 
 		ChangeRename { from: "tableClusterInfoWSS";									to: "tableClusterInformationWithinSumOfSquares"}
 		ChangeRename { from: "tableClusterInfoSilhouette";							to: "tableClusterInformationSilhouetteScore"}
@@ -627,10 +630,10 @@ Upgrades
 			name: "clusterDeterminationMethod"
 			jsFunction: function(options)
 			{
-				switch options["clusterDeterminationMethod"]
+				switch (options["clusterDeterminationMethod"])
 				{
-					case "validationManual"											return "manual";
-					case "validationOptimized"										return "optimized";
+					case "validationManual":		return "manual";
+					case "validationOptimized":		return "optimized";
 				}
 			}
 		}
@@ -643,11 +646,11 @@ Upgrades
 			name: "clusterDeterminationMethodOptimizedTypeOptimization"
 			jsFunction: function(options)
 			{
-				switch options["clusterDeterminationMethodOptimizedTypeOptimization"]
+				switch (options["clusterDeterminationMethodOptimizedTypeOptimization"])
 				{
-					case "validationAIC"											return "aic";
-					case "validationBIC"											return "bic";
-					case "validationSilh"											return "silhouette";
+					case "validationAIC":		return "aic";
+					case "validationBIC":		return "bic";
+					case "validationSilh":		return "silhouette";
 				}
 			}
 		}
@@ -660,13 +663,13 @@ Upgrades
 	{
 
 		functionName:		"mlPrediction"
-		fromVersion:		"0.16.3"
-		toVersion:			"0.16.4"
+		fromVersion:		"0.16.4"
+		toVersion:			"0.17.0"
 
 		ChangeRename { from: "loadPath";											to: "trainedModelFilePath"}
-		ChangeRename { from: "scaleEqualSD";										to: "equalSdScale"}
+		ChangeRename { from: "scaleEqualSD";										to: "scaleVariables"}
 		ChangeRename { from: "addPredictors";										to: "predictionsTableFeatures"}
-		ChangeRename { from: "pfrom";												to: "predictionsTableFeaturesFromValue"}
-		ChangeRename { from: "pto";													to: "predictionsTableFeaturesToValue"}
+		ChangeRename { from: "pfrom";												to: "fromIndex"}
+		ChangeRename { from: "pto";													to: "toIndex"}
 	}
 }
