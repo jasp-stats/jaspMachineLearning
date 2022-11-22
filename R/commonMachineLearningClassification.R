@@ -134,11 +134,11 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   # Add common columns
   table$addColumnInfo(name = "nTrain", title = gettext("n(Train)"), type = "integer")
-  if (options[["modelOptimization"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "manual") {
     table$addColumnInfo(name = "nValid", title = gettext("n(Validation)"), type = "integer")
   }
   table$addColumnInfo(name = "nTest", title = gettext("n(Test)"), type = "integer")
-  if (options[["modelOptimization"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "manual") {
     table$addColumnInfo(name = "validAcc", title = gettext("Validation Accuracy"), type = "number")
   }
   table$addColumnInfo(name = "testAcc", title = gettext("Test Accuracy"), type = "number")
@@ -165,7 +165,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   .mlClassificationComputeResults(dataset, options, jaspResults, ready, type = type)
   classificationResult <- jaspResults[["classificationResult"]]$object
   nTrain <- classificationResult[["ntrain"]]
-  if (options[["modelOptimization"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "manual") {
     nValid <- classificationResult[["nvalid"]]
     if (options[["modelValid"]] == "validationKFold") {
       # Adjust displayed train and test size for cross-validation
@@ -178,10 +178,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   # Fill the table per analysis
   if (type == "knn") {
-    if (options[["modelOptimization"]] == "optimizationError") {
+    if (options[["modelOptimization"]] == "optimized") {
       table$addFootnote(gettext("The model is optimized with respect to the <i>validation set accuracy</i>."))
     }
-    if (classificationResult[["nn"]] == options[["maxNearestNeighbors"]] && options[["modelOptimization"]] != "validationManual") {
+    if (classificationResult[["nn"]] == options[["maxNearestNeighbors"]] && options[["modelOptimization"]] != "optimized") {
       table$addFootnote(gettext("The optimum number of nearest neighbors is the maximum number. You might want to adjust the range of optimization."))
     }
     distance <- if (classificationResult[["distance"]] == 1) gettext("Manhattan") else gettext("Euclidean")
@@ -193,7 +193,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       nTest = classificationResult[["ntest"]],
       testAcc = classificationResult[["testAcc"]]
     )
-    if (options[["modelOptimization"]] != "optimizationManual") {
+    if (options[["modelOptimization"]] != "manual") {
       row <- cbind(row, nValid = nValid, validAcc = classificationResult[["validAcc"]])
     }
     table$addRows(row)
@@ -213,7 +213,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     )
     table$addRows(row)
   } else if (type == "randomForest") {
-    if (options[["modelOptimization"]] == "optimizationError") {
+    if (options[["modelOptimization"]] == "optimized") {
       table$addFootnote(gettext("The model is optimized with respect to the <i>out-of-bag accuracy</i>."))
     }
     row <- data.frame(
@@ -224,12 +224,12 @@ gettextf <- function(fmt, ..., domain = NULL) {
       testAcc = classificationResult[["testAcc"]],
       oob = classificationResult[["oobAccuracy"]]
     )
-    if (options[["modelOptimization"]] != "optimizationManual") {
+    if (options[["modelOptimization"]] != "manual") {
       row <- cbind(row, nValid = nValid, validAcc = classificationResult[["validAcc"]])
     }
     table$addRows(row)
   } else if (type == "boosting") {
-    if (options[["modelOptimization"]] == "optimizationOOB") {
+    if (options[["modelOptimization"]] == "optimized") {
       table$addFootnote(gettext("The model is optimized with respect to the <i>out-of-bag accuracy</i>."))
     }
     row <- data.frame(
@@ -239,14 +239,14 @@ gettextf <- function(fmt, ..., domain = NULL) {
       nTest = classificationResult[["ntest"]],
       testAcc = classificationResult[["testAcc"]]
     )
-    if (options[["modelOptimization"]] != "optimizationManual") {
+    if (options[["modelOptimization"]] != "manual") {
       row <- cbind(row, nValid = nValid, validAcc = classificationResult[["validAcc"]])
     }
     table$addRows(row)
   } else if (type == "neuralnet") {
-    if (options[["modelOptimization"]] == "optimizationManual") {
+    if (options[["modelOptimization"]] == "manual") {
       table$addFootnote(gettext("The model is optimized with respect to the <i>sum of squares</i>."))
-    } else if (options[["modelOptimization"]] == "optimizationError") {
+    } else if (options[["modelOptimization"]] == "optimized") {
       table$addFootnote(gettext("The model is optimized with respect to the <i>validation set accuracy</i>."))
     }
     row <- data.frame(
@@ -256,7 +256,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       nTest = classificationResult[["ntest"]],
       testAcc = classificationResult[["testAcc"]]
     )
-    if (options[["modelOptimization"]] != "optimizationManual") {
+    if (options[["modelOptimization"]] != "manual") {
       row <- cbind(row, nValid = nValid, validAcc = classificationResult[["validAcc"]])
     }
     table$addRows(row)
@@ -845,7 +845,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   table$dependOn(options = c(.mlClassificationDependencies(options), "classProportionsTable"))
   table$addColumnInfo(name = "group", title = "", type = "string")
   table$addColumnInfo(name = "dataset", title = gettext("Data Set"), type = "number")
-  if (options[["modelOptimization"]] == "optimizationManual") {
+  if (options[["modelOptimization"]] == "manual") {
     table$addColumnInfo(name = "train", title = gettext("Training Set"), type = "number")
   } else {
     if (options[["modelValid"]] == "validationManual") {
@@ -867,13 +867,13 @@ gettextf <- function(fmt, ..., domain = NULL) {
   classificationResult <- jaspResults[["classificationResult"]]$object
   dataValues <- rep(0, length(table[["group"]]))
   trainingValues <- rep(0, length(table[["group"]]))
-  if (options[["modelOptimization"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "manual") {
     validValues <- rep(0, length(table[["group"]]))
   }
   testValues <- rep(0, length(table[["group"]]))
   dataTable <- prop.table(table(dataset[, options[["target"]]]))
   trainingTable <- prop.table(table(classificationResult[["train"]][, options[["target"]]]))
-  if (options[["modelOptimization"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "manual") {
     validTable <- prop.table(table(classificationResult[["valid"]][, options[["target"]]]))
   }
   testTable <- prop.table(table(classificationResult[["test"]][, options[["target"]]]))
@@ -885,7 +885,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     trainingIndex <- which(names(trainingTable) == as.character(Dlevels)[i])
     trainingValues[trainingIndex] <- as.numeric(trainingTable)[trainingIndex]
     # Validation set
-    if (options[["modelOptimization"]] != "optimizationManual") {
+    if (options[["modelOptimization"]] != "manual") {
       validIndex <- which(names(validTable) == as.character(Dlevels)[i])
       validValues[validIndex] <- as.numeric(validTable)[validIndex]
     }
@@ -895,7 +895,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   table[["dataset"]] <- dataValues
   table[["train"]] <- trainingValues
-  if (options[["modelOptimization"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "manual") {
     table[["valid"]] <- validValues
   }
   table[["test"]] <- testValues

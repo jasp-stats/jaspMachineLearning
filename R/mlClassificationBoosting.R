@@ -74,8 +74,8 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
   formula <- jaspResults[["formula"]]$object
   # Set model-specific parameters
   trees <- switch(options[["modelOptimization"]],
-    "optimizationManual" = options[["noOfTrees"]],
-    "optimizationOOB" = options[["maxTrees"]]
+    "manual" = options[["noOfTrees"]],
+    "optimized" = options[["maxTrees"]]
   )
   # Split the data into training and test sets
   if (options[["holdoutData"]] == "testSetIndicator" && options[["testSetIndicatorVariable"]] != "") {
@@ -91,7 +91,7 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
   testIndicatorColumn[trainingIndex] <- 0
   # gbm expects the columns in the data to be in the same order as the variables...
   trainingAndValidationSet <- trainingAndValidationSet[, match(names(trainingAndValidationSet), all.vars(formula))]
-  if (options[["modelOptimization"]] == "optimizationManual") {
+  if (options[["modelOptimization"]] == "manual") {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
@@ -104,7 +104,7 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
       distribution = "multinomial", n.cores = 1, keep.data = TRUE
     ) # Multiple cores breaks modules in JASP, see: INTERNAL-jasp#372
     noOfTrees <- options[["noOfTrees"]]
-  } else if (options[["modelOptimization"]] == "optimizationOOB") {
+  } else if (options[["modelOptimization"]] == "optimized") {
     # Create a train, validation and test set (optimization)
     validationIndex <- sample.int(nrow(trainingAndValidationSet), size = ceiling(options[["validationDataManual"]] * nrow(trainingAndValidationSet)))
     testSet <- dataset[-trainingIndex, ]
@@ -157,7 +157,7 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
   result[["method"]] <- if (options[["modelValid"]] == "validationManual") "OOB" else ""
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["classes"]] <- dataPredictions
-  if (options[["modelOptimization"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "manual") {
     result[["validationConfTable"]] <- table("Pred" = validationPredictions, "Real" = validationSet[, options[["target"]]])
     result[["validAcc"]] <- sum(diag(prop.table(result[["validationConfTable"]])))
     result[["nvalid"]] <- nrow(validationSet)

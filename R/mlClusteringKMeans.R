@@ -53,25 +53,25 @@ mlClusteringKMeans <- function(jaspResults, dataset, options, ...) {
 }
 
 .kMeansClustering <- function(dataset, options, jaspResults, ready) {
-  if (options[["clusterDeterminationMethod"]] == "manual") {
+  if (options[["modelOptimization"]] == "manual") {
     if (options[["centers"]] == "means") {
-      fit <- kmeans(dataset[, options[["predictors"]]], centers = options[["clusterDeterminationMethodManualNumberOfClusters"]], iter.max = options[["maxNumberIterations"]], nstart = options[["noOfRandomSets"]], algorithm = options[["algorithm"]])
+      fit <- kmeans(dataset[, options[["predictors"]]], centers = options[["manualNumberOfClusters"]], iter.max = options[["maxNumberIterations"]], nstart = options[["noOfRandomSets"]], algorithm = options[["algorithm"]])
     } else if (options[["centers"]] == "medians") {
-      fit <- Gmedian::kGmedian(dataset[, options[["predictors"]]], ncenters = options[["clusterDeterminationMethodManualNumberOfClusters"]], nstart = options[["maxNumberIterations"]], nstartkmeans = options[["noOfRandomSets"]])
+      fit <- Gmedian::kGmedian(dataset[, options[["predictors"]]], ncenters = options[["manualNumberOfClusters"]], nstart = options[["maxNumberIterations"]], nstartkmeans = options[["noOfRandomSets"]])
     } else if (options[["centers"]] == "medoids") {
       if (options[["algorithm"]] == "pam") {
-        fit <- cluster::pam(dataset[, options[["predictors"]]], k = options[["clusterDeterminationMethodManualNumberOfClusters"]], metric = options[["distance"]], nstart = options[["noOfRandomSets"]])
+        fit <- cluster::pam(dataset[, options[["predictors"]]], k = options[["manualNumberOfClusters"]], metric = options[["distance"]], nstart = options[["noOfRandomSets"]])
       } else {
-        fit <- cluster::clara(dataset[, options[["predictors"]]], k = options[["clusterDeterminationMethodManualNumberOfClusters"]], metric = options[["distance"]], samples = options[["maxNumberIterations"]])
+        fit <- cluster::clara(dataset[, options[["predictors"]]], k = options[["manualNumberOfClusters"]], metric = options[["distance"]], samples = options[["maxNumberIterations"]])
       }
     }
-    clusters <- options[["clusterDeterminationMethodManualNumberOfClusters"]]
+    clusters <- options[["manualNumberOfClusters"]]
   } else {
-    avgSilh <- numeric(options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]] - 1)
-    wssStore <- numeric(options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]] - 1)
-    clusterRange <- 2:options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]]
-    aicStore <- numeric(options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]] - 1)
-    bicStore <- numeric(options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]] - 1)
+    avgSilh <- numeric(options[["maxNumberOfClusters"]] - 1)
+    wssStore <- numeric(options[["maxNumberOfClusters"]] - 1)
+    clusterRange <- 2:options[["maxNumberOfClusters"]]
+    aicStore <- numeric(options[["maxNumberOfClusters"]] - 1)
+    bicStore <- numeric(options[["maxNumberOfClusters"]] - 1)
     startProgressbar(length(clusterRange))
     for (i in clusterRange) {
       if (options[["centers"]] == "means") {
@@ -95,7 +95,7 @@ mlClusteringKMeans <- function(jaspResults, dataset, options, ...) {
       bicStore[i - 1] <- sumSquares[["tot.within.ss"]] + log(length(predictions)) * ncol(centers) * nrow(centers)
       progressbarTick()
     }
-    clusters <- switch(options[["clusterDeterminationMethodOptimizedTypeOptimization"]],
+    clusters <- switch(options[["modelOptimizationMethod"]],
       "silhouette" = clusterRange[which.max(avgSilh)],
       "aic" = clusterRange[which.min(aicStore)],
       "bic" = clusterRange[which.min(bicStore)]
@@ -130,7 +130,7 @@ mlClusteringKMeans <- function(jaspResults, dataset, options, ...) {
   result[["BIC"]] <- sumSquares[["tot.within.ss"]] + log(length(predictions)) * ncol(centers) * nrow(centers)
   result[["Silh_score"]] <- silhouettes[["avg.width"]]
   result[["silh_scores"]] <- silhouettes[["clus.avg.widths"]]
-  if (options[["clusterDeterminationMethod"]] != "manual") {
+  if (options[["modelOptimization"]] != "manual") {
     result[["silhStore"]] <- avgSilh
     result[["aicStore"]] <- aicStore
     result[["bicStore"]] <- bicStore

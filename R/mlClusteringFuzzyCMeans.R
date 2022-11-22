@@ -53,20 +53,20 @@ mlClusteringFuzzyCMeans <- function(jaspResults, dataset, options, ...) {
 }
 
 .cMeansClustering <- function(dataset, options, jaspResults, ready) {
-  if (options[["clusterDeterminationMethod"]] == "manual") {
+  if (options[["modelOptimization"]] == "manual") {
     fit <- e1071::cmeans(dataset[, options[["predictors"]]],
-      centers = options[["clusterDeterminationMethodManualNumberOfClusters"]],
+      centers = options[["manualNumberOfClusters"]],
       iter.max = options[["maxNumberIterations"]],
       m = options[["fuzzinessParameter"]],
       method = "ufcl"
     ) # method = "cmeans" can yield a number of clusters that is not equal to the requested number
-    clusters <- options[["clusterDeterminationMethodManualNumberOfClusters"]]
+    clusters <- options[["manualNumberOfClusters"]]
   } else {
-    avgSilh <- numeric(options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]] - 1)
-    wssStore <- numeric(options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]] - 1)
-    clusterRange <- 2:options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]]
-    aicStore <- numeric(options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]] - 1)
-    bicStore <- numeric(options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]] - 1)
+    avgSilh <- numeric(options[["maxNumberOfClusters"]] - 1)
+    wssStore <- numeric(options[["maxNumberOfClusters"]] - 1)
+    clusterRange <- 2:options[["maxNumberOfClusters"]]
+    aicStore <- numeric(options[["maxNumberOfClusters"]] - 1)
+    bicStore <- numeric(options[["maxNumberOfClusters"]] - 1)
     startProgressbar(length(clusterRange))
     for (i in clusterRange) {
       fit <- e1071::cmeans(dataset[, options[["predictors"]]],
@@ -83,7 +83,7 @@ mlClusteringFuzzyCMeans <- function(jaspResults, dataset, options, ...) {
       bicStore[i - 1] <- sumSquares[["tot.within.ss"]] + log(length(fit[["cluster"]])) * ncol(fit[["centers"]]) * nrow(fit[["centers"]])
       progressbarTick()
     }
-    clusters <- switch(options[["clusterDeterminationMethodOptimizedTypeOptimization"]],
+    clusters <- switch(options[["modelOptimizationMethod"]],
       "silhouette" = clusterRange[which.max(avgSilh)],
       "aic" = clusterRange[which.min(aicStore)],
       "bic" = clusterRange[which.min(bicStore)]
@@ -109,7 +109,7 @@ mlClusteringFuzzyCMeans <- function(jaspResults, dataset, options, ...) {
   result[["BIC"]] <- sumSquares[["tot.within.ss"]] + log(length(fit[["cluster"]])) * ncol(fit[["centers"]]) * nrow(fit[["centers"]])
   result[["Silh_score"]] <- silhouettes[["avg.width"]]
   result[["silh_scores"]] <- silhouettes[["clus.avg.widths"]]
-  if (options[["clusterDeterminationMethod"]] != "manual") {
+  if (options[["modelOptimization"]] != "manual") {
     result[["silhStore"]] <- avgSilh
     result[["aicStore"]] <- aicStore
     result[["bicStore"]] <- bicStore

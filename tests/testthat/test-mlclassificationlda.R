@@ -14,7 +14,7 @@ options$holdoutData <- "holdoutManual"
 options$manovaTable <- TRUE
 options$matrixPlot <- TRUE
 options$meanTable <- TRUE
-options$modelOptimization <- "optimizationManual"
+options$modelOptimization <- "manual"
 options$modelValid <- "validationManual"
 options$multicolTable <- TRUE
 options$noOfFolds <- 5

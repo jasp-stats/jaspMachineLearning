@@ -189,7 +189,7 @@ Form
 
 			RadioButton
 			{
-				name:							"optimizationManual"
+				name:							"manual"
 				checked:						true
 			}
 		}

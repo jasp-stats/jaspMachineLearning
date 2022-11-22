@@ -73,7 +73,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   # Create the generated test set indicator
   testIndicatorColumn <- rep(1, nrow(dataset))
   testIndicatorColumn[trainingIndex] <- 0
-  if (options[["modelOptimization"]] == "optimizationManual") {
+  if (options[["modelOptimization"]] == "manual") {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
@@ -85,7 +85,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
       importance = TRUE, keep.forest = TRUE
     )
     noOfTrees <- options[["noOfTrees"]]
-  } else if (options[["modelOptimization"]] == "optimizationError") {
+  } else if (options[["modelOptimization"]] == "optimized") {
     # Create a train, validation and test set (optimization)
     validationIndex <- sample.int(nrow(trainingAndValidationSet), size = ceiling(options[["validationDataManual"]] * nrow(trainingAndValidationSet)))
     testSet <- dataset[-trainingIndex, ]
@@ -142,7 +142,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
     MeanIncrMSE = testFit$importance[, 1],
     TotalDecrNodeImp = testFit$importance[, 2]
   ), -TotalDecrNodeImp)
-  if (options[["modelOptimization"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "manual") {
     result[["validMSE"]] <- mean((validationFit$test[["predicted"]] - validationSet[, options[["target"]]])^2)
     result[["nvalid"]] <- nrow(validationSet)
     result[["valid"]] <- validationSet
@@ -210,7 +210,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
     "classification" = 1 - result[["rfit_train"]]$err.rate[, 1],
     "regression" = result[["rfit_train"]]$mse
   )
-  if (options[["modelOptimization"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "manual") {
     values2 <- switch(purpose,
       "classification" = 1 - result[["rfit_valid"]]$err.rate[1:result[["noOfTrees"]], 1],
       "regression" = result[["rfit_valid"]]$mse[1:result[["noOfTrees"]]]

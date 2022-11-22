@@ -249,19 +249,19 @@ Form
 			CheckBox
 			{
 				text:							qsTr("Scale variables")
-				name:							"equalSdScale"
+				name:							"scaleVariables"
 				checked:						true
 			}
 
 			CheckBox
 			{
-				name:							"randomSeed"
+				name:							"setSeed"
 				text:							qsTr("Set seed")
 				childrenOnSameRow:				true
 
 				IntegerField
 				{
-					name:						"randomSeedValue"
+					name:						"seed"
 					defaultValue:				1
 					min:						-999999
 					max:						999999
@@ -273,7 +273,7 @@ Form
 		RadioButtonGroup
 		{
 			title:								qsTr("Cluster Determination")
-			name:								"clusterDeterminationMethod"
+			name:								"modelOptimization"
 
 			RadioButton
 			{
@@ -283,7 +283,7 @@ Form
 
 				IntegerField
 				{
-					name:						"clusterDeterminationMethodManualNumberOfClusters"
+					name:						"manualNumberOfClusters"
 					text:						qsTr("Clusters")
 					defaultValue:				3
 					min:						2
@@ -302,7 +302,7 @@ Form
 
 				DropDown
 				{
-					name:						"clusterDeterminationMethodOptimizedTypeOptimization"
+					name:						"modelOptimizationMethod"
 					indexDefaultValue:			1
 
 					values:
@@ -316,7 +316,7 @@ Form
 
 			IntegerField
 			{
-				name:							"clusterDeterminationMethodOptimizedMaxNumberOfClusters"
+				name:							"maxNumberOfClusters"
 				text:							qsTr("Max. clusters")
 				defaultValue:					10
 				min:							2

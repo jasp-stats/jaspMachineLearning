@@ -240,7 +240,7 @@ Form
 
 				RadioButton 
 				{
-					name:								"optimizationManual"
+					name:								"manual"
 					text:								qsTr("Manual")
 					checked:							true
 
@@ -293,7 +293,7 @@ Form
 				{
 					id:									optimizeModel
 					text:								qsTr("Optimized")
-					name:								"optimizationError"
+					name:								"optimized"
 					checked:							true
 
 					Group

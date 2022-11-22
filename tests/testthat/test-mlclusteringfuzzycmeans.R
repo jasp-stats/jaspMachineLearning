@@ -4,12 +4,12 @@ options <- jaspTools::analysisOptions("mlClusteringFuzzyCMeans")
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
 options$tableClusterEvaluationMetrics <- TRUE
-options$clusterDeterminationMethod <- "optimized"
+options$modelOptimization <- "optimized"
 options$tsneClusterPlot <- TRUE
 options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
                            "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
                            "Hue", "Dilution", "Proline")
-options$randomSeed <- TRUE
+options$setSeed <- TRUE
 options$tableClusterInformationBetweenSumOfSquares <- TRUE
 options$tableClusterInformationCentroids <- TRUE
 options$tableClusterInformationSilhouetteScore <- TRUE

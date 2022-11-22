@@ -209,19 +209,19 @@ Form
 			CheckBox
 			{
 				text:							qsTr("Scale variables")
-				name:							"equalSdScale"
+				name:							"scaleVariables"
 				checked:						true
 			}
 
 			CheckBox
 			{
-				name:							"randomSeed"
+				name:							"setSeed"
 				text:							qsTr("Set seed")
 				childrenOnSameRow:				true
 
 				IntegerField
 				{
-					name:						"randomSeedValue"
+					name:						"seed"
 					defaultValue:				1
 					min:						-999999
 					max:						999999
@@ -233,7 +233,7 @@ Form
 		RadioButtonGroup
 		{
 			title:								qsTr("Model Optimization")
-			name:								"clusterDeterminationMethod"
+			name:								"modelOptimization"
 			visible:							false
 
 			RadioButton

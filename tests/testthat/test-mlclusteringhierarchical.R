@@ -5,12 +5,12 @@ options$addPredictions <- FALSE
 options$predictionsColumn <- ""
 options$tableClusterEvaluationMetrics <- TRUE
 options$dendrogram <- TRUE
-options$clusterDeterminationMethod <- "optimized"
+options$modelOptimization <- "optimized"
 options$tsneClusterPlot <- TRUE
 options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
                            "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
                            "Hue", "Dilution", "Proline")
-options$randomSeed <- TRUE
+options$setSeed <- TRUE
 options$tableClusterInformationBetweenSumOfSquares <- TRUE
 options$tableClusterInformationSilhouetteScore <- TRUE
 options$tableClusterInformationTotalSumOfSquares <- TRUE
@@ -81,9 +81,9 @@ options$addPredictions <- FALSE
 options$predictionsColumn <- ""
 options$tableClusterEvaluationMetrics <- TRUE
 options$linkage <- "wardD"
-options$clusterDeterminationMethod <- "optimized"
+options$modelOptimization <- "optimized"
 options$predictors <- c("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", "Hue", "Dilution", "Proline")
-options$randomSeed <- TRUE
+options$setSeed <- TRUE
 options$tableClusterMeans <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClusteringHierarchical", "wine.csv", options)
@@ -146,9 +146,9 @@ options$addPredictions <- FALSE
 options$predictionsColumn <- ""
 options$tableClusterEvaluationMetrics <- TRUE
 options$linkage <- "wardD"
-options$clusterDeterminationMethod <- "optimized"
+options$modelOptimization <- "optimized"
 options$predictors <- c("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", "Hue", "Dilution", "Proline")
-options$randomSeed <- TRUE
+options$setSeed <- TRUE
 options$tableClusterMeans <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClusteringHierarchical", "wine.csv", options)
@@ -211,9 +211,9 @@ options$addPredictions <- FALSE
 options$predictionsColumn <- ""
 options$tableClusterEvaluationMetrics <- TRUE
 options$linkage <- "median"
-options$clusterDeterminationMethod <- "optimized"
+options$modelOptimization <- "optimized"
 options$predictors <- c("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", "Hue", "Dilution", "Proline")
-options$randomSeed <- TRUE
+options$setSeed <- TRUE
 options$tableClusterMeans <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClusteringHierarchical", "wine.csv", options)
@@ -260,9 +260,9 @@ options$addPredictions <- FALSE
 options$predictionsColumn <- ""
 options$tableClusterEvaluationMetrics <- TRUE
 options$linkage <- "mcquitty"
-options$clusterDeterminationMethod <- "optimized"
+options$modelOptimization <- "optimized"
 options$predictors <- c("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", "Hue", "Dilution", "Proline")
-options$randomSeed <- TRUE
+options$setSeed <- TRUE
 options$tableClusterMeans <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClusteringHierarchical", "wine.csv", options)

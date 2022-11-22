@@ -17,8 +17,8 @@
 
 .mlClusteringDependencies <- function(options) {
   opt <- c(
-    "predictors", "clusterDeterminationMethodManualNumberOfClusters", "noOfRandomSets", "maxNumberIterations", "algorithm", "clusterDeterminationMethod", "randomSeedValue", "centers",
-    "clusterDeterminationMethodOptimizedMaxNumberOfClusters", "randomSeed", "equalSdScale", "fuzzinessParameter", "distance", "linkage", "epsilonNeighborhoodSize", "minCorePoints", "numberOfTrees", "maxTrees", "clusterDeterminationMethodOptimizedTypeOptimization"
+    "predictors", "manualNumberOfClusters", "noOfRandomSets", "maxNumberIterations", "algorithm", "modelOptimization", "seed", "centers",
+    "maxNumberOfClusters", "setSeed", "scaleVariables", "fuzzinessParameter", "distance", "linkage", "epsilonNeighborhoodSize", "minCorePoints", "numberOfTrees", "maxTrees", "modelOptimizationMethod"
   )
   return(opt)
 }
@@ -29,7 +29,7 @@
   if (is.null(dataset)) {
     dataset <- .readAndAddCompleteRowIndices(dataset, predictors)
   }
-  if (options[["equalSdScale"]] && length(unlist(options[["predictors"]])) > 0) {
+  if (options[["scaleVariables"]] && length(unlist(options[["predictors"]])) > 0) {
     dataset <- .scaleNumericData(dataset)
   }
   return(dataset)
@@ -49,9 +49,9 @@
 .getCustomErrorChecksClustering <- function(dataset, options, type) {
   checkClusters <- function() {
     if (type != "densitybased") {
-      clusters <- switch(options[["clusterDeterminationMethod"]],
-        "manual" = options[["clusterDeterminationMethodManualNumberOfClusters"]],
-        "optimized" = options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]]
+      clusters <- switch(options[["modelOptimization"]],
+        "manual" = options[["manualNumberOfClusters"]],
+        "optimized" = options[["maxNumberOfClusters"]]
       )
       if (clusters > (nrow(dataset) - 1)) {
         return(gettextf("You have specified more clusters than distinct data points. Please choose a number lower than %s.", nrow(dataset)))
@@ -103,8 +103,8 @@
     return()
   }
   # set the seed so that every time the same set is chosen (to prevent random results) ##
-  if (options[["randomSeed"]]) {
-    set.seed(options[["randomSeedValue"]])
+  if (options[["setSeed"]]) {
+    set.seed(options[["seed"]])
   }
   if (ready) {
     clusterResult <- switch(type,
@@ -158,15 +158,15 @@
   }
   .mlClusteringComputeResults(dataset, options, jaspResults, ready, type = type)
   clusterResult <- jaspResults[["clusterResult"]]$object
-  if (options[["clusterDeterminationMethod"]] != "manual") {
-    criterion <- switch(options[["clusterDeterminationMethodOptimizedTypeOptimization"]],
+  if (options[["modelOptimization"]] != "manual") {
+    criterion <- switch(options[["modelOptimizationMethod"]],
       "aic" = gettext("AIC"),
       "bic" = gettext("BIC"),
       "silhouette" = gettext("silhouette")
     )
     table$addFootnote(gettextf("The model is optimized with respect to the <i>%s</i> value.", criterion))
   }
-  if (clusterResult[["clusters"]] == options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]] && options[["clusterDeterminationMethod"]] != "manual") {
+  if (clusterResult[["clusters"]] == options[["maxNumberOfClusters"]] && options[["modelOptimization"]] != "manual") {
     message <- gettext("The optimum number of clusters is the maximum number of clusters. You might want to adjust the range of optimization.")
     table$addFootnote(message)
   }
@@ -178,7 +178,7 @@
       table$addFootnote(gettext("Your cluster model contains 1 cluster and 0 Noisepoints. You could change the Eps and MinPts parameters."), colNames = "clusters")
     }
   }
-  if (!options[["equalSdScale"]]) {
+  if (!options[["scaleVariables"]]) {
     table$addFootnote(gettext("The features in the model are <b>unstandardized</b>."))
   }
   row <- data.frame(
@@ -310,8 +310,8 @@
     return()
   }
   clusterResult <- jaspResults[["clusterResult"]]$object
-  if (options[["randomSeed"]]) {
-    set.seed(options[["randomSeedValue"]])
+  if (options[["setSeed"]]) {
+    set.seed(options[["seed"]])
   }
   startProgressbar(2)
   progressbarTick()
@@ -322,7 +322,7 @@
   if (is.null(jaspResults[["tsneOutput"]])) {
     tsne <- Rtsne::Rtsne(as.matrix(dataset), perplexity = nrow(dataset) / 4, check_duplicates = FALSE)
     jaspResults[["tsneOutput"]] <- createJaspState(tsne)
-    jaspResults[["tsneOutput"]]$dependOn(options = c("predictors", "randomSeed", "randomSeedValue"))
+    jaspResults[["tsneOutput"]]$dependOn(options = c("predictors", "setSeed", "seed"))
   } else {
     tsne <- jaspResults[["tsneOutput"]]$object
   }
@@ -357,7 +357,7 @@
 }
 
 .mlClusteringPlotElbow <- function(dataset, options, jaspResults, ready, position) {
-  if (!is.null(jaspResults[["optimPlot"]]) || !options[["elbowMethodPlot"]] || options[["clusterDeterminationMethod"]] == "manual") {
+  if (!is.null(jaspResults[["optimPlot"]]) || !options[["elbowMethodPlot"]] || options[["modelOptimization"]] == "manual") {
     return()
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Elbow Method Plot"), width = 400, height = 300)
@@ -373,12 +373,12 @@
   bic <- clusterResult[["bicStore"]]
   values <- c(wss, aic, bic)
   type <- rep(c(gettext("WSS"), gettext("AIC"), gettext("BIC")), each = length(wss))
-  requiredPoint <- switch(options[["clusterDeterminationMethodOptimizedTypeOptimization"]],
+  requiredPoint <- switch(options[["modelOptimizationMethod"]],
     "aic" = gettext("AIC"),
     "bic" = gettext("BIC"),
     "silhouette" = ""
   )
-  plotData <- data.frame(x = rep(2:options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]], 3), y = values, type = type)
+  plotData <- data.frame(x = rep(2:options[["maxNumberOfClusters"]], 3), y = values, type = type)
   xBreaks <- jaspGraphs::getPrettyAxisBreaks(plotData$x, min.n = 4)
   yBreaks <- jaspGraphs::getPrettyAxisBreaks(plotData$y, min.n = 4)
   yVals <- values[type == requiredPoint]
@@ -395,7 +395,7 @@
     jaspGraphs::geom_rangeframe() +
     jaspGraphs::themeJaspRaw(legend.position = "top") +
     ggplot2::theme(legend.text = ggplot2::element_text(size = 12))
-  if (options[["clusterDeterminationMethodOptimizedTypeOptimization"]] != "silhouette") {
+  if (options[["modelOptimizationMethod"]] != "silhouette") {
     p <- p + jaspGraphs::geom_point(data = pointData, ggplot2::aes(x = x, y = y, fill = "red"), inherit.aes = FALSE) +
       ggplot2::scale_fill_manual(name = NULL, labels = gettextf("Lowest %s", requiredPoint), values = "red") +
       ggplot2::guides(fill = ggplot2::guide_legend(order = 1), linetype = ggplot2::guide_legend(order = 2))

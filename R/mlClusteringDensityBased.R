@@ -109,7 +109,7 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("K-Distance Plot"), width = 400, height = 300)
   plot$position <- position
-  plot$dependOn(options = c("predictors", "epsilonNeighborhoodSize", "minCorePoints", "clusterDeterminationMethod", "randomSeedValue", "equalSdScale", "ready", "kDistancePlot", "distance"))
+  plot$dependOn(options = c("predictors", "epsilonNeighborhoodSize", "minCorePoints", "modelOptimization", "seed", "scaleVariables", "ready", "kDistancePlot", "distance"))
   jaspResults[["kdistPlot"]] <- plot
   if (!ready) {
     return()

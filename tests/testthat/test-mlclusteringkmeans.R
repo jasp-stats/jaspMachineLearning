@@ -13,8 +13,8 @@ options$elbowMethodPlot <- TRUE
 options$clusterMeanPlot <- TRUE
 options$tsneClusterPlot <- TRUE
 options$algorithm <- "Hartigan-Wong"
-options$randomSeed <- TRUE
-options$clusterDeterminationMethod <- "optimized"
+options$setSeed <- TRUE
+options$modelOptimization <- "optimized"
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
 set.seed(1)
@@ -97,8 +97,8 @@ options$tableClusterEvaluationMetrics <- TRUE
 options$elbowMethodPlot <- TRUE
 options$clusterMeanPlot <- TRUE
 options$centers <- "medians"
-options$randomSeed <- TRUE
-options$clusterDeterminationMethod <- "optimized"
+options$setSeed <- TRUE
+options$modelOptimization <- "optimized"
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
 set.seed(1)
@@ -178,8 +178,8 @@ options$tableClusterEvaluationMetrics <- TRUE
 options$elbowMethodPlot <- TRUE
 options$clusterMeanPlot <- TRUE
 options$centers <- "medoids"
-options$randomSeed <- TRUE
-options$clusterDeterminationMethod <- "optimized"
+options$setSeed <- TRUE
+options$modelOptimization <- "optimized"
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
 set.seed(1)

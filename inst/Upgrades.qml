@@ -24,6 +24,20 @@ Upgrades
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
 		ChangeRename { from: "modelOpt";								to: "modelOptimization"				}
 
+		ChangeJS
+		{
+			name: "modelOptimization"
+			jsFunction: function(options)
+			{
+				switch (options["modelOptimization"])
+				{
+					case "optimizationManual":		return "manual";
+					case "optimizationOOB":			return "optimized";
+					default:						return options["modelOptimization"];
+				}
+			}
+		}
+
 	}
 
 	Upgrade
@@ -44,6 +58,20 @@ Upgrades
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
 		ChangeRename { from: "modelOpt";								to: "modelOptimization"				}
 
+		ChangeJS
+		{
+			name: "modelOptimization"
+			jsFunction: function(options)
+			{
+				switch (options["modelOptimization"])
+				{
+					case "optimizationManual":		return "manual";
+					case "optimizationOOB":			return "optimized";
+					default:						return options["modelOptimization"];
+				}
+			}
+		}
+
 		ChangeRename { from: "plotLegend";								to: "legendShown"					}
 		ChangeRename { from: "plotPoints";								to: "pointsShown"					}
 
@@ -61,6 +89,19 @@ Upgrades
 		ChangeRename { from: "scaleEqualSD";							to: "scaleVariables"				}
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
 		ChangeRename { from: "modelOpt";								to: "modelOptimization"				}
+
+		ChangeJS
+		{
+			name: "modelOptimization"
+			jsFunction: function(options)
+			{
+				switch (options["modelOptimization"])
+				{
+					case "optimizationManual":		return "manual";
+					default:						return options["modelOptimization"];
+				}
+			}
+		}
 
 		ChangeRename { from: "plotDecisionTree";						to: "decisionTreePlot"				}
 		ChangeRename { from: "cp";										to: "complexityParameter"			}
@@ -84,6 +125,19 @@ Upgrades
 		ChangeRename { from: "scaleEqualSD";							to: "scaleVariables"				}
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
 		ChangeRename { from: "modelOpt";								to: "modelOptimization"				}
+
+		ChangeJS
+		{
+			name: "modelOptimization"
+			jsFunction: function(options)
+			{
+				switch (options["modelOptimization"])
+				{
+					case "optimizationManual":		return "manual";
+					default:						return options["modelOptimization"];
+				}
+			}
+		}
 
 		ChangeRename { from: "plotLegend";								to: "legendShown"					}
 		ChangeRename { from: "plotPoints";								to: "pointsShown"					}
@@ -109,6 +163,20 @@ Upgrades
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
 		ChangeRename { from: "modelOpt";								to: "modelOptimization"				}
 
+		ChangeJS
+		{
+			name: "modelOptimization"
+			jsFunction: function(options)
+			{
+				switch (options["modelOptimization"])
+				{
+					case "optimizationManual":		return "manual";
+					case "optimizationError":		return "optimized";
+					default:						return options["modelOptimization"];
+				}
+			}
+		}
+
 		ChangeRename { from: "tableVariableImportance";					to: "variableImportanceTable"		}
 
 		ChangeRename { from: "plotTreesVsModelError";					to: "treesVsModelErrorPlot"			}
@@ -131,6 +199,20 @@ Upgrades
 		ChangeRename { from: "scaleEqualSD";							to: "scaleVariables"				}
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
 		ChangeRename { from: "modelOpt";								to: "modelOptimization"				}
+
+		ChangeJS
+		{
+			name: "modelOptimization"
+			jsFunction: function(options)
+			{
+				switch (options["modelOptimization"])
+				{
+					case "optimizationManual":		return "manual";
+					case "optimizationError":		return "optimized";
+					default:						return options["modelOptimization"];
+				}
+			}
+		}
 
 		ChangeRename { from: "plotLegend";								to: "legendShown"					}
 		ChangeRename { from: "plotPoints";								to: "pointsShown"					}
@@ -155,6 +237,20 @@ Upgrades
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
 		ChangeRename { from: "modelOpt";								to: "modelOptimization"				}
 
+		ChangeJS
+		{
+			name: "modelOptimization"
+			jsFunction: function(options)
+			{
+				switch (options["modelOptimization"])
+				{
+					case "optimizationManual":		return "manual";
+					case "optimizationError":		return "optimized";
+					default:						return options["modelOptimization"];
+				}
+			}
+		}
+
 		ChangeRename { from: "plotWeights";								to: "weightsPlot"					}
 		ChangeRename { from: "plotErrorVsK";							to: "errorVsKPlot"					}
 		ChangeRename { from: "maxK";									to: "maxNearestNeighbors"			}
@@ -171,6 +267,20 @@ Upgrades
 		ChangeRename { from: "scaleEqualSD";							to: "scaleVariables"				}
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
 		ChangeRename { from: "modelOpt";								to: "modelOptimization"				}
+
+		ChangeJS
+		{
+			name: "modelOptimization"
+			jsFunction: function(options)
+			{
+				switch (options["modelOptimization"])
+				{
+					case "optimizationManual":		return "manual";
+					case "optimizationError":		return "optimized";
+					default:						return options["modelOptimization"];
+				}
+			}
+		}
 
 		ChangeRename { from: "plotLegend";								to: "legendShown"					}
 		ChangeRename { from: "plotPoints";								to: "pointsShown"					}
@@ -192,6 +302,20 @@ Upgrades
 		ChangeRename { from: "scaleEqualSD";							to: "scaleVariables"				}
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
 		ChangeRename { from: "modelOpt";								to: "modelOptimization"				}
+
+		ChangeJS
+		{
+			name: "modelOptimization"
+			jsFunction: function(options)
+			{
+				switch (options["modelOptimization"])
+				{
+					case "optimizationManual":		return "manual";
+					case "optimizationError":		return "optimized";
+					default:						return options["modelOptimization"];
+				}
+			}
+		}
 
 		ChangeRename { from: "plotError";								to: "meanSquaredErrorPlot"			}
 		ChangeRename { from: "actFuncPlot";								to: "activationFunctionPlot"		}
@@ -226,6 +350,20 @@ Upgrades
 		ChangeRename { from: "scaleEqualSD";							to: "scaleVariables"				}
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
 		ChangeRename { from: "modelOpt";								to: "modelOptimization"				}
+
+		ChangeJS
+		{
+			name: "modelOptimization"
+			jsFunction: function(options)
+			{
+				switch (options["modelOptimization"])
+				{
+					case "optimizationManual":		return "manual";
+					case "optimizationError":		return "optimized";
+					default:						return options["modelOptimization"];
+				}
+			}
+		}
 
 		ChangeRename { from: "plotLegend";								to: "legendShown"					}
 		ChangeRename { from: "plotPoints";								to: "pointsShown"					}
@@ -264,6 +402,19 @@ Upgrades
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
 		ChangeRename { from: "modelOpt";								to: "modelOptimization"				}
 
+		ChangeJS
+		{
+			name: "modelOptimization"
+			jsFunction: function(options)
+			{
+				switch (options["modelOptimization"])
+				{
+					case "optimizationManual":		return "manual";
+					default:						return options["modelOptimization"];
+				}
+			}
+		}
+
 		ChangeRename { from: "cp";										to: "complexityParameter"			}
 
 		ChangeRename { from: "tableSupportVectors";						to: "supportVectorsTable"			}
@@ -281,6 +432,19 @@ Upgrades
 		ChangeRename { from: "scaleEqualSD";							to: "scaleVariables"				}
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
 		ChangeRename { from: "modelOpt";								to: "modelOptimization"				}
+
+		ChangeJS
+		{
+			name: "modelOptimization"
+			jsFunction: function(options)
+			{
+				switch (options["modelOptimization"])
+				{
+					case "optimizationManual":		return "manual";
+					default:						return options["modelOptimization"];
+				}
+			}
+		}
 
 		ChangeRename { from: "plotLegend";								to: "legendShown"					}
 		ChangeRename { from: "plotPoints";								to: "pointsShown"					}
@@ -302,6 +466,19 @@ Upgrades
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
 		ChangeRename { from: "modelOpt";								to: "modelOptimization"				}
 
+		ChangeJS
+		{
+			name: "modelOptimization"
+			jsFunction: function(options)
+			{
+				switch (options["modelOptimization"])
+				{
+					case "optimizationManual":		return "manual";
+					default:						return options["modelOptimization"];
+				}
+			}
+		}
+
 		ChangeRename { from: "thresh";									to: "convergenceThreshold"			}
 
 	}
@@ -316,6 +493,19 @@ Upgrades
 		ChangeRename { from: "scaleEqualSD";							to: "scaleVariables"				}
 		ChangeRename { from: "seedBox";									to: "setSeed"						}
 		ChangeRename { from: "modelOpt";								to: "modelOptimization"				}
+
+		ChangeJS
+		{
+			name: "modelOptimization"
+			jsFunction: function(options)
+			{
+				switch (options["modelOptimization"])
+				{
+					case "optimizationManual":		return "manual";
+					default:						return options["modelOptimization"];
+				}
+			}
+		}
 
 		ChangeRename { from: "plotLegend";								to: "legendShown"					}
 		ChangeRename { from: "plotPoints";								to: "pointsShown"					}
@@ -363,20 +553,19 @@ Upgrades
 			}
 		}
 
-		ChangeRename { from: "scaleEqualSD";										to: "equalSdScale"}
-		ChangeRename { from: "seedBox";												to: "randomSeed"}
-		ChangeRename { from: "seed";												to: "randomSeedValue"}
-		ChangeRename { from: "modelOpt";											to: "clusterDeterminationMethod"}
+		ChangeRename { from: "scaleEqualSD";										to: "scaleVariables"}
+		ChangeRename { from: "seedBox";												to: "setSeed"}
+		ChangeRename { from: "modelOpt";											to: "modelOptimization"}
 
 		ChangeJS
 		{
-			name: "clusterDeterminationMethod"
+			name: "modelOptimization"
 			jsFunction: function(options)
 			{
-				switch (options["clusterDeterminationMethod"])
+				switch (options["modelOptimization"])
 				{
 					case "validationManual":			return "manual";
-					default:							return options["clusterDeterminationMethod"];
+					default:							return options["modelOptimization"];
 				}
 			}
 		}
@@ -407,34 +596,33 @@ Upgrades
 		ChangeRename { from: "labels";												to: "tsneClusterPlotLabels"}
 		ChangeRename { from: "noOfIterations";										to: "maxNumberIterations"}
 		ChangeRename { from: "m";													to: "fuzzinessParameter"}
-		ChangeRename { from: "scaleEqualSD";										to: "equalSdScale"}
-		ChangeRename { from: "seedBox";												to: "randomSeed"}
-		ChangeRename { from: "seed";												to: "randomSeedValue"}
-		ChangeRename { from: "modelOpt";											to: "clusterDeterminationMethod"}
+		ChangeRename { from: "scaleEqualSD";										to: "scaleVariables"}
+		ChangeRename { from: "seedBox";												to: "setSeed"}
+		ChangeRename { from: "modelOpt";											to: "modelOptimization"}
 
 		ChangeJS
 		{
-			name: "clusterDeterminationMethod"
+			name: "modelOptimization"
 			jsFunction: function(options)
 			{
-				switch (options["clusterDeterminationMethod"])
+				switch (options["modelOptimization"])
 				{
 					case "validationManual":		return "manual";
 					case "validationOptimized":		return "optimized";
-					default:						return options["clusterDeterminationMethod"]
+					default:						return options["modelOptimization"]
 				}
 			}
 		}
 
-		ChangeRename { from: "noOfClusters";										to: "clusterDeterminationMethodManualNumberOfClusters"}
-		ChangeRename { from: "optimizationCriterion";								to: "clusterDeterminationMethodOptimizedTypeOptimization"}
+		ChangeRename { from: "noOfClusters";										to: "manualNumberOfClusters"}
+		ChangeRename { from: "optimizationCriterion";								to: "modelOptimizationMethod"}
 
 		ChangeJS
 		{
-			name: "clusterDeterminationMethodOptimizedTypeOptimization"
+			name: "modelOptimizationMethod"
 			jsFunction: function(options)
 			{
-				switch (options["clusterDeterminationMethodOptimizedTypeOptimization"])
+				switch (options["modelOptimizationMethod"])
 				{
 					case "validationAIC":			return "aic";
 					case "validationBIC":			return "bic";
@@ -443,7 +631,7 @@ Upgrades
 			}
 		}
 
-		ChangeRename { from: "maxClusters";											to: "clusterDeterminationMethodOptimizedMaxNumberOfClusters"} 
+		ChangeRename { from: "maxClusters";											to: "maxNumberOfClusters"} 
 	}
 
 	//Renaming Clustering Hierarchical
@@ -496,17 +684,16 @@ Upgrades
 			}
 		}
 
-		ChangeRename { from: "scaleEqualSD";										to: "equalSdScale"}
-		ChangeRename { from: "seedBox";												to: "randomSeed"}
-		ChangeRename { from: "seed";												to: "randomSeedValue"}
-		ChangeRename { from: "modelOpt";											to: "clusterDeterminationMethod"}
+		ChangeRename { from: "scaleEqualSD";										to: "scaleVariables"}
+		ChangeRename { from: "seedBox";												to: "setSeed"}
+		ChangeRename { from: "modelOpt";											to: "modelOptimization"}
 
 		ChangeJS
 		{
-			name: "clusterDeterminationMethod"
+			name: "modelOptimization"
 			jsFunction: function(options)
 			{
-				switch (options["clusterDeterminationMethod"])
+				switch (options["modelOptimization"])
 				{
 					case "validationManual":					return "manual";
 					case "validationOptimized":					return "optimized";
@@ -514,15 +701,15 @@ Upgrades
 			}
 		}
 
-		ChangeRename { from: "noOfClusters";										to: "clusterDeterminationMethodManualNumberOfClusters"}
-		ChangeRename { from: "optimizationCriterion";								to: "clusterDeterminationMethodOptimizedTypeOptimization"}
+		ChangeRename { from: "noOfClusters";										to: "manualNumberOfClusters"}
+		ChangeRename { from: "optimizationCriterion";								to: "modelOptimizationMethod"}
 
 		ChangeJS
 		{
-			name: "clusterDeterminationMethodOptimizedTypeOptimization"
+			name: "modelOptimizationMethod"
 			jsFunction: function(options)
 			{
-				switch (options["clusterDeterminationMethodOptimizedTypeOptimization"])
+				switch (options["modelOptimizationMethod"])
 				{
 					case "validationAIC":		return "aic";
 					case "validationBIC":		return "bic";
@@ -531,7 +718,7 @@ Upgrades
 			}
 		}
 
-		ChangeRename { from: "maxClusters";											to: "clusterDeterminationMethodOptimizedMaxNumberOfClusters"} 
+		ChangeRename { from: "maxClusters";											to: "maxNumberOfClusters"} 
 	}
 
 	//Renaming Clustering Neighborhood-Based
@@ -558,17 +745,16 @@ Upgrades
 		ChangeRename { from: "legend";												to: "tsneClusterPlotLegend"}
 		ChangeRename { from: "labels";												to: "tsneClusterPlotLabels"}
 		ChangeRename { from: "noOfIterations";										to: "maxNumberIterations"}
-		ChangeRename { from: "scaleEqualSD";										to: "equalSdScale"}
-		ChangeRename { from: "seedBox";												to: "randomSeed"}
-		ChangeRename { from: "seed";												to: "randomSeedValue"}
-		ChangeRename { from: "modelOpt";											to: "clusterDeterminationMethod"}
+		ChangeRename { from: "scaleEqualSD";										to: "scaleVariables"}
+		ChangeRename { from: "seedBox";												to: "setSeed"}
+		ChangeRename { from: "modelOpt";											to: "modelOptimization"}
 
 		ChangeJS
 		{
-			name: "clusterDeterminationMethod"
+			name: "modelOptimization"
 			jsFunction: function(options)
 			{
-				switch (options["clusterDeterminationMethod"])
+				switch (options["modelOptimization"])
 				{
 					case "validationManual":		return "manual";
 					case "validationOptimized":		return "optimized";
@@ -576,15 +762,15 @@ Upgrades
 			}
 		}
 
-		ChangeRename { from: "noOfClusters";										to: "clusterDeterminationMethodManualNumberOfClusters"}
-		ChangeRename { from: "optimizationCriterion";								to: "clusterDeterminationMethodOptimizedTypeOptimization"}
+		ChangeRename { from: "noOfClusters";								to: "manualNumberOfClusters"}
+		ChangeRename { from: "optimizationCriterion";								to: "modelOptimizationMethod"}
 
 		ChangeJS
 		{
-			name: "clusterDeterminationMethodOptimizedTypeOptimization"
+			name: "modelOptimizationMethod"
 			jsFunction: function(options)
 			{
-				switch (options["clusterDeterminationMethodOptimizedTypeOptimization"])
+				switch (options["modelOptimizationMethod"])
 				{
 					case "validationAIC":											return "aic";
 					case "validationBIC":											return "bic";
@@ -593,7 +779,7 @@ Upgrades
 			}
 		}
 
-		ChangeRename { from: "maxClusters";											to: "clusterDeterminationMethodOptimizedMaxNumberOfClusters"} 
+		ChangeRename { from: "maxClusters";											to: "maxNumberOfClusters"} 
 	}
 
 	//Renaming Clustering Random Forest
@@ -620,17 +806,16 @@ Upgrades
 		ChangeRename { from: "labels";												to: "tsneClusterPlotLabels"}
 		ChangeRename { from: "noOfTrees";											to: "numberOfTrees"}
 
-		ChangeRename { from: "scaleEqualSD";										to: "equalSdScale"}
-		ChangeRename { from: "seedBox";												to: "randomSeed"}
-		ChangeRename { from: "seed";												to: "randomSeedValue"}
-		ChangeRename { from: "modelOpt";											to: "clusterDeterminationMethod"}
+		ChangeRename { from: "scaleEqualSD";										to: "scaleVariables"}
+		ChangeRename { from: "seedBox";												to: "setSeed"}
+		ChangeRename { from: "modelOpt";											to: "modelOptimization"}
 
 		ChangeJS
 		{
-			name: "clusterDeterminationMethod"
+			name: "modelOptimization"
 			jsFunction: function(options)
 			{
-				switch (options["clusterDeterminationMethod"])
+				switch (options["modelOptimization"])
 				{
 					case "validationManual":		return "manual";
 					case "validationOptimized":		return "optimized";
@@ -638,15 +823,15 @@ Upgrades
 			}
 		}
 
-		ChangeRename { from: "noOfClusters";										to: "clusterDeterminationMethodManualNumberOfClusters"}
-		ChangeRename { from: "optimizationCriterion";								to: "clusterDeterminationMethodOptimizedTypeOptimization"}
+		ChangeRename { from: "noOfClusters";								to: "manualNumberOfClusters"}
+		ChangeRename { from: "optimizationCriterion";						to: "modelOptimizationMethod"}
 
 		ChangeJS
 		{
-			name: "clusterDeterminationMethodOptimizedTypeOptimization"
+			name: "modelOptimizationMethod"
 			jsFunction: function(options)
 			{
-				switch (options["clusterDeterminationMethodOptimizedTypeOptimization"])
+				switch (options["modelOptimizationMethod"])
 				{
 					case "validationAIC":		return "aic";
 					case "validationBIC":		return "bic";
@@ -655,7 +840,7 @@ Upgrades
 			}
 		}
 
-		ChangeRename { from: "maxClusters";											to: "clusterDeterminationMethodOptimizedMaxNumberOfClusters"} 
+		ChangeRename { from: "maxClusters";											to: "maxNumberOfClusters"} 
 	}
 
 	//Renaming Clustering Random Forest

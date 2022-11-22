@@ -63,22 +63,22 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
   } else {
     linkage <- options[["linkage"]]
   }
-  if (options[["clusterDeterminationMethod"]] == "manual") {
+  if (options[["modelOptimization"]] == "manual") {
     if (options[["distance"]] == "pearsonCorrelation") {
       distances <- as.dist(1 - cor(t(dataset[, options[["predictors"]]]), method = "pearson"))
       distances[is.na(distances)] <- 1 # We impute the missing correlations with a 1, as 1 - 1 = 0
-      fit <- cutree(hclust(distances, method = linkage), k = options[["clusterDeterminationMethodManualNumberOfClusters"]])
+      fit <- cutree(hclust(distances, method = linkage), k = options[["manualNumberOfClusters"]])
     } else {
       distances <- .mlClusteringCalculateDistances(dataset[, options[["predictors"]]])
-      fit <- cutree(hclust(distances, method = linkage), k = options[["clusterDeterminationMethodManualNumberOfClusters"]])
+      fit <- cutree(hclust(distances, method = linkage), k = options[["manualNumberOfClusters"]])
     }
-    clusters <- options[["clusterDeterminationMethodManualNumberOfClusters"]]
+    clusters <- options[["manualNumberOfClusters"]]
   } else {
-    avgSilh <- numeric(options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]] - 1)
-    wssStore <- numeric(options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]] - 1)
-    clusterRange <- 2:options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]]
-    aicStore <- numeric(options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]] - 1)
-    bicStore <- numeric(options[["clusterDeterminationMethodOptimizedMaxNumberOfClusters"]] - 1)
+    avgSilh <- numeric(options[["maxNumberOfClusters"]] - 1)
+    wssStore <- numeric(options[["maxNumberOfClusters"]] - 1)
+    clusterRange <- 2:options[["maxNumberOfClusters"]]
+    aicStore <- numeric(options[["maxNumberOfClusters"]] - 1)
+    bicStore <- numeric(options[["maxNumberOfClusters"]] - 1)
     startProgressbar(length(clusterRange))
     for (i in clusterRange) {
       if (options[["distance"]] == "pearsonCorrelation") {
@@ -101,7 +101,7 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
       bicStore[i - 1] <- sum(wss) + log(length(fit)) * m * length(table(fit))
       progressbarTick()
     }
-    clusters <- switch(options[["clusterDeterminationMethodOptimizedTypeOptimization"]],
+    clusters <- switch(options[["modelOptimizationMethod"]],
       "silhouette" = clusterRange[which.max(avgSilh)],
       "aic" = clusterRange[which.min(aicStore)],
       "bic" = clusterRange[which.min(bicStore)]
@@ -127,7 +127,7 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
   result[["BIC"]] <- sum(wss) + log(length(fit)) * m * length(table(fit))
   result[["Silh_score"]] <- silhouettes[["avg.width"]]
   result[["silh_scores"]] <- silhouettes[["clus.avg.widths"]]
-  if (options[["clusterDeterminationMethod"]] != "manual") {
+  if (options[["modelOptimization"]] != "manual") {
     result[["silhStore"]] <- avgSilh
     result[["aicStore"]] <- aicStore
     result[["bicStore"]] <- bicStore
@@ -150,16 +150,16 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
   plot <- createJaspPlot(plot = NULL, title = gettext("Dendrogram"), width = 400, height = 300)
   plot$position <- position
   plot$dependOn(options = c(
-    "predictors", "clusterDeterminationMethodManualNumberOfClusters", "noOfRandomSets", "algorithm", "epsilonNeighborhoodSize", "minCorePoints", "distance",
-    "maxNumberIterations", "clusterDeterminationMethod", "ready", "randomSeedValue", "tsneClusterPlot", "clusterDeterminationMethodOptimizedMaxNumberOfClusters", "equalSdScale", "randomSeed",
-    "linkage", "fuzzinessParameter", "dendrogram", "clusterDeterminationMethodOptimizedTypeOptimization"
+    "predictors", "manualNumberOfClusters", "noOfRandomSets", "algorithm", "epsilonNeighborhoodSize", "minCorePoints", "distance",
+    "maxNumberIterations", "modelOptimization", "ready", "seed", "tsneClusterPlot", "maxNumberOfClusters", "scaleVariables", "setSeed",
+    "linkage", "fuzzinessParameter", "dendrogram", "modelOptimizationMethod"
   ))
   jaspResults[["dendrogram"]] <- plot
   if (!ready) {
     return()
   }
-  if (options[["randomSeed"]]) {
-    set.seed(options[["randomSeedValue"]])
+  if (options[["setSeed"]]) {
+    set.seed(options[["seed"]])
   }
   unique.rows <- which(!duplicated(dataset[, options[["predictors"]]]))
   data <- dataset[unique.rows, options[["predictors"]]]

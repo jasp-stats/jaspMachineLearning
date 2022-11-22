@@ -86,7 +86,7 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   # Create the generated test set indicator
   testIndicatorColumn <- rep(1, nrow(dataset))
   testIndicatorColumn[trainingIndex] <- 0
-  if (options[["modelOptimization"]] == "optimizationManual") {
+  if (options[["modelOptimization"]] == "manual") {
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
     structure <- .getNeuralNetworkStructure(options)
@@ -109,7 +109,7 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
     if (isTryError(p)) {
       jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["maxTrainingRepetitions"]]))
     }
-  } else if (options[["modelOptimization"]] == "optimizationError") {
+  } else if (options[["modelOptimization"]] == "optimized") {
     validationIndex <- sample.int(nrow(trainingAndValidationSet), size = ceiling(options[["validationDataManual"]] * nrow(trainingAndValidationSet)))
     testSet <- dataset[-trainingIndex, ]
     validationSet <- trainingAndValidationSet[validationIndex, ]
@@ -220,7 +220,7 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   result[["test"]] <- testSet
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["classes"]] <- dataPredictions
-  if (options[["modelOptimization"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "manual") {
     result[["accuracyStore"]] <- accuracyStore
     result[["valid"]] <- validationSet
     result[["nvalid"]] <- nrow(validationSet)

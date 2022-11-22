@@ -6,12 +6,12 @@ options$predictionsColumn <- ""
 options$tableClusterEvaluationMetrics <- TRUE
 options$distance <- "normalDensities"
 options[["kDistancePlot"]] <- TRUE
-options$clusterDeterminationMethod <- "manual"
+options$modelOptimization <- "manual"
 options$tsneClusterPlot <- TRUE
 options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
                            "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
                            "Hue", "Dilution", "Proline")
-options$randomSeed <- TRUE
+options$setSeed <- TRUE
 options$tableClusterInformationBetweenSumOfSquares <- TRUE
 options$tableClusterInformationSilhouetteScore <- TRUE
 options$tableClusterInformationTotalSumOfSquares <- TRUE

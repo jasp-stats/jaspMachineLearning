@@ -105,7 +105,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   # Create the generated test set indicator
   testIndicatorColumn <- rep(1, nrow(dataset))
   testIndicatorColumn[trainingIndex] <- 0
-  if (options[["modelOptimization"]] == "optimizationManual") {
+  if (options[["modelOptimization"]] == "manual") {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
@@ -173,7 +173,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   result[["cvMSELambda"]] <- data.frame(lambda = trainingFit[["lambda"]], MSE = trainingFit[["cvm"]], sd = trainingFit[["cvsd"]])
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["values"]] <- dataPredictions
-  if (options[["modelOptimization"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "manual") {
     result[["validMSE"]] <- mean((as.numeric(validationPredictions) - validationSet[, options[["target"]]])^2)
     result[["nvalid"]] <- nrow(validationSet)
   }

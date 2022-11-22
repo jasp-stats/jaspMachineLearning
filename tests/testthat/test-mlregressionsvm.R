@@ -6,7 +6,7 @@ options$predictors <- c("Sepal.Width", "Petal.Length", "Petal.Width")
 options$validationMeasures <- TRUE
 options$supportVectorsTable <- TRUE
 options$predictedPerformancePlot <- TRUE
-options$modelOptimization <- "optimizationManual"
+options$modelOptimization <- "manual"
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
 options$holdoutData <- "holdoutManual"
