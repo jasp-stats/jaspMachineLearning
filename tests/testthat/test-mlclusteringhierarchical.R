@@ -3,21 +3,21 @@ context("Machine Learning Hierarchical Clustering")
 options <- jaspTools::analysisOptions("mlClusteringHierarchical")
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
-options$clusterEvaluationMetrics <- TRUE
+options$tableClusterEvaluationMetrics <- TRUE
 options$dendrogram <- TRUE
-options$modelOpt <- "validationOptimized"
-options$plot2dCluster <- TRUE
+options$modelOptimization <- "optimized"
+options$tsneClusterPlot <- TRUE
 options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
                            "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
                            "Hue", "Dilution", "Proline")
-options$seedBox <- TRUE
-options$tableClusterInfoBetweenSumSquares <- TRUE
-options$tableClusterInfoSilhouette <- TRUE
-options$tableClusterInfoTotalSumSquares <- TRUE
-options$withinssPlot <- TRUE
-options$plotClusterMeans <- TRUE
-options$showBars <- TRUE
-options$oneFigure <- TRUE
+options$setSeed <- TRUE
+options$tableClusterInformationBetweenSumOfSquares <- TRUE
+options$tableClusterInformationSilhouetteScore <- TRUE
+options$tableClusterInformationTotalSumOfSquares <- TRUE
+options$elbowMethodPlot <- TRUE
+options$clusterMeanPlot <- TRUE
+options$clusterMeanPlotBarPlot <- TRUE
+options$clusterMeanPlotSingleFigure <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClusteringHierarchical", "wine.csv", options)
 
@@ -79,11 +79,11 @@ test_that("t-SNE Cluster Plot matches", {
 options <- jaspTools::analysisOptions("mlClusteringHierarchical")
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
-options$clusterEvaluationMetrics <- TRUE
-options$linkage <- "ward.D"
-options$modelOpt <- "validationOptimized"
+options$tableClusterEvaluationMetrics <- TRUE
+options$linkage <- "wardD"
+options$modelOptimization <- "optimized"
 options$predictors <- c("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", "Hue", "Dilution", "Proline")
-options$seedBox <- TRUE
+options$setSeed <- TRUE
 options$tableClusterMeans <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClusteringHierarchical", "wine.csv", options)
@@ -144,11 +144,11 @@ test_that("Hierarchical Clustering table results match", {
 options <- jaspTools::analysisOptions("mlClusteringHierarchical")
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
-options$clusterEvaluationMetrics <- TRUE
-options$linkage <- "ward.D"
-options$modelOpt <- "validationOptimized"
+options$tableClusterEvaluationMetrics <- TRUE
+options$linkage <- "wardD"
+options$modelOptimization <- "optimized"
 options$predictors <- c("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", "Hue", "Dilution", "Proline")
-options$seedBox <- TRUE
+options$setSeed <- TRUE
 options$tableClusterMeans <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClusteringHierarchical", "wine.csv", options)
@@ -209,11 +209,11 @@ test_that("Hierarchical Clustering table results match", {
 options <- jaspTools::analysisOptions("mlClusteringHierarchical")
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
-options$clusterEvaluationMetrics <- TRUE
+options$tableClusterEvaluationMetrics <- TRUE
 options$linkage <- "median"
-options$modelOpt <- "validationOptimized"
+options$modelOptimization <- "optimized"
 options$predictors <- c("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", "Hue", "Dilution", "Proline")
-options$seedBox <- TRUE
+options$setSeed <- TRUE
 options$tableClusterMeans <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClusteringHierarchical", "wine.csv", options)
@@ -258,11 +258,11 @@ test_that("Hierarchical Clustering table results match", {
 options <- jaspTools::analysisOptions("mlClusteringHierarchical")
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
-options$clusterEvaluationMetrics <- TRUE
+options$tableClusterEvaluationMetrics <- TRUE
 options$linkage <- "mcquitty"
-options$modelOpt <- "validationOptimized"
+options$modelOptimization <- "optimized"
 options$predictors <- c("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", "Hue", "Dilution", "Proline")
-options$seedBox <- TRUE
+options$setSeed <- TRUE
 options$tableClusterMeans <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClusteringHierarchical", "wine.csv", options)

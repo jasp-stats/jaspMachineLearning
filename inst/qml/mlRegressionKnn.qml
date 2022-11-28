@@ -177,7 +177,7 @@ Form
 			RadioButton
 			{
 				text:							qsTr("Fixed")
-				name:							"optimizationManual"
+				name:							"manual"
 
 				IntegerField {
 					name:						"noOfNearestNeighbours"
@@ -193,7 +193,7 @@ Form
 			{
 				id:								optimizeModel
 				text:							qsTr("Optimized")
-				name:							"optimizationError"
+				name:							"optimized"
 				checked:						true
 
 				IntegerField

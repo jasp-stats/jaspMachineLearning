@@ -53,26 +53,26 @@ mlClusteringFuzzyCMeans <- function(jaspResults, dataset, options, ...) {
 }
 
 .cMeansClustering <- function(dataset, options, jaspResults, ready) {
-  if (options[["modelOpt"]] == "validationManual") {
+  if (options[["modelOptimization"]] == "manual") {
     fit <- e1071::cmeans(dataset[, options[["predictors"]]],
-      centers = options[["noOfClusters"]],
-      iter.max = options[["noOfIterations"]],
-      m = options[["m"]],
+      centers = options[["manualNumberOfClusters"]],
+      iter.max = options[["maxNumberIterations"]],
+      m = options[["fuzzinessParameter"]],
       method = "ufcl"
     ) # method = "cmeans" can yield a number of clusters that is not equal to the requested number
-    clusters <- options[["noOfClusters"]]
+    clusters <- options[["manualNumberOfClusters"]]
   } else {
-    avgSilh <- numeric(options[["maxClusters"]] - 1)
-    wssStore <- numeric(options[["maxClusters"]] - 1)
-    clusterRange <- 2:options[["maxClusters"]]
-    aicStore <- numeric(options[["maxClusters"]] - 1)
-    bicStore <- numeric(options[["maxClusters"]] - 1)
+    avgSilh <- numeric(options[["maxNumberOfClusters"]] - 1)
+    wssStore <- numeric(options[["maxNumberOfClusters"]] - 1)
+    clusterRange <- 2:options[["maxNumberOfClusters"]]
+    aicStore <- numeric(options[["maxNumberOfClusters"]] - 1)
+    bicStore <- numeric(options[["maxNumberOfClusters"]] - 1)
     startProgressbar(length(clusterRange))
     for (i in clusterRange) {
       fit <- e1071::cmeans(dataset[, options[["predictors"]]],
         centers = i,
-        iter.max = options[["noOfIterations"]],
-        m = options[["m"]],
+        iter.max = options[["maxNumberIterations"]],
+        m = options[["fuzzinessParameter"]],
         method = "ufcl"
       ) # method = "cmeans" can yield a number of clusters that is not equal to the requested number
       silh <- summary(cluster::silhouette(fit$cluster, .mlClusteringCalculateDistances(dataset[, options[["predictors"]]])))
@@ -83,15 +83,15 @@ mlClusteringFuzzyCMeans <- function(jaspResults, dataset, options, ...) {
       bicStore[i - 1] <- sumSquares[["tot.within.ss"]] + log(length(fit[["cluster"]])) * ncol(fit[["centers"]]) * nrow(fit[["centers"]])
       progressbarTick()
     }
-    clusters <- switch(options[["optimizationCriterion"]],
-      "validationSilh" = clusterRange[which.max(avgSilh)],
-      "validationAIC" = clusterRange[which.min(aicStore)],
-      "validationBIC" = clusterRange[which.min(bicStore)]
+    clusters <- switch(options[["modelOptimizationMethod"]],
+      "silhouette" = clusterRange[which.max(avgSilh)],
+      "aic" = clusterRange[which.min(aicStore)],
+      "bic" = clusterRange[which.min(bicStore)]
     )
     fit <- e1071::cmeans(dataset[, options[["predictors"]]],
       centers = clusters,
-      iter.max = options[["noOfIterations"]],
-      m = options[["m"]], method = "ufcl"
+      iter.max = options[["maxNumberIterations"]],
+      m = options[["fuzzinessParameter"]], method = "ufcl"
     )
   }
   sumSquares <- .sumsqr(dataset[, options[["predictors"]]], fit[["centers"]], fit[["cluster"]])
@@ -109,7 +109,7 @@ mlClusteringFuzzyCMeans <- function(jaspResults, dataset, options, ...) {
   result[["BIC"]] <- sumSquares[["tot.within.ss"]] + log(length(fit[["cluster"]])) * ncol(fit[["centers"]]) * nrow(fit[["centers"]])
   result[["Silh_score"]] <- silhouettes[["avg.width"]]
   result[["silh_scores"]] <- silhouettes[["clus.avg.widths"]]
-  if (options[["modelOpt"]] != "validationManual") {
+  if (options[["modelOptimization"]] != "manual") {
     result[["silhStore"]] <- avgSilh
     result[["aicStore"]] <- aicStore
     result[["bicStore"]] <- bicStore

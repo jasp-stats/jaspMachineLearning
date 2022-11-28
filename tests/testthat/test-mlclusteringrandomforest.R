@@ -3,21 +3,21 @@ context("Machine Learning Random Forest Clustering")
 options <- jaspTools::analysisOptions("mlClusteringRandomForest")
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
-options$clusterEvaluationMetrics <- TRUE
-options$importanceTable <- TRUE
-options$modelOpt <- "validationOptimized"
-options$plot2dCluster <- TRUE
+options$tableClusterEvaluationMetrics <- TRUE
+options$featureImportanceTable <- TRUE
+options$modelOptimization <- "optimized"
+options$tsneClusterPlot <- TRUE
 options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
                            "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
                            "Hue", "Dilution", "Proline")
-options$seedBox <- TRUE
-options$tableClusterInfoBetweenSumSquares <- TRUE
-options$tableClusterInfoSilhouette <- TRUE
-options$tableClusterInfoTotalSumSquares <- TRUE
-options$withinssPlot <- TRUE
-options$plotClusterMeans <- TRUE
-options$showBars <- TRUE
-options$oneFigure <- TRUE
+options$setSeed <- TRUE
+options$tableClusterInformationBetweenSumOfSquares <- TRUE
+options$tableClusterInformationSilhouetteScore <- TRUE
+options$tableClusterInformationTotalSumOfSquares <- TRUE
+options$elbowMethodPlot <- TRUE
+options$clusterMeanPlot <- TRUE
+options$clusterMeanPlotBarPlot <- TRUE
+options$clusterMeanPlotSingleFigure <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClusteringRandomForest", "wine.csv", options)
 

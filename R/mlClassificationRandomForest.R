@@ -85,7 +85,7 @@ mlClassificationRandomForest <- function(jaspResults, dataset, options, ...) {
   # Create the generated test set indicator
   testIndicatorColumn <- rep(1, nrow(dataset))
   testIndicatorColumn[trainingIndex] <- 0
-  if (options[["modelOptimization"]] == "optimizationManual") {
+  if (options[["modelOptimization"]] == "manual") {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
@@ -97,7 +97,7 @@ mlClassificationRandomForest <- function(jaspResults, dataset, options, ...) {
       importance = TRUE, keep.forest = TRUE
     )
     noOfTrees <- options[["noOfTrees"]]
-  } else if (options[["modelOptimization"]] == "optimizationError") {
+  } else if (options[["modelOptimization"]] == "optimized") {
     # Create a train, validation and test set (optimization)
     validationIndex <- sample.int(nrow(trainingAndValidationSet), size = ceiling(options[["validationDataManual"]] * nrow(trainingAndValidationSet)))
     testSet <- dataset[-trainingIndex, ]
@@ -153,7 +153,7 @@ mlClassificationRandomForest <- function(jaspResults, dataset, options, ...) {
     MeanIncrMSE = testFit[["importance"]][, 1],
     TotalDecrNodeImp = testFit[["importance"]][, 2]
   ), -TotalDecrNodeImp)
-  if (options[["modelOptimization"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "manual") {
     result[["rfit_valid"]] <- validationFit
     result[["validationConfTable"]] <- table("Pred" = validationFit$test[["predicted"]], "Real" = validationSet[, options[["target"]]])
     result[["validAcc"]] <- sum(diag(prop.table(result[["validationConfTable"]])))

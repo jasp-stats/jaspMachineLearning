@@ -56,31 +56,38 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
 }
 
 .hierarchicalClustering <- function(dataset, options, jaspResults) {
-  if (options[["modelOpt"]] == "validationManual") {
-    if (options[["distance"]] == "Pearson correlation") {
+  if (options[["linkage"]] == "wardD") {
+    linkage <- "ward.D"
+  } else if (options[["linkage"]] == "wardD2") {
+    linkage <- "ward.D"
+  } else {
+    linkage <- options[["linkage"]]
+  }
+  if (options[["modelOptimization"]] == "manual") {
+    if (options[["distance"]] == "pearsonCorrelation") {
       distances <- as.dist(1 - cor(t(dataset[, options[["predictors"]]]), method = "pearson"))
       distances[is.na(distances)] <- 1 # We impute the missing correlations with a 1, as 1 - 1 = 0
-      fit <- cutree(hclust(distances, method = options[["linkage"]]), k = options[["noOfClusters"]])
+      fit <- cutree(hclust(distances, method = linkage), k = options[["manualNumberOfClusters"]])
     } else {
       distances <- .mlClusteringCalculateDistances(dataset[, options[["predictors"]]])
-      fit <- cutree(hclust(distances, method = options[["linkage"]]), k = options[["noOfClusters"]])
+      fit <- cutree(hclust(distances, method = linkage), k = options[["manualNumberOfClusters"]])
     }
-    clusters <- options[["noOfClusters"]]
+    clusters <- options[["manualNumberOfClusters"]]
   } else {
-    avgSilh <- numeric(options[["maxClusters"]] - 1)
-    wssStore <- numeric(options[["maxClusters"]] - 1)
-    clusterRange <- 2:options[["maxClusters"]]
-    aicStore <- numeric(options[["maxClusters"]] - 1)
-    bicStore <- numeric(options[["maxClusters"]] - 1)
+    avgSilh <- numeric(options[["maxNumberOfClusters"]] - 1)
+    wssStore <- numeric(options[["maxNumberOfClusters"]] - 1)
+    clusterRange <- 2:options[["maxNumberOfClusters"]]
+    aicStore <- numeric(options[["maxNumberOfClusters"]] - 1)
+    bicStore <- numeric(options[["maxNumberOfClusters"]] - 1)
     startProgressbar(length(clusterRange))
     for (i in clusterRange) {
-      if (options[["distance"]] == "Pearson correlation") {
+      if (options[["distance"]] == "pearsonCorrelation") {
         distances <- as.dist(1 - cor(t(dataset[, options[["predictors"]]]), method = "pearson"))
         distances[is.na(distances)] <- 1 # We impute the missing correlations with a 1, as 1 - 1 = 0
-        fit <- cutree(hclust(distances, method = options[["linkage"]]), k = i)
+        fit <- cutree(hclust(distances, method = linkage), k = i)
       } else {
         distances <- .mlClusteringCalculateDistances(dataset[, options[["predictors"]]])
-        fit <- cutree(hclust(distances, method = options[["linkage"]]), k = i)
+        fit <- cutree(hclust(distances, method = linkage), k = i)
       }
       silh <- summary(cluster::silhouette(fit, distances))
       avgSilh[i - 1] <- silh[["avg.width"]]
@@ -94,12 +101,12 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
       bicStore[i - 1] <- sum(wss) + log(length(fit)) * m * length(table(fit))
       progressbarTick()
     }
-    clusters <- switch(options[["optimizationCriterion"]],
-      "validationSilh" = clusterRange[which.max(avgSilh)],
-      "validationAIC" = clusterRange[which.min(aicStore)],
-      "validationBIC" = clusterRange[which.min(bicStore)]
+    clusters <- switch(options[["modelOptimizationMethod"]],
+      "silhouette" = clusterRange[which.max(avgSilh)],
+      "aic" = clusterRange[which.min(aicStore)],
+      "bic" = clusterRange[which.min(bicStore)]
     )
-    fit <- cutree(hclust(distances, method = options[["linkage"]]), k = clusters)
+    fit <- cutree(hclust(distances, method = linkage), k = clusters)
   }
   size <- as.data.frame(table(fit))[, 2]
   m <- dim(as.data.frame(dataset[, options[["predictors"]]]))[2]
@@ -120,7 +127,7 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
   result[["BIC"]] <- sum(wss) + log(length(fit)) * m * length(table(fit))
   result[["Silh_score"]] <- silhouettes[["avg.width"]]
   result[["silh_scores"]] <- silhouettes[["clus.avg.widths"]]
-  if (options[["modelOpt"]] != "validationManual") {
+  if (options[["modelOptimization"]] != "manual") {
     result[["silhStore"]] <- avgSilh
     result[["aicStore"]] <- aicStore
     result[["bicStore"]] <- bicStore
@@ -133,26 +140,33 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
   if (!is.null(jaspResults[["dendrogram"]]) || !options[["dendrogram"]]) {
     return()
   }
+   if (options[["linkage"]] == "wardD") {
+    linkage <- "ward.D"
+  } else if (options[["linkage"]] == "wardD2") {
+    linkage <- "ward.D"
+  } else {
+    linkage <- options[["linkage"]]
+  }
   plot <- createJaspPlot(plot = NULL, title = gettext("Dendrogram"), width = 400, height = 300)
   plot$position <- position
   plot$dependOn(options = c(
-    "predictors", "noOfClusters", "noOfRandomSets", "algorithm", "eps", "minPts", "distance",
-    "noOfIterations", "modelOpt", "ready", "seed", "plot2dCluster", "maxClusters", "scaleEqualSD", "seedBox",
-    "linkage", "m", "dendrogram", "optimizationCriterion"
+    "predictors", "manualNumberOfClusters", "noOfRandomSets", "algorithm", "epsilonNeighborhoodSize", "minCorePoints", "distance",
+    "maxNumberIterations", "modelOptimization", "ready", "seed", "tsneClusterPlot", "maxNumberOfClusters", "scaleVariables", "setSeed",
+    "linkage", "fuzzinessParameter", "dendrogram", "modelOptimizationMethod"
   ))
   jaspResults[["dendrogram"]] <- plot
   if (!ready) {
     return()
   }
-  if (options[["seedBox"]]) {
+  if (options[["setSeed"]]) {
     set.seed(options[["seed"]])
   }
   unique.rows <- which(!duplicated(dataset[, options[["predictors"]]]))
   data <- dataset[unique.rows, options[["predictors"]]]
-  if (options[["distance"]] == "Pearson correlation") {
-    hc <- hclust(as.dist(1 - cor(t(data), method = "pearson")), method = options[["linkage"]])
+  if (options[["distance"]] == "pearsonCorrelation") {
+    hc <- hclust(as.dist(1 - cor(t(data), method = "pearson")), method = linkage)
   } else {
-    hc <- hclust(.mlClusteringCalculateDistances(data), method = options[["linkage"]])
+    hc <- hclust(.mlClusteringCalculateDistances(data), method = linkage)
   }
   p <- ggdendro::ggdendrogram(hc) +
     jaspGraphs::geom_rangeframe() +

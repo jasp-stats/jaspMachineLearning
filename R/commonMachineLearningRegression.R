@@ -137,11 +137,11 @@
       return()
     }
     nn <- switch(options[["modelOptimization"]],
-      "optimizationManual" = options[["noOfNearestNeighbours"]],
-      "optimizationError" = options[["maxNearestNeighbors"]]
+      "manual" = options[["noOfNearestNeighbours"]],
+      "optimized" = options[["maxNearestNeighbors"]]
     )
     valueToTest <- nTrainAndValid
-    if (options[["modelOptimization"]] == "optimizationError") {
+    if (options[["modelOptimization"]] == "optimized") {
       if (options[["modelValid"]] == "validationManual") {
         nTrain <- ceiling(nTrainAndValid - nTrainAndValid * options[["validationDataManual"]])
       }
@@ -254,11 +254,11 @@
   }
   # Add common columns
   table$addColumnInfo(name = "nTrain", title = gettext("n(Train)"), type = "integer")
-  if (options[["modelOptimization"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "manual") {
     table$addColumnInfo(name = "nValid", title = gettext("n(Validation)"), type = "integer")
   }
   table$addColumnInfo(name = "nTest", title = gettext("n(Test)"), type = "integer")
-  if (options[["modelOptimization"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "manual") {
     table$addColumnInfo(name = "validMSE", title = gettext("Validation MSE"), type = "number")
   }
   table$addColumnInfo(name = "testMSE", title = gettext("Test MSE"), type = "number")
@@ -284,7 +284,7 @@
   .mlRegressionComputeResults(dataset, options, jaspResults, ready, type = type)
   regressionResult <- jaspResults[["regressionResult"]]$object
   nTrain <- regressionResult[["ntrain"]]
-  if (options[["modelOptimization"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "manual") {
     nValid <- regressionResult[["nvalid"]]
     if (options[["modelValid"]] == "validationKFold") {
       # Adjust displayed train and test size for cross-validation
@@ -297,10 +297,10 @@
   }
   # Fill the table per analysis
   if (type == "knn") {
-    if (options[["modelOptimization"]] == "optimizationError") {
+    if (options[["modelOptimization"]] == "optimized") {
       table$addFootnote(gettext("The model is optimized with respect to the <i>validation set mean squared error</i>."))
     }
-    if (regressionResult[["nn"]] == options[["maxNearestNeighbors"]] && options[["modelOptimization"]] != "validationManual") {
+    if (regressionResult[["nn"]] == options[["maxNearestNeighbors"]] && options[["modelOptimization"]] != "optimized") {
       table$addFootnote(gettext("The optimum number of nearest neighbors is the maximum number. You might want to adjust the range of optimization."))
     }
     distance <- ifelse(regressionResult[["distance"]] == 1, yes = "Manhattan", no = "Euclidean")
@@ -312,12 +312,12 @@
       nTest = regressionResult[["ntest"]],
       testMSE = regressionResult[["testMSE"]]
     )
-    if (options[["modelOptimization"]] != "optimizationManual") {
+    if (options[["modelOptimization"]] != "manual") {
       row <- cbind(row, nValid = nValid, validMSE = regressionResult[["validMSE"]])
     }
     table$addRows(row)
   } else if (type == "regularized") {
-    if (options[["modelOptimization"]] != "optimizationManual") {
+    if (options[["modelOptimization"]] != "manual") {
       table$addFootnote(gettext("The model is optimized with respect to the <i>validation set mean squared error</i>."))
     }
     if (regressionResult[["lambda"]] == 0) {
@@ -330,7 +330,7 @@
       nTest = regressionResult[["ntest"]],
       testMSE = regressionResult[["testMSE"]]
     )
-    if (options[["modelOptimization"]] != "optimizationManual") {
+    if (options[["modelOptimization"]] != "manual") {
       row <- cbind(row, nValid = nValid, validMSE = regressionResult[["validMSE"]])
     }
     if (options[["penalty"]] == "elasticNet") {
@@ -338,7 +338,7 @@
     }
     table$addRows(row)
   } else if (type == "randomForest") {
-    if (options[["modelOptimization"]] == "optimizationError") {
+    if (options[["modelOptimization"]] == "optimized") {
       table$addFootnote(gettext("The model is optimized with respect to the <i>out-of-bag mean squared error</i>."))
     }
     row <- data.frame(
@@ -349,12 +349,12 @@
       testMSE = regressionResult[["testMSE"]],
       oob = regressionResult[["oobError"]]
     )
-    if (options[["modelOptimization"]] != "optimizationManual") {
+    if (options[["modelOptimization"]] != "manual") {
       row <- cbind(row, nValid = nValid, validMSE = regressionResult[["validMSE"]])
     }
     table$addRows(row)
   } else if (type == "boosting") {
-    if (options[["modelOptimization"]] == "optimizationOOB") {
+    if (options[["modelOptimization"]] == "optimized") {
       table$addFootnote(gettext("The model is optimized with respect to the <i>out-of-bag mean squared error</i>."))
     }
     distribution <- .regressionGetDistributionFromDistance(options[["distance"]])
@@ -366,14 +366,14 @@
       nTest = regressionResult[["ntest"]],
       testMSE = regressionResult[["testMSE"]]
     )
-    if (options[["modelOptimization"]] != "optimizationManual") {
+    if (options[["modelOptimization"]] != "manual") {
       row <- cbind(row, nValid = nValid, validMSE = regressionResult[["validMSE"]])
     }
     table$addRows(row)
   } else if (type == "neuralnet") {
-    if (options[["modelOptimization"]] == "optimizationManual") {
+    if (options[["modelOptimization"]] == "manual") {
       table$addFootnote(gettext("The model is optimized with respect to the <i>sum of squares</i>."))
-    } else if (options[["modelOptimization"]] == "optimizationError") {
+    } else if (options[["modelOptimization"]] == "optimized") {
       table$addFootnote(gettext("The model is optimized with respect to the <i>validation set mean squared error</i>."))
     }
     row <- data.frame(
@@ -383,7 +383,7 @@
       nTest = regressionResult[["ntest"]],
       testMSE = regressionResult[["testMSE"]]
     )
-    if (options[["modelOptimization"]] != "optimizationManual") {
+    if (options[["modelOptimization"]] != "manual") {
       row <- cbind(row, nValid = nValid, validMSE = regressionResult[["validMSE"]])
     }
     table$addRows(row)
@@ -495,7 +495,7 @@
     "classification" = jaspResults[["classificationResult"]]$object,
     "regression" = jaspResults[["regressionResult"]]$object
   )
-  if (options[["modelOptimization"]] == "optimizationManual") {
+  if (options[["modelOptimization"]] == "manual") {
     # For a fixed model, draw only a training and a test set
     nTrain <- result[["ntrain"]]
     nTest <- result[["ntest"]]

@@ -63,33 +63,33 @@ Form
 			CheckBox
 			{
 				text:							qsTr("Within sum of squares")
-				name:							"tableClusterInfoWSS"
+				name:							"tableClusterInformationWithinSumOfSquares"
 				checked:						true
 			}
 
 			CheckBox
 			{
 				text:							qsTr("Silhouette score")
-				name:							"tableClusterInfoSilhouette"
+				name:							"tableClusterInformationSilhouetteScore"
 			}
 
 			CheckBox
 			{
 				text:							qsTr("Between sum of squares")
-				name:							"tableClusterInfoBetweenSumSquares"
+				name:							"tableClusterInformationBetweenSumOfSquares"
 			}
 
 			CheckBox
 			{
 				text:							qsTr("Total sum of squares")
-				name:							"tableClusterInfoTotalSumSquares"
+				name:							"tableClusterInformationTotalSumOfSquares"
 			}
 		}
 
 		CheckBox
 		{
 			text:								qsTr("Evaluation metrics")
-			name:								"clusterEvaluationMetrics"
+			name:								"tableClusterEvaluationMetrics"
 		}
 
 	}
@@ -101,25 +101,25 @@ Form
 		CheckBox
 		{
 			text:								qsTr("K-distance plot")
-			name:								"k-distplot"
+			name:								"kDistancePlot"
 		}
 
 		CheckBox
 		{
 			text:								qsTr("Cluster means")
-			name:								"plotClusterMeans"
+			name:								"clusterMeanPlot"
 
 			CheckBox
 			{
 				text:							qsTr("Display barplot")
-				name:							"showBars"
+				name:							"clusterMeanPlotBarPlot"
 				checked:						true
 			}
 
 			CheckBox
 			{
 				text:							qsTr("Group into one figure")
-				name:							"oneFigure"
+				name:							"clusterMeanPlotSingleFigure"
 				checked:						true
 			}
 		}
@@ -127,12 +127,12 @@ Form
 		CheckBox
 		{
 			text:								qsTr("Cluster densities")
-			name:								"plotClusterDensities"
+			name:								"clusterDensityPlot"
 
 			CheckBox
 			{
 				text:							qsTr("Group into one figure")
-				name:							"oneFigureDensity"
+				name:							"clusterDensityPlotSingleFigure"
 				checked:						true
 			}
 		}
@@ -140,21 +140,21 @@ Form
 		CheckBox
 		{
 			text:								qsTr("t-SNE cluster plot")
-			name:								"plot2dCluster"
+			name:								"tsneClusterPlot"
 
 			Row
 			{
 				CheckBox
 				{
 					text:						qsTr("Legend")
-					name:						"legend"
+					name:						"tsneClusterPlotLegend"
 					checked:					true
 				}
 
 				CheckBox
 				{
 					text:						qsTr("Labels")
-					name:						"labels"
+					name:						"tsneClusterPlotLabels"
 				}
 			}
 		}
@@ -176,7 +176,7 @@ Form
 
 			DoubleField
 			{
-				name:							"eps"
+				name:							"epsilonNeighborhoodSize"
 				text:							qsTr("Epsilon neighborhood size")
 				decimals:						2
 				defaultValue:					2
@@ -187,7 +187,7 @@ Form
 
 			IntegerField
 			{
-				name:							"minPts"
+				name:							"minCorePoints"
 				text:							qsTr("Min. core points")
 				defaultValue:					5
 				min:							2
@@ -201,21 +201,21 @@ Form
 				label:							qsTr("Distance")
 				values:
 					[
-					{ label: qsTr("Normal"), 	value: "Normal densities"},
-					{ label: qsTr("Correlated"),value: "Correlated densities"}
-				]
+					{ label: qsTr("Normal"), 	value: "normalDensities"},
+					{ label: qsTr("Correlated"),value: "correlatedDensities"}
+					]
 			}
 
 			CheckBox
 			{
 				text:							qsTr("Scale variables")
-				name:							"scaleEqualSD"
+				name:							"scaleVariables"
 				checked:						true
 			}
 
 			CheckBox
 			{
-				name:							"seedBox"
+				name:							"setSeed"
 				text:							qsTr("Set seed")
 				childrenOnSameRow:				true
 
@@ -233,14 +233,14 @@ Form
 		RadioButtonGroup
 		{
 			title:								qsTr("Model Optimization")
-			name:								"modelOpt"
+			name:								"modelOptimization"
 			visible:							false
 
 			RadioButton
 			{
 				id:								validationManual
 				text:							qsTr("Fixed")
-				name:							"validationManual"
+				name:							"manual"
 			}
 		}
 	}

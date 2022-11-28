@@ -9,7 +9,7 @@ options$classProportionsTable <- TRUE
 options$savePath <- ""
 options$saveModel <- FALSE
 options$holdoutData <- "holdoutManual"
-options$modelOptimization <- "optimizationError"
+options$modelOptimization <- "optimized"
 options$modelValid <- "validationManual"
 options$noOfFolds <- 5
 options$accuracyDecreasePlot <- TRUE

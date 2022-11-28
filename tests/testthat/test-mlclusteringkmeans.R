@@ -4,17 +4,17 @@ options <- jaspTools::analysisOptions("mlClusteringKMeans")
 options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
     "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
     "Hue", "Dilution", "Proline")
-options$tableClusterInfoSilhouette <- TRUE
-options$tableClusterInfoCentroids <- TRUE
-options$tableClusterInfoBetweenSumSquares <- TRUE
-options$tableClusterInfoTotalSumSquares <- TRUE
-options$clusterEvaluationMetrics <- TRUE
-options$withinssPlot <- TRUE
-options$plotClusterMeans <- TRUE
-options$plot2dCluster <- TRUE
+options$tableClusterInformationSilhouetteScore <- TRUE
+options$tableClusterInformationCentroids <- TRUE
+options$tableClusterInformationBetweenSumOfSquares <- TRUE
+options$tableClusterInformationTotalSumOfSquares <- TRUE
+options$tableClusterEvaluationMetrics <- TRUE
+options$elbowMethodPlot <- TRUE
+options$clusterMeanPlot <- TRUE
+options$tsneClusterPlot <- TRUE
 options$algorithm <- "Hartigan-Wong"
-options$seedBox <- TRUE
-options$modelOpt <- "validationOptimized"
+options$setSeed <- TRUE
+options$modelOptimization <- "optimized"
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
 set.seed(1)
@@ -89,16 +89,16 @@ options <- jaspTools::analysisOptions("mlClusteringKMeans")
 options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
     "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
     "Hue", "Dilution", "Proline")
-options$tableClusterInfoSilhouette <- TRUE
-options$tableClusterInfoCentroids <- TRUE
-options$tableClusterInfoBetweenSumSquares <- TRUE
-options$tableClusterInfoTotalSumSquares <- TRUE
-options$clusterEvaluationMetrics <- TRUE
-options$withinssPlot <- TRUE
-options$plotClusterMeans <- TRUE
+options$tableClusterInformationSilhouetteScore <- TRUE
+options$tableClusterInformationCentroids <- TRUE
+options$tableClusterInformationBetweenSumOfSquares <- TRUE
+options$tableClusterInformationTotalSumOfSquares <- TRUE
+options$tableClusterEvaluationMetrics <- TRUE
+options$elbowMethodPlot <- TRUE
+options$clusterMeanPlot <- TRUE
 options$centers <- "medians"
-options$seedBox <- TRUE
-options$modelOpt <- "validationOptimized"
+options$setSeed <- TRUE
+options$modelOptimization <- "optimized"
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
 set.seed(1)
@@ -170,16 +170,16 @@ options <- jaspTools::analysisOptions("mlClusteringKMeans")
 options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
     "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
     "Hue", "Dilution", "Proline")
-options$tableClusterInfoSilhouette <- TRUE
-options$tableClusterInfoCentroids <- TRUE
-options$tableClusterInfoBetweenSumSquares <- TRUE
-options$tableClusterInfoTotalSumSquares <- TRUE
-options$clusterEvaluationMetrics <- TRUE
-options$withinssPlot <- TRUE
-options$plotClusterMeans <- TRUE
+options$tableClusterInformationSilhouetteScore <- TRUE
+options$tableClusterInformationCentroids <- TRUE
+options$tableClusterInformationBetweenSumOfSquares <- TRUE
+options$tableClusterInformationTotalSumOfSquares <- TRUE
+options$tableClusterEvaluationMetrics <- TRUE
+options$elbowMethodPlot <- TRUE
+options$clusterMeanPlot <- TRUE
 options$centers <- "medoids"
-options$seedBox <- TRUE
-options$modelOpt <- "validationOptimized"
+options$setSeed <- TRUE
+options$modelOptimization <- "optimized"
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
 set.seed(1)

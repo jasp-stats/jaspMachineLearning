@@ -63,39 +63,39 @@ Form
 			CheckBox
 			{
 				text:							qsTr("Within sum of squares")
-				name:							"tableClusterInfoWSS"
+				name:							"tableClusterInformationWithinSumOfSquares"
 				checked:						true
 			}
 
 			CheckBox
 			{
 				text:							qsTr("Silhouette score")
-				name:							"tableClusterInfoSilhouette"
+				name:							"tableClusterInformationSilhouetteScore"
 			}
 
 			CheckBox
 			{
 				text:							qsTr("Centers")
-				name:							"tableClusterInfoCentroids"
+				name:							"tableClusterInformationCentroids"
 			}
 
 			CheckBox
 			{
 				text:							qsTr("Between sum of squares")
-				name:							"tableClusterInfoBetweenSumSquares"
+				name:							"tableClusterInformationBetweenSumOfSquares"
 			}
 
 			CheckBox
 			{
 				text:							qsTr("Total sum of squares")
-				name:							"tableClusterInfoTotalSumSquares"
+				name:							"tableClusterInformationTotalSumOfSquares"
 			}
 		}
 
 		CheckBox
 		{
 			text:								qsTr("Evaluation metrics")
-			name:								"clusterEvaluationMetrics"
+			name:								"tableClusterEvaluationMetrics"
 		}
 	}
 
@@ -106,26 +106,26 @@ Form
 		CheckBox
 		{
 			text:								qsTr("Elbow method")
-			name:								"withinssPlot"
+			name:								"elbowMethodPlot"
 			enabled:							!validationManual.checked
 		}
 
 		CheckBox
 		{
 			text:								qsTr("Cluster means")
-			name:								"plotClusterMeans"
+			name:								"clusterMeanPlot"
 
 			CheckBox
 			{
 				text:							qsTr("Display barplot")
-				name:							"showBars"
+				name:							"clusterMeanPlotBarPlot"
 				checked:						true
 			}
 
 			CheckBox
 			{
 				text:							qsTr("Group into one figure")
-				name:							"oneFigure"
+				name:							"clusterMeanPlotSingleFigure"
 				checked:						true
 			}
 		}
@@ -133,12 +133,12 @@ Form
 		CheckBox
 		{
 			text:								qsTr("Cluster densities")
-			name:								"plotClusterDensities"
+			name:								"clusterDensityPlot"
 
 			CheckBox
 			{
 				text:							qsTr("Group into one figure")
-				name:							"oneFigureDensity"
+				name:							"clusterDensityPlotSingleFigure"
 				checked:						true
 			}
 		}
@@ -146,21 +146,21 @@ Form
 		CheckBox
 		{
 			text:								qsTr("t-SNE cluster plot")
-			name:								"plot2dCluster"
+			name:								"tsneClusterPlot"
 
 			Row
 			{
 				CheckBox
 				{
 					text:						qsTr("Legend")
-					name:						"legend"
+					name:						"tsneClusterPlotLegend"
 					checked:					true
 				}
 
 				CheckBox
 				{
 					text:						qsTr("Labels")
-					name:						"labels"
+					name:						"tsneClusterPlotLabels"
 				}
 			}
 		}
@@ -228,7 +228,7 @@ Form
 
 			IntegerField
 			{
-				name:							"noOfIterations"
+				name:							"maxNumberIterations"
 				text:							qsTr("Max. iterations")
 				defaultValue:					25
 				min:							1
@@ -249,13 +249,13 @@ Form
 			CheckBox
 			{
 				text:							qsTr("Scale variables")
-				name:							"scaleEqualSD"
+				name:							"scaleVariables"
 				checked:						true
 			}
 
 			CheckBox
 			{
-				name:							"seedBox"
+				name:							"setSeed"
 				text:							qsTr("Set seed")
 				childrenOnSameRow:				true
 
@@ -273,17 +273,17 @@ Form
 		RadioButtonGroup
 		{
 			title:								qsTr("Cluster Determination")
-			name:								"modelOpt"
+			name:								"modelOptimization"
 
 			RadioButton
 			{
 				id:								validationManual
 				text:							qsTr("Fixed")
-				name:							"validationManual"
+				name:							"manual"
 
 				IntegerField
 				{
-					name:						"noOfClusters"
+					name:						"manualNumberOfClusters"
 					text:						qsTr("Clusters")
 					defaultValue:				3
 					min:						2
@@ -296,27 +296,27 @@ Form
 			RadioButton
 			{
 				text:							qsTr("Optimized according to")
-				name:							"validationOptimized"
+				name:							"optimized"
 				childrenOnSameRow:				true
 				checked:						true
 
 				DropDown
 				{
-					name:						"optimizationCriterion"
+					name:						"modelOptimizationMethod"
 					indexDefaultValue:			1
 
 					values:
 						[
-						{ label: "AIC", 		value: "validationAIC"},
-						{ label: "BIC", 		value: "validationBIC"},
-						{ label: "Silhouette", 	value: "validationSilh"}
+						{ label: "AIC", 		value: "aic"},
+						{ label: "BIC", 		value: "bic"},
+						{ label: "Silhouette", 	value: "silhouette"}
 					]
 				}
 			}
 
 			IntegerField
 			{
-				name:							"maxClusters"
+				name:							"maxNumberOfClusters"
 				text:							qsTr("Max. clusters")
 				defaultValue:					10
 				min:							2

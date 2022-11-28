@@ -8,7 +8,7 @@ options$coefficientsTable <- TRUE
 options$dataSplitPlot <- FALSE
 options$holdoutData <- "holdoutManual"
 options$layers <- list(list(nodes = 1, value = "#"))
-options$modelOptimization <- "optimizationManual"
+options$modelOptimization <- "manual"
 options$modelValid <- "validationManual"
 options$predictionsColumn <- ""
 options$predictors <- c("Sepal.Width", "Petal.Length", "Petal.Width")

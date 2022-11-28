@@ -4,7 +4,7 @@ options <- jaspTools::analysisOptions("mlRegressionDecisionTree")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
 options$holdoutData <- "holdoutManual"
-options$modelOptimization <- "optimizationManual"
+options$modelOptimization <- "manual"
 options$modelValid <- "validationManual"
 options$noOfFolds <- 5
 options$decisionTreePlot <- TRUE

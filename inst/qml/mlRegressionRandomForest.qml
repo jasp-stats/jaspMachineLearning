@@ -191,7 +191,7 @@ Form
 		RadioButton
 		{
 			text:								qsTr("Fixed")
-			name:								"optimizationManual"
+			name:								"manual"
 
 			IntegerField
 			{
@@ -208,7 +208,7 @@ Form
 		{
 			id:									optimizeModel
 			text:								qsTr("Optimized")
-			name:								"optimizationError"
+			name:								"optimized"
 			checked:							true
 
 			IntegerField

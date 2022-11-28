@@ -216,7 +216,7 @@ Form
 			{
 				id:								fixedModel
 				text:							qsTr("Fixed")
-				name:							"optimizationManual"
+				name:							"manual"
 
 				DoubleField
 				{

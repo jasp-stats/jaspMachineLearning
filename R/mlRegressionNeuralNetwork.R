@@ -130,7 +130,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   # Create the generated test set indicator
   testIndicatorColumn <- rep(1, nrow(dataset))
   testIndicatorColumn[trainingIndex] <- 0
-  if (options[["modelOptimization"]] == "optimizationManual") {
+  if (options[["modelOptimization"]] == "manual") {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
@@ -155,7 +155,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
     if (isTryError(p)) {
       jaspBase:::.quitAnalysis(gettextf("Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s).", options[["maxTrainingRepetitions"]]))
     }
-  } else if (options[["modelOptimization"]] == "optimizationError") {
+  } else if (options[["modelOptimization"]] == "optimized") {
     # Create a train, validation and test set (optimization)
     validationIndex <- sample.int(nrow(trainingAndValidationSet), size = ceiling(options[["validationDataManual"]] * nrow(trainingAndValidationSet)))
     testSet <- dataset[-trainingIndex, ]
@@ -270,7 +270,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   result[["test"]] <- testSet
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["values"]] <- dataPredictions
-  if (options[["modelOptimization"]] != "optimizationManual") {
+  if (options[["modelOptimization"]] != "manual") {
     result[["accuracyStore"]] <- errorStore
     result[["validMSE"]] <- mean((validationPredictions - valid[, options[["target"]]])^2)
     result[["nvalid"]] <- nrow(valid)
@@ -647,7 +647,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
 }
 
 .mlNeuralNetworkPlotError <- function(dataset, options, jaspResults, ready, position, purpose) {
-  if (!is.null(jaspResults[["meanSquaredErrorPlot"]]) || !options[["meanSquaredErrorPlot"]] || options[["modelOptimization"]] == "optimizationManual") {
+  if (!is.null(jaspResults[["meanSquaredErrorPlot"]]) || !options[["meanSquaredErrorPlot"]] || options[["modelOptimization"]] == "manual") {
     return()
   }
   plotTitle <- switch(purpose,

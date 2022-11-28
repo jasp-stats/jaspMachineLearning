@@ -3,21 +3,21 @@ context("Machine Learning Density-Based Clustering")
 options <- jaspTools::analysisOptions("mlClusteringDensityBased")
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
-options$clusterEvaluationMetrics <- TRUE
-options$distance <- "Normal densities"
-options[["k-distplot"]] <- TRUE
-options$modelOpt <- "validationManual"
-options$plot2dCluster <- TRUE
+options$tableClusterEvaluationMetrics <- TRUE
+options$distance <- "normalDensities"
+options[["kDistancePlot"]] <- TRUE
+options$modelOptimization <- "manual"
+options$tsneClusterPlot <- TRUE
 options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
                            "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
                            "Hue", "Dilution", "Proline")
-options$seedBox <- TRUE
-options$tableClusterInfoBetweenSumSquares <- TRUE
-options$tableClusterInfoSilhouette <- TRUE
-options$tableClusterInfoTotalSumSquares <- TRUE
-options$plotClusterMeans <- TRUE
-options$showBars <- TRUE
-options$oneFigure <- TRUE
+options$setSeed <- TRUE
+options$tableClusterInformationBetweenSumOfSquares <- TRUE
+options$tableClusterInformationSilhouetteScore <- TRUE
+options$tableClusterInformationTotalSumOfSquares <- TRUE
+options$clusterMeanPlot <- TRUE
+options$clusterMeanPlotBarPlot <- TRUE
+options$clusterMeanPlotSingleFigure <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClusteringDensityBased", "wine.csv", options)
 

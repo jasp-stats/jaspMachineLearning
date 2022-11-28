@@ -200,9 +200,9 @@ is.jaspMachineLearning <- function(x) {
 }
 
 .mlPredictionReadModel <- function(options) {
-  if (options[["loadPath"]] != "") {
+  if (options[["trainedModelFilePath"]] != "") {
     model <- try({
-      readRDS(options[["loadPath"]])
+      readRDS(options[["trainedModelFilePath"]])
     })
     if (!is.jaspMachineLearning(model)) {
       jaspBase:::.quitAnalysis(gettext("Error: The trained model is not created in JASP."))
@@ -266,7 +266,7 @@ is.jaspMachineLearning <- function(x) {
     }
     table <- createJaspTable(gettextf("Loaded Model: %1$s", purpose))
   }
-  table$dependOn(options = c("predictors", "loadPath"))
+  table$dependOn(options = c("predictors", "trainedModelFilePath"))
   table$position <- position
   table$addColumnInfo(name = "model", title = gettext("Method"), type = "string")
   jaspResults[["modelSummaryTable"]] <- table
@@ -346,7 +346,7 @@ is.jaspMachineLearning <- function(x) {
   indexes <- options[["fromIndex"]]:options[["toIndex"]]
   selection <- predictions[indexes]
   cols <- list(row = indexes, pred = selection)
-  if (options[["addPredictors"]]) {
+  if (options[["predictionsTableFeatures"]]) {
     for (i in encodeColNames(model[["jaspVars"]])) {
       if (.columnIsNominalText(i)) {
         table$addColumnInfo(name = i, title = i, type = "string")
