@@ -1680,30 +1680,6 @@ msgctxt "mlClassificationNeuralNetwork|"
 msgid "Elitism"
 msgstr "Elitismus"
 
-msgctxt "mlPrediction|"
-msgid "Trained model"
-msgstr "Trainiertes Modell"
-
-msgctxt "mlPrediction|"
-msgid "e.g., location/model.jaspML"
-msgstr "z. B. Pfad/Modell.jaspML"
-
-msgctxt "mlPrediction|"
-msgid "Algorithmic Settings"
-msgstr "Algorithmus-Einstellungen"
-
-msgctxt "mlPrediction|"
-msgid "Tables"
-msgstr "Tabellen"
-
-msgctxt "mlPrediction|"
-msgid "From"
-msgstr "Von"
-
-msgctxt "mlPrediction|"
-msgid "to"
-msgstr "bis"
-
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Target"
 msgstr "Ziel"
@@ -2788,14 +2764,6 @@ msgctxt "mlClusteringRandomForest|"
 msgid "Feature importance"
 msgstr "Merkmal-Wichtigkeit"
 
-msgctxt "mlPrediction|"
-msgid "Features"
-msgstr "Merkmale"
-
-msgctxt "mlPrediction|"
-msgid "Scale features"
-msgstr "Merkmale skalieren"
-
 msgctxt "mlRegressionBoosting|"
 msgid "Features"
 msgstr "Merkmale"
@@ -2843,3 +2811,8 @@ msgstr "Merkmale"
 msgctxt "mlRegressionSvm|"
 msgid "Features"
 msgstr "Merkmale"
+
+#, fuzzy
+msgctxt "mlRegressionKnn|"
+msgid "Manhattan"
+msgstr "Manhattan"

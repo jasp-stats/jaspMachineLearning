@@ -1679,30 +1679,6 @@ msgctxt "mlClassificationNeuralNetwork|"
 msgid "Elitism"
 msgstr "エリート主義"
 
-msgctxt "mlPrediction|"
-msgid "Trained model"
-msgstr "学習済みモデル"
-
-msgctxt "mlPrediction|"
-msgid "e.g., location/model.jaspML"
-msgstr "e.g., 場所/model.jaspML"
-
-msgctxt "mlPrediction|"
-msgid "Algorithmic Settings"
-msgstr "アルゴリズムの設定"
-
-msgctxt "mlPrediction|"
-msgid "Tables"
-msgstr "表"
-
-msgctxt "mlPrediction|"
-msgid "From"
-msgstr "次から"
-
-msgctxt "mlPrediction|"
-msgid "to"
-msgstr "次まで"
-
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Target"
 msgstr "ターゲット"
@@ -2844,14 +2820,6 @@ msgctxt "mlClusteringRandomForest|"
 msgid "Feature importance"
 msgstr ""
 
-msgctxt "mlPrediction|"
-msgid "Features"
-msgstr ""
-
-msgctxt "mlPrediction|"
-msgid "Scale features"
-msgstr ""
-
 msgctxt "mlRegressionBoosting|"
 msgid "Features"
 msgstr ""
@@ -2899,3 +2867,8 @@ msgstr ""
 msgctxt "mlRegressionSvm|"
 msgid "Features"
 msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionKnn|"
+msgid "Manhattan"
+msgstr "マンハッタン"

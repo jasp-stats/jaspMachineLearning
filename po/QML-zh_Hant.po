@@ -1,17 +1,11 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-11-08 09:33+0000\n"
-"Last-Translator: Changya Hu <changyahu@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
-"jasp/jaspmachinelearning-qml/zh_Hant/>\n"
-"Language: zh_Hant\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.14.2\n"
-"X-Qt-Contexts: true\n"
 "X-Language: zh_Hant\n"
+"X-Qt-Contexts: true\n"
 
 msgctxt "Description|"
 msgid "Machine Learning"
@@ -106,14 +100,6 @@ msgid "Hierarchical Clustering"
 msgstr "階層集群分析"
 
 msgctxt "Description|"
-msgid "K-Means"
-msgstr "K-平均數"
-
-msgctxt "Description|"
-msgid "K-Means Clustering"
-msgstr "K-平均數集群分析"
-
-msgctxt "Description|"
 msgid "Random Forest Clustering"
 msgstr "隨機森林集群分析"
 
@@ -164,10 +150,6 @@ msgstr "留一法"
 msgctxt "mlClassificationBoosting|"
 msgid "Target"
 msgstr "目標"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Predictors"
-msgstr "預測變數"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Tables"
@@ -238,10 +220,6 @@ msgid "Algorithmic Settings"
 msgstr "演算法設定"
 
 msgctxt "mlClassificationBoosting|"
-msgid "Scale predictors"
-msgstr ""
-
-msgctxt "mlClassificationBoosting|"
 msgid "Number of Trees"
 msgstr ""
 
@@ -253,41 +231,44 @@ msgctxt "mlClassificationBoosting|"
 msgid "Optimized"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Target"
-msgstr ""
+msgstr "目標"
 
-msgctxt "mlClassificationKnn|"
-msgid "Predictors"
-msgstr "預測變數"
-
+#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlClassificationKnn|"
 msgid "Confusion matrix"
 msgstr "混淆矩陣"
 
+#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Display proportions"
-msgstr ""
+msgstr "顯示比例"
 
+#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Class proportions"
-msgstr ""
+msgstr "類別比例"
 
+#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評估指標"
 
+#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Plots"
-msgstr ""
+msgstr "圖"
 
+#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Data split"
-msgstr ""
+msgstr "資料切割"
 
 msgctxt "mlClassificationKnn|"
 msgid "Classification accuracy"
@@ -305,21 +286,25 @@ msgctxt "mlClassificationKnn|"
 msgid "Decision boundary matrix"
 msgstr "決策邊界矩陣"
 
+#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Legend"
-msgstr ""
+msgstr "圖例"
 
+#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Points"
-msgstr ""
+msgstr "點"
 
+#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "訓練參數"
 
+#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "演算法設定"
 
 msgctxt "mlClassificationKnn|"
 msgid "Rectangular"
@@ -366,10 +351,6 @@ msgid "Manhattan"
 msgstr ""
 
 msgctxt "mlClassificationKnn|"
-msgid "Scale predictors"
-msgstr ""
-
-msgctxt "mlClassificationKnn|"
 msgid "Number of Nearest Neighbors"
 msgstr ""
 
@@ -381,33 +362,34 @@ msgctxt "mlClassificationKnn|"
 msgid "Optimized"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Target"
-msgstr ""
+msgstr "目標"
 
-msgctxt "mlClassificationLda|"
-msgid "Predictors"
-msgstr ""
-
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlClassificationLda|"
 msgid "Confusion matrix"
 msgstr "混淆矩陣"
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Display proportions"
-msgstr ""
+msgstr "顯示比例"
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Class proportions"
-msgstr ""
+msgstr "類別比例"
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評估指標"
 
 msgctxt "mlClassificationLda|"
 msgid "Coefficients"
@@ -437,13 +419,15 @@ msgctxt "mlClassificationLda|"
 msgid "Multicollinearity"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Plots"
-msgstr ""
+msgstr "圖"
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Data split"
-msgstr ""
+msgstr "資料切割"
 
 msgctxt "mlClassificationLda|"
 msgid "ROC curves"
@@ -469,65 +453,64 @@ msgctxt "mlClassificationLda|"
 msgid "Decision boundary matrix"
 msgstr "決策邊界矩陣"
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Legend"
-msgstr ""
+msgstr "圖例"
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Points"
-msgstr ""
+msgstr "點"
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "訓練參數"
 
+#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "演算法設定"
 
-msgctxt "mlClassificationLda|"
-msgid "Scale predictors"
-msgstr ""
-
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Target"
-msgstr ""
+msgstr "目標"
 
-msgctxt "mlClassificationRandomForest|"
-msgid "Predictors"
-msgstr ""
-
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Confusion matrix"
 msgstr "混淆矩陣"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Display proportions"
-msgstr ""
+msgstr "顯示比例"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Class proportions"
-msgstr ""
+msgstr "類別比例"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評估指標"
 
-msgctxt "mlClassificationRandomForest|"
-msgid "Variable importance"
-msgstr ""
-
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Plots"
-msgstr ""
+msgstr "圖"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Data split"
-msgstr ""
+msgstr "資料切割"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Out-of-bag accuracy"
@@ -553,21 +536,25 @@ msgctxt "mlClassificationRandomForest|"
 msgid "Decision boundary matrix"
 msgstr "決策邊界矩陣"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Legend"
-msgstr ""
+msgstr "圖例"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Points"
-msgstr ""
+msgstr "點"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "訓練參數"
 
+#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "演算法設定"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Auto"
@@ -575,10 +562,6 @@ msgstr ""
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Manual"
-msgstr ""
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Scale predictors"
 msgstr ""
 
 msgctxt "mlClassificationRandomForest|"
@@ -593,13 +576,10 @@ msgctxt "mlClassificationRandomForest|"
 msgid "Optimized"
 msgstr ""
 
-msgctxt "mlClusteringDensityBased|"
-msgid "Variables"
-msgstr ""
-
+#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Cluster means"
@@ -625,13 +605,15 @@ msgctxt "mlClusteringDensityBased|"
 msgid "Total sum of squares"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評估指標"
 
+#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Plots"
-msgstr ""
+msgstr "圖"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "K-distance plot"
@@ -653,21 +635,24 @@ msgctxt "mlClusteringDensityBased|"
 msgid "t-SNE cluster plot"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Legend"
-msgstr ""
+msgstr "圖例"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Labels"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "訓練參數"
 
+#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "演算法設定"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Normal"
@@ -689,13 +674,10 @@ msgctxt "mlClusteringDensityBased|"
 msgid "Fixed"
 msgstr ""
 
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Variables"
-msgstr ""
-
+#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Cluster means"
@@ -725,13 +707,15 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Total sum of squares"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評估指標"
 
+#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Plots"
-msgstr ""
+msgstr "圖"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Elbow method"
@@ -753,21 +737,24 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "t-SNE cluster plot"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Legend"
-msgstr ""
+msgstr "圖例"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Labels"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "訓練參數"
 
+#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "演算法設定"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Scale variables"
@@ -785,13 +772,10 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Optimized according to"
 msgstr ""
 
-msgctxt "mlClusteringHierarchical|"
-msgid "Variables"
-msgstr ""
-
+#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Cluster means"
@@ -817,13 +801,15 @@ msgctxt "mlClusteringHierarchical|"
 msgid "Total sum of squares"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評估指標"
 
+#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Plots"
-msgstr ""
+msgstr "圖"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Elbow method"
@@ -849,21 +835,24 @@ msgctxt "mlClusteringHierarchical|"
 msgid "t-SNE cluster plot"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Legend"
-msgstr ""
+msgstr "圖例"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Labels"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "訓練參數"
 
+#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "演算法設定"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Euclidean"
@@ -917,13 +906,10 @@ msgctxt "mlClusteringHierarchical|"
 msgid "Optimized according to"
 msgstr ""
 
-msgctxt "mlClusteringKMeans|"
-msgid "Variables"
-msgstr ""
-
+#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Cluster means"
@@ -942,10 +928,6 @@ msgid "Silhouette score"
 msgstr ""
 
 msgctxt "mlClusteringKMeans|"
-msgid "Centroids"
-msgstr ""
-
-msgctxt "mlClusteringKMeans|"
 msgid "Between sum of squares"
 msgstr ""
 
@@ -953,13 +935,15 @@ msgctxt "mlClusteringKMeans|"
 msgid "Total sum of squares"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評估指標"
 
+#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Plots"
-msgstr ""
+msgstr "圖"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Elbow method"
@@ -981,21 +965,24 @@ msgctxt "mlClusteringKMeans|"
 msgid "t-SNE cluster plot"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Legend"
-msgstr ""
+msgstr "圖例"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Labels"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "訓練參數"
 
+#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "演算法設定"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Scale variables"
@@ -1013,13 +1000,10 @@ msgctxt "mlClusteringKMeans|"
 msgid "Optimized according to"
 msgstr ""
 
-msgctxt "mlClusteringRandomForest|"
-msgid "Variables"
-msgstr ""
-
+#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Cluster means"
@@ -1045,17 +1029,15 @@ msgctxt "mlClusteringRandomForest|"
 msgid "Total sum of squares"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評估指標"
 
-msgctxt "mlClusteringRandomForest|"
-msgid "Variable importance"
-msgstr ""
-
+#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Plots"
-msgstr ""
+msgstr "圖"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Elbow method"
@@ -1077,21 +1059,24 @@ msgctxt "mlClusteringRandomForest|"
 msgid "t-SNE cluster plot"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Legend"
-msgstr ""
+msgstr "圖例"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Labels"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "訓練參數"
 
+#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "演算法設定"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Scale variables"
@@ -1109,53 +1094,59 @@ msgctxt "mlClusteringRandomForest|"
 msgid "Optimized according to"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Target"
-msgstr ""
+msgstr "目標"
 
-msgctxt "mlRegressionBoosting|"
-msgid "Predictors"
-msgstr ""
-
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評估指標"
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Relative influence"
-msgstr ""
+msgstr "相對影響力"
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Plots"
-msgstr ""
+msgstr "圖"
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Data split"
-msgstr ""
+msgstr "資料切割"
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Out-of-bag improvement"
-msgstr ""
+msgstr "袋外提升"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Predictive performance"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Deviance"
-msgstr ""
+msgstr "離差量數"
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "訓練參數"
 
+#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "演算法設定"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Scale variables"
@@ -1173,29 +1164,30 @@ msgctxt "mlRegressionBoosting|"
 msgid "Optimized"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Target"
-msgstr ""
+msgstr "目標"
 
-msgctxt "mlRegressionKnn|"
-msgid "Predictors"
-msgstr ""
-
+#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
+#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評估指標"
 
+#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Plots"
-msgstr ""
+msgstr "圖"
 
+#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Data split"
-msgstr ""
+msgstr "資料切割"
 
 msgctxt "mlRegressionKnn|"
 msgid "Mean squared error"
@@ -1205,13 +1197,15 @@ msgctxt "mlRegressionKnn|"
 msgid "Predictive performance"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "訓練參數"
 
+#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "演算法設定"
 
 msgctxt "mlRegressionKnn|"
 msgid "Rectangular"
@@ -1269,33 +1263,30 @@ msgctxt "mlRegressionKnn|"
 msgid "Optimized"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Target"
-msgstr ""
+msgstr "目標"
 
-msgctxt "mlRegressionRandomForest|"
-msgid "Predictors"
-msgstr ""
-
+#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
+#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評估指標"
 
-msgctxt "mlRegressionRandomForest|"
-msgid "Variable importance"
-msgstr ""
-
+#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Plots"
-msgstr ""
+msgstr "圖"
 
+#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Data split"
-msgstr ""
+msgstr "資料切割"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Out-of-bag error"
@@ -1313,13 +1304,15 @@ msgctxt "mlRegressionRandomForest|"
 msgid "Total increase in node purity"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "訓練參數"
 
+#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "演算法設定"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Auto"
@@ -1345,37 +1338,38 @@ msgctxt "mlRegressionRandomForest|"
 msgid "Optimized"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Target"
-msgstr ""
-
-msgctxt "mlRegressionRegularized|"
-msgid "Predictors"
-msgstr ""
+msgstr "目標"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Weights"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
+#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評估指標"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Regression coefficients"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Plots"
-msgstr ""
+msgstr "圖"
 
+#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Data split"
-msgstr ""
+msgstr "資料切割"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Predictive performance"
@@ -1385,21 +1379,24 @@ msgctxt "mlRegressionRegularized|"
 msgid "Variable trace"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Legend"
-msgstr ""
+msgstr "圖例"
 
 msgctxt "mlRegressionRegularized|"
 msgid "λ evaluation"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "訓練參數"
 
+#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "演算法設定"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Elastic net"
@@ -1475,45 +1472,48 @@ msgctxt "ExportResults|"
 msgid "Save trained model"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Target"
-msgstr ""
+msgstr "目標"
 
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Predictors"
-msgstr ""
-
+#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Confusion matrix"
 msgstr "混淆矩陣"
 
+#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Display proportions"
-msgstr ""
+msgstr "顯示比例"
 
+#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Class proportions"
-msgstr ""
+msgstr "類別比例"
 
+#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評估指標"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Network weights"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Plots"
-msgstr ""
+msgstr "圖"
 
+#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Data split"
-msgstr ""
+msgstr "資料切割"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Classification accuracy"
@@ -1539,21 +1539,25 @@ msgctxt "mlClassificationNeuralNetwork|"
 msgid "Decision boundary matrix"
 msgstr "決策邊界矩陣"
 
+#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Legend"
-msgstr ""
+msgstr "圖例"
 
+#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Points"
-msgstr ""
+msgstr "點"
 
+#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "訓練參數"
 
+#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "演算法設定"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Linear"
@@ -1668,10 +1672,6 @@ msgid "Max. training repetitions"
 msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
-msgid "Scale predictors"
-msgstr ""
-
-msgctxt "mlClassificationNeuralNetwork|"
 msgid "Set seed"
 msgstr "設定種子值"
 
@@ -1783,65 +1783,34 @@ msgctxt "mlClassificationNeuralNetwork|"
 msgid "Elitism"
 msgstr ""
 
-msgctxt "mlPrediction|"
-msgid "Trained model"
-msgstr ""
-
-msgctxt "mlPrediction|"
-msgid "e.g., location/model.jaspML"
-msgstr ""
-
-msgctxt "mlPrediction|"
-msgid "Predictors"
-msgstr ""
-
-msgctxt "mlPrediction|"
-msgid "Algorithmic Settings"
-msgstr ""
-
-msgctxt "mlPrediction|"
-msgid "Scale predictors"
-msgstr ""
-
-msgctxt "mlPrediction|"
-msgid "Tables"
-msgstr ""
-
-msgctxt "mlPrediction|"
-msgid "From"
-msgstr ""
-
-msgctxt "mlPrediction|"
-msgid "to"
-msgstr ""
-
+#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Target"
-msgstr ""
+msgstr "目標"
 
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Predictors"
-msgstr ""
-
+#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Tables"
-msgstr ""
+msgstr "表"
 
+#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Evaluation metrics"
-msgstr ""
+msgstr "評估指標"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Network weights"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Plots"
-msgstr ""
+msgstr "圖"
 
+#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Data split"
-msgstr ""
+msgstr "資料切割"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Mean squared error"
@@ -1859,13 +1828,15 @@ msgctxt "mlRegressionNeuralNetwork|"
 msgid "Network structure"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "訓練參數"
 
+#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "演算法設定"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Linear"
@@ -2139,9 +2110,10 @@ msgctxt "mlClassificationKnn|"
 msgid "Weights"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Distance"
-msgstr ""
+msgstr "距離"
 
 msgctxt "mlClassificationKnn|"
 msgid "Set seed"
@@ -2176,10 +2148,6 @@ msgid "Training data used per tree"
 msgstr ""
 
 msgctxt "mlClassificationRandomForest|"
-msgid "Predictors per split"
-msgstr ""
-
-msgctxt "mlClassificationRandomForest|"
 msgid "Set seed"
 msgstr "設定種子值"
 
@@ -2199,9 +2167,10 @@ msgctxt "mlClusteringDensityBased|"
 msgid "Min. core points"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Distance"
-msgstr ""
+msgstr "距離"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Set seed"
@@ -2227,9 +2196,10 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Max. clusters"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Distance"
-msgstr ""
+msgstr "距離"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Pearson"
@@ -2356,10 +2326,6 @@ msgid "Training data used per tree"
 msgstr ""
 
 msgctxt "mlRegressionRandomForest|"
-msgid "Predictors per split"
-msgstr ""
-
-msgctxt "mlRegressionRandomForest|"
 msgid "Set seed"
 msgstr "設定種子值"
 
@@ -2398,3 +2364,616 @@ msgstr "設定種子值"
 msgctxt "mlRegressionRegularized|"
 msgid "Largest λ within 1 SE of min"
 msgstr ""
+
+msgctxt "Description|"
+msgid "Decision Tree"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Decision Tree Regression"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Support Vector Machine"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Support Vector Machine Regression"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Decision Tree Classification"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Support Vector Machine Classification"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Neighborhood-Based"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Neighborhood-Based Clustering"
+msgstr ""
+
+msgctxt "mlClassificationBoosting|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlClassificationBoosting|"
+msgid "Scale features"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Target"
+msgstr "目標"
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Features"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Tables"
+msgstr "表"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Confusion matrix"
+msgstr "混淆矩陣"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Display proportions"
+msgstr "顯示比例"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Class proportions"
+msgstr "類別比例"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Evaluation metrics"
+msgstr "評估指標"
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Feature importance"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Attempted splits"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Only show splits in tree"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Plots"
+msgstr "圖"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Data split"
+msgstr "資料切割"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "ROC curves"
+msgstr "ROC曲線"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Andrews curves"
+msgstr "Andrews曲線"
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Decision tree"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Decision boundary matrix"
+msgstr "決策邊界矩陣"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Legend"
+msgstr "圖例"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Points"
+msgstr "點"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Training Parameters"
+msgstr "訓練參數"
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Algorithmic Settings"
+msgstr "演算法設定"
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Min. observations for split"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Min. observations in terminal"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Max. interaction depth"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Complexity parameter"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Scale features"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationDecisionTree|"
+msgid "Set seed"
+msgstr "設定種子值"
+
+msgctxt "mlClassificationKnn|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlClassificationKnn|"
+msgid "Weight function"
+msgstr ""
+
+msgctxt "mlClassificationKnn|"
+msgid "Triangular"
+msgstr ""
+
+msgctxt "mlClassificationKnn|"
+msgid "Scale features"
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid "Scale features"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Scale features"
+msgstr ""
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Feature importance"
+msgstr ""
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Features per split"
+msgstr ""
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Scale features"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Target"
+msgstr "目標"
+
+msgctxt "mlClassificationSvm|"
+msgid "Features"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Tables"
+msgstr "表"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Confusion matrix"
+msgstr "混淆矩陣"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Display proportions"
+msgstr "顯示比例"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Class proportions"
+msgstr "類別比例"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Evaluation metrics"
+msgstr "評估指標"
+
+msgctxt "mlClassificationSvm|"
+msgid "Support vectors"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Plots"
+msgstr "圖"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Data split"
+msgstr "資料切割"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "ROC curves"
+msgstr "ROC曲線"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Andrews curves"
+msgstr "Andrews曲線"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Decision boundary matrix"
+msgstr "決策邊界矩陣"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Legend"
+msgstr "圖例"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Points"
+msgstr "點"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Training Parameters"
+msgstr "訓練參數"
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Algorithmic Settings"
+msgstr "演算法設定"
+
+msgctxt "mlClassificationSvm|"
+msgid "Weights"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Linear"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Radial"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Polynomial"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Sigmoid"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Degree"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Gamma parameter"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "r parameter"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Cost of constraints violation"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Tolerance of termination criterion"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Epsilon"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Scale features"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClassificationSvm|"
+msgid "Set seed"
+msgstr "設定種子值"
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Centers"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Center type"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClusteringKMeans|"
+msgid "Distance"
+msgstr "距離"
+
+msgctxt "mlClusteringKMeans|"
+msgid "Euclidean"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Manhattan"
+msgstr ""
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Feature importance"
+msgstr ""
+
+msgctxt "mlRegressionBoosting|"
+msgid "Features"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Target"
+msgstr "目標"
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Features"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Tables"
+msgstr "表"
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Evaluation metrics"
+msgstr "評估指標"
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Feature importance"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Attempted splits"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Only show splits in tree"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Plots"
+msgstr "圖"
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Data split"
+msgstr "資料切割"
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Predictive performance"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Decision tree"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Training Parameters"
+msgstr "訓練參數"
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Algorithmic Settings"
+msgstr "演算法設定"
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Min. observations for split"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Min. observations in terminal"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Max. interaction depth"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Complexity parameter"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Scale variables"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionDecisionTree|"
+msgid "Set seed"
+msgstr "設定種子值"
+
+msgctxt "mlRegressionKnn|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlRegressionKnn|"
+msgid "Weight function"
+msgstr ""
+
+msgctxt "mlRegressionKnn|"
+msgid "Triangular"
+msgstr ""
+
+msgctxt "mlRegressionKnn|"
+msgid "Manhattan"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Feature importance"
+msgstr ""
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Features per split"
+msgstr ""
+
+msgctxt "mlRegressionRegularized|"
+msgid "Features"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Target"
+msgstr "目標"
+
+msgctxt "mlRegressionSvm|"
+msgid "Features"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Tables"
+msgstr "表"
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Evaluation metrics"
+msgstr "評估指標"
+
+msgctxt "mlRegressionSvm|"
+msgid "Support vectors"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Plots"
+msgstr "圖"
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Data split"
+msgstr "資料切割"
+
+msgctxt "mlRegressionSvm|"
+msgid "Predictive performance"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Training Parameters"
+msgstr "訓練參數"
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Algorithmic Settings"
+msgstr "演算法設定"
+
+msgctxt "mlRegressionSvm|"
+msgid "Weights"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Linear"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Radial"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Polynomial"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Sigmoid"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Degree"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Gamma"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "r parameter"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Cost of constraints violation"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Tolerance of termination criterion"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Epsilon"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Scale variables"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionSvm|"
+msgid "Set seed"
+msgstr "設定種子值"
