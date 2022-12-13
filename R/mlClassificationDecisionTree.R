@@ -79,15 +79,56 @@ mlClassificationDecisionTree <- function(jaspResults, dataset, options, ...) {
   # Create the generated test set indicator
   testIndicatorColumn <- rep(1, nrow(dataset))
   testIndicatorColumn[trainingIndex] <- 0
+
+  if (options[["modelOpt"]] == "optimizationManual") {
   # Just create a train and a test set (no optimization)
-  testSet <- dataset[-trainingIndex, ]
-  trainingFit <- rpart::rpart(
-    formula = formula, data = trainingSet, method = "class", x = TRUE, y = TRUE,
-    control = rpart::rpart.control(minsplit = options[["minObservationsForSplit"]], minbucket = options[["minObservationsInNode"]], maxdepth = options[["interactionDepth"]], cp = options[["complexityParameter"]])
+    testSet <- dataset[-trainingIndex, ]
+    trainingFit <- rpart::rpart(
+      formula = formula, data = trainingSet, method = "class", x = TRUE, y = TRUE,
+      control = rpart::rpart.control(minsplit = options[["nSplit"]], minbucket = options[["nNode"]], maxdepth = options[["intDepth"]], cp = options[["cp"]])
+    )
+
+  } else if (options[["modelOpt"]] == "optimizationError") {
+
+    testSet <- dataset[-trainingIndex, ]
+
+    dtRange <- 1:options[["maxCp"]]
+    accuracyStore <- numeric(length(dtRange))
+    trainAccuracyStore <- numeric(length(dtRange))
+    startProgressbar(length(dtRange))
+
+    for (i in dtRange) {
+
+      validationFit <- rpart::rpart(
+      formula = formula, data = trainingSet, method = "class", x = TRUE, y = TRUE,
+      control = rpart::rpart.control(minsplit = options[["nSplit"]], minbucket = options[["nNode"]], maxdepth = options[["intDepth"]], cp = i)
+      )
+
+      accuracyStore[i] <- sum(diag(prop.table(table(validationFit$fitted.values, validationSet[, options[["target"]]]))))
+      trainingFit <- kknn::kknn(
+        formula = formula, train = trainingSet, test = trainingSet, k = i,
+        distance = options[["distanceParameterManual"]], kernel = options[["weights"]], scale = FALSE
+      )
+      trainAccuracyStore[i] <- sum(diag(prop.table(table(trainingFit$fitted.values, trainingSet[, options[["target"]]]))))
+      progressbarTick()
+
+      dt <- switch(options[["modelOpt"]],
+                   "optimizationError" = dtRange[which.max(accuracyStore)]
+      )
+    }
+
+    trainingFit <- rpart::rpart(
+      formula = formula, data = trainingSet, method = "class", x = TRUE, y = TRUE,
+      control = rpart::rpart.control(minsplit = options[["nSplit"]], minbucket = options[["nNode"]], maxdepth = options[["intDepth"]], cp = options[["cp"]])
   )
+
+  }
   # Use the specified model to make predictions for dataset
   testPredictions <- levels(trainingSet[[options[["target"]]]])[max.col(predict(trainingFit, newdata = testSet))]
   dataPredictions <- levels(trainingSet[[options[["target"]]]])[max.col(predict(trainingFit, newdata = dataset))]
+
+  mse = (1/n) * sum(y_real - y_pred)^2
+
   # Create results object
   result <- list()
   result[["formula"]] <- formula

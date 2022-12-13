@@ -198,14 +198,6 @@ Form
 				max:							30
 			}
 
-			DoubleField
-			{
-				text:							qsTr("Complexity parameter")
-				name:							"complexityParameter"
-				min:							0
-				defaultValue:					0.01
-			}
-
 			CheckBox
 			{
 				text:							qsTr("Scale features")
@@ -232,13 +224,41 @@ Form
 
 		RadioButtonGroup
 		{
-			name:								"modelOptimization"
-			visible:							false
+			title:								qsTr("Complexity Parameter")
+			name:								"modelOpt"
 
 			RadioButton
 			{
-				name:							"manual"
+				text:							qsTr("Fixed")
+				name:							"optimizationManual"
 				checked:						true
+
+				DoubleField
+				{
+					name:						"cp"
+					text:						qsTr("Complexity Parameter")
+					defaultValue:				0.01
+					min:						0
+					fieldWidth:					60
+				}
+			}
+
+			RadioButton
+			{
+				id:								optimizeModel
+				text:							qsTr("Optimized")
+				name:							"optimizationError"
+				checked:						true
+
+				IntegerField
+				{
+					name:						"maxCp"
+					text:						qsTr("Max. complexity parameter")
+					defaultValue:				10
+					min:						1
+					max:						50000
+					fieldWidth:					60
+				}
 			}
 		}
 	}
