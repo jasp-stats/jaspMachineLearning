@@ -80,15 +80,15 @@ mlClassificationDecisionTree <- function(jaspResults, dataset, options, ...) {
   testIndicatorColumn <- rep(1, nrow(dataset))
   testIndicatorColumn[trainingIndex] <- 0
 
-  if (options[["modelOpt"]] == "optimizationManual") {
+  if (options[["modelOptimization"]] == "optimizationManual") {
   # Just create a train and a test set (no optimization)
     testSet <- dataset[-trainingIndex, ]
     trainingFit <- rpart::rpart(
       formula = formula, data = trainingSet, method = "class", x = TRUE, y = TRUE,
-      control = rpart::rpart.control(minsplit = options[["nSplit"]], minbucket = options[["nNode"]], maxdepth = options[["intDepth"]], cp = options[["cp"]])
+      control = rpart::rpart.control(minsplit = options[["nSplit"]], minbucket = options[["nNode"]], maxdepth = options[["interactionDepth"]], cp = options[["cp"]])
     )
 
-  } else if (options[["modelOpt"]] == "optimizationError") {
+  } else if (options[["modelOptimization"]] == "optimizationError") {
 
     testSet <- dataset[-trainingIndex, ]
 
@@ -101,7 +101,7 @@ mlClassificationDecisionTree <- function(jaspResults, dataset, options, ...) {
 
       validationFit <- rpart::rpart(
       formula = formula, data = trainingSet, method = "class", x = TRUE, y = TRUE,
-      control = rpart::rpart.control(minsplit = options[["nSplit"]], minbucket = options[["nNode"]], maxdepth = options[["intDepth"]], cp = i)
+      control = rpart::rpart.control(minsplit = options[["nSplit"]], minbucket = options[["nNode"]], maxdepth = options[["interactionDepth"]], cp = i)
       )
 
       accuracyStore[i] <- sum(diag(prop.table(table(validationFit$fitted.values, validationSet[, options[["target"]]]))))
@@ -119,7 +119,7 @@ mlClassificationDecisionTree <- function(jaspResults, dataset, options, ...) {
 
     trainingFit <- rpart::rpart(
       formula = formula, data = trainingSet, method = "class", x = TRUE, y = TRUE,
-      control = rpart::rpart.control(minsplit = options[["nSplit"]], minbucket = options[["nNode"]], maxdepth = options[["intDepth"]], cp = options[["cp"]])
+      control = rpart::rpart.control(minsplit = options[["nSplit"]], minbucket = options[["nNode"]], maxdepth = options[["interactionDepth"]], cp = options[["cp"]])
   )
 
   }
@@ -127,7 +127,7 @@ mlClassificationDecisionTree <- function(jaspResults, dataset, options, ...) {
   testPredictions <- levels(trainingSet[[options[["target"]]]])[max.col(predict(trainingFit, newdata = testSet))]
   dataPredictions <- levels(trainingSet[[options[["target"]]]])[max.col(predict(trainingFit, newdata = dataset))]
 
-  mse = (1/n) * sum(y_real - y_pred)^2
+  # mse = (1/options[["ntest"]]) * sum(y_real - y_pred)^2
 
   # Create results object
   result <- list()

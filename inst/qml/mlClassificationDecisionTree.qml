@@ -225,7 +225,7 @@ Form
 		RadioButtonGroup
 		{
 			title:								qsTr("Complexity Parameter")
-			name:								"modelOpt"
+			name:								"modelOptimization"
 
 			RadioButton
 			{
@@ -248,7 +248,7 @@ Form
 				id:								optimizeModel
 				text:							qsTr("Optimized")
 				name:							"optimizationError"
-				checked:						true
+				checked:						false
 
 				IntegerField
 				{
