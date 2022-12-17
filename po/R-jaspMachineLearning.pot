@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.0\n"
-"POT-Creation-Date: 2022-11-30 10:32\n"
+"POT-Creation-Date: 2022-12-17 03:24\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -497,9 +497,6 @@ msgid "Validation: %d"
 msgstr ""
 
 msgid "Train and validation: %d"
-msgstr ""
-
-msgid "Object passed to .scaleNumericData.matrix was not numeric!"
 msgstr ""
 
 msgid "The target variable should have at least 2 classes."

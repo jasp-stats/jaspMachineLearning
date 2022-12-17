@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2022-05-07 03:28\n"
+"POT-Creation-Date: 2022-12-17 03:24\n"
 "PO-Revision-Date: 2022-08-29 00:16+0000\n"
 "Last-Translator: Laura Durans <lauraadurans@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
@@ -563,9 +563,6 @@ msgid "Validation: %d"
 msgstr "Validação: %d"
 
 msgid "Train and validation: %d"
-msgstr ""
-
-msgid "Object passed to .scaleNumericData.matrix was not numeric!"
 msgstr ""
 
 msgid "The target variable should have at least 2 classes."

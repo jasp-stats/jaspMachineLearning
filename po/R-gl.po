@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2022-05-07 03:28\n"
+"POT-Creation-Date: 2022-12-17 03:24\n"
 "PO-Revision-Date: 2022-05-11 10:00+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
@@ -182,7 +182,8 @@ msgid "Andrews Curves Plot"
 msgstr "Gráfica das Curvas de Andrews"
 
 msgid "Andrews curves require a minimum of 2 feature variables."
-msgstr "As curvas de Andrews requiren un mínimo de 2 variables características."
+msgstr ""
+"As curvas de Andrews requiren un mínimo de 2 variables características."
 
 msgid "Box's M-test for Homogeneity of Covariance Matrices"
 msgstr "Proba M de Box para Homoxeneidade das Matrices de Covarianzas"
@@ -531,8 +532,8 @@ msgstr "Erro OOB"
 
 msgid "Please provide a target variable and at least %d feature variable(s)."
 msgstr ""
-"Por favor, proporciona unha variable obxectivo e, cando menos, %d variable(s)"
-" característica(s)."
+"Por favor, proporciona unha variable obxectivo e, cando menos, %d "
+"variable(s) característica(s)."
 
 msgid ""
 "The model is optimized with respect to the <i>validation set mean squared "
@@ -548,8 +549,8 @@ msgid ""
 "The model is optimized with respect to the <i>out-of-bag mean squared error</"
 "i>."
 msgstr ""
-"O modelo optimízase respecto ao <i>erro cadrado medio \"descuberto o choio"
-"\"</i>."
+"O modelo optimízase respecto ao <i>erro cadrado medio \"descuberto o "
+"choio\"</i>."
 
 msgid "Gaussian"
 msgstr "Normal"
@@ -587,9 +588,6 @@ msgstr "Validación: %d"
 
 msgid "Train and validation: %d"
 msgstr "Adestramento e validación: %d"
-
-msgid "Object passed to .scaleNumericData.matrix was not numeric!"
-msgstr "O obxecto pasado a .scaleNumericData.matrix non era numérico!"
 
 msgid "The target variable should have at least 2 classes."
 msgstr "A variable obxectivo debe ter 2 clases, cando menos."
@@ -1110,6 +1108,9 @@ msgstr "Min. CV ECM"
 
 msgid "%s 1 SE"
 msgstr "%s 1 EP"
+
+#~ msgid "Object passed to .scaleNumericData.matrix was not numeric!"
+#~ msgstr "O obxecto pasado a .scaleNumericData.matrix non era numérico!"
 
 #~ msgid "Variable"
 #~ msgstr "Variable"
