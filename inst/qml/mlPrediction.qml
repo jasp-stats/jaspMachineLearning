@@ -89,6 +89,7 @@ Form
 			{	
 				spacing:							5 * preferencesModel.uiScale
 				enabled:							predictionsTable.checked
+			}
 			
 			IntegerField
 			{
