@@ -2875,3 +2875,37 @@ msgstr ""
 msgctxt "mlRegressionKnn|"
 msgid "Manhattan"
 msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "Trained model"
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "e.g., location/model.jaspML"
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "Features"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlPrediction|"
+msgid "Algorithmic Settings"
+msgstr "Configurações do algoritmo"
+
+msgctxt "mlPrediction|"
+msgid "Scale features"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlPrediction|"
+msgid "Tables"
+msgstr "Tabelas"
+
+msgctxt "mlPrediction|"
+msgid "From"
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "to"
+msgstr ""

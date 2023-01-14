@@ -2815,3 +2815,39 @@ msgstr "Merkmale"
 msgctxt "mlRegressionKnn|"
 msgid "Manhattan"
 msgstr "Manhattan"
+
+msgctxt "mlPrediction|"
+msgid "Trained model"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlPrediction|"
+msgid "e.g., location/model.jaspML"
+msgstr "z. B. Pfad/Modell.jaspML"
+
+#, fuzzy
+msgctxt "mlPrediction|"
+msgid "Features"
+msgstr "Merkmale"
+
+msgctxt "mlPrediction|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlPrediction|"
+msgid "Scale features"
+msgstr "Merkmale skalieren"
+
+#, fuzzy
+msgctxt "mlPrediction|"
+msgid "Tables"
+msgstr "Tabellen"
+
+msgctxt "mlPrediction|"
+msgid "From"
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "to"
+msgstr ""
