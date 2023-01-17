@@ -89,24 +89,24 @@ Form
 			{	
 				spacing:							5 * preferencesModel.uiScale
 				enabled:							predictionsTable.checked
-			}
 			
-			IntegerField
-			{
-				name:							"fromIndex"
-				text:							qsTr("From")
-				defaultValue:					1
-				min:							1
-				max:							dataSetModel.rowCount()
-			}
+				IntegerField
+				{
+					name:							"fromIndex"
+					text:							qsTr("From")
+					defaultValue:					1
+					min:							1
+					max:							dataSetModel.rowCount()
+				}
 
-			IntegerField
-			{
-				name:							"toIndex"
-				text:							qsTr("to")
-				defaultValue:					20
-				max:							dataSetModel.rowCount()
-				min:							1
+				IntegerField
+				{
+					name:							"toIndex"
+					text:							qsTr("to")
+					defaultValue:					20
+					max:							dataSetModel.rowCount()
+					min:							1
+				}
 			}
 		}
 	}
