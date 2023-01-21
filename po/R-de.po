@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2022-12-17 03:24\n"
-"PO-Revision-Date: 2022-12-26 17:53+0000\n"
+"PO-Revision-Date: 2023-01-15 11:50+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/de/>\n"
@@ -396,13 +396,13 @@ msgstr ""
 "gibt."
 
 msgid "t-SNE Cluster Plot"
-msgstr "t-SNE Cluster-Abbildung"
+msgstr "t-SNE Cluster-Diagramm"
 
 msgid "Noisepoint"
 msgstr "Punkte des Rauschens"
 
 msgid "Elbow Method Plot"
-msgstr "Ellenbogenmethode Abbildung"
+msgstr "Diagramm Ellenbogenmethode"
 
 msgid "WSS"
 msgstr "WSS"
@@ -420,7 +420,7 @@ msgid "Cluster %s"
 msgstr "Cluster %s"
 
 msgid "Cluster Density Plots"
-msgstr "Clusterdichte Abbildungen"
+msgstr "Clusterdichte-Diagramme"
 
 msgid "Density"
 msgstr "Dichte"
@@ -432,7 +432,7 @@ msgid "All Features"
 msgstr "Alle Merkmale"
 
 msgid "Cluster Mean Plots"
-msgstr "Clustermittelwerte Abbildungen"
+msgstr "Clustermittelwerte-Diagramme"
 
 msgid "Cluster Mean"
 msgstr "Clustermittelwert"
@@ -790,7 +790,7 @@ msgid "Number of Trees"
 msgstr "Anzahl Bäume"
 
 msgid "Deviance Plot"
-msgstr "Devianz-Abbildung"
+msgstr "Devianz-Diagramm"
 
 msgid "Multinomial Deviance"
 msgstr "Multinomiale Devianz"
@@ -802,7 +802,7 @@ msgid "%s Deviance"
 msgstr "%s Devianz"
 
 msgid "Relative Influence Plot"
-msgstr "Relativer Einfluß Abbildung"
+msgstr "Diagramm Relativer Einfluß"
 
 msgid ""
 "The minimum number of observations per node is too large. Ensure that `2 * "
@@ -841,7 +841,7 @@ msgstr ""
 "Verbesserung angezeigt."
 
 msgid "Decision Tree Plot"
-msgstr "Entscheidungsbaum-Abbildung"
+msgstr "Entscheidungsbaum-Diagramm"
 
 msgid "Plotting not possible: No splits were made in the tree."
 msgstr "Diagramm unmöglich: Im Baum wurden keine Aufteilungen gemacht."
@@ -852,10 +852,10 @@ msgstr ""
 "aufgetreten: %s"
 
 msgid "Classification Accuracy Plot"
-msgstr "Abbildung der Klassifizierungsgenauigkeit"
+msgstr "Diagramm Klassifizierungsgenauigkeit"
 
 msgid "Mean Squared Error Plot"
-msgstr "Abbildung mittlerer quadratische Fehler"
+msgstr "Diagramm mittlerer quadratische Fehler"
 
 msgid "Classification Accuracy"
 msgstr "Klassifikations-Genauigkeit"
@@ -1093,7 +1093,7 @@ msgid "Coefficients"
 msgstr "Koeffizienten"
 
 msgid "Lambda Evaluation Plot"
-msgstr "Lambda-Evaluations-Abbildung"
+msgstr "Lambda-Evaluations-Diagramm"
 
 msgid "Cross-Validated %sMean Squared Error"
 msgstr "Kreuzvalidierter %smittlerer quadratischer Fehler"
