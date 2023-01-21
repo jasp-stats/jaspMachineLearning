@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2023-01-15 11:47+0000\n"
+"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.15.1-dev\n"
 "X-Language: de\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -178,7 +184,7 @@ msgstr "Relativer Einfluß"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Data split"
@@ -258,7 +264,7 @@ msgstr "Evaluationsmetriken"
 
 msgctxt "mlClassificationKnn|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "mlClassificationKnn|"
 msgid "Data split"
@@ -406,7 +412,7 @@ msgstr "Multikollinearität"
 
 msgctxt "mlClassificationLda|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "mlClassificationLda|"
 msgid "Data split"
@@ -478,7 +484,7 @@ msgstr "Evaluationsmetriken"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Data split"
@@ -578,7 +584,7 @@ msgstr "Evaluationsmetriken"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "K-distance plot"
@@ -674,7 +680,7 @@ msgstr "Evaluationsmetriken"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Elbow method"
@@ -762,7 +768,7 @@ msgstr "Evaluationsmetriken"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Elbow method"
@@ -890,7 +896,7 @@ msgstr "Evaluationsmetriken"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Elbow method"
@@ -978,7 +984,7 @@ msgstr "Evaluationsmetriken"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Elbow method"
@@ -1050,7 +1056,7 @@ msgstr "Relativer Einfluß"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Data split"
@@ -1074,7 +1080,7 @@ msgstr "Trainingsparameter"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Algorithmic Settings"
-msgstr "Algoritme-instellingen"
+msgstr "Algorithmus-Einstellungen"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Scale variables"
@@ -1106,7 +1112,7 @@ msgstr "Evaluationsmetriken"
 
 msgctxt "mlRegressionKnn|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "mlRegressionKnn|"
 msgid "Data split"
@@ -1198,7 +1204,7 @@ msgstr "Evaluationsmetriken"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Data split"
@@ -1274,7 +1280,7 @@ msgstr "Regressionskoeffizienten"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Data split"
@@ -1410,7 +1416,7 @@ msgstr "Netzwerkgewichte"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Data split"
@@ -1698,7 +1704,7 @@ msgstr "Netzwerkgewichte"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Plots"
-msgstr "Abbildungen"
+msgstr "Diagramme"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Data split"
@@ -2650,7 +2656,7 @@ msgstr "Epsilon"
 
 msgctxt "mlRegressionSvm|"
 msgid "Scale variables"
-msgstr "Variablen skallieren"
+msgstr "Variablen skalieren"
 
 msgctxt "mlRegressionSvm|"
 msgid "Set seed"
@@ -2818,36 +2824,32 @@ msgstr "Manhattan"
 
 msgctxt "mlPrediction|"
 msgid "Trained model"
-msgstr ""
+msgstr "Trainiertes Modell"
 
-#, fuzzy
 msgctxt "mlPrediction|"
 msgid "e.g., location/model.jaspML"
 msgstr "z. B. Pfad/Modell.jaspML"
 
-#, fuzzy
 msgctxt "mlPrediction|"
 msgid "Features"
 msgstr "Merkmale"
 
 msgctxt "mlPrediction|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Algorithmus-Einstellungen"
 
-#, fuzzy
 msgctxt "mlPrediction|"
 msgid "Scale features"
 msgstr "Merkmale skalieren"
 
-#, fuzzy
 msgctxt "mlPrediction|"
 msgid "Tables"
 msgstr "Tabellen"
 
 msgctxt "mlPrediction|"
 msgid "From"
-msgstr ""
+msgstr "Von"
 
 msgctxt "mlPrediction|"
 msgid "to"
-msgstr ""
+msgstr "bis"
