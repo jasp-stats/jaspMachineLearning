@@ -2,31 +2,34 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.0\n"
 "POT-Creation-Date: 2022-12-17 03:24\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2023-02-01 03:02+0000\n"
+"Last-Translator: Ünal Halit ÖZDEN <uozden@ticaret.edu.tr>\n"
+"Language-Team: Turkish <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-r/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.16-dev\n"
 
 msgid "K-Nearest Neighbors Classification"
-msgstr ""
+msgstr "K-En Yakın Komşular Sınıflandırması"
 
 msgid "Linear Discriminant Classification"
 msgstr ""
 
 msgid "Random Forest Classification"
-msgstr ""
+msgstr "Rastgele Orman Sınıflandırması"
 
 msgid "Boosting Classification"
 msgstr ""
 
 msgid "Neural Network Classification"
-msgstr ""
+msgstr "Sinir Ağı Sınıflandırması"
 
 msgid "Decision Tree Classification"
-msgstr ""
+msgstr "Karar Ağacı Sınıflandırması"
 
 msgid "Support Vector Machine Classification"
 msgstr ""
@@ -35,7 +38,7 @@ msgid "Nearest neighbors"
 msgstr ""
 
 msgid "Weights"
-msgstr ""
+msgstr "Ağırlıklar"
 
 msgid "Distance"
 msgstr ""
@@ -44,7 +47,7 @@ msgid "Linear Discriminants"
 msgstr ""
 
 msgid "Method"
-msgstr ""
+msgstr "Yöntem"
 
 msgid "Trees"
 msgstr ""
@@ -59,13 +62,13 @@ msgid "Hidden Layers"
 msgstr ""
 
 msgid "Nodes"
-msgstr ""
+msgstr "Düğümler"
 
 msgid "Splits"
 msgstr ""
 
 msgid "Support Vectors"
-msgstr ""
+msgstr "Destek Vektörleri"
 
 msgid "n(Train)"
 msgstr ""
@@ -104,7 +107,7 @@ msgid "Manhattan"
 msgstr ""
 
 msgid "Euclidean"
-msgstr ""
+msgstr "Euclidean"
 
 msgid "Moment"
 msgstr ""
@@ -260,7 +263,7 @@ msgid "Clusters"
 msgstr ""
 
 msgid "N"
-msgstr ""
+msgstr "N"
 
 msgid "R%s"
 msgstr ""
@@ -512,7 +515,7 @@ msgid "Prior and Posterior Class Probabilities"
 msgstr ""
 
 msgid "Prior"
-msgstr ""
+msgstr "Önceki"
 
 msgid "Posterior"
 msgstr ""
@@ -536,7 +539,7 @@ msgid "df"
 msgstr ""
 
 msgid "p"
-msgstr ""
+msgstr "p"
 
 msgid "The null hypothesis specifies equal covariance matrices."
 msgstr ""
