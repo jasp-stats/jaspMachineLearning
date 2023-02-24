@@ -151,7 +151,7 @@ Form
 
 			DoubleField
 			{
-				text:							qsTr("Complexity parameter")
+				text:							qsTr("Complexity penalty")
 				name:							"complexityParameter"
 				min:							0
 				defaultValue:					0.01
