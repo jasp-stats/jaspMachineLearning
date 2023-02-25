@@ -2361,10 +2361,6 @@ msgid "Max. interaction depth"
 msgstr "Max. interactiediepte"
 
 msgctxt "mlClassificationDecisionTree|"
-msgid "Complexity parameter"
-msgstr "Complexiteitsparameter"
-
-msgctxt "mlClassificationDecisionTree|"
 msgid "Set seed"
 msgstr "Gebruik toevalsgenerator beginwaarde"
 
@@ -2551,10 +2547,6 @@ msgstr "Min. observaties in bladeren"
 msgctxt "mlRegressionDecisionTree|"
 msgid "Max. interaction depth"
 msgstr "Max. interactiediepte"
-
-msgctxt "mlRegressionDecisionTree|"
-msgid "Complexity parameter"
-msgstr "Complexiteitsparameter"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Scale variables"
@@ -2850,4 +2842,12 @@ msgstr ""
 
 msgctxt "mlPrediction|"
 msgid "to"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Complexity penalty"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Complexity penalty"
 msgstr ""

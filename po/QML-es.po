@@ -2361,10 +2361,6 @@ msgid "Max. interaction depth"
 msgstr "Máx. profundidad de la interacción"
 
 msgctxt "mlClassificationDecisionTree|"
-msgid "Complexity parameter"
-msgstr "Parámetro de complejidad"
-
-msgctxt "mlClassificationDecisionTree|"
 msgid "Set seed"
 msgstr "Establecer semilla"
 
@@ -2551,10 +2547,6 @@ msgstr "Mín. observaciones en el terminal"
 msgctxt "mlRegressionDecisionTree|"
 msgid "Max. interaction depth"
 msgstr "Máx. profundidad de la interacción"
-
-msgctxt "mlRegressionDecisionTree|"
-msgid "Complexity parameter"
-msgstr "Parámetro de complejidad"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Scale variables"
@@ -2847,3 +2839,11 @@ msgstr "De"
 msgctxt "mlPrediction|"
 msgid "to"
 msgstr "a"
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Complexity penalty"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Complexity penalty"
+msgstr ""
