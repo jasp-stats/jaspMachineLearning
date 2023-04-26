@@ -112,6 +112,12 @@ Form
 
 		CheckBox
 		{
+			name:								"matrixPlot"
+			text:								qsTr("Cluster matrix plot")
+		}
+
+		CheckBox
+		{
 			text:								qsTr("Cluster means")
 			name:								"clusterMeanPlot"
 

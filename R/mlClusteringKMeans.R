@@ -50,6 +50,9 @@ mlClusteringKMeans <- function(jaspResults, dataset, options, ...) {
 
   # Create the cluster plot
   .mlClusteringPlotTsne(dataset, options, jaspResults, ready, position = 8, type = "kmeans")
+
+  # Create the matrix plot
+  .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 9)
 }
 
 .kMeansClustering <- function(dataset, options, jaspResults, ready) {

@@ -53,6 +53,9 @@ mlClusteringRandomForest <- function(jaspResults, dataset, options, ...) {
 
   # Create the cluster plot
   .mlClusteringPlotTsne(dataset, options, jaspResults, ready, position = 9, type = "randomForest")
+
+  # Create the matrix plot
+  .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 10)
 }
 
 .randomForestClustering <- function(dataset, options, jaspResults) {
