@@ -432,8 +432,8 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   table$dependOn(options = c("boxTest", "scaleVariables", "target", "predictors"))
   table$addColumnInfo(name = "test", title = "", type = "string")
   table$addColumnInfo(name = "x", title = "\u03C7\u00B2", type = "number")
-  table$addColumnInfo(name = "df", title = gettext("df"), type = "integer")
-  table$addColumnInfo(name = "p", title = gettext("p"), type = "pvalue")
+  table$addColumnInfo(name = "df", title = "df", type = "integer")
+  table$addColumnInfo(name = "p", title = "p", type = "pvalue")
   table$addFootnote(gettext("The null hypothesis specifies equal covariance matrices."))
   jaspResults[["boxTest"]] <- table
   if (!ready) {
