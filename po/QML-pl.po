@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-05-10 16:48+0000\n"
+"PO-Revision-Date: 2023-05-12 16:49+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/pl/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Machine Learning"
-msgstr ""
+msgstr "Uczenie masynowe"
 
 msgctxt "Description|"
 msgid ""
@@ -25,7 +25,7 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Regression"
-msgstr ""
+msgstr "Regresja"
 
 msgctxt "Description|"
 msgid "Boosting"
@@ -37,7 +37,7 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Decision Tree"
-msgstr ""
+msgstr "Drzewo decyzyjne"
 
 msgctxt "Description|"
 msgid "Decision Tree Regression"
@@ -53,7 +53,7 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Neural Network"
-msgstr ""
+msgstr "Sieć neuronowa"
 
 msgctxt "Description|"
 msgid "Neural Network Regression"
@@ -85,7 +85,7 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Classification"
-msgstr ""
+msgstr "Klasyfikacja"
 
 msgctxt "Description|"
 msgid "Boosting Classification"
@@ -141,7 +141,7 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Hierarchical"
-msgstr ""
+msgstr "Hierarchiczne"
 
 msgctxt "Description|"
 msgid "Hierarchical Clustering"
@@ -161,7 +161,7 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Prediction"
-msgstr ""
+msgstr "Predykcja"
 
 msgctxt "DataSplit|"
 msgid "Data Split Preferences"
@@ -173,11 +173,11 @@ msgstr ""
 
 msgctxt "DataSplit|"
 msgid "Sample"
-msgstr ""
+msgstr "Próba"
 
 msgctxt "DataSplit|"
 msgid "% of all data"
-msgstr ""
+msgstr "% z całości danych"
 
 msgctxt "DataSplit|"
 msgid "Add generated indicator to data"
@@ -185,7 +185,7 @@ msgstr ""
 
 msgctxt "DataSplit|"
 msgid "Column name"
-msgstr ""
+msgstr "Nazwa kolumny"
 
 msgctxt "DataSplit|"
 msgid "Test set indicator"
@@ -193,7 +193,7 @@ msgstr ""
 
 msgctxt "DataSplit|"
 msgid "None"
-msgstr ""
+msgstr "Brak"
 
 msgctxt "DataSplit|"
 msgid "Training and Validation Data"
@@ -217,7 +217,7 @@ msgstr ""
 
 msgctxt "ExportResults|"
 msgid "Export Results"
-msgstr ""
+msgstr "Eksportuj wyniki"
 
 msgctxt "ExportResults|"
 msgid "Add predictions to data"
@@ -225,7 +225,7 @@ msgstr ""
 
 msgctxt "ExportResults|"
 msgid "Column name"
-msgstr ""
+msgstr "Nazwa kolumny"
 
 msgctxt "ExportResults|"
 msgid "e.g., predicted"
@@ -233,7 +233,7 @@ msgstr ""
 
 msgctxt "ExportResults|"
 msgid "Save as"
-msgstr ""
+msgstr "Zapisz jako"
 
 msgctxt "ExportResults|"
 msgid "e.g., location/model.jaspML"
@@ -253,7 +253,7 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabele"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Confusion matrix"
@@ -261,7 +261,7 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "Display proportions"
-msgstr ""
+msgstr "Wyświetl proporcje"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Class proportions"
@@ -277,11 +277,11 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "Plots"
-msgstr ""
+msgstr "Wykresy"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Data split"
-msgstr ""
+msgstr "Podział danych"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Out-of-bag improvement"
@@ -289,7 +289,7 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "ROC curves"
-msgstr ""
+msgstr "Krzywa ROC"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Andrews curves"
@@ -297,7 +297,7 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "Deviance"
-msgstr ""
+msgstr "Odchylenie"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Decision boundary matrix"
@@ -305,11 +305,11 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Points"
-msgstr ""
+msgstr "Punkty"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Training Parameters"
@@ -317,7 +317,7 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Ustawienia algorytmu"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Shrinkage"
@@ -2781,7 +2781,7 @@ msgstr ""
 
 msgctxt "mlRegressionSvm|"
 msgid "Degree"
-msgstr ""
+msgstr "Stopnie"
 
 msgctxt "mlRegressionSvm|"
 msgid "Gamma"
@@ -2825,7 +2825,7 @@ msgstr ""
 
 msgctxt "mlPrediction|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Ustawienia algorytmu"
 
 msgctxt "mlPrediction|"
 msgid "Scale features"
@@ -2833,11 +2833,11 @@ msgstr ""
 
 msgctxt "mlPrediction|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabele"
 
 msgctxt "mlPrediction|"
 msgid "From"
-msgstr ""
+msgstr "od"
 
 msgctxt "mlPrediction|"
 msgid "to"
