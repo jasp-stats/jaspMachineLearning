@@ -1,0 +1,980 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: jaspMachineLearning 0.17.2\n"
+"POT-Creation-Date: 2023-04-22 03:23\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: zh_Hans\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "K-Nearest Neighbors Classification"
+msgstr ""
+
+msgid "Linear Discriminant Classification"
+msgstr ""
+
+msgid "Random Forest Classification"
+msgstr ""
+
+msgid "Boosting Classification"
+msgstr ""
+
+msgid "Neural Network Classification"
+msgstr ""
+
+msgid "Decision Tree Classification"
+msgstr ""
+
+msgid "Support Vector Machine Classification"
+msgstr ""
+
+msgid "Nearest neighbors"
+msgstr ""
+
+msgid "Weights"
+msgstr ""
+
+msgid "Distance"
+msgstr ""
+
+msgid "Linear Discriminants"
+msgstr ""
+
+msgid "Method"
+msgstr ""
+
+msgid "Trees"
+msgstr ""
+
+msgid "Features per split"
+msgstr ""
+
+msgid "Shrinkage"
+msgstr ""
+
+msgid "Hidden Layers"
+msgstr ""
+
+msgid "Nodes"
+msgstr ""
+
+msgid "Splits"
+msgstr ""
+
+msgid "Support Vectors"
+msgstr ""
+
+msgid "n(Train)"
+msgstr ""
+
+msgid "n(Validation)"
+msgstr ""
+
+msgid "n(Test)"
+msgstr ""
+
+msgid "Validation Accuracy"
+msgstr ""
+
+msgid "Test Accuracy"
+msgstr ""
+
+msgid "OOB Accuracy"
+msgstr ""
+
+msgid "Please provide a target variable and at least %i feature variable(s)."
+msgstr ""
+
+msgid "The trained model is saved as <i>%1$s</i>."
+msgstr ""
+
+msgid "The trained model is not saved until 'Save trained model' is checked."
+msgstr ""
+
+msgid "The model is optimized with respect to the <i>validation set accuracy</i>."
+msgstr ""
+
+msgid "The optimum number of nearest neighbors is the maximum number. You might want to adjust the range of optimization."
+msgstr ""
+
+msgid "Manhattan"
+msgstr ""
+
+msgid "Euclidean"
+msgstr ""
+
+msgid "Moment"
+msgstr ""
+
+msgid "MLE"
+msgstr ""
+
+msgid "MVE"
+msgstr ""
+
+msgid "t"
+msgstr ""
+
+msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
+msgstr ""
+
+msgid "The model is optimized with respect to the <i>sum of squares</i>."
+msgstr ""
+
+msgid "Confusion Matrix"
+msgstr ""
+
+msgid "Observed"
+msgstr ""
+
+msgid "Predicted"
+msgstr ""
+
+msgid "Decision Boundary Matrix"
+msgstr ""
+
+msgid "Cannot create matrix: not enough numeric variables remain after removing factor variables. You need at least 2 numeric variables."
+msgstr ""
+
+msgid "ROC Curves Plot"
+msgstr ""
+
+msgid "False Positive Rate"
+msgstr ""
+
+msgid "True Positive Rate"
+msgstr ""
+
+msgid "Perfect separation"
+msgstr ""
+
+msgid "Andrews Curves Plot"
+msgstr ""
+
+msgid "Andrews curves require a minimum of 2 feature variables."
+msgstr ""
+
+msgid "Box's M-test for Homogeneity of Covariance Matrices"
+msgstr ""
+
+msgid "Evaluation Metrics"
+msgstr ""
+
+msgid "Support"
+msgstr ""
+
+msgid "Accuracy"
+msgstr ""
+
+msgid "Precision (Positive Predictive Value)"
+msgstr ""
+
+msgid "Recall (True Positive Rate)"
+msgstr ""
+
+msgid "False Discovery Rate"
+msgstr ""
+
+msgid "F1 Score"
+msgstr ""
+
+msgid "Matthews Correlation Coefficient"
+msgstr ""
+
+msgid "Area Under Curve (AUC)"
+msgstr ""
+
+msgid "Negative Predictive Value"
+msgstr ""
+
+msgid "True Negative Rate"
+msgstr ""
+
+msgid "False Negative Rate"
+msgstr ""
+
+msgid "False Omission Rate"
+msgstr ""
+
+msgid "Threat Score"
+msgstr ""
+
+msgid "Statistical Parity"
+msgstr ""
+
+msgid "All metrics are calculated for every class against all other classes."
+msgstr ""
+
+msgid "Average / Total"
+msgstr ""
+
+msgid "Class Proportions"
+msgstr ""
+
+msgid "Data Set"
+msgstr ""
+
+msgid "Training Set"
+msgstr ""
+
+msgid "Validation Set"
+msgstr ""
+
+msgid "Training and Validation Set"
+msgstr ""
+
+msgid "Test Set"
+msgstr ""
+
+msgid "You have specified more clusters than distinct data points. Please choose a number lower than %s."
+msgstr ""
+
+msgid "R package error: The hclust clustering algorithm from the stats R package cannot handle data that has 65536 or more rows. We are working on a solution for this problem. Please try another algorithm in the meantime."
+msgstr ""
+
+msgid "K-Means Clustering"
+msgstr ""
+
+msgid "K-Medians Clustering"
+msgstr ""
+
+msgid "K-Medoids Clustering"
+msgstr ""
+
+msgid "Fuzzy C-Means Clustering"
+msgstr ""
+
+msgid "Hierarchical Clustering"
+msgstr ""
+
+msgid "Density-Based Clustering"
+msgstr ""
+
+msgid "Random Forest Clustering"
+msgstr ""
+
+msgid "Clusters"
+msgstr ""
+
+msgid "N"
+msgstr ""
+
+msgid "R%s"
+msgstr ""
+
+msgid "AIC"
+msgstr ""
+
+msgid "BIC"
+msgstr ""
+
+msgid "Please provide at least 2 features."
+msgstr ""
+
+msgid "silhouette"
+msgstr ""
+
+msgid "The model is optimized with respect to the <i>%s</i> value."
+msgstr ""
+
+msgid "The optimum number of clusters is the maximum number of clusters. You might want to adjust the range of optimization."
+msgstr ""
+
+msgid "Your cluster model contains 0 clusters and only Noisepoints, we advise to change the Eps and MinPts parameters."
+msgstr ""
+
+msgid "Your cluster model contains 1 cluster and 0 Noisepoints. You could change the Eps and MinPts parameters."
+msgstr ""
+
+msgid "The features in the model are <b>unstandardized</b>."
+msgstr ""
+
+msgid "Cluster Information"
+msgstr ""
+
+msgid "Cluster"
+msgstr ""
+
+msgid "Size"
+msgstr ""
+
+msgid "Explained proportion within-cluster heterogeneity"
+msgstr ""
+
+msgid "Within sum of squares"
+msgstr ""
+
+msgid "Silhouette score"
+msgstr ""
+
+msgid "Center %s"
+msgstr ""
+
+msgid "Noisepoints"
+msgstr ""
+
+msgid "The Between Sum of Squares of the %1$s cluster model is %2$s"
+msgstr ""
+
+msgid "The Total Sum of Squares of the %1$s cluster model is %2$s"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+msgid "Maximum diameter"
+msgstr ""
+
+msgid "Minimum separation"
+msgstr ""
+
+msgid "Pearson's %s"
+msgstr ""
+
+msgid "Dunn index"
+msgstr ""
+
+msgid "Entropy"
+msgstr ""
+
+msgid "Calinski-Harabasz index"
+msgstr ""
+
+msgid "All metrics are based on the <i>euclidean</i> distance."
+msgstr ""
+
+msgid "Evaluation metrics cannot be computed when there is only 1 cluster."
+msgstr ""
+
+msgid "t-SNE Cluster Plot"
+msgstr ""
+
+msgid "Noisepoint"
+msgstr ""
+
+msgid "Elbow Method Plot"
+msgstr ""
+
+msgid "WSS"
+msgstr ""
+
+msgid "Number of Clusters"
+msgstr ""
+
+msgid "Lowest %s"
+msgstr ""
+
+msgid "Cluster Means"
+msgstr ""
+
+msgid "Cluster %s"
+msgstr ""
+
+msgid "Cluster Density Plots"
+msgstr ""
+
+msgid "Density"
+msgstr ""
+
+msgid "Feature"
+msgstr ""
+
+msgid "All Features"
+msgstr ""
+
+msgid "Cluster Mean Plots"
+msgstr ""
+
+msgid "Cluster Mean"
+msgstr ""
+
+msgid "Insufficient RAM available to compute the distance matrix. The analysis tried to allocate %s Gb"
+msgstr ""
+
+msgid "An error occurred in the analysis: %1$s"
+msgstr ""
+
+msgid "The variable '%s' can't be both a feature and a test set indicator."
+msgstr ""
+
+msgid "Your test set indicator should be binary, containing only 1 (included in test set) and 0 (excluded from test set)."
+msgstr ""
+
+msgid "There is only one observation in each level of the factor %1$s, please remove this factor as a feature."
+msgstr ""
+
+msgid "There is only one observation in each level of the factors %1$s, please remove these factors as a feature."
+msgstr ""
+
+msgid "You have specified more nearest neighbors than there are observations in the training set. Please choose a number lower than %d."
+msgstr ""
+
+msgid "You have specified more folds than there are observations in the training and validation set. Please choose a number lower than %d."
+msgstr ""
+
+msgid "K-Nearest Neighbors Regression"
+msgstr ""
+
+msgid "Regularized Linear Regression"
+msgstr ""
+
+msgid "Random Forest Regression"
+msgstr ""
+
+msgid "Boosting Regression"
+msgstr ""
+
+msgid "Neural Network Regression"
+msgstr ""
+
+msgid "Decision Tree Regression"
+msgstr ""
+
+msgid "Support Vector Machine Regression"
+msgstr ""
+
+msgid "Penalty"
+msgstr ""
+
+msgid "Loss function"
+msgstr ""
+
+msgid "Validation MSE"
+msgstr ""
+
+msgid "Test MSE"
+msgstr ""
+
+msgid "OOB Error"
+msgstr ""
+
+msgid "Please provide a target variable and at least %d feature variable(s)."
+msgstr ""
+
+msgid "The model is optimized with respect to the <i>validation set mean squared error</i>."
+msgstr ""
+
+msgid "When %s is set to 0 linear regression is performed."
+msgstr ""
+
+msgid "The model is optimized with respect to the <i>out-of-bag mean squared error</i>."
+msgstr ""
+
+msgid "Gaussian"
+msgstr ""
+
+msgid "Laplace"
+msgstr ""
+
+msgid "R%s cannot be computed due to lack of variance in the predictions.</i>"
+msgstr ""
+
+msgid "Predictive Performance Plot"
+msgstr ""
+
+msgid "Observed Test Values"
+msgstr ""
+
+msgid "Predicted Test Values"
+msgstr ""
+
+msgid "Data Split"
+msgstr ""
+
+msgid "Train: %d"
+msgstr ""
+
+msgid "Test: %d"
+msgstr ""
+
+msgid "Total: %d"
+msgstr ""
+
+msgid "Validation: %d"
+msgstr ""
+
+msgid "Train and validation: %d"
+msgstr ""
+
+msgid "The target variable should have at least 2 classes."
+msgstr ""
+
+msgid "Linear Discriminant Coefficients"
+msgstr ""
+
+msgid "(Constant)"
+msgstr ""
+
+msgid "Prior and Posterior Class Probabilities"
+msgstr ""
+
+msgid "Prior"
+msgstr ""
+
+msgid "Posterior"
+msgstr ""
+
+msgid "Class Means in Training Data"
+msgstr ""
+
+msgid "Linear Discriminant Matrix"
+msgstr ""
+
+msgid "Tests of Equality of Class Means"
+msgstr ""
+
+msgid "The null hypothesis specifies equal class means."
+msgstr ""
+
+msgid "Tests of Equality of Covariance Matrices"
+msgstr ""
+
+msgid "df"
+msgstr ""
+
+msgid "p"
+msgstr ""
+
+msgid "The null hypothesis specifies equal covariance matrices."
+msgstr ""
+
+msgid "Pooled Within-Class Matrices Correlations"
+msgstr ""
+
+msgid "Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s)."
+msgstr ""
+
+msgid "Optimizing network topology"
+msgstr ""
+
+msgid "K-Distance Plot"
+msgstr ""
+
+msgid "Points Sorted by Distance"
+msgstr ""
+
+msgid "%s-Nearest Neighbors \nDistance"
+msgstr ""
+
+msgid "Maximum curvature = %s"
+msgstr ""
+
+msgid "End of recursion reached without converging"
+msgstr ""
+
+msgid "x and y must be numeric and finite. Missing values not allowed."
+msgstr ""
+
+msgid "x and y must be of equal length."
+msgstr ""
+
+msgid "Need more points to find cutoff."
+msgstr ""
+
+msgid "Need to specify fraction of maximum slope."
+msgstr ""
+
+msgid "Fraction of maximum slope must be positive and be less than or equal to 1."
+msgstr ""
+
+msgid "Method must be either 'first' or 'curvature'."
+msgstr ""
+
+msgid "Cutoff point is beyond range. Returning NA."
+msgstr ""
+
+msgid "Dendrogram"
+msgstr ""
+
+msgid "Feature Importance"
+msgstr ""
+
+msgid "Mean decrease in Gini Index"
+msgstr ""
+
+msgid "K-nearest neighbors"
+msgstr ""
+
+msgid "Linear discriminant"
+msgstr ""
+
+msgid "Boosting"
+msgstr ""
+
+msgid "Random forest"
+msgstr ""
+
+msgid "Regularized linear regression"
+msgstr ""
+
+msgid "Neural network"
+msgstr ""
+
+msgid "Decision tree"
+msgstr ""
+
+msgid "Support vector machine"
+msgstr ""
+
+msgid "Error: The trained model is not created in JASP."
+msgstr ""
+
+msgid "The trained model (type: %1$s) is currently not supported in JASP."
+msgstr ""
+
+msgid "Error: The trained model is created using a different version of JASP."
+msgstr ""
+
+msgid "Loaded Model"
+msgstr ""
+
+msgid "Classification"
+msgstr ""
+
+msgid "Regression"
+msgstr ""
+
+msgid "Loaded Model: %1$s"
+msgstr ""
+
+msgid "The trained model is not applied because the the following features are missing: <i>%1$s</i>."
+msgstr ""
+
+msgid "The following features are unused because they are not a feature variable in the trained model: <i>%1$s</i>."
+msgstr ""
+
+msgid "Nearest Neighbors"
+msgstr ""
+
+msgid "n(New)"
+msgstr ""
+
+msgid "Predictions for New Data"
+msgstr ""
+
+msgid "Row"
+msgstr ""
+
+msgid "Relative Influence"
+msgstr ""
+
+msgid "Out-of-bag Improvement Plot"
+msgstr ""
+
+msgid "Training set"
+msgstr ""
+
+msgid "OOB Change in %s Multinomial Deviance"
+msgstr ""
+
+msgid "OOB Change in %s Binomial Deviance"
+msgstr ""
+
+msgid "OOB Change in %s%s Deviance"
+msgstr ""
+
+msgid "Plotting not possible: The model is based on only a single tree."
+msgstr ""
+
+msgid "Number of Trees"
+msgstr ""
+
+msgid "Deviance Plot"
+msgstr ""
+
+msgid "Multinomial Deviance"
+msgstr ""
+
+msgid "Binomial Deviance"
+msgstr ""
+
+msgid "%s Deviance"
+msgstr ""
+
+msgid "Relative Influence Plot"
+msgstr ""
+
+msgid "The minimum number of observations per node is too large. Ensure that `2 * Min. observations in node (%1$i) + 1` < `Training data used per tree (%2$s) * available training data (%3$i)` (in this case the minimum can be %4$i at most)."
+msgstr ""
+
+msgid "Relative Importance"
+msgstr ""
+
+msgid "No splits were made in the tree."
+msgstr ""
+
+msgid "Splits in Tree"
+msgstr ""
+
+msgid "Obs. in Split"
+msgstr ""
+
+msgid "Split Point"
+msgstr ""
+
+msgid "Improvement"
+msgstr ""
+
+msgid "For each level of the tree, only the split with the highest improvement in deviance is shown."
+msgstr ""
+
+msgid "Decision Tree Plot"
+msgstr ""
+
+msgid "Plotting not possible: No splits were made in the tree."
+msgstr ""
+
+msgid "Plotting not possible: An error occurred while creating this plot: %s"
+msgstr ""
+
+msgid "Classification Accuracy Plot"
+msgstr ""
+
+msgid "Mean Squared Error Plot"
+msgstr ""
+
+msgid "Classification Accuracy"
+msgstr ""
+
+msgid "Mean Squared Error"
+msgstr ""
+
+msgid "Validation set"
+msgstr ""
+
+msgid "Number of Nearest Neighbors"
+msgstr ""
+
+msgid "Training and validation set"
+msgstr ""
+
+msgid "Rectangular"
+msgstr ""
+
+msgid "Triangular"
+msgstr ""
+
+msgid "Epanechnikov"
+msgstr ""
+
+msgid "Biweight"
+msgstr ""
+
+msgid "Triweight"
+msgstr ""
+
+msgid "Cosine"
+msgstr ""
+
+msgid "Inverse"
+msgstr ""
+
+msgid "Rank"
+msgstr ""
+
+msgid "Optimal"
+msgstr ""
+
+msgid "%1$s Weight Function"
+msgstr ""
+
+msgid "Plotting not possible: The selected weighting scheme cannot be visualized separately from the data."
+msgstr ""
+
+msgid "Proportion of Max. Distance"
+msgstr ""
+
+msgid "Relative Weight"
+msgstr ""
+
+msgid "Network Weights"
+msgstr ""
+
+msgid "Node"
+msgstr ""
+
+msgid "Layer"
+msgstr ""
+
+msgid "Weight"
+msgstr ""
+
+msgid "linear"
+msgstr ""
+
+msgid "binary step"
+msgstr ""
+
+msgid "logistic sigmoid"
+msgstr ""
+
+msgid "sine"
+msgstr ""
+
+msgid "cosine"
+msgstr ""
+
+msgid "inverse tangent"
+msgstr ""
+
+msgid "hyperbolic tangent"
+msgstr ""
+
+msgid "rectified linear unit (ReLU)"
+msgstr ""
+
+msgid "softplus"
+msgstr ""
+
+msgid "softsign"
+msgstr ""
+
+msgid "exponential linear unit (ELU)"
+msgstr ""
+
+msgid "leaky rectified linear unit (Leaky ReLU)"
+msgstr ""
+
+msgid "sigmoid linear unit (SiLU)"
+msgstr ""
+
+msgid "mish"
+msgstr ""
+
+msgid "gaussian"
+msgstr ""
+
+msgid "gaussian error linear unit (GeLU)"
+msgstr ""
+
+msgid "The weights are input for the %1$s activation function."
+msgstr ""
+
+msgid "Network Structure Plot"
+msgstr ""
+
+msgid "Intercept"
+msgstr ""
+
+msgid "Input layer"
+msgstr ""
+
+msgid "Output layer"
+msgstr ""
+
+msgid "Hidden layer %1$s"
+msgstr ""
+
+msgid "Linear"
+msgstr ""
+
+msgid "Binary"
+msgstr ""
+
+msgid "Logistic Sigmoid"
+msgstr ""
+
+msgid "Sine"
+msgstr ""
+
+msgid "Inverse Tangent"
+msgstr ""
+
+msgid "Hyperbolic Tangent"
+msgstr ""
+
+msgid "ReLU"
+msgstr ""
+
+msgid "Softplus"
+msgstr ""
+
+msgid "Softsign"
+msgstr ""
+
+msgid "ELU"
+msgstr ""
+
+msgid "Leaky ReLU"
+msgstr ""
+
+msgid "SiLU"
+msgstr ""
+
+msgid "Mish"
+msgstr ""
+
+msgid "GeLU"
+msgstr ""
+
+msgid "%1$s Activation Function"
+msgstr ""
+
+msgid "Input"
+msgstr ""
+
+msgid "Output"
+msgstr ""
+
+msgid "Generation"
+msgstr ""
+
+msgid "Mean decrease in accuracy"
+msgstr ""
+
+msgid "Total increase in node purity"
+msgstr ""
+
+msgid "Out-of-bag Classification Accuracy Plot"
+msgstr ""
+
+msgid "Out-of-bag Mean Squared Error Plot"
+msgstr ""
+
+msgid "Out-of-bag %sClassification Accuracy"
+msgstr ""
+
+msgid "Out-of-bag %sMean Squared Error"
+msgstr ""
+
+msgid "Mean Decrease in Accuracy"
+msgstr ""
+
+msgid "Total Increase in Node Purity"
+msgstr ""
+
+msgid "L2 (Ridge)"
+msgstr ""
+
+msgid "L1 (Lasso)"
+msgstr ""
+
+msgid "Elastic Net"
+msgstr ""
+
+msgid "Regression Coefficients"
+msgstr ""
+
+msgid "Coefficient (%s)"
+msgstr ""
+
+msgid "Variable Trace Plot"
+msgstr ""
+
+msgid "Coefficients"
+msgstr ""
+
+msgid "Lambda Evaluation Plot"
+msgstr ""
+
+msgid "Cross-Validated %sMean Squared Error"
+msgstr ""
+
+msgid "Min. CV MSE"
+msgstr ""
+
+msgid "%s 1 SE"
+msgstr ""
