@@ -618,7 +618,7 @@
   }
   clusterResult <- jaspResults[["clusterResult"]]$object
   variables <- options[["predictors"]]
-  variables <- variables[!sapply(dataset[, variables], is.factor)] # remove factors from boundary plot
+  variables <- variables[!vapply(dataset[, variables], is.factor, TRUE)] # remove factors from matrix plot
   l <- length(variables)
   if (l < 2) { # Need at least 2 numeric variables to create a matrix
     plot$setError(gettext("Cannot create matrix: not enough numeric variables remain after removing factor variables. You need at least 2 numeric variables."))
