@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-05-12 16:49+0000\n"
+"PO-Revision-Date: 2023-05-20 03:20+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/pl/>\n"
@@ -341,19 +341,19 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "Set seed"
-msgstr ""
+msgstr "Ustaw ziarno generatora"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Number of Trees"
-msgstr ""
+msgstr "Liczba drzew"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Fixed"
-msgstr ""
+msgstr "Ustalone"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Trees"
-msgstr ""
+msgstr "Drzewa"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Optimized"
@@ -373,7 +373,7 @@ msgstr ""
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabele"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Confusion matrix"
@@ -405,23 +405,23 @@ msgstr ""
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Plots"
-msgstr ""
+msgstr "Wykresy"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Data split"
-msgstr ""
+msgstr "Podział danych"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "ROC curves"
-msgstr ""
+msgstr "Krzywa ROC"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "krzywa Andrewsa"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Decision tree"
-msgstr ""
+msgstr "Drzewo decyzyjne"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Decision boundary matrix"
@@ -429,11 +429,11 @@ msgstr ""
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Points"
-msgstr ""
+msgstr "Punkty"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Training Parameters"
@@ -461,11 +461,11 @@ msgstr ""
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Set seed"
-msgstr ""
+msgstr "Ustaw ziarno generatora"
 
 msgctxt "mlClassificationKnn|"
 msgid "Target"
-msgstr ""
+msgstr "Cel"
 
 msgctxt "mlClassificationKnn|"
 msgid "Features"
@@ -473,7 +473,7 @@ msgstr ""
 
 msgctxt "mlClassificationKnn|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabele"
 
 msgctxt "mlClassificationKnn|"
 msgid "Confusion matrix"
@@ -493,11 +493,11 @@ msgstr ""
 
 msgctxt "mlClassificationKnn|"
 msgid "Plots"
-msgstr ""
+msgstr "Wykresy"
 
 msgctxt "mlClassificationKnn|"
 msgid "Data split"
-msgstr ""
+msgstr "Podział danych"
 
 msgctxt "mlClassificationKnn|"
 msgid "Weight function"
@@ -509,11 +509,11 @@ msgstr ""
 
 msgctxt "mlClassificationKnn|"
 msgid "ROC curves"
-msgstr ""
+msgstr "Krzywe ROC"
 
 msgctxt "mlClassificationKnn|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "Krzywe Andrewsa"
 
 msgctxt "mlClassificationKnn|"
 msgid "Decision boundary matrix"
@@ -521,11 +521,11 @@ msgstr ""
 
 msgctxt "mlClassificationKnn|"
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 msgctxt "mlClassificationKnn|"
 msgid "Points"
-msgstr ""
+msgstr "Punkty"
 
 msgctxt "mlClassificationKnn|"
 msgid "Training Parameters"
@@ -537,19 +537,19 @@ msgstr ""
 
 msgctxt "mlClassificationKnn|"
 msgid "Weights"
-msgstr ""
+msgstr "Wagi"
 
 msgctxt "mlClassificationKnn|"
 msgid "Rectangular"
-msgstr ""
+msgstr "Prostokątne"
 
 msgctxt "mlClassificationKnn|"
 msgid "Triangular"
-msgstr ""
+msgstr "Trójkątne"
 
 msgctxt "mlClassificationKnn|"
 msgid "Epanechnikov"
-msgstr ""
+msgstr "Epanechnikov"
 
 msgctxt "mlClassificationKnn|"
 msgid "Biweight"
@@ -569,7 +569,7 @@ msgstr ""
 
 msgctxt "mlClassificationKnn|"
 msgid "Gaussian"
-msgstr ""
+msgstr "Gaussa"
 
 msgctxt "mlClassificationKnn|"
 msgid "Rank"
@@ -581,15 +581,15 @@ msgstr ""
 
 msgctxt "mlClassificationKnn|"
 msgid "Distance"
-msgstr ""
+msgstr "Dystans"
 
 msgctxt "mlClassificationKnn|"
 msgid "Euclidian"
-msgstr ""
+msgstr "Euklidesa"
 
 msgctxt "mlClassificationKnn|"
 msgid "Manhattan"
-msgstr ""
+msgstr "Manhattan"
 
 msgctxt "mlClassificationKnn|"
 msgid "Scale features"
@@ -597,7 +597,7 @@ msgstr ""
 
 msgctxt "mlClassificationKnn|"
 msgid "Set seed"
-msgstr ""
+msgstr "Ustaw ziarnio generatira"
 
 msgctxt "mlClassificationKnn|"
 msgid "Number of Nearest Neighbors"
@@ -605,7 +605,7 @@ msgstr ""
 
 msgctxt "mlClassificationKnn|"
 msgid "Fixed"
-msgstr ""
+msgstr "Stałe"
 
 msgctxt "mlClassificationKnn|"
 msgid "Nearest neighbors"
@@ -613,7 +613,7 @@ msgstr ""
 
 msgctxt "mlClassificationKnn|"
 msgid "Optimized"
-msgstr ""
+msgstr "Zoptymalizowane"
 
 msgctxt "mlClassificationKnn|"
 msgid "Max. nearest neighbors"
@@ -621,15 +621,15 @@ msgstr ""
 
 msgctxt "mlClassificationLda|"
 msgid "Target"
-msgstr ""
+msgstr "Cel"
 
 msgctxt "mlClassificationLda|"
 msgid "Features"
-msgstr ""
+msgstr "Cechy"
 
 msgctxt "mlClassificationLda|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabele"
 
 msgctxt "mlClassificationLda|"
 msgid "Confusion matrix"
@@ -637,7 +637,7 @@ msgstr ""
 
 msgctxt "mlClassificationLda|"
 msgid "Display proportions"
-msgstr ""
+msgstr "Wyświetl proporcje"
 
 msgctxt "mlClassificationLda|"
 msgid "Class proportions"
@@ -649,11 +649,11 @@ msgstr ""
 
 msgctxt "mlClassificationLda|"
 msgid "Coefficients"
-msgstr ""
+msgstr "Współczynniki"
 
 msgctxt "mlClassificationLda|"
 msgid "Prior and posterior probabilities"
-msgstr ""
+msgstr "Prawdopodobieństwo a priori i a posteriori"
 
 msgctxt "mlClassificationLda|"
 msgid "Class means training data"
@@ -661,19 +661,19 @@ msgstr ""
 
 msgctxt "mlClassificationLda|"
 msgid "Plots"
-msgstr ""
+msgstr "Wykresy"
 
 msgctxt "mlClassificationLda|"
 msgid "Data split"
-msgstr ""
+msgstr "Podział danych"
 
 msgctxt "mlClassificationLda|"
 msgid "ROC curves"
-msgstr ""
+msgstr "Krzywe ROC"
 
 msgctxt "mlClassificationLda|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "Krzywe Andrewsa"
 
 msgctxt "mlClassificationLda|"
 msgid "Linear discriminant matrix"
@@ -681,11 +681,11 @@ msgstr ""
 
 msgctxt "mlClassificationLda|"
 msgid "Densities"
-msgstr ""
+msgstr "Gęstości"
 
 msgctxt "mlClassificationLda|"
 msgid "Scatter plots"
-msgstr ""
+msgstr "Wykresy rozrzutu"
 
 msgctxt "mlClassificationLda|"
 msgid "Decision boundary matrix"
@@ -693,15 +693,15 @@ msgstr ""
 
 msgctxt "mlClassificationLda|"
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 msgctxt "mlClassificationLda|"
 msgid "Points"
-msgstr ""
+msgstr "Punkty"
 
 msgctxt "mlClassificationLda|"
 msgid "Assumption Checks"
-msgstr ""
+msgstr "Weryfikacja założeń"
 
 msgctxt "mlClassificationLda|"
 msgid "Equality of class means"
@@ -725,7 +725,7 @@ msgstr ""
 
 msgctxt "mlClassificationLda|"
 msgid "Estimation method"
-msgstr ""
+msgstr "Metoda estymacji"
 
 msgctxt "mlClassificationLda|"
 msgid "Scale features"
@@ -733,11 +733,11 @@ msgstr ""
 
 msgctxt "mlClassificationLda|"
 msgid "Set seed"
-msgstr ""
+msgstr "Ustaw ziarno generatora"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Target"
-msgstr ""
+msgstr "Cel"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Features"
@@ -745,7 +745,7 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabele"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Confusion matrix"
@@ -753,7 +753,7 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Display proportions"
-msgstr ""
+msgstr "Wyświetl proporcje"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Class proportions"
@@ -769,11 +769,11 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Plots"
-msgstr ""
+msgstr "Wykresy"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Data split"
-msgstr ""
+msgstr "Podział danych"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Classification accuracy"
@@ -781,11 +781,11 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "ROC curves"
-msgstr ""
+msgstr "Krzywe ROC"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "Krzywe Andrewsa"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Activation function"
@@ -793,7 +793,7 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Network structure"
-msgstr ""
+msgstr "Struktura sieci"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Decision boundary matrix"
@@ -801,11 +801,11 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Points"
-msgstr ""
+msgstr "Punkty"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Training Parameters"
@@ -817,7 +817,7 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Linear"
-msgstr ""
+msgstr "Liniowy"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Binary"
@@ -845,7 +845,7 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "ReLU"
-msgstr ""
+msgstr "ReLU"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Softplus"
@@ -857,31 +857,31 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "ELU"
-msgstr ""
+msgstr "ELU"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "LReLU"
-msgstr ""
+msgstr "LReLU"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "SiLU"
-msgstr ""
+msgstr "SiLU"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Mish"
-msgstr ""
+msgstr "Mish"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Gaussian"
-msgstr ""
+msgstr "Gauss"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "GeLU"
-msgstr ""
+msgstr "GeLU"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Algorithm"
-msgstr ""
+msgstr "Algorytm"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Backpropagation"
@@ -889,19 +889,19 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "rprop+"
-msgstr ""
+msgstr "rprop+"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "rprop-"
-msgstr ""
+msgstr "rprop-"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "grprop-sag"
-msgstr ""
+msgstr "grprop-sag"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "grprop-slr"
-msgstr ""
+msgstr "grprop-slr"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Learning rate"
@@ -913,7 +913,7 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Sum of squares"
-msgstr ""
+msgstr "Suma kwadratów"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Cross-entropy"
@@ -933,7 +933,7 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Set seed"
-msgstr ""
+msgstr "Ustaw ziarno generatora"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Network Topology"
@@ -941,7 +941,7 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Manual"
-msgstr ""
+msgstr "Ręcznie"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Nodes"
@@ -953,11 +953,11 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Optimized"
-msgstr ""
+msgstr "Zoptymalizowany"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Population size"
-msgstr ""
+msgstr "Wielkość populacji"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Generations"
@@ -989,7 +989,7 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Random"
-msgstr ""
+msgstr "Losowy"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Candidates"
@@ -1001,7 +1001,7 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Uniform"
-msgstr ""
+msgstr "Jednostajny"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "One-point"
@@ -1017,7 +1017,7 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Reset"
-msgstr ""
+msgstr "Reset"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Swap"
@@ -1053,7 +1053,7 @@ msgstr ""
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Target"
-msgstr ""
+msgstr "Cel"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Features"
@@ -1061,7 +1061,7 @@ msgstr ""
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabele"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Confusion matrix"
@@ -1069,7 +1069,7 @@ msgstr ""
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Display proportions"
-msgstr ""
+msgstr "Wyświetl proporcje"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Class proportions"
@@ -1085,11 +1085,11 @@ msgstr ""
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Plots"
-msgstr ""
+msgstr "Wykresy"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Data split"
-msgstr ""
+msgstr "Podział danych"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Out-of-bag accuracy"
@@ -1097,11 +1097,11 @@ msgstr ""
 
 msgctxt "mlClassificationRandomForest|"
 msgid "ROC curves"
-msgstr ""
+msgstr "Krzywe ROC"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "Krzywe Andrewsa"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Mean decrease in accuracy"
@@ -1117,11 +1117,11 @@ msgstr ""
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Points"
-msgstr ""
+msgstr "Punkty"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Training Parameters"
@@ -1129,7 +1129,7 @@ msgstr ""
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Ustawienia algorytmu"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Training data used per tree"
@@ -1141,11 +1141,11 @@ msgstr ""
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Auto"
-msgstr ""
+msgstr "Automatycznie"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Manual"
-msgstr ""
+msgstr "Ręcznie"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Scale features"
@@ -1153,23 +1153,23 @@ msgstr ""
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Set seed"
-msgstr ""
+msgstr "Ustaw ziarno generatora"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Number of Trees"
-msgstr ""
+msgstr "Liczba drzew"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Fixed"
-msgstr ""
+msgstr "Stałe"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Trees"
-msgstr ""
+msgstr "Drzewa"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Optimized"
-msgstr ""
+msgstr "Zoptymalizowany"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Max. trees"
@@ -1177,7 +1177,7 @@ msgstr ""
 
 msgctxt "mlClassificationSvm|"
 msgid "Target"
-msgstr ""
+msgstr "Cel"
 
 msgctxt "mlClassificationSvm|"
 msgid "Features"
@@ -1185,7 +1185,7 @@ msgstr ""
 
 msgctxt "mlClassificationSvm|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabele"
 
 msgctxt "mlClassificationSvm|"
 msgid "Confusion matrix"
@@ -1193,7 +1193,7 @@ msgstr ""
 
 msgctxt "mlClassificationSvm|"
 msgid "Display proportions"
-msgstr ""
+msgstr "Wyświetl proporcje"
 
 msgctxt "mlClassificationSvm|"
 msgid "Class proportions"
@@ -1209,19 +1209,19 @@ msgstr ""
 
 msgctxt "mlClassificationSvm|"
 msgid "Plots"
-msgstr ""
+msgstr "Wykresy"
 
 msgctxt "mlClassificationSvm|"
 msgid "Data split"
-msgstr ""
+msgstr "Podział danych"
 
 msgctxt "mlClassificationSvm|"
 msgid "ROC curves"
-msgstr ""
+msgstr "Krzywe ROC"
 
 msgctxt "mlClassificationSvm|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "Krzywe Andrewsa"
 
 msgctxt "mlClassificationSvm|"
 msgid "Decision boundary matrix"
@@ -1229,11 +1229,11 @@ msgstr ""
 
 msgctxt "mlClassificationSvm|"
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 msgctxt "mlClassificationSvm|"
 msgid "Points"
-msgstr ""
+msgstr "Punkty"
 
 msgctxt "mlClassificationSvm|"
 msgid "Training Parameters"
@@ -1241,15 +1241,15 @@ msgstr ""
 
 msgctxt "mlClassificationSvm|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Ustawienia algorytmu"
 
 msgctxt "mlClassificationSvm|"
 msgid "Weights"
-msgstr ""
+msgstr "Wagi"
 
 msgctxt "mlClassificationSvm|"
 msgid "Linear"
-msgstr ""
+msgstr "LIniowy"
 
 msgctxt "mlClassificationSvm|"
 msgid "Radial"
@@ -1265,15 +1265,15 @@ msgstr ""
 
 msgctxt "mlClassificationSvm|"
 msgid "Degree"
-msgstr ""
+msgstr "Stopień"
 
 msgctxt "mlClassificationSvm|"
 msgid "Gamma parameter"
-msgstr ""
+msgstr "Parametr gamma"
 
 msgctxt "mlClassificationSvm|"
 msgid "r parameter"
-msgstr ""
+msgstr "Parametr r"
 
 msgctxt "mlClassificationSvm|"
 msgid "Cost of constraints violation"
@@ -1285,7 +1285,7 @@ msgstr ""
 
 msgctxt "mlClassificationSvm|"
 msgid "Epsilon"
-msgstr ""
+msgstr "Epsilon"
 
 msgctxt "mlClassificationSvm|"
 msgid "Scale features"
@@ -1293,7 +1293,7 @@ msgstr ""
 
 msgctxt "mlClassificationSvm|"
 msgid "Set seed"
-msgstr ""
+msgstr "Ustaw ziarno generatora"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Features"
@@ -1301,7 +1301,7 @@ msgstr ""
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabele"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Cluster means"
@@ -1325,7 +1325,7 @@ msgstr ""
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Total sum of squares"
-msgstr ""
+msgstr "Całkowita suma kwadratów"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Evaluation metrics"
@@ -1333,7 +1333,7 @@ msgstr ""
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Plots"
-msgstr ""
+msgstr "Wykresy"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "K-distance plot"
@@ -1341,11 +1341,11 @@ msgstr ""
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Display barplot"
-msgstr ""
+msgstr "Wyświetl wykres słupkowy"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Group into one figure"
-msgstr ""
+msgstr "Zgrupuj w jedną figurę"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Cluster densities"
@@ -1357,11 +1357,11 @@ msgstr ""
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Labels"
-msgstr ""
+msgstr "Etykiety"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Training Parameters"
@@ -1369,7 +1369,7 @@ msgstr ""
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Ustawienia algorytmu"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Epsilon neighborhood size"
@@ -1381,15 +1381,15 @@ msgstr ""
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Distance"
-msgstr ""
+msgstr "Dystans"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Normal"
-msgstr ""
+msgstr "Normalny"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Correlated"
-msgstr ""
+msgstr "Skorelowany"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Scale variables"
@@ -1397,15 +1397,15 @@ msgstr ""
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Set seed"
-msgstr ""
+msgstr "Ustaw ziarno generatora"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Model Optimization"
-msgstr ""
+msgstr "Optymalizacja modelu"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Fixed"
-msgstr ""
+msgstr "Stałe"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Features"
@@ -1413,7 +1413,7 @@ msgstr ""
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Tables"
-msgstr ""
+msgstr "badale"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Cluster means"
@@ -1441,7 +1441,7 @@ msgstr ""
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Total sum of squares"
-msgstr ""
+msgstr "Całkowita suma kwadratów"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Evaluation metrics"
@@ -1449,7 +1449,7 @@ msgstr ""
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Plots"
-msgstr ""
+msgstr "Wykresy"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Elbow method"
@@ -1457,11 +1457,11 @@ msgstr ""
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Display barplot"
-msgstr ""
+msgstr "Wyświetl wykres słupkowy"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Group into one figure"
-msgstr ""
+msgstr "Zgrupuj w jedną figurę"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Cluster densities"
@@ -1473,11 +1473,11 @@ msgstr ""
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Labels"
-msgstr ""
+msgstr "Etykiety"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Training Parameters"
@@ -1485,11 +1485,11 @@ msgstr ""
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Ustawienia algorytmu"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Max. iterations"
-msgstr ""
+msgstr "Maks. liczba iteracji"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Fuzziness parameter"
@@ -1501,7 +1501,7 @@ msgstr ""
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Set seed"
-msgstr ""
+msgstr "Ustaw ziarno generatora"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Cluster Determination"
@@ -1509,7 +1509,7 @@ msgstr ""
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Fixed"
-msgstr ""
+msgstr "Stałe"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Clusters"
@@ -1529,7 +1529,7 @@ msgstr ""
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabele"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Cluster means"
@@ -1561,7 +1561,7 @@ msgstr ""
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Plots"
-msgstr ""
+msgstr "Wykresy"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Elbow method"
@@ -1569,15 +1569,15 @@ msgstr ""
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Dendrogram"
-msgstr ""
+msgstr "Dendogram"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Display barplot"
-msgstr ""
+msgstr "Wyświetl wykres słupkowy"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Group into one figure"
-msgstr ""
+msgstr "Zgrupuj w jedną figurę"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Cluster densities"
@@ -1589,11 +1589,11 @@ msgstr ""
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Labels"
-msgstr ""
+msgstr "Etykiety"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Training Parameters"
@@ -1601,19 +1601,19 @@ msgstr ""
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Ustawienia algorytmu"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Distance"
-msgstr ""
+msgstr "Dystans"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Euclidean"
-msgstr ""
+msgstr "Euklidejska"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Pearson"
-msgstr ""
+msgstr "Pearson"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Linkage"
@@ -1637,19 +1637,19 @@ msgstr ""
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Median"
-msgstr ""
+msgstr "Mediana"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Ward.D"
-msgstr ""
+msgstr "Ward.D"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Ward.D2"
-msgstr ""
+msgstr "Ward.D2"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "McQuitty"
-msgstr ""
+msgstr "McQuitty"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Scale variables"
@@ -1657,7 +1657,7 @@ msgstr ""
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Set seed"
-msgstr ""
+msgstr "Ustaw ziarno generatora"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Cluster Determination"
@@ -1665,7 +1665,7 @@ msgstr ""
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Fixed"
-msgstr ""
+msgstr "Stałe"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Clusters"
@@ -1685,7 +1685,7 @@ msgstr ""
 
 msgctxt "mlClusteringKMeans|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabele"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Cluster means"
@@ -1713,7 +1713,7 @@ msgstr ""
 
 msgctxt "mlClusteringKMeans|"
 msgid "Total sum of squares"
-msgstr ""
+msgstr "Całkowita suma kwadratów"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Evaluation metrics"
@@ -1721,7 +1721,7 @@ msgstr ""
 
 msgctxt "mlClusteringKMeans|"
 msgid "Plots"
-msgstr ""
+msgstr "Wykresy"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Elbow method"
@@ -1729,11 +1729,11 @@ msgstr ""
 
 msgctxt "mlClusteringKMeans|"
 msgid "Display barplot"
-msgstr ""
+msgstr "Wyświetl wykres słupkowy"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Group into one figure"
-msgstr ""
+msgstr "Zgrupuj w jedną figurę"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Cluster densities"
@@ -1745,11 +1745,11 @@ msgstr ""
 
 msgctxt "mlClusteringKMeans|"
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Labels"
-msgstr ""
+msgstr "Etykiety"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Training Parameters"
@@ -1757,7 +1757,7 @@ msgstr ""
 
 msgctxt "mlClusteringKMeans|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Ustawienia algorytmu"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Center type"
@@ -1765,19 +1765,19 @@ msgstr ""
 
 msgctxt "mlClusteringKMeans|"
 msgid "Algorithm"
-msgstr ""
+msgstr "Algorytm"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Distance"
-msgstr ""
+msgstr "Dystans"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Euclidean"
-msgstr ""
+msgstr "Euklidejski"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Manhattan"
-msgstr ""
+msgstr "Manhattan"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Max. iterations"
@@ -1793,7 +1793,7 @@ msgstr ""
 
 msgctxt "mlClusteringKMeans|"
 msgid "Set seed"
-msgstr ""
+msgstr "Ustaw ziarno generatora"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Cluster Determination"
@@ -1801,7 +1801,7 @@ msgstr ""
 
 msgctxt "mlClusteringKMeans|"
 msgid "Fixed"
-msgstr ""
+msgstr "Stałe"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Clusters"
@@ -1821,7 +1821,7 @@ msgstr ""
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabele"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Cluster means"
@@ -1845,7 +1845,7 @@ msgstr ""
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Total sum of squares"
-msgstr ""
+msgstr "Całkowita suma kwadratów"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Evaluation metrics"
@@ -1857,7 +1857,7 @@ msgstr ""
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Plots"
-msgstr ""
+msgstr "Wykresy"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Elbow method"
@@ -1865,11 +1865,11 @@ msgstr ""
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Display barplot"
-msgstr ""
+msgstr "Wyświetl wykres słupkowy"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Group into one figure"
-msgstr ""
+msgstr "Zgrupuj w jedną figurę"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Cluster densities"
@@ -1881,11 +1881,11 @@ msgstr ""
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Legend"
-msgstr ""
+msgstr "Legenda"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Labels"
-msgstr ""
+msgstr "Etykiety"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Training Parameters"
@@ -1893,11 +1893,11 @@ msgstr ""
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Ustawienia algorytmu"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Trees"
-msgstr ""
+msgstr "Drzewa"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Scale variables"
@@ -1905,7 +1905,7 @@ msgstr ""
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Set seed"
-msgstr ""
+msgstr "Ustaw ziarno generatora"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Cluster Determination"
@@ -1913,7 +1913,7 @@ msgstr ""
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Fixed"
-msgstr ""
+msgstr "Stałe"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Clusters"
@@ -1929,7 +1929,7 @@ msgstr ""
 
 msgctxt "mlRegressionBoosting|"
 msgid "Target"
-msgstr ""
+msgstr "Cel"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Features"
@@ -1937,7 +1937,7 @@ msgstr ""
 
 msgctxt "mlRegressionBoosting|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabele"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Evaluation metrics"
@@ -1949,11 +1949,11 @@ msgstr ""
 
 msgctxt "mlRegressionBoosting|"
 msgid "Plots"
-msgstr ""
+msgstr "Wykresy"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Data split"
-msgstr ""
+msgstr "Podział danych"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Out-of-bag improvement"
@@ -1973,7 +1973,7 @@ msgstr ""
 
 msgctxt "mlRegressionBoosting|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Ustawienia algorytmu"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Shrinkage"
@@ -2001,31 +2001,31 @@ msgstr ""
 
 msgctxt "mlRegressionBoosting|"
 msgid "Set seed"
-msgstr ""
+msgstr "Ustaw ziarno generatora"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Number of Trees"
-msgstr ""
+msgstr "Liczba drzew"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Fixed"
-msgstr ""
+msgstr "Stałe"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Trees"
-msgstr ""
+msgstr "Drzewa"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Optimized"
-msgstr ""
+msgstr "Zoptymalizowane"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Max. trees"
-msgstr ""
+msgstr "Maks. liczba drzew"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Target"
-msgstr ""
+msgstr "Cel"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Features"
@@ -2033,7 +2033,7 @@ msgstr ""
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabele"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Evaluation metrics"
@@ -2053,11 +2053,11 @@ msgstr ""
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Plots"
-msgstr ""
+msgstr "Wykresy"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Data split"
-msgstr ""
+msgstr "Podział danych"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Predictive performance"
@@ -2065,7 +2065,7 @@ msgstr ""
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Decision tree"
-msgstr ""
+msgstr "Drzewo decyzyjne"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Training Parameters"
@@ -2073,7 +2073,7 @@ msgstr ""
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Ustawienia algorytmu"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Min. observations for split"
@@ -2093,11 +2093,11 @@ msgstr ""
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Set seed"
-msgstr ""
+msgstr "Ustaw ziarno generatora"
 
 msgctxt "mlRegressionKnn|"
 msgid "Target"
-msgstr ""
+msgstr "Cel"
 
 msgctxt "mlRegressionKnn|"
 msgid "Features"
@@ -2105,7 +2105,7 @@ msgstr ""
 
 msgctxt "mlRegressionKnn|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabele"
 
 msgctxt "mlRegressionKnn|"
 msgid "Evaluation metrics"
@@ -2113,11 +2113,11 @@ msgstr ""
 
 msgctxt "mlRegressionKnn|"
 msgid "Plots"
-msgstr ""
+msgstr "Wykresy"
 
 msgctxt "mlRegressionKnn|"
 msgid "Data split"
-msgstr ""
+msgstr "Podział danych"
 
 msgctxt "mlRegressionKnn|"
 msgid "Weight function"
@@ -2137,23 +2137,23 @@ msgstr ""
 
 msgctxt "mlRegressionKnn|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Ustawienia algorytmu"
 
 msgctxt "mlRegressionKnn|"
 msgid "Weights"
-msgstr ""
+msgstr "Wagi"
 
 msgctxt "mlRegressionKnn|"
 msgid "Rectangular"
-msgstr ""
+msgstr "Prostokątne"
 
 msgctxt "mlRegressionKnn|"
 msgid "Triangular"
-msgstr ""
+msgstr "Trójkątne"
 
 msgctxt "mlRegressionKnn|"
 msgid "Epanechnikov"
-msgstr ""
+msgstr "Epanechnikov"
 
 msgctxt "mlRegressionKnn|"
 msgid "Biweight"
@@ -2173,7 +2173,7 @@ msgstr ""
 
 msgctxt "mlRegressionKnn|"
 msgid "Gaussian"
-msgstr ""
+msgstr "Gauss"
 
 msgctxt "mlRegressionKnn|"
 msgid "Rank"
@@ -2185,15 +2185,15 @@ msgstr ""
 
 msgctxt "mlRegressionKnn|"
 msgid "Distance"
-msgstr ""
+msgstr "Odległość"
 
 msgctxt "mlRegressionKnn|"
 msgid "Euclidian"
-msgstr ""
+msgstr "Euklidejska"
 
 msgctxt "mlRegressionKnn|"
 msgid "Manhattan"
-msgstr ""
+msgstr "Manhattan"
 
 msgctxt "mlRegressionKnn|"
 msgid "Scale variables"
@@ -2201,7 +2201,7 @@ msgstr ""
 
 msgctxt "mlRegressionKnn|"
 msgid "Set seed"
-msgstr ""
+msgstr "Ustaw ziarno generatora"
 
 msgctxt "mlRegressionKnn|"
 msgid "Number of Nearest Neighbors"
@@ -2209,7 +2209,7 @@ msgstr ""
 
 msgctxt "mlRegressionKnn|"
 msgid "Fixed"
-msgstr ""
+msgstr "Stałe"
 
 msgctxt "mlRegressionKnn|"
 msgid "Nearest neighbors"
@@ -2217,7 +2217,7 @@ msgstr ""
 
 msgctxt "mlRegressionKnn|"
 msgid "Optimized"
-msgstr ""
+msgstr "Zoptymalizowane"
 
 msgctxt "mlRegressionKnn|"
 msgid "Max. nearest neighbors"
@@ -2225,7 +2225,7 @@ msgstr ""
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Target"
-msgstr ""
+msgstr "Cel"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Features"
@@ -2233,7 +2233,7 @@ msgstr ""
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Tables"
-msgstr ""
+msgstr "Tabele"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Evaluation metrics"
@@ -2245,11 +2245,11 @@ msgstr ""
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Plots"
-msgstr ""
+msgstr "Wykresy"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Data split"
-msgstr ""
+msgstr "Podział danych"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Mean squared error"
@@ -2273,11 +2273,11 @@ msgstr ""
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Ustawienia algorytmu"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Linear"
-msgstr ""
+msgstr "Liniowy"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Binary"
@@ -2305,7 +2305,7 @@ msgstr ""
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "ReLU"
-msgstr ""
+msgstr "ReLU"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Softplus"
@@ -2317,15 +2317,15 @@ msgstr ""
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "ELU"
-msgstr ""
+msgstr "ELU"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "LReLU"
-msgstr ""
+msgstr "LReLU"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "SiLU"
-msgstr ""
+msgstr "SiLU"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Mish"
@@ -2333,15 +2333,15 @@ msgstr ""
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Gaussian"
-msgstr ""
+msgstr "Gauss"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "GeLU"
-msgstr ""
+msgstr "GeLU"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Algorithm"
-msgstr ""
+msgstr "Algorytm"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Backpropagation"
@@ -2349,11 +2349,11 @@ msgstr ""
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "rprop+"
-msgstr ""
+msgstr "rprop+"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "rprop-"
-msgstr ""
+msgstr "rprop-"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "grprop-sag"
@@ -2465,7 +2465,7 @@ msgstr ""
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Uniform"
-msgstr ""
+msgstr "Jednostajny"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "One-point"
