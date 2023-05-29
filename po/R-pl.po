@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.0\n"
 "POT-Creation-Date: 2022-12-17 03:24\n"
-"PO-Revision-Date: 2023-05-29 13:51+0000\n"
+"PO-Revision-Date: 2023-05-30 19:49+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/pl/>\n"
@@ -39,10 +39,10 @@ msgid "Nearest neighbors"
 msgstr ""
 
 msgid "Weights"
-msgstr ""
+msgstr "Wagi"
 
 msgid "Distance"
-msgstr ""
+msgstr "Dystans"
 
 msgid "Linear Discriminants"
 msgstr ""
@@ -51,7 +51,7 @@ msgid "Method"
 msgstr "Metoda"
 
 msgid "Trees"
-msgstr ""
+msgstr "Drzewa"
 
 msgid "Features per split"
 msgstr ""
@@ -108,22 +108,22 @@ msgid ""
 msgstr ""
 
 msgid "Manhattan"
-msgstr ""
+msgstr "Manhattan"
 
 msgid "Euclidean"
-msgstr ""
+msgstr "Eklidejski"
 
 msgid "Moment"
 msgstr ""
 
 msgid "MLE"
-msgstr ""
+msgstr "MLE"
 
 msgid "MVE"
-msgstr ""
+msgstr "MVE"
 
 msgid "t"
-msgstr ""
+msgstr "t"
 
 msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
 msgstr ""
@@ -135,10 +135,10 @@ msgid "Confusion Matrix"
 msgstr ""
 
 msgid "Observed"
-msgstr ""
+msgstr "Obserwowane"
 
 msgid "Predicted"
-msgstr ""
+msgstr "Przewidywane"
 
 msgid "Decision Boundary Matrix"
 msgstr ""
@@ -176,7 +176,7 @@ msgid "Support"
 msgstr ""
 
 msgid "Accuracy"
-msgstr ""
+msgstr "Dokładność"
 
 msgid "Precision (Positive Predictive Value)"
 msgstr ""
@@ -194,7 +194,7 @@ msgid "Matthews Correlation Coefficient"
 msgstr ""
 
 msgid "Area Under Curve (AUC)"
-msgstr ""
+msgstr "Obszar pod krzywą (AUC)"
 
 msgid "Negative Predictive Value"
 msgstr ""
@@ -218,16 +218,16 @@ msgid "All metrics are calculated for every class against all other classes."
 msgstr ""
 
 msgid "Average / Total"
-msgstr ""
+msgstr "Średnie / Całość"
 
 msgid "Class Proportions"
 msgstr ""
 
 msgid "Data Set"
-msgstr ""
+msgstr "Zbiór danych"
 
 msgid "Training Set"
-msgstr ""
+msgstr "Zbiór treningowy"
 
 msgid "Validation Set"
 msgstr ""
@@ -319,7 +319,7 @@ msgid "Cluster"
 msgstr ""
 
 msgid "Size"
-msgstr ""
+msgstr "Rozmiar"
 
 msgid "Explained proportion within-cluster heterogeneity"
 msgstr ""
@@ -352,16 +352,16 @@ msgid "Minimum separation"
 msgstr ""
 
 msgid "Pearson's %s"
-msgstr ""
+msgstr "Pearson's %s"
 
 msgid "Dunn index"
-msgstr ""
+msgstr "indeks Dunna"
 
 msgid "Entropy"
-msgstr ""
+msgstr "Entropia"
 
 msgid "Calinski-Harabasz index"
-msgstr ""
+msgstr "Indeks"
 
 msgid "All metrics are based on the <i>euclidean</i> distance."
 msgstr ""
@@ -379,7 +379,7 @@ msgid "Elbow Method Plot"
 msgstr ""
 
 msgid "WSS"
-msgstr ""
+msgstr "WSS"
 
 msgid "Number of Clusters"
 msgstr ""
@@ -481,7 +481,7 @@ msgid "Test MSE"
 msgstr ""
 
 msgid "OOB Error"
-msgstr ""
+msgstr "Błąd OOB"
 
 msgid "Please provide a target variable and at least %d feature variable(s)."
 msgstr ""
@@ -500,10 +500,10 @@ msgid ""
 msgstr ""
 
 msgid "Gaussian"
-msgstr ""
+msgstr "Gaussa"
 
 msgid "Laplace"
-msgstr ""
+msgstr "Laplace"
 
 msgid "R%s cannot be computed due to lack of variance in the predictions.</i>"
 msgstr ""
