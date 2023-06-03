@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-05-20 03:20+0000\n"
+"PO-Revision-Date: 2023-06-02 20:48+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/pl/>\n"
@@ -229,7 +229,7 @@ msgstr "Nazwa kolumny"
 
 msgctxt "ExportResults|"
 msgid "e.g., predicted"
-msgstr ""
+msgstr "np. oczekiwane"
 
 msgctxt "ExportResults|"
 msgid "Save as"
@@ -245,7 +245,7 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "Target"
-msgstr ""
+msgstr "Cel"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Features"
@@ -293,7 +293,7 @@ msgstr "Krzywa ROC"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "Krzywe Andrewsa"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Deviance"
@@ -357,7 +357,7 @@ msgstr "Drzewa"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Optimized"
-msgstr ""
+msgstr "Zoptymalizowany"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Max. trees"
@@ -365,7 +365,7 @@ msgstr ""
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Target"
-msgstr ""
+msgstr "Cel"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Features"
