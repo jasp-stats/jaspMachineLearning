@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.0\n"
 "POT-Creation-Date: 2022-12-17 03:24\n"
-"PO-Revision-Date: 2023-05-30 19:49+0000\n"
+"PO-Revision-Date: 2023-06-02 21:49+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/pl/>\n"
@@ -191,7 +191,7 @@ msgid "F1 Score"
 msgstr ""
 
 msgid "Matthews Correlation Coefficient"
-msgstr ""
+msgstr "Współczynnik korelacji Matthewsa"
 
 msgid "Area Under Curve (AUC)"
 msgstr "Obszar pod krzywą (AUC)"
@@ -274,7 +274,7 @@ msgid "Clusters"
 msgstr ""
 
 msgid "N"
-msgstr ""
+msgstr "N"
 
 msgid "R%s"
 msgstr "R%s"
@@ -352,7 +352,7 @@ msgid "Minimum separation"
 msgstr ""
 
 msgid "Pearson's %s"
-msgstr "Pearson's %s"
+msgstr "%s Pearsona"
 
 msgid "Dunn index"
 msgstr "indeks Dunna"
@@ -1009,7 +1009,7 @@ msgid "Elastic Net"
 msgstr ""
 
 msgid "Regression Coefficients"
-msgstr ""
+msgstr "Współczynniki regresji"
 
 msgid "Coefficient (%s)"
 msgstr ""
@@ -1018,7 +1018,7 @@ msgid "Variable Trace Plot"
 msgstr ""
 
 msgid "Coefficients"
-msgstr ""
+msgstr "Współczynniki"
 
 msgid "Lambda Evaluation Plot"
 msgstr ""
