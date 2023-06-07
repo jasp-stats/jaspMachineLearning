@@ -604,3 +604,84 @@
 .extractMemSizeFromError <- function(p) {
   unlist(regmatches(p[[1]], gregexpr("[[:digit:]]+\\.*[[:digit:]]*", p[[1]])))
 }
+
+.mlClusteringMatrixPlot <- function(dataset, options, jaspResults, ready, position) {
+  if (!is.null(jaspResults[["matrixPlot"]]) || !options[["matrixPlot"]]) {
+    return()
+  }
+  plot <- createJaspPlot(title = gettext("Cluster Matrix Plot"), height = 400, width = 300)
+  plot$position <- position
+  plot$dependOn(options = c(.mlClusteringDependencies(options), "matrixPlot"))
+  jaspResults[["matrixPlot"]] <- plot
+  if (!ready || length(options[["predictors"]]) < 2) {
+    return()
+  }
+  clusterResult <- jaspResults[["clusterResult"]]$object
+  variables <- options[["predictors"]]
+  variables <- variables[!vapply(dataset[, variables], is.factor, TRUE)] # remove factors from matrix plot
+  l <- length(variables)
+  if (l < 2) { # Need at least 2 numeric variables to create a matrix
+    plot$setError(gettext("Cannot create matrix: not enough numeric variables remain after removing factor variables. You need at least 2 numeric variables."))
+    return()
+  }
+  if (l <= 2) {
+    width <- 400
+    height <- 300
+  } else {
+    width <- 200 * l
+    height <- 200 * l
+  }
+  plot[["width"]] <- width
+  plot[["height"]] <- height
+  cexText <- 1.6
+  plotMat <- matrix(list(), l - 1, l - 1)
+  oldFontSize <- jaspGraphs::getGraphOption("fontsize")
+  jaspGraphs::setGraphOption("fontsize", .85 * oldFontSize)
+  startProgressbar(length(plotMat) + 1)
+  for (row in 2:l) {
+    for (col in 1:(l - 1)) {
+      if (col < row) {
+        predictors <- dataset[, variables]
+        predictors <- predictors[, c(col, row)]
+        plotData <- data.frame(x = predictors[, 1], y = predictors[, 2], cluster = as.factor(clusterResult[["pred.values"]]))
+        xBreaks <- jaspGraphs::getPrettyAxisBreaks(plotData$x, min.n = 4)
+        yBreaks <- jaspGraphs::getPrettyAxisBreaks(plotData$y, min.n = 4)
+        p <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x, y = y, fill = cluster)) +
+          jaspGraphs::geom_point() +
+          ggplot2::scale_fill_manual(name = NULL, values = .mlColorScheme(clusterResult[["clusters"]])) +
+          ggplot2::scale_x_continuous(name = NULL, breaks = xBreaks, limits = range(xBreaks)) +
+          ggplot2::scale_y_continuous(name = NULL, breaks = yBreaks, limits = range(yBreaks)) +
+          jaspGraphs::geom_rangeframe() +
+          jaspGraphs::themeJaspRaw()
+        plotMat[[row - 1, col]] <- p
+      }
+      if (l > 2) {
+        predictors <- dataset[, options[["predictors"]]]
+        plotData <- data.frame(cluster = as.factor(clusterResult[["pred.values"]]), predictor = predictors[, 1])
+        p <- ggplot2::ggplot(plotData, ggplot2::aes(y = cluster, x = cluster, show.legend = TRUE)) +
+          jaspGraphs::geom_point(ggplot2::aes(fill = cluster), alpha = 0) +
+          ggplot2::xlab(NULL) +
+          ggplot2::ylab(NULL) +
+          ggplot2::theme(legend.key = ggplot2::element_blank()) +
+          ggplot2::scale_fill_manual(name = gettext("Cluster"), values = .mlColorScheme(clusterResult[["clusters"]])) +
+          jaspGraphs::geom_rangeframe(sides = "") +
+          jaspGraphs::themeJaspRaw(legend.position = "left") +
+          ggplot2::theme(axis.ticks = ggplot2::element_blank(), axis.text.x = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank()) +
+          ggplot2::guides(fill = ggplot2::guide_legend(override.aes = list(alpha = 1)))
+        plotMat[[1, 2]] <- p
+      }
+      progressbarTick()
+    }
+  }
+  jaspGraphs::setGraphOption("fontsize", oldFontSize)
+  # slightly adjust the positions of the labels left and above the plots.
+  labelPos <- matrix(.5, 4, 2)
+  labelPos[1, 1] <- .55
+  labelPos[4, 2] <- .65
+  p <- jaspGraphs::ggMatrixPlot(
+    plotList = plotMat, leftLabels = variables[-1], topLabels = variables[-length(variables)],
+    scaleXYlabels = NULL, labelPos = labelPos
+  )
+  progressbarTick()
+  plot$plotObject <- p
+}

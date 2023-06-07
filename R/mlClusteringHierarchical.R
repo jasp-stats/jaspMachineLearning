@@ -53,6 +53,9 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
 
   # Create the cluster plot
   .mlClusteringPlotTsne(dataset, options, jaspResults, ready, position = 9, type = "hierarchical")
+
+  # Create the matrix plot
+  .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 10)
 }
 
 .hierarchicalClustering <- function(dataset, options, jaspResults) {
