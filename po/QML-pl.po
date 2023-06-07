@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-06-02 20:48+0000\n"
+"PO-Revision-Date: 2023-06-08 04:26+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/pl/>\n"
@@ -1525,7 +1525,7 @@ msgstr ""
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Features"
-msgstr ""
+msgstr "Cechy"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Tables"
@@ -1553,7 +1553,7 @@ msgstr ""
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Total sum of squares"
-msgstr ""
+msgstr "Całkowita suma kwadratów"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Evaluation metrics"
@@ -1621,7 +1621,7 @@ msgstr ""
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Average"
-msgstr ""
+msgstr "Uśrednione"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Single"
@@ -1781,7 +1781,7 @@ msgstr "Manhattan"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Max. iterations"
-msgstr ""
+msgstr "Maks. liczba iteracji"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Random sets"
@@ -1965,7 +1965,7 @@ msgstr ""
 
 msgctxt "mlRegressionBoosting|"
 msgid "Deviance"
-msgstr ""
+msgstr "Odchylenie"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Training Parameters"
