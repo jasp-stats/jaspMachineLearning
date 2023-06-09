@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2022-12-17 03:24\n"
+"POT-Creation-Date: 2023-06-09 06:45\n"
 "PO-Revision-Date: 2022-05-16 11:10+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
@@ -442,6 +442,10 @@ msgstr ""
 
 msgid "An error occurred in the analysis: %1$s"
 msgstr "Er is een fout opgetreden in de analyse: %1$s"
+
+#, fuzzy
+msgid "Cluster Matrix Plot"
+msgstr "Cluster Gemiddelde Grafieken"
 
 msgid "The variable '%s' can't be both a feature and a test set indicator."
 msgstr ""

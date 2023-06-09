@@ -2909,3 +2909,23 @@ msgstr ""
 msgctxt "mlRegressionDecisionTree|"
 msgid "Complexity penalty"
 msgstr ""
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Cluster matrix plot"
+msgstr ""
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Cluster matrix plot"
+msgstr ""
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Cluster matrix plot"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Cluster matrix plot"
+msgstr ""
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Cluster matrix plot"
+msgstr ""

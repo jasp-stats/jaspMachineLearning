@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.2\n"
-"POT-Creation-Date: 2023-04-22 03:23\n"
+"POT-Creation-Date: 2023-06-09 06:45\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -395,6 +395,9 @@ msgid "Insufficient RAM available to compute the distance matrix. The analysis t
 msgstr ""
 
 msgid "An error occurred in the analysis: %1$s"
+msgstr ""
+
+msgid "Cluster Matrix Plot"
 msgstr ""
 
 msgid "The variable '%s' can't be both a feature and a test set indicator."

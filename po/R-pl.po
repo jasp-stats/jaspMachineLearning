@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.0\n"
-"POT-Creation-Date: 2022-12-17 03:24\n"
+"POT-Creation-Date: 2023-06-09 06:45\n"
 "PO-Revision-Date: 2023-06-02 21:49+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/"
@@ -417,6 +417,9 @@ msgid ""
 msgstr ""
 
 msgid "An error occurred in the analysis: %1$s"
+msgstr ""
+
+msgid "Cluster Matrix Plot"
 msgstr ""
 
 msgid "The variable '%s' can't be both a feature and a test set indicator."
