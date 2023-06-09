@@ -630,3 +630,42 @@
     jaspResults[["predictionsColumn"]]$setScale(predictionsColumn)
   }
 }
+
+.mlShapAnalysis <- function(options, fit, trainingSet, testSet, type) {
+  predict_model.gbm <- gbm:::predict.gbm
+  predict_model.randomForest <- randomForest:::predict.randomForest
+  class(fit) <- type
+  explainer <- shapr::shapr(trainingSet[, options[["predictors"]]], fit)
+  p0 <- mean(trainingSet[, options[["target"]]])
+  explanation <- shapr::explain(x = testSet, explainer, approach = "empirical", prediction_zero = p0)
+  out <- cbind(explanation[["p"]], explanation[["dt"]])
+  colnames(out) <- c("pred", "avg", options[["predictors"]])
+  return(out)
+}
+
+.mlRegressionTableShap <- function(dataset, options, jaspResults, ready, position) {
+  if (!is.null(jaspResults[["shapTable"]]) || !options[["shapTable"]]) {
+    return()
+  }
+  table <- createJaspTable(title = "Feature Contribution to Predictions in the Test Set")
+  table$position <- position
+  table$dependOn(options = c(.mlRegressionDependencies(options), "shapTable", "shapFrom", "shapTo"))
+  table$addColumnInfo(name = "id", title = "#", type = "integer")
+  table$addColumnInfo(name = "pred", title = gettext("Predicted"), type = "number")
+  for (i in options[["predictors"]]) {
+    table$addColumnInfo(name = i, title = i, type = "number")
+  }
+  jaspResults[["shapTable"]] <- table
+  if (!ready) {
+    return()
+  }
+  regressionResult <- jaspResults[["regressionResult"]]$object
+  out <- regressionResult[["shap"]]
+  table$addFootnote(gettextf("The numbers for the features represent their contribution to the predicted value without features (%1$s).", round(unique(out[, 2]), 3)))
+  out <- out[order(-out[["pred"]]), ]
+  out <- cbind(id = seq_len(nrow(out)), out[, -2])
+  from <- min(c(options[["shapFrom"]], options[["shapTo"]] - 1, nrow(out)))
+  to <- min(c(options[["shapTo"]], nrow(out)))
+  out <- out[from:to, ]
+  table$setData(out)
+}

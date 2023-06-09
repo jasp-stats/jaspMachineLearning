@@ -42,17 +42,20 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   # Create the variable importance table
   .mlRandomForestTableVarImp(options, jaspResults, ready, position = 4, purpose = "regression")
 
+  # Create the shap table
+  .mlRegressionTableShap(dataset, options, jaspResults, ready, position = 5)
+
   # Create the trees vs model error plot
-  .mlRandomForestPlotError(options, jaspResults, ready, position = 5, purpose = "regression")
+  .mlRandomForestPlotError(options, jaspResults, ready, position = 6, purpose = "regression")
 
   # Create the predicted performance plot
-  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 6)
+  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 7)
 
   # Create the mean decrease in accuracy plot
-  .mlRandomForestPlotDecreaseAccuracy(options, jaspResults, ready, position = 7, purpose = "regression")
+  .mlRandomForestPlotDecreaseAccuracy(options, jaspResults, ready, position = 8, purpose = "regression")
 
   # Create the total increase in node purity plot
-  .mlRandomForestPlotIncreasePurity(options, jaspResults, ready, position = 8, purpose = "regression")
+  .mlRandomForestPlotIncreasePurity(options, jaspResults, ready, position = 9, purpose = "regression")
 }
 
 .randomForestRegression <- function(dataset, options, jaspResults) {
@@ -148,6 +151,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
     result[["valid"]] <- validationSet
     result[["rfit_valid"]] <- validationFit
   }
+  result[["shap"]] <- .mlShapAnalysis(options, trainingFit, trainingSet, testSet, "randomForest")
   return(result)
 }
 

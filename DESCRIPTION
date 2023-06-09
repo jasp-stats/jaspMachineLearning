@@ -38,7 +38,8 @@ Imports:
   rpart (>= 4.1.16),
   ROCR,
   Rtsne,
-  signal
+  signal,
+  shapr
 Suggests:
   testthat
 Remotes:
