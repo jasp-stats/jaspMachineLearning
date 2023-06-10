@@ -48,23 +48,26 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
   # Create the relative influence table
   .mlBoostingTableRelInf(options, jaspResults, ready, position = 6, purpose = "classification")
 
+  # Create the shap table
+  .mlTableShap(dataset, options, jaspResults, ready, position = 7, purpose = "classification")
+
   # Create the OOB improvement plot
-  .mlBoostingPlotOobImprovement(options, jaspResults, ready, position = 7, purpose = "classification")
+  .mlBoostingPlotOobImprovement(options, jaspResults, ready, position = 8, purpose = "classification")
 
   # Create the ROC curve
-  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 8, type = "boosting")
+  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 9, type = "boosting")
 
   # Create the Andrews curves
-  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 9)
+  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 10)
 
   # Create the deviance plot
-  .mlBoostingPlotDeviance(options, jaspResults, ready, position = 10, purpose = "classification")
+  .mlBoostingPlotDeviance(options, jaspResults, ready, position = 11, purpose = "classification")
 
   # Create the relative influence plot
-  .mlBoostingPlotRelInf(options, jaspResults, ready, position = 11, purpose = "classification")
+  .mlBoostingPlotRelInf(options, jaspResults, ready, position = 12, purpose = "classification")
 
   # Decision boundaries
-  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 12, type = "boosting")
+  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 13, type = "boosting")
 }
 
 .boostingClassification <- function(dataset, options, jaspResults) {
@@ -163,5 +166,6 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
     result[["nvalid"]] <- nrow(validationSet)
     result[["valid"]] <- validationSet
   }
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data, type = "response", n.trees = model$n.trees))
   return(result)
 }

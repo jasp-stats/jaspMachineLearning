@@ -283,7 +283,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
       result[["trainAccuracyStore"]] <- trainErrorStore
     }
   }
-  result[["explainer"]] <- DALEX::explain(result[["model"]], data = result[["train"]][, options[["predictors"]]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data))
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data))
   return(result)
 }
 

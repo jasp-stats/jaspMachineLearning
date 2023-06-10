@@ -174,7 +174,7 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
       result[["trainAccuracyStore"]] <- trainErrorStore
     }
   }
-  result[["explainer"]] <- DALEX::explain(result[["model"]], data = result[["train"]][, options[["predictors"]]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model$predictive, newdata = data))
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model$predictive, newdata = data))
   return(result)
 }
 

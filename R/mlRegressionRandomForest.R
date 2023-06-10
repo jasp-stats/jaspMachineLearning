@@ -151,7 +151,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
     result[["valid"]] <- validationSet
     result[["rfit_valid"]] <- validationFit
   }
-  result[["explainer"]] <- DALEX::explain(result[["model"]], data = result[["train"]][, options[["predictors"]]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data, type = "response"))
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data, type = "response"))
   return(result)
 }
 

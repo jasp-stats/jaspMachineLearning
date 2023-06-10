@@ -86,7 +86,7 @@ mlRegressionSvm <- function(jaspResults, dataset, options, state = NULL) {
   result[["testPred"]] <- testPredictions
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["values"]] <- dataPredictions
-  result[["explainer"]] <- DALEX::explain(result[["model"]], data = result[["train"]][, options[["predictors"]]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data))
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data))
   return(result)
 }
 

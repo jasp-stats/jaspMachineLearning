@@ -635,15 +635,16 @@
   if (!is.null(jaspResults[["shapTable"]]) || !options[["shapTable"]]) {
     return()
   }
-  table <- createJaspTable(title = "Feature Contribution to Predictions in the Test Set")
+  table <- createJaspTable(title = "Feature Contributions to Predictions for Test Set Cases")
   table$position <- position
   table$dependOn(options = c(.mlRegressionDependencies(options), "shapTable", "shapFrom", "shapTo"))
-  table$addColumnInfo(name = "id", title = "#", type = "integer")
+  table$addColumnInfo(name = "id", title = gettext("Case"), type = "integer")
   if (purpose == "regression") {
     table$addColumnInfo(name = "pred", title = gettext("Predicted"), type = "number")
   } else {
-    table$addColumnInfo(name = "pred", title = gettext("Predicted"), type = "string")
+    table$addColumnInfo(name = "pred", title = gettext("Predicted (Prob.)"), type = "string")
   }
+  table$addColumnInfo(name = "avg", title = gettext("Base"), type = "number")
   for (i in options[["predictors"]]) {
     table$addColumnInfo(name = i, title = i, type = "number")
   }
@@ -656,24 +657,22 @@
   x_test <- result[["test"]][, options[["predictors"]]]
   from <- min(c(options[["shapFrom"]], options[["shapTo"]] - 1, nrow(x_test)))
   to <- min(c(options[["shapTo"]], nrow(x_test)))
-  out <- as.data.frame(matrix(NA, nrow = length(from:to), ncol = length(options[["predictors"]]) + 2))
-  colnames(out) <- c("id", "pred", options[["predictors"]])
+  out <- as.data.frame(matrix(NA, nrow = length(from:to), ncol = 3 + length(options[["predictors"]])))
+  colnames(out) <- c("id", "pred", "avg", options[["predictors"]])
   for (i in seq_along(from:to)) {
+    out[i, 1] <- (from:to)[i]
     shap <- DALEX::predict_parts(explainer, new_observation = x_test[(from:to)[i], ])
     if (purpose == "regression") {
-      predicted <- shap[which(shap[["variable"]] == "prediction"), which(colnames(shap) == "contribution")]
+      out[i, 2] <- shap[which(shap[["variable"]] == "prediction"), "contribution"]
     } else {
-      predClass <- which.max(shap[which(shap$variable == "prediction"), "contribution"])
-      sub <- shap[which(shap$variable == "prediction"), ]
-      predicted <- strsplit(sub[predClass, "label"], split = ".", fixed = TRUE)[[1]][2]
+      predictedIndex <- which.max(shap[which(shap$variable == "prediction"), "contribution"])
+      shap <- shap[which(shap[["label"]] == shap[which(shap$variable == "prediction"), ][, "label"][predictedIndex]), ]
+      out[i, 2] <- paste0(levels(result[["test"]][, options[["target"]]])[predictedIndex], " (", round(shap[which(shap[["variable"]] == "prediction"), "contribution"], 3), ")")
     }
-    row <- c((from:to)[i], predicted)
-    for (j in options[["predictors"]]) {
-      row <- c(row, shap[which(shap[["variable_name"]] == j), which(colnames(shap) == "contribution")])
+    out[i, 3] <- shap[which(shap[["variable"]] == "intercept"), "contribution"]
+    for (j in seq_along(options[["predictors"]])) {
+      out[i, j + 3] <- shap[which(shap[["variable_name"]] == options[["predictors"]][j]), "contribution"]
     }
-    out[i, ] <- row
   }
-  avg <- shap[which(shap[["variable"]] == "intercept"), which(colnames(shap) == "contribution")]
-  table$addFootnote(gettextf("Feature values represent their contribution to the predicted value without features (%1$s).", round(avg, 3)))
   table$setData(out)
 }

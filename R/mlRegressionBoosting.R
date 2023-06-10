@@ -149,7 +149,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
     result[["nvalid"]] <- nrow(validationSet)
     result[["valid"]] <- validationSet
   }
-  result[["explainer"]] <- DALEX::explain(result[["model"]], data = result[["train"]][, options[["predictors"]]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data, n.trees = model$n.trees))
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data, n.trees = model$n.trees))
   return(result)
 }
 
