@@ -42,14 +42,17 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   # Create the regression coefficients table
   .mlRegressionRegularizedTableCoef(options, jaspResults, ready, position = 4)
 
+  # Create the shap table
+  .mlTableShap(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
+
   # Create the predicted performance plot
-  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 5)
+  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 6)
 
   # Create the variable trace plot
-  .mlRegressionRegularizedPlotVariableTrace(options, jaspResults, ready, position = 6)
+  .mlRegressionRegularizedPlotVariableTrace(options, jaspResults, ready, position = 7)
 
   # Create the lambda evaluation plot
-  .mlRegressionRegularizedPlotLambda(options, jaspResults, ready, position = 7)
+  .mlRegressionRegularizedPlotLambda(options, jaspResults, ready, position = 8)
 }
 
 # Read dataset
@@ -168,6 +171,8 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   result[["testPred"]] <- as.numeric(testPredictions)
   result[["ntrain"]] <- nrow(trainingSet)
   result[["ntest"]] <- nrow(testSet)
+  result[["train"]] <- trainingSet
+  result[["test"]] <- testSet
   result[["coefTable"]] <- coef(trainingFit, s = lambda)
   result[["cvMSE"]] <- trainingFit[["cvm"]][trainingFit[["lambda"]] == lambda]
   result[["cvMSELambda"]] <- data.frame(lambda = trainingFit[["lambda"]], MSE = trainingFit[["cvm"]], sd = trainingFit[["cvsd"]])
@@ -177,6 +182,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
     result[["validMSE"]] <- mean((as.numeric(validationPredictions) - validationSet[, options[["target"]]])^2)
     result[["nvalid"]] <- nrow(validationSet)
   }
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newx = as.matrix(data), type = "response", s = result[["lambda"]]))
   return(result)
 }
 
