@@ -52,23 +52,26 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   # Create the network weights table
   .mlNeuralNetworkTableWeights(dataset, options, jaspResults, ready, purpose = "classification", position = 6)
 
+  # Create the shap table
+  .mlTableShap(dataset, options, jaspResults, ready, position = 7, purpose = "classification")
+
   # Create the error plot
-  .mlNeuralNetworkPlotError(dataset, options, jaspResults, ready, position = 7, purpose = "classification")
+  .mlNeuralNetworkPlotError(dataset, options, jaspResults, ready, position = 8, purpose = "classification")
 
   # Create the ROC curve
-  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 8, type = "neuralnet")
+  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 9, type = "neuralnet")
 
   # Create the Andrews curves
-  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 9)
+  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 10)
 
   # Create the activation function plot
-  .mlNeuralNetworkPlotActivationFunction(options, jaspResults, position = 10)
+  .mlNeuralNetworkPlotActivationFunction(options, jaspResults, position = 11)
 
   # Create the network graph
-  .mlNeuralNetworkPlotStructure(dataset, options, jaspResults, ready, purpose = "classification", position = 11)
+  .mlNeuralNetworkPlotStructure(dataset, options, jaspResults, ready, purpose = "classification", position = 12)
 
   # Decision boundaries
-  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 12, type = "neuralnet")
+  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 13, type = "neuralnet")
 }
 
 .neuralnetClassification <- function(dataset, options, jaspResults) {
@@ -231,5 +234,6 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
       result[["trainAccuracyStore"]] <- trainAccuracyStore
     }
   }
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) max.col(predict(model, newdata = data)))
   return(result)
 }

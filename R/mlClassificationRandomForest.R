@@ -48,23 +48,26 @@ mlClassificationRandomForest <- function(jaspResults, dataset, options, ...) {
   # Create the variable importance table
   .mlRandomForestTableVarImp(options, jaspResults, ready, position = 6, purpose = "classification")
 
+  # Create the shap table
+  .mlTableShap(dataset, options, jaspResults, ready, position = 7, purpose = "classification")
+
   # Create the trees vs model error plot
-  .mlRandomForestPlotError(options, jaspResults, ready, position = 7, purpose = "classification")
+  .mlRandomForestPlotError(options, jaspResults, ready, position = 8, purpose = "classification")
 
   # Create the ROC curve
-  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 8, type = "randomForest")
+  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 9, type = "randomForest")
 
   # Create the Andrews curves
-  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 9)
+  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 10)
 
   # Create the mean decrease in accuracy plot
-  .mlRandomForestPlotDecreaseAccuracy(options, jaspResults, ready, position = 10, purpose = "classification")
+  .mlRandomForestPlotDecreaseAccuracy(options, jaspResults, ready, position = 11, purpose = "classification")
 
   # Create the total increase in node purity plot
-  .mlRandomForestPlotIncreasePurity(options, jaspResults, ready, position = 11, purpose = "classification")
+  .mlRandomForestPlotIncreasePurity(options, jaspResults, ready, position = 12, purpose = "classification")
 
   # Decision boundaries
-  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 12, type = "randomForest")
+  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 13, type = "randomForest")
 }
 
 .randomForestClassification <- function(dataset, options, jaspResults) {
@@ -161,5 +164,6 @@ mlClassificationRandomForest <- function(jaspResults, dataset, options, ...) {
     result[["valid"]] <- validationSet
     result[["oobValidStore"]] <- oobAccuracy
   }
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data, type = "prob"))
   return(result)
 }

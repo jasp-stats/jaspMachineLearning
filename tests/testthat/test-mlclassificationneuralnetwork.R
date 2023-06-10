@@ -23,6 +23,9 @@ options$testSetIndicatorVariable <- ""
 options$threshold <- 0.05
 options$validationDataManual <- 0.2
 options$validationMeasures <- TRUE
+options$shapTable <- TRUE
+options$shapFrom <- 1
+options$shapTo <- 5
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClassificationNeuralNetwork", "iris.csv", options)
 
@@ -74,4 +77,16 @@ test_that("Evaluation Metrics table results match", {
         8, 1, "<unicode><unicode><unicode>", 1, 1, 1, 0, 0, 0, 0, "virginica",
         1, 1, 1, 1, 0.4, 12, 1, "<unicode><unicode><unicode>", 1, 0.897727272727273,
         1, 0, 0, 0, 0, "Average / Total", 1, 1, 1, 1, 1, 30, 1, "<unicode><unicode><unicode>"))
+})
+
+test_that("Feature Contributions to Predictions for Test Set Cases table results match", {
+	table <- results[["results"]][["shapTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(-0.883333333333333, -0.133333333333333, 0, 0, 2.01666666666667,
+			 1, "setosa (1)", -0.875, -0.141666666666667, 0, 0, 2.01666666666667,
+			 2, "setosa (1)", -0.858333333333333, -0.158333333333333, 0,
+			 0, 2.01666666666667, 3, "setosa (1)", -0.883333333333333, -0.133333333333333,
+			 0, 0, 2.01666666666667, 4, "setosa (1)", -0.833333333333333,
+			 -0.183333333333333, 0, 0, 2.01666666666667, 5, "setosa (1)"
+			))
 })
