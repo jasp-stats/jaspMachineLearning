@@ -32,6 +32,9 @@ mlPrediction <- function(jaspResults, dataset, options, ...) {
 
   # Add predicted outcomes to data set
   .mlPredictionsAddPredictions(model, dataset, options, jaspResults, ready)
+
+  # Create the shap table
+  .mlTableShap(dataset, options, jaspResults, ready, position = 3, purpose = "prediction", model)
 }
 
 is.jaspMachineLearning <- function(x) {
@@ -325,7 +328,7 @@ is.jaspMachineLearning <- function(x) {
     return()
   }
   table <- createJaspTable(gettext("Predictions for New Data"))
-  table$dependOn(options = c("predictors", "loadPath", "predictionsTable", "addPredictors", "scaleVariables", "fromIndex", "toIndex"))
+  table$dependOn(options = c("predictors", "loadPath", "predictionsTable", "predictionsTableFeatures", "scaleVariables", "fromIndex", "toIndex"))
   table$position <- position
   table$addColumnInfo(name = "row", title = gettext("Row"), type = "integer")
   if (!is.null(model)) {

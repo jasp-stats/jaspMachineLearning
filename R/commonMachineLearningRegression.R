@@ -410,6 +410,7 @@
     model <- regressionResult[["model"]]
     model[["jaspVars"]] <- decodeColNames(options[["predictors"]])
     model[["jaspVersion"]] <- .baseCitation
+    model[["explainer"]] <- regressionResult[["explainer"]]
     model <- .decodeJaspMLobject(model)
     class(model) <- c(class(regressionResult[["model"]]), "jaspRegression", "jaspMachineLearning")
     saveRDS(model, file = options[["savePath"]])
@@ -631,11 +632,19 @@
   }
 }
 
-.mlTableShap <- function(dataset, options, jaspResults, ready, position, purpose) {
+.mlTableShap <- function(dataset, options, jaspResults, ready, position, purpose, model = NULL) {
   if (!is.null(jaspResults[["tableShap"]]) || !options[["tableShap"]]) {
     return()
   }
-  table <- createJaspTable(title = "Additive Explanations for Predictions of Test Set Cases")
+  title <- if (purpose == "prediction") gettext("Additive Explanations for Predictions of New Cases") else gettext("Additive Explanations for Predictions of Test Cases")
+  table <- createJaspTable(title = title)
+  if (!is.null(model) && purpose == "prediction") {
+    if (inherits(model, "jaspRegression")) {
+      purpose <- "regression"
+    } else {
+      purpose <- "classification"
+    }
+  }
   table$position <- position
   table$dependOn(options = c(.mlRegressionDependencies(options), "tableShap", "shapFrom", "shapTo"))
   table$addColumnInfo(name = "id", title = gettext("Case"), type = "integer")
@@ -648,18 +657,18 @@
   for (i in options[["predictors"]]) {
     table$addColumnInfo(name = i, title = i, type = "number")
   }
-  message <- switch(purpose,
-    "regression" = gettext("Displayed values represent feature contributions to the predicted value without features (column 'Base')."),
-    "classification" = gettext("Displayed values represent feature contributions to the predicted class probability without features (column 'Base').")
-  )
-  table$addFootnote(message)
   jaspResults[["tableShap"]] <- table
   if (!ready) {
     return()
   }
-  result <- switch(purpose, "regression" = jaspResults[["regressionResult"]]$object, "classification" = jaspResults[["classificationResult"]]$object)
-  explainer <- result[["explainer"]]
-  x_test <- result[["test"]][, options[["predictors"]]]
+  if (is.null(model)) {
+    result <- switch(purpose, "regression" = jaspResults[["regressionResult"]]$object, "classification" = jaspResults[["classificationResult"]]$object)
+    explainer <- result[["explainer"]]
+    x_test <- result[["test"]][, options[["predictors"]]]
+  } else {
+    explainer <- model[["explainer"]]
+    x_test <- dataset[, options[["predictors"]]]
+  }
   from <- min(c(options[["shapFrom"]], options[["shapTo"]] - 1, nrow(x_test)))
   to <- min(c(options[["shapTo"]], nrow(x_test)))
   out <- as.data.frame(matrix(NA, nrow = length(from:to), ncol = 3 + length(options[["predictors"]])))
@@ -680,4 +689,9 @@
     }
   }
   table$setData(out)
+  message <- switch(purpose,
+    "regression" = gettext("Displayed values represent feature contributions to the predicted value without features (column 'Base') for the test set."),
+    "classification" = gettext("Displayed values represent feature contributions to the predicted class probability without features (column 'Base') for the test set.")
+  )
+  table$addFootnote(message)
 }

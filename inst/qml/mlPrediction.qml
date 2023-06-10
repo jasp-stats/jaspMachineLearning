@@ -109,6 +109,8 @@ Form
 				}
 			}
 		}
+
+		ML.Shap { }
 	}
 
 	ML.ExportResults {
