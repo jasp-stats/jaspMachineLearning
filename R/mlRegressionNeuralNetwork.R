@@ -46,17 +46,20 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   # Create the network weights table
   .mlNeuralNetworkTableWeights(dataset, options, jaspResults, ready, purpose = "regression", position = 4)
 
+  # Create the shap table
+  .mlRegressionTableShap(dataset, options, jaspResults, ready, position = 5, type = "nn")
+
   # Create the error plot
-  .mlNeuralNetworkPlotError(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
+  .mlNeuralNetworkPlotError(dataset, options, jaspResults, ready, position = 6, purpose = "regression")
 
   # Create the predicted performance plot
-  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 6)
+  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 7)
 
   # Create the activation function plot
-  .mlNeuralNetworkPlotActivationFunction(options, jaspResults, position = 7)
+  .mlNeuralNetworkPlotActivationFunction(options, jaspResults, position = 8)
 
   # Create the network graph
-  .mlNeuralNetworkPlotStructure(dataset, options, jaspResults, ready, purpose = "regression", position = 8)
+  .mlNeuralNetworkPlotStructure(dataset, options, jaspResults, ready, purpose = "regression", position = 9)
 }
 
 .getNeuralNetworkStructure <- function(options) {

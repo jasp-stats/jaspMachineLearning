@@ -40,10 +40,13 @@ mlRegressionSvm <- function(jaspResults, dataset, options, state = NULL) {
   .mlRegressionTableMetrics(dataset, options, jaspResults, ready, position = 3)
 
   # Create the support vectors table
-  .mlSvmTableSupportVectors(options, jaspResults, ready, position = 3, purpose = "regression")
+  .mlSvmTableSupportVectors(options, jaspResults, ready, position = 4, purpose = "regression")
+
+  # Create the shap table
+  .mlRegressionTableShap(dataset, options, jaspResults, ready, position = 5, type = "svm")
 
   # Create the predicted performance plot
-  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 5)
+  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 6)
 }
 
 .svmRegression <- function(dataset, options, jaspResults, ready) {
@@ -77,6 +80,7 @@ mlRegressionSvm <- function(jaspResults, dataset, options, state = NULL) {
   result[["testMSE"]] <- mean((testPredictions - testSet[, options[["target"]]])^2)
   result[["ntrain"]] <- nrow(trainingSet)
   result[["train"]] <- trainingSet
+  result[["test"]] <- testSet
   result[["ntest"]] <- nrow(testSet)
   result[["testReal"]] <- testSet[, options[["target"]]]
   result[["testPred"]] <- testPredictions

@@ -43,7 +43,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   .mlBoostingTableRelInf(options, jaspResults, ready, position = 4, purpose = "regression")
 
   # Create the shap table
-  .mlRegressionTableShap(dataset, options, jaspResults, ready, position = 6)
+  .mlRegressionTableShap(dataset, options, jaspResults, ready, position = 6, type = "boosting")
 
   # Create the OOB improvement plot
   .mlBoostingPlotOobImprovement(options, jaspResults, ready, position = 5, purpose = "regression")
@@ -144,7 +144,6 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   result[["test"]] <- testSet
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["values"]] <- dataPredictions
-  result[["shap"]] <- .mlShapAnalysis(options, trainingFit, trainingSet, testSet, "gbm")
   if (options[["modelOptimization"]] != "manual") {
     result[["validMSE"]] <- mean((validationPredictions - validationSet[, options[["target"]]])^2)
     result[["nvalid"]] <- nrow(validationSet)

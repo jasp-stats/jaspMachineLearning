@@ -15,6 +15,7 @@ Imports:
   AUC,
   cluster,
   colorspace,
+  DALEX,
   dbscan,
   e1071,
   fpc,
@@ -38,8 +39,7 @@ Imports:
   rpart (>= 4.1.16),
   ROCR,
   Rtsne,
-  signal,
-  shapr
+  signal
 Suggests:
   testthat
 Remotes:

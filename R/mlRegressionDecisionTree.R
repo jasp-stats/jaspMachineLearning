@@ -45,11 +45,14 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   # Create the splits table
   .mlDecisionTreeTableSplits(options, jaspResults, ready, position = 5, purpose = "regression")
 
+  # Create the shap table
+  .mlRegressionTableShap(dataset, options, jaspResults, ready, position = 6, type = "rpart")
+
   # Create the predicted performance plot
-  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 6)
+  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 7)
 
   # Create the decision tree plot
-  .mlDecisionTreePlotTree(dataset, options, jaspResults, ready, position = 7, purpose = "regression")
+  .mlDecisionTreePlotTree(dataset, options, jaspResults, ready, position = 8, purpose = "regression")
 }
 
 .decisionTreeRegression <- function(dataset, options, jaspResults, ready) {
@@ -83,6 +86,7 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   result[["testMSE"]] <- mean((testPredictions - testSet[, options[["target"]]])^2)
   result[["ntrain"]] <- nrow(trainingSet)
   result[["train"]] <- trainingSet
+  result[["test"]] <- testSet
   result[["ntest"]] <- nrow(testSet)
   result[["testReal"]] <- testSet[, options[["target"]]]
   result[["testPred"]] <- testPredictions

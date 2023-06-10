@@ -43,7 +43,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   .mlRandomForestTableVarImp(options, jaspResults, ready, position = 4, purpose = "regression")
 
   # Create the shap table
-  .mlRegressionTableShap(dataset, options, jaspResults, ready, position = 5)
+  .mlRegressionTableShap(dataset, options, jaspResults, ready, position = 5, type = "randomForest")
 
   # Create the trees vs model error plot
   .mlRandomForestPlotError(options, jaspResults, ready, position = 6, purpose = "regression")
@@ -151,7 +151,6 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
     result[["valid"]] <- validationSet
     result[["rfit_valid"]] <- validationFit
   }
-  result[["shap"]] <- .mlShapAnalysis(options, trainingFit, trainingSet, testSet, "randomForest")
   return(result)
 }
 

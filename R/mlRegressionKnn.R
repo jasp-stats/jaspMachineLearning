@@ -42,11 +42,14 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
   # Create the evaluation metrics table
   .mlRegressionTableMetrics(dataset, options, jaspResults, ready, position = 4)
 
+  # Create the shap table
+  .mlRegressionTableShap(dataset, options, jaspResults, ready, position = 5, type = "knn")
+
   # Create the mean squared error plot
-  .mlKnnPlotError(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
+  .mlKnnPlotError(dataset, options, jaspResults, ready, position = 6, purpose = "regression")
 
   # Create the predicted performance plot
-  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 6)
+  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 7)
 }
 
 .knnRegression <- function(dataset, options, jaspResults, ready) {
@@ -156,6 +159,8 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
   result[["testMSE"]] <- mean((testFit$fitted.values - testSet[, options[["target"]]])^2)
   result[["ntrain"]] <- nrow(trainingSet)
   result[["ntest"]] <- nrow(testSet)
+  result[["train"]] <- trainingSet
+  result[["test"]] <- testSet
   result[["testReal"]] <- testSet[, options[["target"]]]
   result[["testPred"]] <- testFit$fitted.values
   result[["testIndicatorColumn"]] <- testIndicatorColumn

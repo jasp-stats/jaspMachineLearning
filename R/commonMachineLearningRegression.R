@@ -631,19 +631,7 @@
   }
 }
 
-.mlShapAnalysis <- function(options, fit, trainingSet, testSet, type) {
-  predict_model.gbm <- gbm:::predict.gbm
-  predict_model.randomForest <- randomForest:::predict.randomForest
-  class(fit) <- type
-  explainer <- shapr::shapr(trainingSet[, options[["predictors"]]], fit)
-  p0 <- mean(trainingSet[, options[["target"]]])
-  explanation <- shapr::explain(x = testSet, explainer, approach = "empirical", prediction_zero = p0)
-  out <- cbind(explanation[["p"]], explanation[["dt"]])
-  colnames(out) <- c("pred", "avg", options[["predictors"]])
-  return(out)
-}
-
-.mlRegressionTableShap <- function(dataset, options, jaspResults, ready, position) {
+.mlRegressionTableShap <- function(dataset, options, jaspResults, ready, position, type) {
   if (!is.null(jaspResults[["shapTable"]]) || !options[["shapTable"]]) {
     return()
   }
@@ -659,13 +647,35 @@
   if (!ready) {
     return()
   }
+
+  p_function <- switch(type,
+    "randomForest" = function(model, data) predict(model, newdata = data, type = "response"),
+    "svm" = function(model, data) predict(model, newdata = data),
+    "boosting" = function(model, data) predict(model, newdata = data, n.trees = model$n.trees),
+    "rpart" = function(model, data) predict(model, newdata = data),
+    "nn" = function(model, data) predict(model, newdata = data),
+	"knn" = function(model, data) predict(model$predictive, newdata = data)
+  )
+
   regressionResult <- jaspResults[["regressionResult"]]$object
-  out <- regressionResult[["shap"]]
-  table$addFootnote(gettextf("The numbers for the features represent their contribution to the predicted value without features (%1$s).", round(unique(out[, 2]), 3)))
-  out <- out[order(-out[["pred"]]), ]
-  out <- cbind(id = seq_len(nrow(out)), out[, -2])
-  from <- min(c(options[["shapFrom"]], options[["shapTo"]] - 1, nrow(out)))
-  to <- min(c(options[["shapTo"]], nrow(out)))
-  out <- out[from:to, ]
+  x_train <- regressionResult[["train"]][, options[["predictors"]]]
+  y_train <- regressionResult[["train"]][, options[["target"]]]
+  x_test <- regressionResult[["test"]][, options[["predictors"]]]
+
+  from <- min(c(options[["shapFrom"]], options[["shapTo"]] - 1, nrow(x_test)))
+  to <- min(c(options[["shapTo"]], nrow(x_test)))
+  out <- as.data.frame(matrix(NA, nrow = length(from:to), ncol = length(options[["predictors"]]) + 2))
+  colnames(out) <- c("id", "pred", options[["predictors"]])
+  explainer <- DALEX::explain(regressionResult[["model"]], data = x_train, y = y_train, predict_function = p_function)
+  for (i in seq_along(from:to)) {
+    shap <- DALEX::predict_parts(explainer, new_observation = x_test[(from:to)[i], ])
+    row <- c((from:to)[i], shap[which(shap[["variable"]] == "prediction"), which(colnames(shap) == "contribution")])
+	for (j in options[["predictors"]]) {
+		row <- c(row, shap[which(shap[["variable_name"]] == j), which(colnames(shap) == "contribution")])
+	}
+    out[i, ] <- row
+  }
+  avg <- shap[which(shap[["variable"]] == "intercept"), which(colnames(shap) == "contribution")]
+  table$addFootnote(gettextf("The numbers for the features represent their contribution to the predicted value without features (%1$s).", round(avg, 3)))
   table$setData(out)
 }

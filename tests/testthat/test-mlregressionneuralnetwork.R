@@ -22,6 +22,9 @@ options$testSetIndicatorVariable <- ""
 options$threshold <- 0.05
 options$validationDataManual <- 0.2
 options$validationMeasures <- TRUE
+options$shapTable <- TRUE
+options$shapFrom <- 1
+options$shapTo <- 5
 set.seed(1)
 results <- jaspTools::runAnalysis("mlRegressionNeuralNetwork", "iris.csv", options)
 
@@ -50,4 +53,16 @@ test_that("Evaluation Metrics table results match", {
 	jaspTools::expect_equal_tables(table,
 		list("MSE", 0.424, "RMSE", 0.651, "MAE / MAD", 0.515, "MAPE", "87.06%", "R<unicode><unicode>",
 			 0.591))
+})
+
+test_that("Feature Contribution to Predictions in the Test Set table results match", {
+	table <- results[["results"]][["shapTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(-0.320874456044422, 5.70882938536069e-05, 5.43570184321823e-06,
+			 1, 0.00103898083329435, -0.320864287870447, 9.64880480532788e-05,
+			 1.916986202931e-05, 2, 0.00110228292165438, -0.32085021538794,
+			 3.23716117410916e-05, 1.42235779519002e-05, 3, 0.00104729268377171,
+			 -0.320881902467681, 4.52598266686044e-05, 3.1853238832855e-05,
+			 4, 0.00104612347983946, -0.320830391213794, 0.000161871241736764,
+			 6.14846902043651e-05, 5, 0.00124387760016624))
 })

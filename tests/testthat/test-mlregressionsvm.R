@@ -20,6 +20,9 @@ options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""
 options$validationDataManual <- 0.2
+options$shapTable <- TRUE
+options$shapFrom <- 1 
+options$shapTo <- 5
 set.seed(1)
 results <- jaspTools::runAnalysis("mlRegressionSvm", "iris.csv", options)
 
@@ -166,4 +169,15 @@ test_that("Evaluation Metrics table results match", {
 	jaspTools::expect_equal_tables(table,
 		list("MSE", 0.114, "RMSE", 0.338, "MAE / MAD", 0.284, "MAPE", "84.57%", "R<unicode><unicode>",
 			 0.853))
+})
+
+test_that("Feature Contribution to Predictions in the Test Set table results match", {
+	table <- results[["results"]][["shapTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(-1.93610069115689, 0.60855460628033, 0.436308073959843, 1, -0.892514873070661,
+			 -1.85324331493049, 0.608554606280327, 0.516487199342941, 2,
+			 -0.729478371461167, -1.77038593870409, 0.608554606280329, 0.275949823193586,
+			 3, -0.887158371384118, -2.0189580673833, 0.48633443430771, 0.67684545010918,
+			 4, -0.857055045120346, -1.68752856247769, 0.547444520294017,
+			 0.596666324726061, 5, -0.544694579611556))
 })
