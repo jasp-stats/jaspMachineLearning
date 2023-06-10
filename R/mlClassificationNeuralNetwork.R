@@ -234,6 +234,6 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
       result[["trainAccuracyStore"]] <- trainAccuracyStore
     }
   }
-  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) max.col(predict(model, newdata = data)))
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) scales::rescale(x = predict(model, newdata = data), from = range(predict(model, newdata = data)), to = c(0, 1)))
   return(result)
 }
