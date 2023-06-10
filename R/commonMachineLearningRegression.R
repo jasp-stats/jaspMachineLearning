@@ -648,6 +648,11 @@
   for (i in options[["predictors"]]) {
     table$addColumnInfo(name = i, title = i, type = "number")
   }
+  message <- switch(purpose,
+    "regression" = gettext("Feature values represent contributions to the predicted value without features (base)."),
+    "classification" = gettext("Feature values represent contributions to the predicted class probability without features (base).")
+  )
+  table$addFootnote(message)
   jaspResults[["shapTable"]] <- table
   if (!ready) {
     return()

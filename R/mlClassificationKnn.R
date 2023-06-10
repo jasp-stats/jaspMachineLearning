@@ -187,6 +187,6 @@ mlClassificationKnn <- function(jaspResults, dataset, options, ...) {
       result[["trainAccuracyStore"]] <- trainAccuracyStore
     }
   }
-  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) as.numeric(predict(model$predictive, newdata = data)))
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model$predictive, newdata = data, type = "prob"))
   return(result)
 }

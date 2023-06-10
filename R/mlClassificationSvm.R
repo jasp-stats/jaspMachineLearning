@@ -101,6 +101,6 @@ mlClassificationSvm <- function(jaspResults, dataset, options, ...) {
   result[["test"]] <- testSet
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["classes"]] <- dataPredictions
-  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) as.numeric(predict(model, newdata = data, probability = TRUE)))
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) attr(predict(model, newdata = data, probability = TRUE), "probabilities"))
   return(result)
 }
