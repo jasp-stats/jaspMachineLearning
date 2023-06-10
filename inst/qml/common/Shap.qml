@@ -23,7 +23,7 @@ import JASP.Widgets								1.0
 
 CheckBox
 {
-	text:								qsTr("Additive explanations")
+	text:								qsTr("Explain predictions")
 	name:								"tableShap"
 	id:									tableShap
 
