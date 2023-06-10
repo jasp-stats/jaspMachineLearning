@@ -63,17 +63,20 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   # Create the multicollinearity table
   .mlClassificationLdaTableMulticollinearity(dataset, options, jaspResults, ready, position = 11)
 
+  # Create the shap table
+  .mlTableShap(dataset, options, jaspResults, ready, position = 12, purpose = "classification")
+
   # Create the ROC curve
-  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 12, type = "lda")
+  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 13, type = "lda")
 
   # Create the Andrews curves
-  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 13)
+  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 14)
 
   # Create the LDA matrix plot
-  .mlClassificationLdaPlotDiscriminants(dataset, options, jaspResults, ready, position = 14)
+  .mlClassificationLdaPlotDiscriminants(dataset, options, jaspResults, ready, position = 15)
 
   # Decision boundaries
-  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 15, type = "lda")
+  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 16, type = "lda")
 }
 
 # Error handling
@@ -134,6 +137,7 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   result[["test"]] <- testSet
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["classes"]] <- predict(fit, newdata = dataset)$class
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) as.numeric(predict(model, newdata = data)$class))
   return(result)
 }
 

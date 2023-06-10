@@ -45,20 +45,23 @@ mlClassificationKnn <- function(jaspResults, dataset, options, ...) {
   # Create the validation measures table
   .mlClassificationTableMetrics(dataset, options, jaspResults, ready, position = 5)
 
+  # Create the shap table
+  .mlTableShap(dataset, options, jaspResults, ready, position = 6, purpose = "classification")
+
   # Create the weights plot
-  .mlKnnPlotWeights(options, jaspResults, position = 6)
+  .mlKnnPlotWeights(options, jaspResults, position = 7)
 
   # Create the classification error plot
-  .mlKnnPlotError(dataset, options, jaspResults, ready, position = 7, purpose = "classification")
+  .mlKnnPlotError(dataset, options, jaspResults, ready, position = 8, purpose = "classification")
 
   # Create the ROC curve
-  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 8, type = "knn")
+  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 9, type = "knn")
 
   # Create the Andrews curves
-  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 9)
+  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 10)
 
   # Decision boundaries
-  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 10, type = "knn")
+  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 11, type = "knn")
 }
 
 .knnClassification <- function(dataset, options, jaspResults) {
@@ -184,5 +187,6 @@ mlClassificationKnn <- function(jaspResults, dataset, options, ...) {
       result[["trainAccuracyStore"]] <- trainAccuracyStore
     }
   }
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) as.numeric(predict(model$predictive, newdata = data)))
   return(result)
 }

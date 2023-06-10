@@ -30,6 +30,9 @@ options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""
 options$validationDataManual <- 0.2
 options$validationMeasures <- TRUE
+options$shapTable <- TRUE
+options$shapFrom <- 1
+options$shapTo <- 5
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClassificationLda", "wine.csv", options)
 
@@ -180,4 +183,20 @@ test_that("Evaluation Metrics table results match", {
       1, 1, 1, 0, 0, 0, 0, 3, 1, 1, 1, 1, 0.228571428571429, 8, 1,
       "<unicode><unicode><unicode>", 1, 0.993197278911565, 1, 0, 0,
       0, 0, "Average / Total", 1, 1, 1, 1, 1, 35, 1, "<unicode><unicode><unicode>"))
+})
+
+test_that("Feature Contributions to Predictions for Test Set Cases table results match", {
+	table <- results[["results"]][["shapTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(-0.0769230769230769, -0.048951048951049, -0.363636363636364, -0.0629370629370629,
+			 -0.272727272727273, -0.132867132867133, -0.055944055944056,
+			 0, 0, -0.00699300699300709, 0, 0, 0.0629370629370629, 1.95804195804196,
+			 1, "1 (1)", 0, -0.125874125874126, 0, 0, -0.0979020979020979,
+			 -0.41958041958042, 0, 0, 0, 0, 0, 0, -0.314685314685315, 1.95804195804196,
+			 2, "1 (1)", 0, -0.0419580419580419, 0, 0, 0, -0.244755244755245,
+			 0, 0, 0, 0, 0, 0, -0.671328671328671, 1.95804195804196, 3, "1 (1)",
+			 0, 0, 0, 0, 0, -0.482517482517482, 0, 0, 0, 0, 0, 0, -0.475524475524476,
+			 1.95804195804196, 4, "1 (1)", 0, -0.0279720279720279, 0, -0.013986013986014,
+			 0, -0.615384615384615, 0, 0, 0, 0, 0, 0, -0.300699300699301,
+			 1.95804195804196, 5, "1 (1)"))
 })
