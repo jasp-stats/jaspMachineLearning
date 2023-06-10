@@ -647,35 +647,32 @@
   if (!ready) {
     return()
   }
-
-  p_function <- switch(type,
+  regressionResult <- jaspResults[["regressionResult"]]$object
+  x_train <- regressionResult[["train"]][, options[["predictors"]]]
+  y_train <- regressionResult[["train"]][, options[["target"]]]
+  x_test <- regressionResult[["test"]][, options[["predictors"]]]
+  predict_function <- switch(type,
     "randomForest" = function(model, data) predict(model, newdata = data, type = "response"),
     "svm" = function(model, data) predict(model, newdata = data),
     "boosting" = function(model, data) predict(model, newdata = data, n.trees = model$n.trees),
     "rpart" = function(model, data) predict(model, newdata = data),
     "nn" = function(model, data) predict(model, newdata = data),
-	"knn" = function(model, data) predict(model$predictive, newdata = data)
+    "knn" = function(model, data) predict(model$predictive, newdata = data)
   )
-
-  regressionResult <- jaspResults[["regressionResult"]]$object
-  x_train <- regressionResult[["train"]][, options[["predictors"]]]
-  y_train <- regressionResult[["train"]][, options[["target"]]]
-  x_test <- regressionResult[["test"]][, options[["predictors"]]]
-
   from <- min(c(options[["shapFrom"]], options[["shapTo"]] - 1, nrow(x_test)))
   to <- min(c(options[["shapTo"]], nrow(x_test)))
   out <- as.data.frame(matrix(NA, nrow = length(from:to), ncol = length(options[["predictors"]]) + 2))
   colnames(out) <- c("id", "pred", options[["predictors"]])
-  explainer <- DALEX::explain(regressionResult[["model"]], data = x_train, y = y_train, predict_function = p_function)
+  explainer <- DALEX::explain(regressionResult[["model"]], data = x_train, y = y_train, predict_function = predict_function)
   for (i in seq_along(from:to)) {
     shap <- DALEX::predict_parts(explainer, new_observation = x_test[(from:to)[i], ])
     row <- c((from:to)[i], shap[which(shap[["variable"]] == "prediction"), which(colnames(shap) == "contribution")])
-	for (j in options[["predictors"]]) {
-		row <- c(row, shap[which(shap[["variable_name"]] == j), which(colnames(shap) == "contribution")])
-	}
+    for (j in options[["predictors"]]) {
+      row <- c(row, shap[which(shap[["variable_name"]] == j), which(colnames(shap) == "contribution")])
+    }
     out[i, ] <- row
   }
   avg <- shap[which(shap[["variable"]] == "intercept"), which(colnames(shap) == "contribution")]
-  table$addFootnote(gettextf("The numbers for the features represent their contribution to the predicted value without features (%1$s).", round(avg, 3)))
+  table$addFootnote(gettextf("Feature values represent their contribution to the predicted value without features (%1$s).", round(avg, 3)))
   table$setData(out)
 }
