@@ -26,7 +26,7 @@ options$validationDataManual <- 0.2
 options$validationMeasures <- TRUE
 options$predictionsColumn <- ""
 options$shapTable <- TRUE
-options$shapFrom <- 1 
+options$shapFrom <- 1
 options$shapTo <- 5
 set.seed(1)
 results <- jaspTools::runAnalysis("mlRegressionBoosting", "wine.csv", options)

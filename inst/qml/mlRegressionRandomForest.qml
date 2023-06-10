@@ -64,37 +64,6 @@ Form
 
 		CheckBox
 		{
-			text:								qsTr("Explain predictions (SHAP)")
-			name:								"tableShap"
-			id:									tableShap
-
-			Row
-			{	
-				spacing:							5 * preferencesModel.uiScale
-				enabled:							tableShap.checked
-			
-				IntegerField
-				{
-					name:							"shapFrom"
-					text:							qsTr("From")
-					defaultValue:					1
-					min:							1
-					max:							dataSetModel.rowCount()
-				}
-
-				IntegerField
-				{
-					name:							"shapTo"
-					text:							qsTr("to")
-					defaultValue:					20
-					max:							dataSetModel.rowCount()
-					min:							1
-				}
-			}
-		}
-
-		CheckBox
-		{
 			name:								"variableImportanceTable"
 			text:								qsTr("Feature importance")
 		}
@@ -140,6 +109,8 @@ Form
 	{
 		enabled:								predictors.count > 1 && target.count > 0
 	}
+
+	ML.XAI { }
 
 	ML.DataSplit
 	{

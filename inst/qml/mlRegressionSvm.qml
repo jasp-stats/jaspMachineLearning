@@ -92,6 +92,8 @@ Form
 		enabled:								predictors.count > 0 && target.count > 0
 	}
 
+	ML.XAI { }
+
 	ML.DataSplit
 	{
 		trainingValidationSplit:				false

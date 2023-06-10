@@ -631,7 +631,7 @@
   }
 }
 
-.mlRegressionTableShap <- function(dataset, options, jaspResults, ready, position, type) {
+.mlTableShap <- function(dataset, options, jaspResults, ready, position, purpose) {
   if (!is.null(jaspResults[["shapTable"]]) || !options[["shapTable"]]) {
     return()
   }
@@ -639,7 +639,11 @@
   table$position <- position
   table$dependOn(options = c(.mlRegressionDependencies(options), "shapTable", "shapFrom", "shapTo"))
   table$addColumnInfo(name = "id", title = "#", type = "integer")
-  table$addColumnInfo(name = "pred", title = gettext("Predicted"), type = "number")
+  if (purpose == "regression") {
+    table$addColumnInfo(name = "pred", title = gettext("Predicted"), type = "number")
+  } else {
+    table$addColumnInfo(name = "pred", title = gettext("Predicted"), type = "string")
+  }
   for (i in options[["predictors"]]) {
     table$addColumnInfo(name = i, title = i, type = "number")
   }
@@ -647,26 +651,23 @@
   if (!ready) {
     return()
   }
-  regressionResult <- jaspResults[["regressionResult"]]$object
-  x_train <- regressionResult[["train"]][, options[["predictors"]]]
-  y_train <- regressionResult[["train"]][, options[["target"]]]
-  x_test <- regressionResult[["test"]][, options[["predictors"]]]
-  predict_function <- switch(type,
-    "randomForest" = function(model, data) predict(model, newdata = data, type = "response"),
-    "svm" = function(model, data) predict(model, newdata = data),
-    "boosting" = function(model, data) predict(model, newdata = data, n.trees = model$n.trees),
-    "rpart" = function(model, data) predict(model, newdata = data),
-    "nn" = function(model, data) predict(model, newdata = data),
-    "knn" = function(model, data) predict(model$predictive, newdata = data)
-  )
+  result <- switch(purpose, "regression" = jaspResults[["regressionResult"]]$object, "classification" = jaspResults[["classificationResult"]]$object)
+  explainer <- result[["explainer"]]
+  x_test <- result[["test"]][, options[["predictors"]]]
   from <- min(c(options[["shapFrom"]], options[["shapTo"]] - 1, nrow(x_test)))
   to <- min(c(options[["shapTo"]], nrow(x_test)))
   out <- as.data.frame(matrix(NA, nrow = length(from:to), ncol = length(options[["predictors"]]) + 2))
   colnames(out) <- c("id", "pred", options[["predictors"]])
-  explainer <- DALEX::explain(regressionResult[["model"]], data = x_train, y = y_train, predict_function = predict_function)
   for (i in seq_along(from:to)) {
     shap <- DALEX::predict_parts(explainer, new_observation = x_test[(from:to)[i], ])
-    row <- c((from:to)[i], shap[which(shap[["variable"]] == "prediction"), which(colnames(shap) == "contribution")])
+    if (purpose == "regression") {
+      predicted <- shap[which(shap[["variable"]] == "prediction"), which(colnames(shap) == "contribution")]
+    } else {
+      predClass <- which.max(shap[which(shap$variable == "prediction"), "contribution"])
+      sub <- shap[which(shap$variable == "prediction"), ]
+      predicted <- strsplit(sub[predClass, "label"], split = ".", fixed = TRUE)[[1]][2]
+    }
+    row <- c((from:to)[i], predicted)
     for (j in options[["predictors"]]) {
       row <- c(row, shap[which(shap[["variable_name"]] == j), which(colnames(shap) == "contribution")])
     }

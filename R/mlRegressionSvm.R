@@ -43,7 +43,7 @@ mlRegressionSvm <- function(jaspResults, dataset, options, state = NULL) {
   .mlSvmTableSupportVectors(options, jaspResults, ready, position = 4, purpose = "regression")
 
   # Create the shap table
-  .mlRegressionTableShap(dataset, options, jaspResults, ready, position = 5, type = "svm")
+  .mlTableShap(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
 
   # Create the predicted performance plot
   .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 6)
@@ -86,6 +86,7 @@ mlRegressionSvm <- function(jaspResults, dataset, options, state = NULL) {
   result[["testPred"]] <- testPredictions
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["values"]] <- dataPredictions
+  result[["explainer"]] <- DALEX::explain(result[["model"]], data = result[["train"]][, options[["predictors"]]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data))
   return(result)
 }
 

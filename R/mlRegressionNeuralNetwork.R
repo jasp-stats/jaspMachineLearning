@@ -47,7 +47,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   .mlNeuralNetworkTableWeights(dataset, options, jaspResults, ready, purpose = "regression", position = 4)
 
   # Create the shap table
-  .mlRegressionTableShap(dataset, options, jaspResults, ready, position = 5, type = "nn")
+  .mlTableShap(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
 
   # Create the error plot
   .mlNeuralNetworkPlotError(dataset, options, jaspResults, ready, position = 6, purpose = "regression")
@@ -283,6 +283,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
       result[["trainAccuracyStore"]] <- trainErrorStore
     }
   }
+  result[["explainer"]] <- DALEX::explain(result[["model"]], data = result[["train"]][, options[["predictors"]]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data))
   return(result)
 }
 

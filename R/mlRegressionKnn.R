@@ -43,7 +43,7 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
   .mlRegressionTableMetrics(dataset, options, jaspResults, ready, position = 4)
 
   # Create the shap table
-  .mlRegressionTableShap(dataset, options, jaspResults, ready, position = 5, type = "knn")
+  .mlTableShap(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
 
   # Create the mean squared error plot
   .mlKnnPlotError(dataset, options, jaspResults, ready, position = 6, purpose = "regression")
@@ -174,6 +174,7 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
       result[["trainAccuracyStore"]] <- trainErrorStore
     }
   }
+  result[["explainer"]] <- DALEX::explain(result[["model"]], data = result[["train"]][, options[["predictors"]]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model$predictive, newdata = data))
   return(result)
 }
 

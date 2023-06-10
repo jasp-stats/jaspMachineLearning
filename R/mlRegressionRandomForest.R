@@ -43,7 +43,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   .mlRandomForestTableVarImp(options, jaspResults, ready, position = 4, purpose = "regression")
 
   # Create the shap table
-  .mlRegressionTableShap(dataset, options, jaspResults, ready, position = 5, type = "randomForest")
+  .mlTableShap(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
 
   # Create the trees vs model error plot
   .mlRandomForestPlotError(options, jaspResults, ready, position = 6, purpose = "regression")
@@ -151,6 +151,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
     result[["valid"]] <- validationSet
     result[["rfit_valid"]] <- validationFit
   }
+  result[["explainer"]] <- DALEX::explain(result[["model"]], data = result[["train"]][, options[["predictors"]]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data, type = "response"))
   return(result)
 }
 

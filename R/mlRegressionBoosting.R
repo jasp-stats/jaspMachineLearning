@@ -43,7 +43,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   .mlBoostingTableRelInf(options, jaspResults, ready, position = 4, purpose = "regression")
 
   # Create the shap table
-  .mlRegressionTableShap(dataset, options, jaspResults, ready, position = 6, type = "boosting")
+  .mlTableShap(dataset, options, jaspResults, ready, position = 6, purpose = "regression")
 
   # Create the OOB improvement plot
   .mlBoostingPlotOobImprovement(options, jaspResults, ready, position = 5, purpose = "regression")
@@ -149,6 +149,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
     result[["nvalid"]] <- nrow(validationSet)
     result[["valid"]] <- validationSet
   }
+  result[["explainer"]] <- DALEX::explain(result[["model"]], data = result[["train"]][, options[["predictors"]]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data, n.trees = model$n.trees))
   return(result)
 }
 
