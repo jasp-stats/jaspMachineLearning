@@ -86,6 +86,8 @@ Form
 			text:								qsTr("Support vectors")
 			name:								"supportVectorsTable"
 		}
+
+		ML.Shap { }
 	}
 
 	Group
@@ -140,8 +142,6 @@ Form
 	{
 		enabled:								predictors.count > 0 && target.count > 0
 	}
-
-	ML.XAI { }
 
 	ML.DataSplit
 	{

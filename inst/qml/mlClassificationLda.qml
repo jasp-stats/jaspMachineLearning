@@ -98,6 +98,8 @@ Form
 			name:								"meanTable"
 			text:								qsTr("Class means training data")
 		}
+
+		ML.Shap { }
 	}
 
 	Group
@@ -202,8 +204,6 @@ Form
 			enabled:							predictors.count > 1 && target.count > 0
 		}
 	}
-
-	ML.XAI { }
 
 	ML.DataSplit
 	{

@@ -67,6 +67,8 @@ Form
 			name:								"relativeInfluenceTable"
 			text:								qsTr("Relative influence")
 		}
+
+		ML.Shap { }
 	}
 
 	Group
@@ -109,8 +111,6 @@ Form
 	{
 		enabled:								predictors.count > 1 && target.count > 0
 	}
-
-	ML.XAI { }
 
 	ML.DataSplit
 	{

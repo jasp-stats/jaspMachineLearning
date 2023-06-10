@@ -41,6 +41,7 @@ Section
 			name:								"holdoutManual"
 			childrenOnSameRow:					true
 			text:								qsTr("Sample")
+			checked:							true
 
 			Row
 			{

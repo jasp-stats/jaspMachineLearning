@@ -75,6 +75,8 @@ Form
 			name:								"coefTable"
 			text:								qsTr("Regression coefficients")
 		}
+
+		ML.Shap { }
 	}
 
 	Group
@@ -125,8 +127,6 @@ Form
 	{
 		enabled:								predictors.count > 1 && target.count > 0
 	}
-
-	ML.XAI { }
 
 	ML.DataSplit
 	{

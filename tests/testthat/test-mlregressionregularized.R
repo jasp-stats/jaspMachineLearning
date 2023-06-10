@@ -25,7 +25,7 @@ options$validationDataManual <- 0.2
 options$validationMeasures <- TRUE
 options$predictionsColumn <- ""
 options$variableTrace <- TRUE
-options$shapTable <- TRUE
+options$tableShap <- TRUE
 options$shapFrom <- 1
 options$shapTo <- 5
 set.seed(1)
@@ -84,7 +84,7 @@ test_that("Variable Trace Plot matches", {
 
 test_that("Feature Contributions to Predictions for Test Set Cases table results match", {
 	skip("Need to figure out why this fails")
-	table <- results[["results"]][["shapTable"]][["data"]]
+	table <- results[["results"]][["tableShap"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list(-0.0535263203138902, 0.118131139348719, -0.188465210106584, 0.0672886920738429,
 			 0.159284348010254, 0.0133281374950708, 0, 0.026495172817724,

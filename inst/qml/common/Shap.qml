@@ -21,39 +21,33 @@ import QtQuick.Layouts							1.3
 import JASP.Controls							1.0
 import JASP.Widgets								1.0
 
-
-Group
+CheckBox
 {
-	title:									qsTr("Explain predictions")
+	text:								qsTr("Additive explanations")
+	name:								"tableShap"
+	id:									tableShap
 
-	CheckBox
-	{
-		text:								qsTr("Additive explanations (SHAP)")
-		name:								"tableShap"
-		id:									tableShap
+	Row
+	{	
+		spacing:						5 * preferencesModel.uiScale
+		enabled:						tableShap.checked
+	
+		IntegerField
+		{
+			name:						"shapFrom"
+			text:						qsTr("Cases")
+			defaultValue:				1
+			min:						1
+			max:						dataSetModel.rowCount()
+		}
 
-		Row
-		{	
-			spacing:							5 * preferencesModel.uiScale
-			enabled:							tableShap.checked
-		
-			IntegerField
-			{
-				name:							"shapFrom"
-				text:							qsTr("From")
-				defaultValue:					1
-				min:							1
-				max:							dataSetModel.rowCount()
-			}
-
-			IntegerField
-			{
-				name:							"shapTo"
-				text:							qsTr("to")
-				defaultValue:					20
-				max:							dataSetModel.rowCount()
-				min:							1
-			}
+		IntegerField
+		{
+			name:						"shapTo"
+			text:						qsTr("to")
+			defaultValue:				5
+			max:						dataSetModel.rowCount()
+			min:						1
 		}
 	}
 }

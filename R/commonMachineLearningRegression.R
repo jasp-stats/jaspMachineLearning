@@ -632,12 +632,12 @@
 }
 
 .mlTableShap <- function(dataset, options, jaspResults, ready, position, purpose) {
-  if (!is.null(jaspResults[["shapTable"]]) || !options[["shapTable"]]) {
+  if (!is.null(jaspResults[["tableShap"]]) || !options[["tableShap"]]) {
     return()
   }
-  table <- createJaspTable(title = "Feature Contributions to Predictions for Test Set Cases")
+  table <- createJaspTable(title = "Additive Explanations for Predictions of Test Set Cases")
   table$position <- position
-  table$dependOn(options = c(.mlRegressionDependencies(options), "shapTable", "shapFrom", "shapTo"))
+  table$dependOn(options = c(.mlRegressionDependencies(options), "tableShap", "shapFrom", "shapTo"))
   table$addColumnInfo(name = "id", title = gettext("Case"), type = "integer")
   if (purpose == "regression") {
     table$addColumnInfo(name = "pred", title = gettext("Predicted"), type = "number")
@@ -649,11 +649,11 @@
     table$addColumnInfo(name = i, title = i, type = "number")
   }
   message <- switch(purpose,
-    "regression" = gettext("Feature values represent contributions to the predicted value without features (column 'Base')."),
-    "classification" = gettext("Feature values represent contributions to the predicted class probability without features (column 'Base').")
+    "regression" = gettext("Displayed values represent feature contributions to the predicted value without features (column 'Base')."),
+    "classification" = gettext("Displayed values represent feature contributions to the predicted class probability without features (column 'Base').")
   )
   table$addFootnote(message)
-  jaspResults[["shapTable"]] <- table
+  jaspResults[["tableShap"]] <- table
   if (!ready) {
     return()
   }

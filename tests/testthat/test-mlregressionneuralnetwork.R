@@ -22,7 +22,7 @@ options$testSetIndicatorVariable <- ""
 options$threshold <- 0.05
 options$validationDataManual <- 0.2
 options$validationMeasures <- TRUE
-options$shapTable <- TRUE
+options$tableShap <- TRUE
 options$shapFrom <- 1
 options$shapTo <- 5
 set.seed(1)
@@ -57,7 +57,7 @@ test_that("Evaluation Metrics table results match", {
 
 test_that("Feature Contributions to Predictions for Test Set Cases table results match", {
 	skip("Need to figure out why this fails")
-	table <- results[["results"]][["shapTable"]][["data"]]
+	table <- results[["results"]][["tableShap"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list(-0.320874456044422, 5.70882938536069e-05, 5.43570184321823e-06,
 			 0.321850912882019, 1, 0.00103898083329435, -0.320864287870447,

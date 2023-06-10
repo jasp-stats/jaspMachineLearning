@@ -80,6 +80,8 @@ Form
 			text:								qsTr("Evaluation metrics")
 			name:								"validationMeasures"
 		}
+
+		ML.Shap { }
 	}
 
 	Group
@@ -147,8 +149,6 @@ Form
 	{
 		enabled:								predictors.count > 0 && target.count > 0
 	}
-
-	ML.XAI { }
 
 	ML.DataSplit
 	{
