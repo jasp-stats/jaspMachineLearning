@@ -157,6 +157,8 @@ Form {
 		enabled:								predictors.count > 1 && target.count > 0
 	}
 
+	ML.XAI { }
+
 	ML.DataSplit
 	{
 		leaveOneOutVisible:						false
