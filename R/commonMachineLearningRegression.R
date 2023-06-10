@@ -636,7 +636,7 @@
   if (!is.null(jaspResults[["tableShap"]]) || !options[["tableShap"]]) {
     return()
   }
-  title <- if (purpose == "prediction") gettext("Additive Explanations for Predictions of New Cases") else gettext("Additive Explanations for Predictions of Test Cases")
+  title <- if (purpose == "prediction") gettext("Additive Explanations for Predictions of New Cases") else gettext("Additive Explanations for Predictions of Test Set Cases")
   table <- createJaspTable(title = title)
   if (!is.null(model) && purpose == "prediction") {
     if (inherits(model, "jaspRegression")) {
