@@ -21,6 +21,9 @@ options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""
 options$validationDataManual <- 0.2
 options$validationMeasures <- TRUE
+options$shapTable <- TRUE
+options$shapFrom <- 1
+options$shapTo <- 5
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClassificationDecisionTree", "iris.csv", options)
 
@@ -85,3 +88,13 @@ test_that("Evaluation Metrics table results match", {
         ))
 })
 
+test_that("Feature Contributions to Predictions for Test Set Cases table results match", {
+	table <- results[["results"]][["shapTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(0.666666666666667, 0, 0, 0, 0.333333333333333, 1, "setosa (1)",
+			 0.666666666666667, 0, 0, 0, 0.333333333333333, 2, "setosa (1)",
+			 0.666666666666667, 0, 0, 0, 0.333333333333333, 3, "setosa (1)",
+			 0.666666666666667, 0, 0, 0, 0.333333333333333, 4, "setosa (1)",
+			 0.666666666666667, 0, 0, 0, 0.333333333333333, 5, "setosa (1)"
+			))
+})

@@ -51,17 +51,20 @@ mlClassificationDecisionTree <- function(jaspResults, dataset, options, ...) {
   # Create the splits table
   .mlDecisionTreeTableSplits(options, jaspResults, ready, position = 7, purpose = "classification")
 
+  # Create the shap table
+  .mlTableShap(dataset, options, jaspResults, ready, position = 8, purpose = "classification")
+
   # Create the ROC curve
-  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 8, type = "rpart")
+  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 9, type = "rpart")
 
   # Create the Andrews curves
-  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 9)
+  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 10)
 
   # Create the decision tree plot
-  .mlDecisionTreePlotTree(dataset, options, jaspResults, ready, position = 10, purpose = "classification")
+  .mlDecisionTreePlotTree(dataset, options, jaspResults, ready, position = 11, purpose = "classification")
 
   # Decision boundaries
-  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 11, type = "rpart")
+  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 12, type = "rpart")
 }
 
 .decisionTreeClassification <- function(dataset, options, jaspResults, ready) {
@@ -104,5 +107,6 @@ mlClassificationDecisionTree <- function(jaspResults, dataset, options, ...) {
   result[["test"]] <- testSet
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["classes"]] <- dataPredictions
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data, type = "prob"))
   return(result)
 }
