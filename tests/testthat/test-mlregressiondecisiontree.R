@@ -1,6 +1,6 @@
 context("Machine Learning Decision Tree Regression")
 
-options <- jaspTools::analysisOptions("mlRegressionDecisionTree")
+options <- initMlOptions("mlRegressionDecisionTree")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
 options$holdoutData <- "holdoutManual"

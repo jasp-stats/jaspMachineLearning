@@ -1,6 +1,6 @@
 context("Machine Learning Boosting Classification")
 
-options <- jaspTools::analysisOptions("mlClassificationBoosting")
+options <- initMlOptions("mlClassificationBoosting")
 options$addPredictions <- FALSE
 options$addIndicator <- FALSE
 options$andrewsCurve <- TRUE

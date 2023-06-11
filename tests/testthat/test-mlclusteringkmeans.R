@@ -1,6 +1,6 @@
 context("Machine Learning K-Means Clustering")
 
-options <- jaspTools::analysisOptions("mlClusteringKMeans")
+options <- initMlOptions("mlClusteringKMeans")
 options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
     "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
     "Hue", "Dilution", "Proline")

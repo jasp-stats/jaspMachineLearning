@@ -1,6 +1,6 @@
 context("Machine Learning Random Forest Regression")
 
-options <- jaspTools::analysisOptions("mlRegressionRandomForest")
+options <- initMlOptions("mlRegressionRandomForest")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
 options$savePath <- ""

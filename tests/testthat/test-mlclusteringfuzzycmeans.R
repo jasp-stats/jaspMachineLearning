@@ -1,6 +1,6 @@
 context("Machine Learning Fuzzy C-Means Clustering")
 
-options <- jaspTools::analysisOptions("mlClusteringFuzzyCMeans")
+options <- initMlOptions("mlClusteringFuzzyCMeans")
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
 options$tableClusterEvaluationMetrics <- TRUE

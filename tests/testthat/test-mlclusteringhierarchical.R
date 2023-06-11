@@ -1,6 +1,6 @@
 context("Machine Learning Hierarchical Clustering")
 
-options <- jaspTools::analysisOptions("mlClusteringHierarchical")
+options <- initMlOptions("mlClusteringHierarchical")
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
 options$tableClusterEvaluationMetrics <- TRUE

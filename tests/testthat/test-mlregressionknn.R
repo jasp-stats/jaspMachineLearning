@@ -1,6 +1,6 @@
 context("Machine Learning KNN Regression")
 
-options <- jaspTools::analysisOptions("mlRegressionKnn")
+options <- initMlOptions("mlRegressionKnn")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
 options$savePath <- ""

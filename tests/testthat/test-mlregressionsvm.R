@@ -1,6 +1,6 @@
 context("Machine Learning SVM Regression")
 
-options <- jaspTools::analysisOptions("mlRegressionSvm")
+options <- initMlOptions("mlRegressionSvm")
 options$target <- "Sepal.Length"
 options$predictors <- c("Sepal.Width", "Petal.Length", "Petal.Width")
 options$validationMeasures <- TRUE

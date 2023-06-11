@@ -1,6 +1,6 @@
 context("Machine Learning Neural Network Regression")
 
-options <- jaspTools::analysisOptions("mlRegressionNeuralNetwork")
+options <- initMlOptions("mlRegressionNeuralNetwork")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
 options$algorithm <- "backprop"

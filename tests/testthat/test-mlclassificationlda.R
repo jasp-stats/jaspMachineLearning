@@ -1,6 +1,6 @@
 context("Machine Learning LDA Classification")
 
-options <- jaspTools::analysisOptions("mlClassificationLda")
+options <- initMlOptions("mlClassificationLda")
 options$addPredictions <- FALSE
 options$addIndicator <- FALSE
 options$andrewsCurve <- TRUE

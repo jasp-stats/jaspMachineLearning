@@ -1,6 +1,6 @@
 context("Machine Learning KNN Classification")
 
-options <- jaspTools::analysisOptions("mlClassificationKnn")
+options <- initMlOptions("mlClassificationKnn")
 options$addPredictions <- FALSE
 options$addIndicator <- FALSE
 options$andrewsCurve <- TRUE

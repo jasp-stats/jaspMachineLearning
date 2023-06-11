@@ -1,6 +1,6 @@
 context("Machine Learning Neural Network Classification")
 
-options <- jaspTools::analysisOptions("mlClassificationNeuralNetwork")
+options <- initMlOptions("mlClassificationNeuralNetwork")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
 options$algorithm <- "backprop"

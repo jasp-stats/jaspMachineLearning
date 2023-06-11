@@ -1,6 +1,6 @@
 context("Machine Learning Boosting Regression")
 
-options <- jaspTools::analysisOptions("mlRegressionBoosting")
+options <- initMlOptions("mlRegressionBoosting")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
 options$featureImportanceTable <- TRUE

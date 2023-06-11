@@ -1,6 +1,6 @@
 context("Machine Learning SVM Classification")
 
-options <- jaspTools::analysisOptions("mlClassificationSvm")
+options <- initMlOptions("mlClassificationSvm")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
 options$classProportionsTable <- TRUE

@@ -1,6 +1,6 @@
 context("Machine Learning Decision Tree Classification")
 
-options <- jaspTools::analysisOptions("mlClassificationDecisionTree")
+options <- initMlOptions("mlClassificationDecisionTree")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
 options$classProportionsTable <- TRUE

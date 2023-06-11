@@ -1,6 +1,6 @@
 context("Machine Learning Regularized Linear Regression")
 
-options <- jaspTools::analysisOptions("mlRegressionRegularized")
+options <- initMlOptions("mlRegressionRegularized")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
 options$coefTable <- TRUE
