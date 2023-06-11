@@ -34,7 +34,7 @@ CheckBox
 	
 		IntegerField
 		{
-			name:						"shapFrom"
+			name:						"fromIndex"
 			text:						qsTr("Cases")
 			defaultValue:				1
 			min:						1
@@ -43,7 +43,7 @@ CheckBox
 
 		IntegerField
 		{
-			name:						"shapTo"
+			name:						"toIndex"
 			text:						qsTr("to")
 			defaultValue:				5
 			max:						dataSetModel.rowCount()

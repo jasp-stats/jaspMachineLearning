@@ -79,38 +79,42 @@ Form
 			label:				 				"Predictions for new data"
 			checked:							true
 
-			CheckBox
-			{
-				name:							"predictionsTableFeatures"
-				label:							"Add features"
-			}
-
 			Row
 			{	
-				spacing:							5 * preferencesModel.uiScale
-				enabled:							predictionsTable.checked
+				spacing:						5 * preferencesModel.uiScale
+				enabled:						predictionsTable.checked
 			
 				IntegerField
 				{
-					name:							"fromIndex"
-					text:							qsTr("From")
-					defaultValue:					1
-					min:							1
-					max:							dataSetModel.rowCount()
+					name:						"fromIndex"
+					text:						qsTr("Cases")
+					defaultValue:				1
+					min:						1
+					max:						dataSetModel.rowCount()
 				}
 
 				IntegerField
 				{
-					name:							"toIndex"
-					text:							qsTr("to")
-					defaultValue:					20
-					max:							dataSetModel.rowCount()
-					min:							1
+					name:						"toIndex"
+					text:						qsTr("to")
+					defaultValue:				20
+					max:						dataSetModel.rowCount()
+					min:						1
 				}
+			}
+
+			CheckBox
+			{
+				name:							"predictionsTableFeatures"
+				label:							qsTr("Add features")
 			}
 		}
 
-		ML.Shap { }
+		CheckBox
+		{
+			text:								qsTr("Explain predictions")
+			name:								"tableShap"
+		}
 	}
 
 	ML.ExportResults {
