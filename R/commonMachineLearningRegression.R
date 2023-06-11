@@ -429,7 +429,7 @@
   if (!is.null(jaspResults[["validationMeasures"]]) || !options[["validationMeasures"]]) {
     return()
   }
-  table <- createJaspTable(title = "Evaluation Metrics")
+  table <- createJaspTable(title = "Model Performance Metrics")
   table$position <- position
   table$dependOn(options = c(.mlRegressionDependencies(options), "validationMeasures"))
   table$addColumnInfo(name = "measures", title = "", type = "string")
@@ -694,4 +694,29 @@
     "classification" = gettext("Displayed values represent feature contributions to the predicted class probability without features (column 'Base') for the test set.")
   )
   table$addFootnote(message)
+}
+
+.mlTableFeatureImportance <- function(options, jaspResults, ready, position, purpose) {
+  if (!options[["featureImportanceTable"]] || !is.null(jaspResults[["featureImportanceTable"]])) {
+    return()
+  }
+  table <- createJaspTable(title = gettext("Feature Importance"))
+  table$position <- position
+  table$dependOn(options = c(.mlRegressionDependencies(), "featureImportanceTable"))
+  table$addColumnInfo(name = "predictor", title = "", type = "string")
+  table$addColumnInfo(name = "dl", title = gettext("Mean dropout loss"), type = "number")
+  table$addFootnote(gettext("Mean dropout loss is computed on the basis of 10 permutations."))
+  jaspResults[["featureImportanceTable"]] <- table
+  if (!ready) {
+    return()
+  }
+  result <- switch(purpose,
+    "regression" = jaspResults[["regressionResult"]]$object,
+    "classification" = jaspResults[["classificationResult"]]$object
+  )
+  fi <- DALEX::feature_importance(result[["explainer"]], B = 10)
+  fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
+  df <- data.frame(predictor = options[["predictors"]], dl = fi[match(options[["predictors"]], fi[["y"]]), "x"])
+  df <- df[order(-df[["dl"]]), ]
+  table$setData(df)
 }

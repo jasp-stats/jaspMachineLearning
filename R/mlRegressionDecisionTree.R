@@ -92,23 +92,26 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   result[["testPred"]] <- testPredictions
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["values"]] <- dataPredictions
-  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data))
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]][, options[["predictors"]]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data))
   return(result)
 }
 
 .mlDecisionTreeTableVarImp <- function(options, jaspResults, ready, position, purpose) {
-  if (!is.null(jaspResults[["variableImportanceTable"]]) || !options[["variableImportanceTable"]]) {
+  if (!is.null(jaspResults[["featureImportanceTable"]]) || !options[["featureImportanceTable"]]) {
     return()
   }
   table <- createJaspTable(title = gettext("Feature Importance"))
   table$position <- position
   table$dependOn(options = c(
-    "variableImportanceTable", "trainingDataManual", "scaleVariables", "target", "predictors", "seed", "setSeed",
+    "featureImportanceTable", "trainingDataManual", "scaleVariables", "target", "predictors", "seed", "setSeed",
     "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "minObservationsForSplit", "minObservationsInNode", "interactionDepth", "complexityParameter"
   ))
   table$addColumnInfo(name = "predictor", title = " ", type = "string")
   table$addColumnInfo(name = "imp", title = gettext("Relative Importance"), type = "number")
-  jaspResults[["variableImportanceTable"]] <- table
+  if (purpose == "regression") {
+    table$addColumnInfo(name = "dl", title = gettext("Mean dropout loss"), type = "number")
+  }
+  jaspResults[["featureImportanceTable"]] <- table
   if (!ready) {
     return()
   }
@@ -121,8 +124,14 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
     return()
   }
   varImpOrder <- sort(result[["model"]][["variable.importance"]], decreasing = TRUE)
-  table[["predictor"]] <- as.character(names(varImpOrder))
+  vars <- as.character(names(varImpOrder))
+  table[["predictor"]] <- vars
   table[["imp"]] <- as.numeric(varImpOrder) / sum(as.numeric(varImpOrder)) * 100
+  if (purpose == "regression") {
+    fi <- DALEX::feature_importance(result[["explainer"]], B = 10)
+    fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
+    table[["dl"]] <- fi[match(options[["predictors"]], fi[["y"]]), "x"]
+  }
 }
 
 .mlDecisionTreeTableSplits <- function(options, jaspResults, ready, position, purpose) {

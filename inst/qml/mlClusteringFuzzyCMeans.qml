@@ -16,275 +16,77 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick									2.8
-import QtQuick.Layouts							1.3
-import JASP.Controls							1.0
-import JASP.Widgets								1.0
+import QtQuick			2.8
+import QtQuick.Layouts	1.3
+import JASP.Controls	1.0
+import JASP.Widgets		1.0
 
-import "./common" as ML
+import "./common/ui" as UI
+import "./common/tables" as TAB
+import "./common/figures" as FIG
 
 Form 
 {
 
-	VariablesForm
+	UI.VariablesFormClustering { }
+
+	Group
 	{
-		AvailableVariablesList
-		{
-			name:								"variables"
-		}
-		
-		AssignedVariablesList
-		{
-			id:									predictors
-			name:								"predictors"
-			title:								qsTr("Features")
-			allowedColumns:						["scale"]
-			allowAnalysisOwnComputedColumns:	false
-		}
+		title:					qsTr("Tables")
+
+		TAB.ClusterMeans { }
+		TAB.ClusterInfo { show_centroids: true }
+		TAB.ModelPerformance {}
 	}
 
 	Group
 	{
-		title:									qsTr("Tables")
+		title:					qsTr("Plots")
 
-		CheckBox
-		{
-			text:								qsTr("Cluster means")
-			name:								"tableClusterMeans"
-		}
-
-		CheckBox
-		{
-			id:									clusterInfo
-			text:								qsTr("Cluster information")
-			name:								"tableClusterInformation"
-			checked:							true
-
-			CheckBox
-			{
-				text:							qsTr("Within sum of squares")
-				name:							"tableClusterInformationWithinSumOfSquares"
-				checked:						true
-			}
-
-			CheckBox
-			{
-				text:							qsTr("Silhouette score")
-				name:							"tableClusterInformationSilhouetteScore"
-			}
-
-			CheckBox
-			{
-				text:							qsTr("Centroids")
-				name:							"tableClusterInformationCentroids"
-			}
-
-			CheckBox
-			{
-				text:							qsTr("Between sum of squares")
-				name:							"tableClusterInformationBetweenSumOfSquares"
-			}
-
-			CheckBox
-			{
-				text:							qsTr("Total sum of squares")
-				name:							"tableClusterInformationTotalSumOfSquares"
-			}
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Evaluation metrics")
-			name:								"tableClusterEvaluationMetrics"
-		}
+		FIG.ElbowMethod { enable: !optim.isManual }
+		FIG.ClusterMatrix { }
+		FIG.ClusterMeans { }
+		FIG.ClusterDensity { }
+		FIG.Tsne { }
 	}
 
-	Group
+	UI.ExportResults
 	{
-		title:									qsTr("Plots")
-
-		CheckBox
-		{
-			text:								qsTr("Elbow method")
-			name:								"elbowMethodPlot"
-			enabled:							!validationManual.checked
-		}
-
-		CheckBox
-		{
-			name:								"matrixPlot"
-			text:								qsTr("Cluster matrix plot")
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Cluster means")
-			name:								"clusterMeanPlot"
-
-			CheckBox
-			{
-				text:							qsTr("Display barplot")
-				name:							"clusterMeanPlotBarPlot"
-				checked:						true
-			}
-
-			CheckBox
-			{
-				text:							qsTr("Group into one figure")
-				name:							"clusterMeanPlotSingleFigure"
-				checked:						true
-			}
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Cluster densities")
-			name:								"clusterDensityPlot"
-
-			CheckBox
-			{
-				text:							qsTr("Group into one figure")
-				name:							"clusterDensityPlotSingleFigure"
-				checked:						true
-			}
-		}
-
-		CheckBox
-		{
-			text:								qsTr("t-SNE cluster plot")
-			name:								"tsneClusterPlot"
-
-			Row
-			{
-
-				CheckBox
-				{
-					text:						qsTr("Legend")
-					name:						"tsneClusterPlotLegend"
-					checked:					true
-				}
-
-				CheckBox
-				{
-					text:						qsTr("Labels")
-					name:						"tsneClusterPlotLabels"
-				}
-			}
-		}
-	}
-
-	ML.ExportResults
-	{
-		enabled:								predictors.count > 1
-		showSave:								false
+		enabled:				predictors.count > 1
+		showSave:				false
 	}
 
 	Section
 	{
-		title:									qsTr("Training Parameters")
+		title:					qsTr("Training Parameters")
 
 		Group
 		{
-			title:								qsTr("Algorithmic Settings")
+			title:				qsTr("Algorithmic Settings")
 
 			IntegerField
 			{
-				name:							"maxNumberIterations"
-				text:							qsTr("Max. iterations")
-				defaultValue:					25
-				min:							1
-				max:							999999
+				name:			"maxNumberIterations"
+				text:			qsTr("Max. iterations")
+				defaultValue:	25
+				min:			1
+				max:			999999
 			}
 
 			DoubleField
 			{
-				name:							"fuzzinessParameter"
-				text:							qsTr("Fuzziness parameter")
-				defaultValue:					2
-				min:							1
-				max:							1000
-				decimals:						2
+				name:			"fuzzinessParameter"
+				text:			qsTr("Fuzziness parameter")
+				defaultValue:	2
+				min:			1
+				max:			1000
+				decimals:		2
 			}
 
-			CheckBox
-			{
-				text:							qsTr("Scale variables")
-				name:							"scaleVariables"
-				checked:						true
-			}
-
-			CheckBox
-			{
-				name:							"setSeed"
-				text:							qsTr("Set seed")
-				childrenOnSameRow:				true
-
-				IntegerField
-				{
-					name:						"seed"
-					defaultValue:				1
-					min:						-999999
-					max:						999999
-					fieldWidth:					60
-				}
-			}
+			UI.ScaleVariables { }
+			UI.SetSeed { }
 		}
 
-		RadioButtonGroup
-		{
-			title:								qsTr("Cluster Determination")
-			name:								"modelOptimization"
-
-			RadioButton
-			{
-				id:								validationManual
-				text:							qsTr("Fixed")
-				name:							"manual"
-
-				IntegerField
-				{
-					name:						"manualNumberOfClusters"
-					text:						qsTr("Clusters")
-					defaultValue:				3
-					min:						2
-					max:						5000
-					enabled:					validationManual.checked
-					fieldWidth:					60
-				}
-			}
-
-			RadioButton
-			{
-				text:							qsTr("Optimized according to")
-				name:							"optimized"
-				childrenOnSameRow:				true
-				checked:						true
-
-				DropDown
-				{
-					name:						"modelOptimizationMethod"
-					indexDefaultValue:			1
-
-					values:
-						[
-						{ label: "AIC",			value: "aic"},
-						{ label: "BIC",			value: "bic"},
-						{ label: "Silhouette", 	value: "silhouette"}
-					]
-				}
-			}
-
-			IntegerField
-			{
-				name:							"maxNumberOfClusters"
-				text:							qsTr("Max. clusters")
-				defaultValue:					10
-				min:							2
-				max:							5000
-				enabled:						!validationManual.checked
-				Layout.leftMargin:				20
-				fieldWidth:						60
-			}
-		}
+		UI.ClusterDetermination { id: optim }
 	}
 }

@@ -42,14 +42,17 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
   # Create the evaluation metrics table
   .mlRegressionTableMetrics(dataset, options, jaspResults, ready, position = 4)
 
+  # Create the feature importance table
+  .mlTableFeatureImportance(options, jaspResults, ready, position = 5, purpose = "regression")
+
   # Create the shap table
-  .mlTableShap(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
+  .mlTableShap(dataset, options, jaspResults, ready, position = 6, purpose = "regression")
 
   # Create the mean squared error plot
-  .mlKnnPlotError(dataset, options, jaspResults, ready, position = 6, purpose = "regression")
+  .mlKnnPlotError(dataset, options, jaspResults, ready, position = 7, purpose = "regression")
 
   # Create the predicted performance plot
-  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 7)
+  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 8)
 }
 
 .knnRegression <- function(dataset, options, jaspResults, ready) {
@@ -174,7 +177,7 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
       result[["trainAccuracyStore"]] <- trainErrorStore
     }
   }
-  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model$predictive, newdata = data))
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]][, options[["predictors"]]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model$predictive, newdata = data))
   return(result)
 }
 

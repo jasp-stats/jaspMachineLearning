@@ -17,7 +17,7 @@ options$predictors <- list("Malic", "Ash", "Alcalinity", "Magnesium", "Phenols",
                            "Nonflavanoids", "Proanthocyanins", "Color", "Hue", "Dilution", 
                            "Proline")
 options$setSeed <- TRUE
-options$variableImportanceTable <- TRUE
+options$featureImportanceTable <- TRUE
 options$target <- "Alcohol"
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""
@@ -70,7 +70,7 @@ test_that("Random Forest Regression table results match", {
 })
 
 test_that("Variable Importance table results match", {
-  table <- results[["results"]][["variableImportanceTable"]][["data"]]
+  table <- results[["results"]][["featureImportanceTable"]][["data"]]
   jaspTools::expect_equal_tables(table,
                       list(0.475727661943587, 13.9713939210907, "Color", 0.133970922782775,
                            6.27626368698486, "Proline", 0.117761043024228, 3.97309320553953,

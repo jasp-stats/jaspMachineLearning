@@ -20,7 +20,7 @@ options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium",
                            "Hue", "Dilution", "Proline")
 options$rocCurve <- TRUE
 options$setSeed <- TRUE
-options$variableImportanceTable <- TRUE
+options$featureImportanceTable <- TRUE
 options$target <- "Type"
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""
@@ -92,7 +92,7 @@ test_that("ROC Curves Plot matches", {
 })
 
 test_that("Variable Importance table results match", {
-  table <- results[["results"]][["variableImportanceTable"]][["data"]]
+  table <- results[["results"]][["featureImportanceTable"]][["data"]]
   jaspTools::expect_equal_tables(table,
                       list(0.0929184156013314, 0.11584466455711, "Color", 0.0746170330176111,
                            0.0740156345749835, "Alcohol", 0.227882931822773, 0.0519798563590929,

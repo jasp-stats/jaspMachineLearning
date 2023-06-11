@@ -4,7 +4,7 @@ options <- jaspTools::analysisOptions("mlClassificationBoosting")
 options$addPredictions <- FALSE
 options$addIndicator <- FALSE
 options$andrewsCurve <- TRUE
-options$relativeInfluenceTable <- TRUE
+options$featureImportanceTable <- TRUE
 options$predictionsColumn <- ""
 options$classProportionsTable <- TRUE
 options$savePath <- ""
@@ -41,7 +41,7 @@ test_that("Andrews Curves Plot matches", {
 })
 
 test_that("Relative Influence table results match", {
-  table <- results[["results"]][["relativeInfluenceTable"]][["data"]]
+  table <- results[["results"]][["featureImportanceTable"]][["data"]]
   jaspTools::expect_equal_tables(table,
                       list("Proline", 31.1797927388636, "Color", 20.173253110114, "Flavanoids",
                            19.8438729446546, "Alcohol", 11.3080195393476, "Hue", 9.04159967448256,

@@ -3,7 +3,7 @@ context("Machine Learning Boosting Regression")
 options <- jaspTools::analysisOptions("mlRegressionBoosting")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
-options$relativeInfluenceTable <- TRUE
+options$featureImportanceTable <- TRUE
 options$savePath <- ""
 options$saveModel <- FALSE
 options$holdoutData <- "holdoutManual"
@@ -33,7 +33,7 @@ results <- jaspTools::runAnalysis("mlRegressionBoosting", "wine.csv", options)
 
 
 test_that("Relative Influence table results match", {
-  table <- results[["results"]][["relativeInfluenceTable"]][["data"]]
+  table <- results[["results"]][["featureImportanceTable"]][["data"]]
   jaspTools::expect_equal_tables(table,
                       list("Color", 60.3564909956942, "Proline", 28.9359792394392, "Phenols",
                            4.02747773147275, "Flavanoids", 2.65410848555859, "Hue", 1.59224895077339,

@@ -149,25 +149,29 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
     result[["nvalid"]] <- nrow(validationSet)
     result[["valid"]] <- validationSet
   }
-  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data, n.trees = model$n.trees))
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]][, options[["predictors"]]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data, n.trees = model$n.trees))
   return(result)
 }
 
 .mlBoostingTableRelInf <- function(options, jaspResults, ready, position, purpose) {
-  if (!options[["relativeInfluenceTable"]] || !is.null(jaspResults[["relativeInfluenceTable"]])) {
+  if (!options[["featureImportanceTable"]] || !is.null(jaspResults[["featureImportanceTable"]])) {
     return()
   }
-  table <- createJaspTable(title = gettext("Relative Influence"))
+  table <- createJaspTable(title = gettext("Feature Importance"))
   table$position <- position
   table$dependOn(options = c(
-    "relativeInfluenceTable", "target", "predictors", "modelOptimization", "maxTrees", "interactionDepth", "shrinkage",
+    "featureImportanceTable", "target", "predictors", "modelOptimization", "maxTrees", "interactionDepth", "shrinkage",
     "noOfTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors", "seed", "setSeed", "modelValid",
     "minObservationsInNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
     "holdoutData", "testDataManual"
   ))
   table$addColumnInfo(name = "predictor", title = "", type = "string")
   table$addColumnInfo(name = "relIn", title = gettext("Relative Influence"), type = "number")
-  jaspResults[["relativeInfluenceTable"]] <- table
+  if (purpose == "regression") {
+    table$addColumnInfo(name = "dl", title = gettext("Mean dropout loss"), type = "number")
+  }
+  table$addFootnote(gettext("Mean dropout loss is computed on the basis of 10 permutations."))
+  jaspResults[["featureImportanceTable"]] <- table
   if (!ready) {
     return()
   }
@@ -175,8 +179,14 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
     "classification" = jaspResults[["classificationResult"]]$object,
     "regression" = jaspResults[["regressionResult"]]$object
   )
-  table[["predictor"]] <- as.character(result[["relInf"]]$var)
+  vars <- as.character(result[["relInf"]]$var)
+  table[["predictor"]] <- vars
   table[["relIn"]] <- result[["relInf"]]$rel.inf
+  if (purpose == "regression") {
+    fi <- DALEX::feature_importance(result[["explainer"]], B = 10)
+    fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
+    table[["dl"]] <- fi[match(options[["predictors"]], fi[["y"]]), "x"]
+  }
 }
 
 .mlBoostingPlotOobImprovement <- function(options, jaspResults, ready, position, purpose) {

@@ -14,7 +14,7 @@ options$predictors <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Wi
 options$saveModel <- FALSE
 options$savePath <- ""
 options$setSeed <- TRUE
-options$variableImportanceTable <- TRUE
+options$featureImportanceTable <- TRUE
 options$target <- "Species"
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""
@@ -62,7 +62,7 @@ test_that("Decision Tree Plot matches", {
 })
 
 test_that("Variable Importance table results match", {
-	table <- results[["results"]][["variableImportanceTable"]][["data"]]
+	table <- results[["results"]][["featureImportanceTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list(34.6709290167624, "Petal.Width", 31.6571914083694, "Petal.Length",
 			 19.9269628140734, "Sepal.Length", 13.7449167607949, "Sepal.Width"

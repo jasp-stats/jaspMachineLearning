@@ -16,106 +16,43 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick									2.8
-import QtQuick.Layouts							1.3
-import JASP.Controls							1.0
-import JASP.Widgets								1.0
+import QtQuick			2.8
+import QtQuick.Layouts	1.3
+import JASP.Controls	1.0
+import JASP.Widgets		1.0
 
-import "./common" as ML
+import "./common/ui" as UI
+import "./common/tables" as TAB
+import "./common/figures" as FIG
 
 Form {
 
-	VariablesForm
-	{
-		AvailableVariablesList
-		{
-			name:								"variables"
-		}
-
-		AssignedVariablesList
-		{
-			id:									target
-			name:								"target"
-			title:								qsTr("Target")
-			singleVariable:						true
-			allowedColumns:						["nominal", "nominalText", "ordinal"]
-		}
-
-		AssignedVariablesList
-		{
-			id:									predictors
-			name:								"predictors"
-			title:								qsTr("Features")
-			allowedColumns:						["nominal", "nominalText", "ordinal", "scale"]
-			allowAnalysisOwnComputedColumns:	false
-		}
-	}
+	UI.VariablesFormClassification { }
 
 	Group
 	{
 		title:									qsTr("Tables")
 
-		CheckBox
-		{
-			text:								qsTr("Confusion matrix")
-			name:								"confusionTable"
-			checked:							true
-
-			CheckBox
-			{
-				text:							qsTr("Display proportions")
-				name:							"confusionProportions"
-			}
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Class proportions")
-			name:								"classProportionsTable"
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Evaluation metrics")
-			name:								"validationMeasures"
-		}
-
-		CheckBox
-		{
-			name:								"variableImportanceTable"
-			text:								qsTr("Feature importance")
-		}
-
-		ML.Shap { }
+		TAB.ConfusionMatrix { }
+		TAB.ClassProportions { }
+		TAB.ModelPerformance { }
+		TAB.FeatureImportance { }
+		TAB.ExplainPredictions { }
 	}
 
 	Group
 	{
 		title:									qsTr("Plots")
 
-		CheckBox
-		{
-			text:								qsTr("Data split")
-			name:								"dataSplitPlot"
-			checked:							true
-		}
+		FIG.DataSplit { }
+		FIG.RocCurve { }
+		FIG.AndrewsCurve { }
+		FIG.DecisionBoundary { }
 
 		CheckBox
 		{
 			name:								"treesVsModelErrorPlot"
 			text:								qsTr("Out-of-bag accuracy")
-		}
-
-		CheckBox
-		{
-			name:								"rocCurve"
-			text:								qsTr("ROC curves")
-		}
-
-		CheckBox
-		{
-			name:								"andrewsCurve"
-			text:								qsTr("Andrews curves")
 		}
 
 		CheckBox
@@ -129,37 +66,14 @@ Form {
 			name:								"purityIncreasePlot"
 			text:								qsTr("Total increase in node purity")
 		}
-
-		CheckBox
-		{
-			name:								"decisionBoundary"
-			text:								qsTr("Decision boundary matrix")
-
-			Row
-			{
-				CheckBox
-				{
-					name:						"legendShown"
-					text:						qsTr("Legend")
-					checked:					true
-				}
-
-				CheckBox
-				{
-					name:						"pointsShown"
-					text:						qsTr("Points")
-					checked:					true
-				}
-			}
-		}
 	}
 
-	ML.ExportResults
+	UI.ExportResults
 	{
 		enabled:								predictors.count > 1 && target.count > 0
 	}
 
-	ML.DataSplit
+	UI.DataSplit
 	{
 		leaveOneOutVisible:						false
 		kFoldsVisible:							false
@@ -208,28 +122,8 @@ Form {
 				}
 			}
 
-			CheckBox
-			{
-				text:							qsTr("Scale features")
-				name:							"scaleVariables"
-				checked:						true
-			}
-
-			CheckBox
-			{
-				name:							"setSeed"
-				text:							qsTr("Set seed")
-				childrenOnSameRow:				true
-
-				IntegerField
-				{
-					name:						"seed"
-					defaultValue:				1
-					min:						-999999
-					max:						999999
-					fieldWidth:					60
-				}
-			}
+			UI.ScaleVariables { }
+			UI.SetSeed { }
 		}
 
 		RadioButtonGroup

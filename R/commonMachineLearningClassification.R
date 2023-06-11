@@ -735,7 +735,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   if (!is.null(jaspResults[["validationMeasures"]]) || !options[["validationMeasures"]]) {
     return()
   }
-  table <- createJaspTable(title = gettext("Evaluation Metrics"))
+  table <- createJaspTable(title = gettext("Model Performance Metrics"))
   table$position <- position
   table$transpose <- TRUE
   table$dependOn(options = c(.mlClassificationDependencies(options), "validationMeasures"))

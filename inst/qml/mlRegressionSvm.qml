@@ -16,85 +16,49 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick									2.8
-import QtQuick.Layouts							1.3
-import JASP.Controls							1.0
-import JASP.Widgets								1.0
+import QtQuick			2.8
+import QtQuick.Layouts	1.3
+import JASP.Controls	1.0
+import JASP.Widgets		1.0
 
-import "./common" as ML
+import "./common/ui" as UI
+import "./common/tables" as TAB
+import "./common/figures" as FIG
 
 Form 
 {
 
-	VariablesForm
-	{
-		AvailableVariablesList
-		{
-			name:								"variables"
-		}
-
-		AssignedVariablesList
-		{
-			id:									target
-			name:								"target"
-			title:								qsTr("Target")
-			singleVariable:						true
-			allowedColumns:						["scale"]
-		}
-
-		AssignedVariablesList
-		{
-			id:									predictors
-			name:								"predictors"
-			title:								qsTr("Features")
-			allowedColumns:						["scale", "nominal", "nominalText", "ordinal"]
-			allowAnalysisOwnComputedColumns:	false
-		}
-	}
+	UI.VariablesFormRegression { }
 
 	Group
 	{
 		title:									qsTr("Tables")
 
-		CheckBox
-		{
-			text:								qsTr("Evaluation metrics")
-			name:								"validationMeasures"
-		}
+		TAB.ModelPerformance { }
+		TAB.FeatureImportance { }
+		TAB.ExplainPredictions { }
 
 		CheckBox
 		{
 			text:								qsTr("Support vectors")
 			name:								"supportVectorsTable"
 		}
-
-		ML.Shap { }
 	}
 
 	Group
 	{
 		title:									qsTr("Plots")
 
-		CheckBox
-		{
-			text:								qsTr("Data split")
-			name:								"dataSplitPlot"
-			checked:							true
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Predictive performance")
-			name:								"predictedPerformancePlot"
-		}
+		FIG.DataSplit { }
+		FIG.PredictivePerformance { }
 	}
 
-	ML.ExportResults
+	UI.ExportResults
 	{
 		enabled:								predictors.count > 0 && target.count > 0
 	}
 
-	ML.DataSplit
+	UI.DataSplit
 	{
 		trainingValidationSplit:				false
 	}
@@ -176,28 +140,8 @@ Form
 				min:							0.001
 			}
 
-			CheckBox
-			{
-				text:							qsTr("Scale variables")
-				name:							"scaleVariables"
-				checked:						true
-			}
-
-			CheckBox
-			{
-				name:							"setSeed"
-				text:							qsTr("Set seed")
-				childrenOnSameRow:				true
-
-				IntegerField
-				{
-					name:						"seed"
-					defaultValue:				1
-					min:						-999999
-					max:						999999
-					fieldWidth:					60
-				}
-			}
+			UI.ScaleVariables { }
+			UI.SetSeed { }
 		}
 
 		RadioButtonGroup

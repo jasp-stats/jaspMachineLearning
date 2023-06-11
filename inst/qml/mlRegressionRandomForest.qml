@@ -16,82 +16,40 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick									2.8
-import QtQuick.Layouts							1.3
-import JASP.Controls							1.0
-import JASP.Widgets								1.0
+import QtQuick			2.8
+import QtQuick.Layouts	1.3
+import JASP.Controls	1.0
+import JASP.Widgets		1.0
 
-import "./common" as ML
+import "./common/ui" as UI
+import "./common/tables" as TAB
+import "./common/figures" as FIG
 
 Form 
 {
 
-	VariablesForm
-	{
-		AvailableVariablesList
-		{
-			name:								"variables"
-		}
-
-		AssignedVariablesList
-		{
-			id:									target
-			name:								"target"
-			title:								qsTr("Target")
-			singleVariable:						true
-			allowedColumns:						["scale"]
-		}
-
-		AssignedVariablesList
-		{
-			id:									predictors
-			name:								"predictors"
-			title:								qsTr("Features")
-			allowedColumns:						["scale", "nominal", "nominalText", "ordinal"]
-			allowAnalysisOwnComputedColumns:	false
-		}
-	}
+	UI.VariablesFormRegression { }
 
 	Group
 	{
 		title:									qsTr("Tables")
 
-		CheckBox
-		{
-			text:								qsTr("Evaluation metrics")
-			name:								"validationMeasures"
-		}
-
-		CheckBox
-		{
-			name:								"variableImportanceTable"
-			text:								qsTr("Feature importance")
-		}
-
-		ML.Shap { }
+		TAB.ModelPerformance { }
+		TAB.FeatureImportance { }
+		TAB.ExplainPredictions { }
 	}
 
 	Group
 	{
 		title:									qsTr("Plots")
 
-		CheckBox
-		{
-			text:								qsTr("Data split")
-			name:								"dataSplitPlot"
-			checked:							true
-		}
+		FIG.DataSplit { }
+		FIG.PredictivePerformance { }
 
 		CheckBox
 		{
 			name:								"treesVsModelErrorPlot"
 			text:								qsTr("Out-of-bag error")
-		}
-
-		CheckBox
-		{
-			name:								"predictedPerformancePlot"
-			text:								qsTr("Predictive performance")
 		}
 
 		CheckBox
@@ -107,12 +65,12 @@ Form
 		}
 	}
 
-	ML.ExportResults
+	UI.ExportResults
 	{
 		enabled:								predictors.count > 1 && target.count > 0
 	}
 
-	ML.DataSplit
+	UI.DataSplit
 	{
 		leaveOneOutVisible:						false
 		kFoldsVisible:							false
@@ -161,68 +119,48 @@ Form
 				}
 			}
 
-			CheckBox 
+			UI.ScaleVariables { }
+			UI.SetSeed { }
+		}
+
+		RadioButtonGroup
+		{
+			title:									qsTr("Number of Trees")
+			name:									"modelOptimization"
+
+			RadioButton
 			{
-				text:							qsTr("Scale variables")
-				name:							"scaleVariables"
-				checked:						true
+				text:								qsTr("Fixed")
+				name:								"manual"
+
+				IntegerField
+				{
+					name:							"noOfTrees"
+					text:							qsTr("Trees")
+					defaultValue:					100
+					min:							1
+					max:							500000
+					fieldWidth:						60
+				}
 			}
 
-		CheckBox
-		{
-			name:								"setSeed"
-			text:								qsTr("Set seed")
-			childrenOnSameRow:					true
-
-			IntegerField
+			RadioButton
 			{
-				name:							"seed"
-				defaultValue:					1
-				min:							-999999
-				max:							999999
-				fieldWidth:						60
+				id:									optimizeModel
+				text:								qsTr("Optimized")
+				name:								"optimized"
+				checked:							true
+
+				IntegerField
+				{
+					name:							"maxTrees"
+					text:							qsTr("Max. trees")
+					defaultValue:					100
+					min:							1
+					max:							500000
+					fieldWidth:						60
+				}
 			}
 		}
 	}
-
-	RadioButtonGroup
-	{
-		title:									qsTr("Number of Trees")
-		name:									"modelOptimization"
-
-		RadioButton
-		{
-			text:								qsTr("Fixed")
-			name:								"manual"
-
-			IntegerField
-			{
-				name:							"noOfTrees"
-				text:							qsTr("Trees")
-				defaultValue:					100
-				min:							1
-				max:							500000
-				fieldWidth:						60
-			}
-		}
-
-		RadioButton
-		{
-			id:									optimizeModel
-			text:								qsTr("Optimized")
-			name:								"optimized"
-			checked:							true
-
-			IntegerField
-			{
-				name:							"maxTrees"
-				text:							qsTr("Max. trees")
-				defaultValue:					100
-				min:							1
-				max:							500000
-				fieldWidth:						60
-			}
-		}
-	}
-}
 }

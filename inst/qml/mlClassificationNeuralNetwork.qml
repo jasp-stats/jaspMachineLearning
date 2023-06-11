@@ -16,108 +16,50 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick										2.8
-import QtQuick.Layouts								1.3
-import JASP.Controls								1.0
-import JASP.Widgets									1.0
+import QtQuick			2.8
+import QtQuick.Layouts	1.3
+import JASP.Controls	1.0
+import JASP.Widgets		1.0
 
-import "./common" as ML
+import "./common/ui" as UI
+import "./common/tables" as TAB
+import "./common/figures" as FIG
 
 Form 
 {
 
-	VariablesForm
-	{
-		AvailableVariablesList
-		{
-			name:									"variables"
-		}
-
-		AssignedVariablesList
-		{
-			id:										target
-			name:									"target"
-			title:									qsTr("Target")
-			singleVariable:							true
-			allowedColumns:							["ordinal", "nominal", "nominalText"]
-		}
-
-		AssignedVariablesList
-		{
-			id:										predictors
-			name:									"predictors"
-			title:									qsTr("Features")
-			allowedColumns:							["scale"]
-			allowAnalysisOwnComputedColumns:		false
-		}
-	}
+	UI.VariablesFormClassification { allow_nominal: false }
 
 	Group
 	{
 		title:										qsTr("Tables")
 
-		CheckBox
-		{
-			text:									qsTr("Confusion matrix")
-			name:									"confusionTable"
-			checked:								true
-
-			CheckBox
-			{
-				text:								qsTr("Display proportions")
-				name:								"confusionProportions"
-			}
-		}
-
-		CheckBox
-		{
-			text:									qsTr("Class proportions")
-			name:									"classProportionsTable"
-		}
-
-		CheckBox
-		{
-			text:									qsTr("Evaluation metrics")
-			name:									"validationMeasures"
-		}
+		TAB.ConfusionMatrix { }
+		TAB.ClassProportions { }
+		TAB.ModelPerformance { }
+		TAB.ExplainPredictions { }
 
 		CheckBox
 		{
 			name:									"coefficientsTable"
 			text:									qsTr("Network weights")
 		}
-
-		ML.Shap { }
 	}
 
 	Group
 	{
 		title:										qsTr("Plots")
 
-		CheckBox
-		{
-			text:									qsTr("Data split")
-			name:									"dataSplitPlot"
-			checked:								true
-		}
+		FIG.DataSplit { }
+		FIG.RocCurve { }
+		FIG.AndrewsCurve { }
+		FIG.DecisionBoundary { }
 
 		CheckBox
 		{
 			text:									qsTr("Classification accuracy")
 			name:									"meanSquaredErrorPlot"
 			enabled:								optimizeModel.checked
-		}
-
-		CheckBox
-		{
-			name:									"rocCurve"
-			text:									qsTr("ROC curves")
-		}
-
-		CheckBox
-		{
-			name:									"andrewsCurve"
-			text:									qsTr("Andrews curves")
 		}
 
 		CheckBox
@@ -131,37 +73,14 @@ Form
 			name:									"networkGraph"
 			text:									qsTr("Network structure")
 		}
-
-		CheckBox
-		{
-			name:									"decisionBoundary"
-			text:									qsTr("Decision boundary matrix")
-
-			Row
-			{
-				CheckBox
-				{
-					name:							"legendShown"
-					text:							qsTr("Legend")
-					checked:						true
-				}
-
-				CheckBox
-				{
-					name:							"pointsShown"
-					text:							qsTr("Points")
-					checked:						true
-				}
-			}
-		}
 	}
 
-	ML.ExportResults
+	UI.ExportResults
 	{
 		enabled:									predictors.count > 0 && target.count > 0
 	}
 
-	ML.DataSplit
+	UI.DataSplit
 	{
 		leaveOneOutVisible:							false
 		kFoldsVisible:								false
@@ -257,28 +176,8 @@ Form
 				fieldWidth:								60
 			}
 
-			CheckBox
-			{
-				text:									qsTr("Scale features")
-				name:									"scaleVariables"
-				checked:								true
-			}
-
-			CheckBox 
-			{
-				name:									"setSeed"
-				text:									qsTr("Set seed")
-				childrenOnSameRow:						true
-
-				IntegerField 
-				{
-					name:								"seed"
-					defaultValue:						1
-					min:								-999999
-					max:								999999
-					fieldWidth:							60
-				}
-			}
+			UI.ScaleVariables { }
+			UI.SetSeed { }
 		}
 
 		Group

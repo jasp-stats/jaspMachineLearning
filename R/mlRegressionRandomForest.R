@@ -151,25 +151,29 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
     result[["valid"]] <- validationSet
     result[["rfit_valid"]] <- validationFit
   }
-  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data, type = "response"))
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]][, options[["predictors"]]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data, type = "response"))
   return(result)
 }
 
 .mlRandomForestTableVarImp <- function(options, jaspResults, ready, position, purpose) {
-  if (!is.null(jaspResults[["variableImportanceTable"]]) || !options[["variableImportanceTable"]]) {
+  if (!is.null(jaspResults[["featureImportanceTable"]]) || !options[["featureImportanceTable"]]) {
     return()
   }
   table <- createJaspTable(title = gettext("Feature Importance"))
   table$position <- position
   table$dependOn(options = c(
-    "variableImportanceTable", "scaleVariables", "target", "predictors", "modelOptimization", "maxTrees",
+    "featureImportanceTable", "scaleVariables", "target", "predictors", "modelOptimization", "maxTrees",
     "noOfTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors", "seed", "setSeed",
     "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "holdoutData", "testDataManual"
   ))
   table$addColumnInfo(name = "predictor", title = " ", type = "string")
   table$addColumnInfo(name = "MDiA", title = gettext("Mean decrease in accuracy"), type = "number")
   table$addColumnInfo(name = "MDiNI", title = gettext("Total increase in node purity"), type = "number")
-  jaspResults[["variableImportanceTable"]] <- table
+  if (purpose == "regression") {
+    table$addColumnInfo(name = "dl", title = gettext("Mean dropout loss"), type = "number")
+  }
+  table$addFootnote(gettext("Mean dropout loss is computed on the basis of 10 permutations."))
+  jaspResults[["featureImportanceTable"]] <- table
   if (!ready) {
     return()
   }
@@ -177,10 +181,15 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
     "classification" = jaspResults[["classificationResult"]]$object,
     "regression" = jaspResults[["regressionResult"]]$object
   )
-  varImpOrder <- sort(result[["rfit_test"]]$importance[, 1], decr = TRUE, index.return = TRUE)$ix
-  table[["predictor"]] <- as.character(result[["varImp"]]$Variable)
+  vars <- as.character(result[["varImp"]]$Variable)
+  table[["predictor"]] <- vars
   table[["MDiA"]] <- result[["varImp"]]$MeanIncrMSE
   table[["MDiNI"]] <- result[["varImp"]]$TotalDecrNodeImp
+  if (purpose == "regression") {
+    fi <- DALEX::feature_importance(result[["explainer"]], B = 10)
+    fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
+    table[["dl"]] <- fi[match(options[["predictors"]], fi[["y"]]), "x"]
+  }
 }
 
 .mlRandomForestPlotError <- function(options, jaspResults, ready, position, purpose) {

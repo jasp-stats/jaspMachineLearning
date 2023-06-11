@@ -16,12 +16,13 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick									2.8
-import QtQuick.Layouts							1.3
-import JASP.Controls							1.0
-import JASP.Widgets								1.0
+import QtQuick			2.8
+import QtQuick.Layouts	1.3
+import JASP.Controls	1.0
+import JASP.Widgets		1.0
 
-import "./common" as ML
+import "./common/ui" as UI
+import "./common/tables" as TAB
 
 Form 
 {
@@ -60,12 +61,7 @@ Form
 	{
 		title:									qsTr("Algorithmic Settings")
 
-		CheckBox
-		{
-			text:								qsTr("Scale features")
-			name:								"scaleVariables"
-			checked:							true
-		}
+		UI.ScaleVariables { }
 	}
 
 	Group
@@ -117,7 +113,7 @@ Form
 		}
 	}
 
-	ML.ExportResults {
+	UI.ExportResults {
 		enabled:								predictors.count > 1
 		showSave:								false
 	}

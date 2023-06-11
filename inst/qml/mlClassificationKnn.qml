@@ -16,158 +16,76 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick									2.8
-import QtQuick.Layouts							1.3
-import JASP.Controls							1.0
-import JASP.Widgets								1.0
+import QtQuick			2.8
+import QtQuick.Layouts	1.3
+import JASP.Controls	1.0
+import JASP.Widgets		1.0
 
-import "./common" as ML
+import "./common/ui" as UI
+import "./common/tables" as TAB
+import "./common/figures" as FIG
 
 Form
 {
 
-	VariablesForm
+	UI.VariablesFormClassification { }
+
+	Group
 	{
-		AvailableVariablesList
-		{
-			name:								"variables"
-		}
+		title: qsTr("Tables")
 
-		AssignedVariablesList
-		{
-			id:									target
-			name:								"target"
-			title:								qsTr("Target")
-			singleVariable:						true
-			allowedColumns:						["ordinal", "nominal", "nominalText"]
-		}
-
-		AssignedVariablesList
-		{
-			id:									predictors
-			name:								"predictors"
-			title:								qsTr("Features")
-			allowedColumns:						["scale", "ordinal", "nominal", "nominalText"]
-			allowAnalysisOwnComputedColumns:	false
-		}
+		TAB.ConfusionMatrix { }
+		TAB.ClassProportions { }
+		TAB.ModelPerformance { }
+		TAB.ExplainPredictions { }
 	}
 
 	Group
 	{
-		title:									qsTr("Tables")
+		title:						qsTr("Plots")
+
+		FIG.DataSplit { }
+		FIG.RocCurve { }
+		FIG.AndrewsCurve { }
+		FIG.DecisionBoundary { }
 
 		CheckBox
 		{
-			text:								qsTr("Confusion matrix")
-			name:								"confusionTable"
-			checked:							true
-
-			CheckBox
-			{
-				text:							qsTr("Display proportions")
-				name:							"confusionProportions"
-			}
+			text:					qsTr("Weight function")
+			name:					"weightsPlot"
 		}
 
 		CheckBox
 		{
-			text:								qsTr("Class proportions")
-			name:								"classProportionsTable"
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Evaluation metrics")
-			name:								"validationMeasures"
-		}
-
-		ML.Shap { }
-	}
-
-	Group
-	{
-		title:									qsTr("Plots")
-
-		CheckBox
-		{
-			text:								qsTr("Data split")
-			name:								"dataSplitPlot"
-			checked:							true
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Weight function")
-			name:								"weightsPlot"
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Classification accuracy")
-			name:								"errorVsKPlot"
-			enabled:							optimizeModel.checked
-		}
-
-		CheckBox
-		{
-			name:								"rocCurve"
-			text:								qsTr("ROC curves")
-		}
-
-		CheckBox
-		{
-			name:								"andrewsCurve"
-			text:								qsTr("Andrews curves")
-		}
-
-		CheckBox
-		{
-			name:								"decisionBoundary"
-			text:								qsTr("Decision boundary matrix")
-
-			Row
-			{
-
-				CheckBox
-				{
-					name:						"legendShown"
-					text:						qsTr("Legend")
-					checked:					true
-				}
-
-				CheckBox
-				{
-					name:						"pointsShown"
-					text:						qsTr("Points")
-					checked:					true
-				}
-			}
+			text:					qsTr("Classification accuracy")
+			name:					"errorVsKPlot"
+			enabled:				optimizeModel.checked
 		}
 	}
 
-	ML.ExportResults
+	UI.ExportResults
 	{
-		enabled:								predictors.count > 0 && target.count > 0
+		enabled:					predictors.count > 0 && target.count > 0
 	}
 
-	ML.DataSplit
+	UI.DataSplit
 	{
-		trainingValidationSplit:				optimizeModel.checked
+		trainingValidationSplit:	optimizeModel.checked
 	}
 
 	Section
 	{
-		title:									qsTr("Training Parameters")
+		title:						qsTr("Training Parameters")
 
 		Group
 		{
-			title:								qsTr("Algorithmic Settings")
+			title:					qsTr("Algorithmic Settings")
 
 			DropDown
 			{
-				name:							"weights"
-				indexDefaultValue:				0
-				label:							qsTr("Weights")
+				name:				"weights"
+				indexDefaultValue:	0
+				label:				qsTr("Weights")
 				values:
 					[
 					{ label: qsTr("Rectangular"),	value: "rectangular"},
@@ -185,9 +103,9 @@ Form
 
 			DropDown
 			{
-				name:							"distanceParameterManual"
-				indexDefaultValue:				0
-				label:							qsTr("Distance")
+				name:				"distanceParameterManual"
+				indexDefaultValue:	0
+				label:				qsTr("Distance")
 				values:
 					[
 					{ label: qsTr("Euclidian"), value: "2"},
@@ -195,66 +113,46 @@ Form
 				]
 			}
 
-			CheckBox
-			{
-				text:							qsTr("Scale features")
-				name:							"scaleVariables"
-				checked:						true
-			}
-
-			CheckBox 
-			{
-				name:							"setSeed"
-				text:							qsTr("Set seed")
-				childrenOnSameRow:				true
-
-				IntegerField 
-				{
-					name:						"seed"
-					defaultValue:				1
-					min:						-999999
-					max:						999999
-					fieldWidth:					60
-				}
-			}
+			UI.ScaleVariables { }
+			UI.SetSeed { }
 		}
 
 		RadioButtonGroup
 		{
-			title:								qsTr("Number of Nearest Neighbors")
-			name:								"modelOptimization"
+			title:					qsTr("Number of Nearest Neighbors")
+			name:					"modelOptimization"
 
 			RadioButton
 			{
-				text:							qsTr("Fixed")
-				name:							"manual"
+				text:				qsTr("Fixed")
+				name:				"manual"
 
 				IntegerField
 				{
-					name:						"noOfNearestNeighbours"
-					text:						qsTr("Nearest neighbors")
-					defaultValue:				3
-					min:						1
-					max:						50000
-					fieldWidth:					60
+					name:			"noOfNearestNeighbours"
+					text:			qsTr("Nearest neighbors")
+					defaultValue:	3
+					min:			1
+					max:			50000
+					fieldWidth:		60
 				}
 			}
 
 			RadioButton
 			{
-				id:								optimizeModel
-				text:							qsTr("Optimized")
-				name:							"optimized"
-				checked:						true
+				id:					optimizeModel
+				text:				qsTr("Optimized")
+				name:				"optimized"
+				checked:			true
 
 				IntegerField
 				{
-					name:						"maxNearestNeighbors"
-					text:						qsTr("Max. nearest neighbors")
-					defaultValue:				10
-					min:						1
-					max:						50000
-					fieldWidth:					60
+					name:			"maxNearestNeighbors"
+					text:			qsTr("Max. nearest neighbors")
+					defaultValue:	10
+					min:			1
+					max:			50000
+					fieldWidth:		60
 				}
 			}
 		}

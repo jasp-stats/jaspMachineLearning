@@ -39,20 +39,23 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   # Create the evaluation metrics table
   .mlRegressionTableMetrics(dataset, options, jaspResults, ready, position = 3)
 
+  # Create the feature importance table
+  .mlTableFeatureImportance(options, jaspResults, ready, position = 4, purpose = "regression")
+
   # Create the regression coefficients table
-  .mlRegressionRegularizedTableCoef(options, jaspResults, ready, position = 4)
+  .mlRegressionRegularizedTableCoef(options, jaspResults, ready, position = 5)
 
   # Create the shap table
-  .mlTableShap(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
+  .mlTableShap(dataset, options, jaspResults, ready, position = 6, purpose = "regression")
 
   # Create the predicted performance plot
-  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 6)
+  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 7)
 
   # Create the variable trace plot
-  .mlRegressionRegularizedPlotVariableTrace(options, jaspResults, ready, position = 7)
+  .mlRegressionRegularizedPlotVariableTrace(options, jaspResults, ready, position = 8)
 
   # Create the lambda evaluation plot
-  .mlRegressionRegularizedPlotLambda(options, jaspResults, ready, position = 8)
+  .mlRegressionRegularizedPlotLambda(options, jaspResults, ready, position = 9)
 }
 
 # Read dataset
@@ -182,7 +185,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
     result[["validMSE"]] <- mean((as.numeric(validationPredictions) - validationSet[, options[["target"]]])^2)
     result[["nvalid"]] <- nrow(validationSet)
   }
-  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newx = as.matrix(data), type = "response", s = result[["lambda"]]))
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]][, options[["predictors"]]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newx = as.matrix(data), type = "response", s = result[["lambda"]]))
   return(result)
 }
 

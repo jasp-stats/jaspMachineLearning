@@ -16,38 +16,14 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick									2.8
-import QtQuick.Layouts							1.3
-import JASP.Controls							1.0
-import JASP.Widgets								1.0
+import QtQuick			2.8
+import QtQuick.Layouts	1.3
+import JASP.Controls	1.0
+import JASP.Widgets		1.0
 
 CheckBox
 {
-	text:								qsTr("Explain predictions")
-	name:								"tableShap"
-	id:									tableShap
-
-	Row
-	{	
-		spacing:						5 * preferencesModel.uiScale
-		enabled:						tableShap.checked
-	
-		IntegerField
-		{
-			name:						"fromIndex"
-			text:						qsTr("Cases")
-			defaultValue:				1
-			min:						1
-			max:						dataSetModel.rowCount()
-		}
-
-		IntegerField
-		{
-			name:						"toIndex"
-			text:						qsTr("to")
-			defaultValue:				5
-			max:						dataSetModel.rowCount()
-			min:						1
-		}
-	}
+	name:		"scaleVariables"
+	text:		qsTr("Scale variables")
+	checked:	true
 }
