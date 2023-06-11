@@ -646,7 +646,7 @@
     }
   }
   table$position <- position
-  table$dependOn(options = c(.mlRegressionDependencies(options), "tableShap", "shapFrom", "shapTo"))
+  table$dependOn(options = c(.mlRegressionDependencies(options), "tableShap", "fromIndex", "toIndex"))
   table$addColumnInfo(name = "id", title = gettext("Case"), type = "integer")
   if (purpose == "regression") {
     table$addColumnInfo(name = "pred", title = gettext("Predicted"), type = "number")
@@ -669,8 +669,8 @@
     explainer <- model[["explainer"]]
     x_test <- dataset[, options[["predictors"]]]
   }
-  from <- min(c(options[["shapFrom"]], options[["shapTo"]] - 1, nrow(x_test)))
-  to <- min(c(options[["shapTo"]], nrow(x_test)))
+  from <- min(c(options[["fromIndex"]], options[["toIndex"]] - 1, nrow(x_test)))
+  to <- min(c(options[["toIndex"]], nrow(x_test)))
   out <- as.data.frame(matrix(NA, nrow = length(from:to), ncol = 3 + length(options[["predictors"]])))
   colnames(out) <- c("id", "pred", "avg", options[["predictors"]])
   for (i in seq_along(from:to)) {

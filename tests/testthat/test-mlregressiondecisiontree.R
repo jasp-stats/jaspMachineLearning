@@ -22,8 +22,8 @@ options$testSetIndicatorVariable <- ""
 options$validationDataManual <- 0.2
 options$validationMeasures <- TRUE
 options$tableShap <- TRUE
-options$shapFrom <- 1
-options$shapTo <- 5
+options$fromIndex <- 1
+options$toIndex <- 5
 set.seed(1)
 results <- jaspTools::runAnalysis("mlRegressionDecisionTree", "iris.csv", options)
 
