@@ -330,14 +330,9 @@ is.jaspMachineLearning <- function(x) {
   table <- createJaspTable(gettext("Predictions for New Data"))
   table$dependOn(options = c("predictors", "loadPath", "predictionsTable", "predictionsTableFeatures", "scaleVariables", "fromIndex", "toIndex"))
   table$position <- position
-  table$addColumnInfo(name = "row", title = gettext("Row"), type = "integer")
-  if (!is.null(model)) {
-    if (inherits(model, "jaspClassification")) {
-      table$addColumnInfo(name = "pred", title = gettext("Predicted"), type = "string")
-    }
-    if (inherits(model, "jaspRegression")) {
-      table$addColumnInfo(name = "pred", title = gettext("Predicted"), type = "number")
-    }
+  table$addColumnInfo(name = "row", title = gettext("Case"), type = "integer")
+  if (!is.null(model) && inherits(model, "jaspClassification")) {
+    table$addColumnInfo(name = "pred", title = gettext("Predicted"), type = "string")
   } else {
     table$addColumnInfo(name = "pred", title = gettext("Predicted"), type = "number")
   }
