@@ -85,7 +85,7 @@ test_that("t-SNE Cluster Plot matches", {
 
 context("Machine Learning K-Medians Clustering")
 
-options <- jaspTools::analysisOptions("mlClusteringKMeans")
+options <- initMlOptions("mlClusteringKMeans")
 options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
     "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
     "Hue", "Dilution", "Proline")
@@ -166,7 +166,7 @@ test_that("Elbow Method Plot matches", {
 
 context("Machine Learning K-Medoids Clustering")
 
-options <- jaspTools::analysisOptions("mlClusteringKMeans")
+options <- initMlOptions("mlClusteringKMeans")
 options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
     "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
     "Hue", "Dilution", "Proline")
