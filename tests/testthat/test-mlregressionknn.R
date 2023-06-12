@@ -55,15 +55,25 @@ test_that("K-Nearest Neighbors Regression table results match", {
                            "rectangular"))
 })
 
-test_that("Evaluation Metrics table results match", {
-  table <- results[["results"]][["validationMeasures"]][["data"]]
-  jaspTools::expect_equal_tables(table,
-                      list("MSE", 0.576, "RMSE", 0.759, "MAE / MAD", 0.63, "MAPE", "245.37%", "R<unicode><unicode>",
-                           0.49))
+test_that("Model Performance Metrics table results match", {
+	table <- results[["results"]][["validationMeasures"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list("MSE", 0.576, "RMSE", 0.759, "MAE / MAD", 0.63, "MAPE", "245.37%",
+			 "R<unicode>", 0.49))
 })
 
-test_that("Feature Contributions to Predictions for Test Set Cases table results match", {
-	skip("Need to figure out why this fails")
+test_that("Feature Importance Metrics table results match", {
+	table <- results[["results"]][["featureImportanceTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(0.685021928680065, "Proline", 0.652602310619497, "Color", 0.611900222810213,
+			 "Nonflavanoids", 0.595775060189909, "Malic", 0.590654021216899,
+			 "Ash", 0.589193989262503, "Dilution", 0.588933682617741, "Alcalinity",
+			 0.581495692525862, "Magnesium", 0.579637965914741, "Hue", 0.578758332225294,
+			 "Proanthocyanins", 0.577591118241997, "Phenols", 0.577510007287227,
+			 "Flavanoids"))
+})
+
+test_that("Additive Explanations for Predictions of Test Set Cases table results match", {
 	table <- results[["results"]][["tableShap"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list(-0.106430998159001, 0.0618326281182624, -0.0948694582574652, -0.0230960668593769,
@@ -87,15 +97,4 @@ test_that("Feature Contributions to Predictions for Test Set Cases table results
 			 0.0437879817298832, -0.0314970923485778, 0.0158565979490696,
 			 0.0891427141940875, 0.0634263917962778, 0.339417637529912, 0.125686370754131,
 			 5, 0.759869249885825))
-})
-
-test_that("Feature Importance Metrics table results match", {
-	table <- results[["results"]][["featureImportanceTable"]][["data"]]
-	jaspTools::expect_equal_tables(table,
-		list(0.685021928680065, "Proline", 0.652602310619497, "Color", 0.611900222810213,
-			 "Nonflavanoids", 0.595775060189909, "Malic", 0.590654021216899,
-			 "Ash", 0.589193989262503, "Dilution", 0.588933682617741, "Alcalinity",
-			 0.581495692525862, "Magnesium", 0.579637965914741, "Hue", 0.578758332225294,
-			 "Proanthocyanins", 0.577591118241997, "Phenols", 0.577510007287227,
-			 "Flavanoids"))
 })

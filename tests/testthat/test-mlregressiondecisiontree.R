@@ -52,12 +52,11 @@ test_that("Decision Tree Regression table results match", {
 		list(30, 120, 37, 0.151655444002406))
 })
 
-test_that("Variable Importance table results match", {
-	table <- results[["results"]][["featureImportanceTable"]][["data"]]
+test_that("Model Performance Metrics table results match", {
+	table <- results[["results"]][["validationMeasures"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(38.0537799528194, "Petal.Length", 27.0512145757421, "Petal.Width",
-			 21.2388630350472, "Species", 13.6561424363914, "Sepal.Width"
-			))
+		list("MSE", 0.152, "RMSE", 0.39, "MAE / MAD", 0.321, "MAPE", "106.28%",
+			 "R<unicode>", 0.818))
 })
 
 test_that("Feature Importance Metrics table results match", {

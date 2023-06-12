@@ -93,7 +93,7 @@ options$tableClusterInformationSilhouetteScore <- TRUE
 options$tableClusterInformationCentroids <- TRUE
 options$tableClusterInformationBetweenSumOfSquares <- TRUE
 options$tableClusterInformationTotalSumOfSquares <- TRUE
-options$tableClusterEvaluationMetrics <- TRUE
+options$validationMeasures <- TRUE
 options$elbowMethodPlot <- TRUE
 options$clusterMeanPlot <- TRUE
 options$centers <- "medians"
@@ -174,7 +174,7 @@ options$tableClusterInformationSilhouetteScore <- TRUE
 options$tableClusterInformationCentroids <- TRUE
 options$tableClusterInformationBetweenSumOfSquares <- TRUE
 options$tableClusterInformationTotalSumOfSquares <- TRUE
-options$tableClusterEvaluationMetrics <- TRUE
+options$validationMeasures <- TRUE
 options$elbowMethodPlot <- TRUE
 options$clusterMeanPlot <- TRUE
 options$centers <- "medoids"

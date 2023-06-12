@@ -85,8 +85,6 @@ test_that("ROC Curves Plot matches", {
   jaspTools::expect_equal_plots(testPlot, "roc-curves-plot")
 })
 
-
-
 test_that("Evaluation Metrics table results match", {
   table <- results[["results"]][["validationMeasures"]][["data"]]
   jaspTools::expect_equal_tables(table,
@@ -134,7 +132,7 @@ test_that("Feature Importance Metrics table results match", {
 		list(35.3677070283885, "Proline", 12.7102697133271, "Alcohol", 11.7892356761295,
 			 "Ash", 5.71041103062523, "Hue", 5.52620422318571, "Color", 4.42096337854857,
 			 "Alcalinity", 4.23675657110904, "Malic", 2.76310211159285, "Dilution",
-			 0.921034037197618, "Nonflavanoids", 0.921034037197618, "Phenols",
-			 0.368413614879047, "Proanthocyanins", 0.368413614879047, "Magnesium",
+			 0.921034037197618, "Phenols", 0.921034037197618, "Nonflavanoids",
+			 0.368413614879047, "Magnesium", 0.368413614879047, "Proanthocyanins",
 			 0, "Flavanoids"))
 })
