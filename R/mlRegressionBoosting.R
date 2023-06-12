@@ -168,7 +168,6 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   table$addColumnInfo(name = "predictor", title = "", type = "string")
   table$addColumnInfo(name = "relIn", title = gettext("Relative Influence"), type = "number")
   table$addColumnInfo(name = "dl", title = gettext("Mean dropout loss"), type = "number")
-  table$addFootnote(gettext("Mean dropout loss is based on 50 permutations."))
   jaspResults[["featureImportanceTable"]] <- table
   if (!ready) {
     return()
@@ -190,6 +189,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   }
   fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
   table[["dl"]] <- fi[match(options[["predictors"]], fi[["y"]]), "x"]
+  table$addFootnote(gettext("Mean dropout loss is based on 50 permutations."))
 }
 
 .mlBoostingPlotOobImprovement <- function(options, jaspResults, ready, position, purpose) {

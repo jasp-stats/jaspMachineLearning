@@ -705,7 +705,6 @@
   table$dependOn(options = c(.mlRegressionDependencies(), "featureImportanceTable"))
   table$addColumnInfo(name = "predictor", title = "", type = "string")
   table$addColumnInfo(name = "dl", title = gettext("Mean dropout loss"), type = "number")
-  table$addFootnote(gettext("Mean dropout loss is based on 50 permutations."))
   jaspResults[["featureImportanceTable"]] <- table
   if (!ready) {
     return()
@@ -726,4 +725,5 @@
   df <- data.frame(predictor = options[["predictors"]], dl = fi[match(options[["predictors"]], fi[["y"]]), "x"])
   df <- df[order(-df[["dl"]]), ]
   table$setData(df)
+  table$addFootnote(gettext("Mean dropout loss is based on 50 permutations."))
 }

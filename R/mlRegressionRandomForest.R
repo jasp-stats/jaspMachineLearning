@@ -170,7 +170,6 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   table$addColumnInfo(name = "MDiA", title = gettext("Mean decrease in accuracy"), type = "number")
   table$addColumnInfo(name = "MDiNI", title = gettext("Total increase in node purity"), type = "number")
   table$addColumnInfo(name = "dl", title = gettext("Mean dropout loss"), type = "number")
-  table$addFootnote(gettext("Mean dropout loss is based on 50 permutations."))
   jaspResults[["featureImportanceTable"]] <- table
   if (!ready) {
     return()
@@ -193,6 +192,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   }
   fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
   table[["dl"]] <- fi[match(options[["predictors"]], fi[["y"]]), "x"]
+  table$addFootnote(gettext("Mean dropout loss is based on 50 permutations."))
 }
 
 .mlRandomForestPlotError <- function(options, jaspResults, ready, position, purpose) {
