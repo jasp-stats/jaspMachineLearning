@@ -269,7 +269,7 @@
   if (!is.null(jaspResults[["clusterEvaluationMetrics"]]) || !options[["validationMeasures"]]) {
     return()
   }
-  table <- createJaspTable(gettext("Evaluation Metrics"))
+  table <- createJaspTable(gettext("Model Performance Metrics"))
   table$dependOn(options = c("validationMeasures", .mlClusteringDependencies(options)))
   table$position <- position
   table$addColumnInfo(name = "metric", title = "", type = "string")
