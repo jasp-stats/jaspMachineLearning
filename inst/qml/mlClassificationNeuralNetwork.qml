@@ -53,7 +53,6 @@ Form
 		FIG.DataSplit { }
 		FIG.RocCurve { }
 		FIG.AndrewsCurve { }
-		FIG.DecisionBoundary { }
 
 		CheckBox
 		{
@@ -73,6 +72,8 @@ Form
 			name:									"networkGraph"
 			text:									qsTr("Network structure")
 		}
+
+		FIG.DecisionBoundary { }
 	}
 
 	UI.ExportResults

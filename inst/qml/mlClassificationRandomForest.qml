@@ -47,7 +47,6 @@ Form {
 		FIG.DataSplit { }
 		FIG.RocCurve { }
 		FIG.AndrewsCurve { }
-		FIG.DecisionBoundary { }
 
 		CheckBox
 		{
@@ -66,6 +65,8 @@ Form {
 			name:								"purityIncreasePlot"
 			text:								qsTr("Total increase in node purity")
 		}
+
+		FIG.DecisionBoundary { }
 	}
 
 	UI.ExportResults

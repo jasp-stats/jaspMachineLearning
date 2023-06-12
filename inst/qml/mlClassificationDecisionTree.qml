@@ -61,13 +61,14 @@ Form
 		FIG.DataSplit { }
 		FIG.RocCurve { }
 		FIG.AndrewsCurve { }
-		FIG.DecisionBoundary { }
 
 		CheckBox
 		{
 			text:					qsTr("Decision tree")
 			name:					"decisionTreePlot"
 		}
+
+		FIG.DecisionBoundary { }
 	}
 
 	UI.ExportResults

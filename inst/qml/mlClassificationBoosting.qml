@@ -48,7 +48,6 @@ Form
 		FIG.DataSplit { }
 		FIG.RocCurve { }
 		FIG.AndrewsCurve { }
-		FIG.DecisionBoundary { }
 
 		CheckBox
 		{
@@ -67,6 +66,8 @@ Form
 			name:					"relativeInfluencePlot"
 			text:					qsTr("Relative influence")
 		}
+
+		FIG.DecisionBoundary { }
 	}
 
 	UI.ExportResults

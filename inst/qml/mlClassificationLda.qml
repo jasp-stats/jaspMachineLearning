@@ -65,7 +65,6 @@ Form
 		FIG.DataSplit { }
 		FIG.RocCurve { }
 		FIG.AndrewsCurve { }
-		FIG.DecisionBoundary { }
 
 		CheckBox
 		{
@@ -89,6 +88,8 @@ Form
 				}
 			}
 		}
+
+		FIG.DecisionBoundary { }
 	}
 
 	Column

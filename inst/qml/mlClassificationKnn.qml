@@ -47,7 +47,6 @@ Form
 		FIG.DataSplit { }
 		FIG.RocCurve { }
 		FIG.AndrewsCurve { }
-		FIG.DecisionBoundary { }
 
 		CheckBox
 		{
@@ -61,6 +60,8 @@ Form
 			name:					"errorVsKPlot"
 			enabled:				optimizeModel.checked
 		}
+
+		FIG.DecisionBoundary { }
 	}
 
 	UI.ExportResults
