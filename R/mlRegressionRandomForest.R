@@ -169,10 +169,8 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   table$addColumnInfo(name = "predictor", title = " ", type = "string")
   table$addColumnInfo(name = "MDiA", title = gettext("Mean decrease in accuracy"), type = "number")
   table$addColumnInfo(name = "MDiNI", title = gettext("Total increase in node purity"), type = "number")
-  if (purpose == "regression") {
-    table$addColumnInfo(name = "dl", title = gettext("Mean dropout loss"), type = "number")
-    table$addFootnote(gettext("Mean dropout loss is computed on the basis of 10 permutations."))
-  }
+  table$addColumnInfo(name = "dl", title = gettext("Mean dropout loss"), type = "number")
+  table$addFootnote(gettext("Mean dropout loss is computed on the basis of 10 permutations."))
   jaspResults[["featureImportanceTable"]] <- table
   if (!ready) {
     return()
@@ -185,11 +183,9 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   table[["predictor"]] <- vars
   table[["MDiA"]] <- result[["varImp"]]$MeanIncrMSE
   table[["MDiNI"]] <- result[["varImp"]]$TotalDecrNodeImp
-  if (purpose == "regression") {
-    fi <- DALEX::feature_importance(result[["explainer"]], B = 10)
-    fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
-    table[["dl"]] <- fi[match(options[["predictors"]], fi[["y"]]), "x"]
-  }
+  fi <- DALEX::feature_importance(result[["explainer_fi"]], B = 10)
+  fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
+  table[["dl"]] <- fi[match(options[["predictors"]], fi[["y"]]), "x"]
 }
 
 .mlRandomForestPlotError <- function(options, jaspResults, ready, position, purpose) {
