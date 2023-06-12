@@ -126,7 +126,11 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   vars <- as.character(names(varImpOrder))
   table[["predictor"]] <- vars
   table[["imp"]] <- as.numeric(varImpOrder) / sum(as.numeric(varImpOrder)) * 100
-  fi <- DALEX::model_parts(result[["explainer_fi"]], B = 50)
+  if (purpose == "regression") {
+    fi <- DALEX::model_parts(result[["explainer"]], B = 50)
+  } else if (purpose == "classification") {
+    fi <- DALEX::model_parts(result[["explainer_fi"]], B = 50)
+  }
   fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
   table[["dl"]] <- fi[match(options[["predictors"]], fi[["y"]]), "x"]
 }
