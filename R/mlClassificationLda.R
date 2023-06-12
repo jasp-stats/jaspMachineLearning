@@ -45,38 +45,41 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   # Create the validation measures table
   .mlClassificationTableMetrics(dataset, options, jaspResults, ready, position = 5)
 
-  # Create the coefficients table
-  .mlClassificationLdaTableCoef(options, jaspResults, ready, position = 6)
-
-  # Create the prior and posterior table
-  .mlClassificationLdaTablePriorPosterior(options, jaspResults, ready, position = 7)
-
-  # Create the group means table
-  .mlClassificationLdaTableMeans(options, jaspResults, ready, position = 8)
-
-  # Create the test of equality of means table
-  .mlClassificationLdaTableEqualityMeans(dataset, options, jaspResults, ready, position = 9)
-
-  # Create the test of equality of covariance matrices table
-  .mlClassificationLdaTableEqualityCovMat(dataset, options, jaspResults, ready, position = 10)
-
-  # Create the multicollinearity table
-  .mlClassificationLdaTableMulticollinearity(dataset, options, jaspResults, ready, position = 11)
+  # Create the feature importance table
+  .mlTableFeatureImportance(options, jaspResults, ready, position = 6, purpose = "classification")
 
   # Create the shap table
-  .mlTableShap(dataset, options, jaspResults, ready, position = 12, purpose = "classification")
+  .mlTableShap(dataset, options, jaspResults, ready, position = 7, purpose = "classification")
+
+  # Create the coefficients table
+  .mlClassificationLdaTableCoef(options, jaspResults, ready, position = 8)
+
+  # Create the prior and posterior table
+  .mlClassificationLdaTablePriorPosterior(options, jaspResults, ready, position = 9)
+
+  # Create the group means table
+  .mlClassificationLdaTableMeans(options, jaspResults, ready, position = 10)
+
+  # Create the test of equality of means table
+  .mlClassificationLdaTableEqualityMeans(dataset, options, jaspResults, ready, position = 11)
+
+  # Create the test of equality of covariance matrices table
+  .mlClassificationLdaTableEqualityCovMat(dataset, options, jaspResults, ready, position = 12)
+
+  # Create the multicollinearity table
+  .mlClassificationLdaTableMulticollinearity(dataset, options, jaspResults, ready, position = 13)
 
   # Create the ROC curve
-  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 13, type = "lda")
+  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 14, type = "lda")
 
   # Create the Andrews curves
-  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 14)
+  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 15)
 
   # Create the LDA matrix plot
-  .mlClassificationLdaPlotDiscriminants(dataset, options, jaspResults, ready, position = 15)
+  .mlClassificationLdaPlotDiscriminants(dataset, options, jaspResults, ready, position = 16)
 
   # Decision boundaries
-  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 16, type = "lda")
+  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 17, type = "lda")
 }
 
 # Error handling
@@ -137,7 +140,12 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   result[["test"]] <- testSet
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["classes"]] <- predict(fit, newdata = dataset)$class
-  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data)$posterior)
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "multiclass", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data)$posterior)
+  if (nlevels(result[["testReal"]]) == 2) {
+    result[["explainer_fi"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = as.numeric(result[["train"]][, options[["target"]]]) - 1, predict_function = function(model, data) apply(predict(model, newdata = data)$posterior, 1, which.max) - 1)
+  } else {
+    result[["explainer_fi"]] <- DALEX::explain(result[["model"]], type = "multiclass", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data)$posterior)
+  }
   return(result)
 }
 
