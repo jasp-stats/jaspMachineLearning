@@ -34,9 +34,9 @@ Form
 	{
 		title:					qsTr("Tables")
 
-		TAB.ClusterMeans { }
 		TAB.ClusterInfo { show_centroids: true }
 		TAB.ModelPerformance {}
+		TAB.ClusterMeans { }
 	}
 
 	Group

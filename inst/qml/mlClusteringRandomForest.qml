@@ -34,9 +34,9 @@ Form
 	{
 		title:									qsTr("Tables")
 
-		TAB.ClusterMeans { }
 		TAB.ClusterInfo { }
 		TAB.ModelPerformance {}
+		TAB.ClusterMeans { }
 		TAB.FeatureImportance { }
 	}
 

@@ -24,7 +24,6 @@ import JASP.Widgets		1.0
 CheckBox
 {
 	property bool show_centroids: false
-	property bool k_means: false
 
 	name:			"tableClusterInformation"
 	text:			qsTr("Cluster information")
@@ -46,7 +45,7 @@ CheckBox
 	CheckBox
 	{
 		name:		"tableClusterInformationCentroids"
-		text:		k_means ? qsTr("Centers") : qsTr("Centroids")
+		text:		qsTr("Centers")
 		visible:	show_centroids
 	}
 
