@@ -3,7 +3,7 @@ context("Machine Learning Fuzzy C-Means Clustering")
 options <- initMlOptions("mlClusteringFuzzyCMeans")
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
-options$tableClusterEvaluationMetrics <- TRUE
+options$validationMeasures <- TRUE
 options$modelOptimization <- "optimized"
 options$tsneClusterPlot <- TRUE
 options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 

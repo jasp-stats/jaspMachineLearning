@@ -3,7 +3,7 @@ context("Machine Learning Random Forest Clustering")
 options <- initMlOptions("mlClusteringRandomForest")
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
-options$tableClusterEvaluationMetrics <- TRUE
+options$validationMeasures <- TRUE
 options$featureImportanceTable <- TRUE
 options$modelOptimization <- "optimized"
 options$tsneClusterPlot <- TRUE
