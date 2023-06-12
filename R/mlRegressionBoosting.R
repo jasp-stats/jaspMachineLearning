@@ -169,8 +169,8 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   table$addColumnInfo(name = "relIn", title = gettext("Relative Influence"), type = "number")
   if (purpose == "regression") {
     table$addColumnInfo(name = "dl", title = gettext("Mean dropout loss"), type = "number")
+    table$addFootnote(gettext("Mean dropout loss is computed on the basis of 10 permutations."))
   }
-  table$addFootnote(gettext("Mean dropout loss is computed on the basis of 10 permutations."))
   jaspResults[["featureImportanceTable"]] <- table
   if (!ready) {
     return()
