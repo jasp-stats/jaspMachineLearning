@@ -472,7 +472,7 @@
   predPerformance <- data.frame(true = c(regressionResult[["testReal"]]), predicted = regressionResult[["testPred"]])
   breaks <- jaspGraphs::getPrettyAxisBreaks(unlist(predPerformance), min.n = 4)
   p <- ggplot2::ggplot(data = predPerformance, mapping = ggplot2::aes(x = true, y = predicted)) +
-    jaspGraphs::geom_line(data = data.frame(x = range(breaks), y = range(breaks)), mapping = ggplot2::aes(x = x, y = y), col = "darkred", size = 1) +
+    ggplot2::geom_line(data = data.frame(x = range(breaks), y = range(breaks)), mapping = ggplot2::aes(x = x, y = y), col = "darkred", linewidth = 1) +
     jaspGraphs::geom_point() +
     ggplot2::scale_x_continuous(name = gettext("Observed Test Values"), breaks = breaks, limits = range(breaks)) +
     ggplot2::scale_y_continuous(name = gettext("Predicted Test Values"), breaks = breaks, limits = range(breaks)) +

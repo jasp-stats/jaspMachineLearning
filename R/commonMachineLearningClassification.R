@@ -685,7 +685,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   )
   yBreaks <- jaspGraphs::getPrettyAxisBreaks(plotData$y, min.n = 4)
   p <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x, y = y, color = target, group = observation)) +
-    jaspGraphs::geom_line(size = 0.2) +
+    ggplot2::geom_line(linewidth = 0.2) +
     ggplot2::scale_x_continuous(name = NULL, breaks = c(-pi, -pi / 2, 0, pi / 2, pi), labels = c("-\u03C0", "-\u03C0/2", "0", "\u03C0/2", "\u03C0"), limits = c(-pi, pi)) +
     ggplot2::scale_y_continuous(name = NULL, breaks = yBreaks, limits = range(yBreaks)) +
     ggplot2::labs(color = options[["target"]]) +
