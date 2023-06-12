@@ -543,10 +543,10 @@
     p <- ggplot2::ggplot(plotData, ggplot2::aes(x = xCoord, y = value, fill = Cluster))
     if (options[["clusterMeanPlotBarPlot"]]) {
       p <- p + ggplot2::geom_bar(color = "black", stat = "identity") +
-        ggplot2::geom_errorbar(data = plotData, ggplot2::aes(x = xCoord, ymin = lower, ymax = upper), width = 0.2, size = 1)
+        ggplot2::geom_errorbar(data = plotData, ggplot2::aes(x = xCoord, ymin = lower, ymax = upper), width = 0.2, linewidth = 1)
     } else {
       p <- p + ggplot2::geom_segment(ggplot2::aes(x = 0, xend = max(plotData[["xCoord"]]), y = 0, yend = 0), linetype = 2) +
-        ggplot2::geom_errorbar(data = plotData, ggplot2::aes(x = xCoord, ymin = lower, ymax = upper), width = 0.2, size = 1) +
+        ggplot2::geom_errorbar(data = plotData, ggplot2::aes(x = xCoord, ymin = lower, ymax = upper), width = 0.2, linewidth = 1) +
         jaspGraphs::geom_point(color = "black")
     }
     p <- p + ggplot2::scale_x_continuous(name = NULL, breaks = xBreaks, labels = xLabels) +
@@ -574,9 +574,9 @@
       p <- ggplot2::ggplot(plotData, ggplot2::aes(x = Cluster, y = value, fill = Cluster))
       if (options[["clusterMeanPlotBarPlot"]]) {
         p <- p + ggplot2::geom_bar(color = "black", stat = "identity") +
-          ggplot2::geom_errorbar(data = plotData, ggplot2::aes(x = Cluster, ymin = lower, ymax = upper), width = 0.2, size = 1)
+          ggplot2::geom_errorbar(data = plotData, ggplot2::aes(x = Cluster, ymin = lower, ymax = upper), width = 0.2, linewidth = 1)
       } else {
-        p <- p + ggplot2::geom_errorbar(data = plotData, ggplot2::aes(x = Cluster, ymin = lower, ymax = upper), width = 0.2, size = 1) +
+        p <- p + ggplot2::geom_errorbar(data = plotData, ggplot2::aes(x = Cluster, ymin = lower, ymax = upper), width = 0.2, linewidth = 1) +
           jaspGraphs::geom_point(color = "black")
       }
       p <- p + ggplot2::scale_x_discrete(name = gettext("Cluster"), breaks = xBreaks) +

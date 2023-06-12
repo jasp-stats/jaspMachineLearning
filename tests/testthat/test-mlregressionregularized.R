@@ -28,6 +28,7 @@ options$variableTrace <- TRUE
 options$tableShap <- TRUE
 options$fromIndex <- 1
 options$toIndex <- 5
+options$featureImportanceTable <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlRegressionRegularized", "wine.csv", options)
 
@@ -82,8 +83,7 @@ test_that("Variable Trace Plot matches", {
   jaspTools::expect_equal_plots(testPlot, "variable-trace-plot")
 })
 
-test_that("Feature Contributions to Predictions for Test Set Cases table results match", {
-	skip("Need to figure out why this fails")
+test_that("Additive Explanations for Predictions of Test Set Cases table results match", {
 	table <- results[["results"]][["tableShap"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list(-0.0535263203138902, 0.118131139348719, -0.188465210106584, 0.0672886920738429,
@@ -107,4 +107,15 @@ test_that("Feature Contributions to Predictions for Test Set Cases table results
 			 0, -0.0588930676809153, 0.00927287186209547, 0.031826815527207,
 			 -0.114653512339831, 0.394185984418554, 0.0569384290499024, 5,
 			 0.899819593817254))
+})
+
+test_that("Feature Importance Metrics table results match", {
+	table <- results[["results"]][["featureImportanceTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(1.02376547238848, "Color", 0.699397281919635, "Proline", 0.695537247556727,
+			 "Flavanoids", 0.67514009379813, "Proanthocyanins", 0.671658627588867,
+			 "Dilution", 0.670338019464055, "Malic", 0.655080866986863, "Alcalinity",
+			 0.642834394340499, "Ash", 0.636925668454509, "Hue", 0.636812592292744,
+			 "Phenols", 0.636185977127098, "Nonflavanoids", 0.634008454468671,
+			 "Magnesium"))
 })
