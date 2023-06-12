@@ -33,6 +33,7 @@ CheckBox
 			name:		"tsneClusterPlotLegend"
 			text:		qsTr("Legend")
 			checked:	true
+			visible:	false
 		}
 
 		CheckBox

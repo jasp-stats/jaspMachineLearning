@@ -49,10 +49,10 @@ Form
 			name:								"kDistancePlot"
 		}
 
+		FIG.Tsne { }
 		FIG.ClusterMatrix { }
 		FIG.ClusterMeans { }
 		FIG.ClusterDensity { }
-		FIG.Tsne { }
 	}
 
 	UI.ExportResults

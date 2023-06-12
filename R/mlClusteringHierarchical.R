@@ -42,20 +42,20 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
   # Create the within sum of squares plot
   .mlClusteringPlotElbow(dataset, options, jaspResults, ready, position = 5)
 
-  # Create dendrogram
-  .mlClusteringHierarchicalDendogram(dataset, options, jaspResults, ready, position = 6)
-
-  # Create the cluster means plot
-  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 7)
-
-  # Create the cluster densities plot
-  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 8)
-
   # Create the cluster plot
-  .mlClusteringPlotTsne(dataset, options, jaspResults, ready, position = 9, type = "hierarchical")
+  .mlClusteringPlotTsne(dataset, options, jaspResults, ready, position = 6, type = "hierarchical")
 
   # Create the matrix plot
-  .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 10)
+  .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 7)
+
+  # Create the cluster means plot
+  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 8)
+
+  # Create the cluster densities plot
+  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 9)
+
+  # Create dendrogram
+  .mlClusteringHierarchicalDendogram(dataset, options, jaspResults, ready, position = 10)
 }
 
 .hierarchicalClustering <- function(dataset, options, jaspResults) {

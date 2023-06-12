@@ -43,19 +43,19 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   .mlBoostingTableRelInf(options, jaspResults, ready, position = 4, purpose = "regression")
 
   # Create the shap table
-  .mlTableShap(dataset, options, jaspResults, ready, position = 6, purpose = "regression")
-
-  # Create the OOB improvement plot
-  .mlBoostingPlotOobImprovement(options, jaspResults, ready, position = 5, purpose = "regression")
+  .mlTableShap(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
 
   # Create the predicted performance plot
   .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 6)
 
+  # Create the OOB improvement plot
+  .mlBoostingPlotOobImprovement(options, jaspResults, ready, position = 7, purpose = "regression")
+
   # Create the deviance plot
-  .mlBoostingPlotDeviance(options, jaspResults, ready, position = 7, purpose = "regression")
+  .mlBoostingPlotDeviance(options, jaspResults, ready, position = 8, purpose = "regression")
 
   # Create the relative influence plot
-  .mlBoostingPlotRelInf(options, jaspResults, ready, position = 8, purpose = "regression")
+  .mlBoostingPlotRelInf(options, jaspResults, ready, position = 9, purpose = "regression")
 }
 
 .boostingRegression <- function(dataset, options, jaspResults) {
@@ -180,6 +180,9 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   vars <- as.character(result[["relInf"]]$var)
   table[["predictor"]] <- vars
   table[["relIn"]] <- result[["relInf"]]$rel.inf
+  if (options[["setSeed"]]) {
+    set.seed(options[["seed"]])
+  }
   if (purpose == "regression") {
     fi <- DALEX::model_parts(result[["explainer"]], B = 50)
   } else if (purpose == "classification") {

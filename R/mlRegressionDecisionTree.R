@@ -42,11 +42,11 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   # Create the variable importance table
   .mlDecisionTreeTableVarImp(options, jaspResults, ready, position = 4, purpose = "regression")
 
-  # Create the splits table
-  .mlDecisionTreeTableSplits(options, jaspResults, ready, position = 5, purpose = "regression")
-
   # Create the shap table
-  .mlTableShap(dataset, options, jaspResults, ready, position = 6, purpose = "regression")
+  .mlTableShap(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
+
+  # Create the splits table
+  .mlDecisionTreeTableSplits(options, jaspResults, ready, position = 6, purpose = "regression")
 
   # Create the predicted performance plot
   .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 7)
@@ -126,6 +126,9 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   vars <- as.character(names(varImpOrder))
   table[["predictor"]] <- vars
   table[["imp"]] <- as.numeric(varImpOrder) / sum(as.numeric(varImpOrder)) * 100
+  if (options[["setSeed"]]) {
+    set.seed(options[["seed"]])
+  }
   if (purpose == "regression") {
     fi <- DALEX::model_parts(result[["explainer"]], B = 50)
   } else if (purpose == "classification") {

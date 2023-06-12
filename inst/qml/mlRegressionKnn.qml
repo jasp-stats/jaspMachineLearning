@@ -48,15 +48,15 @@ Form
 
 		CheckBox
 		{
-			text:								qsTr("Weight function")
-			name:								"weightsPlot"
+			text:								qsTr("Mean squared error")
+			name:								"errorVsKPlot"
+			enabled:							optimizeModel.checked
 		}
 
 		CheckBox
 		{
-			text:								qsTr("Mean squared error")
-			name:								"errorVsKPlot"
-			enabled:							optimizeModel.checked
+			text:								qsTr("Weight function")
+			name:								"weightsPlot"
 		}
 	}
 

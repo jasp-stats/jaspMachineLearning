@@ -51,14 +51,14 @@ mlClassificationRandomForest <- function(jaspResults, dataset, options, ...) {
   # Create the shap table
   .mlTableShap(dataset, options, jaspResults, ready, position = 7, purpose = "classification")
 
-  # Create the trees vs model error plot
-  .mlRandomForestPlotError(options, jaspResults, ready, position = 8, purpose = "classification")
-
   # Create the ROC curve
-  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 9, type = "randomForest")
+  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 8, type = "randomForest")
 
   # Create the Andrews curves
-  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 10)
+  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 9)
+
+  # Create the trees vs model error plot
+  .mlRandomForestPlotError(options, jaspResults, ready, position = 10, purpose = "classification")
 
   # Create the mean decrease in accuracy plot
   .mlRandomForestPlotDecreaseAccuracy(options, jaspResults, ready, position = 11, purpose = "classification")

@@ -55,11 +55,11 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   # Create the shap table
   .mlTableShap(dataset, options, jaspResults, ready, position = 7, purpose = "classification")
 
-  # Create the network weights table
-  .mlNeuralNetworkTableWeights(dataset, options, jaspResults, ready, purpose = "classification", position = 8)
-
   # Create the error plot
-  .mlNeuralNetworkPlotError(dataset, options, jaspResults, ready, position = 9, purpose = "classification")
+  .mlNeuralNetworkPlotError(dataset, options, jaspResults, ready, position = 8, purpose = "classification")
+
+  # Create the network weights table
+  .mlNeuralNetworkTableWeights(dataset, options, jaspResults, ready, position = 9, purpose = "classification")
 
   # Create the ROC curve
   .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 10, type = "neuralnet")

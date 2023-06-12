@@ -51,17 +51,17 @@ mlClassificationKnn <- function(jaspResults, dataset, options, ...) {
   # Create the shap table
   .mlTableShap(dataset, options, jaspResults, ready, position = 7, purpose = "classification")
 
-  # Create the weights plot
-  .mlKnnPlotWeights(options, jaspResults, position = 8)
-
-  # Create the classification error plot
-  .mlKnnPlotError(dataset, options, jaspResults, ready, position = 9, purpose = "classification")
-
   # Create the ROC curve
-  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 10, type = "knn")
+  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 8, type = "knn")
 
   # Create the Andrews curves
-  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 11)
+  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 9)
+
+  # Create the classification error plot
+  .mlKnnPlotError(dataset, options, jaspResults, ready, position = 10, purpose = "classification")
+
+  # Create the weights plot
+  .mlKnnPlotWeights(options, jaspResults, position = 11)
 
   # Decision boundaries
   .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 12, type = "knn")

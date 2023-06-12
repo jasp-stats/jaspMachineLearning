@@ -51,15 +51,15 @@ Form
 
 		CheckBox
 		{
-			text:					qsTr("Weight function")
-			name:					"weightsPlot"
+			text:					qsTr("Classification accuracy")
+			name:					"errorVsKPlot"
+			enabled:				optimizeModel.checked
 		}
 
 		CheckBox
 		{
-			text:					qsTr("Classification accuracy")
-			name:					"errorVsKPlot"
-			enabled:				optimizeModel.checked
+			text:					qsTr("Weight function")
+			name:					"weightsPlot"
 		}
 
 		FIG.DecisionBoundary { }

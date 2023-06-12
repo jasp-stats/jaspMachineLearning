@@ -714,6 +714,9 @@
     "regression" = jaspResults[["regressionResult"]]$object,
     "classification" = jaspResults[["classificationResult"]]$object
   )
+  if (options[["setSeed"]]) {
+    set.seed(options[["seed"]])
+  }
   if (purpose == "regression") {
     fi <- DALEX::model_parts(result[["explainer"]], B = 50)
   } else if (purpose == "classification") {
@@ -721,6 +724,6 @@
   }
   fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
   df <- data.frame(predictor = options[["predictors"]], dl = fi[match(options[["predictors"]], fi[["y"]]), "x"])
-  df <- df[order(df[["dl"]]), ]
+  df <- df[order(-df[["dl"]]), ]
   table$setData(df)
 }

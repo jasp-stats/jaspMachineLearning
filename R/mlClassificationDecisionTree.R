@@ -48,11 +48,11 @@ mlClassificationDecisionTree <- function(jaspResults, dataset, options, ...) {
   # Create the variable importance table
   .mlDecisionTreeTableVarImp(options, jaspResults, ready, position = 6, purpose = "classification")
 
-  # Create the splits table
-  .mlDecisionTreeTableSplits(options, jaspResults, ready, position = 7, purpose = "classification")
-
   # Create the shap table
-  .mlTableShap(dataset, options, jaspResults, ready, position = 8, purpose = "classification")
+  .mlTableShap(dataset, options, jaspResults, ready, position = 7, purpose = "classification")
+
+  # Create the splits table
+  .mlDecisionTreeTableSplits(options, jaspResults, ready, position = 8, purpose = "classification")
 
   # Create the ROC curve
   .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 9, type = "rpart")

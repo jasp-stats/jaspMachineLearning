@@ -172,10 +172,10 @@
   }
   if (type == "densitybased") {
     if (clusterResult[["zeroMark"]] == 1) {
-      table$addFootnote(gettext("Your cluster model contains 0 clusters and only Noisepoints, we advise to change the Eps and MinPts parameters."), colNames = "clusters")
+      table$addFootnote(gettext("The model contains 0 clusters and only Noisepoints, we advise to change 'Epsilon neighborhood size' and 'Min. core points' parameters under 'Training parameters'."), colNames = "clusters")
     }
     if (clusterResult[["oneMark"]] == 1) {
-      table$addFootnote(gettext("Your cluster model contains 1 cluster and 0 Noisepoints. You could change the Eps and MinPts parameters."), colNames = "clusters")
+      table$addFootnote(gettext("The model contains 1 cluster and no Noisepoints. You may want to change 'Epsilon neighborhood size' and 'Min. core points' parameters under 'Training parameters'."), colNames = "clusters")
     }
   }
   if (!options[["scaleVariables"]]) {
@@ -551,6 +551,7 @@
     }
     p <- p + ggplot2::scale_x_continuous(name = NULL, breaks = xBreaks, labels = xLabels) +
       ggplot2::scale_y_continuous(name = gettext("Cluster Mean"), breaks = yBreaks, limits = range(yBreaks)) +
+      ggplot2::scale_fill_manual(name = gettext("Cluster"), values = .mlColorScheme(length(unique(clusterResult[["pred.values"]])))) +
       jaspGraphs::geom_rangeframe(sides = "l") +
       jaspGraphs::themeJaspRaw(legend.position = "right") +
       ggplot2::theme(axis.ticks.x = ggplot2::element_blank(), axis.text.x = ggplot2::element_text(angle = 20))
@@ -580,6 +581,7 @@
       }
       p <- p + ggplot2::scale_x_discrete(name = gettext("Cluster"), breaks = xBreaks) +
         ggplot2::scale_y_continuous(name = variable, breaks = yBreaks, limits = range(yBreaks)) +
+        ggplot2::scale_fill_manual(name = gettext("Cluster"), values = .mlColorScheme(length(unique(clusterResult[["pred.values"]])))) +
         jaspGraphs::geom_rangeframe(sides = "l") +
         jaspGraphs::themeJaspRaw() +
         ggplot2::theme(axis.ticks.x = ggplot2::element_blank())

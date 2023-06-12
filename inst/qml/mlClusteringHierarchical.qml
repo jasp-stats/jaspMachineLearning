@@ -44,10 +44,10 @@ Form
 		title:									qsTr("Plots")
 
 		FIG.ElbowMethod { enable: !optim.isManual }
+		FIG.Tsne { }
 		FIG.ClusterMatrix { }
 		FIG.ClusterMeans { }
 		FIG.ClusterDensity { }
-		FIG.Tsne { }
 
 		CheckBox
 		{

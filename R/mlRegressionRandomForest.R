@@ -45,11 +45,11 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   # Create the shap table
   .mlTableShap(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
 
-  # Create the trees vs model error plot
-  .mlRandomForestPlotError(options, jaspResults, ready, position = 6, purpose = "regression")
-
   # Create the predicted performance plot
-  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 7)
+  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 6)
+
+  # Create the trees vs model error plot
+  .mlRandomForestPlotError(options, jaspResults, ready, position = 7, purpose = "regression")
 
   # Create the mean decrease in accuracy plot
   .mlRandomForestPlotDecreaseAccuracy(options, jaspResults, ready, position = 8, purpose = "regression")
@@ -183,6 +183,9 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   table[["predictor"]] <- vars
   table[["MDiA"]] <- result[["varImp"]]$MeanIncrMSE
   table[["MDiNI"]] <- result[["varImp"]]$TotalDecrNodeImp
+  if (options[["setSeed"]]) {
+    set.seed(options[["seed"]])
+  }
   if (purpose == "regression") {
     fi <- DALEX::model_parts(result[["explainer"]], B = 50)
   } else if (purpose == "classification") {

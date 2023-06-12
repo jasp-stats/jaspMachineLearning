@@ -51,14 +51,14 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
   # Create the shap table
   .mlTableShap(dataset, options, jaspResults, ready, position = 7, purpose = "classification")
 
-  # Create the OOB improvement plot
-  .mlBoostingPlotOobImprovement(options, jaspResults, ready, position = 8, purpose = "classification")
-
   # Create the ROC curve
-  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 9, type = "boosting")
+  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 8, type = "boosting")
 
   # Create the Andrews curves
-  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 10)
+  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 9)
+
+  # Create the OOB improvement plot
+  .mlBoostingPlotOobImprovement(options, jaspResults, ready, position = 10, purpose = "classification")
 
   # Create the deviance plot
   .mlBoostingPlotDeviance(options, jaspResults, ready, position = 11, purpose = "classification")
