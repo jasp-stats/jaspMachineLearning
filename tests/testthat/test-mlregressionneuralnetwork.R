@@ -25,6 +25,7 @@ options$validationMeasures <- TRUE
 options$tableShap <- TRUE
 options$fromIndex <- 1
 options$toIndex <- 5
+options$featureImportanceTable <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlRegressionNeuralNetwork", "iris.csv", options)
 
@@ -56,7 +57,6 @@ test_that("Evaluation Metrics table results match", {
 })
 
 test_that("Feature Contributions to Predictions for Test Set Cases table results match", {
-	skip("Need to figure out why this fails")
 	table <- results[["results"]][["tableShap"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list(-0.320874456044422, 5.70882938536069e-05, 5.43570184321823e-06,
@@ -68,4 +68,11 @@ test_that("Feature Contributions to Predictions for Test Set Cases table results
 			 0.321850912882019, 4, 0.00104612347983946, -0.320830391213794,
 			 0.000161871241736764, 6.14846902043651e-05, 0.321850912882019,
 			 5, 0.00124387760016624))
+})
+
+test_that("Feature Importance Metrics table results match", {
+	table <- results[["results"]][["featureImportanceTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(1.27918013884678, "Petal.Length", 0.85075500640059, "Sepal.Width",
+			 0.846526385783444, "Petal.Width"))
 })

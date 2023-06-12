@@ -60,15 +60,16 @@ test_that("Variable Importance table results match", {
 			))
 })
 
-test_that("Evaluation Metrics table results match", {
-	table <- results[["results"]][["validationMeasures"]][["data"]]
+test_that("Feature Importance Metrics table results match", {
+	table <- results[["results"]][["featureImportanceTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list("MSE", 0.152, "RMSE", 0.39, "MAE / MAD", 0.321, "MAPE", "106.28%", "R<unicode><unicode>",
-			 0.818))
+		list(0.478617650323262, 38.0537799528194, "Petal.Length", 1.46148698515658,
+			 27.0512145757421, "Petal.Width", 0.382413842438776, 21.2388630350472,
+			 "Species", 0.382413842438776, 13.6561424363914, "Sepal.Width"
+			))
 })
 
 test_that("Feature Contributions to Predictions for Test Set Cases table results match", {
-	skip("Need to figure out why this fails")
 	table <- results[["results"]][["tableShap"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list(-1.18222800074384, 0, 0.390825827425081, 0, -0.02415266042682,

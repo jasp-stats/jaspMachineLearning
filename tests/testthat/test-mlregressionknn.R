@@ -25,6 +25,7 @@ options$predictionsColumn <- ""
 options$tableShap <- TRUE
 options$fromIndex <- 1
 options$toIndex <- 5
+options$featureImportanceTable <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlRegressionKnn", "wine.csv", options)
 
@@ -86,4 +87,15 @@ test_that("Feature Contributions to Predictions for Test Set Cases table results
 			 0.0437879817298832, -0.0314970923485778, 0.0158565979490696,
 			 0.0891427141940875, 0.0634263917962778, 0.339417637529912, 0.125686370754131,
 			 5, 0.759869249885825))
+})
+
+test_that("Feature Importance Metrics table results match", {
+	table <- results[["results"]][["featureImportanceTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(0.685021928680065, "Proline", 0.652602310619497, "Color", 0.611900222810213,
+			 "Nonflavanoids", 0.595775060189909, "Malic", 0.590654021216899,
+			 "Ash", 0.589193989262503, "Dilution", 0.588933682617741, "Alcalinity",
+			 0.581495692525862, "Magnesium", 0.579637965914741, "Hue", 0.578758332225294,
+			 "Proanthocyanins", 0.577591118241997, "Phenols", 0.577510007287227,
+			 "Flavanoids"))
 })
