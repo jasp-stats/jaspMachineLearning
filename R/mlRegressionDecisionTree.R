@@ -109,6 +109,7 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   table$addColumnInfo(name = "predictor", title = " ", type = "string")
   table$addColumnInfo(name = "imp", title = gettext("Relative Importance"), type = "number")
   table$addColumnInfo(name = "dl", title = gettext("Mean dropout loss"), type = "number")
+  table$addFootnote(gettext("Mean dropout loss is based on 50 permutations."))
   jaspResults[["featureImportanceTable"]] <- table
   if (!ready) {
     return()
@@ -125,7 +126,7 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   vars <- as.character(names(varImpOrder))
   table[["predictor"]] <- vars
   table[["imp"]] <- as.numeric(varImpOrder) / sum(as.numeric(varImpOrder)) * 100
-  fi <- DALEX::feature_importance(result[["explainer_fi"]], B = 10)
+  fi <- DALEX::model_parts(result[["explainer_fi"]], B = 50)
   fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
   table[["dl"]] <- fi[match(options[["predictors"]], fi[["y"]]), "x"]
 }

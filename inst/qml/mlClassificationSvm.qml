@@ -37,6 +37,7 @@ Form
 		TAB.ConfusionMatrix { }
 		TAB.ClassProportions { }
 		TAB.ModelPerformance { }
+		TAB.FeatureImportance { }
 		TAB.ExplainPredictions { }
 
 		CheckBox
@@ -115,7 +116,7 @@ Form
 				text:							qsTr("r parameter")
 				defaultValue:					0
 				min:							0
-				enabled:						weights.value == "polynomial" | weights.value == "sigmoid"
+				enabled:						weights.value == "polynomial" || weights.value == "sigmoid"
 				Layout.leftMargin:				10 * preferencesModel.uiScale
 			}
 

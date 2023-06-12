@@ -168,7 +168,7 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
   }
   result[["explainer"]] <- DALEX::explain(result[["model"]], type = "multiclass", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data, type = "response", n.trees = model$n.trees))
   if (nlevels(result[["testReal"]]) == 2) {
-    result[["explainer_fi"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = as.numeric(result[["train"]][, options[["target"]]]) , predict_function = function(model, data) predict(model, newdata = data, type = "response", n.trees = model$n.trees))
+    result[["explainer_fi"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = as.numeric(result[["train"]][, options[["target"]]]) - 1, predict_function = function(model, data) predict(model, newdata = data, type = "response", n.trees = model$n.trees))
   } else {
     result[["explainer_fi"]] <- DALEX::explain(result[["model"]], type = "multiclass", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data, type = "response", n.trees = model$n.trees)[, , 1])
   }
