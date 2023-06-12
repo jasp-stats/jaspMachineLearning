@@ -700,7 +700,7 @@
   if (!options[["featureImportanceTable"]] || !is.null(jaspResults[["featureImportanceTable"]])) {
     return()
   }
-  table <- createJaspTable(title = gettext("Feature Importance"))
+  table <- createJaspTable(title = gettext("Feature Importance Metrics"))
   table$position <- position
   table$dependOn(options = c(.mlRegressionDependencies(), "featureImportanceTable"))
   table$addColumnInfo(name = "predictor", title = "", type = "string")

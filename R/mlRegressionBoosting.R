@@ -157,7 +157,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   if (!options[["featureImportanceTable"]] || !is.null(jaspResults[["featureImportanceTable"]])) {
     return()
   }
-  table <- createJaspTable(title = gettext("Feature Importance"))
+  table <- createJaspTable(title = gettext("Feature Importance Metrics"))
   table$position <- position
   table$dependOn(options = c(
     "featureImportanceTable", "target", "predictors", "modelOptimization", "maxTrees", "interactionDepth", "shrinkage",

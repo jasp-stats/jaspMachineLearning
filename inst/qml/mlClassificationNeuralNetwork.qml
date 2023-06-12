@@ -37,6 +37,7 @@ Form
 		TAB.ConfusionMatrix { }
 		TAB.ClassProportions { }
 		TAB.ModelPerformance { }
+		TAB.FeatureImportance { }
 		TAB.ExplainPredictions { }
 
 		CheckBox

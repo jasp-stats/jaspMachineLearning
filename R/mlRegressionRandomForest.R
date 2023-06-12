@@ -159,7 +159,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   if (!is.null(jaspResults[["featureImportanceTable"]]) || !options[["featureImportanceTable"]]) {
     return()
   }
-  table <- createJaspTable(title = gettext("Feature Importance"))
+  table <- createJaspTable(title = gettext("Feature Importance Metrics"))
   table$position <- position
   table$dependOn(options = c(
     "featureImportanceTable", "scaleVariables", "target", "predictors", "modelOptimization", "maxTrees",
