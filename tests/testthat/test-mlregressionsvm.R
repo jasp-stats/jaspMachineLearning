@@ -21,8 +21,9 @@ options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""
 options$validationDataManual <- 0.2
 options$tableShap <- TRUE
-options$fromIndex <- 1 
+options$fromIndex <- 1
 options$toIndex <- 5
+options$featureImportanceTable <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlRegressionSvm", "iris.csv", options)
 
@@ -171,17 +172,22 @@ test_that("Evaluation Metrics table results match", {
 			 0.853))
 })
 
-test_that("Feature Contributions to Predictions for Test Set Cases table results match", {
-	skip("Need to figure out why this fails")
+test_that("Additive Explanations for Predictions of Test Set Cases table results match", {
 	table <- results[["results"]][["tableShap"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(0.446246397209695, 0.0753544365869729, 0.0423939026885956, 0.0837312232013308,
-			 0.330060685696838, 1, "setosa (0.978)", 0.0672463699932125,
-			 0.441679193107275, 0.0319684379167983, 0.099093407572473, 0.330060685696838,
-			 2, "setosa (0.97)", 0.059125021366628, 0.436356111717586, 0.117028543753257,
-			 0.0268778017523981, 0.330060685696838, 3, "setosa (0.969)",
-			 0.431594401877119, 0.0379631581356391, 0.0313367184581614, 0.13907234618323,
-			 0.330060685696838, 4, "setosa (0.97)", 0.0513011440533579, 0.392950061066032,
-			 0.0281980422852209, 0.143787804073311, 0.330060685696838, 5,
-			 "setosa (0.946)"))
+		list(-1.93610069115689, 0.60855460628033, 0.436308073959843, -0.00127686215394108,
+			 1, -0.892514873070661, -1.85324331493049, 0.608554606280327,
+			 0.516487199342941, -0.00127686215394108, 2, -0.729478371461167,
+			 -1.77038593870409, 0.608554606280329, 0.275949823193586, -0.00127686215394108,
+			 3, -0.887158371384118, -2.0189580673833, 0.48633443430771, 0.67684545010918,
+			 -0.00127686215394108, 4, -0.857055045120346, -1.68752856247769,
+			 0.547444520294017, 0.596666324726061, -0.00127686215394108,
+			 5, -0.544694579611556))
+})
+
+test_that("Feature Importance Metrics table results match", {
+	table <- results[["results"]][["featureImportanceTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(2.09469805360401, "Petal.Length", 0.751385865780793, "Petal.Width",
+			 0.616314114995582, "Sepal.Width"))
 })
