@@ -76,7 +76,7 @@ test_that("t-SNE Cluster Plot matches", {
 })
 
 # Ward.D linkage
-options <- jaspTools::analysisOptions("mlClusteringHierarchical")
+options <- initMlOptions("mlClusteringHierarchical")
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
 options$tableClusterEvaluationMetrics <- TRUE
@@ -141,7 +141,7 @@ test_that("Hierarchical Clustering table results match", {
 })
 
 # ward.D2 linkage
-options <- jaspTools::analysisOptions("mlClusteringHierarchical")
+options <- initMlOptions("mlClusteringHierarchical")
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
 options$tableClusterEvaluationMetrics <- TRUE
@@ -206,7 +206,7 @@ test_that("Hierarchical Clustering table results match", {
 })
 
 # Median linkage
-options <- jaspTools::analysisOptions("mlClusteringHierarchical")
+options <- initMlOptions("mlClusteringHierarchical")
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
 options$tableClusterEvaluationMetrics <- TRUE
@@ -255,7 +255,7 @@ test_that("Hierarchical Clustering table results match", {
 })
 
 # McQuitty linkage
-options <- jaspTools::analysisOptions("mlClusteringHierarchical")
+options <- initMlOptions("mlClusteringHierarchical")
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
 options$tableClusterEvaluationMetrics <- TRUE
