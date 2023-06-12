@@ -33,6 +33,7 @@ options$validationMeasures <- TRUE
 options$tableShap <- TRUE
 options$fromIndex <- 1
 options$toIndex <- 5
+options$featureImportanceTable <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClassificationLda", "wine.csv", options)
 
@@ -185,8 +186,7 @@ test_that("Evaluation Metrics table results match", {
       0, 0, "Average / Total", 1, 1, 1, 1, 1, 35, 1, "<unicode><unicode><unicode>"))
 })
 
-test_that("Feature Contributions to Predictions for Test Set Cases table results match", {
-	skip("Need to figure out why this fails")
+test_that("Additive Explanations for Predictions of Test Set Cases table results match", {
 	table <- results[["results"]][["tableShap"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list(-0.0298348205005264, 0.204669205512118, 0.0650573130972094, 0.0984758248651785,
@@ -212,4 +212,15 @@ test_that("Feature Contributions to Predictions for Test Set Cases table results
 			 5.12944464681198e-10, -1.19777410212407e-10, -7.10459945318931e-08,
 			 7.75855569790096e-08, -1.12110600469784e-07, 0.294410797077748,
 			 0.321308696734254, 5, "1 (1)"))
+})
+
+test_that("Feature Importance Metrics table results match", {
+	table <- results[["results"]][["featureImportanceTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(85.8900713326248, "Flavanoids", 83.1720309927639, "Proline", 28.1577006284959,
+			 "Color", 16.2022565499951, "Alcohol", 10.8598389036746, "Alcalinity",
+			 9.92887864875162, "Ash", 8.93029310534988, "Dilution", 3.16091625814165,
+			 "Hue", 1.95530540133887, "Nonflavanoids", 1.6883059234698, "Malic",
+			 0.935460817887541, "Phenols", 0.758027706375559, "Proanthocyanins",
+			 0.45339855404643, "Magnesium"))
 })

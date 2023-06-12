@@ -23,6 +23,7 @@ options$validationMeasures <- TRUE
 options$tableShap <- TRUE
 options$fromIndex <- 1
 options$toIndex <- 5
+options$featureImportanceTable <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClassificationSvm", "iris.csv", options)
 
@@ -110,15 +111,24 @@ test_that("Evaluation Metrics table results match", {
         "<unicode><unicode><unicode>"))
 })
 
-test_that("Feature Contributions to Predictions for Test Set Cases table results match", {
-	skip("Need to figure out why this fails")
+test_that("Additive Explanations for Predictions of Test Set Cases table results match", {
 	table <- results[["results"]][["tableShap"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(-0.633333333333333, -0.341666666666667, 0, -0.0166666666666666,
-			 1.99166666666667, 1, "setosa (1)", -0.616666666666666, -0.341666666666667,
-			 0, -0.0333333333333334, 1.99166666666667, 2, "setosa (1)", -0.616666666666666,
-			 -0.341666666666667, 0, -0.0333333333333334, 1.99166666666667,
-			 3, "setosa (1)", -0.333333333333333, -0.6, 0, -0.0583333333333333,
-			 1.99166666666667, 4, "setosa (1)", -0.583333333333333, -0.333333333333333,
-			 0, -0.075, 1.99166666666667, 5, "setosa (1)"))
+		list(0.446246397209695, 0.0753544365869729, 0.0423939026885956, 0.0837312232013308,
+			 0.330060685696838, 1, "setosa (0.978)", 0.0672463699932125,
+			 0.441679193107275, 0.0319684379167983, 0.099093407572473, 0.330060685696838,
+			 2, "setosa (0.97)", 0.059125021366628, 0.436356111717586, 0.117028543753257,
+			 0.0268778017523981, 0.330060685696838, 3, "setosa (0.969)",
+			 0.431594401877119, 0.0379631581356391, 0.0313367184581614, 0.13907234618323,
+			 0.330060685696838, 4, "setosa (0.97)", 0.0513011440533579, 0.392950061066032,
+			 0.0281980422852209, 0.143787804073311, 0.330060685696838, 5,
+			 "setosa (0.946)"))
+})
+
+test_that("Feature Importance Metrics table results match", {
+	table <- results[["results"]][["featureImportanceTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(138.752398553869, "Petal.Width", 120.73284140279, "Petal.Length",
+			 16.3043053467282, "Sepal.Length", 15.7780499474559, "Sepal.Width"
+			))
 })

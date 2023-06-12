@@ -26,6 +26,7 @@ options$validationMeasures <- TRUE
 options$tableShap <- TRUE
 options$fromIndex <- 1
 options$toIndex <- 5
+options$featureImportanceTable <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClassificationNeuralNetwork", "iris.csv", options)
 
@@ -79,8 +80,7 @@ test_that("Evaluation Metrics table results match", {
         1, 0, 0, 0, 0, "Average / Total", 1, 1, 1, 1, 1, 30, 1, "<unicode><unicode><unicode>"))
 })
 
-test_that("Feature Contributions to Predictions for Test Set Cases table results match", {
-	skip("Need to figure out why this fails")
+test_that("Additive Explanations for Predictions of Test Set Cases table results match", {
 	table <- results[["results"]][["tableShap"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list(0.416891133677921, 0.242092547101801, -0.000953562649922746, 0.00676374917304856,
@@ -92,4 +92,12 @@ test_that("Feature Contributions to Predictions for Test Set Cases table results
 			 0.335206132697152, 4, "setosa (1)", 0.334941163631421, 0.319143972721428,
 			 0.00403240654656789, 0.00667632440343113, 0.335206132697152,
 			 5, "setosa (1)"))
+})
+
+test_that("Feature Importance Metrics table results match", {
+	table <- results[["results"]][["featureImportanceTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(239.91758646936, "Petal.Length", 185.38573115309, "Petal.Width",
+			 45.7996970012585, "Sepal.Width", 42.071168508127, "Sepal.Length"
+			))
 })
