@@ -35,11 +35,11 @@ results <- jaspTools::runAnalysis("mlRegressionBoosting", "wine.csv", options)
 test_that("Relative Influence table results match", {
   table <- results[["results"]][["featureImportanceTable"]][["data"]]
   jaspTools::expect_equal_tables(table,
-                      list("Color", 60.3564909956942, "Proline", 28.9359792394392, "Phenols",
-                           4.02747773147275, "Flavanoids", 2.65410848555859, "Hue", 1.59224895077339,
-                           "Proanthocyanins", 1.14701822224105, "Malic", 0.744077365382741,
-                           "Alcalinity", 0.542599009438009, "Ash", 0, "Magnesium", 0, "Nonflavanoids",
-                           0, "Dilution", 0))
+                      list(0.587457241391015, "Color", 60.3564909956942, 0.583466976995932, "Proline", 28.9359792394392, 0.586472558184126, "Phenols",
+                           4.02747773147275, 0.583466976995932, "Flavanoids", 2.65410848555859, 0.597503681613334, "Hue", 1.59224895077339,
+                           0.58969989872739, "Proanthocyanins", 1.14701822224105, 0.583466976995932, "Malic", 0.744077365382741,
+                           0.587362911034375, "Alcalinity", 0.542599009438009, 0.922075174976346, "Ash", 0, 0.585842141086563, "Magnesium", 0, 0.583466976995932, "Nonflavanoids",
+                           0, 0.678174481851825, "Dilution", 0))
 })
 
 test_that("Data Split plot matches", {
