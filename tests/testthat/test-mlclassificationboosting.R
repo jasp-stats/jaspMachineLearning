@@ -43,12 +43,12 @@ test_that("Andrews Curves Plot matches", {
 test_that("Relative Influence table results match", {
   table <- results[["results"]][["featureImportanceTable"]][["data"]]
   jaspTools::expect_equal_tables(table,
-                      list("Proline", 31.1797927388636, "Color", 20.173253110114, "Flavanoids",
-                           19.8438729446546, "Alcohol", 11.3080195393476, "Hue", 9.04159967448256,
-                           "Dilution", 5.78903515515603, "Phenols", 2.06207785543184, "Malic",
-                           0.318048182535448, "Magnesium", 0.198970273683845, "Ash", 0.0761054305928261,
-                           "Nonflavanoids", 0.00505359720114565, "Alcalinity", 0.00416148218437122,
-                           "Proanthocyanins", 1.00157520318044e-05))
+                      list(0.580073791483201, "Proline", 31.1797927388636, 0.134398642455039, "Color", 20.173253110114, 0.0820480575235912, "Flavanoids",
+                           19.8438729446546, 0.0642402307210398, "Alcohol", 11.3080195393476, 0.0796903953021984, "Hue", 9.04159967448256,
+                           0.0655054520688096, "Dilution", 5.78903515515603, 6.11564217900192, "Phenols", 2.06207785543184, 0.0583723130067498, "Malic",
+                           0.318048182535448, 0.0549408459183189, "Magnesium", 0.198970273683845, 1.92298108138859, "Ash", 0.0761054305928261,
+                           1.46276253431049, "Nonflavanoids", 0.00505359720114565, 0.170561653950044, "Alcalinity", 0.00416148218437122,
+                           16.3458735499254, "Proanthocyanins", 1.00157520318044e-05))
 })
 
 test_that("Class Proportions table results match", {

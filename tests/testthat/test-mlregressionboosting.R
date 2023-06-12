@@ -32,7 +32,7 @@ set.seed(1)
 results <- jaspTools::runAnalysis("mlRegressionBoosting", "wine.csv", options)
 
 
-test_that("Relative Influence table results match", {
+test_that("Feature Importance Metrics table results match", {
   table <- results[["results"]][["featureImportanceTable"]][["data"]]
   jaspTools::expect_equal_tables(table,
                       list(0.587457241391015, "Color", 60.3564909956942, 0.583466976995932, "Proline", 28.9359792394392, 0.586472558184126, "Phenols",
