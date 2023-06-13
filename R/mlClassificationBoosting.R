@@ -46,7 +46,7 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
   .mlClassificationTableMetrics(dataset, options, jaspResults, ready, position = 5)
 
   # Create the relative influence table
-  .mlBoostingTableRelInf(options, jaspResults, ready, position = 6, purpose = "classification")
+  .mlBoostingTableFeatureImportance(options, jaspResults, ready, position = 6, purpose = "classification")
 
   # Create the shap table
   .mlTableShap(dataset, options, jaspResults, ready, position = 7, purpose = "classification")

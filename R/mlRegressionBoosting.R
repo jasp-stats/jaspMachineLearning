@@ -40,7 +40,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   .mlRegressionTableMetrics(dataset, options, jaspResults, ready, position = 3)
 
   # Create the relative influence table
-  .mlBoostingTableRelInf(options, jaspResults, ready, position = 4, purpose = "regression")
+  .mlBoostingTableFeatureImportance(options, jaspResults, ready, position = 4, purpose = "regression")
 
   # Create the shap table
   .mlTableShap(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
@@ -153,7 +153,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   return(result)
 }
 
-.mlBoostingTableRelInf <- function(options, jaspResults, ready, position, purpose) {
+.mlBoostingTableFeatureImportance<- function(options, jaspResults, ready, position, purpose) {
   if (!options[["featureImportanceTable"]] || !is.null(jaspResults[["featureImportanceTable"]])) {
     return()
   }

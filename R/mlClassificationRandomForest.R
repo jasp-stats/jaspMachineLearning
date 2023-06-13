@@ -46,7 +46,7 @@ mlClassificationRandomForest <- function(jaspResults, dataset, options, ...) {
   .mlClassificationTableMetrics(dataset, options, jaspResults, ready, position = 5)
 
   # Create the variable importance table
-  .mlRandomForestTableVarImp(options, jaspResults, ready, position = 6, purpose = "classification")
+  .mlRandomForestTableFeatureImportance(options, jaspResults, ready, position = 6, purpose = "classification")
 
   # Create the shap table
   .mlTableShap(dataset, options, jaspResults, ready, position = 7, purpose = "classification")

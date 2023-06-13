@@ -18,7 +18,8 @@
 .mlClusteringDependencies <- function(options) {
   opt <- c(
     "predictors", "manualNumberOfClusters", "noOfRandomSets", "maxNumberIterations", "algorithm", "modelOptimization", "seed", "centers",
-    "maxNumberOfClusters", "setSeed", "scaleVariables", "fuzzinessParameter", "distance", "linkage", "epsilonNeighborhoodSize", "minCorePoints", "numberOfTrees", "maxTrees", "modelOptimizationMethod"
+    "maxNumberOfClusters", "setSeed", "scaleVariables", "fuzzinessParameter", "distance", "linkage", "epsilonNeighborhoodSize", "minCorePoints",
+    "numberOfTrees", "maxTrees", "modelOptimizationMethod"
   )
   return(opt)
 }

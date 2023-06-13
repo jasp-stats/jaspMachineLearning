@@ -40,7 +40,7 @@ mlClusteringRandomForest <- function(jaspResults, dataset, options, ...) {
   .mlClusteringTableMeans(dataset, options, jaspResults, ready, position = 4)
 
   # Create the variable importance table
-  .mlClusteringRandomForestTableVarImp(options, jaspResults, ready, position = 5)
+  .mlClusteringRandomForestTableFeatureImportance(options, jaspResults, ready, position = 5)
 
   # Create the within sum of squares plot
   .mlClusteringPlotElbow(dataset, options, jaspResults, ready, position = 6)
@@ -140,16 +140,13 @@ mlClusteringRandomForest <- function(jaspResults, dataset, options, ...) {
   return(result)
 }
 
-.mlClusteringRandomForestTableVarImp <- function(options, jaspResults, ready, position) {
+.mlClusteringRandomForestTableFeatureImportance <- function(options, jaspResults, ready, position) {
   if (!is.null(jaspResults[["importanceTable"]]) || !options[["featureImportanceTable"]]) {
     return()
   }
   table <- createJaspTable(title = gettext("Feature Importance"))
   table$position <- position
-  table$dependOn(options = c(
-    "predictors", "manualNumberOfClusters", "noOfRandomSets", "maxNumberIterations", "algorithm", "modelOptimization", "seed", "modelOptimizationMethod",
-    "maxNumberOfClusters", "setSeed", "scaleVariables", "fuzzinessParameter", "distance", "linkage", "epsilonNeighborhoodSize", "minCorePoints", "numberOfTrees", "maxTrees", "featureImportanceTable"
-  ))
+  table$dependOn(options = c(.mlClusteringDependencies(), "featureImportanceTable"))
   table$addColumnInfo(name = "variable", title = "", type = "string")
   table$addColumnInfo(name = "measure", title = gettext("Mean decrease in Gini Index"), type = "number", format = "sf:4")
   jaspResults[["importanceTable"]] <- table

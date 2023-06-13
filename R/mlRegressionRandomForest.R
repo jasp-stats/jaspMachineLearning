@@ -40,7 +40,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   .mlRegressionTableMetrics(dataset, options, jaspResults, ready, position = 3)
 
   # Create the variable importance table
-  .mlRandomForestTableVarImp(options, jaspResults, ready, position = 4, purpose = "regression")
+  .mlRandomForestTableFeatureImportance(options, jaspResults, ready, position = 4, purpose = "regression")
 
   # Create the shap table
   .mlTableShap(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
@@ -155,7 +155,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   return(result)
 }
 
-.mlRandomForestTableVarImp <- function(options, jaspResults, ready, position, purpose) {
+.mlRandomForestTableFeatureImportance <- function(options, jaspResults, ready, position, purpose) {
   if (!is.null(jaspResults[["featureImportanceTable"]]) || !options[["featureImportanceTable"]]) {
     return()
   }
