@@ -373,9 +373,9 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   plot <- createJaspPlot(title = gettext("Network Structure Plot"), height = 500, width = 600)
   plot$position <- position
   if (purpose == "regression") {
-    table$dependOn(options = c("networkGraph", .mlRegressionDependencies()))
+    plot$dependOn(options = c("networkGraph", .mlRegressionDependencies()))
   } else {
-    table$dependOn(options = c("networkGraph", .mlClassificationDependencies()))
+    plot$dependOn(options = c("networkGraph", .mlClassificationDependencies()))
   }
   jaspResults[["networkGraph"]] <- plot
   if (!ready) {
