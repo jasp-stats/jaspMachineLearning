@@ -144,10 +144,11 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   }
   table <- createJaspTable(title = gettext("Splits in Tree"))
   table$position <- position
-  table$dependOn(options = c(
-    "splitsTable", "trainingDataManual", "scaleVariables", "target", "predictors", "seed", "setSeed", "splitsTreeTable",
-    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "minObservationsForSplit", "minObservationsInNode", "interactionDepth", "complexityParameter"
-  ))
+  if (purpose == "regression") {
+    table$dependOn(options = c("splitsTable", "splitsTreeTable", .mlRegressionDependencies()))
+  } else {
+    table$dependOn(options = c("splitsTable", "splitsTreeTable", .mlClassificationDependencies()))
+  }
   table$addColumnInfo(name = "predictor", title = "", type = "string")
   table$addColumnInfo(name = "count", title = gettext("Obs. in Split"), type = "integer")
   table$addColumnInfo(name = "index", title = gettext("Split Point"), type = "number")
@@ -200,10 +201,11 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Decision Tree Plot"), width = 600, height = 500)
   plot$position <- position
-  plot$dependOn(options = c(
-    "decisionTreePlot", "trainingDataManual", "scaleVariables", "target", "predictors", "seed", "setSeed",
-    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "minObservationsInNode", "minObservationsForSplit", "interactionDepth", "complexityParameter"
-  ))
+  if (purpose == "regression") {
+    plot$dependOn(options = c("decisionTreePlot", .mlRegressionDependencies()))
+  } else {
+    plot$dependOn(options = c("decisionTreePlot", .mlClassificationDependencies()))
+  }
   jaspResults[["decisionTreePlot"]] <- plot
   if (!ready) {
     return()

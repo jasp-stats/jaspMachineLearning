@@ -159,12 +159,11 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   }
   table <- createJaspTable(title = gettext("Feature Importance Metrics"))
   table$position <- position
-  table$dependOn(options = c(
-    "featureImportanceTable", "target", "predictors", "modelOptimization", "maxTrees", "interactionDepth", "shrinkage",
-    "noOfTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors", "seed", "setSeed", "modelValid",
-    "minObservationsInNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "holdoutData", "testDataManual"
-  ))
+  if (purpose == "regression") {
+    table$dependOn(options = c("featureImportanceTable", .mlRegressionDependencies()))
+  } else {
+    table$dependOn(options = c("featureImportanceTable", .mlClassificationDependencies()))
+  }
   table$addColumnInfo(name = "predictor", title = "", type = "string")
   table$addColumnInfo(name = "relIn", title = gettext("Relative Influence"), type = "number")
   table$addColumnInfo(name = "dl", title = gettext("Mean dropout loss"), type = "number")
@@ -198,12 +197,11 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Out-of-bag Improvement Plot"), width = 400, height = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "outOfBagImprovementPlot", "target", "predictors", "modelOptimization", "maxTrees", "interactionDepth", "shrinkage",
-    "noOfTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors", "seed", "setSeed", "modelValid",
-    "minObservationsInNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "holdoutData", "testDataManual"
-  ))
+  if (purpose == "regression") {
+    plot$dependOn(options = c("outOfBagImprovementPlot", .mlRegressionDependencies()))
+  } else {
+    plot$dependOn(options = c("outOfBagImprovementPlot", .mlClassificationDependencies()))
+  }
   jaspResults[["outOfBagImprovementPlot"]] <- plot
   if (!ready) {
     return()
@@ -258,12 +256,11 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Deviance Plot"), width = 450, height = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "deviancePlot", "target", "predictors", "modelOptimization", "maxTrees", "interactionDepth", "shrinkage",
-    "noOfTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors", "seed", "setSeed", "modelValid",
-    "minObservationsInNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "holdoutData", "testDataManual"
-  ))
+  if (purpose == "regression") {
+    plot$dependOn(options = c("deviancePlot", .mlRegressionDependencies()))
+  } else {
+    plot$dependOn(options = c("deviancePlot", .mlClassificationDependencies()))
+  }
   jaspResults[["deviancePlot"]] <- plot
   if (!ready) {
     return()
@@ -318,12 +315,11 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Relative Influence Plot"), width = 450, height = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "relativeInfluencePlot", "target", "predictors", "modelOptimization", "maxTrees", "interactionDepth", "shrinkage",
-    "noOfTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors", "seed", "setSeed", "modelValid",
-    "minObservationsInNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "holdoutData", "testDataManual"
-  ))
+  if (purpose == "regression") {
+    plot$dependOn(options = c("relativeInfluencePlot", .mlRegressionDependencies()))
+  } else {
+    plot$dependOn(options = c("relativeInfluencePlot", .mlClassificationDependencies()))
+  }
   jaspResults[["relativeInfluencePlot"]] <- plot
   if (!ready) {
     return()

@@ -20,13 +20,14 @@
   return(colors)
 }
 
+# This function should return all options for all analyses upon which a change in all tables/figures is required
 .mlRegressionDependencies <- function(options, includeSaveOptions = FALSE) {
   opt <- c(
     "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleVariables", "modelOptimization", "maxTrees",
     "target", "predictors", "seed", "setSeed", "validationLeaveOneOut", "confusionProportions", "maxNearestNeighbors", "noOfFolds", "modelValid",
     "penalty", "alpha", "convergenceThreshold", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "baggingFraction",
     "interactionDepth", "minObservationsInNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "minObservationsForSplit",
-    "holdoutData", "testDataManual", "complexityParameter", "degree", "gamma",
+    "holdoutData", "testDataManual", "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon",
     "threshold", "algorithm", "learningRate", "lossFunction", "actfct", "layers", "maxTrainingRepetitions", "maxGenerations", "populationSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProportion", "candidates"
   )
   if (includeSaveOptions) {
@@ -429,7 +430,7 @@
   if (!is.null(jaspResults[["validationMeasures"]]) || !options[["validationMeasures"]]) {
     return()
   }
-  table <- createJaspTable(title = "Model Performance Metrics")
+  table <- createJaspTable(title = gettext("Model Performance Metrics"))
   table$position <- position
   table$dependOn(options = c(.mlRegressionDependencies(options), "validationMeasures"))
   table$addColumnInfo(name = "measures", title = "", type = "string")
@@ -646,7 +647,11 @@
     }
   }
   table$position <- position
-  table$dependOn(options = c(.mlRegressionDependencies(options), "tableShap", "fromIndex", "toIndex"))
+  if (purpose == "regression") {
+    table$dependOn(options = c(.mlRegressionDependencies(options), "tableShap", "fromIndex", "toIndex"))
+  } else {
+    table$dependOn(options = c(.mlClassificationDependencies(options), "tableShap", "fromIndex", "toIndex"))
+  }
   table$addColumnInfo(name = "id", title = gettext("Case"), type = "integer")
   if (purpose == "regression") {
     table$addColumnInfo(name = "pred", title = gettext("Predicted"), type = "number")
@@ -702,7 +707,11 @@
   }
   table <- createJaspTable(title = gettext("Feature Importance Metrics"))
   table$position <- position
-  table$dependOn(options = c(.mlRegressionDependencies(), "featureImportanceTable"))
+  if (purpose == "regression") {
+    table$dependOn(options = c(.mlRegressionDependencies(options), "featureImportanceTable"))
+  } else {
+    table$dependOn(options = c(.mlClassificationDependencies(options), "featureImportanceTable"))
+  }
   table$addColumnInfo(name = "predictor", title = "", type = "string")
   table$addColumnInfo(name = "dl", title = gettext("Mean dropout loss"), type = "number")
   jaspResults[["featureImportanceTable"]] <- table

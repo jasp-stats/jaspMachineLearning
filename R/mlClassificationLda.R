@@ -155,12 +155,7 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   }
   table <- createJaspTable(title = gettext("Linear Discriminant Coefficients"))
   table$position <- position
-  table$dependOn(options = c(
-    "coefficientsTable", "trainingDataManual", "scaleVariables", "modelOptimization",
-    "target", "predictors", "seed", "setSeed", "modelValid", "estimationMethod",
-    "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "holdoutData", "testDataManual"
-  ))
+  table$dependOn(options = c("coefficientsTable", .mlClassificationDependencies()))
   table$addColumnInfo(name = "pred_level", title = "", type = "string")
   jaspResults[["coefficientsTable"]] <- table
   if (!ready) {
@@ -187,12 +182,7 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   }
   table <- createJaspTable(title = gettext("Prior and Posterior Class Probabilities"))
   table$position <- position
-  table$dependOn(options = c(
-    "priorTable", "trainingDataManual", "scaleVariables", "modelOptimization",
-    "target", "predictors", "seed", "setSeed", "modelValid", "estimationMethod",
-    "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "holdoutData", "testDataManual"
-  ))
+  table$dependOn(options = c("priorTable", .mlClassificationDependencies()))
   table$addColumnInfo(name = "typeprob", title = "", type = "string")
   table$addColumnInfo(name = "prior", title = gettext("Prior"), type = "number")
   table$addColumnInfo(name = "posterior", title = gettext("Posterior"), type = "number")
@@ -213,11 +203,7 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   }
   table <- createJaspTable(title = gettext("Class Means in Training Data"))
   table$position <- position
-  table$dependOn(options = c(
-    "meanTable", "trainingDataManual", "scaleVariables", "modelOptimization", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "target", "predictors", "seed", "setSeed", "modelValid", "estimationMethod",
-    "holdoutData", "testDataManual"
-  ))
+  table$dependOn(options = c("meanTable", .mlClassificationDependencies()))
   table$addColumnInfo(name = "target_level", title = "", type = "string")
   for (i in options[["predictors"]]) {
     table$addColumnInfo(name = i, type = "number", title = i)
@@ -239,10 +225,7 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   }
   plot <- createJaspPlot(title = gettext("Linear Discriminant Matrix"), height = 400, width = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "matrixPlot", "plotDensities", "plotStatistics", "trainingDataManual", "scaleVariables", "modelOptimization", "holdoutData", "testDataManual",
-    "target", "predictors", "seed", "setSeed", "modelValid", "estimationMethod", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual"
-  ))
+  plot$dependOn(options = c("matrixPlot", "plotDensities", "plotStatistics", .mlClassificationDependencies()))
   jaspResults[["matrixPlot"]] <- plot
   if (!ready) {
     return()

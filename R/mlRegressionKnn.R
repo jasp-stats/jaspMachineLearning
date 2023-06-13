@@ -191,11 +191,11 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
   )
   plot <- createJaspPlot(plot = NULL, title = plotTitle, width = 400, height = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "errorVsKPlot", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleVariables", "modelOptimization",
-    "target", "predictors", "seed", "setSeed", "modelValid", "maxNearestNeighbors", "noOfFolds", "modelValid",
-    "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "holdoutData", "testDataManual"
-  ))
+  if (purpose == "regression") {
+    plot$dependOn(options = c("errorVsKPlot", .mlRegressionDependencies()))
+  } else {
+    plot$dependOn(options = c("errorVsKPlot", .mlClassificationDependencies()))
+  }
   jaspResults[["errorVsKPlot"]] <- plot
   if (!ready) {
     return()

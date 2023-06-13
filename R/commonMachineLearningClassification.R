@@ -21,6 +21,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   return(sprintf(gettext(fmt, domain = domain), ...))
 }
 
+# This function should return all options for all analyses upon which a change in all tables/figures is required
 .mlClassificationDependencies <- function(options, includeSaveOptions = FALSE) {
   opt <- c(
     "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleVariables", "modelOptimization", "validationDataManual",

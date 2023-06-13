@@ -15,6 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+# This function should return all options for all analyses upon which a change in all tables/figures is required
 .mlClusteringDependencies <- function(options) {
   opt <- c(
     "predictors", "manualNumberOfClusters", "noOfRandomSets", "maxNumberIterations", "algorithm", "modelOptimization", "seed", "centers",

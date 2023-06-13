@@ -301,12 +301,11 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   structure <- result[["structure"]]
   table <- createJaspTable(title = gettext("Network Weights"))
   table$position <- position
-  table$dependOn(options = c(
-    "coefficientsTable", "scaleVariables", "target", "predictors", "seed", "setSeed", "holdoutData", "testDataManual",
-    "testSetIndicatorVariable", "testSetIndicator",
-    "threshold", "algorithm", "learningRate", "lossFunction", "actfct", "layers", "maxTrainingRepetitions", "maxGenerations", "populationSize", "maxLayers", "maxNodes",
-    "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProportion", "candidates"
-  ))
+  if (purpose == "regression") {
+    table$dependOn(options = c("coefficientsTable", .mlRegressionDependencies()))
+  } else {
+    table$dependOn(options = c("coefficientsTable", .mlClassificationDependencies()))
+  }
   table$addColumnInfo(name = "fromNode", title = gettext("Node"), type = "string")
   table$addColumnInfo(name = "fromLayer", title = gettext("Layer"), type = "string")
   table$addColumnInfo(name = "separator", title = "", type = "string")
@@ -373,11 +372,11 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   }
   plot <- createJaspPlot(title = gettext("Network Structure Plot"), height = 500, width = 600)
   plot$position <- position
-  plot$dependOn(options = c(
-    "networkGraph", "target", "predictors", "layers", "modelOptimization",
-    "maxTrainingRepetitions", "maxGenerations", "populationSize", "maxLayers", "maxNodes", "mutationRate", "elitism",
-    "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProportion", "candidates"
-  ))
+  if (purpose == "regression") {
+    table$dependOn(options = c("networkGraph", .mlRegressionDependencies()))
+  } else {
+    table$dependOn(options = c("networkGraph", .mlClassificationDependencies()))
+  }
   jaspResults[["networkGraph"]] <- plot
   if (!ready) {
     return()
@@ -663,11 +662,11 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   )
   plot <- createJaspPlot(plot = NULL, title = plotTitle, width = 400, height = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "meanSquaredErrorPlot", "scaleVariables", "target", "predictors", "seed", "setSeed", "holdoutData", "testDataManual", "validationDataManual",
-    "testSetIndicatorVariable", "testSetIndicator", "modelOptimization",
-    "threshold", "algorithm", "learningRate", "lossFunction", "actfct", "layers", "maxTrainingRepetitions", "maxGenerations", "populationSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProportion", "candidates"
-  ))
+  if (purpose == "regression") {
+    plot$dependOn(options = c("meanSquaredErrorPlot", .mlRegressionDependencies()))
+  } else {
+    plot$dependOn(options = c("meanSquaredErrorPlot", .mlClassificationDependencies()))
+  }
   jaspResults[["meanSquaredErrorPlot"]] <- plot
   if (!ready) {
     return()

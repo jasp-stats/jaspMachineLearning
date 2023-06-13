@@ -195,13 +195,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   }
   table <- createJaspTable(gettext("Regression Coefficients"))
   table$position <- position
-  table$dependOn(options = c(
-    "coefTable", "trainingDataManual", "weights", "scaleVariables", "modelOptimization",
-    "target", "predictors", "seed", "setSeed", "modelValid",
-    "penalty", "alpha", "convergenceThreshold", "intercept", "modelOptimization", "lambda",
-    "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "holdoutData", "testDataManual"
-  ))
+  table$dependOn(options = c("coefTable", .mlRegressionDependencies()))
   table$addColumnInfo(name = "var", title = "", type = "string")
   table$addColumnInfo(name = "coefs", title = gettextf("Coefficient (%s)", "\u03B2"), type = "number")
   jaspResults[["coefTable"]] <- table
@@ -234,13 +228,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Variable Trace Plot"), width = 500, height = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "variableTrace", "variableTraceLegend", "trainingDataManual", "weights", "scaleVariables", "modelOptimization",
-    "target", "predictors", "seed", "setSeed", "modelValid",
-    "penalty", "alpha", "convergenceThreshold", "intercept", "modelOptimization", "lambda",
-    "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "holdoutData", "testDataManual"
-  ))
+  plot$dependOn(options = c("variableTrace", "variableTraceLegend", .mlRegressionDependencies()))
   jaspResults[["variableTrace"]] <- plot
   if (!ready) {
     return()
@@ -270,13 +258,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Lambda Evaluation Plot"), width = 500, height = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "lambdaEvaluation", "lambdaEvaluationLegend", "trainingDataManual", "weights", "scaleVariables", "modelOptimization",
-    "target", "predictors", "seed", "setSeed", "modelValid",
-    "penalty", "alpha", "convergenceThreshold", "intercept", "modelOptimization", "lambda",
-    "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "holdoutData", "testDataManual"
-  ))
+  plot$dependOn(options = c("lambdaEvaluation", "lambdaEvaluationLegend", .mlRegressionDependencies()))
   jaspResults[["lambdaEvaluation"]] <- plot
   if (!ready) {
     return()

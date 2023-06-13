@@ -99,10 +99,11 @@ mlRegressionSvm <- function(jaspResults, dataset, options, state = NULL) {
   }
   table <- createJaspTable(title = gettext("Support Vectors"))
   table$position <- position
-  table$dependOn(options = c(
-    "supportVectorsTable", "trainingDataManual", "scaleVariables", "target", "predictors", "seed", "setSeed",
-    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "weights", "cost", "tolerance", "epsilon"
-  ))
+  if (purpose == "regression") {
+    table$dependOn(options = c("supportVectorsTable", .mlRegressionDependencies()))
+  } else {
+    table$dependOn(options = c("supportVectorsTable", .mlClassificationDependencies()))
+  }
   table$addColumnInfo(name = "row", title = gettext("Row"), type = "string")
   jaspResults[["supportVectorsTable"]] <- table
   if (!ready) {
