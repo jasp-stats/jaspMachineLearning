@@ -109,7 +109,7 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
         algorithm = options[["algorithm"]],
         err.fct = "sse",
         act.fct = jaspResults[["actfct"]]$object,
-        linear.output = if (options[["actfct"]] == "linear") TRUE else FALSE
+        linear.output = FALSE
       )
     })
     if (isTryError(p)) {
@@ -148,7 +148,7 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
             algorithm = options[["algorithm"]],
             err.fct = "sse", # jaspResults[["lossFunction"]]$object,
             act.fct = jaspResults[["actfct"]]$object,
-            linear.output = if (options[["actfct"]] == "linear") TRUE else FALSE
+            linear.output = FALSE
           )
           validationPredictions <- levels(trainingSet[, options[["target"]]])[max.col(predict(fit, newdata = validationSet))]
         })
@@ -197,7 +197,7 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
         algorithm = options[["algorithm"]],
         err.fct = "sse",
         act.fct = jaspResults[["actfct"]]$object,
-        linear.output = if (options[["actfct"]] == "linear") TRUE else FALSE
+        linear.output = FALSE
       )
     })
     if (isTryError(p)) {

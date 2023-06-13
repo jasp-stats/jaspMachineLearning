@@ -155,7 +155,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
         algorithm = options[["algorithm"]],
         err.fct = "sse",
         act.fct = jaspResults[["actfct"]]$object,
-        linear.output = if (options[["actfct"]] == "linear") TRUE else FALSE
+        linear.output = TRUE
       )
     })
     if (isTryError(p)) {
@@ -195,7 +195,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
             algorithm = options[["algorithm"]],
             err.fct = "sse",
             act.fct = jaspResults[["actfct"]]$object,
-            linear.output = if (options[["actfct"]] == "linear") TRUE else FALSE
+            linear.output = TRUE
           )
           validationPredictions <- predict(trainingFit, newdata = valid)
         })
@@ -244,7 +244,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
         algorithm = options[["algorithm"]],
         err.fct = "sse",
         act.fct = jaspResults[["actfct"]]$object,
-        linear.output = if (options[["actfct"]] == "linear") TRUE else FALSE
+        linear.output = TRUE
       )
       validationPredictions <- predict(trainingFit, newdata = valid)
     })
@@ -286,7 +286,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
       result[["trainAccuracyStore"]] <- trainErrorStore
     }
   }
-  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]][, options[["predictors"]]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data))
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]][, options[["predictors"]]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) as.numeric(predict(model, newdata = data)))
   return(result)
 }
 

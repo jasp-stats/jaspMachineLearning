@@ -455,7 +455,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       algorithm = options[["algorithm"]],
       err.fct = "sse", # jaspResults[["lossFunction"]]$object, -> This does not work in the neuralnet package
       act.fct = jaspResults[["actfct"]]$object,
-      linear.output = if (options[["actfct"]] == "linear") TRUE else FALSE
+      linear.output = FALSE
     )
     predictions <- as.factor(max.col(predict(fit, newdata = grid)))
     levels(predictions) <- unique(dataset[, options[["target"]]])
@@ -593,7 +593,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         algorithm = options[["algorithm"]],
         err.fct = "sse", # jaspResults[["lossFunction"]]$object,
         act.fct = jaspResults[["actfct"]]$object,
-        linear.output = if (options[["actfct"]] == "linear") TRUE else FALSE
+        linear.output = FALSE
       )
       score <- max.col(predict(fit, test))
     } else if (type == "rpart") {
@@ -1001,7 +1001,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     algorithm = options[["algorithm"]],
     err.fct = "sse",
     act.fct = jaspResults[["actfct"]]$object,
-    linear.output = if (options[["actfct"]] == "linear") TRUE else FALSE
+    linear.output = FALSE
   )
   score <- max.col(predict(fit, test))
   return(score)
