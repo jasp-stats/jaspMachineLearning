@@ -3,7 +3,7 @@ context("Machine Learning Neural Network Regression")
 options <- initMlOptions("mlRegressionNeuralNetwork")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
-options$algorithm <- "backprop"
+options$algorithm <- "rprop+"
 options$coefficientsTable <- TRUE
 options$dataSplitPlot <- FALSE
 options$holdoutData <- "holdoutManual"

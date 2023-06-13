@@ -188,7 +188,6 @@ Form
 				{
 					name:								"manual"
 					text:								qsTr("Manual")
-					checked:							true
 
 					RowLayout
 					{
