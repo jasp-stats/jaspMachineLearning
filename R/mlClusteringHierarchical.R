@@ -152,11 +152,7 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Dendrogram"), width = 400, height = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "predictors", "manualNumberOfClusters", "noOfRandomSets", "algorithm", "epsilonNeighborhoodSize", "minCorePoints", "distance",
-    "maxNumberIterations", "modelOptimization", "ready", "seed", "tsneClusterPlot", "maxNumberOfClusters", "scaleVariables", "setSeed",
-    "linkage", "fuzzinessParameter", "dendrogram", "modelOptimizationMethod"
-  ))
+  plot$dependOn(options = c(.mlClusteringDependencies(), "dendrogram"))
   jaspResults[["dendrogram"]] <- plot
   if (!ready) {
     return()
