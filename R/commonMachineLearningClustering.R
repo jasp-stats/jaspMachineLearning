@@ -350,7 +350,7 @@
                    axis.text.x = ggplot2::element_blank(), 
                    axis.text.y = ggplot2::element_blank())
   if (options[["tsneClusterPlotLabels"]]) {
-    p <- p + ggrepel::geom_text_repel(ggplot2::aes(label = rownames(dataset), x = x, y = y), hjust = -1, vjust = 1, data = plotData)
+    p <- p + ggrepel::geom_text_repel(ggplot2::aes(label = rownames(dataset), x = x, y = y), hjust = -1, vjust = 1, data = plotData, seed = 1)
   }
   progressbarTick()
   plot$plotObject <- p

@@ -622,7 +622,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     ggrepel::geom_text_repel(
       data = data.frame(x = 0, y = 1),
       mapping = ggplot2::aes(label = gettext("Perfect separation"), x = x, y = y),
-      nudge_x = -0.1, nudge_y = 0.05, xlim = c(0, 1), ylim = c(0, 1.1)
+      nudge_x = 0.1, nudge_y = 0.05, xlim = c(0, 1), ylim = c(0, 1.1), seed = 1
     ) +
     jaspGraphs::geom_rangeframe() +
     jaspGraphs::themeJaspRaw(legend.position = "right")
