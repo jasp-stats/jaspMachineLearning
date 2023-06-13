@@ -24,6 +24,6 @@ import JASP.Widgets		1.0
 CheckBox
 {
 	name:		"scaleVariables"
-	text:		qsTr("Scale variables")
+	text:		qsTr("Scale features")
 	checked:	true
 }

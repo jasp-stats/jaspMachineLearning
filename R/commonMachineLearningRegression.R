@@ -40,8 +40,8 @@
   if (is.null(dataset)) {
     dataset <- .readDataClassificationRegressionAnalyses(dataset, options)
   }
-  if (length(unlist(options[["predictors"]])) > 0 && options[["target"]] != "" && options[["scaleVariables"]]) {
-    dataset[, c(options[["predictors"]], options[["target"]])] <- .scaleNumericData(dataset[, c(options[["predictors"]], options[["target"]]), drop = FALSE])
+  if (length(unlist(options[["predictors"]])) > 0 && options[["scaleVariables"]]) {
+    dataset[, options[["predictors"]]] <- .scaleNumericData(dataset[, options[["predictors"]], drop = FALSE])
   }
   return(dataset)
 }

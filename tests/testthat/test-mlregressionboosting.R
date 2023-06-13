@@ -35,11 +35,11 @@ results <- jaspTools::runAnalysis("mlRegressionBoosting", "wine.csv", options)
 test_that("Feature Importance Metrics table results match", {
   table <- results[["results"]][["featureImportanceTable"]][["data"]]
   jaspTools::expect_equal_tables(table,
-                      list(0.587457241391015, "Color", 60.3564909956942, 0.583466976995932, "Proline", 28.9359792394392, 0.586472558184126, "Phenols",
-                           4.02747773147275, 0.583466976995932, "Flavanoids", 2.65410848555859, 0.597503681613334, "Hue", 1.59224895077339,
-                           0.58969989872739, "Proanthocyanins", 1.14701822224105, 0.583466976995932, "Malic", 0.744077365382741,
-                           0.587362911034375, "Alcalinity", 0.542599009438009, 0.922075174976346, "Ash", 0, 0.585842141086563, "Magnesium", 0, 0.583466976995932, "Nonflavanoids",
-                           0, 0.678174481851825, "Dilution", 0))
+                      list(0.476913378504938, "Color", 60.3564909956942, 0.47367397597535, "Proline", 28.9359792394392, 0.476113986546058, "Phenols",
+                           4.02747773147275, 0.47367397597535, "Flavanoids", 2.65410848555859, 0.485069345289906, "Hue", 1.59224895077339,
+                           0.478734027246261, "Proanthocyanins", 1.14701822224105, 0.47367397597535, "Malic", 0.744077365382741,
+                           0.476836798618079, "Alcalinity", 0.542599009438009, 0.748565097082193, "Ash", 0, 0.475602197216243, "Magnesium", 0, 0.47367397597535, "Nonflavanoids",
+                           0, 0.550560041765682, "Dilution", 0))
 })
 
 test_that("Data Split plot matches", {
@@ -75,14 +75,14 @@ test_that("Predictive Performance Plot matches", {
 test_that("Boosting Regression table results match", {
   table <- results[["results"]][["regressionTable"]][["data"]]
   jaspTools::expect_equal_tables(table,
-                      list("Gaussian", 35, 114, 29, 0.1, 0.425591531163354, 24, 0.54136660008236
+                      list("Gaussian", 35, 114, 29, 0.1, 0.280491345224988, 24, 0.356794331649178
                       ))
 })
 
 test_that("Evaluation Metrics table results match", {
   table <- results[["results"]][["validationMeasures"]][["data"]]
   jaspTools::expect_equal_tables(table,
-                      list("MSE", 0.426, "RMSE", 0.653, "MAE / MAD", 0.524, "MAPE", "141.08%",
+                      list("MSE", 0.28, "RMSE", 0.529, "MAE / MAD", 0.425, "MAPE", "3.33%",
                            "R<unicode><unicode>", 0.652))
 })
 
