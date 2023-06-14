@@ -185,7 +185,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
     result[["validMSE"]] <- mean((as.numeric(validationPredictions) - validationSet[, options[["target"]]])^2)
     result[["nvalid"]] <- nrow(validationSet)
   }
-  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]][, options[["predictors"]]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newx = as.matrix(data), type = "response", s = result[["lambda"]]))
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]][, options[["predictors"]], drop = FALSE], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newx = as.matrix(data), type = "response", s = result[["lambda"]]))
   return(result)
 }
 
