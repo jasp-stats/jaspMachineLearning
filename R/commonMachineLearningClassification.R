@@ -308,10 +308,14 @@ gettextf <- function(fmt, ..., domain = NULL) {
     }
     table[["obs_name"]] <- c(gettext("Observed"), rep("", nrow(confTable) - 1))
     table[["varname_obs"]] <- colnames(confTable)
-    for (i in 1:length(rownames(confTable))) {
+    for (i in seq_along(colnames(confTable))) {
       name <- paste("varname_pred", i, sep = "")
-      table$addColumnInfo(name = name, title = rownames(confTable)[i], type = "integer", overtitle = gettext("Predicted"))
-      table[[name]] <- confTable[i, ]
+      table$addColumnInfo(name = name, title = colnames(confTable)[i], type = "integer", overtitle = gettext("Predicted"))
+      if (colnames(confTable)[i] %in% rownames(confTable)) {
+        table[[name]] <- confTable[which(rownames(confTable) == colnames(confTable)[i]), ]
+      } else {
+        table[[name]] <- rep(0, length(colnames(confTable)))
+      }
     }
   } else if (options[["target"]] != "" && !ready) {
     table$addColumnInfo(name = "obs_name", title = "", type = "string")
@@ -319,7 +323,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     factorLevels <- levels(dataset[, options[["target"]]])
     table[["obs_name"]] <- c(gettext("Observed"), rep("", length(factorLevels) - 1))
     table[["varname_obs"]] <- factorLevels
-    for (i in 1:length(factorLevels)) {
+    for (i in seq_along(factorLevels)) {
       name <- paste("varname_pred", i, sep = "")
       table$addColumnInfo(name = name, title = factorLevels[i], type = "integer", overtitle = gettext("Predicted"))
       table[[name]] <- rep(".", length(factorLevels))
@@ -351,7 +355,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
 }
 
 .classificationFillDecisionBoundary <- function(dataset, options, jaspResults, plot, type) {
-  classificationResult <- jaspResults[["classificationResult"]]$object
   variables <- options[["predictors"]]
   variables <- variables[!vapply(dataset[, variables], is.factor, TRUE)] # remove factors from boundary plot
   l <- length(variables)
@@ -368,7 +371,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   plot[["width"]] <- width
   plot[["height"]] <- height
-  cexText <- 1.6
   plotMat <- matrix(list(), l - 1, l - 1)
   oldFontSize <- jaspGraphs::getGraphOption("fontsize")
   jaspGraphs::setGraphOption("fontsize", .85 * oldFontSize)
@@ -538,7 +540,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   rocXstore <- NULL
   rocYstore <- NULL
   rocNamestore <- NULL
-  for (i in 1:length(lvls)) {
+  for (i in seq_along(lvls)) {
     levelVar <- train[, options[["target"]]] == lvls[i]
     typeData <- cbind(train, levelVar = factor(levelVar))
     column <- which(colnames(typeData) == options[["target"]])
@@ -646,9 +648,9 @@ gettextf <- function(fmt, ..., domain = NULL) {
     return()
   }
   if (nrow(dataset) > 500) {
-    sample <- sample(1:nrow(dataset), size = 500, replace = FALSE) # Sample to prevent crazy long loading times with big data
+    sample <- sample(seq_len(nrow(dataset)), size = 500, replace = FALSE) # Sample to prevent crazy long loading times with big data
   } else {
-    sample <- 1:nrow(dataset)
+    sample <- seq_len(nrow(dataset))
   }
   predictors <- dataset[sample, options[["predictors"]]]
   target <- dataset[sample, options[["target"]]]
@@ -675,7 +677,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     Y[i, ] <- as.numeric(ypts)
   }
   Yvec <- NULL
-  for (i in 1:nrow(Y)) {
+  for (i in seq_len(nrow(Y))) {
     Yvec <- c(Yvec, Y[i, ])
   }
   plotData <- data.frame(
@@ -878,7 +880,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     validTable <- prop.table(table(classificationResult[["valid"]][, options[["target"]]]))
   }
   testTable <- prop.table(table(classificationResult[["test"]][, options[["target"]]]))
-  for (i in 1:length(Dlevels)) {
+  for (i in seq_along(Dlevels)) {
     # Dataset
     dataIndex <- which(names(dataTable) == as.character(Dlevels)[i])
     dataValues[dataIndex] <- as.numeric(dataTable)[dataIndex]
