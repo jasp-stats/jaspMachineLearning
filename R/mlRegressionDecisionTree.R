@@ -125,9 +125,7 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   vars <- as.character(names(varImpOrder))
   table[["predictor"]] <- vars
   table[["imp"]] <- as.numeric(varImpOrder) / sum(as.numeric(varImpOrder)) * 100
-  if (options[["setSeed"]]) {
-    set.seed(options[["seed"]])
-  }
+  .mlSetSeed(options) # Set the seed to make results reproducible
   if (purpose == "regression") {
     fi <- DALEX::model_parts(result[["explainer"]], B = 50)
   } else if (purpose == "classification") {

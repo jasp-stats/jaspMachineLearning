@@ -18,9 +18,13 @@
 # This function should return all options for all analyses upon which a change in all tables/figures is required
 .mlClusteringDependencies <- function(options) {
   opt <- c(
-    "predictors", "manualNumberOfClusters", "noOfRandomSets", "maxNumberIterations", "algorithm", "modelOptimization", "seed", "centers",
-    "maxNumberOfClusters", "setSeed", "scaleVariables", "fuzzinessParameter", "distance", "linkage", "epsilonNeighborhoodSize", "minCorePoints",
-    "numberOfTrees", "maxTrees", "modelOptimizationMethod"
+    "predictors", "seed", "setSeed",  "scaleVariables", "manualNumberOfClusters", # Common
+    "modelOptimization", "modelOptimizationMethod", "maxNumberOfClusters",        # Common
+    "epsilonNeighborhoodSize", "minCorePoints", "distance",                       # Density-based
+    "maxNumberIterations", "fuzzinessParameter",                                  # Fuzzy c-means
+    "linkage",                                                                    # Hierarchical
+    "centers", "algorithm", "noOfRandomSets",                                     # K-means
+    "numberOfTrees"                                                               # Random forest
   )
   return(opt)
 }
@@ -104,10 +108,7 @@
   if (!is.null(jaspResults[["clusterResult"]])) {
     return()
   }
-  # set the seed so that every time the same set is chosen (to prevent random results) ##
-  if (options[["setSeed"]]) {
-    set.seed(options[["seed"]])
-  }
+  .mlSetSeed(options) # Set the seed to make results reproducible
   if (ready) {
     clusterResult <- switch(type,
       "kmeans" = .kMeansClustering(dataset, options, jaspResults),
@@ -312,9 +313,7 @@
     return()
   }
   clusterResult <- jaspResults[["clusterResult"]]$object
-  if (options[["setSeed"]]) {
-    set.seed(options[["seed"]])
-  }
+  .mlSetSeed(options) # Set the seed to make results reproducible
   startProgressbar(2)
   progressbarTick()
   duplicates <- which(duplicated(dataset))

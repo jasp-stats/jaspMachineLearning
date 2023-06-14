@@ -24,11 +24,20 @@ gettextf <- function(fmt, ..., domain = NULL) {
 # This function should return all options for all analyses upon which a change in all tables/figures is required
 .mlClassificationDependencies <- function(options, includeSaveOptions = FALSE) {
   opt <- c(
-    "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleVariables", "modelOptimization", "validationDataManual",
-    "target", "predictors", "seed", "setSeed", "validationLeaveOneOut", "maxNearestNeighbors", "noOfFolds", "modelValid", "complexityParameter", "degree", "gamma",
-    "estimationMethod", "noOfTrees", "maxTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors", "shrinkage", "interactionDepth", "minObservationsInNode", "cost", "tolerance", "epsilon",
-    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual",
-    "threshold", "algorithm", "learningRate", "lossFunction", "actfct", "layers", "maxTrainingRepetitions", "maxGenerations", "populationSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProportion", "candidates"
+    "target", "predictors", "seed", "setSeed",                                            # Common
+    "trainingDataManual", "scaleVariables", "modelOptimization",                          # Common
+    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual",      # Common
+    "modelValid", "validationDataManual", "validationLeaveOneOut", "noOfFolds",           # Common
+	"shrinkage", "interactionDepth", "minObservationsInNode",                             # Boosting
+    "minObservationsForSplit",                                                            # Decision tree
+    "distanceParameterManual", "noOfNearestNeighbours", "weights", "maxNearestNeighbors", # k-Nearest neighbors
+    "estimationMethod",                                                                   # Linear discriminant analysis
+    "threshold", "algorithm", "learningRate", "lossFunction", "actfct", "layers",         # Neural network
+    "maxTrainingRepetitions", "maxGenerations", "populationSize", "maxLayers",            # Neural network
+    "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod",          # Neural network
+    "mutationMethod", "survivalMethod", "elitismProportion", "candidates",                # Neural network
+    "noOfTrees", "maxTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors",   # Random forest
+    "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon"              # Support vector machine
   )
   if (includeSaveOptions) {
     opt <- c(opt, "saveModel", "savePath")
@@ -75,10 +84,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   if (!is.null(jaspResults[["classificationResult"]])) {
     return()
   }
-  # set the seed so that every time the same set is chosen (to prevent random results) ##
-  if (options[["setSeed"]]) {
-    set.seed(options[["seed"]])
-  }
+  .mlSetSeed(options) # Set the seed to make results reproducible
   if (ready) {
     .mlClassificationSetFormula(options, jaspResults)
     classificationResult <- switch(type,

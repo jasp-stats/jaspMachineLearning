@@ -20,15 +20,29 @@
   return(colors)
 }
 
+.mlSetSeed <- function(options) {
+  if (options[["setSeed"]]) {
+    set.seed(options[["seed"]])
+  }
+}
+
 # This function should return all options for all analyses upon which a change in all tables/figures is required
 .mlRegressionDependencies <- function(options, includeSaveOptions = FALSE) {
   opt <- c(
-    "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleVariables", "modelOptimization", "maxTrees",
-    "target", "predictors", "seed", "setSeed", "validationLeaveOneOut", "confusionProportions", "maxNearestNeighbors", "noOfFolds", "modelValid",
-    "penalty", "alpha", "convergenceThreshold", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "baggingFraction",
-    "interactionDepth", "minObservationsInNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "minObservationsForSplit",
-    "holdoutData", "testDataManual", "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon",
-    "threshold", "algorithm", "learningRate", "lossFunction", "actfct", "layers", "maxTrainingRepetitions", "maxGenerations", "populationSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProportion", "candidates"
+    "target", "predictors", "seed", "setSeed",                                            # Common
+    "trainingDataManual", "scaleVariables", "modelOptimization",                          # Common
+    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual",      # Common
+    "modelValid", "validationDataManual", "validationLeaveOneOut", "noOfFolds",           # Common
+    "shrinkage", "interactionDepth", "minObservationsInNode", "distance",                 # Boosting
+    "minObservationsForSplit",                                                            # Decision tree
+    "distanceParameterManual", "noOfNearestNeighbours", "weights", "maxNearestNeighbors", # k-Nearest neighbors
+    "threshold", "algorithm", "learningRate", "lossFunction", "actfct", "layers",         # Neural network
+    "maxTrainingRepetitions", "maxGenerations", "populationSize", "maxLayers",            # Neural network
+    "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod",          # Neural network
+    "mutationMethod", "survivalMethod", "elitismProportion", "candidates",                # Neural network
+    "noOfTrees", "maxTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors",   # Random forest
+    "convergenceThreshold", "penalty", "alpha", "intercept", "lambda",                    # Regularized
+    "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon"              # Support vector machine
   )
   if (includeSaveOptions) {
     opt <- c(opt, "saveModel", "savePath")
@@ -191,10 +205,7 @@
   if (!is.null(jaspResults[["regressionResult"]])) {
     return()
   }
-  # set the seed so that every time the same set is chosen (to prevent random results) ##
-  if (options[["setSeed"]]) {
-    set.seed(options[["seed"]])
-  }
+  .mlSetSeed(options) # Set the seed to make results reproducible
   if (ready) {
     .mlRegressionSetFormula(options, jaspResults)
     regressionResult <- switch(type,
@@ -722,9 +733,7 @@
     "regression" = jaspResults[["regressionResult"]]$object,
     "classification" = jaspResults[["classificationResult"]]$object
   )
-  if (options[["setSeed"]]) {
-    set.seed(options[["seed"]])
-  }
+  .mlSetSeed(options) # Set the seed to make results reproducible
   if (purpose == "regression") {
     fi <- DALEX::model_parts(result[["explainer"]], B = 50)
   } else if (purpose == "classification") {
