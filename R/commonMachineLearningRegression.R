@@ -689,20 +689,26 @@
   to <- min(c(options[["toIndex"]], nrow(x_test)))
   out <- as.data.frame(matrix(NA, nrow = length(from:to), ncol = 3 + length(options[["predictors"]])))
   colnames(out) <- c("id", "pred", "avg", options[["predictors"]])
-  for (i in seq_along(from:to)) {
-    out[i, 1] <- (from:to)[i]
-    shap <- DALEX::predict_parts(explainer, new_observation = x_test[(from:to)[i], ])
-    if (purpose == "regression") {
-      out[i, 2] <- shap[which(shap[["variable"]] == "prediction"), "contribution"]
-    } else {
-      predictedIndex <- which.max(shap[which(shap$variable == "prediction"), "contribution"])
-      shap <- shap[which(shap[["label"]] == shap[which(shap$variable == "prediction"), ][, "label"][predictedIndex]), ]
-      out[i, 2] <- paste0(levels(result[["test"]][, options[["target"]]])[predictedIndex], " (", round(shap[which(shap[["variable"]] == "prediction"), "contribution"], 3), ")")
+  p <- try({
+    for (i in seq_along(from:to)) {
+      out[i, 1] <- (from:to)[i]
+      shap <- DALEX::predict_parts(explainer, new_observation = as.data.frame(x_test[(from:to)[i], options[["predictors"]], drop = FALSE]))
+      if (purpose == "regression") {
+        out[i, 2] <- shap[which(shap[["variable"]] == "prediction"), "contribution"]
+      } else {
+        predictedIndex <- which.max(shap[which(shap$variable == "prediction"), "contribution"])
+        shap <- shap[which(shap[["label"]] == shap[which(shap$variable == "prediction"), ][, "label"][predictedIndex]), ]
+        out[i, 2] <- paste0(levels(result[["test"]][, options[["target"]]])[predictedIndex], " (", round(shap[which(shap[["variable"]] == "prediction"), "contribution"], 3), ")")
+      }
+      out[i, 3] <- shap[which(shap[["variable"]] == "intercept"), "contribution"]
+      for (j in seq_along(options[["predictors"]])) {
+        out[i, j + 3] <- shap[which(shap[["variable_name"]] == options[["predictors"]][j]), "contribution"]
+      }
     }
-    out[i, 3] <- shap[which(shap[["variable"]] == "intercept"), "contribution"]
-    for (j in seq_along(options[["predictors"]])) {
-      out[i, j + 3] <- shap[which(shap[["variable_name"]] == options[["predictors"]][j]), "contribution"]
-    }
+  })
+  if (isTryError(p)) {
+    table$setError(gettext("There was an error in computing the results for this table."))
+    return()
   }
   table$setData(out)
   message <- switch(purpose,
