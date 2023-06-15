@@ -16,7 +16,9 @@ Support Vector Machines is a supervised learning algorithm that maps training ex
 #### Tables  
 - Confusion matrix: Displays a table that shows the observed classes against the predicted classes. Used to assess model accuracy.
 - Class proportions: Displays a table that shows the proportions of each class in the data set, training (and validaton), and test set.
-- Evaluation metrics: Shows commonly used classification evaluation metrics like precision, recall, the F1-score, support and AUC (area under the ROC curve).
+- Model performance: Shows commonly used classification evaluation metrics like precision, recall, the F1-score, support and AUC (area under the ROC curve).
+- Feature importance: Shows the available feature importance metrics for the fitted model.
+- Explain predictions: Shows the decomposition of the model’s prediction into contributions that can be attributed to different explanatory variables.
 - Support vectors: Shows a table containing the data (points) indicated as support vectors by the algorithm.
 
 #### Plots
@@ -37,7 +39,7 @@ Support Vector Machines is a supervised learning algorithm that maps training ex
 - Cost of constraints violation: the 'C'-constant of the regularization term.
 - Tolerance of information criterion: The tolerance of termination criterion.
 - Epsilon: The epsilon parameter in the insensitive-loss function.
-- Scale variables: Scales the continuous variables. Standardization ensures that values of variables from different scales range into a specific similar scale. As a result, standardizing provides numerical stability, which improves the clustering output. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
+- Scale features: Standardizes the continuous features in the dataset. Standardization ensures that values of features from different scales range into a specific similar scale. As a result, standardizing provides numerical stability. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
 - Set seed: Gives the option to set a seed for your analysis. Setting a seed will exclude random processes influencing an analysis. For example, setting a seed makes it possible to re-run analyses with the same data splits.
 
 #### Add Predicted Classes to Data

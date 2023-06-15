@@ -10,7 +10,7 @@ This field can load a trained machine learning model. Note that the model must b
 - Features: In this box, the features that need to be considered for the predictions should be entered.
 
 #### Algorithmic Setting
-- Scale features: Scales the continuous features. Standardization ensures that values of variables from different scales range into a specific similar scale. As a result, standardizing provides numerical stability, which improves the clustering output. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
+- Scale features: Standardizes the continuous features. Standardization ensures that values of variables from different scales range into a specific similar scale. As a result, standardizing provides numerical stability, which improves the clustering output. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
 
 #### Tables:
 - Predictions for new data: Displays the predicted outcomes for the data.

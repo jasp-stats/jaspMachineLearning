@@ -1,5 +1,5 @@
 K-Naaste Buren Classificatie
-==========================
+===
 
 K-naaste buren is een classificatiemethode die kijkt naar het aantal, *k*, voorspelde observaties die het meest gelijk zijn aan nieuwe observaties om een voorspelling te maken over de klasse. Het aantal naaste buren is intrinsiek verbonden aan de complexiteit van het model, lage getallen verhogen de flexibiliteit van het model.
 
@@ -41,7 +41,7 @@ K-naaste buren is een classificatiemethode die kijkt naar het aantal, *k*, voors
 #### Algoritme Instellingen
 - Gewichten: Zet het gewichtsschema voor de naaste buren. De standaardoptie, rectangular, geeft de standaard knn, terwijl de andere opties het algorithme uitbreiden door de naaste buren af te wegen. Zie ook de kknn package.
 - Afstand: De afstandsmetriek om de gelijkheid tussen naaste buren te bepalen. Kan met de Euclidean- of Manhattan afstand.
-- Schaal variabelen: Schaalt de continue variabelen. Standaardiseren zorgt dat waarden van variabelen met verschillende schalen, worden geschaald in een specifieke gelijke schaal. Hierdoor geeft standaardiseren numerieke stabiliteit, wat de uitvoer van het clusteren verbetert. JASP gebruikt de Z-score standaardisatie met een gemiddelde, 0, en een standaardafwijking van 1. Dit is de standaardoptie.
+- Schaal kenmerken: Standaardiseert de continue kenmerken in de dataset. Standaardisatie zorgt ervoor dat waarden van kenmerken van verschillende schalen in een specifieke vergelijkbare schaal vallen. Standaardisatie zorgt daardoor voor numerieke stabiliteit. JASP gebruikt de Z-score standaardisatie van een gemiddelde van 0 en een standaardafwijking van 1. Deze optie is standaard geselecteerd.
 - Gebruik toevalsgenerator beginwaarde: Geeft de mogelijkheid een toevalsgenerator beginwaarde te gebruiken voor uw analyse. Een toevalsgenerator beginwaarde gebruiken, zorgt ervoor dat willekeurige processen geen invloed hebben op een analyse. Bijvoorbeeld, een toevalsgenerator beginwaarde maakt het mogelijk de analyse opnieuw te doen met dezelfde gesplitste data.
 
 #### Aantal Naaste Buren

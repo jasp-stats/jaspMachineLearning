@@ -10,7 +10,7 @@ Dit veld kan een getraind machine learning model laden. Merk op dat het model in
 - Voorspellers: In dit vak moeten de voorspellers worden ingevoerd die in aanmerking moeten worden genomen voor de voorspellingen.
 
 #### Algoritmische instelling
-- Schaal predictoren: Schaalt de continue predictoren. Standaardiseren zorgt dat waarden van predictoren met verschillende schalen, worden geschaald in een specifieke gelijke schaal. JASP gebruikt de Z-score standaardisatie met een gemiddelde, 0, en een standaardafwijking van 1. Dit is de standaardoptie.
+- Schaal kenmerken: Standaardiseert de continue kenmerken in de dataset. Standaardisatie zorgt ervoor dat waarden van kenmerken van verschillende schalen in een specifieke vergelijkbare schaal vallen. Standaardisatie zorgt daardoor voor numerieke stabiliteit. JASP gebruikt de Z-score standaardisatie van een gemiddelde van 0 en een standaardafwijking van 1. Deze optie is standaard geselecteerd.
 
 #### Tabellen:
 - Voorspellingen voor nieuwe data: geeft de voorspelde resultaten voor de data weer.

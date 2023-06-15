@@ -1,5 +1,5 @@
 Neighborhood-Based Clustering
-==========================
+===
 
 Neighborhood-Based clustering methods are a set of hard partitioning algorithm which aims to partition data into several clusters, where each observation belongs to only one group. The data is divided in such a way that the degree of similarity between two data observations is maximal if they belong to the same group and minimal if not.
 
@@ -36,7 +36,7 @@ Neighborhood-Based clustering methods are a set of hard partitioning algorithm w
 - Distance: Specify the used distance measurement used in k-medoids clustering. Euclidean distances are root sum-of-squares of differences, and manhattan distances are the sum of absolute differences.
 - Max. iterations: Sets the maximum number of iterations. The maximum number of iterations reflects the number of possible instances the algorithm iterates for finding the optimal clustering solution. At default, this is set to 25.
 - Random sets: Sets the maximum number of possible random sets used. The number of random sets reflects how many randomly chosen initial cluster assignments are used. At default, this is set to 25.
-- Scale variables: Scales the continuous variables. Standardization ensures that values of variables from different scales range into a specific similar scale. As a result, standardizing provides numerical stability, which improves the clustering output. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
+- Scale features: Standardizes the continuous features in the dataset. Standardization ensures that values of features from different scales range into a specific similar scale. As a result, standardizing provides numerical stability. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
 - Set seed: Gives the option to set a seed for your analysis. Setting a seed will exclude random processes influencing an analysis. For example, setting a seed makes it possible to re-run analyses with the same outcomes.
 
 #### Cluster Determination

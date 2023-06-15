@@ -1,5 +1,5 @@
 Neural Network Regression
-==========================
+===
 
 Feedforward neural networks are predictive algorithms inspired by the biological neural networks that constitute brains. A neuron (node) that receives a signal then processes it and can send signals to neurons connected to it. The signal at a node is a real number, and the output of each node is computed by sending the signal trough the activation function. The number of layers and nodes in the network is intrinsincly linked to model complexity, as high numbers increase the flexibility of the model.
 
@@ -14,7 +14,9 @@ Feedforward neural networks are predictive algorithms inspired by the biological
 - Features: In this box, the variables that provide information about the target variable should be entered. 
 
 #### Tables  
-- Evaluation metrics: Shows commonly used classification evaluation metrics like mean squared error (MSE), root mean squared error (RMSE) and R<sup>2</sup>.
+- Model performance: Shows commonly used classification evaluation metrics like mean squared error (MSE), root mean squared error (RMSE) and R<sup>2</sup>.
+- Feature importance: Shows the available feature importance metrics for the fitted model.
+- Explain predictions: Shows the decomposition of the model’s prediction into contributions that can be attributed to different explanatory variables.
 - Network weights: Shows the connections in the neural network together with their weights.
 
 #### Plots
@@ -54,7 +56,7 @@ Feedforward neural networks are predictive algorithms inspired by the biological
 - Learning rate: The learning rate used by the backpropagation algorithm.
 - Stopping criteria loss function: The threshold for the partial derivatives of the error function as stopping criteria.
 - Max. training repetitions: The maximum number of repetitions used in training the network.
-- Scale variables: Scales the continuous variables. Standardization ensures that values of variables from different scales range into a specific similar scale. As a result, standardizing provides numerical stability, which improves the clustering output. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
+- Scale features: Standardizes the continuous features in the dataset. Standardization ensures that values of features from different scales range into a specific similar scale. As a result, standardizing provides numerical stability. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
 - Set seed: Gives the option to set a seed for your analysis. Setting a seed will exclude random processes influencing an analysis. For example, setting a seed makes it possible to re-run analyses with the same data splits.
 
 #### Network Topology

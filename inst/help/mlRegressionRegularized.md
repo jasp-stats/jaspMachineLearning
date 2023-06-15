@@ -1,5 +1,5 @@
 Regularized Linear Regression
-==========================
+===
 
 Regularized linear regression is an adaptation of linear regression in which the coefficients are shrunken towards 0. This is done by applying a penalty (e.g., ridge, lasso, or elastic net). The parameter λ controls the degree to which parameters are shrunken.
 
@@ -16,7 +16,9 @@ Regularized linear regression is an adaptation of linear regression in which the
 - Weights: In this box, an optional variable containing case weights can be entered.
 
 #### Tables  
-- Evaluation metrics: Shows commonly used regression evaluation metrics such as mean squared error (MSE), root mean squared error (RMSE) and R<sup>2</sup>.
+- Model performance: Shows commonly used classification evaluation metrics like mean squared error (MSE), root mean squared error (RMSE) and R<sup>2</sup>.
+- Feature importance: Shows the available feature importance metrics for the fitted model.
+- Explain predictions: Shows the decomposition of the model’s prediction into contributions that can be attributed to different explanatory variables.
 - Regression coefficients: Gives the regression coefficient for each feature.
 
 #### Plots
@@ -40,7 +42,7 @@ Regularized linear regression is an adaptation of linear regression in which the
 - Penalty: Specifies which penalty is used in shrinking the regression coefficients. The options are ridge, lasso, and elastic net (see James, Witten, Hastie, & Tibshirani, 2013).
 - Fit intercept: Specifies whether the regression function should include an intercept or not.
 - Lambda (\u03BB): Specifies the shrinkage parameter. It can be fixed to a specific value, optimized according to which value gives the lowest MSE in cross-validation, or set to the largest value that was within 1 standard error (SE) of the minimum MSE during cross-validation.
-- Scale variables: Scales the continuous variables. Standardization ensures that values of variables from different scales range into a specific similar scale. As a result, standardizing provides numerical stability, which improves the clustering output. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
+- Scale features: Standardizes the continuous features in the dataset. Standardization ensures that values of features from different scales range into a specific similar scale. As a result, standardizing provides numerical stability. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
 - Set seed: Gives the option to set a seed for your analysis. Setting a seed will exclude random processes influencing an analysis. For example, setting a seed makes it possible to re-run analyses with the same data splits.
 
 #### Add Predicted Values to Data

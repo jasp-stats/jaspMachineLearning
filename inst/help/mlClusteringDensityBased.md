@@ -1,5 +1,6 @@
 Density Based Clustering
-==========================
+===
+
 Density-based clustering is a soft clustering method where clusters are constructed as maximal sets of points that are connected to points whose density exceeds some threshold. The density is produced by the concept that for each point within a cluster, the neighborhood within a given radius has to contain at least a minimum amount of points, that results in the density of that neighborhood to exceed a certain threshold. A density-based cluster is recognized by points having a higher density than points outside of the cluster. The set of all high-density points is called the density level. The points that do not exceed a density level are identified as outliers. The density level influences the amount of generated clusters. 
 
 ### Assumptions
@@ -32,7 +33,7 @@ Density-based clustering is a soft clustering method where clusters are construc
 - Epsilon neighborhood size: Reflects the size of the radius wherein there must be a minimal amount of core points that results in the density of that neighborhood to exceed a certain threshold. By exceeding this threshold, point (i.e., observations) can generate a cluster.
 - Min. core points: Reflects the minimal amount of points that need to be in the Epsilon neighborhood to let points form a cluster. The Eps and MinPts parameters determine the density level and regulate how many points need to be in a given radius to exceed a certain threshold for forming a cluster.
 - Distance: Specify the used dissimilarity measurement. Normal density uses the geometric distance between two points and is entirely based on the magnitude of the distance. In contrast, correlated density is a correlation-based dissimilarity measurement, which examines the linear association observations and if these correlations are high, these observations are considered to be similar. Normal density is set as default.
-- Scale variables: Scales the continuous variables. Standardization ensures that values of variables from different scales range into a specific similar scale. As a result, standardizing provides numerical stability, which improves the clustering output. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
+- Scale features: Standardizes the continuous features in the dataset. Standardization ensures that values of features from different scales range into a specific similar scale. As a result, standardizing provides numerical stability. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
 - Set seed: Gives the option to set a seed for your analysis. Setting a seed will exclude random processes influencing an analysis. For example, setting a seed makes it possible to re-run analyses with the same outcomes.
 
 #### Add Predicted Clusters to Data

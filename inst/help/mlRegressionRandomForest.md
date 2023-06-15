@@ -1,5 +1,5 @@
 Random Forest Regression
-==========================
+===
 
 Random Forest is a method of regression that creates a set of decision trees that consists of a large number of individual trees which operate as an ensemble.
 
@@ -14,8 +14,9 @@ Random Forest is a method of regression that creates a set of decision trees tha
 - Features: In this box, the variables that provide information about the target variable should be entered. 
 
 #### Tables  
-- Evaluation metrics: Shows commonly used classification evaluation metrics like mean squared error (MSE), root mean squared error (RMSE) and R<sup>2</sup>.
-- Feature importance: Shows the mean decrease in accuracy and total increase in node purity for all feature variables. These are indicators of the importance of the features.
+- Model performance: Shows commonly used classification evaluation metrics like mean squared error (MSE), root mean squared error (RMSE) and R<sup>2</sup>.
+- Feature importance: Shows the available feature importance metrics for the fitted model.
+- Explain predictions: Shows the decomposition of the model’s prediction into contributions that can be attributed to different explanatory variables.
 
 #### Plots
 - Data split: Shows how the data is split into training (and validation), and test set.
@@ -37,7 +38,7 @@ Random Forest is a method of regression that creates a set of decision trees tha
 #### Algorithmic Settings
 - Training data used per tree: Select the percentage of training data that is used to train each individual tree.
 - Features per split: Set the number of feature variables that is used within each split in the decision trees. Auto defaults to  
-- Scale variables: Scales the continuous variables. Standardization ensures that values of variables from different scales range into a specific similar scale. As a result, standardizing provides numerical stability, which improves the clustering output. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
+- Scale features: Standardizes the continuous features in the dataset. Standardization ensures that values of features from different scales range into a specific similar scale. As a result, standardizing provides numerical stability. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
 - Set seed: Gives the option to set a seed for your analysis. Setting a seed will exclude random processes influencing an analysis. For example, setting a seed makes it possible to re-run analyses with the same data splits.
 
 #### Number of Trees

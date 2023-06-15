@@ -1,5 +1,6 @@
 Fuzzy c-means Clustering
-==========================
+===
+
 Fuzzy c-means clustering is een soft clusteringsmethode die een output geeft met de gradatie van de associatie voor elke observatie met elke cluster. Dit maakt het mogelijk voor observaties om gedeeltelijk toegewezen te zijn aan meerdere clusters en geven een betrouwbaarheidsniveau over een clusterlidmaatschap. Fuzzy c-means' benadering lijkt op k-means clustering, behalve de soft-benadering.
 
 ### Assumpties
@@ -28,7 +29,7 @@ Fuzzy c-means clustering is een soft clusteringsmethode die een output geeft met
 #### Train parameters
 #### Algoritme Instellingen
 - Fuzziness parameter: Is een scalar en controleert de fuzziness van de clustering output. Dat betekent dat als de waarde stijgt (> 1), de onzekerheid van de lidmaatschappen aan diverse clusters ook stijgt. Ofwel, als de fuzziness parameter 1 nadert, dan is het resultaat van fuzzy clustering gelijk aan de hard-clustering methode, en als de parameter stijgt, wordt het clusteringsresultaat meer fuzzy.
-- Schaal variabelen: Schaalt de continue variabelen. Standaardiseren zorgt dat waarden van variabelen met verschillende schalen, worden geschaald in een specifieke gelijke schaal. Hierdoor geeft standaardiseren numerieke stabiliteit, wat de uitvoer van het clusteren verbetert. JASP gebruikt de Z-score standaardisatie met een gemiddelde, 0, en een standaardafwijking van 1. Dit is de standaardoptie.
+- Schaal kenmerken: Standaardiseert de continue kenmerken in de dataset. Standaardisatie zorgt ervoor dat waarden van kenmerken van verschillende schalen in een specifieke vergelijkbare schaal vallen. Standaardisatie zorgt daardoor voor numerieke stabiliteit. JASP gebruikt de Z-score standaardisatie van een gemiddelde van 0 en een standaardafwijking van 1. Deze optie is standaard geselecteerd.
 - Gebruik toevalsgenerator beginwaarde: Geeft de mogelijkheid een toevalsgenerator beginwaarde te gebruiken voor uw analyse. Een toevalsgenerator beginwaarde gebruiken, zorgt ervoor dat willekeurige processen geen invloed hebben op een analyse. Bijvoorbeeld, een toevalsgenerator beginwaarde maakt het mogelijk de analyse opnieuw te doen met dezelfde gesplitste data.
 
 #### Bepalings parameters 

@@ -1,5 +1,6 @@
 Density Based Clustering
-==========================
+===
+
 Density-based clustering is een soft clusteringsmethode waarbij clusters worden gemaakt als maximale sets van punten die verbonden zijn aan punten waarvan de dichtheid een drempelwaarde overtreft. De dichtheid komt voort uit het concept dat voor elke punt in een cluster, de neighborhood binnen een gegeven radius minstens een bepaalde hoeveelheid punten bevat, dat resulteert in de dichtheid van die neighborhood om een bepaalde drempelwaarde te overtreffen. Een density-based cluster is te herkennen aan punten met een hogere dichtheid dan punten buiten dat cluster. De set van alle hoge-dichtheid punten wordt het dichtheidsniveau genoemd. De punten die een dichtheidsniveau niet overschrijden, worden gezien als uitschieters. Het dichtheidsniveau beïnvloedt het aantal gegenereerde clusters. 
 
 ### Assumpties
@@ -29,7 +30,7 @@ Density-based clustering is een soft clusteringsmethode waarbij clusters worden 
 - Epsilon buurtomvang: Dit is de grootte van de radius waarin een minimum hoeveelheid kernpunten is die resulteren in de dichtheid van die neighborhood om een drempelwaarde te overtreffen. Door de drempelwaarde te overtreffen, kunnen punten (i.e., observaties) een cluster genereren.
 - Min. kernpunten: Reflecteert de minimale hoeveelheid punten die nodig zijn in de Epsilon neighborhood om de punten een cluster te laten vormen. De Eps en MinPts parameters bepalen het dichtsheidsniveau en reguleren hoeveel punten nodig zijn in een gegeven radius om een bepaalde drempelwaarde te overtreffen voor het vormen van een cluster.
 - Afstand: Specificeer de ongelijkheidsmeting. Normale dichtheid gebruikt de geometrische afstand tussen twee punten en is volledig gebaseerd op de magnitude van de afstand. Gecorreleerde dichtheid is daarentegen een correlatie-gebaseerde ongelijkheidsmeting, welke kijkt naar de lineaire associatie van observaties en als deze correlaties hoog zijn, deze observaties worden als gelijk gezien. Normale dichtheid is de standaardoptie.
-- Schaal variabelen: Schaalt de continue variabelen. Standaardiseren zorgt dat waarden van variabelen met verschillende schalen, worden geschaald in een specifieke gelijke schaal. Hierdoor geeft standaardiseren numerieke stabiliteit, wat de uitvoer van het clusteren verbetert. JASP gebruikt de Z-score standaardisatie met een gemiddelde, 0, en een standaardafwijking van 1. Dit is de standaardoptie.
+- Schaal kenmerken: Standaardiseert de continue kenmerken in de dataset. Standaardisatie zorgt ervoor dat waarden van kenmerken van verschillende schalen in een specifieke vergelijkbare schaal vallen. Standaardisatie zorgt daardoor voor numerieke stabiliteit. JASP gebruikt de Z-score standaardisatie van een gemiddelde van 0 en een standaardafwijking van 1. Deze optie is standaard geselecteerd.
 - Gebruik toevalsgenerator beginwaarde: Geeft de mogelijkheid een toevalsgenerator beginwaarde te gebruiken voor uw analyse. Een toevalsgenerator beginwaarde gebruiken, zorgt ervoor dat willekeurige processen geen invloed hebben op een analyse. Bijvoorbeeld, een toevalsgenerator beginwaarde maakt het mogelijk de analyse opnieuw te doen met dezelfde gesplitste data.
 
 #### Voeg Voorspelde Klassen toe aan Data

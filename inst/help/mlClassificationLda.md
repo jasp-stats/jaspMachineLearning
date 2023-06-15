@@ -1,5 +1,5 @@
 Linear Discriminant Classification
-==========================
+===
 
 Linear Discriminant Analysis (LDA) is a method of classification that aims to find *p - 1* components that discriminate best between the classes in the target variable. LDA is a linear classifier, meaning that the decision boundaries between classes are linear.
 
@@ -19,7 +19,9 @@ Linear Discriminant Analysis (LDA) is a method of classification that aims to fi
 #### Tables  
 - Confusion matrix: Displays a table that shows the observed classes against the predicted classes. Used to assess model accuracy.
 - Class proportions: Displays a table that shows the proportions of each class in the data set, training (and validaton), and test set.
-- Evaluation metrics: Shows commonly used classification evaluation metrics like precision, recall, the F1-score, support and AUC (area under the ROC curve).
+- Model performance: Shows commonly used classification evaluation metrics like precision, recall, the F1-score, support and AUC (area under the ROC curve).
+- Feature importance: Shows the available feature importance metrics for the fitted model.
+- Explain predictions: Shows the decomposition of the model’s prediction into contributions that can be attributed to different explanatory variables.
 - Coefficients: Shows the coefficients for the linear discriminants. 
 - Prior and posterior probabilities: Shows the prior and posterior group probabilities. Prior probabilities are the proportions in the training set.
 - Class means training data: Shows the means on every variable for every class in the training data.
@@ -40,7 +42,7 @@ Linear Discriminant Analysis (LDA) is a method of classification that aims to fi
 ### Training Parameters 
 #### Algorithmic Settings
 - Estimation method: Sets the estimator for the algorithm. Can be one of moment" for standard estimators of the mean and variance "mle", "mve", or "t" for robust estimates based on a t distribution. See also the MASS package.
-- Scale variables: Scales the continuous variables. Standardization ensures that values of variables from different scales range into a specific similar scale. As a result, standardizing provides numerical stability, which improves the clustering output. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
+- Scale features: Standardizes the continuous features in the dataset. Standardization ensures that values of features from different scales range into a specific similar scale. As a result, standardizing provides numerical stability. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
 - Set seed: Gives the option to set a seed for your analysis. Setting a seed will exclude random processes influencing an analysis. For example, setting a seed makes it possible to re-run analyses with the same data splits.
 
 #### Add Predicted Classes to Data

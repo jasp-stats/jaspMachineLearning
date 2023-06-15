@@ -1,5 +1,5 @@
 Hiërarchische Clustering
-==========================
+===
 
 Hiërarchische clustering is een hard clusteringsalgoritme dat data opdeelt in meerdere clusters, waar elke observatie tot één groep behoort. De data is dusdanig verdeeld dat de mate van gelijkheid tussen twee observaties maximaal is als ze bij dezelfde groep behoren en minimaal als die niet zo is.
 
@@ -31,7 +31,7 @@ Hiërarchische clustering is een hard clusteringsalgoritme dat data opdeelt in m
 #### Algoritme Instellingen
 - Afstand: Specificeer de ongelijkheidsmeting. De Euclidische afstand gebruikt de geometrische afstand tussen twee punten en is volledig gebaseerd op de magnitude van de afstand. De Pearsoncorrelatie is een daarentegen een correlatie-gebaseerde ongelijkheidsmeting, welke kijkt naar de lineaire associatie van observaties en als deze correlaties hoog zijn, deze observaties worden als gelijk gezien. Euclidische afstand is de standaardoptie.
 - Binding: Specificeer de gebruikte bindingsmeting. Enkele binding gebruikt de kleinste afstand tussen clusters. Complete binding gebruikt de verste afstand tussen clusters. Centroïde binding gebruikt de centroïden van de clusters. Gemiddelde binding berekent de afstand tussen alle clusters. Gemiddelde binding is de standaardoptie. 
-- Schaal variabelen: Schaalt de continue variabelen. Standaardiseren zorgt dat waarden van variabelen met verschillende schalen, worden geschaald in een specifieke gelijke schaal. Hierdoor geeft standaardiseren numerieke stabiliteit, wat de uitvoer van het clusteren verbetert. JASP gebruikt de Z-score standaardisatie met een gemiddelde, 0, en een standaardafwijking van 1. Dit is de standaardoptie.
+- Schaal kenmerken: Standaardiseert de continue kenmerken in de dataset. Standaardisatie zorgt ervoor dat waarden van kenmerken van verschillende schalen in een specifieke vergelijkbare schaal vallen. Standaardisatie zorgt daardoor voor numerieke stabiliteit. JASP gebruikt de Z-score standaardisatie van een gemiddelde van 0 en een standaardafwijking van 1. Deze optie is standaard geselecteerd.
 - Gebruik toevalsgenerator beginwaarde: Geeft de mogelijkheid een toevalsgenerator beginwaarde te gebruiken voor uw analyse. Een toevalsgenerator beginwaarde gebruiken, zorgt ervoor dat willekeurige processen geen invloed hebben op een analyse. Bijvoorbeeld, een toevalsgenerator beginwaarde maakt het mogelijk de analyse opnieuw te doen met dezelfde gesplitste data.
 
 #### Clusteringsparameters 
