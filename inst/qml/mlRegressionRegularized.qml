@@ -43,6 +43,7 @@ Form
 			title:								qsTr("Target")
 			singleVariable:						true
 			allowedColumns:						["scale"]
+			info:								qsTr("In this box, the variable that needs to be predicted should be entered.")
 		}
 
 		AssignedVariablesList
@@ -52,6 +53,7 @@ Form
 			title:								qsTr("Features")
 			allowedColumns:						["scale", "ordinal"]
 			allowAnalysisOwnComputedColumns:	false
+			info:								qsTr("In this box, the variables that provide information about the target variable should be entered.")
 		}
 
 		AssignedVariablesList
@@ -60,6 +62,7 @@ Form
 			title:								qsTr("Weights")
 			singleVariable:						true
 			allowedColumns:						["scale"]
+			info:								qsTr("In this box, an optional variable containing case weights can be entered.")
 		}
 	}
 
