@@ -113,7 +113,7 @@ Form
 
 	UI.ExportResults
 	{
-		enabled:								predictors.count > 1 && target.count > 0
+		enabled:								vars.predictorCount > 1 && vars.targetCount > 0
 	}
 
 	UI.DataSplit

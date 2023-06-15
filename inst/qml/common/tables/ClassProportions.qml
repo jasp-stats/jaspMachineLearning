@@ -25,4 +25,5 @@ CheckBox
 {
 	name:	"classProportionsTable"
 	text:	qsTr("Class proportions")
+	info:	qsTr("Displays a table that shows the proportions of each class in the data set, training (and validaton), and test set.")
 }

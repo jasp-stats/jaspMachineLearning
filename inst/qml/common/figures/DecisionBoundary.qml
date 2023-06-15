@@ -25,6 +25,7 @@ CheckBox
 {
 	name:				"decisionBoundary"
 	text:				qsTr("Decision boundary matrix")
+	info:				qsTr("Creates a *n* x *n* plot that visualizes how every observation would be classified if predicted through the current model. Boundaries between classes are visualized. Can only be made for numeric features.")
 
 	Row
 	{
@@ -33,6 +34,8 @@ CheckBox
 			name:		"legendShown"
 			text:		qsTr("Legend")
 			checked:	true
+			visible:	false
+			info:		qsTr("Show a legend next to the figure.")
 		}
 
 		CheckBox
@@ -40,6 +43,7 @@ CheckBox
 			name:		"pointsShown"
 			text:		qsTr("Points")
 			checked:	true
+			info:		qsTr("Show the observations in the data set as points in the plot.")
 		}
 	}
 }

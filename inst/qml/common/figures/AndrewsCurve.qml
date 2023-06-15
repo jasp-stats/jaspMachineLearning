@@ -25,4 +25,5 @@ CheckBox
 {
 	name:	"andrewsCurve"
 	text:	qsTr("Andrews curves")
+	info:   qsTr("Is a way to visualize structure in high-dimensional data. Lines that cluster are observations that are more alike.")
 }

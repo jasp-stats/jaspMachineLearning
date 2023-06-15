@@ -25,4 +25,5 @@ CheckBox
 {
 	name:	"matrixPlot"
 	text:	qsTr("Cluster matrix plot")
+	info:	qsTr("Creates a *n* x *n* plot that visualizes to which cluster every observation belongs according to the current model.")
 }

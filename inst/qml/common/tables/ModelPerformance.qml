@@ -25,4 +25,5 @@ CheckBox
 {
 	name:	"validationMeasures"
 	text:	qsTr("Model performance")
+	info:	qsTr("Displays available model performance metrics. For regression, these metrics include mean squared error (MSE), root mean squared error (RMSE), R<sup>2</sup> and more. For classification, these metrics include precision, recall, the F1-score, support, AUC (area under the ROC curve) and more.")
 }

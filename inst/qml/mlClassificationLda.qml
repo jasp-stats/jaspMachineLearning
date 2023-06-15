@@ -28,7 +28,7 @@ import "./common/figures" as FIG
 Form 
 {
 
-	UI.VariablesFormClassification { allow_nominal: false }
+	UI.VariablesFormClassification { id: vars; allow_nominal: false }
 
 	Group
 	{
@@ -122,7 +122,7 @@ Form
 
 		UI.ExportResults
 		{
-			enabled:				predictors.count > 1 && target.count > 0
+			enabled:				vars.predictorCount > 1 && vars.targetCount > 0
 		}
 	}
 

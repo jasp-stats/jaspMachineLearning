@@ -24,32 +24,28 @@ import JASP.Widgets		1.0
 import "./common/ui" as UI
 import "./common/tables" as TAB
 import "./common/figures" as FIG
+import "./common/analyses/svm" as SVM
 
 Form
 {
 
-	UI.VariablesFormClassification { }
+	UI.VariablesFormClassification { id: vars }
 
 	Group
 	{
-		title:									qsTr("Tables")
+		title: qsTr("Tables")
 
 		TAB.ConfusionMatrix { }
 		TAB.ClassProportions { }
 		TAB.ModelPerformance { }
 		TAB.FeatureImportance { }
 		TAB.ExplainPredictions { }
-
-		CheckBox
-		{
-			text:								qsTr("Support vectors")
-			name:								"supportVectorsTable"
-		}
+		SVM.SupportVectors { }
 	}
 
 	Group
 	{
-		title:									qsTr("Plots")
+		title: qsTr("Plots")
 
 		FIG.DataSplit { }
 		FIG.RocCurve { }
@@ -57,107 +53,22 @@ Form
 		FIG.DecisionBoundary { }
 	}
 
-	UI.ExportResults
-	{
-		enabled:								predictors.count > 0 && target.count > 0
-	}
-
-	UI.DataSplit
-	{
-		trainingValidationSplit:				false
-	}
+	UI.ExportResults { enabled: vars.predictorCount > 0 && vars.targetCount > 0 }
+	UI.DataSplit { trainingValidationSplit: false }
 
 	Section
 	{
-		title:									qsTr("Training Parameters")
+		title: qsTr("Training Parameters")
 
 		Group
 		{
-			title:								qsTr("Algorithmic Settings")
+			title: qsTr("Algorithmic Settings")
 
-			DropDown
-			{
-				id:								weights
-				name:							"weights"
-				indexDefaultValue:				0
-				label:							qsTr("Weights")
-				values:
-					[
-					{ label: qsTr("Linear"),	value: "linear"},
-					{ label: qsTr("Radial"),	value: "radial"},
-					{ label: qsTr("Polynomial"),value: "polynomial"},
-					{ label: qsTr("Sigmoid"),	value: "sigmoid"}
-				]
-			}
-
-			DoubleField
-			{
-				name:							"degree"
-				text:							qsTr("Degree")
-				defaultValue:					3
-				min:							1
-				enabled:						weights.value == "polynomial"
-				Layout.leftMargin:				10 * preferencesModel.uiScale
-			}
-
-			DoubleField
-			{
-				name:							"gamma"
-				text:							qsTr("Gamma parameter")
-				defaultValue:					1
-				min:							0
-				enabled:						weights.value != "linear"
-				Layout.leftMargin:				10 * preferencesModel.uiScale
-			}
-
-			DoubleField
-			{
-				name:							"complexityParameter"
-				text:							qsTr("r parameter")
-				defaultValue:					0
-				min:							0
-				enabled:						weights.value == "polynomial" || weights.value == "sigmoid"
-				Layout.leftMargin:				10 * preferencesModel.uiScale
-			}
-
-			DoubleField
-			{
-				name:							"cost"
-				text:							qsTr("Cost of constraints violation")
-				defaultValue:					1
-				min:							0.001
-			}
-
-			DoubleField
-			{
-				name:							"tolerance"
-				text:							qsTr("Tolerance of termination criterion")
-				defaultValue:					0.001
-				min:							0.001
-			}
-
-			DoubleField
-			{
-				name:							"epsilon"
-				text:							qsTr("Epsilon")
-				defaultValue:					0.01
-				min:							0.001
-			}
-
+			SVM.AlgorithmicSettings { }
 			UI.ScaleVariables { }
 			UI.SetSeed { }
 		}
 
-		RadioButtonGroup
-		{
-			name:								"modelOptimization"
-			visible:							false
-
-			RadioButton
-			{
-				name:							"manual"
-				checked:						true
-			}
-		}
+		SVM.ModelOptimization { id: optim }
 	}
 }

@@ -25,12 +25,14 @@ CheckBox
 {
 	name:			"clusterMeanPlot"
 	text:			qsTr("Cluster means")
+	info:			qsTr("Creates a plot that visualizes and compares the mean of the feature variables in each cluster.")
 
 	CheckBox
 	{
 		name:		"clusterMeanPlotBarPlot"
 		text:		qsTr("Display barplot")
 		checked:	true
+		info:		qsTr("Transform the cluster mean figure into a barplot.")
 	}
 
 	CheckBox
@@ -38,5 +40,6 @@ CheckBox
 		name:		"clusterMeanPlotSingleFigure"
 		text:		qsTr("Group into one figure")
 		checked:	true
+		info:		qsTr("Group the plots per feature into a single figure.")
 	}
 }

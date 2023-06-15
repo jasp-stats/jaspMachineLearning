@@ -28,7 +28,7 @@ import "./common/figures" as FIG
 Form 
 {
 
-	UI.VariablesFormClustering { }
+	UI.VariablesFormClustering { id: vars }
 
 	Group
 	{
@@ -53,7 +53,7 @@ Form
 
 	UI.ExportResults
 	{
-		enabled:								predictors.count > 1
+		enabled:								vars.predictorCount > 1
 		showSave:								false
 	}
 

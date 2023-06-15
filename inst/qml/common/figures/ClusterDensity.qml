@@ -25,11 +25,13 @@ CheckBox
 {
 	name:			"clusterDensityPlot"
 	text:			qsTr("Cluster densities")
+	info:			qsTr("For each feature variable, generates a plot showing the overlapping densities for the clusters.")
 
 	CheckBox
 	{
 		name:		"clusterDensityPlotSingleFigure"
 		text:		qsTr("Group into one figure")
 		checked:	true
+		info:		qsTr("Group the density plots per feature into a single figure.")
 	}
 }

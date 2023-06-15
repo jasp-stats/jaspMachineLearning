@@ -25,4 +25,5 @@ CheckBox
 {
 	name:	"featureImportanceTable"
 	text:	qsTr("Feature importance")
+	info:	qsTr("Shows the available feature importance metrics for the fitted model.")
 }

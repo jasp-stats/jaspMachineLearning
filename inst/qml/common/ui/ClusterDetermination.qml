@@ -27,12 +27,14 @@ RadioButtonGroup
 
 	title:						qsTr("Cluster Determination")
 	name:						"modelOptimization"
+	info:						qsTr("Choose how to determine the number of clusters in the model.")
 
 	RadioButton
 	{
 		id:						validationManual
 		text:					qsTr("Fixed")
 		name:					"manual"
+		info:					qsTr("Enables you to generate a fixed amount of clusters. This allows you to generate your own specified number of clusters, and thus, optimize manually.")
 
 		IntegerField
 		{
@@ -43,6 +45,7 @@ RadioButtonGroup
 			max:				5000
 			enabled:			validationManual.checked
 			fieldWidth:			60
+			info:				qsTr("The number of clusters to be fitted.")
 		}
 	}
 
@@ -52,11 +55,13 @@ RadioButtonGroup
 		name:					"optimized"
 		childrenOnSameRow:		true
 		checked:				true
+		info:					qsTr("Enables you to choose an optimization method. BIC optimization is set as default.")
 
 		DropDown
 		{
 			name:				"modelOptimizationMethod"
 			indexDefaultValue:	1
+			info:				qsTr("The method of optimization. The options are AIC, BIC, and silhouette. The AIC uses the within sum of squares (within-cluster variation), the number of generated clusters and the number of dimensions for optimizing the clustering output. The BIC uses the within sum of squares (within-cluster variation), the number of generated clusters, the number of dimensions, and the sample size for optimizing the clustering output. The silhouette value uses the similarity of observations within a cluster and their dissimilarity to other clusters for optimizing the clustering output.")
 
 			values:
 				[
@@ -77,5 +82,6 @@ RadioButtonGroup
 		enabled:				!validationManual.checked
 		Layout.leftMargin:		20
 		fieldWidth:				60
+		info:					qsTr("Sets the maximum number of possible clusters to be generated. At default, this is set to 10.")
 	}
 }

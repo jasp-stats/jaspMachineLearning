@@ -24,15 +24,16 @@ import JASP.Widgets		1.0
 import "./common/ui" as UI
 import "./common/tables" as TAB
 import "./common/figures" as FIG
+import "./common/analyses/boosting" as BOOSTING
 
 Form 
 {
 
-	UI.VariablesFormRegression { }
+	UI.VariablesFormRegression { id: vars }
 
 	Group
 	{
-		title:									qsTr("Tables")
+		title: qsTr("Tables")
 
 		TAB.ModelPerformance { }
 		TAB.FeatureImportance { }
@@ -41,139 +42,46 @@ Form
 
 	Group
 	{
-		title:									qsTr("Plots")
+		title: qsTr("Plots")
 
 		FIG.DataSplit { }
 		FIG.PredictivePerformance { }
-
-		CheckBox
-		{
-			name:								"outOfBagImprovementPlot"
-			text:								qsTr("Out-of-bag improvement")
-		}
-
-		CheckBox
-		{
-			name:								"deviancePlot"
-			text:								qsTr("Deviance")
-		}
-
-		CheckBox
-		{
-			name:								"relativeInfluencePlot"
-			text:								qsTr("Relative influence")
-		}
+		BOOSTING.Oob { }
+		BOOSTING.Deviance { }
+		BOOSTING.RelativeInfluence { }
 	}
 
-	UI.ExportResults
-	{
-		enabled:								predictors.count > 1 && target.count > 0
-	}
-
-	UI.DataSplit
-	{
-		leaveOneOutVisible:						false
-		trainingValidationSplit:				optimizeModel.checked
-	}
+	UI.ExportResults { enabled:	vars.predictorCount > 1 && vars.targetCount > 0 }
+	UI.DataSplit { leaveOneOutVisible: false; trainingValidationSplit: !optim.isManual }
 
 	Section
 	{
-		title:									qsTr("Training Parameters")
+		title: qsTr("Training Parameters")
 
 		Group
 		{
-			title:								qsTr("Algorithmic Settings")
+			title: qsTr("Algorithmic Settings")
 
-			DoubleField
-			{
-				name:							"shrinkage"
-				text:							qsTr("Shrinkage")
-				defaultValue:					0.1
-				min:							0
-				max:							1
-			}
-
-			IntegerField
-			{
-				name:							"interactionDepth"
-				text:							qsTr("Interaction depth")
-				defaultValue:					1
-				min:							1
-				max:							99
-			}
-
-			IntegerField
-			{
-				name:							"minObservationsInNode"
-				text:							qsTr("Min. observations in node")
-				defaultValue:					10
-				min:							1
-				max:							50000
-			}
-
-			PercentField 
-			{
-				name:							"baggingFraction"
-				text:							qsTr("Training data used per tree")
-				defaultValue:					50
-			}
+			BOOSTING.AlgorithmicSettings { }
 
 			DropDown
 			{
-				name:							"distance"
-				indexDefaultValue:				0
-				label:							qsTr("Loss function")
-
+				name:				"distance"
+				indexDefaultValue:	0
+				label:				qsTr("Loss function")
 				values:
 					[
 					{ label: "Gaussian",value: "gaussian"},
 					{ label: "Laplace", value: "laplace"},
 					{ label: "t", 		value: "tdist"}
 				]
+				info:				qsTr("The loss function used.")
 			}
 
 			UI.ScaleVariables { }
 			UI.SetSeed { }
 		}
 
-		RadioButtonGroup
-		{
-			title:								qsTr("Number of Trees")
-			name:								"modelOptimization"
-
-			RadioButton
-			{
-				text:							qsTr("Fixed")
-				name:							"manual"
-
-				IntegerField 
-				{
-					name:						"noOfTrees"
-					text:						qsTr("Trees")
-					defaultValue:				100
-					min:						1
-					max:						500000
-					fieldWidth:					60
-				}
-			}
-
-			RadioButton
-			{
-				id:								optimizeModel
-				text:							qsTr("Optimized")
-				name:							"optimized"
-				checked:						true
-
-				IntegerField
-				{
-					name:						"maxTrees"
-					text:						qsTr("Max. trees")
-					defaultValue:				100
-					min:						3
-					max:						500000
-					fieldWidth:					60
-				}
-			}
-		}
+		BOOSTING.ModelOptimization { id: optim }
 	}
 }

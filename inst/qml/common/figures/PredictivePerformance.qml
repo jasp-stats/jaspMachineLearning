@@ -25,4 +25,5 @@ CheckBox
 {
 	name:	"predictedPerformancePlot"
 	text:	qsTr("Predictive performance")
+	info:	qsTr("Plots the true values of the observations in the test set against their predicted values.")
 }

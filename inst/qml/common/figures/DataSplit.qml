@@ -26,4 +26,5 @@ CheckBox
 	name:		"dataSplitPlot"
 	text:		qsTr("Data split")
 	checked:	true
+	info:		qsTr("Shows how the data is split into training (and validation), and test set.")
 }

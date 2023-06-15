@@ -26,10 +26,12 @@ CheckBox
 	name:		"confusionTable"
 	text:		qsTr("Confusion matrix")
 	checked:	true
+	info:		qsTr("Displays a table that shows the observed classes against the predicted classes. Used to assess model accuracy.")
 
 	CheckBox
 	{
 		name:	"confusionProportions"
 		text:	qsTr("Display proportions")
+		info:	qsTr("Displays proportions in the confusion matrix instead of counts.")
 	}
 }

@@ -16,38 +16,41 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick									2.8
-import QtQuick.Layouts							1.3
-import JASP.Controls							1.0
-import JASP.Widgets								1.0
+import QtQuick			2.8
+import QtQuick.Layouts	1.3
+import JASP.Controls	1.0
+import JASP.Widgets		1.0
 
 CheckBox
 {
-	name:								"tableShap"
-	text:								qsTr("Explain predictions")
-	id:									tableShap
+	name:					"tableShap"
+	text:					qsTr("Explain predictions")
+	id:						tableShap
+	info:					qsTr("Shows a decomposition of the predictions of the model into contributions that can be attributed to individual model features.")
 
 	Row
 	{	
-		spacing:						5 * preferencesModel.uiScale
-		enabled:						tableShap.checked
+		spacing:			5 * preferencesModel.uiScale
+		enabled:			tableShap.checked
 	
 		IntegerField
 		{
-			name:						"fromIndex"
-			text:						qsTr("Cases")
-			defaultValue:				1
-			min:						1
-			max:						dataSetModel.rowCount()
+			name:			"fromIndex"
+			text:			qsTr("Cases")
+			defaultValue:	1
+			min:			1
+			max:			dataSetModel.rowCount()
+			info:			qsTr("The test set index of the first row to be displayed in the table.")
 		}
 
 		IntegerField
 		{
-			name:						"toIndex"
-			text:						qsTr("to")
-			defaultValue:				5
-			max:						dataSetModel.rowCount()
-			min:						1
+			name:			"toIndex"
+			text:			qsTr("to")
+			defaultValue:	5
+			max:			dataSetModel.rowCount()
+			min:			1
+			info:			qsTr("The test set index of the last row to be displayed in the table.")
 		}
 	}
 }

@@ -26,6 +26,7 @@ CheckBox
 	name:				"setSeed"
 	text:				qsTr("Set seed")
 	childrenOnSameRow:	true
+	info:				qsTr("Gives the option to set a seed for your analysis. Setting a seed will exclude random processes influencing an analysis. For example, setting a seed makes it possible to re-run analyses with the same data splits.")
 
 	IntegerField
 	{
@@ -34,5 +35,6 @@ CheckBox
 		min:			0
 		max:			999999
 		fieldWidth:		60
+		info:			qsTr("The value of the seed.")
 	}
 }

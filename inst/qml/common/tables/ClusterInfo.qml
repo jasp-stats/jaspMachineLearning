@@ -28,18 +28,21 @@ CheckBox
 	name:			"tableClusterInformation"
 	text:			qsTr("Cluster information")
 	checked:		true
+	info:			qsTr("Displays the size of each cluster and the explained proportion of within-cluster heterogeneity. The latter is the cluster within sum of squares divided by its total over the various clusters. These outputs are shown by default.")
 
 	CheckBox
 	{
 		name:		"tableClusterInformationWithinSumOfSquares"
 		text:		qsTr("Within sum of squares")
 		checked:	true
+		info:		qsTr("Adds a row with the within sum of squares of each cluster to the table. This option is selected by default.")
 	}
 
 	CheckBox
 	{
 		name:		"tableClusterInformationSilhouetteScore"
 		text:		qsTr("Silhouette score")
+		info:		qsTr("Adds a row with the silhouette score of each cluster to the table.")
 	}
 
 	CheckBox
@@ -47,17 +50,20 @@ CheckBox
 		name:		"tableClusterInformationCentroids"
 		text:		qsTr("Centers")
 		visible:	show_centroids
+		info:		qsTr("Adds a row with the center per feature of each cluster to the table. The center can be the mean, median or mode depending on the clustering algorithm.")
 	}
 
 	CheckBox
 	{
 		name:		"tableClusterInformationBetweenSumOfSquares"
 		text:		qsTr("Between sum of squares")
+		info:		qsTr("Adds a note with the between sum of squares of the cluster model to the table.")
 	}
 
 	CheckBox
 	{
 		name:		"tableClusterInformationTotalSumOfSquares"
 		text:		qsTr("Total sum of squares")
+		info:		qsTr("Adds a note with the total sum of squares of the cluster model to the table.")
 	}
 }

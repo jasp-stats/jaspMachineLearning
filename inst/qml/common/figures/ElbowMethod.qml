@@ -28,4 +28,5 @@ CheckBox
 	name:		"elbowMethodPlot"
 	text:		qsTr("Elbow method")
 	enabled:	enable
+	info:		qsTr("Generates a plot with the total within sum of squares on the y-axis and the number of clusters on the x-axis. This plot can be used for determining the optimal number of clusters. The plot shows three curves using AIC, BIC, and 'elbow method' optimization.")
 }

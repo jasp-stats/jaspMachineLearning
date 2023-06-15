@@ -25,4 +25,5 @@ CheckBox
 {
 	name:	"tableClusterMeans"
 	text:	qsTr("Cluster means")
+	info:	qsTr("Shows a table containing the cluster means for each feature variable.")
 }

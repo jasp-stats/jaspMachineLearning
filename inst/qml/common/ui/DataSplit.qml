@@ -16,10 +16,10 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick									2.8
-import QtQuick.Layouts							1.3
-import JASP.Controls							1.0
-import JASP.Widgets								1.0
+import QtQuick			2.8
+import QtQuick.Layouts	1.3
+import JASP.Controls	1.0
+import JASP.Widgets		1.0
 
 
 Section
@@ -32,8 +32,9 @@ Section
 
 	RadioButtonGroup
 	{
-		title: 									qsTr("Holdout Test Data")
 		name: 									"holdoutData"
+		title: 									qsTr("Holdout Test Data")
+		info:									qsTr("Choose how to create the test set.")
 
 		RadioButton
 		{
@@ -42,6 +43,7 @@ Section
 			childrenOnSameRow:					true
 			text:								qsTr("Sample")
 			checked:							true
+			info:								qsTr("Choose a percentage to randomly sample from your data to derive prediction error. Generates an internal indicator variable that indicates whether the observation is included (1) or excluded (0) from the test set.")
 
 			Row
 			{
@@ -52,6 +54,7 @@ Section
 					min:						5
 					max:						95
 					afterLabel:					qsTr("% of all data")
+					info:						qsTr("The percentage of observations to use for the test set.")
 				}
 			}
 		}
@@ -63,6 +66,7 @@ Section
 			text:								qsTr("Add generated indicator to data")
 			Layout.leftMargin:					20
 			enabled:							holdoutManual.checked
+			info:								qsTr("Add the generated test set indicator from the option above to your data set.")
 
 			ComputedColumnField
 			{
@@ -70,6 +74,7 @@ Section
 				text:							qsTr("Column name")
 				fieldWidth:						120
 				visible:						addIndicator.checked
+				info:							qsTr("The column name for the generated test set indicator.")
 			}
 		}
 
@@ -78,6 +83,7 @@ Section
 			name: 								"testSetIndicator"
 			label: 								qsTr("Test set indicator")
 			childrenOnSameRow: 					true
+			info:								qsTr("Use an indicator variable to select data for the test set. This indicator should be a column in your data that consists of only 0 (excluded from the test set) and 1 (included in the test set). The data will then be split into a training (and validation if requested) set (0), and a test set (1) according to your indicator.")
 
 			DropDown
 			{
@@ -86,6 +92,7 @@ Section
 				showVariableTypeIcon: 			true
 				addEmptyValue: 					true
 				placeholderText: 				qsTr("None")
+				info:							qsTr("The variable in the data set that is used as the test set indicator.")
 			}
 		}
 	}
@@ -95,6 +102,7 @@ Section
 		id: 									trainingValidationSplit
 		title: 									qsTr("Training and Validation Data")
 		name: 									"modelValid"
+		info:									qsTr("Choose how to create the validation set.")
 
 		RadioButton
 		{
@@ -102,6 +110,7 @@ Section
 			childrenOnSameRow: 					true
 			checked: 							true
 			text: 								qsTr("Sample")
+			info:								qsTr("Randomly sample a percentage from the remaining training data (after selecting the test set).")
 
 			Row 
 			{
@@ -112,6 +121,7 @@ Section
 					min: 						5
 					max: 						95
 					afterLabel: 				qsTr("% for validation data")
+					info:						qsTr("The percentage of observations to use for the validation set.")
 				}
 			}
 		}
@@ -122,6 +132,7 @@ Section
 			name:								"validationKFold"
 			childrenOnSameRow:					true
 			text:								qsTr("K-fold with")
+			info:								qsTr("Partition the remaining data in *k* parts.")
 
 			Row
 			{
@@ -133,6 +144,7 @@ Section
 					max:						999
 					fieldWidth:					30
 					afterLabel:					qsTr("folds")
+					info:						qsTr("Tne number of folds to be used.")
 				}
 			}
 		}
@@ -142,6 +154,7 @@ Section
 			id:									leaveOneOut
 			text:								qsTr("Leave-one-out")
 			name:								"validationLeaveOneOut"
+			info:								qsTr("Partition the remaining data in *n* parts.")
 		}
 	}
 }

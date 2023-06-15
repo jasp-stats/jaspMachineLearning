@@ -24,15 +24,16 @@ import JASP.Widgets		1.0
 import "./common/ui" as UI
 import "./common/tables" as TAB
 import "./common/figures" as FIG
+import "./common/analyses/knn" as KNN
 
 Form 
 {
 
-	UI.VariablesFormRegression { }
+	UI.VariablesFormRegression { id: vars }
 
 	Group
 	{
-		title:									qsTr("Tables")
+		title: qsTr("Tables")
 
 		TAB.ModelPerformance { }
 		TAB.FeatureImportance { }
@@ -41,116 +42,31 @@ Form
 
 	Group
 	{
-		title:									qsTr("Plots")
+		title: qsTr("Plots")
 
 		FIG.DataSplit { }
 		FIG.PredictivePerformance { }
-
-		CheckBox
-		{
-			text:								qsTr("Mean squared error")
-			name:								"errorVsKPlot"
-			enabled:							optimizeModel.checked
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Weight function")
-			name:								"weightsPlot"
-		}
+		KNN.OptimPlot { regression: true; enable: !optim.isManual }
+		KNN.WeightFunction { }
 	}
 
-	UI.ExportResults
-	{
-		enabled:								predictors.count > 0 && target.count > 0
-	}
+	UI.ExportResults { enabled: vars.predictorCount > 1 && vars.targetCount > 0 }
 
-	UI.DataSplit
-	{
-		trainingValidationSplit:				optimizeModel.checked
-	}
+	UI.DataSplit { trainingValidationSplit: !optim.isManual }
 
 	Section
 	{
-		title:									qsTr("Training Parameters")
+		title: qsTr("Training Parameters")
 
 		Group
 		{
-			title:								qsTr("Algorithmic Settings")
+			title: qsTr("Algorithmic Settings")
 
-			DropDown
-			{
-				name:							"weights"
-				indexDefaultValue:				0
-				label:							qsTr("Weights")
-				values:
-					[
-					{ label: qsTr("Rectangular"), 	value: "rectangular"},
-					{ label: qsTr("Triangular"), 	value: "triangular"},
-					{ label: qsTr("Epanechnikov"), 	value: "epanechnikov"},
-					{ label: qsTr("Biweight"), 		value: "biweight"},
-					{ label: qsTr("Triweight"), 	value: "triweight"},
-					{ label: qsTr("Cosine"), 		value: "cos"},
-					{ label: qsTr("Inverse"), 		value: "inv"},
-					{ label: qsTr("Gaussian"), 		value: "gaussian"},
-					{ label: qsTr("Rank"), 			value: "rank"},
-					{ label: qsTr("Optimal"), 		value: "optimal"}
-				]
-			}
-
-			DropDown
-			{
-				name:							"distanceParameterManual"
-				indexDefaultValue:				0
-				label:							qsTr("Distance")
-				values:
-					[
-					{ label:qsTr("Euclidian"),	value:"2"},
-					{ label:qsTr("Manhattan"),	value:"1"}
-				]
-			}
-
+			KNN.AlgorithmicSettings { }
 			UI.ScaleVariables { }
 			UI.SetSeed { }
 		}
 
-		RadioButtonGroup
-		{
-			title:								qsTr("Number of Nearest Neighbors")
-			name:								"modelOptimization"
-
-			RadioButton
-			{
-				text:							qsTr("Fixed")
-				name:							"manual"
-
-				IntegerField {
-					name:						"noOfNearestNeighbours"
-					text:						qsTr("Nearest neighbors")
-					defaultValue:				3
-					min:						1
-					max:						50000
-					fieldWidth:					60
-				}
-			}
-
-			RadioButton
-			{
-				id:								optimizeModel
-				text:							qsTr("Optimized")
-				name:							"optimized"
-				checked:						true
-
-				IntegerField
-				{
-					name:						"maxNearestNeighbors"
-					text:						qsTr("Max. nearest neighbors")
-					defaultValue:				10
-					min:						1
-					max:						50000
-					fieldWidth:					60
-				}
-			}
-		}
+		KNN.ModelOptimization { id: optim }
 	}
 }

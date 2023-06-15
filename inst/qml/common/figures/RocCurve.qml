@@ -25,4 +25,5 @@ CheckBox
 {
 	name:	"rocCurve"
 	text:	qsTr("ROC curves")
+	info:	qsTr("Displays ROC curves for each class predicted against all other classes.")
 }

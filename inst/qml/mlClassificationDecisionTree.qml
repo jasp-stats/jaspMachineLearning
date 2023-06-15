@@ -24,118 +24,52 @@ import JASP.Widgets		1.0
 import "./common/ui" as UI
 import "./common/tables" as TAB
 import "./common/figures" as FIG
+import "./common/analyses/decisiontree" as DT
 
 Form
 {
 
-	UI.VariablesFormClassification { }
+	UI.VariablesFormClassification { id: vars }
 
 	Group
 	{
-		title:						qsTr("Tables")
+		title: qsTr("Tables")
 
 		TAB.ConfusionMatrix { }
 		TAB.ClassProportions { }
 		TAB.ModelPerformance { }
 		TAB.FeatureImportance { }
 		TAB.ExplainPredictions { }
-		
-		CheckBox
-		{
-			text:					qsTr("Attempted splits")
-			name:					"splitsTable"
-
-			CheckBox
-			{
-				text:				qsTr("Only show splits in tree")
-				name:				"splitsTreeTable"
-				checked:			true
-			}
-		}
+		DT.AttemptedSplits { }
 	}
 
 	Group
 	{
-		title:						qsTr("Plots")
+		title: qsTr("Plots")
 
 		FIG.DataSplit { }
 		FIG.RocCurve { }
 		FIG.AndrewsCurve { }
-
-		CheckBox
-		{
-			text:					qsTr("Decision tree")
-			name:					"decisionTreePlot"
-		}
-
+		DT.TreePlot { }
 		FIG.DecisionBoundary { }
 	}
 
-	UI.ExportResults
-	{
-		enabled:					predictors.count > 0 && target.count > 0
-	}
-
-	UI.DataSplit
-	{
-		trainingValidationSplit:	false
-	}
+	UI.ExportResults { enabled: vars.predictorCount > 0 && vars.targetCount > 0 }
+	UI.DataSplit { trainingValidationSplit: false }
 
 	Section
 	{
-		title:						qsTr("Training Parameters")
+		title: qsTr("Training Parameters")
 
 		Group
 		{
-			title:					qsTr("Algorithmic Settings")
+			title: qsTr("Algorithmic Settings")
 
-			IntegerField
-			{
-				text:				qsTr("Min. observations for split")
-				name:				"minObservationsForSplit"
-				min:				1
-				defaultValue:		20
-			}
-
-			IntegerField
-			{
-				text:				qsTr("Min. observations in terminal")
-				name:				"minObservationsInNode"
-				min:				1
-				defaultValue:		7
-			}
-
-			IntegerField
-			{
-				text:				qsTr("Max. interaction depth")
-				name:				"interactionDepth"
-				min:				1
-				defaultValue:		30
-				max:				30
-			}
-
-			DoubleField
-			{
-				text:				qsTr("Complexity penalty")
-				name:				"complexityParameter"
-				min:				0
-				defaultValue:		0.01
-			}
-
+			DT.AlgorithmicSettings { }
 			UI.ScaleVariables { }
 			UI.SetSeed { }
 		}
 
-		RadioButtonGroup
-		{
-			name:					"modelOptimization"
-			visible:				false
-
-			RadioButton
-			{
-				name:				"manual"
-				checked:			true
-			}
-		}
+		DT.ModelOptimization { }
 	}
 }

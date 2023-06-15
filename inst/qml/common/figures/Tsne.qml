@@ -25,6 +25,7 @@ CheckBox
 {
 	name:				"tsneClusterPlot"
 	text:				qsTr("t-SNE cluster plot")
+	info:				qsTr("Generates a t-SNE plot of the clustering output. t-SNE plots are used for visualizing high-dimensional data in a low-dimensional space of two dimensions aiming to illustrate the relative distances between data observations. The t-SNE two-dimensional space makes the axes uninterpretable. A t-SNE plot seeks to give an impression of the relative distances between observations and clusters. To recreate the same t-SNE plot across several clustering analyses you can set their seed to the same value, as the t-SNE algorithm uses random starting values.")
 
 	Row
 	{
@@ -34,12 +35,14 @@ CheckBox
 			text:		qsTr("Legend")
 			checked:	true
 			visible:	false
+			info:		qsTr("Show a legend next to the figure.")
 		}
 
 		CheckBox
 		{
 			name:		"tsneClusterPlotLabels"
 			text:		qsTr("Labels")
+			info:		qsTr("Add the row numbers of the observations in the data set as labels to the plot.")
 		}
 	}
 }

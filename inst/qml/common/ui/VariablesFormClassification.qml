@@ -23,7 +23,9 @@ import JASP.Widgets					1.0
 
 VariablesForm
 {
-	property bool	allow_nominal:	true
+	property				bool	allow_nominal:	true
+	readonly	property	alias 	targetCount:	target.count
+	readonly	property	alias 	predictorCount: predictors.count
 
 	AvailableVariablesList
 	{
@@ -37,6 +39,7 @@ VariablesForm
 		title:								qsTr("Target")
 		singleVariable:						true
 		allowedColumns:						["nominal", "nominalText", "ordinal"]
+		info:								qsTr("In this box, the variable that needs to be predicted should be entered.")
 	}
 
 	AssignedVariablesList
@@ -46,5 +49,6 @@ VariablesForm
 		title:								qsTr("Features")
 		allowedColumns:						allow_nominal ? ["scale", "nominal", "nominalText", "ordinal"] : ["scale", "ordinal"]
 		allowAnalysisOwnComputedColumns:	false
+		info:								qsTr("In this box, the variables that provide information about the target variable should be entered.")
 	}
 }

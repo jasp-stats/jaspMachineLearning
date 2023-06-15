@@ -24,14 +24,15 @@ import JASP.Widgets		1.0
 import "./common/ui" as UI
 import "./common/tables" as TAB
 import "./common/figures" as FIG
+import "./common/analyses/randomforest" as RF
 
 Form {
 
-	UI.VariablesFormClassification { }
+	UI.VariablesFormClassification { id: vars }
 
 	Group
 	{
-		title:									qsTr("Tables")
+		title: qsTr("Tables")
 
 		TAB.ConfusionMatrix { }
 		TAB.ClassProportions { }
@@ -42,129 +43,33 @@ Form {
 
 	Group
 	{
-		title:									qsTr("Plots")
+		title: qsTr("Plots")
 
 		FIG.DataSplit { }
 		FIG.RocCurve { }
 		FIG.AndrewsCurve { }
-
-		CheckBox
-		{
-			name:								"treesVsModelErrorPlot"
-			text:								qsTr("Out-of-bag accuracy")
-		}
-
-		CheckBox
-		{
-			name:								"accuracyDecreasePlot"
-			text:								qsTr("Mean decrease in accuracy")
-		}
-
-		CheckBox
-		{
-			name:								"purityIncreasePlot"
-			text:								qsTr("Total increase in node purity")
-		}
-
+		RF.Oob { regression: false }
+		RF.AccuracyDecrease { }
+		RF.NodePurity { }
 		FIG.DecisionBoundary { }
 	}
 
-	UI.ExportResults
-	{
-		enabled:								predictors.count > 1 && target.count > 0
-	}
-
-	UI.DataSplit
-	{
-		leaveOneOutVisible:						false
-		kFoldsVisible:							false
-		trainingValidationSplit:				optimizeModel.checked
-	}
+	UI.ExportResults { enabled: vars.predictorCount > 1 && vars.targetCount > 0 }
+	UI.DataSplit { leaveOneOutVisible: false; kFoldsVisible: false; trainingValidationSplit: !optim.isManual }
 
 	Section
 	{
-		title:									qsTr("Training Parameters")
+		title: qsTr("Training Parameters")
 
 		Group
 		{
-			title:								qsTr("Algorithmic Settings")
+			title: qsTr("Algorithmic Settings")
 
-			PercentField
-			{
-				name:							"baggingFraction"
-				text:							qsTr("Training data used per tree")
-				defaultValue:					50
-				min:							5
-				max:							95
-			}
-
-			RowLayout
-			{
-				DropDown
-				{
-					id:							noOfPredictors
-					name:						"noOfPredictors"
-					indexDefaultValue:			0
-					label:						qsTr("Features per split")
-					values:
-						[
-						{ label: qsTr("Auto"), 		value: "auto"},
-						{ label: qsTr("Manual"), 	value: "manual"}
-					]
-				}
-
-				IntegerField
-				{
-					name:						"numberOfPredictors"
-					defaultValue:				1
-					min:						0
-					max:						10000
-					visible:					noOfPredictors.currentIndex == 1
-				}
-			}
-
+			RF.AlgorithmicSettings { }
 			UI.ScaleVariables { }
 			UI.SetSeed { }
 		}
 
-		RadioButtonGroup
-		{
-			title:								qsTr("Number of Trees")
-			name:								"modelOptimization"
-
-			RadioButton
-			{
-				text:							qsTr("Fixed")
-				name:							"manual"
-
-				IntegerField
-				{
-					name:						"noOfTrees"
-					text:						qsTr("Trees")
-					defaultValue:				100
-					min:						1
-					max:						500000
-					fieldWidth:					60
-				}
-			}
-
-			RadioButton
-			{
-				id:								optimizeModel
-				text:							qsTr("Optimized")
-				name:							"optimized"
-				checked:						true
-
-				IntegerField
-				{
-					name:						"maxTrees"
-					text:						qsTr("Max. trees")
-					defaultValue:				100
-					min:						1
-					max:						500000
-					fieldWidth:					60
-				}
-			}
-		}
+		RF.ModelOptimization { id: optim }
 	}
 }

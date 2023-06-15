@@ -26,4 +26,5 @@ CheckBox
 	name:		"scaleVariables"
 	text:		qsTr("Scale features")
 	checked:	true
+	info:		qsTr("Standardizes the continuous features in the dataset. Standardization ensures that values of features from different scales range into a specific similar scale. As a result, standardizing provides numerical stability. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.")
 }
