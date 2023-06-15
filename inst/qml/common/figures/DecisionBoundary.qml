@@ -41,7 +41,7 @@ CheckBox
 		CheckBox
 		{
 			name:		"pointsShown"
-			text:		qsTr("Points")
+			text:		qsTr("Add data points")
 			checked:	true
 			info:		qsTr("Show the observations in the data set as points in the plot.")
 		}

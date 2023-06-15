@@ -41,7 +41,7 @@ CheckBox
 		CheckBox
 		{
 			name:		"tsneClusterPlotLabels"
-			text:		qsTr("Labels")
+			text:		qsTr("Add data labels")
 			info:		qsTr("Add the row numbers of the observations in the data set as labels to the plot.")
 		}
 	}
