@@ -100,7 +100,7 @@ Group
 					name:						"populationSize"
 					text:						qsTr("Population size")
 					defaultValue:				20
-					min:						2
+					min:						10
 					max:						50000
 					info:						qsTr("Size of population used in genetic optimization.")
 				}
@@ -118,21 +118,19 @@ Group
 				IntegerField
 				{
 					name:						"maxLayers"
-					text:						qsTr("Max. layers")
+					text:						qsTr("Max. number of layers")
 					defaultValue:				10
 					min:						1
 					max:						50000
-					visible:					false
 				}
 
 				IntegerField
 				{
 					name:						"maxNodes"
-					text:						qsTr("Max. nodes")
+					text:						qsTr("Max. nodes in each layer")
 					defaultValue:				10
 					min:						1
 					max:						50000
-					visible:					false
 				}
 
 				DropDown
@@ -159,7 +157,7 @@ Group
 					text:						qsTr("Candidates")
 					defaultValue:				5
 					min:						1
-					max:						populationSize.value - 1
+					max:						selectionMethod.value == "tournament" ? populationSize.value - 1 : 9999999
 					enabled:					selectionMethod.value == "tournament"
 					info:						qsTr("Number of candidates for tournament selection")
 				}
