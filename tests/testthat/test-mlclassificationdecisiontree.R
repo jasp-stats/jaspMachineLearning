@@ -64,9 +64,9 @@ test_that("Decision Tree Plot matches", {
 test_that("Feature Importance Metrics table results match", {
 	table <- results[["results"]][["featureImportanceTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(15.521551923813, 34.6709290167624, "Petal.Width", 15.521551923813,
-			 31.6571914083694, "Petal.Length", 503.428041209099, 19.9269628140734,
-			 "Sepal.Length", 117.364610545376, 13.7449167607949, "Sepal.Width"
+		list(117.364610545376, 34.6709290167624, "Petal.Width", 503.428041209099,
+			 31.6571914083694, "Petal.Length", 15.521551923813, 19.9269628140734,
+			 "Sepal.Length", 15.521551923813, 13.7449167607949, "Sepal.Width"
 			))
 })
 

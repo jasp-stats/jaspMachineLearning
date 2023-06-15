@@ -35,11 +35,11 @@ results <- jaspTools::runAnalysis("mlRegressionBoosting", "wine.csv", options)
 test_that("Feature Importance Metrics table results match", {
   table <- results[["results"]][["featureImportanceTable"]][["data"]]
   jaspTools::expect_equal_tables(table,
-                      list(0.476913378504938, "Color", 60.3564909956942, 0.47367397597535, "Proline", 28.9359792394392, 0.476113986546058, "Phenols",
-                           4.02747773147275, 0.47367397597535, "Flavanoids", 2.65410848555859, 0.485069345289906, "Hue", 1.59224895077339,
-                           0.478734027246261, "Proanthocyanins", 1.14701822224105, 0.47367397597535, "Malic", 0.744077365382741,
-                           0.476836798618079, "Alcalinity", 0.542599009438009, 0.748565097082193, "Ash", 0, 0.475602197216243, "Magnesium", 0, 0.47367397597535, "Nonflavanoids",
-                           0, 0.550560041765682, "Dilution", 0))
+                      list(0.748565097082193, "Color", 60.3564909956942, 0.550560041765682, "Proline", 28.9359792394392, 0.485069345289906, "Phenols",
+                           4.02747773147275, 0.478734027246261, "Flavanoids", 2.65410848555859, 0.475602197216243, "Hue", 1.59224895077339,
+                           0.476836798618079, "Proanthocyanins", 1.14701822224105, 0.476913378504938, "Malic", 0.744077365382741,
+                           0.476113986546058, "Alcalinity", 0.542599009438009, 0.47367397597535, "Ash", 0, 0.47367397597535, "Magnesium", 0, 0.47367397597535, "Nonflavanoids",
+                           0, 0.47367397597535, "Dilution", 0))
 })
 
 test_that("Data Split plot matches", {

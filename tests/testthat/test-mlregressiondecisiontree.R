@@ -73,8 +73,8 @@ test_that("Additive Explanations for Predictions of Test Set Cases table results
 test_that("Feature Importance Metrics table results match", {
 	table <- results[["results"]][["featureImportanceTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(0.396327064485046, 38.0537799528193, "Petal.Length", 1.21020786888865,
+		list(1.21020786888865, 38.0537799528193, "Petal.Length", 0.316663949793413,
 			 27.0512145757422, "Petal.Width", 0.316663949793413, 21.2388630350472,
-			 "Species", 0.316663949793413, 13.6561424363913, "Sepal.Width"
+			 "Species", 0.396327064485046, 13.6561424363913, "Sepal.Width"
 			))
 })
