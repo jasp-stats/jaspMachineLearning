@@ -146,6 +146,7 @@ Group
 						{ label:qsTr("Roulette wheel"),	value: "roulette"},
 						{ label:qsTr("Universal"), 		value: "universal"},
 						{ label:qsTr("Rank"), 			value: "rank"},
+						{ label: qsTr("Tournament"), 	value: "tournament"},
 						{ label:qsTr("Random"),			value: "random"}
 					]
 					info:						qsTr("How to select suviving networks.")
