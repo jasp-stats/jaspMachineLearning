@@ -132,7 +132,7 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
     fi <- DALEX::model_parts(result[["explainer_fi"]], B = 50)
   }
   fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
-  table[["dl"]] <- fi[match(options[["predictors"]], fi[["y"]]), "x"]
+  table[["dl"]] <- fi[match(vars, fi[["y"]]), "x"]
   table$addFootnote(gettext("Mean dropout loss is based on 50 permutations."))
 }
 
