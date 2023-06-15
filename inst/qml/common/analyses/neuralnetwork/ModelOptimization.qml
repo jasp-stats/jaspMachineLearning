@@ -159,7 +159,7 @@ Group
 					text:						qsTr("Candidates")
 					defaultValue:				5
 					min:						1
-					max:						populationSize.value
+					max:						populationSize.value - 1
 					enabled:					selectionMethod.value == "tournament"
 					info:						qsTr("Number of candidates for tournament selection")
 				}

@@ -283,8 +283,11 @@
     table$addFootnote(gettextf("Please provide a target variable and at least %d feature variable(s).", if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm") 1L else 2L))
   }
   if (options[["savePath"]] != "") {
-    if (options[["saveModel"]]) {
+    validNames <- (length(grep(" ", decodeColNames(colnames(dataset)))) == 0) && (length(grep("_", decodeColNames(colnames(dataset)))) == 0)
+    if (options[["saveModel"]] && validNames) {
       table$addFootnote(gettextf("The trained model is saved as <i>%1$s</i>.", basename(options[["savePath"]])))
+    } else if (options[["saveModel"]] && !validNames) {
+      table$addFootnote(gettext("The trained model is <b>not</b> saved because the some of the variable names in the model contain spaces (i.e., ' ') or underscores (i.e., '_'). Please remove all such characters from the variable names and try saving the model again."))
     } else {
       table$addFootnote(gettext("The trained model is not saved until 'Save trained model' is checked."))
     }
@@ -419,6 +422,10 @@
   }
   # Save the model if requested
   if (options[["saveModel"]] && options[["savePath"]] != "") {
+    validNames <- (length(grep(" ", decodeColNames(colnames(dataset)))) == 0) && (length(grep("_", decodeColNames(colnames(dataset)))) == 0)
+    if (!validNames) {
+      return()
+    }
     model <- regressionResult[["model"]]
     model[["jaspVars"]] <- decodeColNames(options[["predictors"]])
     model[["jaspVersion"]] <- .baseCitation

@@ -51,7 +51,7 @@ Form
 		FIG.DataSplit { }
 		FIG.RocCurve { }
 		FIG.AndrewsCurve { }
-		NN.OptimPlot { regression: true; enable: !optim.isManual }
+		NN.OptimPlot { regression: false; enable: !optim.isManual }
 		NN.ActivationFunctionPlot { }
 		NN.NetworkPlot { }
 		FIG.DecisionBoundary { }
