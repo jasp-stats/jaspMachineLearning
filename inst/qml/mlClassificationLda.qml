@@ -27,6 +27,7 @@ import "./common/figures" as FIG
 
 Form 
 {
+	info: qsTr("Linear Discriminant Analysis (LDA) is a method of classification that aims to find *p - 1* components that discriminate best between the classes in the target variable. LDA is a linear classifier, meaning that the decision boundaries between classes are linear.\n### Assumptions\n- The target variable is a nominal or ordinal variable.\n- The feature variables consist of continuous, nominal, or ordinal variables.\n- Equality of class means: The class means should be equal, can be checked with the corresponding table.\n- Equality of covariance matrices: The covariance matrices should be equal, can be checked with the corresponding table.\n- Multicollinearity: The classes should not correlate within each other, can be checked with the corresponding table.")
 
 	UI.VariablesFormClassification { id: vars; allow_nominal: false }
 

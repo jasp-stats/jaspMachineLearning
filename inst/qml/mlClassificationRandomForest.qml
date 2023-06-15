@@ -26,7 +26,9 @@ import "./common/tables" as TAB
 import "./common/figures" as FIG
 import "./common/analyses/randomforest" as RF
 
-Form {
+Form 
+{
+	info: qsTr("Random Forest is a method of classification that creates a set of decision trees that consists of a large number of individual trees which operate as an ensemble. Each individual tree in the random forest returns a class prediction and the class with the most votes becomes the model's prediction.\n### Assumptions\n- The target variable is a nominal or ordinal variable.\n- The feature variables consist of continuous, nominal, or ordinal variables.")
 
 	UI.VariablesFormClassification { id: vars }
 

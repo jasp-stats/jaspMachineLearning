@@ -27,6 +27,7 @@ import "./common/figures" as FIG
 
 Form 
 {
+	info: qsTr("Fuzzy c-means clustering is a soft partitioning method that provides an output that contains the degree of association for each observation to each cluster. This makes it possible for data observations to be partially assigned to multiple clusters and give a degree of confidence about cluster membership. Fuzzy c-means' approach is quite similar to that of k-means clustering, apart from its soft approach.\n### Assumptions\n- The data consists of continuous variables.\n- (Normally distributed data aids the clustering process).")
 
 	UI.VariablesFormClustering { id: vars }
 

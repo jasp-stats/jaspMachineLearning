@@ -28,6 +28,7 @@ import "./common/analyses/knn" as KNN
 
 Form 
 {
+	info: qsTr("K-nearest neighbors is a method of regression that looks at the *k* number of feature observations that are most similar to new observations to make a prediction for their values. The number of nearest neighbors is intrinsincly linked to model complexity, as small numbers increase the flexibility of the model.\n### Assumptions\n- The target variable is a continuous variable.\n- The feature variables consist of continuous, nominal, or ordinal variables.")
 
 	UI.VariablesFormRegression { id: vars }
 

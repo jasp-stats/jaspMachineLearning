@@ -27,6 +27,7 @@ import "./common/figures" as FIG
 
 Form 
 {
+	info: qsTr("Random Forest clustering is a hard partitioning algorithm which aims to partition data into several clusters, where each observation belongs to only one group. This clustering method uses the Random Forest algorithm in an unsupervised way, with the outcome variable 'y' set to NULL. The Random Forest algorithm generates a proximity matrix which gives an estimate of the distance between observations based on the frequency of observations ending up in the same leaf node.\n### Assumptions\n- The data consists of continuous variables.\n- (Normally distributed data aids the clustering process).")
 
 	UI.VariablesFormClustering { id: vars }
 

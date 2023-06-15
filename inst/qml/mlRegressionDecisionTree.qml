@@ -28,6 +28,7 @@ import "./common/analyses/decisiontree" as DT
 
 Form 
 {
+	info: qsTr("Decision Trees is a supervised learning algorithm that uses a decision tree as a predictive model to go from observations about an item (represented in the roots of the tree) to conclusions about the item's target value (represented in the endpoints of the tree).\n### Assumptions\n- The target variable is a continuous variable.\n- The feature variables consist of continuous, nominal, or ordinal variables.")
 
 	UI.VariablesFormRegression { id: vars }
 

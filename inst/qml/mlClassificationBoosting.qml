@@ -28,6 +28,7 @@ import "./common/analyses/boosting" as BOOSTING
 
 Form
 {
+	info: qsTr("Boosting works by sequentially adding features to an decision tree ensemble, each one correcting its predecessor. However, instead of changing the weights for every incorrect classified observation at every iteration, Boosting method tries to fit the new feature to the residual errors made by the previous feature.\n### Assumptions\n- The target variable is a nominal or ordinal variable.\n- The feature variables consist of continuous, nominal, or ordinal variables.")
 
 	UI.VariablesFormClassification { id: vars }
 

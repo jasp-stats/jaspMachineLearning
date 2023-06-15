@@ -27,6 +27,7 @@ import "./common/figures" as FIG
 
 Form 
 {
+	info: qsTr("Regularized linear regression is an adaptation of linear regression in which the coefficients are shrunken towards 0. This is done by applying a penalty (e.g., ridge, lasso, or elastic net). The parameter λ controls the degree to which parameters are shrunken.\n### Assumptions\n- The target variable is a continuous variable.\n- The feature variables consist of continuous, nominal, or ordinal variables.")
 
 	VariablesForm
 	{

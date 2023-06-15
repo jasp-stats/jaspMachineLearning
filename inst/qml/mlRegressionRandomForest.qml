@@ -28,6 +28,7 @@ import "./common/analyses/randomforest" as RF
 
 Form 
 {
+	info: qsTr("Random Forest is a method of regression that creates a set of decision trees that consists of a large number of individual trees which operate as an ensemble.\n### Assumptions\n- The target variable is a continuous variable.\n- The feature variables consist of continuous, nominal, or ordinal variables.")
 
 	UI.VariablesFormRegression { id: vars }
 

@@ -28,6 +28,7 @@ import "./common/analyses/knn" as KNN
 
 Form
 {
+	info: qsTr("K-nearest neighbors is a method of classification that looks at the *k* number of feature observations that are most similar to new observations to make a prediction for their class assignments. The number of nearest neighbors is intrinsincly linked to model complexity, as small numbers increase the flexibility of the model.\n### Assumptions\n- The target is a nominal or ordinal variable.\n- The feature variables consist of continuous, nominal, or ordinal variables.")
 
 	UI.VariablesFormClassification { id: vars }
 

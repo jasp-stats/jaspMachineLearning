@@ -27,6 +27,7 @@ import "./common/figures" as FIG
 
 Form 
 {
+	info: qsTr("Neighborhood-Based clustering methods are a set of hard partitioning algorithm which aims to partition data into several clusters, where each observation belongs to only one group. The data is divided in such a way that the degree of similarity between two data observations is maximal if they belong to the same group and minimal if not.\n### Assumptions\n- The data consists of continuous variables.\n- (Normally distributed data aids the clustering process).")
 
 	UI.VariablesFormClustering { id: vars }
 

@@ -28,6 +28,7 @@ import "./common/analyses/neuralnetwork" as NN
 
 Form 
 {
+	info: qsTr("Feedforward neural networks are predictive algorithms inspired by the biological neural networks that constitute brains. A neuron (node) that receives a signal then processes it and can send signals to neurons connected to it. The signal at a node is a real number, and the output of each node is computed by sending the signal trough the activation function. The number of layers and nodes in the network is intrinsincly linked to model complexity, as high numbers increase the flexibility of the model.\n### Assumptions\n- The target variable is a continuous variable.\n- The feature variables consist of continuous.")
 
 	UI.VariablesFormRegression { id: vars; allow_nominal: false }
 

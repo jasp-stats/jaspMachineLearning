@@ -26,6 +26,7 @@ import "./common/tables" as TAB
 
 Form 
 {
+	info: qsTr("The prediction analysis enables you to load a trained machine learning model and apply it to new data.")
 
 	FileSelector
 	{

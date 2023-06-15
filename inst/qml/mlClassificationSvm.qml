@@ -28,6 +28,7 @@ import "./common/analyses/svm" as SVM
 
 Form
 {
+	info: qsTr("Support Vector Machines is a supervised learning algorithm that maps training examples to points in space so as to maximise the width of the gap between the two categories. New examples are then mapped into that same space and predicted to belong to a category based on which side of the gap they fall.\n### Assumptions\n- The target is a nominal or ordinal variable.\n- The feature variables consist of continuous, nominal, or ordinal variables.")
 
 	UI.VariablesFormClassification { id: vars }
 

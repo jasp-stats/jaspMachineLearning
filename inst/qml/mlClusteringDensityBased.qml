@@ -27,6 +27,7 @@ import "./common/figures" as FIG
 
 Form 
 {
+	info: qsTr("Density-based clustering is a soft clustering method where clusters are constructed as maximal sets of points that are connected to points whose density exceeds some threshold. The density is produced by the concept that for each point within a cluster, the neighborhood within a given radius has to contain at least a minimum amount of points, that results in the density of that neighborhood to exceed a certain threshold. A density-based cluster is recognized by points having a higher density than points outside of the cluster. The set of all high-density points is called the density level. The points that do not exceed a density level are identified as outliers. The density level influences the amount of generated clusters.\n### Assumptions\n- The data consists of continuous variables.\n- (Normally distributed data aids the clustering process).")
 
 	UI.VariablesFormClustering { id: vars }
 
