@@ -660,11 +660,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     plot$setError(gettext("Andrews curves require a minimum of 2 feature variables."))
     return()
   }
-  if (nrow(dataset) > 500) {
-    sample <- sample(seq_len(nrow(dataset)), size = 500, replace = FALSE) # Sample to prevent crazy long loading times with big data
-  } else {
-    sample <- seq_len(nrow(dataset))
-  }
+  sample <- sample.int(nrow(dataset), size = min(500, nrow(dataset)))
   predictors <- dataset[sample, options[["predictors"]]]
   target <- dataset[sample, options[["target"]]]
   # Taken from function `andrewsplot()` in R package "andrewsplot", thanks!
