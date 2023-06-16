@@ -20,12 +20,6 @@
   return(colors)
 }
 
-.mlSetSeed <- function(options) {
-  if (options[["setSeed"]]) {
-    set.seed(options[["seed"]])
-  }
-}
-
 # This function should return all options for all analyses upon which a change in all tables/figures is required
 .mlRegressionDependencies <- function(options, includeSaveOptions = FALSE) {
   opt <- c(
@@ -205,7 +199,7 @@
   if (!is.null(jaspResults[["regressionResult"]])) {
     return()
   }
-  .mlSetSeed(options) # Set the seed to make results reproducible
+  .setSeedJASP(options) # Set the seed to make results reproducible
   if (ready) {
     .mlRegressionSetFormula(options, jaspResults)
     regressionResult <- switch(type,
@@ -665,11 +659,14 @@
     }
   }
   table$position <- position
-  if (purpose == "regression") {
-    table$dependOn(options = c(.mlRegressionDependencies(options), "tableShap", "fromIndex", "toIndex"))
-  } else {
-    table$dependOn(options = c(.mlClassificationDependencies(options), "tableShap", "fromIndex", "toIndex"))
-  }
+  table$dependOn(options = c(
+    if (purpose == "regression") {
+      .mlRegressionDependencies(options)
+    } else {
+      .mlClassificationDependencies(options)
+    },
+    "tableShap", "fromIndex", "toIndex"
+  ))
   table$addColumnInfo(name = "id", title = gettext("Case"), type = "integer")
   if (purpose == "regression") {
     table$addColumnInfo(name = "pred", title = gettext("Predicted"), type = "number")
@@ -746,7 +743,7 @@
     "regression" = jaspResults[["regressionResult"]]$object,
     "classification" = jaspResults[["classificationResult"]]$object
   )
-  .mlSetSeed(options) # Set the seed to make results reproducible
+  .setSeedJASP(options) # Set the seed to make results reproducible
   if (purpose == "regression") {
     fi <- DALEX::model_parts(result[["explainer"]], B = 50)
   } else if (purpose == "classification") {

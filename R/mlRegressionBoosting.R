@@ -178,7 +178,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   vars <- as.character(result[["relInf"]]$var)
   table[["predictor"]] <- vars
   table[["relIn"]] <- result[["relInf"]]$rel.inf
-  .mlSetSeed(options) # Set the seed to make results reproducible
+  .setSeedJASP(options) # Set the seed to make results reproducible
   if (purpose == "regression") {
     fi <- DALEX::model_parts(result[["explainer"]], B = 50)
   } else if (purpose == "classification") {

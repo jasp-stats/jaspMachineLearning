@@ -157,7 +157,7 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
   if (!ready) {
     return()
   }
-  .mlSetSeed(options) # Set the seed to make results reproducible
+  .setSeedJASP(options) # Set the seed to make results reproducible
   unique.rows <- which(!duplicated(dataset[, options[["predictors"]]]))
   data <- dataset[unique.rows, options[["predictors"]]]
   if (options[["distance"]] == "pearsonCorrelation") {

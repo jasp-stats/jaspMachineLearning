@@ -84,7 +84,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   if (!is.null(jaspResults[["classificationResult"]])) {
     return()
   }
-  .mlSetSeed(options) # Set the seed to make results reproducible
+  .setSeedJASP(options) # Set the seed to make results reproducible
   if (ready) {
     .mlClassificationSetFormula(options, jaspResults)
     classificationResult <- switch(type,

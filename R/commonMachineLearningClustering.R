@@ -108,7 +108,7 @@
   if (!is.null(jaspResults[["clusterResult"]])) {
     return()
   }
-  .mlSetSeed(options) # Set the seed to make results reproducible
+  .setSeedJASP(options) # Set the seed to make results reproducible
   if (ready) {
     clusterResult <- switch(type,
       "kmeans" = .kMeansClustering(dataset, options, jaspResults),
@@ -313,7 +313,7 @@
     return()
   }
   clusterResult <- jaspResults[["clusterResult"]]$object
-  .mlSetSeed(options) # Set the seed to make results reproducible
+  .setSeedJASP(options) # Set the seed to make results reproducible
   startProgressbar(2)
   progressbarTick()
   duplicates <- which(duplicated(dataset))

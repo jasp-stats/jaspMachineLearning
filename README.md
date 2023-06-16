@@ -1,4 +1,4 @@
-[![R_build_status](https://github.com/jasp-stats/jaspAudit/workflows/unit-tests/badge.svg)](https://github.com/jasp-stats/jaspAudit/actions)
+[![R_build_status](https://github.com/jasp-stats/jaspMachineLearning/workflows/unit-tests/badge.svg)](https://github.com/jasp-stats/jaspMachineLearning/actions)
 
 # The Machine Learning Module <img src='https://github.com/jasp-stats/jaspMachineLearning/raw/master/inst/icons/analysis-ml-ribbon.svg' width='149' height='173' align='right'/>
 
@@ -43,7 +43,7 @@ The organization of the analyses within the Machine Learning module in JASP is a
 
 ### Translations
 
-The JASP translation project is located at the following [link](https://hosted.weblate.org/projects/jasp/). The Machine Learning module is referred to as `jaspMachineLearning` and consists of two distinct components: `jaspMachineLearning-QML` and `jaspMachineLearning-R`, both of which require translation. The participation of any individual who is interested would be highly valued. As demonstrated below, we have made substantial progress in the translation of the Audit module.
+The JASP translation project is located at the following [link](https://hosted.weblate.org/projects/jasp/). The Machine Learning module is referred to as `jaspMachineLearning` and consists of two distinct components: `jaspMachineLearning-QML` and `jaspMachineLearning-R`, both of which require translation. The participation of any individual who is interested would be highly valued. As demonstrated below, we have made substantial progress in the translation of the Machine Learning module.
 
 | Interface | Results |
 | :---: | :---: |
