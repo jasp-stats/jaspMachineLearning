@@ -17,10 +17,10 @@
 
 .mlAnomalyDependencies <- function(options) {
   opt <- c(
-    "predictors", "scaleVariables",                                # Common
-    "maxDepth",                                                    # Outlier tree
-    "sampleSize", "nTrees", "numberOfPredictors", "scoringMetric", # Isolation forest
-    "something"                                                    # Svm
+    "predictors", "scaleVariables",                                                     # Common
+    "maxDepth",                                                                         # Outlier tree
+    "sampleSize", "nTrees", "numberOfPredictors", "scoringMetric", "cutoff",            # Isolation forest
+    "weights", "degree", "gamma", "complexityParameter", "cost", "tolerance", "epsilon" # Svm
   )
   return(opt)
 }
@@ -64,10 +64,12 @@
   )
   table <- createJaspTable(title)
   table$position <- position
-  table$dependOn(options = c(.mlAnomalyDependencies(options), "cutoff"))
+  table$dependOn(options = .mlAnomalyDependencies(options))
   if (type == "isoforest") {
     table$addColumnInfo(name = "ntrees", title = gettext("Trees"), type = "integer")
     table$addColumnInfo(name = "npred", title = gettext("Features per split"), type = "integer")
+  } else if (type == "svm") {
+    table$addColumnInfo(name = "svec", title = gettext("Support vectors"), type = "integer")
   }
   table$addColumnInfo(name = "N", title = "N", type = "integer")
   table$addColumnInfo(name = "n", title = gettext("Anomalies"), type = "integer")
@@ -86,9 +88,11 @@
   if (!options[["scaleVariables"]]) {
     table$addFootnote(gettext("The features in the model are <b>unstandardized</b>."))
   }
-  row <- data.frame(N = anomalyResult[["N"]], n = anomalyResult[["noutliers"]])
+  row <- data.frame(N = anomalyResult[["N"]], n = anomalyResult[["noutlier"]])
   if (type == "isoforest") {
     row <- cbind(row, ntrees = options[["nTrees"]], npred = options[["numberOfPredictors"]])
+  } else if (type == "svm") {
+	row <- cbind(row, svec = nrow(anomalyResult[["model"]]$SV))
   }
   table$addRows(row)
 }
@@ -96,6 +100,10 @@
 .mlAnomalyComputeResults <- function(dataset, options, jaspResults, ready, type) {
   if (!is.null(jaspResults[["anomalyResult"]]) || !ready) {
     return()
+  }
+  # set the seed so that every time the same set is chosen (to prevent random results) ##
+  if (options[["setSeed"]]) {
+    .setSeedJASP(options)
   }
   result <- switch(type,
     "isoforest" = .mlIsoForestComputeResults(dataset, options),
@@ -112,7 +120,7 @@
     return()
   }
   table <- createJaspTable(gettext("Detected Anomalies"))
-  table$dependOn(options = c("tableAnomalyScores", "cutoff", "tableAnomalyScoresFeatures", "tableAnomalyScoresObs", .mlAnomalyDependencies(options)))
+  table$dependOn(options = c("tableAnomalyScores", "tableAnomalyScoresFeatures", .mlAnomalyDependencies(options)))
   table$position <- position
   table$addColumnInfo(name = "row", title = gettext("Case"), type = "integer")
   table$addColumnInfo(name = "pred", title = gettext("Predicted"), type = "string")
@@ -130,13 +138,9 @@
     return()
   }
   anomalyResult <- jaspResults[["anomalyResult"]]$object
-  if (!options[["tableAnomalyScoresObs"]]) {
-    indexes <- which(anomalyResult[["outlier"]])
-  } else {
-    indexes <- seq_len(nrow(dataset))
-  }
+  indexes <- anomalyResult[["ioutlier"]]
   table[["row"]] <- indexes
-  table[["pred"]] <- anomalyResult[["classes"]][indexes]
+  table[["pred"]] <- as.character(anomalyResult[["classes"]][indexes])
   if (type == "isoforest") {
     table[["score"]] <- anomalyResult[["values"]][indexes]
   }
@@ -153,7 +157,7 @@
   }
 }
 
-.mlAnomalyMatrixPlot <- function(dataset, options, jaspResults, ready, position) {
+.mlAnomalyMatrixPlot <- function(dataset, options, jaspResults, ready, position, type) {
   if (!is.null(jaspResults[["matrixPlot"]]) || !options[["matrixPlot"]]) {
     return()
   }
@@ -190,35 +194,23 @@
       if (col < row) {
         predictors <- dataset[, variables]
         predictors <- predictors[, c(col, row)]
-        plotData <- data.frame(x = predictors[, 1], y = predictors[, 2], score = anomalyResult[["values"]])
+        plotData <- data.frame(x = predictors[, 1], y = predictors[, 2], score = anomalyResult[["values"]], outlier = anomalyResult[["outlier"]])
         xBreaks <- jaspGraphs::getPrettyAxisBreaks(plotData$x, min.n = 4)
         yBreaks <- jaspGraphs::getPrettyAxisBreaks(plotData$y, min.n = 4)
-        gridModel <- isotree::isolation.forest(
-          data = plotData[, 1:2], sample_size = options[["sampleSize"]], ntrees = options[["nTrees"]],
-          ndim = options[["numberOfPredictors"]], standardize_data = FALSE, scoring_metric = options[["scoringMetric"]]
-        )
-        grid <- expand.grid(seq(min(xBreaks), max(xBreaks), length = 100), seq(min(yBreaks), max(yBreaks), length = 100))
-        colnames(grid) <- c("x", "y")
-        gridScores <- predict(gridModel, newdata = grid)
-        gridData <- data.frame(x = grid[, 1], y = grid[, 2], score = gridScores)
         p <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x, y = y, fill = score)) +
-          ggplot2::geom_raster(data = gridData, mapping = ggplot2::aes(x = x, y = y, fill = score)) +
-          ggplot2::scale_fill_gradient2(low = "green", mid = "white", high = "red", limits = c(0, 1), midpoint = 0.5) +
+          ggplot2::scale_fill_gradient2(low = "lightgray", high = "firebrick", limits = c(0, 1), midpoint = 0.5) +
+          jaspGraphs::geom_point() +
           ggplot2::scale_x_continuous(name = NULL, breaks = xBreaks, limits = range(xBreaks)) +
           ggplot2::scale_y_continuous(name = NULL, breaks = yBreaks, limits = range(yBreaks)) +
-          ggplot2::geom_contour(mapping = ggplot2::aes(z = score)) +
           jaspGraphs::geom_rangeframe() +
           jaspGraphs::themeJaspRaw()
-        if (options[["matrixPlotPoints"]]) {
-          p <- p + jaspGraphs::geom_point()
           if (options[["matrixPlotLabels"]]) {
-            labelData <- subset(plotData, plotData$score >= options[["cutoff"]])
+            labelData <- subset(plotData, plotData$outlier)
             p <- p + ggrepel::geom_text_repel(ggplot2::aes(label = rownames(labelData), x = x, y = y), hjust = -1, vjust = 1, data = labelData)
           }
-        }
         plotMat[[row - 1, col]] <- p
       } else if (row == 2 && col == 2) {
-        plotMat[[row - 1, col]] <- .legendPlotAnomaly(dataset, options)
+        plotMat[[row - 1, col]] <- .legendPlotAnomaly(dataset, options, type)
       }
       progressbarTick()
     }
@@ -236,14 +228,20 @@
   plot$plotObject <- p
 }
 
-.legendPlotAnomaly <- function(dataset, options) {
-  p <- ggplot2::ggplot(data.frame(x = 0.999, y = 0.999), ggplot2::aes(y = y, x = x, show.legend = TRUE)) +
-    jaspGraphs::geom_point(ggplot2::aes(fill = y), alpha = 0) +
+.legendPlotAnomaly <- function(dataset, options, type) {
+  plotData <- data.frame(x = c(1, 1), y = c(1, 1), type = c(gettext("Anomaly"), gettext("Standard")))
+  p <- ggplot2::ggplot(data = plotData, ggplot2::aes(y = y, x = x, show.legend = TRUE)) +
     ggplot2::xlab(NULL) +
     ggplot2::ylab(NULL) +
-    ggplot2::theme(legend.key = ggplot2::element_blank()) +
-    ggplot2::scale_fill_gradient2(name = gettext("Anomaly score"), low = "green", mid = "white", high = "red", limits = c(0, 1), midpoint = 0.5) +
-    jaspGraphs::geom_rangeframe(sides = "") +
+    ggplot2::theme(legend.key = ggplot2::element_blank())
+	if (type == "isoforest") {
+		p <- p + jaspGraphs::geom_point(ggplot2::aes(fill = y), alpha = 0) +
+		ggplot2::scale_fill_gradient2(name = gettext("Predicted Score"), low = "lightgray", high = "firebrick",  limits = c(0, 1), midpoint = 0.5, breaks = c(0, 0.25, 0.5, 0.75, 1))
+	} else {
+		p <- p + jaspGraphs::geom_point(ggplot2::aes(fill = type), alpha = 0) +
+		ggplot2::scale_fill_manual(name = gettext("Predicted"), values = c("firebrick", "lightgray"))
+	}
+	p <- p + jaspGraphs::geom_rangeframe(sides = "") +
     jaspGraphs::themeJaspRaw(legend.position = "left") +
     ggplot2::theme(axis.ticks = ggplot2::element_blank(), axis.text.x = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank()) +
     ggplot2::guides(fill = ggplot2::guide_legend(override.aes = list(alpha = 1)))

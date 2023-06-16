@@ -49,14 +49,8 @@ Form
 
 		CheckBox
 		{
-			text:							qsTr("Anomalies")
+			text:							qsTr("Detected anomalies")
 			name:							"tableAnomalyScores"
-
-			CheckBox
-			{
-				text:						qsTr("Show standard data")
-				name:						"tableAnomalyScoresObs"
-			}
 
 			CheckBox
 			{
@@ -77,14 +71,6 @@ Form
 
 			CheckBox
 			{
-				id:							matrixPlotPoints
-				text:						qsTr("Add data points")
-				name:						"matrixPlotPoints"
-				checked:					true
-			}
-
-			CheckBox
-			{
 				text:						qsTr("Label anomalies")
 				name:						"matrixPlotLabels"
 				enabled:					matrixPlotPoints.checked
@@ -94,7 +80,7 @@ Form
 
 	ML.ExportResults
 	{
-		enabled:								predictors.count > 1
+		enabled:								predictors.count > 0
 		showSave:								false
 	}
 
@@ -163,6 +149,22 @@ Form
 				text:							qsTr("Scale features")
 				name:							"scaleVariables"
 				checked:						true
+			}
+
+			CheckBox
+			{
+				name:							"setSeed"
+				text:							qsTr("Set seed")
+				childrenOnSameRow:				true
+
+				IntegerField
+				{
+					name:						"seed"
+					defaultValue:				1
+					min:						-999999
+					max:						999999
+					fieldWidth:					60
+				}
 			}
 		}
 	}
