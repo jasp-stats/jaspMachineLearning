@@ -32,18 +32,47 @@ mlAnomalySvm <- function(jaspResults, dataset, options, ...) {
   # Create the table containing anomaly scores
   .mlAnomalyTableScores(dataset, options, jaspResults, ready, position = 2, type = "svm")
 
+  # Create the support vectors table
+  .TMPmlSvmTableSupportVectors(options, jaspResults, ready, position = 3, purpose = "anomaly")
+
   # Create the plot
-  .mlAnomalyMatrixPlot(dataset, options, jaspResults, ready, position = 3)
+  .mlAnomalyMatrixPlot(dataset, options, jaspResults, ready, position = 4, type = "svm")
 }
 
 .mlSvmAnomalyComputeResults <- function(dataset, options) {
   fit <- e1071::svm(dataset[, options[["predictors"]]], y = NULL, type = 'one-classification',
-                    nu = 0.10, scale = FALSE, kernel = "radial")
+                    kernel = options[["weights"]], cost = options[["cost"]], tolerance = options[["tolerance"]],
+                    epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]],
+					gamma = options[["gamma"]], coef0 = options[["complexityParameter"]])
   result <- list()
   result[["model"]] <- fit
-  result[["outlier"]] <- !predict(fit, dataset[, options[["predictors"]]])
-  result[["classes"]] <- as.factor(ifelse(result[["outlier"]], yes = gettext("Outlier"), no = gettext("Standard")))
-  result[["noutliers"]] <- sum(result[["outlier"]])
+  result[["outlier"]] <- as.logical(!predict(fit, dataset[, options[["predictors"]]]))
+  result[["values"]] <- as.numeric(result[["outlier"]])
+  result[["classes"]] <- as.factor(ifelse(result[["outlier"]], yes = gettext("Anomaly"), no = gettext("Standard")))
+  result[["noutlier"]] <- sum(result[["outlier"]])
+  result[["ioutlier"]] <- which(result[["outlier"]])
   result[["N"]] <- nrow(dataset)
   return(result)
+}
+
+.TMPmlSvmTableSupportVectors <- function(options, jaspResults, ready, position, purpose) {
+  if (!is.null(jaspResults[["supportVectorsTable"]]) || !options[["supportVectorsTable"]]) {
+    return()
+  }
+  table <- createJaspTable(title = gettext("Support Vectors"))
+  table$position <- position
+   table$dependOn(options = c(.mlAnomalyDependencies(options), "supportVectorsTable"))
+  table$addColumnInfo(name = "row", title = gettext("Row"), type = "string")
+  jaspResults[["supportVectorsTable"]] <- table
+  if (!ready) {
+    return()
+  }
+  result <- jaspResults[["anomalyResult"]]$object
+  vectors <- cbind(result[["model"]]$index, result[["model"]]$SV)
+  colnames(vectors)[1] <- "row"
+  vectors <- vectors[order(vectors[, 1]), ]
+  for (i in 2:ncol(vectors)) {
+    table$addColumnInfo(name = colnames(vectors)[i], title = colnames(vectors)[i], type = "number")
+  }
+  table$setData(vectors)
 }

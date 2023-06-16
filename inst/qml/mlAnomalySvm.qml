@@ -49,20 +49,20 @@ Form
 
 		CheckBox
 		{
-			text:							qsTr("Anomalies")
+			text:							qsTr("Detected anomalies")
 			name:							"tableAnomalyScores"
-
-			CheckBox
-			{
-				text:						qsTr("Show standard data")
-				name:						"tableAnomalyScoresObs"
-			}
 
 			CheckBox
 			{
 				text:						qsTr("Add features")
 				name:						"tableAnomalyScoresFeatures"
 			}
+		}
+
+		CheckBox
+		{
+			text:								qsTr("Support vectors")
+			name:								"supportVectorsTable"
 		}
 	}
 
@@ -77,14 +77,6 @@ Form
 
 			CheckBox
 			{
-				id:							matrixPlotPoints
-				text:						qsTr("Add data points")
-				name:						"matrixPlotPoints"
-				checked:					true
-			}
-
-			CheckBox
-			{
 				text:						qsTr("Label anomalies")
 				name:						"matrixPlotLabels"
 				enabled:					matrixPlotPoints.checked
@@ -94,7 +86,7 @@ Form
 
 	ML.ExportResults
 	{
-		enabled:								predictors.count > 1
+		enabled:								predictors.count > 0
 		showSave:								false
 	}
 
@@ -108,54 +100,71 @@ Form
 
 			DropDown
 			{
-				name:							"scoringMetric"
+				id:								weights
+				name:							"weights"
 				indexDefaultValue:				0
-				label:							qsTr("Scoring metric")
+				label:							qsTr("Weights")
 				values:
 					[
-					{ label: "Depth", 			value: "depth"},
-					{ label: "Density", 		value: "density"},
-					{ label: "Adjusted depth", 	value: "adj_depth"},
-					{ label: "Adjusted density", value: "adj_density"},
-					{ label: "Boxed ratio", 	value: "boxed_ratio"},
-					{ label: "Boxed density", value: "boxed_density"},
-					{ label: "Boxed density 2", value: "boxed_density2"}
+					{ label: qsTr("Linear"),	value: "linear"},
+					{ label: qsTr("Radial"),	value: "radial"},
+					{ label: qsTr("Polynomial"),value: "polynomial"},
+					{ label: qsTr("Sigmoid"),	value: "sigmoid"}
 				]
 			}
 
-			DoubleField 
+			DoubleField
 			{
-				Layout.leftMargin:					15 * preferencesModel.uiScale
-				text:								qsTr("Threshold")
-				name:								"cutoff"
-				min:								0
-				decimals:							2
-				defaultValue:						0.5
-			}
-
-			IntegerField
-			{
-				text:							qsTr("Number of trees")
-				name:							"nTrees"
+				name:							"degree"
+				text:							qsTr("Degree")
+				defaultValue:					3
 				min:							1
-				defaultValue:					500
-				max:							10000
+				enabled:						weights.value == "polynomial"
+				Layout.leftMargin:				10 * preferencesModel.uiScale
 			}
 
-			PercentField
+			DoubleField
 			{
-				text:							qsTr("Data used per tree")
-				name:							"sampleSize"
-				defaultValue:					100
-			}
-
-			IntegerField
-			{
-				text:							qsTr("Features per split")
-				name:							"numberOfPredictors"
+				name:							"gamma"
+				text:							qsTr("Gamma")
 				defaultValue:					1
-				min:							1
-				max:							5000
+				min:							0
+				enabled:						weights.value != "linear"
+				Layout.leftMargin:				10 * preferencesModel.uiScale
+			}
+
+			DoubleField
+			{
+				name:							"complexityParameter"
+				text:							qsTr("r parameter")
+				defaultValue:					0
+				min:							0
+				enabled:						weights.value == "polynomial" | weights.value == "sigmoid"
+				Layout.leftMargin:				10 * preferencesModel.uiScale
+			}
+
+			DoubleField
+			{
+				name:							"cost"
+				text:							qsTr("Cost of constraints violation")
+				defaultValue:					1
+				min:							0.001
+			}
+
+			DoubleField
+			{
+				name:							"tolerance"
+				text:							qsTr("Tolerance of termination criterion")
+				defaultValue:					0.001
+				min:							0.001
+			}
+
+			DoubleField
+			{
+				name:							"epsilon"
+				text:							qsTr("Epsilon")
+				defaultValue:					0.01
+				min:							0.001
 			}
 
 			CheckBox
@@ -163,6 +172,22 @@ Form
 				text:							qsTr("Scale features")
 				name:							"scaleVariables"
 				checked:						true
+			}
+
+			CheckBox
+			{
+				name:							"setSeed"
+				text:							qsTr("Set seed")
+				childrenOnSameRow:				true
+
+				IntegerField
+				{
+					name:						"seed"
+					defaultValue:				1
+					min:						-999999
+					max:						999999
+					fieldWidth:					60
+				}
 			}
 		}
 	}
