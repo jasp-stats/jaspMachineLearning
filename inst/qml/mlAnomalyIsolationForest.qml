@@ -43,36 +43,22 @@ Form
 		}
 	}
 
-	Column
+	Group
 	{
-		spacing:								10 * preferencesModel.uiScale
-		DoubleField 
-		{
-			text:								qsTr("Anomaly score threshold")
-			name:								"cutoff"
-			min:								0
-			decimals:							2
-			defaultValue:						0.5
-		}
+		title:								qsTr("Tables")
 
-		Group
+		CheckBox
 		{
-			title:								qsTr("Tables")
+			text:							qsTr("Anomaly scores")
+			name:							"tableAnomalyScores"
 
 			CheckBox
 			{
-				text:							qsTr("Anomalies")
-				name:							"tableAnomalyScores"
-
-				CheckBox
-				{
-					text:						qsTr("Add features")
-					name:						"tableAnomalyScoresFeatures"
-				}
+				text:						qsTr("Add features")
+				name:						"tableAnomalyScoresFeatures"
 			}
 		}
 	}
-
 
 	Group
 	{
@@ -83,22 +69,19 @@ Form
 			text:								qsTr("Anomaly matrix plot")
 			name:								"matrixPlot"
 
-			Row
+			CheckBox
 			{
-				CheckBox
-				{
-					id:							matrixPlotPoints
-					text:						qsTr("Points")
-					name:						"matrixPlotPoints"
-					checked:					true
-				}
+				id:							matrixPlotPoints
+				text:						qsTr("Add data points")
+				name:						"matrixPlotPoints"
+				checked:					true
+			}
 
-				CheckBox
-				{
-					text:						qsTr("Labels")
-					name:						"matrixPlotLabels"
-					enabled:					matrixPlotPoints.checked
-				}
+			CheckBox
+			{
+				text:						qsTr("Label anomalies")
+				name:						"matrixPlotLabels"
+				enabled:					matrixPlotPoints.checked
 			}
 		}
 	}
@@ -134,6 +117,16 @@ Form
 				]
 			}
 
+			DoubleField 
+			{
+				Layout.leftMargin:					15 * preferencesModel.uiScale
+				text:								qsTr("Threshold")
+				name:								"cutoff"
+				min:								0
+				decimals:							2
+				defaultValue:						0.5
+			}
+
 			IntegerField
 			{
 				text:							qsTr("Number of trees")
@@ -163,8 +156,7 @@ Form
 			{
 				text:							qsTr("Scale features")
 				name:							"scaleVariables"
-				checked:						false
-				visible:						false
+				checked:						true
 			}
 		}
 	}
