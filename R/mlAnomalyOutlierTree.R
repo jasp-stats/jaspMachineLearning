@@ -39,7 +39,7 @@ mlAnomalyOutlierTree <- function(jaspResults, dataset, options, ...) {
 .mlOutlierTreeComputeResults <- function(dataset, options) {
   result <- list()
   result[["model"]] <- outliertree::outlier.tree(dataset[, options[["predictors"]]], save_outliers = TRUE, nthreads = 1,
-                                   max_depth = options[["maxDepth"]])
+                                   max_depth = options[["maxDepth"]], min_gain = options[["complexityParameter"]])
   result[["values"]] <- as.numeric(unlist(as.numeric(lapply(result[["model"]][["outliers_data"]], `[[`, "outlier_score"))))
   result[["values"]] <- ifelse(is.na(result[["values"]]), yes = 0, no = 1)
   result[["outlier"]] <- as.logical(result[["values"]])

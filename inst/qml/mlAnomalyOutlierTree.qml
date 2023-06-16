@@ -101,6 +101,14 @@ Form
 				max:							10000
 			}
 
+			DoubleField
+			{
+				text:							qsTr("Complexity penalty")
+				name:							"complexityParameter"
+				min:							0
+				defaultValue:					0.01
+			}
+
 			CheckBox
 			{
 				text:							qsTr("Scale features")
