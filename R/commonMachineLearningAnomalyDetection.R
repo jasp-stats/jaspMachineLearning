@@ -73,7 +73,7 @@
   table$addColumnInfo(name = "n", title = gettext("Anomalies"), type = "integer")
   if (!ready) {
     table$addFootnote(gettext("Please provide at least 1 feature."))
-  } else {
+  } else if (type == "isoforest") {
     table$addFootnote(gettextf("The number of anomalies is based on a threshold of %1$s.", options[["cutoff"]]))
   }
   jaspResults[["anomalyTable"]] <- table
@@ -81,12 +81,12 @@
     return()
   }
   .mlAnomalyComputeResults(dataset, options, jaspResults, ready, type)
-  anomalyResult <- jaspResults[["regressionResult"]]$object
+  anomalyResult <- jaspResults[["anomalyResult"]]$object
 
   if (!options[["scaleVariables"]]) {
     table$addFootnote(gettext("The features in the model are <b>unstandardized</b>."))
   }
-  row <- data.frame(N = anomalyResult[["N"]], n = anomalyResult[["n"]])
+  row <- data.frame(N = anomalyResult[["N"]], n = anomalyResult[["noutliers"]])
   if (type == "isoforest") {
     row <- cbind(row, ntrees = options[["nTrees"]], npred = options[["numberOfPredictors"]])
   }
@@ -94,7 +94,7 @@
 }
 
 .mlAnomalyComputeResults <- function(dataset, options, jaspResults, ready, type) {
-  if (!is.null(jaspResults[["regressionResult"]]) || !ready) {
+  if (!is.null(jaspResults[["anomalyResult"]]) || !ready) {
     return()
   }
   result <- switch(type,
@@ -103,19 +103,22 @@
     "svm" = .mlSvmAnomalyComputeResults(dataset, options)
 
   )
-  jaspResults[["regressionResult"]] <- createJaspState(result)
-  jaspResults[["regressionResult"]]$dependOn(options = .mlAnomalyDependencies(options))
+  jaspResults[["anomalyResult"]] <- createJaspState(result)
+  jaspResults[["anomalyResult"]]$dependOn(options = .mlAnomalyDependencies(options))
 }
 
-.mlAnomalyTableScores <- function(dataset, options, jaspResults, ready, position) {
+.mlAnomalyTableScores <- function(dataset, options, jaspResults, ready, position, type) {
   if (!is.null(jaspResults[["tableAnomalyScores"]]) || !options[["tableAnomalyScores"]]) {
     return()
   }
-  table <- createJaspTable(gettext("Anomaly Scores for All Cases"))
-  table$dependOn(options = c("tableAnomalyScores", "cutoff", "tableAnomalyScoresFeatures", .mlAnomalyDependencies(options)))
+  table <- createJaspTable(gettext("Detected Anomalies"))
+  table$dependOn(options = c("tableAnomalyScores", "cutoff", "tableAnomalyScoresFeatures", "tableAnomalyScoresObs", .mlAnomalyDependencies(options)))
   table$position <- position
   table$addColumnInfo(name = "row", title = gettext("Case"), type = "integer")
-  table$addColumnInfo(name = "score", title = gettext("Score"), type = "number")
+  table$addColumnInfo(name = "pred", title = gettext("Predicted"), type = "string")
+  if (type == "isoforest") {
+    table$addColumnInfo(name = "score", title = gettext("Score"), type = "number")
+  }
   if (options[["tableAnomalyScoresFeatures"]]) {
     types <- ifelse(unlist(lapply(dataset[, options[["predictors"]]], is.factor)), yes = "string", no = "number")
     for (i in seq_len(ncol(dataset[, options[["predictors"]], drop = FALSE]))) {
@@ -126,11 +129,17 @@
   if (!ready) {
     return()
   }
-  anomalyResult <- jaspResults[["regressionResult"]]$object
-  scores <- anomalyResult[["values"]]
-  indexes <- which(scores > options[["cutoff"]])
+  anomalyResult <- jaspResults[["anomalyResult"]]$object
+  if (!options[["tableAnomalyScoresObs"]]) {
+    indexes <- which(anomalyResult[["outlier"]])
+  } else {
+    indexes <- seq_len(nrow(dataset))
+  }
   table[["row"]] <- indexes
-  table[["score"]] <- scores[indexes]
+  table[["pred"]] <- anomalyResult[["classes"]][indexes]
+  if (type == "isoforest") {
+    table[["score"]] <- anomalyResult[["values"]][indexes]
+  }
   if (options[["tableAnomalyScoresFeatures"]]) {
     for (i in seq_len(ncol(dataset))) {
       table[[options[["predictors"]][i]]] <- switch(types[i],
@@ -140,9 +149,7 @@
     }
   }
   if (length(indexes) == 0L) {
-    table$addFootnote(gettextf("There are no anomaly scores >= %1$s.", options[["cutoff"]]))
-  } else {
-    table$addFootnote(gettextf("Display is limited to anomaly scores >= %1$s.", options[["cutoff"]]))
+    table$addFootnote(gettext("There are no anomalies detected."))
   }
 }
 
@@ -157,7 +164,7 @@
   if (!ready || length(options[["predictors"]]) < 2) {
     return()
   }
-  anomalyResult <- jaspResults[["regressionResult"]]$object
+  anomalyResult <- jaspResults[["anomalyResult"]]$object
   variables <- options[["predictors"]]
   variables <- variables[!vapply(dataset[, variables], is.factor, TRUE)] # remove factors from boundary plot
   l <- length(variables)
@@ -241,4 +248,20 @@
     ggplot2::theme(axis.ticks = ggplot2::element_blank(), axis.text.x = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank()) +
     ggplot2::guides(fill = ggplot2::guide_legend(override.aes = list(alpha = 1)))
   return(p)
+}
+
+.mlAnomalyAddPredictionsToData <- function(dataset, options, jaspResults, ready) {
+  if (!ready || !options[["addPredictions"]] || options[["predictionsColumn"]] == "") {
+    return()
+  }
+  anomalyResult <- jaspResults[["anomalyResult"]]$object
+  if (is.null(jaspResults[["predictionsColumn"]])) {
+    predictions <- as.character(anomalyResult[["classes"]])
+    predictionsColumn <- rep(NA, max(as.numeric(rownames(dataset))))
+    predictionsColumn[as.numeric(rownames(dataset))] <- predictions
+    predictionsColumn <- factor(predictionsColumn)
+    jaspResults[["predictionsColumn"]] <- createJaspColumn(columnName = options[["predictionsColumn"]])
+    jaspResults[["predictionsColumn"]]$dependOn(options = c(.mlAnomalyDependencies(options), "predictionsColumn", "addPredictions"))
+    jaspResults[["predictionsColumn"]]$setNominal(predictionsColumn)
+  }
 }

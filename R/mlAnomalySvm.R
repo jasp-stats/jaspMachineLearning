@@ -24,26 +24,26 @@ mlAnomalySvm <- function(jaspResults, dataset, options, ...) {
   ready <- .mlAnomalyReady(options)
 
   # Compute results and create the model summary table
-  .mlAnomalyTableSummary(dataset, options, jaspResults, ready, position = 1, type = "isoforest")
+  .mlAnomalyTableSummary(dataset, options, jaspResults, ready, position = 1, type = "svm")
 
   # If the user wants to add the predictions to the data set
-  .mlRegressionAddPredictionsToData(dataset, options, jaspResults, ready)
+  .mlAnomalyAddPredictionsToData(dataset, options, jaspResults, ready)
 
   # Create the table containing anomaly scores
-  .mlAnomalyTableScores(dataset, options, jaspResults, ready, position = 2)
+  .mlAnomalyTableScores(dataset, options, jaspResults, ready, position = 2, type = "svm")
 
   # Create the plot
   .mlAnomalyMatrixPlot(dataset, options, jaspResults, ready, position = 3)
 }
 
 .mlSvmAnomalyComputeResults <- function(dataset, options) {
-  fit <- isotree::isolation.forest(
-    data = dataset[, options[["predictors"]]], sample_size = options[["sampleSize"]], ntrees = options[["nTrees"]],
-    ndim = options[["numberOfPredictors"]], standardize_data = FALSE, scoring_metric = options[["scoringMetric"]]
-  )
+  fit <- e1071::svm(dataset[, options[["predictors"]]], y = NULL, type = 'one-classification',
+                    nu = 0.10, scale = FALSE, kernel = "radial")
   result <- list()
   result[["model"]] <- fit
-  result[["values"]] <- predict(fit, newdata = dataset)
+  result[["outlier"]] <- !predict(fit, dataset[, options[["predictors"]]])
+  result[["classes"]] <- as.factor(ifelse(result[["outlier"]], yes = gettext("Outlier"), no = gettext("Standard")))
+  result[["noutliers"]] <- sum(result[["outlier"]])
   result[["N"]] <- nrow(dataset)
   return(result)
 }
