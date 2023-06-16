@@ -13,6 +13,7 @@ Description
 	license:		"GPL (>= 2)"
 	icon:			"analysis-ml-ribbon.svg"
 
+	// NEEDS FIRST-LEVEL HEADER "SUPERVISED"
 	GroupTitle
 	{
 		title:	qsTr("Regression")
@@ -134,6 +135,7 @@ Description
 		func:	"mlPrediction"
 	}
 
+	// NEEDS FIRST-LEVEL HEADER "UNSUPERVISED"
 	GroupTitle
 	{
 		title:	qsTr("Clustering")
@@ -173,19 +175,19 @@ Description
 	GroupTitle
 	{
 		title:	qsTr("Anomaly Detection")
-		icon: 	"analysis-ml-clustering.svg"
-	}
-	Analysis
-	{
-		menu:	qsTr("Outlier Tree")
-		title:	qsTr("Outlier Tree Anomaly Detection")
-		func:	"mlAnomalyOutlierTree"
+		icon: 	"analysis-ml-anomaly.svg"
 	}
 	Analysis
 	{
 		menu:	qsTr("Isolation Forest")
 		title:	qsTr("Isolation Forest Anomaly Detection")
 		func:	"mlAnomalyIsolationForest"
+	}
+	Analysis
+	{
+		menu:	qsTr("Outlier Tree")
+		title:	qsTr("Outlier Tree Anomaly Detection")
+		func:	"mlAnomalyOutlierTree"
 	}
 	Analysis
 	{
