@@ -49,8 +49,14 @@ Form
 
 		CheckBox
 		{
-			text:							qsTr("Anomaly scores")
+			text:							qsTr("Anomalies")
 			name:							"tableAnomalyScores"
+
+			CheckBox
+			{
+				text:						qsTr("Show standard data")
+				name:						"tableAnomalyScoresObs"
+			}
 
 			CheckBox
 			{
