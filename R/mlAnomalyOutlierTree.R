@@ -27,21 +27,23 @@ mlAnomalyOutlierTree <- function(jaspResults, dataset, options, ...) {
   .mlAnomalyTableSummary(dataset, options, jaspResults, ready, position = 1, type = "outliertree")
 
   # If the user wants to add the predictions to the data set
-  .mlRegressionAddPredictionsToData(dataset, options, jaspResults, ready)
+  .mlAnomalyAddPredictionsToData(dataset, options, jaspResults, ready)
 
   # Create the table containing anomaly scores
-  .mlAnomalyTableScores(dataset, options, jaspResults, ready, position = 2)
+  .mlAnomalyTableScores(dataset, options, jaspResults, ready, position = 2, type = "outliertree")
 
   # Create the plot
   .mlAnomalyMatrixPlot(dataset, options, jaspResults, ready, position = 3)
 }
 
 .mlOutlierTreeComputeResults <- function(dataset, options) {
-  fit <- outliertree::outlier.tree(dataset[, options[["predictors"]]], save_outliers = TRUE, nthreads = 1,
-                                   max_depth = options[["maxDepth"]])
   result <- list()
-  result[["model"]] <- fit
-  result[["values"]] <- unlist(as.numeric(lapply(fit[["outliers_data"]], `[[`, "outlier_score")))
+  result[["model"]] <- outliertree::outlier.tree(dataset[, options[["predictors"]]], save_outliers = TRUE, nthreads = 1,
+                                   max_depth = options[["maxDepth"]])
+  result[["values"]] <- unlist(as.numeric(lapply(result[["model"]][["outliers_data"]], `[[`, "outlier_score")))
+  result[["outlier"]] <- !is.na(result[["values"]])
+  result[["classes"]] <- as.factor(ifelse(result[["outlier"]], yes = gettext("Outlier"), no = gettext("Standard")))
+  result[["noutliers"]] <- sum(result[["outlier"]])
   result[["N"]] <- nrow(dataset)
   return(result)
 }
