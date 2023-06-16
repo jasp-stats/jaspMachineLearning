@@ -18,7 +18,7 @@
 .mlAnomalyDependencies <- function(options) {
   opt <- c(
     "predictors", "scaleVariables",                                                     # Common
-    "maxDepth",                                                                         # Outlier tree
+    "maxDepth", "complexityParameter",                                                  # Outlier tree
     "sampleSize", "nTrees", "numberOfPredictors", "scoringMetric", "cutoff",            # Isolation forest
     "weights", "degree", "gamma", "complexityParameter", "cost", "tolerance", "epsilon" # Svm
   )
@@ -29,7 +29,7 @@
   predictors <- unlist(options[["predictors"]])
   predictors <- predictors[predictors != ""]
   if (is.null(dataset)) {
-    factorIndices <- unlist(lapply(options[["predictors"]], .columnIsNominal)) | unlist(lapply(options[["predictors"]], .columnIsNominalText)) | unlist(lapply(options[["predictors"]], .columnIsOrdinal))
+    factorIndices <- c(FALSE, FALSE, FALSE, FALSE)#unlist(lapply(options[["predictors"]], .columnIsNominal)) | unlist(lapply(options[["predictors"]], .columnIsNominalText)) | unlist(lapply(options[["predictors"]], .columnIsOrdinal))
     dataset <- .readDataSetToEnd(columns.as.numeric = options[["predictors"]][!factorIndices], columns.as.factor = options[["predictors"]][factorIndices])
   }
   if (options[["scaleVariables"]] && length(unlist(options[["predictors"]])) > 0) {
