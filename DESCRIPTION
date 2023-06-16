@@ -36,6 +36,7 @@ Imports:
   mvnormalTest,
   neuralnet,
   network,
+  outliertree,
   partykit,
   plyr,
   randomForest,
