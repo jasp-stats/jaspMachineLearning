@@ -33,7 +33,7 @@ mlAnomalyIsolationForest <- function(jaspResults, dataset, options, ...) {
   .mlAnomalyTableScores(dataset, options, jaspResults, ready, position = 2, type = "isoforest")
 
   # Create the plot
-  .mlAnomalyMatrixPlot(dataset, options, jaspResults, ready, position = 3)
+  .mlAnomalyMatrixPlot(dataset, options, jaspResults, ready, position = 3, type = "isoforest")
 }
 
 .mlIsoForestComputeResults <- function(dataset, options) {
@@ -42,10 +42,11 @@ mlAnomalyIsolationForest <- function(jaspResults, dataset, options, ...) {
     data = dataset[, options[["predictors"]]], sample_size = options[["sampleSize"]], ntrees = options[["nTrees"]],
     ndim = options[["numberOfPredictors"]], standardize_data = FALSE, scoring_metric = options[["scoringMetric"]], nthreads = 1
   )
-  result[["values"]] <- predict(result[["model"]], newdata = dataset)
-  result[["outlier"]] <- result[["values"]] >= options[["cutoff"]]
-  result[["classes"]] <- as.factor(ifelse(result[["outlier"]], yes = gettext("Outlier"), no = gettext("Standard")))
-  result[["noutliers"]] <- sum(result[["outlier"]])
+  result[["values"]] <- as.numeric(predict(result[["model"]], newdata = dataset))
+  result[["outlier"]] <- as.logical(result[["values"]] >= options[["cutoff"]])
+  result[["classes"]] <- as.factor(ifelse(result[["outlier"]], yes = gettext("Anomaly"), no = gettext("Standard")))
+  result[["noutlier"]] <- sum(result[["outlier"]])
+  result[["ioutlier"]] <- which(result[["outlier"]])
   result[["N"]] <- nrow(dataset)
   return(result)
 }
