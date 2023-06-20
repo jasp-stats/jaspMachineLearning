@@ -70,6 +70,9 @@
     table$addColumnInfo(name = "npred", title = gettext("Features per split"), type = "integer")
   } else if (type == "svm") {
     table$addColumnInfo(name = "svec", title = gettext("Support vectors"), type = "integer")
+  } else if (type == "outliertree") {
+	table$addColumnInfo(name = "ntrees", title = gettext("Trees"), type = "integer")
+	table$addColumnInfo(name = "nclusters", title = gettext("Clusters"), type = "integer")
   }
   table$addColumnInfo(name = "N", title = "N", type = "integer")
   table$addColumnInfo(name = "n", title = gettext("Anomalies"), type = "integer")
@@ -89,11 +92,10 @@
     table$addFootnote(gettext("The features in the model are <b>unstandardized</b>."))
   }
   row <- data.frame(N = anomalyResult[["N"]], n = anomalyResult[["noutlier"]])
-  if (type == "isoforest") {
-    row <- cbind(row, ntrees = options[["nTrees"]], npred = options[["numberOfPredictors"]])
-  } else if (type == "svm") {
-	row <- cbind(row, svec = nrow(anomalyResult[["model"]]$SV))
-  }
+  row <- switch(type,
+  "isoforest" = cbind(row, ntrees = options[["nTrees"]], npred = options[["numberOfPredictors"]]),
+  "svm" = cbind(row, svec = nrow(anomalyResult[["model"]]$SV)),
+  "outliertree" = cbind(row, ntrees = anomalyResult[["ntrees"]], nclusters = anomalyResult[["nclusters"]]))
   table$addRows(row)
 }
 
@@ -123,10 +125,12 @@
   table$dependOn(options = c("tableAnomalyScores", "tableAnomalyScoresFeatures", .mlAnomalyDependencies(options)))
   table$position <- position
   table$addColumnInfo(name = "row", title = gettext("Case"), type = "integer")
-  table$addColumnInfo(name = "pred", title = gettext("Predicted"), type = "string")
   if (type == "isoforest") {
     table$addColumnInfo(name = "score", title = gettext("Score"), type = "number")
-  }
+  } else if (type == "outliertree") {
+	table$addColumnInfo(name = "depth", title = gettext("Tree depth"), type = "integer")
+	table$addColumnInfo(name = "value", title = gettext("Suspicous feature"), type = "string")
+	}
   if (options[["tableAnomalyScoresFeatures"]]) {
     types <- ifelse(unlist(lapply(dataset[, options[["predictors"]]], is.factor)), yes = "string", no = "number")
     for (i in seq_len(ncol(dataset[, options[["predictors"]], drop = FALSE]))) {
@@ -139,11 +143,16 @@
   }
   anomalyResult <- jaspResults[["anomalyResult"]]$object
   indexes <- anomalyResult[["ioutlier"]]
+  indexes <- switch(type, "outliertree" = indexes[order(anomalyResult[["depth"]][indexes])],
+                          "isoforest" = indexes[order(-anomalyResult[["values"]][indexes])],
+						  "svm" = indexes[order(anomalyResult[["values"]][indexes])])
   table[["row"]] <- indexes
-  table[["pred"]] <- as.character(anomalyResult[["classes"]][indexes])
   if (type == "isoforest") {
     table[["score"]] <- anomalyResult[["values"]][indexes]
-  }
+  } else if (type == "outliertree") {
+	table[["depth"]] <- anomalyResult[["depth"]][indexes]
+	table[["value"]] <- anomalyResult[["susp"]][indexes]
+	}
   if (options[["tableAnomalyScoresFeatures"]]) {
     for (i in seq_len(ncol(dataset))) {
       table[[options[["predictors"]][i]]] <- switch(types[i],
