@@ -81,7 +81,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   testIndicatorColumn <- rep(1, nrow(dataset))
   testIndicatorColumn[trainingIndex] <- 0
   # gbm expects the columns in the data to be in the same order as the variables...
-  trainingAndValidationSet <- trainingAndValidationSet[, match(names(trainingAndValidationSet)[which(names(trainingAndValidationSet) %in% all.vars(formula))], all.vars(formula))]
+  trainingAndValidationSet <- trainingAndValidationSet[, match(names(trainingAndValidationSet)[which(names(trainingAndValidationSet) %in% all.vars(formula))], all.vars(formula)), drop = FALSE]
   if (options[["modelOptimization"]] == "manual") {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet

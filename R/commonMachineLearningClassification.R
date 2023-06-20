@@ -87,15 +87,20 @@ gettextf <- function(fmt, ..., domain = NULL) {
   .setSeedJASP(options) # Set the seed to make results reproducible
   if (ready) {
     .mlClassificationSetFormula(options, jaspResults)
-    classificationResult <- switch(type,
-      "knn" = .knnClassification(dataset, options, jaspResults),
-      "lda" = .ldaClassification(dataset, options, jaspResults),
-      "randomForest" = .randomForestClassification(dataset, options, jaspResults),
-      "boosting" = .boostingClassification(dataset, options, jaspResults),
-      "neuralnet" = .neuralnetClassification(dataset, options, jaspResults),
-      "rpart" = .decisionTreeClassification(dataset, options, jaspResults),
-      "svm" = .svmClassification(dataset, options, jaspResults)
-    )
+    p <- try({
+      classificationResult <- switch(type,
+        "knn" = .knnClassification(dataset, options, jaspResults),
+        "lda" = .ldaClassification(dataset, options, jaspResults),
+        "randomForest" = .randomForestClassification(dataset, options, jaspResults),
+        "boosting" = .boostingClassification(dataset, options, jaspResults),
+        "neuralnet" = .neuralnetClassification(dataset, options, jaspResults),
+        "rpart" = .decisionTreeClassification(dataset, options, jaspResults),
+        "svm" = .svmClassification(dataset, options, jaspResults)
+      )
+    })
+    if (isTryError(p)) { # Fail gracefully
+      jaspBase:::.quitAnalysis(gettextf("An error occurred in the analysis: %s", jaspBase:::.extractErrorMessage(p)))
+    }
     jaspResults[["classificationResult"]] <- createJaspState(classificationResult)
     jaspResults[["classificationResult"]]$dependOn(options = .mlClassificationDependencies(options))
   }

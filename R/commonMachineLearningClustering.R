@@ -110,13 +110,18 @@
   }
   .setSeedJASP(options) # Set the seed to make results reproducible
   if (ready) {
-    clusterResult <- switch(type,
-      "kmeans" = .kMeansClustering(dataset, options, jaspResults),
-      "cmeans" = .cMeansClustering(dataset, options, jaspResults),
-      "hierarchical" = .hierarchicalClustering(dataset, options, jaspResults),
-      "densitybased" = .densityBasedClustering(dataset, options, jaspResults),
-      "randomForest" = .randomForestClustering(dataset, options, jaspResults)
-    )
+    p <- try({
+      clusterResult <- switch(type,
+        "kmeans" = .kMeansClustering(dataset, options, jaspResults),
+       "cmeans" = .cMeansClustering(dataset, options, jaspResults),
+        "hierarchical" = .hierarchicalClustering(dataset, options, jaspResults),
+        "densitybased" = .densityBasedClustering(dataset, options, jaspResults),
+        "randomForest" = .randomForestClustering(dataset, options, jaspResults)
+      )
+    })
+    if (isTryError(p)) { # Fail gracefully
+      jaspBase:::.quitAnalysis(gettextf("An error occurred in the analysis: %s", jaspBase:::.extractErrorMessage(p)))
+    }
     jaspResults[["clusterResult"]] <- createJaspState(clusterResult)
     jaspResults[["clusterResult"]]$dependOn(options = .mlClusteringDependencies(options))
   }

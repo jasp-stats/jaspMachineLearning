@@ -202,15 +202,20 @@
   .setSeedJASP(options) # Set the seed to make results reproducible
   if (ready) {
     .mlRegressionSetFormula(options, jaspResults)
-    regressionResult <- switch(type,
-      "knn" = .knnRegression(dataset, options, jaspResults),
-      "regularized" = .regularizedRegression(dataset, options, jaspResults),
-      "randomForest" = .randomForestRegression(dataset, options, jaspResults),
-      "boosting" = .boostingRegression(dataset, options, jaspResults),
-      "neuralnet" = .neuralnetRegression(dataset, options, jaspResults),
-      "rpart" = .decisionTreeRegression(dataset, options, jaspResults),
-      "svm" = .svmRegression(dataset, options, jaspResults)
-    )
+    p <- try({
+      regressionResult <- switch(type,
+        "knn" = .knnRegression(dataset, options, jaspResults),
+        "regularized" = .regularizedRegression(dataset, options, jaspResults),
+        "randomForest" = .randomForestRegression(dataset, options, jaspResults),
+        "boosting" = .boostingRegression(dataset, options, jaspResults),
+        "neuralnet" = .neuralnetRegression(dataset, options, jaspResults),
+        "rpart" = .decisionTreeRegression(dataset, options, jaspResults),
+        "svm" = .svmRegression(dataset, options, jaspResults)
+      )
+    })
+    if (isTryError(p)) { # Fail gracefully
+      jaspBase:::.quitAnalysis(gettextf("An error occurred in the analysis: %s", jaspBase:::.extractErrorMessage(p)))
+    }
     jaspResults[["regressionResult"]] <- createJaspState(regressionResult)
     jaspResults[["regressionResult"]]$dependOn(options = .mlRegressionDependencies(options))
   }
