@@ -40,9 +40,16 @@ mlAnomalyOutlierTree <- function(jaspResults, dataset, options, ...) {
   result <- list()
   result[["model"]] <- outliertree::outlier.tree(dataset[, options[["predictors"]]], save_outliers = TRUE, nthreads = 1,
                                    max_depth = options[["maxDepth"]], min_gain = options[["complexityParameter"]])
-  result[["values"]] <- as.numeric(unlist(as.numeric(lapply(result[["model"]][["outliers_data"]], `[[`, "outlier_score"))))
-  result[["values"]] <- ifelse(is.na(result[["values"]]), yes = 0, no = 1)
-  result[["outlier"]] <- as.logical(result[["values"]])
+  out <- outliertree:::list.to.outliers((result[["model"]]$outliers_data))
+  result[["values"]] <- as.numeric(ifelse(is.na(out[["outlier_score"]]), yes = 0, no = out[["outlier_score"]]))
+  result[["depth"]] <- as.numeric(ifelse(is.na(out[["outlier_score"]]), yes = 0, no = out[["tree_depth"]]))
+  result[["ntrees"]] <- result[["model"]]$obj_from_cpp$ntrees
+  result[["nclusters"]] <- result[["model"]]$obj_from_cpp$nclust
+  result[["susp"]] <- character(length(result[["depth"]]))
+  for (i in seq_along(result[["depth"]])) {
+	result[["susp"]][i] <- if (is.null(out$suspicous_value[[i]]$column)) "" else out$suspicous_value[[i]]$column
+  }
+  result[["outlier"]] <- as.logical(result[["values"]] != 0)
   result[["classes"]] <- as.factor(ifelse(result[["outlier"]], yes = gettext("Anomaly"), no = gettext("Standard")))
   result[["noutlier"]] <- sum(result[["outlier"]])
   result[["ioutlier"]] <- which(result[["outlier"]])
