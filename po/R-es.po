@@ -778,14 +778,14 @@ msgstr "Gráfico de la Mejora \"Descubierto el Pastel\""
 msgid "Training set"
 msgstr "Conjunto de entrenamiento"
 
-msgid "OOB Change in %s Multinomial Deviance"
-msgstr "Cambio OOB en la Desviación Multinomial de %s"
+msgid "OOB Change in \n Multinomial Deviance"
+msgstr "Cambio OOB en \n la Desviación Multinomial"
 
-msgid "OOB Change in %s Binomial Deviance"
-msgstr "Cambio OOB en la Desviación Binomial de %s"
+msgid "OOB Change in \n Binomial Deviance"
+msgstr "Cambio OOB en \n la Desviación Binomial"
 
-msgid "OOB Change in %s%s Deviance"
-msgstr "Cambio OOB en la Desviación de %s%s"
+msgid "OOB Change in \n%s Deviance"
+msgstr "Cambio OOB en \nla Desviación de %s"
 
 msgid "Plotting not possible: The model is based on only a single tree."
 msgstr ""

@@ -777,14 +777,14 @@ msgstr "Out-of-bag-Verbesserungsdiagramm"
 msgid "Training set"
 msgstr "Trainingset"
 
-msgid "OOB Change in %s Multinomial Deviance"
-msgstr "OOB Änderung in %s Multinomialer Devianz"
+msgid "OOB Change in \n Multinomial Deviance"
+msgstr "OOB Änderung in \n Multinomialer Devianz"
 
-msgid "OOB Change in %s Binomial Deviance"
-msgstr "OOB Änderung in %s Binomialer Devianz"
+msgid "OOB Change in \n Binomial Deviance"
+msgstr "OOB Änderung in \n Binomialer Devianz"
 
-msgid "OOB Change in %s%s Deviance"
-msgstr "OOB Änderung in %s%s Devianz"
+msgid "OOB Change in \n%s Deviance"
+msgstr "OOB Änderung in \n%s Devianz"
 
 msgid "Plotting not possible: The model is based on only a single tree."
 msgstr "Diagramm unmöglich: Das Modell basiert nur auf einem einzelnen Baum."

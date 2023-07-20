@@ -751,13 +751,13 @@ msgstr ""
 msgid "Training set"
 msgstr ""
 
-msgid "OOB Change in %s Multinomial Deviance"
+msgid "OOB Change in \n Multinomial Deviance"
 msgstr ""
 
-msgid "OOB Change in %s Binomial Deviance"
+msgid "OOB Change in \n Binomial Deviance"
 msgstr ""
 
-msgid "OOB Change in %s%s Deviance"
+msgid "OOB Change in \n%s Deviance"
 msgstr ""
 
 msgid "Plotting not possible: The model is based on only a single tree."
