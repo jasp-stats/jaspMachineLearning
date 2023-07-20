@@ -6,7 +6,7 @@ Description
 	title :			qsTr("Machine Learning")
 	name :			"jaspMachineLearning"
 	description:	qsTr("Explore the relation between variables using data-driven methods for regression, classification, and clustering")
-	version:		"0.17.3"
+	version			: "0.17.3"
 	author:			"JASP Team"
 	maintainer:		"JASP Team <info@jasp-stats.org>"
 	website:		"www.jasp-stats.org"
