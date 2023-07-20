@@ -198,13 +198,13 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   oobDev <- data.frame(trees = 1:result[["model"]]$n.trees, oobImprove = result[["model"]]$oobag.improve, type = gettext("Training set"))
   if (purpose == "classification") {
     if (nlevels(result[["test"]][, options[["target"]]]) > 2L) {
-      ylab <- gettextf("OOB Change in %s Multinomial Deviance", "\n")
+      ylab <- gettext("OOB Change in \n Multinomial Deviance")
     } else {
-      ylab <- gettextf("OOB Change in %s Binomial Deviance", "\n")
+      ylab <- gettext("OOB Change in \n Binomial Deviance")
     }
   } else {
     distribution <- .regressionGetDistributionFromDistance(options[["distance"]])
-    ylab <- gettextf("OOB Change in %s%s Deviance", "\n", distribution)
+    ylab <- gettextf("OOB Change in \n%s Deviance", distribution)
   }
   if (nrow(oobDev) <= 1) {
     plot$setError(gettext("Plotting not possible: The model is based on only a single tree."))

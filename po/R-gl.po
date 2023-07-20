@@ -779,14 +779,14 @@ msgstr "Gráfica da Mellora \"Descuberto o Choio\""
 msgid "Training set"
 msgstr "Conxunto de adestramento"
 
-msgid "OOB Change in %s Multinomial Deviance"
-msgstr "Cambio OOB na Desviación Multinomial de %s"
+msgid "OOB Change in \n Multinomial Deviance"
+msgstr "Cambio OOB na \n Desviación Multinomial"
 
-msgid "OOB Change in %s Binomial Deviance"
-msgstr "Cambio OOB na Desviación Binomial de %s"
+msgid "OOB Change in \n Binomial Deviance"
+msgstr "Cambio OOB na \n Desviación Binomial"
 
-msgid "OOB Change in %s%s Deviance"
-msgstr "Cambio OOB na Desviación de %s%s"
+msgid "OOB Change in \n%s Deviance"
+msgstr "Cambio OOB na \n Desviación de %s"
 
 msgid "Plotting not possible: The model is based on only a single tree."
 msgstr ""
