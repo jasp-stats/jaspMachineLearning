@@ -69,17 +69,20 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   # Create the multicollinearity table
   .mlClassificationLdaTableMulticollinearity(dataset, options, jaspResults, ready, position = 13)
 
+  # Create the multivariate normal table
+  .mlClassificationLdaTableMultivariateNormality(dataset, options, jaspResults, ready, position = 14)
+
   # Create the ROC curve
-  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 14, type = "lda")
+  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 15, type = "lda")
 
   # Create the Andrews curves
-  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 15)
+  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 16)
 
   # Create the LDA matrix plot
-  .mlClassificationLdaPlotDiscriminants(dataset, options, jaspResults, ready, position = 16)
+  .mlClassificationLdaPlotDiscriminants(dataset, options, jaspResults, ready, position = 17)
 
   # Decision boundaries
-  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 17, type = "lda")
+  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 18, type = "lda")
 }
 
 # Error handling
@@ -478,4 +481,25 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
     x <- x[, -xint, drop = FALSE]
   }
   return(x)
+}
+
+.mlClassificationLdaTableMultivariateNormality <- function(dataset, options, jaspResults, ready, position) {
+  if (!is.null(jaspResults[["multinormalTable"]]) || !options[["multinormalTable"]]) {
+    return()
+  }
+  table <- createJaspTable(title = gettext("Tests for Multivariate Normality"))
+  table$position <- position
+  table$dependOn(options = c("multinormalTable", "scaleVariables", "predictors"))
+  table$addColumnInfo(name = "type", title = "", type = "string")
+  table$addColumnInfo(name = "statistic", title = gettext("Statistic"), type = "number")
+  table$addColumnInfo(name = "p", title = gettext("p"), type = "pvalue")
+  table[["type"]] <- c(gettext("Skewness"), gettext("Kurtosis"))
+  table$addFootnote(gettext("Both p-values of the skewness and kurtosis statistics should be > 0.05 to conclude multivariate normality."))
+  jaspResults[["multinormalTable"]] <- table
+  if (!ready) {
+    return()
+  }
+  result <- mvnormalTest::mardia(dataset[, options[["predictors"]]])
+  table[["statistic"]] <- as.numeric(as.character(result[["mv.test"]][1:2, "Statistic"]))
+  table[["p"]] <- as.numeric(as.character(result[["mv.test"]][1:2, "p-value"]))
 }

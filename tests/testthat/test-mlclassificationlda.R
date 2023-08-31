@@ -34,6 +34,7 @@ options$tableShap <- TRUE
 options$fromIndex <- 1
 options$toIndex <- 5
 options$featureImportanceTable <- TRUE
+options$multinormalTable <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClassificationLda", "wine.csv", options)
 
@@ -223,4 +224,10 @@ test_that("Feature Importance Metrics table results match", {
 			 "Hue", 1.95530540133887, "Nonflavanoids", 1.6883059234698, "Malic",
 			 0.935460817887541, "Phenols", 0.758027706375559, "Proanthocyanins",
 			 0.45339855404643, "Magnesium"))
+})
+
+test_that("Tests for Multivariate Normality table results match", {
+	table <- results[["results"]][["multinormalTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(0, 1290.7639, "Skewness", 0, 10.9082, "Kurtosis"))
 })

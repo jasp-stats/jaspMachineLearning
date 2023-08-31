@@ -119,6 +119,12 @@ Form
 				name:				"multicolTable"
 				text:				qsTr("Multicollinearity")
 			}
+
+			CheckBox
+			{
+				name:				"multinormalTable"
+				text:				qsTr("Multivariate normality")
+			}
 		}
 
 		UI.ExportResults
