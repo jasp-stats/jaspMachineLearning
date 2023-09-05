@@ -437,11 +437,15 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   if (!ready) {
     return()
   }
+  if (any(as.numeric(table(dataset[, options[["target"]]])) < 2)) {
+    table$setError(gettext("There are one or more levels in the target variable with less than two observations."))
+    return()
+  }
   boxSum <- .boxM(dataset[, options[["predictors"]]], dataset[, options[["target"]]])
   chi <- as.numeric(boxSum[["statistic"]])
   df <- as.numeric(boxSum[["parameter"]])
   p <- as.numeric(boxSum[["p.value"]])
-  row <- data.frame(test = "Box's M", x = chi, df = df, p = p)
+  row <- data.frame(test = gettext("Box's M"), x = chi, df = df, p = p)
   table$addRows(row)
 }
 
@@ -454,6 +458,10 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   table$dependOn(options = c("multicolTable", "scaleVariables", "target", "predictors"))
   jaspResults[["multicolTable"]] <- table
   if (!ready) {
+    return()
+  }
+  if (any(as.numeric(table(dataset[, options[["target"]]])) < 2)) {
+    table$setError(gettext("There are one or more levels in the target variable with less than two observations."))
     return()
   }
   boxSum <- .boxM(dataset[, options[["predictors"]]], dataset[, options[["target"]]])
