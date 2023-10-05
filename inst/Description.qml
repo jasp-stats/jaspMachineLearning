@@ -38,6 +38,12 @@ Description
 	}
 	Analysis
 	{
+		menu:	qsTr("Linear")
+		title:	qsTr("Linear Regression")
+		func:	"mlRegressionLinear"
+	}
+	Analysis
+	{
 		menu:	qsTr("Neural Network")
 		title:	qsTr("Neural Network Regression")
 		func:	"mlRegressionNeuralNetwork"

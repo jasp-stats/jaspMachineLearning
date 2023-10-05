@@ -180,8 +180,10 @@
 
 .mlRegressionReady <- function(options, type) {
   if (type == "randomForest" || type == "boosting" || type == "regularized") {
+    # Require at least two predictors
     ready <- length(options[["predictors"]][options[["predictors"]] != ""]) >= 2 && options[["target"]] != ""
-  } else if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm") {
+  } else if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm" || type == "lm") {
+    # Require at least one predictor
     ready <- length(options[["predictors"]][options[["predictors"]] != ""]) >= 1 && options[["target"]] != ""
   }
   return(ready)
@@ -210,7 +212,8 @@
         "boosting" = .boostingRegression(dataset, options, jaspResults),
         "neuralnet" = .neuralnetRegression(dataset, options, jaspResults),
         "rpart" = .decisionTreeRegression(dataset, options, jaspResults),
-        "svm" = .svmRegression(dataset, options, jaspResults)
+        "svm" = .svmRegression(dataset, options, jaspResults),
+        "lm" = .linearRegression(dataset, options, jaspResults)
       )
     })
     if (isTryError(p)) { # Fail gracefully
@@ -232,7 +235,8 @@
     "boosting" = gettext("Boosting Regression"),
     "neuralnet" = gettext("Neural Network Regression"),
     "rpart" = gettext("Decision Tree Regression"),
-    "svm" = gettext("Support Vector Machine Regression")
+    "svm" = gettext("Support Vector Machine Regression"),
+    "lm" = gettext("Linear Regression")
   )
   table <- createJaspTable(title)
   table$position <- position
@@ -279,7 +283,7 @@
   }
   # If no analysis is run, specify the required variables in a footnote
   if (!ready) {
-    table$addFootnote(gettextf("Please provide a target variable and at least %d feature variable(s).", if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm") 1L else 2L))
+    table$addFootnote(gettextf("Please provide a target variable and at least %d feature variable(s).", if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm" || type == "lm") 1L else 2L))
   }
   if (options[["savePath"]] != "") {
     validNames <- (length(grep(" ", decodeColNames(colnames(dataset)))) == 0) && (length(grep("_", decodeColNames(colnames(dataset)))) == 0)
@@ -413,6 +417,13 @@
   } else if (type == "svm") {
     row <- data.frame(
       vectors = nrow(regressionResult[["model"]]$SV),
+      nTrain = nTrain,
+      nTest = regressionResult[["ntest"]],
+      testMSE = regressionResult[["testMSE"]]
+    )
+    table$addRows(row)
+  } else if (type == "lm") {
+    row <- data.frame(
       nTrain = nTrain,
       nTest = regressionResult[["ntest"]],
       testMSE = regressionResult[["testMSE"]]
