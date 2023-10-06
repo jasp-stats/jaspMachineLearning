@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.2\n"
-"POT-Creation-Date: 2023-06-09 06:45\n"
+"POT-Creation-Date: 2023-10-06 08:17\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -9,6 +9,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+msgid "An error occurred in the analysis: %s"
+msgstr ""
 
 msgid "K-Nearest Neighbors Classification"
 msgstr ""
@@ -91,6 +94,13 @@ msgstr ""
 msgid "The trained model is saved as <i>%1$s</i>."
 msgstr ""
 
+msgid ""
+"The trained model is <b>not</b> saved because the some of the variable names "
+"in the model contain spaces (i.e., ' ') or underscores (i.e., '_'). Please "
+"remove all such characters from the variable names and try saving the model "
+"again."
+msgstr ""
+
 msgid "The trained model is not saved until 'Save trained model' is checked."
 msgstr ""
 
@@ -165,7 +175,7 @@ msgstr ""
 msgid "Box's M-test for Homogeneity of Covariance Matrices"
 msgstr ""
 
-msgid "Evaluation Metrics"
+msgid "Model Performance Metrics"
 msgstr ""
 
 msgid "Support"
@@ -296,13 +306,15 @@ msgid ""
 msgstr ""
 
 msgid ""
-"Your cluster model contains 0 clusters and only Noisepoints, we advise to "
-"change the Eps and MinPts parameters."
+"The model contains 0 clusters and only Noisepoints, we advise to change "
+"'Epsilon neighborhood size' and 'Min. core points' parameters under "
+"'Training parameters'."
 msgstr ""
 
 msgid ""
-"Your cluster model contains 1 cluster and 0 Noisepoints. You could change "
-"the Eps and MinPts parameters."
+"The model contains 1 cluster and no Noisepoints. You may want to change "
+"'Epsilon neighborhood size' and 'Min. core points' parameters under "
+"'Training parameters'."
 msgstr ""
 
 msgid "The features in the model are <b>unstandardized</b>."
@@ -467,6 +479,9 @@ msgstr ""
 msgid "Support Vector Machine Regression"
 msgstr ""
 
+msgid "Linear Regression"
+msgstr ""
+
 msgid "Penalty"
 msgstr ""
 
@@ -480,6 +495,12 @@ msgid "Test MSE"
 msgstr ""
 
 msgid "OOB Error"
+msgstr ""
+
+msgid "R%1$s"
+msgstr ""
+
+msgid "Adjusted R%1$s"
 msgstr ""
 
 msgid "Please provide a target variable and at least %d feature variable(s)."
@@ -534,6 +555,43 @@ msgstr ""
 msgid "Train and validation: %d"
 msgstr ""
 
+msgid "Additive Explanations for Predictions of New Cases"
+msgstr ""
+
+msgid "Additive Explanations for Predictions of Test Set Cases"
+msgstr ""
+
+msgid "Case"
+msgstr ""
+
+msgid "Predicted (Prob.)"
+msgstr ""
+
+msgid "Base"
+msgstr ""
+
+msgid "There was an error in computing the results for this table."
+msgstr ""
+
+msgid ""
+"Displayed values represent feature contributions to the predicted value "
+"without features (column 'Base') for the test set."
+msgstr ""
+
+msgid ""
+"Displayed values represent feature contributions to the predicted class "
+"probability without features (column 'Base') for the test set."
+msgstr ""
+
+msgid "Feature Importance Metrics"
+msgstr ""
+
+msgid "Mean dropout loss"
+msgstr ""
+
+msgid "Mean dropout loss is based on 50 permutations."
+msgstr ""
+
 msgid "The target variable should have at least 2 classes."
 msgstr ""
 
@@ -576,7 +634,32 @@ msgstr ""
 msgid "The null hypothesis specifies equal covariance matrices."
 msgstr ""
 
+msgid ""
+"There are one or more levels in the target variable with less than two "
+"observations."
+msgstr ""
+
+msgid "Box's M"
+msgstr ""
+
 msgid "Pooled Within-Class Matrices Correlations"
+msgstr ""
+
+msgid "Tests for Multivariate Normality"
+msgstr ""
+
+msgid "Statistic"
+msgstr ""
+
+msgid "Skewness"
+msgstr ""
+
+msgid "Kurtosis"
+msgstr ""
+
+msgid ""
+"Both p-values of the skewness and kurtosis statistics should be > 0.05 to "
+"conclude multivariate normality."
 msgstr ""
 
 msgid ""
@@ -641,6 +724,9 @@ msgstr ""
 msgid "Linear discriminant"
 msgstr ""
 
+msgid "Linear"
+msgstr ""
+
 msgid "Boosting"
 msgstr ""
 
@@ -699,9 +785,6 @@ msgstr ""
 msgid "Predictions for New Data"
 msgstr ""
 
-msgid "Row"
-msgstr ""
-
 msgid "Relative Influence"
 msgstr ""
 
@@ -711,13 +794,19 @@ msgstr ""
 msgid "Training set"
 msgstr ""
 
-msgid "OOB Change in \n Multinomial Deviance"
+msgid ""
+"OOB Change in \n"
+" Multinomial Deviance"
 msgstr ""
 
-msgid "OOB Change in \n Binomial Deviance"
+msgid ""
+"OOB Change in \n"
+" Binomial Deviance"
 msgstr ""
 
-msgid "OOB Change in \n%s Deviance"
+msgid ""
+"OOB Change in \n"
+"%s Deviance"
 msgstr ""
 
 msgid "Plotting not possible: The model is based on only a single tree."
@@ -842,6 +931,35 @@ msgstr ""
 msgid "Relative Weight"
 msgstr ""
 
+msgid "Regression Coefficients"
+msgstr ""
+
+msgid "Coefficient (%s)"
+msgstr ""
+
+msgid "Standard Error"
+msgstr ""
+
+msgid "%1$s%% Confidence interval"
+msgstr ""
+
+msgid "Lower"
+msgstr ""
+
+msgid "Upper"
+msgstr ""
+
+msgid "The regression coefficients for numeric features are standardized."
+msgstr ""
+
+msgid "The regression coefficients are unstandardized."
+msgstr ""
+
+msgid ""
+"<b>Regression equation:</b>\n"
+"%1$s"
+msgstr ""
+
 msgid "Network Weights"
 msgstr ""
 
@@ -918,9 +1036,6 @@ msgid "Output layer"
 msgstr ""
 
 msgid "Hidden layer %1$s"
-msgstr ""
-
-msgid "Linear"
 msgstr ""
 
 msgid "Binary"
@@ -1007,12 +1122,6 @@ msgstr ""
 msgid "Elastic Net"
 msgstr ""
 
-msgid "Regression Coefficients"
-msgstr ""
-
-msgid "Coefficient (%s)"
-msgstr ""
-
 msgid "Variable Trace Plot"
 msgstr ""
 
@@ -1029,4 +1138,7 @@ msgid "Min. CV MSE"
 msgstr ""
 
 msgid "%s 1 SE"
+msgstr ""
+
+msgid "Row"
 msgstr ""

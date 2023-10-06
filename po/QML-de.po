@@ -149,68 +149,12 @@ msgid "Leave-one-out"
 msgstr "Lass-einen-aus"
 
 msgctxt "mlClassificationBoosting|"
-msgid "Target"
-msgstr "Ziel"
-
-msgctxt "mlClassificationBoosting|"
 msgid "Tables"
 msgstr "Tabellen"
 
 msgctxt "mlClassificationBoosting|"
-msgid "Confusion matrix"
-msgstr "Konfusionsmatrix"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Display proportions"
-msgstr "Verhältnisse anzeigen"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Class proportions"
-msgstr "Klasseproporties"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Evaluation metrics"
-msgstr "Evaluationsmetriken"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Relative influence"
-msgstr "Relativer Einfluß"
-
-msgctxt "mlClassificationBoosting|"
 msgid "Plots"
 msgstr "Diagramme"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Data split"
-msgstr "Datenaufteilungen"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Out-of-bag improvement"
-msgstr "Out-of-bag-Verbesserung"
-
-msgctxt "mlClassificationBoosting|"
-msgid "ROC curves"
-msgstr "ROC-Kurven"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Andrews curves"
-msgstr "Andrews Kurven"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Deviance"
-msgstr "Devianz"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Decision boundary matrix"
-msgstr "Entscheidungsgrenzenmatrix"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Legend"
-msgstr "Legende"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Points"
-msgstr "Punkte"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Training Parameters"
@@ -220,73 +164,13 @@ msgctxt "mlClassificationBoosting|"
 msgid "Algorithmic Settings"
 msgstr "Algorithmus-Einstellungen"
 
-msgctxt "mlClassificationBoosting|"
-msgid "Number of Trees"
-msgstr "Anzahl Bäume"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Fixed"
-msgstr "Fixiert"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Optimized"
-msgstr "Optimiert"
-
-msgctxt "mlClassificationKnn|"
-msgid "Target"
-msgstr "Ziel"
-
 msgctxt "mlClassificationKnn|"
 msgid "Tables"
 msgstr "Tabellen"
 
 msgctxt "mlClassificationKnn|"
-msgid "Confusion matrix"
-msgstr "Konfusionsmatrix"
-
-msgctxt "mlClassificationKnn|"
-msgid "Display proportions"
-msgstr "Verhältnisse anzeigen"
-
-msgctxt "mlClassificationKnn|"
-msgid "Class proportions"
-msgstr "Klassenverhältnisse"
-
-msgctxt "mlClassificationKnn|"
-msgid "Evaluation metrics"
-msgstr "Evaluationsmetriken"
-
-msgctxt "mlClassificationKnn|"
 msgid "Plots"
 msgstr "Diagramme"
-
-msgctxt "mlClassificationKnn|"
-msgid "Data split"
-msgstr "Datenaufteilung"
-
-msgctxt "mlClassificationKnn|"
-msgid "Classification accuracy"
-msgstr "Klassifikations-Genauigkeit"
-
-msgctxt "mlClassificationKnn|"
-msgid "ROC curves"
-msgstr "ROC-Kurven"
-
-msgctxt "mlClassificationKnn|"
-msgid "Andrews curves"
-msgstr "Andrews Kurven"
-
-msgctxt "mlClassificationKnn|"
-msgid "Decision boundary matrix"
-msgstr "Entscheidungsgrenzenmatrix"
-
-msgctxt "mlClassificationKnn|"
-msgid "Legend"
-msgstr "Legende"
-
-msgctxt "mlClassificationKnn|"
-msgid "Points"
-msgstr "Punkte"
 
 msgctxt "mlClassificationKnn|"
 msgid "Training Parameters"
@@ -296,85 +180,9 @@ msgctxt "mlClassificationKnn|"
 msgid "Algorithmic Settings"
 msgstr "Algorithmus-Einstellungen"
 
-msgctxt "mlClassificationKnn|"
-msgid "Rectangular"
-msgstr "Rechteckig"
-
-msgctxt "mlClassificationKnn|"
-msgid "Epanechnikov"
-msgstr "Epanechnikov"
-
-msgctxt "mlClassificationKnn|"
-msgid "Biweight"
-msgstr "zweifach gewichtet"
-
-msgctxt "mlClassificationKnn|"
-msgid "Triweight"
-msgstr "dreifach gewichtet"
-
-msgctxt "mlClassificationKnn|"
-msgid "Cosine"
-msgstr "Kosinus"
-
-msgctxt "mlClassificationKnn|"
-msgid "Inverse"
-msgstr "Invers"
-
-msgctxt "mlClassificationKnn|"
-msgid "Gaussian"
-msgstr "Gaußsch"
-
-msgctxt "mlClassificationKnn|"
-msgid "Rank"
-msgstr "Rang"
-
-msgctxt "mlClassificationKnn|"
-msgid "Optimal"
-msgstr "Optimal"
-
-msgctxt "mlClassificationKnn|"
-msgid "Euclidian"
-msgstr "Euklidisch"
-
-msgctxt "mlClassificationKnn|"
-msgid "Manhattan"
-msgstr "Manhattan"
-
-msgctxt "mlClassificationKnn|"
-msgid "Number of Nearest Neighbors"
-msgstr "Anzahl nächster Nachbarn"
-
-msgctxt "mlClassificationKnn|"
-msgid "Fixed"
-msgstr "Fixiert"
-
-msgctxt "mlClassificationKnn|"
-msgid "Optimized"
-msgstr "Optimiert"
-
-msgctxt "mlClassificationLda|"
-msgid "Target"
-msgstr "Ziel"
-
 msgctxt "mlClassificationLda|"
 msgid "Tables"
 msgstr "Tabellen"
-
-msgctxt "mlClassificationLda|"
-msgid "Confusion matrix"
-msgstr "Konfusionsmatrix"
-
-msgctxt "mlClassificationLda|"
-msgid "Display proportions"
-msgstr "Verhältnisse anzeigen"
-
-msgctxt "mlClassificationLda|"
-msgid "Class proportions"
-msgstr "Klassenverhältnisse"
-
-msgctxt "mlClassificationLda|"
-msgid "Evaluation metrics"
-msgstr "Evaluationsmetriken"
 
 msgctxt "mlClassificationLda|"
 msgid "Coefficients"
@@ -409,18 +217,6 @@ msgid "Plots"
 msgstr "Diagramme"
 
 msgctxt "mlClassificationLda|"
-msgid "Data split"
-msgstr "Datenaufteilung"
-
-msgctxt "mlClassificationLda|"
-msgid "ROC curves"
-msgstr "ROC-Kurve"
-
-msgctxt "mlClassificationLda|"
-msgid "Andrews curves"
-msgstr "Andrews Kurve"
-
-msgctxt "mlClassificationLda|"
 msgid "Linear discriminant matrix"
 msgstr "Lineare Diskriminanzmatrix"
 
@@ -433,18 +229,6 @@ msgid "Scatter plots"
 msgstr "Streudiagramm"
 
 msgctxt "mlClassificationLda|"
-msgid "Decision boundary matrix"
-msgstr "Beslissingsseparatrix"
-
-msgctxt "mlClassificationLda|"
-msgid "Legend"
-msgstr "Legende"
-
-msgctxt "mlClassificationLda|"
-msgid "Points"
-msgstr "Punkte"
-
-msgctxt "mlClassificationLda|"
 msgid "Training Parameters"
 msgstr "Trainingsparameter"
 
@@ -453,70 +237,14 @@ msgid "Algorithmic Settings"
 msgstr "Algorithmus-Einstellungen"
 
 msgctxt "mlClassificationRandomForest|"
-msgid "Target"
-msgstr "Zielt"
-
-msgctxt "mlClassificationRandomForest|"
 msgid "Tables"
 msgstr "Tabellen"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Confusion matrix"
-msgstr "Konfusionsmatrix"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Display proportions"
-msgstr "Verhältnisse anzeigen"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Class proportions"
-msgstr "Klassenverhältnisse"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Evaluation metrics"
-msgstr "Evaluationsmetriken"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Plots"
 msgstr "Diagramme"
 
 msgctxt "mlClassificationRandomForest|"
-msgid "Data split"
-msgstr "Datenaufteilung"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Out-of-bag accuracy"
-msgstr "Out-of-bag Genauigkeit"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "ROC curves"
-msgstr "ROC-Kurve"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Andrews curves"
-msgstr "Andrews Kurve"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Mean decrease in accuracy"
-msgstr "Mittlere Abnahme der Genauigkeit"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Total increase in node purity"
-msgstr "Gesamte Zunahme der Knotenreinheit"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Decision boundary matrix"
-msgstr "Entscheidungsgrenzenmatrix"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Legend"
-msgstr "Legende"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Points"
-msgstr "Punkte"
-
-msgctxt "mlClassificationRandomForest|"
 msgid "Training Parameters"
 msgstr "Trainingsparameter"
 
@@ -524,57 +252,9 @@ msgctxt "mlClassificationRandomForest|"
 msgid "Algorithmic Settings"
 msgstr "Algorithmus-Einstellungen"
 
-msgctxt "mlClassificationRandomForest|"
-msgid "Auto"
-msgstr "Auto"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Manual"
-msgstr "Manuell"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Number of Trees"
-msgstr "Anzahl Bäume"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Fixed"
-msgstr "Fixiert"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Optimized"
-msgstr "Optimiert"
-
 msgctxt "mlClusteringDensityBased|"
 msgid "Tables"
 msgstr "Tabellen"
-
-msgctxt "mlClusteringDensityBased|"
-msgid "Cluster means"
-msgstr "Cluster-Mittelwerte"
-
-msgctxt "mlClusteringDensityBased|"
-msgid "Cluster information"
-msgstr "Clusterinformation"
-
-msgctxt "mlClusteringDensityBased|"
-msgid "Within sum of squares"
-msgstr "Binnen-Quadratsumme"
-
-msgctxt "mlClusteringDensityBased|"
-msgid "Silhouette score"
-msgstr "Silhouette-Score"
-
-msgctxt "mlClusteringDensityBased|"
-msgid "Between sum of squares"
-msgstr "Zwischen-Quadratsumme"
-
-msgctxt "mlClusteringDensityBased|"
-msgid "Total sum of squares"
-msgstr "Gesamte Quadratsumme"
-
-msgctxt "mlClusteringDensityBased|"
-msgid "Evaluation metrics"
-msgstr "Evaluationsmetriken"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Plots"
@@ -583,30 +263,6 @@ msgstr "Diagramme"
 msgctxt "mlClusteringDensityBased|"
 msgid "K-distance plot"
 msgstr "K-Distanz-Plot"
-
-msgctxt "mlClusteringDensityBased|"
-msgid "Display barplot"
-msgstr "Balkdendiagramm anzeigen"
-
-msgctxt "mlClusteringDensityBased|"
-msgid "Group into one figure"
-msgstr "In eine Abbildung gruppieren"
-
-msgctxt "mlClusteringDensityBased|"
-msgid "Cluster densities"
-msgstr "Cluster-Dichten"
-
-msgctxt "mlClusteringDensityBased|"
-msgid "t-SNE cluster plot"
-msgstr "t-SNE Clusterplot"
-
-msgctxt "mlClusteringDensityBased|"
-msgid "Legend"
-msgstr "Legende"
-
-msgctxt "mlClusteringDensityBased|"
-msgid "Labels"
-msgstr "Labels"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Training Parameters"
@@ -625,10 +281,6 @@ msgid "Correlated"
 msgstr "Korreliert"
 
 msgctxt "mlClusteringDensityBased|"
-msgid "Scale variables"
-msgstr "Variablen skalieren"
-
-msgctxt "mlClusteringDensityBased|"
 msgid "Model Optimization"
 msgstr "Modelloptimierung"
 
@@ -641,68 +293,8 @@ msgid "Tables"
 msgstr "Tabellen"
 
 msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Cluster means"
-msgstr "Cluster-Mittelwerte"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Cluster information"
-msgstr "Clusterinformatie"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Within sum of squares"
-msgstr "Binnen kwadratensom"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Silhouette score"
-msgstr "Silhouette-Score"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Centroids"
-msgstr "Centroïden"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Between sum of squares"
-msgstr "Tussen kwadratensom"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Total sum of squares"
-msgstr "Gesamte Quadratsumme"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Evaluation metrics"
-msgstr "Evaluationsmetriken"
-
-msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Plots"
 msgstr "Diagramme"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Elbow method"
-msgstr "Ellenbogenmethode"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Display barplot"
-msgstr "Balkdendiagramm anzeigen"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Group into one figure"
-msgstr "In eine Abbildung gruppieren"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Cluster densities"
-msgstr "Cluster-Dichten"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "t-SNE cluster plot"
-msgstr "T-SNE clustergrafiek"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Legend"
-msgstr "Legende"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Labels"
-msgstr "Labellen"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Training Parameters"
@@ -712,89 +304,17 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Algorithmic Settings"
 msgstr "Algorithmus-Einstellungen"
 
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Scale variables"
-msgstr "Variablen skalieren"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Cluster Determination"
-msgstr "Cluster-Bestimmung"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Fixed"
-msgstr "Fixiert"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Optimized according to"
-msgstr "Geoptimaliseerd volgens"
-
 msgctxt "mlClusteringHierarchical|"
 msgid "Tables"
 msgstr "Tabellen"
-
-msgctxt "mlClusteringHierarchical|"
-msgid "Cluster means"
-msgstr "Cluster-Mittelwerte"
-
-msgctxt "mlClusteringHierarchical|"
-msgid "Cluster information"
-msgstr "Clusterinformation"
-
-msgctxt "mlClusteringHierarchical|"
-msgid "Within sum of squares"
-msgstr "Binnen-Quadratsumme"
-
-msgctxt "mlClusteringHierarchical|"
-msgid "Silhouette score"
-msgstr "Silhouette-Score"
-
-msgctxt "mlClusteringHierarchical|"
-msgid "Between sum of squares"
-msgstr "Zwischen-Quadratsumme"
-
-msgctxt "mlClusteringHierarchical|"
-msgid "Total sum of squares"
-msgstr "Gesamte Quadratsumme"
-
-msgctxt "mlClusteringHierarchical|"
-msgid "Evaluation metrics"
-msgstr "Evaluationsmetriken"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Plots"
 msgstr "Diagramme"
 
 msgctxt "mlClusteringHierarchical|"
-msgid "Elbow method"
-msgstr "Ellenbogenmethode"
-
-msgctxt "mlClusteringHierarchical|"
 msgid "Dendrogram"
 msgstr "Dendrogramm"
-
-msgctxt "mlClusteringHierarchical|"
-msgid "Display barplot"
-msgstr "Balkdendiagramm anzeigen"
-
-msgctxt "mlClusteringHierarchical|"
-msgid "Group into one figure"
-msgstr "In eine Abbildung gruppieren"
-
-msgctxt "mlClusteringHierarchical|"
-msgid "Cluster densities"
-msgstr "Cluster-Dichten"
-
-msgctxt "mlClusteringHierarchical|"
-msgid "t-SNE cluster plot"
-msgstr "t-SNE clustergrafiek"
-
-msgctxt "mlClusteringHierarchical|"
-msgid "Legend"
-msgstr "Legende"
-
-msgctxt "mlClusteringHierarchical|"
-msgid "Labels"
-msgstr "Labels"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Training Parameters"
@@ -840,85 +360,13 @@ msgctxt "mlClusteringHierarchical|"
 msgid "McQuitty"
 msgstr "McQuitty"
 
-msgctxt "mlClusteringHierarchical|"
-msgid "Scale variables"
-msgstr "Variablen skalieren"
-
-msgctxt "mlClusteringHierarchical|"
-msgid "Cluster Determination"
-msgstr "Cluster-Bestimmung"
-
-msgctxt "mlClusteringHierarchical|"
-msgid "Fixed"
-msgstr "Fixiert"
-
-msgctxt "mlClusteringHierarchical|"
-msgid "Optimized according to"
-msgstr "Optimiert nach"
-
 msgctxt "mlClusteringKMeans|"
 msgid "Tables"
 msgstr "Tabellen"
 
 msgctxt "mlClusteringKMeans|"
-msgid "Cluster means"
-msgstr "Cluster-Mittelwerte"
-
-msgctxt "mlClusteringKMeans|"
-msgid "Cluster information"
-msgstr "Clusterinformation"
-
-msgctxt "mlClusteringKMeans|"
-msgid "Within sum of squares"
-msgstr "Binnen-Quadratsumme"
-
-msgctxt "mlClusteringKMeans|"
-msgid "Silhouette score"
-msgstr "Silhouette-Score"
-
-msgctxt "mlClusteringKMeans|"
-msgid "Between sum of squares"
-msgstr "Zwischen-Quadratsumme"
-
-msgctxt "mlClusteringKMeans|"
-msgid "Total sum of squares"
-msgstr "Gesamte Quadratsumme"
-
-msgctxt "mlClusteringKMeans|"
-msgid "Evaluation metrics"
-msgstr "Evaluationsmetriken"
-
-msgctxt "mlClusteringKMeans|"
 msgid "Plots"
 msgstr "Diagramme"
-
-msgctxt "mlClusteringKMeans|"
-msgid "Elbow method"
-msgstr "Ellenbogenmethode"
-
-msgctxt "mlClusteringKMeans|"
-msgid "Display barplot"
-msgstr "Balkdendiagramm anzeigen"
-
-msgctxt "mlClusteringKMeans|"
-msgid "Group into one figure"
-msgstr "In eine Abbildung gruppieren"
-
-msgctxt "mlClusteringKMeans|"
-msgid "Cluster densities"
-msgstr "Cluster dichtheden"
-
-msgctxt "mlClusteringKMeans|"
-msgid "t-SNE cluster plot"
-msgstr "t-SNE Clusterplot"
-
-msgctxt "mlClusteringKMeans|"
-msgid "Legend"
-msgstr "Legende"
-
-msgctxt "mlClusteringKMeans|"
-msgid "Labels"
-msgstr "Labels"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Training Parameters"
@@ -928,85 +376,13 @@ msgctxt "mlClusteringKMeans|"
 msgid "Algorithmic Settings"
 msgstr "Algorithmus-Einstellungen"
 
-msgctxt "mlClusteringKMeans|"
-msgid "Scale variables"
-msgstr "Variablen skalieren"
-
-msgctxt "mlClusteringKMeans|"
-msgid "Cluster Determination"
-msgstr "Cluster-Bestimmung"
-
-msgctxt "mlClusteringKMeans|"
-msgid "Fixed"
-msgstr "Fixiert"
-
-msgctxt "mlClusteringKMeans|"
-msgid "Optimized according to"
-msgstr "Geoptimaliseerd volgens"
-
 msgctxt "mlClusteringRandomForest|"
 msgid "Tables"
 msgstr "Tabellen"
 
 msgctxt "mlClusteringRandomForest|"
-msgid "Cluster means"
-msgstr "Cluster gemiddelden"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "Cluster information"
-msgstr "Clusterinformation"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "Within sum of squares"
-msgstr "Binnen-Quadratsumme"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "Silhouette score"
-msgstr "Silhouette-Score"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "Between sum of squares"
-msgstr "Zwischen-Quadratsumme"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "Total sum of squares"
-msgstr "Gesamte Quadratsumme"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "Evaluation metrics"
-msgstr "Evaluationsmetriken"
-
-msgctxt "mlClusteringRandomForest|"
 msgid "Plots"
 msgstr "Diagramme"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "Elbow method"
-msgstr "Ellenbogenmethode"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "Display barplot"
-msgstr "Balkdendiagramm anzeigen"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "Group into one figure"
-msgstr "In eine Abbildung gruppieren"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "Cluster densities"
-msgstr "Cluster-Dichten"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "t-SNE cluster plot"
-msgstr "t-SNE Clusterplot"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "Legend"
-msgstr "Legende"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "Labels"
-msgstr "Beschriftungen"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Training Parameters"
@@ -1016,57 +392,13 @@ msgctxt "mlClusteringRandomForest|"
 msgid "Algorithmic Settings"
 msgstr "Algorithmus-Einstellungen"
 
-msgctxt "mlClusteringRandomForest|"
-msgid "Scale variables"
-msgstr "Variablen skalieren"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "Cluster Determination"
-msgstr "Cluster-Bestimmung"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "Fixed"
-msgstr "Fixiert"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "Optimized according to"
-msgstr "Geoptimaliseerd volgens"
-
-msgctxt "mlRegressionBoosting|"
-msgid "Target"
-msgstr "Ziel"
-
 msgctxt "mlRegressionBoosting|"
 msgid "Tables"
 msgstr "Tabellen"
 
 msgctxt "mlRegressionBoosting|"
-msgid "Evaluation metrics"
-msgstr "Evaluationsmetriken"
-
-msgctxt "mlRegressionBoosting|"
-msgid "Relative influence"
-msgstr "Relativer Einfluß"
-
-msgctxt "mlRegressionBoosting|"
 msgid "Plots"
 msgstr "Diagramme"
-
-msgctxt "mlRegressionBoosting|"
-msgid "Data split"
-msgstr "Datenaufteilung"
-
-msgctxt "mlRegressionBoosting|"
-msgid "Out-of-bag improvement"
-msgstr "Out-of-bag Verbesserung"
-
-msgctxt "mlRegressionBoosting|"
-msgid "Predictive performance"
-msgstr "Vorhersageleistung"
-
-msgctxt "mlRegressionBoosting|"
-msgid "Deviance"
-msgstr "Devianz"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Training Parameters"
@@ -1076,49 +408,13 @@ msgctxt "mlRegressionBoosting|"
 msgid "Algorithmic Settings"
 msgstr "Algorithmus-Einstellungen"
 
-msgctxt "mlRegressionBoosting|"
-msgid "Scale variables"
-msgstr "Variablen skalieren"
-
-msgctxt "mlRegressionBoosting|"
-msgid "Number of Trees"
-msgstr "Anzahl Bäume"
-
-msgctxt "mlRegressionBoosting|"
-msgid "Fixed"
-msgstr "Fixiert"
-
-msgctxt "mlRegressionBoosting|"
-msgid "Optimized"
-msgstr "Optimiert"
-
-msgctxt "mlRegressionKnn|"
-msgid "Target"
-msgstr "Ziel"
-
 msgctxt "mlRegressionKnn|"
 msgid "Tables"
 msgstr "Tabellen"
 
 msgctxt "mlRegressionKnn|"
-msgid "Evaluation metrics"
-msgstr "Evaluationsmetriken"
-
-msgctxt "mlRegressionKnn|"
 msgid "Plots"
 msgstr "Diagramme"
-
-msgctxt "mlRegressionKnn|"
-msgid "Data split"
-msgstr "Datenaufteilung"
-
-msgctxt "mlRegressionKnn|"
-msgid "Mean squared error"
-msgstr "Mittlerer quadratischer Fehler"
-
-msgctxt "mlRegressionKnn|"
-msgid "Predictive performance"
-msgstr "Vorhersageleistung"
 
 msgctxt "mlRegressionKnn|"
 msgid "Training Parameters"
@@ -1128,97 +424,13 @@ msgctxt "mlRegressionKnn|"
 msgid "Algorithmic Settings"
 msgstr "Algorithmus-Einstellungen"
 
-msgctxt "mlRegressionKnn|"
-msgid "Rectangular"
-msgstr "Rechteckig"
-
-msgctxt "mlRegressionKnn|"
-msgid "Epanechnikov"
-msgstr "Epanechnikov"
-
-msgctxt "mlRegressionKnn|"
-msgid "Biweight"
-msgstr "zweifach gewichtet"
-
-msgctxt "mlRegressionKnn|"
-msgid "Triweight"
-msgstr "dreifach gewichtet"
-
-msgctxt "mlRegressionKnn|"
-msgid "Cosine"
-msgstr "Kosinus"
-
-msgctxt "mlRegressionKnn|"
-msgid "Inverse"
-msgstr "Invers"
-
-msgctxt "mlRegressionKnn|"
-msgid "Gaussian"
-msgstr "Gaußsch"
-
-msgctxt "mlRegressionKnn|"
-msgid "Rank"
-msgstr "Rang"
-
-msgctxt "mlRegressionKnn|"
-msgid "Optimal"
-msgstr "Optimal"
-
-msgctxt "mlRegressionKnn|"
-msgid "Euclidian"
-msgstr "Euklidisch"
-
-msgctxt "mlRegressionKnn|"
-msgid "Scale variables"
-msgstr "Variablen skalieren"
-
-msgctxt "mlRegressionKnn|"
-msgid "Number of Nearest Neighbors"
-msgstr "Anzahl nächster Nachbarn"
-
-msgctxt "mlRegressionKnn|"
-msgid "Fixed"
-msgstr "Fixiert"
-
-msgctxt "mlRegressionKnn|"
-msgid "Optimized"
-msgstr "Optimiert"
-
-msgctxt "mlRegressionRandomForest|"
-msgid "Target"
-msgstr "Ziel"
-
 msgctxt "mlRegressionRandomForest|"
 msgid "Tables"
 msgstr "Tabellen"
 
 msgctxt "mlRegressionRandomForest|"
-msgid "Evaluation metrics"
-msgstr "Evaluationsmetriken"
-
-msgctxt "mlRegressionRandomForest|"
 msgid "Plots"
 msgstr "Diagramme"
-
-msgctxt "mlRegressionRandomForest|"
-msgid "Data split"
-msgstr "Datenaufteilung"
-
-msgctxt "mlRegressionRandomForest|"
-msgid "Out-of-bag error"
-msgstr "Out-of-bag-Fehler"
-
-msgctxt "mlRegressionRandomForest|"
-msgid "Predictive performance"
-msgstr "Vorhersageleistung"
-
-msgctxt "mlRegressionRandomForest|"
-msgid "Mean decrease in accuracy"
-msgstr "Gemittelte Abnahme der Genauigkeit"
-
-msgctxt "mlRegressionRandomForest|"
-msgid "Total increase in node purity"
-msgstr "Gesamte Steigerung der Knotenreinheit"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Training Parameters"
@@ -1228,61 +440,13 @@ msgctxt "mlRegressionRandomForest|"
 msgid "Algorithmic Settings"
 msgstr "Algorithmus-Einstellungen"
 
-msgctxt "mlRegressionRandomForest|"
-msgid "Auto"
-msgstr "Auto"
-
-msgctxt "mlRegressionRandomForest|"
-msgid "Manual"
-msgstr "Manuell"
-
-msgctxt "mlRegressionRandomForest|"
-msgid "Scale variables"
-msgstr "Variablen skalieren"
-
-msgctxt "mlRegressionRandomForest|"
-msgid "Number of Trees"
-msgstr "Anzahl Bäume"
-
-msgctxt "mlRegressionRandomForest|"
-msgid "Fixed"
-msgstr "Fixiert"
-
-msgctxt "mlRegressionRandomForest|"
-msgid "Optimized"
-msgstr "Optimiert"
-
-msgctxt "mlRegressionRegularized|"
-msgid "Target"
-msgstr "Ziel"
-
-msgctxt "mlRegressionRegularized|"
-msgid "Weights"
-msgstr "Gewichte"
-
 msgctxt "mlRegressionRegularized|"
 msgid "Tables"
 msgstr "Tabellen"
 
 msgctxt "mlRegressionRegularized|"
-msgid "Evaluation metrics"
-msgstr "Evaluationsmetriken"
-
-msgctxt "mlRegressionRegularized|"
-msgid "Regression coefficients"
-msgstr "Regressionskoeffizienten"
-
-msgctxt "mlRegressionRegularized|"
 msgid "Plots"
 msgstr "Diagramme"
-
-msgctxt "mlRegressionRegularized|"
-msgid "Data split"
-msgstr "Datenaufteilung"
-
-msgctxt "mlRegressionRegularized|"
-msgid "Predictive performance"
-msgstr "Vorhersageleistung"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Variable trace"
@@ -1307,14 +471,6 @@ msgstr "Algorithmus-Einstellungen"
 msgctxt "mlRegressionRegularized|"
 msgid "Elastic net"
 msgstr "Elastisches Netz"
-
-msgctxt "mlRegressionRegularized|"
-msgid "Fit intercept"
-msgstr "Konstante anpassen"
-
-msgctxt "mlRegressionRegularized|"
-msgid "Scale variables"
-msgstr "Variablen skalieren"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Lambda (λ)"
@@ -1381,72 +537,12 @@ msgid "Save trained model"
 msgstr "Trainiertes Modell speichern"
 
 msgctxt "mlClassificationNeuralNetwork|"
-msgid "Target"
-msgstr "Ziel"
-
-msgctxt "mlClassificationNeuralNetwork|"
 msgid "Tables"
 msgstr "Tabellen"
 
 msgctxt "mlClassificationNeuralNetwork|"
-msgid "Confusion matrix"
-msgstr "Konfusionsmatrix"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Display proportions"
-msgstr "Verhältnisse anzeigen"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Class proportions"
-msgstr "Klassenverhältnisse"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Evaluation metrics"
-msgstr "Evaluationsmetriken"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Network weights"
-msgstr "Netzwerkgewichte"
-
-msgctxt "mlClassificationNeuralNetwork|"
 msgid "Plots"
 msgstr "Diagramme"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Data split"
-msgstr "Datenaufteilung"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Classification accuracy"
-msgstr "Klassifikations-Genauigkeit"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "ROC curves"
-msgstr "ROC-Kurven"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Andrews curves"
-msgstr "Andrews-Kurven"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Activation function"
-msgstr "Aktivierungsfunktion"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Network structure"
-msgstr "Netzwerkstruktur"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Decision boundary matrix"
-msgstr "Entscheidungsgrenzenmatrix"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Legend"
-msgstr "Legende"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Points"
-msgstr "Punkte"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Training Parameters"
@@ -1456,269 +552,13 @@ msgctxt "mlClassificationNeuralNetwork|"
 msgid "Algorithmic Settings"
 msgstr "Algorithmus-Einstellungen"
 
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Linear"
-msgstr "Linear"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Binary"
-msgstr "Binär"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Logistic sigmoid"
-msgstr "Logistische Sigmoid"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Sine"
-msgstr "Sinus"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Cosine"
-msgstr "Kosinus"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Inverse tangent"
-msgstr "Arkustangens"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Hyperbolic tangent"
-msgstr "Hyperbolischer Tangens"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "ReLU"
-msgstr "ReLU"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Softplus"
-msgstr "Softplus"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Softsign"
-msgstr "Softsign"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "ELU"
-msgstr "ELU"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "LReLU"
-msgstr "LReLU"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "SiLU"
-msgstr "SiLU"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Mish"
-msgstr "Mish"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Gaussian"
-msgstr "Gaußsch"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "GeLU"
-msgstr "GeLU"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Algorithm"
-msgstr "Algorithmus"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Backpropagation"
-msgstr "Backpropagation"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "rprop+"
-msgstr "rprop+"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "rprop-"
-msgstr "rprop-"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "grprop-sag"
-msgstr "grprop-sag"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "grprop-slr"
-msgstr "grprop-slr"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Learning rate"
-msgstr "Lernrate"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Loss function"
-msgstr "Fehlerfunktion"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Sum of squares"
-msgstr "Summe der Abweichungsquadrate"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Cross-entropy"
-msgstr "Kreuzentropie"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Stopping criteria loss function"
-msgstr "Abbruchkriterien Fehlerfunktion"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Max. training repetitions"
-msgstr "Max. Trainingswiederholungen"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Set seed"
-msgstr "Startwert für Zufallszahlen setzen"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Network Topology"
-msgstr "Netzwerktopologie"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Manual"
-msgstr "Manuell"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Nodes"
-msgstr "Knoten"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Hidden layer "
-msgstr "Verdeckte Schicht "
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Optimized"
-msgstr "Optimiert"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Population size"
-msgstr "Größe der Grundgesamtheit"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Generations"
-msgstr "Generationen"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Parent selection"
-msgstr "Elternauswahl"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Roulette wheel"
-msgstr "Roulette-Rad"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Universal"
-msgstr "Universal"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Rank"
-msgstr "Rang"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Random"
-msgstr "Zufällig"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Candidates"
-msgstr "Kandidaten"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Crossover method"
-msgstr "Crossover-Methode"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Uniform"
-msgstr "Uniform"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "One-point"
-msgstr "Ein-Punkt"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Multi-point"
-msgstr "Multi-Punkt"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Mutations"
-msgstr "Mutationen"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Reset"
-msgstr "Zurücksetzen"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Swap"
-msgstr "Swap"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Scramble"
-msgstr "Verschlüsselung"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Inversion"
-msgstr "Umkehrung"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Probability"
-msgstr "Wahrscheinlichkeit"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Survival method"
-msgstr "Überlebensmethode"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Fitness-based"
-msgstr "Fitness-basiert"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Age-based"
-msgstr "Altersabhängig"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Elitism"
-msgstr "Elitismus"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Target"
-msgstr "Ziel"
-
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Tables"
 msgstr "Tabellen"
 
 msgctxt "mlRegressionNeuralNetwork|"
-msgid "Evaluation metrics"
-msgstr "Evaluationsmetriken"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Network weights"
-msgstr "Netzwerkgewichte"
-
-msgctxt "mlRegressionNeuralNetwork|"
 msgid "Plots"
 msgstr "Diagramme"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Data split"
-msgstr "Datenaufteilung"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Mean squared error"
-msgstr "Mittlerer quadratischer Fehler"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Predictive performance"
-msgstr "Vorhersageleistung"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Activation function"
-msgstr "Aktivierungsfunktion"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Network structure"
-msgstr "Netzwerkstruktur"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Training Parameters"
@@ -1727,238 +567,6 @@ msgstr "Trainingsparameter"
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Algorithmic Settings"
 msgstr "Algorithmus-Einstellungen"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Linear"
-msgstr "Linear"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Binary"
-msgstr "Binär"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Logistic sigmoid"
-msgstr "Logistische Sigmoid"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Sine"
-msgstr "Sinus"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Cosine"
-msgstr "Kosinus"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Inverse tangent"
-msgstr "Arkustangens"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Hyperbolic tangent"
-msgstr "Hyperbolischer Tangens"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "ReLU"
-msgstr "ReLU"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Softplus"
-msgstr "Softplus"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Softsign"
-msgstr "Softsign"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "ELU"
-msgstr "ELU"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "LReLU"
-msgstr "LReLU"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "SiLU"
-msgstr "SiLU"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Mish"
-msgstr "Mish"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Gaussian"
-msgstr "Gaußsch"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "GeLU"
-msgstr "GeLU"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Algorithm"
-msgstr "Algorithmus"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Backpropagation"
-msgstr "Rückverbreitung"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "rprop+"
-msgstr "rprop+"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "rprop-"
-msgstr "rprop-"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "grprop-sag"
-msgstr "grprop-sag"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "grprop-slr"
-msgstr "grprop-slr"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Learning rate"
-msgstr "Lernrate"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Loss function"
-msgstr "Fehlerfunktion"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Sum of squares"
-msgstr "Summe der Abweichungsquadrate"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Cross-entropy"
-msgstr "Kreuzentropie"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Stopping criteria loss function"
-msgstr "Abbruchkriterien Fehlerfunktion"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Max. training repetitions"
-msgstr "Max. Trainingswiederholungen"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Scale variables"
-msgstr "Variablen skalieren"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Set seed"
-msgstr "Startwert für Zufallszahlen setzen"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Network Topology"
-msgstr "Netzwerktopologie"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Manual"
-msgstr "Manuell"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Nodes"
-msgstr "Knoten"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Hidden layer "
-msgstr "Verdeckte Schicht "
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Optimized"
-msgstr "Optimiert"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Population size"
-msgstr "Größe der Grundgesamtheit"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Generations"
-msgstr "Generationen"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Parent selection"
-msgstr "Elternauswahl"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Roulette wheel"
-msgstr "Roulette-Rad"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Universal"
-msgstr "Universal"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Rank"
-msgstr "Rang"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Tournament"
-msgstr "Turnier"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Random"
-msgstr "Zufällig"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Candidates"
-msgstr "Kandidaten"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Crossover method"
-msgstr "Crossover-Methode"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Uniform"
-msgstr "Uniform"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "One-point"
-msgstr "Ein-Punkt"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Multi-point"
-msgstr "Multi-Punkt"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Mutations"
-msgstr "Mutationen"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Reset"
-msgstr "Zurücksetzen"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Swap"
-msgstr "Tausch"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Scramble"
-msgstr "Verschlüsselung"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Inversion"
-msgstr "Umkehrung"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Probability"
-msgstr "Wahrscheinlichkeit"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Survival method"
-msgstr "Überlebensmethode"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Fitness-based"
-msgstr "Fitness-basiert"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Age-based"
-msgstr "Altersabhängig"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Elitism"
-msgstr "Elitismus"
 
 msgctxt "DataSplit|"
 msgid "Column name"
@@ -1968,85 +576,9 @@ msgctxt "DataSplit|"
 msgid "Test set indicator"
 msgstr "Testset-Indikator"
 
-msgctxt "mlClassificationBoosting|"
-msgid "Shrinkage"
-msgstr "Schrumpfung"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Interaction depth"
-msgstr "Interaktionstiefe"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Min. observations in node"
-msgstr "Min. Beobachtungen in Knoten"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Training data used per tree"
-msgstr "Trainingsdaten pro Baum"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Set seed"
-msgstr "Startwert für Zufallszahlen setzen"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Trees"
-msgstr "Bäume"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Max. trees"
-msgstr "Max. Bäume"
-
-msgctxt "mlClassificationKnn|"
-msgid "Weights"
-msgstr "Gewichte"
-
-msgctxt "mlClassificationKnn|"
-msgid "Distance"
-msgstr "Distanz"
-
-msgctxt "mlClassificationKnn|"
-msgid "Set seed"
-msgstr "Startwert für Zufallszahlen setzen"
-
-msgctxt "mlClassificationKnn|"
-msgid "Nearest neighbors"
-msgstr "Nächste Nachbarn"
-
-msgctxt "mlClassificationKnn|"
-msgid "Max. nearest neighbors"
-msgstr "Max. nächste Nachbarn"
-
 msgctxt "mlClassificationLda|"
 msgid "Estimation method"
 msgstr "Schätzmethode"
-
-msgctxt "mlClassificationLda|"
-msgid "Set seed"
-msgstr "Startwert für Zufallszahlen setzen"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Max. layers"
-msgstr "Max. Schichten"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Max. nodes"
-msgstr "Max. Knoten"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Training data used per tree"
-msgstr "Trainingsdaten pro Baum"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Set seed"
-msgstr "Startwert für Zufallszahlen setzen"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Trees"
-msgstr "Bäume"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Max. trees"
-msgstr "Max. Bäume"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Epsilon neighborhood size"
@@ -2060,10 +592,6 @@ msgctxt "mlClusteringDensityBased|"
 msgid "Distance"
 msgstr "Distanz"
 
-msgctxt "mlClusteringDensityBased|"
-msgid "Set seed"
-msgstr "Startwert für Zufallszahlen setzen"
-
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Max. iterations"
 msgstr "Max. Iterationen"
@@ -2071,18 +599,6 @@ msgstr "Max. Iterationen"
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Fuzziness parameter"
 msgstr "Fuzziness-Parameter"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Set seed"
-msgstr "Startwert für Zufallszahlen setzen"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Clusters"
-msgstr "Cluster"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Max. clusters"
-msgstr "Max. Cluster"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Distance"
@@ -2096,18 +612,6 @@ msgctxt "mlClusteringHierarchical|"
 msgid "Linkage"
 msgstr "Verbundenheit"
 
-msgctxt "mlClusteringHierarchical|"
-msgid "Set seed"
-msgstr "Startwert für Zufallszahlen setzen"
-
-msgctxt "mlClusteringHierarchical|"
-msgid "Clusters"
-msgstr "Cluster"
-
-msgctxt "mlClusteringHierarchical|"
-msgid "Max. clusters"
-msgstr "Max. Cluster"
-
 msgctxt "mlClusteringKMeans|"
 msgid "Max. iterations"
 msgstr "Max. Iterationen"
@@ -2120,109 +624,13 @@ msgctxt "mlClusteringKMeans|"
 msgid "Algorithm"
 msgstr "Algorithmus"
 
-msgctxt "mlClusteringKMeans|"
-msgid "Set seed"
-msgstr "Startwert für Zufallszahlen setzen"
-
-msgctxt "mlClusteringKMeans|"
-msgid "Clusters"
-msgstr "Cluster"
-
-msgctxt "mlClusteringKMeans|"
-msgid "Max. clusters"
-msgstr "Max. Cluster"
-
 msgctxt "mlClusteringRandomForest|"
 msgid "Trees"
 msgstr "Bäume"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "Set seed"
-msgstr "Startwert für Zufallszahlen setzen"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "Clusters"
-msgstr "Cluster"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "Max. clusters"
-msgstr "Max. Cluster"
-
-msgctxt "mlRegressionBoosting|"
-msgid "Shrinkage"
-msgstr "Schrumpfung"
-
-msgctxt "mlRegressionBoosting|"
-msgid "Interaction depth"
-msgstr "Interaktionstiefe"
-
-msgctxt "mlRegressionBoosting|"
-msgid "Min. observations in node"
-msgstr "Min. Beobachtungen in Knoten"
-
-msgctxt "mlRegressionBoosting|"
-msgid "Training data used per tree"
-msgstr "Trainingsdaten pro Baum"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Loss function"
 msgstr "Verlustfunktion"
-
-msgctxt "mlRegressionBoosting|"
-msgid "Set seed"
-msgstr "Startwert für Zufallszahlen setzen"
-
-msgctxt "mlRegressionBoosting|"
-msgid "Trees"
-msgstr "Bäume"
-
-msgctxt "mlRegressionBoosting|"
-msgid "Max. trees"
-msgstr "Max. Bäume"
-
-msgctxt "mlRegressionKnn|"
-msgid "Weights"
-msgstr "Gewichte"
-
-msgctxt "mlRegressionKnn|"
-msgid "Distance"
-msgstr "Distanz"
-
-msgctxt "mlRegressionKnn|"
-msgid "Set seed"
-msgstr "Startwert für Zufallszahlen setzen"
-
-msgctxt "mlRegressionKnn|"
-msgid "Nearest neighbors"
-msgstr "Nächste Nachbarn"
-
-msgctxt "mlRegressionKnn|"
-msgid "Max. nearest neighbors"
-msgstr "Max. nächste Nachbarn"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Max. layers"
-msgstr "Max. Schichten"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Max. nodes"
-msgstr "Max. Knoten"
-
-msgctxt "mlRegressionRandomForest|"
-msgid "Training data used per tree"
-msgstr "Trainingsdaten pro Baum"
-
-msgctxt "mlRegressionRandomForest|"
-msgid "Set seed"
-msgstr "Startwert für Zufallszahlen setzen"
-
-msgctxt "mlRegressionRandomForest|"
-msgid "Trees"
-msgstr "Bäume"
-
-msgctxt "mlRegressionRandomForest|"
-msgid "Max. trees"
-msgstr "Max. Bäume"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Convergence threshold"
@@ -2243,10 +651,6 @@ msgstr "Ridge"
 msgctxt "mlRegressionRegularized|"
 msgid "Elastic net parameter (α)"
 msgstr "Parameter Elastisches Netz (α)"
-
-msgctxt "mlRegressionRegularized|"
-msgid "Set seed"
-msgstr "Startwert für Zufallszahlen setzen"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Largest λ within 1 SE of min"
@@ -2285,60 +689,12 @@ msgid "Neighborhood-Based Clustering"
 msgstr "Nachbarschaftsbasiertes Clustering"
 
 msgctxt "mlClassificationDecisionTree|"
-msgid "Target"
-msgstr "Ziel"
-
-msgctxt "mlClassificationDecisionTree|"
 msgid "Tables"
 msgstr "Tabellen"
 
 msgctxt "mlClassificationDecisionTree|"
-msgid "Confusion matrix"
-msgstr "Konfusionsmatrix"
-
-msgctxt "mlClassificationDecisionTree|"
-msgid "Display proportions"
-msgstr "Verhältnisse anzeigen"
-
-msgctxt "mlClassificationDecisionTree|"
-msgid "Class proportions"
-msgstr "Klassen-Anteile"
-
-msgctxt "mlClassificationDecisionTree|"
-msgid "Evaluation metrics"
-msgstr "Evaluationsmetriken"
-
-msgctxt "mlClassificationDecisionTree|"
 msgid "Plots"
 msgstr "Diagramme"
-
-msgctxt "mlClassificationDecisionTree|"
-msgid "Data split"
-msgstr "Datenaufteilung"
-
-msgctxt "mlClassificationDecisionTree|"
-msgid "ROC curves"
-msgstr "ROC-Kurven"
-
-msgctxt "mlClassificationDecisionTree|"
-msgid "Andrews curves"
-msgstr "Andrews-Kurven"
-
-msgctxt "mlClassificationDecisionTree|"
-msgid "Decision tree"
-msgstr "Entscheidungsbaum"
-
-msgctxt "mlClassificationDecisionTree|"
-msgid "Decision boundary matrix"
-msgstr "Entscheidungsgrenzenmatrix"
-
-msgctxt "mlClassificationDecisionTree|"
-msgid "Legend"
-msgstr "Legende"
-
-msgctxt "mlClassificationDecisionTree|"
-msgid "Points"
-msgstr "Punkte"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Training Parameters"
@@ -2348,85 +704,13 @@ msgctxt "mlClassificationDecisionTree|"
 msgid "Algorithmic Settings"
 msgstr "Algorithmus-Einstellungen"
 
-msgctxt "mlClassificationDecisionTree|"
-msgid "Min. observations for split"
-msgstr "Min. Beobachtungen für Aufteilung"
-
-msgctxt "mlClassificationDecisionTree|"
-msgid "Min. observations in terminal"
-msgstr "Min. Beobachtungen im Terminal"
-
-msgctxt "mlClassificationDecisionTree|"
-msgid "Max. interaction depth"
-msgstr "Max. Interaktionstiefe"
-
-msgctxt "mlClassificationDecisionTree|"
-msgid "Set seed"
-msgstr "Startwert für Zufallszahlen setzen"
-
-msgctxt "mlClassificationKnn|"
-msgid "Weight function"
-msgstr "Gewichtungsfunktion"
-
-msgctxt "mlClassificationKnn|"
-msgid "Triangular"
-msgstr "Dreieckig"
-
-msgctxt "mlClassificationSvm|"
-msgid "Target"
-msgstr "Ziel"
-
 msgctxt "mlClassificationSvm|"
 msgid "Tables"
 msgstr "Tabellen"
 
 msgctxt "mlClassificationSvm|"
-msgid "Confusion matrix"
-msgstr "Konfusionsmatrix"
-
-msgctxt "mlClassificationSvm|"
-msgid "Display proportions"
-msgstr "Verhältnisse anzeigen"
-
-msgctxt "mlClassificationSvm|"
-msgid "Class proportions"
-msgstr "Klassen-Anteile"
-
-msgctxt "mlClassificationSvm|"
-msgid "Evaluation metrics"
-msgstr "Evaluationsmetriken"
-
-msgctxt "mlClassificationSvm|"
-msgid "Support vectors"
-msgstr "Support-Vektoren"
-
-msgctxt "mlClassificationSvm|"
 msgid "Plots"
 msgstr "Diagramme"
-
-msgctxt "mlClassificationSvm|"
-msgid "Data split"
-msgstr "Datenaufteilung"
-
-msgctxt "mlClassificationSvm|"
-msgid "ROC curves"
-msgstr "ROC-Kurven"
-
-msgctxt "mlClassificationSvm|"
-msgid "Andrews curves"
-msgstr "Andrews-Kurven"
-
-msgctxt "mlClassificationSvm|"
-msgid "Decision boundary matrix"
-msgstr "Entscheidungsgrenzenmatrix"
-
-msgctxt "mlClassificationSvm|"
-msgid "Legend"
-msgstr "Legende"
-
-msgctxt "mlClassificationSvm|"
-msgid "Points"
-msgstr "Punkte"
 
 msgctxt "mlClassificationSvm|"
 msgid "Training Parameters"
@@ -2435,54 +719,6 @@ msgstr "Trainingsparameter"
 msgctxt "mlClassificationSvm|"
 msgid "Algorithmic Settings"
 msgstr "Algorithmus-Einstellungen"
-
-msgctxt "mlClassificationSvm|"
-msgid "Weights"
-msgstr "Gewichte"
-
-msgctxt "mlClassificationSvm|"
-msgid "Linear"
-msgstr "Linear"
-
-msgctxt "mlClassificationSvm|"
-msgid "Radial"
-msgstr "Radial"
-
-msgctxt "mlClassificationSvm|"
-msgid "Polynomial"
-msgstr "Polynomial"
-
-msgctxt "mlClassificationSvm|"
-msgid "Sigmoid"
-msgstr "Sigmoid"
-
-msgctxt "mlClassificationSvm|"
-msgid "Degree"
-msgstr "Grad"
-
-msgctxt "mlClassificationSvm|"
-msgid "Gamma parameter"
-msgstr "Gamma-Parameter"
-
-msgctxt "mlClassificationSvm|"
-msgid "r parameter"
-msgstr "r-Parameter"
-
-msgctxt "mlClassificationSvm|"
-msgid "Tolerance of termination criterion"
-msgstr "Toleranz des Abbruchkriteriums"
-
-msgctxt "mlClassificationSvm|"
-msgid "Epsilon"
-msgstr "Epsilon"
-
-msgctxt "mlClassificationSvm|"
-msgid "Set seed"
-msgstr "Startwert für Zufallszahlen setzen"
-
-msgctxt "mlClusteringKMeans|"
-msgid "Centers"
-msgstr "Zentren"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Center type"
@@ -2501,32 +737,12 @@ msgid "Manhattan"
 msgstr "Manhattan"
 
 msgctxt "mlRegressionDecisionTree|"
-msgid "Target"
-msgstr "Ziel"
-
-msgctxt "mlRegressionDecisionTree|"
 msgid "Tables"
 msgstr "Tabellen"
 
 msgctxt "mlRegressionDecisionTree|"
-msgid "Evaluation metrics"
-msgstr "Evaluationsmetriken"
-
-msgctxt "mlRegressionDecisionTree|"
 msgid "Plots"
 msgstr "Diagramme"
-
-msgctxt "mlRegressionDecisionTree|"
-msgid "Data split"
-msgstr "Datenaufteilung"
-
-msgctxt "mlRegressionDecisionTree|"
-msgid "Predictive performance"
-msgstr "Vorhersageleistung"
-
-msgctxt "mlRegressionDecisionTree|"
-msgid "Decision tree"
-msgstr "Entscheidungsbaum"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Training Parameters"
@@ -2536,61 +752,13 @@ msgctxt "mlRegressionDecisionTree|"
 msgid "Algorithmic Settings"
 msgstr "Algorithmus-Einstellungen"
 
-msgctxt "mlRegressionDecisionTree|"
-msgid "Min. observations for split"
-msgstr "Min. Beobachtungen für Aufteilung"
-
-msgctxt "mlRegressionDecisionTree|"
-msgid "Min. observations in terminal"
-msgstr "Min. Beobachtungen im Terminal"
-
-msgctxt "mlRegressionDecisionTree|"
-msgid "Max. interaction depth"
-msgstr "Max. Interaktionstiefe"
-
-msgctxt "mlRegressionDecisionTree|"
-msgid "Scale variables"
-msgstr "Variablen skalieren"
-
-msgctxt "mlRegressionDecisionTree|"
-msgid "Set seed"
-msgstr "Startwert für Zufallszahlen setzen"
-
-msgctxt "mlRegressionKnn|"
-msgid "Weight function"
-msgstr "Gewichtungsfunktion"
-
-msgctxt "mlRegressionKnn|"
-msgid "Triangular"
-msgstr "Dreieckig"
-
-msgctxt "mlRegressionSvm|"
-msgid "Target"
-msgstr "Ziel"
-
 msgctxt "mlRegressionSvm|"
 msgid "Tables"
 msgstr "Tabellen"
 
 msgctxt "mlRegressionSvm|"
-msgid "Evaluation metrics"
-msgstr "Evaluationsmetriken"
-
-msgctxt "mlRegressionSvm|"
-msgid "Support vectors"
-msgstr "Support-Vektoren"
-
-msgctxt "mlRegressionSvm|"
 msgid "Plots"
 msgstr "Diagramme"
-
-msgctxt "mlRegressionSvm|"
-msgid "Data split"
-msgstr "Datenaufteilung"
-
-msgctxt "mlRegressionSvm|"
-msgid "Predictive performance"
-msgstr "Vorhersageleistung"
 
 msgctxt "mlRegressionSvm|"
 msgid "Training Parameters"
@@ -2599,214 +767,6 @@ msgstr "Trainingsparameter"
 msgctxt "mlRegressionSvm|"
 msgid "Algorithmic Settings"
 msgstr "Algorithmus-Einstellungen"
-
-msgctxt "mlRegressionSvm|"
-msgid "Weights"
-msgstr "Gewichte"
-
-msgctxt "mlRegressionSvm|"
-msgid "Linear"
-msgstr "Linear"
-
-msgctxt "mlRegressionSvm|"
-msgid "Radial"
-msgstr "Radial"
-
-msgctxt "mlRegressionSvm|"
-msgid "Polynomial"
-msgstr "Polynomial"
-
-msgctxt "mlRegressionSvm|"
-msgid "Sigmoid"
-msgstr "Sigmoid"
-
-msgctxt "mlRegressionSvm|"
-msgid "Degree"
-msgstr "Grad"
-
-msgctxt "mlRegressionSvm|"
-msgid "Gamma"
-msgstr "Gamma"
-
-msgctxt "mlRegressionSvm|"
-msgid "r parameter"
-msgstr "r-Parameter"
-
-msgctxt "mlRegressionSvm|"
-msgid "Tolerance of termination criterion"
-msgstr "Toleranz des Abbruchkriteriums"
-
-msgctxt "mlRegressionSvm|"
-msgid "Epsilon"
-msgstr "Epsilon"
-
-msgctxt "mlRegressionSvm|"
-msgid "Scale variables"
-msgstr "Variablen skalieren"
-
-msgctxt "mlRegressionSvm|"
-msgid "Set seed"
-msgstr "Startwert für Zufallszahlen setzen"
-
-msgctxt "mlClassificationSvm|"
-msgid "Cost of constraints violation"
-msgstr "Kosten von Beschränkungsverletzung"
-
-msgctxt "mlRegressionSvm|"
-msgid "Cost of constraints violation"
-msgstr "Kosten von Beschränkungsverletzung"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Features"
-msgstr "Merkmale"
-
-msgctxt "mlClassificationBoosting|"
-msgid "Scale features"
-msgstr "Merkmale skalieren"
-
-msgctxt "mlClassificationDecisionTree|"
-msgid "Features"
-msgstr "Merkmale"
-
-msgctxt "mlClassificationDecisionTree|"
-msgid "Feature importance"
-msgstr "Merkmal-Wichtigkeit"
-
-msgctxt "mlClassificationDecisionTree|"
-msgid "Attempted splits"
-msgstr "Versuchte Aufteilungen"
-
-msgctxt "mlClassificationDecisionTree|"
-msgid "Only show splits in tree"
-msgstr "Nur Aufteilungen im Baum anzeigen"
-
-msgctxt "mlClassificationDecisionTree|"
-msgid "Scale features"
-msgstr "Merkmale skalieren"
-
-msgctxt "mlClassificationKnn|"
-msgid "Features"
-msgstr "Merkmale"
-
-msgctxt "mlClassificationKnn|"
-msgid "Scale features"
-msgstr "Merkmale skalieren"
-
-msgctxt "mlClassificationLda|"
-msgid "Features"
-msgstr "Merkmale"
-
-msgctxt "mlClassificationLda|"
-msgid "Scale features"
-msgstr "Merkmale skalieren"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Features"
-msgstr "Merkmale"
-
-msgctxt "mlClassificationNeuralNetwork|"
-msgid "Scale features"
-msgstr "Merkmale skalieren"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Features"
-msgstr "Merkmale"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Feature importance"
-msgstr "Merkmal-Wichtigkeit"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Features per split"
-msgstr "Merkmale pro Aufteilung"
-
-msgctxt "mlClassificationRandomForest|"
-msgid "Scale features"
-msgstr "Merkmale skalieren"
-
-msgctxt "mlClassificationSvm|"
-msgid "Features"
-msgstr "Merkmale"
-
-msgctxt "mlClassificationSvm|"
-msgid "Scale features"
-msgstr "Merkmale skalieren"
-
-msgctxt "mlClusteringDensityBased|"
-msgid "Features"
-msgstr "Merkmale"
-
-msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Features"
-msgstr "Merkmale"
-
-msgctxt "mlClusteringHierarchical|"
-msgid "Features"
-msgstr "Merkmale"
-
-msgctxt "mlClusteringKMeans|"
-msgid "Features"
-msgstr "Merkmale"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "Features"
-msgstr "Merkmale"
-
-msgctxt "mlClusteringRandomForest|"
-msgid "Feature importance"
-msgstr "Merkmal-Wichtigkeit"
-
-msgctxt "mlRegressionBoosting|"
-msgid "Features"
-msgstr "Merkmale"
-
-msgctxt "mlRegressionDecisionTree|"
-msgid "Features"
-msgstr "Merkmale"
-
-msgctxt "mlRegressionDecisionTree|"
-msgid "Feature importance"
-msgstr "Merkmal-Wichtigkeit"
-
-msgctxt "mlRegressionDecisionTree|"
-msgid "Attempted splits"
-msgstr "Versuchte Aufteilungen"
-
-msgctxt "mlRegressionDecisionTree|"
-msgid "Only show splits in tree"
-msgstr "Nur Aufteilungen im Baum anzeigen"
-
-msgctxt "mlRegressionKnn|"
-msgid "Features"
-msgstr "Merkmale"
-
-msgctxt "mlRegressionNeuralNetwork|"
-msgid "Features"
-msgstr "Merkmale"
-
-msgctxt "mlRegressionRandomForest|"
-msgid "Features"
-msgstr "Merkmale"
-
-msgctxt "mlRegressionRandomForest|"
-msgid "Feature importance"
-msgstr "Merkmal-Wichtigkeit"
-
-msgctxt "mlRegressionRandomForest|"
-msgid "Features per split"
-msgstr "Merkmale pro Aufteilung"
-
-msgctxt "mlRegressionRegularized|"
-msgid "Features"
-msgstr "Merkmale"
-
-msgctxt "mlRegressionSvm|"
-msgid "Features"
-msgstr "Merkmale"
-
-msgctxt "mlRegressionKnn|"
-msgid "Manhattan"
-msgstr "Manhattan"
 
 msgctxt "mlPrediction|"
 msgid "Trained model"
@@ -2825,45 +785,1823 @@ msgid "Algorithmic Settings"
 msgstr "Algorithmus-Einstellungen"
 
 msgctxt "mlPrediction|"
-msgid "Scale features"
-msgstr "Merkmale skalieren"
-
-msgctxt "mlPrediction|"
 msgid "Tables"
 msgstr "Tabellen"
-
-msgctxt "mlPrediction|"
-msgid "From"
-msgstr "Von"
 
 msgctxt "mlPrediction|"
 msgid "to"
 msgstr "bis"
 
-msgctxt "mlClassificationDecisionTree|"
+#, fuzzy
+msgctxt "Description|"
+msgid "Linear"
+msgstr "Linear"
+
+msgctxt "Description|"
+msgid "Linear Regression"
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Shrinkage"
+msgstr "Schrumpfung"
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"A shrinkage parameter applied to each tree in the expansion. Also known as "
+"the learning rate or step-size reduction 0.001 to 0.1 usually work, but a "
+"smaller learning rate typically requires more trees."
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Interaction depth"
+msgstr "Interaktionstiefe"
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"Integer specifying the maximum depth of each tree (i.e., the highest level "
+"of variable interactions allowed. A value of 1 implies an additive model, a "
+"value of 2 implies a model with up to 2-way interactions, etc. Default is 1."
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Min. observations in node"
+msgstr "Min. Beobachtungen in Knoten"
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"Integer specifying the minimum number of observations in the terminal nodes "
+"of the trees. Note that this is the actual number of observations, not the "
+"total weight."
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Training data used per tree"
+msgstr "Trainingsdaten pro Baum"
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"Select the percentage of training data that is used to train each individual "
+"tree."
+msgstr ""
+
+#, fuzzy
+msgctxt "Deviance|"
+msgid "Deviance"
+msgstr "Devianz"
+
+msgctxt "Deviance|"
+msgid "Shows the prediction error plotted against the number of trees."
+msgstr ""
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Number of Trees"
+msgstr "Anzahl Bäume"
+
+msgctxt "ModelOptimization|"
+msgid "Choose how to optimize the model."
+msgstr ""
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Fixed"
+msgstr "Fixiert"
+
+msgctxt "ModelOptimization|"
+msgid "Enables you to use a user-specified number of decision trees."
+msgstr ""
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Trees"
+msgstr "Bäume"
+
+msgctxt "ModelOptimization|"
+msgid "The number of trees."
+msgstr ""
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Optimized"
+msgstr "Optimiert"
+
+msgctxt "ModelOptimization|"
+msgid ""
+"Enables you to optimize the prediction error on a validation data set with "
+"respect to the number of trees."
+msgstr ""
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Max. trees"
+msgstr "Max. Bäume"
+
+msgctxt "ModelOptimization|"
+msgid ""
+"Sets the maximum number of possible decision trees to be considered. At "
+"default, this is set to 100."
+msgstr ""
+
+msgctxt "Oob|"
+msgid "Out-of-bag improvement"
+msgstr ""
+
+msgctxt "Oob|"
+msgid ""
+"Plots the number of trees against the out-of-bag classification accuracy "
+"improvement of the model. Accuracy is assessed for the training set."
+msgstr ""
+
+#, fuzzy
+msgctxt "RelativeInfluence|"
+msgid "Relative influence"
+msgstr "Relativer Einfluß"
+
+msgctxt "RelativeInfluence|"
+msgid "Shows the relative influence of the features."
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Min. observations for split"
+msgstr "Min. Beobachtungen für Aufteilung"
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"The minimum number of observations that must exist in a node in order for a "
+"split to be attempted."
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Min. observations in terminal"
+msgstr "Min. Beobachtungen im Terminal"
+
+msgctxt "AlgorithmicSettings|"
+msgid "The minimum number of observations in any terminal node."
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Max. interaction depth"
+msgstr "Max. Interaktionstiefe"
+
+msgctxt "AlgorithmicSettings|"
+msgid "Set the maximum depth of any node of the final tree."
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
 msgid "Complexity penalty"
 msgstr "Komplexitäts-Strafterm"
 
-msgctxt "mlRegressionDecisionTree|"
-msgid "Complexity penalty"
-msgstr "Komplexitäts-Strafterm"
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"Any split that does not decrease the overall lack of fit by a factor of this "
+"parameter is not attempted."
+msgstr ""
+
+#, fuzzy
+msgctxt "AttemptedSplits|"
+msgid "Attempted splits"
+msgstr "Versuchte Aufteilungen"
+
+msgctxt "AttemptedSplits|"
+msgid ""
+"Shows the splits made by the algorithm, the corresponding features and split "
+"points, and the number of observations (which are not missing and are of "
+"positive weight) sent left or right by the split. It also shows the "
+"improvement in deviance given by the splits."
+msgstr ""
+
+#, fuzzy
+msgctxt "AttemptedSplits|"
+msgid "Only show splits in tree"
+msgstr "Nur Aufteilungen im Baum anzeigen"
+
+msgctxt "AttemptedSplits|"
+msgid "Remove splits that do not occur in the final tree from the table."
+msgstr ""
+
+#, fuzzy
+msgctxt "TreePlot|"
+msgid "Decision tree"
+msgstr "Entscheidungsbaum"
+
+msgctxt "TreePlot|"
+msgid "Creates a plot that visualizes the decision tree and its leafs."
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Weights"
+msgstr "Gewichte"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Rectangular"
+msgstr "Rechteckig"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Triangular"
+msgstr "Dreieckig"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Epanechnikov"
+msgstr "Epanechnikov"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Biweight"
+msgstr "zweifach gewichtet"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Triweight"
+msgstr "dreifach gewichtet"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Cosine"
+msgstr "Kosinus"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Inverse"
+msgstr "Invers"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Gaussian"
+msgstr "Gaußsch"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Rank"
+msgstr "Rang"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Optimal"
+msgstr "Optimal"
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"Sets the weighting scheme for the nearest neighbors. The default rectangular "
+"option results in standard knn, while the other options expand the algorithm "
+"by weighing the nearest neighbors. See also the kknn package."
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Distance"
+msgstr "Distanz"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Euclidian"
+msgstr "Euklidisch"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Manhattan"
+msgstr "Manhattan"
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"The distance metric to be used when determining the similarity between "
+"nearest neighbors. Can be either Euclidean or Manhattan distance."
+msgstr ""
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Number of Nearest Neighbors"
+msgstr "Anzahl nächster Nachbarn"
+
+msgctxt "ModelOptimization|"
+msgid "Enables you to use a user-specified number of nearest neighbors."
+msgstr ""
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Nearest neighbors"
+msgstr "Nächste Nachbarn"
+
+msgctxt "ModelOptimization|"
+msgid "The number of nearest neighbors to be used."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid ""
+"Enables you to optimize the prediction error on a validation data set with "
+"respect to the number of nearest neighbors."
+msgstr ""
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Max. nearest neighbors"
+msgstr "Max. nächste Nachbarn"
+
+msgctxt "ModelOptimization|"
+msgid ""
+"Sets the maximum number of possible nearest neighbors to be considered. At "
+"default, this is set to 10."
+msgstr ""
+
+#, fuzzy
+msgctxt "OptimPlot|"
+msgid "Mean squared error"
+msgstr "Mittlerer quadratischer Fehler"
+
+#, fuzzy
+msgctxt "OptimPlot|"
+msgid "Classification accuracy"
+msgstr "Klassifikations-Genauigkeit"
+
+msgctxt "OptimPlot|"
+msgid ""
+"For regression, Plots the number of nearest neighbors against the MSE of the "
+"model. Accuracy is assessed for the training (and validation) set. For "
+"classification, plots the number of nearest neighbors against the "
+"classification accuracy of the model. Accuracy is assessed for the training "
+"(and validation) set."
+msgstr ""
+
+#, fuzzy
+msgctxt "WeightFunction|"
+msgid "Weight function"
+msgstr "Gewichtungsfunktion"
+
+msgctxt "WeightFunction|"
+msgid "Shows how the weights are assigned as a function of the distance."
+msgstr ""
+
+#, fuzzy
+msgctxt "ActivationFunctionPlot|"
+msgid "Activation function"
+msgstr "Aktivierungsfunktion"
+
+msgctxt "ActivationFunctionPlot|"
+msgid "Creates a plot of the activation function."
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Activation function"
+msgstr "Aktivierungsfunktion"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Linear"
+msgstr "Linear"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Binary"
+msgstr "Binär"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Logistic sigmoid"
+msgstr "Logistische Sigmoid"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Sine"
+msgstr "Sinus"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Inverse tangent"
+msgstr "Arkustangens"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Hyperbolic tangent"
+msgstr "Hyperbolischer Tangens"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "ReLU"
+msgstr "ReLU"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Softplus"
+msgstr "Softplus"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Softsign"
+msgstr "Softsign"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "ELU"
+msgstr "ELU"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "LReLU"
+msgstr "LReLU"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "SiLU"
+msgstr "SiLU"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Mish"
+msgstr "Mish"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "GeLU"
+msgstr "GeLU"
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"Sets the activation function for the signal in each hidden layer. Available "
+"options are:\n"
+"- linear: *f(x) = x*\n"
+"- Binary: *f(x) = 0 if x < 0, 1 if x > 0\n"
+"- Logistic sigmoid: *f(x) = 1 / (1 + e^(-x))*\n"
+"- Sine: *f(x) = sin(x)*\n"
+"- Cosine: *f(x) = cos(x)*\n"
+"- Inverse tangent: *f(x) = arctan(x)*\n"
+"- Hyperbolic tangent: *f(x) = tanh(x)*\n"
+"- ReLU: *f(x) =  0 if x < 0, x if x > 0*\n"
+"- Softplus: *f(x) = log(1 + e^x)*\n"
+"- Softsign: *f(x) = x / (abs(x) + 1)*\n"
+"- ELU: *f(x) = e^x - 1 if x <= 0, x if x > 0*\n"
+"- LReLU: *f(x) = 0.01 * x if x < 0, x if x > 0*\n"
+"- SiLU: *f(x) = x / (1 + e^(-x))*\n"
+"- Mish: *f(x) = x * tanh(log(1 + e^x))*\n"
+"- Gaussian: *f(x) = e * (-x^2)*\n"
+"- GeLU: *f(x) = 0.5 * x * (1 + tanh(sqrt(2 / pi) * (x + 0.044715 * x^3)))*"
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Algorithm"
+msgstr "Algorithmus"
+
+msgctxt "AlgorithmicSettings|"
+msgid "Backpropagation"
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "rprop+"
+msgstr "rprop+"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "rprop-"
+msgstr "rprop-"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "grprop-sag"
+msgstr "grprop-sag"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "grprop-slr"
+msgstr "grprop-slr"
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"Sets the algorithm for the network training. The backpropagation option is "
+"standard for training neural networks, but other options are `rprop+` "
+"(default) for resilient backpropagation with backtracing, `rprop-` for "
+"resilient backpropagation without backtracing, `gprop-sag` for the globally "
+"convergent algorithm that modifies the learning rate associated with the "
+"smallest absolute gradient, or `gprop-slr` for the globally convergent "
+"algorithm that modifies the learning rate associated with the smallest "
+"learning rate itself."
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Learning rate"
+msgstr "Lernrate"
+
+msgctxt "AlgorithmicSettings|"
+msgid "The learning rate used by the backpropagation algorithm."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Loss function"
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Sum of squares"
+msgstr "Summe der Abweichungsquadrate"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Cross-entropy"
+msgstr "Kreuzentropie"
+
+msgctxt "AlgorithmicSettings|"
+msgid "The loss function used."
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Stopping criteria loss function"
+msgstr "Abbruchkriterien Fehlerfunktion"
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"The threshold for the partial derivatives of the error function as stopping "
+"criteria."
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Max. training repetitions"
+msgstr "Max. Trainingswiederholungen"
+
+msgctxt "AlgorithmicSettings|"
+msgid "The maximum number of repetitions used in training the network."
+msgstr ""
+
+#, fuzzy
+msgctxt "Coefficients|"
+msgid "Network weights"
+msgstr "Netzwerkgewichte"
+
+msgctxt "Coefficients|"
+msgid ""
+"Shows the connections in the neural network together with their weights."
+msgstr ""
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Network Topology"
+msgstr "Netzwerktopologie"
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Manual"
+msgstr "Manuell"
+
+msgctxt "ModelOptimization|"
+msgid "Specify the nodes in each hidden layer of the neural network."
+msgstr ""
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Nodes"
+msgstr "Knoten"
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Hidden layer "
+msgstr "Verdeckte Schicht "
+
+msgctxt "ModelOptimization|"
+msgid "Optimize the topology of the network using a genetic algorithm."
+msgstr ""
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Population size"
+msgstr "Größe der Grundgesamtheit"
+
+msgctxt "ModelOptimization|"
+msgid "Size of population used in genetic optimization."
+msgstr ""
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Generations"
+msgstr "Generationen"
+
+msgctxt "ModelOptimization|"
+msgid "Number of generations used in genetic optimization."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Max. number of layers"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Max. nodes in each layer"
+msgstr ""
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Parent selection"
+msgstr "Elternauswahl"
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Roulette wheel"
+msgstr "Roulette-Rad"
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Universal"
+msgstr "Universal"
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Rank"
+msgstr "Rang"
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Tournament"
+msgstr "Turnier"
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Random"
+msgstr "Zufällig"
+
+msgctxt "ModelOptimization|"
+msgid "How to select suviving networks."
+msgstr ""
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Candidates"
+msgstr "Kandidaten"
+
+msgctxt "ModelOptimization|"
+msgid "Number of candidates for tournament selection"
+msgstr ""
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Crossover method"
+msgstr "Crossover-Methode"
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Uniform"
+msgstr "Uniform"
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "One-point"
+msgstr "Ein-Punkt"
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Multi-point"
+msgstr "Multi-Punkt"
+
+msgctxt "ModelOptimization|"
+msgid "How to crossover two candidate networks."
+msgstr ""
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Mutations"
+msgstr "Mutationen"
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Reset"
+msgstr "Zurücksetzen"
+
+msgctxt "ModelOptimization|"
+msgid "Swap"
+msgstr ""
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Scramble"
+msgstr "Verschlüsselung"
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Inversion"
+msgstr "Umkehrung"
+
+msgctxt "ModelOptimization|"
+msgid "How to mutate a network."
+msgstr ""
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Probability"
+msgstr "Wahrscheinlichkeit"
+
+msgctxt "ModelOptimization|"
+msgid "The mutation probability of a random network in each generation."
+msgstr ""
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Survival method"
+msgstr "Überlebensmethode"
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Fitness-based"
+msgstr "Fitness-basiert"
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Age-based"
+msgstr "Altersabhängig"
+
+msgctxt "ModelOptimization|"
+msgid "How to choose which networks survive and die in a generation."
+msgstr ""
+
+#, fuzzy
+msgctxt "ModelOptimization|"
+msgid "Elitism"
+msgstr "Elitismus"
+
+msgctxt "ModelOptimization|"
+msgid "Keep top networks from dying out."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Percentage of top networks to keep."
+msgstr ""
+
+#, fuzzy
+msgctxt "NetworkPlot|"
+msgid "Network structure"
+msgstr "Netzwerkstruktur"
+
+msgctxt "NetworkPlot|"
+msgid ""
+"Creates a plot that visualizes the structure (nodes and edges) of the "
+"network."
+msgstr ""
+
+msgctxt "OptimPlot|"
+msgid ""
+"For regression, plots the average mean squared error of the population of "
+"neural networks against the number of generations in the evoluationary "
+"optimization algorithm. For classification, plots the average classification "
+"accuracy of the population of neural networks against the number of "
+"generations in the evoluationary optimization algorithm. Accuracy is "
+"assessed for the training (and validation) set."
+msgstr ""
+
+msgctxt "AccuracyDecrease|"
+msgid "Mean decrease in accuracy"
+msgstr ""
+
+msgctxt "AccuracyDecrease|"
+msgid ""
+"Displays a figure with the mean decrease in accuracy per feature in the "
+"model."
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Features per split"
+msgstr "Merkmale pro Aufteilung"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Auto"
+msgstr "Auto"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Manual"
+msgstr "Manuell"
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"Set the number of feature variables that is used within each split in the "
+"decision trees. Defaults to auto."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "The number of feature variables in each split."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "The number of trees to be used."
+msgstr ""
+
+msgctxt "NodePurity|"
+msgid "Total increase in node purity"
+msgstr ""
+
+msgctxt "NodePurity|"
+msgid ""
+"Displays a figure with total increase in node purity per feature in the "
+"model."
+msgstr ""
+
+#, fuzzy
+msgctxt "Oob|"
+msgid "Out-of-bag error"
+msgstr "Out-of-bag-Fehler"
+
+#, fuzzy
+msgctxt "Oob|"
+msgid "Out-of-bag accuracy"
+msgstr "Out-of-bag Genauigkeit"
+
+msgctxt "Oob|"
+msgid ""
+"Plots the number of trees against the out-of-bag mean squared error "
+"(regression) or accuracy (classification) of the model."
+msgstr ""
+
+#, fuzzy
+msgctxt "CoefficientTable|"
+msgid "Coefficients"
+msgstr "Koeffizienten"
+
+msgctxt "CoefficientTable|"
+msgid "Shows a table containing the regression coefficients."
+msgstr ""
+
+msgctxt "CoefficientTable|"
+msgid "Confidence interval"
+msgstr ""
+
+msgctxt "CoefficientTable|"
+msgid "Display confidence intervals around estimated regression coefficients."
+msgstr ""
+
+msgctxt "CoefficientTable|"
+msgid "The confidence level for the interval."
+msgstr ""
+
+msgctxt "CoefficientTable|"
+msgid "Display equation"
+msgstr ""
+
+msgctxt "CoefficientTable|"
+msgid ""
+"Display the regression equation with the estimated values of the "
+"coefficients."
+msgstr ""
+
+msgctxt "Intercept|"
+msgid "Include intercept"
+msgstr ""
+
+msgctxt "Intercept|"
+msgid "Whether to include an intercept in the regression formula."
+msgstr ""
+
+msgctxt "VariablesFormRegularizedRegression|"
+msgid "Target"
+msgstr ""
+
+msgctxt "VariablesFormRegularizedRegression|"
+msgid "In this box, the variable that needs to be predicted should be entered."
+msgstr ""
+
+#, fuzzy
+msgctxt "VariablesFormRegularizedRegression|"
+msgid "Features"
+msgstr "Merkmale"
+
+msgctxt "VariablesFormRegularizedRegression|"
+msgid ""
+"In this box, the variables that provide information about the target "
+"variable should be entered."
+msgstr ""
+
+#, fuzzy
+msgctxt "VariablesFormRegularizedRegression|"
+msgid "Weights"
+msgstr "Gewichte"
+
+msgctxt "VariablesFormRegularizedRegression|"
+msgid ""
+"In this box, an optional variable containing case weights can be entered."
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Radial"
+msgstr "Radial"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Polynomial"
+msgstr "Polynomial"
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Sigmoid"
+msgstr "Sigmoid"
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"The kernel used in training and predicting. Possible kernels are 'linear', "
+"'radial', 'polynomial', and 'sigmoid'."
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Degree"
+msgstr "Grad"
+
+msgctxt "AlgorithmicSettings|"
+msgid "The degree of polynomial used."
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Gamma parameter"
+msgstr "Gamma-Parameter"
+
+msgctxt "AlgorithmicSettings|"
+msgid "The gamma parameter used."
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "r parameter"
+msgstr "r-Parameter"
+
+msgctxt "AlgorithmicSettings|"
+msgid "The complexity parameter used."
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Cost of constraints violation"
+msgstr "Kosten von Beschränkungsverletzung"
+
+msgctxt "AlgorithmicSettings|"
+msgid "The 'C'-constant of the regularization term."
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Tolerance of termination criterion"
+msgstr "Toleranz des Abbruchkriteriums"
+
+msgctxt "AlgorithmicSettings|"
+msgid "The tolerance of termination criterion."
+msgstr ""
+
+#, fuzzy
+msgctxt "AlgorithmicSettings|"
+msgid "Epsilon"
+msgstr "Epsilon"
+
+msgctxt "AlgorithmicSettings|"
+msgid "The epsilon parameter in the insensitive-loss function."
+msgstr ""
+
+#, fuzzy
+msgctxt "SupportVectors|"
+msgid "Support vectors"
+msgstr "Support-Vektoren"
+
+msgctxt "SupportVectors|"
+msgid ""
+"Shows a table containing the data (points) indicated as support vectors by "
+"the algorithm."
+msgstr ""
+
+msgctxt "AndrewsCurve|"
+msgid "Andrews curves"
+msgstr ""
+
+msgctxt "AndrewsCurve|"
+msgid ""
+"Is a way to visualize structure in high-dimensional data. Lines that cluster "
+"are observations that are more alike."
+msgstr ""
+
+msgctxt "ClusterDensity|"
+msgid "Cluster densities"
+msgstr ""
+
+msgctxt "ClusterDensity|"
+msgid ""
+"For each feature variable, generates a plot showing the overlapping "
+"densities for the clusters."
+msgstr ""
+
+#, fuzzy
+msgctxt "ClusterDensity|"
+msgid "Group into one figure"
+msgstr "In eine Abbildung gruppieren"
+
+msgctxt "ClusterDensity|"
+msgid "Group the density plots per feature into a single figure."
+msgstr ""
+
+#, fuzzy
+msgctxt "ClusterMatrix|"
+msgid "Cluster matrix plot"
+msgstr "Cluster-Matrix-Diagramm"
+
+msgctxt "ClusterMatrix|"
+msgid ""
+"Creates a *n* x *n* plot that visualizes to which cluster every observation "
+"belongs according to the current model."
+msgstr ""
+
+msgctxt "ClusterMeans|"
+msgid "Cluster means"
+msgstr ""
+
+msgctxt "ClusterMeans|"
+msgid ""
+"Creates a plot that visualizes and compares the mean of the feature "
+"variables in each cluster."
+msgstr ""
+
+#, fuzzy
+msgctxt "ClusterMeans|"
+msgid "Display barplot"
+msgstr "Balkdendiagramm anzeigen"
+
+msgctxt "ClusterMeans|"
+msgid "Transform the cluster mean figure into a barplot."
+msgstr ""
+
+#, fuzzy
+msgctxt "ClusterMeans|"
+msgid "Group into one figure"
+msgstr "In eine Abbildung gruppieren"
+
+msgctxt "ClusterMeans|"
+msgid "Group the plots per feature into a single figure."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "Data split"
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid ""
+"Shows how the data is split into training (and validation), and test set."
+msgstr ""
+
+msgctxt "DecisionBoundary|"
+msgid "Decision boundary matrix"
+msgstr ""
+
+msgctxt "DecisionBoundary|"
+msgid ""
+"Creates a *n* x *n* plot that visualizes how every observation would be "
+"classified if predicted through the current model. Boundaries between "
+"classes are visualized. Can only be made for numeric features."
+msgstr ""
+
+#, fuzzy
+msgctxt "DecisionBoundary|"
+msgid "Legend"
+msgstr "Legende"
+
+msgctxt "DecisionBoundary|"
+msgid "Show a legend next to the figure."
+msgstr ""
+
+msgctxt "DecisionBoundary|"
+msgid "Add data points"
+msgstr ""
+
+msgctxt "DecisionBoundary|"
+msgid "Show the observations in the data set as points in the plot."
+msgstr ""
+
+#, fuzzy
+msgctxt "ElbowMethod|"
+msgid "Elbow method"
+msgstr "Ellenbogenmethode"
+
+msgctxt "ElbowMethod|"
+msgid ""
+"Generates a plot with the total within sum of squares on the y-axis and the "
+"number of clusters on the x-axis. This plot can be used for determining the "
+"optimal number of clusters. The plot shows three curves using AIC, BIC, and "
+"'elbow method' optimization."
+msgstr ""
+
+#, fuzzy
+msgctxt "PredictivePerformance|"
+msgid "Predictive performance"
+msgstr "Vorhersageleistung"
+
+msgctxt "PredictivePerformance|"
+msgid ""
+"Plots the true values of the observations in the test set against their "
+"predicted values."
+msgstr ""
+
+msgctxt "RocCurve|"
+msgid "ROC curves"
+msgstr ""
+
+msgctxt "RocCurve|"
+msgid "Displays ROC curves for each class predicted against all other classes."
+msgstr ""
+
+msgctxt "Tsne|"
+msgid "t-SNE cluster plot"
+msgstr ""
+
+msgctxt "Tsne|"
+msgid ""
+"Generates a t-SNE plot of the clustering output. t-SNE plots are used for "
+"visualizing high-dimensional data in a low-dimensional space of two "
+"dimensions aiming to illustrate the relative distances between data "
+"observations. The t-SNE two-dimensional space makes the axes "
+"uninterpretable. A t-SNE plot seeks to give an impression of the relative "
+"distances between observations and clusters. To recreate the same t-SNE plot "
+"across several clustering analyses you can set their seed to the same value, "
+"as the t-SNE algorithm uses random starting values."
+msgstr ""
+
+#, fuzzy
+msgctxt "Tsne|"
+msgid "Legend"
+msgstr "Legende"
+
+msgctxt "Tsne|"
+msgid "Show a legend next to the figure."
+msgstr ""
+
+msgctxt "Tsne|"
+msgid "Add data labels"
+msgstr ""
+
+msgctxt "Tsne|"
+msgid ""
+"Add the row numbers of the observations in the data set as labels to the "
+"plot."
+msgstr ""
+
+msgctxt "ClassProportions|"
+msgid "Class proportions"
+msgstr ""
+
+msgctxt "ClassProportions|"
+msgid ""
+"Displays a table that shows the proportions of each class in the data set, "
+"training (and validaton), and test set."
+msgstr ""
+
+msgctxt "ClusterInfo|"
+msgid "Cluster information"
+msgstr ""
+
+msgctxt "ClusterInfo|"
+msgid ""
+"Displays the size of each cluster and the explained proportion of within-"
+"cluster heterogeneity. The latter is the cluster within sum of squares "
+"divided by its total over the various clusters. These outputs are shown by "
+"default."
+msgstr ""
+
+msgctxt "ClusterInfo|"
+msgid "Within sum of squares"
+msgstr ""
+
+msgctxt "ClusterInfo|"
+msgid ""
+"Adds a row with the within sum of squares of each cluster to the table. This "
+"option is selected by default."
+msgstr ""
+
+#, fuzzy
+msgctxt "ClusterInfo|"
+msgid "Silhouette score"
+msgstr "Silhouette-Score"
+
+msgctxt "ClusterInfo|"
+msgid "Adds a row with the silhouette score of each cluster to the table."
+msgstr ""
+
+#, fuzzy
+msgctxt "ClusterInfo|"
+msgid "Centers"
+msgstr "Zentren"
+
+msgctxt "ClusterInfo|"
+msgid ""
+"Adds a row with the center per feature of each cluster to the table. The "
+"center can be the mean, median or mode depending on the clustering algorithm."
+msgstr ""
+
+msgctxt "ClusterInfo|"
+msgid "Between sum of squares"
+msgstr ""
+
+msgctxt "ClusterInfo|"
+msgid ""
+"Adds a note with the between sum of squares of the cluster model to the "
+"table."
+msgstr ""
+
+#, fuzzy
+msgctxt "ClusterInfo|"
+msgid "Total sum of squares"
+msgstr "Gesamte Quadratsumme"
+
+msgctxt "ClusterInfo|"
+msgid ""
+"Adds a note with the total sum of squares of the cluster model to the table."
+msgstr ""
+
+msgctxt "ClusterMeans|"
+msgid "Shows a table containing the cluster means for each feature variable."
+msgstr ""
+
+#, fuzzy
+msgctxt "ConfusionMatrix|"
+msgid "Confusion matrix"
+msgstr "Konfusionsmatrix"
+
+msgctxt "ConfusionMatrix|"
+msgid ""
+"Displays a table that shows the observed classes against the predicted "
+"classes. Used to assess model accuracy."
+msgstr ""
+
+#, fuzzy
+msgctxt "ConfusionMatrix|"
+msgid "Display proportions"
+msgstr "Verhältnisse anzeigen"
+
+msgctxt "ConfusionMatrix|"
+msgid "Displays proportions in the confusion matrix instead of counts."
+msgstr ""
+
+msgctxt "ExplainPredictions|"
+msgid "Explain predictions"
+msgstr ""
+
+msgctxt "ExplainPredictions|"
+msgid ""
+"Shows a decomposition of the predictions of the model into contributions "
+"that can be attributed to individual model features."
+msgstr ""
+
+msgctxt "ExplainPredictions|"
+msgid "Cases"
+msgstr ""
+
+msgctxt "ExplainPredictions|"
+msgid "The test set index of the first row to be displayed in the table."
+msgstr ""
+
+#, fuzzy
+msgctxt "ExplainPredictions|"
+msgid "to"
+msgstr "bis"
+
+msgctxt "ExplainPredictions|"
+msgid "The test set index of the last row to be displayed in the table."
+msgstr ""
+
+#, fuzzy
+msgctxt "FeatureImportance|"
+msgid "Feature importance"
+msgstr "Merkmal-Wichtigkeit"
+
+msgctxt "FeatureImportance|"
+msgid "Shows the available feature importance metrics for the fitted model."
+msgstr ""
+
+msgctxt "ModelPerformance|"
+msgid "Model performance"
+msgstr ""
+
+msgctxt "ModelPerformance|"
+msgid ""
+"Displays available model performance metrics. For regression, these metrics "
+"include mean squared error (MSE), root mean squared error (RMSE), R<sup>2</"
+"sup> and more. For classification, these metrics include precision, recall, "
+"the F1-score, support, AUC (area under the ROC curve) and more."
+msgstr ""
+
+#, fuzzy
+msgctxt "ClusterDetermination|"
+msgid "Cluster Determination"
+msgstr "Cluster-Bestimmung"
+
+msgctxt "ClusterDetermination|"
+msgid "Choose how to determine the number of clusters in the model."
+msgstr ""
+
+#, fuzzy
+msgctxt "ClusterDetermination|"
+msgid "Fixed"
+msgstr "Fixiert"
+
+msgctxt "ClusterDetermination|"
+msgid ""
+"Enables you to generate a fixed amount of clusters. This allows you to "
+"generate your own specified number of clusters, and thus, optimize manually."
+msgstr ""
+
+#, fuzzy
+msgctxt "ClusterDetermination|"
+msgid "Clusters"
+msgstr "Cluster"
+
+msgctxt "ClusterDetermination|"
+msgid "The number of clusters to be fitted."
+msgstr ""
+
+msgctxt "ClusterDetermination|"
+msgid "Optimized according to"
+msgstr ""
+
+msgctxt "ClusterDetermination|"
+msgid ""
+"Enables you to choose an optimization method. BIC optimization is set as "
+"default."
+msgstr ""
+
+msgctxt "ClusterDetermination|"
+msgid ""
+"The method of optimization. The options are AIC, BIC, and silhouette. The "
+"AIC uses the within sum of squares (within-cluster variation), the number of "
+"generated clusters and the number of dimensions for optimizing the "
+"clustering output. The BIC uses the within sum of squares (within-cluster "
+"variation), the number of generated clusters, the number of dimensions, and "
+"the sample size for optimizing the clustering output. The silhouette value "
+"uses the similarity of observations within a cluster and their dissimilarity "
+"to other clusters for optimizing the clustering output."
+msgstr ""
+
+#, fuzzy
+msgctxt "ClusterDetermination|"
+msgid "Max. clusters"
+msgstr "Max. Cluster"
+
+msgctxt "ClusterDetermination|"
+msgid ""
+"Sets the maximum number of possible clusters to be generated. At default, "
+"this is set to 10."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "Choose how to create the test set."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid ""
+"Choose a percentage to randomly sample from your data to derive prediction "
+"error. Generates an internal indicator variable that indicates whether the "
+"observation is included (1) or excluded (0) from the test set."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "The percentage of observations to use for the test set."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid ""
+"Add the generated test set indicator from the option above to your data set."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "The column name for the generated test set indicator."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid ""
+"Use an indicator variable to select data for the test set. This indicator "
+"should be a column in your data that consists of only 0 (excluded from the "
+"test set) and 1 (included in the test set). The data will then be split into "
+"a training (and validation if requested) set (0), and a test set (1) "
+"according to your indicator."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "The variable in the data set that is used as the test set indicator."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "Choose how to create the validation set."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid ""
+"Randomly sample a percentage from the remaining training data (after "
+"selecting the test set)."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "The percentage of observations to use for the validation set."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "Partition the remaining data in *k* parts."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "Tne number of folds to be used."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "Partition the remaining data in *n* parts."
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid ""
+"Generates a new column in your dataset with the values of your regression "
+"result. This gives you the option to inspect, cluster, or predict the "
+"generated values."
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "The column name for the predicted values."
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "The file path for the saved model."
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "When clicked, the model is exported to the specified file path."
+msgstr ""
+
+#, fuzzy
+msgctxt "ScaleVariables|"
+msgid "Scale features"
+msgstr "Merkmale skalieren"
+
+msgctxt "ScaleVariables|"
+msgid ""
+"Standardizes the continuous features in the dataset. Standardization ensures "
+"that values of features from different scales range into a specific similar "
+"scale. As a result, standardizing provides numerical stability. JASP uses "
+"the Z-score standardization of a mean of 0 and a standard deviation of 1. "
+"This option is selected by default."
+msgstr ""
+
+#, fuzzy
+msgctxt "SetSeed|"
+msgid "Set seed"
+msgstr "Startwert für Zufallszahlen setzen"
+
+msgctxt "SetSeed|"
+msgid ""
+"Gives the option to set a seed for your analysis. Setting a seed will "
+"exclude random processes influencing an analysis. For example, setting a "
+"seed makes it possible to re-run analyses with the same data splits."
+msgstr ""
+
+msgctxt "SetSeed|"
+msgid "The value of the seed."
+msgstr ""
+
+msgctxt "VariablesFormClassification|"
+msgid "Target"
+msgstr ""
+
+msgctxt "VariablesFormClassification|"
+msgid "In this box, the variable that needs to be predicted should be entered."
+msgstr ""
+
+#, fuzzy
+msgctxt "VariablesFormClassification|"
+msgid "Features"
+msgstr "Merkmale"
+
+msgctxt "VariablesFormClassification|"
+msgid ""
+"In this box, the variables that provide information about the target "
+"variable should be entered."
+msgstr ""
+
+#, fuzzy
+msgctxt "VariablesFormClustering|"
+msgid "Features"
+msgstr "Merkmale"
+
+msgctxt "VariablesFormClustering|"
+msgid ""
+"In this box, the variables are need to be considered by the clustering "
+"algorithm should be entered."
+msgstr ""
+
+msgctxt "VariablesFormRegression|"
+msgid "Target"
+msgstr ""
+
+msgctxt "VariablesFormRegression|"
+msgid "In this box, the variable that needs to be predicted should be entered."
+msgstr ""
+
+#, fuzzy
+msgctxt "VariablesFormRegression|"
+msgid "Features"
+msgstr "Merkmale"
+
+msgctxt "VariablesFormRegression|"
+msgid ""
+"In this box, the variables that provide information about the target "
+"variable should be entered."
+msgstr ""
+
+msgctxt "mlClassificationBoosting|"
+msgid ""
+"Boosting works by sequentially adding features to an decision tree ensemble, "
+"each one correcting its predecessor. However, instead of changing the "
+"weights for every incorrect classified observation at every iteration, "
+"Boosting method tries to fit the new feature to the residual errors made by "
+"the previous feature.\n"
+"### Assumptions\n"
+"- The target variable is a nominal or ordinal variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal variables."
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid ""
+"Decision Trees is a supervised learning algorithm that uses a decision tree "
+"as a predictive model to go from observations about an item (represented in "
+"the roots of the tree) to conclusions about the item's target value "
+"(represented in the endpoints of the tree).\n"
+"### Assumptions\n"
+"- The target is a nominal or ordinal variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal variables."
+msgstr ""
+
+msgctxt "mlClassificationKnn|"
+msgid ""
+"K-nearest neighbors is a method of classification that looks at the *k* "
+"number of feature observations that are most similar to new observations to "
+"make a prediction for their class assignments. The number of nearest "
+"neighbors is intrinsincly linked to model complexity, as small numbers "
+"increase the flexibility of the model.\n"
+"### Assumptions\n"
+"- The target is a nominal or ordinal variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal variables."
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid ""
+"Linear Discriminant Analysis (LDA) is a method of classification that aims "
+"to find *p - 1* components that discriminate best between the classes in the "
+"target variable. LDA is a linear classifier, meaning that the decision "
+"boundaries between classes are linear.\n"
+"### Assumptions\n"
+"- The target variable is a nominal or ordinal variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal "
+"variables.\n"
+"- Equality of class means: The class means should be equal, can be checked "
+"with the corresponding table.\n"
+"- Equality of covariance matrices: The covariance matrices should be equal, "
+"can be checked with the corresponding table.\n"
+"- Multicollinearity: The classes should not correlate within each other, can "
+"be checked with the corresponding table."
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid "Multivariate normality"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid ""
+"Feedforward neural networks are predictive algorithms inspired by the "
+"biological neural networks that constitute brains. A neuron (node) that "
+"receives a signal then processes it and can send signals to neurons "
+"connected to it. The signal at a node is a real number, and the output of "
+"each node is computed by sending the signal trough the activation function. "
+"The number of layers and nodes in the network is intrinsincly linked to "
+"model complexity, as high numbers increase the flexibility of the model.\n"
+"### Assumptions\n"
+"- The target is a nominal or ordinal variable.\n"
+"- The feature variables consist of continuous variables."
+msgstr ""
+
+msgctxt "mlClassificationRandomForest|"
+msgid ""
+"Random Forest is a method of classification that creates a set of decision "
+"trees that consists of a large number of individual trees which operate as "
+"an ensemble. Each individual tree in the random forest returns a class "
+"prediction and the class with the most votes becomes the model's "
+"prediction.\n"
+"### Assumptions\n"
+"- The target variable is a nominal or ordinal variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal variables."
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid ""
+"Support Vector Machines is a supervised learning algorithm that maps "
+"training examples to points in space so as to maximise the width of the gap "
+"between the two categories. New examples are then mapped into that same "
+"space and predicted to belong to a category based on which side of the gap "
+"they fall.\n"
+"### Assumptions\n"
+"- The target is a nominal or ordinal variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal variables."
+msgstr ""
 
 msgctxt "mlClusteringDensityBased|"
-msgid "Cluster matrix plot"
-msgstr "Cluster-Matrix-Diagramm"
+msgid ""
+"Density-based clustering is a soft clustering method where clusters are "
+"constructed as maximal sets of points that are connected to points whose "
+"density exceeds some threshold. The density is produced by the concept that "
+"for each point within a cluster, the neighborhood within a given radius has "
+"to contain at least a minimum amount of points, that results in the density "
+"of that neighborhood to exceed a certain threshold. A density-based cluster "
+"is recognized by points having a higher density than points outside of the "
+"cluster. The set of all high-density points is called the density level. The "
+"points that do not exceed a density level are identified as outliers. The "
+"density level influences the amount of generated clusters.\n"
+"### Assumptions\n"
+"- The data consists of continuous variables.\n"
+"- (Normally distributed data aids the clustering process)."
+msgstr ""
 
 msgctxt "mlClusteringFuzzyCMeans|"
-msgid "Cluster matrix plot"
-msgstr "Cluster-Matrix-Diagramm"
+msgid ""
+"Fuzzy c-means clustering is a soft partitioning method that provides an "
+"output that contains the degree of association for each observation to each "
+"cluster. This makes it possible for data observations to be partially "
+"assigned to multiple clusters and give a degree of confidence about cluster "
+"membership. Fuzzy c-means' approach is quite similar to that of k-means "
+"clustering, apart from its soft approach.\n"
+"### Assumptions\n"
+"- The data consists of continuous variables.\n"
+"- (Normally distributed data aids the clustering process)."
+msgstr ""
 
 msgctxt "mlClusteringHierarchical|"
-msgid "Cluster matrix plot"
-msgstr "Cluster-Matrix-Diagramm"
+msgid ""
+"Hierarchical clustering is a hard partitioning algorithm which aims to "
+"partition data into several clusters, where each observation belongs to only "
+"one group. The data is divided in such a way that the degree of similarity "
+"between two data observations is maximal if they belong to the same group "
+"and minimal if not.\n"
+"### Assumptions\n"
+"- The data consists of continuous variables.\n"
+"- (Normally distributed data aids the clustering process)."
+msgstr ""
 
 msgctxt "mlClusteringKMeans|"
-msgid "Cluster matrix plot"
-msgstr "Cluster-Matrix-Diagramm"
+msgid ""
+"Neighborhood-Based clustering methods are a set of hard partitioning "
+"algorithm which aims to partition data into several clusters, where each "
+"observation belongs to only one group. The data is divided in such a way "
+"that the degree of similarity between two data observations is maximal if "
+"they belong to the same group and minimal if not.\n"
+"### Assumptions\n"
+"- The data consists of continuous variables.\n"
+"- (Normally distributed data aids the clustering process)."
+msgstr ""
 
 msgctxt "mlClusteringRandomForest|"
-msgid "Cluster matrix plot"
-msgstr "Cluster-Matrix-Diagramm"
+msgid ""
+"Random Forest clustering is a hard partitioning algorithm which aims to "
+"partition data into several clusters, where each observation belongs to only "
+"one group. This clustering method uses the Random Forest algorithm in an "
+"unsupervised way, with the outcome variable 'y' set to NULL. The Random "
+"Forest algorithm generates a proximity matrix which gives an estimate of the "
+"distance between observations based on the frequency of observations ending "
+"up in the same leaf node.\n"
+"### Assumptions\n"
+"- The data consists of continuous variables.\n"
+"- (Normally distributed data aids the clustering process)."
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid ""
+"The prediction analysis enables you to load a trained machine learning model "
+"and apply it to new data."
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "Cases"
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "Add features"
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "Explain predictions"
+msgstr ""
+
+msgctxt "mlRegressionBoosting|"
+msgid ""
+"Boosting works by sequentially adding features to an decision tree ensemble, "
+"each one correcting its predecessor. Boosting tries to fit the new feature "
+"to the residual errors made by the previous feature.\n"
+"### Assumptions\n"
+"- The target variable is a continuous variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal variables."
+msgstr ""
+
+msgctxt "mlRegressionBoosting|"
+msgid "The loss function used."
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid ""
+"Decision Trees is a supervised learning algorithm that uses a decision tree "
+"as a predictive model to go from observations about an item (represented in "
+"the roots of the tree) to conclusions about the item's target value "
+"(represented in the endpoints of the tree).\n"
+"### Assumptions\n"
+"- The target variable is a continuous variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal variables."
+msgstr ""
+
+msgctxt "mlRegressionKnn|"
+msgid ""
+"K-nearest neighbors is a method of regression that looks at the *k* number "
+"of feature observations that are most similar to new observations to make a "
+"prediction for their values. The number of nearest neighbors is intrinsincly "
+"linked to model complexity, as small numbers increase the flexibility of the "
+"model.\n"
+"### Assumptions\n"
+"- The target variable is a continuous variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal variables."
+msgstr ""
+
+msgctxt "mlRegressionLinear|"
+msgid ""
+"Linear regression allows the user to model a linear relationship between one "
+"or more features (predictors) and a continuous dependent (target) variable."
+msgstr ""
+
+#, fuzzy
+msgctxt "mlRegressionLinear|"
+msgid "Tables"
+msgstr "Tabellen"
+
+#, fuzzy
+msgctxt "mlRegressionLinear|"
+msgid "Plots"
+msgstr "Diagramme"
+
+#, fuzzy
+msgctxt "mlRegressionLinear|"
+msgid "Training Parameters"
+msgstr "Trainingsparameter"
+
+#, fuzzy
+msgctxt "mlRegressionLinear|"
+msgid "Algorithmic Settings"
+msgstr "Algorithmus-Einstellungen"
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid ""
+"Feedforward neural networks are predictive algorithms inspired by the "
+"biological neural networks that constitute brains. A neuron (node) that "
+"receives a signal then processes it and can send signals to neurons "
+"connected to it. The signal at a node is a real number, and the output of "
+"each node is computed by sending the signal trough the activation function. "
+"The number of layers and nodes in the network is intrinsincly linked to "
+"model complexity, as high numbers increase the flexibility of the model.\n"
+"### Assumptions\n"
+"- The target variable is a continuous variable.\n"
+"- The feature variables consist of continuous."
+msgstr ""
+
+msgctxt "mlRegressionRandomForest|"
+msgid ""
+"Random Forest is a method of regression that creates a set of decision trees "
+"that consists of a large number of individual trees which operate as an "
+"ensemble.\n"
+"### Assumptions\n"
+"- The target variable is a continuous variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal variables."
+msgstr ""
+
+msgctxt "mlRegressionRegularized|"
+msgid ""
+"Regularized linear regression is an adaptation of linear regression in which "
+"the coefficients are shrunken towards 0. This is done by applying a penalty "
+"(e.g., ridge, lasso, or elastic net). The parameter λ controls the degree to "
+"which parameters are shrunken.\n"
+"### Assumptions\n"
+"- The target variable is a continuous variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal variables."
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid ""
+"Support Vector Machines is a supervised learning algorithm that maps "
+"training examples to points in space so as to maximise the width of the gap "
+"between the two categories. New examples are then mapped into that same "
+"space and predicted to belong to a category based on which side of the gap "
+"they fall.\n"
+"### Assumptions\n"
+"- The target variable is a continuous variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal variable"
+msgstr ""

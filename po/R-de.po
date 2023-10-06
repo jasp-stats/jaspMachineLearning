@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2023-06-09 06:45\n"
+"POT-Creation-Date: 2023-10-06 08:17\n"
 "PO-Revision-Date: 2023-06-11 13:48+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
@@ -13,6 +13,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
 "X-Generator: Weblate 4.18-dev\n"
+
+#, fuzzy
+msgid "An error occurred in the analysis: %s"
+msgstr "In der Analyse ist ein Fehler aufgetreten: %1$s"
 
 msgid "K-Nearest Neighbors Classification"
 msgstr "K-nächste-Nachbarn-Klassifikation"
@@ -95,6 +99,13 @@ msgstr ""
 
 msgid "The trained model is saved as <i>%1$s</i>."
 msgstr "Das trainierte Modell wird als <i>%1$s</i> gespeichert."
+
+msgid ""
+"The trained model is <b>not</b> saved because the some of the variable names "
+"in the model contain spaces (i.e., ' ') or underscores (i.e., '_'). Please "
+"remove all such characters from the variable names and try saving the model "
+"again."
+msgstr ""
 
 msgid "The trained model is not saved until 'Save trained model' is checked."
 msgstr ""
@@ -179,8 +190,9 @@ msgstr "Andrews Kurve benötigt ein Minimum von 2 Merkmalsvariablen."
 msgid "Box's M-test for Homogeneity of Covariance Matrices"
 msgstr "Box's M-test auf die Homogenität der Kovarianz-Matritzen"
 
-msgid "Evaluation Metrics"
-msgstr "Evaluationsmetriken"
+#, fuzzy
+msgid "Model Performance Metrics"
+msgstr "Diagramm Vorhersageleistung"
 
 msgid "Support"
 msgstr "Träger"
@@ -319,16 +331,20 @@ msgstr ""
 "Die optimale Anzahl von Clustern ist die maximale Anzahl von Clustern. "
 "Möglicherweise möchten Sie den Optimierungsbereich anpassen."
 
+#, fuzzy
 msgid ""
-"Your cluster model contains 0 clusters and only Noisepoints, we advise to "
-"change the Eps and MinPts parameters."
+"The model contains 0 clusters and only Noisepoints, we advise to change "
+"'Epsilon neighborhood size' and 'Min. core points' parameters under "
+"'Training parameters'."
 msgstr ""
 "Das Clustermodell enthält 0 Cluster und ausschließlich Noisepoints; wir "
 "empfehlen, die Parameter Eps und MinPts zu ändern."
 
+#, fuzzy
 msgid ""
-"Your cluster model contains 1 cluster and 0 Noisepoints. You could change "
-"the Eps and MinPts parameters."
+"The model contains 1 cluster and no Noisepoints. You may want to change "
+"'Epsilon neighborhood size' and 'Min. core points' parameters under "
+"'Training parameters'."
 msgstr ""
 "Das Clustermodell enthält 1 Cluster und 0 Noisepoints. Sie könnten die "
 "Parameter Eps und MinPts ändern."
@@ -511,6 +527,10 @@ msgstr "Entscheidungsbaum-Regression"
 msgid "Support Vector Machine Regression"
 msgstr "Support Vector Machine-Regression"
 
+#, fuzzy
+msgid "Linear Regression"
+msgstr "Regression"
+
 msgid "Penalty"
 msgstr "Strafterm"
 
@@ -525,6 +545,12 @@ msgstr "Test-MSE"
 
 msgid "OOB Error"
 msgstr "OOB Fehler"
+
+msgid "R%1$s"
+msgstr ""
+
+msgid "Adjusted R%1$s"
+msgstr ""
 
 msgid "Please provide a target variable and at least %d feature variable(s)."
 msgstr ""
@@ -585,6 +611,45 @@ msgstr "Prüfung: %d"
 msgid "Train and validation: %d"
 msgstr "Training und Validation: %d"
 
+msgid "Additive Explanations for Predictions of New Cases"
+msgstr ""
+
+msgid "Additive Explanations for Predictions of Test Set Cases"
+msgstr ""
+
+msgid "Case"
+msgstr ""
+
+#, fuzzy
+msgid "Predicted (Prob.)"
+msgstr "Vorhergesagt"
+
+msgid "Base"
+msgstr ""
+
+msgid "There was an error in computing the results for this table."
+msgstr ""
+
+msgid ""
+"Displayed values represent feature contributions to the predicted value "
+"without features (column 'Base') for the test set."
+msgstr ""
+
+msgid ""
+"Displayed values represent feature contributions to the predicted class "
+"probability without features (column 'Base') for the test set."
+msgstr ""
+
+#, fuzzy
+msgid "Feature Importance Metrics"
+msgstr "Merkmal-Wichtigkeit"
+
+msgid "Mean dropout loss"
+msgstr ""
+
+msgid "Mean dropout loss is based on 50 permutations."
+msgstr ""
+
 msgid "The target variable should have at least 2 classes."
 msgstr "Die Zielvariable muss mindestens 2 Klassen enthalten."
 
@@ -627,8 +692,34 @@ msgstr "p"
 msgid "The null hypothesis specifies equal covariance matrices."
 msgstr "Die Nullhypothese spezifiziert gleiche Kovarianzmatrizen."
 
+msgid ""
+"There are one or more levels in the target variable with less than two "
+"observations."
+msgstr ""
+
+msgid "Box's M"
+msgstr ""
+
 msgid "Pooled Within-Class Matrices Correlations"
 msgstr "Gepoolte klasseninterne Matrizenkorrelationen"
+
+msgid "Tests for Multivariate Normality"
+msgstr ""
+
+#, fuzzy
+msgid "Statistic"
+msgstr "Statistische Parität"
+
+msgid "Skewness"
+msgstr ""
+
+msgid "Kurtosis"
+msgstr ""
+
+msgid ""
+"Both p-values of the skewness and kurtosis statistics should be > 0.05 to "
+"conclude multivariate normality."
+msgstr ""
 
 msgid ""
 "Analysis not possible: The algorithm did not converge within the maximum "
@@ -700,6 +791,9 @@ msgstr "K-nächste-Nachbarn"
 msgid "Linear discriminant"
 msgstr "Lineare Diskriminante"
 
+msgid "Linear"
+msgstr "Linear"
+
 msgid "Boosting"
 msgstr "Boosting"
 
@@ -765,9 +859,6 @@ msgstr "n(Neu)"
 msgid "Predictions for New Data"
 msgstr "Vorhersagen für neue Daten"
 
-msgid "Row"
-msgstr "Zeile"
-
 msgid "Relative Influence"
 msgstr "Relativer Einfluß"
 
@@ -777,14 +868,26 @@ msgstr "Out-of-bag-Verbesserungsdiagramm"
 msgid "Training set"
 msgstr "Trainingset"
 
-msgid "OOB Change in \n Multinomial Deviance"
-msgstr "OOB Änderung in \n Multinomialer Devianz"
+msgid ""
+"OOB Change in \n"
+" Multinomial Deviance"
+msgstr ""
+"OOB Änderung in \n"
+" Multinomialer Devianz"
 
-msgid "OOB Change in \n Binomial Deviance"
-msgstr "OOB Änderung in \n Binomialer Devianz"
+msgid ""
+"OOB Change in \n"
+" Binomial Deviance"
+msgstr ""
+"OOB Änderung in \n"
+" Binomialer Devianz"
 
-msgid "OOB Change in \n%s Deviance"
-msgstr "OOB Änderung in \n%s Devianz"
+msgid ""
+"OOB Change in \n"
+"%s Deviance"
+msgstr ""
+"OOB Änderung in \n"
+"%s Devianz"
 
 msgid "Plotting not possible: The model is based on only a single tree."
 msgstr "Diagramm unmöglich: Das Modell basiert nur auf einem einzelnen Baum."
@@ -918,6 +1021,37 @@ msgstr "Anteil der max. Distanz"
 msgid "Relative Weight"
 msgstr "Relatives Gewicht"
 
+msgid "Regression Coefficients"
+msgstr "Regressionskoeffizienten"
+
+msgid "Coefficient (%s)"
+msgstr "Koeffizienten (%s)"
+
+#, fuzzy
+msgid "Standard Error"
+msgstr "Mittlerer quadratischer Fehler"
+
+msgid "%1$s%% Confidence interval"
+msgstr ""
+
+msgid "Lower"
+msgstr ""
+
+msgid "Upper"
+msgstr ""
+
+msgid "The regression coefficients for numeric features are standardized."
+msgstr ""
+
+#, fuzzy
+msgid "The regression coefficients are unstandardized."
+msgstr "Die Merkmale in dem Modell sind <b>unstandardisiert</b>."
+
+msgid ""
+"<b>Regression equation:</b>\n"
+"%1$s"
+msgstr ""
+
 msgid "Network Weights"
 msgstr "Netzwerkgewichte"
 
@@ -995,9 +1129,6 @@ msgstr "Ausgabeschicht"
 
 msgid "Hidden layer %1$s"
 msgstr "Verdeckte Schicht %1$s"
-
-msgid "Linear"
-msgstr "Linear"
 
 msgid "Binary"
 msgstr "Binär"
@@ -1083,12 +1214,6 @@ msgstr "L1 (Lasso)"
 msgid "Elastic Net"
 msgstr "Elastisches Netz"
 
-msgid "Regression Coefficients"
-msgstr "Regressionskoeffizienten"
-
-msgid "Coefficient (%s)"
-msgstr "Koeffizienten (%s)"
-
 msgid "Variable Trace Plot"
 msgstr "Variablen-Verlaufsdiagramm"
 
@@ -1106,6 +1231,12 @@ msgstr "Min. CV MSE"
 
 msgid "%s 1 SE"
 msgstr "%s 1 Std. Fehler"
+
+msgid "Row"
+msgstr "Zeile"
+
+#~ msgid "Evaluation Metrics"
+#~ msgstr "Evaluationsmetriken"
 
 #~ msgid "Object passed to .scaleNumericData.matrix was not numeric!"
 #~ msgstr ""
