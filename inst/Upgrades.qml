@@ -857,4 +857,126 @@ Upgrades
 		ChangeRename { from: "pfrom";												to: "fromIndex"}
 		ChangeRename { from: "pto";													to: "toIndex"}
 	}
+
+	// 11-06-2023
+	//Renaming Boosting Classification
+	Upgrade
+	{
+
+		functionName:		"mlClassificationBoosting"
+		fromVersion:		"0.17.2.1"
+		toVersion:			"0.17.3"
+
+		ChangeRename { from: "relativeInfluenceTable";									to: "featureImportanceTable"}
+	}
+
+	//Renaming Boosting Regression
+	Upgrade
+	{
+
+		functionName:		"mlRegressionBoosting"
+		fromVersion:		"0.17.2.1"
+		toVersion:			"0.17.3"
+
+		ChangeRename { from: "relativeInfluenceTable";									to: "featureImportanceTable"}
+	}
+
+	//Renaming Decision Tree Classification
+	Upgrade
+	{
+
+		functionName:		"mlClassificationDecisionTree"
+		fromVersion:		"0.17.2.1"
+		toVersion:			"0.17.3"
+
+		ChangeRename { from: "variableImportanceTable";									to: "featureImportanceTable"}
+	}
+
+	//Renaming Decision Tree Regression
+	Upgrade
+	{
+
+		functionName:		"mlRegressionDecisionTree"
+		fromVersion:		"0.17.2.1"
+		toVersion:			"0.17.3"
+
+		ChangeRename { from: "variableImportanceTable";									to: "featureImportanceTable"}
+	}
+
+	//Renaming Random Forest Classification
+	Upgrade
+	{
+
+		functionName:		"mlClassificationRandomForest"
+		fromVersion:		"0.17.2.1"
+		toVersion:			"0.17.3"
+
+		ChangeRename { from: "variableImportanceTable";									to: "featureImportanceTable"}
+	}
+
+	//Renaming Random Forest Regression
+	Upgrade
+	{
+
+		functionName:		"mlRegressionRandomForest"
+		fromVersion:		"0.17.2.1"
+		toVersion:			"0.17.3"
+
+		ChangeRename { from: "variableImportanceTable";									to: "featureImportanceTable"}
+	}
+
+	//Renaming Density Based Clustering
+	Upgrade
+	{
+
+		functionName:		"mlClusteringDensityBased"
+		fromVersion:		"0.17.2.1"
+		toVersion:			"0.17.3"
+
+		ChangeRename { from: "tableClusterEvaluationMetrics";							to: "validationMeasures"}
+	}
+
+	//Renaming Fuzzy C Means Clustering
+	Upgrade
+	{
+
+		functionName:		"mlClusteringFuzzyCMeans"
+		fromVersion:		"0.17.2.1"
+		toVersion:			"0.17.3"
+
+		ChangeRename { from: "tableClusterEvaluationMetrics";							to: "validationMeasures"}
+	}
+
+	//Renaming Hierarchical Clustering
+	Upgrade
+	{
+
+		functionName:		"mlClusteringHierarchical"
+		fromVersion:		"0.17.2.1"
+		toVersion:			"0.17.3"
+
+		ChangeRename { from: "tableClusterEvaluationMetrics";							to: "validationMeasures"}
+	}
+
+	//Renaming K Means Clustering
+	Upgrade
+	{
+
+		functionName:		"mlClusteringKMeans"
+		fromVersion:		"0.17.2.1"
+		toVersion:			"0.17.3"
+
+		ChangeRename { from: "tableClusterEvaluationMetrics";							to: "validationMeasures"}
+	}
+
+	//Renaming Random Forest Clustering
+	Upgrade
+	{
+
+		functionName:		"mlClusteringRandomForest"
+		fromVersion:		"0.17.2.1"
+		toVersion:			"0.17.3"
+
+		ChangeRename { from: "tableClusterEvaluationMetrics";							to: "validationMeasures"}
+	}
 }

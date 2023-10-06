@@ -33,29 +33,29 @@ mlClusteringRandomForest <- function(jaspResults, dataset, options, ...) {
   # Create the cluster information table
   .mlClusteringTableInformation(options, jaspResults, ready, position = 2, type = "randomForest")
 
-  # Create the cluster means table
-  .mlClusteringTableMeans(dataset, options, jaspResults, ready, position = 3)
-
   # Create the cluster evaluation metrics table
-  .mlClusteringTableMetrics(dataset, options, jaspResults, ready, position = 4)
+  .mlClusteringTableMetrics(dataset, options, jaspResults, ready, position = 3)
+
+  # Create the cluster means table
+  .mlClusteringTableMeans(dataset, options, jaspResults, ready, position = 4)
 
   # Create the variable importance table
-  .mlClusteringRandomForestTableVarImp(options, jaspResults, ready, position = 5)
+  .mlClusteringRandomForestTableFeatureImportance(options, jaspResults, ready, position = 5)
 
   # Create the within sum of squares plot
   .mlClusteringPlotElbow(dataset, options, jaspResults, ready, position = 6)
 
-  # Create the cluster means plot
-  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 7)
-
-  # Create the cluster densities plot
-  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 8)
-
   # Create the cluster plot
-  .mlClusteringPlotTsne(dataset, options, jaspResults, ready, position = 9, type = "randomForest")
+  .mlClusteringPlotTsne(dataset, options, jaspResults, ready, position = 7, type = "randomForest")
 
   # Create the matrix plot
-  .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 10)
+  .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 8)
+
+  # Create the cluster means plot
+  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 9)
+
+  # Create the cluster densities plot
+  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 10)
 }
 
 .randomForestClustering <- function(dataset, options, jaspResults) {
@@ -140,16 +140,13 @@ mlClusteringRandomForest <- function(jaspResults, dataset, options, ...) {
   return(result)
 }
 
-.mlClusteringRandomForestTableVarImp <- function(options, jaspResults, ready, position) {
+.mlClusteringRandomForestTableFeatureImportance <- function(options, jaspResults, ready, position) {
   if (!is.null(jaspResults[["importanceTable"]]) || !options[["featureImportanceTable"]]) {
     return()
   }
   table <- createJaspTable(title = gettext("Feature Importance"))
   table$position <- position
-  table$dependOn(options = c(
-    "predictors", "manualNumberOfClusters", "noOfRandomSets", "maxNumberIterations", "algorithm", "modelOptimization", "seed", "modelOptimizationMethod",
-    "maxNumberOfClusters", "setSeed", "scaleVariables", "fuzzinessParameter", "distance", "linkage", "epsilonNeighborhoodSize", "minCorePoints", "numberOfTrees", "maxTrees", "featureImportanceTable"
-  ))
+  table$dependOn(options = c(.mlClusteringDependencies(), "featureImportanceTable"))
   table$addColumnInfo(name = "variable", title = "", type = "string")
   table$addColumnInfo(name = "measure", title = gettext("Mean decrease in Gini Index"), type = "number", format = "sf:4")
   jaspResults[["importanceTable"]] <- table

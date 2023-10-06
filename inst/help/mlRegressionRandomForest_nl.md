@@ -1,5 +1,5 @@
 Random Forest Regressie
-==========================
+===
 
 Random Forest is een regressiemethode die een set beslisbomen maakt, bestaande uit een groot aantal individuele bomen die functioneren als ensemble. 
 
@@ -37,7 +37,7 @@ Random Forest is een regressiemethode die een set beslisbomen maakt, bestaande u
 #### Algoritme Instellingen
 - Trainingsdata per boom: Selecteer het percentage trainingsdata dat wordt gebruikt om elke individuele boom te trainen.
 - Voorspellers per splitsing: Geef het aantal voorspellervariabelen die gebruikt worden binnen elke splitsing in de beslisboom.   
-- Schaal variabelen: Schaalt de continue variabelen. Standaardiseren zorgt dat waarden van variabelen met verschillende schalen, worden geschaald in een specifieke gelijke schaal. Hierdoor geeft standaardiseren numerieke stabiliteit, wat de uitvoer van het clusteren verbetert. JASP gebruikt de Z-score standaardisatie met een gemiddelde, 0, en een standaardafwijking van 1. Dit is de standaardoptie.
+- Schaal kenmerken: Standaardiseert de continue kenmerken in de dataset. Standaardisatie zorgt ervoor dat waarden van kenmerken van verschillende schalen in een specifieke vergelijkbare schaal vallen. Standaardisatie zorgt daardoor voor numerieke stabiliteit. JASP gebruikt de Z-score standaardisatie van een gemiddelde van 0 en een standaardafwijking van 1. Deze optie is standaard geselecteerd.
 - Gebruik toevalsgenerator beginwaarde: Geeft de mogelijkheid een toevalsgenerator beginwaarde te gebruiken voor uw analyse. Een toevalsgenerator beginwaarde gebruiken, zorgt ervoor dat willekeurige processen geen invloed hebben op een analyse. Bijvoorbeeld, een toevalsgenerator beginwaarde maakt het mogelijk de analyse opnieuw te doen met dezelfde gesplitste data.
 
 ##### Aantal Beslisbomen

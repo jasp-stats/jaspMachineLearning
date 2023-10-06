@@ -1,5 +1,5 @@
 Random Forest Clustering
-==========================
+===
 
 Random Forest clustering is a hard partitioning algorithm which aims to partition data into several clusters, where each observation belongs to only one group. This clustering method uses the Random Forest algorithm in an unsupervised way, with the outcome variable 'y' set to NULL. The Random Forest algorithm generates a proximity matrix which gives an estimate of the distance between observations based on the frequency of observations ending up in the same leaf node.
 
@@ -32,7 +32,7 @@ Random Forest clustering is a hard partitioning algorithm which aims to partitio
 #### Training Parameters 
 #### Algorithmic Settings
 - Trees: Determine how many trees are used. 
-- Scale variables: Scales the continuous variables. Standardization ensures that values of variables from different scales range into a specific similar scale. As a result, standardizing provides numerical stability, which improves the clustering output. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
+- Scale features: Standardizes the continuous features in the dataset. Standardization ensures that values of features from different scales range into a specific similar scale. As a result, standardizing provides numerical stability. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
 - Set seed: Gives the option to set a seed for your analysis. Setting a seed will exclude random processes influencing an analysis. For example, setting a seed makes it possible to re-run analyses with the same outcomes.
 
 #### Cluster Determination

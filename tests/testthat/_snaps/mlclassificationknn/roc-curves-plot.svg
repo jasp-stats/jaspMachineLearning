@@ -32,6 +32,8 @@
 <polyline points='95.76,487.89 95.76,141.19 625.33,83.40 ' style='stroke-width: 2.13; stroke: #50A315; stroke-linecap: butt;' />
 <polyline points='95.76,487.89 115.38,83.40 625.33,83.40 ' style='stroke-width: 2.13; stroke: #009ADE; stroke-linecap: butt;' />
 <circle cx='95.76' cy='83.40' r='3.56' style='stroke-width: 0.71; fill: #BEBEBE;' />
+<line x1='102.12' y1='64.61' x2='96.11' y2='82.39' style='stroke-width: 1.07;' />
+<text x='148.72' y='66.98' text-anchor='middle' style='font-size: 11.04px; font-family: sans;' textLength='89.61px' lengthAdjust='spacingAndGlyphs'>Perfect separation</text>
 <line x1='95.44' y1='510.14' x2='625.65' y2='510.14' style='stroke-width: 0.64; stroke-linecap: butt;' />
 <line x1='69.28' y1='488.21' x2='69.28' y2='83.08' style='stroke-width: 0.64; stroke-linecap: butt;' />
 <rect x='69.28' y='20.71' width='582.53' height='489.43' style='stroke-width: 0.00; stroke: none;' />

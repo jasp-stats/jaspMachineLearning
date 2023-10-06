@@ -16,224 +16,73 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick									2.8
-import QtQuick.Layouts							1.3
-import JASP.Controls							1.0
-import JASP.Widgets								1.0
+import QtQuick			2.8
+import QtQuick.Layouts	1.3
+import JASP.Controls	1.0
+import JASP.Widgets		1.0
 
-import "./common" as ML
+import "./common/ui" as UI
+import "./common/tables" as TAB
+import "./common/figures" as FIG
+import "./common/analyses/boosting" as BOOSTING
 
 Form 
 {
+	info: qsTr("Boosting works by sequentially adding features to an decision tree ensemble, each one correcting its predecessor. Boosting tries to fit the new feature to the residual errors made by the previous feature.\n### Assumptions\n- The target variable is a continuous variable.\n- The feature variables consist of continuous, nominal, or ordinal variables.")
 
-	VariablesForm
+	UI.VariablesFormRegression { id: vars }
+
+	Group
 	{
-		AvailableVariablesList
-		{
-			name:								"variables"
-		}
+		title: qsTr("Tables")
 
-		AssignedVariablesList
-		{
-			id:									target
-			name:								"target"
-			title:								qsTr("Target")
-			singleVariable:						true
-			allowedColumns:						["scale"]
-		}
-
-		AssignedVariablesList
-		{
-			id:									predictors
-			name:								"predictors"
-			title:								qsTr("Features")
-			allowedColumns:						["scale", "nominal", "nominalText", "ordinal"]
-			allowAnalysisOwnComputedColumns:	false
-		}
+		TAB.ModelPerformance { }
+		TAB.FeatureImportance { }
+		TAB.ExplainPredictions { }
 	}
 
 	Group
 	{
-		title:									qsTr("Tables")
+		title: qsTr("Plots")
 
-		CheckBox
-		{
-			text:								qsTr("Evaluation metrics")
-			name:								"validationMeasures"
-		}
-
-		CheckBox
-		{
-			name:								"relativeInfluenceTable"
-			text:								qsTr("Relative influence")
-		}
+		FIG.DataSplit { }
+		FIG.PredictivePerformance { }
+		BOOSTING.Oob { }
+		BOOSTING.Deviance { }
+		BOOSTING.RelativeInfluence { }
 	}
 
-	Group
-	{
-		title:									qsTr("Plots")
-
-		CheckBox
-		{
-			text:								qsTr("Data split")
-			name:								"dataSplitPlot"
-			checked:							true
-		}
-
-		CheckBox
-		{
-			name:								"outOfBagImprovementPlot"
-			text:								qsTr("Out-of-bag improvement")
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Predictive performance")
-			name:								"predictedPerformancePlot"
-		}
-
-		CheckBox
-		{
-			name:								"deviancePlot"
-			text:								qsTr("Deviance")
-		}
-
-		CheckBox
-		{
-			name:								"relativeInfluencePlot"
-			text:								qsTr("Relative influence")
-		}
-	}
-
-	ML.ExportResults
-	{
-		enabled:								predictors.count > 1 && target.count > 0
-	}
-
-	ML.DataSplit
-	{
-		leaveOneOutVisible:						false
-		trainingValidationSplit:				optimizeModel.checked
-	}
+	UI.ExportResults { enabled:	vars.predictorCount > 1 && vars.targetCount > 0 }
+	UI.DataSplit { leaveOneOutVisible: false; trainingValidationSplit: !optim.isManual }
 
 	Section
 	{
-		title:									qsTr("Training Parameters")
+		title: qsTr("Training Parameters")
 
 		Group
 		{
-			title:								qsTr("Algorithmic Settings")
+			title: qsTr("Algorithmic Settings")
 
-			DoubleField
-			{
-				name:							"shrinkage"
-				text:							qsTr("Shrinkage")
-				defaultValue:					0.1
-				min:							0
-				max:							1
-			}
-
-			IntegerField
-			{
-				name:							"interactionDepth"
-				text:							qsTr("Interaction depth")
-				defaultValue:					1
-				min:							1
-				max:							99
-			}
-
-			IntegerField
-			{
-				name:							"minObservationsInNode"
-				text:							qsTr("Min. observations in node")
-				defaultValue:					10
-				min:							1
-				max:							50000
-			}
-
-			PercentField 
-			{
-				name:							"baggingFraction"
-				text:							qsTr("Training data used per tree")
-				defaultValue:					50
-			}
+			BOOSTING.AlgorithmicSettings { }
 
 			DropDown
 			{
-				name:							"distance"
-				indexDefaultValue:				0
-				label:							qsTr("Loss function")
-
+				name:				"distance"
+				indexDefaultValue:	0
+				label:				qsTr("Loss function")
 				values:
 					[
 					{ label: "Gaussian",value: "gaussian"},
 					{ label: "Laplace", value: "laplace"},
 					{ label: "t", 		value: "tdist"}
 				]
+				info:				qsTr("The loss function used.")
 			}
 
-			CheckBox
-			{
-				text:							qsTr("Scale variables")
-				name:							"scaleVariables"
-				checked:						true
-			}
-
-			CheckBox
-			{
-				name:							"setSeed"
-				text:							qsTr("Set seed")
-				childrenOnSameRow:				true
-
-				IntegerField
-				{
-					name:						"seed"
-					defaultValue:				1
-					min:						-999999
-					max:						999999
-					fieldWidth:					60
-				}
-			}
+			UI.ScaleVariables { }
+			UI.SetSeed { }
 		}
 
-		RadioButtonGroup
-		{
-			title:								qsTr("Number of Trees")
-			name:								"modelOptimization"
-
-			RadioButton
-			{
-				text:							qsTr("Fixed")
-				name:							"manual"
-
-				IntegerField 
-				{
-					name:						"noOfTrees"
-					text:						qsTr("Trees")
-					defaultValue:				100
-					min:						1
-					max:						500000
-					fieldWidth:					60
-				}
-			}
-
-			RadioButton
-			{
-				id:								optimizeModel
-				text:							qsTr("Optimized")
-				name:							"optimized"
-				checked:						true
-
-				IntegerField
-				{
-					name:						"maxTrees"
-					text:						qsTr("Max. trees")
-					defaultValue:				100
-					min:						3
-					max:						500000
-					fieldWidth:					60
-				}
-			}
-		}
+		BOOSTING.ModelOptimization { id: optim }
 	}
 }

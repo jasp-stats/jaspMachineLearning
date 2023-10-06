@@ -1,5 +1,5 @@
 Hierarchical Clustering
-==========================
+===
 
 Hierarchical clustering is a hard partitioning algorithm which aims to partition data into several clusters, where each observation belongs to only one group. The data is divided in such a way that the degree of similarity between two data observations is maximal if they belong to the same group and minimal if not.
 
@@ -33,7 +33,7 @@ Hierarchical clustering is a hard partitioning algorithm which aims to partition
 #### Algorithmic Settings
 - Distance: Specify the used dissimilarity measurement. The Euclidean distance uses the geometric distance between two points and is entirely based on the magnitude of the distance. In contrast, the Pearson correlation metric is a correlation-based dissimilarity measurement, which examines the linear association observations and if these correlations are high, these observations are considered to be similar. The Euclidean distance is set as default.
 - Linkage: Specify the used linkage measure. Single linkage uses the smallest distance between cases of clusters. Complete linkage uses the furthest distance between cases of clusters. Centroid linkage uses the centroids of clusters. Average linkage computes the distances between all cases between clusters. Average linkage is set as default. 
-- Scale variables: Scales the continuous variables. Standardization ensures that values of variables from different scales range into a specific similar scale. As a result, standardizing provides numerical stability, which improves the clustering output. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
+- Scale features: Standardizes the continuous features in the dataset. Standardization ensures that values of features from different scales range into a specific similar scale. As a result, standardizing provides numerical stability. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
 - Set seed: Gives the option to set a seed for your analysis. Setting a seed will exclude random processes influencing an analysis. For example, setting a seed makes it possible to re-run analyses with the same outcomes.
 
 #### Cluster Determination

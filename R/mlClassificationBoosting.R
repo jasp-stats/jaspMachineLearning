@@ -46,10 +46,10 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
   .mlClassificationTableMetrics(dataset, options, jaspResults, ready, position = 5)
 
   # Create the relative influence table
-  .mlBoostingTableRelInf(options, jaspResults, ready, position = 6, purpose = "classification")
+  .mlBoostingTableFeatureImportance(options, jaspResults, ready, position = 6, purpose = "classification")
 
-  # Create the OOB improvement plot
-  .mlBoostingPlotOobImprovement(options, jaspResults, ready, position = 7, purpose = "classification")
+  # Create the shap table
+  .mlTableShap(dataset, options, jaspResults, ready, position = 7, purpose = "classification")
 
   # Create the ROC curve
   .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 8, type = "boosting")
@@ -57,14 +57,17 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
   # Create the Andrews curves
   .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 9)
 
+  # Create the OOB improvement plot
+  .mlBoostingPlotOobImprovement(options, jaspResults, ready, position = 10, purpose = "classification")
+
   # Create the deviance plot
-  .mlBoostingPlotDeviance(options, jaspResults, ready, position = 10, purpose = "classification")
+  .mlBoostingPlotDeviance(options, jaspResults, ready, position = 11, purpose = "classification")
 
   # Create the relative influence plot
-  .mlBoostingPlotRelInf(options, jaspResults, ready, position = 11, purpose = "classification")
+  .mlBoostingPlotRelInf(options, jaspResults, ready, position = 12, purpose = "classification")
 
   # Decision boundaries
-  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 12, type = "boosting")
+  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 13, type = "boosting")
 }
 
 .boostingClassification <- function(dataset, options, jaspResults) {
@@ -90,7 +93,7 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
   testIndicatorColumn <- rep(1, nrow(dataset))
   testIndicatorColumn[trainingIndex] <- 0
   # gbm expects the columns in the data to be in the same order as the variables...
-  trainingAndValidationSet <- trainingAndValidationSet[, match(names(trainingAndValidationSet), all.vars(formula))]
+  trainingAndValidationSet <- trainingAndValidationSet[, match(names(trainingAndValidationSet), all.vars(formula)), drop = FALSE]
   if (options[["modelOptimization"]] == "manual") {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
@@ -162,6 +165,12 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
     result[["validAcc"]] <- sum(diag(prop.table(result[["validationConfTable"]])))
     result[["nvalid"]] <- nrow(validationSet)
     result[["valid"]] <- validationSet
+  }
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "multiclass", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data, type = "response", n.trees = model$n.trees))
+  if (nlevels(result[["testReal"]]) == 2) {
+    result[["explainer_fi"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = as.numeric(result[["train"]][, options[["target"]]]) - 1, predict_function = function(model, data) predict(model, newdata = data, type = "response", n.trees = model$n.trees))
+  } else {
+    result[["explainer_fi"]] <- DALEX::explain(result[["model"]], type = "multiclass", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data, type = "response", n.trees = model$n.trees)[, , 1])
   }
   return(result)
 }

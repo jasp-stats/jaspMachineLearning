@@ -16,10 +16,10 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick						2.8
-import QtQuick.Layouts				1.3
-import JASP.Controls				1.0
-import JASP.Widgets					1.0
+import QtQuick			2.8
+import QtQuick.Layouts	1.3
+import JASP.Controls	1.0
+import JASP.Widgets		1.0
 
 Group
 {
@@ -34,6 +34,7 @@ Group
 		id:							addPredictions
 		name:						"addPredictions"
 		text:						qsTr("Add predictions to data")
+		info:						qsTr("Generates a new column in your dataset with the values of your regression result. This gives you the option to inspect, cluster, or predict the generated values.")
 
 		ComputedColumnField 
 		{
@@ -43,6 +44,7 @@ Group
 			placeholderText:		qsTr("e.g., predicted")
 			fieldWidth:				120
 			enabled:				addPredictions.checked
+			info:					qsTr("The column name for the predicted values.")
 		}
 	}
 
@@ -59,6 +61,7 @@ Group
 			filter:					"*.jaspML"
 			save:					true
 			fieldWidth:				180 * preferencesModel.uiScale
+			info:					qsTr("The file path for the saved model.")
 		}
 
 		CheckBox
@@ -68,6 +71,7 @@ Group
 			text:					qsTr("Save trained model")
 			enabled:				showSave && savePath.value != ""
 			Layout.leftMargin:		10 * preferencesModel.uiScale
+			info:					qsTr("When clicked, the model is exported to the specified file path.")
 		}
 	}
 }

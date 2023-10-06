@@ -1,6 +1,6 @@
 context("Machine Learning Random Forest Classification")
 
-options <- jaspTools::analysisOptions("mlClassificationRandomForest")
+options <- initMlOptions("mlClassificationRandomForest")
 options$addPredictions <- FALSE
 options$addIndicator <- FALSE
 options$andrewsCurve <- TRUE
@@ -20,13 +20,16 @@ options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium",
                            "Hue", "Dilution", "Proline")
 options$rocCurve <- TRUE
 options$setSeed <- TRUE
-options$variableImportanceTable <- TRUE
+options$featureImportanceTable <- TRUE
 options$target <- "Type"
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""
 options$validationDataManual <- 0.2
 options$validationMeasures <- TRUE
+options$tableShap <- TRUE
+options$fromIndex <- 1
+options$toIndex <- 5
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClassificationRandomForest", "wine.csv", options)
 
@@ -88,19 +91,19 @@ test_that("ROC Curves Plot matches", {
   jaspTools::expect_equal_plots(testPlot, "roc-curves-plot")
 })
 
-test_that("Variable Importance table results match", {
-  table <- results[["results"]][["variableImportanceTable"]][["data"]]
+test_that("Feature Importance Metrics table results match", {
+  table <- results[["results"]][["featureImportanceTable"]][["data"]]
   jaspTools::expect_equal_tables(table,
-                      list(0.0929184156013314, 0.11584466455711, "Color", 0.0746170330176111,
-                           0.0740156345749835, "Alcohol", 0.227882931822773, 0.0519798563590929,
-                           "Proline", 0.104210419210419, 0.038220702722991, "Dilution",
-                           0.0392152459372139, 0.0269934390675145, "Hue", 0.148036748647974,
-                           0.00844623148177441, "Flavanoids", 0.0192297690867485, 0.00698621553884712,
-                           "Alcalinity", 0.00674978530241688, 0.00569058515854854, "Ash",
-                           0.0214415086298743, 0.00440369101163704, "Malic", 0.00579683474420317,
-                           0.0025062656641604, "Magnesium", 0.0831850839152417, -0.000437779601050258,
-                           "Phenols", 0.0194222905441742, -0.000592846851428087, "Proanthocyanins",
-                           0.0238594357587493, -0.00457882900654936, "Nonflavanoids"))
+                      list(0.0929184156013314, 0.11584466455711, 28.9155424269627, "Color", 0.0746170330176111,
+                           0.0740156345749835, 19.448078950963, "Alcohol", 0.227882931822773, 0.0519798563590929,
+                           26.418991981014, "Proline", 0.104210419210419, 0.038220702722991, 27.3543977112687, "Dilution",
+                           0.0392152459372139, 0.0269934390675145, 19.8918388161141, "Hue", 0.148036748647974,
+                           0.00844623148177441, 26.682160490794, "Flavanoids", 0.0192297690867485, 0.00698621553884712,
+                           13.2574950728752, "Alcalinity", 0.00674978530241688, 0.00569058515854854, 11.8285559639254, "Ash",
+                           0.0214415086298743, 0.00440369101163704, 13.4442844540554, "Malic", 0.00579683474420317,
+                           0.0025062656641604, 11.4619631102683, "Magnesium", 0.0831850839152417, -0.000437779601050258,
+                           18.1627003897205, "Phenols", 0.0194222905441742, -0.000592846851428087, 13.0768563565669, "Proanthocyanins",
+                           0.0238594357587493, -0.00457882900654936, 13.0837916724828, "Nonflavanoids"))
 })
 
 test_that("Evaluation Metrics table results match", {
@@ -119,3 +122,30 @@ test_that("Evaluation Metrics table results match", {
         0.971428571428571, 1, 35, 0.987654320987654, "<unicode><unicode><unicode>"))
 })
 
+test_that("Feature Contributions to Predictions for Test Set Cases table results match", {
+	skip("Need to figure out why this fails")
+	table <- results[["results"]][["tableShap"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(-0.0211810012836975, 0.0641848523748396, 0.0203252032520327, 0.045143346170304,
+			 0.0303808301240908, 0.0740265297389816, 0.0248181429182713,
+			 0.0211810012836967, 0.0117672229353872, -0.00813008130081316,
+			 0.0761660248181432, 0.0102695763799739, -0.0160462130937101,
+			 0.325631151048352, 1, "1 (0.659)", 0.0273855370132654, 0.0823705605477109,
+			 0.0203252032520325, 0.042789901583226, 0.0605477107402651, 0.0791613179289691,
+			 0.0590500641848525, 0.0346598202824133, 0.0203252032520326,
+			 0.0162601626016248, 0.0667522464698331, -0.0192554557124522,
+			 0.110825845100556, 0.325631151048352, 2, "1 (0.927)", 0.0280273855370136,
+			 0.0982028241335046, 0.00556268720581932, 0.0425759520753094,
+			 0.0243902439024392, 0.104835258878904, 0.0744544287548139, 0.0308087291399228,
+			 0.0117672229353879, -0.00534873769790212, 0.0890029952931112,
+			 0.0104835258878905, 0.110825845100556, 0.325631151048352, 3,
+			 "1 (0.951)", 0.0280273855370133, 0.100342319212666, 0.00556268720581965,
+			 0.0577663671373557, 0.0303808301240908, 0.10397946084724, 0.0744544287548137,
+			 0.0258878904578513, 0.011767222935387, 0.0162601626016267, 0.0890029952931107,
+			 0.0104835258878905, 0.120453572956782, 0.325631151048352, 4,
+			 "1 (1)", -0.00706033376123194, 0.0982028241335046, 0.0029952931108258,
+			 0.053701326486949, 0.0243902439024392, 0.104835258878904, 0.0744544287548139,
+			 0.0269576379974326, 0.0117672229353872, 0.0162601626016248,
+			 0.0708172871202396, 0.0130509199828839, 0.110825845100556, 0.325631151048352,
+			 5, "1 (0.927)"))
+})

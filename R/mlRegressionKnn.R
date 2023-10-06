@@ -36,17 +36,23 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
   # Create the data split plot
   .mlPlotDataSplit(dataset, options, jaspResults, ready, position = 2, purpose = "regression", type = "knn")
 
-  # Create the weights plot
-  .mlKnnPlotWeights(options, jaspResults, position = 3)
-
   # Create the evaluation metrics table
-  .mlRegressionTableMetrics(dataset, options, jaspResults, ready, position = 4)
+  .mlRegressionTableMetrics(dataset, options, jaspResults, ready, position = 3)
 
-  # Create the mean squared error plot
-  .mlKnnPlotError(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
+  # Create the feature importance table
+  .mlTableFeatureImportance(options, jaspResults, ready, position = 4, purpose = "regression")
+
+  # Create the shap table
+  .mlTableShap(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
 
   # Create the predicted performance plot
   .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 6)
+
+  # Create the mean squared error plot
+  .mlKnnPlotError(dataset, options, jaspResults, ready, position = 7, purpose = "regression")
+
+  # Create the weights plot
+  .mlKnnPlotWeights(options, jaspResults, position = 8)
 }
 
 .knnRegression <- function(dataset, options, jaspResults, ready) {
@@ -156,6 +162,8 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
   result[["testMSE"]] <- mean((testFit$fitted.values - testSet[, options[["target"]]])^2)
   result[["ntrain"]] <- nrow(trainingSet)
   result[["ntest"]] <- nrow(testSet)
+  result[["train"]] <- trainingSet
+  result[["test"]] <- testSet
   result[["testReal"]] <- testSet[, options[["target"]]]
   result[["testPred"]] <- testFit$fitted.values
   result[["testIndicatorColumn"]] <- testIndicatorColumn
@@ -169,6 +177,7 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
       result[["trainAccuracyStore"]] <- trainErrorStore
     }
   }
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]][, options[["predictors"]], drop = FALSE], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model$predictive, newdata = data))
   return(result)
 }
 
@@ -182,11 +191,11 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
   )
   plot <- createJaspPlot(plot = NULL, title = plotTitle, width = 400, height = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "errorVsKPlot", "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleVariables", "modelOptimization",
-    "target", "predictors", "seed", "setSeed", "modelValid", "maxNearestNeighbors", "noOfFolds", "modelValid",
-    "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "holdoutData", "testDataManual"
-  ))
+  if (purpose == "regression") {
+    plot$dependOn(options = c("errorVsKPlot", .mlRegressionDependencies()))
+  } else {
+    plot$dependOn(options = c("errorVsKPlot", .mlClassificationDependencies()))
+  }
   jaspResults[["errorVsKPlot"]] <- plot
   if (!ready) {
     return()

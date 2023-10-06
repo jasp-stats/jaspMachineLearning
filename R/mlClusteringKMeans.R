@@ -33,26 +33,26 @@ mlClusteringKMeans <- function(jaspResults, dataset, options, ...) {
   # Create the cluster information table
   .mlClusteringTableInformation(options, jaspResults, ready, position = 2, type = "kmeans")
 
-  # Create the cluster means table
-  .mlClusteringTableMeans(dataset, options, jaspResults, ready, position = 3)
-
   # Create the cluster evaluation metrics table
-  .mlClusteringTableMetrics(dataset, options, jaspResults, ready, position = 4)
+  .mlClusteringTableMetrics(dataset, options, jaspResults, ready, position = 3)
+
+  # Create the cluster means table
+  .mlClusteringTableMeans(dataset, options, jaspResults, ready, position = 4)
 
   # Create the within sum of squares plot
   .mlClusteringPlotElbow(dataset, options, jaspResults, ready, position = 5)
 
-  # Create the cluster means plot
-  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 6)
-
-  # Create the cluster densities plot
-  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 7)
-
   # Create the cluster plot
-  .mlClusteringPlotTsne(dataset, options, jaspResults, ready, position = 8, type = "kmeans")
+  .mlClusteringPlotTsne(dataset, options, jaspResults, ready, position = 6, type = "kmeans")
 
   # Create the matrix plot
-  .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 9)
+  .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 7)
+
+  # Create the cluster means plot
+  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 8)
+
+  # Create the cluster densities plot
+  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 9)
 }
 
 .kMeansClustering <- function(dataset, options, jaspResults, ready) {

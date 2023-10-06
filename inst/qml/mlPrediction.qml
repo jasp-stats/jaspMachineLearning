@@ -16,15 +16,17 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick									2.8
-import QtQuick.Layouts							1.3
-import JASP.Controls							1.0
-import JASP.Widgets								1.0
+import QtQuick			2.8
+import QtQuick.Layouts	1.3
+import JASP.Controls	1.0
+import JASP.Widgets		1.0
 
-import "./common" as ML
+import "./common/ui" as UI
+import "./common/tables" as TAB
 
 Form 
 {
+	info: qsTr("The prediction analysis enables you to load a trained machine learning model and apply it to new data.")
 
 	FileSelector
 	{
@@ -60,12 +62,7 @@ Form
 	{
 		title:									qsTr("Algorithmic Settings")
 
-		CheckBox
-		{
-			text:								qsTr("Scale features")
-			name:								"scaleVariables"
-			checked:							true
-		}
+		UI.ScaleVariables { }
 	}
 
 	Group
@@ -79,39 +76,45 @@ Form
 			label:				 				"Predictions for new data"
 			checked:							true
 
-			CheckBox
-			{
-				name:							"predictionsTableFeatures"
-				label:							"Add features"
-			}
-
 			Row
 			{	
-				spacing:							5 * preferencesModel.uiScale
-				enabled:							predictionsTable.checked
+				spacing:						5 * preferencesModel.uiScale
+				enabled:						predictionsTable.checked
 			
 				IntegerField
 				{
-					name:							"fromIndex"
-					text:							qsTr("From")
-					defaultValue:					1
-					min:							1
-					max:							dataSetModel.rowCount()
+					name:						"fromIndex"
+					text:						qsTr("Cases")
+					defaultValue:				1
+					min:						1
+					max:						dataSetModel.rowCount()
 				}
 
 				IntegerField
 				{
-					name:							"toIndex"
-					text:							qsTr("to")
-					defaultValue:					20
-					max:							dataSetModel.rowCount()
-					min:							1
+					name:						"toIndex"
+					text:						qsTr("to")
+					defaultValue:				20
+					max:						dataSetModel.rowCount()
+					min:						1
 				}
 			}
+
+			CheckBox
+			{
+				name:							"predictionsTableFeatures"
+				label:							qsTr("Add features")
+			}
+		}
+
+		CheckBox
+		{
+			text:								qsTr("Explain predictions")
+			name:								"tableShap"
 		}
 	}
 
-	ML.ExportResults {
+	UI.ExportResults {
 		enabled:								predictors.count > 1
 		showSave:								false
 	}

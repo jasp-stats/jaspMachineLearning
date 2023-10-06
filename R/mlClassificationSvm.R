@@ -45,17 +45,23 @@ mlClassificationSvm <- function(jaspResults, dataset, options, ...) {
   # Create the validation measures table
   .mlClassificationTableMetrics(dataset, options, jaspResults, ready, position = 5)
 
+  # Create the feature importance table
+  .mlTableFeatureImportance(options, jaspResults, ready, position = 6, purpose = "classification")
+
+  # Create the shap table
+  .mlTableShap(dataset, options, jaspResults, ready, position = 7, purpose = "classification")
+
   # Create the support vectors table
-  .mlSvmTableSupportVectors(options, jaspResults, ready, position = 6, purpose = "classification")
+  .mlSvmTableSupportVectors(options, jaspResults, ready, position = 8, purpose = "classification")
 
   # Create the ROC curve
-  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 7, type = "svm")
+  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 9, type = "svm")
 
   # Create the Andrews curves
-  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 8)
+  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 10)
 
   # Decision boundaries
-  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 9, type = "svm")
+  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 11, type = "svm")
 }
 
 .svmClassification <- function(dataset, options, jaspResults, ready) {
@@ -77,7 +83,7 @@ mlClassificationSvm <- function(jaspResults, dataset, options, ...) {
   testSet <- dataset[-trainingIndex, ]
   trainingFit <- e1071::svm(
     formula = formula, data = trainingSet, type = "C-classification", kernel = options[["weights"]], cost = options[["cost"]], tolerance = options[["tolerance"]],
-    epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]], gamma = options[["gamma"]], coef0 = options[["complexityParameter"]]
+    epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]], gamma = options[["gamma"]], coef0 = options[["complexityParameter"]], probability = TRUE
   )
   # Use the specified model to make predictions for dataset
   testPredictions <- predict(trainingFit, newdata = testSet)
@@ -98,5 +104,11 @@ mlClassificationSvm <- function(jaspResults, dataset, options, ...) {
   result[["test"]] <- testSet
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["classes"]] <- dataPredictions
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "multiclass", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) attr(predict(model, newdata = data, probability = TRUE), "probabilities"))
+  if (nlevels(result[["testReal"]]) == 2) {
+    result[["explainer_fi"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = as.numeric(result[["train"]][, options[["target"]]]) - 1, predict_function = function(model, data) as.numeric(predict(model, newdata = data)) - 1)
+  } else {
+    result[["explainer_fi"]] <- DALEX::explain(result[["model"]], type = "multiclass", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) attr(predict(model, newdata = data, probability = TRUE), "probabilities"))
+  }
   return(result)
 }

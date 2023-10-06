@@ -1,5 +1,5 @@
 Random Forest Classification
-==========================
+===
 
 Random Forest is a method of classification that creates a set of decision trees that consists of a large number of individual trees which operate as an ensemble. Each individual tree in the random forest returns a class prediction and the class with the most votes becomes the model’s prediction.
 
@@ -16,8 +16,9 @@ Random Forest is a method of classification that creates a set of decision trees
 #### Tables  
 - Confusion matrix: Displays a table that shows the observed classes against the predicted classes. Used to assess model accuracy.
 - Class proportions: Displays a table that shows the proportions of each class in the data set, training (and validaton), and test set.
-- Evaluation metrics: Shows commonly used classification evaluation metrics like precision, recall, the F1-score, support and AUC (area under the ROC curve).
-- Feature importance: Shows the mean decrease in accuracy and total increase in node purity for all feature variables. These are indicators of the importance of the features.
+- Model performance: Shows commonly used classification evaluation metrics like precision, recall, the F1-score, support and AUC (area under the ROC curve).
+- Feature importance: Shows the available feature importance metrics for the fitted model.
+- Explain predictions: Shows the decomposition of the model’s prediction into contributions that can be attributed to different explanatory variables.
 
 #### Plots
 - Data split: Shows how the data is split into training (and validation), and test set.
@@ -41,7 +42,7 @@ Random Forest is a method of classification that creates a set of decision trees
 #### Algorithmic Settings
 - Training data used per tree: Select the percentage of training data that is used to train each individual tree.
 - Features per split: Set the number of feature variables that is used within each split in the decision trees. Auto defaults to  
-- Scale variables: Scales the continuous variables. Standardization ensures that values of variables from different scales range into a specific similar scale. As a result, standardizing provides numerical stability, which improves the clustering output. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
+- Scale features: Standardizes the continuous features in the dataset. Standardization ensures that values of features from different scales range into a specific similar scale. As a result, standardizing provides numerical stability. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
 - Set seed: Gives the option to set a seed for your analysis. Setting a seed will exclude random processes influencing an analysis. For example, setting a seed makes it possible to re-run analyses with the same data splits.
 
 #### Number of Trees

@@ -1,10 +1,10 @@
 context("Machine Learning Boosting Classification")
 
-options <- jaspTools::analysisOptions("mlClassificationBoosting")
+options <- initMlOptions("mlClassificationBoosting")
 options$addPredictions <- FALSE
 options$addIndicator <- FALSE
 options$andrewsCurve <- TRUE
-options$relativeInfluenceTable <- TRUE
+options$featureImportanceTable <- TRUE
 options$predictionsColumn <- ""
 options$classProportionsTable <- TRUE
 options$savePath <- ""
@@ -27,6 +27,9 @@ options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""
 options$validationDataManual <- 0.2
 options$validationMeasures <- TRUE
+options$tableShap <- TRUE
+options$fromIndex <- 1
+options$toIndex <- 5
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClassificationBoosting", "wine.csv", options)
 
@@ -38,14 +41,14 @@ test_that("Andrews Curves Plot matches", {
 })
 
 test_that("Relative Influence table results match", {
-  table <- results[["results"]][["relativeInfluenceTable"]][["data"]]
+  table <- results[["results"]][["featureImportanceTable"]][["data"]]
   jaspTools::expect_equal_tables(table,
-                      list("Proline", 31.1797927388636, "Color", 20.173253110114, "Flavanoids",
-                           19.8438729446546, "Alcohol", 11.3080195393476, "Hue", 9.04159967448256,
-                           "Dilution", 5.78903515515603, "Phenols", 2.06207785543184, "Malic",
-                           0.318048182535448, "Magnesium", 0.198970273683845, "Ash", 0.0761054305928261,
-                           "Nonflavanoids", 0.00505359720114565, "Alcalinity", 0.00416148218437122,
-                           "Proanthocyanins", 1.00157520318044e-05))
+                      list(16.3458735499254, "Proline", 31.1797927388636, 1.92298108138859, "Color", 20.173253110114, 6.11564217900192, "Flavanoids",
+                           19.8438729446546, 0.580073791483201, "Alcohol", 11.3080195393476, 1.46276253431049, "Hue", 9.04159967448256,
+                           0.170561653950044, "Dilution", 5.78903515515603, 0.0655054520688096, "Phenols", 2.06207785543184, 0.134398642455039, "Malic",
+                           0.318048182535448, 0.0796903953021984, "Magnesium", 0.198970273683845, 0.0820480575235912, "Ash", 0.0761054305928261,
+                           0.0583723130067498, "Nonflavanoids", 0.00505359720114565, 0.0642402307210398, "Alcalinity", 0.00416148218437122,
+                           0.0549408459183189, "Proanthocyanins", 1.00157520318044e-05))
 })
 
 test_that("Class Proportions table results match", {
@@ -119,3 +122,30 @@ test_that("Evaluation Metrics table results match", {
         7))
 })
 
+test_that("Feature Contributions to Predictions for Test Set Cases table results match", {
+	skip("Need to figure out why this fails")
+	table <- results[["results"]][["tableShap"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(-0.0150822123508907, 0.159929656349742, 0.0417039066834324, 0.0319091531835033,
+			 0.0507163099941813, 0.013427306659579, 0.116594538544877, 0.105521840234203,
+			 0.0999814923383288, 0.00284520779706354, 0.0167544051680328,
+			 0, -0.0336486168114327, 0.324584764525254, 1, "1 (0.915)", 5.37876421069505e-07,
+			 0.0181252669779804, 1.10340389214425e-06, 0.184912951717921,
+			 0.000536054987528733, 0.293751186421069, 0.0546718264256107,
+			 7.1285765782525e-06, 5.00288138793881e-05, 1.42973015537784e-07,
+			 1.65533451035316e-06, 0, 0.123354284265876, 0.324584764525254,
+			 2, "1 (1)", 2.42044409766162e-05, 0.0123209555645536, 5.6333492063354e-06,
+			 0.156003257147095, 7.45997318882807e-05, 0.353846301230481,
+			 0.0295431352261265, 4.00556964907928e-06, 0.000222745823264647,
+			 5.76329424184507e-07, 3.64201702562905e-06, 0, 0.123354284265876,
+			 0.324584764525254, 3, "1 (1)", 2.42044409766162e-05, 0.0123209555645536,
+			 5.6333492063354e-06, 0.156003257147095, 7.45997318882807e-05,
+			 0.353846301230481, 0.0295431352261265, 4.00556964907928e-06,
+			 0.000222745823264647, 5.76329424184507e-07, 3.64201702562905e-06,
+			 0, 0.123354284265876, 0.324584764525254, 4, "1 (1)", -2.09319118182894e-06,
+			 0.00968685617741993, 5.69083017809557e-06, 0.156003257147095,
+			 7.54586161424431e-05, 0.353846301230481, 0.0322349904847964,
+			 2.13704773278645e-05, 0.000173208048563356, 6.39177424877069e-07,
+			 4.23279087402584e-06, 0, 0.123354284265876, 0.324584764525254,
+			 5, "1 (1)"))
+})

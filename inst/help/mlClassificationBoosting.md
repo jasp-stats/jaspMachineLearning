@@ -1,5 +1,5 @@
 Boosting Classification
-==========================
+===
 
 Boosting works by sequentially adding features to an decision tree ensemble, each one correcting its predecessor. However, instead of changing the weights for every incorrect classified observation at every iteration, Boosting method tries to fit the new feature to the residual errors made by the previous feature.
 
@@ -16,8 +16,9 @@ Boosting works by sequentially adding features to an decision tree ensemble, eac
 #### Tables  
 - Confusion matrix: Displays a table that shows the observed classes against the predicted classes. Used to assess model accuracy.
 - Class proportions: Displays a table that shows the proportions of each class in the data set, training (and validaton), and test set.
-- Evaluation metrics: Shows commonly used classification evaluation metrics like precision, recall, the F1-score, support and AUC (area under the ROC curve).
-- Relative influence: Shows the relative influence of the features.
+- Model performance: Shows commonly used classification evaluation metrics like precision, recall, the F1-score, support and AUC (area under the ROC curve).
+- Feature importance: Shows the available feature importance metrics for the fitted model.
+- Explain predictions: Shows the decomposition of the model’s prediction into contributions that can be attributed to different explanatory variables.
 
 #### Plots
 - Data split: Shows how the data is split into training (and validation), and test set.
@@ -44,7 +45,7 @@ Boosting works by sequentially adding features to an decision tree ensemble, eac
 - Interaction depth: Integer specifying the maximum depth of each tree (i.e., the highest level of variable interactions allowed. A value of 1 implies an additive model, a value of 2 implies a model with up to 2-way interactions, etc. Default is 1.
 - Min. observations in node: Integer specifying the minimum number of observations in the terminal nodes of the trees. Note that this is the actual number of observations, not the total weight.
 - Training data used per tree: Select the percentage of training data that is used to train each individual tree.
-- Scale variables: Scales the continuous variables. Standardization ensures that values of variables from different scales range into a specific similar scale. As a result, standardizing provides numerical stability, which improves the clustering output. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
+- Scale features: Standardizes the continuous features in the dataset. Standardization ensures that values of features from different scales range into a specific similar scale. As a result, standardizing provides numerical stability. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
 - Set seed: Gives the option to set a seed for your analysis. Setting a seed will exclude random processes influencing an analysis. For example, setting a seed makes it possible to re-run analyses with the same data splits.
 
 #### Number of Trees

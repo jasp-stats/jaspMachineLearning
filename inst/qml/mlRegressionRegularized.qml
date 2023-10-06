@@ -16,83 +16,38 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick									2.8
-import QtQuick.Layouts							1.3
-import JASP.Controls							1.0
-import JASP.Widgets								1.0
+import QtQuick			2.8
+import QtQuick.Layouts	1.3
+import JASP.Controls	1.0
+import JASP.Widgets		1.0
 
-import "./common" as ML
+import "./common/ui" as UI
+import "./common/tables" as TAB
+import "./common/figures" as FIG
+import "./common/analyses/regularized" as REGU
 
 Form 
 {
+	info: qsTr("Regularized linear regression is an adaptation of linear regression in which the coefficients are shrunken towards 0. This is done by applying a penalty (e.g., ridge, lasso, or elastic net). The parameter λ controls the degree to which parameters are shrunken.\n### Assumptions\n- The target variable is a continuous variable.\n- The feature variables consist of continuous, nominal, or ordinal variables.")
 
-	VariablesForm
-	{
-		AvailableVariablesList
-		{
-			name:								"variables"
-		}
-
-		AssignedVariablesList
-		{
-			id:									target
-			name:								"target"
-			title:								qsTr("Target")
-			singleVariable:						true
-			allowedColumns:						["scale"]
-		}
-
-		AssignedVariablesList
-		{
-			id:									predictors
-			name:								"predictors"
-			title:								qsTr("Features")
-			allowedColumns:						["scale", "ordinal"]
-			allowAnalysisOwnComputedColumns:	false
-		}
-
-		AssignedVariablesList
-		{
-			name:								"weights"
-			title:								qsTr("Weights")
-			singleVariable:						true
-			allowedColumns:						["scale"]
-		}
-	}
+	REGU.VariablesFormRegularizedRegression { id: vars; allow_nominal: false }
 
 	Group
 	{
 		title:									qsTr("Tables")
 
-		CheckBox
-		{
-			text:								qsTr("Evaluation metrics")
-			name:								"validationMeasures"
-		}
-
-		CheckBox
-		{
-			name:								"coefTable"
-			text:								qsTr("Regression coefficients")
-		}
+		TAB.ModelPerformance { }
+		TAB.FeatureImportance { }
+		TAB.ExplainPredictions { }
+		REGU.CoefficientTable { }
 	}
 
 	Group
 	{
 		title:									qsTr("Plots")
 
-		CheckBox
-		{
-			text:								qsTr("Data split")
-			name:								"dataSplitPlot"
-			checked:							true
-		}
-
-		CheckBox
-		{
-			name:								"predictedPerformancePlot"
-			text:								qsTr("Predictive performance")
-		}
+		FIG.DataSplit { }
+		FIG.PredictivePerformance { }
 
 		CheckBox
 		{
@@ -121,12 +76,12 @@ Form
 		}
 	}
 
-	ML.ExportResults
+	UI.ExportResults
 	{
-		enabled:								predictors.count > 1 && target.count > 0
+		enabled:								vars.predictorCount > 1 && vars.targetCount > 0
 	}
 
-	ML.DataSplit
+	UI.DataSplit
 	{
 		leaveOneOutVisible:						false
 		kFoldsVisible:							false
@@ -176,35 +131,9 @@ Form
 				visible:						penalty.currentIndex == 2
 			}
 
-			CheckBox
-			{
-				name:							"intercept"
-				text:							qsTr("Fit intercept")
-				checked:						true
-			}
-
-			CheckBox
-			{
-				text:							qsTr("Scale variables")
-				name:							"scaleVariables"
-				checked:						true
-			}
-
-			CheckBox
-			{
-				name:							"setSeed"
-				text:							qsTr("Set seed")
-				childrenOnSameRow:				true
-
-				IntegerField
-				{
-					name:						"seed"
-					defaultValue:				1
-					min:						-999999
-					max:						999999
-					fieldWidth:					60
-				}
-			}
+			REGU.Intercept { }
+			UI.ScaleVariables { }
+			UI.SetSeed { }
 		}
 
 		RadioButtonGroup

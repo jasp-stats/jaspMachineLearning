@@ -16,9 +16,10 @@ Decision Trees is a supervised learning algorithm that uses a decision tree as a
 #### Tables  
 - Confusion matrix: Displays a table that shows the observed classes against the predicted classes. Used to assess model accuracy.
 - Class proportions: Displays a table that shows the proportions of each class in the data set, training (and validaton), and test set.
-- Evaluation metrics: Shows commonly used classification evaluation metrics like precision, recall, the F1-score, support and AUC (area under the ROC curve).
+- Model performance: Shows commonly used classification evaluation metrics like precision, recall, the F1-score, support and AUC (area under the ROC curve).
+- Feature importance: Shows the available feature importance metrics for the fitted model.
+- Explain predictions: Shows the decomposition of the model’s prediction into contributions that can be attributed to different explanatory variables.
 - Splits in tree: Shows the split variables, their split point, and the number of observations (which are not missing and are of positive weight) sent left or right by the split. It also shows the improvement in deviance given by this split.
-- Feature importance: Shows the relative importance of the features.
 
 #### Plots
 - Data split: Shows how the data is split into training (and validation), and test set.
@@ -39,7 +40,7 @@ Decision Trees is a supervised learning algorithm that uses a decision tree as a
 - Min. observations in terminal: The minimum number of observations in any terminal node.
 - Max. interaction depth: Set the maximum depth of any node of the final tree.
 - Complexity penalty: Any split that does not decrease the overall lack of fit by a factor of this parameter is not attempted.
-- Scale variables: Scales the continuous variables. Standardization ensures that values of variables from different scales range into a specific similar scale. As a result, standardizing provides numerical stability, which improves the clustering output. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
+- Scale features: Standardizes the continuous features in the dataset. Standardization ensures that values of features from different scales range into a specific similar scale. As a result, standardizing provides numerical stability. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
 - Set seed: Gives the option to set a seed for your analysis. Setting a seed will exclude random processes influencing an analysis. For example, setting a seed makes it possible to re-run analyses with the same data splits.
 
 #### Add Predicted Classes to Data

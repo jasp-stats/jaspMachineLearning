@@ -33,29 +33,29 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
   # Create the cluster information table
   .mlClusteringTableInformation(options, jaspResults, ready, position = 2, type = "hierarchical")
 
-  # Create the cluster means table
-  .mlClusteringTableMeans(dataset, options, jaspResults, ready, position = 3)
-
   # Create the cluster evaluation metrics table
-  .mlClusteringTableMetrics(dataset, options, jaspResults, ready, position = 4)
+  .mlClusteringTableMetrics(dataset, options, jaspResults, ready, position = 3)
+
+  # Create the cluster means table
+  .mlClusteringTableMeans(dataset, options, jaspResults, ready, position = 4)
 
   # Create the within sum of squares plot
   .mlClusteringPlotElbow(dataset, options, jaspResults, ready, position = 5)
 
-  # Create dendrogram
-  .mlClusteringHierarchicalDendogram(dataset, options, jaspResults, ready, position = 6)
-
-  # Create the cluster means plot
-  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 7)
-
-  # Create the cluster densities plot
-  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 8)
-
   # Create the cluster plot
-  .mlClusteringPlotTsne(dataset, options, jaspResults, ready, position = 9, type = "hierarchical")
+  .mlClusteringPlotTsne(dataset, options, jaspResults, ready, position = 6, type = "hierarchical")
 
   # Create the matrix plot
-  .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 10)
+  .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 7)
+
+  # Create the cluster means plot
+  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 8)
+
+  # Create the cluster densities plot
+  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 9)
+
+  # Create dendrogram
+  .mlClusteringHierarchicalDendogram(dataset, options, jaspResults, ready, position = 10)
 }
 
 .hierarchicalClustering <- function(dataset, options, jaspResults) {
@@ -152,18 +152,12 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Dendrogram"), width = 400, height = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "predictors", "manualNumberOfClusters", "noOfRandomSets", "algorithm", "epsilonNeighborhoodSize", "minCorePoints", "distance",
-    "maxNumberIterations", "modelOptimization", "ready", "seed", "tsneClusterPlot", "maxNumberOfClusters", "scaleVariables", "setSeed",
-    "linkage", "fuzzinessParameter", "dendrogram", "modelOptimizationMethod"
-  ))
+  plot$dependOn(options = c(.mlClusteringDependencies(), "dendrogram"))
   jaspResults[["dendrogram"]] <- plot
   if (!ready) {
     return()
   }
-  if (options[["setSeed"]]) {
-    set.seed(options[["seed"]])
-  }
+  .setSeedJASP(options) # Set the seed to make results reproducible
   unique.rows <- which(!duplicated(dataset[, options[["predictors"]]]))
   data <- dataset[unique.rows, options[["predictors"]]]
   if (options[["distance"]] == "pearsonCorrelation") {

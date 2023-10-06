@@ -16,247 +16,60 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick									2.8
-import QtQuick.Layouts							1.3
-import JASP.Controls							1.0
-import JASP.Widgets								1.0
+import QtQuick			2.8
+import QtQuick.Layouts	1.3
+import JASP.Controls	1.0
+import JASP.Widgets		1.0
 
-import "./common" as ML
+import "./common/ui" as UI
+import "./common/tables" as TAB
+import "./common/figures" as FIG
+import "./common/analyses/svm" as SVM
 
 Form
 {
+	info: qsTr("Support Vector Machines is a supervised learning algorithm that maps training examples to points in space so as to maximise the width of the gap between the two categories. New examples are then mapped into that same space and predicted to belong to a category based on which side of the gap they fall.\n### Assumptions\n- The target is a nominal or ordinal variable.\n- The feature variables consist of continuous, nominal, or ordinal variables.")
 
-	VariablesForm
+	UI.VariablesFormClassification { id: vars }
+
+	Group
 	{
-		AvailableVariablesList
-		{
-			name:								"variables"
-		}
+		title: qsTr("Tables")
 
-		AssignedVariablesList
-		{
-			id:									target
-			name:								"target"
-			title:								qsTr("Target")
-			singleVariable:						true
-			allowedColumns:						["ordinal", "nominal", "nominalText"]
-		}
-
-		AssignedVariablesList
-		{
-			id:									predictors
-			name:								"predictors"
-			title:								qsTr("Features")
-			allowedColumns:						["scale", "ordinal", "nominal", "nominalText"]
-			allowAnalysisOwnComputedColumns:	false
-		}
+		TAB.ConfusionMatrix { }
+		TAB.ClassProportions { }
+		TAB.ModelPerformance { }
+		TAB.FeatureImportance { }
+		TAB.ExplainPredictions { }
+		SVM.SupportVectors { }
 	}
 
 	Group
 	{
-		title:									qsTr("Tables")
+		title: qsTr("Plots")
 
-		CheckBox
-		{
-			text:								qsTr("Confusion matrix")
-			name:								"confusionTable"
-			checked:							true
-
-			CheckBox
-			{
-				text:							qsTr("Display proportions")
-				name:							"confusionProportions"
-			}
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Class proportions")
-			name:								"classProportionsTable"
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Evaluation metrics")
-			name:								"validationMeasures"
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Support vectors")
-			name:								"supportVectorsTable"
-		}
+		FIG.DataSplit { }
+		FIG.RocCurve { }
+		FIG.AndrewsCurve { }
+		FIG.DecisionBoundary { }
 	}
 
-	Group
-	{
-		title:									qsTr("Plots")
-
-		CheckBox
-		{
-			text:								qsTr("Data split")
-			name:								"dataSplitPlot"
-			checked:							true
-		}
-
-		CheckBox
-		{
-			name:								"rocCurve"
-			text:								qsTr("ROC curves")
-		}
-
-		CheckBox
-		{
-			name:								"andrewsCurve"
-			text:								qsTr("Andrews curves")
-		}
-
-		CheckBox
-		{
-			name:								"decisionBoundary"
-			text:								qsTr("Decision boundary matrix")
-
-			Row
-			{
-
-				CheckBox
-				{
-					name:						"legendShown"
-					text:						qsTr("Legend")
-					checked:					true
-				}
-
-				CheckBox
-				{
-					name:						"pointsShown"
-					text:						qsTr("Points")
-					checked:					true
-				}
-			}
-		}
-	}
-
-	ML.ExportResults
-	{
-		enabled:								predictors.count > 0 && target.count > 0
-	}
-
-	ML.DataSplit
-	{
-		trainingValidationSplit:				false
-	}
+	UI.ExportResults { enabled: vars.predictorCount > 0 && vars.targetCount > 0 }
+	UI.DataSplit { trainingValidationSplit: false }
 
 	Section
 	{
-		title:									qsTr("Training Parameters")
+		title: qsTr("Training Parameters")
 
 		Group
 		{
-			title:								qsTr("Algorithmic Settings")
+			title: qsTr("Algorithmic Settings")
 
-			DropDown
-			{
-				id:								weights
-				name:							"weights"
-				indexDefaultValue:				0
-				label:							qsTr("Weights")
-				values:
-					[
-					{ label: qsTr("Linear"),	value: "linear"},
-					{ label: qsTr("Radial"),	value: "radial"},
-					{ label: qsTr("Polynomial"),value: "polynomial"},
-					{ label: qsTr("Sigmoid"),	value: "sigmoid"}
-				]
-			}
-
-			DoubleField
-			{
-				name:							"degree"
-				text:							qsTr("Degree")
-				defaultValue:					3
-				min:							1
-				enabled:						weights.value == "polynomial"
-				Layout.leftMargin:				10 * preferencesModel.uiScale
-			}
-
-			DoubleField
-			{
-				name:							"gamma"
-				text:							qsTr("Gamma parameter")
-				defaultValue:					1
-				min:							0
-				enabled:						weights.value != "linear"
-				Layout.leftMargin:				10 * preferencesModel.uiScale
-			}
-
-			DoubleField
-			{
-				name:							"complexityParameter"
-				text:							qsTr("r parameter")
-				defaultValue:					0
-				min:							0
-				enabled:						weights.value == "polynomial" | weights.value == "sigmoid"
-				Layout.leftMargin:				10 * preferencesModel.uiScale
-			}
-
-			DoubleField
-			{
-				name:							"cost"
-				text:							qsTr("Cost of constraints violation")
-				defaultValue:					1
-				min:							0.001
-			}
-
-			DoubleField
-			{
-				name:							"tolerance"
-				text:							qsTr("Tolerance of termination criterion")
-				defaultValue:					0.001
-				min:							0.001
-			}
-
-			DoubleField
-			{
-				name:							"epsilon"
-				text:							qsTr("Epsilon")
-				defaultValue:					0.01
-				min:							0.001
-			}
-
-			CheckBox
-			{
-				text:							qsTr("Scale features")
-				name:							"scaleVariables"
-				checked:						true
-			}
-
-			CheckBox
-			{
-				name:							"setSeed"
-				text:							qsTr("Set seed")
-				childrenOnSameRow:				true
-
-				IntegerField
-				{
-					name:						"seed"
-					defaultValue:				1
-					min:						-999999
-					max:						999999
-					fieldWidth:					60
-				}
-			}
+			SVM.AlgorithmicSettings { }
+			UI.ScaleVariables { }
+			UI.SetSeed { }
 		}
 
-		RadioButtonGroup
-		{
-			name:								"modelOptimization"
-			visible:							false
-
-			RadioButton
-			{
-				name:							"manual"
-				checked:						true
-			}
-		}
+		SVM.ModelOptimization { id: optim }
 	}
 }

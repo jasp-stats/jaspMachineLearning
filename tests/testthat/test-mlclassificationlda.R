@@ -1,6 +1,6 @@
 context("Machine Learning LDA Classification")
 
-options <- jaspTools::analysisOptions("mlClassificationLda")
+options <- initMlOptions("mlClassificationLda")
 options$addPredictions <- FALSE
 options$addIndicator <- FALSE
 options$andrewsCurve <- TRUE
@@ -30,6 +30,11 @@ options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""
 options$validationDataManual <- 0.2
 options$validationMeasures <- TRUE
+options$tableShap <- TRUE
+options$fromIndex <- 1
+options$toIndex <- 5
+options$featureImportanceTable <- TRUE
+options$multinormalTable <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClassificationLda", "wine.csv", options)
 
@@ -180,4 +185,49 @@ test_that("Evaluation Metrics table results match", {
       1, 1, 1, 0, 0, 0, 0, 3, 1, 1, 1, 1, 0.228571428571429, 8, 1,
       "<unicode><unicode><unicode>", 1, 0.993197278911565, 1, 0, 0,
       0, 0, "Average / Total", 1, 1, 1, 1, 1, 35, 1, "<unicode><unicode><unicode>"))
+})
+
+test_that("Additive Explanations for Predictions of Test Set Cases table results match", {
+	table <- results[["results"]][["tableShap"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(-0.0298348205005264, 0.204669205512118, 0.0650573130972094, 0.0984758248651785,
+			 0.113173720484469, 0.00523002834583347, 0.0485892399292589,
+			 0.0208518913958571, 0.015842321950409, 0.00411361891683004,
+			 -0.0432251530809802, -0.00572368692579106, 0.1064720765996,
+			 0.321308696734254, 1, "1 (0.925)", 0.000336631001660037, 0.0885033606859238,
+			 -8.01732617317086e-05, 3.28859969256357e-08, 0.051334361355912,
+			 0.232090513921032, 2.80742096236963e-12, 5.18818321637582e-12,
+			 6.98441304791686e-13, 1.02218233877238e-12, 2.33990604669998e-12,
+			 2.17420526027468e-11, 0.306506576628935, 0.321308696734254,
+			 2, "1 (1)", 0.000193543699123166, 0.0523219088423289, 1.38580036335156e-09,
+			 -4.53284298984613e-10, 5.67399238704525e-10, 0.0309691006574206,
+			 -2.40113484650806e-11, -1.84963155902551e-13, -2.80331313717852e-13,
+			 2.47246667584022e-13, -4.36315428231637e-11, -1.28925103926036e-09,
+			 0.595206749921992, 0.321308696734254, 3, "1 (1)", 4.34445911468018e-08,
+			 0.000334340497036067, 1.52022838761923e-12, -1.65489844050626e-12,
+			 5.57565105197e-12, 0.239379726212877, -2.66453525910038e-14,
+			 0, 0, 2.50910403565285e-14, -3.81783493708099e-12, -1.45683465291313e-12,
+			 0.438977193111077, 0.321308696734254, 4, "1 (1)", 5.28184063708359e-07,
+			 0.0366521043193467, 6.52825025038162e-07, 0.00608510361034065,
+			 2.63923297327828e-07, 0.341542088017672, -1.31101352995877e-07,
+			 5.12944464681198e-10, -1.19777410212407e-10, -7.10459945318931e-08,
+			 7.75855569790096e-08, -1.12110600469784e-07, 0.294410797077748,
+			 0.321308696734254, 5, "1 (1)"))
+})
+
+test_that("Feature Importance Metrics table results match", {
+	table <- results[["results"]][["featureImportanceTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(85.8900713326248, "Flavanoids", 83.1720309927639, "Proline", 28.1577006284959,
+			 "Color", 16.2022565499951, "Alcohol", 10.8598389036746, "Alcalinity",
+			 9.92887864875162, "Ash", 8.93029310534988, "Dilution", 3.16091625814165,
+			 "Hue", 1.95530540133887, "Nonflavanoids", 1.6883059234698, "Malic",
+			 0.935460817887541, "Phenols", 0.758027706375559, "Proanthocyanins",
+			 0.45339855404643, "Magnesium"))
+})
+
+test_that("Tests for Multivariate Normality table results match", {
+	table <- results[["results"]][["multinormalTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(0, 1290.7639, "Skewness", 0, 10.9082, "Kurtosis"))
 })

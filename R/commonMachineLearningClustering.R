@@ -15,10 +15,16 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+# This function should return all options for all analyses upon which a change in all tables/figures is required
 .mlClusteringDependencies <- function(options) {
   opt <- c(
-    "predictors", "manualNumberOfClusters", "noOfRandomSets", "maxNumberIterations", "algorithm", "modelOptimization", "seed", "centers",
-    "maxNumberOfClusters", "setSeed", "scaleVariables", "fuzzinessParameter", "distance", "linkage", "epsilonNeighborhoodSize", "minCorePoints", "numberOfTrees", "maxTrees", "modelOptimizationMethod"
+    "predictors", "seed", "setSeed",  "scaleVariables", "manualNumberOfClusters", # Common
+    "modelOptimization", "modelOptimizationMethod", "maxNumberOfClusters",        # Common
+    "epsilonNeighborhoodSize", "minCorePoints", "distance",                       # Density-based
+    "maxNumberIterations", "fuzzinessParameter",                                  # Fuzzy c-means
+    "linkage",                                                                    # Hierarchical
+    "centers", "algorithm", "noOfRandomSets",                                     # K-means
+    "numberOfTrees"                                                               # Random forest
   )
   return(opt)
 }
@@ -102,18 +108,20 @@
   if (!is.null(jaspResults[["clusterResult"]])) {
     return()
   }
-  # set the seed so that every time the same set is chosen (to prevent random results) ##
-  if (options[["setSeed"]]) {
-    set.seed(options[["seed"]])
-  }
+  .setSeedJASP(options) # Set the seed to make results reproducible
   if (ready) {
-    clusterResult <- switch(type,
-      "kmeans" = .kMeansClustering(dataset, options, jaspResults),
-      "cmeans" = .cMeansClustering(dataset, options, jaspResults),
-      "hierarchical" = .hierarchicalClustering(dataset, options, jaspResults),
-      "densitybased" = .densityBasedClustering(dataset, options, jaspResults),
-      "randomForest" = .randomForestClustering(dataset, options, jaspResults)
-    )
+    p <- try({
+      clusterResult <- switch(type,
+        "kmeans" = .kMeansClustering(dataset, options, jaspResults),
+       "cmeans" = .cMeansClustering(dataset, options, jaspResults),
+        "hierarchical" = .hierarchicalClustering(dataset, options, jaspResults),
+        "densitybased" = .densityBasedClustering(dataset, options, jaspResults),
+        "randomForest" = .randomForestClustering(dataset, options, jaspResults)
+      )
+    })
+    if (isTryError(p)) { # Fail gracefully
+      jaspBase:::.quitAnalysis(gettextf("An error occurred in the analysis: %s", jaspBase:::.extractErrorMessage(p)))
+    }
     jaspResults[["clusterResult"]] <- createJaspState(clusterResult)
     jaspResults[["clusterResult"]]$dependOn(options = .mlClusteringDependencies(options))
   }
@@ -172,10 +180,10 @@
   }
   if (type == "densitybased") {
     if (clusterResult[["zeroMark"]] == 1) {
-      table$addFootnote(gettext("Your cluster model contains 0 clusters and only Noisepoints, we advise to change the Eps and MinPts parameters."), colNames = "clusters")
+      table$addFootnote(gettext("The model contains 0 clusters and only Noisepoints, we advise to change 'Epsilon neighborhood size' and 'Min. core points' parameters under 'Training parameters'."), colNames = "clusters")
     }
     if (clusterResult[["oneMark"]] == 1) {
-      table$addFootnote(gettext("Your cluster model contains 1 cluster and 0 Noisepoints. You could change the Eps and MinPts parameters."), colNames = "clusters")
+      table$addFootnote(gettext("The model contains 1 cluster and no Noisepoints. You may want to change 'Epsilon neighborhood size' and 'Min. core points' parameters under 'Training parameters'."), colNames = "clusters")
     }
   }
   if (!options[["scaleVariables"]]) {
@@ -266,11 +274,11 @@
 }
 
 .mlClusteringTableMetrics <- function(dataset, options, jaspResults, ready, position) {
-  if (!is.null(jaspResults[["clusterEvaluationMetrics"]]) || !options[["tableClusterEvaluationMetrics"]]) {
+  if (!is.null(jaspResults[["clusterEvaluationMetrics"]]) || !options[["validationMeasures"]]) {
     return()
   }
-  table <- createJaspTable(gettext("Evaluation Metrics"))
-  table$dependOn(options = c("tableClusterEvaluationMetrics", .mlClusteringDependencies(options)))
+  table <- createJaspTable(gettext("Model Performance Metrics"))
+  table$dependOn(options = c("validationMeasures", .mlClusteringDependencies(options)))
   table$position <- position
   table$addColumnInfo(name = "metric", title = "", type = "string")
   table$addColumnInfo(name = "value", title = gettext("Value"), type = "number")
@@ -310,9 +318,7 @@
     return()
   }
   clusterResult <- jaspResults[["clusterResult"]]$object
-  if (options[["setSeed"]]) {
-    set.seed(options[["seed"]])
-  }
+  .setSeedJASP(options) # Set the seed to make results reproducible
   startProgressbar(2)
   progressbarTick()
   duplicates <- which(duplicated(dataset))
@@ -350,7 +356,7 @@
                    axis.text.x = ggplot2::element_blank(), 
                    axis.text.y = ggplot2::element_blank())
   if (options[["tsneClusterPlotLabels"]]) {
-    p <- p + ggrepel::geom_text_repel(ggplot2::aes(label = rownames(dataset), x = x, y = y), hjust = -1, vjust = 1, data = plotData)
+    p <- p + ggrepel::geom_text_repel(ggplot2::aes(label = rownames(dataset), x = x, y = y), hjust = -1, vjust = 1, data = plotData, seed = 1)
   }
   progressbarTick()
   plot$plotObject <- p
@@ -543,14 +549,15 @@
     p <- ggplot2::ggplot(plotData, ggplot2::aes(x = xCoord, y = value, fill = Cluster))
     if (options[["clusterMeanPlotBarPlot"]]) {
       p <- p + ggplot2::geom_bar(color = "black", stat = "identity") +
-        ggplot2::geom_errorbar(data = plotData, ggplot2::aes(x = xCoord, ymin = lower, ymax = upper), width = 0.2, size = 1)
+        ggplot2::geom_errorbar(data = plotData, ggplot2::aes(x = xCoord, ymin = lower, ymax = upper), width = 0.2, linewidth = 1)
     } else {
       p <- p + ggplot2::geom_segment(ggplot2::aes(x = 0, xend = max(plotData[["xCoord"]]), y = 0, yend = 0), linetype = 2) +
-        ggplot2::geom_errorbar(data = plotData, ggplot2::aes(x = xCoord, ymin = lower, ymax = upper), width = 0.2, size = 1) +
+        ggplot2::geom_errorbar(data = plotData, ggplot2::aes(x = xCoord, ymin = lower, ymax = upper), width = 0.2, linewidth = 1) +
         jaspGraphs::geom_point(color = "black")
     }
     p <- p + ggplot2::scale_x_continuous(name = NULL, breaks = xBreaks, labels = xLabels) +
       ggplot2::scale_y_continuous(name = gettext("Cluster Mean"), breaks = yBreaks, limits = range(yBreaks)) +
+      ggplot2::scale_fill_manual(name = gettext("Cluster"), values = .mlColorScheme(length(unique(clusterResult[["pred.values"]])))) +
       jaspGraphs::geom_rangeframe(sides = "l") +
       jaspGraphs::themeJaspRaw(legend.position = "right") +
       ggplot2::theme(axis.ticks.x = ggplot2::element_blank(), axis.text.x = ggplot2::element_text(angle = 20))
@@ -573,13 +580,14 @@
       p <- ggplot2::ggplot(plotData, ggplot2::aes(x = Cluster, y = value, fill = Cluster))
       if (options[["clusterMeanPlotBarPlot"]]) {
         p <- p + ggplot2::geom_bar(color = "black", stat = "identity") +
-          ggplot2::geom_errorbar(data = plotData, ggplot2::aes(x = Cluster, ymin = lower, ymax = upper), width = 0.2, size = 1)
+          ggplot2::geom_errorbar(data = plotData, ggplot2::aes(x = Cluster, ymin = lower, ymax = upper), width = 0.2, linewidth = 1)
       } else {
-        p <- p + ggplot2::geom_errorbar(data = plotData, ggplot2::aes(x = Cluster, ymin = lower, ymax = upper), width = 0.2, size = 1) +
+        p <- p + ggplot2::geom_errorbar(data = plotData, ggplot2::aes(x = Cluster, ymin = lower, ymax = upper), width = 0.2, linewidth = 1) +
           jaspGraphs::geom_point(color = "black")
       }
       p <- p + ggplot2::scale_x_discrete(name = gettext("Cluster"), breaks = xBreaks) +
         ggplot2::scale_y_continuous(name = variable, breaks = yBreaks, limits = range(yBreaks)) +
+        ggplot2::scale_fill_manual(name = gettext("Cluster"), values = .mlColorScheme(length(unique(clusterResult[["pred.values"]])))) +
         jaspGraphs::geom_rangeframe(sides = "l") +
         jaspGraphs::themeJaspRaw() +
         ggplot2::theme(axis.ticks.x = ggplot2::element_blank())

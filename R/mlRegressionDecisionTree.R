@@ -42,14 +42,17 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   # Create the variable importance table
   .mlDecisionTreeTableVarImp(options, jaspResults, ready, position = 4, purpose = "regression")
 
+  # Create the shap table
+  .mlTableShap(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
+
   # Create the splits table
-  .mlDecisionTreeTableSplits(options, jaspResults, ready, position = 5, purpose = "regression")
+  .mlDecisionTreeTableSplits(options, jaspResults, ready, position = 6, purpose = "regression")
 
   # Create the predicted performance plot
-  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 6)
+  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 7)
 
   # Create the decision tree plot
-  .mlDecisionTreePlotTree(dataset, options, jaspResults, ready, position = 7, purpose = "regression")
+  .mlDecisionTreePlotTree(dataset, options, jaspResults, ready, position = 8, purpose = "regression")
 }
 
 .decisionTreeRegression <- function(dataset, options, jaspResults, ready) {
@@ -83,27 +86,30 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   result[["testMSE"]] <- mean((testPredictions - testSet[, options[["target"]]])^2)
   result[["ntrain"]] <- nrow(trainingSet)
   result[["train"]] <- trainingSet
+  result[["test"]] <- testSet
   result[["ntest"]] <- nrow(testSet)
   result[["testReal"]] <- testSet[, options[["target"]]]
   result[["testPred"]] <- testPredictions
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["values"]] <- dataPredictions
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]][, options[["predictors"]], drop = FALSE], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data))
   return(result)
 }
 
 .mlDecisionTreeTableVarImp <- function(options, jaspResults, ready, position, purpose) {
-  if (!is.null(jaspResults[["variableImportanceTable"]]) || !options[["variableImportanceTable"]]) {
+  if (!is.null(jaspResults[["featureImportanceTable"]]) || !options[["featureImportanceTable"]]) {
     return()
   }
-  table <- createJaspTable(title = gettext("Feature Importance"))
+  table <- createJaspTable(title = gettext("Feature Importance Metrics"))
   table$position <- position
   table$dependOn(options = c(
-    "variableImportanceTable", "trainingDataManual", "scaleVariables", "target", "predictors", "seed", "setSeed",
+    "featureImportanceTable", "trainingDataManual", "scaleVariables", "target", "predictors", "seed", "setSeed",
     "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "minObservationsForSplit", "minObservationsInNode", "interactionDepth", "complexityParameter"
   ))
   table$addColumnInfo(name = "predictor", title = " ", type = "string")
   table$addColumnInfo(name = "imp", title = gettext("Relative Importance"), type = "number")
-  jaspResults[["variableImportanceTable"]] <- table
+  table$addColumnInfo(name = "dl", title = gettext("Mean dropout loss"), type = "number")
+  jaspResults[["featureImportanceTable"]] <- table
   if (!ready) {
     return()
   }
@@ -116,8 +122,18 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
     return()
   }
   varImpOrder <- sort(result[["model"]][["variable.importance"]], decreasing = TRUE)
-  table[["predictor"]] <- as.character(names(varImpOrder))
+  vars <- as.character(names(varImpOrder))
+  table[["predictor"]] <- vars
   table[["imp"]] <- as.numeric(varImpOrder) / sum(as.numeric(varImpOrder)) * 100
+  .setSeedJASP(options) # Set the seed to make results reproducible
+  if (purpose == "regression") {
+    fi <- DALEX::model_parts(result[["explainer"]], B = 50)
+  } else if (purpose == "classification") {
+    fi <- DALEX::model_parts(result[["explainer_fi"]], B = 50)
+  }
+  fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
+  table[["dl"]] <- fi[match(vars, fi[["y"]]), "x"]
+  table$addFootnote(gettext("Mean dropout loss is based on 50 permutations."))
 }
 
 .mlDecisionTreeTableSplits <- function(options, jaspResults, ready, position, purpose) {
@@ -126,10 +142,11 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   }
   table <- createJaspTable(title = gettext("Splits in Tree"))
   table$position <- position
-  table$dependOn(options = c(
-    "splitsTable", "trainingDataManual", "scaleVariables", "target", "predictors", "seed", "setSeed", "splitsTreeTable",
-    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "minObservationsForSplit", "minObservationsInNode", "interactionDepth", "complexityParameter"
-  ))
+  if (purpose == "regression") {
+    table$dependOn(options = c("splitsTable", "splitsTreeTable", .mlRegressionDependencies()))
+  } else {
+    table$dependOn(options = c("splitsTable", "splitsTreeTable", .mlClassificationDependencies()))
+  }
   table$addColumnInfo(name = "predictor", title = "", type = "string")
   table$addColumnInfo(name = "count", title = gettext("Obs. in Split"), type = "integer")
   table$addColumnInfo(name = "index", title = gettext("Split Point"), type = "number")
@@ -182,10 +199,11 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Decision Tree Plot"), width = 600, height = 500)
   plot$position <- position
-  plot$dependOn(options = c(
-    "decisionTreePlot", "trainingDataManual", "scaleVariables", "target", "predictors", "seed", "setSeed",
-    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "minObservationsInNode", "minObservationsForSplit", "interactionDepth", "complexityParameter"
-  ))
+  if (purpose == "regression") {
+    plot$dependOn(options = c("decisionTreePlot", .mlRegressionDependencies()))
+  } else {
+    plot$dependOn(options = c("decisionTreePlot", .mlClassificationDependencies()))
+  }
   jaspResults[["decisionTreePlot"]] <- plot
   if (!ready) {
     return()

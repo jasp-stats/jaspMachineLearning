@@ -16,196 +16,58 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick									2.8
-import QtQuick.Layouts							1.3
-import JASP.Controls							1.0
-import JASP.Widgets								1.0
+import QtQuick			2.8
+import QtQuick.Layouts	1.3
+import JASP.Controls	1.0
+import JASP.Widgets		1.0
 
-import "./common" as ML
+import "./common/ui" as UI
+import "./common/tables" as TAB
+import "./common/figures" as FIG
+import "./common/analyses/knn" as KNN
 
 Form 
 {
+	info: qsTr("K-nearest neighbors is a method of regression that looks at the *k* number of feature observations that are most similar to new observations to make a prediction for their values. The number of nearest neighbors is intrinsincly linked to model complexity, as small numbers increase the flexibility of the model.\n### Assumptions\n- The target variable is a continuous variable.\n- The feature variables consist of continuous, nominal, or ordinal variables.")
 
-	VariablesForm
+	UI.VariablesFormRegression { id: vars }
+
+	Group
 	{
-		AvailableVariablesList
-		{
-			name:								"variables"
-		}
+		title: qsTr("Tables")
 
-		AssignedVariablesList
-		{
-			id:									target
-			name:								"target"
-			title:								qsTr("Target")
-			singleVariable:						true
-			allowedColumns:						["scale"]
-		}
-
-		AssignedVariablesList
-		{
-			id:									predictors
-			name:								"predictors"
-			title:								qsTr("Features")
-			allowedColumns:						["scale", "nominal", "nominalText", "ordinal"]
-			allowAnalysisOwnComputedColumns:	false
-		}
+		TAB.ModelPerformance { }
+		TAB.FeatureImportance { }
+		TAB.ExplainPredictions { }
 	}
 
 	Group
 	{
-		title:									qsTr("Tables")
+		title: qsTr("Plots")
 
-		CheckBox
-		{
-			text:								qsTr("Evaluation metrics")
-			name:								"validationMeasures"
-		}
-
+		FIG.DataSplit { }
+		FIG.PredictivePerformance { }
+		KNN.OptimPlot { regression: true; enable: !optim.isManual }
+		KNN.WeightFunction { }
 	}
 
-	Group
-	{
-		title:									qsTr("Plots")
+	UI.ExportResults { enabled: vars.predictorCount > 1 && vars.targetCount > 0 }
 
-		CheckBox
-		{
-			text:								qsTr("Data split")
-			name:								"dataSplitPlot"
-			checked:							true
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Weight function")
-			name:								"weightsPlot"
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Mean squared error")
-			name:								"errorVsKPlot"
-			enabled:							optimizeModel.checked
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Predictive performance")
-			name:								"predictedPerformancePlot"
-		}
-	}
-
-	ML.ExportResults
-	{
-		enabled:								predictors.count > 0 && target.count > 0
-	}
-
-	ML.DataSplit
-	{
-		trainingValidationSplit:				optimizeModel.checked
-	}
+	UI.DataSplit { trainingValidationSplit: !optim.isManual }
 
 	Section
 	{
-		title:									qsTr("Training Parameters")
+		title: qsTr("Training Parameters")
 
 		Group
 		{
-			title:								qsTr("Algorithmic Settings")
+			title: qsTr("Algorithmic Settings")
 
-			DropDown
-			{
-				name:							"weights"
-				indexDefaultValue:				0
-				label:							qsTr("Weights")
-				values:
-					[
-					{ label: qsTr("Rectangular"), 	value: "rectangular"},
-					{ label: qsTr("Triangular"), 	value: "triangular"},
-					{ label: qsTr("Epanechnikov"), 	value: "epanechnikov"},
-					{ label: qsTr("Biweight"), 		value: "biweight"},
-					{ label: qsTr("Triweight"), 	value: "triweight"},
-					{ label: qsTr("Cosine"), 		value: "cos"},
-					{ label: qsTr("Inverse"), 		value: "inv"},
-					{ label: qsTr("Gaussian"), 		value: "gaussian"},
-					{ label: qsTr("Rank"), 			value: "rank"},
-					{ label: qsTr("Optimal"), 		value: "optimal"}
-				]
-			}
-
-			DropDown
-			{
-				name:							"distanceParameterManual"
-				indexDefaultValue:				0
-				label:							qsTr("Distance")
-				values:
-					[
-					{ label:qsTr("Euclidian"),	value:"2"},
-					{ label:qsTr("Manhattan"),	value:"1"}
-				]
-			}
-
-			CheckBox
-			{
-				text:							qsTr("Scale variables")
-				name:							"scaleVariables"
-				checked:						true
-			}
-
-			CheckBox
-			{
-				name:							"setSeed"
-				text:							qsTr("Set seed")
-				childrenOnSameRow:				true
-
-				IntegerField
-				{
-					name:						"seed"
-					defaultValue:				1
-					min:						-999999
-					max:						999999
-					fieldWidth:					60
-				}
-			}
+			KNN.AlgorithmicSettings { }
+			UI.ScaleVariables { }
+			UI.SetSeed { }
 		}
 
-		RadioButtonGroup
-		{
-			title:								qsTr("Number of Nearest Neighbors")
-			name:								"modelOptimization"
-
-			RadioButton
-			{
-				text:							qsTr("Fixed")
-				name:							"manual"
-
-				IntegerField {
-					name:						"noOfNearestNeighbours"
-					text:						qsTr("Nearest neighbors")
-					defaultValue:				3
-					min:						1
-					max:						50000
-					fieldWidth:					60
-				}
-			}
-
-			RadioButton
-			{
-				id:								optimizeModel
-				text:							qsTr("Optimized")
-				name:							"optimized"
-				checked:						true
-
-				IntegerField
-				{
-					name:						"maxNearestNeighbors"
-					text:						qsTr("Max. nearest neighbors")
-					defaultValue:				10
-					min:						1
-					max:						50000
-					fieldWidth:					60
-				}
-			}
-		}
+		KNN.ModelOptimization { id: optim }
 	}
 }

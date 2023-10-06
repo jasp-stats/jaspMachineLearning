@@ -20,14 +20,23 @@
   return(colors)
 }
 
+# This function should return all options for all analyses upon which a change in all tables/figures is required
 .mlRegressionDependencies <- function(options, includeSaveOptions = FALSE) {
   opt <- c(
-    "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleVariables", "modelOptimization", "maxTrees",
-    "target", "predictors", "seed", "setSeed", "validationLeaveOneOut", "confusionProportions", "maxNearestNeighbors", "noOfFolds", "modelValid",
-    "penalty", "alpha", "convergenceThreshold", "intercept", "shrinkage", "lambda", "noOfTrees", "noOfPredictors", "numberOfPredictors", "baggingFraction",
-    "interactionDepth", "minObservationsInNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "minObservationsForSplit",
-    "holdoutData", "testDataManual", "complexityParameter", "degree", "gamma",
-    "threshold", "algorithm", "learningRate", "lossFunction", "actfct", "layers", "maxTrainingRepetitions", "maxGenerations", "populationSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProportion", "candidates"
+    "target", "predictors", "seed", "setSeed",                                            # Common
+    "trainingDataManual", "scaleVariables", "modelOptimization",                          # Common
+    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual",      # Common
+    "modelValid", "validationDataManual", "validationLeaveOneOut", "noOfFolds",           # Common
+    "shrinkage", "interactionDepth", "minObservationsInNode", "distance",                 # Boosting
+    "minObservationsForSplit",                                                            # Decision tree
+    "distanceParameterManual", "noOfNearestNeighbours", "weights", "maxNearestNeighbors", # k-Nearest neighbors
+    "threshold", "algorithm", "learningRate", "lossFunction", "actfct", "layers",         # Neural network
+    "maxTrainingRepetitions", "maxGenerations", "populationSize", "maxLayers",            # Neural network
+    "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod",          # Neural network
+    "mutationMethod", "survivalMethod", "elitismProportion", "candidates",                # Neural network
+    "noOfTrees", "maxTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors",   # Random forest
+    "convergenceThreshold", "penalty", "alpha", "intercept", "lambda",                    # Regularized
+    "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon"              # Support vector machine
   )
   if (includeSaveOptions) {
     opt <- c(opt, "saveModel", "savePath")
@@ -39,8 +48,8 @@
   if (is.null(dataset)) {
     dataset <- .readDataClassificationRegressionAnalyses(dataset, options)
   }
-  if (length(unlist(options[["predictors"]])) > 0 && options[["target"]] != "" && options[["scaleVariables"]]) {
-    dataset[, c(options[["predictors"]], options[["target"]])] <- .scaleNumericData(dataset[, c(options[["predictors"]], options[["target"]]), drop = FALSE])
+  if (length(unlist(options[["predictors"]])) > 0 && options[["scaleVariables"]]) {
+    dataset[, options[["predictors"]]] <- .scaleNumericData(dataset[, options[["predictors"]], drop = FALSE])
   }
   return(dataset)
 }
@@ -171,8 +180,10 @@
 
 .mlRegressionReady <- function(options, type) {
   if (type == "randomForest" || type == "boosting" || type == "regularized") {
+    # Require at least two predictors
     ready <- length(options[["predictors"]][options[["predictors"]] != ""]) >= 2 && options[["target"]] != ""
-  } else if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm") {
+  } else if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm" || type == "lm") {
+    # Require at least one predictor
     ready <- length(options[["predictors"]][options[["predictors"]] != ""]) >= 1 && options[["target"]] != ""
   }
   return(ready)
@@ -190,21 +201,24 @@
   if (!is.null(jaspResults[["regressionResult"]])) {
     return()
   }
-  # set the seed so that every time the same set is chosen (to prevent random results) ##
-  if (options[["setSeed"]]) {
-    set.seed(options[["seed"]])
-  }
+  .setSeedJASP(options) # Set the seed to make results reproducible
   if (ready) {
     .mlRegressionSetFormula(options, jaspResults)
-    regressionResult <- switch(type,
-      "knn" = .knnRegression(dataset, options, jaspResults),
-      "regularized" = .regularizedRegression(dataset, options, jaspResults),
-      "randomForest" = .randomForestRegression(dataset, options, jaspResults),
-      "boosting" = .boostingRegression(dataset, options, jaspResults),
-      "neuralnet" = .neuralnetRegression(dataset, options, jaspResults),
-      "rpart" = .decisionTreeRegression(dataset, options, jaspResults),
-      "svm" = .svmRegression(dataset, options, jaspResults)
-    )
+    p <- try({
+      regressionResult <- switch(type,
+        "knn" = .knnRegression(dataset, options, jaspResults),
+        "regularized" = .regularizedRegression(dataset, options, jaspResults),
+        "randomForest" = .randomForestRegression(dataset, options, jaspResults),
+        "boosting" = .boostingRegression(dataset, options, jaspResults),
+        "neuralnet" = .neuralnetRegression(dataset, options, jaspResults),
+        "rpart" = .decisionTreeRegression(dataset, options, jaspResults),
+        "svm" = .svmRegression(dataset, options, jaspResults),
+        "lm" = .linearRegression(dataset, options, jaspResults)
+      )
+    })
+    if (isTryError(p)) { # Fail gracefully
+      jaspBase:::.quitAnalysis(gettextf("An error occurred in the analysis: %s", jaspBase:::.extractErrorMessage(p)))
+    }
     jaspResults[["regressionResult"]] <- createJaspState(regressionResult)
     jaspResults[["regressionResult"]]$dependOn(options = .mlRegressionDependencies(options))
   }
@@ -221,7 +235,8 @@
     "boosting" = gettext("Boosting Regression"),
     "neuralnet" = gettext("Neural Network Regression"),
     "rpart" = gettext("Decision Tree Regression"),
-    "svm" = gettext("Support Vector Machine Regression")
+    "svm" = gettext("Support Vector Machine Regression"),
+    "lm" = gettext("Linear Regression")
   )
   table <- createJaspTable(title)
   table$position <- position
@@ -266,13 +281,20 @@
   if (type == "randomForest") {
     table$addColumnInfo(name = "oob", title = gettext("OOB Error"), type = "number")
   }
+  if (type == "lm") {
+    table$addColumnInfo(name = "rsquared", title = gettextf("R%1$s", "\u00B2"), type = "number")
+	table$addColumnInfo(name = "arsquared", title = gettextf("Adjusted R%1$s", "\u00B2"), type = "number")
+  }
   # If no analysis is run, specify the required variables in a footnote
   if (!ready) {
-    table$addFootnote(gettextf("Please provide a target variable and at least %d feature variable(s).", if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm") 1L else 2L))
+    table$addFootnote(gettextf("Please provide a target variable and at least %d feature variable(s).", if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm" || type == "lm") 1L else 2L))
   }
   if (options[["savePath"]] != "") {
-    if (options[["saveModel"]]) {
+    validNames <- (length(grep(" ", decodeColNames(colnames(dataset)))) == 0) && (length(grep("_", decodeColNames(colnames(dataset)))) == 0)
+    if (options[["saveModel"]] && validNames) {
       table$addFootnote(gettextf("The trained model is saved as <i>%1$s</i>.", basename(options[["savePath"]])))
+    } else if (options[["saveModel"]] && !validNames) {
+      table$addFootnote(gettext("The trained model is <b>not</b> saved because the some of the variable names in the model contain spaces (i.e., ' ') or underscores (i.e., '_'). Please remove all such characters from the variable names and try saving the model again."))
     } else {
       table$addFootnote(gettext("The trained model is not saved until 'Save trained model' is checked."))
     }
@@ -404,12 +426,26 @@
       testMSE = regressionResult[["testMSE"]]
     )
     table$addRows(row)
+  } else if (type == "lm") {
+    row <- data.frame(
+      nTrain = nTrain,
+      nTest = regressionResult[["ntest"]],
+      testMSE = regressionResult[["testMSE"]],
+      rsquared = regressionResult[["rsquared"]],
+      arsquared = regressionResult[["arsquared"]]
+    )
+    table$addRows(row)
   }
   # Save the model if requested
   if (options[["saveModel"]] && options[["savePath"]] != "") {
+    validNames <- (length(grep(" ", decodeColNames(colnames(dataset)))) == 0) && (length(grep("_", decodeColNames(colnames(dataset)))) == 0)
+    if (!validNames) {
+      return()
+    }
     model <- regressionResult[["model"]]
     model[["jaspVars"]] <- decodeColNames(options[["predictors"]])
     model[["jaspVersion"]] <- .baseCitation
+    model[["explainer"]] <- regressionResult[["explainer"]]
     model <- .decodeJaspMLobject(model)
     class(model) <- c(class(regressionResult[["model"]]), "jaspRegression", "jaspMachineLearning")
     saveRDS(model, file = options[["savePath"]])
@@ -428,7 +464,7 @@
   if (!is.null(jaspResults[["validationMeasures"]]) || !options[["validationMeasures"]]) {
     return()
   }
-  table <- createJaspTable(title = "Evaluation Metrics")
+  table <- createJaspTable(title = gettext("Model Performance Metrics"))
   table$position <- position
   table$dependOn(options = c(.mlRegressionDependencies(options), "validationMeasures"))
   table$addColumnInfo(name = "measures", title = "", type = "string")
@@ -471,7 +507,7 @@
   predPerformance <- data.frame(true = c(regressionResult[["testReal"]]), predicted = regressionResult[["testPred"]])
   breaks <- jaspGraphs::getPrettyAxisBreaks(unlist(predPerformance), min.n = 4)
   p <- ggplot2::ggplot(data = predPerformance, mapping = ggplot2::aes(x = true, y = predicted)) +
-    jaspGraphs::geom_line(data = data.frame(x = range(breaks), y = range(breaks)), mapping = ggplot2::aes(x = x, y = y), col = "darkred", size = 1) +
+    ggplot2::geom_line(data = data.frame(x = range(breaks), y = range(breaks)), mapping = ggplot2::aes(x = x, y = y), col = "darkred", linewidth = 1) +
     jaspGraphs::geom_point() +
     ggplot2::scale_x_continuous(name = gettext("Observed Test Values"), breaks = breaks, limits = range(breaks)) +
     ggplot2::scale_y_continuous(name = gettext("Predicted Test Values"), breaks = breaks, limits = range(breaks)) +
@@ -629,4 +665,115 @@
     jaspResults[["predictionsColumn"]]$dependOn(options = c(.mlRegressionDependencies(options), "predictionsColumn", "addPredictions"))
     jaspResults[["predictionsColumn"]]$setScale(predictionsColumn)
   }
+}
+
+.mlTableShap <- function(dataset, options, jaspResults, ready, position, purpose, model = NULL) {
+  if (!is.null(jaspResults[["tableShap"]]) || !options[["tableShap"]]) {
+    return()
+  }
+  title <- if (purpose == "prediction") gettext("Additive Explanations for Predictions of New Cases") else gettext("Additive Explanations for Predictions of Test Set Cases")
+  table <- createJaspTable(title = title)
+  if (!is.null(model) && purpose == "prediction") {
+    if (inherits(model, "jaspRegression")) {
+      purpose <- "regression"
+    } else {
+      purpose <- "classification"
+    }
+  }
+  table$position <- position
+  table$dependOn(options = c(
+    if (purpose == "regression") {
+      .mlRegressionDependencies(options)
+    } else {
+      .mlClassificationDependencies(options)
+    },
+    "tableShap", "fromIndex", "toIndex"
+  ))
+  table$addColumnInfo(name = "id", title = gettext("Case"), type = "integer")
+  if (purpose == "regression") {
+    table$addColumnInfo(name = "pred", title = gettext("Predicted"), type = "number")
+  } else {
+    table$addColumnInfo(name = "pred", title = gettext("Predicted (Prob.)"), type = "string")
+  }
+  table$addColumnInfo(name = "avg", title = gettext("Base"), type = "number")
+  for (i in options[["predictors"]]) {
+    table$addColumnInfo(name = i, title = i, type = "number")
+  }
+  jaspResults[["tableShap"]] <- table
+  if (!ready) {
+    return()
+  }
+  if (is.null(model)) {
+    result <- switch(purpose, "regression" = jaspResults[["regressionResult"]]$object, "classification" = jaspResults[["classificationResult"]]$object)
+    explainer <- result[["explainer"]]
+    x_test <- result[["test"]][, options[["predictors"]]]
+  } else {
+    explainer <- model[["explainer"]]
+    x_test <- dataset[, options[["predictors"]]]
+  }
+  from <- min(c(options[["fromIndex"]], options[["toIndex"]] - 1, nrow(x_test)))
+  to <- min(c(options[["toIndex"]], nrow(x_test)))
+  out <- as.data.frame(matrix(NA, nrow = length(from:to), ncol = 3 + length(options[["predictors"]])))
+  colnames(out) <- c("id", "pred", "avg", options[["predictors"]])
+  p <- try({
+    for (i in seq_along(from:to)) {
+      out[i, 1] <- (from:to)[i]
+      shap <- DALEX::predict_parts(explainer, new_observation = as.data.frame(x_test[(from:to)[i], options[["predictors"]], drop = FALSE]))
+      if (purpose == "regression") {
+        out[i, 2] <- shap[which(shap[["variable"]] == "prediction"), "contribution"]
+      } else {
+        predictedIndex <- which.max(shap[which(shap$variable == "prediction"), "contribution"])
+        shap <- shap[which(shap[["label"]] == shap[which(shap$variable == "prediction"), ][, "label"][predictedIndex]), ]
+        out[i, 2] <- paste0(levels(result[["test"]][, options[["target"]]])[predictedIndex], " (", round(shap[which(shap[["variable"]] == "prediction"), "contribution"], 3), ")")
+      }
+      out[i, 3] <- shap[which(shap[["variable"]] == "intercept"), "contribution"]
+      for (j in seq_along(options[["predictors"]])) {
+        out[i, j + 3] <- shap[which(shap[["variable_name"]] == options[["predictors"]][j]), "contribution"]
+      }
+    }
+  })
+  if (isTryError(p)) {
+    table$setError(gettext("There was an error in computing the results for this table."))
+    return()
+  }
+  table$setData(out)
+  message <- switch(purpose,
+    "regression" = gettext("Displayed values represent feature contributions to the predicted value without features (column 'Base') for the test set."),
+    "classification" = gettext("Displayed values represent feature contributions to the predicted class probability without features (column 'Base') for the test set.")
+  )
+  table$addFootnote(message)
+}
+
+.mlTableFeatureImportance <- function(options, jaspResults, ready, position, purpose) {
+  if (!options[["featureImportanceTable"]] || !is.null(jaspResults[["featureImportanceTable"]])) {
+    return()
+  }
+  table <- createJaspTable(title = gettext("Feature Importance Metrics"))
+  table$position <- position
+  if (purpose == "regression") {
+    table$dependOn(options = c(.mlRegressionDependencies(options), "featureImportanceTable"))
+  } else {
+    table$dependOn(options = c(.mlClassificationDependencies(options), "featureImportanceTable"))
+  }
+  table$addColumnInfo(name = "predictor", title = "", type = "string")
+  table$addColumnInfo(name = "dl", title = gettext("Mean dropout loss"), type = "number")
+  jaspResults[["featureImportanceTable"]] <- table
+  if (!ready) {
+    return()
+  }
+  result <- switch(purpose,
+    "regression" = jaspResults[["regressionResult"]]$object,
+    "classification" = jaspResults[["classificationResult"]]$object
+  )
+  .setSeedJASP(options) # Set the seed to make results reproducible
+  if (purpose == "regression") {
+    fi <- DALEX::model_parts(result[["explainer"]], B = 50)
+  } else if (purpose == "classification") {
+    fi <- DALEX::model_parts(result[["explainer_fi"]], B = 50)
+  }
+  fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
+  df <- data.frame(predictor = options[["predictors"]], dl = fi[match(options[["predictors"]], fi[["y"]]), "x"])
+  df <- df[order(-df[["dl"]]), ]
+  table$setData(df)
+  table$addFootnote(gettext("Mean dropout loss is based on 50 permutations."))
 }

@@ -40,19 +40,22 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   .mlRegressionTableMetrics(dataset, options, jaspResults, ready, position = 3)
 
   # Create the relative influence table
-  .mlBoostingTableRelInf(options, jaspResults, ready, position = 4, purpose = "regression")
+  .mlBoostingTableFeatureImportance(options, jaspResults, ready, position = 4, purpose = "regression")
 
-  # Create the OOB improvement plot
-  .mlBoostingPlotOobImprovement(options, jaspResults, ready, position = 5, purpose = "regression")
+  # Create the shap table
+  .mlTableShap(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
 
   # Create the predicted performance plot
   .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 6)
 
+  # Create the OOB improvement plot
+  .mlBoostingPlotOobImprovement(options, jaspResults, ready, position = 7, purpose = "regression")
+
   # Create the deviance plot
-  .mlBoostingPlotDeviance(options, jaspResults, ready, position = 7, purpose = "regression")
+  .mlBoostingPlotDeviance(options, jaspResults, ready, position = 8, purpose = "regression")
 
   # Create the relative influence plot
-  .mlBoostingPlotRelInf(options, jaspResults, ready, position = 8, purpose = "regression")
+  .mlBoostingPlotRelInf(options, jaspResults, ready, position = 9, purpose = "regression")
 }
 
 .boostingRegression <- function(dataset, options, jaspResults) {
@@ -78,7 +81,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   testIndicatorColumn <- rep(1, nrow(dataset))
   testIndicatorColumn[trainingIndex] <- 0
   # gbm expects the columns in the data to be in the same order as the variables...
-  trainingAndValidationSet <- trainingAndValidationSet[, match(names(trainingAndValidationSet)[which(names(trainingAndValidationSet) %in% all.vars(formula))], all.vars(formula))]
+  trainingAndValidationSet <- trainingAndValidationSet[, match(names(trainingAndValidationSet)[which(names(trainingAndValidationSet) %in% all.vars(formula))], all.vars(formula)), drop = FALSE]
   if (options[["modelOptimization"]] == "manual") {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
@@ -146,24 +149,25 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
     result[["nvalid"]] <- nrow(validationSet)
     result[["valid"]] <- validationSet
   }
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]][, options[["predictors"]], drop = FALSE], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data, n.trees = model$n.trees))
   return(result)
 }
 
-.mlBoostingTableRelInf <- function(options, jaspResults, ready, position, purpose) {
-  if (!options[["relativeInfluenceTable"]] || !is.null(jaspResults[["relativeInfluenceTable"]])) {
+.mlBoostingTableFeatureImportance<- function(options, jaspResults, ready, position, purpose) {
+  if (!options[["featureImportanceTable"]] || !is.null(jaspResults[["featureImportanceTable"]])) {
     return()
   }
-  table <- createJaspTable(title = gettext("Relative Influence"))
+  table <- createJaspTable(title = gettext("Feature Importance Metrics"))
   table$position <- position
-  table$dependOn(options = c(
-    "relativeInfluenceTable", "target", "predictors", "modelOptimization", "maxTrees", "interactionDepth", "shrinkage",
-    "noOfTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors", "seed", "setSeed", "modelValid",
-    "minObservationsInNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "holdoutData", "testDataManual"
-  ))
+  if (purpose == "regression") {
+    table$dependOn(options = c("featureImportanceTable", .mlRegressionDependencies()))
+  } else {
+    table$dependOn(options = c("featureImportanceTable", .mlClassificationDependencies()))
+  }
   table$addColumnInfo(name = "predictor", title = "", type = "string")
   table$addColumnInfo(name = "relIn", title = gettext("Relative Influence"), type = "number")
-  jaspResults[["relativeInfluenceTable"]] <- table
+  table$addColumnInfo(name = "dl", title = gettext("Mean dropout loss"), type = "number")
+  jaspResults[["featureImportanceTable"]] <- table
   if (!ready) {
     return()
   }
@@ -171,8 +175,18 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
     "classification" = jaspResults[["classificationResult"]]$object,
     "regression" = jaspResults[["regressionResult"]]$object
   )
-  table[["predictor"]] <- as.character(result[["relInf"]]$var)
+  vars <- as.character(result[["relInf"]]$var)
+  table[["predictor"]] <- vars
   table[["relIn"]] <- result[["relInf"]]$rel.inf
+  .setSeedJASP(options) # Set the seed to make results reproducible
+  if (purpose == "regression") {
+    fi <- DALEX::model_parts(result[["explainer"]], B = 50)
+  } else if (purpose == "classification") {
+    fi <- DALEX::model_parts(result[["explainer_fi"]], B = 50)
+  }
+  fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
+  table[["dl"]] <- fi[match(vars, fi[["y"]]), "x"]
+  table$addFootnote(gettext("Mean dropout loss is based on 50 permutations."))
 }
 
 .mlBoostingPlotOobImprovement <- function(options, jaspResults, ready, position, purpose) {
@@ -181,12 +195,11 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Out-of-bag Improvement Plot"), width = 400, height = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "outOfBagImprovementPlot", "target", "predictors", "modelOptimization", "maxTrees", "interactionDepth", "shrinkage",
-    "noOfTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors", "seed", "setSeed", "modelValid",
-    "minObservationsInNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "holdoutData", "testDataManual"
-  ))
+  if (purpose == "regression") {
+    plot$dependOn(options = c("outOfBagImprovementPlot", .mlRegressionDependencies()))
+  } else {
+    plot$dependOn(options = c("outOfBagImprovementPlot", .mlClassificationDependencies()))
+  }
   jaspResults[["outOfBagImprovementPlot"]] <- plot
   if (!ready) {
     return()
@@ -241,12 +254,11 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Deviance Plot"), width = 450, height = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "deviancePlot", "target", "predictors", "modelOptimization", "maxTrees", "interactionDepth", "shrinkage",
-    "noOfTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors", "seed", "setSeed", "modelValid",
-    "minObservationsInNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "holdoutData", "testDataManual"
-  ))
+  if (purpose == "regression") {
+    plot$dependOn(options = c("deviancePlot", .mlRegressionDependencies()))
+  } else {
+    plot$dependOn(options = c("deviancePlot", .mlClassificationDependencies()))
+  }
   jaspResults[["deviancePlot"]] <- plot
   if (!ready) {
     return()
@@ -301,12 +313,11 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Relative Influence Plot"), width = 450, height = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "relativeInfluencePlot", "target", "predictors", "modelOptimization", "maxTrees", "interactionDepth", "shrinkage",
-    "noOfTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors", "seed", "setSeed", "modelValid",
-    "minObservationsInNode", "distance", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "holdoutData", "testDataManual"
-  ))
+  if (purpose == "regression") {
+    plot$dependOn(options = c("relativeInfluencePlot", .mlRegressionDependencies()))
+  } else {
+    plot$dependOn(options = c("relativeInfluencePlot", .mlClassificationDependencies()))
+  }
   jaspResults[["relativeInfluencePlot"]] <- plot
   if (!ready) {
     return()

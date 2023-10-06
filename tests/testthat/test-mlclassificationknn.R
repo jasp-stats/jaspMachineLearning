@@ -1,6 +1,6 @@
 context("Machine Learning KNN Classification")
 
-options <- jaspTools::analysisOptions("mlClassificationKnn")
+options <- initMlOptions("mlClassificationKnn")
 options$addPredictions <- FALSE
 options$addIndicator <- FALSE
 options$andrewsCurve <- TRUE
@@ -25,6 +25,10 @@ options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""
 options$validationDataManual <- 0.2
 options$validationMeasures <- TRUE
+options$tableShap <- TRUE
+options$fromIndex <- 1
+options$toIndex <- 5
+options$featureImportanceTable <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClassificationKnn", "wine.csv", options)
 
@@ -81,8 +85,6 @@ test_that("ROC Curves Plot matches", {
   jaspTools::expect_equal_plots(testPlot, "roc-curves-plot")
 })
 
-
-
 test_that("Evaluation Metrics table results match", {
   table <- results[["results"]][["validationMeasures"]][["data"]]
   jaspTools::expect_equal_tables(table,
@@ -100,4 +102,37 @@ test_that("Evaluation Metrics table results match", {
         0.948072562358277, 0.942857142857143, 1, 35, 0.972502805836139,
         5.5
         ))
+})
+
+test_that("Additive Explanations for Predictions of Test Set Cases table results match", {
+	table <- results[["results"]][["tableShap"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(-0.0175438596491228, 0.0614035087719298, 0.0350877192982456, 0.0789473684210527,
+			 0.0526315789473685, 0.087719298245614, 0.219298245614035, 0.105263157894737,
+			 -0.00877192982456138, 0.0175438596491229, 0.043859649122807,
+			 0, 0, 0.324561403508772, 1, "1 (1)", 0, 0.18421052631579, 0.0350877192982456,
+			 0.0175438596491229, 0, 0.149122807017544, 0, 0.0175438596491229,
+			 0, 0.0964912280701754, 0.0614035087719298, -0.0175438596491229,
+			 0.131578947368421, 0.324561403508772, 2, "1 (1)", 0.0526315789473684,
+			 0.228070175438597, 0.0175438596491229, 0, 0, 0.0350877192982456,
+			 0.140350877192982, 0, 0.0964912280701754, 0, 0.043859649122807,
+			 0, 0.0614035087719298, 0.324561403508772, 3, "1 (1)", 0.0175438596491229,
+			 0.0964912280701754, 0.0263157894736842, 0, 0, 0, 0.210526315789474,
+			 0, 0.0701754385964912, 0, 0.00877192982456143, 0, 0.245614035087719,
+			 0.324561403508772, 4, "1 (1)", -0.0175438596491229, 0.192982456140351,
+			 0.0263157894736842, 0, 0, 0.175438596491228, 0, 0.0350877192982456,
+			 0.00877192982456143, 0.0175438596491228, 0.0964912280701755,
+			 0.00877192982456143, 0.131578947368421, 0.324561403508772, 5,
+			 "1 (1)"))
+})
+
+test_that("Feature Importance Metrics table results match", {
+	table <- results[["results"]][["featureImportanceTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(35.3677070283885, "Proline", 12.7102697133271, "Alcohol", 11.7892356761295,
+			 "Ash", 5.71041103062523, "Hue", 5.52620422318571, "Color", 4.42096337854857,
+			 "Alcalinity", 4.23675657110904, "Malic", 2.76310211159285, "Dilution",
+			 0.921034037197618, "Phenols", 0.921034037197618, "Nonflavanoids",
+			 0.368413614879047, "Magnesium", 0.368413614879047, "Proanthocyanins",
+			 0, "Flavanoids"))
 })

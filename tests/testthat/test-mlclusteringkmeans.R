@@ -1,6 +1,6 @@
 context("Machine Learning K-Means Clustering")
 
-options <- jaspTools::analysisOptions("mlClusteringKMeans")
+options <- initMlOptions("mlClusteringKMeans")
 options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
     "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
     "Hue", "Dilution", "Proline")
@@ -8,7 +8,7 @@ options$tableClusterInformationSilhouetteScore <- TRUE
 options$tableClusterInformationCentroids <- TRUE
 options$tableClusterInformationBetweenSumOfSquares <- TRUE
 options$tableClusterInformationTotalSumOfSquares <- TRUE
-options$tableClusterEvaluationMetrics <- TRUE
+options$validationMeasures <- TRUE
 options$elbowMethodPlot <- TRUE
 options$clusterMeanPlot <- TRUE
 options$tsneClusterPlot <- TRUE
@@ -85,7 +85,7 @@ test_that("t-SNE Cluster Plot matches", {
 
 context("Machine Learning K-Medians Clustering")
 
-options <- jaspTools::analysisOptions("mlClusteringKMeans")
+options <- initMlOptions("mlClusteringKMeans")
 options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
     "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
     "Hue", "Dilution", "Proline")
@@ -93,7 +93,7 @@ options$tableClusterInformationSilhouetteScore <- TRUE
 options$tableClusterInformationCentroids <- TRUE
 options$tableClusterInformationBetweenSumOfSquares <- TRUE
 options$tableClusterInformationTotalSumOfSquares <- TRUE
-options$tableClusterEvaluationMetrics <- TRUE
+options$validationMeasures <- TRUE
 options$elbowMethodPlot <- TRUE
 options$clusterMeanPlot <- TRUE
 options$centers <- "medians"
@@ -166,7 +166,7 @@ test_that("Elbow Method Plot matches", {
 
 context("Machine Learning K-Medoids Clustering")
 
-options <- jaspTools::analysisOptions("mlClusteringKMeans")
+options <- initMlOptions("mlClusteringKMeans")
 options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
     "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
     "Hue", "Dilution", "Proline")
@@ -174,7 +174,7 @@ options$tableClusterInformationSilhouetteScore <- TRUE
 options$tableClusterInformationCentroids <- TRUE
 options$tableClusterInformationBetweenSumOfSquares <- TRUE
 options$tableClusterInformationTotalSumOfSquares <- TRUE
-options$tableClusterEvaluationMetrics <- TRUE
+options$validationMeasures <- TRUE
 options$elbowMethodPlot <- TRUE
 options$clusterMeanPlot <- TRUE
 options$centers <- "medoids"

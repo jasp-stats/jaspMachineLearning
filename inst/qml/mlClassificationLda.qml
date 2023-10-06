@@ -16,213 +16,143 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick									2.8
-import QtQuick.Layouts							1.3
-import JASP.Controls							1.0
-import JASP.Widgets								1.0
+import QtQuick			2.8
+import QtQuick.Layouts	1.3
+import JASP.Controls	1.0
+import JASP.Widgets		1.0
 
-import "./common" as ML
+import "./common/ui" as UI
+import "./common/tables" as TAB
+import "./common/figures" as FIG
 
 Form 
 {
+	info: qsTr("Linear Discriminant Analysis (LDA) is a method of classification that aims to find *p - 1* components that discriminate best between the classes in the target variable. LDA is a linear classifier, meaning that the decision boundaries between classes are linear.\n### Assumptions\n- The target variable is a nominal or ordinal variable.\n- The feature variables consist of continuous, nominal, or ordinal variables.\n- Equality of class means: The class means should be equal, can be checked with the corresponding table.\n- Equality of covariance matrices: The covariance matrices should be equal, can be checked with the corresponding table.\n- Multicollinearity: The classes should not correlate within each other, can be checked with the corresponding table.")
 
-	VariablesForm
+	UI.VariablesFormClassification { id: vars; allow_nominal: false }
+
+	Group
 	{
-		AvailableVariablesList
+		title:						qsTr("Tables")
+
+		TAB.ConfusionMatrix { }
+		TAB.ClassProportions { }
+		TAB.ModelPerformance { }
+		TAB.FeatureImportance { }
+		TAB.ExplainPredictions { }
+
+		CheckBox
 		{
-			name:								"variables"
+			name:					"coefficientsTable"
+			text:					qsTr("Coefficients")
 		}
 
-		AssignedVariablesList
+		CheckBox
 		{
-			id:									target
-			name:								"target"
-			title:								qsTr("Target")
-			singleVariable:						true
-			allowedColumns:						["nominal", "nominalText", "ordinal"]
+			name:					"priorTable"
+			text:					qsTr("Prior and posterior probabilities")
 		}
 
-		AssignedVariablesList
+		CheckBox
 		{
-			id:									predictors
-			name:								"predictors"
-			title:								qsTr("Features")
-			allowedColumns:						["scale", "ordinal"]
-			allowAnalysisOwnComputedColumns:	false
+			name:					"meanTable"
+			text:					qsTr("Class means training data")
 		}
 	}
 
 	Group
 	{
-		title:									qsTr("Tables")
+		title:						qsTr("Plots")
+
+		FIG.DataSplit { }
+		FIG.RocCurve { }
+		FIG.AndrewsCurve { }
 
 		CheckBox
 		{
-			text:								qsTr("Confusion matrix")
-			name:								"confusionTable"
-			checked:							true
-
-			CheckBox
-			{
-				text:							qsTr("Display proportions")
-				name:							"confusionProportions"
-			}
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Class proportions")
-			name:								"classProportionsTable"
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Evaluation metrics")
-			name:								"validationMeasures"
-		}
-
-		CheckBox
-		{
-			name:								"coefficientsTable"
-			text:								qsTr("Coefficients")
-		}
-
-		CheckBox
-		{
-			name:								"priorTable"
-			text:								qsTr("Prior and posterior probabilities")
-		}
-
-		CheckBox
-		{
-			name:								"meanTable"
-			text:								qsTr("Class means training data")
-		}
-	}
-
-	Group
-	{
-		title:									qsTr("Plots")
-
-		CheckBox
-		{
-			text:								qsTr("Data split")
-			name:								"dataSplitPlot"
-			checked:							true
-		}
-
-		CheckBox
-		{
-			name:								"rocCurve"
-			text:								qsTr("ROC curves")
-		}
-
-		CheckBox
-		{
-			name:								"andrewsCurve"
-			text:								qsTr("Andrews curves")
-		}
-
-		CheckBox
-		{
-			name:								"matrixPlot"
-			text:								qsTr("Linear discriminant matrix")
+			name:					"matrixPlot"
+			text:					qsTr("Linear discriminant matrix")
 
 			Row
 			{
 				CheckBox
 				{
-					name:						"plotDensities"
-					text:						qsTr("Densities")
-					checked:					true
+					name:			"plotDensities"
+					text:			qsTr("Densities")
+					checked:		true
 				}
 
 				CheckBox
 				{
-					name:						"plotStatistics"
-					text:						qsTr("Scatter plots")
-					checked:					true
+					name:			"plotStatistics"
+					text:			qsTr("Scatter plots")
+					checked:		true
 				}
 			}
 		}
 
-		CheckBox
-		{
-			name:								"decisionBoundary"
-			text:								qsTr("Decision boundary matrix")
-
-			Row
-			{
-				CheckBox
-				{
-					name:						"legendShown"
-					text:						qsTr("Legend")
-					checked:					true
-				}
-
-				CheckBox
-				{
-					name:						"pointsShown"
-					text:						qsTr("Points")
-					checked:					true
-				}
-			}
-		}
+		FIG.DecisionBoundary { }
 	}
 
 	Column
 	{
-		spacing:								10 * preferencesModel.uiScale
+		spacing:					10 * preferencesModel.uiScale
 
 		Group
 		{
-			title:								qsTr("Assumption Checks")
+			title:					qsTr("Assumption Checks")
 
 			CheckBox
 			{
-				name:							"manovaTable"
-				text:							qsTr("Equality of class means")
+				name:				"manovaTable"
+				text:				qsTr("Equality of class means")
 			}
 
 			CheckBox
 			{
-				name:							"boxTest"
-				text:							qsTr("Equality of covariance matrices")
+				name:				"boxTest"
+				text:				qsTr("Equality of covariance matrices")
 			}
 
 			CheckBox
 			{
-				name:							"multicolTable"
-				text:							qsTr("Multicollinearity")
+				name:				"multicolTable"
+				text:				qsTr("Multicollinearity")
+			}
+
+			CheckBox
+			{
+				name:				"multinormalTable"
+				text:				qsTr("Multivariate normality")
 			}
 		}
 
-		ML.ExportResults
+		UI.ExportResults
 		{
-			enabled:							predictors.count > 1 && target.count > 0
+			enabled:				vars.predictorCount > 1 && vars.targetCount > 0
 		}
 	}
 
-	ML.DataSplit
+	UI.DataSplit
 	{
-		leaveOneOutVisible:						false
-		kFoldsVisible:							false
-		trainingValidationSplit:				false
+		leaveOneOutVisible:			false
+		kFoldsVisible:				false
+		trainingValidationSplit:	false
 	}
 
 	Section
 	{
-		title:									qsTr("Training Parameters")
+		title:						qsTr("Training Parameters")
 
 		Group
 		{
-			title:								qsTr("Algorithmic Settings")
+			title:					qsTr("Algorithmic Settings")
 
 			DropDown
 			{
-				name:							"estimationMethod"
-				indexDefaultValue:				0
-				label:							qsTr("Estimation method")
+				name:				"estimationMethod"
+				indexDefaultValue:	0
+				label:				qsTr("Estimation method")
 				values:
 					[
 					{ label: "Moment",	value: "moment"},
@@ -232,39 +162,19 @@ Form
 				]
 			}
 
-			CheckBox
-			{
-				text:							qsTr("Scale features")
-				name:							"scaleVariables"
-				checked:						true
-			}
-
-			CheckBox 
-			{
-				name:							"setSeed"
-				text:							qsTr("Set seed")
-				childrenOnSameRow:				true
-
-				IntegerField 
-				{
-					name:						"seed"
-					defaultValue:				1
-					min:						-999999
-					max:						999999
-					fieldWidth:					60
-				}
-			}
+			UI.ScaleVariables { }
+			UI.SetSeed { }
 		}
 
 		RadioButtonGroup
 		{
-			name:								"modelOptimization"
-			visible:							false
+			name:					"modelOptimization"
+			visible:				false
 
 			RadioButton
 			{
-				name:							"manual"
-				checked:						true
+				name:				"manual"
+				checked:			true
 			}
 		}
 	}

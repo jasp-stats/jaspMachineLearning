@@ -1,5 +1,5 @@
 Boosting Classificatie
-==========================
+===
 
 Boosting werkt door opeenvolgende voorspellers toe te voegen aan een beslisboom ensemble, waarin elke voorspeller de voorgaande corrigeert. Echter, in plaats van  de gewichten voor elke incorrecte geclassificeerde observatie bij elke iteratie te vveranderen, probeert de Boosting methode de nieuwe voorspeller aan te passen aan de residuen gemaakt door de voorgaande voorspeller.
 
@@ -45,7 +45,7 @@ Boosting werkt door opeenvolgende voorspellers toe te voegen aan een beslisboom 
 - Interactie diepte: Geheel getal dat de maximale diepte van elke beslisboom specificeert (i.e., het hoogste niveau van toegestane variabele interacties. Een waarde van 1 impliceert een additieve model, een waarde van 2 impliceert een model met hoogstens 2-weg interacties, etc. Standaardoptie is 1.
 - Min. observatie in knoop: Geheel getal dat het minimum aantal observaties in de eindknopen van de bomen specificeert. Let op dat dit het daadwerkelijk aantal observaties is, niet het totale gewicht.
 - Gebruikte trainingdata per beslisboom: Selecteert het percentage trainingsdata dat is gebruikt om elk individuele beslisboom te trainen.
-- Schaal variabelen: Schaalt de continue variabelen. Standaardiseren zorgt dat waarden van variabelen met verschillende schalen, worden geschaald in een specifieke gelijke schaal. Hierdoor geeft standaardiseren numerieke stabiliteit, wat de uitvoer van het clusteren verbetert. JASP gebruikt de Z-score standaardisatie met een gemiddelde, 0, en een standaardafwijking van 1. Dit is de standaardoptie.
+- Schaal kenmerken: Standaardiseert de continue kenmerken in de dataset. Standaardisatie zorgt ervoor dat waarden van kenmerken van verschillende schalen in een specifieke vergelijkbare schaal vallen. Standaardisatie zorgt daardoor voor numerieke stabiliteit. JASP gebruikt de Z-score standaardisatie van een gemiddelde van 0 en een standaardafwijking van 1. Deze optie is standaard geselecteerd.
 - Gebruik toevalsgenerator beginwaarde: Geeft de mogelijkheid een toevalsgenerator beginwaarde te gebruiken voor uw analyse. Een toevalsgenerator beginwaarde gebruiken, zorgt ervoor dat willekeurige processen geen invloed hebben op een analyse. Bijvoorbeeld, een toevalsgenerator beginwaarde maakt het mogelijk de analyse opnieuw te doen met dezelfde gesplitste data.
 
 #### Aantal Beslisbomen

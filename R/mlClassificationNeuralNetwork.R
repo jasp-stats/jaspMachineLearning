@@ -49,26 +49,32 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   # Create the validation measures table
   .mlClassificationTableMetrics(dataset, options, jaspResults, ready, position = 5)
 
-  # Create the network weights table
-  .mlNeuralNetworkTableWeights(dataset, options, jaspResults, ready, purpose = "classification", position = 6)
+  # Create the feature importance table
+  .mlTableFeatureImportance(options, jaspResults, ready, position = 6, purpose = "classification")
+
+  # Create the shap table
+  .mlTableShap(dataset, options, jaspResults, ready, position = 7, purpose = "classification")
 
   # Create the error plot
-  .mlNeuralNetworkPlotError(dataset, options, jaspResults, ready, position = 7, purpose = "classification")
+  .mlNeuralNetworkPlotError(dataset, options, jaspResults, ready, position = 8, purpose = "classification")
+
+  # Create the network weights table
+  .mlNeuralNetworkTableWeights(dataset, options, jaspResults, ready, position = 9, purpose = "classification")
 
   # Create the ROC curve
-  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 8, type = "neuralnet")
+  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 10, type = "neuralnet")
 
   # Create the Andrews curves
-  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 9)
+  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 11)
 
   # Create the activation function plot
-  .mlNeuralNetworkPlotActivationFunction(options, jaspResults, position = 10)
+  .mlNeuralNetworkPlotActivationFunction(options, jaspResults, position = 12)
 
   # Create the network graph
-  .mlNeuralNetworkPlotStructure(dataset, options, jaspResults, ready, purpose = "classification", position = 11)
+  .mlNeuralNetworkPlotStructure(dataset, options, jaspResults, ready, purpose = "classification", position = 13)
 
   # Decision boundaries
-  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 12, type = "neuralnet")
+  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 14, type = "neuralnet")
 }
 
 .neuralnetClassification <- function(dataset, options, jaspResults) {
@@ -103,7 +109,7 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
         algorithm = options[["algorithm"]],
         err.fct = "sse",
         act.fct = jaspResults[["actfct"]]$object,
-        linear.output = if (options[["actfct"]] == "linear") TRUE else FALSE
+        linear.output = FALSE
       )
     })
     if (isTryError(p)) {
@@ -142,7 +148,7 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
             algorithm = options[["algorithm"]],
             err.fct = "sse", # jaspResults[["lossFunction"]]$object,
             act.fct = jaspResults[["actfct"]]$object,
-            linear.output = if (options[["actfct"]] == "linear") TRUE else FALSE
+            linear.output = FALSE
           )
           validationPredictions <- levels(trainingSet[, options[["target"]]])[max.col(predict(fit, newdata = validationSet))]
         })
@@ -191,7 +197,7 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
         algorithm = options[["algorithm"]],
         err.fct = "sse",
         act.fct = jaspResults[["actfct"]]$object,
-        linear.output = if (options[["actfct"]] == "linear") TRUE else FALSE
+        linear.output = FALSE
       )
     })
     if (isTryError(p)) {
@@ -230,6 +236,12 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
     if (options[["modelValid"]] == "validationManual") {
       result[["trainAccuracyStore"]] <- trainAccuracyStore
     }
+  }
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "multiclass", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) scales::rescale(x = predict(model, newdata = data), from = range(predict(model, newdata = data)), to = c(0, 1)))
+  if (nlevels(result[["testReal"]]) == 2) {
+    result[["explainer_fi"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = as.numeric(result[["train"]][, options[["target"]]]) - 1, predict_function = function(model, data) apply(predict(model, newdata = data), 1, which.max) - 1)
+  } else {
+    result[["explainer_fi"]] <- DALEX::explain(result[["model"]], type = "multiclass", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) scales::rescale(x = predict(model, newdata = data), from = range(predict(model, newdata = data)), to = c(0, 1)))
   }
   return(result)
 }

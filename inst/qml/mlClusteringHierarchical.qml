@@ -16,165 +16,50 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick									2.8
-import QtQuick.Layouts							1.3
-import JASP.Controls							1.0
-import JASP.Widgets								1.0
+import QtQuick			2.8
+import QtQuick.Layouts	1.3
+import JASP.Controls	1.0
+import JASP.Widgets		1.0
 
-import "./common" as ML
+import "./common/ui" as UI
+import "./common/tables" as TAB
+import "./common/figures" as FIG
 
 Form 
 {
+	info: qsTr("Hierarchical clustering is a hard partitioning algorithm which aims to partition data into several clusters, where each observation belongs to only one group. The data is divided in such a way that the degree of similarity between two data observations is maximal if they belong to the same group and minimal if not.\n### Assumptions\n- The data consists of continuous variables.\n- (Normally distributed data aids the clustering process).")
 
-	VariablesForm
-	{
-		AvailableVariablesList
-		{
-			name:								"variables"
-		}
-
-		AssignedVariablesList
-		{
-			id:									predictors
-			name:								"predictors"
-			title:								qsTr("Features")
-			allowedColumns:						["scale"]
-			allowAnalysisOwnComputedColumns:	false
-		}
-	}
+	UI.VariablesFormClustering { id: vars }
 
 	Group
 	{
 		title:									qsTr("Tables")
 
-		CheckBox
-		{
-			text:								qsTr("Cluster means")
-			name:								"tableClusterMeans"
-		}
-
-		CheckBox
-		{
-			id:									clusterInfo
-			text:								qsTr("Cluster information")
-			name:								"tableClusterInformation"
-			checked:							true
-
-			CheckBox
-			{
-				text:							qsTr("Within sum of squares")
-				name:							"tableClusterInformationWithinSumOfSquares"
-				checked:						true
-			}
-
-			CheckBox
-			{
-				text:							qsTr("Silhouette score")
-				name:							"tableClusterInformationSilhouetteScore"
-			}
-
-			CheckBox
-			{
-				text:							qsTr("Between sum of squares")
-				name:							"tableClusterInformationBetweenSumOfSquares"
-			}
-
-			CheckBox
-			{
-				text:							qsTr("Total sum of squares")
-				name:							"tableClusterInformationTotalSumOfSquares"
-			}
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Evaluation metrics")
-			name:								"tableClusterEvaluationMetrics"
-		}
+		TAB.ClusterInfo { }
+		TAB.ModelPerformance {}
+		TAB.ClusterMeans { }
 	}
 
 	Group
 	{
 		title:									qsTr("Plots")
 
-		CheckBox
-		{
-			text:								qsTr("Elbow method")
-			name:								"elbowMethodPlot"
-			enabled:							!validationManual.checked
-		}
-
-		CheckBox
-		{
-			name:								"matrixPlot"
-			text:								qsTr("Cluster matrix plot")
-		}
+		FIG.ElbowMethod { enable: !optim.isManual }
+		FIG.Tsne { }
+		FIG.ClusterMatrix { }
+		FIG.ClusterMeans { }
+		FIG.ClusterDensity { }
 
 		CheckBox
 		{
 			text:								qsTr("Dendrogram")
 			name:								"dendrogram"
 		}
-
-		CheckBox
-		{
-			text:								qsTr("Cluster means")
-			name:								"clusterMeanPlot"
-
-			CheckBox
-			{
-				text:							qsTr("Display barplot")
-				name:							"clusterMeanPlotBarPlot"
-				checked:						true
-			}
-
-			CheckBox
-			{
-				text:							qsTr("Group into one figure")
-				name:							"clusterMeanPlotSingleFigure"
-				checked:						true
-			}
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Cluster densities")
-			name:								"clusterDensityPlot"
-
-			CheckBox
-			{
-				text:							qsTr("Group into one figure")
-				name:							"clusterDensityPlotSingleFigure"
-				checked:						true
-			}
-		}
-
-		CheckBox
-		{
-			text:								qsTr("t-SNE cluster plot")
-			name:								"tsneClusterPlot"
-
-			Row
-			{
-				CheckBox
-				{
-					text:						qsTr("Legend")
-					name:						"tsneClusterPlotLegend"
-					checked:					true
-				}
-
-				CheckBox
-				{
-					text:						qsTr("Labels")
-					name:						"tsneClusterPlotLabels"
-				}
-			}
-		}
 	}
 
-	ML.ExportResults
+	UI.ExportResults
 	{
-		enabled:								predictors.count > 1
+		enabled:								vars.predictorCount > 1
 		showSave:								false
 	}
 
@@ -216,85 +101,10 @@ Form
 				]
 			}
 
-			CheckBox
-			{
-				text:							qsTr("Scale variables")
-				name:							"scaleVariables"
-				checked:						true
-			}
-
-			CheckBox
-			{
-				name:							"setSeed"
-				text:							qsTr("Set seed")
-				childrenOnSameRow:				true
-
-				IntegerField
-				{
-					name:						"seed"
-					defaultValue:				1
-					min:						-999999
-					max:						999999
-					fieldWidth:					60
-				}
-			}
+			UI.ScaleVariables { }
+			UI.SetSeed { }
 		}
 
-		RadioButtonGroup
-		{
-			title:								qsTr("Cluster Determination")
-			name:								"modelOptimization"
-
-			RadioButton
-			{
-				id:								validationManual
-				text:							qsTr("Fixed")
-				name:							"manual"
-
-				IntegerField
-				{
-					name:						"manualNumberOfClusters"
-					text:						qsTr("Clusters")
-					defaultValue:				3
-					min:						2
-					max:						5000
-					enabled:					validationManual.checked
-					fieldWidth:					60
-				}
-			}
-
-			RadioButton
-			{
-				text:							qsTr("Optimized according to")
-				name:							"optimized"
-				childrenOnSameRow:				true
-				checked:						true
-
-				DropDown
-				{
-					name:						"modelOptimizationMethod"
-					indexDefaultValue:			1
-
-					values:
-						[
-						{ label: "AIC", 		value: "aic"},
-						{ label: "BIC", 		value: "bic"},
-						{ label: "Silhouette", 	value: "silhouette"}
-					]
-				}
-			}
-
-			IntegerField
-			{
-				name:							"maxNumberOfClusters"
-				text:							qsTr("Max. clusters")
-				defaultValue:					10
-				min:							2
-				max:							5000
-				enabled:						!validationManual.checked
-				Layout.leftMargin:				20
-				fieldWidth:						60
-			}
-		}
+		UI.ClusterDetermination { id: optim }
 	}
 }

@@ -16,182 +16,57 @@
 // <http://www.gnu.org/licenses/>.
 //
 
-import QtQuick									2.8
-import QtQuick.Layouts							1.3
-import JASP.Controls							1.0
-import JASP.Widgets								1.0
+import QtQuick			2.8
+import QtQuick.Layouts	1.3
+import JASP.Controls	1.0
+import JASP.Widgets		1.0
 
-import "./common" as ML
+import "./common/ui" as UI
+import "./common/tables" as TAB
+import "./common/figures" as FIG
+import "./common/analyses/decisiontree" as DT
 
 Form 
 {
+	info: qsTr("Decision Trees is a supervised learning algorithm that uses a decision tree as a predictive model to go from observations about an item (represented in the roots of the tree) to conclusions about the item's target value (represented in the endpoints of the tree).\n### Assumptions\n- The target variable is a continuous variable.\n- The feature variables consist of continuous, nominal, or ordinal variables.")
 
-	VariablesForm
+	UI.VariablesFormRegression { id: vars }
+
+	Group
 	{
-		AvailableVariablesList
-		{
-			name:								"variables"
-		}
+		title: qsTr("Tables")
 
-		AssignedVariablesList
-		{
-			id:									target
-			name:								"target"
-			title:								qsTr("Target")
-			singleVariable:						true
-			allowedColumns:						["scale"]
-		}
-
-		AssignedVariablesList
-		{
-			id:									predictors
-			name:								"predictors"
-			title:								qsTr("Features")
-			allowedColumns:						["scale", "nominal", "nominalText", "ordinal"]
-			allowAnalysisOwnComputedColumns:	false
-		}
+		TAB.ModelPerformance { }
+		TAB.FeatureImportance { }
+		TAB.ExplainPredictions { }
+		DT.AttemptedSplits { }
 	}
 
 	Group
 	{
-		title:									qsTr("Tables")
+		title: qsTr("Plots")
 
-		CheckBox
-		{
-			text:								qsTr("Evaluation metrics")
-			name:								"validationMeasures"
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Feature importance")
-			name:								"variableImportanceTable"
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Attempted splits")
-			name:								"splitsTable"
-
-			CheckBox
-			{
-				text:							qsTr("Only show splits in tree")
-				name:							"splitsTreeTable"
-				checked:						true
-			}
-		}
+		FIG.DataSplit { }
+		FIG.PredictivePerformance { }
+		DT.TreePlot { }
 	}
 
-	Group
-	{
-		title:									qsTr("Plots")
-
-		CheckBox
-		{
-			text:								qsTr("Data split")
-			name:								"dataSplitPlot"
-			checked:							true
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Predictive performance")
-			name:								"predictedPerformancePlot"
-		}
-
-		CheckBox
-		{
-			text:								qsTr("Decision tree")
-			name:								"decisionTreePlot"
-		}
-	}
-
-	ML.ExportResults
-	{
-		enabled:								predictors.count > 0 && target.count > 0
-	}
-
-	ML.DataSplit
-	{
-		trainingValidationSplit:				false
-	}
+	UI.ExportResults { enabled:	vars.predictorCount > 0 && vars.targetCount > 0 }
+	UI.DataSplit { trainingValidationSplit: false }
 
 	Section
 	{
-		title:									qsTr("Training Parameters")
+		title: qsTr("Training Parameters")
 
 		Group
 		{
-			title:								qsTr("Algorithmic Settings")
+			title: qsTr("Algorithmic Settings")
 
-			IntegerField
-			{
-				text:							qsTr("Min. observations for split")
-				name:							"minObservationsForSplit"
-				min:							1
-				defaultValue:					20
-			}
-
-			IntegerField
-			{
-				text:							qsTr("Min. observations in terminal")
-				name:							"minObservationsInNode"
-				min:							1
-				defaultValue:					7
-			}
-
-			IntegerField
-			{
-				text:							qsTr("Max. interaction depth")
-				name:							"interactionDepth"
-				min:							1
-				defaultValue:					30
-				max:							30
-			}
-
-			DoubleField
-			{
-				text:							qsTr("Complexity penalty")
-				name:							"complexityParameter"
-				min:							0
-				defaultValue:					0.01
-			}
-
-
-			CheckBox
-			{
-				text:							qsTr("Scale variables")
-				name:							"scaleVariables"
-				checked:						true
-			}
-
-			CheckBox
-			{
-				name:							"setSeed"
-				text:							qsTr("Set seed")
-				childrenOnSameRow:				true
-
-				IntegerField
-				{
-					name:						"seed"
-					defaultValue:				1
-					min:						-999999
-					max:						999999
-					fieldWidth:					60
-				}
-			}
+			DT.AlgorithmicSettings { }
+			UI.ScaleVariables { }
+			UI.SetSeed { }
 		}
 
-		RadioButtonGroup
-		{
-			name:								"modelOptimization"
-			visible:							false
-
-			RadioButton
-			{
-				name:							"manual"
-				checked:						true
-			}
-		}
+		DT.ModelOptimization { }
 	}
 }

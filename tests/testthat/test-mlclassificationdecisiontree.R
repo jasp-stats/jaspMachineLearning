@@ -1,6 +1,6 @@
 context("Machine Learning Decision Tree Classification")
 
-options <- jaspTools::analysisOptions("mlClassificationDecisionTree")
+options <- initMlOptions("mlClassificationDecisionTree")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
 options$classProportionsTable <- TRUE
@@ -14,13 +14,16 @@ options$predictors <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Wi
 options$saveModel <- FALSE
 options$savePath <- ""
 options$setSeed <- TRUE
-options$variableImportanceTable <- TRUE
+options$featureImportanceTable <- TRUE
 options$target <- "Species"
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""
 options$validationDataManual <- 0.2
 options$validationMeasures <- TRUE
+options$tableShap <- TRUE
+options$fromIndex <- 1
+options$toIndex <- 5
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClassificationDecisionTree", "iris.csv", options)
 
@@ -58,15 +61,14 @@ test_that("Decision Tree Plot matches", {
 	jaspTools::expect_equal_plots(testPlot, "decision-tree-plot")
 })
 
-test_that("Variable Importance table results match", {
-	table <- results[["results"]][["variableImportanceTable"]][["data"]]
+test_that("Feature Importance Metrics table results match", {
+	table <- results[["results"]][["featureImportanceTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(34.6709290167624, "Petal.Width", 31.6571914083694, "Petal.Length",
-			 19.9269628140734, "Sepal.Length", 13.7449167607949, "Sepal.Width"
+		list(117.364610545376, 34.6709290167624, "Petal.Width", 503.428041209099,
+			 31.6571914083694, "Petal.Length", 15.521551923813, 19.9269628140734,
+			 "Sepal.Length", 15.521551923813, 13.7449167607949, "Sepal.Width"
 			))
 })
-
-
 
 test_that("Evaluation Metrics table results match", {
   table <- results[["results"]][["validationMeasures"]][["data"]]
@@ -85,3 +87,13 @@ test_that("Evaluation Metrics table results match", {
         ))
 })
 
+test_that("Additive Explanations for Predictions of Test Set Cases table results match", {
+	table <- results[["results"]][["tableShap"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(0.666666666666667, 0, 0, 0, 0.333333333333333, 1, "setosa (1)",
+			 0.666666666666667, 0, 0, 0, 0.333333333333333, 2, "setosa (1)",
+			 0.666666666666667, 0, 0, 0, 0.333333333333333, 3, "setosa (1)",
+			 0.666666666666667, 0, 0, 0, 0.333333333333333, 4, "setosa (1)",
+			 0.666666666666667, 0, 0, 0, 0.333333333333333, 5, "setosa (1)"
+			))
+})

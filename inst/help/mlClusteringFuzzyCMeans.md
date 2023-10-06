@@ -1,5 +1,6 @@
 Fuzzy c-means Clustering
-==========================
+===
+
 Fuzzy c-means clustering is a soft partitioning method that provides an output that contains the degree of association for each observation to each cluster. This makes it possible for data observations to be partially assigned to multiple clusters and give a degree of confidence about cluster membership. Fuzzy c-means' approach is quite similar to that of k-means clustering, apart from its soft approach.
 
 ### Assumptions
@@ -32,7 +33,7 @@ Fuzzy c-means clustering is a soft partitioning method that provides an output t
 #### Algorithmic Settings
 - Max. iterations: Sets the maximum number of iterations. The maximum number of iterations reflects the number of possible instances the algorithm iterates for finding the optimal clustering solution. At default, this is set to 25.
 - Fuzziness parameter: Is a scalar and controls the fuzziness of the clustering output. Meaning that if its value increases (> 1) the uncertainty of the memberships to the different clusters also increases. In other words, if the fuzziness parameter approaches 1, the result of the fuzzy clustering is similar to a hard-clustering method, and if the parameter increases, the clustering result becomes fuzzier.
-- Scale variables: Scales the continuous variables. Standardization ensures that values of variables from different scales range into a specific similar scale. As a result, standardizing provides numerical stability, which improves the clustering output. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
+- Scale features: Standardizes the continuous features in the dataset. Standardization ensures that values of features from different scales range into a specific similar scale. As a result, standardizing provides numerical stability. JASP uses the Z-score standardization of a mean of 0 and a standard deviation of 1. This option is selected by default.
 - Set seed: Gives the option to set a seed for your analysis. Setting a seed will exclude random processes influencing an analysis. For example, setting a seed makes it possible to re-run analyses with the same outcomes.
 
 #### Cluster Determination

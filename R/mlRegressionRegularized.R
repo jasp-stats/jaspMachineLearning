@@ -39,17 +39,23 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   # Create the evaluation metrics table
   .mlRegressionTableMetrics(dataset, options, jaspResults, ready, position = 3)
 
+  # Create the feature importance table
+  .mlTableFeatureImportance(options, jaspResults, ready, position = 4, purpose = "regression")
+
+  # Create the shap table
+  .mlTableShap(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
+
   # Create the regression coefficients table
-  .mlRegressionRegularizedTableCoef(options, jaspResults, ready, position = 4)
+  .mlRegressionRegularizedTableCoef(options, jaspResults, ready, position = 6)
 
   # Create the predicted performance plot
-  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 5)
+  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 8) # position + 1 for regression equation
 
   # Create the variable trace plot
-  .mlRegressionRegularizedPlotVariableTrace(options, jaspResults, ready, position = 6)
+  .mlRegressionRegularizedPlotVariableTrace(options, jaspResults, ready, position = 9)
 
   # Create the lambda evaluation plot
-  .mlRegressionRegularizedPlotLambda(options, jaspResults, ready, position = 7)
+  .mlRegressionRegularizedPlotLambda(options, jaspResults, ready, position = 10)
 }
 
 # Read dataset
@@ -68,19 +74,16 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   }
   predictors <- unlist(options["predictors"])
   predictors <- predictors[predictors != ""]
-  variables.to.read <- c(target, predictors, weights, testSetIndicator)
   if (is.null(dataset)) {
-    dataset <- .readAndAddCompleteRowIndices(dataset, columnsAsNumeric = variables.to.read)
+    dataset <- .readAndAddCompleteRowIndices(dataset, columns = predictors, columnsAsNumeric = c(target, weights, testSetIndicator))
   }
-  if (length(unlist(options[["predictors"]])) > 0 && options[["target"]] != "" && options[["scaleVariables"]]) {
-    dataset[, c(options[["predictors"]], options[["target"]])] <- .scaleNumericData(dataset[, c(options[["predictors"]], options[["target"]]), drop = FALSE])
+  if (length(unlist(options[["predictors"]])) > 0 && options[["scaleVariables"]]) {
+    dataset[, options[["predictors"]]] <- .scaleNumericData(dataset[, options[["predictors"]], drop = FALSE])
   }
   return(dataset)
 }
 
 .regularizedRegression <- function(dataset, options, jaspResults) {
-  # Import model formula from jaspResults
-  formula <- jaspResults[["formula"]]$object
   # Set model-specific parameters
   alpha <- switch(options[["penalty"]],
     "ridge" = 0,
@@ -158,8 +161,21 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
     x = as.matrix(dataset[, options[["predictors"]]]), y = dataset[, options[["target"]]], weights = weights, offset = NULL,
     alpha = alpha, standardize = FALSE, intercept = options[["intercept"]], convergenceThreshold = options[["convergenceThreshold"]]
   )
+  # Create the formula
+  coefs <- coef(trainingFit, s = lambda)
+  if (options[["intercept"]]) {
+    regform <- paste0(options[["target"]], " = ", round(as.numeric(coefs[, 1])[1], 3))
+    start <- 2
+  } else {
+    regform <- paste0(options[["target"]], " = ")
+    start <- 1
+  }
+  for (i in start:nrow(coefs)) {
+    regform <- paste0(regform, if (round(as.numeric(coefs[, 1])[i], 3) < 0) " - " else " + ", abs(round(as.numeric(coefs[, 1])[i], 3)), " x ", rownames(coefs)[i])
+  }
   result <- list()
   result[["model"]] <- trainingFit
+  result[["formula"]] <- regform
   result[["lambda"]] <- lambda
   result[["penalty"]] <- penalty
   result[["alpha"]] <- alpha
@@ -168,7 +184,9 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   result[["testPred"]] <- as.numeric(testPredictions)
   result[["ntrain"]] <- nrow(trainingSet)
   result[["ntest"]] <- nrow(testSet)
-  result[["coefTable"]] <- coef(trainingFit, s = lambda)
+  result[["train"]] <- trainingSet
+  result[["test"]] <- testSet
+  result[["coefTable"]] <- coefs
   result[["cvMSE"]] <- trainingFit[["cvm"]][trainingFit[["lambda"]] == lambda]
   result[["cvMSELambda"]] <- data.frame(lambda = trainingFit[["lambda"]], MSE = trainingFit[["cvm"]], sd = trainingFit[["cvsd"]])
   result[["testIndicatorColumn"]] <- testIndicatorColumn
@@ -177,6 +195,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
     result[["validMSE"]] <- mean((as.numeric(validationPredictions) - validationSet[, options[["target"]]])^2)
     result[["nvalid"]] <- nrow(validationSet)
   }
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]][, options[["predictors"]], drop = FALSE], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newx = as.matrix(data), type = "response", s = result[["lambda"]]))
   return(result)
 }
 
@@ -186,13 +205,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   }
   table <- createJaspTable(gettext("Regression Coefficients"))
   table$position <- position
-  table$dependOn(options = c(
-    "coefTable", "trainingDataManual", "weights", "scaleVariables", "modelOptimization",
-    "target", "predictors", "seed", "setSeed", "modelValid",
-    "penalty", "alpha", "convergenceThreshold", "intercept", "modelOptimization", "lambda",
-    "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "holdoutData", "testDataManual"
-  ))
+  table$dependOn(options = c("coefTable", "formula", .mlRegressionDependencies()))
   table$addColumnInfo(name = "var", title = "", type = "string")
   table$addColumnInfo(name = "coefs", title = gettextf("Coefficient (%s)", "\u03B2"), type = "number")
   jaspResults[["coefTable"]] <- table
@@ -217,6 +230,12 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   }
   table[["var"]] <- labs
   table[["coefs"]] <- values
+  if (options[["formula"]]) {
+    formula <- createJaspHtml(gettextf("<b>Regression equation:</b>\n%1$s", regressionResult[["formula"]]), "p")
+    formula$position <- position + 1
+    formula$dependOn(options = c("coefTable", "formula"), optionsFromObject = jaspResults[["regressionResult"]])
+    jaspResults[["regressionFormula"]] <- formula
+  }
 }
 
 .mlRegressionRegularizedPlotVariableTrace <- function(options, jaspResults, ready, position) {
@@ -225,13 +244,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Variable Trace Plot"), width = 500, height = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "variableTrace", "variableTraceLegend", "trainingDataManual", "weights", "scaleVariables", "modelOptimization",
-    "target", "predictors", "seed", "setSeed", "modelValid",
-    "penalty", "alpha", "convergenceThreshold", "intercept", "modelOptimization", "lambda",
-    "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "holdoutData", "testDataManual"
-  ))
+  plot$dependOn(options = c("variableTrace", "variableTraceLegend", .mlRegressionDependencies()))
   jaspResults[["variableTrace"]] <- plot
   if (!ready) {
     return()
@@ -261,13 +274,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Lambda Evaluation Plot"), width = 500, height = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "lambdaEvaluation", "lambdaEvaluationLegend", "trainingDataManual", "weights", "scaleVariables", "modelOptimization",
-    "target", "predictors", "seed", "setSeed", "modelValid",
-    "penalty", "alpha", "convergenceThreshold", "intercept", "modelOptimization", "lambda",
-    "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "holdoutData", "testDataManual"
-  ))
+  plot$dependOn(options = c("lambdaEvaluation", "lambdaEvaluationLegend", .mlRegressionDependencies()))
   jaspResults[["lambdaEvaluation"]] <- plot
   if (!ready) {
     return()

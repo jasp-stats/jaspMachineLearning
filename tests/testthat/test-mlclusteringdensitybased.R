@@ -1,9 +1,9 @@
 context("Machine Learning Density-Based Clustering")
 
-options <- jaspTools::analysisOptions("mlClusteringDensityBased")
+options <- initMlOptions("mlClusteringDensityBased")
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""
-options$tableClusterEvaluationMetrics <- TRUE
+options$validationMeasures <- TRUE
 options$distance <- "normalDensities"
 options[["kDistancePlot"]] <- TRUE
 options$modelOptimization <- "manual"

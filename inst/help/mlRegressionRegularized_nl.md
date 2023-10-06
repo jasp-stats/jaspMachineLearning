@@ -1,5 +1,5 @@
 Geregulariseerde Lineaire Regressie
-==========================
+===
 
 Geregulariseerde lineaire regressie is een aanpassing van de lineaire regressie waarin coëfficiënten worden verkleind richting 0. Dit is gedaan door een straf te geven (e.g., ridge, lasso, of elastic net). De parameter λ controlleert de mate waarin parameters zijn verkleind.
 
@@ -38,7 +38,7 @@ Geregulariseerde lineaire regressie is een aanpassing van de lineaire regressie 
 - Straf: Specificeer welke straf wordt gebruikt om de regressiecoëfficiënten te verkleinen. De opties zijn ridge, lasso, en elastische net (see James, Witten, Hastie, & Tibshirani, 2013).
 - Fit intercept: Specificeer of de regressiefunctie een intercept heeft.
 - Lambda (\u03BB): Specificeer de shrinkage parameter. Het kan vastgezet worden op een specifieke waarde, geoptimaliseerd worden door het een waarde te geven met de laagste MSE in kruis-validatie, of het wordt de hoogste waarde die binnen 1 standaardfout (Std. Fout) van de minimum MSE in kruis-validatie is.
-- Schaal variabelen: Schaalt de continue variabelen. Standaardiseren zorgt dat waarden van variabelen met verschillende schalen, worden geschaald in een specifieke gelijke schaal. Hierdoor geeft standaardiseren numerieke stabiliteit, wat de uitvoer van het clusteren verbetert. JASP gebruikt de Z-score standaardisatie met een gemiddelde, 0, en een standaardafwijking van 1. Dit is de standaardoptie.
+- Schaal kenmerken: Standaardiseert de continue kenmerken in de dataset. Standaardisatie zorgt ervoor dat waarden van kenmerken van verschillende schalen in een specifieke vergelijkbare schaal vallen. Standaardisatie zorgt daardoor voor numerieke stabiliteit. JASP gebruikt de Z-score standaardisatie van een gemiddelde van 0 en een standaardafwijking van 1. Deze optie is standaard geselecteerd.
 - Gebruik toevalsgenerator beginwaarde: Geeft de mogelijkheid een toevalsgenerator beginwaarde te gebruiken voor uw analyse. Een toevalsgenerator beginwaarde gebruiken, zorgt ervoor dat willekeurige processen geen invloed hebben op een analyse. Bijvoorbeeld, een toevalsgenerator beginwaarde maakt het mogelijk de analyse opnieuw te doen met dezelfde gesplitste data.
 
 #### Voeg Voorspelde Klassen toe aan Data

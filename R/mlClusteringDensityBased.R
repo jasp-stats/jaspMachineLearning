@@ -33,26 +33,26 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
   # Create the cluster information table
   .mlClusteringTableInformation(options, jaspResults, ready, position = 2, type = "densitybased")
 
-  # Create the cluster means table
-  .mlClusteringTableMeans(dataset, options, jaspResults, ready, position = 3)
-
   # Create the cluster evaluation metrics table
-  .mlClusteringTableMetrics(dataset, options, jaspResults, ready, position = 4)
+  .mlClusteringTableMetrics(dataset, options, jaspResults, ready, position = 3)
+
+  # Create the cluster means table
+  .mlClusteringTableMeans(dataset, options, jaspResults, ready, position = 4)
 
   # Create the k-distance plot
   .mlClusteringDensityBasedPlotError(dataset, options, jaspResults, ready, position = 5)
 
-  # Create the cluster means plot
-  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 6)
-
-  # Create the cluster densities plot
-  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 7)
-
   # Create the cluster plot
-  .mlClusteringPlotTsne(dataset, options, jaspResults, ready, position = 8, type = "densitybased")
+  .mlClusteringPlotTsne(dataset, options, jaspResults, ready, position = 6, type = "densitybased")
 
   # Create the matrix plot
-  .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 9)
+  .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 7)
+
+  # Create the cluster means plot
+  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 8)
+
+  # Create the cluster densities plot
+  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 9)
 }
 
 .densityBasedClustering <- function(dataset, options, jaspResults) {
@@ -112,7 +112,7 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("K-Distance Plot"), width = 400, height = 300)
   plot$position <- position
-  plot$dependOn(options = c("predictors", "epsilonNeighborhoodSize", "minCorePoints", "modelOptimization", "seed", "scaleVariables", "ready", "kDistancePlot", "distance"))
+  plot$dependOn(options = c(.mlClusteringDependencies(), "kDistancePlot"))
   jaspResults[["kdistPlot"]] <- plot
   if (!ready) {
     return()

@@ -1,5 +1,5 @@
 K-Naaste Buren Regressie
-==========================
+===
 
 K-naaste buren is een regressiemethode die lijkt op het *k* aantal voorspellende observaties die het meest lijken op de nieuwe observatie om een voorspelling te maken over de waarde. Het aantal naaste buren is intrinsiek gebonden aan de complexiteit van het model, aangezien kleine getallen de flexibiliteit van het model verhogen.
 
@@ -37,7 +37,7 @@ K-naaste buren is een regressiemethode die lijkt op het *k* aantal voorspellende
 #### Algoritme Instellingen
 - Gewichten: Stel het gewichtsschema voor de naaste buren in. De standaardoptie, rectangular, geeft de standaard knn, terwijl de andere opties het algoritme uitbreiden door de naaste buren af te wegen. Zie ook het kknn package.
 - Afstand: De afstandsmetriek om de gelijkheid tussen naaste buren te bepalen. Kan met de Euclidean- of Manhattan afstand.
-- Schaal variabelen: Schaalt de continue variabelen. Standaardiseren zorgt dat waarden van variabelen met verschillende schalen, worden geschaald in een specifieke gelijke schaal. Hierdoor geeft standaardiseren numerieke stabiliteit, wat de uitvoer van het clusteren verbetert. JASP gebruikt de Z-score standaardisatie met een gemiddelde, 0, en een standaardafwijking van 1. Dit is de standaardoptie.
+- Schaal kenmerken: Standaardiseert de continue kenmerken in de dataset. Standaardisatie zorgt ervoor dat waarden van kenmerken van verschillende schalen in een specifieke vergelijkbare schaal vallen. Standaardisatie zorgt daardoor voor numerieke stabiliteit. JASP gebruikt de Z-score standaardisatie van een gemiddelde van 0 en een standaardafwijking van 1. Deze optie is standaard geselecteerd.
 - Gebruik toevalsgenerator beginwaarde: Geeft de mogelijkheid een toevalsgenerator beginwaarde te gebruiken voor uw analyse. Een toevalsgenerator beginwaarde gebruiken, zorgt ervoor dat willekeurige processen geen invloed hebben op een analyse. Bijvoorbeeld, een toevalsgenerator beginwaarde maakt het mogelijk de analyse opnieuw te doen met dezelfde gesplitste data.
 
 #### Aantal Naaste Buren

@@ -21,13 +21,23 @@ gettextf <- function(fmt, ..., domain = NULL) {
   return(sprintf(gettext(fmt, domain = domain), ...))
 }
 
+# This function should return all options for all analyses upon which a change in all tables/figures is required
 .mlClassificationDependencies <- function(options, includeSaveOptions = FALSE) {
   opt <- c(
-    "noOfNearestNeighbours", "trainingDataManual", "distanceParameterManual", "weights", "scaleVariables", "modelOptimization", "validationDataManual",
-    "target", "predictors", "seed", "setSeed", "validationLeaveOneOut", "maxNearestNeighbors", "noOfFolds", "modelValid", "complexityParameter", "degree", "gamma",
-    "estimationMethod", "noOfTrees", "maxTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors", "shrinkage", "interactionDepth", "minObservationsInNode", "cost", "tolerance", "epsilon",
-    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual",
-    "threshold", "algorithm", "learningRate", "lossFunction", "actfct", "layers", "maxTrainingRepetitions", "maxGenerations", "populationSize", "maxLayers", "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod", "mutationMethod", "survivalMethod", "elitismProportion", "candidates"
+    "target", "predictors", "seed", "setSeed",                                            # Common
+    "trainingDataManual", "scaleVariables", "modelOptimization",                          # Common
+    "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual",      # Common
+    "modelValid", "validationDataManual", "validationLeaveOneOut", "noOfFolds",           # Common
+	"shrinkage", "interactionDepth", "minObservationsInNode",                             # Boosting
+    "minObservationsForSplit",                                                            # Decision tree
+    "distanceParameterManual", "noOfNearestNeighbours", "weights", "maxNearestNeighbors", # k-Nearest neighbors
+    "estimationMethod",                                                                   # Linear discriminant analysis
+    "threshold", "algorithm", "learningRate", "lossFunction", "actfct", "layers",         # Neural network
+    "maxTrainingRepetitions", "maxGenerations", "populationSize", "maxLayers",            # Neural network
+    "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod",          # Neural network
+    "mutationMethod", "survivalMethod", "elitismProportion", "candidates",                # Neural network
+    "noOfTrees", "maxTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors",   # Random forest
+    "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon"              # Support vector machine
   )
   if (includeSaveOptions) {
     opt <- c(opt, "saveModel", "savePath")
@@ -74,21 +84,23 @@ gettextf <- function(fmt, ..., domain = NULL) {
   if (!is.null(jaspResults[["classificationResult"]])) {
     return()
   }
-  # set the seed so that every time the same set is chosen (to prevent random results) ##
-  if (options[["setSeed"]]) {
-    set.seed(options[["seed"]])
-  }
+  .setSeedJASP(options) # Set the seed to make results reproducible
   if (ready) {
     .mlClassificationSetFormula(options, jaspResults)
-    classificationResult <- switch(type,
-      "knn" = .knnClassification(dataset, options, jaspResults),
-      "lda" = .ldaClassification(dataset, options, jaspResults),
-      "randomForest" = .randomForestClassification(dataset, options, jaspResults),
-      "boosting" = .boostingClassification(dataset, options, jaspResults),
-      "neuralnet" = .neuralnetClassification(dataset, options, jaspResults),
-      "rpart" = .decisionTreeClassification(dataset, options, jaspResults),
-      "svm" = .svmClassification(dataset, options, jaspResults)
-    )
+    p <- try({
+      classificationResult <- switch(type,
+        "knn" = .knnClassification(dataset, options, jaspResults),
+        "lda" = .ldaClassification(dataset, options, jaspResults),
+        "randomForest" = .randomForestClassification(dataset, options, jaspResults),
+        "boosting" = .boostingClassification(dataset, options, jaspResults),
+        "neuralnet" = .neuralnetClassification(dataset, options, jaspResults),
+        "rpart" = .decisionTreeClassification(dataset, options, jaspResults),
+        "svm" = .svmClassification(dataset, options, jaspResults)
+      )
+    })
+    if (isTryError(p)) { # Fail gracefully
+      jaspBase:::.quitAnalysis(gettextf("An error occurred in the analysis: %s", jaspBase:::.extractErrorMessage(p)))
+    }
     jaspResults[["classificationResult"]] <- createJaspState(classificationResult)
     jaspResults[["classificationResult"]]$dependOn(options = .mlClassificationDependencies(options))
   }
@@ -151,8 +163,11 @@ gettextf <- function(fmt, ..., domain = NULL) {
     table$addFootnote(gettextf("Please provide a target variable and at least %i feature variable(s).", if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm") 1L else 2L))
   }
   if (options[["savePath"]] != "") {
-    if (options[["saveModel"]]) {
+    validNames <- (length(grep(" ", decodeColNames(colnames(dataset)))) == 0) && (length(grep("_", decodeColNames(colnames(dataset)))) == 0)
+    if (options[["saveModel"]] && validNames) {
       table$addFootnote(gettextf("The trained model is saved as <i>%1$s</i>.", basename(options[["savePath"]])))
+    } else if (options[["saveModel"]] && !validNames) {
+      table$addFootnote(gettext("The trained model is <b>not</b> saved because the some of the variable names in the model contain spaces (i.e., ' ') or underscores (i.e., '_'). Please remove all such characters from the variable names and try saving the model again."))
     } else {
       table$addFootnote(gettext("The trained model is not saved until 'Save trained model' is checked."))
     }
@@ -280,6 +295,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   # Save the applied model if requested
   if (options[["saveModel"]] && options[["savePath"]] != "") {
+    validNames <- (length(grep(" ", decodeColNames(colnames(dataset)))) == 0) && (length(grep("_", decodeColNames(colnames(dataset)))) == 0)
+    if (!validNames) {
+      return()
+    }
     model <- classificationResult[["model"]]
     model[["jaspVars"]] <- decodeColNames(options[["predictors"]])
     model[["jaspVersion"]] <- .baseCitation
@@ -307,10 +326,14 @@ gettextf <- function(fmt, ..., domain = NULL) {
     }
     table[["obs_name"]] <- c(gettext("Observed"), rep("", nrow(confTable) - 1))
     table[["varname_obs"]] <- colnames(confTable)
-    for (i in 1:length(rownames(confTable))) {
+    for (i in seq_along(colnames(confTable))) {
       name <- paste("varname_pred", i, sep = "")
-      table$addColumnInfo(name = name, title = rownames(confTable)[i], type = "integer", overtitle = gettext("Predicted"))
-      table[[name]] <- confTable[i, ]
+      table$addColumnInfo(name = name, title = colnames(confTable)[i], type = "integer", overtitle = gettext("Predicted"))
+      if (colnames(confTable)[i] %in% rownames(confTable)) {
+        table[[name]] <- confTable[which(rownames(confTable) == colnames(confTable)[i]), ]
+      } else {
+        table[[name]] <- rep(0, length(colnames(confTable)))
+      }
     }
   } else if (options[["target"]] != "" && !ready) {
     table$addColumnInfo(name = "obs_name", title = "", type = "string")
@@ -318,7 +341,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     factorLevels <- levels(dataset[, options[["target"]]])
     table[["obs_name"]] <- c(gettext("Observed"), rep("", length(factorLevels) - 1))
     table[["varname_obs"]] <- factorLevels
-    for (i in 1:length(factorLevels)) {
+    for (i in seq_along(factorLevels)) {
       name <- paste("varname_pred", i, sep = "")
       table$addColumnInfo(name = name, title = factorLevels[i], type = "integer", overtitle = gettext("Predicted"))
       table[[name]] <- rep(".", length(factorLevels))
@@ -350,7 +373,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
 }
 
 .classificationFillDecisionBoundary <- function(dataset, options, jaspResults, plot, type) {
-  classificationResult <- jaspResults[["classificationResult"]]$object
   variables <- options[["predictors"]]
   variables <- variables[!vapply(dataset[, variables], is.factor, TRUE)] # remove factors from boundary plot
   l <- length(variables)
@@ -367,7 +389,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   plot[["width"]] <- width
   plot[["height"]] <- height
-  cexText <- 1.6
   plotMat <- matrix(list(), l - 1, l - 1)
   oldFontSize <- jaspGraphs::getGraphOption("fontsize")
   jaspGraphs::setGraphOption("fontsize", .85 * oldFontSize)
@@ -454,7 +475,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
       algorithm = options[["algorithm"]],
       err.fct = "sse", # jaspResults[["lossFunction"]]$object, -> This does not work in the neuralnet package
       act.fct = jaspResults[["actfct"]]$object,
-      linear.output = if (options[["actfct"]] == "linear") TRUE else FALSE
+      linear.output = FALSE
     )
     predictions <- as.factor(max.col(predict(fit, newdata = grid)))
     levels(predictions) <- unique(dataset[, options[["target"]]])
@@ -537,7 +558,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   rocXstore <- NULL
   rocYstore <- NULL
   rocNamestore <- NULL
-  for (i in 1:length(lvls)) {
+  for (i in seq_along(lvls)) {
     levelVar <- train[, options[["target"]]] == lvls[i]
     typeData <- cbind(train, levelVar = factor(levelVar))
     column <- which(colnames(typeData) == options[["target"]])
@@ -592,7 +613,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
         algorithm = options[["algorithm"]],
         err.fct = "sse", # jaspResults[["lossFunction"]]$object,
         act.fct = jaspResults[["actfct"]]$object,
-        linear.output = if (options[["actfct"]] == "linear") TRUE else FALSE
+        linear.output = FALSE
       )
       score <- max.col(predict(fit, test))
     } else if (type == "rpart") {
@@ -622,7 +643,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     ggrepel::geom_text_repel(
       data = data.frame(x = 0, y = 1),
       mapping = ggplot2::aes(label = gettext("Perfect separation"), x = x, y = y),
-      nudge_x = -0.1, nudge_y = 0.05, xlim = c(0, 1), ylim = c(0, 1.1)
+      nudge_x = 0.1, nudge_y = 0.05, xlim = c(0, 1), ylim = c(0, 1.1), seed = 1
     ) +
     jaspGraphs::geom_rangeframe() +
     jaspGraphs::themeJaspRaw(legend.position = "right")
@@ -644,11 +665,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     plot$setError(gettext("Andrews curves require a minimum of 2 feature variables."))
     return()
   }
-  if (nrow(dataset) > 500) {
-    sample <- sample(1:nrow(dataset), size = 500, replace = FALSE) # Sample to prevent crazy long loading times with big data
-  } else {
-    sample <- 1:nrow(dataset)
-  }
+  sample <- sample.int(nrow(dataset), size = min(500, nrow(dataset)))
   predictors <- dataset[sample, options[["predictors"]]]
   target <- dataset[sample, options[["target"]]]
   # Taken from function `andrewsplot()` in R package "andrewsplot", thanks!
@@ -674,7 +691,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     Y[i, ] <- as.numeric(ypts)
   }
   Yvec <- NULL
-  for (i in 1:nrow(Y)) {
+  for (i in seq_len(nrow(Y))) {
     Yvec <- c(Yvec, Y[i, ])
   }
   plotData <- data.frame(
@@ -685,7 +702,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   )
   yBreaks <- jaspGraphs::getPrettyAxisBreaks(plotData$y, min.n = 4)
   p <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = x, y = y, color = target, group = observation)) +
-    jaspGraphs::geom_line(size = 0.2) +
+    ggplot2::geom_line(linewidth = 0.2) +
     ggplot2::scale_x_continuous(name = NULL, breaks = c(-pi, -pi / 2, 0, pi / 2, pi), labels = c("-\u03C0", "-\u03C0/2", "0", "\u03C0/2", "\u03C0"), limits = c(-pi, pi)) +
     ggplot2::scale_y_continuous(name = NULL, breaks = yBreaks, limits = range(yBreaks)) +
     ggplot2::labs(color = options[["target"]]) +
@@ -735,7 +752,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
   if (!is.null(jaspResults[["validationMeasures"]]) || !options[["validationMeasures"]]) {
     return()
   }
-  table <- createJaspTable(title = gettext("Evaluation Metrics"))
+  table <- createJaspTable(title = gettext("Model Performance Metrics"))
   table$position <- position
   table$transpose <- TRUE
   table$dependOn(options = c(.mlClassificationDependencies(options), "validationMeasures"))
@@ -877,7 +894,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     validTable <- prop.table(table(classificationResult[["valid"]][, options[["target"]]]))
   }
   testTable <- prop.table(table(classificationResult[["test"]][, options[["target"]]]))
-  for (i in 1:length(Dlevels)) {
+  for (i in seq_along(Dlevels)) {
     # Dataset
     dataIndex <- which(names(dataTable) == as.character(Dlevels)[i])
     dataValues[dataIndex] <- as.numeric(dataTable)[dataIndex]
@@ -1000,7 +1017,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     algorithm = options[["algorithm"]],
     err.fct = "sse",
     act.fct = jaspResults[["actfct"]]$object,
-    linear.output = if (options[["actfct"]] == "linear") TRUE else FALSE
+    linear.output = FALSE
   )
   score <- max.col(predict(fit, test))
   return(score)

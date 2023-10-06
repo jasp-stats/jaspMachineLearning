@@ -40,19 +40,22 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   .mlRegressionTableMetrics(dataset, options, jaspResults, ready, position = 3)
 
   # Create the variable importance table
-  .mlRandomForestTableVarImp(options, jaspResults, ready, position = 4, purpose = "regression")
+  .mlRandomForestTableFeatureImportance(options, jaspResults, ready, position = 4, purpose = "regression")
 
-  # Create the trees vs model error plot
-  .mlRandomForestPlotError(options, jaspResults, ready, position = 5, purpose = "regression")
+  # Create the shap table
+  .mlTableShap(dataset, options, jaspResults, ready, position = 5, purpose = "regression")
 
   # Create the predicted performance plot
   .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 6)
 
+  # Create the trees vs model error plot
+  .mlRandomForestPlotError(options, jaspResults, ready, position = 7, purpose = "regression")
+
   # Create the mean decrease in accuracy plot
-  .mlRandomForestPlotDecreaseAccuracy(options, jaspResults, ready, position = 7, purpose = "regression")
+  .mlRandomForestPlotDecreaseAccuracy(options, jaspResults, ready, position = 8, purpose = "regression")
 
   # Create the total increase in node purity plot
-  .mlRandomForestPlotIncreasePurity(options, jaspResults, ready, position = 8, purpose = "regression")
+  .mlRandomForestPlotIncreasePurity(options, jaspResults, ready, position = 9, purpose = "regression")
 }
 
 .randomForestRegression <- function(dataset, options, jaspResults) {
@@ -148,24 +151,26 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
     result[["valid"]] <- validationSet
     result[["rfit_valid"]] <- validationFit
   }
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "regression", data = result[["train"]][, options[["predictors"]], drop = FALSE], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data, type = "response"))
   return(result)
 }
 
-.mlRandomForestTableVarImp <- function(options, jaspResults, ready, position, purpose) {
-  if (!is.null(jaspResults[["variableImportanceTable"]]) || !options[["variableImportanceTable"]]) {
+.mlRandomForestTableFeatureImportance <- function(options, jaspResults, ready, position, purpose) {
+  if (!is.null(jaspResults[["featureImportanceTable"]]) || !options[["featureImportanceTable"]]) {
     return()
   }
-  table <- createJaspTable(title = gettext("Feature Importance"))
+  table <- createJaspTable(title = gettext("Feature Importance Metrics"))
   table$position <- position
-  table$dependOn(options = c(
-    "variableImportanceTable", "scaleVariables", "target", "predictors", "modelOptimization", "maxTrees",
-    "noOfTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors", "seed", "setSeed",
-    "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "holdoutData", "testDataManual"
-  ))
+  if (purpose == "regression") {
+    table$dependOn(options = c("featureImportanceTable", .mlRegressionDependencies()))
+  } else {
+    table$dependOn(options = c("featureImportanceTable", .mlClassificationDependencies()))
+  }
   table$addColumnInfo(name = "predictor", title = " ", type = "string")
   table$addColumnInfo(name = "MDiA", title = gettext("Mean decrease in accuracy"), type = "number")
   table$addColumnInfo(name = "MDiNI", title = gettext("Total increase in node purity"), type = "number")
-  jaspResults[["variableImportanceTable"]] <- table
+  table$addColumnInfo(name = "dl", title = gettext("Mean dropout loss"), type = "number")
+  jaspResults[["featureImportanceTable"]] <- table
   if (!ready) {
     return()
   }
@@ -173,10 +178,19 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
     "classification" = jaspResults[["classificationResult"]]$object,
     "regression" = jaspResults[["regressionResult"]]$object
   )
-  varImpOrder <- sort(result[["rfit_test"]]$importance[, 1], decr = TRUE, index.return = TRUE)$ix
-  table[["predictor"]] <- as.character(result[["varImp"]]$Variable)
+  vars <- as.character(result[["varImp"]]$Variable)
+  table[["predictor"]] <- vars
   table[["MDiA"]] <- result[["varImp"]]$MeanIncrMSE
   table[["MDiNI"]] <- result[["varImp"]]$TotalDecrNodeImp
+  .setSeedJASP(options) # Set the seed to make results reproducible
+  if (purpose == "regression") {
+    fi <- DALEX::model_parts(result[["explainer"]], B = 50)
+  } else if (purpose == "classification") {
+    fi <- DALEX::model_parts(result[["explainer_fi"]], B = 50)
+  }
+  fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
+  table[["dl"]] <- fi[match(vars, fi[["y"]]), "x"]
+  table$addFootnote(gettext("Mean dropout loss is based on 50 permutations."))
 }
 
 .mlRandomForestPlotError <- function(options, jaspResults, ready, position, purpose) {
@@ -189,11 +203,11 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   )
   plot <- createJaspPlot(plot = NULL, title = title, width = 400, height = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "treesVsModelErrorPlot", "trainingDataManual", "scaleVariables", "modelOptimization", "maxTrees",
-    "target", "predictors", "seed", "setSeed", "noOfTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors",
-    "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "holdoutData", "testDataManual"
-  ))
+  if (purpose == "regression") {
+    plot$dependOn(options = c("treesVsModelErrorPlot", .mlRegressionDependencies()))
+  } else {
+    plot$dependOn(options = c("treesVsModelErrorPlot", .mlClassificationDependencies()))
+  }
   jaspResults[["treesVsModelErrorPlot"]] <- plot
   if (!ready) {
     return()
@@ -256,11 +270,11 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Mean Decrease in Accuracy"), width = 450, height = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "accuracyDecreasePlot", "trainingDataManual", "scaleVariables", "modelOptimization", "maxTrees",
-    "target", "predictors", "seed", "setSeed", "noOfTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors",
-    "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "holdoutData", "testDataManual"
-  ))
+  if (purpose == "regression") {
+    plot$dependOn(options = c("accuracyDecreasePlot", .mlRegressionDependencies()))
+  } else {
+    plot$dependOn(options = c("accuracyDecreasePlot", .mlClassificationDependencies()))
+  }
   jaspResults[["accuracyDecreasePlot"]] <- plot
   if (!ready) {
     return()
@@ -287,11 +301,11 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Total Increase in Node Purity"), width = 450, height = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "purityIncreasePlot", "trainingDataManual", "scaleVariables", "modelOptimization", "maxTrees",
-    "target", "predictors", "seed", "setSeed", "noOfTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors",
-    "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "holdoutData", "testDataManual"
-  ))
+  if (purpose == "regression") {
+    plot$dependOn(options = c("purityIncreasePlot", .mlRegressionDependencies()))
+  } else {
+    plot$dependOn(options = c("purityIncreasePlot", .mlClassificationDependencies()))
+  }
   jaspResults[["purityIncreasePlot"]] <- plot
   if (!ready) {
     return()

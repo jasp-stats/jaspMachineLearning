@@ -45,35 +45,44 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   # Create the validation measures table
   .mlClassificationTableMetrics(dataset, options, jaspResults, ready, position = 5)
 
+  # Create the feature importance table
+  .mlTableFeatureImportance(options, jaspResults, ready, position = 6, purpose = "classification")
+
+  # Create the shap table
+  .mlTableShap(dataset, options, jaspResults, ready, position = 7, purpose = "classification")
+
   # Create the coefficients table
-  .mlClassificationLdaTableCoef(options, jaspResults, ready, position = 6)
+  .mlClassificationLdaTableCoef(options, jaspResults, ready, position = 8)
 
   # Create the prior and posterior table
-  .mlClassificationLdaTablePriorPosterior(options, jaspResults, ready, position = 7)
+  .mlClassificationLdaTablePriorPosterior(options, jaspResults, ready, position = 9)
 
   # Create the group means table
-  .mlClassificationLdaTableMeans(options, jaspResults, ready, position = 8)
+  .mlClassificationLdaTableMeans(options, jaspResults, ready, position = 10)
 
   # Create the test of equality of means table
-  .mlClassificationLdaTableEqualityMeans(dataset, options, jaspResults, ready, position = 9)
+  .mlClassificationLdaTableEqualityMeans(dataset, options, jaspResults, ready, position = 11)
 
   # Create the test of equality of covariance matrices table
-  .mlClassificationLdaTableEqualityCovMat(dataset, options, jaspResults, ready, position = 10)
+  .mlClassificationLdaTableEqualityCovMat(dataset, options, jaspResults, ready, position = 12)
 
   # Create the multicollinearity table
-  .mlClassificationLdaTableMulticollinearity(dataset, options, jaspResults, ready, position = 11)
+  .mlClassificationLdaTableMulticollinearity(dataset, options, jaspResults, ready, position = 13)
+
+  # Create the multivariate normal table
+  .mlClassificationLdaTableMultivariateNormality(dataset, options, jaspResults, ready, position = 14)
 
   # Create the ROC curve
-  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 12, type = "lda")
+  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 15, type = "lda")
 
   # Create the Andrews curves
-  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 13)
+  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 16)
 
   # Create the LDA matrix plot
-  .mlClassificationLdaPlotDiscriminants(dataset, options, jaspResults, ready, position = 14)
+  .mlClassificationLdaPlotDiscriminants(dataset, options, jaspResults, ready, position = 17)
 
   # Decision boundaries
-  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 15, type = "lda")
+  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 18, type = "lda")
 }
 
 # Error handling
@@ -134,6 +143,12 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   result[["test"]] <- testSet
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["classes"]] <- predict(fit, newdata = dataset)$class
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "multiclass", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data)$posterior)
+  if (nlevels(result[["testReal"]]) == 2) {
+    result[["explainer_fi"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = as.numeric(result[["train"]][, options[["target"]]]) - 1, predict_function = function(model, data) apply(predict(model, newdata = data)$posterior, 1, which.max) - 1)
+  } else {
+    result[["explainer_fi"]] <- DALEX::explain(result[["model"]], type = "multiclass", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data)$posterior)
+  }
   return(result)
 }
 
@@ -143,12 +158,7 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   }
   table <- createJaspTable(title = gettext("Linear Discriminant Coefficients"))
   table$position <- position
-  table$dependOn(options = c(
-    "coefficientsTable", "trainingDataManual", "scaleVariables", "modelOptimization",
-    "target", "predictors", "seed", "setSeed", "modelValid", "estimationMethod",
-    "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "holdoutData", "testDataManual"
-  ))
+  table$dependOn(options = c("coefficientsTable", .mlClassificationDependencies()))
   table$addColumnInfo(name = "pred_level", title = "", type = "string")
   jaspResults[["coefficientsTable"]] <- table
   if (!ready) {
@@ -175,12 +185,7 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   }
   table <- createJaspTable(title = gettext("Prior and Posterior Class Probabilities"))
   table$position <- position
-  table$dependOn(options = c(
-    "priorTable", "trainingDataManual", "scaleVariables", "modelOptimization",
-    "target", "predictors", "seed", "setSeed", "modelValid", "estimationMethod",
-    "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "holdoutData", "testDataManual"
-  ))
+  table$dependOn(options = c("priorTable", .mlClassificationDependencies()))
   table$addColumnInfo(name = "typeprob", title = "", type = "string")
   table$addColumnInfo(name = "prior", title = gettext("Prior"), type = "number")
   table$addColumnInfo(name = "posterior", title = gettext("Posterior"), type = "number")
@@ -201,11 +206,7 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   }
   table <- createJaspTable(title = gettext("Class Means in Training Data"))
   table$position <- position
-  table$dependOn(options = c(
-    "meanTable", "trainingDataManual", "scaleVariables", "modelOptimization", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual",
-    "target", "predictors", "seed", "setSeed", "modelValid", "estimationMethod",
-    "holdoutData", "testDataManual"
-  ))
+  table$dependOn(options = c("meanTable", .mlClassificationDependencies()))
   table$addColumnInfo(name = "target_level", title = "", type = "string")
   for (i in options[["predictors"]]) {
     table$addColumnInfo(name = i, type = "number", title = i)
@@ -227,10 +228,7 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   }
   plot <- createJaspPlot(title = gettext("Linear Discriminant Matrix"), height = 400, width = 300)
   plot$position <- position
-  plot$dependOn(options = c(
-    "matrixPlot", "plotDensities", "plotStatistics", "trainingDataManual", "scaleVariables", "modelOptimization", "holdoutData", "testDataManual",
-    "target", "predictors", "seed", "setSeed", "modelValid", "estimationMethod", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual"
-  ))
+  plot$dependOn(options = c("matrixPlot", "plotDensities", "plotStatistics", .mlClassificationDependencies()))
   jaspResults[["matrixPlot"]] <- plot
   if (!ready) {
     return()
@@ -439,11 +437,15 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   if (!ready) {
     return()
   }
+  if (any(as.numeric(table(dataset[, options[["target"]]])) < 2)) {
+    table$setError(gettext("There are one or more levels in the target variable with less than two observations."))
+    return()
+  }
   boxSum <- .boxM(dataset[, options[["predictors"]]], dataset[, options[["target"]]])
   chi <- as.numeric(boxSum[["statistic"]])
   df <- as.numeric(boxSum[["parameter"]])
   p <- as.numeric(boxSum[["p.value"]])
-  row <- data.frame(test = "Box's M", x = chi, df = df, p = p)
+  row <- data.frame(test = gettext("Box's M"), x = chi, df = df, p = p)
   table$addRows(row)
 }
 
@@ -456,6 +458,10 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   table$dependOn(options = c("multicolTable", "scaleVariables", "target", "predictors"))
   jaspResults[["multicolTable"]] <- table
   if (!ready) {
+    return()
+  }
+  if (any(as.numeric(table(dataset[, options[["target"]]])) < 2)) {
+    table$setError(gettext("There are one or more levels in the target variable with less than two observations."))
     return()
   }
   boxSum <- .boxM(dataset[, options[["predictors"]]], dataset[, options[["target"]]])
@@ -483,4 +489,25 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
     x <- x[, -xint, drop = FALSE]
   }
   return(x)
+}
+
+.mlClassificationLdaTableMultivariateNormality <- function(dataset, options, jaspResults, ready, position) {
+  if (!is.null(jaspResults[["multinormalTable"]]) || !options[["multinormalTable"]]) {
+    return()
+  }
+  table <- createJaspTable(title = gettext("Tests for Multivariate Normality"))
+  table$position <- position
+  table$dependOn(options = c("multinormalTable", "scaleVariables", "predictors"))
+  table$addColumnInfo(name = "type", title = "", type = "string")
+  table$addColumnInfo(name = "statistic", title = gettext("Statistic"), type = "number")
+  table$addColumnInfo(name = "p", title = gettext("p"), type = "pvalue")
+  table[["type"]] <- c(gettext("Skewness"), gettext("Kurtosis"))
+  table$addFootnote(gettext("Both p-values of the skewness and kurtosis statistics should be > 0.05 to conclude multivariate normality."))
+  jaspResults[["multinormalTable"]] <- table
+  if (!ready) {
+    return()
+  }
+  result <- mvnormalTest::mardia(dataset[, options[["predictors"]]])
+  table[["statistic"]] <- as.numeric(as.character(result[["mv.test"]][1:2, "Statistic"]))
+  table[["p"]] <- as.numeric(as.character(result[["mv.test"]][1:2, "p-value"]))
 }
