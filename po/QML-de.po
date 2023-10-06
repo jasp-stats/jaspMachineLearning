@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2023-10-07 03:20+0000\n"
+"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.1-dev\n"
 "X-Language: de\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -792,16 +798,14 @@ msgctxt "mlPrediction|"
 msgid "to"
 msgstr "bis"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Linear"
 msgstr "Linear"
 
 msgctxt "Description|"
 msgid "Linear Regression"
-msgstr ""
+msgstr "Lineare Regression"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Shrinkage"
 msgstr "Schrumpfung"
@@ -813,7 +817,6 @@ msgid ""
 "smaller learning rate typically requires more trees."
 msgstr ""
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Interaction depth"
 msgstr "Interaktionstiefe"
@@ -857,34 +860,32 @@ msgctxt "Deviance|"
 msgid "Shows the prediction error plotted against the number of trees."
 msgstr ""
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Number of Trees"
 msgstr "Anzahl Bäume"
 
 msgctxt "ModelOptimization|"
 msgid "Choose how to optimize the model."
-msgstr ""
+msgstr "Wählen Sie, wie das Modell optimiert wird."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Fixed"
-msgstr "Fixiert"
+msgstr "Fest"
 
 msgctxt "ModelOptimization|"
 msgid "Enables you to use a user-specified number of decision trees."
 msgstr ""
+"Ermöglicht es Ihnen, eine benutzerdefinierte Anzahl von Entscheidungsbäumen "
+"zu verwenden."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Trees"
 msgstr "Bäume"
 
 msgctxt "ModelOptimization|"
 msgid "The number of trees."
-msgstr ""
+msgstr "Die Anzahl der Bäume."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Optimized"
 msgstr "Optimiert"
@@ -894,8 +895,9 @@ msgid ""
 "Enables you to optimize the prediction error on a validation data set with "
 "respect to the number of trees."
 msgstr ""
+"Ermöglicht Ihnen, den Vorhersagefehler auf einem Validierungsdatensatz "
+"hinsichtlich der Anzahl der Bäume zu optimieren."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Max. trees"
 msgstr "Max. Bäume"
@@ -905,10 +907,12 @@ msgid ""
 "Sets the maximum number of possible decision trees to be considered. At "
 "default, this is set to 100."
 msgstr ""
+"Setzt die maximale Anzahl möglicher Entscheidungsbäume, die in Betracht "
+"gezogen wird. Standardmäßig ist dies auf 100 gesetzt."
 
 msgctxt "Oob|"
 msgid "Out-of-bag improvement"
-msgstr ""
+msgstr "Out-of-bag Verbesserung"
 
 msgctxt "Oob|"
 msgid ""
@@ -916,16 +920,14 @@ msgid ""
 "improvement of the model. Accuracy is assessed for the training set."
 msgstr ""
 
-#, fuzzy
 msgctxt "RelativeInfluence|"
 msgid "Relative influence"
 msgstr "Relativer Einfluß"
 
 msgctxt "RelativeInfluence|"
 msgid "Shows the relative influence of the features."
-msgstr ""
+msgstr "Zeigt den relativen Einfluss der Merkmale."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Min. observations for split"
 msgstr "Min. Beobachtungen für Aufteilung"
@@ -935,26 +937,25 @@ msgid ""
 "The minimum number of observations that must exist in a node in order for a "
 "split to be attempted."
 msgstr ""
+"Die minimale Anzahl von Beobachtungen, die in einem Knoten vorhanden sein "
+"müssen, um eine Aufteilung zu probieren."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Min. observations in terminal"
-msgstr "Min. Beobachtungen im Terminal"
+msgstr "Min. Beobachtungen am Ende"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The minimum number of observations in any terminal node."
-msgstr ""
+msgstr "Die minimale Anzahl der Beobachtungen in jedem Endknoten."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Max. interaction depth"
 msgstr "Max. Interaktionstiefe"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Set the maximum depth of any node of the final tree."
-msgstr ""
+msgstr "Setzen Sie die maximale Tiefe jedes Knotens des endgültigen Baumes."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Complexity penalty"
 msgstr "Komplexitäts-Strafterm"
@@ -1011,7 +1012,6 @@ msgctxt "AlgorithmicSettings|"
 msgid "Triangular"
 msgstr "Dreieckig"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Epanechnikov"
 msgstr "Epanechnikov"
@@ -1046,7 +1046,6 @@ msgctxt "AlgorithmicSettings|"
 msgid "Rank"
 msgstr "Rang"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Optimal"
 msgstr "Optimal"
@@ -1068,7 +1067,6 @@ msgctxt "AlgorithmicSettings|"
 msgid "Euclidian"
 msgstr "Euklidisch"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Manhattan"
 msgstr "Manhattan"
@@ -1186,17 +1184,14 @@ msgctxt "AlgorithmicSettings|"
 msgid "Hyperbolic tangent"
 msgstr "Hyperbolischer Tangens"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "ReLU"
 msgstr "ReLU"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Softplus"
 msgstr "Softplus"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Softsign"
 msgstr "Softsign"
@@ -1206,22 +1201,18 @@ msgctxt "AlgorithmicSettings|"
 msgid "ELU"
 msgstr "ELU"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "LReLU"
 msgstr "LReLU"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "SiLU"
 msgstr "SiLU"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Mish"
 msgstr "Mish"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "GeLU"
 msgstr "GeLU"
@@ -1257,22 +1248,18 @@ msgctxt "AlgorithmicSettings|"
 msgid "Backpropagation"
 msgstr ""
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "rprop+"
 msgstr "rprop+"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "rprop-"
 msgstr "rprop-"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "grprop-sag"
 msgstr "grprop-sag"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "grprop-slr"
 msgstr "grprop-slr"
@@ -1316,7 +1303,6 @@ msgctxt "AlgorithmicSettings|"
 msgid "The loss function used."
 msgstr ""
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Stopping criteria loss function"
 msgstr "Abbruchkriterien Fehlerfunktion"
@@ -1326,8 +1312,9 @@ msgid ""
 "The threshold for the partial derivatives of the error function as stopping "
 "criteria."
 msgstr ""
+"Die Schwelle für die partiellen Ableitungen der Fehlerfunktion als "
+"Stoppkriterien."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Max. training repetitions"
 msgstr "Max. Trainingswiederholungen"
@@ -1335,8 +1322,9 @@ msgstr "Max. Trainingswiederholungen"
 msgctxt "AlgorithmicSettings|"
 msgid "The maximum number of repetitions used in training the network."
 msgstr ""
+"Die maximale Anzahl von Wiederholungen, die beim Training des Netzes "
+"verwendet werden."
 
-#, fuzzy
 msgctxt "Coefficients|"
 msgid "Network weights"
 msgstr "Netzwerkgewichte"
@@ -1344,14 +1332,12 @@ msgstr "Netzwerkgewichte"
 msgctxt "Coefficients|"
 msgid ""
 "Shows the connections in the neural network together with their weights."
-msgstr ""
+msgstr "Zeigt die Verbindungen im neuronalen Netz zusammen mit ihren Gewichten."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Network Topology"
 msgstr "Netzwerktopologie"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Manual"
 msgstr "Manuell"
@@ -1359,13 +1345,12 @@ msgstr "Manuell"
 msgctxt "ModelOptimization|"
 msgid "Specify the nodes in each hidden layer of the neural network."
 msgstr ""
+"Geben Sie die Knoten in jeder verdeckten Schicht des neuronalen Netzes an."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Nodes"
 msgstr "Knoten"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Hidden layer "
 msgstr "Verdeckte Schicht "
@@ -1373,39 +1358,37 @@ msgstr "Verdeckte Schicht "
 msgctxt "ModelOptimization|"
 msgid "Optimize the topology of the network using a genetic algorithm."
 msgstr ""
+"Optimieren Sie die Topologie des Netzwerks mithilfe eines genetischen "
+"Algorithmus."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Population size"
 msgstr "Größe der Grundgesamtheit"
 
 msgctxt "ModelOptimization|"
 msgid "Size of population used in genetic optimization."
-msgstr ""
+msgstr "Größe der bei der genetischen Optimierung verwendeten Grundgesamtheit."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Generations"
 msgstr "Generationen"
 
 msgctxt "ModelOptimization|"
 msgid "Number of generations used in genetic optimization."
-msgstr ""
+msgstr "Anzahl der bei der genetischen Optimierung verwendeten Generationen."
 
 msgctxt "ModelOptimization|"
 msgid "Max. number of layers"
-msgstr ""
+msgstr "Max. Anzahl der Schichten"
 
 msgctxt "ModelOptimization|"
 msgid "Max. nodes in each layer"
-msgstr ""
+msgstr "Max. Knoten in jeder Schicht"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Parent selection"
 msgstr "Elternauswahl"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Roulette wheel"
 msgstr "Roulette-Rad"
@@ -1420,30 +1403,26 @@ msgctxt "ModelOptimization|"
 msgid "Rank"
 msgstr "Rang"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Tournament"
 msgstr "Turnier"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Random"
 msgstr "Zufällig"
 
 msgctxt "ModelOptimization|"
 msgid "How to select suviving networks."
-msgstr ""
+msgstr "Wie die überlebenden Netzwerke ausgewählt werden."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Candidates"
 msgstr "Kandidaten"
 
 msgctxt "ModelOptimization|"
 msgid "Number of candidates for tournament selection"
-msgstr ""
+msgstr "Anzahl der Kandidaten für Turnierauswahl"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Crossover method"
 msgstr "Crossover-Methode"
@@ -1695,12 +1674,10 @@ msgctxt "AlgorithmicSettings|"
 msgid "Radial"
 msgstr "Radial"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Polynomial"
 msgstr "Polynomial"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Sigmoid"
 msgstr "Sigmoid"
@@ -1756,7 +1733,6 @@ msgctxt "AlgorithmicSettings|"
 msgid "The tolerance of termination criterion."
 msgstr ""
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Epsilon"
 msgstr "Epsilon"
