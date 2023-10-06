@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2023-10-06 13:16+0000\n"
+"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
+"Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/gl/>\n"
+"Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.1-dev\n"
 "X-Language: gl_ES\n"
 "X-Source-Language: C\n"
 "X-Qt-Contexts: true\n"
@@ -130,7 +136,7 @@ msgstr "Configuracións Algorítmicas"
 
 msgctxt "mlClassificationLda|"
 msgid "Training Parameters"
-msgstr "Parámetros de adestramento"
+msgstr "Parámetros de ensaio"
 
 msgctxt "DataSplit|"
 msgid "folds"
@@ -138,7 +144,7 @@ msgstr "pregos"
 
 msgctxt "DataSplit|"
 msgid "Training and Validation Data"
-msgstr "Datos de adestramento e validación"
+msgstr "Datos de ensaio e validación"
 
 msgctxt "DataSplit|"
 msgid "K-fold with"
@@ -246,7 +252,7 @@ msgstr "Densidades"
 
 msgctxt "mlClassificationLda|"
 msgid "Class means training data"
-msgstr "Medias de clase nos datos de adestramento"
+msgstr "Medias de clase nos datos de ensaio"
 
 msgctxt "mlClassificationLda|"
 msgid "Multicollinearity"
@@ -286,7 +292,7 @@ msgstr "Gráficas"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Training Parameters"
-msgstr "Parámetros de Adestramento"
+msgstr "Parámetros de ensaio"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Algorithmic Settings"
@@ -302,7 +308,7 @@ msgstr "Gráficas"
 
 msgctxt "mlClassificationKnn|"
 msgid "Training Parameters"
-msgstr "Parámetros de Adestramento"
+msgstr "Parámetros de ensaio"
 
 msgctxt "mlClassificationKnn|"
 msgid "Algorithmic Settings"
@@ -322,7 +328,7 @@ msgstr "Gráficas"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Training Parameters"
-msgstr "Parámetros de Adestramento"
+msgstr "Parámetros de ensaio"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Algorithmic Settings"
@@ -338,7 +344,7 @@ msgstr "Gráficas"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Training Parameters"
-msgstr "Parámetros de Adestramento"
+msgstr "Parámetros de ensaio"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Algorithmic Settings"
@@ -362,7 +368,7 @@ msgstr "Gráficas"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Training Parameters"
-msgstr "Parámetros de Adestramento"
+msgstr "Parámetros de ensaio"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Algorithmic Settings"
@@ -378,7 +384,7 @@ msgstr "Gráficas"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Training Parameters"
-msgstr "Parámetros de Adestramento"
+msgstr "Parámetros de ensaio"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Algorithmic Settings"
@@ -394,7 +400,7 @@ msgstr "Gráficas"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Training Parameters"
-msgstr "Parámetros de Adestramento"
+msgstr "Parámetros de ensaio"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Algorithmic Settings"
@@ -410,7 +416,7 @@ msgstr "Gráficas"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Training Parameters"
-msgstr "Parámetros de Adestramento"
+msgstr "Parámetros de ensaio"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Algorithmic Settings"
@@ -426,7 +432,7 @@ msgstr "Gráficas"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Training Parameters"
-msgstr "Parámetros de Adestramento"
+msgstr "Parámetros de ensaio"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Algorithmic Settings"
@@ -442,7 +448,7 @@ msgstr "Gráficas"
 
 msgctxt "mlRegressionKnn|"
 msgid "Training Parameters"
-msgstr "Parámetros de Adestramento"
+msgstr "Parámetros de ensaio"
 
 msgctxt "mlRegressionKnn|"
 msgid "Algorithmic Settings"
@@ -458,7 +464,7 @@ msgstr "Gráficas"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Training Parameters"
-msgstr "Parámetros de Adestramento"
+msgstr "Parámetros de ensaio"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Algorithmic Settings"
@@ -478,7 +484,7 @@ msgstr "Lenda"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Training Parameters"
-msgstr "Parámetros de Adestramento"
+msgstr "Parámetros de ensaio"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Algorithmic Settings"
@@ -534,7 +540,7 @@ msgstr "p.e., posición/modelo.jaspML"
 
 msgctxt "ExportResults|"
 msgid "Save trained model"
-msgstr "Gardar o modelo adestrado"
+msgstr "Gardar o modelo ensaiado"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Tables"
@@ -546,7 +552,7 @@ msgstr "Gráficas"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Training Parameters"
-msgstr "Parámetros de Adestramento"
+msgstr "Parámetros de ensaio"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Algorithmic Settings"
@@ -562,7 +568,7 @@ msgstr "Gráficas"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Training Parameters"
-msgstr "Parámetros de Adestramento"
+msgstr "Parámetros de ensaio"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Algorithmic Settings"
@@ -698,7 +704,7 @@ msgstr "Gráficas"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Training Parameters"
-msgstr "Parámetros de Adestramento"
+msgstr "Parámetros de ensaio"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Algorithmic Settings"
@@ -714,7 +720,7 @@ msgstr "Gráficas"
 
 msgctxt "mlClassificationSvm|"
 msgid "Training Parameters"
-msgstr "Parámetros de Adestramento"
+msgstr "Parámetros de ensaio"
 
 msgctxt "mlClassificationSvm|"
 msgid "Algorithmic Settings"
@@ -746,7 +752,7 @@ msgstr "Gráficas"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Training Parameters"
-msgstr "Parámetros de Adestramento"
+msgstr "Parámetros de ensaio"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Algorithmic Settings"
@@ -762,7 +768,7 @@ msgstr "Gráficas"
 
 msgctxt "mlRegressionSvm|"
 msgid "Training Parameters"
-msgstr "Parámetros de Adestramento"
+msgstr "Parámetros de ensaio"
 
 msgctxt "mlRegressionSvm|"
 msgid "Algorithmic Settings"
@@ -770,7 +776,7 @@ msgstr "Configuracións Algorítmicas"
 
 msgctxt "mlPrediction|"
 msgid "Trained model"
-msgstr "Modelo adestrado"
+msgstr "Modelo ensaiado"
 
 msgctxt "mlPrediction|"
 msgid "e.g., location/model.jaspML"
@@ -792,16 +798,14 @@ msgctxt "mlPrediction|"
 msgid "to"
 msgstr "a"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Linear"
 msgstr "Linear"
 
 msgctxt "Description|"
 msgid "Linear Regression"
-msgstr ""
+msgstr "Regresión linear"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Shrinkage"
 msgstr "Contracción"
@@ -812,8 +816,11 @@ msgid ""
 "the learning rate or step-size reduction 0.001 to 0.1 usually work, but a "
 "smaller learning rate typically requires more trees."
 msgstr ""
+"Un parámetro de contracción aplicado a cada árbore na expansión. Tamén "
+"coñecido como a taxa de apredizaxe ou reducción do tamaño de paso, "
+"habitualmente funciona de 0.001 a 0.1, pero unha taxa de aprendizaxe menor "
+"require normalmente máis árbores."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Interaction depth"
 msgstr "Profundidade da interacción"
@@ -825,7 +832,6 @@ msgid ""
 "value of 2 implies a model with up to 2-way interactions, etc. Default is 1."
 msgstr ""
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Min. observations in node"
 msgstr "Mín. observacións no nodo"
@@ -837,36 +843,34 @@ msgid ""
 "total weight."
 msgstr ""
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Training data used per tree"
-msgstr "Datos de adestramento utilizados por árbore"
+msgstr "Datos de ensaio utilizados por árbore"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
 "Select the percentage of training data that is used to train each individual "
 "tree."
 msgstr ""
+"Selecciona a porcentaxe de datos de ensaio que se usa para ensaiar cada "
+"árbore individual."
 
-#, fuzzy
 msgctxt "Deviance|"
 msgid "Deviance"
 msgstr "Desviación"
 
 msgctxt "Deviance|"
 msgid "Shows the prediction error plotted against the number of trees."
-msgstr ""
+msgstr "Amosa o erro de predición representado fronte ao número de árbores."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Number of Trees"
 msgstr "Número de Árbores"
 
 msgctxt "ModelOptimization|"
 msgid "Choose how to optimize the model."
-msgstr ""
+msgstr "Escoller como optimizar o modelo."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Fixed"
 msgstr "Fixo"
@@ -874,17 +878,16 @@ msgstr "Fixo"
 msgctxt "ModelOptimization|"
 msgid "Enables you to use a user-specified number of decision trees."
 msgstr ""
+"Permite utilizar un número de árbores de decisión especificado polo usuario."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Trees"
 msgstr "Árbores"
 
 msgctxt "ModelOptimization|"
 msgid "The number of trees."
-msgstr ""
+msgstr "O número de árbores."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Optimized"
 msgstr "Optimizado"
@@ -894,8 +897,9 @@ msgid ""
 "Enables you to optimize the prediction error on a validation data set with "
 "respect to the number of trees."
 msgstr ""
+"Permite optimizar o erro de predición nun conxunto de datos de validación, "
+"con respecto ao número de árbores."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Max. trees"
 msgstr "Máx. árbores"
@@ -905,8 +909,9 @@ msgid ""
 "Sets the maximum number of possible decision trees to be considered. At "
 "default, this is set to 100."
 msgstr ""
+"Establece o número máximo de posibles árbores de decisión a considerar. Por "
+"defecto, establécese en 100."
 
-#, fuzzy
 msgctxt "Oob|"
 msgid "Out-of-bag improvement"
 msgstr "Mellora \"descuberto o choio\""
@@ -917,16 +922,14 @@ msgid ""
 "improvement of the model. Accuracy is assessed for the training set."
 msgstr ""
 
-#, fuzzy
 msgctxt "RelativeInfluence|"
 msgid "Relative influence"
 msgstr "Influencia relativa"
 
 msgctxt "RelativeInfluence|"
 msgid "Shows the relative influence of the features."
-msgstr ""
+msgstr "Amosa a influencia relativa das características."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Min. observations for split"
 msgstr "Mín. observacións para a separación"
@@ -937,28 +940,25 @@ msgid ""
 "split to be attempted."
 msgstr ""
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Min. observations in terminal"
 msgstr "Mín. observacións no terminal"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The minimum number of observations in any terminal node."
-msgstr ""
+msgstr "O número mínimo de observacións en calquera nodo da terminal."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Max. interaction depth"
 msgstr "Máx. profundidade da interacción"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Set the maximum depth of any node of the final tree."
-msgstr ""
+msgstr "Establecer a máxima profundidade de calquera nodo da árbore final."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Complexity penalty"
-msgstr "Penalización de complexidade"
+msgstr "Penalización da complexidade"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
@@ -966,7 +966,6 @@ msgid ""
 "parameter is not attempted."
 msgstr ""
 
-#, fuzzy
 msgctxt "AttemptedSplits|"
 msgid "Attempted splits"
 msgstr "Separacións intentadas"
@@ -979,7 +978,6 @@ msgid ""
 "improvement in deviance given by the splits."
 msgstr ""
 
-#, fuzzy
 msgctxt "AttemptedSplits|"
 msgid "Only show splits in tree"
 msgstr "Amosar só as separacións na árbore"
@@ -988,7 +986,6 @@ msgctxt "AttemptedSplits|"
 msgid "Remove splits that do not occur in the final tree from the table."
 msgstr ""
 
-#, fuzzy
 msgctxt "TreePlot|"
 msgid "Decision tree"
 msgstr "Árbore de decisión"
@@ -997,57 +994,46 @@ msgctxt "TreePlot|"
 msgid "Creates a plot that visualizes the decision tree and its leafs."
 msgstr ""
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Weights"
 msgstr "Ponderacións"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Rectangular"
 msgstr "Rectangular"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Triangular"
 msgstr "Triangular"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Epanechnikov"
 msgstr "Epanechnikov"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Biweight"
 msgstr "Ponderación dobre"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Triweight"
 msgstr "Ponderación tripla"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Cosine"
 msgstr "Coseno"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Inverse"
 msgstr "Inversa"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Gaussian"
 msgstr "Normal"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Rank"
 msgstr "Rango"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Optimal"
 msgstr "Óptimo"
@@ -1059,17 +1045,14 @@ msgid ""
 "by weighing the nearest neighbors. See also the kknn package."
 msgstr ""
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Distance"
 msgstr "Distancia"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Euclidian"
 msgstr "Euclídeo"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Manhattan"
 msgstr "Manhattan"
@@ -1080,7 +1063,6 @@ msgid ""
 "nearest neighbors. Can be either Euclidean or Manhattan distance."
 msgstr ""
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Number of Nearest Neighbors"
 msgstr "Número de Veciños Máis Próximos"
@@ -1089,7 +1071,6 @@ msgctxt "ModelOptimization|"
 msgid "Enables you to use a user-specified number of nearest neighbors."
 msgstr ""
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Nearest neighbors"
 msgstr "Veciños máis próximos"
@@ -1330,10 +1311,9 @@ msgid ""
 "criteria."
 msgstr ""
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Max. training repetitions"
-msgstr "Máx. repeticións de adestramento"
+msgstr "Máx. repeticións de ensaio"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The maximum number of repetitions used in training the network."
@@ -2572,9 +2552,8 @@ msgstr "Gráficas"
 
 msgctxt "mlRegressionLinear|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parámetros de ensaio"
 
-#, fuzzy
 msgctxt "mlRegressionLinear|"
 msgid "Algorithmic Settings"
 msgstr "Configuracións Algorítmicas"

@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2023-10-06 13:16+0000\n"
+"Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/nl/>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.1-dev\n"
 "X-Language: nl\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -792,16 +798,14 @@ msgctxt "mlPrediction|"
 msgid "to"
 msgstr "naar"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Linear"
 msgstr "Lineair"
 
 msgctxt "Description|"
 msgid "Linear Regression"
-msgstr ""
+msgstr "Lineare Regressie"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Shrinkage"
 msgstr "Krimping"
@@ -812,8 +816,10 @@ msgid ""
 "the learning rate or step-size reduction 0.001 to 0.1 usually work, but a "
 "smaller learning rate typically requires more trees."
 msgstr ""
+"Een krimp parameter toegevoegd aan elke boom in de set. Ook bekend als de "
+"learning rate of reductie in stapgrootte, 0.001 naar 0.1 werkt meestal, maar "
+"een kleinere learning rate vereist meestal meer bomen."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Interaction depth"
 msgstr "Interactie diepte"
@@ -824,11 +830,14 @@ msgid ""
 "of variable interactions allowed. A value of 1 implies an additive model, a "
 "value of 2 implies a model with up to 2-way interactions, etc. Default is 1."
 msgstr ""
+"Een integer die specificeert wat de maximale diepte van elke boom is (i.e., "
+"het hoogste niveau van de toegestane interacties tussen variabelen). Een "
+"waarde van 1 impliceert een additief model, een waarde van 2 impliceert een "
+"model met 2-weg interacties, enzovoort. Standaard is 1."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Min. observations in node"
-msgstr "Min. observaties in node"
+msgstr "Min. observaties per knoop"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
@@ -836,8 +845,10 @@ msgid ""
 "of the trees. Note that this is the actual number of observations, not the "
 "total weight."
 msgstr ""
+"Een integer die specificeert wat het minimum aantal observaties in de "
+"terminale knopen van de bomen is. Dit is het echte aantal observaties, niet "
+"het totale gewicht."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Training data used per tree"
 msgstr "Training data gebruikt per boom"
@@ -847,43 +858,43 @@ msgid ""
 "Select the percentage of training data that is used to train each individual "
 "tree."
 msgstr ""
+"Selecteer het percentage van training data die gebruikt word om elke "
+"individuele boom te trainen."
 
-#, fuzzy
 msgctxt "Deviance|"
 msgid "Deviance"
 msgstr "Afwijking"
 
 msgctxt "Deviance|"
 msgid "Shows the prediction error plotted against the number of trees."
-msgstr ""
+msgstr "Toont de voorspellingsfout tegen het aantal bomen."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Number of Trees"
-msgstr "Aantal bomen"
+msgstr "Aantal Bomen"
 
 msgctxt "ModelOptimization|"
 msgid "Choose how to optimize the model."
-msgstr ""
+msgstr "Kies hoe het model geoptimaliseerd wordt."
 
 msgctxt "ModelOptimization|"
 msgid "Fixed"
-msgstr ""
+msgstr "Vast"
 
 msgctxt "ModelOptimization|"
 msgid "Enables you to use a user-specified number of decision trees."
 msgstr ""
+"Stelt je in staat om een zelf-gespecificeerd aantal beslissingenbomen te "
+"gebruiken."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Trees"
 msgstr "Bomen"
 
 msgctxt "ModelOptimization|"
 msgid "The number of trees."
-msgstr ""
+msgstr "Het aantal bomen."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Optimized"
 msgstr "Geoptimaliseerd"
@@ -893,8 +904,9 @@ msgid ""
 "Enables you to optimize the prediction error on a validation data set with "
 "respect to the number of trees."
 msgstr ""
+"Stelt je in staat om de voorspellingsfout te optimaliseren op een validatie "
+"data set op basis van het aantal bomen."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Max. trees"
 msgstr "Max. bomen"
@@ -904,8 +916,9 @@ msgid ""
 "Sets the maximum number of possible decision trees to be considered. At "
 "default, this is set to 100."
 msgstr ""
+"Geef het aantal mogelijke beslissingenbomen om beschouwd te worden aan. "
+"Standaard is dit 100."
 
-#, fuzzy
 msgctxt "Oob|"
 msgid "Out-of-bag improvement"
 msgstr "Out-of-bag verbetering"
@@ -915,17 +928,17 @@ msgid ""
 "Plots the number of trees against the out-of-bag classification accuracy "
 "improvement of the model. Accuracy is assessed for the training set."
 msgstr ""
+"Het aantal bomen tegen de verbetering in classificatie nauwkeurigheid van "
+"het model. Nauwkeurigheid wordt beoordeeld voor de trainingsset."
 
-#, fuzzy
 msgctxt "RelativeInfluence|"
 msgid "Relative influence"
 msgstr "Relatieve invloed"
 
 msgctxt "RelativeInfluence|"
 msgid "Shows the relative influence of the features."
-msgstr ""
+msgstr "Toont de relatieve invloed van de kenmerken."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Min. observations for split"
 msgstr "Min. observaties voor splitsing"
@@ -935,26 +948,25 @@ msgid ""
 "The minimum number of observations that must exist in a node in order for a "
 "split to be attempted."
 msgstr ""
+"Het minimum aantal observaties die moeten bestaan in een knoop om een split "
+"te proberen."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Min. observations in terminal"
 msgstr "Min. observaties in bladeren"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The minimum number of observations in any terminal node."
-msgstr ""
+msgstr "Het minimum aantal observaties in elke eindknoop."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Max. interaction depth"
 msgstr "Max. interactiediepte"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Set the maximum depth of any node of the final tree."
-msgstr ""
+msgstr "Zet de maximale diepte van elke knoop in de laatste boom."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Complexity penalty"
 msgstr "Straf voor complexiteit"
@@ -964,8 +976,9 @@ msgid ""
 "Any split that does not decrease the overall lack of fit by a factor of this "
 "parameter is not attempted."
 msgstr ""
+"Elke split die niet de nauwkeurigheid verbeterd met een factor van deze "
+"parameter wordt niet geprobeerd."
 
-#, fuzzy
 msgctxt "AttemptedSplits|"
 msgid "Attempted splits"
 msgstr "Geprobeerde splitsingen"
@@ -977,17 +990,19 @@ msgid ""
 "positive weight) sent left or right by the split. It also shows the "
 "improvement in deviance given by the splits."
 msgstr ""
+"Toont de splitsingen gemaakt door het algoritme, de corresponderende "
+"kenmerken en de splitpunten, en het aantal observaties (die niet missen en "
+"een positief gewicht hebben) die links of rechts van de split liggen. Het "
+"toont ook de verbetering in nauwkeurigheid door de splitsingen."
 
-#, fuzzy
 msgctxt "AttemptedSplits|"
 msgid "Only show splits in tree"
 msgstr "Toon alleen splitsingen in boom"
 
 msgctxt "AttemptedSplits|"
 msgid "Remove splits that do not occur in the final tree from the table."
-msgstr ""
+msgstr "Verwijder splitsingen die niet plaatsvinden in de uiteindelijke boom."
 
-#, fuzzy
 msgctxt "TreePlot|"
 msgid "Decision tree"
 msgstr "Beslisboom"
@@ -995,58 +1010,48 @@ msgstr "Beslisboom"
 msgctxt "TreePlot|"
 msgid "Creates a plot that visualizes the decision tree and its leafs."
 msgstr ""
+"Creëert een figuur die de beslissingsboom en zijn bladeren visualiseert."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Weights"
 msgstr "Gewichten"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Rectangular"
 msgstr "Rechthoekig"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Triangular"
 msgstr "Driehoekig"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Epanechnikov"
 msgstr "Epanechnikov"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Biweight"
 msgstr "Bigewicht"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Triweight"
 msgstr "Trigewicht"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Cosine"
 msgstr "Cosinus"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Inverse"
 msgstr "Omgekeerd"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Gaussian"
 msgstr "Gaussische"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Rank"
 msgstr "Rang"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Optimal"
 msgstr "Optimaal"
@@ -1057,18 +1062,19 @@ msgid ""
 "option results in standard knn, while the other options expand the algorithm "
 "by weighing the nearest neighbors. See also the kknn package."
 msgstr ""
+"Zet het gewichtsschema voor de dichtstbijzijnde buren. De standaard "
+"rechthoekige optie resulteert in standaard kan, terwijl de andere opties het "
+"algoritme uitbreiden door de dichtstbijzijnde buren te wegen. Zie ook het "
+"kknn pakket."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Distance"
 msgstr "Afstand"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Euclidian"
 msgstr "Euclidisch"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Manhattan"
 msgstr "Manhattan"
@@ -1078,51 +1084,54 @@ msgid ""
 "The distance metric to be used when determining the similarity between "
 "nearest neighbors. Can be either Euclidean or Manhattan distance."
 msgstr ""
+"De afstandsmaat die gebruikt wordt voor het bepalen van de overeenkomst "
+"tussen de dichtstbijzijnde buren. Kan Euclidische of Manhattan afstand zijn."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Number of Nearest Neighbors"
-msgstr "Aantal dichtste buren"
+msgstr "Aantal Dichtstbijzijnde Buren"
 
 msgctxt "ModelOptimization|"
 msgid "Enables you to use a user-specified number of nearest neighbors."
 msgstr ""
+"Stelt je in staat om een zelf-gespecificeerd aantal dichtstbijzijnde buren "
+"te gebruiken."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Nearest neighbors"
-msgstr "Dichtste buren"
+msgstr "Dichtstbijzijnde buren"
 
 msgctxt "ModelOptimization|"
 msgid "The number of nearest neighbors to be used."
-msgstr ""
+msgstr "Het aantal dichtstbijzijnde buren wat gebruikt wordt."
 
 msgctxt "ModelOptimization|"
 msgid ""
 "Enables you to optimize the prediction error on a validation data set with "
 "respect to the number of nearest neighbors."
 msgstr ""
+"Stelt je in staat om de voorspellingsfout te optimaliseren op een validatie "
+"data set op basis van het aantal dichtstbijzijnde buren."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Max. nearest neighbors"
-msgstr "Max. dichtste buren"
+msgstr "Max. dichtstbijzijnde buren"
 
 msgctxt "ModelOptimization|"
 msgid ""
 "Sets the maximum number of possible nearest neighbors to be considered. At "
 "default, this is set to 10."
 msgstr ""
+"Zet het maximale aantal mogelijke dichtstbijzijnde buren. Standaard is dit "
+"10."
 
-#, fuzzy
 msgctxt "OptimPlot|"
 msgid "Mean squared error"
-msgstr "Fout gemiddelde kwadraatsom"
+msgstr "Gemiddelde kwadraatfout"
 
-#, fuzzy
 msgctxt "OptimPlot|"
 msgid "Classification accuracy"
-msgstr "Classificatie precisie"
+msgstr "Classificatie nauwkeurigheid"
 
 msgctxt "OptimPlot|"
 msgid ""
@@ -1132,8 +1141,12 @@ msgid ""
 "classification accuracy of the model. Accuracy is assessed for the training "
 "(and validation) set."
 msgstr ""
+"Voor regressie, plot het aantal dichtstbijzijnde buren tegen de MSE van het "
+"model. Nauwkeurigheid wordt beoordeeld voor de training (en validatie) set. "
+"Voor classificatie, plot het aantal dichtstbijzijnde buren tegen de "
+"classificatie nauwkeurigheid van het model. Nauwkeurigheid wordt beoordeeld "
+"voor de training (en validatie) set."
 
-#, fuzzy
 msgctxt "WeightFunction|"
 msgid "Weight function"
 msgstr "Gewichtsfunctie"
@@ -1141,87 +1154,72 @@ msgstr "Gewichtsfunctie"
 msgctxt "WeightFunction|"
 msgid "Shows how the weights are assigned as a function of the distance."
 msgstr ""
+"Laat zien hoe de gewichten worden toegewezen als een functie van de afstand."
 
-#, fuzzy
 msgctxt "ActivationFunctionPlot|"
 msgid "Activation function"
-msgstr "Activeringsfunctie"
+msgstr "Activatiefunctie"
 
 msgctxt "ActivationFunctionPlot|"
 msgid "Creates a plot of the activation function."
-msgstr ""
+msgstr "Creëert een figuur van de activatiefunctie."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Activation function"
-msgstr "Activeringsfunctie"
+msgstr "Activatiefunctie"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Linear"
 msgstr "Lineair"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Binary"
 msgstr "Binair"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Logistic sigmoid"
 msgstr "Logistische sigmoïde"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Sine"
 msgstr "Sinus"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Inverse tangent"
 msgstr "Inverse tangens"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Hyperbolic tangent"
 msgstr "Hyperbolische tangens"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "ReLU"
 msgstr "ReLU"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Softplus"
 msgstr "Softplus"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Softsign"
 msgstr "Softsign"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "ELU"
 msgstr "ELU"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "LReLU"
 msgstr "LReLU"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "SiLU"
 msgstr "SiLU"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Mish"
 msgstr "Mish"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "GeLU"
 msgstr "GeLU"
@@ -1247,32 +1245,45 @@ msgid ""
 "- Gaussian: *f(x) = e * (-x^2)*\n"
 "- GeLU: *f(x) = 0.5 * x * (1 + tanh(sqrt(2 / pi) * (x + 0.044715 * x^3)))*"
 msgstr ""
+"Stelt de activeringsfunctie in voor het signaal in elke verborgen laag. "
+"Beschikbare opties zijn:\n"
+"- lineair: *f(x) = x*\n"
+"- Binair: *f(x) = 0 als x < 0, 1 als x > 0\n"
+"- Logistische sigmoïde: *f(x) = 1 / (1 + e^(-x))*\n"
+"- Sinus: *f(x) = sin(x)*\n"
+"- Cosinus: *f(x) = cos(x)*\n"
+"- Inverse tangens: *f(x) = arctan(x)*\n"
+"- Hyperbolische tangens: *f(x) = tanh(x)*\n"
+"- ReLU: *f(x) = 0 als x < 0, x als x > 0*\n"
+"- Softplus: *f(x) = log(1 + e^x)*\n"
+"- Softsign: *f(x) = x / (abs(x) + 1)*\n"
+"- ELU: *f(x) = e^x - 1 als x <= 0, x als x > 0*\n"
+"- LReLU: *f(x) = 0,01 * x als x < 0, x als x > 0*\n"
+"- SiLU: *f(x) = x / (1 + e^(-x))*\n"
+"- Mish: *f(x) = x * tanh(log(1 + e^x))*\n"
+"- Gaussisch: *f(x) = e * (-x^2)*\n"
+"- GeLU: *f(x) = 0,5 * x * (1 + tanh(sqrt(2 / pi) * (x + 0,044715 * x^3)))*"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Algorithm"
 msgstr "Algoritme"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Backpropagation"
 msgstr "Terugwaartse propagatie"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "rprop+"
 msgstr "rprop+"
 
 msgctxt "AlgorithmicSettings|"
 msgid "rprop-"
-msgstr ""
+msgstr "rprop-"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "grprop-sag"
 msgstr "grprop-sag"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "grprop-slr"
 msgstr "grprop-slr"
@@ -1288,36 +1299,39 @@ msgid ""
 "algorithm that modifies the learning rate associated with the smallest "
 "learning rate itself."
 msgstr ""
+"Stelt het algoritme voor de netwerktraining in. De backpropagation optie is "
+"standaard voor het trainen van neurale netwerken, maar andere opties zijn "
+"`rprop+` (standaard) voor veerkrachtige backpropagation met backtracing, "
+"`rprop-` voor veerkrachtige backpropagation zonder backtracing, `gprop-sag` "
+"voor het globaal convergente algoritme dat de leersnelheid wijzigt die "
+"geassocieerd is met de kleinste absolute gradiënt, of `gprop-slr` voor het "
+"globaal convergente algoritme dat de leersnelheid wijzigt die geassocieerd "
+"is met de kleinste leersnelheid zelf."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Learning rate"
 msgstr "Leertempo"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The learning rate used by the backpropagation algorithm."
-msgstr ""
+msgstr "Het leertempo van het terugwaartse propagatie algoritme."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Loss function"
 msgstr "Verliesfunctie"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Sum of squares"
 msgstr "Kwadratensom"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Cross-entropy"
 msgstr "Cross-entropie"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The loss function used."
-msgstr ""
+msgstr "De gebruikte verliesfunctie."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Stopping criteria loss function"
 msgstr "Stopcriteria verliesfunctie"
@@ -1327,8 +1341,9 @@ msgid ""
 "The threshold for the partial derivatives of the error function as stopping "
 "criteria."
 msgstr ""
+"De drempel voor de gedeeltelijke derivaten van de foutfunctie als "
+"stopcriterium."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Max. training repetitions"
 msgstr "Max. trainingsherhalingen"
@@ -1336,208 +1351,183 @@ msgstr "Max. trainingsherhalingen"
 msgctxt "AlgorithmicSettings|"
 msgid "The maximum number of repetitions used in training the network."
 msgstr ""
+"Het maximale aantal herhalingen gebruikt in het trainen van het netwerk."
 
-#, fuzzy
 msgctxt "Coefficients|"
 msgid "Network weights"
-msgstr "Netwerk gewichten"
+msgstr "Netwerkgewichten"
 
 msgctxt "Coefficients|"
 msgid ""
 "Shows the connections in the neural network together with their weights."
-msgstr ""
+msgstr "Toont de connecties in het neurale netwerk samen met hun gewichten."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Network Topology"
-msgstr "Netwerk Topologie"
+msgstr "Netwerktopologie"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Manual"
 msgstr "Handmatig"
 
 msgctxt "ModelOptimization|"
 msgid "Specify the nodes in each hidden layer of the neural network."
-msgstr ""
+msgstr "Specificeer de knopen in elke verborgen laag van het neurale netwerk."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Nodes"
-msgstr "Nodes"
+msgstr "Knopen"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Hidden layer "
 msgstr "Verborgen laag "
 
 msgctxt "ModelOptimization|"
 msgid "Optimize the topology of the network using a genetic algorithm."
-msgstr ""
+msgstr "Optimaliseer de topologie van het netwerk met een genetisch algoritme."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Population size"
 msgstr "Populatiegrootte"
 
 msgctxt "ModelOptimization|"
 msgid "Size of population used in genetic optimization."
-msgstr ""
+msgstr "Grootte van de populatie gebruikt in de genetische optimalisatie."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Generations"
 msgstr "Generaties"
 
 msgctxt "ModelOptimization|"
 msgid "Number of generations used in genetic optimization."
-msgstr ""
+msgstr "Aantal generaties gebruikt in de genetische optimalisatie."
 
 msgctxt "ModelOptimization|"
 msgid "Max. number of layers"
-msgstr ""
+msgstr "Max. aantal lagen"
 
 msgctxt "ModelOptimization|"
 msgid "Max. nodes in each layer"
-msgstr ""
+msgstr "Max. knopen in elke laag"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Parent selection"
 msgstr "Ouder selectie"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Roulette wheel"
 msgstr "Roulette wiel"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Universal"
 msgstr "Universeel"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Rank"
 msgstr "Rang"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Tournament"
 msgstr "Toernooi"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Random"
 msgstr "Willekeurig"
 
 msgctxt "ModelOptimization|"
 msgid "How to select suviving networks."
-msgstr ""
+msgstr "Hoe overlevende netwerken geselecteerd moeten worden."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Candidates"
 msgstr "Kandidaten"
 
 msgctxt "ModelOptimization|"
 msgid "Number of candidates for tournament selection"
-msgstr ""
+msgstr "Aantal kandidaten voor de toernooiselectie"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Crossover method"
-msgstr "Cross-over methode"
+msgstr "Kruismethode"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Uniform"
 msgstr "Uniform"
 
 msgctxt "ModelOptimization|"
 msgid "One-point"
-msgstr ""
+msgstr "Eenpunts"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Multi-point"
 msgstr "Meerpunts"
 
 msgctxt "ModelOptimization|"
 msgid "How to crossover two candidate networks."
-msgstr ""
+msgstr "Hoe twee kandidaat netwerken gekruist moeten worden."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Mutations"
 msgstr "Mutaties"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Reset"
-msgstr "Herstel"
+msgstr "Reset"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Swap"
 msgstr "Wissel"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Scramble"
 msgstr "Hussel"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Inversion"
 msgstr "Inversie"
 
 msgctxt "ModelOptimization|"
 msgid "How to mutate a network."
-msgstr ""
+msgstr "Hoe een netwerk gemuteerd moet worden."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Probability"
 msgstr "Kans"
 
 msgctxt "ModelOptimization|"
 msgid "The mutation probability of a random network in each generation."
-msgstr ""
+msgstr "De kans dat een willekeurig netwerk in elke generatie muteert."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Survival method"
 msgstr "Overlevingsmethode"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Fitness-based"
 msgstr "Fitness-gebaseerd"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Age-based"
-msgstr "Leeftijdsgebonden"
+msgstr "Leeftijdsgebaseerd"
 
 msgctxt "ModelOptimization|"
 msgid "How to choose which networks survive and die in a generation."
 msgstr ""
+"Hoe gekozen moet worden welke netwerken overleven en sterven in elke "
+"generatie."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Elitism"
 msgstr "Elitisme"
 
 msgctxt "ModelOptimization|"
 msgid "Keep top networks from dying out."
-msgstr ""
+msgstr "Voorkom dat de beste netwerken afsterven."
 
 msgctxt "ModelOptimization|"
 msgid "Percentage of top networks to keep."
-msgstr ""
+msgstr "Percentage beste netwerken om te houden."
 
-#, fuzzy
 msgctxt "NetworkPlot|"
 msgid "Network structure"
 msgstr "Netwerkstructuur"
@@ -1547,6 +1537,8 @@ msgid ""
 "Creates a plot that visualizes the structure (nodes and edges) of the "
 "network."
 msgstr ""
+"Creëert een figuur die de structuur van het netwerk (knopen en relaties) "
+"visualiseert."
 
 msgctxt "OptimPlot|"
 msgid ""
@@ -1557,29 +1549,33 @@ msgid ""
 "generations in the evoluationary optimization algorithm. Accuracy is "
 "assessed for the training (and validation) set."
 msgstr ""
+"Voor regressie, creëert een figuur met het gemiddelde van de gemiddelde "
+"kwadraatfout van de populatie neurale netwerken tegen het aantal generaties "
+"in het evolutionaire optimizatie algoritme. Voor classificatie, geeft de "
+"gemiddelde nauwkeurigheid van de populatie neurale netwerken tegen het "
+"aantal generaties in het evolutionaire optimizatie algoritme. Nauwkeurigheid "
+"wordt gemeten op de training (en validatie) set."
 
-#, fuzzy
 msgctxt "AccuracyDecrease|"
 msgid "Mean decrease in accuracy"
-msgstr "Gemiddelde afname in precisie"
+msgstr "Gemiddelde afname in nauwkeurigheid"
 
 msgctxt "AccuracyDecrease|"
 msgid ""
 "Displays a figure with the mean decrease in accuracy per feature in the "
 "model."
 msgstr ""
+"Creëert een figuur met de gemiddelde vermindering van nauwkeurigheid per "
+"kenmerk in het model."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Features per split"
 msgstr "Kenmerken per splitsing"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Auto"
 msgstr "Auto"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Manual"
 msgstr "Handmatig"
@@ -1589,90 +1585,94 @@ msgid ""
 "Set the number of feature variables that is used within each split in the "
 "decision trees. Defaults to auto."
 msgstr ""
+"Zet het aantal kenmerken die gebruikt worden in elke split in de "
+"beslissingsbomen. Standaard is auto."
 
 msgctxt "AlgorithmicSettings|"
 msgid "The number of feature variables in each split."
-msgstr ""
+msgstr "Het aantal kenmerken in elke split."
 
 msgctxt "ModelOptimization|"
 msgid "The number of trees to be used."
-msgstr ""
+msgstr "Het aantal bomen wat gebruikt wordt."
 
 msgctxt "NodePurity|"
 msgid "Total increase in node purity"
-msgstr ""
+msgstr "Totale toename in knoopzuiverheid"
 
 msgctxt "NodePurity|"
 msgid ""
 "Displays a figure with total increase in node purity per feature in the "
 "model."
 msgstr ""
+"Creëert een figuur met totale toename in knoopzuiverheid per kenmerk in het "
+"model."
 
-#, fuzzy
 msgctxt "Oob|"
 msgid "Out-of-bag error"
 msgstr "Out-of-bag fout"
 
-#, fuzzy
 msgctxt "Oob|"
 msgid "Out-of-bag accuracy"
-msgstr "Out-of-bag precisie"
+msgstr "Out-of-bag nauwkeurigheid"
 
 msgctxt "Oob|"
 msgid ""
 "Plots the number of trees against the out-of-bag mean squared error "
 "(regression) or accuracy (classification) of the model."
 msgstr ""
+"Creëert een figuur met het aantal bomen tegen de out-of-bag gemiddelde "
+"kwadraatsom (regressie) of nauwkeurigheid (classificatie) van het model."
 
-#, fuzzy
 msgctxt "CoefficientTable|"
 msgid "Coefficients"
 msgstr "Coëfficiënten"
 
 msgctxt "CoefficientTable|"
 msgid "Shows a table containing the regression coefficients."
-msgstr ""
+msgstr "Toont een tafel met de regressiecoefficiënten."
 
 msgctxt "CoefficientTable|"
 msgid "Confidence interval"
-msgstr ""
+msgstr "Betrouwbaarheidsinterval"
 
 msgctxt "CoefficientTable|"
 msgid "Display confidence intervals around estimated regression coefficients."
 msgstr ""
+"Toon betrouwbaarheidsintervallen voor de schattingen van de "
+"regressiecoëfficiënten."
 
 msgctxt "CoefficientTable|"
 msgid "The confidence level for the interval."
-msgstr ""
+msgstr "Het betrouwbaarheidsniveau voor het interval."
 
 msgctxt "CoefficientTable|"
 msgid "Display equation"
-msgstr ""
+msgstr "Toon vergelijking"
 
 msgctxt "CoefficientTable|"
 msgid ""
 "Display the regression equation with the estimated values of the "
 "coefficients."
 msgstr ""
+"Toon de regressievergelijking met de geschatte waarden van de coëfficiënten."
 
 msgctxt "Intercept|"
 msgid "Include intercept"
-msgstr ""
+msgstr "Voeg intercept toe"
 
 msgctxt "Intercept|"
 msgid "Whether to include an intercept in the regression formula."
-msgstr ""
+msgstr "Of er een intercept in de regressievergelijking moet worden opgenomen."
 
-#, fuzzy
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "Target"
 msgstr "Doel"
 
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "In this box, the variable that needs to be predicted should be entered."
-msgstr ""
+msgstr "In dit vak moet de variabele die voorspeld moet worden ingevuld worden."
 
-#, fuzzy
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "Features"
 msgstr "Kenmerken"
@@ -1682,8 +1682,9 @@ msgid ""
 "In this box, the variables that provide information about the target "
 "variable should be entered."
 msgstr ""
+"In dit vak moeten de variabele die informatie over de doelvariabele geven "
+"moeten worden ingevuld."
 
-#, fuzzy
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "Weights"
 msgstr "Gewichten"
@@ -1691,19 +1692,16 @@ msgstr "Gewichten"
 msgctxt "VariablesFormRegularizedRegression|"
 msgid ""
 "In this box, an optional variable containing case weights can be entered."
-msgstr ""
+msgstr "In dit vak kan een optionele variabele met gewichten ingevuld worden."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Radial"
 msgstr "Radiaal"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Polynomial"
 msgstr "Polynomiaal"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Sigmoid"
 msgstr "Sigmoïde"
@@ -1713,62 +1711,57 @@ msgid ""
 "The kernel used in training and predicting. Possible kernels are 'linear', "
 "'radial', 'polynomial', and 'sigmoid'."
 msgstr ""
+"De kernel gebruikt voor het trainen en voorspellen. Mogelijke kernels zijn "
+"'linear', 'radiaal', 'polynomiaal' en 'sigmoïde'."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Degree"
 msgstr "Graad"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The degree of polynomial used."
-msgstr ""
+msgstr "De graad van de gebruikte polynomiaal."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Gamma parameter"
 msgstr "Gamma parameter"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The gamma parameter used."
-msgstr ""
+msgstr "De gebruikte gamma parameter."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "r parameter"
 msgstr "r parameter"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The complexity parameter used."
-msgstr ""
+msgstr "De gebruikte complexiteitsparameter."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Cost of constraints violation"
 msgstr "Kosten van overtreding van de beperkingen"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The 'C'-constant of the regularization term."
-msgstr ""
+msgstr "De 'C'-constante van de regularisatieterm."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Tolerance of termination criterion"
 msgstr "Tolerantie van beëindigingscriterium"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The tolerance of termination criterion."
-msgstr ""
+msgstr "De toleratie van het beëindigingscriterium."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Epsilon"
 msgstr "Epsilon"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The epsilon parameter in the insensitive-loss function."
-msgstr ""
+msgstr "De epsilon parameter in de intensieve verliesfunctie."
 
-#, fuzzy
 msgctxt "SupportVectors|"
 msgid "Support vectors"
 msgstr "Ondersteuningsvectoren"
@@ -1778,18 +1771,21 @@ msgid ""
 "Shows a table containing the data (points) indicated as support vectors by "
 "the algorithm."
 msgstr ""
+"Laat een tabel zien met de data(punten) die aangegeven zijn als "
+"ondersteuningsvectoren door het algoritme."
 
 msgctxt "AndrewsCurve|"
 msgid "Andrews curves"
-msgstr ""
+msgstr "Andrewskrommen"
 
 msgctxt "AndrewsCurve|"
 msgid ""
 "Is a way to visualize structure in high-dimensional data. Lines that cluster "
 "are observations that are more alike."
 msgstr ""
+"Is een manier om structuur te visualiseren in hoogdimensionale gegevens. "
+"Lijnen die clusteren zijn observaties die meer op elkaar lijken."
 
-#, fuzzy
 msgctxt "ClusterDensity|"
 msgid "Cluster densities"
 msgstr "Cluster dichtheden"
@@ -1799,27 +1795,29 @@ msgid ""
 "For each feature variable, generates a plot showing the overlapping "
 "densities for the clusters."
 msgstr ""
+"Laat een plot met de overlappende dichtheden voor de clusters zien voor elk "
+"kenmerk."
 
 msgctxt "ClusterDensity|"
 msgid "Group into one figure"
-msgstr ""
+msgstr "Groupeer in één figuur"
 
 msgctxt "ClusterDensity|"
 msgid "Group the density plots per feature into a single figure."
-msgstr ""
+msgstr "Groupeer de dichtheidsplots per kenmerk in een enkel figuur."
 
-#, fuzzy
 msgctxt "ClusterMatrix|"
 msgid "Cluster matrix plot"
-msgstr "Cluster grafiek"
+msgstr "Cluster matrix grafiek"
 
 msgctxt "ClusterMatrix|"
 msgid ""
 "Creates a *n* x *n* plot that visualizes to which cluster every observation "
 "belongs according to the current model."
 msgstr ""
+"Creëert een *n* x *n* figuur welke visualiseert tot welke cluster elke "
+"observatie behoort volgens het huidige model."
 
-#, fuzzy
 msgctxt "ClusterMeans|"
 msgid "Cluster means"
 msgstr "Cluster gemiddelden"
@@ -1829,36 +1827,38 @@ msgid ""
 "Creates a plot that visualizes and compares the mean of the feature "
 "variables in each cluster."
 msgstr ""
+"Creëert een figuur welke de gemiddelden van de kenmerken in elke cluster "
+"visualiseert en vergelijkt."
 
-#, fuzzy
 msgctxt "ClusterMeans|"
 msgid "Display barplot"
 msgstr "Toon staafdiagram"
 
 msgctxt "ClusterMeans|"
 msgid "Transform the cluster mean figure into a barplot."
-msgstr ""
+msgstr "Verander de cluster gemiddelde grafiek in een staafdiagram."
 
 msgctxt "ClusterMeans|"
 msgid "Group into one figure"
-msgstr ""
+msgstr "Groupeer in één figuur"
 
 msgctxt "ClusterMeans|"
 msgid "Group the plots per feature into a single figure."
-msgstr ""
+msgstr "Groupeer de plots per kenmerk in een enkel figuur."
 
 msgctxt "DataSplit|"
 msgid "Data split"
-msgstr ""
+msgstr "Data splitsing"
 
 msgctxt "DataSplit|"
 msgid ""
 "Shows how the data is split into training (and validation), and test set."
 msgstr ""
+"Toont hoe de data worden gesplitst in de training (en validatie) en test set."
 
 msgctxt "DecisionBoundary|"
 msgid "Decision boundary matrix"
-msgstr ""
+msgstr "Beslissingsgrensmatrix"
 
 msgctxt "DecisionBoundary|"
 msgid ""
@@ -1866,25 +1866,26 @@ msgid ""
 "classified if predicted through the current model. Boundaries between "
 "classes are visualized. Can only be made for numeric features."
 msgstr ""
+"Creëert een *n* x *n* figuur welke visualiseert hoe elke observatie "
+"geclassificeerd zou worden door het huidige model. De grenzen tussen klassen "
+"zijn gevisualiseerd. Kan alleen gemaakt worden voor numerieke kenmerken."
 
-#, fuzzy
 msgctxt "DecisionBoundary|"
 msgid "Legend"
 msgstr "Legenda"
 
 msgctxt "DecisionBoundary|"
 msgid "Show a legend next to the figure."
-msgstr ""
+msgstr "Toon een legenda naast het figuur."
 
 msgctxt "DecisionBoundary|"
 msgid "Add data points"
-msgstr ""
+msgstr "Voeg datapunten toe"
 
 msgctxt "DecisionBoundary|"
 msgid "Show the observations in the data set as points in the plot."
-msgstr ""
+msgstr "Toon de observaties in de data set als punten in de figuur."
 
-#, fuzzy
 msgctxt "ElbowMethod|"
 msgid "Elbow method"
 msgstr "Elleboogmethode"
@@ -1896,28 +1897,36 @@ msgid ""
 "optimal number of clusters. The plot shows three curves using AIC, BIC, and "
 "'elbow method' optimization."
 msgstr ""
+"Creëert een figuur met de totale kwadratensom op de y-axis en het aantal "
+"clusters op de x-axis. Deze figuur kan worden gebruikt voor het bepalen van "
+"het optimaal aantal clusters. De figuur toont drie curves met AIC, BIC, en "
+"'elleboog methode' optimalisatie."
 
 msgctxt "PredictivePerformance|"
 msgid "Predictive performance"
-msgstr ""
+msgstr "Voorspellend vermogen"
 
 msgctxt "PredictivePerformance|"
 msgid ""
 "Plots the true values of the observations in the test set against their "
 "predicted values."
 msgstr ""
+"Creëert een figuur met de werkelijke waarden van de observaties in de test "
+"set tegenover hun voorspelde waarden."
 
 msgctxt "RocCurve|"
 msgid "ROC curves"
-msgstr ""
+msgstr "ROC krommen"
 
 msgctxt "RocCurve|"
 msgid "Displays ROC curves for each class predicted against all other classes."
 msgstr ""
+"Creëert een figuur met ROC krommen voor elke klas voorspeld tegen alle "
+"andere klassen."
 
 msgctxt "Tsne|"
 msgid "t-SNE cluster plot"
-msgstr ""
+msgstr "t-SNE cluster figuur"
 
 msgctxt "Tsne|"
 msgid ""
@@ -1930,39 +1939,51 @@ msgid ""
 "across several clustering analyses you can set their seed to the same value, "
 "as the t-SNE algorithm uses random starting values."
 msgstr ""
+"Genereert een t-SNE figuur van de cluster output. t-SNE figuren worden "
+"gebruikt voor visualiseren van hoog-dimensionale gegevens in een lage-"
+"dimensionale ruimte van twee dimensies die zich richten op de relatieve "
+"afstanden tussen data observaties. De t-SNE tweedimensionale ruimte maakt de "
+"assen on-interpreteerbaar. Een t-SNE figuur geeft een indruk van de "
+"relatieve afstanden tussen observaties en clusters. Om dezelfde t-SNE figuur "
+"te reproduceren tussen verschillende analyses kun je de startwaarde "
+"gelijkzetten, omdat het t-SNE algoritme gebruik maakt van willekeurige "
+"startwaarden."
 
-#, fuzzy
 msgctxt "Tsne|"
 msgid "Legend"
 msgstr "Legenda"
 
 msgctxt "Tsne|"
 msgid "Show a legend next to the figure."
-msgstr ""
+msgstr "Toon een legenda naast de figuur."
 
 msgctxt "Tsne|"
 msgid "Add data labels"
-msgstr ""
+msgstr "Voeg gegevenslabels toe"
 
 msgctxt "Tsne|"
 msgid ""
 "Add the row numbers of the observations in the data set as labels to the "
 "plot."
 msgstr ""
+"Voeg de rijnummers toe van de observaties in de data set als labels aan de "
+"figuur."
 
 msgctxt "ClassProportions|"
 msgid "Class proportions"
-msgstr ""
+msgstr "Klasse verhoudingen"
 
 msgctxt "ClassProportions|"
 msgid ""
 "Displays a table that shows the proportions of each class in the data set, "
 "training (and validaton), and test set."
 msgstr ""
+"Laat een tafel zien die de proporties van elke klasse laat zien in de data "
+"set, training (en validatie) en test set."
 
 msgctxt "ClusterInfo|"
 msgid "Cluster information"
-msgstr ""
+msgstr "Cluster informatie"
 
 msgctxt "ClusterInfo|"
 msgid ""
@@ -1971,8 +1992,11 @@ msgid ""
 "divided by its total over the various clusters. These outputs are shown by "
 "default."
 msgstr ""
+"Toont de grootte van elk cluster en het verklaarde aandeel van de "
+"heterogeniteit binnen clusters. Dit laatste is de som van de kwadraten "
+"binnen een cluster gedeeld door het totaal over de verschillende clusters. "
+"Deze uitvoer wordt standaard weergegeven."
 
-#, fuzzy
 msgctxt "ClusterInfo|"
 msgid "Within sum of squares"
 msgstr "Binnen kwadratensom"
@@ -1982,8 +2006,9 @@ msgid ""
 "Adds a row with the within sum of squares of each cluster to the table. This "
 "option is selected by default."
 msgstr ""
+"Voegt een rij met de binnen kwadratensom van elke cluster aan de tabel toe. "
+"Deze optie is standaard aangevinkt."
 
-#, fuzzy
 msgctxt "ClusterInfo|"
 msgid "Silhouette score"
 msgstr "Silhouette score"
@@ -1991,8 +2016,8 @@ msgstr "Silhouette score"
 msgctxt "ClusterInfo|"
 msgid "Adds a row with the silhouette score of each cluster to the table."
 msgstr ""
+"Voegt een rij met de silhouette score van elke cluster toe aan de tabel."
 
-#, fuzzy
 msgctxt "ClusterInfo|"
 msgid "Centers"
 msgstr "Centrums"
@@ -2002,8 +2027,10 @@ msgid ""
 "Adds a row with the center per feature of each cluster to the table. The "
 "center can be the mean, median or mode depending on the clustering algorithm."
 msgstr ""
+"Voegt een rij met het centrum per kenmerk van elke cluster toe aan de tabel. "
+"Het centrum kan het gemiddelde, de median of de modus zijn, afhankelijk van "
+"het clusteralgoritme."
 
-#, fuzzy
 msgctxt "ClusterInfo|"
 msgid "Between sum of squares"
 msgstr "Tussen kwadratensom"
@@ -2013,8 +2040,9 @@ msgid ""
 "Adds a note with the between sum of squares of the cluster model to the "
 "table."
 msgstr ""
+"Voegt een voetnoot met de tussen kwadratensom van het clustermodel toe aan "
+"de tabel."
 
-#, fuzzy
 msgctxt "ClusterInfo|"
 msgid "Total sum of squares"
 msgstr "Totale kwadratensom"
@@ -2023,12 +2051,12 @@ msgctxt "ClusterInfo|"
 msgid ""
 "Adds a note with the total sum of squares of the cluster model to the table."
 msgstr ""
+"Voegt een voetnoot met de totale som van het clustermodel toe aan de tabel."
 
 msgctxt "ClusterMeans|"
 msgid "Shows a table containing the cluster means for each feature variable."
-msgstr ""
+msgstr "Toont een tabel met de cluster gemiddelde voor elk kenmerk."
 
-#, fuzzy
 msgctxt "ConfusionMatrix|"
 msgid "Confusion matrix"
 msgstr "Verwarringsmatrix"
@@ -2038,55 +2066,57 @@ msgid ""
 "Displays a table that shows the observed classes against the predicted "
 "classes. Used to assess model accuracy."
 msgstr ""
+"Toont een tabel met de werkelijke klassen tegen de voorspelde klassen. Wordt "
+"beoordeeld om de nauwkeurigheid van het model te beoordelen."
 
-#, fuzzy
 msgctxt "ConfusionMatrix|"
 msgid "Display proportions"
 msgstr "Toon proporties"
 
 msgctxt "ConfusionMatrix|"
 msgid "Displays proportions in the confusion matrix instead of counts."
-msgstr ""
+msgstr "Toon proporties in de verwarmingsmatrix in plaats van getallen."
 
 msgctxt "ExplainPredictions|"
 msgid "Explain predictions"
-msgstr ""
+msgstr "Verklaar voorspellingen"
 
 msgctxt "ExplainPredictions|"
 msgid ""
 "Shows a decomposition of the predictions of the model into contributions "
 "that can be attributed to individual model features."
 msgstr ""
+"Toont een ontbinding van de voorspellingen van het model in bijdragen die "
+"kunnen worden toegeschreven aan individuele kenmerken."
 
 msgctxt "ExplainPredictions|"
 msgid "Cases"
-msgstr ""
+msgstr "Gevallen"
 
 msgctxt "ExplainPredictions|"
 msgid "The test set index of the first row to be displayed in the table."
-msgstr ""
+msgstr "De test set index van de eerste rij om in de tabel te worden getoond."
 
-#, fuzzy
 msgctxt "ExplainPredictions|"
 msgid "to"
-msgstr "naar"
+msgstr "tot"
 
 msgctxt "ExplainPredictions|"
 msgid "The test set index of the last row to be displayed in the table."
-msgstr ""
+msgstr "De test set index van de laatste rij om in de tabel te worden getoond."
 
-#, fuzzy
 msgctxt "FeatureImportance|"
 msgid "Feature importance"
-msgstr "Belang van het kenmerk"
+msgstr "Belang van kenmerken"
 
 msgctxt "FeatureImportance|"
 msgid "Shows the available feature importance metrics for the fitted model."
 msgstr ""
+"Toont de beschikbare kenmerken voor belangrijkheid in het getrainde model."
 
 msgctxt "ModelPerformance|"
 msgid "Model performance"
-msgstr ""
+msgstr "Modelprestatie"
 
 msgctxt "ModelPerformance|"
 msgid ""
@@ -2095,36 +2125,39 @@ msgid ""
 "sup> and more. For classification, these metrics include precision, recall, "
 "the F1-score, support, AUC (area under the ROC curve) and more."
 msgstr ""
+"Toont beschikbare metrieke voor modelprestatie. Voor regressie zijn dit de "
+"gemiddelde kwadratenfout (MSE), de wortel van de gemiddelde kwadratenfout "
+"(RMSE), R<sup>2</sup> en meer. Voor classificatie zijn dit de precisie, "
+"recall, de F1-score, steun, AUC (area onder de ROC curve) en meer."
 
-#, fuzzy
 msgctxt "ClusterDetermination|"
 msgid "Cluster Determination"
 msgstr "Clusterbepaling"
 
 msgctxt "ClusterDetermination|"
 msgid "Choose how to determine the number of clusters in the model."
-msgstr ""
+msgstr "Kies hoe het aantal clusters in het model bepaalt wordt."
 
 msgctxt "ClusterDetermination|"
 msgid "Fixed"
-msgstr ""
+msgstr "Vast"
 
 msgctxt "ClusterDetermination|"
 msgid ""
 "Enables you to generate a fixed amount of clusters. This allows you to "
 "generate your own specified number of clusters, and thus, optimize manually."
 msgstr ""
+"Stelt je in staat om een vast aantal clusters te genereren. Hierdoor kun je "
+"een zelf-gespecificeerd aantal clusters genereren en handmatig optimaliseren."
 
-#, fuzzy
 msgctxt "ClusterDetermination|"
 msgid "Clusters"
 msgstr "Clusters"
 
 msgctxt "ClusterDetermination|"
 msgid "The number of clusters to be fitted."
-msgstr ""
+msgstr "Het aantal clusters wat gebruikt wordt."
 
-#, fuzzy
 msgctxt "ClusterDetermination|"
 msgid "Optimized according to"
 msgstr "Geoptimaliseerd volgens"
@@ -2134,6 +2167,8 @@ msgid ""
 "Enables you to choose an optimization method. BIC optimization is set as "
 "default."
 msgstr ""
+"Stelt je een in staat om een optimalisatie methode kiezen. De BIC-"
+"optimalisatie is standaard."
 
 msgctxt "ClusterDetermination|"
 msgid ""
@@ -2146,8 +2181,15 @@ msgid ""
 "uses the similarity of observations within a cluster and their dissimilarity "
 "to other clusters for optimizing the clustering output."
 msgstr ""
+"De optimalisatiemethode. De opties zijn AIC, BIC en silhouette. De AIC "
+"gebruikt de som van de kwadraten (variatie binnen clusters), het aantal "
+"gegenereerde clusters en het aantal dimensies voor het optimaliseren van de "
+"clustering. De BIC gebruikt de som van de kwadraten (variatie binnen "
+"clusters), het aantal gegenereerde clusters, het aantal dimensies en de "
+"steekproefgrootte voor het optimaliseren van de clustering. De "
+"silhouetwaarde gebruikt de gelijkenis van observaties binnen een cluster en "
+"hun ongelijkenis met andere clusters om de clustering te optimaliseren."
 
-#, fuzzy
 msgctxt "ClusterDetermination|"
 msgid "Max. clusters"
 msgstr "Max. clusters"
@@ -2157,10 +2199,12 @@ msgid ""
 "Sets the maximum number of possible clusters to be generated. At default, "
 "this is set to 10."
 msgstr ""
+"Stelt het maximum aantal mogelijke clusters om gegenereerd te worden in. "
+"Standaard is dit 10."
 
 msgctxt "DataSplit|"
 msgid "Choose how to create the test set."
-msgstr ""
+msgstr "Kies hoe de test set gemaakt moet worden."
 
 msgctxt "DataSplit|"
 msgid ""
@@ -2168,19 +2212,23 @@ msgid ""
 "error. Generates an internal indicator variable that indicates whether the "
 "observation is included (1) or excluded (0) from the test set."
 msgstr ""
+"Kies een percentage om willekeurig te steken van je gegevens om een "
+"voorspellingsfout te verkrijgen. Genereert een interne indicator variabele "
+"welke aangeeft of de observatie is inbegrepen (1) is of uitgesloten (0) van "
+"de test."
 
 msgctxt "DataSplit|"
 msgid "The percentage of observations to use for the test set."
-msgstr ""
+msgstr "Het percentage van observaties om te gebruiken voor de test set."
 
 msgctxt "DataSplit|"
 msgid ""
 "Add the generated test set indicator from the option above to your data set."
-msgstr ""
+msgstr "Voeg de gegenereerde test set indicator toe aan je data set."
 
 msgctxt "DataSplit|"
 msgid "The column name for the generated test set indicator."
-msgstr ""
+msgstr "De kolomnaam voor de gegenereerde test set indicator."
 
 msgctxt "DataSplit|"
 msgid ""
@@ -2190,36 +2238,44 @@ msgid ""
 "a training (and validation if requested) set (0), and a test set (1) "
 "according to your indicator."
 msgstr ""
+"Gebruik een indicatorvariabele om gegevens te selecteren voor de test set. "
+"Deze indicator moet een kolom in je gegevens zijn die alleen uit 0 ("
+"uitgesloten van de test set) en 1 (opgenomen in de test set) bestaat. De "
+"gegevens worden dan opgesplitst in een trainingsset (en validatieset indien "
+"gewenst) (0) en een testset (1) op basis van je indicator."
 
 msgctxt "DataSplit|"
 msgid "The variable in the data set that is used as the test set indicator."
 msgstr ""
+"De variabele in de data set die gebruikt wordt als de test set indicator."
 
 msgctxt "DataSplit|"
 msgid "Choose how to create the validation set."
-msgstr ""
+msgstr "Kies hoe de validatie set gemaakt moet worden."
 
 msgctxt "DataSplit|"
 msgid ""
 "Randomly sample a percentage from the remaining training data (after "
 "selecting the test set)."
 msgstr ""
+"Kies willekeurig een percentage van de resterende training data (nadat de "
+"test set is geselecteerd)."
 
 msgctxt "DataSplit|"
 msgid "The percentage of observations to use for the validation set."
-msgstr ""
+msgstr "Het percentage observaties wat gebruikt wordt voor de validatie set."
 
 msgctxt "DataSplit|"
 msgid "Partition the remaining data in *k* parts."
-msgstr ""
+msgstr "Deel de overige data op in *k* delen."
 
 msgctxt "DataSplit|"
 msgid "Tne number of folds to be used."
-msgstr ""
+msgstr "Het aantal vouwen wat gebruikt wordt."
 
 msgctxt "DataSplit|"
 msgid "Partition the remaining data in *n* parts."
-msgstr ""
+msgstr "Deel de overige data op in *n* delen."
 
 msgctxt "ExportResults|"
 msgid ""
@@ -2227,20 +2283,24 @@ msgid ""
 "result. This gives you the option to inspect, cluster, or predict the "
 "generated values."
 msgstr ""
+"Genereert een nieuwe kolom in je dataset met de waarden van je "
+"regressieresultaat. Dit geeft u de optie om de gegenereerde waarden te "
+"inspecteren, te clusteren of te voorspellen."
 
 msgctxt "ExportResults|"
 msgid "The column name for the predicted values."
-msgstr ""
+msgstr "De kolomnaam voor de voorspelde waarden."
 
 msgctxt "ExportResults|"
 msgid "The file path for the saved model."
-msgstr ""
+msgstr "Het bestandspad voor het opgeslagen model."
 
 msgctxt "ExportResults|"
 msgid "When clicked, the model is exported to the specified file path."
 msgstr ""
+"Als hierop geklikt wordt, wordt het model geëxporteerd naar het "
+"gespecificeerde bestandspad."
 
-#, fuzzy
 msgctxt "ScaleVariables|"
 msgid "Scale features"
 msgstr "Schaal kenmerken"
@@ -2253,8 +2313,12 @@ msgid ""
 "the Z-score standardization of a mean of 0 and a standard deviation of 1. "
 "This option is selected by default."
 msgstr ""
+"Standaardiseert de continue kenmerken in de dataset. Standaardisatie zorgt "
+"ervoor dat waarden van kenmerken van verschillende schalen in een specifieke "
+"vergelijkbare schaal vallen. Standaardisatie zorgt dus voor numerieke "
+"stabiliteit. JASP gebruikt de Z-score standaardisatie van een gemiddelde van "
+"0 en een standaardafwijking van 1. Deze optie is standaard geselecteerd."
 
-#, fuzzy
 msgctxt "SetSeed|"
 msgid "Set seed"
 msgstr "Gebruik toevalsgenerator beginwaarde"
@@ -2265,12 +2329,16 @@ msgid ""
 "exclude random processes influencing an analysis. For example, setting a "
 "seed makes it possible to re-run analyses with the same data splits."
 msgstr ""
+"Geeft de optie om de beginwaarde van de toevalsgenerator in te stellen voor "
+"je analyse. Door een beginwaarde in te stellen worden willekeurige processen "
+"die een analyse beïnvloeden uitgesloten. Het instellen van een beginwaarde "
+"maakt het bijvoorbeeld mogelijk om analyses met dezelfde gegevenssplitsingen "
+"opnieuw uit te voeren."
 
 msgctxt "SetSeed|"
 msgid "The value of the seed."
-msgstr ""
+msgstr "De waarde van de toevalsgenerator beginwaarde."
 
-#, fuzzy
 msgctxt "VariablesFormClassification|"
 msgid "Target"
 msgstr "Doel"
@@ -2278,8 +2346,8 @@ msgstr "Doel"
 msgctxt "VariablesFormClassification|"
 msgid "In this box, the variable that needs to be predicted should be entered."
 msgstr ""
+"In dit veld moet de variabele ingevuld worden die voorspeld moet worden."
 
-#, fuzzy
 msgctxt "VariablesFormClassification|"
 msgid "Features"
 msgstr "Kenmerken"
@@ -2289,8 +2357,9 @@ msgid ""
 "In this box, the variables that provide information about the target "
 "variable should be entered."
 msgstr ""
+"In dit veld moeten de variabelen worden ingevoerd die informatie geven over "
+"de doelvariabele."
 
-#, fuzzy
 msgctxt "VariablesFormClustering|"
 msgid "Features"
 msgstr "Kenmerken"
@@ -2300,8 +2369,9 @@ msgid ""
 "In this box, the variables are need to be considered by the clustering "
 "algorithm should be entered."
 msgstr ""
+"Voer in dit vak de variabelen in waarmee het clusteralgoritme rekening moet "
+"houden."
 
-#, fuzzy
 msgctxt "VariablesFormRegression|"
 msgid "Target"
 msgstr "Doel"
@@ -2309,8 +2379,8 @@ msgstr "Doel"
 msgctxt "VariablesFormRegression|"
 msgid "In this box, the variable that needs to be predicted should be entered."
 msgstr ""
+"In dit veld moet de variabele die voorspeld moet worden ingevuld worden."
 
-#, fuzzy
 msgctxt "VariablesFormRegression|"
 msgid "Features"
 msgstr "Kenmerken"
@@ -2320,6 +2390,8 @@ msgid ""
 "In this box, the variables that provide information about the target "
 "variable should be entered."
 msgstr ""
+"In dit vak moeten de variabelen worden ingevoerd die informatie geven over "
+"de doelvariabele."
 
 msgctxt "mlClassificationBoosting|"
 msgid ""
@@ -2332,6 +2404,15 @@ msgid ""
 "- The target variable is a nominal or ordinal variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"Boosting werkt door achtereenvolgens kenmerken toe te voegen aan een "
+"beslissingsboomensemble, waarbij elk kenmerk zijn voorganger corrigeert. "
+"Maar in plaats van de gewichten voor elke onjuist geclassificeerde "
+"observatie bij elke iteratie te wijzigen, probeert de boostmethode de nieuwe "
+"eigenschap aan te passen aan de resterende fouten die door de vorige "
+"eigenschap zijn gemaakt.\n"
+"### Aannames\n"
+"- De doelvariabele is een nominale of ordinale variabele.\n"
+"- De kenmerken bestaan uit continue, nominale of ordinale variabelen."
 
 msgctxt "mlClassificationDecisionTree|"
 msgid ""
@@ -2343,6 +2424,13 @@ msgid ""
 "- The target is a nominal or ordinal variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"Een beslisboom is een algoritme voor leren onder toezicht dat een "
+"beslissingsboom gebruikt als een voorspellend model om van waarnemingen over "
+"een item (weergegeven in de wortels van de boom) naar conclusies over de "
+"doelwaarde van het item te gaan (weergegeven in de eindpunten van de boom).\n"
+"### Aannames\n"
+"- De doelvariabele is een nominale of ordinale variabele.\n"
+"- De kenmerken bestaan uit continue, nominale of ordinale variabelen."
 
 msgctxt "mlClassificationKnn|"
 msgid ""
@@ -2355,6 +2443,14 @@ msgid ""
 "- The target is a nominal or ordinal variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"K-dichtsbijzijnde buren is een classificatiemethode die kijkt naar het *k* "
+"aantal kenmerkwaarnemingen dat het meest lijkt op nieuwe waarnemingen om een "
+"voorspelling te doen voor hun klassetoewijzing. Het aantal dichtstbijzijnde "
+"buren is nauw verbonden met de complexiteit van het model, omdat kleine "
+"aantallen de flexibiliteit van het model vergroten.\n"
+"### Aannames\n"
+"- De doelvariabele is een nominale of ordinale variabele.\n"
+"- De kenmerken bestaan uit continue, nominale of ordinale variabelen."
 
 msgctxt "mlClassificationLda|"
 msgid ""
@@ -2373,10 +2469,23 @@ msgid ""
 "- Multicollinearity: The classes should not correlate within each other, can "
 "be checked with the corresponding table."
 msgstr ""
+"Lineaire Discriminantanalyse (LDA) is een classificatiemethode die tot doel "
+"heeft *p - 1* componenten te vinden die het beste discrimineren tussen de "
+"klassen in de doelvariabele. LDA is een lineaire classificeerder, wat "
+"betekent dat de beslissingsgrenzen tussen klassen lineair zijn.\n"
+"### Aannames\n"
+"- De doelvariabele is een nominale of ordinale variabele.\n"
+"- De kenmerken bestaan uit continue, nominale of ordinale variabelen.\n"
+"- Gelijkheid van klassengemiddelden: De klassegemiddelden moeten gelijk "
+"zijn, kan gecontroleerd worden met de bijbehorende tabel.\n"
+"- Gelijkheid van covariantiematrices: De covariantiematrices moeten gelijk "
+"zijn, kan worden gecontroleerd met de bijbehorende tabel.\n"
+"- Multicollineariteit: De klassen mogen niet binnen elkaar correleren, kan "
+"gecontroleerd worden met de bijbehorende tabel."
 
 msgctxt "mlClassificationLda|"
 msgid "Multivariate normality"
-msgstr ""
+msgstr "Multivariate normaliteit"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid ""
@@ -2391,6 +2500,18 @@ msgid ""
 "- The target is a nominal or ordinal variable.\n"
 "- The feature variables consist of continuous variables."
 msgstr ""
+"Feedforward neurale netwerken zijn voorspellende algoritmen die geïnspireerd "
+"zijn op de biologische neurale netwerken waaruit hersenen bestaan. Een "
+"neuron (knooppunt) dat een signaal ontvangt, verwerkt het en kan signalen "
+"sturen naar neuronen die ermee verbonden zijn. Het signaal op een knooppunt "
+"is een reëel getal en de output van elk knooppunt wordt berekend door het "
+"signaal door de activeringsfunctie te sturen. Het aantal lagen en "
+"knooppunten in het netwerk is onlosmakelijk verbonden met de complexiteit "
+"van het model, aangezien hoge aantallen de flexibiliteit van het model "
+"vergroten.\n"
+"### Aannames\n"
+"- De doelvariabele is een nominale of ordinale variabele.\n"
+"- De kenmerken bestaan uit continue variabelen."
 
 msgctxt "mlClassificationRandomForest|"
 msgid ""
@@ -2403,6 +2524,14 @@ msgid ""
 "- The target variable is a nominal or ordinal variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"Random Forest is een classificatiemethode die een set beslissingsbomen "
+"creëert die bestaat uit een groot aantal individuele bomen die werken als "
+"een ensemble. Elke individuele boom in het random forest geeft een "
+"klassevoorspelling en de klasse met de meeste stemmen wordt de voorspelling "
+"van het model.\n"
+"### Aannames\n"
+"- De doelvariabele is een nominale of ordinale variabele.\n"
+"- De kenmerken bestaan uit continue, nominale of ordinale variabelen."
 
 msgctxt "mlClassificationSvm|"
 msgid ""
@@ -2415,6 +2544,14 @@ msgid ""
 "- The target is a nominal or ordinal variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"Support Vector Machines is een algoritme voor leren onder toezicht dat "
+"trainingsvoorbeelden in kaart brengt in punten in de ruimte om de kloof "
+"tussen de twee categorieën zo breed mogelijk te maken. Nieuwe voorbeelden "
+"worden vervolgens in diezelfde ruimte geplaatst en er wordt voorspeld dat ze "
+"bij een categorie horen op basis van de kant van de kloof waarin ze vallen.\n"
+"### Aannames\n"
+"- De doelvariabele is een nominale of ordinale variabele.\n"
+"- De kenmerken bestaan uit continue, nominale of ordinale variabelen."
 
 msgctxt "mlClusteringDensityBased|"
 msgid ""
@@ -2432,6 +2569,21 @@ msgid ""
 "- The data consists of continuous variables.\n"
 "- (Normally distributed data aids the clustering process)."
 msgstr ""
+"Clusteren op basis van dichtheid is een zachte clustermethode waarbij "
+"clusters worden geconstrueerd als maximale sets van punten die verbonden "
+"zijn met punten waarvan de dichtheid groter is dan een bepaalde drempel. De "
+"dichtheid wordt geproduceerd door het concept dat voor elk punt binnen een "
+"cluster, de buurt binnen een bepaalde straal ten minste een minimum aantal "
+"punten moet bevatten, waardoor de dichtheid van die buurt een bepaalde "
+"drempel overschrijdt. Een op dichtheid gebaseerd cluster wordt herkend door "
+"punten met een hogere dichtheid dan punten buiten het cluster. De "
+"verzameling van alle punten met een hoge dichtheid wordt het "
+"dichtheidsniveau genoemd. De punten die een dichtheidsniveau niet "
+"overschrijden, worden geïdentificeerd als uitschieters. Het dichtheidsniveau "
+"beïnvloedt het aantal gegenereerde clusters.\n"
+"### Aannames\n"
+"- De data bestaan uit continue variabelen.\n"
+"- (Normaal verdeelde gegevens helpen bij het clusteren)."
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid ""
@@ -2445,6 +2597,15 @@ msgid ""
 "- The data consists of continuous variables.\n"
 "- (Normally distributed data aids the clustering process)."
 msgstr ""
+"Fuzzy c-means clustering is een zachte partitioneringsmethode die een output "
+"oplevert die de mate van associatie voor elke observatie met elk cluster "
+"bevat. Dit maakt het mogelijk om gegevenswaarnemingen gedeeltelijk toe te "
+"wijzen aan meerdere clusters en een mate van vertrouwen te geven over het "
+"clustermodel. De benadering van Fuzzy c-means lijkt veel op die van k-means "
+"clustering, afgezien van de zachte benadering.\n"
+"### Aannames\n"
+"- De data bestaan uit continue variabelen.\n"
+"- (Normaal verdeelde gegevens helpen bij het clusteren)."
 
 msgctxt "mlClusteringHierarchical|"
 msgid ""
@@ -2457,6 +2618,14 @@ msgid ""
 "- The data consists of continuous variables.\n"
 "- (Normally distributed data aids the clustering process)."
 msgstr ""
+"Hiërarchisch clusteren is een hard partitioneringsalgoritme dat erop gericht "
+"is gegevens te verdelen in verschillende clusters, waarbij elke observatie "
+"slechts tot één groep behoort. De gegevens worden zo verdeeld dat de mate "
+"van gelijkenis tussen twee gegevenswaarnemingen maximaal is als ze tot "
+"dezelfde groep behoren en minimaal als dat niet het geval is.\n"
+"### Aannames\n"
+"- De data bestaan uit continue variabelen.\n"
+"- (Normaal verdeelde gegevens helpen bij het clusteren)."
 
 msgctxt "mlClusteringKMeans|"
 msgid ""
@@ -2469,6 +2638,15 @@ msgid ""
 "- The data consists of continuous variables.\n"
 "- (Normally distributed data aids the clustering process)."
 msgstr ""
+"Op nabijheid gebaseerde clustermethoden zijn een reeks harde "
+"partitioneringsalgoritmen die tot doel hebben gegevens te verdelen in "
+"verschillende clusters, waarbij elke observatie slechts tot één groep "
+"behoort. De gegevens worden zo verdeeld dat de mate van gelijkenis tussen "
+"twee gegevenswaarnemingen maximaal is als ze tot dezelfde groep behoren en "
+"minimaal als dat niet het geval is.\n"
+"### Aannames\n"
+"- De data bestaan uit continue variabelen.\n"
+"- (Normaal verdeelde gegevens helpen bij het clusteren)."
 
 msgctxt "mlClusteringRandomForest|"
 msgid ""
@@ -2483,24 +2661,37 @@ msgid ""
 "- The data consists of continuous variables.\n"
 "- (Normally distributed data aids the clustering process)."
 msgstr ""
+"Random Forest-clustering is een hard partitioneringsalgoritme dat erop "
+"gericht is gegevens te verdelen in verschillende clusters, waarbij elke "
+"observatie slechts tot één groep behoort. Deze clustermethode gebruikt het "
+"Random Forest-algoritme zonder toezicht, waarbij de uitkomstvariabele 'y' is "
+"ingesteld op NULL. Het Random Forest-algoritme genereert een "
+"nabijheidsmatrix die een schatting geeft van de afstand tussen waarnemingen "
+"op basis van de frequentie waarmee waarnemingen in dezelfde bladknoop "
+"terechtkomen.\n"
+"### Aannames\n"
+"- De data bestaan uit continue variabelen.\n"
+"- (Normaal verdeelde gegevens helpen bij het clusteren)."
 
 msgctxt "mlPrediction|"
 msgid ""
 "The prediction analysis enables you to load a trained machine learning model "
 "and apply it to new data."
 msgstr ""
+"Met de voorspellingsanalyse kun je een getraind machine-learningmodel laden "
+"en toepassen op nieuwe gegevens."
 
 msgctxt "mlPrediction|"
 msgid "Cases"
-msgstr ""
+msgstr "Gevallen"
 
 msgctxt "mlPrediction|"
 msgid "Add features"
-msgstr ""
+msgstr "Voeg kenmerken toe"
 
 msgctxt "mlPrediction|"
 msgid "Explain predictions"
-msgstr ""
+msgstr "Verklaar voorspellingen"
 
 msgctxt "mlRegressionBoosting|"
 msgid ""
@@ -2511,10 +2702,17 @@ msgid ""
 "- The target variable is a continuous variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"Boosting werkt door achtereenvolgens kenmerken toe te voegen aan een "
+"beslissingsboomensemble, waarbij elk kenmerk zijn voorganger corrigeert. "
+"Boosting probeert het nieuwe kenmerk aan te passen aan de resterende fouten "
+"die door het vorige kenmerk zijn gemaakt.\n"
+"### Aannames\n"
+"- De doelvariabele is een continue variabele.\n"
+"- De kenmerken bestaan uit continue, nominale of ordinale variabelen."
 
 msgctxt "mlRegressionBoosting|"
 msgid "The loss function used."
-msgstr ""
+msgstr "De gebruikte verliesfunctie."
 
 msgctxt "mlRegressionDecisionTree|"
 msgid ""
@@ -2526,6 +2724,13 @@ msgid ""
 "- The target variable is a continuous variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"Decision Trees is een algoritme voor leren onder toezicht dat een "
+"beslissingsboom gebruikt als een voorspellend model om van waarnemingen over "
+"een item (weergegeven in de wortels van de boom) naar conclusies over de "
+"doelwaarde van het item te gaan (weergegeven in de eindpunten van de boom).\n"
+"### Aannames\n"
+"- De doelvariabele is een continue variabele.\n"
+"- De kenmerken bestaan uit continue, nominale of ordinale variabelen."
 
 msgctxt "mlRegressionKnn|"
 msgid ""
@@ -2538,30 +2743,38 @@ msgid ""
 "- The target variable is a continuous variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"K-dichtsbijzijnde buren is een regressiemethode waarbij wordt gekeken naar "
+"het *k* aantal kenmerkwaarnemingen dat het meest lijkt op nieuwe "
+"waarnemingen om een voorspelling te doen voor hun waarden. Het aantal "
+"dichtstbijzijnde buren is nauw verbonden met de complexiteit van het model, "
+"omdat kleine aantallen de flexibiliteit van het model vergroten.\n"
+"### Aannames\n"
+"- De doelvariabele is een continue variabele.\n"
+"- De kenmerken bestaan uit continue, nominale of ordinale variabelen."
 
 msgctxt "mlRegressionLinear|"
 msgid ""
 "Linear regression allows the user to model a linear relationship between one "
 "or more features (predictors) and a continuous dependent (target) variable."
 msgstr ""
+"Linear regressie laat de gebruiker een lineaire relatie modeleren tussen een "
+"of meer kenmerken en een continue afhankelijke variabele."
 
-#, fuzzy
 msgctxt "mlRegressionLinear|"
 msgid "Tables"
 msgstr "Tabellen"
 
-#, fuzzy
 msgctxt "mlRegressionLinear|"
 msgid "Plots"
 msgstr "Grafieken"
 
 msgctxt "mlRegressionLinear|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Training Parameters"
 
 msgctxt "mlRegressionLinear|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Algoritmische Instellingen"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid ""
@@ -2576,6 +2789,18 @@ msgid ""
 "- The target variable is a continuous variable.\n"
 "- The feature variables consist of continuous."
 msgstr ""
+"Feedforward neurale netwerken zijn voorspellende algoritmen die geïnspireerd "
+"zijn op de biologische neurale netwerken waaruit hersenen bestaan. Een "
+"neuron (knooppunt) dat een signaal ontvangt, verwerkt het en kan signalen "
+"sturen naar neuronen die ermee verbonden zijn. Het signaal op een knooppunt "
+"is een reëel getal en de output van elk knooppunt wordt berekend door het "
+"signaal door de activeringsfunctie te sturen. Het aantal lagen en "
+"knooppunten in het netwerk is onlosmakelijk verbonden met de complexiteit "
+"van het model, aangezien hoge aantallen de flexibiliteit van het model "
+"vergroten.\n"
+"### Aannames\n"
+"- De doelvariabele is een continue variabele.\n"
+"- De kenmerken bestaan uit continue variabelen."
 
 msgctxt "mlRegressionRandomForest|"
 msgid ""
@@ -2586,6 +2811,11 @@ msgid ""
 "- The target variable is a continuous variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"Random Forest is een regressiemethode die een set beslisbomen creëert die "
+"bestaat uit een groot aantal individuele bomen die als een ensemble werken.\n"
+"### Veronderstellingen\n"
+"- De doelvariabele is een continue variabele.\n"
+"- De kenmerken bestaan uit continue, nominale of ordinale variabelen."
 
 msgctxt "mlRegressionRegularized|"
 msgid ""
@@ -2597,6 +2827,13 @@ msgid ""
 "- The target variable is a continuous variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"Geregulariseerde lineaire regressie is een aanpassing van lineaire regressie "
+"waarbij de coëfficiënten worden gekrompen naar 0. Dit wordt gedaan door een "
+"straf toe te passen (bijvoorbeeld ridge, lasso of elastisch net). De "
+"parameter λ bepaalt de mate waarin parameters worden gekrompen.\n"
+"### Aannames\n"
+"- De doelvariabele is een continue variabele.\n"
+"- De kenmerken bestaan uit continue, nominale of ordinale variabelen."
 
 msgctxt "mlRegressionSvm|"
 msgid ""
@@ -2609,3 +2846,11 @@ msgid ""
 "- The target variable is a continuous variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variable"
 msgstr ""
+"Support Vector Machines is een algoritme voor leren onder toezicht dat "
+"trainingsvoorbeelden in kaart brengt in punten in de ruimte om de kloof "
+"tussen de twee categorieën zo breed mogelijk te maken. Nieuwe voorbeelden "
+"worden vervolgens in diezelfde ruimte geplaatst en er wordt voorspeld dat ze "
+"bij een categorie horen op basis van de kant van de kloof waarin ze vallen.\n"
+"### Aannames\n"
+"- De doelvariabele is een continue variabele.\n"
+"- De kenmerken bestaan uit continue, nominale of ordinale variabelen"
