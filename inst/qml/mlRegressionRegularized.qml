@@ -24,47 +24,13 @@ import JASP.Widgets		1.0
 import "./common/ui" as UI
 import "./common/tables" as TAB
 import "./common/figures" as FIG
+import "./common/analyses/regularized" as REGU
 
 Form 
 {
 	info: qsTr("Regularized linear regression is an adaptation of linear regression in which the coefficients are shrunken towards 0. This is done by applying a penalty (e.g., ridge, lasso, or elastic net). The parameter λ controls the degree to which parameters are shrunken.\n### Assumptions\n- The target variable is a continuous variable.\n- The feature variables consist of continuous, nominal, or ordinal variables.")
 
-	VariablesForm
-	{
-		AvailableVariablesList
-		{
-			name:								"variables"
-		}
-
-		AssignedVariablesList
-		{
-			id:									target
-			name:								"target"
-			title:								qsTr("Target")
-			singleVariable:						true
-			allowedColumns:						["scale"]
-			info:								qsTr("In this box, the variable that needs to be predicted should be entered.")
-		}
-
-		AssignedVariablesList
-		{
-			id:									predictors
-			name:								"predictors"
-			title:								qsTr("Features")
-			allowedColumns:						["scale", "ordinal"]
-			allowAnalysisOwnComputedColumns:	false
-			info:								qsTr("In this box, the variables that provide information about the target variable should be entered.")
-		}
-
-		AssignedVariablesList
-		{
-			name:								"weights"
-			title:								qsTr("Weights")
-			singleVariable:						true
-			allowedColumns:						["scale"]
-			info:								qsTr("In this box, an optional variable containing case weights can be entered.")
-		}
-	}
+	REGU.VariablesFormRegularizedRegression { id: vars; allow_nominal: false }
 
 	Group
 	{
@@ -73,12 +39,7 @@ Form
 		TAB.ModelPerformance { }
 		TAB.FeatureImportance { }
 		TAB.ExplainPredictions { }
-
-		CheckBox
-		{
-			name:								"coefTable"
-			text:								qsTr("Regression coefficients")
-		}
+		REGU.CoefficientTable { }
 	}
 
 	Group
@@ -170,13 +131,7 @@ Form
 				visible:						penalty.currentIndex == 2
 			}
 
-			CheckBox
-			{
-				name:							"intercept"
-				text:							qsTr("Fit intercept")
-				checked:						true
-			}
-
+			REGU.Intercept { }
 			UI.ScaleVariables { }
 			UI.SetSeed { }
 		}

@@ -24,47 +24,13 @@ import JASP.Widgets		1.0
 import "./common/ui" as UI
 import "./common/tables" as TAB
 import "./common/figures" as FIG
+import "./common/analyses/regularized" as REGU
 
 Form 
 {
 	info: qsTr("Linear regression allows the user to model a linear relationship between one or more features (predictors) and a continuous dependent (target) variable.")
 
-	VariablesForm
-	{
-		AvailableVariablesList
-		{
-			name:								"variables"
-		}
-
-		AssignedVariablesList
-		{
-			id:									target
-			name:								"target"
-			title:								qsTr("Target")
-			singleVariable:						true
-			allowedColumns:						["scale"]
-			info:								qsTr("In this box, the variable that needs to be predicted should be entered.")
-		}
-
-		AssignedVariablesList
-		{
-			id:									predictors
-			name:								"predictors"
-			title:								qsTr("Features")
-			allowedColumns:						["scale", "ordinal", "nominal", "nominalText"]
-			allowAnalysisOwnComputedColumns:	false
-			info:								qsTr("In this box, the variables that provide information about the target variable should be entered.")
-		}
-
-		AssignedVariablesList
-		{
-			name:								"weights"
-			title:								qsTr("Weights")
-			singleVariable:						true
-			allowedColumns:						["scale"]
-			info:								qsTr("In this box, an optional variable containing case weights can be entered.")
-		}
-	}
+	REGU.VariablesFormRegularizedRegression { id: vars; allow_nominal: true }
 
 	Group
 	{
@@ -72,25 +38,7 @@ Form
 
 		TAB.ModelPerformance { }
 		TAB.ExplainPredictions { }
-
-		CheckBox
-		{
-			name:								"coefTable"
-			text:								qsTr("Regression coefficients")
-
-			CheckBox 
-			{
-				name:							"coefTableConfInt"
-				text:							qsTr("Confidence interval")
-				childrenOnSameRow:				true
-
-				CIField
-				{ 
-					name:						"coefTableConfIntLevel"
-					defaultValue:				95
-				}
-			}
-		}
+		REGU.CoefficientTable { confint: true }
 	}
 
 	Group
@@ -112,13 +60,7 @@ Form
 		{
 			title:								qsTr("Algorithmic Settings")
 
-			CheckBox 
-			{ 
-				name:							"intercept"
-				label:							qsTr("Include intercept")
-				checked:						true 
-				info:							qsTr("Whether to include an intercept.")
-			}
+			REGU.Intercept { }
 			UI.ScaleVariables { }
 			UI.SetSeed { }
 		}
