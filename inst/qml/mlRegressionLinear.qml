@@ -42,6 +42,19 @@ Form
 		{
 			name: "coefTable"
 			text: qsTr("Regression coefficients")
+
+			CheckBox 
+			{
+				name: "coefTableConfInt"
+				text: qsTr("Confidence interval")
+				childrenOnSameRow: true
+
+				CIField
+				{ 
+					name: "coefTableConfIntLevel"
+					defaultValue: 95
+				}
+			}
 		}
 	}
 

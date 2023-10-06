@@ -99,12 +99,17 @@ mlRegressionLinear <- function(jaspResults, dataset, options, ...) {
   }
   table <- createJaspTable(gettext("Regression Coefficients"))
   table$position <- position
-  table$dependOn(options = c("coefTable", .mlRegressionDependencies()))
+  table$dependOn(options = c("coefTable", "coefTableConfInt", "coefTableConfIntLevel", .mlRegressionDependencies()))
   table$addColumnInfo(name = "var", title = "", type = "string")
   table$addColumnInfo(name = "coefs", title = gettextf("Coefficient (%s)", "\u03B2"), type = "number")
   table$addColumnInfo(name = "se", title = gettext("Standard Error"), type = "number")
   table$addColumnInfo(name = "t", title = gettext("t"), type = "number")
   table$addColumnInfo(name = "p", title = gettext("p"), type = "pvalue")
+  if (options[["coefTableConfInt"]]) {
+    overtitle <- gettextf("%1$s%% Confidence interval", round(options[["coefTableConfIntLevel"]] * 100, 3))
+    table$addColumnInfo(name = "lower", title = gettext("Lower"), type = "number", overtitle = overtitle)
+	table$addColumnInfo(name = "upper", title = gettext("Upper"), type = "number", overtitle = overtitle)
+  }
   if (options[["scaleVariables"]]) {
     table$addFootnote(gettext("The regression coefficients for numeric features are standardized."))
   } else {
@@ -133,4 +138,9 @@ mlRegressionLinear <- function(jaspResults, dataset, options, ...) {
   table[["se"]] <- as.numeric(sumfit[, 2])
   table[["t"]] <- as.numeric(sumfit[, 3])
   table[["p"]] <- as.numeric(sumfit[, 4])
+  if (options[["coefTableConfInt"]]) {
+    conf <- confint(regressionResult[["model"]], level = options[["coefTableConfIntLevel"]])
+    table[["lower"]] <- conf[, 1]
+    table[["upper"]] <- conf[, 2]
+  }
 }
