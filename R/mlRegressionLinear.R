@@ -166,7 +166,7 @@ mlRegressionLinear <- function(jaspResults, dataset, options, ...) {
   if (options[["formula"]]) {
     formula <- createJaspHtml(gettextf("<b>Regression equation:</b>\n%1$s", regressionResult[["formula"]]), "p")
     formula$position <- position + 1
-    formula$dependOn(options = "formula", optionsFromObject = jaspResults[["regressionResult"]])
+    formula$dependOn(options = c("coefTable", "formula"), optionsFromObject = jaspResults[["regressionResult"]])
     jaspResults[["regressionFormula"]] <- formula
   }
 }
