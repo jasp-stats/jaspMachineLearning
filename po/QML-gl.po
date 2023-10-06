@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-10-06 13:16+0000\n"
+"PO-Revision-Date: 2023-10-06 15:40+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/gl/>\n"
@@ -831,6 +831,10 @@ msgid ""
 "of variable interactions allowed. A value of 1 implies an additive model, a "
 "value of 2 implies a model with up to 2-way interactions, etc. Default is 1."
 msgstr ""
+"Enteiro que especifica a profundidade máxima de cada árbore (i.e., o maior "
+"nivel de interaccións permitidas das variables). O valor 1 implica un modelo "
+"aditivo, o valor 2 implica un modelo con interaccións de ata 2 direccións, "
+"etc. O predeterminado é 1."
 
 msgctxt "AlgorithmicSettings|"
 msgid "Min. observations in node"
@@ -842,6 +846,9 @@ msgid ""
 "of the trees. Note that this is the actual number of observations, not the "
 "total weight."
 msgstr ""
+"Enteiro que especifica o número mínimo de observacións nos nodos terminais "
+"das árbores. Cae na conta de que este é o número vixente de observacións, "
+"non a ponderación total."
 
 msgctxt "AlgorithmicSettings|"
 msgid "Training data used per tree"
@@ -921,6 +928,9 @@ msgid ""
 "Plots the number of trees against the out-of-bag classification accuracy "
 "improvement of the model. Accuracy is assessed for the training set."
 msgstr ""
+"Representa graficamente o número de árbores fronte á mellora na precisión da "
+"clasificación \"descuberto o choio\" do modelo. A precisión avalíase para o "
+"conxunto de ensaio."
 
 msgctxt "RelativeInfluence|"
 msgid "Relative influence"
@@ -939,6 +949,8 @@ msgid ""
 "The minimum number of observations that must exist in a node in order for a "
 "split to be attempted."
 msgstr ""
+"O número mínimo de observacións que deben existir nun nodo para que se "
+"intente unha separación."
 
 msgctxt "AlgorithmicSettings|"
 msgid "Min. observations in terminal"
@@ -965,6 +977,8 @@ msgid ""
 "Any split that does not decrease the overall lack of fit by a factor of this "
 "parameter is not attempted."
 msgstr ""
+"Calquera separación que non diminúa a carencia global de axuste por un "
+"factor deste parámetro, non se intenta."
 
 msgctxt "AttemptedSplits|"
 msgid "Attempted splits"
@@ -977,6 +991,11 @@ msgid ""
 "positive weight) sent left or right by the split. It also shows the "
 "improvement in deviance given by the splits."
 msgstr ""
+"Amosa as separacións que fixo o algoritmo, as características "
+"correspondentes e os puntos de separación; e o número de observacións (que "
+"non se perderon e teñen ponderación positiva) enviadas á esquerda ou á "
+"dereita polo separador. Tamén amosa a mellora na desviación que proporcionan "
+"as separacións."
 
 msgctxt "AttemptedSplits|"
 msgid "Only show splits in tree"
@@ -984,7 +1003,7 @@ msgstr "Amosar só as separacións na árbore"
 
 msgctxt "AttemptedSplits|"
 msgid "Remove splits that do not occur in the final tree from the table."
-msgstr ""
+msgstr "Quita os separadores que non acontecen na árbore final, da táboa."
 
 msgctxt "TreePlot|"
 msgid "Decision tree"
@@ -992,7 +1011,7 @@ msgstr "Árbore de decisión"
 
 msgctxt "TreePlot|"
 msgid "Creates a plot that visualizes the decision tree and its leafs."
-msgstr ""
+msgstr "Crea unha gráfica que visualiza a árbore de decisión e as súas follas."
 
 msgctxt "AlgorithmicSettings|"
 msgid "Weights"
@@ -1168,17 +1187,14 @@ msgctxt "AlgorithmicSettings|"
 msgid "Hyperbolic tangent"
 msgstr "Tanxente hiperbólica"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "ReLU"
 msgstr "ReLU"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Softplus"
 msgstr "Softplus"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Softsign"
 msgstr "Softsign"
@@ -1188,22 +1204,18 @@ msgctxt "AlgorithmicSettings|"
 msgid "ELU"
 msgstr "ELU"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "LReLU"
 msgstr "LReLU"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "SiLU"
 msgstr "SiLU"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Mish"
 msgstr "Mish"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "GeLU"
 msgstr "GeLU"
@@ -1240,22 +1252,18 @@ msgctxt "AlgorithmicSettings|"
 msgid "Backpropagation"
 msgstr "Propagación cara atrás"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "rprop+"
 msgstr "rprop+"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "rprop-"
 msgstr "rprop-"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "grprop-sag"
 msgstr "grprop-sag"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "grprop-slr"
 msgstr "grprop-slr"
@@ -1479,48 +1487,42 @@ msgctxt "ModelOptimization|"
 msgid "How to mutate a network."
 msgstr ""
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Probability"
 msgstr "Probabilidade"
 
 msgctxt "ModelOptimization|"
 msgid "The mutation probability of a random network in each generation."
-msgstr ""
+msgstr "A probabilidade de mutación dunha rede aleatoria, en cada xeración."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Survival method"
 msgstr "Método de supervivencia"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Fitness-based"
 msgstr "Baseado no axuste"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Age-based"
 msgstr "Baseado na idade"
 
 msgctxt "ModelOptimization|"
 msgid "How to choose which networks survive and die in a generation."
-msgstr ""
+msgstr "Como escoller que redes sobreviven ou morren nunha xeración."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Elitism"
 msgstr "Elitismo"
 
 msgctxt "ModelOptimization|"
 msgid "Keep top networks from dying out."
-msgstr ""
+msgstr "Evitar que as redes superiores se extingan."
 
 msgctxt "ModelOptimization|"
 msgid "Percentage of top networks to keep."
-msgstr ""
+msgstr "Porcentaxe de redes superiores a manter."
 
-#, fuzzy
 msgctxt "NetworkPlot|"
 msgid "Network structure"
 msgstr "Estrutura de rede"
@@ -1529,7 +1531,7 @@ msgctxt "NetworkPlot|"
 msgid ""
 "Creates a plot that visualizes the structure (nodes and edges) of the "
 "network."
-msgstr ""
+msgstr "Crea unha gráfica que visualiza a estrutura (nodos e límites) da rede."
 
 msgctxt "OptimPlot|"
 msgid ""
@@ -1541,28 +1543,26 @@ msgid ""
 "assessed for the training (and validation) set."
 msgstr ""
 
-#, fuzzy
 msgctxt "AccuracyDecrease|"
 msgid "Mean decrease in accuracy"
-msgstr "Decrecemento da media na precisión"
+msgstr "Decrecemento medio na precisión"
 
 msgctxt "AccuracyDecrease|"
 msgid ""
 "Displays a figure with the mean decrease in accuracy per feature in the "
 "model."
 msgstr ""
+"Presenta unha gráfica co decrecemento medio na precisión, por característica "
+"do modelo."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Features per split"
 msgstr "Características por separador"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Auto"
 msgstr "Auto"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Manual"
 msgstr "Manual"
@@ -1677,7 +1677,6 @@ msgid ""
 "In this box, an optional variable containing case weights can be entered."
 msgstr ""
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Radial"
 msgstr "Radial"
@@ -1774,7 +1773,6 @@ msgid ""
 "are observations that are more alike."
 msgstr ""
 
-#, fuzzy
 msgctxt "ClusterDensity|"
 msgid "Cluster densities"
 msgstr "Densidades dos conglomerados"
@@ -1785,7 +1783,6 @@ msgid ""
 "densities for the clusters."
 msgstr ""
 
-#, fuzzy
 msgctxt "ClusterDensity|"
 msgid "Group into one figure"
 msgstr "Agrupar nunha gráfica"
@@ -1856,24 +1853,22 @@ msgid ""
 "classes are visualized. Can only be made for numeric features."
 msgstr ""
 
-#, fuzzy
 msgctxt "DecisionBoundary|"
 msgid "Legend"
 msgstr "Lenda"
 
 msgctxt "DecisionBoundary|"
 msgid "Show a legend next to the figure."
-msgstr ""
+msgstr "Amosa unha lenda próxima á gráfica."
 
 msgctxt "DecisionBoundary|"
 msgid "Add data points"
-msgstr ""
+msgstr "Engade puntos dos datos"
 
 msgctxt "DecisionBoundary|"
 msgid "Show the observations in the data set as points in the plot."
-msgstr ""
+msgstr "Amosa as observacións do conxunto de datos como puntos na gráfica."
 
-#, fuzzy
 msgctxt "ElbowMethod|"
 msgid "Elbow method"
 msgstr "Método do cóbado"
@@ -1923,26 +1918,26 @@ msgid ""
 "as the t-SNE algorithm uses random starting values."
 msgstr ""
 
-#, fuzzy
 msgctxt "Tsne|"
 msgid "Legend"
 msgstr "Lenda"
 
 msgctxt "Tsne|"
 msgid "Show a legend next to the figure."
-msgstr ""
+msgstr "Amosa unha lenda próxima á gráfica."
 
 msgctxt "Tsne|"
 msgid "Add data labels"
-msgstr ""
+msgstr "Añade etiquetas de los datos"
 
 msgctxt "Tsne|"
 msgid ""
 "Add the row numbers of the observations in the data set as labels to the "
 "plot."
 msgstr ""
+"Engadir os números de fila das observacións do conxunto de datos, como "
+"etiquetas na gráfica."
 
-#, fuzzy
 msgctxt "ClassProportions|"
 msgid "Class proportions"
 msgstr "Proporcións de clase"
@@ -1952,8 +1947,9 @@ msgid ""
 "Displays a table that shows the proportions of each class in the data set, "
 "training (and validaton), and test set."
 msgstr ""
+"Presenta unha táboa que amosa as proporcións de cada clase no conxunto de "
+"datos, ensaio (e validación), e conxunto de probas."
 
-#, fuzzy
 msgctxt "ClusterInfo|"
 msgid "Cluster information"
 msgstr "Información dos conglomerados"
@@ -1966,7 +1962,6 @@ msgid ""
 "default."
 msgstr ""
 
-#, fuzzy
 msgctxt "ClusterInfo|"
 msgid "Within sum of squares"
 msgstr "Suma de cadrados Dentro"
@@ -1977,7 +1972,6 @@ msgid ""
 "option is selected by default."
 msgstr ""
 
-#, fuzzy
 msgctxt "ClusterInfo|"
 msgid "Silhouette score"
 msgstr "Puntuación de siluetas"
