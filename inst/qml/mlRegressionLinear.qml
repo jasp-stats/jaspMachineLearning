@@ -29,7 +29,7 @@ Form
 {
 	info: qsTr("Linear regression allows the user to model a linear relationship between one or more features (predictors) and a continuous dependent (target) variable.")
 
-	UI.VariablesFormRegression { id: vars; allow_nominal: false}
+	UI.VariablesFormRegression { id: vars }
 
 	Group
 	{
@@ -64,6 +64,13 @@ Form
 		{
 			title: qsTr("Algorithmic Settings")
 
+			CheckBox 
+			{ 
+				name: "intercept"
+				label: qsTr("Include intercept")
+				checked: true 
+				info: qsTr("Whether to include an intercept.")
+			}
 			UI.ScaleVariables { }
 			UI.SetSeed { }
 		}

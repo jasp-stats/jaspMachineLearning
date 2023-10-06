@@ -65,7 +65,12 @@ mlRegressionLinear <- function(jaspResults, dataset, options, ...) {
   # Just create a train and a test set (no optimization)
   trainingSet <- trainingAndValidationSet
   testSet <- dataset[-trainingIndex, ]
-  fit <- lm(jaspResults[["formula"]]$object, data = trainingSet)
+  if (options[["intercept"]]) {
+    formula <- formula(paste(options[["target"]], "~ 1 + ", paste(options[["predictors"]], collapse = " + ")))
+  } else {
+    formula <- formula(paste(options[["target"]], "~ 0 + ", paste(options[["predictors"]], collapse = " + ")))
+  }
+  fit <- lm(formula, data = trainingSet)
   # Use the specified model to make predictions for the test set
   testFit <- predict(fit, newdata = testSet)
   # Use the specified model to make predictions for dataset
@@ -74,6 +79,8 @@ mlRegressionLinear <- function(jaspResults, dataset, options, ...) {
   result <- list()
   result[["model"]] <- fit
   result[["testMSE"]] <- mean((testFit - testSet[, options[["target"]]])^2)
+  result[["rsquared"]] <- summary(fit)$r.squared
+  result[["arsquared"]] <- summary(fit)$adj.r.squared
   result[["testPred"]] <- testFit
   result[["testReal"]] <- testSet[, options[["target"]]]
   result[["ntrain"]] <- nrow(trainingSet)
@@ -95,23 +102,35 @@ mlRegressionLinear <- function(jaspResults, dataset, options, ...) {
   table$dependOn(options = c("coefTable", .mlRegressionDependencies()))
   table$addColumnInfo(name = "var", title = "", type = "string")
   table$addColumnInfo(name = "coefs", title = gettextf("Coefficient (%s)", "\u03B2"), type = "number")
-  jaspResults[["coefTable"]] <- table
-  if (!ready && options[["target"]] == "" && length(unlist(options[["predictors"]])) > 0) {
-    varStrings <- options[["predictors"]]
-    varStrings <- c("(Intercept)", varStrings)
-    table[["var"]] <- varStrings
+  table$addColumnInfo(name = "se", title = gettext("Standard Error"), type = "number")
+  table$addColumnInfo(name = "t", title = gettext("t"), type = "number")
+  table$addColumnInfo(name = "p", title = gettext("p"), type = "pvalue")
+  if (options[["scaleVariables"]]) {
+    table$addFootnote(gettext("The regression coefficients for numeric features are standardized."))
+  } else {
+    table$addFootnote(gettext("The regression coefficients are unstandardized."))
   }
+  jaspResults[["coefTable"]] <- table
   if (!ready) {
+    if (options[["target"]] == "" && length(unlist(options[["predictors"]])) > 0) {
+      table[["var"]] <- c(if (options[["intercept"]]) "(Intercept)" else NULL, options[["predictors"]])
+    }
     return()
   }
   regressionResult <- jaspResults[["regressionResult"]]$object
-  coefs <- coef(regressionResult[["model"]])
-  table[["var"]] <- c("(Intercept)", names(coefs)[-1])
-  table[["coefs"]] <- as.numeric(coefs)
-}
-
-.mlRegressionFormatCoefNames <- function(names) {
-  # Use regular expressions to separate variable and level
-  formatted_names <- gsub("(\\w+)(\\w+)$", "\\1 = \\2", names)
-  return(formatted_names)
+  sumfit <- summary(regressionResult[["model"]])$coefficients
+  vars <- rownames(sumfit)
+  for (i in seq_along(vars)) {
+    if (!(vars[i] %in% options[["predictors"]]) && vars[i] != "(Intercept)") {
+      for (j in options[["predictors"]]) {
+        vars[i] <- gsub(pattern = j, replacement = paste0(j, " ("), x = vars[i])
+      }
+      vars[i] <- paste0(vars[i], ")")
+    }
+  }
+  table[["var"]] <- vars
+  table[["coefs"]] <- as.numeric(sumfit[, 1])
+  table[["se"]] <- as.numeric(sumfit[, 2])
+  table[["t"]] <- as.numeric(sumfit[, 3])
+  table[["p"]] <- as.numeric(sumfit[, 4])
 }

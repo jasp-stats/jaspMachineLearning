@@ -281,6 +281,10 @@
   if (type == "randomForest") {
     table$addColumnInfo(name = "oob", title = gettext("OOB Error"), type = "number")
   }
+  if (type == "lm") {
+    table$addColumnInfo(name = "rsquared", title = gettextf("R%1$s", "\u00B2"), type = "number")
+	table$addColumnInfo(name = "arsquared", title = gettextf("Adjusted R%1$s", "\u00B2"), type = "number")
+  }
   # If no analysis is run, specify the required variables in a footnote
   if (!ready) {
     table$addFootnote(gettextf("Please provide a target variable and at least %d feature variable(s).", if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm" || type == "lm") 1L else 2L))
@@ -426,7 +430,9 @@
     row <- data.frame(
       nTrain = nTrain,
       nTest = regressionResult[["ntest"]],
-      testMSE = regressionResult[["testMSE"]]
+      testMSE = regressionResult[["testMSE"]],
+      rsquared = regressionResult[["rsquared"]],
+      arsquared = regressionResult[["arsquared"]]
     )
     table$addRows(row)
   }
