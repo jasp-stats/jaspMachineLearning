@@ -49,7 +49,7 @@ mlRegressionLinear <- function(jaspResults, dataset, options, ...) {
   .mlRegressionLinearTableCoef(options, jaspResults, ready, position = 6)
 
   # Create the predicted performance plot
-  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 7)
+  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 8) # position + 1 for regression equation
 }
 
 .linearRegression <- function(dataset, options, jaspResults) {
@@ -78,9 +78,36 @@ mlRegressionLinear <- function(jaspResults, dataset, options, ...) {
   testFit <- predict(fit, newdata = testSet)
   # Use the specified model to make predictions for dataset
   dataPredictions <- predict(fit, newdata = dataset)
+  # Create the coefficients table
+  coefs <- summary(fit)$coefficients
+  vars <- rownames(coefs)
+  for (i in seq_along(vars)) {
+    if (!(vars[i] %in% options[["predictors"]]) && vars[i] != "(Intercept)") {
+      for (j in options[["predictors"]]) {
+        vars[i] <- gsub(pattern = j, replacement = paste0(j, " ("), x = vars[i])
+      }
+      vars[i] <- paste0(vars[i], ")")
+    }
+  }
+  coefs <- cbind(coefs, confint(fit, level = options[["coefTableConfIntLevel"]]))
+  rownames(coefs) <- vars
+  colnames(coefs) <- c("coefficient", "se", "t", "p", "lower", "upper")
+  # Create the formula
+  if (options[["intercept"]]) {
+    regform <- paste0(options[["target"]], " = ", round(as.numeric(coefs[, 1])[1], 3))
+    start <- 2
+  } else {
+    regform <- paste0(options[["target"]], " = ")
+    start <- 1
+  }
+  for (i in start:nrow(coefs)) {
+    regform <- paste0(regform, if (round(as.numeric(coefs[, 1])[i], 3) < 0) " - " else " + ", abs(round(as.numeric(coefs[, 1])[i], 3)), " x ", vars[i])
+  }
   # Create results object
   result <- list()
   result[["model"]] <- fit
+  result[["coefficients"]] <- coefs
+  result[["formula"]] <- regform
   result[["testMSE"]] <- mean((testFit - testSet[, options[["target"]]])^2)
   result[["rsquared"]] <- summary(fit)[["r.squared"]]
   result[["arsquared"]] <- summary(fit)[["adj.r.squared"]]
@@ -102,7 +129,7 @@ mlRegressionLinear <- function(jaspResults, dataset, options, ...) {
   }
   table <- createJaspTable(gettext("Regression Coefficients"))
   table$position <- position
-  table$dependOn(options = c("coefTable", "coefTableConfInt", "coefTableConfIntLevel", .mlRegressionDependencies()))
+  table$dependOn(options = c("coefTable", "coefTableConfInt", "coefTableConfIntLevel", "formula", .mlRegressionDependencies()))
   table$addColumnInfo(name = "var", title = "", type = "string")
   table$addColumnInfo(name = "coefs", title = gettextf("Coefficient (%s)", "\u03B2"), type = "number")
   table$addColumnInfo(name = "se", title = gettext("Standard Error"), type = "number")
@@ -126,24 +153,20 @@ mlRegressionLinear <- function(jaspResults, dataset, options, ...) {
     return()
   }
   regressionResult <- jaspResults[["regressionResult"]]$object
-  sumfit <- summary(regressionResult[["model"]])$coefficients
-  vars <- rownames(sumfit)
-  for (i in seq_along(vars)) {
-    if (!(vars[i] %in% options[["predictors"]]) && vars[i] != "(Intercept)") {
-      for (j in options[["predictors"]]) {
-        vars[i] <- gsub(pattern = j, replacement = paste0(j, " ("), x = vars[i])
-      }
-      vars[i] <- paste0(vars[i], ")")
-    }
-  }
-  table[["var"]] <- vars
-  table[["coefs"]] <- as.numeric(sumfit[, 1])
-  table[["se"]] <- as.numeric(sumfit[, 2])
-  table[["t"]] <- as.numeric(sumfit[, 3])
-  table[["p"]] <- as.numeric(sumfit[, 4])
+  coefs <- regressionResult[["coefficients"]]
+  table[["var"]] <- rownames(coefs)
+  table[["coefs"]] <- as.numeric(coefs[, "coefficient"])
+  table[["se"]] <- as.numeric(coefs[, "se"])
+  table[["t"]] <- as.numeric(coefs[, "t"])
+  table[["p"]] <- as.numeric(coefs[, "p"])
   if (options[["coefTableConfInt"]]) {
-    conf <- confint(regressionResult[["model"]], level = options[["coefTableConfIntLevel"]])
-    table[["lower"]] <- conf[, 1]
-    table[["upper"]] <- conf[, 2]
+    table[["lower"]] <- coefs[, "lower"]
+    table[["upper"]] <- coefs[, "upper"]
+  }
+  if (options[["formula"]]) {
+    formula <- createJaspHtml(gettextf("<b>Regression equation:</b>\n%1$s", regressionResult[["formula"]]), "p")
+    formula$position <- position + 1
+    formula$dependOn(options = "formula", optionsFromObject = jaspResults[["regressionResult"]])
+    jaspResults[["regressionFormula"]] <- formula
   }
 }

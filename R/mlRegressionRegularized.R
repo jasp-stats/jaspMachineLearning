@@ -49,13 +49,13 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   .mlRegressionRegularizedTableCoef(options, jaspResults, ready, position = 6)
 
   # Create the predicted performance plot
-  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 7)
+  .mlRegressionPlotPredictedPerformance(options, jaspResults, ready, position = 8) # position + 1 for regression equation
 
   # Create the variable trace plot
-  .mlRegressionRegularizedPlotVariableTrace(options, jaspResults, ready, position = 8)
+  .mlRegressionRegularizedPlotVariableTrace(options, jaspResults, ready, position = 9)
 
   # Create the lambda evaluation plot
-  .mlRegressionRegularizedPlotLambda(options, jaspResults, ready, position = 9)
+  .mlRegressionRegularizedPlotLambda(options, jaspResults, ready, position = 10)
 }
 
 # Read dataset
@@ -161,8 +161,21 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
     x = as.matrix(dataset[, options[["predictors"]]]), y = dataset[, options[["target"]]], weights = weights, offset = NULL,
     alpha = alpha, standardize = FALSE, intercept = options[["intercept"]], convergenceThreshold = options[["convergenceThreshold"]]
   )
+  # Create the formula
+  coefs <- coef(trainingFit, s = lambda)
+  if (options[["intercept"]]) {
+    regform <- paste0(options[["target"]], " = ", round(as.numeric(coefs[, 1])[1], 3))
+    start <- 2
+  } else {
+    regform <- paste0(options[["target"]], " = ")
+    start <- 1
+  }
+  for (i in start:nrow(coefs)) {
+    regform <- paste0(regform, if (round(as.numeric(coefs[, 1])[i], 3) < 0) " - " else " + ", abs(round(as.numeric(coefs[, 1])[i], 3)), " x ", rownames(coefs)[i])
+  }
   result <- list()
   result[["model"]] <- trainingFit
+  result[["formula"]] <- regform
   result[["lambda"]] <- lambda
   result[["penalty"]] <- penalty
   result[["alpha"]] <- alpha
@@ -173,7 +186,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   result[["ntest"]] <- nrow(testSet)
   result[["train"]] <- trainingSet
   result[["test"]] <- testSet
-  result[["coefTable"]] <- coef(trainingFit, s = lambda)
+  result[["coefTable"]] <- coefs
   result[["cvMSE"]] <- trainingFit[["cvm"]][trainingFit[["lambda"]] == lambda]
   result[["cvMSELambda"]] <- data.frame(lambda = trainingFit[["lambda"]], MSE = trainingFit[["cvm"]], sd = trainingFit[["cvsd"]])
   result[["testIndicatorColumn"]] <- testIndicatorColumn
@@ -192,7 +205,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   }
   table <- createJaspTable(gettext("Regression Coefficients"))
   table$position <- position
-  table$dependOn(options = c("coefTable", .mlRegressionDependencies()))
+  table$dependOn(options = c("coefTable", "formula", .mlRegressionDependencies()))
   table$addColumnInfo(name = "var", title = "", type = "string")
   table$addColumnInfo(name = "coefs", title = gettextf("Coefficient (%s)", "\u03B2"), type = "number")
   jaspResults[["coefTable"]] <- table
@@ -217,6 +230,12 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   }
   table[["var"]] <- labs
   table[["coefs"]] <- values
+  if (options[["formula"]]) {
+    formula <- createJaspHtml(gettextf("<b>Regression equation:</b>\n%1$s", regressionResult[["formula"]]), "p")
+    formula$position <- position + 1
+    formula$dependOn(options = "formula", optionsFromObject = jaspResults[["regressionResult"]])
+    jaspResults[["regressionFormula"]] <- formula
+  }
 }
 
 .mlRegressionRegularizedPlotVariableTrace <- function(options, jaspResults, ready, position) {

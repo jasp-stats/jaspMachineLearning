@@ -26,7 +26,7 @@ CheckBox
 	property bool confint: 	false
 
 	name:					"coefTable"
-	text:					qsTr("Regression coefficients")
+	text:					qsTr("Coefficients")
 	info:					qsTr("Shows a table containing the regression coefficients.")
 
 	CheckBox 
@@ -43,5 +43,12 @@ CheckBox
 			defaultValue:	95
 			info:			qsTr("The confidence level for the interval.")
 		}
+	}
+
+	CheckBox
+	{
+		name:				"formula"
+		label:				qsTr("Display equation")
+		info:				qsTr("Display the regression equation with the estimated values of the coefficients.")
 	}
 }
