@@ -37,6 +37,7 @@ Form
 		title:									qsTr("Tables")
 
 		TAB.ModelPerformance { }
+		TAB.FeatureImportance { }
 		TAB.ExplainPredictions { }
 		REGU.CoefficientTable { confint: true }
 	}
