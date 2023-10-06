@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2023-10-06 08:17\n"
-"PO-Revision-Date: 2023-06-09 06:56+0000\n"
+"PO-Revision-Date: 2023-10-06 13:16+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/nl/>\n"
@@ -12,11 +12,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
-"X-Generator: Weblate 4.18-dev\n"
+"X-Generator: Weblate 5.1-dev\n"
 
-#, fuzzy
 msgid "An error occurred in the analysis: %s"
-msgstr "Er is een fout opgetreden in de analyse: %1$s"
+msgstr "Er is een fout opgetreden in de analyse: %s"
 
 msgid "K-Nearest Neighbors Classification"
 msgstr "K-Dichtste Buren Classificatie"
@@ -105,6 +104,10 @@ msgid ""
 "remove all such characters from the variable names and try saving the model "
 "again."
 msgstr ""
+"Het getrainde model is <b>niet</b> opgeslagen omdat enkele variabelen in het "
+"model namen bevatten met spaties (i.e., ' ') of underscores (i.e, '_'). "
+"Verwijder alstublieft al deze karakters uit de variabelen namen en probeer "
+"het model opnieuw op te slaan."
 
 msgid "The trained model is not saved until 'Save trained model' is checked."
 msgstr ""
@@ -188,9 +191,8 @@ msgstr "Andrews kromme vereist minimaal 2 kenmerken."
 msgid "Box's M-test for Homogeneity of Covariance Matrices"
 msgstr "Box's M-toets voor Homogeniteit van Covariantiematrixen"
 
-#, fuzzy
 msgid "Model Performance Metrics"
-msgstr "Grafiek Prestatievoorspelling"
+msgstr "Model Kwaliteitsmaten"
 
 msgid "Support"
 msgstr "Ondersteuning"
@@ -328,23 +330,23 @@ msgstr ""
 "Het optimale aantal clusters is het maximale aantal clusters. Het is "
 "misschien beter om het bereik van optimalisatie aan te passen."
 
-#, fuzzy
 msgid ""
 "The model contains 0 clusters and only Noisepoints, we advise to change "
 "'Epsilon neighborhood size' and 'Min. core points' parameters under "
 "'Training parameters'."
 msgstr ""
-"Het clustermodel bevat 0 clusters en enkel Noisepoints. U zou de Eps en "
-"MinPts parameters kunnen aanpassen."
+"Het model bevat 0 clusters en enkel Ruispunten. U zou de 'Epsilon "
+"buurtgrootte' en 'Min. kernpunten' parameters kunnen aanpassen onder "
+"'Training parameters'."
 
-#, fuzzy
 msgid ""
 "The model contains 1 cluster and no Noisepoints. You may want to change "
 "'Epsilon neighborhood size' and 'Min. core points' parameters under "
 "'Training parameters'."
 msgstr ""
-"Het clustermodel bevat 1 cluster en 0 Noisepoints. U zou de Eps en MinPts "
-"parameters kunnen aanpassen."
+"Het model bevat 0 clusters en geen Ruispunten. U zou de 'Epsilon "
+"buurtgrootte' en 'Min. kernpunten' parameters kunnen aanpassen onder "
+"'Training parameters'."
 
 msgid "The features in the model are <b>unstandardized</b>."
 msgstr "De kenmerken in het model zijn <b>ongestandaardiseerd</b>."
@@ -522,9 +524,8 @@ msgstr "Beslisboom Regressie"
 msgid "Support Vector Machine Regression"
 msgstr "Support Vector Machine Regressie"
 
-#, fuzzy
 msgid "Linear Regression"
-msgstr "Regressie"
+msgstr "Lineare Regressie"
 
 msgid "Penalty"
 msgstr "Straf"
@@ -542,10 +543,10 @@ msgid "OOB Error"
 msgstr "OOB Fout"
 
 msgid "R%1$s"
-msgstr ""
+msgstr "R%1$s"
 
 msgid "Adjusted R%1$s"
-msgstr ""
+msgstr "Aangepaste R%1$s"
 
 msgid "Please provide a target variable and at least %d feature variable(s)."
 msgstr "Geef a.u.b. een doelvariabele en minstens %d kenmerkvariabele(n)."
@@ -606,43 +607,48 @@ msgid "Train and validation: %d"
 msgstr "Train en validatie: %d"
 
 msgid "Additive Explanations for Predictions of New Cases"
-msgstr ""
+msgstr "Additieve Verklaringen voor Voorspellingen van Nieuwe Gevallen"
 
 msgid "Additive Explanations for Predictions of Test Set Cases"
-msgstr ""
+msgstr "Additieve Verklaringen voor Voorspellingen van Test Set Gevallen"
 
 msgid "Case"
-msgstr ""
+msgstr "Datapunt"
 
-#, fuzzy
 msgid "Predicted (Prob.)"
-msgstr "Voorspeld"
+msgstr "Voorspeld (Kans)"
 
 msgid "Base"
-msgstr ""
+msgstr "Basis"
 
 msgid "There was an error in computing the results for this table."
 msgstr ""
+"Er is een fout opgetreden in het uitrekenen van de resultaten voor deze "
+"tabel."
 
 msgid ""
 "Displayed values represent feature contributions to the predicted value "
 "without features (column 'Base') for the test set."
 msgstr ""
+"Weergegeven waarden vertegenwoordigen toevoegingen van de kenmerken aan de "
+"voorspelde waarde zonder kenmerken (kolom 'Basis') voor de test set."
 
 msgid ""
 "Displayed values represent feature contributions to the predicted class "
 "probability without features (column 'Base') for the test set."
 msgstr ""
+"Weergegeven waarden vertegenwoordigen toevoegingen van de kenmerken aan de "
+"voorspelde kans op een klasse zonder kenmerken (kolom 'Basis') voor de test "
+"set."
 
-#, fuzzy
 msgid "Feature Importance Metrics"
-msgstr "Belang van Kenmerken"
+msgstr "Metrieken voor Belang van Kenmerken"
 
 msgid "Mean dropout loss"
-msgstr ""
+msgstr "Gemiddelde dropout loss"
 
 msgid "Mean dropout loss is based on 50 permutations."
-msgstr ""
+msgstr "Gemiddelde dropout loss is gebaseerd op 50 permutaties."
 
 msgid "The target variable should have at least 2 classes."
 msgstr "De doelvariabele moet minstens 2 klassen bevatten."
@@ -690,30 +696,33 @@ msgid ""
 "There are one or more levels in the target variable with less than two "
 "observations."
 msgstr ""
+"Er zijn een of meer niveaus in de doel variabele met minder dan twee "
+"observaties."
 
 msgid "Box's M"
-msgstr ""
+msgstr "Box's M"
 
 msgid "Pooled Within-Class Matrices Correlations"
 msgstr "Pooled Within-Class Matricescorrelaties"
 
 msgid "Tests for Multivariate Normality"
-msgstr ""
+msgstr "Test voor Multivariate Normaliteit"
 
-#, fuzzy
 msgid "Statistic"
-msgstr "Statistische Pariteit"
+msgstr "Statistiek"
 
 msgid "Skewness"
-msgstr ""
+msgstr "Scheefheid"
 
 msgid "Kurtosis"
-msgstr ""
+msgstr "Gepiektheid"
 
 msgid ""
 "Both p-values of the skewness and kurtosis statistics should be > 0.05 to "
 "conclude multivariate normality."
 msgstr ""
+"Zowel de p-waarde van de scheefheid als die van de gepiektheid moeten > 0.05 "
+"zijn om multivariate normaliteiten te concluderen."
 
 msgid ""
 "Analysis not possible: The algorithm did not converge within the maximum "
@@ -1018,30 +1027,31 @@ msgstr "Regressie Coëfficiënten"
 msgid "Coefficient (%s)"
 msgstr "Coëfficiënten (%s)"
 
-#, fuzzy
 msgid "Standard Error"
-msgstr "Gemiddelde kwadratenfout"
+msgstr "Standaardfout"
 
 msgid "%1$s%% Confidence interval"
-msgstr ""
+msgstr "%1$s%% Betrouwbaarheidsinterval"
 
 msgid "Lower"
-msgstr ""
+msgstr "Onder"
 
 msgid "Upper"
-msgstr ""
+msgstr "Boven"
 
 msgid "The regression coefficients for numeric features are standardized."
 msgstr ""
+"De regressiecoefficiënten voor de numerieke kenmerken zijn gestandaardiseerd."
 
-#, fuzzy
 msgid "The regression coefficients are unstandardized."
-msgstr "De kenmerken in het model zijn <b>ongestandaardiseerd</b>."
+msgstr "De regressiecoefficienten zijn niet gestandaardiseerd."
 
 msgid ""
 "<b>Regression equation:</b>\n"
 "%1$s"
 msgstr ""
+"<b>Regressievergelijking:</b>\n"
+"%1$s"
 
 msgid "Network Weights"
 msgstr "Netwerk Gewichten"
