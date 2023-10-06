@@ -18,7 +18,7 @@
 mlRegressionLinear <- function(jaspResults, dataset, options, ...) {
 
   # Preparatory work
-  dataset <- .readDataRegressionAnalyses(dataset, options)
+  dataset <- .mlRegressionRegularizedReadData(dataset, options)
   .mlRegressionErrorHandling(dataset, options, type = "lm")
 
   # Check if analysis is ready to run
@@ -70,7 +70,7 @@ mlRegressionLinear <- function(jaspResults, dataset, options, ...) {
   } else {
     formula <- formula(paste(options[["target"]], "~ 0 + ", paste(options[["predictors"]], collapse = " + ")))
   }
-  fit <- lm(formula, data = trainingSet)
+  fit <- stats::lm(formula, data = trainingSet[, c(options[["target"]], options[["predictors"]])], weights = if (options[["weights"]] != "") trainingSet[, options[["weights"]]] else NULL)
   # Use the specified model to make predictions for the test set
   testFit <- predict(fit, newdata = testSet)
   # Use the specified model to make predictions for dataset
@@ -79,8 +79,8 @@ mlRegressionLinear <- function(jaspResults, dataset, options, ...) {
   result <- list()
   result[["model"]] <- fit
   result[["testMSE"]] <- mean((testFit - testSet[, options[["target"]]])^2)
-  result[["rsquared"]] <- summary(fit)$r.squared
-  result[["arsquared"]] <- summary(fit)$adj.r.squared
+  result[["rsquared"]] <- summary(fit)[["r.squared"]]
+  result[["arsquared"]] <- summary(fit)[["adj.r.squared"]]
   result[["testPred"]] <- testFit
   result[["testReal"]] <- testSet[, options[["target"]]]
   result[["ntrain"]] <- nrow(trainingSet)

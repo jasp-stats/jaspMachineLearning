@@ -29,30 +29,65 @@ Form
 {
 	info: qsTr("Linear regression allows the user to model a linear relationship between one or more features (predictors) and a continuous dependent (target) variable.")
 
-	UI.VariablesFormRegression { id: vars }
+	VariablesForm
+	{
+		AvailableVariablesList
+		{
+			name:								"variables"
+		}
+
+		AssignedVariablesList
+		{
+			id:									target
+			name:								"target"
+			title:								qsTr("Target")
+			singleVariable:						true
+			allowedColumns:						["scale"]
+			info:								qsTr("In this box, the variable that needs to be predicted should be entered.")
+		}
+
+		AssignedVariablesList
+		{
+			id:									predictors
+			name:								"predictors"
+			title:								qsTr("Features")
+			allowedColumns:						["scale", "ordinal", "nominal", "nominalText"]
+			allowAnalysisOwnComputedColumns:	false
+			info:								qsTr("In this box, the variables that provide information about the target variable should be entered.")
+		}
+
+		AssignedVariablesList
+		{
+			name:								"weights"
+			title:								qsTr("Weights")
+			singleVariable:						true
+			allowedColumns:						["scale"]
+			info:								qsTr("In this box, an optional variable containing case weights can be entered.")
+		}
+	}
 
 	Group
 	{
-		title: qsTr("Tables")
+		title:									qsTr("Tables")
 
 		TAB.ModelPerformance { }
 		TAB.ExplainPredictions { }
 
 		CheckBox
 		{
-			name: "coefTable"
-			text: qsTr("Regression coefficients")
+			name:								"coefTable"
+			text:								qsTr("Regression coefficients")
 
 			CheckBox 
 			{
-				name: "coefTableConfInt"
-				text: qsTr("Confidence interval")
-				childrenOnSameRow: true
+				name:							"coefTableConfInt"
+				text:							qsTr("Confidence interval")
+				childrenOnSameRow:				true
 
 				CIField
 				{ 
-					name: "coefTableConfIntLevel"
-					defaultValue: 95
+					name:						"coefTableConfIntLevel"
+					defaultValue:				95
 				}
 			}
 		}
@@ -60,29 +95,29 @@ Form
 
 	Group
 	{
-		title: qsTr("Plots")
+		title:									qsTr("Plots")
 
 		FIG.DataSplit { }
 		FIG.PredictivePerformance { }
 	}
 
-	UI.ExportResults { enabled:	vars.predictorCount > 0 && vars.targetCount > 0 }
+	UI.ExportResults { enabled:	predictors.count > 0 && target.count > 0 }
 	UI.DataSplit { trainingValidationSplit: false }
 
 	Section
 	{
-		title: qsTr("Training Parameters")
+		title:									qsTr("Training Parameters")
 
 		Group
 		{
-			title: qsTr("Algorithmic Settings")
+			title:								qsTr("Algorithmic Settings")
 
 			CheckBox 
 			{ 
-				name: "intercept"
-				label: qsTr("Include intercept")
-				checked: true 
-				info: qsTr("Whether to include an intercept.")
+				name:							"intercept"
+				label:							qsTr("Include intercept")
+				checked:						true 
+				info:							qsTr("Whether to include an intercept.")
 			}
 			UI.ScaleVariables { }
 			UI.SetSeed { }
@@ -90,13 +125,13 @@ Form
 
 		RadioButtonGroup
 		{
-			name:					"modelOptimization"
-			visible:				false
+			name:								"modelOptimization"
+			visible:							false
 
 			RadioButton
 			{
-				name:				"manual"
-				checked:			true
+				name:							"manual"
+				checked:						true
 			}
 		}
 	}

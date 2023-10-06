@@ -85,8 +85,6 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
 }
 
 .regularizedRegression <- function(dataset, options, jaspResults) {
-  # Import model formula from jaspResults
-  formula <- jaspResults[["formula"]]$object
   # Set model-specific parameters
   alpha <- switch(options[["penalty"]],
     "ridge" = 0,
