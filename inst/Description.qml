@@ -99,6 +99,12 @@ Description
 	}
 	Analysis
 	{
+		menu:	qsTr("Naive Bayes")
+		title:	qsTr("Naive Bayes Classification")
+		func: 	"mlClassificationNaiveBayes"
+	}
+	Analysis
+	{
 		menu:	qsTr("Neural Network")
 		title:	qsTr("Neural Network Classification")
 		func: 	"mlClassificationNeuralNetwork"

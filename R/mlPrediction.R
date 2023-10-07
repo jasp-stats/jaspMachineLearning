@@ -72,6 +72,9 @@ is.jaspMachineLearning <- function(x) {
 .mlPredictionGetModelType.svm <- function(model) {
   gettext("Support vector machine")
 }
+.mlPredictionGetModelType.naiveBayes <- function(model) {
+  gettext("Naive Bayes")
+}
 
 # S3 method to make predictions using the model
 .mlPredictionGetPredictions <- function(model, dataset) {
@@ -129,6 +132,9 @@ is.jaspMachineLearning <- function(x) {
     as.numeric(e1071:::predict.svm(model, newdata = dataset))
   }
 }
+.mlPredictionGetPredictions.naiveBayes <- function(model, dataset) {
+  as.character(e1071:::predict.naiveBayes(model, newdata = dataset, type = "class"))
+}
 
 # S3 method to make find out number of observations in training data
 .mlPredictionGetTrainingN <- function(model) {
@@ -160,6 +166,9 @@ is.jaspMachineLearning <- function(x) {
 }
 .mlPredictionGetTrainingN.svm <- function(model) {
   length(model[["fitted"]])
+}
+.mlPredictionGetTrainingN.naiveBayes <- function(model) {
+  nrow(model[["data"]])
 }
 
 # S3 method to decode the model variables in the result object
@@ -215,6 +224,11 @@ is.jaspMachineLearning <- function(x) {
   model$terms <- stats::terms(formula)
   return(model)
 }
+.decodeJaspMLobject.naiveBayes <- function(model) {
+  names(model[["isnumeric"]]) <- decodeColNames(names(model[["isnumeric"]]))
+  names(model[["tables"]]) <- decodeColNames(names(model[["tables"]]))
+  return(model)
+}
 
 .mlPredictionReadModel <- function(options) {
   if (options[["trainedModelFilePath"]] != "") {
@@ -224,7 +238,7 @@ is.jaspMachineLearning <- function(x) {
     if (!is.jaspMachineLearning(model)) {
       jaspBase:::.quitAnalysis(gettext("Error: The trained model is not created in JASP."))
     }
-    if (!(any(c("kknn", "lda", "gbm", "randomForest", "cv.glmnet", "nn", "rpart", "svm", "lm") %in% class(model)))) {
+    if (!(any(c("kknn", "lda", "gbm", "randomForest", "cv.glmnet", "nn", "rpart", "svm", "lm", "naiveBayes") %in% class(model)))) {
       jaspBase:::.quitAnalysis(gettextf("The trained model (type: %1$s) is currently not supported in JASP.", paste(class(model), collapse = ", ")))
     }
     if (model[["jaspVersion"]] != .baseCitation) {

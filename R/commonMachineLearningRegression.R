@@ -571,7 +571,7 @@
           axis.text.y = ggplot2::element_blank(),
           axis.text.x = ggplot2::element_blank()
         )
-    } else {
+    } else { # Cross-validated models require a merged training and validation set
       nTrainAndValid <- result[["nvalid"]]
       nTest <- result[["ntest"]]
       plotData <- data.frame(y = c(nTrainAndValid, nTest), x = c("Train and validation", "Test"), group = c(1, 1))
@@ -733,7 +733,7 @@
     }
   })
   if (isTryError(p)) {
-    table$setError(gettext("There was an error in computing the results for this table."))
+    table$setError(gettextf("There was an error in computing the results for this table: %1$s", .extractErrorMessage(p)))
     return()
   }
   table$setData(out)
