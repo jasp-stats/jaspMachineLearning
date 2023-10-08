@@ -21,33 +21,13 @@ import QtQuick.Layouts	1.3
 import JASP.Controls	1.0
 import JASP.Widgets		1.0
 
-Group
+CheckBox
 {
-	IntegerField
-	{
-		name:			"minObservationsForSplit"
-		text:			qsTr("Min. observations for split")
-		min:			1
-		defaultValue:	20
-		info:			qsTr("The minimum number of observations that must exist in a node in order for a split to be attempted.")
-	}
+	property bool regression: true
+	property bool enable: false
 
-	IntegerField
-	{
-		name:			"minObservationsInNode"
-		text:			qsTr("Min. observations in terminal")
-		min:			1
-		defaultValue:	7
-		info:			qsTr("The minimum number of observations in any terminal node.")
-	}
-
-	IntegerField
-	{
-		name:			"interactionDepth"
-		text:			qsTr("Max. interaction depth")
-		min:			1
-		defaultValue:	30
-		max:			30
-		info:			qsTr("Set the maximum depth of any node of the final tree.")
-	}
+	text:		regression ? qsTr("Mean squared error") : qsTr("Classification accuracy")
+	name:		"optimPlot"
+	enabled:	enable
+	info:		qsTr("For regression, Plots the cost of contraints violation against the MSE of the model. Accuracy is assessed for the training (and validation) set. For classification, plots the cost of contraints violation against the classification accuracy of the model. Accuracy is assessed for the training (and validation) set.")
 }

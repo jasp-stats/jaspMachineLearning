@@ -38,7 +38,7 @@ test_that("Class Proportions table results match", {
 test_that("Support Vector Machine Classification table results match", {
 	table <- results[["results"]][["classificationTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(30, 120, 0.966666666666667, 26))
+		list(1, 30, 120, 0.966666666666667, 26))
 })
 
 test_that("Confusion Matrix table results match", {

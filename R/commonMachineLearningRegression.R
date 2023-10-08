@@ -28,7 +28,7 @@
     "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual",      # Common
     "modelValid", "validationDataManual", "validationLeaveOneOut", "noOfFolds",           # Common
     "shrinkage", "interactionDepth", "minObservationsInNode", "distance",                 # Boosting
-    "minObservationsForSplit",                                                            # Decision tree
+    "minObservationsForSplit", "maxComplexityParameter",                                  # Decision tree
     "distanceParameterManual", "noOfNearestNeighbours", "weights", "maxNearestNeighbors", # k-Nearest neighbors
     "threshold", "algorithm", "learningRate", "lossFunction", "actfct", "layers",         # Neural network
     "maxTrainingRepetitions", "maxGenerations", "populationSize", "maxLayers",            # Neural network
@@ -36,7 +36,7 @@
     "mutationMethod", "survivalMethod", "elitismProportion", "candidates",                # Neural network
     "noOfTrees", "maxTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors",   # Random forest
     "convergenceThreshold", "penalty", "alpha", "intercept", "lambda",                    # Regularized
-    "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon"              # Support vector machine
+    "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon", "maxCost"   # Support vector machine
   )
   if (includeSaveOptions) {
     opt <- c(opt, "saveModel", "savePath")
@@ -263,8 +263,10 @@
     table$addColumnInfo(name = "layers", title = gettext("Hidden Layers"), type = "integer")
     table$addColumnInfo(name = "nodes", title = gettext("Nodes"), type = "integer")
   } else if (type == "rpart") {
+    table$addColumnInfo(name = "penalty", title = gettext("Complexity penalty"), type = "number")
     table$addColumnInfo(name = "splits", title = gettext("Splits"), type = "integer")
   } else if (type == "svm") {
+    table$addColumnInfo(name = "cost", title = gettext("Violation cost"), type = "number")
     table$addColumnInfo(name = "vectors", title = gettext("Support Vectors"), type = "integer")
   }
   # Add common columns
@@ -412,19 +414,27 @@
   } else if (type == "rpart") {
     splits <- if (!is.null(regressionResult[["model"]]$splits)) nrow(regressionResult[["model"]]$splits) else 0
     row <- data.frame(
+      penalty = regressionResult[["penalty"]],
       splits = splits,
       nTrain = nTrain,
       nTest = regressionResult[["ntest"]],
       testMSE = regressionResult[["testMSE"]]
     )
+    if (options[["modelOptimization"]] != "manual") {
+      row <- cbind(row, nValid = nValid, validMSE = regressionResult[["validMSE"]])
+    }
     table$addRows(row)
   } else if (type == "svm") {
     row <- data.frame(
+      cost = regressionResult[["cost"]],
       vectors = nrow(regressionResult[["model"]]$SV),
       nTrain = nTrain,
       nTest = regressionResult[["ntest"]],
       testMSE = regressionResult[["testMSE"]]
     )
+    if (options[["modelOptimization"]] != "manual") {
+      row <- cbind(row, nValid = nValid, validMSE = regressionResult[["validMSE"]])
+    }
     table$addRows(row)
   } else if (type == "lm") {
     row <- data.frame(

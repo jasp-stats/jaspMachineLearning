@@ -29,7 +29,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual",      # Common
     "modelValid", "validationDataManual", "validationLeaveOneOut", "noOfFolds",           # Common
 	"shrinkage", "interactionDepth", "minObservationsInNode",                             # Boosting
-    "minObservationsForSplit",                                                            # Decision tree
+    "minObservationsForSplit", "maxComplexityParameter",                                  # Decision tree
     "distanceParameterManual", "noOfNearestNeighbours", "weights", "maxNearestNeighbors", # k-Nearest neighbors
     "estimationMethod",                                                                   # Linear discriminant analysis
     "threshold", "algorithm", "learningRate", "lossFunction", "actfct", "layers",         # Neural network
@@ -37,7 +37,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod",          # Neural network
     "mutationMethod", "survivalMethod", "elitismProportion", "candidates",                # Neural network
     "noOfTrees", "maxTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors",   # Random forest
-    "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon",             # Support vector machine
+    "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon", "maxCost",  # Support vector machine
     "smoothingParameter"                                                                  # Naive Bayes
   )
   if (includeSaveOptions) {
@@ -145,8 +145,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
     table$addColumnInfo(name = "layers", title = gettext("Hidden Layers"), type = "integer")
     table$addColumnInfo(name = "nodes", title = gettext("Nodes"), type = "integer")
   } else if (type == "rpart") {
+    table$addColumnInfo(name = "penalty", title = gettext("Complexity penalty"), type = "number")
     table$addColumnInfo(name = "splits", title = gettext("Splits"), type = "integer")
   } else if (type == "svm") {
+    table$addColumnInfo(name = "cost", title = gettext("Violation cost"), type = "number")
     table$addColumnInfo(name = "vectors", title = gettext("Support Vectors"), type = "integer")
   } else if (type == "naivebayes") {
     table$addColumnInfo(name = "smoothing", title = gettext("Smoothing"), type = "number")
@@ -285,19 +287,27 @@ gettextf <- function(fmt, ..., domain = NULL) {
   } else if (type == "rpart") {
     splits <- if (!is.null(classificationResult[["model"]]$splits)) nrow(classificationResult[["model"]]$splits) else 0
     row <- data.frame(
+      penalty = classificationResult[["penalty"]],
       splits = splits,
       nTrain = nTrain,
       nTest = classificationResult[["ntest"]],
       testAcc = classificationResult[["testAcc"]]
     )
+    if (options[["modelOptimization"]] != "manual") {
+      row <- cbind(row, nValid = nValid, validAcc = classificationResult[["validAcc"]])
+    }
     table$addRows(row)
   } else if (type == "svm") {
     row <- data.frame(
+      cost = classificationResult[["cost"]],
       vectors = nrow(classificationResult[["model"]]$SV),
       nTrain = nTrain,
       nTest = classificationResult[["ntest"]],
       testAcc = classificationResult[["testAcc"]]
     )
+    if (options[["modelOptimization"]] != "manual") {
+      row <- cbind(row, nValid = nValid, validAcc = classificationResult[["validAcc"]])
+    }
     table$addRows(row)
   } else if (type == "naivebayes") {
     row <- data.frame(
@@ -1045,15 +1055,15 @@ gettextf <- function(fmt, ..., domain = NULL) {
   return(score)
 }
 
-.calcAUCScore.partClassification <- function(AUCformula, test, typeData, options, jaspResults, ...) {
-  fit <- rpart::rpart(AUCformula, data = typeData, method = "class", control = rpart::rpart.control(minsplit = options[["minObservationsForSplit"]], minbucket = options[["minObservationsInNode"]], maxdepth = options[["interactionDepth"]], cp = options[["complexityParameter"]]))
+.calcAUCScore.partClassification <- function(AUCformula, test, typeData, options, jaspResults, complexityPenalty, ...) {
+  fit <- rpart::rpart(AUCformula, data = typeData, method = "class", control = rpart::rpart.control(minsplit = options[["minObservationsForSplit"]], minbucket = options[["minObservationsInNode"]], maxdepth = options[["interactionDepth"]], cp = complexityPenalty))
   score <- max.col(predict(fit, test))
   return(score)
 }
 
-.calcAUCScore.svmClassification <- function(AUCformula, test, typeData, options, jaspResults, ...) {
+.calcAUCScore.svmClassification <- function(AUCformula, test, typeData, options, jaspResults, cost, ...) {
   fit <- e1071::svm(AUCformula,
-    data = typeData, type = "C-classification", kernel = options[["weights"]], cost = options[["cost"]], tolerance = options[["tolerance"]],
+    data = typeData, type = "C-classification", kernel = options[["weights"]], cost = cost, tolerance = options[["tolerance"]],
     epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]], gamma = options[["gamma"]], coef0 = options[["complexityParameter"]]
   )
   score <- as.numeric(predict(fit, test))

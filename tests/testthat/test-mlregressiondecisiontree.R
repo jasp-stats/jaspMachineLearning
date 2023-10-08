@@ -49,7 +49,7 @@ test_that("Predictive Performance Plot matches", {
 test_that("Decision Tree Regression table results match", {
 	table <- results[["results"]][["regressionTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(30, 120, 37, 0.10398915405807))
+		list(0.01, 30, 120, 37, 0.10398915405807))
 })
 
 test_that("Model Performance Metrics table results match", {

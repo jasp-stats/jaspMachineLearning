@@ -48,6 +48,7 @@ Form
 
 		FIG.DataSplit { }
 		FIG.PredictivePerformance { }
+		SVM.OptimPlot { regression: true; enable: !optim.isManual }
 	}
 
 	UI.ExportResults { enabled: vars.predictorCount > 0 && vars.targetCount > 0 }

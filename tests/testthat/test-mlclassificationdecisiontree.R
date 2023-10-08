@@ -39,7 +39,7 @@ test_that("Class Proportions table results match", {
 test_that("Decision Tree Classification table results match", {
 	table <- results[["results"]][["classificationTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(30, 120, 14, 0.933333333333333))
+		list(0.01, 30, 120, 14, 0.933333333333333))
 })
 
 test_that("Confusion Matrix table results match", {
