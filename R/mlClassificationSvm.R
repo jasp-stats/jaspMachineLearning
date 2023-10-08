@@ -105,8 +105,8 @@ mlClassificationSvm <- function(jaspResults, dataset, options, ...) {
         formula = formula, data = trainingSet, type = "C-classification", kernel = options[["weights"]], cost = costs[i], tolerance = options[["tolerance"]],
         epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]], gamma = options[["gamma"]], coef0 = options[["complexityParameter"]], probability = TRUE
       )
-      accuracyStore[i] <- length(which(predict(trainingFit, newdata = validationSet) == validationSet[, options[["target"]]])) / nrow(validationSet)
-      trainAccuracyStore[i] <- length(which(predict(trainingFit, newdata = trainingSet) == trainingSet[, options[["target"]]])) / nrow(trainingSet)
+      accuracyStore[i] <- length(which(as.character(predict(trainingFit, newdata = validationSet)) == as.character(validationSet[, options[["target"]]]))) / nrow(validationSet)
+      trainAccuracyStore[i] <- length(which(as.character(predict(trainingFit, newdata = trainingSet)) == as.character(trainingSet[, options[["target"]]]))) / nrow(trainingSet)
       progressbarTick()
     }
     cost <- costs[which.max(accuracyStore)]
