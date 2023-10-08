@@ -1,5 +1,26 @@
 context("Machine Learning Boosting Regression")
 
+# Test fixed model #############################################################
+options <- initMlOptions("mlRegressionBoosting")
+options$target <- "Sepal.Length"
+options$predictors <- c("Sepal.Width", "Petal.Length", "Petal.Width")
+options$modelOptimization <- "manual"
+options$holdoutData <- "holdoutManual"
+options$modelValid <- "validationManual"
+options$savePath <- ""
+options$predictionsColumn <- ""
+options$testIndicatorColumn <- ""
+options$testSetIndicatorVariable <- ""
+options$dataSplitPlot <- FALSE
+options$setSeed <- TRUE
+set.seed(1)
+results <- jaspTools::runAnalysis("mlRegressionBoosting", "iris.csv", options)
+
+table <- results[["results"]][["regressionTable"]][["data"]]
+jaspTools::expect_equal_tables(table,
+		list("Gaussian", 30, 120, 0.1, 0.10476507592285, 100))
+
+# Test optimized model #########################################################
 options <- initMlOptions("mlRegressionBoosting")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
@@ -87,7 +108,7 @@ test_that("Evaluation Metrics table results match", {
 })
 
 test_that("Feature Contributions to Predictions for Test Set Cases table results match", {
-	skip("Need to figure out why this fails")
+	skip("Does not reproduce on machine KD <-> GitHub Actions")
 	table <- results[["results"]][["tableShap"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list(-0.00670014251730083, 0, 0.12999822317264, 0, -0.0163668300906356,

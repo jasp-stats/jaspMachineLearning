@@ -1,5 +1,21 @@
 context("Machine Learning K-Means Clustering")
 
+# Test fixed model #############################################################
+options <- initMlOptions("mlClusteringKMeans")
+options$predictors <- list("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
+options$modelOptimization <- "manual"
+options$predictionsColumn <- ""
+options$setSeed <- TRUE
+options$tableClusterInformation <- FALSE
+options$algorithm <- "Hartigan-Wong"
+set.seed(1)
+results <- jaspTools::runAnalysis("mlClusteringKMeans", "iris.csv", options)
+
+table <- results[["results"]][["clusteringTable"]][["data"]]
+jaspTools::expect_equal_tables(table,
+		list(3, 150, 0.766965839400417, 162.89, 199.02, 0.46))
+
+# Test optimized model #########################################################
 options <- initMlOptions("mlClusteringKMeans")
 options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
     "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 

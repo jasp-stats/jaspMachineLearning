@@ -1,5 +1,6 @@
 context("Machine Learning Naive Bayes Classification")
 
+# Test fixed model #############################################################
 options <- initMlOptions("mlClassificationNaiveBayes")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE

@@ -1,5 +1,26 @@
 context("Machine Learning Random Forest Regression")
 
+# Test fixed model #############################################################
+options <- initMlOptions("mlRegressionRandomForest")
+options$target <- "Sepal.Length"
+options$predictors <- c("Sepal.Width", "Petal.Length", "Petal.Width")
+options$modelOptimization <- "manual"
+options$holdoutData <- "holdoutManual"
+options$modelValid <- "validationManual"
+options$savePath <- ""
+options$predictionsColumn <- ""
+options$testIndicatorColumn <- ""
+options$testSetIndicatorVariable <- ""
+options$setSeed <- TRUE
+options$dataSplitPlot <- FALSE
+set.seed(1)
+results <- jaspTools::runAnalysis("mlRegressionRandomForest", "iris.csv", options)
+
+table <- results[["results"]][["regressionTable"]][["data"]]
+jaspTools::expect_equal_tables(table,
+		list(30, 120, 0.154553780715417, 1, 0.0939947930433144, 100))
+
+# Test optimized model #########################################################
 options <- initMlOptions("mlRegressionRandomForest")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
@@ -91,7 +112,7 @@ test_that("Evaluation Metrics table results match", {
 })
 
 test_that("Feature Contributions to Predictions for Test Set Cases table results match", {
-	skip("Need to figure out why this fails")
+	skip("Does not reproduce on machine KD <-> GitHub Actions")
 	table <- results[["results"]][["tableShap"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list(-0.0980762484150122, 0.0363452082600033, 0.14256335085434, -0.0150232807943395,

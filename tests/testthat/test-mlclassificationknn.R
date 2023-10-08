@@ -1,5 +1,27 @@
 context("Machine Learning KNN Classification")
 
+# Test fixed model #########################################################
+options <- initMlOptions("mlClassificationKnn")
+options$holdoutData <- "holdoutManual"
+options$modelOptimization <- "manual"
+options$modelValid <- "validationManual"
+options$predictionsColumn <- ""
+options$predictors <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
+options$savePath <- ""
+options$setSeed <- TRUE
+options$target <- "Species"
+options$testIndicatorColumn <- ""
+options$testSetIndicatorVariable <- ""
+options$dataSplitPlot <- FALSE
+options$confusionTable <- FALSE
+set.seed(1)
+results <- jaspTools::runAnalysis("mlClassificationKnn", "iris.csv", options)
+
+table <- results[["results"]][["classificationTable"]][["data"]]
+jaspTools::expect_equal_tables(table,
+		list("Euclidean", 30, 120, 3, 0.9, "rectangular"))
+
+# Test optimized model #########################################################
 options <- initMlOptions("mlClassificationKnn")
 options$addPredictions <- FALSE
 options$addIndicator <- FALSE

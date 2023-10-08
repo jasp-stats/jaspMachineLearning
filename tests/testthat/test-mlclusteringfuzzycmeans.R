@@ -1,5 +1,20 @@
 context("Machine Learning Fuzzy C-Means Clustering")
 
+# Test fixed model #############################################################
+options <- initMlOptions("mlClusteringFuzzyCMeans")
+options$predictors <- list("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
+options$modelOptimization <- "manual"
+options$predictionsColumn <- ""
+options$setSeed <- TRUE
+options$tableClusterInformation <- FALSE
+set.seed(1)
+results <- jaspTools::runAnalysis("mlClusteringFuzzyCMeans", "iris.csv", options)
+
+table <- results[["results"]][["clusteringTable"]][["data"]]
+jaspTools::expect_equal_tables(table,
+		list(3, 150, 0.589422839657918, 220.57, 256.7, 0.32))
+
+# Test optimized model #########################################################
 options <- initMlOptions("mlClusteringFuzzyCMeans")
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""

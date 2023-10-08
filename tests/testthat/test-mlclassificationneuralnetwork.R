@@ -1,5 +1,6 @@
 context("Machine Learning Neural Network Classification")
 
+# Test fixed model #############################################################
 options <- initMlOptions("mlClassificationNeuralNetwork")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE

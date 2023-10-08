@@ -1,5 +1,26 @@
 context("Machine Learning KNN Regression")
 
+# Test fixed model #############################################################
+options <- initMlOptions("mlRegressionKnn")
+options$target <- "Sepal.Length"
+options$predictors <- c("Sepal.Width", "Petal.Length", "Petal.Width")
+options$modelOptimization <- "manual"
+options$holdoutData <- "holdoutManual"
+options$modelValid <- "validationManual"
+options$savePath <- ""
+options$predictionsColumn <- ""
+options$testIndicatorColumn <- ""
+options$testSetIndicatorVariable <- ""
+options$dataSplitPlot <- FALSE
+options$setSeed <- TRUE
+set.seed(1)
+results <- jaspTools::runAnalysis("mlRegressionKnn", "iris.csv", options)
+
+table <- results[["results"]][["regressionTable"]][["data"]]
+jaspTools::expect_equal_tables(table,
+		list("Euclidean", 30, 120, 3, 0.186888888888889, "rectangular"))
+
+# Test optimized model #########################################################
 options <- initMlOptions("mlRegressionKnn")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE

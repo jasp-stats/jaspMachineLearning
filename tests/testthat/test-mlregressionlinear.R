@@ -1,5 +1,6 @@
 context("Machine Learning Linear Regression")
 
+# Test fixed model #############################################################
 options <- initMlOptions("mlRegressionLinear")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE

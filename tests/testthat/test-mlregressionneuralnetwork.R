@@ -1,5 +1,6 @@
 context("Machine Learning Neural Network Regression")
 
+# Test fixed model #############################################################
 options <- initMlOptions("mlRegressionNeuralNetwork")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
