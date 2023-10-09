@@ -54,7 +54,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     dataset[, options[["predictors"]]] <- .scaleNumericData(dataset[, options[["predictors"]], drop = FALSE])
   }
   if (options[["target"]] != "") {
-    dataset[, options[["target"]]] <- factor(dataset[, options[["target"]]])
+    dataset[, options[["target"]]] <- factor(dataset[, options[["target"]]], ordered = FALSE)
   }
   return(dataset)
 }
