@@ -505,12 +505,14 @@ gettextf <- function(fmt, ..., domain = NULL) {
     predictions <- as.factor(max.col(predict(fit, newdata = grid)))
     levels(predictions) <- unique(dataset[, options[["target"]]])
   } else if (type == "rpart") {
-    fit <- rpart::rpart(formula, data = dataset, method = "class", control = rpart::rpart.control(minsplit = options[["minObservationsForSplit"]], minbucket = options[["minObservationsInNode"]], maxdepth = options[["interactionDepth"]], cp = options[["complexityParameter"]]))
+    classificationResult <- jaspResults[["classificationResult"]]$object
+    fit <- rpart::rpart(formula, data = dataset, method = "class", control = rpart::rpart.control(minsplit = options[["minObservationsForSplit"]], minbucket = options[["minObservationsInNode"]], maxdepth = options[["interactionDepth"]], cp = classificationResult[["penalty"]]))
     predictions <- as.factor(max.col(predict(fit, newdata = grid)))
     levels(predictions) <- unique(dataset[, options[["target"]]])
   } else if (type == "svm") {
+    classificationResult <- jaspResults[["classificationResult"]]$object
     fit <- e1071::svm(formula,
-      data = dataset, method = "C-classification", kernel = options[["weights"]], cost = options[["cost"]], tolerance = options[["tolerance"]],
+      data = dataset, method = "C-classification", kernel = options[["weights"]], cost = classificationResult[["cost"]], tolerance = options[["tolerance"]],
       epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]], gamma = options[["gamma"]], coef0 = options[["complexityParameter"]]
     )
     predictions <- predict(fit, newdata = grid)
