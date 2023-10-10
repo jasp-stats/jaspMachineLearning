@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-10-09 17:10+0000\n"
+"PO-Revision-Date: 2023-10-10 20:25+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/es/>\n"
@@ -1624,56 +1624,60 @@ msgid ""
 "Plots the number of trees against the out-of-bag mean squared error "
 "(regression) or accuracy (classification) of the model."
 msgstr ""
+"Representa gráficamente el número de árboles frente al error cuadrado medio "
+"\"descubierto el pastel\" (en la regresión) o a la precisión (en la "
+"clasificación) del modelo."
 
-#, fuzzy
 msgctxt "CoefficientTable|"
 msgid "Coefficients"
 msgstr "Coeficientes"
 
 msgctxt "CoefficientTable|"
 msgid "Shows a table containing the regression coefficients."
-msgstr ""
+msgstr "Muestra la tabla que contiene los coeficientes de la regresión."
 
 msgctxt "CoefficientTable|"
 msgid "Confidence interval"
-msgstr ""
+msgstr "Intervalo de confianza"
 
 msgctxt "CoefficientTable|"
 msgid "Display confidence intervals around estimated regression coefficients."
 msgstr ""
+"Presenta los intervalos de confianza alrededor de los coeficientes de la "
+"regresión."
 
 msgctxt "CoefficientTable|"
 msgid "The confidence level for the interval."
-msgstr ""
+msgstr "El nivel de confianza del intervalo."
 
 msgctxt "CoefficientTable|"
 msgid "Display equation"
-msgstr ""
+msgstr "Presentar la ecuación"
 
 msgctxt "CoefficientTable|"
 msgid ""
 "Display the regression equation with the estimated values of the "
 "coefficients."
 msgstr ""
+"Presentar la ecuación de regresión con los valores estimados para los "
+"coeficientes."
 
 msgctxt "Intercept|"
 msgid "Include intercept"
-msgstr ""
+msgstr "Incluir constante"
 
 msgctxt "Intercept|"
 msgid "Whether to include an intercept in the regression formula."
-msgstr ""
+msgstr "Si incluir una constante en la fórmula de la regresión."
 
-#, fuzzy
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "Target"
 msgstr "Objetivo"
 
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "In this box, the variable that needs to be predicted should be entered."
-msgstr ""
+msgstr "En esta caja debe introducirse la variable que se necesita predecir."
 
-#, fuzzy
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "Features"
 msgstr "Características"
@@ -1683,8 +1687,9 @@ msgid ""
 "In this box, the variables that provide information about the target "
 "variable should be entered."
 msgstr ""
+"En esta caja deben introducirse las variables que proporcionan información "
+"sobre la variable objetivo."
 
-#, fuzzy
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "Weights"
 msgstr "Ponderaciones"
@@ -1693,82 +1698,77 @@ msgctxt "VariablesFormRegularizedRegression|"
 msgid ""
 "In this box, an optional variable containing case weights can be entered."
 msgstr ""
+"En esta caja se puede introducir una variable opcional que contenga las "
+"ponderaciones de cada caso."
 
 msgctxt "AlgorithmicSettings|"
 msgid "Radial"
 msgstr "Radial"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Polynomial"
 msgstr "Polinómico"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Sigmoid"
-msgstr "Sigmoide"
+msgstr "Sigmoidal"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
 "The kernel used in training and predicting. Possible kernels are 'linear', "
 "'radial', 'polynomial', and 'sigmoid'."
 msgstr ""
+"El núcleo utilizado en el adiestramiento y la predicción. Los posibles "
+"núcleos son 'lineal', 'radial', 'polinómico' y 'sigmoidal'."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Degree"
 msgstr "Grado"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The degree of polynomial used."
-msgstr ""
+msgstr "El grado del polinomio utilizado."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Gamma parameter"
 msgstr "Parámetro Gamma"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The gamma parameter used."
-msgstr ""
+msgstr "El parámetro Gamma utilizado."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "r parameter"
 msgstr "parámetro r"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The complexity parameter used."
-msgstr ""
+msgstr "El parámetro de complejidad utilizado."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Cost of constraints violation"
 msgstr "Coste del incumplimiento de las restricciones"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The 'C'-constant of the regularization term."
-msgstr ""
+msgstr "La constante 'C' del término de regularización."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Tolerance of termination criterion"
 msgstr "Tolerancia del criterio de finalización"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The tolerance of termination criterion."
-msgstr ""
+msgstr "La tolerancia del criterio de finalización."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Epsilon"
 msgstr "Épsilon"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The epsilon parameter in the insensitive-loss function."
-msgstr ""
+msgstr "El parámetro épsilon en la función de pérdida insensible."
 
-#, fuzzy
 msgctxt "SupportVectors|"
 msgid "Support vectors"
 msgstr "Vectores de soporte"
@@ -1778,8 +1778,9 @@ msgid ""
 "Shows a table containing the data (points) indicated as support vectors by "
 "the algorithm."
 msgstr ""
+"Muestra una tabla que contiene los datos (puntos) indicados como vectores de "
+"soporte por el algoritmo."
 
-#, fuzzy
 msgctxt "AndrewsCurve|"
 msgid "Andrews curves"
 msgstr "Curvas de Andrews"
@@ -1789,6 +1790,8 @@ msgid ""
 "Is a way to visualize structure in high-dimensional data. Lines that cluster "
 "are observations that are more alike."
 msgstr ""
+"Es un modo de visualizar la estructura en los datos de alta dimensión. Las "
+"lineas que se agrupan son observaciones que se parecen más."
 
 msgctxt "ClusterDensity|"
 msgid "Cluster densities"
@@ -1799,6 +1802,8 @@ msgid ""
 "For each feature variable, generates a plot showing the overlapping "
 "densities for the clusters."
 msgstr ""
+"Para cada variable de característica, genera un gráfico que muestra las "
+"densidades superpuestas para los conglomerados."
 
 msgctxt "ClusterDensity|"
 msgid "Group into one figure"
@@ -1807,8 +1812,8 @@ msgstr "Agrupar en un gráfico"
 msgctxt "ClusterDensity|"
 msgid "Group the density plots per feature into a single figure."
 msgstr ""
+"Agrupa los gráficos de densidades por característica, en un único gráfico."
 
-#, fuzzy
 msgctxt "ClusterMatrix|"
 msgid "Cluster matrix plot"
 msgstr "Gráfico de la matriz de los conglomerados"
@@ -1818,8 +1823,9 @@ msgid ""
 "Creates a *n* x *n* plot that visualizes to which cluster every observation "
 "belongs according to the current model."
 msgstr ""
+"Genera un gráfico *n* x *n* que visualiza a qué conglomerado pertenece cada "
+"observación, de acuerdo con el modelo vigente."
 
-#, fuzzy
 msgctxt "ClusterMeans|"
 msgid "Cluster means"
 msgstr "Medias de los conglomerados"
@@ -1829,8 +1835,9 @@ msgid ""
 "Creates a plot that visualizes and compares the mean of the feature "
 "variables in each cluster."
 msgstr ""
+"Genera un gráfico que visualiza y compara la media de las variables de "
+"características en cada conglomerado."
 
-#, fuzzy
 msgctxt "ClusterMeans|"
 msgid "Display barplot"
 msgstr "Mostrar gráfico de barras"
@@ -1838,17 +1845,16 @@ msgstr "Mostrar gráfico de barras"
 msgctxt "ClusterMeans|"
 msgid "Transform the cluster mean figure into a barplot."
 msgstr ""
+"Transformar el gráfico de la media de conglomerados en un gráfico de barras."
 
-#, fuzzy
 msgctxt "ClusterMeans|"
 msgid "Group into one figure"
 msgstr "Agrupar en un gráfico"
 
 msgctxt "ClusterMeans|"
 msgid "Group the plots per feature into a single figure."
-msgstr ""
+msgstr "Agrupa los gráficos por característica en un único gráfico."
 
-#, fuzzy
 msgctxt "DataSplit|"
 msgid "Data split"
 msgstr "Separador de datos"
@@ -1857,8 +1863,9 @@ msgctxt "DataSplit|"
 msgid ""
 "Shows how the data is split into training (and validation), and test set."
 msgstr ""
+"Muestra cómo se separan los datos entre adiestramiento (y validación) y "
+"conjunto de contraste."
 
-#, fuzzy
 msgctxt "DecisionBoundary|"
 msgid "Decision boundary matrix"
 msgstr "Matriz límite de decisión"
@@ -1869,6 +1876,9 @@ msgid ""
 "classified if predicted through the current model. Boundaries between "
 "classes are visualized. Can only be made for numeric features."
 msgstr ""
+"Genera un gráfico *n* x *n* que visualiza cómo se clasificaría cada "
+"observación si se predice mediante el modelo vigente. Se visualizan los "
+"límites entre clases. Solo se puede hacer para características numéricas."
 
 msgctxt "DecisionBoundary|"
 msgid "Legend"
@@ -1898,8 +1908,11 @@ msgid ""
 "optimal number of clusters. The plot shows three curves using AIC, BIC, and "
 "'elbow method' optimization."
 msgstr ""
+"Genera un gráfico con la suma de cuadrados total Dentro en el eje y, más el "
+"número de conglomerados en el eje x. Se puede utilizar este gráfico para "
+"determinar el número óptimo de conglomerados. El gráfico presenta tres "
+"curvas usando AIC, BIC, y la optimización del 'método del codo'."
 
-#, fuzzy
 msgctxt "PredictivePerformance|"
 msgid "Predictive performance"
 msgstr "Capacidad predictiva"
@@ -1909,8 +1922,9 @@ msgid ""
 "Plots the true values of the observations in the test set against their "
 "predicted values."
 msgstr ""
+"Representa los valores verdaderos de las observaciones en el conjunto de "
+"contraste, frente a sus valores predichos."
 
-#, fuzzy
 msgctxt "RocCurve|"
 msgid "ROC curves"
 msgstr "Curvas ROC"
@@ -1918,11 +1932,12 @@ msgstr "Curvas ROC"
 msgctxt "RocCurve|"
 msgid "Displays ROC curves for each class predicted against all other classes."
 msgstr ""
+"Muestra las curvas ROC para cada clase predicha, frente a todas las otras "
+"clases."
 
-#, fuzzy
 msgctxt "Tsne|"
 msgid "t-SNE cluster plot"
-msgstr "gráfico de conglomerados t-SNE"
+msgstr "Gráfico de Conglomerados t-SNE"
 
 msgctxt "Tsne|"
 msgid ""
@@ -1998,7 +2013,6 @@ msgctxt "ClusterInfo|"
 msgid "Adds a row with the silhouette score of each cluster to the table."
 msgstr ""
 
-#, fuzzy
 msgctxt "ClusterInfo|"
 msgid "Centers"
 msgstr "Centros"
@@ -2009,7 +2023,6 @@ msgid ""
 "center can be the mean, median or mode depending on the clustering algorithm."
 msgstr ""
 
-#, fuzzy
 msgctxt "ClusterInfo|"
 msgid "Between sum of squares"
 msgstr "Suma de cuadrados Entre"
@@ -2020,10 +2033,9 @@ msgid ""
 "table."
 msgstr ""
 
-#, fuzzy
 msgctxt "ClusterInfo|"
 msgid "Total sum of squares"
-msgstr "Suma de cuadrados total"
+msgstr "Suma de cuadrados Totales"
 
 msgctxt "ClusterInfo|"
 msgid ""
@@ -2034,7 +2046,6 @@ msgctxt "ClusterMeans|"
 msgid "Shows a table containing the cluster means for each feature variable."
 msgstr ""
 
-#, fuzzy
 msgctxt "ConfusionMatrix|"
 msgid "Confusion matrix"
 msgstr "Matriz de desorden"
@@ -2045,7 +2056,6 @@ msgid ""
 "classes. Used to assess model accuracy."
 msgstr ""
 
-#, fuzzy
 msgctxt "ConfusionMatrix|"
 msgid "Display proportions"
 msgstr "Mostrar proporciones"
