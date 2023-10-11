@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-10-11 15:46+0000\n"
+"PO-Revision-Date: 2023-10-11 15:47+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/gl/>\n"
@@ -2102,14 +2102,13 @@ msgid ""
 "the F1-score, support, AUC (area under the ROC curve) and more."
 msgstr ""
 
-#, fuzzy
 msgctxt "ClusterDetermination|"
 msgid "Cluster Determination"
 msgstr "Determinación dos Conglomerados"
 
 msgctxt "ClusterDetermination|"
 msgid "Choose how to determine the number of clusters in the model."
-msgstr ""
+msgstr "Elixe como determinar o número de conglomerados no modelo."
 
 #, fuzzy
 msgctxt "ClusterDetermination|"
