@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-10-06 08:17\n"
-"PO-Revision-Date: 2023-10-06 15:40+0000\n"
+"PO-Revision-Date: 2023-10-09 17:10+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/gl/>\n"
@@ -1037,30 +1037,32 @@ msgstr "Coeficientes da Regresión"
 msgid "Coefficient (%s)"
 msgstr "Coeficiente (%s)"
 
-#, fuzzy
 msgid "Standard Error"
-msgstr "Erro Cadrado Medio"
+msgstr "Erro Padrón"
 
 msgid "%1$s%% Confidence interval"
 msgstr "Intervalo co %1$s%% de Confianza"
 
 msgid "Lower"
-msgstr ""
+msgstr "Inferior"
 
 msgid "Upper"
-msgstr ""
+msgstr "Superior"
 
 msgid "The regression coefficients for numeric features are standardized."
 msgstr ""
+"Os coeficientes de regresión para características numéricas están "
+"tipificados."
 
-#, fuzzy
 msgid "The regression coefficients are unstandardized."
-msgstr "As características no modelo están <b>sen tipificar</b>."
+msgstr "Os coeficientes de regresión están sen tipificar."
 
 msgid ""
 "<b>Regression equation:</b>\n"
 "%1$s"
 msgstr ""
+"<b>Ecuación de regresión:</b>\n"
+"%1$s"
 
 msgid "Network Weights"
 msgstr "Ponderacións da Rede"
@@ -1081,7 +1083,7 @@ msgid "binary step"
 msgstr "paso binario"
 
 msgid "logistic sigmoid"
-msgstr "sigmoide loxística"
+msgstr "Sigmoide loxística"
 
 msgid "sine"
 msgstr "seno"
@@ -1144,7 +1146,7 @@ msgid "Binary"
 msgstr "Binario"
 
 msgid "Logistic Sigmoid"
-msgstr "Sigmoide Loxística"
+msgstr "Sigmoide loxística"
 
 msgid "Sine"
 msgstr "Seno"
