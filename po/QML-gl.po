@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-10-11 15:38+0000\n"
+"PO-Revision-Date: 2023-10-11 15:39+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/gl/>\n"
@@ -56,7 +56,7 @@ msgstr "Regresión de Potenciación"
 
 msgctxt "Description|"
 msgid "Hierarchical Clustering"
-msgstr "Conglomerados Xerárquicos"
+msgstr "Conglomeración Xerárquica"
 
 msgctxt "Description|"
 msgid "K-Nearest Neighbors Regression"
@@ -92,7 +92,7 @@ msgstr "Linear Regularizado"
 
 msgctxt "Description|"
 msgid "Clustering"
-msgstr "Conglomerados"
+msgstr "Conglomeración"
 
 msgctxt "Description|"
 msgid "Linear Discriminant Classification"
