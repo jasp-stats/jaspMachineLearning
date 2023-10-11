@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-10-10 20:25+0000\n"
+"PO-Revision-Date: 2023-10-11 15:49+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/gl/>\n"
@@ -56,7 +56,7 @@ msgstr "Regresión de Potenciación"
 
 msgctxt "Description|"
 msgid "Hierarchical Clustering"
-msgstr "Conglomerados Xerárquicos"
+msgstr "Conglomeración Xerárquica"
 
 msgctxt "Description|"
 msgid "K-Nearest Neighbors Regression"
@@ -84,7 +84,7 @@ msgstr "Medias C Borrosas"
 
 msgctxt "Description|"
 msgid "Random Forest Clustering"
-msgstr "Conglomerados de Bosques Aleatorios"
+msgstr "Conglomeración de Bosques Aleatorios"
 
 msgctxt "Description|"
 msgid "Regularized Linear"
@@ -92,7 +92,7 @@ msgstr "Linear Regularizado"
 
 msgctxt "Description|"
 msgid "Clustering"
-msgstr "Conglomerados"
+msgstr "Conglomeración"
 
 msgctxt "Description|"
 msgid "Linear Discriminant Classification"
@@ -120,11 +120,11 @@ msgstr "Clasificación de Bosques Aleatorios"
 
 msgctxt "Description|"
 msgid "Density-Based Clustering"
-msgstr "Conglomerados Baseados na Densidade"
+msgstr "Conglomeración Baseada na Densidade"
 
 msgctxt "Description|"
 msgid "Fuzzy C-Means Clustering"
-msgstr "Conglomerados con Medias C Borrosas"
+msgstr "Conglomeración con Medias C Borrosas"
 
 msgctxt "DataSplit|"
 msgid "Sample"
@@ -272,7 +272,7 @@ msgid ""
 "regression, classification, and clustering"
 msgstr ""
 "Analizar a relación entre as variables que utilizan métodos baseados en "
-"datos para análises de regresión, de clasificación e de conglomerados"
+"datos para análises de regresión, de clasificación e de conglomeración"
 
 msgctxt "Description|"
 msgid "Regression"
@@ -692,7 +692,7 @@ msgstr "Baseado na Veciñanza"
 
 msgctxt "Description|"
 msgid "Neighborhood-Based Clustering"
-msgstr "Conglomerados Baseados na Veciñanza"
+msgstr "Conglomeración Baseada na Veciñanza"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Tables"
@@ -1143,8 +1143,8 @@ msgid ""
 "(and validation) set."
 msgstr ""
 "Para a regresión, representa graficamente o número de veciños máis próximos "
-"fronte ao ECM (MSE) do modelo; e avalíase a precisión do conxunto de ensaio ("
-"e validación). Para a clasificación, representa graficamente o número de "
+"fronte ao ECM (MSE) do modelo; e avalíase a precisión do conxunto de ensaio "
+"(e validación). Para a clasificación, representa graficamente o número de "
 "veciños máis próximos fronte á precisión na clasificación do modelo; e "
 "avalíase a precisión do conxunto de ensaio (e validación)."
 
@@ -2102,16 +2102,14 @@ msgid ""
 "the F1-score, support, AUC (area under the ROC curve) and more."
 msgstr ""
 
-#, fuzzy
 msgctxt "ClusterDetermination|"
 msgid "Cluster Determination"
 msgstr "Determinación dos Conglomerados"
 
 msgctxt "ClusterDetermination|"
 msgid "Choose how to determine the number of clusters in the model."
-msgstr ""
+msgstr "Elixe como determinar o número de conglomerados no modelo."
 
-#, fuzzy
 msgctxt "ClusterDetermination|"
 msgid "Fixed"
 msgstr "Fixo"
@@ -2121,8 +2119,10 @@ msgid ""
 "Enables you to generate a fixed amount of clusters. This allows you to "
 "generate your own specified number of clusters, and thus, optimize manually."
 msgstr ""
+"Habilita que xeres unha cantidade fixa de conglomerados. Isto permite que "
+"xeres o teu propio número específico de conglomerados, e así optimizar "
+"manualmente."
 
-#, fuzzy
 msgctxt "ClusterDetermination|"
 msgid "Clusters"
 msgstr "Conglomerados"
