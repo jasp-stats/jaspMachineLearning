@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-10-06 15:40+0000\n"
+"PO-Revision-Date: 2023-10-10 20:25+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/es/>\n"
@@ -1065,6 +1065,10 @@ msgid ""
 "option results in standard knn, while the other options expand the algorithm "
 "by weighing the nearest neighbors. See also the kknn package."
 msgstr ""
+"Establece el esquema de ponderaciones para los vecinos más cercanos. La "
+"opción rectangular predeterminada da como resultado un típico knn, mientras "
+"que las otras opciones amplían el algoritmo ponderando los vecinos más "
+"cercanos. Consulta también el paquete kknn."
 
 msgctxt "AlgorithmicSettings|"
 msgid "Distance"
@@ -1083,6 +1087,9 @@ msgid ""
 "The distance metric to be used when determining the similarity between "
 "nearest neighbors. Can be either Euclidean or Manhattan distance."
 msgstr ""
+"La métrica de la distancia que se va a utilizar cuando se determine la "
+"similitud entre los vecinos más cercanos. Puede ser la distancia Euclídea o "
+"Manhattan."
 
 msgctxt "ModelOptimization|"
 msgid "Number of Nearest Neighbors"
@@ -1091,6 +1098,8 @@ msgstr "Número de Vecinos Más Cercanos"
 msgctxt "ModelOptimization|"
 msgid "Enables you to use a user-specified number of nearest neighbors."
 msgstr ""
+"Te permite utilizar un número especificado por el usuario, para los vecinos "
+"más cercanos."
 
 msgctxt "ModelOptimization|"
 msgid "Nearest neighbors"
@@ -1098,31 +1107,32 @@ msgstr "Vecinos más próximos"
 
 msgctxt "ModelOptimization|"
 msgid "The number of nearest neighbors to be used."
-msgstr ""
+msgstr "El número de vecinos más cercanos que se va a utilizar."
 
 msgctxt "ModelOptimization|"
 msgid ""
 "Enables you to optimize the prediction error on a validation data set with "
 "respect to the number of nearest neighbors."
 msgstr ""
+"Te permite optimizar el error de predicción en un conjunto de datos de "
+"comprobación, respecto al número de vecinos más cercanos."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Max. nearest neighbors"
-msgstr "Máx. vecinos más próximos"
+msgstr "Máx. vecinos más cercanos"
 
 msgctxt "ModelOptimization|"
 msgid ""
 "Sets the maximum number of possible nearest neighbors to be considered. At "
 "default, this is set to 10."
 msgstr ""
+"Establece el número máximo de posibles vecinos más cercanos a considerar. "
+"Por defecto, se establece en 10."
 
-#, fuzzy
 msgctxt "OptimPlot|"
 msgid "Mean squared error"
 msgstr "Error cuadrado medio"
 
-#, fuzzy
 msgctxt "OptimPlot|"
 msgid "Classification accuracy"
 msgstr "Precisión de la clasificación"
@@ -1135,8 +1145,13 @@ msgid ""
 "classification accuracy of the model. Accuracy is assessed for the training "
 "(and validation) set."
 msgstr ""
+"Para la regresión, representa gráficamente el número de vecinos más cercanos "
+"frente al ECM (MSE) del modelo; y se evalúa la precisión del conjunto de "
+"adiestramiento (y validación). Para la clasificación, representa "
+"gráficamente el número de vecinos más cercanos frente a la precisión en la "
+"clasificación del modelo; y se evalúa la precisión del conjunto de "
+"adiestramiento (y validación)."
 
-#, fuzzy
 msgctxt "WeightFunction|"
 msgid "Weight function"
 msgstr "Función de ponderación"
@@ -1144,47 +1159,40 @@ msgstr "Función de ponderación"
 msgctxt "WeightFunction|"
 msgid "Shows how the weights are assigned as a function of the distance."
 msgstr ""
+"Muestra cómo se asignan las ponderaciones como una función de la distancia."
 
-#, fuzzy
 msgctxt "ActivationFunctionPlot|"
 msgid "Activation function"
 msgstr "Función de activación"
 
 msgctxt "ActivationFunctionPlot|"
 msgid "Creates a plot of the activation function."
-msgstr ""
+msgstr "Genera un gráfico de la función de activación."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Activation function"
 msgstr "Función de activación"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Linear"
 msgstr "Lineal"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Binary"
 msgstr "Binario"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Logistic sigmoid"
-msgstr "Sigmoide Logística"
+msgstr "Sigmoide logística"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Sine"
 msgstr "Seno"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Inverse tangent"
 msgstr "Tangente inversa"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Hyperbolic tangent"
 msgstr "Tangente hiperbólica"
@@ -1201,7 +1209,6 @@ msgctxt "AlgorithmicSettings|"
 msgid "Softsign"
 msgstr "Softsign"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "ELU"
 msgstr "ELU"
@@ -1243,16 +1250,32 @@ msgid ""
 "- Gaussian: *f(x) = e * (-x^2)*\n"
 "- GeLU: *f(x) = 0.5 * x * (1 + tanh(sqrt(2 / pi) * (x + 0.044715 * x^3)))*"
 msgstr ""
+"Establece la función de activación para la señal en cada estrato oculto. Las "
+"opciones disponibles son:\n"
+"- Lineal: *f(x) = x*\n"
+"- Binaria: *f(x) = 0 if x < 0, 1 if x > 0\n"
+"- Sigmoide logística: *f(x) = 1 / (1 + e^(-x))*\n"
+"- Seno: *f(x) = sin(x)*\n"
+"- Coseno: *f(x) = cos(x)*\n"
+"- Tangente inversa: *f(x) = arctan(x)*\n"
+"- Tangente hiperbólica: *f(x) = tanh(x)*\n"
+"- ReLU: *f(x) =  0 if x < 0, x if x > 0*\n"
+"- Softplus: *f(x) = log(1 + e^x)*\n"
+"- Softsign: *f(x) = x / (abs(x) + 1)*\n"
+"- ELU: *f(x) = e^x - 1 if x <= 0, x if x > 0*\n"
+"- LReLU: *f(x) = 0.01 * x if x < 0, x if x > 0*\n"
+"- SiLU: *f(x) = x / (1 + e^(-x))*\n"
+"- Mish: *f(x) = x * tanh(log(1 + e^x))*\n"
+"- Normal: *f(x) = e * (-x^2)*\n"
+"- GeLU: *f(x) = 0.5 * x * (1 + tanh(sqrt(2 / pi) * (x + 0.044715 * x^3)))*"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Algorithm"
 msgstr "Algoritmo"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Backpropagation"
-msgstr "Propagación cara atrás"
+msgstr "Propagación hacia atrás"
 
 msgctxt "AlgorithmicSettings|"
 msgid "rprop+"
@@ -1281,8 +1304,16 @@ msgid ""
 "algorithm that modifies the learning rate associated with the smallest "
 "learning rate itself."
 msgstr ""
+"Establece el algoritmo para el adiestramiento de la red. La opción de "
+"propagación hacia atrás es la típica de las redes neuronales de "
+"adiestramiento, pero otras opciones son `rprop+` (predeterminada) para la "
+"propagación hacia atrás resiliente con trazado hacia atrás, `rprop-` para la "
+"propagación hacia atrás resiliente sin trazado hacia atrás, `gprop-sag` para "
+"el algoritmo globalmente convergente que modifica la tasa de aprendizaje "
+"asociada al gradiente absoluto más pequeño, o `gprop-slr` para el algoritmo "
+"globalmente convergente que modifica la tasa de aprendizaje asociada a la "
+"propia tasa de aprendizaje más pequeña."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Learning rate"
 msgstr "Tasa de aprendizaje"
@@ -1290,27 +1321,24 @@ msgstr "Tasa de aprendizaje"
 msgctxt "AlgorithmicSettings|"
 msgid "The learning rate used by the backpropagation algorithm."
 msgstr ""
+"La tasa de aprendizaje que utiliza el algoritmo de propagación hacia atrás."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Loss function"
 msgstr "Función de pérdida"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Sum of squares"
 msgstr "Suma de cuadrados"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Cross-entropy"
 msgstr "Entropía cruzada"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The loss function used."
-msgstr ""
+msgstr "La función de pérdida utilizada."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Stopping criteria loss function"
 msgstr "Criterio de parada de la función de pérdida"
@@ -1320,6 +1348,8 @@ msgid ""
 "The threshold for the partial derivatives of the error function as stopping "
 "criteria."
 msgstr ""
+"El umbral para las derivadas parciales de la función de error como criterio "
+"de parada."
 
 msgctxt "AlgorithmicSettings|"
 msgid "Max. training repetitions"
@@ -1327,9 +1357,8 @@ msgstr "Máx. repeticiones de adiestramiento"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The maximum number of repetitions used in training the network."
-msgstr ""
+msgstr "El número máximo de repeticiones utilizadas en adiestrar la red."
 
-#, fuzzy
 msgctxt "Coefficients|"
 msgid "Network weights"
 msgstr "Ponderaciones de red"
@@ -1337,156 +1366,135 @@ msgstr "Ponderaciones de red"
 msgctxt "Coefficients|"
 msgid ""
 "Shows the connections in the neural network together with their weights."
-msgstr ""
+msgstr "Muestra las conexiones en la red neuronal junto con sus ponderaciones."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Network Topology"
 msgstr "Topología de la Red"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Manual"
 msgstr "Manual"
 
 msgctxt "ModelOptimization|"
 msgid "Specify the nodes in each hidden layer of the neural network."
-msgstr ""
+msgstr "Especifica los nodos en cada estrato oculto de la red neuronal."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Nodes"
 msgstr "Nodos"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Hidden layer "
 msgstr "Estrato oculto "
 
 msgctxt "ModelOptimization|"
 msgid "Optimize the topology of the network using a genetic algorithm."
-msgstr ""
+msgstr "Optimiza la topología de la red usando un algoritmo genético."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Population size"
 msgstr "Tamaño de la población"
 
 msgctxt "ModelOptimization|"
 msgid "Size of population used in genetic optimization."
-msgstr ""
+msgstr "Tamaño de la población usada en la optimización genética."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Generations"
 msgstr "Generaciones"
 
 msgctxt "ModelOptimization|"
 msgid "Number of generations used in genetic optimization."
-msgstr ""
+msgstr "Número de generaciones usadas en la optimización genética."
 
 msgctxt "ModelOptimization|"
 msgid "Max. number of layers"
-msgstr ""
+msgstr "Máx. número de estratos"
 
 msgctxt "ModelOptimization|"
 msgid "Max. nodes in each layer"
-msgstr ""
+msgstr "Máx. nodos en cada estrato"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Parent selection"
 msgstr "Selección de progenitor"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Roulette wheel"
 msgstr "Rueda de ruleta"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Universal"
 msgstr "Universal"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Rank"
 msgstr "Rango"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Tournament"
 msgstr "Torneo"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Random"
 msgstr "Aleatorio"
 
 msgctxt "ModelOptimization|"
 msgid "How to select suviving networks."
-msgstr ""
+msgstr "Cómo elegir las redes supervivientes."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Candidates"
 msgstr "Candidatos"
 
 msgctxt "ModelOptimization|"
 msgid "Number of candidates for tournament selection"
-msgstr ""
+msgstr "Número de candidatos para la selección de torneo"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Crossover method"
 msgstr "Método cruzado"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Uniform"
 msgstr "Uniforme"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "One-point"
 msgstr "Punto-Único"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Multi-point"
 msgstr "Punto-Múltiple"
 
 msgctxt "ModelOptimization|"
 msgid "How to crossover two candidate networks."
-msgstr ""
+msgstr "Cómo cruzar dos redes candidatas."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Mutations"
 msgstr "Mutaciones"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Reset"
 msgstr "Restablecer"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Swap"
 msgstr "Intercambio"
 
 msgctxt "ModelOptimization|"
 msgid "Scramble"
-msgstr ""
+msgstr "Disputa"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Inversion"
 msgstr "Inversión"
 
 msgctxt "ModelOptimization|"
 msgid "How to mutate a network."
-msgstr ""
+msgstr "Cómo mutar una red."
 
 msgctxt "ModelOptimization|"
 msgid "Probability"
@@ -1543,6 +1551,13 @@ msgid ""
 "generations in the evoluationary optimization algorithm. Accuracy is "
 "assessed for the training (and validation) set."
 msgstr ""
+"Para la regresión, representa gráficamente el promedio del error cuadrado "
+"medio de la población de redes neuronales, frente al número de generaciones "
+"en el algoritmo de optimización evolutiva. Para la clasificación, representa "
+"gráficamente el promedio de la precisión de la clasificación de la población "
+"de redes neuronales, frente al número de generaciones en el algoritmo de "
+"optimización evolutiva. La precisión se evalúa para el conjunto de "
+"adiestramiento (y validación)."
 
 msgctxt "AccuracyDecrease|"
 msgid "Mean decrease in accuracy"
@@ -1573,16 +1588,17 @@ msgid ""
 "Set the number of feature variables that is used within each split in the "
 "decision trees. Defaults to auto."
 msgstr ""
+"Establece el número de variables de características que se usan en cada "
+"separador en las árboles de decisión. El predeterminado es automático."
 
 msgctxt "AlgorithmicSettings|"
 msgid "The number of feature variables in each split."
-msgstr ""
+msgstr "El número de variables de características en cada separador."
 
 msgctxt "ModelOptimization|"
 msgid "The number of trees to be used."
-msgstr ""
+msgstr "El número de árboles a utilizar."
 
-#, fuzzy
 msgctxt "NodePurity|"
 msgid "Total increase in node purity"
 msgstr "Aumento total de la pureza del nodo"
@@ -1592,13 +1608,13 @@ msgid ""
 "Displays a figure with total increase in node purity per feature in the "
 "model."
 msgstr ""
+"Presenta un gráfico con el aumento total de la pureza del nodo por "
+"característica del modelo."
 
-#, fuzzy
 msgctxt "Oob|"
 msgid "Out-of-bag error"
 msgstr "Error \"descubierto el pastel\""
 
-#, fuzzy
 msgctxt "Oob|"
 msgid "Out-of-bag accuracy"
 msgstr "Precisión \"descubierto el pastel\""
@@ -1608,56 +1624,60 @@ msgid ""
 "Plots the number of trees against the out-of-bag mean squared error "
 "(regression) or accuracy (classification) of the model."
 msgstr ""
+"Representa gráficamente el número de árboles frente al error cuadrado medio "
+"\"descubierto el pastel\" (en la regresión) o a la precisión (en la "
+"clasificación) del modelo."
 
-#, fuzzy
 msgctxt "CoefficientTable|"
 msgid "Coefficients"
 msgstr "Coeficientes"
 
 msgctxt "CoefficientTable|"
 msgid "Shows a table containing the regression coefficients."
-msgstr ""
+msgstr "Muestra la tabla que contiene los coeficientes de la regresión."
 
 msgctxt "CoefficientTable|"
 msgid "Confidence interval"
-msgstr ""
+msgstr "Intervalo de confianza"
 
 msgctxt "CoefficientTable|"
 msgid "Display confidence intervals around estimated regression coefficients."
 msgstr ""
+"Presenta los intervalos de confianza alrededor de los coeficientes de la "
+"regresión."
 
 msgctxt "CoefficientTable|"
 msgid "The confidence level for the interval."
-msgstr ""
+msgstr "El nivel de confianza del intervalo."
 
 msgctxt "CoefficientTable|"
 msgid "Display equation"
-msgstr ""
+msgstr "Presentar la ecuación"
 
 msgctxt "CoefficientTable|"
 msgid ""
 "Display the regression equation with the estimated values of the "
 "coefficients."
 msgstr ""
+"Presentar la ecuación de regresión con los valores estimados para los "
+"coeficientes."
 
 msgctxt "Intercept|"
 msgid "Include intercept"
-msgstr ""
+msgstr "Incluir constante"
 
 msgctxt "Intercept|"
 msgid "Whether to include an intercept in the regression formula."
-msgstr ""
+msgstr "Si incluir una constante en la fórmula de la regresión."
 
-#, fuzzy
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "Target"
 msgstr "Objetivo"
 
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "In this box, the variable that needs to be predicted should be entered."
-msgstr ""
+msgstr "En esta caja debe introducirse la variable que se necesita predecir."
 
-#, fuzzy
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "Features"
 msgstr "Características"
@@ -1667,8 +1687,9 @@ msgid ""
 "In this box, the variables that provide information about the target "
 "variable should be entered."
 msgstr ""
+"En esta caja deben introducirse las variables que proporcionan información "
+"sobre la variable objetivo."
 
-#, fuzzy
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "Weights"
 msgstr "Ponderaciones"
@@ -1677,82 +1698,77 @@ msgctxt "VariablesFormRegularizedRegression|"
 msgid ""
 "In this box, an optional variable containing case weights can be entered."
 msgstr ""
+"En esta caja se puede introducir una variable opcional que contenga las "
+"ponderaciones de cada caso."
 
 msgctxt "AlgorithmicSettings|"
 msgid "Radial"
 msgstr "Radial"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Polynomial"
 msgstr "Polinómico"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Sigmoid"
-msgstr "Sigmoide"
+msgstr "Sigmoidal"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
 "The kernel used in training and predicting. Possible kernels are 'linear', "
 "'radial', 'polynomial', and 'sigmoid'."
 msgstr ""
+"El núcleo utilizado en el adiestramiento y la predicción. Los posibles "
+"núcleos son 'lineal', 'radial', 'polinómico' y 'sigmoidal'."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Degree"
 msgstr "Grado"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The degree of polynomial used."
-msgstr ""
+msgstr "El grado del polinomio utilizado."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Gamma parameter"
 msgstr "Parámetro Gamma"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The gamma parameter used."
-msgstr ""
+msgstr "El parámetro Gamma utilizado."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "r parameter"
 msgstr "parámetro r"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The complexity parameter used."
-msgstr ""
+msgstr "El parámetro de complejidad utilizado."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Cost of constraints violation"
 msgstr "Coste del incumplimiento de las restricciones"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The 'C'-constant of the regularization term."
-msgstr ""
+msgstr "La constante 'C' del término de regularización."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Tolerance of termination criterion"
 msgstr "Tolerancia del criterio de finalización"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The tolerance of termination criterion."
-msgstr ""
+msgstr "La tolerancia del criterio de finalización."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Epsilon"
 msgstr "Épsilon"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The epsilon parameter in the insensitive-loss function."
-msgstr ""
+msgstr "El parámetro épsilon en la función de pérdida insensible."
 
-#, fuzzy
 msgctxt "SupportVectors|"
 msgid "Support vectors"
 msgstr "Vectores de soporte"
@@ -1762,8 +1778,9 @@ msgid ""
 "Shows a table containing the data (points) indicated as support vectors by "
 "the algorithm."
 msgstr ""
+"Muestra una tabla que contiene los datos (puntos) indicados como vectores de "
+"soporte por el algoritmo."
 
-#, fuzzy
 msgctxt "AndrewsCurve|"
 msgid "Andrews curves"
 msgstr "Curvas de Andrews"
@@ -1773,6 +1790,8 @@ msgid ""
 "Is a way to visualize structure in high-dimensional data. Lines that cluster "
 "are observations that are more alike."
 msgstr ""
+"Es un modo de visualizar la estructura en los datos de alta dimensión. Las "
+"lineas que se agrupan son observaciones que se parecen más."
 
 msgctxt "ClusterDensity|"
 msgid "Cluster densities"
@@ -1783,6 +1802,8 @@ msgid ""
 "For each feature variable, generates a plot showing the overlapping "
 "densities for the clusters."
 msgstr ""
+"Para cada variable de característica, genera un gráfico que muestra las "
+"densidades superpuestas para los conglomerados."
 
 msgctxt "ClusterDensity|"
 msgid "Group into one figure"
@@ -1791,8 +1812,8 @@ msgstr "Agrupar en un gráfico"
 msgctxt "ClusterDensity|"
 msgid "Group the density plots per feature into a single figure."
 msgstr ""
+"Agrupa los gráficos de densidades por característica, en un único gráfico."
 
-#, fuzzy
 msgctxt "ClusterMatrix|"
 msgid "Cluster matrix plot"
 msgstr "Gráfico de la matriz de los conglomerados"
@@ -1802,8 +1823,9 @@ msgid ""
 "Creates a *n* x *n* plot that visualizes to which cluster every observation "
 "belongs according to the current model."
 msgstr ""
+"Genera un gráfico *n* x *n* que visualiza a qué conglomerado pertenece cada "
+"observación, de acuerdo con el modelo vigente."
 
-#, fuzzy
 msgctxt "ClusterMeans|"
 msgid "Cluster means"
 msgstr "Medias de los conglomerados"
@@ -1813,8 +1835,9 @@ msgid ""
 "Creates a plot that visualizes and compares the mean of the feature "
 "variables in each cluster."
 msgstr ""
+"Genera un gráfico que visualiza y compara la media de las variables de "
+"características en cada conglomerado."
 
-#, fuzzy
 msgctxt "ClusterMeans|"
 msgid "Display barplot"
 msgstr "Mostrar gráfico de barras"
@@ -1822,17 +1845,16 @@ msgstr "Mostrar gráfico de barras"
 msgctxt "ClusterMeans|"
 msgid "Transform the cluster mean figure into a barplot."
 msgstr ""
+"Transformar el gráfico de la media de conglomerados en un gráfico de barras."
 
-#, fuzzy
 msgctxt "ClusterMeans|"
 msgid "Group into one figure"
 msgstr "Agrupar en un gráfico"
 
 msgctxt "ClusterMeans|"
 msgid "Group the plots per feature into a single figure."
-msgstr ""
+msgstr "Agrupa los gráficos por característica en un único gráfico."
 
-#, fuzzy
 msgctxt "DataSplit|"
 msgid "Data split"
 msgstr "Separador de datos"
@@ -1841,8 +1863,9 @@ msgctxt "DataSplit|"
 msgid ""
 "Shows how the data is split into training (and validation), and test set."
 msgstr ""
+"Muestra cómo se separan los datos entre adiestramiento (y validación) y "
+"conjunto de contraste."
 
-#, fuzzy
 msgctxt "DecisionBoundary|"
 msgid "Decision boundary matrix"
 msgstr "Matriz límite de decisión"
@@ -1853,6 +1876,9 @@ msgid ""
 "classified if predicted through the current model. Boundaries between "
 "classes are visualized. Can only be made for numeric features."
 msgstr ""
+"Genera un gráfico *n* x *n* que visualiza cómo se clasificaría cada "
+"observación si se predice mediante el modelo vigente. Se visualizan los "
+"límites entre clases. Solo se puede hacer para características numéricas."
 
 msgctxt "DecisionBoundary|"
 msgid "Legend"
@@ -1882,8 +1908,11 @@ msgid ""
 "optimal number of clusters. The plot shows three curves using AIC, BIC, and "
 "'elbow method' optimization."
 msgstr ""
+"Genera un gráfico con la suma de cuadrados total Dentro en el eje y, más el "
+"número de conglomerados en el eje x. Se puede utilizar este gráfico para "
+"determinar el número óptimo de conglomerados. El gráfico presenta tres "
+"curvas usando AIC, BIC, y la optimización del 'método del codo'."
 
-#, fuzzy
 msgctxt "PredictivePerformance|"
 msgid "Predictive performance"
 msgstr "Capacidad predictiva"
@@ -1893,8 +1922,9 @@ msgid ""
 "Plots the true values of the observations in the test set against their "
 "predicted values."
 msgstr ""
+"Representa los valores verdaderos de las observaciones en el conjunto de "
+"contraste, frente a sus valores predichos."
 
-#, fuzzy
 msgctxt "RocCurve|"
 msgid "ROC curves"
 msgstr "Curvas ROC"
@@ -1902,11 +1932,12 @@ msgstr "Curvas ROC"
 msgctxt "RocCurve|"
 msgid "Displays ROC curves for each class predicted against all other classes."
 msgstr ""
+"Muestra las curvas ROC para cada clase predicha, frente a todas las otras "
+"clases."
 
-#, fuzzy
 msgctxt "Tsne|"
 msgid "t-SNE cluster plot"
-msgstr "gráfico de conglomerados t-SNE"
+msgstr "Gráfico de Conglomerados t-SNE"
 
 msgctxt "Tsne|"
 msgid ""
@@ -1982,7 +2013,6 @@ msgctxt "ClusterInfo|"
 msgid "Adds a row with the silhouette score of each cluster to the table."
 msgstr ""
 
-#, fuzzy
 msgctxt "ClusterInfo|"
 msgid "Centers"
 msgstr "Centros"
@@ -1993,7 +2023,6 @@ msgid ""
 "center can be the mean, median or mode depending on the clustering algorithm."
 msgstr ""
 
-#, fuzzy
 msgctxt "ClusterInfo|"
 msgid "Between sum of squares"
 msgstr "Suma de cuadrados Entre"
@@ -2004,10 +2033,9 @@ msgid ""
 "table."
 msgstr ""
 
-#, fuzzy
 msgctxt "ClusterInfo|"
 msgid "Total sum of squares"
-msgstr "Suma de cuadrados total"
+msgstr "Suma de cuadrados Totales"
 
 msgctxt "ClusterInfo|"
 msgid ""
@@ -2018,7 +2046,6 @@ msgctxt "ClusterMeans|"
 msgid "Shows a table containing the cluster means for each feature variable."
 msgstr ""
 
-#, fuzzy
 msgctxt "ConfusionMatrix|"
 msgid "Confusion matrix"
 msgstr "Matriz de desorden"
@@ -2029,7 +2056,6 @@ msgid ""
 "classes. Used to assess model accuracy."
 msgstr ""
 
-#, fuzzy
 msgctxt "ConfusionMatrix|"
 msgid "Display proportions"
 msgstr "Mostrar proporciones"

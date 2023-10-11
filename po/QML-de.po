@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-10-07 03:20+0000\n"
+"PO-Revision-Date: 2023-10-10 17:58+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/de/>\n"
@@ -827,8 +827,11 @@ msgid ""
 "of variable interactions allowed. A value of 1 implies an additive model, a "
 "value of 2 implies a model with up to 2-way interactions, etc. Default is 1."
 msgstr ""
+"Ganze Zahl zur Angabe der maximalen Tiefe jedes Baumes (d.h. den höchsten "
+"Grad erlaubter Variablen-Interaktionen. Ein Wert von 1 impliziert ein "
+"additives Modell, ein Wert von 2 impliziert ein Modell mit bis zu 2-fach-"
+"Interaktionen, usw. Standardwert ist 1."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Min. observations in node"
 msgstr "Min. Beobachtungen in Knoten"
@@ -839,19 +842,22 @@ msgid ""
 "of the trees. Note that this is the actual number of observations, not the "
 "total weight."
 msgstr ""
+"Ganze Zahl zur Angabe der Mindestanzahl von Beobachtungen in den Endknoten "
+"der Bäume. Beachten Sie, dass dies die tatsächliche Anzahl von Beobachtungen "
+"ist, nicht das Gesamtgewicht."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Training data used per tree"
-msgstr "Trainingsdaten pro Baum"
+msgstr "Zu nutzende Trainingsdaten pro Baum"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
 "Select the percentage of training data that is used to train each individual "
 "tree."
 msgstr ""
+"Wählen Sie den Prozentsatz der Trainingsdaten aus, die verwendet werden, um "
+"jeden einzelnen Baum zu trainieren."
 
-#, fuzzy
 msgctxt "Deviance|"
 msgid "Deviance"
 msgstr "Devianz"
@@ -859,6 +865,7 @@ msgstr "Devianz"
 msgctxt "Deviance|"
 msgid "Shows the prediction error plotted against the number of trees."
 msgstr ""
+"Zeigt den Vorhersagefehler, der gegen die Anzahl der Bäume aufgetragen ist."
 
 msgctxt "ModelOptimization|"
 msgid "Number of Trees"
@@ -919,6 +926,9 @@ msgid ""
 "Plots the number of trees against the out-of-bag classification accuracy "
 "improvement of the model. Accuracy is assessed for the training set."
 msgstr ""
+"Zeigt die Anzahl der Bäume gegen die Out-of-bag "
+"Klassifizierungsgenauigkeitsverbesserung des Modells. Die Genauigkeit wird "
+"für die Trainingsmenge bewertet."
 
 msgctxt "RelativeInfluence|"
 msgid "Relative influence"
@@ -966,7 +976,6 @@ msgid ""
 "parameter is not attempted."
 msgstr ""
 
-#, fuzzy
 msgctxt "AttemptedSplits|"
 msgid "Attempted splits"
 msgstr "Versuchte Aufteilungen"
@@ -978,6 +987,11 @@ msgid ""
 "positive weight) sent left or right by the split. It also shows the "
 "improvement in deviance given by the splits."
 msgstr ""
+"Zeigt die Aufteilungen durch den Algorithmus, die entsprechenden Merkmale "
+"und Spaltpunkte, und die Anzahl der Beobachtungen (die nicht fehlen und "
+"positives Gewicht haben) die von der Aufteilung nach links oder rechts "
+"gesendet wurden. Es zeigt auch die Verbesserung der Devianz, die die "
+"Aufteilungen ergeben."
 
 #, fuzzy
 msgctxt "AttemptedSplits|"
@@ -987,8 +1001,8 @@ msgstr "Nur Aufteilungen im Baum anzeigen"
 msgctxt "AttemptedSplits|"
 msgid "Remove splits that do not occur in the final tree from the table."
 msgstr ""
+"Aufteilungen entfernen, die nicht im finalen Baum der Tabelle auftreten."
 
-#, fuzzy
 msgctxt "TreePlot|"
 msgid "Decision tree"
 msgstr "Entscheidungsbaum"
@@ -996,18 +1010,17 @@ msgstr "Entscheidungsbaum"
 msgctxt "TreePlot|"
 msgid "Creates a plot that visualizes the decision tree and its leafs."
 msgstr ""
+"Erstellt ein Diagramm zur Visualisierung des Entscheidungsbaums und seinen "
+"Blättern."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Weights"
 msgstr "Gewichte"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Rectangular"
 msgstr "Rechteckig"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Triangular"
 msgstr "Dreieckig"
@@ -1026,7 +1039,6 @@ msgctxt "AlgorithmicSettings|"
 msgid "Triweight"
 msgstr "dreifach gewichtet"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Cosine"
 msgstr "Kosinus"
@@ -1036,12 +1048,10 @@ msgctxt "AlgorithmicSettings|"
 msgid "Inverse"
 msgstr "Invers"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Gaussian"
 msgstr "Gaußsch"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Rank"
 msgstr "Rang"
@@ -1056,13 +1066,15 @@ msgid ""
 "option results in standard knn, while the other options expand the algorithm "
 "by weighing the nearest neighbors. See also the kknn package."
 msgstr ""
+"Setzt das Gewichtungsschema für die nächsten Nachbarn. Die standardmäßige "
+"rechteckige Option führt zu Standard-KNN, während die anderen Optionen den "
+"Algorithmus erweitern, indem die nächsten Nachbarn gewichtet werden. Siehe "
+"auch das Paket kknn."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Distance"
 msgstr "Distanz"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Euclidian"
 msgstr "Euklidisch"
@@ -1076,32 +1088,35 @@ msgid ""
 "The distance metric to be used when determining the similarity between "
 "nearest neighbors. Can be either Euclidean or Manhattan distance."
 msgstr ""
+"Die verwendete Distanzmetrik zur Bestimmung der Ähnlichkeit zwischen "
+"nächsten Nachbarn. Kann entweder Euklidische oder Manhattan-Distanz sein."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Number of Nearest Neighbors"
-msgstr "Anzahl nächster Nachbarn"
+msgstr "Anzahl von nächsten Nachbarn"
 
 msgctxt "ModelOptimization|"
 msgid "Enables you to use a user-specified number of nearest neighbors."
 msgstr ""
+"Ermöglicht Ihnen die Verwendung einer benutzerdefinierte Anzahl von nächsten "
+"Nachbarn."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Nearest neighbors"
 msgstr "Nächste Nachbarn"
 
 msgctxt "ModelOptimization|"
 msgid "The number of nearest neighbors to be used."
-msgstr ""
+msgstr "Die Anzahl der verwendeten nächsten Nachbarn."
 
 msgctxt "ModelOptimization|"
 msgid ""
 "Enables you to optimize the prediction error on a validation data set with "
 "respect to the number of nearest neighbors."
 msgstr ""
+"Ermöglicht Ihnen, den Vorhersagefehler auf einem Validierungsdatensatz "
+"hinsichtlich der Anzahl der nächsten Nachbarn zu optimieren."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Max. nearest neighbors"
 msgstr "Max. nächste Nachbarn"
@@ -1111,13 +1126,14 @@ msgid ""
 "Sets the maximum number of possible nearest neighbors to be considered. At "
 "default, this is set to 10."
 msgstr ""
+"Setzt die maximale Anzahl möglicher nächster Nachbarn, die in Betracht "
+"gezogen wird. Standardmäßig ist dies auf 10 gesetzt."
 
 #, fuzzy
 msgctxt "OptimPlot|"
 msgid "Mean squared error"
 msgstr "Mittlerer quadratischer Fehler"
 
-#, fuzzy
 msgctxt "OptimPlot|"
 msgid "Classification accuracy"
 msgstr "Klassifikations-Genauigkeit"
@@ -1130,56 +1146,52 @@ msgid ""
 "classification accuracy of the model. Accuracy is assessed for the training "
 "(and validation) set."
 msgstr ""
+"Für Regression, Zeigt die Anzahl der nächsten Nachbarn gegen den MSE des "
+"Modells. Die Genauigkeit wird für den Trainings- (und Validierungs)-satz "
+"bewertet. Für Klassifikation, Zeigt die Anzahl der nächsten Nachbarn gegen "
+"die Klassifikationsgenauigkeit des Modells. Die Genauigkeit wird für den "
+"Trainings- (und Validierungs)-satz bewertet."
 
-#, fuzzy
 msgctxt "WeightFunction|"
 msgid "Weight function"
 msgstr "Gewichtungsfunktion"
 
 msgctxt "WeightFunction|"
 msgid "Shows how the weights are assigned as a function of the distance."
-msgstr ""
+msgstr "Zeigt, wie die Gewichte als Funktion der Distanz zugeordnet werden."
 
-#, fuzzy
 msgctxt "ActivationFunctionPlot|"
 msgid "Activation function"
 msgstr "Aktivierungsfunktion"
 
 msgctxt "ActivationFunctionPlot|"
 msgid "Creates a plot of the activation function."
-msgstr ""
+msgstr "Erstellt ein Diagramm der Aktivierungsfunktion."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Activation function"
 msgstr "Aktivierungsfunktion"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Linear"
 msgstr "Linear"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Binary"
 msgstr "Binär"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Logistic sigmoid"
 msgstr "Logistische Sigmoid"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Sine"
 msgstr "Sinus"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Inverse tangent"
 msgstr "Arkustangens"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Hyperbolic tangent"
 msgstr "Hyperbolischer Tangens"
@@ -1196,7 +1208,6 @@ msgctxt "AlgorithmicSettings|"
 msgid "Softsign"
 msgstr "Softsign"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "ELU"
 msgstr "ELU"
@@ -1238,15 +1249,32 @@ msgid ""
 "- Gaussian: *f(x) = e * (-x^2)*\n"
 "- GeLU: *f(x) = 0.5 * x * (1 + tanh(sqrt(2 / pi) * (x + 0.044715 * x^3)))*"
 msgstr ""
+"Setzt die Aktivierungsfunktion für das Signal in jeder verdeckten Schicht. "
+"Verfügbare Optionen sind:\n"
+"- Linear: *f(x) = x*\n"
+"- Binär: *f(x) = 0 falls x < 0, 1 falls x > 0\n"
+"- Logistisches Sigmoid: *f(x) = 1 / (1 + e^(-x))*\n"
+"- Sinus: *f(x) = sin(x)*\n"
+"- Kosinus: *f(x) = cos(x)*\n"
+"- Arkustangens: *f(x) = arctan(x)*\n"
+"- Hyperbolischer Tangens: *f(x) = tanh(x)*\n"
+"- ReLU: *f(x) = 0 falls x < 0, x falls x > 0*\n"
+"- Softplus: *f(x) = log(1 + e^x)*\n"
+"- Softsign: *f(x) = x / (abs(x) + 1)*\n"
+"- ELU: *f(x) = e^x - 1 falls x <= 0, x falls x > 0*\n"
+"- LReLU: *f(x) = 0.01 * x falls x < 0, x falls x > 0*\n"
+"- SiLU: *f(x) = x / (1 + e^(-x))*\n"
+"- Mish: *f(x) = x * tanh(log(1 + e^x))*\n"
+"- Gaußsch: *f(x) = e * (-x^2)*\n"
+"- GeLU: *f(x) = 0,5 * x * (1 + tanh(sqrt(2 / pi) * (x + 0,044715 * x^3))*"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Algorithm"
 msgstr "Algorithmus"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Backpropagation"
-msgstr ""
+msgstr "Backpropagation"
 
 msgctxt "AlgorithmicSettings|"
 msgid "rprop+"
