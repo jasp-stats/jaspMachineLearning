@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-10-10 20:25+0000\n"
+"PO-Revision-Date: 2023-10-11 15:49+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/es/>\n"
@@ -80,7 +80,7 @@ msgstr "Clasificación en Bosques Aleatorios"
 
 msgctxt "Description|"
 msgid "Clustering"
-msgstr "Conglomerados"
+msgstr "Conglomeración"
 
 msgctxt "Description|"
 msgid "Density-Based"
@@ -88,7 +88,7 @@ msgstr "Basado en la Densidad"
 
 msgctxt "Description|"
 msgid "Density-Based Clustering"
-msgstr "Conglomerados Basados en la Densidad"
+msgstr "Conglomeración Basada en la Densidad"
 
 msgctxt "Description|"
 msgid "Fuzzy C-Means"
@@ -96,7 +96,7 @@ msgstr "Medias C Borrosas"
 
 msgctxt "Description|"
 msgid "Fuzzy C-Means Clustering"
-msgstr "Conglomerados con Medias C Borrosas"
+msgstr "Conglomeración con Medias C Borrosas"
 
 msgctxt "Description|"
 msgid "Hierarchical"
@@ -104,11 +104,11 @@ msgstr "Jerárquico"
 
 msgctxt "Description|"
 msgid "Hierarchical Clustering"
-msgstr "Conglomerados Jerárquicos"
+msgstr "Conglomeración Jerárquica"
 
 msgctxt "Description|"
 msgid "Random Forest Clustering"
-msgstr "Conglomerados en Bosques Aleatorios"
+msgstr "Conglomeración en Bosques Aleatorios"
 
 msgctxt "DataSplit|"
 msgid "Data Split Preferences"
@@ -2133,7 +2133,6 @@ msgid ""
 "generate your own specified number of clusters, and thus, optimize manually."
 msgstr ""
 
-#, fuzzy
 msgctxt "ClusterDetermination|"
 msgid "Clusters"
 msgstr "Conglomerados"
