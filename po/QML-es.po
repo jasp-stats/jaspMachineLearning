@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-10-11 16:13+0000\n"
+"PO-Revision-Date: 2023-10-11 16:14+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/es/>\n"
@@ -2215,7 +2215,6 @@ msgstr ""
 "observaciones dentro de un conglomerado y su disimilitud con las de otros "
 "conglomerados para optimizar el resultado de la conglomeración."
 
-#, fuzzy
 msgctxt "ClusterDetermination|"
 msgid "Max. clusters"
 msgstr "Máx. conglomerados"
