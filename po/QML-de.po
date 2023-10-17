@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-10-10 17:58+0000\n"
+"PO-Revision-Date: 2023-10-16 21:44+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/de/>\n"
@@ -9,7 +9,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.1-dev\n"
+"X-Generator: Weblate 5.1\n"
 "X-Language: de\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -1129,7 +1129,6 @@ msgstr ""
 "Setzt die maximale Anzahl möglicher nächster Nachbarn, die in Betracht "
 "gezogen wird. Standardmäßig ist dies auf 10 gesetzt."
 
-#, fuzzy
 msgctxt "OptimPlot|"
 msgid "Mean squared error"
 msgstr "Mittlerer quadratischer Fehler"
@@ -1304,32 +1303,29 @@ msgid ""
 "learning rate itself."
 msgstr ""
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Learning rate"
 msgstr "Lernrate"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The learning rate used by the backpropagation algorithm."
-msgstr ""
+msgstr "Die vom Backpropagation-Algorithmus verwendete Lernrate."
 
 msgctxt "AlgorithmicSettings|"
 msgid "Loss function"
-msgstr ""
+msgstr "Verlustfunktion"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Sum of squares"
-msgstr "Summe der Abweichungsquadrate"
+msgstr "Quadratsummen"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Cross-entropy"
 msgstr "Kreuzentropie"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The loss function used."
-msgstr ""
+msgstr "Die verwendete Verlustfunktion."
 
 msgctxt "AlgorithmicSettings|"
 msgid "Stopping criteria loss function"
@@ -1421,12 +1417,10 @@ msgctxt "ModelOptimization|"
 msgid "Roulette wheel"
 msgstr "Roulette-Rad"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Universal"
 msgstr "Universal"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Rank"
 msgstr "Rang"
@@ -1472,37 +1466,33 @@ msgstr "Multi-Punkt"
 
 msgctxt "ModelOptimization|"
 msgid "How to crossover two candidate networks."
-msgstr ""
+msgstr "Wie zwei Kandidatennetzwerke gekreuzt werden."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Mutations"
 msgstr "Mutationen"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Reset"
 msgstr "Zurücksetzen"
 
 msgctxt "ModelOptimization|"
 msgid "Swap"
-msgstr ""
+msgstr "Tausch"
 
 #, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Scramble"
-msgstr "Verschlüsselung"
+msgstr "Durchmischen"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Inversion"
 msgstr "Umkehrung"
 
 msgctxt "ModelOptimization|"
 msgid "How to mutate a network."
-msgstr ""
+msgstr "Wie ein Netzwerk mutiert wird."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Probability"
 msgstr "Wahrscheinlichkeit"
@@ -1510,18 +1500,17 @@ msgstr "Wahrscheinlichkeit"
 msgctxt "ModelOptimization|"
 msgid "The mutation probability of a random network in each generation."
 msgstr ""
+"Die Mutationswahrscheinlichkeit eines zufälligen Netzwerks in jeder "
+"Generation."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Survival method"
 msgstr "Überlebensmethode"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Fitness-based"
 msgstr "Fitness-basiert"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Age-based"
 msgstr "Altersabhängig"
@@ -1529,21 +1518,21 @@ msgstr "Altersabhängig"
 msgctxt "ModelOptimization|"
 msgid "How to choose which networks survive and die in a generation."
 msgstr ""
+"Wie ausgewählt wird, welche Netzwerke in einer Generation überleben und "
+"sterben."
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Elitism"
 msgstr "Elitismus"
 
 msgctxt "ModelOptimization|"
 msgid "Keep top networks from dying out."
-msgstr ""
+msgstr "Die Top-Netzwerke vor dem Aussterben beschützen."
 
 msgctxt "ModelOptimization|"
 msgid "Percentage of top networks to keep."
-msgstr ""
+msgstr "Prozentsatz der zu behaltenden Top-Netzwerke."
 
-#, fuzzy
 msgctxt "NetworkPlot|"
 msgid "Network structure"
 msgstr "Netzwerkstruktur"
@@ -1553,6 +1542,8 @@ msgid ""
 "Creates a plot that visualizes the structure (nodes and edges) of the "
 "network."
 msgstr ""
+"Erstellt ein Diagramm, das die Struktur (Knoten und Kanten) des Netzwerks "
+"visualisiert."
 
 msgctxt "OptimPlot|"
 msgid ""
