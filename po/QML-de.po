@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2023-10-24 12:00+0000\n"
+"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.1.1-dev\n"
 "X-Language: de\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -1587,17 +1593,19 @@ msgstr ""
 
 msgctxt "ModelOptimization|"
 msgid "The number of trees to be used."
-msgstr ""
+msgstr "Die Anzahl der zu verwendenden Bäume."
 
 msgctxt "NodePurity|"
 msgid "Total increase in node purity"
-msgstr ""
+msgstr "Gesamtzunahme der Knotenreinheit"
 
 msgctxt "NodePurity|"
 msgid ""
 "Displays a figure with total increase in node purity per feature in the "
 "model."
 msgstr ""
+"Zeigt ein Diagramm mit einer Gesamtzunahme der Knotenreinheit pro Merkmal im "
+"Modell an."
 
 #, fuzzy
 msgctxt "Oob|"
@@ -1615,54 +1623,55 @@ msgid ""
 "(regression) or accuracy (classification) of the model."
 msgstr ""
 
-#, fuzzy
 msgctxt "CoefficientTable|"
 msgid "Coefficients"
 msgstr "Koeffizienten"
 
 msgctxt "CoefficientTable|"
 msgid "Shows a table containing the regression coefficients."
-msgstr ""
+msgstr "Zeigt eine Tabelle mit den Regressionskoeffizienten."
 
 msgctxt "CoefficientTable|"
 msgid "Confidence interval"
-msgstr ""
+msgstr "Konfidenzintervall"
 
 msgctxt "CoefficientTable|"
 msgid "Display confidence intervals around estimated regression coefficients."
-msgstr ""
+msgstr "Zeige Konfidenzintervalle um geschätzte Regressionskoeffizienten."
 
 msgctxt "CoefficientTable|"
 msgid "The confidence level for the interval."
-msgstr ""
+msgstr "Das Konfidenzniveau des Intervalls."
 
 msgctxt "CoefficientTable|"
 msgid "Display equation"
-msgstr ""
+msgstr "Gleichung anzeigen"
 
 msgctxt "CoefficientTable|"
 msgid ""
 "Display the regression equation with the estimated values of the "
 "coefficients."
 msgstr ""
+"Zeige die Regressionsgleichung mit den geschätzten Werten der Koeffizienten."
 
 msgctxt "Intercept|"
 msgid "Include intercept"
-msgstr ""
+msgstr "Konstante einbeziehen"
 
 msgctxt "Intercept|"
 msgid "Whether to include an intercept in the regression formula."
-msgstr ""
+msgstr "Ob eine Konstante in die Regressionsformel aufgenommen werden soll."
 
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "Target"
-msgstr ""
+msgstr "Ziel"
 
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "In this box, the variable that needs to be predicted should be entered."
 msgstr ""
+"In diesem Feld sollte die Variable eingegeben werden, die vorhergesagt "
+"werden muss."
 
-#, fuzzy
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "Features"
 msgstr "Merkmale"
@@ -1672,8 +1681,9 @@ msgid ""
 "In this box, the variables that provide information about the target "
 "variable should be entered."
 msgstr ""
+"In diesem Feld sollten die Variablen eingegeben werden, die Informationen "
+"über die Zielvariable liefern."
 
-#, fuzzy
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "Weights"
 msgstr "Gewichte"
@@ -1682,8 +1692,9 @@ msgctxt "VariablesFormRegularizedRegression|"
 msgid ""
 "In this box, an optional variable containing case weights can be entered."
 msgstr ""
+"In diesem Feld kann eine optionale Variable mit Fallgewichtungen eingetragen "
+"werden."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Radial"
 msgstr "Radial"
@@ -1701,51 +1712,48 @@ msgid ""
 "The kernel used in training and predicting. Possible kernels are 'linear', "
 "'radial', 'polynomial', and 'sigmoid'."
 msgstr ""
+"Der Kernel der in Training und Vorhersage verwendet wird. Mögliche Kernel "
+"sind 'linear', 'radial', 'polynomial' und 'sigmoid'."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Degree"
 msgstr "Grad"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The degree of polynomial used."
-msgstr ""
+msgstr "Der verwendete Polynomgrad."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Gamma parameter"
 msgstr "Gamma-Parameter"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The gamma parameter used."
-msgstr ""
+msgstr "Der verwendete Gamma-Parameter."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "r parameter"
 msgstr "r-Parameter"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The complexity parameter used."
-msgstr ""
+msgstr "Der verwendete Komplexitätsparameter."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Cost of constraints violation"
 msgstr "Kosten von Beschränkungsverletzung"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The 'C'-constant of the regularization term."
-msgstr ""
+msgstr "Die 'C'-Konstante des Regularisierungsterms."
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Tolerance of termination criterion"
 msgstr "Toleranz des Abbruchkriteriums"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The tolerance of termination criterion."
-msgstr ""
+msgstr "Die Toleranz des Abbruchkriteriums."
 
 msgctxt "AlgorithmicSettings|"
 msgid "Epsilon"
