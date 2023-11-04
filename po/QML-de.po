@@ -1,15 +1,9 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-10-28 03:19+0000\n"
-"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/jasp/"
-"jaspmachinelearning-qml/de/>\n"
-"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.2-dev\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Language: de\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -1938,9 +1932,10 @@ msgctxt "Tsne|"
 msgid "Legend"
 msgstr "Legende"
 
+#, fuzzy
 msgctxt "Tsne|"
 msgid "Show a legend next to the figure."
-msgstr ""
+msgstr "Eine Legende neben der Abbildung anzeigen."
 
 msgctxt "Tsne|"
 msgid "Add data labels"
@@ -2270,24 +2265,31 @@ msgctxt "SetSeed|"
 msgid "The value of the seed."
 msgstr ""
 
+#, fuzzy
 msgctxt "VariablesFormClassification|"
 msgid "Target"
-msgstr ""
+msgstr "Ziel"
 
+#, fuzzy
 msgctxt "VariablesFormClassification|"
 msgid "In this box, the variable that needs to be predicted should be entered."
 msgstr ""
+"In diesem Feld sollte die Variable eingegeben werden, die vorhergesagt "
+"werden muss."
 
 #, fuzzy
 msgctxt "VariablesFormClassification|"
 msgid "Features"
 msgstr "Merkmale"
 
+#, fuzzy
 msgctxt "VariablesFormClassification|"
 msgid ""
 "In this box, the variables that provide information about the target "
 "variable should be entered."
 msgstr ""
+"In diesem Feld sollten die Variablen eingegeben werden, die Informationen "
+"über die Zielvariable liefern."
 
 #, fuzzy
 msgctxt "VariablesFormClustering|"
@@ -2300,24 +2302,31 @@ msgid ""
 "algorithm should be entered."
 msgstr ""
 
+#, fuzzy
 msgctxt "VariablesFormRegression|"
 msgid "Target"
-msgstr ""
+msgstr "Ziel"
 
+#, fuzzy
 msgctxt "VariablesFormRegression|"
 msgid "In this box, the variable that needs to be predicted should be entered."
 msgstr ""
+"In diesem Feld sollte die Variable eingegeben werden, die vorhergesagt "
+"werden muss."
 
 #, fuzzy
 msgctxt "VariablesFormRegression|"
 msgid "Features"
 msgstr "Merkmale"
 
+#, fuzzy
 msgctxt "VariablesFormRegression|"
 msgid ""
 "In this box, the variables that provide information about the target "
 "variable should be entered."
 msgstr ""
+"In diesem Feld sollten die Variablen eingegeben werden, die Informationen "
+"über die Zielvariable liefern."
 
 msgctxt "mlClassificationBoosting|"
 msgid ""
