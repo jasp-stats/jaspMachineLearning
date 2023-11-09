@@ -1,5 +1,27 @@
 context("Machine Learning Random Forest Classification")
 
+# Test fixed model #########################################################
+options <- initMlOptions("mlClassificationRandomForest")
+options$holdoutData <- "holdoutManual"
+options$modelOptimization <- "manual"
+options$modelValid <- "validationManual"
+options$predictionsColumn <- ""
+options$predictors <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
+options$savePath <- ""
+options$setSeed <- TRUE
+options$target <- "Species"
+options$testIndicatorColumn <- ""
+options$testSetIndicatorVariable <- ""
+options$dataSplitPlot <- FALSE
+options$confusionTable <- FALSE
+set.seed(1)
+results <- jaspTools::runAnalysis("mlClassificationRandomForest", "iris.csv", options)
+
+table <- results[["results"]][["classificationTable"]][["data"]]
+jaspTools::expect_equal_tables(table,
+		list(30, 120, 0.894736842105263, 2, 0.933333333333333, 100))
+
+# Test optimized model #########################################################
 options <- initMlOptions("mlClassificationRandomForest")
 options$addPredictions <- FALSE
 options$addIndicator <- FALSE
@@ -123,7 +145,7 @@ test_that("Evaluation Metrics table results match", {
 })
 
 test_that("Feature Contributions to Predictions for Test Set Cases table results match", {
-	skip("Need to figure out why this fails")
+	skip("Does not reproduce on machine KD <-> GitHub Actions")
 	table <- results[["results"]][["tableShap"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list(-0.0211810012836975, 0.0641848523748396, 0.0203252032520327, 0.045143346170304,

@@ -27,11 +27,9 @@
 </defs>
 <g clip-path='url(#cpOC41MHw3MjAuMDB8MjAuNzF8NTY3LjUw)'>
 <rect x='8.50' y='20.71' width='711.50' height='546.79' style='stroke-width: 10.67; stroke: none;' />
-<rect x='40.84' y='45.56' width='344.97' height='497.08' style='stroke-width: 1.07; stroke-linecap: butt; stroke-linejoin: miter; fill: #5CACEE;' />
-<rect x='385.81' y='45.56' width='86.24' height='497.08' style='stroke-width: 1.07; stroke-linecap: butt; stroke-linejoin: miter; fill: #EEAD0E;' />
+<rect x='40.84' y='45.56' width='431.21' height='497.08' style='stroke-width: 1.07; stroke-linecap: butt; stroke-linejoin: miter; fill: #5CACEE;' />
 <rect x='472.05' y='45.56' width='107.80' height='497.08' style='stroke-width: 1.07; stroke-linecap: butt; stroke-linejoin: miter; fill: #EE5C42;' />
-<text x='45.34' y='298.02' style='font-size: 11.38px; font-family: sans;' textLength='44.91px' lengthAdjust='spacingAndGlyphs'>Train: 96</text>
-<text x='392.71' y='298.02' style='font-size: 11.38px; font-family: sans;' textLength='68.97px' lengthAdjust='spacingAndGlyphs'>Validation: 24</text>
+<text x='45.97' y='298.02' style='font-size: 11.38px; font-family: sans;' textLength='51.24px' lengthAdjust='spacingAndGlyphs'>Train: 120</text>
 <text x='476.17' y='298.02' style='font-size: 11.38px; font-family: sans;' textLength='41.12px' lengthAdjust='spacingAndGlyphs'>Test: 30</text>
 <text x='584.92' y='298.02' style='font-size: 11.38px; font-family: sans;' textLength='50.61px' lengthAdjust='spacingAndGlyphs'>Total: 150</text>
 <rect x='8.50' y='20.71' width='711.50' height='546.79' style='stroke-width: 0.00; stroke: none;' />

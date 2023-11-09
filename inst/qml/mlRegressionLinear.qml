@@ -50,7 +50,7 @@ Form
 		FIG.PredictivePerformance { }
 	}
 
-	UI.ExportResults { enabled:	predictors.count > 0 && target.count > 0 }
+	UI.ExportResults { enabled:	vars.predictorCount > 1 > 0 && vars.targetCount > 0 }
 	UI.DataSplit { trainingValidationSplit: false }
 
 	Section

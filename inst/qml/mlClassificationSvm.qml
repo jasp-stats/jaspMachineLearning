@@ -51,6 +51,7 @@ Form
 		FIG.DataSplit { }
 		FIG.RocCurve { }
 		FIG.AndrewsCurve { }
+		SVM.OptimPlot { regression: false; enable: !optim.isManual }
 		FIG.DecisionBoundary { }
 	}
 

@@ -1,5 +1,26 @@
 context("Machine Learning Regularized Linear Regression")
 
+# Test fixed model #############################################################
+options <- initMlOptions("mlRegressionRegularized")
+options$target <- "Sepal.Length"
+options$predictors <- c("Sepal.Width", "Petal.Length", "Petal.Width")
+options$modelOptimization <- "manual"
+options$holdoutData <- "holdoutManual"
+options$modelValid <- "validationManual"
+options$savePath <- ""
+options$predictionsColumn <- ""
+options$testIndicatorColumn <- ""
+options$testSetIndicatorVariable <- ""
+options$setSeed <- TRUE
+options$dataSplitPlot <- FALSE
+set.seed(1)
+results <- jaspTools::runAnalysis("mlRegressionRegularized", "iris.csv", options)
+
+table <- results[["results"]][["regressionTable"]][["data"]]
+jaspTools::expect_equal_tables(table,
+		list(1, 30, 120, "L1 (Lasso)", 0.521122222222222))
+
+# Test optimized model #########################################################
 options <- initMlOptions("mlRegressionRegularized")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE

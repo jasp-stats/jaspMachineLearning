@@ -1,5 +1,20 @@
 context("Machine Learning Random Forest Clustering")
 
+# Test fixed model #############################################################
+options <- initMlOptions("mlClusteringRandomForest")
+options$predictors <- list("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
+options$modelOptimization <- "manual"
+options$predictionsColumn <- ""
+options$setSeed <- TRUE
+options$tableClusterInformation <- FALSE
+set.seed(1)
+results <- jaspTools::runAnalysis("mlClusteringRandomForest", "iris.csv", options)
+
+table <- results[["results"]][["clusteringTable"]][["data"]]
+jaspTools::expect_equal_tables(table,
+		list(3, 150, 0.756064175255188, 169.39, 205.51, 0.450))
+
+# Test optimized model #########################################################
 options <- initMlOptions("mlClusteringRandomForest")
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""

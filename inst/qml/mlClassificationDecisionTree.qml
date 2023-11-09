@@ -51,6 +51,7 @@ Form
 		FIG.DataSplit { }
 		FIG.RocCurve { }
 		FIG.AndrewsCurve { }
+		DT.OptimPlot { regression: false; enable: !optim.isManual }
 		DT.TreePlot { }
 		FIG.DecisionBoundary { }
 	}
@@ -71,6 +72,6 @@ Form
 			UI.SetSeed { }
 		}
 
-		DT.ModelOptimization { }
+		DT.ModelOptimization { id: optim }
 	}
 }

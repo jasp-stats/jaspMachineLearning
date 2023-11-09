@@ -48,6 +48,7 @@ Form
 
 		FIG.DataSplit { }
 		FIG.PredictivePerformance { }
+		DT.OptimPlot { regression: true; enable: !optim.isManual }
 		DT.TreePlot { }
 	}
 
@@ -67,6 +68,6 @@ Form
 			UI.SetSeed { }
 		}
 
-		DT.ModelOptimization { }
+		DT.ModelOptimization { id: optim }
 	}
 }

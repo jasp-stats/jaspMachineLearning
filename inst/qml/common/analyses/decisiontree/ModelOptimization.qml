@@ -23,12 +23,43 @@ import JASP.Widgets		1.0
 
 RadioButtonGroup
 {
-	name:			"modelOptimization"
-	visible:		false
+	readonly property bool isManual: !optimizeModel.checked
+
+	name:					"modelOptimization"
+	title:					qsTr("Tree Complexity")
+	info:					qsTr("Choose how to optimize the model.")
 
 	RadioButton
 	{
-		name:		"manual"
-		checked:	true
+		name:				"manual"
+		text:				qsTr("Fixed")
+		info:				qsTr("Enables you to use a user-specified complexity penalty.")
+
+		DoubleField 
+		{
+			name:			"complexityParameter"
+			text:			qsTr("Complexity penalty")
+			defaultValue:	0.01
+			min:			0
+			info:			qsTr("The complexity penalty to be used. Any split that does not decrease the overall lack of fit by a factor of this parameter is not attempted.")
+		}
+	}
+
+	RadioButton
+	{
+		id:					optimizeModel
+		name:				"optimized"
+		text:				qsTr("Optimized")
+		checked:			true
+		info:				qsTr("Enables you to optimize the prediction error on a validation data set with respect to the complexity penalty.")
+
+		DoubleField
+		{
+			name:			"maxComplexityParameter"
+			text:			qsTr("Max. complexity penalty")
+			defaultValue:	1
+			min:			0.01
+			info:			qsTr("Sets the maximum value of the complexity penalty to be considered. At default, this is set to 1.")
+		}
 	}
 }

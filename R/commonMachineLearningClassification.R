@@ -29,7 +29,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual",      # Common
     "modelValid", "validationDataManual", "validationLeaveOneOut", "noOfFolds",           # Common
 	"shrinkage", "interactionDepth", "minObservationsInNode",                             # Boosting
-    "minObservationsForSplit",                                                            # Decision tree
+    "minObservationsForSplit", "maxComplexityParameter",                                  # Decision tree
     "distanceParameterManual", "noOfNearestNeighbours", "weights", "maxNearestNeighbors", # k-Nearest neighbors
     "estimationMethod",                                                                   # Linear discriminant analysis
     "threshold", "algorithm", "learningRate", "lossFunction", "actfct", "layers",         # Neural network
@@ -37,7 +37,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
     "maxNodes", "mutationRate", "elitism", "selectionMethod", "crossoverMethod",          # Neural network
     "mutationMethod", "survivalMethod", "elitismProportion", "candidates",                # Neural network
     "noOfTrees", "maxTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors",   # Random forest
-    "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon"              # Support vector machine
+    "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon", "maxCost",  # Support vector machine
+    "smoothingParameter"                                                                  # Naive Bayes
   )
   if (includeSaveOptions) {
     opt <- c(opt, "saveModel", "savePath")
@@ -53,7 +54,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     dataset[, options[["predictors"]]] <- .scaleNumericData(dataset[, options[["predictors"]], drop = FALSE])
   }
   if (options[["target"]] != "") {
-    dataset[, options[["target"]]] <- factor(dataset[, options[["target"]]])
+    dataset[, options[["target"]]] <- factor(dataset[, options[["target"]]], ordered = FALSE)
   }
   return(dataset)
 }
@@ -65,8 +66,10 @@ gettextf <- function(fmt, ..., domain = NULL) {
 
 .mlClassificationReady <- function(options, type) {
   if (type == "lda" || type == "randomForest" || type == "boosting") {
+    # Require at least 2 features
     ready <- length(options[["predictors"]][options[["predictors"]] != ""]) >= 2 && options[["target"]] != ""
-  } else if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm") {
+  } else if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm" || type == "naivebayes") {
+    # Require at least 1 features
     ready <- length(options[["predictors"]][options[["predictors"]] != ""]) >= 1 && options[["target"]] != ""
   }
   return(ready)
@@ -95,7 +98,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
         "boosting" = .boostingClassification(dataset, options, jaspResults),
         "neuralnet" = .neuralnetClassification(dataset, options, jaspResults),
         "rpart" = .decisionTreeClassification(dataset, options, jaspResults),
-        "svm" = .svmClassification(dataset, options, jaspResults)
+        "svm" = .svmClassification(dataset, options, jaspResults),
+        "naivebayes" = .naiveBayesClassification(dataset, options, jaspResults)
       )
     })
     if (isTryError(p)) { # Fail gracefully
@@ -117,7 +121,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
     "boosting" = gettext("Boosting Classification"),
     "neuralnet" = gettext("Neural Network Classification"),
     "rpart" = gettext("Decision Tree Classification"),
-    "svm" = gettext("Support Vector Machine Classification")
+    "svm" = gettext("Support Vector Machine Classification"),
+    "naivebayes" = gettext("Naive Bayes Classification")
   )
   table <- createJaspTable(title)
   table$position <- position
@@ -140,9 +145,13 @@ gettextf <- function(fmt, ..., domain = NULL) {
     table$addColumnInfo(name = "layers", title = gettext("Hidden Layers"), type = "integer")
     table$addColumnInfo(name = "nodes", title = gettext("Nodes"), type = "integer")
   } else if (type == "rpart") {
+    table$addColumnInfo(name = "penalty", title = gettext("Complexity penalty"), type = "number")
     table$addColumnInfo(name = "splits", title = gettext("Splits"), type = "integer")
   } else if (type == "svm") {
+    table$addColumnInfo(name = "cost", title = gettext("Violation cost"), type = "number")
     table$addColumnInfo(name = "vectors", title = gettext("Support Vectors"), type = "integer")
+  } else if (type == "naivebayes") {
+    table$addColumnInfo(name = "smoothing", title = gettext("Smoothing"), type = "number")
   }
   # Add common columns
   table$addColumnInfo(name = "nTrain", title = gettext("n(Train)"), type = "integer")
@@ -278,15 +287,31 @@ gettextf <- function(fmt, ..., domain = NULL) {
   } else if (type == "rpart") {
     splits <- if (!is.null(classificationResult[["model"]]$splits)) nrow(classificationResult[["model"]]$splits) else 0
     row <- data.frame(
+      penalty = classificationResult[["penalty"]],
       splits = splits,
       nTrain = nTrain,
       nTest = classificationResult[["ntest"]],
       testAcc = classificationResult[["testAcc"]]
     )
+    if (options[["modelOptimization"]] != "manual") {
+      row <- cbind(row, nValid = nValid, validAcc = classificationResult[["validAcc"]])
+    }
     table$addRows(row)
   } else if (type == "svm") {
     row <- data.frame(
+      cost = classificationResult[["cost"]],
       vectors = nrow(classificationResult[["model"]]$SV),
+      nTrain = nTrain,
+      nTest = classificationResult[["ntest"]],
+      testAcc = classificationResult[["testAcc"]]
+    )
+    if (options[["modelOptimization"]] != "manual") {
+      row <- cbind(row, nValid = nValid, validAcc = classificationResult[["validAcc"]])
+    }
+    table$addRows(row)
+  } else if (type == "naivebayes") {
+    row <- data.frame(
+      smoothing = options[["smoothingParameter"]],
       nTrain = nTrain,
       nTest = classificationResult[["ntest"]],
       testAcc = classificationResult[["testAcc"]]
@@ -480,15 +505,21 @@ gettextf <- function(fmt, ..., domain = NULL) {
     predictions <- as.factor(max.col(predict(fit, newdata = grid)))
     levels(predictions) <- unique(dataset[, options[["target"]]])
   } else if (type == "rpart") {
-    fit <- rpart::rpart(formula, data = dataset, method = "class", control = rpart::rpart.control(minsplit = options[["minObservationsForSplit"]], minbucket = options[["minObservationsInNode"]], maxdepth = options[["interactionDepth"]], cp = options[["complexityParameter"]]))
+    classificationResult <- jaspResults[["classificationResult"]]$object
+    fit <- rpart::rpart(formula, data = dataset, method = "class", control = rpart::rpart.control(minsplit = options[["minObservationsForSplit"]], minbucket = options[["minObservationsInNode"]], maxdepth = options[["interactionDepth"]], cp = classificationResult[["penalty"]]))
     predictions <- as.factor(max.col(predict(fit, newdata = grid)))
     levels(predictions) <- unique(dataset[, options[["target"]]])
   } else if (type == "svm") {
+    classificationResult <- jaspResults[["classificationResult"]]$object
     fit <- e1071::svm(formula,
-      data = dataset, method = "C-classification", kernel = options[["weights"]], cost = options[["cost"]], tolerance = options[["tolerance"]],
+      data = dataset, method = "C-classification", kernel = options[["weights"]], cost = classificationResult[["cost"]], tolerance = options[["tolerance"]],
       epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]], gamma = options[["gamma"]], coef0 = options[["complexityParameter"]]
     )
     predictions <- predict(fit, newdata = grid)
+  } else if (type == "naivebayes") {
+    fit <- e1071::naiveBayes(formula, data = dataset, laplace = options[["laplace"]])
+    predictions <- as.factor(max.col(predict(fit, newdata = grid, type = "raw")))
+    levels(predictions) <- unique(dataset[, options[["target"]]])
   }
   shapes <- rep(21, nrow(dataset))
   if (type == "svm") {
@@ -625,6 +656,9 @@ gettextf <- function(fmt, ..., domain = NULL) {
         epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]], gamma = options[["gamma"]], coef0 = options[["complexityParameter"]]
       )
       score <- as.numeric(predict(fit, test))
+    } else if (type == "naivebayes") {
+      fit <- e1071::naiveBayes(formula, data = typeData, laplace = options[["laplace"]])
+      score <- max.col(predict(fit, test, type = "raw"))
     }
     pred <- ROCR::prediction(score, actual.class)
     nbperf <- ROCR::performance(pred, "tpr", "fpr")
@@ -1023,17 +1057,23 @@ gettextf <- function(fmt, ..., domain = NULL) {
   return(score)
 }
 
-.calcAUCScore.partClassification <- function(AUCformula, test, typeData, options, jaspResults, ...) {
-  fit <- rpart::rpart(AUCformula, data = typeData, method = "class", control = rpart::rpart.control(minsplit = options[["minObservationsForSplit"]], minbucket = options[["minObservationsInNode"]], maxdepth = options[["interactionDepth"]], cp = options[["complexityParameter"]]))
+.calcAUCScore.partClassification <- function(AUCformula, test, typeData, options, jaspResults, complexityPenalty, ...) {
+  fit <- rpart::rpart(AUCformula, data = typeData, method = "class", control = rpart::rpart.control(minsplit = options[["minObservationsForSplit"]], minbucket = options[["minObservationsInNode"]], maxdepth = options[["interactionDepth"]], cp = complexityPenalty))
   score <- max.col(predict(fit, test))
   return(score)
 }
 
-.calcAUCScore.svmClassification <- function(AUCformula, test, typeData, options, jaspResults, ...) {
+.calcAUCScore.svmClassification <- function(AUCformula, test, typeData, options, jaspResults, cost, ...) {
   fit <- e1071::svm(AUCformula,
-    data = typeData, type = "C-classification", kernel = options[["weights"]], cost = options[["cost"]], tolerance = options[["tolerance"]],
+    data = typeData, type = "C-classification", kernel = options[["weights"]], cost = cost, tolerance = options[["tolerance"]],
     epsilon = options[["epsilon"]], scale = FALSE, degree = options[["degree"]], gamma = options[["gamma"]], coef0 = options[["complexityParameter"]]
   )
   score <- as.numeric(predict(fit, test))
+  return(score)
+}
+
+.calcAUCScore.bayesClassification <- function(AUCformula, test, typeData, options, jaspResults, ...) {
+  fit <- e1071::naiveBayes(AUCformula, data = typeData, laplace = options[["smoothingParameter"]])
+  score <- max.col(predict(fit, test, type = "raw"))
   return(score)
 }

@@ -1,5 +1,6 @@
 context("Machine Learning Density-Based Clustering")
 
+# Test fixed model #############################################################
 options <- initMlOptions("mlClusteringDensityBased")
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""

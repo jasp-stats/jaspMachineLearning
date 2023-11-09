@@ -74,15 +74,6 @@ Group
 
 	DoubleField
 	{
-		name:				"cost"
-		text:				qsTr("Cost of constraints violation")
-		defaultValue:		1
-		min:				0.001
-		info:				qsTr("The 'C'-constant of the regularization term.")
-	}
-
-	DoubleField
-	{
 		name:				"tolerance"
 		text:				qsTr("Tolerance of termination criterion")
 		defaultValue:		0.001

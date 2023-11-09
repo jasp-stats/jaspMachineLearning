@@ -23,12 +23,43 @@ import JASP.Widgets		1.0
 
 RadioButtonGroup
 {
-	name:			"modelOptimization"
-	visible:		false
+	readonly property bool isManual: !optimizeModel.checked
+
+	name:					"modelOptimization"
+	title:					qsTr("Costs of Contraints Violation")
+	info:					qsTr("Choose how to optimize the model.")
 
 	RadioButton
 	{
-		name:		"manual"
-		checked:	true
+		name:				"manual"
+		text:				qsTr("Fixed")
+		info:				qsTr("Enables you to use a user-specified cost of constraints violation.")
+
+		DoubleField 
+		{
+			name:			"cost"
+			text:			qsTr("Violation cost")
+			defaultValue:	1
+			min:			0
+			info:			qsTr("The complexity penalty to be used. Any split that does not decrease the overall lack of fit by a factor of this parameter is not attempted.")
+		}
+	}
+
+	RadioButton
+	{
+		id:					optimizeModel
+		name:				"optimized"
+		text:				qsTr("Optimized")
+		checked:			true
+		info:				qsTr("Enables you to optimize the prediction error on a validation data set with respect to the cost of constraints violation.")
+
+		DoubleField
+		{
+			name:			"maxCost"
+			text:			qsTr("Max. violation cost")
+			defaultValue:	5
+			min:			0.02
+			info:			qsTr("Sets the maximum value of the cost of constraints violation to be considered. At default, this is set to 5.")
+		}
 	}
 }

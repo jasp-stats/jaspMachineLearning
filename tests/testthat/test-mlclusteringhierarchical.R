@@ -1,5 +1,20 @@
 context("Machine Learning Hierarchical Clustering")
 
+# Test fixed model #############################################################
+options <- initMlOptions("mlClusteringHierarchical")
+options$predictors <- list("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
+options$modelOptimization <- "manual"
+options$predictionsColumn <- ""
+options$setSeed <- TRUE
+options$tableClusterInformation <- FALSE
+set.seed(1)
+results <- jaspTools::runAnalysis("mlClusteringHierarchical", "iris.csv", options)
+
+table <- results[["results"]][["clusteringTable"]][["data"]]
+jaspTools::expect_equal_tables(table,
+		list(3, 150, 0.669701219735835, 220.86, 256.99, 0.48))
+
+# Test optimized model #########################################################
 options <- initMlOptions("mlClusteringHierarchical")
 options$addPredictions <- FALSE
 options$predictionsColumn <- ""

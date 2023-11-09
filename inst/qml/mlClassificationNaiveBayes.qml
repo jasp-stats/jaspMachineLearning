@@ -24,22 +24,28 @@ import JASP.Widgets		1.0
 import "./common/ui" as UI
 import "./common/tables" as TAB
 import "./common/figures" as FIG
-import "./common/analyses/svm" as SVM
 
-Form 
+Form
 {
-	info: qsTr("Support Vector Machines is a supervised learning algorithm that maps training examples to points in space so as to maximise the width of the gap between the two categories. New examples are then mapped into that same space and predicted to belong to a category based on which side of the gap they fall.\n### Assumptions\n- The target variable is a continuous variable.\n- The feature variables consist of continuous, nominal, or ordinal variable")
+	info: qsTr("Naive Bayes computes the conditional posterior probabilities of a categorical class variable given independent predictor variables using the Bayes rule.\n### Assumptions\n- The target variable is a nominal or ordinal variable.\n- The features are independent.\n- The features are normally distributed given the target class.")
 
-	UI.VariablesFormRegression { id: vars }
+	UI.VariablesFormClassification { id: vars }
 
 	Group
 	{
 		title: qsTr("Tables")
 
+		TAB.ConfusionMatrix { }
+		TAB.ClassProportions { }
 		TAB.ModelPerformance { }
 		TAB.FeatureImportance { }
 		TAB.ExplainPredictions { }
-		SVM.SupportVectors { }
+		CheckBox
+		{
+			name:	"tablePosterior"
+			label:	qsTr("Posterior statistics")
+			info:	qsTr("Show tables with the posterior statistics. For numeric features, the table contains the mean and standard deviation of the feature given the target class. For categorical features, the table displays the conditional probabilities given the target class.")
+		}
 	}
 
 	Group
@@ -47,8 +53,9 @@ Form
 		title: qsTr("Plots")
 
 		FIG.DataSplit { }
-		FIG.PredictivePerformance { }
-		SVM.OptimPlot { regression: true; enable: !optim.isManual }
+		FIG.RocCurve { }
+		FIG.AndrewsCurve { }
+		FIG.DecisionBoundary { }
 	}
 
 	UI.ExportResults { enabled: vars.predictorCount > 0 && vars.targetCount > 0 }
@@ -62,11 +69,28 @@ Form
 		{
 			title: qsTr("Algorithmic Settings")
 
-			SVM.AlgorithmicSettings { }
+			DoubleField
+			{
+				name:			"smoothingParameter"
+				label:			qsTr("Smoothing parameter")
+				defaultValue:	0
+				min:			0
+				info:			qsTr("A positive double controlling the amount of Laplace smoothing applied. The default (0) disables Laplace smoothing alltogether.")
+			}
 			UI.ScaleVariables { }
 			UI.SetSeed { }
 		}
 
-		SVM.ModelOptimization { id: optim }
+		RadioButtonGroup
+		{
+			name:			"modelOptimization"
+			visible:		false
+
+			RadioButton
+			{
+				name:		"manual"
+				checked:	true
+			}
+		}
 	}
 }
