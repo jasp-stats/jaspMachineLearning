@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2023-11-09 10:46\n"
-"PO-Revision-Date: 2023-10-06 13:16+0000\n"
+"PO-Revision-Date: 2023-11-09 10:59+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
-"X-Generator: Weblate 5.1-dev\n"
+"X-Generator: Weblate 5.2-dev\n"
 
 msgid "An error occurred in the analysis: %s"
 msgstr "Er is een fout opgetreden in de analyse: %s"
@@ -38,9 +38,8 @@ msgstr "Beslisboom Classificatie"
 msgid "Support Vector Machine Classification"
 msgstr "Support Vector Machine Classificatie"
 
-#, fuzzy
 msgid "Naive Bayes Classification"
-msgstr "Random Forest Classificatie"
+msgstr "Naive Bayes Classificatie"
 
 msgid "Nearest neighbors"
 msgstr "Dichtste buren"
@@ -73,20 +72,19 @@ msgid "Nodes"
 msgstr "Nodes"
 
 msgid "Complexity penalty"
-msgstr ""
+msgstr "Straf voor complexiteit"
 
 msgid "Splits"
 msgstr "Splitsingen"
 
-#, fuzzy
 msgid "Violation cost"
-msgstr "Validatieset"
+msgstr "Overtredingskosten"
 
 msgid "Support Vectors"
 msgstr "Ondersteuningsvectoren"
 
 msgid "Smoothing"
-msgstr ""
+msgstr "Afvlakking"
 
 msgid "n(Train)"
 msgstr "n(Train)"
@@ -635,11 +633,10 @@ msgstr "Voorspeld (Kans)"
 msgid "Base"
 msgstr "Basis"
 
-#, fuzzy
 msgid "There was an error in computing the results for this table: %1$s"
 msgstr ""
-"Er is een fout opgetreden in het uitrekenen van de resultaten voor deze "
-"tabel."
+"Er is een fout opgetreden bij het berekenen van de resultaten voor deze "
+"tabel: %1$s"
 
 msgid ""
 "Displayed values represent feature contributions to the predicted value "
@@ -739,28 +736,28 @@ msgstr ""
 "Zowel de p-waarde van de scheefheid als die van de gepiektheid moeten > 0.05 "
 "zijn om multivariate normaliteiten te concluderen."
 
-#, fuzzy
 msgid "Posterior Statistics"
-msgstr "Posterior"
+msgstr "Posterior Statistieken"
 
-#, fuzzy
 msgid "Feature: %1$s"
-msgstr "Kenmerk"
+msgstr "Kernmerk: %1$s"
 
 msgid "Mean"
-msgstr ""
+msgstr "Gemiddelde"
 
 msgid "Std. deviation"
-msgstr ""
+msgstr "Std. deviatie"
 
 msgid ""
 "The table displays the mean and standard deviation of the feature given the "
 "target class."
 msgstr ""
+"De tabel toont het gemiddelde en de standaardafwijking van het kenmerk "
+"gegeven de doelklasse."
 
 msgid ""
 "The table displays the conditional probabilities given the target class."
-msgstr ""
+msgstr "De tabel toont de conditionele kansen gegeven de doelklasse."
 
 msgid ""
 "Analysis not possible: The algorithm did not converge within the maximum "
@@ -852,7 +849,7 @@ msgid "Support vector machine"
 msgstr "Support vector machine"
 
 msgid "Naive Bayes"
-msgstr ""
+msgstr "Naive Bayes"
 
 msgid "Error: The trained model is not created in JASP."
 msgstr "Fout: Het getrainde model is niet gemaakt in JASP."
@@ -1014,7 +1011,7 @@ msgid "Validation set"
 msgstr "Validatieset"
 
 msgid "Complexity Penalty"
-msgstr ""
+msgstr "Straf voor Complexiteit"
 
 msgid "Number of Nearest Neighbors"
 msgstr "Aantal Dichtsbijzijnde Buren"
@@ -1281,7 +1278,7 @@ msgid "Row"
 msgstr "Rij"
 
 msgid "Cost of Constraints Violation"
-msgstr ""
+msgstr "Overtredingskosten"
 
 #~ msgid "Evaluation Metrics"
 #~ msgstr "Evaluatie Metriek"
