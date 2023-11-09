@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.2\n"
-"POT-Creation-Date: 2023-10-06 08:17\n"
+"POT-Creation-Date: 2023-11-09 10:46\n"
 "PO-Revision-Date: 2023-09-21 18:28+0000\n"
 "Last-Translator: JASP Stats <b.boutin@uva.nl>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
@@ -37,6 +37,10 @@ msgstr "决策树分类"
 msgid "Support Vector Machine Classification"
 msgstr "支持向量机分类"
 
+#, fuzzy
+msgid "Naive Bayes Classification"
+msgstr "随机森林分类"
+
 msgid "Nearest neighbors"
 msgstr "近邻"
 
@@ -67,10 +71,19 @@ msgstr "隐藏层"
 msgid "Nodes"
 msgstr "节点"
 
+msgid "Complexity penalty"
+msgstr ""
+
 msgid "Splits"
 msgstr ""
 
+msgid "Violation cost"
+msgstr ""
+
 msgid "Support Vectors"
+msgstr ""
+
+msgid "Smoothing"
 msgstr ""
 
 msgid "n(Train)"
@@ -573,7 +586,7 @@ msgstr ""
 msgid "Base"
 msgstr ""
 
-msgid "There was an error in computing the results for this table."
+msgid "There was an error in computing the results for this table: %1$s"
 msgstr ""
 
 msgid ""
@@ -665,6 +678,27 @@ msgid ""
 "conclude multivariate normality."
 msgstr ""
 
+msgid "Posterior Statistics"
+msgstr ""
+
+msgid "Feature: %1$s"
+msgstr ""
+
+msgid "Mean"
+msgstr ""
+
+msgid "Std. deviation"
+msgstr ""
+
+msgid ""
+"The table displays the mean and standard deviation of the feature given the "
+"target class."
+msgstr ""
+
+msgid ""
+"The table displays the conditional probabilities given the target class."
+msgstr ""
+
 msgid ""
 "Analysis not possible: The algorithm did not converge within the maximum "
 "number of training repetitions (%1$s)."
@@ -746,6 +780,9 @@ msgid "Decision tree"
 msgstr ""
 
 msgid "Support vector machine"
+msgstr ""
+
+msgid "Naive Bayes"
 msgstr ""
 
 msgid "Error: The trained model is not created in JASP."
@@ -885,6 +922,9 @@ msgid "Mean Squared Error"
 msgstr ""
 
 msgid "Validation set"
+msgstr ""
+
+msgid "Complexity Penalty"
 msgstr ""
 
 msgid "Number of Nearest Neighbors"
@@ -1144,4 +1184,7 @@ msgid "%s 1 SE"
 msgstr ""
 
 msgid "Row"
+msgstr ""
+
+msgid "Cost of Constraints Violation"
 msgstr ""

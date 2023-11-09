@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.0\n"
-"POT-Creation-Date: 2023-10-06 08:17\n"
+"POT-Creation-Date: 2023-11-09 10:46\n"
 "PO-Revision-Date: 2023-02-01 03:02+0000\n"
 "Last-Translator: Ünal Halit ÖZDEN <uozden@ticaret.edu.tr>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/jasp/"
@@ -37,6 +37,10 @@ msgstr "Karar Ağacı Sınıflandırması"
 msgid "Support Vector Machine Classification"
 msgstr ""
 
+#, fuzzy
+msgid "Naive Bayes Classification"
+msgstr "Rastgele Orman Sınıflandırması"
+
 msgid "Nearest neighbors"
 msgstr ""
 
@@ -67,11 +71,20 @@ msgstr ""
 msgid "Nodes"
 msgstr "Düğümler"
 
+msgid "Complexity penalty"
+msgstr ""
+
 msgid "Splits"
+msgstr ""
+
+msgid "Violation cost"
 msgstr ""
 
 msgid "Support Vectors"
 msgstr "Destek Vektörleri"
+
+msgid "Smoothing"
+msgstr ""
 
 msgid "n(Train)"
 msgstr ""
@@ -573,7 +586,7 @@ msgstr ""
 msgid "Base"
 msgstr ""
 
-msgid "There was an error in computing the results for this table."
+msgid "There was an error in computing the results for this table: %1$s"
 msgstr ""
 
 msgid ""
@@ -665,6 +678,27 @@ msgid ""
 "conclude multivariate normality."
 msgstr ""
 
+msgid "Posterior Statistics"
+msgstr ""
+
+msgid "Feature: %1$s"
+msgstr ""
+
+msgid "Mean"
+msgstr ""
+
+msgid "Std. deviation"
+msgstr ""
+
+msgid ""
+"The table displays the mean and standard deviation of the feature given the "
+"target class."
+msgstr ""
+
+msgid ""
+"The table displays the conditional probabilities given the target class."
+msgstr ""
+
 msgid ""
 "Analysis not possible: The algorithm did not converge within the maximum "
 "number of training repetitions (%1$s)."
@@ -746,6 +780,9 @@ msgid "Decision tree"
 msgstr ""
 
 msgid "Support vector machine"
+msgstr ""
+
+msgid "Naive Bayes"
 msgstr ""
 
 msgid "Error: The trained model is not created in JASP."
@@ -885,6 +922,9 @@ msgid "Mean Squared Error"
 msgstr ""
 
 msgid "Validation set"
+msgstr ""
+
+msgid "Complexity Penalty"
 msgstr ""
 
 msgid "Number of Nearest Neighbors"
@@ -1144,4 +1184,7 @@ msgid "%s 1 SE"
 msgstr ""
 
 msgid "Row"
+msgstr ""
+
+msgid "Cost of Constraints Violation"
 msgstr ""

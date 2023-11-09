@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2023-10-06 08:17\n"
+"POT-Creation-Date: 2023-11-09 10:46\n"
 "PO-Revision-Date: 2023-11-06 09:06+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
@@ -38,6 +38,10 @@ msgstr "Entscheidungsbaum-Klassifizierung"
 msgid "Support Vector Machine Classification"
 msgstr "Support Vector Machine-Klassifikation"
 
+#, fuzzy
+msgid "Naive Bayes Classification"
+msgstr "Random-Forest-Klassifikation"
+
 msgid "Nearest neighbors"
 msgstr "Nächste-Nachbarn"
 
@@ -68,11 +72,21 @@ msgstr "Verdeckte Schichten"
 msgid "Nodes"
 msgstr "Knoten"
 
+msgid "Complexity penalty"
+msgstr ""
+
 msgid "Splits"
 msgstr "Datenaufteilung"
 
+#, fuzzy
+msgid "Violation cost"
+msgstr "Validations-Menge"
+
 msgid "Support Vectors"
 msgstr "Support Vectors"
+
+msgid "Smoothing"
+msgstr ""
 
 msgid "n(Train)"
 msgstr "n(Train)"
@@ -631,7 +645,8 @@ msgstr "Vorhergesagt (Wahrsch.)"
 msgid "Base"
 msgstr ""
 
-msgid "There was an error in computing the results for this table."
+#, fuzzy
+msgid "There was an error in computing the results for this table: %1$s"
 msgstr ""
 "Es gab einen Fehler bei der Berechnung der Ergebnisse für diese Tabelle."
 
@@ -729,6 +744,29 @@ msgstr ""
 "Beide p-Werte der Schiefe- und Wölbungsstatistik sollten > 0.05 sein, um "
 "multivariate Normalität zu folgern."
 
+#, fuzzy
+msgid "Posterior Statistics"
+msgstr "Posterior"
+
+#, fuzzy
+msgid "Feature: %1$s"
+msgstr "Merkmal"
+
+msgid "Mean"
+msgstr ""
+
+msgid "Std. deviation"
+msgstr ""
+
+msgid ""
+"The table displays the mean and standard deviation of the feature given the "
+"target class."
+msgstr ""
+
+msgid ""
+"The table displays the conditional probabilities given the target class."
+msgstr ""
+
 msgid ""
 "Analysis not possible: The algorithm did not converge within the maximum "
 "number of training repetitions (%1$s)."
@@ -819,6 +857,9 @@ msgstr "Entscheidungsbaum"
 
 msgid "Support vector machine"
 msgstr "Support-Vektor-Maschine"
+
+msgid "Naive Bayes"
+msgstr ""
 
 msgid "Error: The trained model is not created in JASP."
 msgstr "Fehler: Das trainierte Modell ist nicht in JASP erstellt."
@@ -979,6 +1020,9 @@ msgstr "Mittlerer quadratischer Fehler"
 
 msgid "Validation set"
 msgstr "Validations-Menge"
+
+msgid "Complexity Penalty"
+msgstr ""
 
 msgid "Number of Nearest Neighbors"
 msgstr "Anzahl von nächsten Nachbarn"
@@ -1243,6 +1287,9 @@ msgstr "%s 1 Std. Fehler"
 
 msgid "Row"
 msgstr "Zeile"
+
+msgid "Cost of Constraints Violation"
+msgstr ""
 
 #~ msgid "Evaluation Metrics"
 #~ msgstr "Evaluationsmetriken"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2023-10-06 08:17\n"
+"POT-Creation-Date: 2023-11-09 10:46\n"
 "PO-Revision-Date: 2023-10-06 13:16+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
@@ -38,6 +38,10 @@ msgstr "Beslisboom Classificatie"
 msgid "Support Vector Machine Classification"
 msgstr "Support Vector Machine Classificatie"
 
+#, fuzzy
+msgid "Naive Bayes Classification"
+msgstr "Random Forest Classificatie"
+
 msgid "Nearest neighbors"
 msgstr "Dichtste buren"
 
@@ -68,11 +72,21 @@ msgstr "Verborgen Lagen"
 msgid "Nodes"
 msgstr "Nodes"
 
+msgid "Complexity penalty"
+msgstr ""
+
 msgid "Splits"
 msgstr "Splitsingen"
 
+#, fuzzy
+msgid "Violation cost"
+msgstr "Validatieset"
+
 msgid "Support Vectors"
 msgstr "Ondersteuningsvectoren"
+
+msgid "Smoothing"
+msgstr ""
 
 msgid "n(Train)"
 msgstr "n(Train)"
@@ -621,7 +635,8 @@ msgstr "Voorspeld (Kans)"
 msgid "Base"
 msgstr "Basis"
 
-msgid "There was an error in computing the results for this table."
+#, fuzzy
+msgid "There was an error in computing the results for this table: %1$s"
 msgstr ""
 "Er is een fout opgetreden in het uitrekenen van de resultaten voor deze "
 "tabel."
@@ -724,6 +739,29 @@ msgstr ""
 "Zowel de p-waarde van de scheefheid als die van de gepiektheid moeten > 0.05 "
 "zijn om multivariate normaliteiten te concluderen."
 
+#, fuzzy
+msgid "Posterior Statistics"
+msgstr "Posterior"
+
+#, fuzzy
+msgid "Feature: %1$s"
+msgstr "Kenmerk"
+
+msgid "Mean"
+msgstr ""
+
+msgid "Std. deviation"
+msgstr ""
+
+msgid ""
+"The table displays the mean and standard deviation of the feature given the "
+"target class."
+msgstr ""
+
+msgid ""
+"The table displays the conditional probabilities given the target class."
+msgstr ""
+
 msgid ""
 "Analysis not possible: The algorithm did not converge within the maximum "
 "number of training repetitions (%1$s)."
@@ -812,6 +850,9 @@ msgstr "Beslisboom"
 
 msgid "Support vector machine"
 msgstr "Support vector machine"
+
+msgid "Naive Bayes"
+msgstr ""
 
 msgid "Error: The trained model is not created in JASP."
 msgstr "Fout: Het getrainde model is niet gemaakt in JASP."
@@ -971,6 +1012,9 @@ msgstr "Gemiddelde kwadratenfout"
 
 msgid "Validation set"
 msgstr "Validatieset"
+
+msgid "Complexity Penalty"
+msgstr ""
 
 msgid "Number of Nearest Neighbors"
 msgstr "Aantal Dichtsbijzijnde Buren"
@@ -1235,6 +1279,9 @@ msgstr "%s 1 Std. Fout"
 
 msgid "Row"
 msgstr "Rij"
+
+msgid "Cost of Constraints Violation"
+msgstr ""
 
 #~ msgid "Evaluation Metrics"
 #~ msgstr "Evaluatie Metriek"
