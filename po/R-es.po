@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
 "POT-Creation-Date: 2023-11-09 10:46\n"
-"PO-Revision-Date: 2023-11-10 11:34+0000\n"
-"Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
+"PO-Revision-Date: 2023-11-11 23:40+0000\n"
+"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/es/>\n"
 "Language: es\n"
@@ -38,7 +38,7 @@ msgid "Support Vector Machine Classification"
 msgstr "Clasificación de Máquinas de Vectores de Soporte"
 
 msgid "Naive Bayes Classification"
-msgstr "Clasificación Naive Bayes"
+msgstr "Clasificación ingenua de Bayes"
 
 msgid "Nearest neighbors"
 msgstr "Vecinos más próximos"
@@ -71,20 +71,19 @@ msgid "Nodes"
 msgstr "Nodos"
 
 msgid "Complexity penalty"
-msgstr ""
+msgstr "Penalización de complejidad"
 
 msgid "Splits"
 msgstr "Separadores"
 
-#, fuzzy
 msgid "Violation cost"
-msgstr "Conjunto de validación"
+msgstr "Coste del incumplimiento"
 
 msgid "Support Vectors"
 msgstr "Vectores de Soporte"
 
 msgid "Smoothing"
-msgstr ""
+msgstr "Alisamiento"
 
 msgid "n(Train)"
 msgstr "n(Adiestramiento)"
@@ -647,9 +646,8 @@ msgstr "Predicho (Prob.)"
 msgid "Base"
 msgstr "Base"
 
-#, fuzzy
 msgid "There was an error in computing the results for this table: %1$s"
-msgstr "Ocurrió un fallo al calcular los resultados de esta tabla."
+msgstr "Ocurrió un fallo al calcular los resultados para esta tabla: %1$s"
 
 msgid ""
 "Displayed values represent feature contributions to the predicted value "
@@ -748,28 +746,29 @@ msgstr ""
 "Los dos valores p de los estadísticos de asimetría y curtosis deben ser > "
 "0.05 para cocluir la Normalidad Multivariante."
 
-#, fuzzy
 msgid "Posterior Statistics"
-msgstr "Posterior"
+msgstr "Estadísticos posteriores"
 
-#, fuzzy
 msgid "Feature: %1$s"
-msgstr "Característica"
+msgstr "Característica: %1$s"
 
 msgid "Mean"
-msgstr ""
+msgstr "Media"
 
 msgid "Std. deviation"
-msgstr ""
+msgstr "Desviación típica"
 
 msgid ""
 "The table displays the mean and standard deviation of the feature given the "
 "target class."
 msgstr ""
+"La tabla presenta la media y la desviación típica de la característica dada "
+"la clase objetivo."
 
 msgid ""
 "The table displays the conditional probabilities given the target class."
 msgstr ""
+"La tabla presenta las probabilidades condicionadas dada la clase objetivo."
 
 msgid ""
 "Analysis not possible: The algorithm did not converge within the maximum "
@@ -860,7 +859,7 @@ msgid "Support vector machine"
 msgstr "Máquina de vectores de soporte"
 
 msgid "Naive Bayes"
-msgstr ""
+msgstr "Bayes Ingenuo"
 
 msgid "Error: The trained model is not created in JASP."
 msgstr "Fallo: El modelo ensayado no se creó en JASP."
@@ -1024,7 +1023,7 @@ msgid "Validation set"
 msgstr "Conjunto de validación"
 
 msgid "Complexity Penalty"
-msgstr ""
+msgstr "Penalización de complejidad"
 
 msgid "Number of Nearest Neighbors"
 msgstr "Número de Vecinos Más Cercanos"
@@ -1292,7 +1291,7 @@ msgid "Row"
 msgstr "Fila"
 
 msgid "Cost of Constraints Violation"
-msgstr ""
+msgstr "Coste del incumplimiento de las restricciones"
 
 #~ msgid "Evaluation Metrics"
 #~ msgstr "Métricas de evaluación"
