@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2023-11-09 10:46\n"
-"PO-Revision-Date: 2023-10-11 15:44+0000\n"
+"PO-Revision-Date: 2023-11-11 23:40+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/gl/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.1-dev\n"
+"X-Generator: Weblate 5.2-dev\n"
 "X-Virgin-Header: remove this line if you change anything in the header.\n"
 "X-Language: gl_ES\n"
 "X-Source-Language: C\n"
@@ -45,9 +45,8 @@ msgstr "Clasificación de Árbore de Decisión"
 msgid "Support Vector Machine Classification"
 msgstr "Clasificación de Máquinas de Vectores de Soporte"
 
-#, fuzzy
 msgid "Naive Bayes Classification"
-msgstr "Clasificación de Bosques Aleatorios"
+msgstr "Clasificación inxenua de Bayes"
 
 msgid "Nearest neighbors"
 msgstr "Veciños máis próximos"
@@ -80,20 +79,19 @@ msgid "Nodes"
 msgstr "Nodos"
 
 msgid "Complexity penalty"
-msgstr ""
+msgstr "Penalización da complexidade"
 
 msgid "Splits"
 msgstr "Separadores"
 
-#, fuzzy
 msgid "Violation cost"
-msgstr "Conxunto de validación"
+msgstr "Custo do incumprimento"
 
 msgid "Support Vectors"
 msgstr "Vectores de Soporte"
 
 msgid "Smoothing"
-msgstr ""
+msgstr "Alisamento"
 
 msgid "n(Train)"
 msgstr "n(Ensaio)"
@@ -647,9 +645,8 @@ msgstr "Predito (Prob.)"
 msgid "Base"
 msgstr "Base"
 
-#, fuzzy
 msgid "There was an error in computing the results for this table: %1$s"
-msgstr "Aconteceu un fallo ao calcular os resultados desta táboa."
+msgstr "Aconteceu un fallo ao calcular os resultados para esta táboa: %1$s"
 
 msgid ""
 "Displayed values represent feature contributions to the predicted value "
@@ -748,28 +745,29 @@ msgstr ""
 "Os dous valores p dos estatísticos de asimetría e curtose deben ser > 0.05 "
 "para cocluír a Normalidade Multivariante."
 
-#, fuzzy
 msgid "Posterior Statistics"
-msgstr "Posterior"
+msgstr "Estatísticos posteriores"
 
-#, fuzzy
 msgid "Feature: %1$s"
-msgstr "Característica"
+msgstr "Característica: %1$s"
 
 msgid "Mean"
-msgstr ""
+msgstr "Media"
 
 msgid "Std. deviation"
-msgstr ""
+msgstr "Desvío padrón"
 
 msgid ""
 "The table displays the mean and standard deviation of the feature given the "
 "target class."
 msgstr ""
+"A táboa presenta a media e o desvío padrón da característica dada a clase "
+"obxectivo."
 
 msgid ""
 "The table displays the conditional probabilities given the target class."
 msgstr ""
+"A táboa presenta as probabilidades condicionadas dada a clase obxectivo."
 
 msgid ""
 "Analysis not possible: The algorithm did not converge within the maximum "
@@ -860,7 +858,7 @@ msgid "Support vector machine"
 msgstr "Máquina de vectores de soporte"
 
 msgid "Naive Bayes"
-msgstr ""
+msgstr "Bayes Inxenuo"
 
 msgid "Error: The trained model is not created in JASP."
 msgstr "Fallo: O modelo ensaiado non se creou en JASP."
@@ -1024,7 +1022,7 @@ msgid "Validation set"
 msgstr "Conxunto de validación"
 
 msgid "Complexity Penalty"
-msgstr ""
+msgstr "Penalización da complexidade"
 
 msgid "Number of Nearest Neighbors"
 msgstr "Número de Veciños Máis Próximos"
@@ -1292,7 +1290,7 @@ msgid "Row"
 msgstr "Fila"
 
 msgid "Cost of Constraints Violation"
-msgstr ""
+msgstr "Custo do incumprimento das restricións"
 
 #~ msgid "Evaluation Metrics"
 #~ msgstr "Métricas de avaliación"
