@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2023-11-09 10:46\n"
-"PO-Revision-Date: 2023-11-06 09:06+0000\n"
+"PO-Revision-Date: 2023-11-13 11:11+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/de/>\n"
@@ -38,9 +38,8 @@ msgstr "Entscheidungsbaum-Klassifizierung"
 msgid "Support Vector Machine Classification"
 msgstr "Support Vector Machine-Klassifikation"
 
-#, fuzzy
 msgid "Naive Bayes Classification"
-msgstr "Random-Forest-Klassifikation"
+msgstr "Naive-Bayes-Klassifikation"
 
 msgid "Nearest neighbors"
 msgstr "Nächste-Nachbarn"
@@ -73,20 +72,20 @@ msgid "Nodes"
 msgstr "Knoten"
 
 msgid "Complexity penalty"
-msgstr ""
+msgstr "Komplexitäts-Strafterm"
 
 msgid "Splits"
 msgstr "Datenaufteilung"
 
 #, fuzzy
 msgid "Violation cost"
-msgstr "Validations-Menge"
+msgstr "Verletzungs-Kosten"
 
 msgid "Support Vectors"
 msgstr "Support Vectors"
 
 msgid "Smoothing"
-msgstr ""
+msgstr "Glättung"
 
 msgid "n(Train)"
 msgstr "n(Train)"
@@ -207,9 +206,8 @@ msgstr "Andrews Kurve benötigt ein Minimum von 2 Merkmalsvariablen."
 msgid "Box's M-test for Homogeneity of Covariance Matrices"
 msgstr "Box's M-test auf die Homogenität der Kovarianz-Matritzen"
 
-#, fuzzy
 msgid "Model Performance Metrics"
-msgstr "Diagramm Vorhersageleistung"
+msgstr "Modell-Leistungs-Metriken"
 
 msgid "Support"
 msgstr "Träger"
@@ -358,14 +356,14 @@ msgstr ""
 "die Parameter 'Epsilon-Nachbarschaftsgröße' und 'Min. Core-Points' unter "
 "'Trainingsparameter' zu ändern."
 
-#, fuzzy
 msgid ""
 "The model contains 1 cluster and no Noisepoints. You may want to change "
 "'Epsilon neighborhood size' and 'Min. core points' parameters under "
 "'Training parameters'."
 msgstr ""
-"Das Clustermodell enthält 1 Cluster und 0 Noisepoints. Sie könnten die "
-"Parameter Eps und MinPts ändern."
+"Das Modell enthält 1 Cluster und keine Noisepoints. Sie wollen "
+"möglicherweise die Parameter 'Epsilon-Nachbarschaftsgröße' und 'Min. Core-"
+"Points' unter 'Trainingsparameter' ändern."
 
 msgid "The features in the model are <b>unstandardized</b>."
 msgstr "Die Merkmale in dem Modell sind <b>unstandardisiert</b>."
@@ -642,23 +640,30 @@ msgstr "Fall"
 msgid "Predicted (Prob.)"
 msgstr "Vorhergesagt (Wahrsch.)"
 
-msgid "Base"
-msgstr ""
-
 #, fuzzy
+msgid "Base"
+msgstr "Basis"
+
 msgid "There was an error in computing the results for this table: %1$s"
 msgstr ""
-"Es gab einen Fehler bei der Berechnung der Ergebnisse für diese Tabelle."
+"Es gab einen Fehler bei der Berechnung der Ergebnisse für diese Tabelle: %1$s"
 
+#, fuzzy
 msgid ""
 "Displayed values represent feature contributions to the predicted value "
 "without features (column 'Base') for the test set."
 msgstr ""
+"Anzeigte Werte stellen Merkmalsbeiträge zum vorhergesagten Wert ohne "
+"Merkmale (Spalte 'Basis') für den Testsatz dar."
 
+#, fuzzy
 msgid ""
 "Displayed values represent feature contributions to the predicted class "
 "probability without features (column 'Base') for the test set."
 msgstr ""
+"Angezeigte Werte stellen Merkmalsbeiträge zur vorhergesagten "
+"Klassenwahrscheinlichkeit ohne Merkmale (Spalte 'Basis') für den Testsatz "
+"dar."
 
 #, fuzzy
 msgid "Feature Importance Metrics"
@@ -744,28 +749,29 @@ msgstr ""
 "Beide p-Werte der Schiefe- und Wölbungsstatistik sollten > 0.05 sein, um "
 "multivariate Normalität zu folgern."
 
-#, fuzzy
 msgid "Posterior Statistics"
-msgstr "Posterior"
+msgstr "Posterior-Statistiken"
 
-#, fuzzy
 msgid "Feature: %1$s"
-msgstr "Merkmal"
+msgstr "Merkmal: %1$s"
 
 msgid "Mean"
-msgstr ""
+msgstr "Mittelwert"
 
 msgid "Std. deviation"
-msgstr ""
+msgstr "Std.-Abweichung"
 
 msgid ""
 "The table displays the mean and standard deviation of the feature given the "
 "target class."
 msgstr ""
+"Die Tabelle zeigt den Mittelwert und Standardabweichung des Merkmals, "
+"gegeben der Zielklasse."
 
 msgid ""
 "The table displays the conditional probabilities given the target class."
 msgstr ""
+"Die Tabelle zeigt die bedingten Wahrscheinlichkeiten, gegeben der Zielklasse."
 
 msgid ""
 "Analysis not possible: The algorithm did not converge within the maximum "
@@ -858,8 +864,9 @@ msgstr "Entscheidungsbaum"
 msgid "Support vector machine"
 msgstr "Support-Vektor-Maschine"
 
+#, fuzzy
 msgid "Naive Bayes"
-msgstr ""
+msgstr "Naiv-Bayes"
 
 msgid "Error: The trained model is not created in JASP."
 msgstr "Fehler: Das trainierte Modell ist nicht in JASP erstellt."
@@ -1022,7 +1029,7 @@ msgid "Validation set"
 msgstr "Validations-Menge"
 
 msgid "Complexity Penalty"
-msgstr ""
+msgstr "Komplexitäts-Strafterm"
 
 msgid "Number of Nearest Neighbors"
 msgstr "Anzahl von nächsten Nachbarn"
@@ -1289,7 +1296,7 @@ msgid "Row"
 msgstr "Zeile"
 
 msgid "Cost of Constraints Violation"
-msgstr ""
+msgstr "Kosten von Beschränkungsverletzung"
 
 #~ msgid "Evaluation Metrics"
 #~ msgstr "Evaluationsmetriken"
