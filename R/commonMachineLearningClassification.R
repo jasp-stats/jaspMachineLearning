@@ -329,7 +329,11 @@ gettextf <- function(fmt, ..., domain = NULL) {
     model[["jaspVersion"]] <- .baseCitation
     model <- .decodeJaspMLobject(model)
     class(model) <- c(class(classificationResult[["model"]]), "jaspClassification", "jaspMachineLearning")
-    saveRDS(model, file = options[["savePath"]])
+    path <- options[["savePath"]]
+    if (!endsWith(path, ".jaspML")) {
+      path <- paste0(path, ".jaspML")
+    }
+    saveRDS(model, file = path)
   }
 }
 

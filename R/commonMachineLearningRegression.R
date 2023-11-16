@@ -458,7 +458,11 @@
     model[["explainer"]] <- regressionResult[["explainer"]]
     model <- .decodeJaspMLobject(model)
     class(model) <- c(class(regressionResult[["model"]]), "jaspRegression", "jaspMachineLearning")
-    saveRDS(model, file = options[["savePath"]])
+    path <- options[["savePath"]]
+    if (!endsWith(path, ".jaspML")) {
+      path <- paste0(path, ".jaspML")
+    }
+    saveRDS(model, file = path)
   }
 }
 
