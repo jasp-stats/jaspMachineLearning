@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2023-11-09 10:46\n"
-"PO-Revision-Date: 2023-11-13 11:11+0000\n"
-"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
+"PO-Revision-Date: 2023-11-18 03:20+0000\n"
+"Last-Translator: Thomas Langkamp <thomas.lassdiesonnerein@gmx.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/de/>\n"
 "Language: de\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
-"X-Generator: Weblate 5.2-dev\n"
+"X-Generator: Weblate 5.2\n"
 
 msgid "An error occurred in the analysis: %s"
 msgstr "In der Analyse ist ein Fehler aufgetreten: %s"
@@ -77,9 +77,8 @@ msgstr "Komplexitäts-Strafterm"
 msgid "Splits"
 msgstr "Datenaufteilung"
 
-#, fuzzy
 msgid "Violation cost"
-msgstr "Verletzungs-Kosten"
+msgstr "Kosten der Verletzung"
 
 msgid "Support Vectors"
 msgstr "Support Vectors"
@@ -346,14 +345,13 @@ msgstr ""
 "Die optimale Anzahl von Clustern ist die maximale Anzahl von Clustern. "
 "Möglicherweise möchten Sie den Optimierungsbereich anpassen."
 
-#, fuzzy
 msgid ""
 "The model contains 0 clusters and only Noisepoints, we advise to change "
 "'Epsilon neighborhood size' and 'Min. core points' parameters under "
 "'Training parameters'."
 msgstr ""
-"Das Modell enthält 0 Cluster und ausschließlich Noisepoints; wir empfehlen, "
-"die Parameter 'Epsilon-Nachbarschaftsgröße' und 'Min. Core-Points' unter "
+"Das Modell enthält 0 Cluster und ausschließlich Rauschen; wir empfehlen, die "
+"Parameter 'Epsilon-Nachbarschaftsgröße' und 'Min. Core-Points' unter "
 "'Trainingsparameter' zu ändern."
 
 msgid ""
@@ -629,18 +627,15 @@ msgstr "Training und Validation: %d"
 msgid "Additive Explanations for Predictions of New Cases"
 msgstr "Additive Erklärungen für Vorhersagen neuer Fälle"
 
-#, fuzzy
 msgid "Additive Explanations for Predictions of Test Set Cases"
-msgstr "Additive Erklärungen für Vorhersagen von Testsatz-Fällen"
+msgstr "Additive Erklärungen für Vorhersagen von Testfällen"
 
 msgid "Case"
 msgstr "Fall"
 
-#, fuzzy
 msgid "Predicted (Prob.)"
 msgstr "Vorhergesagt (Wahrsch.)"
 
-#, fuzzy
 msgid "Base"
 msgstr "Basis"
 
@@ -648,32 +643,29 @@ msgid "There was an error in computing the results for this table: %1$s"
 msgstr ""
 "Es gab einen Fehler bei der Berechnung der Ergebnisse für diese Tabelle: %1$s"
 
-#, fuzzy
 msgid ""
 "Displayed values represent feature contributions to the predicted value "
 "without features (column 'Base') for the test set."
 msgstr ""
-"Anzeigte Werte stellen Merkmalsbeiträge zum vorhergesagten Wert ohne "
-"Merkmale (Spalte 'Basis') für den Testsatz dar."
+"Angezeigte Werte stellen Beiträge des Merkmals zum vorhergesagten Wert ohne "
+"Merkmale (Spalte 'Basis') für den Testdatensatz dar."
 
-#, fuzzy
 msgid ""
 "Displayed values represent feature contributions to the predicted class "
 "probability without features (column 'Base') for the test set."
 msgstr ""
-"Angezeigte Werte stellen Merkmalsbeiträge zur vorhergesagten "
-"Klassenwahrscheinlichkeit ohne Merkmale (Spalte 'Basis') für den Testsatz "
-"dar."
+"Angezeigte Werte stellen Beiträge des Merkmals zur vorhergesagten "
+"Klassenwahrscheinlichkeit ohne Merkmale (Spalte 'Basis') für den "
+"Testdatensatz dar."
 
-#, fuzzy
 msgid "Feature Importance Metrics"
-msgstr "Merkmal-Wichtigkeits-Metriken"
+msgstr "Bedeutungsmaße des Merkmals"
 
 msgid "Mean dropout loss"
-msgstr ""
+msgstr "Mittlerer Ausfallverlust"
 
 msgid "Mean dropout loss is based on 50 permutations."
-msgstr ""
+msgstr "Mittlerer Ausfallverlust basiert auf 50 Permutationen."
 
 msgid "The target variable should have at least 2 classes."
 msgstr "Die Zielvariable muss mindestens 2 Klassen enthalten."
@@ -864,7 +856,6 @@ msgstr "Entscheidungsbaum"
 msgid "Support vector machine"
 msgstr "Support-Vektor-Maschine"
 
-#, fuzzy
 msgid "Naive Bayes"
 msgstr "Naiv-Bayes"
 
