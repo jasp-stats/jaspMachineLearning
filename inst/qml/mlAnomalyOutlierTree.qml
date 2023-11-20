@@ -21,7 +21,7 @@ import QtQuick.Layouts							1.3
 import JASP.Controls							1.0
 import JASP.Widgets								1.0
 
-import "./common" as ML
+import "./common/ui" as ML
 
 Form 
 {
