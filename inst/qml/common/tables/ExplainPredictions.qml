@@ -39,7 +39,7 @@ CheckBox
 			text:			qsTr("Cases")
 			defaultValue:	1
 			min:			1
-			max:			dataSetModel.rowCount()
+			max:			dataSetInfo.rowCount
 			info:			qsTr("The test set index of the first row to be displayed in the table.")
 		}
 
@@ -48,7 +48,7 @@ CheckBox
 			name:			"toIndex"
 			text:			qsTr("to")
 			defaultValue:	5
-			max:			dataSetModel.rowCount()
+			max:			dataSetInfo.rowCount
 			min:			1
 			info:			qsTr("The test set index of the last row to be displayed in the table.")
 		}

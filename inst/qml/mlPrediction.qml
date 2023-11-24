@@ -87,7 +87,7 @@ Form
 					text:						qsTr("Cases")
 					defaultValue:				1
 					min:						1
-					max:						dataSetModel.rowCount()
+					max:						dataSetInfo.rowCount
 				}
 
 				IntegerField
@@ -95,7 +95,7 @@ Form
 					name:						"toIndex"
 					text:						qsTr("to")
 					defaultValue:				20
-					max:						dataSetModel.rowCount()
+					max:						dataSetInfo.rowCount
 					min:						1
 				}
 			}
