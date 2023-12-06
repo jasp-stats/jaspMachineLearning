@@ -210,7 +210,7 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   splits <- result[["model"]]$splits
   if (options[["splitsTreeTable"]]) {
     # Only show the splits actually in the tree (aka with the highest OOB improvement)
-    splits <- splits[splits[, 1] > 0, ] # Discard the leaf splits 
+    splits <- splits[splits[, 1] > 0, , drop = FALSE] # Discard the leaf splits 
     df <- as.data.frame(splits)
     df$names <- rownames(splits)
     df$group <- c(1, 1 + cumsum(splits[-1, 1] != splits[-nrow(df), 1]))

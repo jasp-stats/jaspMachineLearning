@@ -588,7 +588,26 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
       child1[["structure"]] <- c(fromParent1, fromParent2)
       child2[["structure"]] <- c(fromParent2, fromParent1)
     } else if (options[["crossoverMethod"]] == "multipoint") {
-
+      crossover_points <- sort(sample(1:(options[["maxLayers"]] - 1), 2))
+      child1_structure <- numeric(options[["maxLayers"]])
+      child2_structure <- numeric(options[["maxLayers"]])
+      toggle <- TRUE
+      for (j in seq_len(options[["maxLayers"]])) {
+        if (j %in% crossover_points) {
+          toggle <- !toggle
+        }
+        if (toggle) {
+          child1_structure[j] <- parent1[j]
+          child2_structure[j] <- parent2[j]
+        } else {
+          child1_structure[j] <- parent2[j]
+          child2_structure[j] <- parent1[j]
+        }
+      }
+      child1_structure <- child1_structure[which(child1_structure != 0)]
+      child2_structure <- child2_structure[which(child2_structure != 0)]
+      child1[["structure"]] <- child1_structure
+      child2[["structure"]] <- child2_structure
     }
     child1[["age"]] <- 0
     child2[["age"]] <- 0
