@@ -327,6 +327,7 @@ gettextf <- function(fmt, ..., domain = NULL) {
     model <- classificationResult[["model"]]
     model[["jaspVars"]] <- decodeColNames(options[["predictors"]])
     model[["jaspVersion"]] <- .baseCitation
+    model[["explainer"]] <- classificationResult[["explainer"]]
     model <- .decodeJaspMLobject(model)
     class(model) <- c(class(classificationResult[["model"]]), "jaspClassification", "jaspMachineLearning")
     path <- options[["savePath"]]
