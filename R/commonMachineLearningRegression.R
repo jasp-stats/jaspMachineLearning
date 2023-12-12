@@ -724,6 +724,7 @@
   } else {
     explainer <- model[["explainer"]]
     x_test <- dataset[, options[["predictors"]]]
+    predictions <- .mlPredictionsState(model, dataset, options, jaspResults, ready)[options[["fromIndex"]]:options[["toIndex"]]]
   }
   from <- min(c(options[["fromIndex"]], options[["toIndex"]] - 1, nrow(x_test)))
   to <- min(c(options[["toIndex"]], nrow(x_test)))
@@ -738,7 +739,11 @@
       } else {
         predictedIndex <- which.max(shap[which(shap$variable == "prediction"), "contribution"])
         shap <- shap[which(shap[["label"]] == shap[which(shap$variable == "prediction"), ][, "label"][predictedIndex]), ]
-        out[i, 2] <- paste0(levels(result[["test"]][, options[["target"]]])[predictedIndex], " (", round(shap[which(shap[["variable"]] == "prediction"), "contribution"], 3), ")")
+        if (is.null(model)) {
+          out[i, 2] <- paste0(levels(result[["test"]][, options[["target"]]])[predictedIndex], " (", round(shap[which(shap[["variable"]] == "prediction"), "contribution"], 3), ")")
+        } else {
+          out[i, 2] <- paste0(predictions[i], " (", round(shap[which(shap[["variable"]] == "prediction"), "contribution"], 3), ")")
+        }
       }
       out[i, 3] <- shap[which(shap[["variable"]] == "intercept"), "contribution"]
       for (j in seq_along(options[["predictors"]])) {
