@@ -144,7 +144,7 @@ Section
 					max:						999
 					fieldWidth:					30
 					afterLabel:					qsTr("folds")
-					info:						qsTr("Tne number of folds to be used.")
+					info:						qsTr("The number of folds to be used.")
 				}
 			}
 		}

@@ -2245,7 +2245,7 @@ msgid "Partition the remaining data in *k* parts."
 msgstr "Deel de overige data op in *k* delen."
 
 msgctxt "DataSplit|"
-msgid "Tne number of folds to be used."
+msgid "The number of folds to be used."
 msgstr "Het aantal vouwen wat gebruikt wordt."
 
 msgctxt "DataSplit|"
