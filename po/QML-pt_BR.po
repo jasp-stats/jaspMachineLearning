@@ -1563,7 +1563,7 @@ msgid "folds"
 msgstr ""
 
 msgctxt "DataSplit|"
-msgid "Tne number of folds to be used."
+msgid "The number of folds to be used."
 msgstr ""
 
 msgctxt "DataSplit|"
