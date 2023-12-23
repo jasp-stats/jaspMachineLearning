@@ -1,15 +1,9 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-12-14 11:05+0000\n"
-"Last-Translator: Ginger Shu-Ying Yeh <gingershuying@gmail.com>\n"
-"Language-Team: Chinese (Traditional) <https://hosted.weblate.org/projects/"
-"jasp/jaspmachinelearning-qml/zh_Hant/>\n"
-"Language: zh_Hant\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.3\n"
 "X-Language: zh_Hant\n"
 "X-Qt-Contexts: true\n"
 
@@ -799,9 +793,10 @@ msgctxt "mlClusteringKMeans|"
 msgid "Distance"
 msgstr "距離"
 
+#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Euclidean"
-msgstr ""
+msgstr "歐幾里得"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Manhattan"
@@ -1111,9 +1106,10 @@ msgctxt "AlgorithmicSettings|"
 msgid "Euclidian"
 msgstr ""
 
+#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Manhattan"
-msgstr ""
+msgstr "曼哈頓"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
@@ -1190,9 +1186,10 @@ msgctxt "AlgorithmicSettings|"
 msgid "Activation function"
 msgstr ""
 
+#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Linear"
-msgstr ""
+msgstr "線性"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Binary"
@@ -1268,9 +1265,10 @@ msgid ""
 "- GeLU: *f(x) = 0.5 * x * (1 + tanh(sqrt(2 / pi) * (x + 0.044715 * x^3)))*"
 msgstr ""
 
+#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Algorithm"
-msgstr ""
+msgstr "演算法"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Backpropagation"
@@ -1312,9 +1310,10 @@ msgctxt "AlgorithmicSettings|"
 msgid "The learning rate used by the backpropagation algorithm."
 msgstr ""
 
+#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Loss function"
-msgstr ""
+msgstr "損失函數"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Sum of squares"
@@ -1600,9 +1599,10 @@ msgid ""
 "(regression) or accuracy (classification) of the model."
 msgstr ""
 
+#, fuzzy
 msgctxt "CoefficientTable|"
 msgid "Coefficients"
-msgstr ""
+msgstr "係數"
 
 msgctxt "CoefficientTable|"
 msgid "Shows a table containing the regression coefficients."
@@ -1647,9 +1647,10 @@ msgctxt "VariablesFormRegularizedRegression|"
 msgid "In this box, the variable that needs to be predicted should be entered."
 msgstr ""
 
+#, fuzzy
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "Features"
-msgstr ""
+msgstr "特徵"
 
 msgctxt "VariablesFormRegularizedRegression|"
 msgid ""
@@ -2052,9 +2053,10 @@ msgctxt "ClusterDetermination|"
 msgid "Choose how to determine the number of clusters in the model."
 msgstr ""
 
+#, fuzzy
 msgctxt "ClusterDetermination|"
 msgid "Fixed"
-msgstr ""
+msgstr "固定"
 
 msgctxt "ClusterDetermination|"
 msgid ""
@@ -2222,9 +2224,10 @@ msgctxt "VariablesFormClassification|"
 msgid "In this box, the variable that needs to be predicted should be entered."
 msgstr ""
 
+#, fuzzy
 msgctxt "VariablesFormClassification|"
 msgid "Features"
-msgstr ""
+msgstr "特徵"
 
 msgctxt "VariablesFormClassification|"
 msgid ""
@@ -2232,9 +2235,10 @@ msgid ""
 "variable should be entered."
 msgstr ""
 
+#, fuzzy
 msgctxt "VariablesFormClustering|"
 msgid "Features"
-msgstr ""
+msgstr "特徵"
 
 msgctxt "VariablesFormClustering|"
 msgid ""
@@ -2251,9 +2255,10 @@ msgctxt "VariablesFormRegression|"
 msgid "In this box, the variable that needs to be predicted should be entered."
 msgstr ""
 
+#, fuzzy
 msgctxt "VariablesFormRegression|"
 msgid "Features"
-msgstr ""
+msgstr "特徵"
 
 msgctxt "VariablesFormRegression|"
 msgid ""
