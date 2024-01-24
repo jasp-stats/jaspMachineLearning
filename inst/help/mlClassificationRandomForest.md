@@ -18,6 +18,7 @@ Random Forest is a method of classification that creates a set of decision trees
 - Class proportions: Displays a table that shows the proportions of each class in the data set, training (and validaton), and test set.
 - Model performance: Shows commonly used classification evaluation metrics like precision, recall, the F1-score, support and AUC (area under the ROC curve).
 - Feature importance: Shows the available feature importance metrics for the fitted model.
+  - Permutations: Sets the number of permutations on which the mean dropout loss is based.
 - Explain predictions: Shows the decomposition of the model’s prediction into contributions that can be attributed to different explanatory variables.
 
 #### Plots

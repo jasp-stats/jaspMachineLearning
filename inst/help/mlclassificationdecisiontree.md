@@ -18,6 +18,7 @@ Decision Trees is a supervised learning algorithm that uses a decision tree as a
 - Class proportions: Displays a table that shows the proportions of each class in the data set, training (and validaton), and test set.
 - Model performance: Shows commonly used classification evaluation metrics like precision, recall, the F1-score, support and AUC (area under the ROC curve).
 - Feature importance: Shows the available feature importance metrics for the fitted model.
+  - Permutations: Sets the number of permutations on which the mean dropout loss is based.
 - Explain predictions: Shows the decomposition of the model’s prediction into contributions that can be attributed to different explanatory variables.
 - Splits in tree: Shows the split variables, their split point, and the number of observations (which are not missing and are of positive weight) sent left or right by the split. It also shows the improvement in deviance given by this split.
 

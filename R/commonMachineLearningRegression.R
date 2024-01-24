@@ -770,9 +770,9 @@
   table <- createJaspTable(title = gettext("Feature Importance Metrics"))
   table$position <- position
   if (purpose == "regression") {
-    table$dependOn(options = c(.mlRegressionDependencies(options), "featureImportanceTable"))
+    table$dependOn(options = c(.mlRegressionDependencies(options), "featureImportanceTable", "featureImportancePermutations"))
   } else {
-    table$dependOn(options = c(.mlClassificationDependencies(options), "featureImportanceTable"))
+    table$dependOn(options = c(.mlClassificationDependencies(options), "featureImportanceTable", "featureImportancePermutations"))
   }
   table$addColumnInfo(name = "predictor", title = "", type = "string")
   table$addColumnInfo(name = "dl", title = gettext("Mean dropout loss"), type = "number")
@@ -786,13 +786,13 @@
   )
   .setSeedJASP(options) # Set the seed to make results reproducible
   if (purpose == "regression") {
-    fi <- DALEX::model_parts(result[["explainer"]], B = 50)
+    fi <- DALEX::model_parts(result[["explainer"]], B = options[["featureImportancePermutations"]])
   } else if (purpose == "classification") {
-    fi <- DALEX::model_parts(result[["explainer_fi"]], B = 50)
+    fi <- DALEX::model_parts(result[["explainer_fi"]], B = options[["featureImportancePermutations"]])
   }
   fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
   df <- data.frame(predictor = options[["predictors"]], dl = fi[match(options[["predictors"]], fi[["y"]]), "x"])
   df <- df[order(-df[["dl"]]), ]
   table$setData(df)
-  table$addFootnote(gettext("Mean dropout loss is based on 50 permutations."))
+  table$addFootnote(gettextf("Mean dropout loss is based on %1$s permutations.", options[["featureImportancePermutations"]]))
 }

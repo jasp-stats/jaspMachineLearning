@@ -23,7 +23,16 @@ import JASP.Widgets		1.0
 
 CheckBox
 {
-	name:	"featureImportanceTable"
-	text:	qsTr("Feature importance")
-	info:	qsTr("Shows the available feature importance metrics for the fitted model.")
+	name:				"featureImportanceTable"
+	text:				qsTr("Feature importance")
+	info:				qsTr("Shows the available feature importance metrics for the fitted model.")
+
+	IntegerField
+	{
+		name:			"featureImportancePermutations"
+		text:			qsTr("Permutations")
+		defaultValue:	50
+		min:			10
+		info:			qsTr("Sets the number of permutations on which the mean dropout loss is based.")
+	}
 }
