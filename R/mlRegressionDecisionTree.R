@@ -145,7 +145,7 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   table <- createJaspTable(title = gettext("Feature Importance Metrics"))
   table$position <- position
   table$dependOn(options = c(
-    "featureImportanceTable", "trainingDataManual", "scaleVariables", "target", "predictors", "seed", "setSeed",
+    "featureImportanceTable", "featureImportancePermutations", "trainingDataManual", "scaleVariables", "target", "predictors", "seed", "setSeed",
     "testSetIndicatorVariable", "testSetIndicator", "holdoutData", "testDataManual", "minObservationsForSplit", "minObservationsInNode", "interactionDepth", "complexityParameter"
   ))
   table$addColumnInfo(name = "predictor", title = " ", type = "string")
@@ -169,13 +169,13 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
   table[["imp"]] <- as.numeric(varImpOrder) / sum(as.numeric(varImpOrder)) * 100
   .setSeedJASP(options) # Set the seed to make results reproducible
   if (purpose == "regression") {
-    fi <- DALEX::model_parts(result[["explainer"]], B = 50)
+    fi <- DALEX::model_parts(result[["explainer"]], B = options[["featureImportancePermutations"]])
   } else if (purpose == "classification") {
-    fi <- DALEX::model_parts(result[["explainer_fi"]], B = 50)
+    fi <- DALEX::model_parts(result[["explainer_fi"]], B = options[["featureImportancePermutations"]])
   }
   fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
   table[["dl"]] <- fi[match(vars, fi[["y"]]), "x"]
-  table$addFootnote(gettext("Mean dropout loss is based on 50 permutations."))
+  table$addFootnote(gettextf("Mean dropout loss is based on %1$s permutations.", options[["featureImportancePermutations"]]))
 }
 
 .mlDecisionTreeTableSplits <- function(options, jaspResults, ready, position, purpose) {

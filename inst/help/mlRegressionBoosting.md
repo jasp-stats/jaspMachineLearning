@@ -16,6 +16,7 @@ Boosting works by sequentially adding features to an decision tree ensemble, eac
 #### Tables  
 - Model performance: Shows commonly used classification evaluation metrics like mean squared error (MSE), root mean squared error (RMSE) and R<sup>2</sup>.
 - Feature importance: Shows the available feature importance metrics for the fitted model.
+  - Permutations: Sets the number of permutations on which the mean dropout loss is based.
 - Explain predictions: Shows the decomposition of the model’s prediction into contributions that can be attributed to different explanatory variables.
 
 #### Plots

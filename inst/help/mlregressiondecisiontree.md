@@ -16,6 +16,7 @@ Decision Trees is a supervised learning algorithm that uses a decision tree as a
 #### Tables  
 - Model performance: Shows commonly used classification evaluation metrics like mean squared error (MSE), root mean squared error (RMSE) and R<sup>2</sup>.
 - Feature importance: Shows the available feature importance metrics for the fitted model.
+  - Permutations: Sets the number of permutations on which the mean dropout loss is based.
 - Explain predictions: Shows the decomposition of the model’s prediction into contributions that can be attributed to different explanatory variables.
 - Splits in tree: Shows the split variables, their split point, and the number of observations (which are not missing and are of positive weight) sent left or right by the split. It also shows the improvement in deviance given by this split.
 

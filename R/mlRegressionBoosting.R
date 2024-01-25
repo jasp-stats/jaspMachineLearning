@@ -160,9 +160,9 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   table <- createJaspTable(title = gettext("Feature Importance Metrics"))
   table$position <- position
   if (purpose == "regression") {
-    table$dependOn(options = c("featureImportanceTable", .mlRegressionDependencies()))
+    table$dependOn(options = c("featureImportanceTable", .mlRegressionDependencies(), "featureImportancePermutations"))
   } else {
-    table$dependOn(options = c("featureImportanceTable", .mlClassificationDependencies()))
+    table$dependOn(options = c("featureImportanceTable", .mlClassificationDependencies(), "featureImportancePermutations"))
   }
   table$addColumnInfo(name = "predictor", title = "", type = "string")
   table$addColumnInfo(name = "relIn", title = gettext("Relative Influence"), type = "number")
@@ -180,13 +180,13 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   table[["relIn"]] <- result[["relInf"]]$rel.inf
   .setSeedJASP(options) # Set the seed to make results reproducible
   if (purpose == "regression") {
-    fi <- DALEX::model_parts(result[["explainer"]], B = 50)
+    fi <- DALEX::model_parts(result[["explainer"]], B = options[["featureImportancePermutations"]])
   } else if (purpose == "classification") {
-    fi <- DALEX::model_parts(result[["explainer_fi"]], B = 50)
+    fi <- DALEX::model_parts(result[["explainer_fi"]], B = options[["featureImportancePermutations"]])
   }
   fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
   table[["dl"]] <- fi[match(vars, fi[["y"]]), "x"]
-  table$addFootnote(gettext("Mean dropout loss is based on 50 permutations."))
+  table$addFootnote(gettextf("Mean dropout loss is based on %1$s permutations.", options[["featureImportancePermutations"]]))
 }
 
 .mlBoostingPlotOobImprovement <- function(options, jaspResults, ready, position, purpose) {
