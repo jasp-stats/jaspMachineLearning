@@ -3004,3 +3004,12 @@ msgid ""
 msgstr ""
 "Een positief getal dat de hoeveelheid toegepaste Laplace-afvlakking regelt. "
 "De standaardwaarde (0) schakelt Laplace-afvlakken helemaal uit."
+
+msgctxt "FeatureImportance|"
+msgid "Permutations"
+msgstr ""
+
+msgctxt "FeatureImportance|"
+msgid ""
+"Sets the number of permutations on which the mean dropout loss is based."
+msgstr ""

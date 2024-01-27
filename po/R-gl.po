@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2023-11-09 10:46\n"
+"POT-Creation-Date: 2024-01-27 03:20\n"
 "PO-Revision-Date: 2023-11-11 23:40+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
@@ -669,7 +669,8 @@ msgstr "Métricas da importancia da característica"
 msgid "Mean dropout loss"
 msgstr "Perda media do abandono"
 
-msgid "Mean dropout loss is based on 50 permutations."
+#, fuzzy
+msgid "Mean dropout loss is based on %1$s permutations."
 msgstr "A perda media do abandono baséase en 50 permutacións."
 
 msgid "The target variable should have at least 2 classes."

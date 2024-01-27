@@ -3054,3 +3054,12 @@ msgstr ""
 "Un doble positivo que controla la cantidad del suavizado de Laplace "
 "aplicado. El valor predeterminado (0) desactiva completamente el suavizado "
 "de Laplace."
+
+msgctxt "FeatureImportance|"
+msgid "Permutations"
+msgstr ""
+
+msgctxt "FeatureImportance|"
+msgid ""
+"Sets the number of permutations on which the mean dropout loss is based."
+msgstr ""

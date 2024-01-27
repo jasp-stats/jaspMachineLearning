@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2023-11-09 10:46\n"
+"POT-Creation-Date: 2024-01-27 03:20\n"
 "PO-Revision-Date: 2023-11-09 10:59+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
@@ -659,7 +659,8 @@ msgstr "Metrieken voor Belang van Kenmerken"
 msgid "Mean dropout loss"
 msgstr "Gemiddelde dropout loss"
 
-msgid "Mean dropout loss is based on 50 permutations."
+#, fuzzy
+msgid "Mean dropout loss is based on %1$s permutations."
 msgstr "Gemiddelde dropout loss is gebaseerd op 50 permutaties."
 
 msgid "The target variable should have at least 2 classes."

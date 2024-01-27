@@ -3028,3 +3028,12 @@ msgid ""
 msgstr ""
 "Un dobre positivo que controla o grao do alisamento de Laplace que se "
 "aplica. O predeterminado (0) inhabilita totalmente o alisamento de Laplace."
+
+msgctxt "FeatureImportance|"
+msgid "Permutations"
+msgstr ""
+
+msgctxt "FeatureImportance|"
+msgid ""
+"Sets the number of permutations on which the mean dropout loss is based."
+msgstr ""

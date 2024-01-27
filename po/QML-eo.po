@@ -2580,3 +2580,12 @@ msgid ""
 "A positive double controlling the amount of Laplace smoothing applied. The "
 "default (0) disables Laplace smoothing alltogether."
 msgstr ""
+
+msgctxt "FeatureImportance|"
+msgid "Permutations"
+msgstr ""
+
+msgctxt "FeatureImportance|"
+msgid ""
+"Sets the number of permutations on which the mean dropout loss is based."
+msgstr ""
