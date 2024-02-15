@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2024-02-15 22:10+0000\n"
+"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.4\n"
 "X-Language: de\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -2646,6 +2652,8 @@ msgid ""
 "The prediction analysis enables you to load a trained machine learning model "
 "and apply it to new data."
 msgstr ""
+"Mit der Prognose-Analyse können Sie ein trainiertes Maschinenlernmodell "
+"laden und auf neue Daten anwenden."
 
 msgctxt "mlPrediction|"
 msgid "Cases"
@@ -2886,7 +2894,7 @@ msgstr ""
 
 msgctxt "ModelOptimization|"
 msgid "Violation cost"
-msgstr ""
+msgstr "Kosten der Verletzung"
 
 msgctxt "ModelOptimization|"
 msgid ""
@@ -2894,9 +2902,10 @@ msgid ""
 "respect to the cost of constraints violation."
 msgstr ""
 
+#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Max. violation cost"
-msgstr ""
+msgstr "Max. Verletzungskosten"
 
 msgctxt "ModelOptimization|"
 msgid ""
@@ -2924,14 +2933,13 @@ msgid ""
 "- The features are normally distributed given the target class."
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Tables"
 msgstr "Tabellen"
 
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Posterior statistics"
-msgstr ""
+msgstr "Posterior-Statistiken"
 
 msgctxt "mlClassificationNaiveBayes|"
 msgid ""
@@ -2940,25 +2948,27 @@ msgid ""
 "class. For categorical features, the table displays the conditional "
 "probabilities given the target class."
 msgstr ""
+"Tabellen mit den Posteriorstatistiken anzeigen. Für numerische Merkmale "
+"enthält die Tabelle den Mittelwert und die Standardabweichung des Merkmals, "
+"gegeben die Zielklasse. Für kategorische Merkmale zeigt die Tabelle die "
+"bedingten Wahrscheinlichkeiten gegeben der Zielklasse an."
 
-#, fuzzy
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Plots"
 msgstr "Diagramme"
 
-#, fuzzy
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Training Parameters"
 msgstr "Trainingsparameter"
 
-#, fuzzy
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Algorithmic Settings"
 msgstr "Algorithmus-Einstellungen"
 
+#, fuzzy
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Smoothing parameter"
-msgstr ""
+msgstr "Glättungsparameter"
 
 msgctxt "mlClassificationNaiveBayes|"
 msgid ""
@@ -2968,7 +2978,7 @@ msgstr ""
 
 msgctxt "FeatureImportance|"
 msgid "Permutations"
-msgstr ""
+msgstr "Permutationen"
 
 msgctxt "FeatureImportance|"
 msgid ""
