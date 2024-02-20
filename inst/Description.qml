@@ -148,6 +148,12 @@ Description
 	}
 	Analysis
 	{
+		menu:	qsTr("Model-Based")
+		title:	qsTr("Model-Based Clustering")
+		func:	"mlClusteringModelBased"
+	}
+	Analysis
+	{
 		menu:	qsTr("Neighborhood-Based")
 		title:	qsTr("Neighborhood-Based Clustering")
 		func:	"mlClusteringKMeans"

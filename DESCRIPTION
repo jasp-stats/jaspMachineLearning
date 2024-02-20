@@ -31,6 +31,7 @@ Imports:
   jaspBase,
   jaspGraphs,
   MASS,
+  mclust,
   mvnormalTest,
   neuralnet,
   network,

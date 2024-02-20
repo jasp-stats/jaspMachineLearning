@@ -24,7 +24,8 @@
     "maxNumberIterations", "fuzzinessParameter",                                  # Fuzzy c-means
     "linkage",                                                                    # Hierarchical
     "centers", "algorithm", "noOfRandomSets",                                     # K-means
-    "numberOfTrees"                                                               # Random forest
+    "numberOfTrees",                                                              # Random forest
+    "modelName"                                                                   # Model-based
   )
   return(opt)
 }
@@ -113,10 +114,11 @@
     p <- try({
       clusterResult <- switch(type,
         "kmeans" = .kMeansClustering(dataset, options, jaspResults),
-       "cmeans" = .cMeansClustering(dataset, options, jaspResults),
+        "cmeans" = .cMeansClustering(dataset, options, jaspResults),
         "hierarchical" = .hierarchicalClustering(dataset, options, jaspResults),
         "densitybased" = .densityBasedClustering(dataset, options, jaspResults),
-        "randomForest" = .randomForestClustering(dataset, options, jaspResults)
+        "randomForest" = .randomForestClustering(dataset, options, jaspResults),
+        "modelbased" = .modelBasedClustering(dataset, options, jaspResults)
       )
     })
     if (isTryError(p)) { # Fail gracefully
@@ -140,7 +142,8 @@
     "cmeans" = gettext("Fuzzy C-Means Clustering"),
     "hierarchical" = gettext("Hierarchical Clustering"),
     "densitybased" = gettext("Density-Based Clustering"),
-    "randomForest" = gettext("Random Forest Clustering")
+    "randomForest" = gettext("Random Forest Clustering"),
+    "modelbased" = gettext("Model-Based Clustering")
   )
   table <- createJaspTable(title)
   table$position <- position
@@ -186,6 +189,24 @@
       table$addFootnote(gettext("The model contains 1 cluster and no Noisepoints. You may want to change 'Epsilon neighborhood size' and 'Min. core points' parameters under 'Training parameters'."), colNames = "clusters")
     }
   }
+  if (type == "modelbased") {
+    modelName <- switch(clusterResult[["modelName"]],
+                        "EII" = gettext("spherical with equal volume"),
+                        "VII" = gettext("spherical with unequal volume"),
+                        "EEI" = gettext("diagonal with equal volume and shape"),
+                        "VEI" = gettext("diagonal with varying volume and equal shape"),
+                        "EVI" = gettext("diagonal with equal volume and varying shape"),
+                        "VVI" = gettext("diagonal with varying volume and shape"),
+                        "EEE" = gettext("ellipsoidal with equal volume, shape, and orientation"),
+                        "VEE" = gettext("ellipsoidal with equal shape and orientation"),
+                        "EVE" = gettext("ellipsoidal with equal volume and orientation"),
+                        "VVE" = gettext("ellipsoidal with equal orientation"),
+                        "EEV" = gettext("ellipsoidal with equal volume and equal shape"),
+                        "VEV" = gettext("ellipsoidal with equal shape"),
+                        "EVV" = gettext("ellipsoidal with equal volume"),
+                        "VVV" = gettext("ellipsoidal with varying volume, shape, and orientation"))
+    table$addFootnote(gettextf("The model is %1$s.", modelName))
+  }
   if (!options[["scaleVariables"]]) {
     table$addFootnote(gettext("The features in the model are <b>unstandardized</b>."))
   }
@@ -208,6 +229,9 @@
   table$position <- position
   table$transpose <- TRUE
   table$addColumnInfo(name = "cluster", title = gettext("Cluster"), type = "integer")
+  if (type == "modelbased") {
+    table$addColumnInfo(name = "prob", title = gettext("Mixing probability"), type = "number")
+  }
   table$addColumnInfo(name = "size", title = gettext("Size"), type = "integer")
   table$addColumnInfo(name = "percentage", title = gettext("Explained proportion within-cluster heterogeneity"), type = "number")
   if (options[["tableClusterInformationWithinSumOfSquares"]]) {
@@ -221,7 +245,7 @@
     return()
   }
   clusterResult <- jaspResults[["clusterResult"]]$object
-  if (type == "kmeans" || type == "cmeans") {
+  if (type == "kmeans" || type == "cmeans" || type == "modelbased") {
     if (options[["tableClusterInformationCentroids"]]) {
       for (i in seq_along(options[["predictors"]])) {
         title <- gettextf("Center %s", options[["predictors"]][i])
@@ -254,13 +278,16 @@
   if (options[["tableClusterInformationSilhouetteScore"]]) {
     row <- cbind(row, silh_scores = silh_scores)
   }
-  if (type == "kmeans" || type == "cmeans") {
+  if (type == "kmeans" || type == "cmeans" || type == "modelbased") {
     if (options[["tableClusterInformationCentroids"]]) {
       for (i in 1:length(options[["predictors"]])) {
         row <- cbind(row, "tmp" = clusterResult[["centroids"]][, i])
         colnames(row)[length(colnames(row))] <- paste0("centroid", i)
       }
     }
+  }
+  if (type == "modelbased") {
+    row <- cbind(row, prob = clusterResult[["parameters"]]$pro)
   }
   table$addRows(row)
   if (options[["tableClusterInformationBetweenSumOfSquares"]]) {
