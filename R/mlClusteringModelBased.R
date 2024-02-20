@@ -218,7 +218,7 @@ mclustBIC <- mclust::mclustBIC
   }
   # Tables with orientation
   if (!is.null(parameters[["variance"]]$orientation)) {
-    for (i in seq_len(length(options[["predictors"]]))) {
+    for (i in seq_len(clusterResult[["clusters"]])) {
       table <- createJaspTable(gettextf("Eigenvalues of the Covariance Matrix for Component %1$s", i))
       table$position <- 2 + clusterResult[["clusters"]] + 2 + i
       collection[[paste0("tableParametersOrientation", i)]] <- table
