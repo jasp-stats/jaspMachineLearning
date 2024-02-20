@@ -703,7 +703,8 @@
             x <- sqrt(lambda1) * cos(theta) * cos(t) - sqrt(lambda2) * sin(theta) * sin(t) + mu_x
             y <- sqrt(lambda1) * sin(theta) * cos(t) + sqrt(lambda2) * cos(theta) * sin(t) + mu_y
             ellips <- data.frame(x = x, y = y)
-            p <- p + ggplot2::geom_path(data = ellips, mapping = ggplot2::aes(x = x, y = y), color = .mlColorScheme(clusterResult[["clusters"]])[i], inherit.aes = FALSE)
+            p <- p + ggplot2::geom_path(data = ellips, mapping = ggplot2::aes(x = x, y = y), color = "black", inherit.aes = FALSE, linewidth = 1.5) +
+                       ggplot2::geom_path(data = ellips, mapping = ggplot2::aes(x = x, y = y), color = .mlColorScheme(clusterResult[["clusters"]])[i], inherit.aes = FALSE, linewidth = 0.75)
           }
         }
 
