@@ -39,27 +39,34 @@ mlClusteringModelBased <- function(jaspResults, dataset, options, ...) {
   # Create the cluster means table
   .mlClusteringTableMeans(dataset, options, jaspResults, ready, position = 4)
 
+  # Create the cluster variances table
+  .mlClusteringTableModelParameters(dataset, options, jaspResults, ready, position = 5)
+
   # Create the within sum of squares plot
-  .mlClusteringPlotElbow(dataset, options, jaspResults, ready, position = 5)
+  .mlClusteringPlotElbow(dataset, options, jaspResults, ready, position = 6)
 
   # Create the cluster plot
-  .mlClusteringPlotTsne(dataset, options, jaspResults, ready, position = 6, type = "modelbased")
+  .mlClusteringPlotTsne(dataset, options, jaspResults, ready, position = 7, type = "modelbased")
 
   # Create the matrix plot
-  .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 7)
+  .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 8)
 
   # Create the cluster means plot
-  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 8)
+  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 9)
 
   # Create the cluster densities plot
-  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 9)
+  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 10)
 }
+
+emControl <- mclust::emControl
+mclust.options <- mclust::mclust.options
+mclustBIC <- mclust::mclustBIC
 
 .modelBasedClustering <- function(dataset, options, jaspResults, ready) {
   if (options[["modelOptimization"]] == "manual") {
     fit <- mclust::Mclust(dataset[, options[["predictors"]]], G = options[["manualNumberOfClusters"]],
                           modelNames = if (options[["modelName"]] == "auto") NULL else options[["modelName"]],
-                          control = mclust::emControl(itmax = options[["maxNumberIterations"]]))
+                          control = mclust::emControl(itmax = options[["maxNumberIterations"]]), verbose = FALSE)
     clusters <- options[["manualNumberOfClusters"]]
   } else {
     avgSilh <- numeric(options[["maxNumberOfClusters"]] - 1)
@@ -70,7 +77,7 @@ mlClusteringModelBased <- function(jaspResults, dataset, options, ...) {
     startProgressbar(length(clusterRange))
     for (i in clusterRange) {
       fit <- mclust::Mclust(dataset[, options[["predictors"]]], G = i,
-                            control = mclust::emControl(itmax = options[["maxNumberIterations"]]))
+                            control = mclust::emControl(itmax = options[["maxNumberIterations"]]), verbose = FALSE)
       silh <- summary(cluster::silhouette(fit[["classification"]], .mlClusteringCalculateDistances(dataset[, options[["predictors"]]])))
       avgSilh[i - 1] <- silh[["avg.width"]]
       sumSquares <- .sumsqr(dataset[, options[["predictors"]]], t(fit[["parameters"]]$mean), fit[["classification"]])
@@ -85,7 +92,7 @@ mlClusteringModelBased <- function(jaspResults, dataset, options, ...) {
       "bic" = clusterRange[which.min(bicStore)]
     )
     fit <- mclust::Mclust(dataset[, options[["predictors"]]], G = clusters,
-                          control = mclust::emControl(itmax = options[["maxNumberIterations"]]))
+                          control = mclust::emControl(itmax = options[["maxNumberIterations"]]), verbose = FALSE)
   }
   sumSquares <- .sumsqr(dataset[, options[["predictors"]]], t(fit[["parameters"]]$mean), fit[["classification"]])
   silhouettes <- summary(cluster::silhouette(fit[["classification"]], .mlClusteringCalculateDistances(dataset[, options[["predictors"]]])))
@@ -113,6 +120,34 @@ mlClusteringModelBased <- function(jaspResults, dataset, options, ...) {
   return(result)
 }
 
-emControl <- mclust::emControl
-mclust.options <- mclust::mclust.options
-mclustBIC <- mclust::mclustBIC
+.mlClusteringTableModelParameters <- function(dataset, options, jaspResults, ready, position) {
+  if (!is.null(jaspResults[["modelParametersCollection"]]) || !options[["tableModelParameters"]]) {
+    return()
+  }
+  collection <- createJaspContainer(gettext("Estimated Model Parameters"))
+  collection$dependOn(options = c("tableModelParameters", .mlClusteringDependencies(options)))
+  collection$position <- position
+  jaspResults[["modelParametersCollection"]] <- collection
+  if (!ready) {
+    return()
+  }
+#   table$addColumnInfo(name = "cluster", title = "", type = "number")
+#   if (!identical(options[["predictors"]], "")) {
+#     for (i in 1:length(unlist(options[["predictors"]]))) {
+#       columnName <- as.character(options[["predictors"]][i])
+#       table$addColumnInfo(name = columnName, title = columnName, type = "number")
+#     }
+#   }
+#   clusterResult <- jaspResults[["clusterResult"]]$object
+#   clusters <- as.factor(clusterResult[["pred.values"]])
+#   clusterLevels <- as.numeric(levels(clusters))
+#   clusterTitles <- gettextf("Cluster %s", clusterLevels)
+#   clusterMeans <- NULL
+#   for (i in clusterLevels) {
+#     clusterSubset <- subset(dataset, clusters == i)
+#     clusterMeans <- rbind(clusterMeans, colMeans(clusterSubset))
+#   }
+#   clusterMeans <- cbind(cluster = clusterTitles, data.frame(clusterMeans))
+#   colnames(clusterMeans) <- c("cluster", as.character(options[["predictors"]]))
+#   table$setData(clusterMeans)
+}

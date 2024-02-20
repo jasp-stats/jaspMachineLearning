@@ -38,6 +38,12 @@ Form
 		TAB.ClusterInfo { show_centroids: true }
 		TAB.ModelPerformance {}
 		TAB.ClusterMeans { }
+		CheckBox
+		{
+			name:					"tableModelParameters"
+			text:					qsTr("Model parameters")
+			info:					qsTr("Shows tables containing the model parameters for each cluster and feature variable.")
+		}
 	}
 
 	Group
@@ -89,6 +95,7 @@ Form
 					{ label: qsTr("EVV"),	value: "EVV"},
 					{ label: qsTr("VVV"),	value: "VVV"},
 				]
+				info:				qsTr("Choose the model to be fitted in the EM step of the clustering.")
 			}
 
 			IntegerField
@@ -99,6 +106,7 @@ Form
 				min:				1
 				max:				999999
 				enabled:			modelName.value == "auto" | modelName.value == "VEI" | modelName.value == "VEE" | modelName.value == "EVE" | modelName.value == "VVE" | modelName.value == "VEV"
+				info:				qsTr("The maximum number of iterations for the M-step in the algorithm.")
 			}
 
 			UI.ScaleVariables { }
