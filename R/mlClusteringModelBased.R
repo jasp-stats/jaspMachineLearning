@@ -171,6 +171,7 @@ mclustBIC <- mclust::mclustBIC
     }
     table$setData(rows)
   }
+  # Tables with covariance matrices
   if (!is.null(parameters[["variance"]]$sigma)) {
     for (i in seq_len(dim(parameters[["variance"]]$sigma)[3])) {
       table <- createJaspTable(gettextf("Covariance Matrix for Component %1$s", i))
@@ -182,5 +183,37 @@ mclustBIC <- mclust::mclustBIC
       }
       table$setData(data.frame(predictor = rownames(parameters[["variance"]]$sigma[ , , i]), parameters[["variance"]]$sigma[ , , i]))
     }
+  }
+  # Table with scale
+  if (!is.null(parameters[["variance"]]$scale)) {
+    table <- createJaspTable(gettext("Scale of the Covariance"))
+    table$dependOn(optionsFromObject = collection)
+    table$position <- 2 + clusterResult[["clusters"]] + 1
+    collection[["tableParametersScale"]] <- table
+    table$addColumnInfo(name = "cluster", title = "", type = "string")
+    table$addColumnInfo(name = "scale", title = gettext("Scale"), type = "number")
+    rows <- data.frame(cluster = gettextf("Component %1$s", seq_len(clusterResult[["clusters"]])), scale = parameters[["variance"]]$scale)
+    table$setData(rows)
+  }
+  # Table with shape
+  if (!is.null(parameters[["variance"]]$shape)) {
+    table <- createJaspTable(gettext("Shape of the Covariance Matrix"))
+    table$dependOn(optionsFromObject = collection)
+    table$position <- 2 + clusterResult[["clusters"]] + 2
+    collection[["tableParametersShape"]] <- table
+    table$addColumnInfo(name = "cluster", title = "", type = "string")
+    for (i in seq_len(length(options[["predictors"]]))) {
+      table$addColumnInfo(name = options[["predictors"]][i], title = options[["predictors"]][i], type = "number")
+    }
+    rows <- data.frame(cluster = gettextf("Component %1$s", seq_len(clusterResult[["clusters"]])))
+    if (is.matrix(parameters[["variance"]]$shape)) {
+      rows <- cbind(rows, t(parameters[["variance"]]$shape))
+      colnames(rows)[-1] <- options[["predictors"]]
+    } else {
+      for (i in seq_len(length(options[["predictors"]]))) {
+        rows[[options[["predictors"]][i]]] <- parameters[["variance"]]$shape[i]
+      }
+    }
+    table$setData(rows)
   }
 }
