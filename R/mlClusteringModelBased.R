@@ -216,4 +216,21 @@ mclustBIC <- mclust::mclustBIC
     }
     table$setData(rows)
   }
+  # Tables with orientation
+  if (!is.null(parameters[["variance"]]$orientation)) {
+    for (i in seq_len(length(options[["predictors"]]))) {
+      table <- createJaspTable(gettextf("Eigenvalues of the Covariance Matrix for Component %1$s", i))
+      table$position <- 2 + clusterResult[["clusters"]] + 2 + i
+      collection[[paste0("tableParametersOrientation", i)]] <- table
+      table$addColumnInfo(name = "predictor", title = "", type = "string")
+      for (j in seq_len(length(options[["predictors"]]))) {
+        table$addColumnInfo(name = options[["predictors"]][j], title = options[["predictors"]][j], type = "number")
+      }
+      if (length(dim(parameters[["variance"]]$orientation)) == 3) {
+        table$setData(data.frame(predictor = rownames(parameters[["variance"]]$orientation[ , , i]), parameters[["variance"]]$orientation[ , , i]))
+      } else {
+        table$setData(data.frame(predictor = rownames(parameters[["variance"]]$orientation), parameters[["variance"]]$orientation))
+      }
+    }
+  }
 }
