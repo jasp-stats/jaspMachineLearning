@@ -52,7 +52,7 @@ Form
 
 		FIG.ElbowMethod { enable: !optim.isManual }
 		FIG.Tsne { }
-		FIG.ClusterMatrix { }
+		FIG.ClusterMatrix { show_ellips: true }
 		FIG.ClusterMeans { }
 		FIG.ClusterDensity { }
 	}

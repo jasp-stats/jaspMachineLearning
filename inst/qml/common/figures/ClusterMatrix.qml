@@ -23,7 +23,16 @@ import JASP.Widgets		1.0
 
 CheckBox
 {
-	name:	"matrixPlot"
-	text:	qsTr("Cluster matrix plot")
-	info:	qsTr("Creates a *n* x *n* plot that visualizes to which cluster every observation belongs according to the current model.")
+	property bool show_ellips: false
+
+	name:			"matrixPlot"
+	text:			qsTr("Cluster matrix plot")
+	info:			qsTr("Creates a *n* x *n* plot that visualizes to which cluster every observation belongs according to the current model.")
+
+	CheckBox
+	{
+		name: 		"addEllips"
+		text:		qsTr("Display components")
+		visible:	show_ellips
+	}
 }

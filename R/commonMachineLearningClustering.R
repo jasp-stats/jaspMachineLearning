@@ -640,7 +640,7 @@
   }
   plot <- createJaspPlot(title = gettext("Cluster Matrix Plot"), height = 400, width = 300)
   plot$position <- position
-  plot$dependOn(options = c(.mlClusteringDependencies(options), "matrixPlot"))
+  plot$dependOn(options = c(.mlClusteringDependencies(options), "matrixPlot", "addEllips"))
   jaspResults[["matrixPlot"]] <- plot
   if (!ready || length(options[["predictors"]]) < 2) {
     return()
@@ -682,6 +682,31 @@
           ggplot2::scale_y_continuous(name = NULL, breaks = yBreaks, limits = range(yBreaks)) +
           jaspGraphs::geom_rangeframe() +
           jaspGraphs::themeJaspRaw()
+
+        # Add the ellipses for model-based clustering
+        if (options[["addEllips"]]) {
+          for (i in seq_len(clusterResult[["clusters"]])) {
+            xvar <- options[["predictors"]][col]
+            yvar <- options[["predictors"]][row]
+            covmat <- clusterResult[["parameters"]]$variance$sigma[, , i]
+            sigma <- matrix(c(covmat[xvar, xvar], covmat[xvar, yvar], covmat[yvar, xvar], covmat[yvar, yvar]), nrow = 2, byrow = TRUE)
+            mu <- clusterResult[["parameters"]]$mean[, i]
+            mu_x <- mu[xvar]
+            mu_y <- mu[yvar]
+            a <- sigma[1, 1]
+            b <- sigma[2, 1]
+            c <- sigma[2, 2]
+            lambda1 <- abs((a + c) / 2 + sqrt(((a - 2) / 2)^2 + b^2))
+            lambda2 <- abs((a + c) / 2 - sqrt(((a - 2) / 2)^2 + b^2))
+            theta <- ifelse(b == 0 && a >= c, 0, ifelse(b == 0 && a < c, pi / 2, atan2(lambda1 - a, b)))
+            t <- seq(0, 2 * pi, length.out = 1000)
+            x <- sqrt(lambda1) * cos(theta) * cos(t) - sqrt(lambda2) * sin(theta) * sin(t) + mu_x
+            y <- sqrt(lambda1) * sin(theta) * cos(t) + sqrt(lambda2) * cos(theta) * sin(t) + mu_y
+            ellips <- data.frame(x = x, y = y)
+            p <- p + ggplot2::geom_path(data = ellips, mapping = ggplot2::aes(x = x, y = y), color = .mlColorScheme(clusterResult[["clusters"]])[i], inherit.aes = FALSE)
+          }
+        }
+
         plotMat[[row - 1, col]] <- p
       }
       if (l > 2) {
