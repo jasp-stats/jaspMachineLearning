@@ -35,13 +35,13 @@ Form
 	{
 		title:						qsTr("Tables")
 
-		TAB.ClusterInfo { show_centroids: true }
+		TAB.ClusterInfo { }
 		TAB.ModelPerformance {}
 		TAB.ClusterMeans { }
 		CheckBox
 		{
 			name:					"tableModelParameters"
-			text:					qsTr("Model parameters")
+			text:					qsTr("Parameter estimates")
 			info:					qsTr("Shows tables containing the model parameters for each cluster and feature variable.")
 		}
 	}

@@ -101,7 +101,6 @@ mclustBIC <- mclust::mclustBIC
   result[["clusters"]] <- clusters
   result[["N"]] <- nrow(dataset)
   result[["size"]] <- as.numeric(table(fit[["classification"]]))
-  result[["centroids"]] <- t(fit[["parameters"]]$mean)
   result[["WSS"]] <- sumSquares[["wss"]]
   result[["TSS"]] <- sumSquares[["tss"]]
   result[["BSS"]] <- sumSquares[["bss"]]
@@ -131,23 +130,45 @@ mclustBIC <- mclust::mclustBIC
   if (!ready) {
     return()
   }
-#   table$addColumnInfo(name = "cluster", title = "", type = "number")
-#   if (!identical(options[["predictors"]], "")) {
-#     for (i in 1:length(unlist(options[["predictors"]]))) {
-#       columnName <- as.character(options[["predictors"]][i])
-#       table$addColumnInfo(name = columnName, title = columnName, type = "number")
-#     }
-#   }
-#   clusterResult <- jaspResults[["clusterResult"]]$object
-#   clusters <- as.factor(clusterResult[["pred.values"]])
-#   clusterLevels <- as.numeric(levels(clusters))
-#   clusterTitles <- gettextf("Cluster %s", clusterLevels)
-#   clusterMeans <- NULL
-#   for (i in clusterLevels) {
-#     clusterSubset <- subset(dataset, clusters == i)
-#     clusterMeans <- rbind(clusterMeans, colMeans(clusterSubset))
-#   }
-#   clusterMeans <- cbind(cluster = clusterTitles, data.frame(clusterMeans))
-#   colnames(clusterMeans) <- c("cluster", as.character(options[["predictors"]]))
-#   table$setData(clusterMeans)
+  clusterResult <- jaspResults[["clusterResult"]]$object
+  parameters <- clusterResult[["parameters"]]
+  # Table with mixing probabilities
+  if (!is.null(parameters[["pro"]])) {
+    table <- createJaspTable(gettext("Mixing Probabilities"))
+    table$dependOn(optionsFromObject = collection)
+    table$position <- 1
+    collection[["tableParametersMixing"]] <- table
+    table$addColumnInfo(name = "cluster", title = "", type = "string")
+    table$addColumnInfo(name = "prob", title = gettext("Mixing probability"), type = "number")
+    rows <- data.frame(cluster = gettextf("Component %1$s", seq_len(clusterResult[["clusters"]])), prob = parameters[["pro"]])
+    table$setData(rows)
+  }
+  # Table with means
+  if (!is.null(parameters[["mean"]])) {
+    table <- createJaspTable(gettext("Means"))
+    table$dependOn(optionsFromObject = collection)
+    table$position <- 2
+    collection[["tableParametersMean"]] <- table
+    table$addColumnInfo(name = "cluster", title = "", type = "string")
+    for (i in seq_len(length(options[["predictors"]]))) {
+      table$addColumnInfo(name = options[["predictors"]][i], title = options[["predictors"]][i], type = "number")
+    }
+    rows <- data.frame(cluster = gettextf("Component %1$s", seq_len(clusterResult[["clusters"]])))
+    for (i in seq_len(length(options[["predictors"]]))) {
+      rows[[options[["predictors"]][i]]] <- parameters[["mean"]][i, ]
+    }
+    table$setData(rows)
+  }
+  if (!is.null(parameters[["variance"]]$sigma)) {
+    for (i in seq_len(dim(parameters[["variance"]]$sigma)[3])) {
+      table <- createJaspTable(gettextf("Covariance matrix for component %1$s", i))
+      table$position <- 2 + i
+      collection[[paste0("tableParametersCovariance", i)]] <- table
+      table$addColumnInfo(name = "predictor", title = "", type = "string")
+      for (j in seq_len(length(options[["predictors"]]))) {
+        table$addColumnInfo(name = options[["predictors"]][j], title = options[["predictors"]][j], type = "number")
+      }
+      table$setData(data.frame(predictor = rownames(parameters[["variance"]]$sigma[ , , i]), parameters[["variance"]]$sigma[ , , i]))
+    }
+  }
 }

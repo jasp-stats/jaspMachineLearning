@@ -229,9 +229,6 @@
   table$position <- position
   table$transpose <- TRUE
   table$addColumnInfo(name = "cluster", title = gettext("Cluster"), type = "integer")
-  if (type == "modelbased") {
-    table$addColumnInfo(name = "prob", title = gettext("Mixing probability"), type = "number")
-  }
   table$addColumnInfo(name = "size", title = gettext("Size"), type = "integer")
   table$addColumnInfo(name = "percentage", title = gettext("Explained proportion within-cluster heterogeneity"), type = "number")
   if (options[["tableClusterInformationWithinSumOfSquares"]]) {
@@ -245,7 +242,7 @@
     return()
   }
   clusterResult <- jaspResults[["clusterResult"]]$object
-  if (type == "kmeans" || type == "cmeans" || type == "modelbased") {
+  if (type == "kmeans" || type == "cmeans") {
     if (options[["tableClusterInformationCentroids"]]) {
       for (i in seq_along(options[["predictors"]])) {
         title <- gettextf("Center %s", options[["predictors"]][i])
@@ -278,16 +275,13 @@
   if (options[["tableClusterInformationSilhouetteScore"]]) {
     row <- cbind(row, silh_scores = silh_scores)
   }
-  if (type == "kmeans" || type == "cmeans" || type == "modelbased") {
+  if (type == "kmeans" || type == "cmeans") {
     if (options[["tableClusterInformationCentroids"]]) {
       for (i in 1:length(options[["predictors"]])) {
         row <- cbind(row, "tmp" = clusterResult[["centroids"]][, i])
         colnames(row)[length(colnames(row))] <- paste0("centroid", i)
       }
     }
-  }
-  if (type == "modelbased") {
-    row <- cbind(row, prob = clusterResult[["parameters"]]$pro)
   }
   table$addRows(row)
   if (options[["tableClusterInformationBetweenSumOfSquares"]]) {
