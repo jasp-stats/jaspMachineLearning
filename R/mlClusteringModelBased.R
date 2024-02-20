@@ -173,7 +173,7 @@ mclustBIC <- mclust::mclustBIC
   }
   if (!is.null(parameters[["variance"]]$sigma)) {
     for (i in seq_len(dim(parameters[["variance"]]$sigma)[3])) {
-      table <- createJaspTable(gettextf("Covariance matrix for component %1$s", i))
+      table <- createJaspTable(gettextf("Covariance Matrix for Component %1$s", i))
       table$position <- 2 + i
       collection[[paste0("tableParametersCovariance", i)]] <- table
       table$addColumnInfo(name = "predictor", title = "", type = "string")
