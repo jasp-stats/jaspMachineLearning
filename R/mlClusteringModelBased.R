@@ -67,6 +67,9 @@ mclustBIC <- mclust::mclustBIC
     fit <- mclust::Mclust(dataset[, options[["predictors"]]], G = options[["manualNumberOfClusters"]],
                           modelNames = if (options[["modelName"]] == "auto") NULL else options[["modelName"]],
                           control = mclust::emControl(itmax = options[["maxNumberIterations"]]), verbose = FALSE)
+    if (is.null(fit)) {
+      .quitAnalysis(gettextf("The %1$s-component %2$s model could not be fitted, try a different model or a different number of clusters.", options[["manualNumberOfClusters"]], options[["modelName"]]))
+    }
     clusters <- options[["manualNumberOfClusters"]]
   } else {
     avgSilh <- numeric(options[["maxNumberOfClusters"]] - 1)
@@ -77,13 +80,21 @@ mclustBIC <- mclust::mclustBIC
     startProgressbar(length(clusterRange))
     for (i in clusterRange) {
       fit <- mclust::Mclust(dataset[, options[["predictors"]]], G = i,
+                            modelNames = if (options[["modelName"]] == "auto") NULL else options[["modelName"]],
                             control = mclust::emControl(itmax = options[["maxNumberIterations"]]), verbose = FALSE)
-      silh <- summary(cluster::silhouette(fit[["classification"]], .mlClusteringCalculateDistances(dataset[, options[["predictors"]]])))
-      avgSilh[i - 1] <- silh[["avg.width"]]
-      sumSquares <- .sumsqr(dataset[, options[["predictors"]]], t(fit[["parameters"]]$mean), fit[["classification"]])
-      wssStore[i - 1] <- sumSquares[["tot.within.ss"]]
-      aicStore[i - 1] <- sumSquares[["tot.within.ss"]] + 2 * ncol(t(fit[["parameters"]]$mean)) * nrow(t(fit[["parameters"]]$mean))
-      bicStore[i - 1] <- sumSquares[["tot.within.ss"]] + log(length(t(fit[["parameters"]]$mean))) * ncol(t(fit[["parameters"]]$mean)) * nrow(t(fit[["parameters"]]$mean))
+      if (is.null(fit)) {
+        avgSilh[i - 1] <- NA
+        wssStore[i - 1] <- NA
+        aicStore[i - 1] <- NA
+        bicStore[i - 1] <- NA
+      } else {
+        silh <- summary(cluster::silhouette(fit[["classification"]], .mlClusteringCalculateDistances(dataset[, options[["predictors"]]])))
+        avgSilh[i - 1] <- silh[["avg.width"]]
+        sumSquares <- .sumsqr(dataset[, options[["predictors"]]], t(fit[["parameters"]]$mean), fit[["classification"]])
+        wssStore[i - 1] <- sumSquares[["tot.within.ss"]]
+        aicStore[i - 1] <- sumSquares[["tot.within.ss"]] + 2 * ncol(t(fit[["parameters"]]$mean)) * nrow(t(fit[["parameters"]]$mean))
+        bicStore[i - 1] <- sumSquares[["tot.within.ss"]] + log(length(t(fit[["parameters"]]$mean))) * ncol(t(fit[["parameters"]]$mean)) * nrow(t(fit[["parameters"]]$mean))
+      }
       progressbarTick()
     }
     clusters <- switch(options[["modelOptimizationMethod"]],
@@ -92,6 +103,7 @@ mclustBIC <- mclust::mclustBIC
       "bic" = clusterRange[which.min(bicStore)]
     )
     fit <- mclust::Mclust(dataset[, options[["predictors"]]], G = clusters,
+                          modelNames = if (options[["modelName"]] == "auto") NULL else options[["modelName"]],
                           control = mclust::emControl(itmax = options[["maxNumberIterations"]]), verbose = FALSE)
   }
   sumSquares <- .sumsqr(dataset[, options[["predictors"]]], t(fit[["parameters"]]$mean), fit[["classification"]])
