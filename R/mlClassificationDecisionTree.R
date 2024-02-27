@@ -120,11 +120,11 @@ mlClassificationDecisionTree <- function(jaspResults, dataset, options, ...) {
       control = rpart::rpart.control(minsplit = options[["minObservationsForSplit"]], 
       minbucket = options[["minObservationsInNode"]], maxdepth = options[["interactionDepth"]], cp = complexityPenalty)
     )
-    validationPredictions <- levels(trainingSet[[options[["target"]]]])[max.col(predict(trainingFit, newdata = validationSet))]
+    validationPredictions <- factor(levels(trainingSet[[options[["target"]]]])[max.col(predict(trainingFit, newdata = validationSet))], levels = levels(trainingSet[[options[["target"]]]]))
   }
   # Use the specified model to make predictions for dataset
-  testPredictions <- levels(trainingSet[[options[["target"]]]])[max.col(predict(trainingFit, newdata = testSet))]
-  dataPredictions <- levels(trainingSet[[options[["target"]]]])[max.col(predict(trainingFit, newdata = dataset))]
+  testPredictions <- factor(levels(trainingSet[[options[["target"]]]])[max.col(predict(trainingFit, newdata = testSet))], levels = levels(trainingSet[[options[["target"]]]]))
+  dataPredictions <- factor(levels(trainingSet[[options[["target"]]]])[max.col(predict(trainingFit, newdata = dataset))], levels = levels(trainingSet[[options[["target"]]]]))
   # Create results object
   result <- list()
   result[["formula"]] <- formula
