@@ -3039,3 +3039,126 @@ msgid ""
 msgstr ""
 "Establece o número de permutacións nas que se basa a perda media por "
 "abandono."
+
+msgctxt "Description|"
+msgid "Model-Based"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Model-Based Clustering"
+msgstr ""
+
+msgctxt "ClusterMatrix|"
+msgid "Display components"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid ""
+"Model-based clustering is based on parameterized finite Gaussian mixture "
+"models. The models are estimated by EM algorithm initialized by hierarchical "
+"model-based agglomerative clustering."
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClusteringModelBased|"
+msgid "Tables"
+msgstr "Táboas"
+
+msgctxt "mlClusteringModelBased|"
+msgid "Parameter estimates"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid ""
+"Shows tables containing the model parameters for each cluster and feature "
+"variable."
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClusteringModelBased|"
+msgid "Plots"
+msgstr "Gráficas"
+
+#, fuzzy
+msgctxt "mlClusteringModelBased|"
+msgid "Training Parameters"
+msgstr "Parámetros de ensaio"
+
+#, fuzzy
+msgctxt "mlClusteringModelBased|"
+msgid "Algorithmic Settings"
+msgstr "Configuracións Algorítmicas"
+
+msgctxt "mlClusteringModelBased|"
+msgid "Model"
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClusteringModelBased|"
+msgid "Auto"
+msgstr "Auto"
+
+msgctxt "mlClusteringModelBased|"
+msgid "EII"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "VII"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "EEI"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "VEI"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "EVI"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "EEE"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "VEE"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "EVE"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "VVE"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "EEV"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "VEV"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "EVV"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "VVV"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "Choose the model to be fitted in the EM step of the clustering."
+msgstr ""
+
+#, fuzzy
+msgctxt "mlClusteringModelBased|"
+msgid "Max. iterations"
+msgstr "Máx. iteracións"
+
+msgctxt "mlClusteringModelBased|"
+msgid "The maximum number of iterations for the M-step in the algorithm."
+msgstr ""

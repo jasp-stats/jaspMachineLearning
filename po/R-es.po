@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
-"POT-Creation-Date: 2024-01-27 03:20\n"
+"POT-Creation-Date: 2024-03-05 15:27\n"
 "PO-Revision-Date: 2024-02-03 13:21+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
@@ -317,6 +317,10 @@ msgstr "Conglomeración Basada en la Densidad"
 msgid "Random Forest Clustering"
 msgstr "Conglomerados en Bosques Aleatorios"
 
+#, fuzzy
+msgid "Model-Based Clustering"
+msgstr "Conglomeración Basada en la Densidad"
+
 msgid "Clusters"
 msgstr "Conglomerados"
 
@@ -365,6 +369,52 @@ msgstr ""
 "El modelo contiene 1 conglomerado y ningún Punto confuso. Quizás quiera "
 "cambiar los parámetros 'Tamaño del épsilon de vecindad' y 'Mín. puntos del "
 "núcleo' en 'Parámetros de adiestramiento'."
+
+msgid "spherical with equal volume"
+msgstr ""
+
+msgid "spherical with unequal volume"
+msgstr ""
+
+msgid "diagonal with equal volume and shape"
+msgstr ""
+
+msgid "diagonal with varying volume and equal shape"
+msgstr ""
+
+msgid "diagonal with equal volume and varying shape"
+msgstr ""
+
+msgid "diagonal with varying volume and shape"
+msgstr ""
+
+msgid "ellipsoidal with equal volume, shape, and orientation"
+msgstr ""
+
+msgid "ellipsoidal with equal shape and orientation"
+msgstr ""
+
+msgid "ellipsoidal with equal volume and orientation"
+msgstr ""
+
+msgid "ellipsoidal with equal orientation"
+msgstr ""
+
+msgid "ellipsoidal with equal volume and equal shape"
+msgstr ""
+
+msgid "ellipsoidal with equal shape"
+msgstr ""
+
+msgid "ellipsoidal with equal volume"
+msgstr ""
+
+msgid "ellipsoidal with varying volume, shape, and orientation"
+msgstr ""
+
+#, fuzzy
+msgid "The model is %1$s."
+msgstr "Modelo Cargado: %1$s"
 
 msgid "The features in the model are <b>unstandardized</b>."
 msgstr "Las características del modelo están <b>sin tipificar</b>."
@@ -824,6 +874,43 @@ msgstr "El punto de corte está más allá del rango. Se devuelve NA."
 
 msgid "Dendrogram"
 msgstr "Dendrograma"
+
+msgid ""
+"The %1$s-component %2$s model could not be fitted, try a different model or "
+"a different number of clusters."
+msgstr ""
+
+msgid "Estimated Model Parameters"
+msgstr ""
+
+msgid "Mixing Probabilities"
+msgstr ""
+
+msgid "Mixing probability"
+msgstr ""
+
+msgid "Component %1$s"
+msgstr ""
+
+#, fuzzy
+msgid "Means"
+msgstr "Media"
+
+msgid "Covariance Matrix for Component %1$s"
+msgstr ""
+
+msgid "Scale of the Covariance"
+msgstr ""
+
+msgid "Scale"
+msgstr ""
+
+#, fuzzy
+msgid "Shape of the Covariance Matrix"
+msgstr "Contrastes de Igualdad de Matrices de Covarianzas"
+
+msgid "Eigenvalues of the Covariance Matrix for Component %1$s"
+msgstr ""
 
 msgid "Feature Importance"
 msgstr "Importancia de la característica"

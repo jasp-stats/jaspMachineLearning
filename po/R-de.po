@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2024-01-27 03:20\n"
+"POT-Creation-Date: 2024-03-05 15:27\n"
 "PO-Revision-Date: 2024-02-12 18:06+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
@@ -314,6 +314,10 @@ msgstr "Dichtebasiertes Clustering"
 msgid "Random Forest Clustering"
 msgstr "Random-Forest-Clustering"
 
+#, fuzzy
+msgid "Model-Based Clustering"
+msgstr "Dichtebasiertes Clustering"
+
 msgid "Clusters"
 msgstr "Cluster"
 
@@ -362,6 +366,52 @@ msgstr ""
 "Das Modell enthält 1 Cluster und keine Noisepoints. Sie wollen "
 "möglicherweise die Parameter 'Epsilon-Nachbarschaftsgröße' und 'Min. Core-"
 "Points' unter 'Trainingsparameter' ändern."
+
+msgid "spherical with equal volume"
+msgstr ""
+
+msgid "spherical with unequal volume"
+msgstr ""
+
+msgid "diagonal with equal volume and shape"
+msgstr ""
+
+msgid "diagonal with varying volume and equal shape"
+msgstr ""
+
+msgid "diagonal with equal volume and varying shape"
+msgstr ""
+
+msgid "diagonal with varying volume and shape"
+msgstr ""
+
+msgid "ellipsoidal with equal volume, shape, and orientation"
+msgstr ""
+
+msgid "ellipsoidal with equal shape and orientation"
+msgstr ""
+
+msgid "ellipsoidal with equal volume and orientation"
+msgstr ""
+
+msgid "ellipsoidal with equal orientation"
+msgstr ""
+
+msgid "ellipsoidal with equal volume and equal shape"
+msgstr ""
+
+msgid "ellipsoidal with equal shape"
+msgstr ""
+
+msgid "ellipsoidal with equal volume"
+msgstr ""
+
+msgid "ellipsoidal with varying volume, shape, and orientation"
+msgstr ""
+
+#, fuzzy
+msgid "The model is %1$s."
+msgstr "Geladenes Modell: %1$s"
 
 msgid "The features in the model are <b>unstandardized</b>."
 msgstr "Die Merkmale in dem Modell sind <b>unstandardisiert</b>."
@@ -822,6 +872,43 @@ msgstr "Der Grenzwert liegt außerhalb des Bereichs. Kein Wert zurückgeben."
 
 msgid "Dendrogram"
 msgstr "Dendrogramm"
+
+msgid ""
+"The %1$s-component %2$s model could not be fitted, try a different model or "
+"a different number of clusters."
+msgstr ""
+
+msgid "Estimated Model Parameters"
+msgstr ""
+
+msgid "Mixing Probabilities"
+msgstr ""
+
+msgid "Mixing probability"
+msgstr ""
+
+msgid "Component %1$s"
+msgstr ""
+
+#, fuzzy
+msgid "Means"
+msgstr "Mittelwert"
+
+msgid "Covariance Matrix for Component %1$s"
+msgstr ""
+
+msgid "Scale of the Covariance"
+msgstr ""
+
+msgid "Scale"
+msgstr ""
+
+#, fuzzy
+msgid "Shape of the Covariance Matrix"
+msgstr "Test auf Gleichheit der Kovarianzmatrizen"
+
+msgid "Eigenvalues of the Covariance Matrix for Component %1$s"
+msgstr ""
 
 msgid "Feature Importance"
 msgstr "Merkmal-Wichtigkeit"

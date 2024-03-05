@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.1\n"
-"POT-Creation-Date: 2024-01-27 03:20\n"
+"POT-Creation-Date: 2024-03-05 15:27\n"
 "PO-Revision-Date: 2023-12-02 03:20+0000\n"
 "Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
@@ -304,6 +304,9 @@ msgstr ""
 msgid "Random Forest Clustering"
 msgstr ""
 
+msgid "Model-Based Clustering"
+msgstr ""
+
 msgid "Clusters"
 msgstr ""
 
@@ -344,6 +347,52 @@ msgid ""
 "'Epsilon neighborhood size' and 'Min. core points' parameters under "
 "'Training parameters'."
 msgstr ""
+
+msgid "spherical with equal volume"
+msgstr ""
+
+msgid "spherical with unequal volume"
+msgstr ""
+
+msgid "diagonal with equal volume and shape"
+msgstr ""
+
+msgid "diagonal with varying volume and equal shape"
+msgstr ""
+
+msgid "diagonal with equal volume and varying shape"
+msgstr ""
+
+msgid "diagonal with varying volume and shape"
+msgstr ""
+
+msgid "ellipsoidal with equal volume, shape, and orientation"
+msgstr ""
+
+msgid "ellipsoidal with equal shape and orientation"
+msgstr ""
+
+msgid "ellipsoidal with equal volume and orientation"
+msgstr ""
+
+msgid "ellipsoidal with equal orientation"
+msgstr ""
+
+msgid "ellipsoidal with equal volume and equal shape"
+msgstr ""
+
+msgid "ellipsoidal with equal shape"
+msgstr ""
+
+msgid "ellipsoidal with equal volume"
+msgstr ""
+
+msgid "ellipsoidal with varying volume, shape, and orientation"
+msgstr ""
+
+#, fuzzy
+msgid "The model is %1$s."
+msgstr "学習したモデルは<i>%1$s</i>として保存されます."
 
 msgid "The features in the model are <b>unstandardized</b>."
 msgstr ""
@@ -763,6 +812,41 @@ msgid "Cutoff point is beyond range. Returning NA."
 msgstr ""
 
 msgid "Dendrogram"
+msgstr ""
+
+msgid ""
+"The %1$s-component %2$s model could not be fitted, try a different model or "
+"a different number of clusters."
+msgstr ""
+
+msgid "Estimated Model Parameters"
+msgstr ""
+
+msgid "Mixing Probabilities"
+msgstr ""
+
+msgid "Mixing probability"
+msgstr ""
+
+msgid "Component %1$s"
+msgstr ""
+
+msgid "Means"
+msgstr ""
+
+msgid "Covariance Matrix for Component %1$s"
+msgstr ""
+
+msgid "Scale of the Covariance"
+msgstr ""
+
+msgid "Scale"
+msgstr ""
+
+msgid "Shape of the Covariance Matrix"
+msgstr ""
+
+msgid "Eigenvalues of the Covariance Matrix for Component %1$s"
 msgstr ""
 
 msgid "Feature Importance"
