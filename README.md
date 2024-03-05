@@ -37,6 +37,7 @@ The organization of the analyses within the Machine Learning module in JASP is a
        - Fuzzy C-Means
        - Hierarchical
        - Neighborhood-Based
+       - Model-Based
        - Random Forest
     -- Prediction
 ```
