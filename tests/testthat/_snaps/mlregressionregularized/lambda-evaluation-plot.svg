@@ -65,16 +65,14 @@
 <text x='403.82' y='567.49' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='8.51px' lengthAdjust='spacingAndGlyphs'>λ</text>
 <text transform='translate(16.68,290.56) rotate(-90)' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='125.68px' lengthAdjust='spacingAndGlyphs'>Cross-Validated </text>
 <text transform='translate(35.04,290.56) rotate(-90)' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='154.04px' lengthAdjust='spacingAndGlyphs'>Mean Squared Error</text>
-<rect x='276.99' y='20.71' width='253.66' height='39.31' style='stroke-width: 0.75; stroke: none;' />
-<rect x='276.99' y='20.71' width='253.66' height='39.31' style='stroke-width: 10.67; stroke: none;' />
-<rect x='290.94' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<line x1='305.11' y1='54.53' x2='305.11' y2='26.19' style='stroke-width: 1.07; stroke: #99C454; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='305.11' y1='54.53' x2='305.11' y2='26.19' style='stroke-width: 1.07; stroke: #99C454; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<rect x='386.32' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<line x1='400.49' y1='54.53' x2='400.49' y2='26.19' style='stroke-width: 1.07; stroke: #14A1E3; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<line x1='400.49' y1='54.53' x2='400.49' y2='26.19' style='stroke-width: 1.07; stroke: #14A1E3; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
-<text x='327.76' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='50.09px' lengthAdjust='spacingAndGlyphs'>λ 1 SE</text>
-<text x='423.13' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='102.04px' lengthAdjust='spacingAndGlyphs'>Min. CV MSE</text>
+<rect x='285.71' y='20.71' width='236.22' height='39.31' style='stroke-width: 0.75; stroke: none;' />
+<rect x='285.71' y='20.71' width='236.22' height='39.31' style='stroke-width: 10.67; stroke: none;' />
+<rect x='291.19' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<line x1='305.36' y1='54.53' x2='305.36' y2='26.19' style='stroke-width: 1.07; stroke: #99C454; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<rect x='380.59' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<line x1='394.76' y1='54.53' x2='394.76' y2='26.19' style='stroke-width: 1.07; stroke: #14A1E3; stroke-dasharray: 5.69,5.69; stroke-linecap: butt;' />
+<text x='325.02' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='50.09px' lengthAdjust='spacingAndGlyphs'>λ 1 SE</text>
+<text x='414.41' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='102.04px' lengthAdjust='spacingAndGlyphs'>Min. CV MSE</text>
 <text x='403.82' y='11.70' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='172.00px' lengthAdjust='spacingAndGlyphs'>lambda-evaluation-plot</text>
 </g>
 </svg>

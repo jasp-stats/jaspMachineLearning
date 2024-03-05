@@ -18,7 +18,7 @@
   </clipPath>
 </defs>
 <g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
-<rect x='-0.000000000000064' y='0.00' width='720.00' height='576.00' style='stroke-width: 10.67; stroke: none;' />
+<rect x='0.00' y='0.00' width='720.00' height='576.00' style='stroke-width: 10.67; stroke: none;' />
 </g>
 <defs>
   <clipPath id='cpOTcuMTB8NzIwLjAwfDcwLjk3fDUxMC4xNA=='>
@@ -61,14 +61,14 @@
 <text x='408.55' y='567.49' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='127.56px' lengthAdjust='spacingAndGlyphs'>Number of Trees</text>
 <text transform='translate(16.68,290.56) rotate(-90)' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='86.00px' lengthAdjust='spacingAndGlyphs'>Out-of-bag </text>
 <text transform='translate(35.04,290.56) rotate(-90)' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='174.83px' lengthAdjust='spacingAndGlyphs'>Classification Accuracy</text>
-<rect x='262.34' y='20.71' width='292.42' height='39.31' style='stroke-width: 0.75; stroke: none;' />
-<rect x='262.34' y='20.71' width='292.42' height='39.31' style='stroke-width: 10.67; stroke: none;' />
-<rect x='276.29' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<line x1='279.12' y1='40.36' x2='301.80' y2='40.36' style='stroke-width: 2.13; stroke-dasharray: 11.38,11.38; stroke-linecap: butt;' />
-<rect x='410.39' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<line x1='413.23' y1='40.36' x2='435.90' y2='40.36' style='stroke-width: 2.13; stroke-linecap: butt;' />
+<rect x='268.32' y='20.71' width='280.46' height='39.31' style='stroke-width: 0.75; stroke: none;' />
+<rect x='268.32' y='20.71' width='280.46' height='39.31' style='stroke-width: 10.67; stroke: none;' />
+<rect x='279.28' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<line x1='282.11' y1='40.36' x2='304.79' y2='40.36' style='stroke-width: 2.13; stroke-dasharray: 11.38,11.38; stroke-linecap: butt;' />
+<rect x='407.40' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<line x1='410.24' y1='40.36' x2='432.92' y2='40.36' style='stroke-width: 2.13; stroke-linecap: butt;' />
 <text x='313.10' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='88.82px' lengthAdjust='spacingAndGlyphs'>Training set</text>
-<text x='447.21' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='102.07px' lengthAdjust='spacingAndGlyphs'>Validation set</text>
+<text x='441.23' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='102.07px' lengthAdjust='spacingAndGlyphs'>Validation set</text>
 <text x='408.55' y='11.70' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='286.33px' lengthAdjust='spacingAndGlyphs'>out-of-bag-classification-accuracy-plot</text>
 </g>
 </svg>

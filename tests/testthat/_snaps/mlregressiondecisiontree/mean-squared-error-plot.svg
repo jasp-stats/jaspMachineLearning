@@ -18,7 +18,7 @@
   </clipPath>
 </defs>
 <g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
-<rect x='0.00' y='0.00' width='720.00' height='576.00' style='stroke-width: 10.67; stroke: none;' />
+<rect x='-0.000000000000064' y='0.00' width='720.00' height='576.00' style='stroke-width: 10.67; stroke: none;' />
 </g>
 <defs>
   <clipPath id='cpNjkuMjh8NzIwLjAwfDcwLjk3fDUxMC4xNA=='>
@@ -69,14 +69,14 @@
 <text x='690.42' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='23.63px' lengthAdjust='spacingAndGlyphs'>1.0</text>
 <text x='394.64' y='567.49' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='145.53px' lengthAdjust='spacingAndGlyphs'>Complexity Penalty</text>
 <text transform='translate(16.68,290.56) rotate(-90)' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='154.04px' lengthAdjust='spacingAndGlyphs'>Mean Squared Error</text>
-<rect x='248.43' y='20.71' width='292.42' height='39.31' style='stroke-width: 0.75; stroke: none;' />
-<rect x='248.43' y='20.71' width='292.42' height='39.31' style='stroke-width: 10.67; stroke: none;' />
-<rect x='262.38' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<line x1='265.22' y1='40.36' x2='287.89' y2='40.36' style='stroke-width: 2.13; stroke-dasharray: 11.38,11.38; stroke-linecap: butt;' />
-<rect x='396.49' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<line x1='399.32' y1='40.36' x2='422.00' y2='40.36' style='stroke-width: 2.13; stroke-linecap: butt;' />
-<text x='299.20' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='88.82px' lengthAdjust='spacingAndGlyphs'>Training set</text>
-<text x='433.30' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='102.07px' lengthAdjust='spacingAndGlyphs'>Validation set</text>
+<rect x='257.15' y='20.71' width='274.98' height='39.31' style='stroke-width: 0.75; stroke: none;' />
+<rect x='257.15' y='20.71' width='274.98' height='39.31' style='stroke-width: 10.67; stroke: none;' />
+<rect x='262.63' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<line x1='265.46' y1='40.36' x2='288.14' y2='40.36' style='stroke-width: 2.13; stroke-dasharray: 11.38,11.38; stroke-linecap: butt;' />
+<rect x='390.76' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<line x1='393.59' y1='40.36' x2='416.27' y2='40.36' style='stroke-width: 2.13; stroke-linecap: butt;' />
+<text x='296.46' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='88.82px' lengthAdjust='spacingAndGlyphs'>Training set</text>
+<text x='424.58' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='102.07px' lengthAdjust='spacingAndGlyphs'>Validation set</text>
 <text x='394.64' y='11.70' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='184.26px' lengthAdjust='spacingAndGlyphs'>mean-squared-error-plot</text>
 </g>
 </svg>

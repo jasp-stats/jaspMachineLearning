@@ -18,7 +18,7 @@
   </clipPath>
 </defs>
 <g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
-<rect x='-0.000000000000064' y='0.00' width='720.00' height='576.00' style='stroke-width: 10.67; stroke: none;' />
+<rect x='0.00' y='0.00' width='720.00' height='576.00' style='stroke-width: 10.67; stroke: none;' />
 </g>
 <defs>
   <clipPath id='cpNzguNzR8NzIwLjAwfDcwLjk3fDUxMC4xNA=='>
@@ -65,14 +65,14 @@
 <text x='690.85' y='537.32' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='9.46px' lengthAdjust='spacingAndGlyphs'>5</text>
 <text x='399.37' y='567.49' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='214.52px' lengthAdjust='spacingAndGlyphs'>Cost of Constraints Violation</text>
 <text transform='translate(16.68,290.56) rotate(-90)' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='174.83px' lengthAdjust='spacingAndGlyphs'>Classification Accuracy</text>
-<rect x='253.16' y='20.71' width='292.42' height='39.31' style='stroke-width: 0.75; stroke: none;' />
-<rect x='253.16' y='20.71' width='292.42' height='39.31' style='stroke-width: 10.67; stroke: none;' />
-<rect x='267.11' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<line x1='269.94' y1='40.36' x2='292.62' y2='40.36' style='stroke-width: 2.13; stroke-dasharray: 11.38,11.38; stroke-linecap: butt;' />
-<rect x='401.21' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<line x1='404.05' y1='40.36' x2='426.72' y2='40.36' style='stroke-width: 2.13; stroke-linecap: butt;' />
-<text x='303.92' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='88.82px' lengthAdjust='spacingAndGlyphs'>Training set</text>
-<text x='438.03' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='102.07px' lengthAdjust='spacingAndGlyphs'>Validation set</text>
+<rect x='261.88' y='20.71' width='274.98' height='39.31' style='stroke-width: 0.75; stroke: none;' />
+<rect x='261.88' y='20.71' width='274.98' height='39.31' style='stroke-width: 10.67; stroke: none;' />
+<rect x='267.36' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<line x1='270.19' y1='40.36' x2='292.87' y2='40.36' style='stroke-width: 2.13; stroke-dasharray: 11.38,11.38; stroke-linecap: butt;' />
+<rect x='395.48' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<line x1='398.32' y1='40.36' x2='421.00' y2='40.36' style='stroke-width: 2.13; stroke-linecap: butt;' />
+<text x='301.18' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='88.82px' lengthAdjust='spacingAndGlyphs'>Training set</text>
+<text x='429.31' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='102.07px' lengthAdjust='spacingAndGlyphs'>Validation set</text>
 <text x='399.37' y='11.70' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='203.17px' lengthAdjust='spacingAndGlyphs'>classification-accuracy-plot</text>
 </g>
 </svg>
