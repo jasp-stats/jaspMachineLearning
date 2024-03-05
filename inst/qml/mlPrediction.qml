@@ -73,7 +73,7 @@ Form
 		{
 			id:									predictionsTable
 			name:								"predictionsTable"
-			label:				 				"Predictions for new data"
+			label:				 				qsTr("Predictions for new data")
 			checked:							true
 
 			Row
