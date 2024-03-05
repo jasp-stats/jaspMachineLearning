@@ -24,7 +24,8 @@
     "maxNumberIterations", "fuzzinessParameter",                                  # Fuzzy c-means
     "linkage",                                                                    # Hierarchical
     "centers", "algorithm", "noOfRandomSets",                                     # K-means
-    "numberOfTrees"                                                               # Random forest
+    "numberOfTrees",                                                              # Random forest
+    "modelName"                                                                   # Model-based
   )
   return(opt)
 }
@@ -113,10 +114,11 @@
     p <- try({
       clusterResult <- switch(type,
         "kmeans" = .kMeansClustering(dataset, options, jaspResults),
-       "cmeans" = .cMeansClustering(dataset, options, jaspResults),
+        "cmeans" = .cMeansClustering(dataset, options, jaspResults),
         "hierarchical" = .hierarchicalClustering(dataset, options, jaspResults),
         "densitybased" = .densityBasedClustering(dataset, options, jaspResults),
-        "randomForest" = .randomForestClustering(dataset, options, jaspResults)
+        "randomForest" = .randomForestClustering(dataset, options, jaspResults),
+        "modelbased" = .modelBasedClustering(dataset, options, jaspResults)
       )
     })
     if (isTryError(p)) { # Fail gracefully
@@ -140,7 +142,8 @@
     "cmeans" = gettext("Fuzzy C-Means Clustering"),
     "hierarchical" = gettext("Hierarchical Clustering"),
     "densitybased" = gettext("Density-Based Clustering"),
-    "randomForest" = gettext("Random Forest Clustering")
+    "randomForest" = gettext("Random Forest Clustering"),
+    "modelbased" = gettext("Model-Based Clustering")
   )
   table <- createJaspTable(title)
   table$position <- position
@@ -185,6 +188,24 @@
     if (clusterResult[["oneMark"]] == 1) {
       table$addFootnote(gettext("The model contains 1 cluster and no Noisepoints. You may want to change 'Epsilon neighborhood size' and 'Min. core points' parameters under 'Training parameters'."), colNames = "clusters")
     }
+  }
+  if (type == "modelbased") {
+    modelName <- switch(clusterResult[["modelName"]],
+                        "EII" = gettext("spherical with equal volume"),
+                        "VII" = gettext("spherical with unequal volume"),
+                        "EEI" = gettext("diagonal with equal volume and shape"),
+                        "VEI" = gettext("diagonal with varying volume and equal shape"),
+                        "EVI" = gettext("diagonal with equal volume and varying shape"),
+                        "VVI" = gettext("diagonal with varying volume and shape"),
+                        "EEE" = gettext("ellipsoidal with equal volume, shape, and orientation"),
+                        "VEE" = gettext("ellipsoidal with equal shape and orientation"),
+                        "EVE" = gettext("ellipsoidal with equal volume and orientation"),
+                        "VVE" = gettext("ellipsoidal with equal orientation"),
+                        "EEV" = gettext("ellipsoidal with equal volume and equal shape"),
+                        "VEV" = gettext("ellipsoidal with equal shape"),
+                        "EVV" = gettext("ellipsoidal with equal volume"),
+                        "VVV" = gettext("ellipsoidal with varying volume, shape, and orientation"))
+    table$addFootnote(gettextf("The model is %1$s.", modelName))
   }
   if (!options[["scaleVariables"]]) {
     table$addFootnote(gettext("The features in the model are <b>unstandardized</b>."))
@@ -619,7 +640,7 @@
   }
   plot <- createJaspPlot(title = gettext("Cluster Matrix Plot"), height = 400, width = 300)
   plot$position <- position
-  plot$dependOn(options = c(.mlClusteringDependencies(options), "matrixPlot"))
+  plot$dependOn(options = c(.mlClusteringDependencies(options), "matrixPlot", "addEllips"))
   jaspResults[["matrixPlot"]] <- plot
   if (!ready || length(options[["predictors"]]) < 2) {
     return()
@@ -661,6 +682,32 @@
           ggplot2::scale_y_continuous(name = NULL, breaks = yBreaks, limits = range(yBreaks)) +
           jaspGraphs::geom_rangeframe() +
           jaspGraphs::themeJaspRaw()
+
+        # Add the ellipses for model-based clustering
+        if (options[["addEllips"]]) {
+          for (i in seq_len(clusterResult[["clusters"]])) {
+            xvar <- options[["predictors"]][col]
+            yvar <- options[["predictors"]][row]
+            covmat <- clusterResult[["parameters"]]$variance$sigma[, , i]
+            sigma <- matrix(c(covmat[xvar, xvar], covmat[xvar, yvar], covmat[yvar, xvar], covmat[yvar, yvar]), nrow = 2, byrow = TRUE)
+            mu <- clusterResult[["parameters"]]$mean[, i]
+            mu_x <- mu[xvar]
+            mu_y <- mu[yvar]
+            a <- sigma[1, 1]
+            b <- sigma[2, 1]
+            c <- sigma[2, 2]
+            lambda1 <- abs((a + c) / 2 + sqrt(((a - 2) / 2)^2 + b^2))
+            lambda2 <- abs((a + c) / 2 - sqrt(((a - 2) / 2)^2 + b^2))
+            theta <- ifelse(b == 0 && a >= c, 0, ifelse(b == 0 && a < c, pi / 2, atan2(lambda1 - a, b)))
+            t <- seq(0, 2 * pi, length.out = 1000)
+            x <- sqrt(lambda1) * cos(theta) * cos(t) - sqrt(lambda2) * sin(theta) * sin(t) + mu_x
+            y <- sqrt(lambda1) * sin(theta) * cos(t) + sqrt(lambda2) * cos(theta) * sin(t) + mu_y
+            ellips <- data.frame(x = x, y = y)
+            p <- p + ggplot2::geom_path(data = ellips, mapping = ggplot2::aes(x = x, y = y), color = "black", inherit.aes = FALSE, linewidth = 1.5) +
+                       ggplot2::geom_path(data = ellips, mapping = ggplot2::aes(x = x, y = y), color = .mlColorScheme(clusterResult[["clusters"]])[i], inherit.aes = FALSE, linewidth = 0.75)
+          }
+        }
+
         plotMat[[row - 1, col]] <- p
       }
       if (l > 2) {
