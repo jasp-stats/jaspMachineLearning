@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-03-05 15:16+0000\n"
+"PO-Revision-Date: 2024-03-05 15:20+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/nl/>\n"
@@ -112,7 +112,7 @@ msgstr "Random Forest Clusteren"
 
 msgctxt "DataSplit|"
 msgid "Data Split Preferences"
-msgstr "Data splits voorkeuren"
+msgstr "Data Split Voorkeuren"
 
 msgctxt "DataSplit|"
 msgid "Holdout Test Data"
@@ -164,7 +164,7 @@ msgstr "Grafieken"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Training Parameters"
-msgstr "Parameters trainen"
+msgstr "Trainingsparameters"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Algorithmic Settings"
@@ -180,7 +180,7 @@ msgstr "Grafieken"
 
 msgctxt "mlClassificationKnn|"
 msgid "Training Parameters"
-msgstr "Parameters trainen"
+msgstr "Trainingsparameters"
 
 msgctxt "mlClassificationKnn|"
 msgid "Algorithmic Settings"
@@ -236,7 +236,7 @@ msgstr "Spreidingsdiagram"
 
 msgctxt "mlClassificationLda|"
 msgid "Training Parameters"
-msgstr "Parameters trainen"
+msgstr "Trainingsparameters"
 
 msgctxt "mlClassificationLda|"
 msgid "Algorithmic Settings"
@@ -252,7 +252,7 @@ msgstr "Grafieken"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Training Parameters"
-msgstr "Parameters trainen"
+msgstr "Trainingsparameters"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Algorithmic Settings"
@@ -272,7 +272,7 @@ msgstr "K-afstandsgrafiek"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Training Parameters"
-msgstr "Parameters trainen"
+msgstr "Trainingsparameters"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Algorithmic Settings"
@@ -304,7 +304,7 @@ msgstr "Grafieken"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Training Parameters"
-msgstr "Parameters trainen"
+msgstr "Trainingsparameters"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Algorithmic Settings"
@@ -324,7 +324,7 @@ msgstr "Dendrogram"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Training Parameters"
-msgstr "Parameters trainen"
+msgstr "Trainingsparameters"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Algorithmic Settings"
@@ -376,7 +376,7 @@ msgstr "Grafieken"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Training Parameters"
-msgstr "Parameters trainen"
+msgstr "Trainingsparameters"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Algorithmic Settings"
@@ -392,7 +392,7 @@ msgstr "Grafieken"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Training Parameters"
-msgstr "Parameters Trainen"
+msgstr "Trainingsparameters"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Algorithmic Settings"
@@ -408,7 +408,7 @@ msgstr "Grafieken"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Training Parameters"
-msgstr "Parameters trainen"
+msgstr "Trainingsparameters"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Algorithmic Settings"
@@ -424,7 +424,7 @@ msgstr "Grafieken"
 
 msgctxt "mlRegressionKnn|"
 msgid "Training Parameters"
-msgstr "Parameters trainen"
+msgstr "Trainingsparameters"
 
 msgctxt "mlRegressionKnn|"
 msgid "Algorithmic Settings"
@@ -440,7 +440,7 @@ msgstr "Grafieken"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Training Parameters"
-msgstr "Parameters trainen"
+msgstr "Trainingsparameters"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Algorithmic Settings"
@@ -468,7 +468,7 @@ msgstr "λ evaluatie"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Training Parameters"
-msgstr "Parameters trainen"
+msgstr "Trainingsparameters"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Algorithmic Settings"
@@ -552,7 +552,7 @@ msgstr "Grafieken"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Training Parameters"
-msgstr "Parameters trainen"
+msgstr "Trainingsparameters"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Algorithmic Settings"
@@ -568,7 +568,7 @@ msgstr "Grafieken"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Training Parameters"
-msgstr "Parameters trainen"
+msgstr "Trainingsparameters"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Algorithmic Settings"
@@ -704,7 +704,7 @@ msgstr "Grafieken"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Training Parameters"
-msgstr "Parameters Trainen"
+msgstr "Trainingsparameters"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Algorithmic Settings"
@@ -720,7 +720,7 @@ msgstr "Grafieken"
 
 msgctxt "mlClassificationSvm|"
 msgid "Training Parameters"
-msgstr "Parameters Trainen"
+msgstr "Trainingsparameters"
 
 msgctxt "mlClassificationSvm|"
 msgid "Algorithmic Settings"
@@ -752,7 +752,7 @@ msgstr "Grafieken"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Training Parameters"
-msgstr "Parameters Trainen"
+msgstr "Trainingsparameters"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Algorithmic Settings"
@@ -768,7 +768,7 @@ msgstr "Grafieken"
 
 msgctxt "mlRegressionSvm|"
 msgid "Training Parameters"
-msgstr "Parameters Trainen"
+msgstr "Trainingsparameters"
 
 msgctxt "mlRegressionSvm|"
 msgid "Algorithmic Settings"
@@ -1835,7 +1835,8 @@ msgctxt "DataSplit|"
 msgid ""
 "Shows how the data is split into training (and validation), and test set."
 msgstr ""
-"Toont hoe de data worden gesplitst in de training (en validatie) en test set."
+"Toont hoe de data worden gesplitst in de trainings- (en validatie) en "
+"testset."
 
 msgctxt "DecisionBoundary|"
 msgid "Decision boundary matrix"
