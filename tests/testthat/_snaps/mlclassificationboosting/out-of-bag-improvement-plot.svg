@@ -18,7 +18,7 @@
   </clipPath>
 </defs>
 <g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
-<rect x='0.00' y='0.00' width='720.00' height='576.00' style='stroke-width: 10.67; stroke: none;' />
+<rect x='-0.000000000000064' y='0.00' width='720.00' height='576.00' style='stroke-width: 10.67; stroke: none;' />
 </g>
 <defs>
   <clipPath id='cpMTAyLjc2fDcyMC4wMHw3MC45N3w1MTAuMTQ='>
@@ -70,11 +70,11 @@
 <text x='411.38' y='567.49' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='127.56px' lengthAdjust='spacingAndGlyphs'>Number of Trees</text>
 <text transform='translate(16.68,290.56) rotate(-90)' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='124.76px' lengthAdjust='spacingAndGlyphs'>OOB Change in </text>
 <text transform='translate(35.04,290.56) rotate(-90)' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='166.31px' lengthAdjust='spacingAndGlyphs'> Multinomial Deviance</text>
-<rect x='338.85' y='20.71' width='145.06' height='39.31' style='stroke-width: 0.75; stroke: none;' />
-<rect x='338.85' y='20.71' width='145.06' height='39.31' style='stroke-width: 10.67; stroke: none;' />
-<rect x='352.80' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
-<line x1='355.63' y1='40.36' x2='378.31' y2='40.36' style='stroke-width: 2.13; stroke-linecap: butt;' />
-<text x='389.61' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='88.82px' lengthAdjust='spacingAndGlyphs'>Training set</text>
+<rect x='344.58' y='20.71' width='133.61' height='39.31' style='stroke-width: 0.75; stroke: none;' />
+<rect x='344.58' y='20.71' width='133.61' height='39.31' style='stroke-width: 10.67; stroke: none;' />
+<rect x='350.06' y='26.19' width='28.35' height='28.35' style='stroke-width: 10.67; stroke: none;' />
+<line x1='352.89' y1='40.36' x2='375.57' y2='40.36' style='stroke-width: 2.13; stroke-linecap: butt;' />
+<text x='383.88' y='46.21' style='font-size: 17.00px; font-family: sans;' textLength='88.82px' lengthAdjust='spacingAndGlyphs'>Training set</text>
 <text x='411.38' y='11.70' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='214.51px' lengthAdjust='spacingAndGlyphs'>out-of-bag-improvement-plot</text>
 </g>
 </svg>
