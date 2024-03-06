@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2024-03-05 15:27\n"
-"PO-Revision-Date: 2024-03-05 15:20+0000\n"
+"PO-Revision-Date: 2024-03-06 08:49+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/nl/>\n"
@@ -313,9 +313,8 @@ msgstr "Gebaseerd Op Dichtheid Clusteren"
 msgid "Random Forest Clustering"
 msgstr "Random Forest Clusteren"
 
-#, fuzzy
 msgid "Model-Based Clustering"
-msgstr "Gebaseerd Op Dichtheid Clusteren"
+msgstr "Modelgebaseerd Clusteren"
 
 msgid "Clusters"
 msgstr "Clusters"
@@ -367,50 +366,49 @@ msgstr ""
 "'Training parameters'."
 
 msgid "spherical with equal volume"
-msgstr ""
+msgstr "bolvormig met gelijk volume"
 
 msgid "spherical with unequal volume"
-msgstr ""
+msgstr "bolvormig met ongelijk volume"
 
 msgid "diagonal with equal volume and shape"
-msgstr ""
+msgstr "diagonaal met gelijk volume en vorm"
 
 msgid "diagonal with varying volume and equal shape"
-msgstr ""
+msgstr "diagonaal met variërend volume en gelijke vorm"
 
 msgid "diagonal with equal volume and varying shape"
-msgstr ""
+msgstr "diagonaal met gelijk volume en variërende vorm"
 
 msgid "diagonal with varying volume and shape"
-msgstr ""
+msgstr "diagonaal met variërend volume en vorm"
 
 msgid "ellipsoidal with equal volume, shape, and orientation"
-msgstr ""
+msgstr "ellipsvormig met gelijk volume, vorm en oriëntatie"
 
 msgid "ellipsoidal with equal shape and orientation"
-msgstr ""
+msgstr "ellipsvormig met gelijke vorm en oriëntatie"
 
 msgid "ellipsoidal with equal volume and orientation"
-msgstr ""
+msgstr "ellipsoïdaal met gelijk volume en gelijke oriëntatie"
 
 msgid "ellipsoidal with equal orientation"
-msgstr ""
+msgstr "ellipsoïdaal met gelijke oriëntatie"
 
 msgid "ellipsoidal with equal volume and equal shape"
-msgstr ""
+msgstr "ellipsoïdaal met gelijk volume en gelijke vorm"
 
 msgid "ellipsoidal with equal shape"
-msgstr ""
+msgstr "ellipsvormig met gelijke vorm"
 
 msgid "ellipsoidal with equal volume"
-msgstr ""
+msgstr "ellipsvormig met gelijk volume"
 
 msgid "ellipsoidal with varying volume, shape, and orientation"
-msgstr ""
+msgstr "ellipsvormig met variërend volume, vorm en oriëntatie"
 
-#, fuzzy
 msgid "The model is %1$s."
-msgstr "Geladen Model: %1$s"
+msgstr "Het model is %1$s."
 
 msgid "The features in the model are <b>unstandardized</b>."
 msgstr "De kenmerken in het model zijn <b>ongestandaardiseerd</b>."
@@ -711,9 +709,8 @@ msgstr "Metrieken voor Belang van Kenmerken"
 msgid "Mean dropout loss"
 msgstr "Gemiddelde dropout loss"
 
-#, fuzzy
 msgid "Mean dropout loss is based on %1$s permutations."
-msgstr "Gemiddelde dropout loss is gebaseerd op 50 permutaties."
+msgstr "Gemiddelde dropout loss is gebaseerd op %1$s permutaties."
 
 msgid "The target variable should have at least 2 classes."
 msgstr "De doelvariabele moet minstens 2 klassen bevatten."
@@ -872,38 +869,38 @@ msgid ""
 "The %1$s-component %2$s model could not be fitted, try a different model or "
 "a different number of clusters."
 msgstr ""
+"Het %1$s-component %2$s model kon niet worden gepast, probeer een ander "
+"model of een ander aantal clusters."
 
 msgid "Estimated Model Parameters"
-msgstr ""
+msgstr "Geschatte Modelparameters"
 
 msgid "Mixing Probabilities"
-msgstr ""
+msgstr "Mengkansen"
 
 msgid "Mixing probability"
-msgstr ""
+msgstr "Mengkans"
 
 msgid "Component %1$s"
-msgstr ""
+msgstr "Component %1$s"
 
-#, fuzzy
 msgid "Means"
-msgstr "Gemiddelde"
+msgstr "Gemiddeldes"
 
 msgid "Covariance Matrix for Component %1$s"
-msgstr ""
+msgstr "Covariantiematrix voor Component %1$s"
 
 msgid "Scale of the Covariance"
-msgstr ""
+msgstr "Schaal van de Covariantie"
 
 msgid "Scale"
-msgstr ""
+msgstr "Schaal"
 
-#, fuzzy
 msgid "Shape of the Covariance Matrix"
-msgstr "Toetsen van Gelijkwaardigheid van Covariantie Matrices"
+msgstr "Vorm van de Covariantiematrix"
 
 msgid "Eigenvalues of the Covariance Matrix for Component %1$s"
-msgstr ""
+msgstr "Eigenwaarden van de Covariantiematrix voor Component %1$s"
 
 msgid "Feature Importance"
 msgstr "Belang van Kenmerken"
