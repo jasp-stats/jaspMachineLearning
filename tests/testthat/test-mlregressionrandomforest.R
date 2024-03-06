@@ -107,7 +107,7 @@ test_that("Feature Importance Metrics table results match", {
 test_that("Evaluation Metrics table results match", {
   table <- results[["results"]][["validationMeasures"]][["data"]]
   jaspTools::expect_equal_tables(table,
-                      list("MSE", 0.355, "RMSE", 0.596, "MAE / MAD", 0.473, "MAPE", "3.71%",
+                      list("MSE", 0.355, "MSE(scaled)", 0.531, "RMSE", 0.596, "MAE / MAD", 0.473, "MAPE", "3.71%",
                            "R<unicode><unicode>", 0.528))
 })
 

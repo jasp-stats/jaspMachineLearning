@@ -93,7 +93,7 @@ test_that("Regularized Linear Regression table results match", {
 test_that("Model Performance Metrics table results match", {
 	table <- results[["results"]][["validationMeasures"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list("MSE", 0.316, "RMSE", 0.562, "MAE / MAD", 0.428, "MAPE", "3.34%",
+		list("MSE", 0.316, "MSE(scaled)", 0.504, "RMSE", 0.562, "MAE / MAD", 0.428, "MAPE", "3.34%",
 			 "R<unicode>", 0.549))
 })
 
