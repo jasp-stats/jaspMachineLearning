@@ -483,7 +483,7 @@
   table$dependOn(options = c(.mlRegressionDependencies(options), "validationMeasures"))
   table$addColumnInfo(name = "measures", title = "", type = "string")
   table$addColumnInfo(name = "values", title = gettext("Value"), type = "string")
-  measures <- c("MSE", "RMSE", "MAE / MAD", "MAPE", "R\u00B2")
+  measures <- c("MSE", gettext("MSE(scaled)"), "RMSE", "MAE / MAD", "MAPE", "R\u00B2")
   table[["measures"]] <- measures
   jaspResults[["validationMeasures"]] <- table
   if (!ready) {
@@ -495,11 +495,14 @@
   obs <- predDat[["obs"]]
   pred <- predDat[["pred"]]
   mse <- round(regressionResult[["testMSE"]], 3)
+  obs_scaled <- (obs - mean(obs)) / sd(obs)
+  pred_scaled <- (pred - mean(pred)) / sd(pred)
+  mse_scaled <- round(mean((obs_scaled - pred_scaled)^2), 3)
   rmse <- round(sqrt(mse), 3)
   mae <- round(mean(abs(obs - pred)), 3)
   mape <- paste0(round(mean(abs((obs - pred) / obs)) * 100, 2), "%")
   r_squared <- round(cor(obs, pred)^2, 3)
-  values <- c(mse, rmse, mae, mape, r_squared)
+  values <- c(mse, mse_scaled, rmse, mae, mape, r_squared)
   table[["values"]] <- values
   if (is.na(r_squared)) {
     table$addFootnote(gettextf("R%s cannot be computed due to lack of variance in the predictions.</i>", "\u00B2"))
