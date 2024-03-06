@@ -15,7 +15,7 @@ Geregulariseerde lineaire regressie is een aanpassing van de lineaire regressie 
 - Gewichten: In dit veld vult u een optionele variabele in die gewichten voor casussen bevatten.
 
 #### Tabellen  
-- Evaluatiemetrieken: Toon regelmatig gebruikte classificatie evaluatiemetrieken zoals gemiddelde kwadraatsom fout (MSE), wortel gemiddelde kwadraatsom fout (RMSE) en R<sup>2</sup>.
+- Evaluatiemetrieken: Toon regelmatig gebruikte classificatie evaluatiemetrieken zoals gemiddelde kwadratenfout (MSE), wortel van de gemiddelde kwadratenfout (RMSE) en R<sup>2</sup>.
 - Regressiecoëfficiënten: Geeft de regressiecoëfficiënt voor elke voorspeller.
 
 #### Grafieken
@@ -57,7 +57,8 @@ Genereert een nieuwe kolom in uw dataset met de klasselabels van uw classificati
 - Testset MSE: De MSE van de testset.
 
 #### Evaluatiemetrieken
-- MSE: De gemiddelde kwadraatsom fout van het model.
+- MSE: De gemiddelde kwadratenfout van het model.
+- MSE(geschaald): De gemiddelde kwadratenfout berekend met de geschaalde doelvariabele en de geschaalde voorspellingen.
 - RMSE: De wortel van de kwadratische gemiddelde fout van het model.
 - MAE / MAD: De gemiddelde absolute fout van het model.
 - MAPE: De gemiddelde absolute percentagefout van het model.

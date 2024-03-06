@@ -14,13 +14,13 @@ Decision Trees is een leeralgoritme onder toezicht dat een beslissingsboom gebru
 - Voorspellers: In dit veld vult u de variabelen in die informatie geven over de target. 
 
 #### Tabellen  
-- Evaluatiemetrieken: Toon regelmatig gebruikte classificatie evaluatiemetrieken zoals gemiddelde kwadraatsom fout (MSE), wortel gemiddelde kwadraatsom fout (RMSE) en R<sup>2</sup>.
+- Evaluatiemetrieken: Toon regelmatig gebruikte classificatie evaluatiemetrieken zoals gemiddelde kwadratenfout (MSE), wortel van de gemiddelde kwadratenfout (RMSE) en R<sup>2</sup>.
 - Splitsing in boomstructuur: toont de splitsvariabelen, hun splitspunt en het aantal waarnemingen (die niet ontbreken en een positief gewicht hebben) die door de splitsing naar links of rechts zijn verzonden. Het toont ook de verbetering in deviantie die door deze splitsing wordt gegeven.
 - Variabele belang: toont het relatieve belang van de voorspellers.
 
 #### Grafieken
 - Datasplit: Laat zien hoe de data is gesplitst in trainings- (en validatie-) en testset.
-- Gemiddelde kwadraatsom fout: Plot het aantal naaste buren tegen de MSE van het model. Precisie is bepaald voor de trainingsset (en validatieset).
+- Gemiddelde kwadratenfout: Plot het aantal naaste buren tegen de MSE van het model. Precisie is bepaald voor de trainingsset (en validatieset).
 - Beslisboom: Creëert een plot die de beslisboom en zijn bladeren visualiseert.
 - Voorspellingsvermogen: Laat de observaties van de geselecteerde testset tegen de voorspelde waarden zien.
 
@@ -52,7 +52,8 @@ Genereert een nieuwe kolom in uw dataset met de klasselabels van uw classificati
 - Testset MSE: De MSE van de testset.
 
 #### Evaluatiemetrieken
-- MSE: De gemiddelde kwadraatsom fout van het model.
+- MSE: De gemiddelde kwadratenfout van het model.
+- MSE(geschaald): De gemiddelde kwadratenfout berekend met de geschaalde doelvariabele en de geschaalde voorspellingen.
 - RMSE: De wortel van de kwadratische gemiddelde fout van het model.
 - MAE / MAD: De gemiddelde absolute fout van het model.
 - MAPE: De gemiddelde absolute percentagefout van het model.
