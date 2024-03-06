@@ -14,12 +14,12 @@ K-naaste buren is een regressiemethode die lijkt op het *k* aantal voorspellende
 - Voorspellers: In dit veld vult u de variabelen in die informatie geven over de target. 
 
 #### Tabellen  
-- Evaluatiemetrieken: Toon regelmatig gebruikte classificatie evaluatiemetrieken zoals gemiddelde kwadraatsom fout (MSE), wortel gemiddelde kwadraatsom fout (RMSE) en R<sup>2</sup>.
+- Evaluatiemetrieken: Toon regelmatig gebruikte classificatie evaluatiemetrieken zoals gemiddelde kwadratenfout (MSE), wortel van de gemiddelde kwadratenfout (RMSE) en R<sup>2</sup>.
 
 #### Grafieken
 - Datasplit: Laat zien hoe de data is gesplitst in trainings- (en validatie-) en testset.
 - Gewichtsfunctie: laat zien hoe de gewichten worden toegekend als functie van de afstand.
-- Gemiddelde kwadraatsom fout: Plot het aantal naaste buren tegen de MSE van het model. Precisie is bepaald voor de trainingsset (en validatieset).
+- Gemiddelde kwadratenfout: Plot het aantal naaste buren tegen de MSE van het model. Precisie is bepaald voor de trainingsset (en validatieset).
 - Voorspellingsvermogen: Laat de observaties van de geselecteerde testset tegen de voorspelde waarden zien.
 
 ### Datasplit Voorkeuren
@@ -62,7 +62,8 @@ Genereert een nieuwe kolom in uw dataset met de klasselabels van uw classificati
 - Testset MSE: De MSE van de testset.
 
 #### Evaluatiemetrieken
-- MSE: De gemiddelde kwadraatsom fout van het model.
+- MSE: De gemiddelde kwadratenfout van het model.
+- MSE(geschaald): De gemiddelde kwadratenfout berekend met de geschaalde doelvariabele en de geschaalde voorspellingen.
 - RMSE: De wortel van de kwadratische gemiddelde fout van het model.
 - MAE / MAD: De gemiddelde absolute fout van het model.
 - MAPE: De gemiddelde absolute percentagefout van het model.

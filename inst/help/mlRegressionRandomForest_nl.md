@@ -14,7 +14,7 @@ Random Forest is een regressiemethode die een set beslisbomen maakt, bestaande u
 - Voorspellers: In dit veld vult u de variabelen in die informatie geven over de target. 
 
 #### Tabellen  
-- Evaluatiemetrieken: Toon regelmatig gebruikte classificatie evaluatiemetrieken zoals gemiddelde kwadraatsom fout (MSE), wortel gemiddelde kwadraatsom fout (RMSE) en R<sup>2</sup>.
+- Evaluatiemetrieken: Toon regelmatig gebruikte classificatie evaluatiemetrieken zoals gemiddelde kwadratenfout (MSE), wortel van de gemiddelde kwadratenfout (RMSE) en R<sup>2</sup>.
 - Variabele van belang: Toont de gemiddelde daling van de Precisie en de totale stijging van de node purity voor alle voorspellervariabelen. Dit zijn indicatoren voor het belang van de voorspellers.
 
 #### Plots
@@ -62,7 +62,8 @@ Genereert een nieuwe kolom in uw dataset met de klasselabels van uw classificati
 - OOB fout: De out-of-bag MSE van de testset.
 
 #### Evaluatiemetrieken
-- MSE: De gemiddelde kwadraatsom fout van het model.
+- MSE: De gemiddelde kwadratenfout van het model.
+- MSE(geschaald): De gemiddelde kwadratenfout berekend met de geschaalde doelvariabele en de geschaalde voorspellingen.
 - RMSE: De wortel van de kwadratische gemiddelde fout van het model.
 - MAE / MAD: De gemiddelde absolute fout van het model.
 - MAPE: De gemiddelde absolute percentagefout van het model.
