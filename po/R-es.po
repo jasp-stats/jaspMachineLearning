@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
 "POT-Creation-Date: 2024-03-05 15:27\n"
-"PO-Revision-Date: 2024-02-03 13:21+0000\n"
+"PO-Revision-Date: 2024-03-07 12:00+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/es/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.4-dev\n"
+"X-Generator: Weblate 5.5-dev\n"
 
 msgid "An error occurred in the analysis: %s"
 msgstr "Ocurrió un fallo en el análisis: %s"
@@ -317,9 +317,8 @@ msgstr "Conglomeración Basada en la Densidad"
 msgid "Random Forest Clustering"
 msgstr "Conglomerados en Bosques Aleatorios"
 
-#, fuzzy
 msgid "Model-Based Clustering"
-msgstr "Conglomeración Basada en la Densidad"
+msgstr "Conglomeración basada en el Modelo"
 
 msgid "Clusters"
 msgstr "Conglomerados"
@@ -371,50 +370,49 @@ msgstr ""
 "núcleo' en 'Parámetros de adiestramiento'."
 
 msgid "spherical with equal volume"
-msgstr ""
+msgstr "Esférica con volumen igual"
 
 msgid "spherical with unequal volume"
-msgstr ""
+msgstr "Esférica con volumen distinto"
 
 msgid "diagonal with equal volume and shape"
-msgstr ""
+msgstr "Diagonal con volumen y forma iguales"
 
 msgid "diagonal with varying volume and equal shape"
-msgstr ""
+msgstr "Diagonal con volumen distinto y forma igual"
 
 msgid "diagonal with equal volume and varying shape"
-msgstr ""
+msgstr "Diagonal con volumen igual y forma distinta"
 
 msgid "diagonal with varying volume and shape"
-msgstr ""
+msgstr "Diagonal con volumen y forma distintos"
 
 msgid "ellipsoidal with equal volume, shape, and orientation"
-msgstr ""
+msgstr "Elipsoidal con volumen, forma y orientación iguales"
 
 msgid "ellipsoidal with equal shape and orientation"
-msgstr ""
+msgstr "Elipsoidal con forma y orientación iguales"
 
 msgid "ellipsoidal with equal volume and orientation"
-msgstr ""
+msgstr "Elipsoidal con volumen y orientación iguales"
 
 msgid "ellipsoidal with equal orientation"
-msgstr ""
+msgstr "Elipsoidal con orientación igual"
 
 msgid "ellipsoidal with equal volume and equal shape"
-msgstr ""
+msgstr "Elipsoidal con volumen y forma iguales"
 
 msgid "ellipsoidal with equal shape"
-msgstr ""
+msgstr "Elipsoidal con forma igual"
 
 msgid "ellipsoidal with equal volume"
-msgstr ""
+msgstr "Elipsoidal con volumen igual"
 
 msgid "ellipsoidal with varying volume, shape, and orientation"
-msgstr ""
+msgstr "Elipsoidal con volumen, forma y orientación distintos"
 
-#, fuzzy
 msgid "The model is %1$s."
-msgstr "Modelo Cargado: %1$s"
+msgstr "El modelo es %1$s."
 
 msgid "The features in the model are <b>unstandardized</b>."
 msgstr "Las características del modelo están <b>sin tipificar</b>."
@@ -879,38 +877,38 @@ msgid ""
 "The %1$s-component %2$s model could not be fitted, try a different model or "
 "a different number of clusters."
 msgstr ""
+"El modelo %2$s de componentes %1$s no se puede ajustar; prueba un modelo "
+"distinto o un número diferente de conglomerados."
 
 msgid "Estimated Model Parameters"
-msgstr ""
+msgstr "Parámetros del modelo estimado"
 
 msgid "Mixing Probabilities"
-msgstr ""
+msgstr "Probabilidades mixturadas"
 
 msgid "Mixing probability"
-msgstr ""
+msgstr "Probabilidad mixturada"
 
 msgid "Component %1$s"
-msgstr ""
+msgstr "Componente %1$s"
 
-#, fuzzy
 msgid "Means"
-msgstr "Media"
+msgstr "Medias"
 
 msgid "Covariance Matrix for Component %1$s"
-msgstr ""
+msgstr "Matriz de covarianzas por Componente %1$s"
 
 msgid "Scale of the Covariance"
-msgstr ""
+msgstr "Escala de la covarianza"
 
 msgid "Scale"
-msgstr ""
+msgstr "Escala"
 
-#, fuzzy
 msgid "Shape of the Covariance Matrix"
-msgstr "Contrastes de Igualdad de Matrices de Covarianzas"
+msgstr "Forma de la matriz de covarianzas"
 
 msgid "Eigenvalues of the Covariance Matrix for Component %1$s"
-msgstr ""
+msgstr "Autovalores de la matriz de covarianzas para la componente %1$s"
 
 msgid "Feature Importance"
 msgstr "Importancia de la característica"
