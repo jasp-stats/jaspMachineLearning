@@ -60,7 +60,7 @@ Form
 	{
 		title: qsTr("Training Parameters")
 
-		GroupBox
+		Group
 		{
 			title: qsTr("Algorithmic Settings")
 
