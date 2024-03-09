@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2024-03-07 12:00+0000\n"
+"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.5-dev\n"
 "X-Language: es\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -3068,15 +3074,15 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Model-Based"
-msgstr ""
+msgstr "Basado en el modelo"
 
 msgctxt "Description|"
 msgid "Model-Based Clustering"
-msgstr ""
+msgstr "Conglomeración basada en el Modelo"
 
 msgctxt "ClusterMatrix|"
 msgid "Display components"
-msgstr ""
+msgstr "Representar las componentes"
 
 msgctxt "mlClusteringModelBased|"
 msgid ""
@@ -3084,105 +3090,108 @@ msgid ""
 "models. The models are estimated by EM algorithm initialized by hierarchical "
 "model-based agglomerative clustering."
 msgstr ""
+"La conglomeración basada en modelos se fundamenta en modelos mixturados "
+"Gaussianos finitos con parámetros. Los modelos se estiman con el algoritmo "
+"ME (EM) que se inicia mediante la conglomeración jerárquica acumulativa "
+"basada en modelos."
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Tables"
 msgstr "Tablas"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Parameter estimates"
-msgstr ""
+msgstr "Estimaciones de los parámetros"
 
 msgctxt "mlClusteringModelBased|"
 msgid ""
 "Shows tables containing the model parameters for each cluster and feature "
 "variable."
 msgstr ""
+"Muestra las tablas que contienen los parámetros del modelo para cada "
+"conglomerado y variable característica."
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Plots"
 msgstr "Gráficos"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parámetros de adiestramiento"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Configuraciones Algorítmicas"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Model"
-msgstr ""
+msgstr "Modelo"
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Auto"
 msgstr "Auto"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EII"
-msgstr ""
+msgstr "EII"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VII"
-msgstr ""
+msgstr "VII"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EEI"
-msgstr ""
+msgstr "EEI"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VEI"
-msgstr ""
+msgstr "VEI"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EVI"
-msgstr ""
+msgstr "EVI"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EEE"
-msgstr ""
+msgstr "EEE"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VEE"
-msgstr ""
+msgstr "VEE"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EVE"
-msgstr ""
+msgstr "EVE"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VVE"
-msgstr ""
+msgstr "VVE"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EEV"
-msgstr ""
+msgstr "EEV"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VEV"
-msgstr ""
+msgstr "VEV"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EVV"
-msgstr ""
+msgstr "EVV"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VVV"
-msgstr ""
+msgstr "VVV"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Choose the model to be fitted in the EM step of the clustering."
 msgstr ""
+"Elige el modelo que se ajustará en la etapa del ME (EM) de la conglomeración."
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Max. iterations"
 msgstr "Máx. iteraciones"
 
 msgctxt "mlClusteringModelBased|"
 msgid "The maximum number of iterations for the M-step in the algorithm."
-msgstr ""
+msgstr "El número máximo de iteraciones para la etapa M del algoritmo."
