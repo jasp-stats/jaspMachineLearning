@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2024-03-05 15:27\n"
-"PO-Revision-Date: 2024-02-12 18:06+0000\n"
+"PO-Revision-Date: 2024-03-14 10:01+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
-"X-Generator: Weblate 5.4-dev\n"
+"X-Generator: Weblate 5.5-dev\n"
 
 msgid "An error occurred in the analysis: %s"
 msgstr "In der Analyse ist ein Fehler aufgetreten: %s"
@@ -314,9 +314,8 @@ msgstr "Dichtebasiertes Clustering"
 msgid "Random Forest Clustering"
 msgstr "Random-Forest-Clustering"
 
-#, fuzzy
 msgid "Model-Based Clustering"
-msgstr "Dichtebasiertes Clustering"
+msgstr "Modellbasiertes Clustering"
 
 msgid "Clusters"
 msgstr "Cluster"
@@ -368,50 +367,49 @@ msgstr ""
 "Points' unter 'Trainingsparameter' ändern."
 
 msgid "spherical with equal volume"
-msgstr ""
+msgstr "kugelförmig mit gleichem volumen"
 
 msgid "spherical with unequal volume"
-msgstr ""
+msgstr "kugelförmig mit ungleichem Volumen"
 
 msgid "diagonal with equal volume and shape"
-msgstr ""
+msgstr "diagonal mit gleichem Volumen und Form"
 
 msgid "diagonal with varying volume and equal shape"
-msgstr ""
+msgstr "diagonal mit unterschiedlichem Volumen und gleicher Form"
 
 msgid "diagonal with equal volume and varying shape"
-msgstr ""
+msgstr "diagonal mit gleichem Volumen und unterschiedlicher Form"
 
 msgid "diagonal with varying volume and shape"
-msgstr ""
+msgstr "diagonal mit unterschiedlichem Volumen und Form"
 
 msgid "ellipsoidal with equal volume, shape, and orientation"
-msgstr ""
+msgstr "ellipsoid mit gleichem Volumen, Form und Orientierung"
 
 msgid "ellipsoidal with equal shape and orientation"
-msgstr ""
+msgstr "ellipsoid mit gleicher Form und Orientierung"
 
 msgid "ellipsoidal with equal volume and orientation"
-msgstr ""
+msgstr "ellipsoid mit gleichem Volumen und Orientierung"
 
 msgid "ellipsoidal with equal orientation"
-msgstr ""
+msgstr "ellipsoid mit gleicher Orientierung"
 
 msgid "ellipsoidal with equal volume and equal shape"
-msgstr ""
+msgstr "ellipsoid mit gleichem Volumen und gleicher Form"
 
 msgid "ellipsoidal with equal shape"
-msgstr ""
+msgstr "ellipsoid mit gleicher Form"
 
 msgid "ellipsoidal with equal volume"
-msgstr ""
+msgstr "ellipsoid mit gleichem Volumen"
 
 msgid "ellipsoidal with varying volume, shape, and orientation"
-msgstr ""
+msgstr "ellipsoid mit unterschiedlichem Volumen, Form und Orientierung"
 
-#, fuzzy
 msgid "The model is %1$s."
-msgstr "Geladenes Modell: %1$s"
+msgstr "Das Modell ist %1$s."
 
 msgid "The features in the model are <b>unstandardized</b>."
 msgstr "Die Merkmale in dem Modell sind <b>unstandardisiert</b>."
@@ -873,13 +871,16 @@ msgstr "Der Grenzwert liegt außerhalb des Bereichs. Kein Wert zurückgeben."
 msgid "Dendrogram"
 msgstr "Dendrogramm"
 
+#, fuzzy
 msgid ""
 "The %1$s-component %2$s model could not be fitted, try a different model or "
 "a different number of clusters."
 msgstr ""
+"Die %1$s-Komponente %2$ Modell konnte nicht angepasst werden, probieren Sie "
+"ein anderes Modell oder eine andere Anzahl von Clustern."
 
 msgid "Estimated Model Parameters"
-msgstr ""
+msgstr "Geschätzte Modellparameter"
 
 msgid "Mixing Probabilities"
 msgstr ""
@@ -888,27 +889,27 @@ msgid "Mixing probability"
 msgstr ""
 
 msgid "Component %1$s"
-msgstr ""
+msgstr "Komponente %1$s"
 
-#, fuzzy
 msgid "Means"
-msgstr "Mittelwert"
+msgstr "Mittelwerte"
 
 msgid "Covariance Matrix for Component %1$s"
-msgstr ""
-
-msgid "Scale of the Covariance"
-msgstr ""
-
-msgid "Scale"
-msgstr ""
+msgstr "Kovarianzmatrix für Komponente %1$s"
 
 #, fuzzy
+msgid "Scale of the Covariance"
+msgstr "Skalierung der Kovarianz"
+
+#, fuzzy
+msgid "Scale"
+msgstr "Skalierung"
+
 msgid "Shape of the Covariance Matrix"
-msgstr "Test auf Gleichheit der Kovarianzmatrizen"
+msgstr "Form der Kovarianzmatrix"
 
 msgid "Eigenvalues of the Covariance Matrix for Component %1$s"
-msgstr ""
+msgstr "Eigenwerte der Kovarianzmatrix für Komponenten %1$s"
 
 msgid "Feature Importance"
 msgstr "Merkmal-Wichtigkeit"
