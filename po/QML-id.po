@@ -3103,3 +3103,7 @@ msgstr "Maks. iterasi"
 msgctxt "mlClusteringModelBased|"
 msgid "The maximum number of iterations for the M-step in the algorithm."
 msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "Predictions for new data"
+msgstr ""
