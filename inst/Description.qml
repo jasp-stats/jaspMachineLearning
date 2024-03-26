@@ -13,6 +13,7 @@ Description
 	license:		"GPL (>= 2)"
 	icon:			"analysis-ml-ribbon.svg"
 
+	// NEEDS FIRST-LEVEL HEADER "SUPERVISED"
 	GroupTitle
 	{
 		title:	qsTr("Regression")
@@ -122,7 +123,19 @@ Description
 		func:	"mlClassificationSvm"
 	}
 
+	GroupTitle
+	{
+		title:	qsTr("Prediction")
+		icon: 	"analysis-ml-prediction.svg"
+	}
+	Analysis
+	{
+		menu:	qsTr("Prediction")
+		title:	qsTr("Prediction")
+		func:	"mlPrediction"
+	}
 
+	// NEEDS FIRST-LEVEL HEADER "UNSUPERVISED"
 	GroupTitle
 	{
 		title:	qsTr("Clustering")
@@ -154,6 +167,12 @@ Description
 	}
 	Analysis
 	{
+		menu:	qsTr("Isolation Forest")
+		title:	qsTr("Isolation Forest Clustering")
+		func:	"mlClusteringIsolationForest"
+	}
+	Analysis
+	{
 		menu:	qsTr("Neighborhood-Based")
 		title:	qsTr("Neighborhood-Based Clustering")
 		func:	"mlClusteringKMeans"
@@ -167,13 +186,25 @@ Description
 
 	GroupTitle
 	{
-		title:	qsTr("Prediction")
-		icon: 	"analysis-ml-prediction.svg"
+		title:	qsTr("Anomaly Detection")
+		icon: 	"analysis-ml-anomaly.svg"
 	}
 	Analysis
 	{
-		menu:	qsTr("Prediction")
-		title:	qsTr("Prediction")
-		func:	"mlPrediction"
+		menu:	qsTr("Isolation Forest")
+		title:	qsTr("Isolation Forest Anomaly Detection")
+		func:	"mlAnomalyIsolationForest"
+	}
+	Analysis
+	{
+		menu:	qsTr("Outlier Tree")
+		title:	qsTr("Outlier Tree Anomaly Detection")
+		func:	"mlAnomalyOutlierTree"
+	}
+	Analysis
+	{
+		menu:	qsTr("Support Vector Machine")
+		title:	qsTr("Support Vector Machine Anomaly Detection")
+		func:	"mlAnomalySvm"
 	}
 }
