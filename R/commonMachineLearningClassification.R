@@ -973,7 +973,6 @@ gettextf <- function(fmt, ..., domain = NULL) {
     if (.columnIsScale(options$target)) jaspResults[["predictionsColumn"]]$setScale(predictionsColumn)
     if (.columnIsOrdinal(options$target)) jaspResults[["predictionsColumn"]]$setOrdinal(predictionsColumn)
     if (.columnIsNominal(options$target)) jaspResults[["predictionsColumn"]]$setNominal(predictionsColumn)
-    if (.columnIsNominalText(options$target)) jaspResults[["predictionsColumn"]]$setNominalText(predictionsColumn)
   }
 }
 
