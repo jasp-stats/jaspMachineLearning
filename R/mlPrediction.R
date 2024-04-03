@@ -374,7 +374,7 @@ is.jaspMachineLearning <- function(x) {
   cols <- list(row = indexes, pred = selection)
   if (options[["predictionsTableFeatures"]]) {
     for (i in encodeColNames(model[["jaspVars"]])) {
-      if (.columnIsNominalText(i)) {
+      if (.columnIsNominalText(i)) { # THIS NEEDS TO BE REPLACED
         table$addColumnInfo(name = i, title = i, type = "string")
         var <- levels(dataset[[i]])[dataset[[i]]]
       } else {
