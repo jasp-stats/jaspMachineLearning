@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2024-04-05 10:01+0000\n"
+"Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.5-dev\n"
 "X-Language: de\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -3004,41 +3010,38 @@ msgid ""
 "model-based agglomerative clustering."
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Tables"
 msgstr "Tabellen"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Parameter estimates"
-msgstr ""
+msgstr "Parameterschätzungen"
 
 msgctxt "mlClusteringModelBased|"
 msgid ""
 "Shows tables containing the model parameters for each cluster and feature "
 "variable."
 msgstr ""
+"Zeigt Tabellen mit den Modellparametern für jedes Cluster und "
+"Merkmalsvariable."
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Plots"
 msgstr "Diagramme"
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Training Parameters"
 msgstr "Trainingsparameter"
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Algorithmic Settings"
 msgstr "Algorithmus-Einstellungen"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Model"
-msgstr ""
+msgstr "Modell"
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Auto"
 msgstr "Auto"
