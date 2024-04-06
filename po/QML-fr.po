@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-04-06 03:20+0000\n"
+"PO-Revision-Date: 2024-04-07 21:01+0000\n"
 "Last-Translator: robachowyk <kaya.robach@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/fr/>\n"
@@ -67,15 +67,15 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Random Forest Regression"
-msgstr ""
+msgstr "Régression Fôret Aléatoire"
 
 msgctxt "Description|"
 msgid "Regularized Linear"
-msgstr ""
+msgstr "Linéaire Régularisée"
 
 msgctxt "Description|"
 msgid "Regularized Linear Regression"
-msgstr ""
+msgstr "Régression linéaire régularisée"
 
 msgctxt "Description|"
 msgid "Support Vector Machine"
