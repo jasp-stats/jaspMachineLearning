@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.0\n"
 "POT-Creation-Date: 2024-03-23 03:22\n"
-"PO-Revision-Date: 2024-04-06 03:20+0000\n"
+"PO-Revision-Date: 2024-04-09 13:34+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/pl/>\n"
@@ -133,7 +133,7 @@ msgid "Manhattan"
 msgstr "Manhattan"
 
 msgid "Euclidean"
-msgstr "Eklidejski"
+msgstr "Euklidesowa"
 
 msgid "Moment"
 msgstr ""
@@ -272,10 +272,10 @@ msgid ""
 msgstr ""
 
 msgid "K-Means Clustering"
-msgstr ""
+msgstr "Metoda k-średnich"
 
 msgid "K-Medians Clustering"
-msgstr ""
+msgstr "Metoda k-median"
 
 msgid "K-Medoids Clustering"
 msgstr ""
@@ -284,7 +284,7 @@ msgid "Fuzzy C-Means Clustering"
 msgstr ""
 
 msgid "Hierarchical Clustering"
-msgstr ""
+msgstr "Analiza hierarchiczna"
 
 msgid "Density-Based Clustering"
 msgstr ""
@@ -311,7 +311,7 @@ msgid "BIC"
 msgstr "BIC"
 
 msgid "Please provide at least 2 features."
-msgstr ""
+msgstr "Proszę wprowadzić co najmniej 2 zmienne."
 
 msgid "silhouette"
 msgstr ""
@@ -382,7 +382,7 @@ msgid "The model is %1$s."
 msgstr ""
 
 msgid "The features in the model are <b>unstandardized</b>."
-msgstr ""
+msgstr "Zmienne w modelu są <b>niestandaryzowane</b>."
 
 msgid "Cluster Information"
 msgstr ""
@@ -427,7 +427,7 @@ msgid "Pearson's %s"
 msgstr "%s Pearsona"
 
 msgid "Dunn index"
-msgstr "indeks Dunna"
+msgstr "Indeks Dunna"
 
 msgid "Entropy"
 msgstr "Entropia"
@@ -436,7 +436,7 @@ msgid "Calinski-Harabasz index"
 msgstr "Indeks"
 
 msgid "All metrics are based on the <i>euclidean</i> distance."
-msgstr ""
+msgstr "Wszystkie wskaźniki są oparte na odległości <i>euklidesowej</i>."
 
 msgid "Evaluation metrics cannot be computed when there is only 1 cluster."
 msgstr ""
@@ -475,7 +475,7 @@ msgid "Feature"
 msgstr ""
 
 msgid "All Features"
-msgstr ""
+msgstr "Wszystkie zmienne"
 
 msgid "Cluster Mean Plots"
 msgstr ""
@@ -1081,7 +1081,7 @@ msgid "Upper"
 msgstr ""
 
 msgid "The regression coefficients for numeric features are standardized."
-msgstr ""
+msgstr "Współczynniki regresji dla zmiennych numerycznych są standaryzowane."
 
 #, fuzzy
 msgid "The regression coefficients are unstandardized."
