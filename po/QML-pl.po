@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-04-06 03:20+0000\n"
+"PO-Revision-Date: 2024-04-09 13:34+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/pl/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Machine Learning"
-msgstr "Uczenie masynowe"
+msgstr "Uczenie maszynowe"
 
 msgctxt "Description|"
 msgid ""
@@ -121,7 +121,7 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Clustering"
-msgstr ""
+msgstr "Skupienia"
 
 msgctxt "Description|"
 msgid "Density-Based"
@@ -145,7 +145,7 @@ msgstr "Hierarchiczne"
 
 msgctxt "Description|"
 msgid "Hierarchical Clustering"
-msgstr ""
+msgstr "Analiza hierarchiczna"
 
 msgctxt "Description|"
 msgid "Neighborhood-Based"
@@ -249,7 +249,7 @@ msgstr "Cel"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Features"
-msgstr ""
+msgstr "Zmienne"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Tables"
@@ -337,7 +337,7 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "Scale features"
-msgstr ""
+msgstr "Standaryzuj zmienne"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Set seed"
@@ -369,7 +369,7 @@ msgstr "Cel"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Features"
-msgstr ""
+msgstr "Zmienne"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Tables"
@@ -457,7 +457,7 @@ msgstr ""
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Scale features"
-msgstr ""
+msgstr "Standaryzuj zmienne"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Set seed"
@@ -469,7 +469,7 @@ msgstr "Cel"
 
 msgctxt "mlClassificationKnn|"
 msgid "Features"
-msgstr ""
+msgstr "Zmienne"
 
 msgctxt "mlClassificationKnn|"
 msgid "Tables"
@@ -593,7 +593,7 @@ msgstr "Manhattan"
 
 msgctxt "mlClassificationKnn|"
 msgid "Scale features"
-msgstr ""
+msgstr "Standaryzuj zmienne"
 
 msgctxt "mlClassificationKnn|"
 msgid "Set seed"
@@ -625,7 +625,7 @@ msgstr "Cel"
 
 msgctxt "mlClassificationLda|"
 msgid "Features"
-msgstr "Cechy"
+msgstr "Zmienne"
 
 msgctxt "mlClassificationLda|"
 msgid "Tables"
@@ -729,7 +729,7 @@ msgstr "Metoda estymacji"
 
 msgctxt "mlClassificationLda|"
 msgid "Scale features"
-msgstr ""
+msgstr "Standaryzuj zmienne"
 
 msgctxt "mlClassificationLda|"
 msgid "Set seed"
@@ -741,7 +741,7 @@ msgstr "Cel"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Features"
-msgstr ""
+msgstr "Zmienne"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Tables"
@@ -929,7 +929,7 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Scale features"
-msgstr ""
+msgstr "Standaryzuj zmienne"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Set seed"
@@ -1057,7 +1057,7 @@ msgstr "Cel"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Features"
-msgstr ""
+msgstr "Zmienne"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Tables"
@@ -1149,7 +1149,7 @@ msgstr "Ręcznie"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Scale features"
-msgstr ""
+msgstr "Standaryzuj zmienne"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Set seed"
@@ -1181,7 +1181,7 @@ msgstr "Cel"
 
 msgctxt "mlClassificationSvm|"
 msgid "Features"
-msgstr ""
+msgstr "Zmienne"
 
 msgctxt "mlClassificationSvm|"
 msgid "Tables"
@@ -1289,7 +1289,7 @@ msgstr "Epsilon"
 
 msgctxt "mlClassificationSvm|"
 msgid "Scale features"
-msgstr ""
+msgstr "Standaryzuj zmienne"
 
 msgctxt "mlClassificationSvm|"
 msgid "Set seed"
@@ -1297,7 +1297,7 @@ msgstr "Ustaw ziarno generatora"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Features"
-msgstr ""
+msgstr "Zmienne"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Tables"
@@ -1409,7 +1409,7 @@ msgstr "Stałe"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Features"
-msgstr ""
+msgstr "Zmienne"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Tables"
@@ -1525,7 +1525,7 @@ msgstr ""
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Features"
-msgstr "Cechy"
+msgstr "Zmienne"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Tables"
@@ -1609,7 +1609,7 @@ msgstr "Dystans"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Euclidean"
-msgstr "Euklidejska"
+msgstr "Euklidesowa"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Pearson"
@@ -1621,7 +1621,7 @@ msgstr ""
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Average"
-msgstr "Uśrednione"
+msgstr "Średnie"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Single"
@@ -1681,7 +1681,7 @@ msgstr ""
 
 msgctxt "mlClusteringKMeans|"
 msgid "Features"
-msgstr ""
+msgstr "Zmienne"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Tables"
@@ -1773,7 +1773,7 @@ msgstr "Dystans"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Euclidean"
-msgstr "Euklidejski"
+msgstr "Euklidesowy"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Manhattan"
@@ -1817,7 +1817,7 @@ msgstr ""
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Features"
-msgstr ""
+msgstr "Zmienne"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Tables"
@@ -1933,7 +1933,7 @@ msgstr "Cel"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Features"
-msgstr ""
+msgstr "Zmienne"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Tables"
@@ -2029,7 +2029,7 @@ msgstr "Cel"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Features"
-msgstr ""
+msgstr "Zmienne"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Tables"
@@ -2101,7 +2101,7 @@ msgstr "Cel"
 
 msgctxt "mlRegressionKnn|"
 msgid "Features"
-msgstr ""
+msgstr "Zmienne"
 
 msgctxt "mlRegressionKnn|"
 msgid "Tables"
@@ -2229,7 +2229,7 @@ msgstr "Cel"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Features"
-msgstr ""
+msgstr "Zmienne"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Tables"
@@ -2521,7 +2521,7 @@ msgstr ""
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Features"
-msgstr ""
+msgstr "Zmienne"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Tables"
@@ -2617,7 +2617,7 @@ msgstr ""
 
 msgctxt "mlRegressionRegularized|"
 msgid "Features"
-msgstr ""
+msgstr "Zmienne"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Weights"
@@ -2725,7 +2725,7 @@ msgstr "Cel"
 
 msgctxt "mlRegressionSvm|"
 msgid "Features"
-msgstr ""
+msgstr "Zmienne"
 
 msgctxt "mlRegressionSvm|"
 msgid "Tables"
@@ -2821,7 +2821,7 @@ msgstr ""
 
 msgctxt "mlPrediction|"
 msgid "Features"
-msgstr ""
+msgstr "Zmienne"
 
 msgctxt "mlPrediction|"
 msgid "Algorithmic Settings"
@@ -2829,7 +2829,7 @@ msgstr "Ustawienia algorytmu"
 
 msgctxt "mlPrediction|"
 msgid "Scale features"
-msgstr ""
+msgstr "Standaryzuj zmienne"
 
 msgctxt "mlPrediction|"
 msgid "Tables"
