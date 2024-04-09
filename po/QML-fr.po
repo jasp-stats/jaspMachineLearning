@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-04-09 13:34+0000\n"
+"PO-Revision-Date: 2024-04-10 11:01+0000\n"
 "Last-Translator: robachowyk <kaya.robach@gmail.com>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/fr/>\n"
@@ -99,7 +99,7 @@ msgstr "Classification par Arbres de Décision"
 
 msgctxt "Description|"
 msgid "K-Nearest Neighbors Classification"
-msgstr ""
+msgstr "Classification par K plus proches voisins"
 
 msgctxt "Description|"
 msgid "Linear Discriminant"
