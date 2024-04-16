@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.0\n"
 "POT-Creation-Date: 2024-03-23 03:22\n"
-"PO-Revision-Date: 2024-04-14 19:01+0000\n"
+"PO-Revision-Date: 2024-04-17 06:49+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/pl/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Generator: Weblate 5.5-dev\n"
 
 msgid "An error occurred in the analysis: %s"
-msgstr ""
+msgstr "W analizie wystąpił błąd: %s"
 
 msgid "K-Nearest Neighbors Classification"
 msgstr ""
@@ -66,7 +66,7 @@ msgid "Shrinkage"
 msgstr ""
 
 msgid "Hidden Layers"
-msgstr ""
+msgstr "Ukryte warstwy"
 
 msgid "Nodes"
 msgstr ""
@@ -108,7 +108,7 @@ msgid "Please provide a target variable and at least %i feature variable(s)."
 msgstr ""
 
 msgid "The trained model is saved as <i>%1$s</i>."
-msgstr ""
+msgstr "Model został zapisany jako <i>%1$s</i>."
 
 msgid ""
 "The trained model is <b>not</b> saved because the some of the variable names "
@@ -120,9 +120,11 @@ msgstr ""
 msgid "The trained model is not saved until 'Save trained model' is checked."
 msgstr ""
 
+#, fuzzy
 msgid ""
 "The model is optimized with respect to the <i>validation set accuracy</i>."
 msgstr ""
+"Liczba skupień została ustalona w oparciu o <i>validation set accuracy</i>."
 
 msgid ""
 "The optimum number of nearest neighbors is the maximum number. You might "
@@ -147,11 +149,12 @@ msgstr "MVE"
 msgid "t"
 msgstr "t"
 
+#, fuzzy
 msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
-msgstr ""
+msgstr "Liczba skupień została ustalona w oparciu o <i>out-of-bag accuracy</i>."
 
 msgid "The model is optimized with respect to the <i>sum of squares</i>."
-msgstr ""
+msgstr "Liczba skupień została ustalona w oparciu o <i>sumę kwadratów</i>."
 
 msgid "Confusion Matrix"
 msgstr ""
@@ -171,7 +174,7 @@ msgid ""
 msgstr ""
 
 msgid "ROC Curves Plot"
-msgstr ""
+msgstr "Wykres krzywej ROC"
 
 msgid "False Positive Rate"
 msgstr ""
@@ -189,10 +192,10 @@ msgid "Andrews curves require a minimum of 2 feature variables."
 msgstr ""
 
 msgid "Box's M-test for Homogeneity of Covariance Matrices"
-msgstr ""
+msgstr "Test M homogeniczności macierzy kowariancji Boxa"
 
 msgid "Model Performance Metrics"
-msgstr ""
+msgstr "Wskaźniki jakości modelu"
 
 msgid "Support"
 msgstr ""
@@ -284,7 +287,7 @@ msgid "Fuzzy C-Means Clustering"
 msgstr ""
 
 msgid "Hierarchical Clustering"
-msgstr "Analiza hierarchiczna"
+msgstr "Hierarchiczna analiza skupień"
 
 msgid "Density-Based Clustering"
 msgstr ""
@@ -296,7 +299,7 @@ msgid "Model-Based Clustering"
 msgstr ""
 
 msgid "Clusters"
-msgstr ""
+msgstr "Skupienia"
 
 msgid "N"
 msgstr "N"
@@ -317,7 +320,7 @@ msgid "silhouette"
 msgstr ""
 
 msgid "The model is optimized with respect to the <i>%s</i> value."
-msgstr ""
+msgstr "Liczba skupień została ustalona w oparciu o wartość <i>%s</i>."
 
 msgid ""
 "The optimum number of clusters is the maximum number of clusters. You might "
@@ -385,7 +388,7 @@ msgid "The features in the model are <b>unstandardized</b>."
 msgstr "Zmienne w modelu są <b>niestandaryzowane</b>."
 
 msgid "Cluster Information"
-msgstr ""
+msgstr "Informacje na temat skupień"
 
 msgid "Cluster"
 msgstr ""
@@ -454,13 +457,13 @@ msgid "WSS"
 msgstr "WSS"
 
 msgid "Number of Clusters"
-msgstr ""
+msgstr "Liczba skupień"
 
 msgid "Lowest %s"
 msgstr ""
 
 msgid "Cluster Means"
-msgstr ""
+msgstr "Średnie dla skupień"
 
 msgid "Cluster %s"
 msgstr ""
@@ -570,18 +573,24 @@ msgstr ""
 msgid "Please provide a target variable and at least %d feature variable(s)."
 msgstr ""
 
+#, fuzzy
 msgid ""
 "The model is optimized with respect to the <i>validation set mean squared "
 "error</i>."
 msgstr ""
+"Liczba skupień została ustalona w oparciu o <i>validation set mean squared "
+"error</i>."
 
 msgid "When %s is set to 0 linear regression is performed."
 msgstr ""
 
+#, fuzzy
 msgid ""
 "The model is optimized with respect to the <i>out-of-bag mean squared error</"
 "i>."
 msgstr ""
+"Liczba skupień została ustalona w oparciu o <i>out-of-bag mean squared "
+"error</i>."
 
 msgid "Gaussian"
 msgstr "Gaussa"
@@ -688,7 +697,7 @@ msgid "Tests of Equality of Class Means"
 msgstr ""
 
 msgid "The null hypothesis specifies equal class means."
-msgstr ""
+msgstr "Hipoteza zerowa zakłada równość średnich dla klas."
 
 msgid "Tests of Equality of Covariance Matrices"
 msgstr ""
@@ -764,7 +773,7 @@ msgid "K-Distance Plot"
 msgstr ""
 
 msgid "Points Sorted by Distance"
-msgstr ""
+msgstr "Punkty posortowane wg dystansu"
 
 msgid ""
 "%s-Nearest Neighbors \n"
@@ -820,7 +829,7 @@ msgid "Component %1$s"
 msgstr ""
 
 msgid "Means"
-msgstr ""
+msgstr "Średnie"
 
 msgid "Covariance Matrix for Component %1$s"
 msgstr ""
