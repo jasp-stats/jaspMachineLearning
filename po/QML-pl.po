@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-04-09 13:34+0000\n"
+"PO-Revision-Date: 2024-04-17 06:49+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/pl/>\n"
@@ -221,7 +221,7 @@ msgstr "Eksportuj wyniki"
 
 msgctxt "ExportResults|"
 msgid "Add predictions to data"
-msgstr ""
+msgstr "Umieść numery skupień w pliku"
 
 msgctxt "ExportResults|"
 msgid "Column name"
@@ -313,7 +313,7 @@ msgstr "Punkty"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parametry algorytmu"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Algorithmic Settings"
@@ -349,7 +349,7 @@ msgstr "Liczba drzew"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Fixed"
-msgstr "Ustalone"
+msgstr "Stała"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Trees"
@@ -437,7 +437,7 @@ msgstr "Punkty"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parametry algorytmu"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Algorithmic Settings"
@@ -529,7 +529,7 @@ msgstr "Punkty"
 
 msgctxt "mlClassificationKnn|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parametry algorytmu"
 
 msgctxt "mlClassificationKnn|"
 msgid "Algorithmic Settings"
@@ -605,7 +605,7 @@ msgstr ""
 
 msgctxt "mlClassificationKnn|"
 msgid "Fixed"
-msgstr "Stałe"
+msgstr "Stała"
 
 msgctxt "mlClassificationKnn|"
 msgid "Nearest neighbors"
@@ -717,7 +717,7 @@ msgstr ""
 
 msgctxt "mlClassificationLda|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parametry algorytmu"
 
 msgctxt "mlClassificationLda|"
 msgid "Algorithmic Settings"
@@ -809,7 +809,7 @@ msgstr "Punkty"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parametry algorytmu"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Algorithmic Settings"
@@ -1125,7 +1125,7 @@ msgstr "Punkty"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parametry algorytmu"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Algorithmic Settings"
@@ -1161,7 +1161,7 @@ msgstr "Liczba drzew"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Fixed"
-msgstr "Stałe"
+msgstr "Stała"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Trees"
@@ -1237,7 +1237,7 @@ msgstr "Punkty"
 
 msgctxt "mlClassificationSvm|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parametry algorytmu"
 
 msgctxt "mlClassificationSvm|"
 msgid "Algorithmic Settings"
@@ -1305,11 +1305,11 @@ msgstr "Tabele"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Cluster means"
-msgstr ""
+msgstr "Średnie dla skupień"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Cluster information"
-msgstr ""
+msgstr "Informacje o skupieniach"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Within sum of squares"
@@ -1317,7 +1317,7 @@ msgstr ""
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Silhouette score"
-msgstr ""
+msgstr "Wskaźnik sylwetki (silhouette)"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Between sum of squares"
@@ -1365,7 +1365,7 @@ msgstr "Etykiety"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parametry algorytmu"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Algorithmic Settings"
@@ -1405,7 +1405,7 @@ msgstr "Optymalizacja modelu"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Fixed"
-msgstr "Stałe"
+msgstr "Stała"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Features"
@@ -1413,15 +1413,15 @@ msgstr "Zmienne"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Tables"
-msgstr "badale"
+msgstr "Tabele"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Cluster means"
-msgstr ""
+msgstr "Średnie dla skupień"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Cluster information"
-msgstr ""
+msgstr "Informacje o skupieniach"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Within sum of squares"
@@ -1429,7 +1429,7 @@ msgstr ""
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Silhouette score"
-msgstr ""
+msgstr "Wskaźnik sylwetki (silhouette)"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Centroids"
@@ -1481,7 +1481,7 @@ msgstr "Etykiety"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parametry algorytmu"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Algorithmic Settings"
@@ -1505,23 +1505,23 @@ msgstr "Ustaw ziarno generatora"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Cluster Determination"
-msgstr ""
+msgstr "Liczba skupień"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Fixed"
-msgstr "Stałe"
+msgstr "Stała"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Clusters"
-msgstr ""
+msgstr "Skupienia"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Optimized according to"
-msgstr ""
+msgstr "Ustalona na podstawie"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Max. clusters"
-msgstr ""
+msgstr "Maks. skupień"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Features"
@@ -1533,11 +1533,11 @@ msgstr "Tabele"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Cluster means"
-msgstr ""
+msgstr "Średnie dla skupień"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Cluster information"
-msgstr ""
+msgstr "Informacje o skupieniach"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Within sum of squares"
@@ -1545,7 +1545,7 @@ msgstr ""
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Silhouette score"
-msgstr ""
+msgstr "Wskaźnik sylwetki (silhouette)"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Between sum of squares"
@@ -1597,7 +1597,7 @@ msgstr "Etykiety"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parametry algorytmu"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Algorithmic Settings"
@@ -1661,23 +1661,23 @@ msgstr "Ustaw ziarno generatora"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Cluster Determination"
-msgstr ""
+msgstr "Liczba skupień"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Fixed"
-msgstr "Stałe"
+msgstr "Stała"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Clusters"
-msgstr ""
+msgstr "Skupienia"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Optimized according to"
-msgstr ""
+msgstr "Ustalona na podstawie"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Max. clusters"
-msgstr ""
+msgstr "Maks. skupień"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Features"
@@ -1689,11 +1689,11 @@ msgstr "Tabele"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Cluster means"
-msgstr ""
+msgstr "Średnie dla skupień"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Cluster information"
-msgstr ""
+msgstr "Informacje o skupieniach"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Within sum of squares"
@@ -1701,7 +1701,7 @@ msgstr ""
 
 msgctxt "mlClusteringKMeans|"
 msgid "Silhouette score"
-msgstr ""
+msgstr "Wskaźnik sylwetki (silhouette)"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Centers"
@@ -1753,7 +1753,7 @@ msgstr "Etykiety"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parametry algorytmu"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Algorithmic Settings"
@@ -1797,23 +1797,23 @@ msgstr "Ustaw ziarno generatora"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Cluster Determination"
-msgstr ""
+msgstr "Liczba skupień"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Fixed"
-msgstr "Stałe"
+msgstr "Stała"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Clusters"
-msgstr ""
+msgstr "Skupienia"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Optimized according to"
-msgstr ""
+msgstr "Ustalona na podstawie"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Max. clusters"
-msgstr ""
+msgstr "Maks. skupień"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Features"
@@ -1825,11 +1825,11 @@ msgstr "Tabele"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Cluster means"
-msgstr ""
+msgstr "Średnie dla skupień"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Cluster information"
-msgstr ""
+msgstr "Informacje o skupieniach"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Within sum of squares"
@@ -1837,7 +1837,7 @@ msgstr ""
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Silhouette score"
-msgstr ""
+msgstr "Wskaźnik sylwetki (silhouette)"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Between sum of squares"
@@ -1889,7 +1889,7 @@ msgstr "Etykiety"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parametry algorytmu"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Algorithmic Settings"
@@ -1909,23 +1909,23 @@ msgstr "Ustaw ziarno generatora"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Cluster Determination"
-msgstr ""
+msgstr "Liczba skupień"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Fixed"
-msgstr "Stałe"
+msgstr "Stała"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Clusters"
-msgstr ""
+msgstr "Skupienia"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Optimized according to"
-msgstr ""
+msgstr "Ustalona na podstawie"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Max. clusters"
-msgstr ""
+msgstr "Maks. skupień"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Target"
@@ -1969,7 +1969,7 @@ msgstr "Odchylenie"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parametry algorytmu"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Algorithmic Settings"
@@ -2009,7 +2009,7 @@ msgstr "Liczba drzew"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Fixed"
-msgstr "Stałe"
+msgstr "Stała"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Trees"
@@ -2069,7 +2069,7 @@ msgstr "Drzewo decyzyjne"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parametry algorytmu"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Algorithmic Settings"
@@ -2133,7 +2133,7 @@ msgstr ""
 
 msgctxt "mlRegressionKnn|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parametry algorytmu"
 
 msgctxt "mlRegressionKnn|"
 msgid "Algorithmic Settings"
@@ -2209,7 +2209,7 @@ msgstr ""
 
 msgctxt "mlRegressionKnn|"
 msgid "Fixed"
-msgstr "Stałe"
+msgstr "Stała"
 
 msgctxt "mlRegressionKnn|"
 msgid "Nearest neighbors"
@@ -2269,7 +2269,7 @@ msgstr ""
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parametry algorytmu"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Algorithmic Settings"
@@ -2413,7 +2413,7 @@ msgstr ""
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Optimized"
-msgstr ""
+msgstr "Zoptymalizowane"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Population size"
@@ -2561,7 +2561,7 @@ msgstr ""
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parametry algorytmu"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Algorithmic Settings"
@@ -2597,7 +2597,7 @@ msgstr ""
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Fixed"
-msgstr ""
+msgstr "Stała"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Trees"
@@ -2605,7 +2605,7 @@ msgstr ""
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Optimized"
-msgstr ""
+msgstr "Zoptymalizowane"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Max. trees"
@@ -2661,7 +2661,7 @@ msgstr ""
 
 msgctxt "mlRegressionRegularized|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parametry algorytmu"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Algorithmic Settings"
@@ -2709,7 +2709,7 @@ msgstr ""
 
 msgctxt "mlRegressionRegularized|"
 msgid "Fixed"
-msgstr ""
+msgstr "Stała"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Optimized"
@@ -2753,7 +2753,7 @@ msgstr ""
 
 msgctxt "mlRegressionSvm|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Parametry algorytmu"
 
 msgctxt "mlRegressionSvm|"
 msgid "Algorithmic Settings"
