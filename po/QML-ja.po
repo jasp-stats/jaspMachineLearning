@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2024-04-19 09:03+0000\n"
+"Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/ja/>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.5-dev\n"
 "X-Language: ja\n"
 "X-Qt-Contexts: true\n"
 
@@ -657,35 +663,35 @@ msgstr "最小値から1SE以内の最大のλ"
 
 msgctxt "Description|"
 msgid "Decision Tree"
-msgstr ""
+msgstr "決定木"
 
 msgctxt "Description|"
 msgid "Decision Tree Regression"
-msgstr ""
+msgstr "決定木回帰"
 
 msgctxt "Description|"
 msgid "Support Vector Machine"
-msgstr ""
+msgstr "サポートベクターマシン"
 
 msgctxt "Description|"
 msgid "Support Vector Machine Regression"
-msgstr ""
+msgstr "サポートベクターマシン回帰"
 
 msgctxt "Description|"
 msgid "Decision Tree Classification"
-msgstr ""
+msgstr "決定木分類"
 
 msgctxt "Description|"
 msgid "Support Vector Machine Classification"
-msgstr ""
+msgstr "サポートベクターマシン分類"
 
 msgctxt "Description|"
 msgid "Neighborhood-Based"
-msgstr ""
+msgstr "近傍ベース"
 
 msgctxt "Description|"
 msgid "Neighborhood-Based Clustering"
-msgstr ""
+msgstr "近傍ベース分類"
 
 #, fuzzy
 msgctxt "mlClassificationDecisionTree|"
@@ -729,7 +735,7 @@ msgstr "アルゴリズムの設定"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Center type"
-msgstr ""
+msgstr "代表値型"
 
 #, fuzzy
 msgctxt "mlClusteringKMeans|"
@@ -788,7 +794,7 @@ msgstr "アルゴリズムの設定"
 
 msgctxt "mlPrediction|"
 msgid "Trained model"
-msgstr ""
+msgstr "学習済みモデル"
 
 #, fuzzy
 msgctxt "mlPrediction|"
@@ -797,7 +803,7 @@ msgstr "e.g., 場所/model.jaspML"
 
 msgctxt "mlPrediction|"
 msgid "Features"
-msgstr ""
+msgstr "特徴量"
 
 #, fuzzy
 msgctxt "mlPrediction|"
@@ -811,7 +817,7 @@ msgstr "表"
 
 msgctxt "mlPrediction|"
 msgid "to"
-msgstr ""
+msgstr "次まで"
 
 #, fuzzy
 msgctxt "Description|"
@@ -820,7 +826,7 @@ msgstr "線形"
 
 msgctxt "Description|"
 msgid "Linear Regression"
-msgstr ""
+msgstr "線形回帰"
 
 #, fuzzy
 msgctxt "AlgorithmicSettings|"
