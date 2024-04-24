@@ -345,47 +345,90 @@ gettextf <- function(fmt, ..., domain = NULL) {
   table <- createJaspTable(title = gettext("Confusion Matrix"))
   table$position <- position
   table$dependOn(options = c(.mlClassificationDependencies(options), "confusionTable", "confusionProportions", "confusionTranspose"))
-  table$transpose <- options[["confusionTranspose"]]
   jaspResults[["confusionTable"]] <- table
   if (ready) {
     classificationResult <- jaspResults[["classificationResult"]]$object
-    table$addColumnInfo(name = "obs_name", title = "", type = "string")
-    table$addColumnInfo(name = "varname_obs", title = "", type = "string")
-    confTable <- classificationResult[["confTable"]]
-    if (options[["confusionProportions"]]) {
-      confTable <- round(confTable / classificationResult[["ntest"]], 2)
-    }
-    table[["obs_name"]] <- c(gettext("Observed"), rep("", nrow(confTable) - 1))
-    table[["varname_obs"]] <- colnames(confTable)
-    for (i in seq_along(colnames(confTable))) {
-      name <- paste("varname_pred", i, sep = "")
-      table$addColumnInfo(name = name, title = colnames(confTable)[i], type = "integer", overtitle = gettext("Predicted"))
-      if (colnames(confTable)[i] %in% rownames(confTable)) {
-        table[[name]] <- confTable[which(rownames(confTable) == colnames(confTable)[i]), ]
-      } else {
-        table[[name]] <- rep(0, length(colnames(confTable)))
+    if (!options[["confusionTranspose"]]) {
+     table$addColumnInfo(name = "obs_name", title = "", type = "string")
+      table$addColumnInfo(name = "varname_obs", title = "", type = "string")
+      confTable <- classificationResult[["confTable"]]
+      if (options[["confusionProportions"]]) {
+        confTable <- round(confTable / classificationResult[["ntest"]], 2)
+      }
+      table[["obs_name"]] <- c(gettext("Observed"), rep("", nrow(confTable) - 1))
+      table[["varname_obs"]] <- colnames(confTable)
+      for (i in seq_along(colnames(confTable))) {
+        name <- paste("varname_pred", i, sep = "")
+        table$addColumnInfo(name = name, title = colnames(confTable)[i], type = "integer", overtitle = gettext("Predicted"))
+        if (colnames(confTable)[i] %in% rownames(confTable)) {
+          table[[name]] <- confTable[which(rownames(confTable) == colnames(confTable)[i]), ]
+        } else {
+          table[[name]] <- rep(0, length(colnames(confTable)))
+        }
+      }
+    } else {
+      table$addColumnInfo(name = "pred_name", title = "", type = "string")
+      table$addColumnInfo(name = "varname_pred", title = "", type = "string")
+      confTable <- t(classificationResult[["confTable"]])
+      if (options[["confusionProportions"]]) {
+        confTable <- round(confTable / classificationResult[["ntest"]], 2)
+      }
+      table[["pred_name"]] <- c(gettext("Predicted"), rep("", nrow(confTable) - 1))
+      table[["varname_pred"]] <- colnames(confTable)
+      for (i in seq_along(colnames(confTable))) {
+        name <- paste("varname_obs", i, sep = "")
+        table$addColumnInfo(name = name, title = colnames(confTable)[i], type = "integer", overtitle = gettext("Observed"))
+        if (colnames(confTable)[i] %in% rownames(confTable)) {
+          table[[name]] <- confTable[which(rownames(confTable) == colnames(confTable)[i]), ]
+        } else {
+          table[[name]] <- rep(0, length(colnames(confTable)))
+        }
       }
     }
   } else if (options[["target"]] != "" && !ready) {
-    table$addColumnInfo(name = "obs_name", title = "", type = "string")
-    table$addColumnInfo(name = "varname_obs", title = "", type = "string")
-    factorLevels <- levels(dataset[, options[["target"]]])
-    table[["obs_name"]] <- c(gettext("Observed"), rep("", length(factorLevels) - 1))
-    table[["varname_obs"]] <- factorLevels
-    for (i in seq_along(factorLevels)) {
-      name <- paste("varname_pred", i, sep = "")
-      table$addColumnInfo(name = name, title = factorLevels[i], type = "integer", overtitle = gettext("Predicted"))
-      table[[name]] <- rep(".", length(factorLevels))
+    if (!options[["confusionTranspose"]]) {
+      table$addColumnInfo(name = "obs_name", title = "", type = "string")
+      table$addColumnInfo(name = "varname_obs", title = "", type = "string")
+      factorLevels <- levels(dataset[, options[["target"]]])
+      table[["obs_name"]] <- c(gettext("Observed"), rep("", length(factorLevels) - 1))
+      table[["varname_obs"]] <- factorLevels
+      for (i in seq_along(factorLevels)) {
+        name <- paste("varname_pred", i, sep = "")
+        table$addColumnInfo(name = name, title = factorLevels[i], type = "integer", overtitle = gettext("Predicted"))
+        table[[name]] <- rep(".", length(factorLevels))
+      }
+    } else {
+      table$addColumnInfo(name = "pred_name", title = "", type = "string")
+      table$addColumnInfo(name = "varname_pred", title = "", type = "string")
+      factorLevels <- levels(dataset[, options[["target"]]])
+      table[["pred_name"]] <- c(gettext("Predicted"), rep("", length(factorLevels) - 1))
+      table[["varname_pred"]] <- factorLevels
+      for (i in seq_along(factorLevels)) {
+        name <- paste("varname_obs", i, sep = "")
+        table$addColumnInfo(name = name, title = factorLevels[i], type = "integer", overtitle = gettext("Observed"))
+        table[[name]] <- rep(".", length(factorLevels))
+      }
     }
   } else {
-    table$addColumnInfo(name = "obs_name", title = "", type = "string")
-    table$addColumnInfo(name = "varname_obs", title = "", type = "string")
-    table$addColumnInfo(name = "varname_pred1", title = ".", type = "integer")
-    table$addColumnInfo(name = "varname_pred2", title = ".", type = "integer")
-    table[["obs_name"]] <- c(gettext("Observed"), "")
-    table[["varname_obs"]] <- rep(".", 2)
-    table[["varname_pred1"]] <- rep("", 2)
-    table[["varname_pred2"]] <- rep("", 2)
+    if (!options[["confusionTranspose"]]) {
+      table$addColumnInfo(name = "obs_name", title = "", type = "string")
+      table$addColumnInfo(name = "varname_obs", title = "", type = "string")
+      table$addColumnInfo(name = "varname_pred1", title = ".", type = "integer")
+      table$addColumnInfo(name = "varname_pred2", title = ".", type = "integer")
+      table[["obs_name"]] <- c(gettext("Observed"), "")
+      table[["varname_obs"]] <- rep(".", 2)
+      table[["varname_pred1"]] <- rep("", 2)
+      table[["varname_pred2"]] <- rep("", 2)
+    } else {
+      table$addColumnInfo(name = "pred_name", title = "", type = "string")
+      table$addColumnInfo(name = "varname_pred", title = "", type = "string")
+      table$addColumnInfo(name = "varname_obs1", title = ".", type = "integer")
+      table$addColumnInfo(name = "varname_obs2", title = ".", type = "integer")
+      table[["pred_name"]] <- c(gettext("Predicted"), "")
+      table[["varname_pred"]] <- rep(".", 2)
+      table[["varname_obs1"]] <- rep("", 2)
+      table[["varname_obs2"]] <- rep("", 2)
+    }
   }
 }
 
