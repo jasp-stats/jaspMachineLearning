@@ -344,7 +344,8 @@ gettextf <- function(fmt, ..., domain = NULL) {
   }
   table <- createJaspTable(title = gettext("Confusion Matrix"))
   table$position <- position
-  table$dependOn(options = c(.mlClassificationDependencies(options), "confusionTable", "confusionProportions"))
+  table$dependOn(options = c(.mlClassificationDependencies(options), "confusionTable", "confusionProportions", "confusionTranspose"))
+  table$transpose <- options[["confusionTranspose"]]
   jaspResults[["confusionTable"]] <- table
   if (ready) {
     classificationResult <- jaspResults[["classificationResult"]]$object
