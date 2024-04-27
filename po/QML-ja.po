@@ -1,15 +1,9 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-04-19 09:03+0000\n"
-"Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
-"Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
-"jaspmachinelearning-qml/ja/>\n"
-"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.5-dev\n"
 "X-Language: ja\n"
 "X-Qt-Contexts: true\n"
 
@@ -1681,9 +1675,10 @@ msgctxt "VariablesFormRegularizedRegression|"
 msgid "In this box, the variable that needs to be predicted should be entered."
 msgstr ""
 
+#, fuzzy
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "Features"
-msgstr ""
+msgstr "特徴量"
 
 msgctxt "VariablesFormRegularizedRegression|"
 msgid ""
@@ -2063,9 +2058,10 @@ msgctxt "ExplainPredictions|"
 msgid "The test set index of the first row to be displayed in the table."
 msgstr ""
 
+#, fuzzy
 msgctxt "ExplainPredictions|"
 msgid "to"
-msgstr ""
+msgstr "次まで"
 
 msgctxt "ExplainPredictions|"
 msgid "The test set index of the last row to be displayed in the table."
@@ -2274,9 +2270,10 @@ msgctxt "VariablesFormClassification|"
 msgid "In this box, the variable that needs to be predicted should be entered."
 msgstr ""
 
+#, fuzzy
 msgctxt "VariablesFormClassification|"
 msgid "Features"
-msgstr ""
+msgstr "特徴量"
 
 msgctxt "VariablesFormClassification|"
 msgid ""
@@ -2284,9 +2281,10 @@ msgid ""
 "variable should be entered."
 msgstr ""
 
+#, fuzzy
 msgctxt "VariablesFormClustering|"
 msgid "Features"
-msgstr ""
+msgstr "特徴量"
 
 msgctxt "VariablesFormClustering|"
 msgid ""
@@ -2303,9 +2301,10 @@ msgctxt "VariablesFormRegression|"
 msgid "In this box, the variable that needs to be predicted should be entered."
 msgstr ""
 
+#, fuzzy
 msgctxt "VariablesFormRegression|"
 msgid "Features"
-msgstr ""
+msgstr "特徴量"
 
 msgctxt "VariablesFormRegression|"
 msgid ""
