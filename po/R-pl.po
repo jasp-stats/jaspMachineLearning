@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.0\n"
 "POT-Creation-Date: 2024-03-23 03:22\n"
-"PO-Revision-Date: 2024-04-17 06:49+0000\n"
+"PO-Revision-Date: 2024-05-08 18:04+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/pl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.5-dev\n"
+"X-Generator: Weblate 5.5.4-rc\n"
 
 msgid "An error occurred in the analysis: %s"
 msgstr "W analizie wystąpił błąd: %s"
@@ -739,9 +739,8 @@ msgid ""
 "conclude multivariate normality."
 msgstr ""
 
-#, fuzzy
 msgid "Posterior Statistics"
-msgstr "Posterior"
+msgstr "Statystyki posterior"
 
 msgid "Feature: %1$s"
 msgstr ""
@@ -750,7 +749,7 @@ msgid "Mean"
 msgstr ""
 
 msgid "Std. deviation"
-msgstr ""
+msgstr "Odch. stand."
 
 msgid ""
 "The table displays the mean and standard deviation of the feature given the "
@@ -1081,7 +1080,7 @@ msgid "Standard Error"
 msgstr ""
 
 msgid "%1$s%% Confidence interval"
-msgstr ""
+msgstr "%1$s%% przedział ufności"
 
 msgid "Lower"
 msgstr ""
@@ -1092,9 +1091,8 @@ msgstr ""
 msgid "The regression coefficients for numeric features are standardized."
 msgstr "Współczynniki regresji dla zmiennych numerycznych są standaryzowane."
 
-#, fuzzy
 msgid "The regression coefficients are unstandardized."
-msgstr "Współczynniki regresji"
+msgstr "Współczynniki regresji są niestandaryzowane."
 
 msgid ""
 "<b>Regression equation:</b>\n"
