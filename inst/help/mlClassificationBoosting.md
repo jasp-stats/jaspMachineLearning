@@ -19,7 +19,7 @@ Boosting works by sequentially adding features to an decision tree ensemble, eac
 - Model performance: Shows commonly used classification evaluation metrics like precision, recall, the F1-score, support and AUC (area under the ROC curve).
 - Feature importance: Shows the available feature importance metrics for the fitted model.
   - Permutations: Sets the number of permutations on which the mean dropout loss is based.
-- Explain predictions: Shows the decomposition of the model’s prediction into contributions that can be attributed to different explanatory variables.
+- Explain predictions: Shows the decomposition of the model’s prediction into contributions that can be attributed to different explanatory variables. This feature uses the breakdown algoritm from the `ibreakdown` R package. For more details about this method, see Gosiewska and Biecek (2019).
 
 #### Plots
 - Data split: Shows how the data is split into training (and validation), and test set.
@@ -91,6 +91,7 @@ Generates a new column in your dataset with the class labels of your classificat
 ### References
 -------
 - James, G., Witten, D., Hastie, T., & Tibshirani, R. (2013). An introduction to statistical learning. Springer New York.
+- Gosiewska, A. & Biecek, P. (2019). Do Not Trust Additive Explanations. <i>ArXiv</i>. https://doi.org/10.48550/arXiv.1903.11420
 
 ### R-packages 
 --- 

@@ -13,7 +13,7 @@ Linear Regression
 
 #### Tables  
 - Model performance: Shows commonly used classification evaluation metrics like mean squared error (MSE), root mean squared error (RMSE) and R<sup>2</sup>.
-- Explain predictions: Shows the decomposition of the model’s prediction into contributions that can be attributed to different explanatory variables.
+- Explain predictions: Shows the decomposition of the model’s prediction into contributions that can be attributed to different explanatory variables. This feature uses the breakdown algoritm from the `ibreakdown` R package. For more details about this method, see Gosiewska and Biecek (2019).
 - Regression coefficients: Shows a table of the regression coefficients.
 
 #### Plots
@@ -53,6 +53,7 @@ Generates a new column in your dataset with the values of your regression result
 ### References
 -------
 - James, G., Witten, D., Hastie, T., & Tibshirani, R. (2013). An introduction to statistical learning. Springer New York.
+- Gosiewska, A. & Biecek, P. (2019). Do Not Trust Additive Explanations. <i>ArXiv</i>. https://doi.org/10.48550/arXiv.1903.11420
 
 ### R-packages 
 --- 
