@@ -34,4 +34,11 @@ CheckBox
 		text:	qsTr("Display proportions")
 		info:	qsTr("Displays proportions in the confusion matrix instead of counts.")
 	}
+
+	CheckBox
+	{
+		name:	"confusionTranspose"
+		text:	qsTr("Transpose matrix")
+		info:	qsTr("Transposes the confusion matrix.")
+	}
 }

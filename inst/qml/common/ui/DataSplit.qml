@@ -72,6 +72,7 @@ Section
 			{
 				name:							"testIndicatorColumn"
 				text:							qsTr("Column name")
+				placeholderText:				qsTr("e.g., testSet")
 				fieldWidth:						120
 				visible:						addIndicator.checked
 				info:							qsTr("The column name for the generated test set indicator.")

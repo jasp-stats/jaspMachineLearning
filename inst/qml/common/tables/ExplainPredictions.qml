@@ -26,7 +26,7 @@ CheckBox
 	name:					"tableShap"
 	text:					qsTr("Explain predictions")
 	id:						tableShap
-	info:					qsTr("Shows a decomposition of the predictions of the model into contributions that can be attributed to individual model features.")
+	info:					qsTr("Shows a decomposition of the predictions of the model into contributions that can be attributed to individual model features. This feature uses the breakdown algoritm from the `ibreakdown` R package. For more details about this method, see Gosiewska and Biecek (2019).")
 
 	Row
 	{	
