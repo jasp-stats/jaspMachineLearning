@@ -2088,14 +2088,6 @@ msgid "Explain predictions"
 msgstr "Vorhersagen erklären"
 
 msgctxt "ExplainPredictions|"
-msgid ""
-"Shows a decomposition of the predictions of the model into contributions "
-"that can be attributed to individual model features."
-msgstr ""
-"Zeigt eine Aufteilung der Vorhersagen des Modells in Beiträge, die auf "
-"einzelne Modellmerkmale zurückgeführt werden können."
-
-msgctxt "ExplainPredictions|"
 msgid "Cases"
 msgstr "Fälle"
 
@@ -3121,4 +3113,24 @@ msgstr ""
 
 msgctxt "mlPrediction|"
 msgid "Predictions for new data"
+msgstr ""
+
+msgctxt "ConfusionMatrix|"
+msgid "Transpose matrix"
+msgstr ""
+
+msgctxt "ConfusionMatrix|"
+msgid "Transposes the confusion matrix."
+msgstr ""
+
+msgctxt "ExplainPredictions|"
+msgid ""
+"Shows a decomposition of the predictions of the model into contributions "
+"that can be attributed to individual model features. This feature uses the "
+"breakdown algoritm from the `ibreakdown` R package. For more details about "
+"this method, see Gosiewska and Biecek (2019)."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "e.g., testSet"
 msgstr ""
