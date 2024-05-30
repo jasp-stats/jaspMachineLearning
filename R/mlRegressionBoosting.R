@@ -186,7 +186,16 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
   }
   fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
   table[["dl"]] <- fi[match(vars, fi[["y"]]), "x"]
-  table$addFootnote(gettextf("Mean dropout loss is based on %1$s permutations.", options[["featureImportancePermutations"]]))
+  if (purpose == "regression") {
+    loss_function <- gettext("root mean squared error (RMSE)")
+  } else {
+    if (nlevels(result[["testReal"]]) == 2) {
+      loss_function <- gettext("1 - area under curve (AUC)")
+    } else {
+      loss_function <- gettext("cross entropy")
+    }
+  }
+  table$addFootnote(gettextf("Mean dropout loss (defined as %1$s) is based on %2$s permutations.", loss_function, options[["featureImportancePermutations"]]))
 }
 
 .mlBoostingPlotOobImprovement <- function(options, jaspResults, ready, position, purpose) {
