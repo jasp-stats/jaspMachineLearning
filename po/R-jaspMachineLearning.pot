@@ -1,13 +1,13 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.19.0\n"
-"POT-Creation-Date: 2024-05-04 03:23\n"
+"POT-Creation-Date: 2024-06-10 08:22\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 msgid "An error occurred in the analysis: %s"
@@ -610,7 +610,16 @@ msgstr ""
 msgid "Mean dropout loss"
 msgstr ""
 
-msgid "Mean dropout loss is based on %1$s permutations."
+msgid "root mean squared error (RMSE)"
+msgstr ""
+
+msgid "1 - area under curve (AUC)"
+msgstr ""
+
+msgid "cross entropy"
+msgstr ""
+
+msgid "Mean dropout loss (defined as %1$s) is based on %2$s permutations."
 msgstr ""
 
 msgid "The target variable should have at least 2 classes."

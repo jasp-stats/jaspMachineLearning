@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2024-03-23 03:22\n"
+"POT-Creation-Date: 2024-06-10 08:22\n"
 "PO-Revision-Date: 2024-03-24 12:01+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
@@ -716,7 +716,20 @@ msgstr "Bedeutungsmaße des Merkmals"
 msgid "Mean dropout loss"
 msgstr "Mittlerer Ausfallverlust"
 
-msgid "Mean dropout loss is based on %1$s permutations."
+#, fuzzy
+msgid "root mean squared error (RMSE)"
+msgstr "Mittlerer quadratischer Fehler"
+
+#, fuzzy
+msgid "1 - area under curve (AUC)"
+msgstr "Fläche unter der Kurve (AUC)"
+
+#, fuzzy
+msgid "cross entropy"
+msgstr "Entropie"
+
+#, fuzzy
+msgid "Mean dropout loss (defined as %1$s) is based on %2$s permutations."
 msgstr "Mittlerer Ausfallverlust basiert auf %1$s Permutationen."
 
 msgid "The target variable should have at least 2 classes."
