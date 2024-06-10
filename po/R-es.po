@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
 "POT-Creation-Date: 2024-06-10 08:22\n"
-"PO-Revision-Date: 2024-05-21 16:24+0000\n"
+"PO-Revision-Date: 2024-06-10 10:24+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/es/>\n"
@@ -721,21 +721,19 @@ msgstr "Métricas de la importancia de la característica"
 msgid "Mean dropout loss"
 msgstr "Pérdida media del abandono"
 
-#, fuzzy
 msgid "root mean squared error (RMSE)"
-msgstr "Error Cuadrático Medio"
+msgstr "Raíz del error cuadrado medio (RECM, RMSE)"
 
-#, fuzzy
 msgid "1 - area under curve (AUC)"
-msgstr "Área Bajo la Curva (ABC, AUC)"
+msgstr "1 - Área Bajo la Curva (ABC, AUC)"
 
-#, fuzzy
 msgid "cross entropy"
-msgstr "Entropía"
+msgstr "Entropía cruzada"
 
-#, fuzzy
 msgid "Mean dropout loss (defined as %1$s) is based on %2$s permutations."
-msgstr "La pérdida media del abandono se basa en %1$s permutaciones."
+msgstr ""
+"La pérdida media del abandono (definida como %1$s) se basa en %2$s "
+"permutaciones."
 
 msgid "The target variable should have at least 2 classes."
 msgstr "La variable objetivo debe tener al menos 2 clases."
