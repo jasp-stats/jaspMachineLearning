@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-05-28 09:29+0000\n"
+"PO-Revision-Date: 2024-06-10 10:24+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/pl/>\n"
@@ -1249,7 +1249,7 @@ msgstr "Wagi"
 
 msgctxt "mlClassificationSvm|"
 msgid "Linear"
-msgstr "LIniowy"
+msgstr "Liniowy"
 
 msgctxt "mlClassificationSvm|"
 msgid "Radial"
@@ -1349,7 +1349,7 @@ msgstr "Zgrupuj w jedną figurę"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Cluster densities"
-msgstr ""
+msgstr "Gęstości skupień"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "t-SNE cluster plot"
@@ -1465,7 +1465,7 @@ msgstr "Zgrupuj w jedną figurę"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Cluster densities"
-msgstr ""
+msgstr "Gęstości skupień"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "t-SNE cluster plot"
@@ -1581,7 +1581,7 @@ msgstr "Zgrupuj w jedną figurę"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Cluster densities"
-msgstr ""
+msgstr "Gęstości skupień"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "t-SNE cluster plot"
@@ -1737,7 +1737,7 @@ msgstr "Zgrupuj w jedną figurę"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Cluster densities"
-msgstr ""
+msgstr "Gęstości skupień"
 
 msgctxt "mlClusteringKMeans|"
 msgid "t-SNE cluster plot"
@@ -1873,7 +1873,7 @@ msgstr "Zgrupuj w jedną figurę"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Cluster densities"
-msgstr ""
+msgstr "Gęstości skupień"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "t-SNE cluster plot"
