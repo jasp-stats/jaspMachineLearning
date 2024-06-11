@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2024-06-10 08:22\n"
-"PO-Revision-Date: 2024-05-23 22:00+0000\n"
+"PO-Revision-Date: 2024-06-11 16:58+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/nl/>\n"
@@ -712,21 +712,19 @@ msgstr "Metrieken voor Belang van Kenmerken"
 msgid "Mean dropout loss"
 msgstr "Gemiddelde dropout loss"
 
-#, fuzzy
 msgid "root mean squared error (RMSE)"
-msgstr "Gemiddelde kwadratenfout"
+msgstr "wortel van de gemiddelde kwadratenfout (RMSE)"
 
-#, fuzzy
 msgid "1 - area under curve (AUC)"
-msgstr "Gebied Onder Kromme (AUC)"
+msgstr "1 - gebied onder kromme (AUC)"
 
-#, fuzzy
 msgid "cross entropy"
-msgstr "Entropie"
+msgstr "kruisentropie"
 
-#, fuzzy
 msgid "Mean dropout loss (defined as %1$s) is based on %2$s permutations."
-msgstr "Gemiddelde dropout loss is gebaseerd op %1$s permutaties."
+msgstr ""
+"Gemiddelde dropout loss (gedefinieerd als %1$s) is gebaseerd op %2$s "
+"permutaties."
 
 msgid "The target variable should have at least 2 classes."
 msgstr "De doelvariabele moet minstens 2 klassen bevatten."
