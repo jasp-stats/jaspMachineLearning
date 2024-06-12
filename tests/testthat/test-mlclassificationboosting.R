@@ -55,24 +55,6 @@ options$toIndex <- 5
 set.seed(1)
 results <- jaspTools::runAnalysis("mlClassificationBoosting", "wine.csv", options)
 
-
-test_that("Andrews Curves Plot matches", {
-  plotName <- results[["results"]][["andrewsCurve"]][["data"]]
-  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "andrews-curves-plot")
-})
-
-test_that("Relative Influence table results match", {
-  table <- results[["results"]][["featureImportanceTable"]][["data"]]
-  jaspTools::expect_equal_tables(table,
-                      list(16.3458735499254, "Proline", 31.1797927388636, 1.92298108138859, "Color", 20.173253110114, 6.11564217900192, "Flavanoids",
-                           19.8438729446546, 0.580073791483201, "Alcohol", 11.3080195393476, 1.46276253431049, "Hue", 9.04159967448256,
-                           0.170561653950044, "Dilution", 5.78903515515603, 0.0655054520688096, "Phenols", 2.06207785543184, 0.134398642455039, "Malic",
-                           0.318048182535448, 0.0796903953021984, "Magnesium", 0.198970273683845, 0.0820480575235912, "Ash", 0.0761054305928261,
-                           0.0583723130067498, "Nonflavanoids", 0.00505359720114565, 0.0642402307210398, "Alcalinity", 0.00416148218437122,
-                           0.0549408459183189, "Proanthocyanins", 1.00157520318044e-05))
-})
-
 test_that("Class Proportions table results match", {
   table <- results[["results"]][["classProportionsTable"]][["data"]]
   jaspTools::expect_equal_tables(table,
@@ -82,48 +64,11 @@ test_that("Class Proportions table results match", {
                            0.172413793103448))
 })
 
-test_that("Boosting Classification table results match", {
-  table <- results[["results"]][["classificationTable"]][["data"]]
-  jaspTools::expect_equal_tables(table,
-                      list(35, 114, 29, 0.1, 0.942857142857143, 84, 0.96551724137931))
-})
-
 test_that("Confusion Matrix table results match", {
   table <- results[["results"]][["confusionTable"]][["data"]]
   jaspTools::expect_equal_tables(table,
                       list("Observed", 1, 12, 0, 1, "", 2, 1, 13, 0, "", 3, 0, 0, 8))
 })
-
-test_that("Data Split plot matches", {
-  plotName <- results[["results"]][["plotDataSplit"]][["data"]]
-  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "data-split")
-})
-
-test_that("Deviance Plot matches", {
-  plotName <- results[["results"]][["deviancePlot"]][["data"]]
-  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "deviance-plot")
-})
-
-test_that("Out-of-bag Improvement Plot matches", {
-  plotName <- results[["results"]][["outOfBagImprovementPlot"]][["data"]]
-  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "out-of-bag-improvement-plot")
-})
-
-test_that("Relative Influence Plot matches", {
-  plotName <- results[["results"]][["relativeInfluencePlot"]][["data"]]
-  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "relative-influence-plot")
-})
-
-test_that("ROC Curves Plot matches", {
-  plotName <- results[["results"]][["rocCurve"]][["data"]]
-  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "roc-curves-plot")
-})
-
 
 test_that("Evaluation Metrics table results match", {
   table <- results[["results"]][["validationMeasures"]][["data"]]
@@ -170,4 +115,124 @@ test_that("Feature Contributions to Predictions for Test Set Cases table results
 			 2.13704773278645e-05, 0.000173208048563356, 6.39177424877069e-07,
 			 4.23279087402584e-06, 0, 0.123354284265876, 0.324584764525254,
 			 5, "1 (1)"))
+})
+
+test_that("Data Split plot matches", {
+  plotName <- results[["results"]][["plotDataSplit"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "data-split")
+})
+
+# Tests specific for windows and linux
+test_that("Andrews Curves Plot matches", {
+  testthat::skip_on_os("mac")
+  plotName <- results[["results"]][["andrewsCurve"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "andrews-curves-plot")
+})
+
+test_that("Relative Influence table results match", {
+  testthat::skip_on_os("mac")
+  table <- results[["results"]][["featureImportanceTable"]][["data"]]
+  jaspTools::expect_equal_tables(table,
+                      list(16.3458735499254, "Proline", 31.1797927388636, 1.92298108138859, "Color", 20.173253110114, 6.11564217900192, "Flavanoids",
+                           19.8438729446546, 0.580073791483201, "Alcohol", 11.3080195393476, 1.46276253431049, "Hue", 9.04159967448256,
+                           0.170561653950044, "Dilution", 5.78903515515603, 0.0655054520688096, "Phenols", 2.06207785543184, 0.134398642455039, "Malic",
+                           0.318048182535448, 0.0796903953021984, "Magnesium", 0.198970273683845, 0.0820480575235912, "Ash", 0.0761054305928261,
+                           0.0583723130067498, "Nonflavanoids", 0.00505359720114565, 0.0642402307210398, "Alcalinity", 0.00416148218437122,
+                           0.0549408459183189, "Proanthocyanins", 1.00157520318044e-05))
+})
+
+test_that("Boosting Classification table results match", {
+  testthat::skip_on_os("mac")
+  table <- results[["results"]][["classificationTable"]][["data"]]
+  jaspTools::expect_equal_tables(table,
+                      list(35, 114, 29, 0.1, 0.942857142857143, 84, 0.96551724137931))
+})
+
+test_that("Deviance Plot matches", {
+  testthat::skip_on_os("mac")
+  plotName <- results[["results"]][["deviancePlot"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "deviance-plot")
+})
+
+test_that("Out-of-bag Improvement Plot matches", {
+  testthat::skip_on_os("mac")
+  plotName <- results[["results"]][["outOfBagImprovementPlot"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "out-of-bag-improvement-plot")
+})
+
+test_that("Relative Influence Plot matches", {
+  testthat::skip_on_os("mac")
+  plotName <- results[["results"]][["relativeInfluencePlot"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "relative-influence-plot")
+})
+
+test_that("ROC Curves Plot matches", {
+  testthat::skip_on_os("mac")
+  plotName <- results[["results"]][["rocCurve"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "roc-curves-plot")
+})
+
+# Tests specific for mac
+test_that("Andrews Curves Plot matches", {
+  testthat::skip_on_os(c("windows", "linux"))
+  plotName <- results[["results"]][["andrewsCurve"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "andrews-curves-plot-mac")
+})
+
+test_that("Feature Importance Metrics table results match", {
+	testthat::skip_on_os(c("windows", "linux"))
+	table <- results[["results"]][["featureImportanceTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(16.6628167288637, "Proline", 31.1710479606241, 2.30906967311753,
+			 "Color", 20.2027929087086, 5.40187240801467, "Flavanoids", 18.9322276092634,
+			 0.571452911587973, "Alcohol", 11.3558373164206, 1.28390495673821,
+			 "Hue", 9.00503138188843, 0.202003460109013, "Dilution", 6.60449049492057,
+			 0.0767927443803931, "Phenols", 2.0342983889147, 0.16239385993903,
+			 "Malic", 0.349135278911687, 0.0887765925280579, "Magnesium",
+			 0.194500356950665, 0.0894373829126091, "Ash", 0.0798365790091133,
+			 0.0756253804363032, "Alcalinity", 0.0659567852299842, 0.0662982852417071,
+			 "Nonflavanoids", 0.00484493915816381, 0.0625753440706065, "Proanthocyanins",
+			 0))
+})
+
+test_that("Boosting Classification table results match", {
+  testthat::skip_on_os(c("windows", "linux"))
+  table <- results[["results"]][["classificationTable"]][["data"]]
+  jaspTools::expect_equal_tables(table,
+                      list(35, 114, 29, 0.1, 0.942857142857143, 83, 0.96551724137931))
+})
+
+test_that("Deviance Plot matches", {
+  testthat::skip_on_os(c("windows", "linux"))
+  plotName <- results[["results"]][["deviancePlot"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "deviance-plot-mac")
+})
+
+test_that("Out-of-bag Improvement Plot matches", {
+  testthat::skip_on_os(c("windows", "linux"))
+  plotName <- results[["results"]][["outOfBagImprovementPlot"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "out-of-bag-improvement-plot-mac")
+})
+
+test_that("Relative Influence Plot matches", {
+  testthat::skip_on_os(c("windows", "linux"))
+  plotName <- results[["results"]][["relativeInfluencePlot"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "relative-influence-plot-mac")
+})
+
+test_that("ROC Curves Plot matches", {
+  testthat::skip_on_os(c("windows", "linux"))
+  plotName <- results[["results"]][["rocCurve"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "roc-curves-plot-mac")
 })

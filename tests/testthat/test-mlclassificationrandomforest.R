@@ -89,59 +89,10 @@ test_that("Data Split plot matches", {
   jaspTools::expect_equal_plots(testPlot, "data-split")
 })
 
-test_that("Mean Decrease in Accuracy plot matches", {
-  plotName <- results[["results"]][["accuracyDecreasePlot"]][["data"]]
-  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "mean-decrease-in-accuracy")
-})
-
-test_that("Total Increase in Node Purity plot matches", {
-  plotName <- results[["results"]][["purityIncreasePlot"]][["data"]]
-  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "total-increase-in-node-purity")
-})
-
-test_that("Out-of-bag Classification Accuracy Plot matches", {
-  plotName <- results[["results"]][["treesVsModelErrorPlot"]][["data"]]
-  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-  jaspTools::expect_equal_plots(testPlot, "out-of-bag-classification-accuracy-plot")
-})
-
 test_that("ROC Curves Plot matches", {
   plotName <- results[["results"]][["rocCurve"]][["data"]]
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
   jaspTools::expect_equal_plots(testPlot, "roc-curves-plot")
-})
-
-test_that("Feature Importance Metrics table results match", {
-  table <- results[["results"]][["featureImportanceTable"]][["data"]]
-  jaspTools::expect_equal_tables(table,
-                      list(0.0929184156013314, 0.11584466455711, 28.9155424269627, "Color", 0.0746170330176111,
-                           0.0740156345749835, 19.448078950963, "Alcohol", 0.227882931822773, 0.0519798563590929,
-                           26.418991981014, "Proline", 0.104210419210419, 0.038220702722991, 27.3543977112687, "Dilution",
-                           0.0392152459372139, 0.0269934390675145, 19.8918388161141, "Hue", 0.148036748647974,
-                           0.00844623148177441, 26.682160490794, "Flavanoids", 0.0192297690867485, 0.00698621553884712,
-                           13.2574950728752, "Alcalinity", 0.00674978530241688, 0.00569058515854854, 11.8285559639254, "Ash",
-                           0.0214415086298743, 0.00440369101163704, 13.4442844540554, "Malic", 0.00579683474420317,
-                           0.0025062656641604, 11.4619631102683, "Magnesium", 0.0831850839152417, -0.000437779601050258,
-                           18.1627003897205, "Phenols", 0.0194222905441742, -0.000592846851428087, 13.0768563565669, "Proanthocyanins",
-                           0.0238594357587493, -0.00457882900654936, 13.0837916724828, "Nonflavanoids"))
-})
-
-test_that("Evaluation Metrics table results match", {
-  table <- results[["results"]][["validationMeasures"]][["data"]]
-  jaspTools::expect_equal_tables(table,
-    list(1, 0.993006993006993, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0.371428571428571,
-        13, 1, "<unicode><unicode><unicode>", 0.971428571428571, 0.998299319727891,
-        0.962962962962963, 0, 0.0714285714285714, 0.0454545454545455,
-        0, 2, 0.941468871691272, 0.954545454545455, 1, 0.928571428571429,
-        0.371428571428571, 14, 1, 13, 0.971428571428571, 1, 0.941176470588235,
-        0.111111111111111, 0, 0, 0.037037037037037, 3, 0.925184888651615,
-        1, 0.888888888888889, 1, 0.257142857142857, 8, 0.962962962962963,
-        4, 0.980952380952381, 0.997102104244961, 0.971739807033925,
-        0.037037037037037, 0.0238095238095238, 0.0151515151515152, 0.0123456790123457,
-        "Average / Total", 0.955551253447629, 0.984848484848485, 0.974603174603175,
-        0.971428571428571, 1, 35, 0.987654320987654, "<unicode><unicode><unicode>"))
 })
 
 test_that("Feature Contributions to Predictions for Test Set Cases table results match", {
@@ -170,4 +121,118 @@ test_that("Feature Contributions to Predictions for Test Set Cases table results
 			 0.0269576379974326, 0.0117672229353872, 0.0162601626016248,
 			 0.0708172871202396, 0.0130509199828839, 0.110825845100556, 0.325631151048352,
 			 5, "1 (0.927)"))
+})
+
+# Tests specific for windows and linux
+test_that("Feature Importance Metrics table results match", {
+  testthat::skip_on_os("mac")
+  table <- results[["results"]][["featureImportanceTable"]][["data"]]
+  jaspTools::expect_equal_tables(table,
+                      list(0.0929184156013314, 0.11584466455711, 28.9155424269627, "Color", 0.0746170330176111,
+                           0.0740156345749835, 19.448078950963, "Alcohol", 0.227882931822773, 0.0519798563590929,
+                           26.418991981014, "Proline", 0.104210419210419, 0.038220702722991, 27.3543977112687, "Dilution",
+                           0.0392152459372139, 0.0269934390675145, 19.8918388161141, "Hue", 0.148036748647974,
+                           0.00844623148177441, 26.682160490794, "Flavanoids", 0.0192297690867485, 0.00698621553884712,
+                           13.2574950728752, "Alcalinity", 0.00674978530241688, 0.00569058515854854, 11.8285559639254, "Ash",
+                           0.0214415086298743, 0.00440369101163704, 13.4442844540554, "Malic", 0.00579683474420317,
+                           0.0025062656641604, 11.4619631102683, "Magnesium", 0.0831850839152417, -0.000437779601050258,
+                           18.1627003897205, "Phenols", 0.0194222905441742, -0.000592846851428087, 13.0768563565669, "Proanthocyanins",
+                           0.0238594357587493, -0.00457882900654936, 13.0837916724828, "Nonflavanoids"))
+})
+
+test_that("Evaluation Metrics table results match", {
+  testthat::skip_on_os("mac")
+  table <- results[["results"]][["validationMeasures"]][["data"]]
+  jaspTools::expect_equal_tables(table,
+    list(1, 0.993006993006993, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0.371428571428571,
+        13, 1, "<unicode><unicode><unicode>", 0.971428571428571, 0.998299319727891,
+        0.962962962962963, 0, 0.0714285714285714, 0.0454545454545455,
+        0, 2, 0.941468871691272, 0.954545454545455, 1, 0.928571428571429,
+        0.371428571428571, 14, 1, 13, 0.971428571428571, 1, 0.941176470588235,
+        0.111111111111111, 0, 0, 0.037037037037037, 3, 0.925184888651615,
+        1, 0.888888888888889, 1, 0.257142857142857, 8, 0.962962962962963,
+        4, 0.980952380952381, 0.997102104244961, 0.971739807033925,
+        0.037037037037037, 0.0238095238095238, 0.0151515151515152, 0.0123456790123457,
+        "Average / Total", 0.955551253447629, 0.984848484848485, 0.974603174603175,
+        0.971428571428571, 1, 35, 0.987654320987654, "<unicode><unicode><unicode>"))
+})
+
+test_that("Mean Decrease in Accuracy plot matches", {
+  testthat::skip_on_os("mac")
+  plotName <- results[["results"]][["accuracyDecreasePlot"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "mean-decrease-in-accuracy")
+})
+
+test_that("Total Increase in Node Purity plot matches", {
+  testthat::skip_on_os("mac")
+  plotName <- results[["results"]][["purityIncreasePlot"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "total-increase-in-node-purity")
+})
+
+test_that("Out-of-bag Classification Accuracy Plot matches", {
+  testthat::skip_on_os("mac")
+  plotName <- results[["results"]][["treesVsModelErrorPlot"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "out-of-bag-classification-accuracy-plot")
+})
+
+# Tests specific for mac
+test_that("Feature Importance Metrics table results match", {
+	testthat::skip_on_os(c("windows", "linux"))
+	table <- results[["results"]][["featureImportanceTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(0.0842355188871508, 0.140028607384325, 25.5081304764804, "Color",
+			 0.1910695271336, 0.0817233664218454, 29.4726331694755, "Proline",
+			 0.0826624092070316, 0.0654880838290449, 19.1495415964802, "Alcohol",
+			 0.0377722392024452, 0.0282158474206529, 21.7344936916165, "Hue",
+			 0.159056561711024, 0.0276355721149772, 25.126989492684, "Flavanoids",
+			 0.083825542334515, 0.0229680114677254, 26.3595041365273, "Dilution",
+			 0.0085213358442914, 0.0126326694747747, 12.0047263714573, "Ash",
+			 0.0139256895098157, 0.0118547570850202, 12.9475336867388, "Alcalinity",
+			 0.0609110664316614, 0.0100432705695864, 15.7756074396539, "Phenols",
+			 0.0382445601267112, 0.00847398215819268, 13.2585876070529, "Magnesium",
+			 -0.0011441647597254, -5.20074890784274e-05, 11.4094026164425,
+			 "Malic", 0.0319776714513557, -0.000500572082379863, 12.4960241802194,
+			 "Proanthocyanins", 0.0130769230769231, -0.00314354261722683,
+			 12.2265958852755, "Nonflavanoids"))
+})
+
+test_that("Model Performance Metrics table results match", {
+	testthat::skip_on_os(c("windows", "linux"))
+	table <- results[["results"]][["validationMeasures"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(0.971428571428571, 0.993006993006993, 0.962962962962963, 0.0714285714285714,
+			 0, 0, 0.0454545454545455, 1, 0.941468871691272, 1, 0.928571428571429,
+			 1, 0.4, 13, 0.954545454545455, 6.5, 0.971428571428571, 1, 0.962962962962963,
+			 0, 0.0714285714285714, 0.0454545454545455, 0, 2, 0.941468871691272,
+			 0.954545454545455, 1, 0.928571428571429, 0.371428571428571,
+			 14, 1, 13, 1, 1, 1, 0, 0, 0, 0, 3, 1, 1, 1, 1, 0.228571428571429,
+			 8, 1, "<unicode>", 0.980952380952381, 0.997668997668998, 0.971428571428571,
+			 0.0238095238095238, 0.0238095238095238, 0.0151515151515152,
+			 0.0151515151515152, "Average / Total", 0.960979247794181, 0.984848484848485,
+			 0.973469387755102, 0.971428571428571, 1, 35, 0.984848484848485,
+			 "<unicode>"))
+})
+
+test_that("Mean Decrease in Accuracy plot matches", {
+  testthat::skip_on_os(c("windows", "linux"))
+  plotName <- results[["results"]][["accuracyDecreasePlot"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "mean-decrease-in-accuracy-mac")
+})
+
+test_that("Total Increase in Node Purity plot matches", {
+  testthat::skip_on_os(c("windows", "linux"))
+  plotName <- results[["results"]][["purityIncreasePlot"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "total-increase-in-node-purity-mac")
+})
+
+test_that("Out-of-bag Classification Accuracy Plot matches", {
+  testthat::skip_on_os(c("windows", "linux"))
+  plotName <- results[["results"]][["treesVsModelErrorPlot"]][["data"]]
+  testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+  jaspTools::expect_equal_plots(testPlot, "out-of-bag-classification-accuracy-plot-mac")
 })

@@ -16,9 +16,21 @@ options$setSeed <- TRUE
 set.seed(1)
 results <- jaspTools::runAnalysis("mlRegressionBoosting", "iris.csv", options)
 
-table <- results[["results"]][["regressionTable"]][["data"]]
-jaspTools::expect_equal_tables(table,
+# Tests specific for windows and linux
+test_that("Boosting Regression table results match", {
+  testthat::skip_on_os("mac")
+  table <- results[["results"]][["regressionTable"]][["data"]]
+  jaspTools::expect_equal_tables(table,
 		list("Gaussian", 30, 120, 0.1, 0.10476507592285, 100))
+})
+
+# Tests specific for mac
+test_that("Boosting Regression table results match", {
+  testthat::skip_on_os(c("windows", "linux"))
+  table <- results[["results"]][["regressionTable"]][["data"]]
+  jaspTools::expect_equal_tables(table,
+		list("Gaussian", 30, 120, 0.1, 0.104957074621182, 100))
+})
 
 # Test optimized model #########################################################
 options <- initMlOptions("mlRegressionBoosting")
