@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2024-06-10 08:22\n"
-"PO-Revision-Date: 2024-03-24 12:01+0000\n"
+"PO-Revision-Date: 2024-06-12 08:08+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
-"X-Generator: Weblate 5.5-dev\n"
+"X-Generator: Weblate 5.6-dev\n"
 
 msgid "An error occurred in the analysis: %s"
 msgstr "In der Analyse ist ein Fehler aufgetreten: %s"
@@ -718,19 +718,17 @@ msgstr "Mittlerer Ausfallverlust"
 
 #, fuzzy
 msgid "root mean squared error (RMSE)"
-msgstr "Mittlerer quadratischer Fehler"
+msgstr "Wurzel d. mittleren quadratischer Fehlers (RMSE)"
 
-#, fuzzy
 msgid "1 - area under curve (AUC)"
-msgstr "Fläche unter der Kurve (AUC)"
+msgstr "1 - Fläche unter Kurve (AUC)"
 
-#, fuzzy
 msgid "cross entropy"
-msgstr "Entropie"
+msgstr "Kreuzentropie"
 
-#, fuzzy
 msgid "Mean dropout loss (defined as %1$s) is based on %2$s permutations."
-msgstr "Mittlerer Ausfallverlust basiert auf %1$s Permutationen."
+msgstr ""
+"Mittlerer Ausfallverlust (definiert als %1$s) basiert auf %2$s Permutationen."
 
 msgid "The target variable should have at least 2 classes."
 msgstr "Die Zielvariable muss mindestens 2 Klassen enthalten."
