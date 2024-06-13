@@ -39,6 +39,7 @@ VariablesForm
 		title:								qsTr("Target")
 		singleVariable:						true
 		allowedColumns:						["nominal", "ordinal"]
+		minLevels:							2
 		info:								qsTr("In this box, the variable that needs to be predicted should be entered.")
 	}
 
