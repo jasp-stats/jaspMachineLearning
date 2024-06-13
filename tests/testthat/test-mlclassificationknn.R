@@ -148,7 +148,9 @@ test_that("Additive Explanations for Predictions of Test Set Cases table results
 			 "1 (1)"))
 })
 
+# Tests specific for windows and linux
 test_that("Feature Importance Metrics table results match", {
+	testthat::skip_on_os("mac")
 	table <- results[["results"]][["featureImportanceTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list(35.3677070283885, "Proline", 12.7102697133271, "Alcohol", 11.7892356761295,
@@ -156,5 +158,18 @@ test_that("Feature Importance Metrics table results match", {
 			 "Alcalinity", 4.23675657110904, "Malic", 2.76310211159285, "Dilution",
 			 0.921034037197618, "Phenols", 0.921034037197618, "Nonflavanoids",
 			 0.368413614879047, "Magnesium", 0.368413614879047, "Proanthocyanins",
+			 0, "Flavanoids"))
+})
+
+# Tests specific for mac
+test_that("Feature Importance Metrics table results match", {
+	testthat::skip_on_os(c("windows", "linux"))
+	table <- results[["results"]][["featureImportanceTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(35.3677070283885, "Proline", 12.7102697133271, "Alcohol", 11.7892356761295,
+			 "Ash", 5.71041103062523, "Hue", 5.52620422318571, "Color", 4.42096337854857,
+			 "Alcalinity", 4.23675657110904, "Malic", 2.76310211159285, "Dilution",
+			 0.921034037197618, "Nonflavanoids", 0.921034037197618, "Phenols",
+			 0.368413614879047, "Proanthocyanins", 0.368413614879047, "Magnesium",
 			 0, "Flavanoids"))
 })
