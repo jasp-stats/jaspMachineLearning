@@ -36,6 +36,7 @@ VariablesForm
 		name:								"predictors"
 		title:								qsTr("Features")
 		allowedColumns:						["scale"]
+		minNumericLevels:					1
 		allowAnalysisOwnComputedColumns:	false
 		info:								qsTr("In this box, the variables are need to be considered by the clustering algorithm should be entered.")
 	}

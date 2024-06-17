@@ -145,7 +145,7 @@
     "randomForest" = gettext("Random Forest Clustering"),
     "modelbased" = gettext("Model-Based Clustering")
   )
-  table <- createJaspTable(title)
+  table <- createJaspTable(gettextf("Model Summary: %1$s", title))
   table$position <- position
   table$dependOn(options = .mlClusteringDependencies(options))
   table$addColumnInfo(name = "clusters", title = gettext("Clusters"), type = "integer")
