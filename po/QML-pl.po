@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-06-10 10:24+0000\n"
+"PO-Revision-Date: 2024-06-20 21:09+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/pl/>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.6-dev\n"
+"X-Generator: Weblate 5.6-rc\n"
 "X-Qt-Contexts: true\n"
 
 msgctxt "Description|"
@@ -1313,7 +1313,7 @@ msgstr "Informacje o skupieniach"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Within sum of squares"
-msgstr ""
+msgstr "Suma kwadratów wewnątrzgrupowa"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Silhouette score"
@@ -1321,7 +1321,7 @@ msgstr "Wskaźnik sylwetki (silhouette)"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Between sum of squares"
-msgstr ""
+msgstr "Suma kwadratów międzygrupowa"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Total sum of squares"
@@ -1425,7 +1425,7 @@ msgstr "Informacje o skupieniach"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Within sum of squares"
-msgstr ""
+msgstr "Suma kwadratów wewnątrzgrupowa"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Silhouette score"
@@ -1437,7 +1437,7 @@ msgstr ""
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Between sum of squares"
-msgstr ""
+msgstr "Suma kwadratów międzygrupowa"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Total sum of squares"
@@ -1541,7 +1541,7 @@ msgstr "Informacje o skupieniach"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Within sum of squares"
-msgstr ""
+msgstr "Suma kwadratów wewnątrzgrupowa"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Silhouette score"
@@ -1549,7 +1549,7 @@ msgstr "Wskaźnik sylwetki (silhouette)"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Between sum of squares"
-msgstr ""
+msgstr "Suma kwadratów międzygrupowa"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Total sum of squares"
@@ -1697,7 +1697,7 @@ msgstr "Informacje o skupieniach"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Within sum of squares"
-msgstr ""
+msgstr "Suma kwadratów wewnątrzgrupowa"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Silhouette score"
@@ -1709,7 +1709,7 @@ msgstr "Centra"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Between sum of squares"
-msgstr ""
+msgstr "Suma kwadratów międzygrupowa"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Total sum of squares"
@@ -1833,7 +1833,7 @@ msgstr "Informacje o skupieniach"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Within sum of squares"
-msgstr ""
+msgstr "Suma kwadratów wewnątrzgrupowa"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Silhouette score"
@@ -1841,7 +1841,7 @@ msgstr "Wskaźnik sylwetki (silhouette)"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Between sum of squares"
-msgstr ""
+msgstr "Suma kwadratów międzygrupowa"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Total sum of squares"
@@ -2125,7 +2125,7 @@ msgstr ""
 
 msgctxt "mlRegressionKnn|"
 msgid "Mean squared error"
-msgstr ""
+msgstr "Średni błąd kwadratowy (MSE)"
 
 msgctxt "mlRegressionKnn|"
 msgid "Predictive performance"
@@ -2253,7 +2253,7 @@ msgstr "Podział danych"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Mean squared error"
-msgstr ""
+msgstr "Średni błąd kwadratowy (MSE)"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Predictive performance"
@@ -2373,7 +2373,7 @@ msgstr ""
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Sum of squares"
-msgstr ""
+msgstr "Suma kwadratów"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Cross-entropy"
