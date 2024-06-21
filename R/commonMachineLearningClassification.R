@@ -15,12 +15,6 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-# This is a temporary fix
-# TODO: remove it when R will solve this problem!
-gettextf <- function(fmt, ..., domain = NULL) {
-  return(sprintf(gettext(fmt, domain = domain), ...))
-}
-
 # This function should return all options for all analyses upon which a change in all tables/figures is required
 .mlClassificationDependencies <- function(options, includeSaveOptions = FALSE) {
   opt <- c(
