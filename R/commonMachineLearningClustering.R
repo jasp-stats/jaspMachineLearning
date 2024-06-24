@@ -145,7 +145,8 @@
     "randomForest" = gettext("Random Forest Clustering"),
     "modelbased" = gettext("Model-Based Clustering")
   )
-  table <- createJaspTable(gettextf("Model Summary: %1$s", title))
+  tableTitle <- gettextf("Model Summary: %1$s", title)
+  table <- createJaspTable(tableTitle)
   table$position <- position
   table$dependOn(options = .mlClusteringDependencies(options))
   table$addColumnInfo(name = "clusters", title = gettext("Clusters"), type = "integer")
@@ -153,7 +154,7 @@
   table$addColumnInfo(name = "measure", title = gettextf("R%s", "\u00B2"), type = "number", format = "dp:2")
   table$addColumnInfo(name = "aic", title = gettext("AIC"), type = "number", format = "dp:2")
   table$addColumnInfo(name = "bic", title = gettext("BIC"), type = "number", format = "dp:2")
-  table$addColumnInfo(name = "Silh", title = "Silhouette", type = "number", format = "dp:2")
+  table$addColumnInfo(name = "Silh", title = gettext("Silhouette"), type = "number", format = "dp:2")
   if (type == "kmeans") {
     table$addCitation("Hartigan, J. A., & Wong, M. A. (1979). Algorithm AS 136: A k-means clustering algorithm. Journal of the Royal Statistical Society. Series C (Applied Statistics), 28(1), 100-108.")
   } else if (type == "kmedians") {
