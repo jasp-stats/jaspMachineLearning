@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.4.0",
+    "Version": "4.4.1",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -141,7 +141,7 @@
     },
     "cli": {
       "Package": "cli",
-      "Version": "3.6.2",
+      "Version": "3.6.3",
       "Source": "Repository"
     },
     "coda": {
@@ -176,7 +176,7 @@
     },
     "crayon": {
       "Package": "crayon",
-      "Version": "1.5.2",
+      "Version": "1.5.3",
       "Source": "Repository"
     },
     "crul": {
@@ -221,7 +221,7 @@
     },
     "evaluate": {
       "Package": "evaluate",
-      "Version": "0.23",
+      "Version": "0.24.0",
       "Source": "Repository"
     },
     "fansi": {
@@ -443,7 +443,7 @@
       "RemoteUsername": "jasp-stats",
       "RemoteRepo": "jaspBase",
       "RemoteRef": "HEAD",
-      "RemoteSha": "b89e24ee72bc63e66655f30f5bb00650d5f22cde"
+      "RemoteSha": "c5936d63c775841d2ebc6fc097fe96ff2b06d21b"
     },
     "jaspGraphs": {
       "Package": "jaspGraphs",
@@ -454,7 +454,7 @@
       "RemoteUsername": "jasp-stats",
       "RemoteRepo": "jaspGraphs",
       "RemoteRef": "HEAD",
-      "RemoteSha": "e05d48559699a775d0fa27899378f7cb5316586c"
+      "RemoteSha": "09e2fecf1b921a00a203a442207591ecd3db2821"
     },
     "jpeg": {
       "Package": "jpeg",
@@ -874,7 +874,7 @@
     },
     "xfun": {
       "Package": "xfun",
-      "Version": "0.44",
+      "Version": "0.45",
       "Source": "Repository"
     },
     "xml2": {
