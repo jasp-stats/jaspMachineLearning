@@ -238,7 +238,8 @@
     "svm" = gettext("Support Vector Machine Regression"),
     "lm" = gettext("Linear Regression")
   )
-  table <- createJaspTable(gettextf("Model Summary: %1$s", title))
+  tableTitle <- gettextf("Model Summary: %1$s", title)
+  table <- createJaspTable(tableTitle)
   table$position <- position
   table$dependOn(options = .mlRegressionDependencies(options, includeSaveOptions = TRUE))
   # Add analysis-specific columns

@@ -118,7 +118,8 @@
     "svm" = gettext("Support Vector Machine Classification"),
     "naivebayes" = gettext("Naive Bayes Classification")
   )
-  table <- createJaspTable(gettextf("Model Summary: %1$s", title))
+  tableTitle <- gettextf("Model Summary: %1$s", title)
+  table <- createJaspTable(tableTitle)
   table$position <- position
   table$dependOn(options = .mlClassificationDependencies(options, includeSaveOptions = TRUE))
   # Add analysis-specific columns
