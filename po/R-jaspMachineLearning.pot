@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.19.0\n"
-"POT-Creation-Date: 2024-06-10 08:22\n"
+"POT-Creation-Date: 2024-06-24 09:55\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,6 +35,9 @@ msgid "Support Vector Machine Classification"
 msgstr ""
 
 msgid "Naive Bayes Classification"
+msgstr ""
+
+msgid "Model Summary: %1$s"
 msgstr ""
 
 msgid "Nearest neighbors"
@@ -290,6 +293,9 @@ msgid "AIC"
 msgstr ""
 
 msgid "BIC"
+msgstr ""
+
+msgid "Silhouette"
 msgstr ""
 
 msgid "Please provide at least 2 features."

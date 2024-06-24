@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2024-06-10 08:22\n"
+"POT-Creation-Date: 2024-06-24 09:55\n"
 "PO-Revision-Date: 2022-08-29 00:16+0000\n"
 "Last-Translator: Laura Durans <lauraadurans@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
@@ -47,6 +47,9 @@ msgstr "Classificação de Vizinhos K-Nearest"
 #, fuzzy
 msgid "Naive Bayes Classification"
 msgstr "Classificação de Vizinhos K-Nearest"
+
+msgid "Model Summary: %1$s"
+msgstr ""
 
 msgid "Nearest neighbors"
 msgstr ""
@@ -332,6 +335,9 @@ msgstr "AIC"
 
 msgid "BIC"
 msgstr "BIC"
+
+msgid "Silhouette"
+msgstr ""
 
 msgid "Please provide at least 2 features."
 msgstr ""

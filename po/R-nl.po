@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2024-06-10 08:22\n"
+"POT-Creation-Date: 2024-06-24 09:55\n"
 "PO-Revision-Date: 2024-06-11 16:58+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
@@ -40,6 +40,9 @@ msgstr "Support Vector Machine Classificatie"
 
 msgid "Naive Bayes Classification"
 msgstr "Naive Bayes Classificatie"
+
+msgid "Model Summary: %1$s"
+msgstr ""
 
 msgid "Nearest neighbors"
 msgstr "Dichtste buren"
@@ -330,6 +333,10 @@ msgstr "AIC"
 
 msgid "BIC"
 msgstr "BIC"
+
+#, fuzzy
+msgid "Silhouette"
+msgstr "silhouet"
 
 msgid "Please provide at least 2 features."
 msgstr "Geef a.u.b. minstens 2 kenmerken."

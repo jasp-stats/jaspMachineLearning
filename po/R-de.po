@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2024-06-10 08:22\n"
+"POT-Creation-Date: 2024-06-24 09:55\n"
 "PO-Revision-Date: 2024-06-12 08:08+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
@@ -40,6 +40,9 @@ msgstr "Support Vector Machine-Klassifikation"
 
 msgid "Naive Bayes Classification"
 msgstr "Naive-Bayes-Klassifikation"
+
+msgid "Model Summary: %1$s"
+msgstr ""
 
 msgid "Nearest neighbors"
 msgstr "Nächste-Nachbarn"
@@ -331,6 +334,10 @@ msgstr "AIC"
 
 msgid "BIC"
 msgstr "BIC"
+
+#, fuzzy
+msgid "Silhouette"
+msgstr "Silhouette"
 
 msgid "Please provide at least 2 features."
 msgstr "Bitte geben Sie mindestens 2 Merkmale an."

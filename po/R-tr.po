@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.0\n"
-"POT-Creation-Date: 2024-06-10 08:22\n"
+"POT-Creation-Date: 2024-06-24 09:55\n"
 "PO-Revision-Date: 2024-03-09 03:22+0000\n"
 "Last-Translator: Fikret Er <fikret.alara@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/jasp/"
@@ -40,6 +40,9 @@ msgstr ""
 #, fuzzy
 msgid "Naive Bayes Classification"
 msgstr "Rastgele Orman Sınıflandırması"
+
+msgid "Model Summary: %1$s"
+msgstr ""
 
 msgid "Nearest neighbors"
 msgstr ""
@@ -308,6 +311,9 @@ msgid "AIC"
 msgstr ""
 
 msgid "BIC"
+msgstr ""
+
+msgid "Silhouette"
 msgstr ""
 
 msgid "Please provide at least 2 features."

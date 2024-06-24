@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-06-10 08:22\n"
+"POT-Creation-Date: 2024-06-24 09:55\n"
 "PO-Revision-Date: 2024-06-10 10:24+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
@@ -47,6 +47,9 @@ msgstr "Clasificación de Máquinas de Vectores de Soporte"
 
 msgid "Naive Bayes Classification"
 msgstr "Clasificación inxenua de Bayes"
+
+msgid "Model Summary: %1$s"
+msgstr ""
 
 msgid "Nearest neighbors"
 msgstr "Veciños máis próximos"
@@ -338,6 +341,10 @@ msgstr "AIC"
 
 msgid "BIC"
 msgstr "BIC"
+
+#, fuzzy
+msgid "Silhouette"
+msgstr "silueta"
 
 msgid "Please provide at least 2 features."
 msgstr "Por favor, proporciona 2 características cando menos."
