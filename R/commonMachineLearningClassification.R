@@ -561,7 +561,7 @@
     )
     predictions <- predict(fit, newdata = grid)
   } else if (type == "naivebayes") {
-    fit <- e1071::naiveBayes(formula, data = dataset, laplace = options[["laplace"]])
+    fit <- e1071::naiveBayes(formula, data = dataset, laplace = options[["smoothingParameter"]])
     predictions <- as.factor(max.col(predict(fit, newdata = grid, type = "raw")))
     levels(predictions) <- unique(dataset[, options[["target"]]])
   }
@@ -637,7 +637,7 @@
     levelVar <- train[, options[["target"]]] == lvls[i]
     typeData <- cbind(train, levelVar = factor(levelVar))
     column <- which(colnames(typeData) == options[["target"]])
-    typeData <- typeData[, -column]
+    typeData <- typeData[, -column, drop = FALSE]
     actual.class <- test[, options[["target"]]] == lvls[i]
     if (length(levels(factor(actual.class))) != 2) { # This variable is not in the test set, we should skip it
       next
@@ -657,7 +657,7 @@
       levelVar[levelVar == "FALSE"] <- 0
       levelVar <- as.numeric(levelVar)
       column <- which(colnames(typeData) == "levelVar")
-      typeData <- typeData[, -column]
+      typeData <- typeData[, -column, drop = FALSE]
       typeData <- cbind(typeData, levelVar = levelVar)
       fit <- gbm::gbm(
         formula = formula, data = typeData, n.trees = classificationResult[["noOfTrees"]],
@@ -668,7 +668,7 @@
       score <- predict(fit, newdata = test, n.trees = classificationResult[["noOfTrees"]], type = "response")
     } else if (type == "randomForest") {
       column <- which(colnames(typeData) == "levelVar")
-      typeData <- typeData[, -column]
+      typeData <- typeData[, -column, drop = FALSE]
       fit <- randomForest::randomForest(
         x = typeData, y = factor(levelVar),
         ntree = classificationResult[["noOfTrees"]], mtry = classificationResult[["predPerSplit"]],
@@ -701,7 +701,7 @@
       )
       score <- as.numeric(predict(fit, test))
     } else if (type == "naivebayes") {
-      fit <- e1071::naiveBayes(formula, data = typeData, laplace = options[["laplace"]])
+      fit <- e1071::naiveBayes(formula = formula, data = typeData, laplace = options[["smoothingParameter"]])
       score <- max.col(predict(fit, test, type = "raw"))
     }
     pred <- ROCR::prediction(score, actual.class)
