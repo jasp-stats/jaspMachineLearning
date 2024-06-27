@@ -49,6 +49,7 @@ VariablesForm
 		name:								"predictors"
 		title:								qsTr("Features")
 		allowedColumns:						allow_nominal ? ["scale", "nominal"] : ["scale"]
+		minNumericLevels:					allow_nominal ? -1 : 1
 		allowAnalysisOwnComputedColumns:	false
 		info:								qsTr("In this box, the variables that provide information about the target variable should be entered.")
 	}
