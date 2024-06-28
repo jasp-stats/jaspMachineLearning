@@ -182,14 +182,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
   table[["predictor"]] <- vars
   table[["MDiA"]] <- result[["varImp"]]$MeanIncrMSE
   table[["MDiNI"]] <- result[["varImp"]]$TotalDecrNodeImp
-  .setSeedJASP(options) # Set the seed to make results reproducible
-  if (purpose == "regression") {
-    fi <- DALEX::model_parts(result[["explainer"]], B = options[["featureImportancePermutations"]])
-  } else if (purpose == "classification") {
-    fi <- DALEX::model_parts(result[["explainer_fi"]], B = options[["featureImportancePermutations"]])
-  }
-  fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
-  table[["dl"]] <- fi[match(vars, fi[["y"]]), "x"]
+  # Compute mean dropout loss
   if (purpose == "regression") {
     loss_function <- gettext("root mean squared error (RMSE)")
   } else {
@@ -200,6 +193,20 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
     }
   }
   table$addFootnote(gettextf("Mean dropout loss (defined as %1$s) is based on %2$s permutations.", loss_function, options[["featureImportancePermutations"]]))
+  .setSeedJASP(options) # Set the seed to make results reproducible
+  error <- try({
+    if (purpose == "regression") {
+      fi <- DALEX::model_parts(result[["explainer"]], B = options[["featureImportancePermutations"]])
+    } else if (purpose == "classification") {
+      fi <- DALEX::model_parts(result[["explainer_fi"]], B = options[["featureImportancePermutations"]])
+    }
+  })
+  if (isTryError(error)) {
+    table$addFootnote(symbol = gettext("<i>Warning.</i>"), gettextf("An error occurred when computing the mean dropout loss: %1$s", jaspBase:::.extractErrorMessage(error)))
+    return()
+  }
+  fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
+  table[["dl"]] <- fi[match(vars, fi[["y"]]), "x"]
 }
 
 .mlRandomForestPlotError <- function(options, jaspResults, ready, position, purpose) {

@@ -756,7 +756,7 @@
     }
   })
   if (isTryError(p)) {
-    table$setError(gettextf("There was an error in computing the results for this table: %1$s", .extractErrorMessage(p)))
+    table$setError(gettextf("An error occurred when computing the results for this table: %1$s", .extractErrorMessage(p)))
     return()
   }
   table$setData(out)
@@ -788,16 +788,7 @@
     "regression" = jaspResults[["regressionResult"]]$object,
     "classification" = jaspResults[["classificationResult"]]$object
   )
-  .setSeedJASP(options) # Set the seed to make results reproducible
-  if (purpose == "regression") {
-    fi <- DALEX::model_parts(result[["explainer"]], B = options[["featureImportancePermutations"]])
-  } else if (purpose == "classification") {
-    fi <- DALEX::model_parts(result[["explainer_fi"]], B = options[["featureImportancePermutations"]])
-  }
-  fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
-  df <- data.frame(predictor = options[["predictors"]], dl = fi[match(options[["predictors"]], fi[["y"]]), "x"])
-  df <- df[order(-df[["dl"]]), ]
-  table$setData(df)
+  # Compute mean dropout loss
   if (purpose == "regression") {
     loss_function <- gettext("root mean squared error (RMSE)")
   } else {
@@ -808,4 +799,20 @@
     }
   }
   table$addFootnote(gettextf("Mean dropout loss (defined as %1$s) is based on %2$s permutations.", loss_function, options[["featureImportancePermutations"]]))
+  .setSeedJASP(options) # Set the seed to make results reproducible
+  error <- try({
+    if (purpose == "regression") {
+      fi <- DALEX::model_parts(result[["explainer"]], B = options[["featureImportancePermutations"]])
+    } else if (purpose == "classification") {
+      fi <- DALEX::model_parts(result[["explainer_fi"]], B = options[["featureImportancePermutations"]])
+    }
+  })
+  if (isTryError(error)) {
+    table$setError(gettextf("An error occurred when computing the results for this table: %1$s", jaspBase:::.extractErrorMessage(error)))
+    return()
+  }
+  fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
+  df <- data.frame(predictor = options[["predictors"]], dl = fi[match(options[["predictors"]], fi[["y"]]), "x"])
+  df <- df[order(-df[["dl"]]), ]
+  table$setData(df)
 }
