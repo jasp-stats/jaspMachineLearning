@@ -697,6 +697,9 @@
     } else {
       purpose <- "classification"
     }
+    predictors <- options[["predictors"]][which(decodeColNames(options[["predictors"]]) %in% model[["jaspVars"]])]
+  } else {
+    predictors <- options[["predictors"]]
   }
   table$position <- position
   table$dependOn(options = c(
@@ -714,7 +717,7 @@
     table$addColumnInfo(name = "pred", title = gettext("Predicted (Prob.)"), type = "string")
   }
   table$addColumnInfo(name = "avg", title = gettext("Base"), type = "number")
-  for (i in options[["predictors"]]) {
+  for (i in predictors) {
     table$addColumnInfo(name = i, title = i, type = "number")
   }
   jaspResults[["tableShap"]] <- table
@@ -724,20 +727,20 @@
   if (is.null(model)) {
     result <- switch(purpose, "regression" = jaspResults[["regressionResult"]]$object, "classification" = jaspResults[["classificationResult"]]$object)
     explainer <- result[["explainer"]]
-    x_test <- result[["test"]][, options[["predictors"]]]
+    x_test <- result[["test"]][, predictors]
   } else {
     explainer <- model[["explainer"]]
-    x_test <- dataset[, options[["predictors"]]]
+    x_test <- dataset[, predictors]
     predictions <- .mlPredictionsState(model, dataset, options, jaspResults, ready)[options[["fromIndex"]]:options[["toIndex"]]]
   }
   from <- min(c(options[["fromIndex"]], options[["toIndex"]] - 1, nrow(x_test)))
   to <- min(c(options[["toIndex"]], nrow(x_test)))
-  out <- as.data.frame(matrix(NA, nrow = length(from:to), ncol = 3 + length(options[["predictors"]])))
-  colnames(out) <- c("id", "pred", "avg", options[["predictors"]])
+  out <- as.data.frame(matrix(NA, nrow = length(from:to), ncol = 3 + length(predictors)))
+  colnames(out) <- c("id", "pred", "avg", predictors)
   p <- try({
     for (i in seq_along(from:to)) {
       out[i, 1] <- (from:to)[i]
-      shap <- DALEX::predict_parts(explainer, new_observation = as.data.frame(x_test[(from:to)[i], options[["predictors"]], drop = FALSE]))
+      shap <- DALEX::predict_parts(explainer, new_observation = as.data.frame(x_test[(from:to)[i], predictors, drop = FALSE]))
       if (purpose == "regression") {
         out[i, 2] <- shap[which(shap[["variable"]] == "prediction"), "contribution"]
       } else {
@@ -750,13 +753,13 @@
         }
       }
       out[i, 3] <- shap[which(shap[["variable"]] == "intercept"), "contribution"]
-      for (j in seq_along(options[["predictors"]])) {
-        out[i, j + 3] <- shap[which(shap[["variable_name"]] == options[["predictors"]][j]), "contribution"]
+      for (j in seq_along(predictors)) {
+        out[i, j + 3] <- shap[which(shap[["variable_name"]] == predictors[j]), "contribution"]
       }
     }
   })
   if (isTryError(p)) {
-    table$setError(gettextf("There was an error in computing the results for this table: %1$s", .extractErrorMessage(p)))
+    table$setError(gettextf("An error occurred when computing the results for this table: %1$s", .extractErrorMessage(p)))
     return()
   }
   table$setData(out)
@@ -788,16 +791,7 @@
     "regression" = jaspResults[["regressionResult"]]$object,
     "classification" = jaspResults[["classificationResult"]]$object
   )
-  .setSeedJASP(options) # Set the seed to make results reproducible
-  if (purpose == "regression") {
-    fi <- DALEX::model_parts(result[["explainer"]], B = options[["featureImportancePermutations"]])
-  } else if (purpose == "classification") {
-    fi <- DALEX::model_parts(result[["explainer_fi"]], B = options[["featureImportancePermutations"]])
-  }
-  fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
-  df <- data.frame(predictor = options[["predictors"]], dl = fi[match(options[["predictors"]], fi[["y"]]), "x"])
-  df <- df[order(-df[["dl"]]), ]
-  table$setData(df)
+  # Compute mean dropout loss
   if (purpose == "regression") {
     loss_function <- gettext("root mean squared error (RMSE)")
   } else {
@@ -808,4 +802,20 @@
     }
   }
   table$addFootnote(gettextf("Mean dropout loss (defined as %1$s) is based on %2$s permutations.", loss_function, options[["featureImportancePermutations"]]))
+  .setSeedJASP(options) # Set the seed to make results reproducible
+  error <- try({
+    if (purpose == "regression") {
+      fi <- DALEX::model_parts(result[["explainer"]], B = options[["featureImportancePermutations"]])
+    } else if (purpose == "classification") {
+      fi <- DALEX::model_parts(result[["explainer_fi"]], B = options[["featureImportancePermutations"]])
+    }
+  })
+  if (isTryError(error)) {
+    table$setError(gettextf("An error occurred when computing the results for this table: %1$s", jaspBase:::.extractErrorMessage(error)))
+    return()
+  }
+  fi <- aggregate(x = fi[["dropout_loss"]], by = list(y = fi[["variable"]]), FUN = mean)
+  df <- data.frame(predictor = options[["predictors"]], dl = fi[match(options[["predictors"]], fi[["y"]]), "x"])
+  df <- df[order(-df[["dl"]]), ]
+  table$setData(df)
 }
