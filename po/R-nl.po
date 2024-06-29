@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2024-06-24 09:55\n"
+"POT-Creation-Date: 2024-06-29 03:25\n"
 "PO-Revision-Date: 2024-06-24 13:21+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
@@ -692,7 +692,8 @@ msgstr "Voorspeld (Kans)"
 msgid "Base"
 msgstr "Basis"
 
-msgid "There was an error in computing the results for this table: %1$s"
+#, fuzzy
+msgid "An error occurred when computing the results for this table: %1$s"
 msgstr ""
 "Er is een fout opgetreden bij het berekenen van de resultaten voor deze "
 "tabel: %1$s"
@@ -1005,6 +1006,13 @@ msgstr "Voorspellingen voor Nieuwe Gegevens"
 
 msgid "Relative Influence"
 msgstr "Relatieve Invloed"
+
+msgid "<i>Warning.</i>"
+msgstr ""
+
+#, fuzzy
+msgid "An error occurred when computing the mean dropout loss: %1$s"
+msgstr "Er is een fout opgetreden in de analyse: %1$s"
 
 msgid "Out-of-bag Improvement Plot"
 msgstr "Out-of-bag Verbeteringsgrafiek"

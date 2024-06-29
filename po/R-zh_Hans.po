@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.2\n"
-"POT-Creation-Date: 2024-06-24 09:55\n"
+"POT-Creation-Date: 2024-06-29 03:25\n"
 "PO-Revision-Date: 2024-04-30 07:07+0000\n"
 "Last-Translator: Cochrane <cunyikang@qq.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
@@ -643,8 +643,9 @@ msgstr ""
 msgid "Base"
 msgstr ""
 
-msgid "There was an error in computing the results for this table: %1$s"
-msgstr ""
+#, fuzzy
+msgid "An error occurred when computing the results for this table: %1$s"
+msgstr "分析过程中发生了错误：%s"
 
 msgid ""
 "Displayed values represent feature contributions to the predicted value "
@@ -928,6 +929,13 @@ msgstr ""
 
 msgid "Relative Influence"
 msgstr ""
+
+msgid "<i>Warning.</i>"
+msgstr ""
+
+#, fuzzy
+msgid "An error occurred when computing the mean dropout loss: %1$s"
+msgstr "分析过程中发生了错误：%s"
 
 msgid "Out-of-bag Improvement Plot"
 msgstr ""

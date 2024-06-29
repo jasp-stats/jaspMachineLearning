@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.2\n"
-"POT-Creation-Date: 2024-06-24 09:55\n"
+"POT-Creation-Date: 2024-06-29 03:25\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -639,7 +639,7 @@ msgstr ""
 msgid "Base"
 msgstr ""
 
-msgid "There was an error in computing the results for this table: %1$s"
+msgid "An error occurred when computing the results for this table: %1$s"
 msgstr ""
 
 msgid ""
@@ -923,6 +923,12 @@ msgid "Predictions for New Data"
 msgstr ""
 
 msgid "Relative Influence"
+msgstr ""
+
+msgid "<i>Warning.</i>"
+msgstr ""
+
+msgid "An error occurred when computing the mean dropout loss: %1$s"
 msgstr ""
 
 msgid "Out-of-bag Improvement Plot"

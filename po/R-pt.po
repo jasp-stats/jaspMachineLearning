@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2024-06-24 09:55\n"
+"POT-Creation-Date: 2024-06-29 03:25\n"
 "PO-Revision-Date: 2022-08-29 00:16+0000\n"
 "Last-Translator: Laura Durans <lauraadurans@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
@@ -676,7 +676,7 @@ msgstr "Previsto"
 msgid "Base"
 msgstr ""
 
-msgid "There was an error in computing the results for this table: %1$s"
+msgid "An error occurred when computing the results for this table: %1$s"
 msgstr ""
 
 msgid ""
@@ -970,6 +970,12 @@ msgid "Predictions for New Data"
 msgstr ""
 
 msgid "Relative Influence"
+msgstr ""
+
+msgid "<i>Warning.</i>"
+msgstr ""
+
+msgid "An error occurred when computing the mean dropout loss: %1$s"
 msgstr ""
 
 msgid "Out-of-bag Improvement Plot"
