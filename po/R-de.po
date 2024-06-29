@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2024-06-29 03:25\n"
-"PO-Revision-Date: 2024-06-12 08:08+0000\n"
+"PO-Revision-Date: 2024-06-30 08:09+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
-"X-Generator: Weblate 5.6-dev\n"
+"X-Generator: Weblate 5.7-dev\n"
 
 msgid "An error occurred in the analysis: %s"
 msgstr "In der Analyse ist ein Fehler aufgetreten: %s"
@@ -42,7 +42,7 @@ msgid "Naive Bayes Classification"
 msgstr "Naive-Bayes-Klassifikation"
 
 msgid "Model Summary: %1$s"
-msgstr ""
+msgstr "Modell-Zusammenfassung: %1$s"
 
 msgid "Nearest neighbors"
 msgstr "Nächste-Nachbarn"
@@ -335,7 +335,6 @@ msgstr "AIC"
 msgid "BIC"
 msgstr "BIC"
 
-#, fuzzy
 msgid "Silhouette"
 msgstr "Silhouette"
 
@@ -1021,11 +1020,12 @@ msgid "Relative Influence"
 msgstr "Relativer Einfluß"
 
 msgid "<i>Warning.</i>"
-msgstr ""
+msgstr "<i>Warnung.</i>"
 
 #, fuzzy
 msgid "An error occurred when computing the mean dropout loss: %1$s"
-msgstr "In der Analyse ist ein Fehler aufgetreten: %1$s"
+msgstr ""
+"Ein Fehler ist aufgetreten beim Berechnen des mittleren Dropout-Loss: %1$s"
 
 msgid "Out-of-bag Improvement Plot"
 msgstr "Out-of-bag-Verbesserungsdiagramm"
