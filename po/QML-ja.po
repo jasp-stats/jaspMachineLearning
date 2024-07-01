@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2024-07-02 17:10+0000\n"
+"Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/ja/>\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.7-dev\n"
 "X-Language: ja\n"
 "X-Qt-Contexts: true\n"
 
@@ -1192,12 +1198,10 @@ msgctxt "AlgorithmicSettings|"
 msgid "ReLU"
 msgstr "ReLu"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Softplus"
 msgstr "Softplus"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Softsign"
 msgstr "Softsign"
@@ -1207,22 +1211,18 @@ msgctxt "AlgorithmicSettings|"
 msgid "ELU"
 msgstr "ELU"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "LReLU"
 msgstr "LReLU"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "SiLU"
 msgstr "SiLU"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Mish"
 msgstr "Mish"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "GeLU"
 msgstr "GeLU"
@@ -1259,22 +1259,18 @@ msgctxt "AlgorithmicSettings|"
 msgid "Backpropagation"
 msgstr "誤差逆伝播法"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "rprop+"
 msgstr "rprop+"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "rprop-"
 msgstr "rprop-"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "grprop-sag"
 msgstr "grprop-sag"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "grprop-slr"
 msgstr "grprop-slr"
