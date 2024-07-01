@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.1\n"
 "POT-Creation-Date: 2024-06-29 03:25\n"
-"PO-Revision-Date: 2024-06-18 16:09+0000\n"
+"PO-Revision-Date: 2024-07-02 16:09+0000\n"
 "Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/ja/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.6-dev\n"
+"X-Generator: Weblate 5.7-dev\n"
 
 msgid "An error occurred in the analysis: %s"
 msgstr ""
@@ -207,9 +207,8 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
-#, fuzzy
 msgid "Accuracy"
-msgstr "OOB精度"
+msgstr "精度"
 
 msgid "Precision (Positive Predictive Value)"
 msgstr ""
@@ -650,7 +649,7 @@ msgid "Additive Explanations for Predictions of Test Set Cases"
 msgstr ""
 
 msgid "Case"
-msgstr ""
+msgstr "ケース"
 
 #, fuzzy
 msgid "Predicted (Prob.)"
@@ -771,7 +770,7 @@ msgid "Mean"
 msgstr ""
 
 msgid "Std. deviation"
-msgstr ""
+msgstr "標準偏差"
 
 msgid ""
 "The table displays the mean and standard deviation of the feature given the "
@@ -1111,7 +1110,7 @@ msgid "Standard Error"
 msgstr ""
 
 msgid "%1$s%% Confidence interval"
-msgstr ""
+msgstr "%1$s%% 信頼区間"
 
 msgid "Lower"
 msgstr ""
@@ -1312,7 +1311,7 @@ msgid "%s 1 SE"
 msgstr ""
 
 msgid "Row"
-msgstr ""
+msgstr "行"
 
 msgid "Cost of Constraints Violation"
 msgstr ""
