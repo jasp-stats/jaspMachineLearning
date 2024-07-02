@@ -55,23 +55,23 @@
 }
 
 .readDataClassificationRegressionAnalyses <- function(dataset, options) {
-  target <- NULL
-  if (options[["target"]] != "") {
-    target <- options[["target"]]
-  }
-  predictors <- NULL
-  if (length(options[["predictors"]]) > 0) {
-    predictors <- unlist(options[["predictors"]])
-  }
+
   testSetIndicator <- NULL
-  if (options[["testSetIndicatorVariable"]] != "" && options[["holdoutData"]] == "testSetIndicator") {
-    testSetIndicator <- options[["testSetIndicatorVariable"]]
-  }
-  return(.readAndAddCompleteRowIndices(dataset, columns = c(target, predictors), columnsAsNumeric = testSetIndicator))
+  if (options[["testSetIndicatorVariable"]] != "" && options[["holdoutData"]] == "testSetIndicator")
+    testSetIndicator <- "testSetIndicatorVariable"
+
+  return(.readAndAddCompleteRowIndices(options, c("target", "predictors"), testSetIndicator))
 }
 
-.readAndAddCompleteRowIndices <- function(dataset, columns = NULL, columnsAsNumeric = NULL) {
-  dataset <- .readDataSetToEnd(columns = columns, columns.as.numeric = columnsAsNumeric)
+.readAndAddCompleteRowIndices <- function(options, optionNames = NULL, optionNamesAsNumeric = NULL) {
+
+  if (!is.null(optionNamesAsNumeric))
+    for (name in optionNamesAsNumeric) {
+      name2 <- paste(name, ".types")
+      if (is.null(options[[name]]))
+        options[[name2]] <- rep("scale", length(options[[name]]))
+    }
+  dataset <- jaspBase::readDataSetByVariableTypes(options, c(optionNames, optionNamesAsNumeric))
   complete.index <- which(complete.cases(dataset))
   dataset <- na.omit(dataset)
   rownames(dataset) <- as.character(complete.index)

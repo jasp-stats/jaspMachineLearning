@@ -69,13 +69,13 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
   if (options[["weights"]] != "") {
     weights <- options[["weights"]]
   }
-  if (options[["testSetIndicatorVariable"]] != "" && options[["holdoutData"]] == "testSetIndicator") {
-    testSetIndicator <- options[["testSetIndicatorVariable"]]
-  }
+  if (options[["testSetIndicatorVariable"]] != "" && options[["holdoutData"]] == "testSetIndicator")
+    testSetIndicator <- "testSetIndicatorVariable"
+
   predictors <- unlist(options["predictors"])
   predictors <- predictors[predictors != ""]
   if (is.null(dataset)) {
-    dataset <- .readAndAddCompleteRowIndices(dataset, columns = predictors, columnsAsNumeric = c(target, weights, testSetIndicator))
+    dataset <- .readAndAddCompleteRowIndices(options, c("target", "predictors", "weights"), testSetIndicator)
   }
   if (length(unlist(options[["predictors"]])) > 0 && options[["scaleVariables"]]) {
     dataset[, options[["predictors"]]] <- .scaleNumericData(dataset[, options[["predictors"]], drop = FALSE])

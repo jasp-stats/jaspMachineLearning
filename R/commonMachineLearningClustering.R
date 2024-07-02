@@ -34,7 +34,7 @@
   predictors <- unlist(options[["predictors"]])
   predictors <- predictors[predictors != ""]
   if (is.null(dataset)) {
-    dataset <- .readAndAddCompleteRowIndices(dataset, predictors)
+    dataset <- .readAndAddCompleteRowIndices(options, "predictors")
   }
   if (options[["scaleVariables"]] && length(unlist(options[["predictors"]])) > 0) {
     dataset <- .scaleNumericData(dataset)
@@ -374,8 +374,8 @@
     ggplot2::scale_fill_manual(name = gettext("Cluster"), values = .mlColorScheme(ncolors)) +
     jaspGraphs::geom_rangeframe() +
     jaspGraphs::themeJaspRaw(legend.position = if (options[["tsneClusterPlotLegend"]]) "right" else "none") +
-    ggplot2::theme(axis.ticks = ggplot2::element_blank(), 
-                   axis.text.x = ggplot2::element_blank(), 
+    ggplot2::theme(axis.ticks = ggplot2::element_blank(),
+                   axis.text.x = ggplot2::element_blank(),
                    axis.text.y = ggplot2::element_blank())
   if (options[["tsneClusterPlotLabels"]]) {
     p <- p + ggrepel::geom_text_repel(ggplot2::aes(label = rownames(dataset), x = x, y = y), hjust = -1, vjust = 1, data = plotData, seed = 1)
