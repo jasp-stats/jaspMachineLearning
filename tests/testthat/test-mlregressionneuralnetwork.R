@@ -13,10 +13,12 @@ options$modelOptimization <- "manual"
 options$modelValid <- "validationManual"
 options$predictionsColumn <- ""
 options$predictors <- c("Sepal.Width", "Petal.Length", "Petal.Width")
+options$predictors.types <- rep("scale", 3)
 options$saveModel <- FALSE
 options$savePath <- ""
 options$setSeed <- TRUE
 options$target <- "Sepal.Length"
+options$target.types <- "scale"
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""

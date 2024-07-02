@@ -3,6 +3,7 @@ context("Machine Learning Fuzzy C-Means Clustering")
 # Test fixed model #############################################################
 options <- initMlOptions("mlClusteringFuzzyCMeans")
 options$predictors <- list("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
+options$predictors.types <- rep("scale", length(options$predictors))
 options$modelOptimization <- "manual"
 options$predictionsColumn <- ""
 options$setSeed <- TRUE
@@ -21,8 +22,8 @@ options$predictionsColumn <- ""
 options$validationMeasures <- TRUE
 options$modelOptimization <- "optimized"
 options$tsneClusterPlot <- TRUE
-options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
-                           "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
+options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols",
+                           "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color",
                            "Hue", "Dilution", "Proline")
 options$setSeed <- TRUE
 options$tableClusterInformationBetweenSumOfSquares <- TRUE

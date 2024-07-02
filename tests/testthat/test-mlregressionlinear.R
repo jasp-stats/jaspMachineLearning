@@ -10,8 +10,10 @@ options$holdoutData <- "holdoutManual"
 options$modelOptimization <- "manual"
 options$predictedPerformancePlot <- TRUE
 options$predictors <- list("Petal.Width", "Sepal.Length", "Sepal.Width", "Species")
+options$predictors.types <- rep("scale", length(options$predictors))
 options$setSeed <- TRUE
 options$target <- "Petal.Length"
+options$target.types <- "scale"
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""

@@ -3,6 +3,7 @@ context("Machine Learning K-Means Clustering")
 # Test fixed model #############################################################
 options <- initMlOptions("mlClusteringKMeans")
 options$predictors <- list("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
+options$predictors.types <- rep("scale", length(options$predictors))
 options$modelOptimization <- "manual"
 options$predictionsColumn <- ""
 options$setSeed <- TRUE
@@ -17,9 +18,10 @@ jaspTools::expect_equal_tables(table,
 
 # Test optimized model #########################################################
 options <- initMlOptions("mlClusteringKMeans")
-options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
-    "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
+options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols",
+    "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color",
     "Hue", "Dilution", "Proline")
+options$predictors.types <- rep("scale", length(options$predictors))
 options$tableClusterInformationSilhouetteScore <- TRUE
 options$tableClusterInformationCentroids <- TRUE
 options$tableClusterInformationBetweenSumOfSquares <- TRUE
@@ -102,9 +104,10 @@ test_that("t-SNE Cluster Plot matches", {
 context("Machine Learning K-Medians Clustering")
 
 options <- initMlOptions("mlClusteringKMeans")
-options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
-    "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
+options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols",
+    "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color",
     "Hue", "Dilution", "Proline")
+options$predictors.types <- rep("scale", length(options$predictors))
 options$tableClusterInformationSilhouetteScore <- TRUE
 options$tableClusterInformationCentroids <- TRUE
 options$tableClusterInformationBetweenSumOfSquares <- TRUE
@@ -183,9 +186,10 @@ test_that("Elbow Method Plot matches", {
 context("Machine Learning K-Medoids Clustering")
 
 options <- initMlOptions("mlClusteringKMeans")
-options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
-    "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
+options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols",
+    "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color",
     "Hue", "Dilution", "Proline")
+options$predictors.types <- rep("scale", length(options$predictors))
 options$tableClusterInformationSilhouetteScore <- TRUE
 options$tableClusterInformationCentroids <- TRUE
 options$tableClusterInformationBetweenSumOfSquares <- TRUE

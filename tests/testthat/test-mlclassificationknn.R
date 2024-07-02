@@ -7,9 +7,11 @@ options$modelOptimization <- "manual"
 options$modelValid <- "validationManual"
 options$predictionsColumn <- ""
 options$predictors <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
+options$predictors.types <- rep("scale", 4)
 options$savePath <- ""
 options$setSeed <- TRUE
 options$target <- "Species"
+options$target.types <- "nominal"
 options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""
 options$dataSplitPlot <- FALSE
@@ -36,12 +38,14 @@ options$modelValid <- "validationManual"
 options$noOfFolds <- 5
 options$errorVsKPlot <- TRUE
 options$weightsPlot <- TRUE
-options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
-                           "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
+options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols",
+                           "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color",
                            "Hue", "Dilution", "Proline")
+options$predictors.types <- rep("scale", length(options$predictors))
 options$rocCurve <- TRUE
 options$setSeed <- TRUE
 options$target <- "Type"
+options$target.types <- "nominal"
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""

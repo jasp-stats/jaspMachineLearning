@@ -19,13 +19,15 @@ options$modelOptimization <- "manual"
 options$modelValid <- "validationManual"
 options$multicolTable <- TRUE
 options$noOfFolds <- 5
-options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
-                           "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
+options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols",
+                           "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color",
                            "Hue", "Dilution", "Proline")
+options$predictors.types <- rep("scale", length(options$predictors))
 options$priorTable <- TRUE
 options$rocCurve <- TRUE
 options$setSeed <- TRUE
 options$target <- "Type"
+options$target.types <- "nominal"
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""
