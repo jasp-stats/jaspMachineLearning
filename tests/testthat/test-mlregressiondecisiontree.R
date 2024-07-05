@@ -34,6 +34,7 @@ options$decisionTreePlot <- TRUE
 options$predictedPerformancePlot <- TRUE
 options$predictionsColumn <- ""
 options$predictors <- c("Sepal.Width", "Petal.Length", "Petal.Width", "Species")
+options$predictors.types <- c("scale", "scale", "scale", "nominal")
 options$saveModel <- FALSE
 options$savePath <- ""
 options$setSeed <- TRUE
