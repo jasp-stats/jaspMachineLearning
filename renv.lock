@@ -39,6 +39,11 @@
       "Version": "1.2-5",
       "Source": "Repository"
     },
+    "GPArotation": {
+      "Package": "GPArotation",
+      "Version": "2024.3-1",
+      "Source": "Repository"
+    },
     "Gmedian": {
       "Package": "Gmedian",
       "Version": "1.2.7",
@@ -76,7 +81,7 @@
     },
     "RcppArmadillo": {
       "Package": "RcppArmadillo",
-      "Version": "0.12.8.4.0",
+      "Version": "14.0.0-1",
       "Source": "Repository"
     },
     "RcppEigen": {
@@ -196,7 +201,7 @@
     },
     "dbscan": {
       "Package": "dbscan",
-      "Version": "1.1-12",
+      "Version": "1.2-0",
       "Source": "Repository"
     },
     "desc": {
@@ -206,7 +211,7 @@
     },
     "digest": {
       "Package": "digest",
-      "Version": "0.6.35",
+      "Version": "0.6.36",
       "Source": "Repository"
     },
     "diptest": {
@@ -286,12 +291,17 @@
     },
     "gbm": {
       "Package": "gbm",
-      "Version": "2.1.9",
+      "Version": "2.2.2",
       "Source": "Repository"
     },
     "gdtools": {
       "Package": "gdtools",
       "Version": "0.3.7",
+      "Source": "Repository"
+    },
+    "generics": {
+      "Package": "generics",
+      "Version": "0.1.3",
       "Source": "Repository"
     },
     "gfonts": {
@@ -443,7 +453,7 @@
       "RemoteUsername": "jasp-stats",
       "RemoteRepo": "jaspBase",
       "RemoteRef": "HEAD",
-      "RemoteSha": "c5936d63c775841d2ebc6fc097fe96ff2b06d21b"
+      "RemoteSha": "e7b21a684768ac8853057a935ff21bcba3314212"
     },
     "jaspGraphs": {
       "Package": "jaspGraphs",
@@ -454,7 +464,7 @@
       "RemoteUsername": "jasp-stats",
       "RemoteRepo": "jaspGraphs",
       "RemoteRef": "HEAD",
-      "RemoteSha": "09e2fecf1b921a00a203a442207591ecd3db2821"
+      "RemoteSha": "5c6cb6a4723197ca3befd3d0a5fab5b8291c08a2"
     },
     "jpeg": {
       "Package": "jpeg",
@@ -489,7 +499,7 @@
     },
     "knitr": {
       "Package": "knitr",
-      "Version": "1.47",
+      "Version": "1.48",
       "Source": "Repository"
     },
     "labeling": {
@@ -669,7 +679,7 @@
     },
     "ps": {
       "Package": "ps",
-      "Version": "1.7.6",
+      "Version": "1.7.7",
       "Source": "Repository"
     },
     "pspline": {
@@ -679,7 +689,7 @@
     },
     "psych": {
       "Package": "psych",
-      "Version": "2.4.3",
+      "Version": "2.4.6.26",
       "Source": "Repository"
     },
     "qgraph": {
@@ -734,7 +744,7 @@
     },
     "robustbase": {
       "Package": "robustbase",
-      "Version": "0.99-2",
+      "Version": "0.99-3",
       "Source": "Repository"
     },
     "rstudioapi": {
@@ -769,7 +779,7 @@
     },
     "signal": {
       "Package": "signal",
-      "Version": "1.8-0",
+      "Version": "1.8-1",
       "Source": "Repository"
     },
     "sna": {
@@ -889,7 +899,7 @@
     },
     "yaml": {
       "Package": "yaml",
-      "Version": "2.3.8",
+      "Version": "2.3.9",
       "Source": "Repository"
     },
     "zip": {
