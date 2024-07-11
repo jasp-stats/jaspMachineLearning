@@ -3,7 +3,9 @@ context("Machine Learning Decision Tree Regression")
 # Test fixed model #############################################################
 options <- initMlOptions("mlRegressionDecisionTree")
 options$target <- "Sepal.Length"
+options$target.types <- "scale"
 options$predictors <- c("Sepal.Width", "Petal.Length", "Petal.Width")
+options$predictors.types <- rep("scale", 3)
 options$modelOptimization <- "manual"
 options$holdoutData <- "holdoutManual"
 options$modelValid <- "validationManual"
@@ -32,11 +34,13 @@ options$decisionTreePlot <- TRUE
 options$predictedPerformancePlot <- TRUE
 options$predictionsColumn <- ""
 options$predictors <- c("Sepal.Width", "Petal.Length", "Petal.Width", "Species")
+options$predictors.types <- c("scale", "scale", "scale", "nominal")
 options$saveModel <- FALSE
 options$savePath <- ""
 options$setSeed <- TRUE
 options$featureImportanceTable <- TRUE
 options$target <- "Sepal.Length"
+options$target.types <- "scale"
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""

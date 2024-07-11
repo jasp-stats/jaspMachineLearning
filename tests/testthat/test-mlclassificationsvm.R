@@ -7,9 +7,11 @@ options$modelOptimization <- "manual"
 options$modelValid <- "validationManual"
 options$predictionsColumn <- ""
 options$predictors <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
+options$predictors.types <- rep("scale", 4)
 options$savePath <- ""
 options$setSeed <- TRUE
 options$target <- "Species"
+options$target.types <- "nominal"
 options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""
 options$dataSplitPlot <- FALSE
@@ -32,11 +34,13 @@ options$modelValid <- "validationManual"
 options$noOfFolds <- 5
 options$predictionsColumn <- ""
 options$predictors <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
+options$predictors.types <- rep("scale", 4)
 options$saveModel <- FALSE
 options$savePath <- ""
 options$setSeed <- TRUE
 options$supportVectorsTable <- TRUE
 options$target <- "Species"
+options$target.types <- "nominal"
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""

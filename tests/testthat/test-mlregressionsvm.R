@@ -3,7 +3,9 @@ context("Machine Learning SVM Regression")
 # Test fixed model #############################################################
 options <- initMlOptions("mlRegressionSvm")
 options$target <- "Sepal.Length"
+options$target.types <- "scale"
 options$predictors <- c("Sepal.Width", "Petal.Length", "Petal.Width")
+options$predictors.types <- rep("scale", 3)
 options$modelOptimization <- "manual"
 options$holdoutData <- "holdoutManual"
 options$modelValid <- "validationManual"
@@ -23,7 +25,9 @@ jaspTools::expect_equal_tables(table,
 # Test optimized model #########################################################
 options <- initMlOptions("mlRegressionSvm")
 options$target <- "Sepal.Length"
+options$target.types <- "scale"
 options$predictors <- c("Sepal.Width", "Petal.Length", "Petal.Width")
+options$predictors.types <- rep("scale", 3)
 options$validationMeasures <- TRUE
 options$supportVectorsTable <- TRUE
 options$predictedPerformancePlot <- TRUE

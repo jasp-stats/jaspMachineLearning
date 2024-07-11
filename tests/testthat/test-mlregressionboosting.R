@@ -3,7 +3,9 @@ context("Machine Learning Boosting Regression")
 # Test fixed model #############################################################
 options <- initMlOptions("mlRegressionBoosting")
 options$target <- "Sepal.Length"
+options$target.types <- "scale"
 options$predictors <- c("Sepal.Width", "Petal.Length", "Petal.Width")
+options$predictors.types <- rep("scale", 3)
 options$modelOptimization <- "manual"
 options$holdoutData <- "holdoutManual"
 options$modelValid <- "validationManual"
@@ -47,11 +49,16 @@ options$deviancePlot <- TRUE
 options$outOfBagImprovementPlot <- TRUE
 options$relativeInfluencePlot <- TRUE
 options$predictedPerformancePlot <- TRUE
-options$predictors <- list("Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", "Flavanoids", 
-                           "Nonflavanoids", "Proanthocyanins", "Color", "Hue", "Dilution", 
+options$predictors <- list("Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", "Flavanoids",
+                           "Nonflavanoids", "Proanthocyanins", "Color", "Hue", "Dilution",
                            "Proline")
+options$predictors.types <- rep("scale", length(options$predictors))
+options$predictors.types <- rep("scale", length(options$predictors))
+options$predictors.types <- rep("scale", length(options$predictors))
+options$predictors.types <- rep("scale", length(options$predictors))
 options$setSeed <- TRUE
 options$target <- "Alcohol"
+options$target.types <- "scale"
 options$testDataManual <- 0.2
 options$testIndicatorColumn <- ""
 options$testSetIndicatorVariable <- ""

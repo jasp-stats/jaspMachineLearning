@@ -3,6 +3,7 @@ context("Machine Learning Hierarchical Clustering")
 # Test fixed model #############################################################
 options <- initMlOptions("mlClusteringHierarchical")
 options$predictors <- list("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
+options$predictors.types <- rep("scale", length(options$predictors))
 options$modelOptimization <- "manual"
 options$predictionsColumn <- ""
 options$setSeed <- TRUE
@@ -22,9 +23,10 @@ options$validationMeasures <- TRUE
 options$dendrogram <- TRUE
 options$modelOptimization <- "optimized"
 options$tsneClusterPlot <- TRUE
-options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", 
-                           "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", 
+options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols",
+                           "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color",
                            "Hue", "Dilution", "Proline")
+options$predictors.types <- rep("scale", length(options$predictors))
 options$setSeed <- TRUE
 options$tableClusterInformationBetweenSumOfSquares <- TRUE
 options$tableClusterInformationSilhouetteScore <- TRUE
@@ -98,6 +100,7 @@ options$validationMeasures <- TRUE
 options$linkage <- "wardD"
 options$modelOptimization <- "optimized"
 options$predictors <- c("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", "Hue", "Dilution", "Proline")
+options$predictors.types <- rep("scale", length(options$predictors))
 options$setSeed <- TRUE
 options$tableClusterMeans <- TRUE
 set.seed(1)
@@ -163,6 +166,7 @@ options$validationMeasures <- TRUE
 options$linkage <- "wardD"
 options$modelOptimization <- "optimized"
 options$predictors <- c("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", "Hue", "Dilution", "Proline")
+options$predictors.types <- rep("scale", length(options$predictors))
 options$setSeed <- TRUE
 options$tableClusterMeans <- TRUE
 set.seed(1)
@@ -228,6 +232,7 @@ options$validationMeasures <- TRUE
 options$linkage <- "median"
 options$modelOptimization <- "optimized"
 options$predictors <- c("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", "Hue", "Dilution", "Proline")
+options$predictors.types <- rep("scale", length(options$predictors))
 options$setSeed <- TRUE
 options$tableClusterMeans <- TRUE
 set.seed(1)
@@ -277,6 +282,7 @@ options$validationMeasures <- TRUE
 options$linkage <- "mcquitty"
 options$modelOptimization <- "optimized"
 options$predictors <- c("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color", "Hue", "Dilution", "Proline")
+options$predictors.types <- rep("scale", length(options$predictors))
 options$setSeed <- TRUE
 options$tableClusterMeans <- TRUE
 set.seed(1)
