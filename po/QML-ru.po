@@ -1,10 +1,16 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2024-08-21 00:49+0000\n"
+"Last-Translator: Volnov Egor Vladimirovich <volnov_e@pimunn.net>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/ru/>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.7\n"
 "X-Language: ru\n"
 "X-Qt-Contexts: true\n"
 
@@ -212,15 +218,15 @@ msgstr ""
 
 msgctxt "ExportResults|"
 msgid "Export Results"
-msgstr ""
+msgstr "Экспорт результатов"
 
 msgctxt "ExportResults|"
 msgid "Add predictions to data"
-msgstr ""
+msgstr "Добавить предсказания модели в таблицу данных"
 
 msgctxt "ExportResults|"
 msgid "Column name"
-msgstr ""
+msgstr "Имя столбца"
 
 msgctxt "ExportResults|"
 msgid "e.g., predicted"
@@ -240,55 +246,55 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Гиперпараметры модели"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Гиперпараметры модели"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlClassificationKnn|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlClassificationKnn|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "mlClassificationKnn|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Гиперпараметры модели"
 
 msgctxt "mlClassificationKnn|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlClassificationLda|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlClassificationLda|"
 msgid "Coefficients"
@@ -304,7 +310,7 @@ msgstr ""
 
 msgctxt "mlClassificationLda|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "mlClassificationLda|"
 msgid "Linear discriminant matrix"
@@ -336,11 +342,11 @@ msgstr ""
 
 msgctxt "mlClassificationLda|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Гиперпараметры модели"
 
 msgctxt "mlClassificationLda|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlClassificationLda|"
 msgid "Estimation method"
@@ -348,59 +354,59 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Гиперпараметры модели"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Гиперпараметры модели"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlClassificationSvm|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlClassificationSvm|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "mlClassificationSvm|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Гиперпараметры модели"
 
 msgctxt "mlClassificationSvm|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "K-distance plot"
@@ -408,11 +414,11 @@ msgstr ""
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Гиперпараметры модели"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Epsilon neighborhood size"
@@ -444,19 +450,19 @@ msgstr ""
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Гиперпараметры модели"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Max. iterations"
@@ -468,11 +474,11 @@ msgstr ""
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Dendrogram"
@@ -480,11 +486,11 @@ msgstr ""
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Гиперпараметры модели"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Distance"
@@ -536,63 +542,63 @@ msgstr ""
 
 msgctxt "mlClusteringKMeans|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Гиперпараметры модели"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Center type"
-msgstr ""
+msgstr "Вычисление центров"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Algorithm"
-msgstr ""
+msgstr "Алгоритм"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Distance"
-msgstr ""
+msgstr "Метрика расстояния"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Euclidean"
-msgstr ""
+msgstr "Евклидова"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Manhattan"
-msgstr ""
+msgstr "Городских кварталов"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Max. iterations"
-msgstr ""
+msgstr "Макс. итераций"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Random sets"
-msgstr ""
+msgstr "Макс. случ. наборов"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Гиперпараметры модели"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Trees"
@@ -600,19 +606,19 @@ msgstr ""
 
 msgctxt "mlRegressionBoosting|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Гиперпараметры модели"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Loss function"
@@ -620,75 +626,75 @@ msgstr ""
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Гиперпараметры модели"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlRegressionKnn|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlRegressionKnn|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "mlRegressionKnn|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Гиперпараметры модели"
 
 msgctxt "mlRegressionKnn|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Гиперпараметры модели"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Гиперпараметры модели"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Variable trace"
@@ -704,11 +710,11 @@ msgstr ""
 
 msgctxt "mlRegressionRegularized|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Гиперпараметры модели"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Convergence threshold"
@@ -752,19 +758,19 @@ msgstr ""
 
 msgctxt "mlRegressionSvm|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlRegressionSvm|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "mlRegressionSvm|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Гиперпараметры модели"
 
 msgctxt "mlRegressionSvm|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlPrediction|"
 msgid "Trained model"
@@ -780,11 +786,11 @@ msgstr ""
 
 msgctxt "mlPrediction|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlPrediction|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlPrediction|"
 msgid "to"
@@ -1657,7 +1663,7 @@ msgstr ""
 
 msgctxt "ClusterDensity|"
 msgid "Cluster densities"
-msgstr ""
+msgstr "Плотности кластеров"
 
 msgctxt "ClusterDensity|"
 msgid ""
@@ -1667,7 +1673,7 @@ msgstr ""
 
 msgctxt "ClusterDensity|"
 msgid "Group into one figure"
-msgstr ""
+msgstr "Сгруппировать в одну картинку"
 
 msgctxt "ClusterDensity|"
 msgid "Group the density plots per feature into a single figure."
@@ -1675,7 +1681,7 @@ msgstr ""
 
 msgctxt "ClusterMatrix|"
 msgid "Cluster matrix plot"
-msgstr ""
+msgstr "Матричная диаграмма"
 
 msgctxt "ClusterMatrix|"
 msgid ""
@@ -1685,7 +1691,7 @@ msgstr ""
 
 msgctxt "ClusterMeans|"
 msgid "Cluster means"
-msgstr ""
+msgstr "Средние значения по кластерам"
 
 msgctxt "ClusterMeans|"
 msgid ""
@@ -1747,7 +1753,7 @@ msgstr ""
 
 msgctxt "ElbowMethod|"
 msgid "Elbow method"
-msgstr ""
+msgstr "Метод локтя"
 
 msgctxt "ElbowMethod|"
 msgid ""
@@ -1777,7 +1783,7 @@ msgstr ""
 
 msgctxt "Tsne|"
 msgid "t-SNE cluster plot"
-msgstr ""
+msgstr "Диаграмма кластеров t-SNE"
 
 msgctxt "Tsne|"
 msgid ""
@@ -1801,7 +1807,7 @@ msgstr ""
 
 msgctxt "Tsne|"
 msgid "Add data labels"
-msgstr ""
+msgstr "Добавить метки данных"
 
 msgctxt "Tsne|"
 msgid ""
@@ -1821,7 +1827,7 @@ msgstr ""
 
 msgctxt "ClusterInfo|"
 msgid "Cluster information"
-msgstr ""
+msgstr "Сведения о кластерах"
 
 msgctxt "ClusterInfo|"
 msgid ""
@@ -1833,7 +1839,7 @@ msgstr ""
 
 msgctxt "ClusterInfo|"
 msgid "Within sum of squares"
-msgstr ""
+msgstr "Внутрикластерные суммы квадратов"
 
 msgctxt "ClusterInfo|"
 msgid ""
@@ -1843,7 +1849,7 @@ msgstr ""
 
 msgctxt "ClusterInfo|"
 msgid "Silhouette score"
-msgstr ""
+msgstr "Оценки силуэта"
 
 msgctxt "ClusterInfo|"
 msgid "Adds a row with the silhouette score of each cluster to the table."
@@ -1851,7 +1857,7 @@ msgstr ""
 
 msgctxt "ClusterInfo|"
 msgid "Centers"
-msgstr ""
+msgstr "Координаты центров"
 
 msgctxt "ClusterInfo|"
 msgid ""
@@ -1861,7 +1867,7 @@ msgstr ""
 
 msgctxt "ClusterInfo|"
 msgid "Between sum of squares"
-msgstr ""
+msgstr "Межкластерная сумма квадратов"
 
 msgctxt "ClusterInfo|"
 msgid ""
@@ -1871,7 +1877,7 @@ msgstr ""
 
 msgctxt "ClusterInfo|"
 msgid "Total sum of squares"
-msgstr ""
+msgstr "Полная сумма квадратов"
 
 msgctxt "ClusterInfo|"
 msgid ""
@@ -1930,7 +1936,7 @@ msgstr ""
 
 msgctxt "ModelPerformance|"
 msgid "Model performance"
-msgstr ""
+msgstr "Оценки качества модели"
 
 msgctxt "ModelPerformance|"
 msgid ""
@@ -1942,7 +1948,7 @@ msgstr ""
 
 msgctxt "ClusterDetermination|"
 msgid "Cluster Determination"
-msgstr ""
+msgstr "Определение количества кластеров"
 
 msgctxt "ClusterDetermination|"
 msgid "Choose how to determine the number of clusters in the model."
@@ -1950,7 +1956,7 @@ msgstr ""
 
 msgctxt "ClusterDetermination|"
 msgid "Fixed"
-msgstr ""
+msgstr "Фиксированное"
 
 msgctxt "ClusterDetermination|"
 msgid ""
@@ -1960,7 +1966,7 @@ msgstr ""
 
 msgctxt "ClusterDetermination|"
 msgid "Clusters"
-msgstr ""
+msgstr "Кластеров"
 
 msgctxt "ClusterDetermination|"
 msgid "The number of clusters to be fitted."
@@ -1968,7 +1974,7 @@ msgstr ""
 
 msgctxt "ClusterDetermination|"
 msgid "Optimized according to"
-msgstr ""
+msgstr "Оптимизированное в соответствии с"
 
 msgctxt "ClusterDetermination|"
 msgid ""
@@ -1990,7 +1996,7 @@ msgstr ""
 
 msgctxt "ClusterDetermination|"
 msgid "Max. clusters"
-msgstr ""
+msgstr "Макс. кластеров"
 
 msgctxt "ClusterDetermination|"
 msgid ""
@@ -2082,7 +2088,7 @@ msgstr ""
 
 msgctxt "ScaleVariables|"
 msgid "Scale features"
-msgstr ""
+msgstr "Стандартизировать признаки"
 
 msgctxt "ScaleVariables|"
 msgid ""
@@ -2095,7 +2101,7 @@ msgstr ""
 
 msgctxt "SetSeed|"
 msgid "Set seed"
-msgstr ""
+msgstr "Затравка ГСЧ"
 
 msgctxt "SetSeed|"
 msgid ""
@@ -2380,19 +2386,19 @@ msgstr ""
 
 msgctxt "mlRegressionLinear|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlRegressionLinear|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "mlRegressionLinear|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Гиперпараметры модели"
 
 msgctxt "mlRegressionLinear|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid ""
@@ -2542,7 +2548,7 @@ msgstr ""
 
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Posterior statistics"
@@ -2558,15 +2564,15 @@ msgstr ""
 
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Гиперпараметры модели"
 
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Smoothing parameter"
@@ -2608,7 +2614,7 @@ msgstr ""
 
 msgctxt "mlClusteringModelBased|"
 msgid "Tables"
-msgstr ""
+msgstr "Таблицы"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Parameter estimates"
@@ -2622,15 +2628,15 @@ msgstr ""
 
 msgctxt "mlClusteringModelBased|"
 msgid "Plots"
-msgstr ""
+msgstr "Графики"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Гиперпараметры модели"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Настройки алгоритма"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Model"
