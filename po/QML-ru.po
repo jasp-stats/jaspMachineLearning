@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-08-22 08:33+0000\n"
+"PO-Revision-Date: 2024-08-23 12:09+0000\n"
 "Last-Translator: Volnov Egor Vladimirovich <volnov_e@pimunn.net>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/ru/>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.7\n"
+"X-Generator: Weblate 5.7.1-dev\n"
 "X-Language: ru\n"
 "X-Qt-Contexts: true\n"
 
@@ -28,7 +28,7 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Regression"
-msgstr "Корреляции"
+msgstr "Регрессия"
 
 msgctxt "Description|"
 msgid "Boosting"
@@ -168,55 +168,55 @@ msgstr "Предсказание"
 
 msgctxt "DataSplit|"
 msgid "Data Split Preferences"
-msgstr ""
+msgstr "Настройки разделения выборки"
 
 msgctxt "DataSplit|"
 msgid "Holdout Test Data"
-msgstr ""
+msgstr "Отложенная тестовая выборка"
 
 msgctxt "DataSplit|"
 msgid "Sample"
-msgstr ""
+msgstr "Выделить"
 
 msgctxt "DataSplit|"
 msgid "% of all data"
-msgstr ""
+msgstr "% всех данных"
 
 msgctxt "DataSplit|"
 msgid "Add generated indicator to data"
-msgstr ""
+msgstr "Добавить индикатор тестовой выборки"
 
 msgctxt "DataSplit|"
 msgid "Column name"
-msgstr ""
+msgstr "Имя столбца"
 
 msgctxt "DataSplit|"
 msgid "Test set indicator"
-msgstr ""
+msgstr "Выделить по индикатору"
 
 msgctxt "DataSplit|"
 msgid "None"
-msgstr ""
+msgstr "Не выбрано"
 
 msgctxt "DataSplit|"
 msgid "Training and Validation Data"
-msgstr ""
+msgstr "Обучающая и валидационная выборки"
 
 msgctxt "DataSplit|"
 msgid "% for validation data"
-msgstr ""
+msgstr "% для валидационной"
 
 msgctxt "DataSplit|"
 msgid "K-fold with"
-msgstr ""
+msgstr "Кросс-валидация K-fold с"
 
 msgctxt "DataSplit|"
 msgid "folds"
-msgstr ""
+msgstr "фолдами"
 
 msgctxt "DataSplit|"
 msgid "Leave-one-out"
-msgstr ""
+msgstr "Кросс-валидация Leave-one-out"
 
 msgctxt "ExportResults|"
 msgid "Export Results"
@@ -232,19 +232,19 @@ msgstr "Имя столбца"
 
 msgctxt "ExportResults|"
 msgid "e.g., predicted"
-msgstr ""
+msgstr "напр. predicted"
 
 msgctxt "ExportResults|"
 msgid "Save as"
-msgstr ""
+msgstr "Сохранить как"
 
 msgctxt "ExportResults|"
 msgid "e.g., location/model.jaspML"
-msgstr ""
+msgstr "напр. location/model.jaspML"
 
 msgctxt "ExportResults|"
 msgid "Save trained model"
-msgstr ""
+msgstr "Сохранить обученную модель"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Tables"
@@ -300,15 +300,15 @@ msgstr "Таблицы"
 
 msgctxt "mlClassificationLda|"
 msgid "Coefficients"
-msgstr ""
+msgstr "Коэффициенты"
 
 msgctxt "mlClassificationLda|"
 msgid "Prior and posterior probabilities"
-msgstr ""
+msgstr "Априор. и апостериор. вероятности"
 
 msgctxt "mlClassificationLda|"
 msgid "Class means training data"
-msgstr ""
+msgstr "Средние по классам в обучающей выборке"
 
 msgctxt "mlClassificationLda|"
 msgid "Plots"
@@ -316,31 +316,31 @@ msgstr "Графики"
 
 msgctxt "mlClassificationLda|"
 msgid "Linear discriminant matrix"
-msgstr ""
+msgstr "Матричная диаграмма"
 
 msgctxt "mlClassificationLda|"
 msgid "Densities"
-msgstr ""
+msgstr "Плотности"
 
 msgctxt "mlClassificationLda|"
 msgid "Scatter plots"
-msgstr ""
+msgstr "Диаграммы рассеяния"
 
 msgctxt "mlClassificationLda|"
 msgid "Assumption Checks"
-msgstr ""
+msgstr "Проверки допущений"
 
 msgctxt "mlClassificationLda|"
 msgid "Equality of class means"
-msgstr ""
+msgstr "Равенство средних по классам"
 
 msgctxt "mlClassificationLda|"
 msgid "Equality of covariance matrices"
-msgstr ""
+msgstr "Равенство ковариационных матриц"
 
 msgctxt "mlClassificationLda|"
 msgid "Multicollinearity"
-msgstr ""
+msgstr "Мультиколлинеарность"
 
 msgctxt "mlClassificationLda|"
 msgid "Training Parameters"
@@ -352,7 +352,7 @@ msgstr "Настройки алгоритма"
 
 msgctxt "mlClassificationLda|"
 msgid "Estimation method"
-msgstr ""
+msgstr "Метод оценки"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Tables"
@@ -412,7 +412,7 @@ msgstr "Графики"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "K-distance plot"
-msgstr ""
+msgstr "График K-расстояний"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Training Parameters"
@@ -424,31 +424,31 @@ msgstr "Настройки алгоритма"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Epsilon neighborhood size"
-msgstr ""
+msgstr "Радиус соседства epsilon"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Min. core points"
-msgstr ""
+msgstr "Мин. основных точек"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Distance"
-msgstr ""
+msgstr "Метрика расстояния"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Normal"
-msgstr ""
+msgstr "Нормальная"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Correlated"
-msgstr ""
+msgstr "Корреляционная"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Model Optimization"
-msgstr ""
+msgstr "Оптимизация модели"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Fixed"
-msgstr ""
+msgstr "Фиксированная"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Tables"
@@ -468,11 +468,11 @@ msgstr "Настройки алгоритма"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Max. iterations"
-msgstr ""
+msgstr "Макс. итераций"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Fuzziness parameter"
-msgstr ""
+msgstr "Величина нечеткости"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Tables"
@@ -484,7 +484,7 @@ msgstr "Графики"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Dendrogram"
-msgstr ""
+msgstr "Дендрограмма"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Training Parameters"
@@ -496,51 +496,51 @@ msgstr "Настройки алгоритма"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Distance"
-msgstr ""
+msgstr "Метрика расстояния"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Euclidean"
-msgstr ""
+msgstr "Евклидова"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Pearson"
-msgstr ""
+msgstr "Пирсона"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Linkage"
-msgstr ""
+msgstr "Метрика связности"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Average"
-msgstr ""
+msgstr "Ср. арифм."
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Single"
-msgstr ""
+msgstr "Одиночная"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Complete"
-msgstr ""
+msgstr "Полная"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Centroid"
-msgstr ""
+msgstr "По центрам"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Median"
-msgstr ""
+msgstr "Медианная"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Ward.D"
-msgstr ""
+msgstr "Уорд.D"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Ward.D2"
-msgstr ""
+msgstr "Уорд.D2"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "McQuitty"
-msgstr ""
+msgstr "МакКвитти"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Tables"
@@ -604,7 +604,7 @@ msgstr "Настройки алгоритма"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Trees"
-msgstr ""
+msgstr "Деревьев"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Tables"
@@ -624,7 +624,7 @@ msgstr "Настройки алгоритма"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Loss function"
-msgstr ""
+msgstr "Функция потерь"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Tables"
@@ -800,11 +800,11 @@ msgstr "до"
 
 msgctxt "Description|"
 msgid "Linear"
-msgstr ""
+msgstr "Линейная"
 
 msgctxt "Description|"
 msgid "Linear Regression"
-msgstr ""
+msgstr "Линейная регрессия"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Shrinkage"
