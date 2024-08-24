@@ -1,16 +1,10 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-08-23 12:09+0000\n"
-"Last-Translator: Volnov Egor Vladimirovich <volnov_e@pimunn.net>\n"
-"Language-Team: Russian <https://hosted.weblate.org/projects/jasp/"
-"jaspmachinelearning-qml/ru/>\n"
-"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Weblate 5.7.1-dev\n"
 "X-Language: ru\n"
 "X-Qt-Contexts: true\n"
 
@@ -702,9 +696,10 @@ msgctxt "mlRegressionRegularized|"
 msgid "Variable trace"
 msgstr ""
 
+#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Legend"
-msgstr ""
+msgstr "Легенда"
 
 msgctxt "mlRegressionRegularized|"
 msgid "λ evaluation"
@@ -873,9 +868,10 @@ msgctxt "ModelOptimization|"
 msgid "Enables you to use a user-specified number of decision trees."
 msgstr ""
 
+#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Trees"
-msgstr ""
+msgstr "Деревьев"
 
 msgctxt "ModelOptimization|"
 msgid "The number of trees."
@@ -1024,17 +1020,19 @@ msgid ""
 "by weighing the nearest neighbors. See also the kknn package."
 msgstr ""
 
+#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Distance"
-msgstr ""
+msgstr "Метрика расстояния"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Euclidian"
 msgstr ""
 
+#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Manhattan"
-msgstr ""
+msgstr "Городских кварталов"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
@@ -1111,9 +1109,10 @@ msgctxt "AlgorithmicSettings|"
 msgid "Activation function"
 msgstr ""
 
+#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Linear"
-msgstr ""
+msgstr "Линейная"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Binary"
@@ -1189,9 +1188,10 @@ msgid ""
 "- GeLU: *f(x) = 0.5 * x * (1 + tanh(sqrt(2 / pi) * (x + 0.044715 * x^3)))*"
 msgstr ""
 
+#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Algorithm"
-msgstr ""
+msgstr "Алгоритм"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Backpropagation"
@@ -1233,9 +1233,10 @@ msgctxt "AlgorithmicSettings|"
 msgid "The learning rate used by the backpropagation algorithm."
 msgstr ""
 
+#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Loss function"
-msgstr ""
+msgstr "Функция потерь"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Sum of squares"
@@ -1520,9 +1521,10 @@ msgid ""
 "(regression) or accuracy (classification) of the model."
 msgstr ""
 
+#, fuzzy
 msgctxt "CoefficientTable|"
 msgid "Coefficients"
-msgstr ""
+msgstr "Коэффициенты"
 
 msgctxt "CoefficientTable|"
 msgid "Shows a table containing the regression coefficients."
@@ -1566,9 +1568,10 @@ msgctxt "VariablesFormRegularizedRegression|"
 msgid "In this box, the variable that needs to be predicted should be entered."
 msgstr ""
 
+#, fuzzy
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "Features"
-msgstr ""
+msgstr "Признаки"
 
 msgctxt "VariablesFormRegularizedRegression|"
 msgid ""
@@ -1713,9 +1716,10 @@ msgctxt "ClusterMeans|"
 msgid "Transform the cluster mean figure into a barplot."
 msgstr ""
 
+#, fuzzy
 msgctxt "ClusterMeans|"
 msgid "Group into one figure"
-msgstr ""
+msgstr "Сгруппировать в одну картинку"
 
 msgctxt "ClusterMeans|"
 msgid "Group the plots per feature into a single figure."
@@ -1741,13 +1745,15 @@ msgid ""
 "classes are visualized. Can only be made for numeric features."
 msgstr ""
 
+#, fuzzy
 msgctxt "DecisionBoundary|"
 msgid "Legend"
-msgstr ""
+msgstr "Легенда"
 
+#, fuzzy
 msgctxt "DecisionBoundary|"
 msgid "Show a legend next to the figure."
-msgstr ""
+msgstr "Показывает легенду рядом с диаграммой."
 
 msgctxt "DecisionBoundary|"
 msgid "Add data points"
@@ -1944,21 +1950,24 @@ msgctxt "ConfusionMatrix|"
 msgid "Displays proportions in the confusion matrix instead of counts."
 msgstr ""
 
+#, fuzzy
 msgctxt "ExplainPredictions|"
 msgid "Explain predictions"
-msgstr ""
+msgstr "Объяснить предсказания"
 
+#, fuzzy
 msgctxt "ExplainPredictions|"
 msgid "Cases"
-msgstr ""
+msgstr "Случаи от"
 
 msgctxt "ExplainPredictions|"
 msgid "The test set index of the first row to be displayed in the table."
 msgstr ""
 
+#, fuzzy
 msgctxt "ExplainPredictions|"
 msgid "to"
-msgstr ""
+msgstr "до"
 
 msgctxt "ExplainPredictions|"
 msgid "The test set index of the last row to be displayed in the table."
@@ -2035,10 +2044,10 @@ msgid ""
 "to other clusters for optimizing the clustering output."
 msgstr ""
 "Критерий оптимизации. В качестве вариантов критериев предлагаются AIC, BIC и "
-"оценка силуэта. AIC использует внутрикластерную сумму квадратов расстояний ("
-"внутрикластерную вариацию), количество генерируемых кластеров и количество "
-"измерений. BIC использует внутрикластерную сумму квадратов расстояний ("
-"внутрикластерную вариацию), количество генерируемых кластеров, количество "
+"оценка силуэта. AIC использует внутрикластерную сумму квадратов расстояний "
+"(внутрикластерную вариацию), количество генерируемых кластеров и количество "
+"измерений. BIC использует внутрикластерную сумму квадратов расстояний "
+"(внутрикластерную вариацию), количество генерируемых кластеров, количество "
 "измерений и объем выборки. Оценка силуэта использует сходство наблюдений "
 "внутри данного кластера и их расхождение с наблюдениями из других кластеров."
 
@@ -2172,9 +2181,10 @@ msgctxt "VariablesFormClassification|"
 msgid "In this box, the variable that needs to be predicted should be entered."
 msgstr ""
 
+#, fuzzy
 msgctxt "VariablesFormClassification|"
 msgid "Features"
-msgstr ""
+msgstr "Признаки"
 
 msgctxt "VariablesFormClassification|"
 msgid ""
@@ -2202,9 +2212,10 @@ msgctxt "VariablesFormRegression|"
 msgid "In this box, the variable that needs to be predicted should be entered."
 msgstr ""
 
+#, fuzzy
 msgctxt "VariablesFormRegression|"
 msgid "Features"
-msgstr ""
+msgstr "Признаки"
 
 msgctxt "VariablesFormRegression|"
 msgid ""
@@ -2766,9 +2777,10 @@ msgctxt "mlClusteringModelBased|"
 msgid "Choose the model to be fitted in the EM step of the clustering."
 msgstr ""
 
+#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Max. iterations"
-msgstr ""
+msgstr "Макс. итераций"
 
 msgctxt "mlClusteringModelBased|"
 msgid "The maximum number of iterations for the M-step in the algorithm."
