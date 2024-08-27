@@ -352,7 +352,6 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "RensDofferhoff",
       "RemoteRepo": "ggdendro",
-      "RemoteRef": "HEAD",
       "RemoteSha": "39d8416afb9ee30306f34afb6c6ca0dddfa13aa0"
     },
     "ggnetwork": {
@@ -493,7 +492,6 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "jasp-stats",
       "RemoteRepo": "jaspBase",
-      "RemoteRef": "HEAD",
       "RemoteSha": "7de02c442478e028fe2036e3b906059bf504c13e"
     },
     "jaspGraphs": {
@@ -504,7 +502,6 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "jasp-stats",
       "RemoteRepo": "jaspGraphs",
-      "RemoteRef": "HEAD",
       "RemoteSha": "e439c080e3841e0719c00ce35c376b34c833b546"
     },
     "jpeg": {
@@ -535,7 +532,6 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "vandenman",
       "RemoteRepo": "kknn",
-      "RemoteRef": "HEAD",
       "RemoteSha": "b2e9fa193fb22af90be0717d1bc869fc04099ce5"
     },
     "knitr": {
