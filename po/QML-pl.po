@@ -907,9 +907,10 @@ msgctxt "ModelOptimization|"
 msgid "The number of trees."
 msgstr ""
 
+#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Optimized"
-msgstr ""
+msgstr "Zoptymalizowany"
 
 msgctxt "ModelOptimization|"
 msgid ""
@@ -1108,9 +1109,10 @@ msgid ""
 "by weighing the nearest neighbors. See also the kknn package."
 msgstr ""
 
+#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Distance"
-msgstr ""
+msgstr "Dystans"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Euclidian"
