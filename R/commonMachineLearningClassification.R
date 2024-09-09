@@ -62,7 +62,7 @@
   if (type == "lda" || type == "randomForest" || type == "boosting") {
     # Require at least 2 features
     ready <- length(options[["predictors"]][options[["predictors"]] != ""]) >= 2 && options[["target"]] != ""
-  } else if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm" || type == "naivebayes") {
+  } else if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm" || type == "naivebayes" || type == "logistic") {
     # Require at least 1 features
     ready <- length(options[["predictors"]][options[["predictors"]] != ""]) >= 1 && options[["target"]] != ""
   }
@@ -93,7 +93,8 @@
         "neuralnet" = .neuralnetClassification(dataset, options, jaspResults),
         "rpart" = .decisionTreeClassification(dataset, options, jaspResults),
         "svm" = .svmClassification(dataset, options, jaspResults),
-        "naivebayes" = .naiveBayesClassification(dataset, options, jaspResults)
+        "naivebayes" = .naiveBayesClassification(dataset, options, jaspResults),
+        "logistic" = .logisticRegressionClassification(dataset, options, jaspResults)
       )
     })
     if (isTryError(p)) { # Fail gracefully
@@ -116,7 +117,8 @@
     "neuralnet" = gettext("Neural Network Classification"),
     "rpart" = gettext("Decision Tree Classification"),
     "svm" = gettext("Support Vector Machine Classification"),
-    "naivebayes" = gettext("Naive Bayes Classification")
+    "naivebayes" = gettext("Naive Bayes Classification"),
+    "logistic" = gettext("Logistic / Multinomial Regression")
   )
   tableTitle <- gettextf("Model Summary: %1$s", title)
   table <- createJaspTable(tableTitle)
@@ -147,6 +149,8 @@
     table$addColumnInfo(name = "vectors", title = gettext("Support Vectors"), type = "integer")
   } else if (type == "naivebayes") {
     table$addColumnInfo(name = "smoothing", title = gettext("Smoothing"), type = "number")
+  } else if (type == "logistic") {
+    table$addColumnInfo(name = "family", title = gettext("Family"), type = "string")
   }
   # Add common columns
   table$addColumnInfo(name = "nTrain", title = gettext("n(Train)"), type = "integer")
@@ -164,7 +168,7 @@
   }
   # If no analysis is run, specify the required variables in a footnote
   if (!ready) {
-    table$addFootnote(gettextf("Please provide a target variable and at least %i feature variable(s).", if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm") 1L else 2L))
+    table$addFootnote(gettextf("Please provide a target variable and at least %i feature variable(s).", if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm" || type == "logistic") 1L else 2L))
   }
   if (options[["savePath"]] != "") {
     validNames <- (length(grep(" ", decodeColNames(colnames(dataset)))) == 0) && (length(grep("_", decodeColNames(colnames(dataset)))) == 0)
@@ -307,6 +311,14 @@
   } else if (type == "naivebayes") {
     row <- data.frame(
       smoothing = options[["smoothingParameter"]],
+      nTrain = nTrain,
+      nTest = classificationResult[["ntest"]],
+      testAcc = classificationResult[["testAcc"]]
+    )
+    table$addRows(row)
+  } else if (type == "logistic") {
+    row <- data.frame(
+      family = classificationResult[["family"]],
       nTrain = nTrain,
       nTest = classificationResult[["ntest"]],
       testAcc = classificationResult[["testAcc"]]
