@@ -82,8 +82,8 @@ mlClassificationLogistic <- function(jaspResults, dataset, options, ...) {
     family = "binomial"
     trainingFit <- stats::glm(formula, data = trainingSet, family = family)
     # Use the specified model to make predictions for dataset
-    testPredictions <- levels(trainingSet[[options[["target"]]]])[round(predict(trainingFit, newdata = testSet, type = "response"), 0) + 1]
-    dataPredictions <- levels(trainingSet[[options[["target"]]]])[round(predict(trainingFit, newdata = dataset, type = "response"), 0) + 1]
+    testPredictions <- .mlClassificationLogisticPredictions(trainingSet, options, predict(trainingFit, newdata = testSet, type = "response"))
+    dataPredictions <- .mlClassificationLogisticPredictions(trainingSet, options, predict(trainingFit, newdata = dataset, type = "response"))
   } else {
     family <- "multinomial"
     trainingFit <- VGAM::vglm(formula, data = trainingSet, family = family)
@@ -116,17 +116,23 @@ mlClassificationLogistic <- function(jaspResults, dataset, options, ...) {
   return(result)
 }
 
-.mlClassificationMultinomialPredictions <- function(trainingSet, options, predictions) {
-  num_categories <- ncol(predictions) + 1
-  probs <- matrix(0, nrow = nrow(predictions), ncol = num_categories)
-  for (i in 1:(num_categories - 1)) {
-    probs[, i] <- exp(predictions[, i])
-  }
-  probs[, num_categories] <- 1
-  row_sums <- rowSums(probs)
-  probs <- probs / row_sums
-  predicted_category <- apply(probs, 1, which.max)
+.mlClassificationLogisticPredictions <- function(trainingSet, options, probabilities) {
   categories <- levels(trainingSet[[options[["target"]]]])
-  predicted_categories <- categories[predicted_category]
+  predicted_categories <- categories[round(probabilities, 0) + 1]
+  return(predicted_categories)
+}
+
+.mlClassificationMultinomialPredictions <- function(trainingSet, options, logodds) {
+  ncategories <- ncol(logodds) + 1
+  probabilities <- matrix(0, nrow = nrow(logodds), ncol = ncategories)
+  for (i in seq_len(ncategories - 1)) {
+    probabilities[, i] <- exp(logodds[, i])
+  }
+  probabilities[, ncategories] <- 1
+  row_sums <- rowSums(probabilities)
+  probabilities <- probabilities / row_sums
+  predicted_columns <- apply(probabilities, 1, which.max)
+  categories <- levels(trainingSet[[options[["target"]]]])
+  predicted_categories <- categories[predicted_columns]
   return(predicted_categories)
 }
