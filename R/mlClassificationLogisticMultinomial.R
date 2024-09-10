@@ -128,7 +128,6 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
     result[["explainer"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) data.frame(1 - predict(model, newdata = data, type = "response"), predict(model, newdata = data, type = "response")))
     result[["explainer_fi"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = as.numeric(result[["train"]][, options[["target"]]]) - 1, predict_function = function(model, data) round(predict(model, newdata = data, type = "response"), 0) + 1)
   } else {
-    # TODO
     result[["explainer"]] <- DALEX::explain(result[["model"]][["original"]], type = "multiclass", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) VGAM::predict(model, data, type = "response"))
     result[["explainer_fi"]] <- result[["explainer"]]
   }
