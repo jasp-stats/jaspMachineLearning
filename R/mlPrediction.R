@@ -75,6 +75,12 @@ is.jaspMachineLearning <- function(x) {
 .mlPredictionGetModelType.naiveBayes <- function(model) {
   gettext("Naive Bayes")
 }
+.mlPredictionGetModelType.glm <- function(model) {
+  gettext("Logistic regression")
+}
+.mlPredictionGetModelType.vglm <- function(model) {
+  gettext("Multinomial regression")
+}
 
 # S3 method to make predictions using the model
 .mlPredictionGetPredictions <- function(model, dataset) {
@@ -135,6 +141,12 @@ is.jaspMachineLearning <- function(x) {
 .mlPredictionGetPredictions.naiveBayes <- function(model, dataset) {
   as.character(e1071:::predict.naiveBayes(model, newdata = dataset, type = "class"))
 }
+.mlPredictionGetPredictions.glm <- function(model, dataset) {
+  # TODO
+}
+.mlPredictionGetPredictions.vglm <- function(model, dataset) {
+  # TODO
+}
 
 # S3 method to make find out number of observations in training data
 .mlPredictionGetTrainingN <- function(model) {
@@ -169,6 +181,12 @@ is.jaspMachineLearning <- function(x) {
 }
 .mlPredictionGetTrainingN.naiveBayes <- function(model) {
   nrow(model[["data"]])
+}
+.mlPredictionGetTrainingN.glm <- function(model) {
+  nrow(model[["data"]])
+}
+.mlPredictionGetTrainingN.vglm <- function(model) {
+  nrow(model$x)
 }
 
 # S3 method to decode the model variables in the result object
@@ -229,6 +247,14 @@ is.jaspMachineLearning <- function(x) {
   names(model[["tables"]]) <- decodeColNames(names(model[["tables"]]))
   return(model)
 }
+.decodeJaspMLobject.glm <- function(model) {
+  # TODO
+  return(model)
+}
+.decodeJaspMLobject.vglm <- function(model) {
+  # TODO
+  return(model)
+}
 
 .mlPredictionReadModel <- function(options) {
   if (options[["trainedModelFilePath"]] != "") {
@@ -238,7 +264,7 @@ is.jaspMachineLearning <- function(x) {
     if (!is.jaspMachineLearning(model)) {
       jaspBase:::.quitAnalysis(gettext("Error: The trained model is not created in JASP."))
     }
-    if (!(any(c("kknn", "lda", "gbm", "randomForest", "cv.glmnet", "nn", "rpart", "svm", "lm", "naiveBayes") %in% class(model)))) {
+    if (!(any(c("kknn", "lda", "gbm", "randomForest", "cv.glmnet", "nn", "rpart", "svm", "lm", "naiveBayes", "glm", "vglm") %in% class(model)))) {
       jaspBase:::.quitAnalysis(gettextf("The trained model (type: %1$s) is currently not supported in JASP.", paste(class(model), collapse = ", ")))
     }
     if (model[["jaspVersion"]] != .baseCitation) {
@@ -326,6 +352,8 @@ is.jaspMachineLearning <- function(x) {
     table$addColumnInfo(name = "mtry", title = gettext("Features per split"), type = "integer")
   } else if (inherits(model, "cv.glmnet")) {
     table$addColumnInfo(name = "lambda", title = "\u03BB", type = "number")
+  } else if (inherits(model, "glm") || inherits(model, "vglm")) {
+    table$addColumnInfo(name = "family", title = gettext("Family"), type = "string")
   }
   table$addColumnInfo(name = "ntrain", title = gettext("n(Train)"), type = "integer")
   table$addColumnInfo(name = "nnew", title = gettext("n(New)"), type = "integer")
@@ -344,6 +372,10 @@ is.jaspMachineLearning <- function(x) {
     row[["mtry"]] <- model[["mtry"]]
   } else if (inherits(model, "cv.glmnet")) {
     row[["lambda"]] <- model[["lambda.min"]]
+  } else if (inherits(model, "glm")) {
+    row[["family"]] <- gettext("binomial")
+  } else if (inherits(model, "vglm")) {
+    row[["family"]] <- gettext("multinomial")
   }
   if (length(presentVars) > 0) {
     row[["nnew"]] <- nrow(dataset)

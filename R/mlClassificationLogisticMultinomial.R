@@ -103,7 +103,15 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
   result <- list()
   result[["formula"]] <- formula
   result[["family"]] <- family
-  result[["model"]] <- trainingFit
+  if (family == "binomial") {
+    result[["model"]] <- trainingFit
+  } else {
+    model <- lapply(slotNames(trainingFit), function(x) slot(trainingFit, x))
+    names(model) <- slotNames(trainingFit)
+    model[["original"]] <- trainingFit
+    class(model) <- "vglm"
+    result[["model"]] <- model
+  }
   result[["confTable"]] <- table("Pred" = testPredictions, "Real" = testSet[, options[["target"]]])
   result[["testAcc"]] <- sum(diag(prop.table(result[["confTable"]])))
   result[["auc"]] <- .classificationCalcAUC(testSet, trainingSet, options, "logisticClassification")
@@ -171,7 +179,7 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
     }
     rownames(coefs) <- vars
   } else {
-    coefs <- cbind(model@coefficients, confint(model, level = options[["coefTableConfIntLevel"]]))
+    coefs <- cbind(model$coefficients, confint(model[["original"]], level = options[["coefTableConfIntLevel"]]))
     colnames(coefs) <- c("est", "lower", "upper")
     vars <- rownames(coefs)
     for (i in seq_along(vars)) {
