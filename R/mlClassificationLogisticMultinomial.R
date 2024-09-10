@@ -217,16 +217,40 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
     table[["upper"]] <- coefs[, "upper"]
   }
   if (options[["formula"]]) { # TODO FOR MULTINOMIAL
-    one_cat <- levels(factor(classificationResult[["train"]][[options[["target"]]]]))[2]
-    if (options[["intercept"]]) {
-      regform <- paste0("logit(p<sub>", options[["target"]], " = ", one_cat, "</sub>) = ", round(as.numeric(coefs[, 1])[1], 3))
-      start <- 2
+    if (classificationResult[["family"]] == "binomial") {
+      one_cat <- levels(factor(classificationResult[["train"]][[options[["target"]]]]))[2]
+      if (options[["intercept"]]) {
+        regform <- paste0("logit(p<sub>", options[["target"]], " = ", one_cat, "</sub>) = ", round(as.numeric(coefs[, 1])[1], 3))
+        start <- 2
+      } else {
+        regform <- paste0("logit(p<sub>", options[["target"]], " = ", one_cat, "</sub>) = ")
+        start <- 1
+      }
+      for (i in start:nrow(coefs)) {
+        regform <- paste0(regform, if (round(as.numeric(coefs[, 1])[i], 3) < 0) " - " else " + ", abs(round(as.numeric(coefs[, 1])[i], 3)), " x ", rownames(coefs)[i])
+      }
     } else {
-      regform <- paste0("logit(p<sub>", options[["target"]], " = ", one_cat, "</sub>) = ")
-      start <- 1
-    }
-    for (i in start:nrow(coefs)) {
-      regform <- paste0(regform, if (round(as.numeric(coefs[, 1])[i], 3) < 0) " - " else " + ", abs(round(as.numeric(coefs[, 1])[i], 3)), " x ", rownames(coefs)[i])
+      regform <- NULL
+      nlevs <- nlevels(classificationResult[["train"]][[options[["target"]]]])
+      baseline_cat <- levels(classificationResult[["train"]][[options[["target"]]]])[nlevs]
+      for (i in seq_len(nlevs - 1)) {
+        current_cat <- levels(classificationResult[["train"]][[options[["target"]]]])[i]
+        if (options[["intercept"]]) {
+          part <- paste0("log(p<sub>", options[["target"]], " = ", current_cat, "</sub> / p<sub>", options[["target"]], " = ", baseline_cat, "</sub>) = ", round(as.numeric(coefs[, 1])[i], 3))
+          start <- nlevs - 1 + i
+        } else {
+          part <- paste0("log(p<sub>", options[["target"]], " = ", current_cat, "</sub> / p<sub>", options[["target"]], " = ", baseline_cat, "</sub>) = ")
+          start <- i
+        }
+        for (j in seq(start, nrow(coefs), by = nlevs - 1)) {
+          part <- paste0(part, if (round(as.numeric(coefs[, 1])[j], 3) < 0) " - " else " + ", abs(round(as.numeric(coefs[, 1])[j], 3)), " x ", strsplit(rownames(coefs)[j], " : ")[[1]][1])
+        }
+        if (i == 1) {
+          regform <- paste0(regform, part, "\n\n")
+        } else {
+          regform <- paste0(regform, part)
+        }
+      }
     }
     formula <- createJaspHtml(gettextf("<b>Regression equation:</b>\n%1$s", regform), "p")
     formula$position <- position + 1
