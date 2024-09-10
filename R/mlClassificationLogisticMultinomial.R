@@ -236,7 +236,7 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
 
 .mlClassificationLogisticPredictions <- function(trainingSet, options, probabilities) {
   categories <- levels(trainingSet[[options[["target"]]]])
-  predicted_categories <- categories[round(probabilities, 0) + 1]
+  predicted_categories <- factor(categories[round(probabilities, 0) + 1], levels = levels(trainingSet[[options[["target"]]]]))
   return(predicted_categories)
 }
 
@@ -251,6 +251,6 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
   probabilities <- probabilities / row_sums
   predicted_columns <- apply(probabilities, 1, which.max)
   categories <- levels(trainingSet[[options[["target"]]]])
-  predicted_categories <- categories[predicted_columns]
+  predicted_categories <- factor(categories[predicted_columns], levels = levels(trainingSet[[options[["target"]]]]))
   return(predicted_categories)
 }
