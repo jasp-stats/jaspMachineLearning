@@ -39,7 +39,7 @@ test_that("Class Proportions table results match", {
 test_that("Model Summary: Multinomial Regression Classification table results match", {
 	table <- results[["results"]][["classificationTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list("multinomial", 30, 120, 1))
+		list("Multinomial", 30, 120, 1))
 })
 
 test_that("Confusion Matrix table results match", {

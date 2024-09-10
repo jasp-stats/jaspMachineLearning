@@ -323,8 +323,10 @@
     } else {
       table$title <- gettext("Model Summary: Multinomial Regression Classification")
     }
+    family <- classificationResult[["family"]]
+    family <- paste0(toupper(substr(family, 1, 1)), substr(family, 2, nchar(family)))
     row <- data.frame(
-      family = classificationResult[["family"]],
+      family = family,
       nTrain = nTrain,
       nTest = classificationResult[["ntest"]],
       testAcc = classificationResult[["testAcc"]]
