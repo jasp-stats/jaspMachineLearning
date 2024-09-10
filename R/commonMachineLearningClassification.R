@@ -582,6 +582,26 @@
     fit <- e1071::naiveBayes(formula, data = dataset, laplace = options[["smoothingParameter"]])
     predictions <- as.factor(max.col(predict(fit, newdata = grid, type = "raw")))
     levels(predictions) <- unique(dataset[, options[["target"]]])
+  } else if (type == "logistic") {
+    if (classificationResult[["family"]] == "binomial") {
+      fit <- glm(formula, data = dataset, family = "binomial")
+      predictions <- as.factor(round(predict(fit, grid, type = "response"), 0))
+      levels(predictions) <- unique(dataset[, options[["target"]]])
+    } else {
+      fit <- VGAM::vglm(formula, data = dataset, family = "multinomial")
+      logodds <- predict(fit, newdata = grid)
+      ncategories <- ncol(logodds) + 1
+      probabilities <- matrix(0, nrow = nrow(logodds), ncol = ncategories)
+      for (i in seq_len(ncategories - 1)) {
+        probabilities[, i] <- exp(logodds[, i])
+      }
+      probabilities[, ncategories] <- 1
+      row_sums <- rowSums(probabilities)
+      probabilities <- probabilities / row_sums
+      predicted_columns <- apply(probabilities, 1, which.max)
+      categories <- levels(dataset[[options[["target"]]]])
+      predictions <- as.factor(categories[predicted_columns])
+    }
   }
   shapes <- rep(21, nrow(dataset))
   if (type == "svm") {

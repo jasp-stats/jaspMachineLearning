@@ -59,8 +59,8 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
   # Create the Andrews curves
   .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 11)
 
-#   # Decision boundaries
-#   .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 12, type = "logistic")
+  # Decision boundaries
+  .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 12, type = "logistic")
 }
 
 .logisticMultinomialClassification <- function(dataset, options, jaspResults, ready) {
