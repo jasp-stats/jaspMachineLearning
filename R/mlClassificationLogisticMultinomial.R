@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-mlClassificationLogistic <- function(jaspResults, dataset, options, ...) {
+mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, ...) {
 
   # Preparatory work
   dataset <- .mlClassificationReadData(dataset, options)
@@ -63,7 +63,7 @@ mlClassificationLogistic <- function(jaspResults, dataset, options, ...) {
 #   .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 12, type = "logistic")
 }
 
-.logisticRegressionClassification <- function(dataset, options, jaspResults, ready) {
+.logisticMultinomialClassification <- function(dataset, options, jaspResults, ready) {
   # Import model formula from jaspResults
   formula <- jaspResults[["formula"]]$object
   # Split the data into training and test sets
