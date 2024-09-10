@@ -78,6 +78,12 @@ mlClassificationLogistic <- function(jaspResults, dataset, options, ...) {
   testIndicatorColumn[trainingIndex] <- 0
   # Just create a train and a test set (no optimization)
   testSet <- dataset[-trainingIndex, ]
+  # Create the formula
+  if (options[["intercept"]]) {
+    formula <- formula(paste(options[["target"]], "~ 1 + ", paste(options[["predictors"]], collapse = " + ")))
+  } else {
+    formula <- formula(paste(options[["target"]], "~ 0 + ", paste(options[["predictors"]], collapse = " + ")))
+  }
   if (nlevels(trainingSet[[options[["target"]]]]) == 2) {
     family = "binomial"
     trainingFit <- stats::glm(formula, data = trainingSet, family = family)

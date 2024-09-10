@@ -32,7 +32,8 @@
     "mutationMethod", "survivalMethod", "elitismProportion", "candidates",                # Neural network
     "noOfTrees", "maxTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors",   # Random forest
     "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon", "maxCost",  # Support vector machine
-    "smoothingParameter"                                                                  # Naive Bayes
+    "smoothingParameter",                                                                 # Naive Bayes
+    "intercept"                                                                           # Logistic
   )
   if (includeSaveOptions) {
     opt <- c(opt, "saveModel", "savePath")

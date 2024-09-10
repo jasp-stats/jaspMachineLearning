@@ -24,6 +24,7 @@ import JASP.Widgets		1.0
 import "./common/ui" as UI
 import "./common/tables" as TAB
 import "./common/figures" as FIG
+import "./common/analyses/regularized" as REGU
 
 Form
 {
@@ -63,6 +64,7 @@ Form
 		{
 			title: qsTr("Algorithmic Settings")
 			
+			REGU.Intercept { }
 			UI.ScaleVariables { }
 			UI.SetSeed { }
 		}
