@@ -45,11 +45,11 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
   # Create the validation measures table
   .mlClassificationTableMetrics(dataset, options, jaspResults, ready, position = 5)
 
-#   # Create the variable importance table
-#   .mlTableFeatureImportance(options, jaspResults, ready, position = 6, purpose = "classification")
+  # Create the variable importance table
+  .mlTableFeatureImportance(options, jaspResults, ready, position = 6, purpose = "classification")
 
-#   # Create the shap table
-#   .mlTableShap(dataset, options, jaspResults, ready, position = 7, purpose = "classification")
+  # Create the shap table
+  .mlTableShap(dataset, options, jaspResults, ready, position = 7, purpose = "classification")
 
   .mlClassificationLogisticTableCoef(options, jaspResults, ready, position = 8)
 
@@ -124,12 +124,14 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
   result[["test"]] <- testSet
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["classes"]] <- dataPredictions
-#   result[["explainer"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) predict(model, newdata = data, type = "raw"))
-#   if (nlevels(result[["testReal"]]) == 2) {
-#     result[["explainer_fi"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = as.numeric(result[["train"]][, options[["target"]]]) - 1, predict_function = function(model, data) predict(model, newdata = data, type = "class"))
-#   } else {
-#     result[["explainer_fi"]] <- DALEX::explain(result[["model"]], type = "multiclass", data = result[["train"]], y = result[["train"]][, options[["target"]]] , predict_function = function(model, data) predict(model, newdata = data, type = "raw"))
-#   }
+  if (family == "binomial") {
+    result[["explainer"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) data.frame(1 - predict(model, newdata = data, type = "response"), predict(model, newdata = data, type = "response")))
+    result[["explainer_fi"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = as.numeric(result[["train"]][, options[["target"]]]) - 1, predict_function = function(model, data) round(predict(model, newdata = data, type = "response"), 0) + 1)
+  } else {
+    # TODO
+    result[["explainer"]] <- DALEX::explain(result[["model"]][["original"]], type = "multiclass", data = result[["train"]], y = result[["train"]][, options[["target"]]], predict_function = function(model, data) VGAM::predict(model, data, type = "response"))
+    result[["explainer_fi"]] <- result[["explainer"]]
+  }
   return(result)
 }
 
