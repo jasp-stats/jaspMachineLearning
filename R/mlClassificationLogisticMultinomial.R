@@ -106,7 +106,7 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
   result[["model"]] <- trainingFit
   result[["confTable"]] <- table("Pred" = testPredictions, "Real" = testSet[, options[["target"]]])
   result[["testAcc"]] <- sum(diag(prop.table(result[["confTable"]])))
-#   result[["auc"]] <- .classificationCalcAUC(testSet, trainingSet, options, "logisticClassification")
+  result[["auc"]] <- .classificationCalcAUC(testSet, trainingSet, options, if (family == "binomial") "logisticClassification" else "multinomialClassification")
   result[["ntrain"]] <- nrow(trainingSet)
   result[["ntest"]] <- nrow(testSet)
   result[["testReal"]] <- testSet[, options[["target"]]]
@@ -207,7 +207,7 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
     table[["lower"]] <- coefs[, "lower"]
     table[["upper"]] <- coefs[, "upper"]
   }
-  if (options[["formula"]]) {
+  if (options[["formula"]]) { # TODO FOR MULTINOMIAL
     one_cat <- levels(factor(classificationResult[["train"]][[options[["target"]]]]))[2]
     if (options[["intercept"]]) {
       regform <- paste0("logit(p<sub>", options[["target"]], " = ", one_cat, "</sub>) = ", round(as.numeric(coefs[, 1])[1], 3))

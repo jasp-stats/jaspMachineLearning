@@ -1138,3 +1138,24 @@
   score <- max.col(predict(fit, test, type = "raw"))
   return(score)
 }
+
+.calcAUCScore.logisticClassification <- function(AUCformula, test, typeData, options, jaspResults, ...) {
+  fit <- glm(AUCformula, data = typeData, family = "binomial")
+  score <- round(predict(fit, test, type = "response"), 0)
+  return(score)
+}
+
+.calcAUCScore.multinomialClassification <- function(AUCformula, test, typeData, options, jaspResults, ...) {
+  fit <- VGAM::vglm(AUCformula, data = typeData, family = "multinomial")
+  logodds <- as.data.frame(predict(fit, test))
+  ncategories <- ncol(logodds) + 1
+  probabilities <- matrix(0, nrow = nrow(logodds), ncol = ncategories)
+  for (i in seq_len(ncategories - 1)) {
+    probabilities[, i] <- exp(logodds[, i])
+  }
+  probabilities[, ncategories] <- 1
+  row_sums <- rowSums(probabilities)
+  probabilities <- probabilities / row_sums
+  score <- apply(probabilities, 1, which.max)
+  return(score)
+}
