@@ -36,7 +36,7 @@ test_that("Class Proportions table results match", {
 			 "virginica", 0.4, 0.316666666666667))
 })
 
-test_that("Model Summary: Logistic / Multinomial Regression table results match", {
+test_that("Model Summary: Multinomial Regression Classification table results match", {
 	table <- results[["results"]][["classificationTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list("multinomial", 30, 120, 1))
@@ -58,9 +58,10 @@ test_that("Data Split plot matches", {
 test_that("Model Performance Metrics table results match", {
 	table <- results[["results"]][["validationMeasures"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list(1, "", 1, 0, 0, 0, 0, "setosa", 1, 1, 1, 1, 0.333333333333333,
-			 10, 1, "<unicode>", 1, 1, 0, 0, 0, 0, "versicolor", 1, 1, 1,
-			 1, 0.266666666666667, 8, 1, "<unicode>", 1, 1, 0, 0, 0, 0, "virginica",
-			 1, 1, 1, 1, 0.4, 12, 1, "<unicode>", 1, 1, 0, 0, 0, 0, "Average / Total",
-			 1, 1, 1, 1, 1, 30, 1, "<unicode>"))
+		list(1, 1, 1, 0, 0, 0, 0, "setosa", 1, 1, 1, 1, 0.333333333333333,
+			 10, 1, "<unicode>", 1, 0.613636363636364, 1, 0, 0, 0, 0, "versicolor",
+			 1, 1, 1, 1, 0.266666666666667, 8, 1, "<unicode>", 1, 1, 1, 0,
+			 0, 0, 0, "virginica", 1, 1, 1, 1, 0.4, 12, 1, "<unicode>", 1,
+			 0.871212121212121, 1, 0, 0, 0, 0, "Average / Total", 1, 1, 1,
+			 1, 1, 30, 1, "<unicode>"))
 })

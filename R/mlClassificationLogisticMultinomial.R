@@ -53,8 +53,8 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
 
   .mlClassificationLogisticTableCoef(options, jaspResults, ready, position = 8)
 
-#   # Create the ROC curve
-#   .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 10, type = "logistic") # position + 1 for regression equation
+  # Create the ROC curve
+  .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 10, type = "logistic") # position + 1 for regression equation
 
   # Create the Andrews curves
   .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 11)
@@ -106,7 +106,7 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
   result[["model"]] <- trainingFit
   result[["confTable"]] <- table("Pred" = testPredictions, "Real" = testSet[, options[["target"]]])
   result[["testAcc"]] <- sum(diag(prop.table(result[["confTable"]])))
-  result[["auc"]] <- .classificationCalcAUC(testSet, trainingSet, options, if (family == "binomial") "logisticClassification" else "multinomialClassification")
+  result[["auc"]] <- .classificationCalcAUC(testSet, trainingSet, options, "logisticClassification")
   result[["ntrain"]] <- nrow(trainingSet)
   result[["ntest"]] <- nrow(testSet)
   result[["testReal"]] <- testSet[, options[["target"]]]
