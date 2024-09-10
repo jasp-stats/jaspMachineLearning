@@ -1,7 +1,7 @@
 context("Machine Learning Logistic Regression Classification")
 
 # Test fixed model #############################################################
-options <- initMlOptions("mlClassificationLogistic")
+options <- initMlOptions("mlClassificationLogisticMultinomial")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
 options$classProportionsTable <- TRUE
@@ -26,7 +26,7 @@ options$fromIndex <- 1
 options$toIndex <- 5
 options$featureImportanceTable <- TRUE
 set.seed(1)
-results <- jaspTools::runAnalysis("mlClassificationLogistic", "iris.csv", options)
+results <- jaspTools::runAnalysis("mlClassificationLogisticMultinomial", "iris.csv", options)
 
 test_that("Class Proportions table results match", {
 	table <- results[["results"]][["classProportionsTable"]][["data"]]

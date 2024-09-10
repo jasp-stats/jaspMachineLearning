@@ -101,7 +101,7 @@ Description
 	{
 		menu:	qsTr("Logistic / Multinomial")
 		title:	qsTr("Logistic / Multinomial Regression Classification")
-		func: 	"mlClassificationLogistic"
+		func: 	"mlClassificationLogisticMultinomial"
 	}
 	Analysis
 	{

@@ -95,7 +95,7 @@
         "rpart" = .decisionTreeClassification(dataset, options, jaspResults),
         "svm" = .svmClassification(dataset, options, jaspResults),
         "naivebayes" = .naiveBayesClassification(dataset, options, jaspResults),
-        "logistic" = .logisticRegressionClassification(dataset, options, jaspResults)
+        "logistic" = .logisticMultinomialClassification(dataset, options, jaspResults)
       )
     })
     if (isTryError(p)) { # Fail gracefully
