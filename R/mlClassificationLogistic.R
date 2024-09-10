@@ -51,14 +51,16 @@ mlClassificationLogistic <- function(jaspResults, dataset, options, ...) {
 #   # Create the shap table
 #   .mlTableShap(dataset, options, jaspResults, ready, position = 7, purpose = "classification")
 
+  .mlClassificationLogisticTableCoef(options, jaspResults, ready, position = 8)
+
 #   # Create the ROC curve
-#   .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 8, type = "logistic")
+#   .mlClassificationPlotRoc(dataset, options, jaspResults, ready, position = 10, type = "logistic") # position + 1 for regression equation
 
   # Create the Andrews curves
-  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 9)
+  .mlClassificationPlotAndrews(dataset, options, jaspResults, ready, position = 11)
 
 #   # Decision boundaries
-#   .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 10, type = "logistic")
+#   .mlClassificationPlotBoundaries(dataset, options, jaspResults, ready, position = 12, type = "logistic")
 }
 
 .logisticRegressionClassification <- function(dataset, options, jaspResults, ready) {
@@ -86,7 +88,7 @@ mlClassificationLogistic <- function(jaspResults, dataset, options, ...) {
   }
   if (nlevels(trainingSet[[options[["target"]]]]) == 2) {
     family = "binomial"
-    trainingFit <- stats::glm(formula, data = trainingSet, family = family)
+    trainingFit <- glm(formula, data = trainingSet, family = family)
     # Use the specified model to make predictions for dataset
     testPredictions <- .mlClassificationLogisticPredictions(trainingSet, options, predict(trainingFit, newdata = testSet, type = "response"))
     dataPredictions <- .mlClassificationLogisticPredictions(trainingSet, options, predict(trainingFit, newdata = dataset, type = "response"))
@@ -120,6 +122,67 @@ mlClassificationLogistic <- function(jaspResults, dataset, options, ...) {
 #     result[["explainer_fi"]] <- DALEX::explain(result[["model"]], type = "multiclass", data = result[["train"]], y = result[["train"]][, options[["target"]]] , predict_function = function(model, data) predict(model, newdata = data, type = "raw"))
 #   }
   return(result)
+}
+
+.mlClassificationLogisticTableCoef <- function(options, jaspResults, ready, position) {
+  if (!is.null(jaspResults[["coefTable"]]) || !options[["coefTable"]]) {
+    return()
+  }
+  table <- createJaspTable(gettext("Regression Coefficients"))
+  table$position <- position
+  table$dependOn(options = c("coefTable", "coefTableConfInt", "coefTableConfIntLevel", "formula", .mlClassificationDependencies()))
+  table$addColumnInfo(name = "var", title = "", type = "string")
+  table$addColumnInfo(name = "coefs", title = gettextf("Coefficient (%s)", "\u03B2"), type = "number")
+  table$addColumnInfo(name = "se", title = gettext("Standard Error"), type = "number")
+  table$addColumnInfo(name = "t", title = gettext("t"), type = "number")
+  table$addColumnInfo(name = "p", title = gettext("p"), type = "pvalue")
+  if (options[["coefTableConfInt"]]) {
+    overtitle <- gettextf("%1$s%% Confidence interval", round(options[["coefTableConfIntLevel"]] * 100, 3))
+    table$addColumnInfo(name = "lower", title = gettext("Lower"), type = "number", overtitle = overtitle)
+	table$addColumnInfo(name = "upper", title = gettext("Upper"), type = "number", overtitle = overtitle)
+  }
+  if (options[["scaleVariables"]]) {
+    table$addFootnote(gettext("The regression coefficients for numeric features are standardized."))
+  } else {
+    table$addFootnote(gettext("The regression coefficients are unstandardized."))
+  }
+  jaspResults[["coefTable"]] <- table
+  if (!ready) {
+    if (options[["target"]] == "" && length(unlist(options[["predictors"]])) > 0) {
+      table[["var"]] <- c(if (options[["intercept"]]) "(Intercept)" else NULL, options[["predictors"]])
+    }
+    return()
+  }
+  classificationResult <- jaspResults[["classificationResult"]]$object
+  model <- classificationResult[["model"]]
+  coefs <- summary(model)$coefficients
+  conf_int <- confint(model, level = options[["coefTableConfIntLevel"]])
+  coefs <- cbind(coefs, lower = conf_int[, 1], upper = conf_int[, 2])
+  table[["var"]] <- rownames(coefs)
+  table[["coefs"]] <- as.numeric(coefs[, 1])
+  table[["se"]] <- as.numeric(coefs[, 2])
+  table[["t"]] <- as.numeric(coefs[, 3])
+  table[["p"]] <- as.numeric(coefs[, 4])
+  if (options[["coefTableConfInt"]]) {
+    table[["lower"]] <- coefs[, "lower"]
+    table[["upper"]] <- coefs[, "upper"]
+  }
+  if (options[["formula"]]) {
+    if (options[["intercept"]]) {
+      regform <- paste0("logit(", options[["target"]], ") = ", round(as.numeric(coefs[, 1])[1], 3))
+      start <- 2
+    } else {
+      regform <- paste0("logit(", options[["target"]], ") = ")
+      start <- 1
+    }
+    for (i in start:nrow(coefs)) {
+      regform <- paste0(regform, if (round(as.numeric(coefs[, 1])[i], 3) < 0) " - " else " + ", abs(round(as.numeric(coefs[, 1])[i], 3)), " x ", rownames(coefs)[i])
+    }
+    formula <- createJaspHtml(gettextf("<b>Regression equation:</b>\n%1$s", regform), "p")
+    formula$position <- position + 1
+    formula$dependOn(options = c("coefTable", "formula"), optionsFromObject = jaspResults[["classificationResult"]])
+    jaspResults[["regressionFormula"]] <- formula
+  }
 }
 
 .mlClassificationLogisticPredictions <- function(trainingSet, options, probabilities) {

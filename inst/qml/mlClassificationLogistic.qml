@@ -41,6 +41,7 @@ Form
 		TAB.ModelPerformance { }
 		TAB.FeatureImportance { }
 		TAB.ExplainPredictions { }
+		REGU.CoefficientTable { confint: true }
 	}
 
 	Group
