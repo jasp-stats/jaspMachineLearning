@@ -1,4 +1,4 @@
-context("Machine Learning Logistic Regression Classification")
+context("Machine Learning Logistic / Multinomial Regression Classification")
 
 # Test fixed model #############################################################
 options <- initMlOptions("mlClassificationLogisticMultinomial")

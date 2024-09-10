@@ -139,7 +139,7 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
   if (options[["coefTableConfInt"]]) {
     overtitle <- gettextf("%1$s%% Confidence interval", round(options[["coefTableConfIntLevel"]] * 100, 3))
     table$addColumnInfo(name = "lower", title = gettext("Lower"), type = "number", overtitle = overtitle)
-	table$addColumnInfo(name = "upper", title = gettext("Upper"), type = "number", overtitle = overtitle)
+    table$addColumnInfo(name = "upper", title = gettext("Upper"), type = "number", overtitle = overtitle)
   }
   if (options[["scaleVariables"]]) {
     table$addFootnote(gettext("The regression coefficients for numeric features are standardized."))
@@ -155,14 +155,54 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
   }
   classificationResult <- jaspResults[["classificationResult"]]$object
   model <- classificationResult[["model"]]
-  coefs <- summary(model)$coefficients
-  conf_int <- confint(model, level = options[["coefTableConfIntLevel"]])
-  coefs <- cbind(coefs, lower = conf_int[, 1], upper = conf_int[, 2])
+  if (classificationResult[["family"]] == "binomial") {
+    coefs <- summary(model)$coefficients
+    conf_int <- confint(model, level = options[["coefTableConfIntLevel"]])
+    coefs <- cbind(coefs, lower = conf_int[, 1], upper = conf_int[, 2])
+    colnames(coefs) <- c("est", "se", "t", "p", "lower", "upper")
+    vars <- rownames(coefs)
+    for (i in seq_along(vars)) {
+      if (!(vars[i] %in% options[["predictors"]]) && vars[i] != "(Intercept)") {
+        for (j in options[["predictors"]]) {
+          vars[i] <- gsub(pattern = j, replacement = paste0(j, " ("), x = vars[i])
+        }
+        vars[i] <- paste0(vars[i], ")")
+      }
+    }
+    rownames(coefs) <- vars
+  } else {
+    coefs <- cbind(model@coefficients, confint(model, level = options[["coefTableConfIntLevel"]]))
+    colnames(coefs) <- c("est", "lower", "upper")
+    vars <- rownames(coefs)
+    for (i in seq_along(vars)) {
+      for (j in c("(Intercept)", options[["predictors"]])) {
+        if (!grepl(j, vars[i])) {
+          next
+        }
+        splitvar <- strsplit(vars[i], split = ":")[[1]]
+        if (grepl(paste0(j, "[A-Za-z]+:"), vars[i])) {
+          repl_part1 <- paste0(gsub(pattern = j, replacement = paste0(j, " ("), x = splitvar[1]), ")")
+        } else {
+          repl_part1 <- j
+        }
+        repl_part2 <- levels(factor(classificationResult[["train"]][[options[["target"]]]]))[as.numeric(splitvar[2])]
+        vars[i] <- paste0(repl_part1, " : ", repl_part2)
+      }
+    }
+    rownames(coefs) <- vars
+  }
   table[["var"]] <- rownames(coefs)
-  table[["coefs"]] <- as.numeric(coefs[, 1])
-  table[["se"]] <- as.numeric(coefs[, 2])
-  table[["t"]] <- as.numeric(coefs[, 3])
-  table[["p"]] <- as.numeric(coefs[, 4])
+  table[["coefs"]] <- as.numeric(coefs[, "est"])
+  if (classificationResult[["family"]] == "binomial") {
+    table[["se"]] <- as.numeric(coefs[, "se"])
+    table[["t"]] <- as.numeric(coefs[, "t"])
+    table[["p"]] <- as.numeric(coefs[, "p"])
+  } else {
+    table[["se"]] <- rep(".", nrow(coefs))
+    table[["t"]] <- rep(".", nrow(coefs))
+    table[["p"]] <- rep(".", nrow(coefs))
+    table$addFootnote(gettext("Standard errors, t-values and p-values are not available for multinomial regression coefficients."))
+  }
   if (options[["coefTableConfInt"]]) {
     table[["lower"]] <- coefs[, "lower"]
     table[["upper"]] <- coefs[, "upper"]

@@ -27,7 +27,7 @@ mlOptions <- function(analysis) {
     files <- c(files, list.files(testthat::test_path("..", "..", "inst", "qml", "common", "analyses", "randomforest"), full.names = TRUE))
   } else if (analysis %in% c("mlClassificationSvm", "mlRegressionSvm")) {
     files <- c(files, list.files(testthat::test_path("..", "..", "inst", "qml", "common", "analyses", "svm"), full.names = TRUE))
-  } else if (analysis %in% c("mlClassificationLogistic", "mlRegressionLinear", "mlRegressionRegularized")) {
+  } else if (analysis %in% c("mlClassificationLogisticMultinomial", "mlRegressionLinear", "mlRegressionRegularized")) {
     files <- c(files, list.files(testthat::test_path("..", "..", "inst", "qml", "common", "analyses", "regularized"), full.names = TRUE))
   }
   options <- lapply(files, jaspTools:::readQML) |>
