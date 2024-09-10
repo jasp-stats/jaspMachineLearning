@@ -119,7 +119,7 @@
     "rpart" = gettext("Decision Tree Classification"),
     "svm" = gettext("Support Vector Machine Classification"),
     "naivebayes" = gettext("Naive Bayes Classification"),
-    "logistic" = gettext("Logistic / Multinomial Regression")
+    "logistic" = gettext("Logistic / Multinomial Regression Classification")
   )
   tableTitle <- gettextf("Model Summary: %1$s", title)
   table <- createJaspTable(tableTitle)
@@ -318,6 +318,11 @@
     )
     table$addRows(row)
   } else if (type == "logistic") {
+    if (classificationResult[["family"]] == "binomial") {
+      table$title <- gettext("Model Summary: Logistic Regression Classification")
+    } else {
+      table$title <- gettext("Model Summary: Multinomial Regression Classification")
+    }
     row <- data.frame(
       family = classificationResult[["family"]],
       nTrain = nTrain,

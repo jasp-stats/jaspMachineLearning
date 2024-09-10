@@ -168,11 +168,12 @@ mlClassificationLogistic <- function(jaspResults, dataset, options, ...) {
     table[["upper"]] <- coefs[, "upper"]
   }
   if (options[["formula"]]) {
+    one_cat <- levels(factor(classificationResult[["train"]][[options[["target"]]]]))[2]
     if (options[["intercept"]]) {
-      regform <- paste0("logit(", options[["target"]], ") = ", round(as.numeric(coefs[, 1])[1], 3))
+      regform <- paste0("logit(p<sub>", options[["target"]], " = ", one_cat, "</sub>) = ", round(as.numeric(coefs[, 1])[1], 3))
       start <- 2
     } else {
-      regform <- paste0("logit(", options[["target"]], ") = ")
+      regform <- paste0("logit(p<sub>", options[["target"]], " = ", one_cat, "</sub>) = ")
       start <- 1
     }
     for (i in start:nrow(coefs)) {
