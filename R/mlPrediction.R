@@ -145,7 +145,18 @@ is.jaspMachineLearning <- function(x) {
   as.character(levels(as.factor(model$model[, 1]))[round(predict(model, newdata = dataset, type = "response"), 0) + 1])
 }
 .mlPredictionGetPredictions.vglm <- function(model, dataset) {
-  # TODO
+  model[["original"]]@terms$terms <- model[["terms"]]
+  logodds <- predict(model[["original"]], newdata = dataset)
+  ncategories <- ncol(logodds) + 1
+  probabilities <- matrix(0, nrow = nrow(logodds), ncol = ncategories)
+  for (i in seq_len(ncategories - 1)) {
+    probabilities[, i] <- exp(logodds[, i])
+  }
+  probabilities[, ncategories] <- 1
+  row_sums <- rowSums(probabilities)
+  probabilities <- probabilities / row_sums
+  predicted_columns <- apply(probabilities, 1, which.max)
+  as.character(levels(as.factor(model$target))[predicted_columns])
 }
 
 # S3 method to make find out number of observations in training data
@@ -186,7 +197,7 @@ is.jaspMachineLearning <- function(x) {
   nrow(model[["data"]])
 }
 .mlPredictionGetTrainingN.vglm <- function(model) {
-  nrow(model$x)
+  nrow(model[["x"]])
 }
 
 # S3 method to decode the model variables in the result object
@@ -253,7 +264,8 @@ is.jaspMachineLearning <- function(x) {
   return(model)
 }
 .decodeJaspMLobject.vglm <- function(model) {
-  # TODO
+  formula <- formula(paste(decodeColNames(strsplit(as.character(model$terms), " ")[[1]][1]), "~", paste0(decodeColNames(strsplit(strsplit(as.character(model$terms), split = " ~ ")[[1]][2], split = " + ", fixed = TRUE)[[1]]), collapse = " + ")))
+  model$terms <- stats::terms(formula)
   return(model)
 }
 

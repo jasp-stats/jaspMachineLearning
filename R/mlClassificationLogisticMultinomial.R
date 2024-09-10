@@ -109,6 +109,7 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
     model <- lapply(slotNames(trainingFit), function(x) slot(trainingFit, x))
     names(model) <- slotNames(trainingFit)
     model[["original"]] <- trainingFit
+    model[["target"]] <- trainingSet[[options[["target"]]]]
     class(model) <- "vglm"
     result[["model"]] <- model
   }
