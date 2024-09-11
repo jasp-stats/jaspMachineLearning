@@ -4,6 +4,8 @@ context("Machine Learning Logistic / Multinomial Regression Classification")
 options <- initMlOptions("mlClassificationLogisticMultinomial")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
+options$coefTable <- TRUE
+options$coefTableConfInt <- TRUE
 options$classProportionsTable <- TRUE
 options$holdoutData <- "holdoutManual"
 options$modelOptimization <- "manual"
@@ -40,6 +42,32 @@ test_that("Model Summary: Multinomial Regression Classification table results ma
 	table <- results[["results"]][["classificationTable"]][["data"]]
 	jaspTools::expect_equal_tables(table,
 		list("Multinomial", "Logit", 30, 120, 1))
+})
+
+test_that("Regression Coefficients table results match", {
+	table <- results[["results"]][["coefTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(-0.42267961226173, -4222.39134720741, 0.999843438690878, 2154.10522892129,
+			 4221.54598798288, "(Intercept) : setosa", -0.000196220503337896,
+			 17.8212683047785, 0.307905475852188, 0.0461059069011903, 8.93555339132221,
+			 35.3346311337047, "(Intercept) : versicolor", 1.99442245200903,
+			 7.95554619079237, -9967.35637439074, 0.998752813237481, 5089.53837890162,
+			 9983.26746677233, "Sepal.Length : setosa", 0.00156311743787445,
+			 1.89635371704686, -2.10497557567811, 0.352947362657274, 2.04153205073509,
+			 5.89768300977184, "Sepal.Length : versicolor", 0.928887555972511,
+			 4.70317443290632, -2533.61853897752, 0.997102445459767, 1295.08589618604,
+			 2543.02488784333, "Sepal.Width : setosa", 0.00363155405116905,
+			 2.30296713825466, -1.92502652612214, 0.285708816748704, 2.15717926335722,
+			 6.53096080263146, "Sepal.Width : versicolor", 1.0675826424692,
+			 -38.7099474348317, -15129.1258351686, 0.995988491696961, 7699.33325651139,
+			 15051.705940299, "Petal.Length : setosa", -0.00502770124959773,
+			 -14.4906493502573, -31.1295653321292, 0.087838572245474, 8.48939884258976,
+			 2.14826663161466, "Petal.Length : versicolor", -1.7069111275065,
+			 -24.205993975534, -10348.1025945441, 0.996333380037363, 5267.39097350877,
+			 10299.690606593, "Petal.Width : setosa", -0.00459544280978437,
+			 -12.7574125117412, -27.3435062790441, 0.0864846111196134, 7.44202132404277,
+			 1.82868125556169, "Petal.Width : versicolor", -1.7142402522452
+			))
 })
 
 test_that("Confusion Matrix table results match", {

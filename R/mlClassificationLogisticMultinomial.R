@@ -147,7 +147,7 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
   table$addColumnInfo(name = "var", title = "", type = "string")
   table$addColumnInfo(name = "coefs", title = gettextf("Coefficient (%s)", "\u03B2"), type = "number")
   table$addColumnInfo(name = "se", title = gettext("Standard Error"), type = "number")
-  table$addColumnInfo(name = "t", title = gettext("t"), type = "number")
+  table$addColumnInfo(name = "z", title = gettext("z"), type = "number")
   table$addColumnInfo(name = "p", title = gettext("p"), type = "pvalue")
   if (options[["coefTableConfInt"]]) {
     overtitle <- gettextf("%1$s%% Confidence interval", round(options[["coefTableConfIntLevel"]] * 100, 3))
@@ -169,10 +169,8 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
   classificationResult <- jaspResults[["classificationResult"]]$object
   model <- classificationResult[["model"]]
   if (classificationResult[["family"]] == "binomial") {
-    coefs <- summary(model)$coefficients
-    conf_int <- confint(model, level = options[["coefTableConfIntLevel"]])
-    coefs <- cbind(coefs, lower = conf_int[, 1], upper = conf_int[, 2])
-    colnames(coefs) <- c("est", "se", "t", "p", "lower", "upper")
+    coefs <- cbind(coef(summary(model)), confint(model, level = options[["coefTableConfIntLevel"]]))
+    colnames(coefs) <- c("est", "se", "z", "p", "lower", "upper")
     vars <- rownames(coefs)
     for (i in seq_along(vars)) {
       if (!(vars[i] %in% options[["predictors"]]) && vars[i] != "(Intercept)") {
@@ -184,8 +182,8 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
     }
     rownames(coefs) <- vars
   } else {
-    coefs <- cbind(model$coefficients, confint(model[["original"]], level = options[["coefTableConfIntLevel"]]))
-    colnames(coefs) <- c("est", "lower", "upper")
+    coefs <- cbind(VGAM::coef(VGAM::summaryvglm(model[["original"]])), confint(model[["original"]], level = options[["coefTableConfIntLevel"]]))
+    colnames(coefs) <- c("est", "se", "z", "p", "lower", "upper")
     vars <- rownames(coefs)
     for (i in seq_along(vars)) {
       for (j in c("(Intercept)", options[["predictors"]])) {
@@ -206,16 +204,9 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
   }
   table[["var"]] <- rownames(coefs)
   table[["coefs"]] <- as.numeric(coefs[, "est"])
-  if (classificationResult[["family"]] == "binomial") {
-    table[["se"]] <- as.numeric(coefs[, "se"])
-    table[["t"]] <- as.numeric(coefs[, "t"])
-    table[["p"]] <- as.numeric(coefs[, "p"])
-  } else {
-    table[["se"]] <- rep(".", nrow(coefs))
-    table[["t"]] <- rep(".", nrow(coefs))
-    table[["p"]] <- rep(".", nrow(coefs))
-    table$addFootnote(gettext("Standard errors, t-values and p-values are not available in multinomial regression."))
-  }
+  table[["se"]] <- as.numeric(coefs[, "se"])
+  table[["z"]] <- as.numeric(coefs[, "z"])
+  table[["p"]] <- as.numeric(coefs[, "p"])
   if (options[["coefTableConfInt"]]) {
     table[["lower"]] <- coefs[, "lower"]
     table[["upper"]] <- coefs[, "upper"]
