@@ -152,6 +152,7 @@
     table$addColumnInfo(name = "smoothing", title = gettext("Smoothing"), type = "number")
   } else if (type == "logistic") {
     table$addColumnInfo(name = "family", title = gettext("Family"), type = "string")
+    table$addColumnInfo(name = "link", title = gettext("Link"), type = "string")
   }
   # Add common columns
   table$addColumnInfo(name = "nTrain", title = gettext("n(Train)"), type = "integer")
@@ -324,8 +325,10 @@
       table$title <- gettext("Model Summary: Multinomial Regression Classification")
     }
     family <- classificationResult[["family"]]
+    link <- classificationResult[["link"]]
     row <- data.frame(
       family = paste0(toupper(substr(family, 1, 1)), substr(family, 2, nchar(family))),
+      link = paste0(toupper(substr(link, 1, 1)), substr(link, 2, nchar(link))),
       nTrain = nTrain,
       nTest = classificationResult[["ntest"]],
       testAcc = classificationResult[["testAcc"]]
@@ -585,11 +588,11 @@
     levels(predictions) <- unique(dataset[, options[["target"]]])
   } else if (type == "logistic") {
     if (classificationResult[["family"]] == "binomial") {
-      fit <- glm(formula, data = dataset, family = "binomial")
+      fit <- glm(formula, data = dataset, family = stats::binomial(link = "logit"))
       predictions <- as.factor(round(predict(fit, grid, type = "response"), 0))
       levels(predictions) <- unique(dataset[, options[["target"]]])
     } else {
-      fit <- VGAM::vglm(formula, data = dataset, family = "multinomial")
+      fit <- VGAM::vglm(formula, data = dataset, family = VGAM::multinomial())
       logodds <- predict(fit, newdata = grid)
       ncategories <- ncol(logodds) + 1
       probabilities <- matrix(0, nrow = nrow(logodds), ncol = ncategories)
@@ -743,7 +746,7 @@
       fit <- e1071::naiveBayes(formula = formula, data = typeData, laplace = options[["smoothingParameter"]])
       score <- max.col(predict(fit, test, type = "raw"))
     } else if (type == "logistic") {
-      fit <- glm(formula, data = typeData, family = "binomial")
+      fit <- glm(formula, data = typeData, family = stats::binomial(link = "logit"))
       score <- round(predict(fit, test, type = "response"), 0)
     }
     pred <- ROCR::prediction(score, actual.class)
@@ -1164,7 +1167,7 @@
 }
 
 .calcAUCScore.logisticClassification <- function(AUCformula, test, typeData, options, jaspResults, ...) {
-  fit <- glm(AUCformula, data = typeData, family = "binomial")
+  fit <- glm(AUCformula, data = typeData, family = stats::binomial(link = "logit"))
   score <- round(predict(fit, test, type = "response"), 0)
   return(score)
 }

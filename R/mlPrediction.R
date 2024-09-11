@@ -365,6 +365,9 @@ is.jaspMachineLearning <- function(x) {
     table$addColumnInfo(name = "mtry", title = gettext("Features per split"), type = "integer")
   } else if (inherits(model, "cv.glmnet")) {
     table$addColumnInfo(name = "lambda", title = "\u03BB", type = "number")
+  } else if (inherits(model, "glm") || inherits(model, "vglm")) {
+    table$addColumnInfo(name = "family", title = gettext("Family"), type = "string")
+    table$addColumnInfo(name = "link", title = gettext("Link"), type = "string")
   }
   table$addColumnInfo(name = "ntrain", title = gettext("n(Train)"), type = "integer")
   table$addColumnInfo(name = "nnew", title = gettext("n(New)"), type = "integer")
@@ -383,6 +386,12 @@ is.jaspMachineLearning <- function(x) {
     row[["mtry"]] <- model[["mtry"]]
   } else if (inherits(model, "cv.glmnet")) {
     row[["lambda"]] <- model[["lambda.min"]]
+  } else if (inherits(model, "glm")) {
+    row[["family"]] <- gettext("Binomial")
+    row[["link"]] <- gettext("Logit")
+  } else if (inherits(model, "vglm")) {
+    row[["family"]] <- gettext("Multinomial")
+    row[["link"]] <- gettext("Logit")
   }
   if (length(presentVars) > 0) {
     row[["nnew"]] <- nrow(dataset)

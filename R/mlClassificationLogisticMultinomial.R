@@ -88,12 +88,14 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
   }
   if (nlevels(trainingSet[[options[["target"]]]]) == 2) {
     family = "binomial"
-    trainingFit <- glm(formula, data = trainingSet, family = stats::binomial(link = "logit"))
+    linkFunction <- "logit"
+    trainingFit <- glm(formula, data = trainingSet, family = stats::binomial(link = linkFunction))
     # Use the specified model to make predictions for dataset
     testPredictions <- .mlClassificationLogisticPredictions(trainingSet, options, predict(trainingFit, newdata = testSet, type = "response"))
     dataPredictions <- .mlClassificationLogisticPredictions(trainingSet, options, predict(trainingFit, newdata = dataset, type = "response"))
   } else {
     family <- "multinomial"
+    linkFunction <- "logit"
     trainingFit <- VGAM::vglm(formula, data = trainingSet, family = VGAM::multinomial())
     # Use the specified model to make predictions for dataset
     testPredictions <- .mlClassificationMultinomialPredictions(trainingSet, options, predict(trainingFit, newdata = testSet))
@@ -103,6 +105,7 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
   result <- list()
   result[["formula"]] <- formula
   result[["family"]] <- family
+  result[["link"]] <- linkFunction
   if (family == "binomial") {
     result[["model"]] <- trainingFit
   } else {
