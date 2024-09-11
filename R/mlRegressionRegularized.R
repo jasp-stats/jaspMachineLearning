@@ -173,7 +173,7 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
     form_coefs <- coefs[-1, , drop = FALSE] # There is still a row with (Intercept) but its value is 0
   }
   for (i in start:nrow(form_coefs)) {
-    regform <- paste0(regform, if (round(as.numeric(form_coefs[, 1])[i], 3) < 0) " - " else " + ", abs(round(as.numeric(form_coefs[, 1])[i], 3)), " x ", rownames(form_coefs)[i])
+    regform <- paste0(regform, if (round(as.numeric(form_coefs[, 1])[i], 3) < 0) " - " else (if (!options[["intercept"]] && i == 1) "" else " + "), abs(round(as.numeric(form_coefs[, 1])[i], 3)), " x ", rownames(form_coefs)[i])
   }
   result <- list()
   result[["model"]] <- trainingFit

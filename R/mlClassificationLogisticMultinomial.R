@@ -223,7 +223,7 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
         start <- 1
       }
       for (i in start:nrow(coefs)) {
-        regform <- paste0(regform, if (round(as.numeric(coefs[, 1])[i], 3) < 0) " - " else " + ", abs(round(as.numeric(coefs[, 1])[i], 3)), " x ", rownames(coefs)[i])
+        regform <- paste0(regform, if (round(as.numeric(coefs[, 1])[i], 3) < 0) " - " else (if (!options[["intercept"]] && i == 1) "" else " + "), abs(round(as.numeric(coefs[, 1])[i], 3)), " x ", rownames(coefs)[i])
       }
     } else {
       regform <- NULL
@@ -239,7 +239,7 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
           start <- i
         }
         for (j in seq(start, nrow(coefs), by = nlevs - 1)) {
-          part <- paste0(part, if (round(as.numeric(coefs[, 1])[j], 3) < 0) " - " else " + ", abs(round(as.numeric(coefs[, 1])[j], 3)), " x ", strsplit(rownames(coefs)[j], " : ")[[1]][1])
+          part <- paste0(part, if (round(as.numeric(coefs[, 1])[j], 3) < 0) " - " else (if (!options[["intercept"]] && j == i) "" else " + "), abs(round(as.numeric(coefs[, 1])[j], 3)), " x ", strsplit(rownames(coefs)[j], " : ")[[1]][1])
         }
         if (i == 1) {
           regform <- paste0(regform, part, "\n\n")

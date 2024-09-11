@@ -101,7 +101,7 @@ mlRegressionLinear <- function(jaspResults, dataset, options, ...) {
     start <- 1
   }
   for (i in start:nrow(coefs)) {
-    regform <- paste0(regform, if (round(as.numeric(coefs[, 1])[i], 3) < 0) " - " else " + ", abs(round(as.numeric(coefs[, 1])[i], 3)), " x ", vars[i])
+    regform <- paste0(regform, if (round(as.numeric(coefs[, 1])[i], 3) < 0) " - " else (if (!options[["intercept"]] && i == 1) "" else " + "), abs(round(as.numeric(coefs[, 1])[i], 3)), " x ", vars[i])
   }
   # Create results object
   result <- list()
