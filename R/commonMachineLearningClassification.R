@@ -33,7 +33,7 @@
     "noOfTrees", "maxTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors",   # Random forest
     "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon", "maxCost",  # Support vector machine
     "smoothingParameter",                                                                 # Naive Bayes
-    "intercept"                                                                           # Logistic
+    "intercept", "link"                                                                   # Logistic
   )
   if (includeSaveOptions) {
     opt <- c(opt, "saveModel", "savePath")
@@ -588,7 +588,7 @@
     levels(predictions) <- unique(dataset[, options[["target"]]])
   } else if (type == "logistic") {
     if (classificationResult[["family"]] == "binomial") {
-      fit <- glm(formula, data = dataset, family = stats::binomial(link = "logit"))
+      fit <- stats::glm(formula, data = dataset, family = stats::binomial(link = options[["link"]]))
       predictions <- as.factor(round(predict(fit, grid, type = "response"), 0))
       levels(predictions) <- unique(dataset[, options[["target"]]])
     } else {
@@ -746,7 +746,7 @@
       fit <- e1071::naiveBayes(formula = formula, data = typeData, laplace = options[["smoothingParameter"]])
       score <- max.col(predict(fit, test, type = "raw"))
     } else if (type == "logistic") {
-      fit <- glm(formula, data = typeData, family = stats::binomial(link = "logit"))
+      fit <- stats::glm(formula, data = typeData, family = stats::binomial(link = options[["link"]]))
       score <- round(predict(fit, test, type = "response"), 0)
     }
     pred <- ROCR::prediction(score, actual.class)
@@ -1167,7 +1167,7 @@
 }
 
 .calcAUCScore.logisticClassification <- function(AUCformula, test, typeData, options, jaspResults, ...) {
-  fit <- glm(AUCformula, data = typeData, family = stats::binomial(link = "logit"))
+  fit <- stats::glm(AUCformula, data = typeData, family = stats::binomial(link = options[["link"]]))
   score <- round(predict(fit, test, type = "response"), 0)
   return(score)
 }

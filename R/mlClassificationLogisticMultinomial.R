@@ -88,18 +88,18 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
   }
   if (nlevels(trainingSet[[options[["target"]]]]) == 2) {
     family = "binomial"
-    linkFunction <- "logit"
-    trainingFit <- glm(formula, data = trainingSet, family = stats::binomial(link = linkFunction))
+    linkFunction <- options[["link"]]
+    trainingFit <- stats::glm(formula, data = trainingSet, family = stats::binomial(link = linkFunction))
     # Use the specified model to make predictions for dataset
-    testPredictions <- .mlClassificationLogisticPredictions(trainingSet, options, predict(trainingFit, newdata = testSet, type = "response"))
-    dataPredictions <- .mlClassificationLogisticPredictions(trainingSet, options, predict(trainingFit, newdata = dataset, type = "response"))
+    testPredictions <- .mlClassificationLogisticPredictions(trainingSet, options, stats::predict(trainingFit, newdata = testSet, type = "response"))
+    dataPredictions <- .mlClassificationLogisticPredictions(trainingSet, options, stats::predict(trainingFit, newdata = dataset, type = "response"))
   } else {
     family <- "multinomial"
     linkFunction <- "logit"
     trainingFit <- VGAM::vglm(formula, data = trainingSet, family = VGAM::multinomial())
     # Use the specified model to make predictions for dataset
-    testPredictions <- .mlClassificationMultinomialPredictions(trainingSet, options, predict(trainingFit, newdata = testSet))
-    dataPredictions <- .mlClassificationMultinomialPredictions(trainingSet, options, predict(trainingFit, newdata = dataset))
+    testPredictions <- .mlClassificationMultinomialPredictions(trainingSet, options, VGAM::predict(trainingFit, newdata = testSet))
+    dataPredictions <- .mlClassificationMultinomialPredictions(trainingSet, options, VGAM::predict(trainingFit, newdata = dataset))
   }
   # Create results object
   result <- list()
@@ -108,6 +108,7 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
   result[["link"]] <- linkFunction
   if (family == "binomial") {
     result[["model"]] <- trainingFit
+    result[["model"]]$link <- result[["link"]]
   } else {
     model <- lapply(slotNames(trainingFit), function(x) slot(trainingFit, x))
     names(model) <- slotNames(trainingFit)
@@ -211,14 +212,14 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
     table[["lower"]] <- coefs[, "lower"]
     table[["upper"]] <- coefs[, "upper"]
   }
-  if (options[["formula"]]) { # TODO FOR MULTINOMIAL
+  if (options[["formula"]]) {
     if (classificationResult[["family"]] == "binomial") {
       one_cat <- levels(factor(classificationResult[["train"]][[options[["target"]]]]))[2]
       if (options[["intercept"]]) {
-        regform <- paste0("logit(p<sub>", options[["target"]], " = ", one_cat, "</sub>) = ", round(as.numeric(coefs[, 1])[1], 3))
+        regform <- paste0(options[["link"]], "(p<sub>", options[["target"]], " = ", one_cat, "</sub>) = ", round(as.numeric(coefs[, 1])[1], 3))
         start <- 2
       } else {
-        regform <- paste0("logit(p<sub>", options[["target"]], " = ", one_cat, "</sub>) = ")
+        regform <- paste0(options[["link"]], "(p<sub>", options[["target"]], " = ", one_cat, "</sub>) = ")
         start <- 1
       }
       for (i in start:nrow(coefs)) {

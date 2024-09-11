@@ -388,7 +388,7 @@ is.jaspMachineLearning <- function(x) {
     row[["lambda"]] <- model[["lambda.min"]]
   } else if (inherits(model, "glm")) {
     row[["family"]] <- gettext("Binomial")
-    row[["link"]] <- gettext("Logit")
+    row[["link"]] <- paste0(toupper(substr(model[["link"]], 1, 1)), substr(model[["link"]], 2, nchar(model[["link"]])))
   } else if (inherits(model, "vglm")) {
     row[["family"]] <- gettext("Multinomial")
     row[["link"]] <- gettext("Logit")
