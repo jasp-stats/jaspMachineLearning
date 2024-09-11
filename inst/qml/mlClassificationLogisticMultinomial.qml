@@ -67,16 +67,16 @@ Form
 			
 			DropDown
 			{
-				name:							"link"
-				indexDefaultValue:				0
-				label:							qsTr("Link function (for binary classification)")
+				name:										"link"
+				indexDefaultValue:							0
+				label:										qsTr("Link function (for binary classification)")
 				values:
 					[
-					{ label: qsTr("Logit"),		value: "logit"},
-					{ label: qsTr("Probit"),	value: "probit"},
-					{ label: qsTr("Cauchit"),	value: "cauchit"},
-					{ label: qsTr("C log-log"),	value: "cloglog"},
-					{ label: qsTr("Log"),		value: "log"}
+					{ label: qsTr("Logit"),					value: "logit"},
+					{ label: qsTr("Probit"),				value: "probit"},
+					{ label: qsTr("Cauchit"),				value: "cauchit"},
+					{ label: qsTr("Complimentary log-log"),	value: "cloglog"},
+					{ label: qsTr("Log"),					value: "log"}
 				]
 			}
 			REGU.Intercept { }
