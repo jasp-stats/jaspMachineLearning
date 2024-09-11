@@ -170,7 +170,13 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
   classificationResult <- jaspResults[["classificationResult"]]$object
   model <- classificationResult[["model"]]
   if (classificationResult[["family"]] == "binomial") {
-    coefs <- cbind(coef(summary(model)), confint(model, level = options[["coefTableConfIntLevel"]]))
+    estimates <- coef(summary(model))
+    conf_int <- confint(model, level = options[["coefTableConfIntLevel"]])
+    if (!options[["intercept"]] && length(options[["predictors"]] == 1)) {
+      coefs <- cbind(estimates, conf_int[1], conf_int[2])
+    } else {
+      coefs <- cbind(estimates, conf_int)
+    }
     colnames(coefs) <- c("est", "se", "z", "p", "lower", "upper")
     vars <- rownames(coefs)
     for (i in seq_along(vars)) {
@@ -183,7 +189,9 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
     }
     rownames(coefs) <- vars
   } else {
-    coefs <- cbind(VGAM::coef(VGAM::summaryvglm(model[["original"]])), confint(model[["original"]], level = options[["coefTableConfIntLevel"]]))
+    estimates <- VGAM::coef(VGAM::summaryvglm(model[["original"]]))
+    conf_int <- confint(model[["original"]], level = options[["coefTableConfIntLevel"]])
+    coefs <- cbind(estimates, conf_int)
     colnames(coefs) <- c("est", "se", "z", "p", "lower", "upper")
     vars <- rownames(coefs)
     for (i in seq_along(vars)) {
