@@ -28,7 +28,7 @@ import "./common/analyses/regularized" as REGU
 
 Form
 {
-	info: qsTr("Logistic regression.")
+	info: qsTr("Logistic regression is a statistical method used to model the relationship between a binary target variable (with two possible outcomes) and one or more feature variables. It predicts the probability of a specific outcome by using a logistic function, which ensures that the predicted probabilities are between 0 and 1. Multinomial regression extends logistic regression to handle target variables with more than two categories. Instead of predicting binary outcomes, multinomial regression is used for scenarios where the target variable has three or more unordered categories.")
 
 	UI.VariablesFormClassification { id: vars }
 
