@@ -214,7 +214,7 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
     table[["se"]] <- rep(".", nrow(coefs))
     table[["t"]] <- rep(".", nrow(coefs))
     table[["p"]] <- rep(".", nrow(coefs))
-    table$addFootnote(gettext("Standard errors, t-values and p-values are not available for multinomial regression coefficients."))
+    table$addFootnote(gettext("Standard errors, t-values and p-values are not available in multinomial regression."))
   }
   if (options[["coefTableConfInt"]]) {
     table[["lower"]] <- coefs[, "lower"]
