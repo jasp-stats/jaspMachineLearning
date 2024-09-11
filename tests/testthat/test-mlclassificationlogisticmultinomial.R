@@ -8,6 +8,7 @@ options$coefTable <- TRUE
 options$coefTableConfInt <- TRUE
 options$classProportionsTable <- TRUE
 options$holdoutData <- "holdoutManual"
+options$link <- "logit"
 options$modelOptimization <- "manual"
 options$modelValid <- "validationManual"
 options$predictionsColumn <- ""
@@ -107,6 +108,7 @@ options$coefTable <- TRUE
 options$coefTableConfInt <- TRUE
 options$classProportionsTable <- TRUE
 options$holdoutData <- "holdoutManual"
+options$link <- "logit"
 options$modelOptimization <- "manual"
 options$modelValid <- "validationManual"
 options$predictionsColumn <- ""

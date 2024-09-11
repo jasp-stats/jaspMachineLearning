@@ -259,7 +259,8 @@ is.jaspMachineLearning <- function(x) {
   return(model)
 }
 .decodeJaspMLobject.glm <- function(model) {
-  formula <- formula(paste(decodeColNames(as.character(model$terms)[2]), "~", paste0(decodeColNames(strsplit(as.character(model$terms)[3], split = " + ", fixed = TRUE)[[1]]), collapse = " + ")))
+  vars <- all.vars(stats::terms(model))
+  formula <- formula(paste(decodeColNames(vars[1]), "~", paste0(decodeColNames(vars[-1]), collapse = " + ")))
   model$terms <- stats::terms(formula)
   return(model)
 }
