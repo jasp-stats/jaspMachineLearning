@@ -1,6 +1,105 @@
 context("Machine Learning Logistic / Multinomial Regression Classification")
 
-# Test fixed model #############################################################
+# Test logistic regression model ############################################
+options <- initMlOptions("mlClassificationLogisticMultinomial")
+options$addIndicator <- FALSE
+options$addPredictions <- FALSE
+options$coefTable <- TRUE
+options$coefTableConfInt <- TRUE
+options$classProportionsTable <- TRUE
+options$holdoutData <- "holdoutManual"
+options$modelOptimization <- "manual"
+options$modelValid <- "validationManual"
+options$predictionsColumn <- ""
+options$predictors <- c("x", "y")
+options$predictors.types <- rep("scale", 2)
+options$saveModel <- FALSE
+options$savePath <- ""
+options$setSeed <- TRUE
+options$target <- "color"
+options$target.types <- "nominal"
+options$testDataManual <- 0.2
+options$testIndicatorColumn <- ""
+options$testSetIndicatorVariable <- ""
+options$validationDataManual <- 0.2
+options$validationMeasures <- TRUE
+options$tableShap <- TRUE
+options$fromIndex <- 1
+options$toIndex <- 5
+options$featureImportanceTable <- TRUE
+options$seed <- 2
+set.seed(1)
+results <- jaspTools::runAnalysis("mlClassificationLogisticMultinomial", "spiral.csv", options)
+
+test_that("Class Proportions table results match", {
+	table <- results[["results"]][["classProportionsTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(0.5, "Black", 0.575, 0.48125, 0.5, "Red", 0.425, 0.51875))
+})
+
+test_that("Model Summary: Logistic Regression Classification table results match", {
+	table <- results[["results"]][["classificationTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list("Binomial", "Logit", 40, 160, 0.675))
+})
+
+test_that("Regression Coefficients table results match", {
+	table <- results[["results"]][["coefTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(0.0784909051640228, -0.241691087574101, 0.630847847956443, 0.163341057208965,
+			 0.400211265504598, "(Intercept)", 0.480533838247466, -0.0733280693358763,
+			 -0.389515022216725, 0.647229030486731, 0.160239637348256, 0.241355688318239,
+			 "x", -0.457615047995329, -0.520574613112014, -0.864252780481388,
+			 0.00221841580161717, 0.170160350681228, -0.194437228429846,
+			 "y", -3.0593179376272))
+})
+
+test_that("Confusion Matrix table results match", {
+	table <- results[["results"]][["confusionTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list("Observed", "Black", 14, 9, "", "Red", 4, 13))
+})
+
+test_that("Feature Importance Metrics table results match", {
+	table <- results[["results"]][["featureImportanceTable"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(0.49553121577218, "y", 0.367228915662651, "x"))
+})
+
+test_that("Data Split plot matches", {
+	plotName <- results[["results"]][["plotDataSplit"]][["data"]]
+	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
+	jaspTools::expect_equal_plots(testPlot, "data-split-1")
+})
+
+test_that("Additive Explanations for Predictions of Test Set Cases table results match", {
+	table <- results[["results"]][["tableShap"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(0.518749999999986, 1, "Red (0.511)", -0.0104280206091216, 0.00223442804446772,
+			 0.481250000000014, 2, "Black (0.505)", 0.0113934073181472, 0.0126826432048778,
+			 0.518749999999986, 3, "Red (0.694)", -0.0215827660760237, 0.196894941069013,
+			 0.518749999999986, 4, "Red (0.707)", -0.0148699072618508, 0.203086871619157,
+			 0.481250000000014, 5, "Black (0.584)", 0.00703631455756359,
+			 0.0957186107999987))
+})
+
+test_that("Model Performance Metrics table results match", {
+	table <- results[["results"]][["validationMeasures"]][["data"]]
+	jaspTools::expect_equal_tables(table,
+		list(0.675, 0.686700767263427, 0.682926829268293, 0.222222222222222,
+			 0.391304347826087, 0.409090909090909, 0.235294117647059, "Black",
+			 0.371036713180216, 0.590909090909091, 0.777777777777778, 0.608695652173913,
+			 0.45, 23, 0.764705882352941, 0.823529411764706, 0.675, 0.686700767263427,
+			 0.666666666666667, 0.409090909090909, 0.235294117647059, 0.222222222222222,
+			 0.391304347826087, "Red", 0.371036713180216, 0.777777777777778,
+			 0.590909090909091, 0.764705882352941, 0.55, 17, 0.608695652173913,
+			 0.590909090909091, 0.675, 0.686700767263427, 0.676016260162602,
+			 0.315656565656566, 0.313299232736573, 0.315656565656566, 0.313299232736573,
+			 "Average / Total", 0.371036713180216, 0.684343434343434, 0.698358585858586,
+			 0.675, 1, 40, 0.686700767263427, 0.707219251336898))
+})
+
+# Test multinomial regression model ############################################
 options <- initMlOptions("mlClassificationLogisticMultinomial")
 options$addIndicator <- FALSE
 options$addPredictions <- FALSE
@@ -88,7 +187,7 @@ test_that("Feature Importance Metrics table results match", {
 test_that("Data Split plot matches", {
 	plotName <- results[["results"]][["plotDataSplit"]][["data"]]
 	testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
-	jaspTools::expect_equal_plots(testPlot, "data-split")
+	jaspTools::expect_equal_plots(testPlot, "data-split-2")
 })
 
 test_that("Additive Explanations for Predictions of Test Set Cases table results match", {
