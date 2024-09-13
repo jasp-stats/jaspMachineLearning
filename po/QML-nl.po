@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2024-09-13 21:09+0000\n"
+"Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
+"Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/nl/>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.8-dev\n"
 "X-Language: nl\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -390,7 +396,7 @@ msgstr "Trainingsparameters"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Algorithmic Settings"
-msgstr "Algoritme Instellingen"
+msgstr "Algoritme-instellingen"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Tables"
@@ -550,7 +556,7 @@ msgstr "Trainingsparameters"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Algorithmic Settings"
-msgstr "Algoritme Instellingen"
+msgstr "Algoritme-instellingen"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Tables"
@@ -566,7 +572,7 @@ msgstr "Trainingsparameters"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Algorithmic Settings"
-msgstr "Algoritme Instellingen"
+msgstr "Algoritme-instellingen"
 
 msgctxt "DataSplit|"
 msgid "Column name"
@@ -702,7 +708,7 @@ msgstr "Trainingsparameters"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Algorithmic Settings"
-msgstr "Algoritmische Instellingen"
+msgstr "Algoritme-instellingen"
 
 msgctxt "mlClassificationSvm|"
 msgid "Tables"
@@ -718,7 +724,7 @@ msgstr "Trainingsparameters"
 
 msgctxt "mlClassificationSvm|"
 msgid "Algorithmic Settings"
-msgstr "Algoritmische Instellingen"
+msgstr "Algoritme-instellingen"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Center type"
@@ -750,7 +756,7 @@ msgstr "Trainingsparameters"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Algorithmic Settings"
-msgstr "Algoritmische Instellingen"
+msgstr "Algoritme-instellingen"
 
 msgctxt "mlRegressionSvm|"
 msgid "Tables"
@@ -766,7 +772,7 @@ msgstr "Trainingsparameters"
 
 msgctxt "mlRegressionSvm|"
 msgid "Algorithmic Settings"
-msgstr "Algoritmische Instellingen"
+msgstr "Algoritme-instellingen"
 
 msgctxt "mlPrediction|"
 msgid "Trained model"
@@ -782,7 +788,7 @@ msgstr "Kenmerken"
 
 msgctxt "mlPrediction|"
 msgid "Algorithmic Settings"
-msgstr "Algoritmische Instellingen"
+msgstr "Algoritme-instellingen"
 
 msgctxt "mlPrediction|"
 msgid "Tables"
@@ -2738,7 +2744,7 @@ msgstr "Training Parameters"
 
 msgctxt "mlRegressionLinear|"
 msgid "Algorithmic Settings"
-msgstr "Algoritmische Instellingen"
+msgstr "Algoritme-instellingen"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid ""
@@ -2980,7 +2986,7 @@ msgstr "Training Parameters"
 
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Algorithmic Settings"
-msgstr "Algoritmische Instellingen"
+msgstr "Algoritme-instellingen"
 
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Smoothing parameter"
@@ -3051,7 +3057,7 @@ msgstr "Trainingparameters"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Algorithmic Settings"
-msgstr "Algoritmische Instellingen"
+msgstr "Algoritme-instellingen"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Model"
@@ -3156,11 +3162,11 @@ msgstr "bijv. testSet"
 
 msgctxt "Description|"
 msgid "Logistic / Multinomial"
-msgstr ""
+msgstr "Logistisch / Multinomiaal"
 
 msgctxt "Description|"
 msgid "Logistic / Multinomial Regression Classification"
-msgstr ""
+msgstr "Logistische / Multinomiale Regressie Classificatie"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid ""
@@ -3173,45 +3179,53 @@ msgid ""
 "binary outcomes, multinomial regression is used for scenarios where the "
 "target variable has three or more unordered categories."
 msgstr ""
+"Logistische regressie is een statistische methode die wordt gebruikt om de "
+"relatie tussen een binaire doelvariabele (met twee mogelijke uitkomsten) en "
+"een of meer kenmerkvariabelen te modelleren. Het voorspelt de "
+"waarschijnlijkheid van een specifieke uitkomst door een logistische functie "
+"te gebruiken, die ervoor zorgt dat de voorspelde waarschijnlijkheden tussen "
+"0 en 1 liggen. Multinomiale regressie breidt logistische regressie uit om "
+"doelvariabelen met meer dan twee categorieën te verwerken. In plaats van "
+"binaire uitkomsten te voorspellen, wordt multinomiale regressie gebruikt "
+"voor scenario's waarbij de doelvariabele drie of meer ongeordende "
+"categorieën heeft."
 
-#, fuzzy
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Tables"
 msgstr "Tabellen"
 
-#, fuzzy
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Plots"
 msgstr "Grafieken"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Training Parameters"
-msgstr ""
+msgstr "Trainingsparameters"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Algorithmic Settings"
-msgstr ""
+msgstr "Algoritme-instellingen"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Link function (for binary classification)"
-msgstr ""
+msgstr "Koppelingsfunctie (voor binaire classificatie)"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Logit"
-msgstr ""
+msgstr "Logit"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Probit"
-msgstr ""
+msgstr "Probit"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Cauchit"
-msgstr ""
+msgstr "Cauchit"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Complimentary log-log"
-msgstr ""
+msgstr "Complementaire log-log"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Log"
-msgstr ""
+msgstr "Log"
