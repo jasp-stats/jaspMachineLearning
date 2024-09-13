@@ -41,7 +41,8 @@ Imports:
   rpart (>= 4.1.16),
   ROCR,
   Rtsne,
-  signal
+  signal,
+  VGAM
 Suggests:
   testthat
 Remotes:

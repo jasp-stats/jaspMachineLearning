@@ -75,6 +75,12 @@ is.jaspMachineLearning <- function(x) {
 .mlPredictionGetModelType.naiveBayes <- function(model) {
   gettext("Naive Bayes")
 }
+.mlPredictionGetModelType.glm <- function(model) {
+  gettext("Logistic regression")
+}
+.mlPredictionGetModelType.vglm <- function(model) {
+  gettext("Multinomial regression")
+}
 
 # S3 method to make predictions using the model
 .mlPredictionGetPredictions <- function(model, dataset) {
@@ -135,6 +141,23 @@ is.jaspMachineLearning <- function(x) {
 .mlPredictionGetPredictions.naiveBayes <- function(model, dataset) {
   as.character(e1071:::predict.naiveBayes(model, newdata = dataset, type = "class"))
 }
+.mlPredictionGetPredictions.glm <- function(model, dataset) {
+  as.character(levels(as.factor(model$model[, 1]))[round(predict(model, newdata = dataset, type = "response"), 0) + 1])
+}
+.mlPredictionGetPredictions.vglm <- function(model, dataset) {
+  model[["original"]]@terms$terms <- model[["terms"]]
+  logodds <- predict(model[["original"]], newdata = dataset)
+  ncategories <- ncol(logodds) + 1
+  probabilities <- matrix(0, nrow = nrow(logodds), ncol = ncategories)
+  for (i in seq_len(ncategories - 1)) {
+    probabilities[, i] <- exp(logodds[, i])
+  }
+  probabilities[, ncategories] <- 1
+  row_sums <- rowSums(probabilities)
+  probabilities <- probabilities / row_sums
+  predicted_columns <- apply(probabilities, 1, which.max)
+  as.character(levels(as.factor(model$target))[predicted_columns])
+}
 
 # S3 method to make find out number of observations in training data
 .mlPredictionGetTrainingN <- function(model) {
@@ -169,6 +192,12 @@ is.jaspMachineLearning <- function(x) {
 }
 .mlPredictionGetTrainingN.naiveBayes <- function(model) {
   nrow(model[["data"]])
+}
+.mlPredictionGetTrainingN.glm <- function(model) {
+  nrow(model[["data"]])
+}
+.mlPredictionGetTrainingN.vglm <- function(model) {
+  nrow(model[["x"]])
 }
 
 # S3 method to decode the model variables in the result object
@@ -229,6 +258,17 @@ is.jaspMachineLearning <- function(x) {
   names(model[["tables"]]) <- decodeColNames(names(model[["tables"]]))
   return(model)
 }
+.decodeJaspMLobject.glm <- function(model) {
+  vars <- all.vars(stats::terms(model))
+  formula <- formula(paste(decodeColNames(vars[1]), "~", paste0(decodeColNames(vars[-1]), collapse = " + ")))
+  model$terms <- stats::terms(formula)
+  return(model)
+}
+.decodeJaspMLobject.vglm <- function(model) {
+  formula <- formula(paste(decodeColNames(strsplit(as.character(model$terms), " ")[[1]][1]), "~", paste0(decodeColNames(strsplit(strsplit(as.character(model$terms), split = " ~ ")[[1]][2], split = " + ", fixed = TRUE)[[1]]), collapse = " + ")))
+  model$terms <- stats::terms(formula)
+  return(model)
+}
 
 .mlPredictionReadModel <- function(options) {
   if (options[["trainedModelFilePath"]] != "") {
@@ -238,7 +278,7 @@ is.jaspMachineLearning <- function(x) {
     if (!is.jaspMachineLearning(model)) {
       jaspBase:::.quitAnalysis(gettext("Error: The trained model is not created in JASP."))
     }
-    if (!(any(c("kknn", "lda", "gbm", "randomForest", "cv.glmnet", "nn", "rpart", "svm", "lm", "naiveBayes") %in% class(model)))) {
+    if (!(any(c("kknn", "lda", "gbm", "randomForest", "cv.glmnet", "nn", "rpart", "svm", "lm", "naiveBayes", "glm", "vglm") %in% class(model)))) {
       jaspBase:::.quitAnalysis(gettextf("The trained model (type: %1$s) is currently not supported in JASP.", paste(class(model), collapse = ", ")))
     }
     if (model[["jaspVersion"]] != .baseCitation) {
@@ -326,6 +366,9 @@ is.jaspMachineLearning <- function(x) {
     table$addColumnInfo(name = "mtry", title = gettext("Features per split"), type = "integer")
   } else if (inherits(model, "cv.glmnet")) {
     table$addColumnInfo(name = "lambda", title = "\u03BB", type = "number")
+  } else if (inherits(model, "glm") || inherits(model, "vglm")) {
+    table$addColumnInfo(name = "family", title = gettext("Family"), type = "string")
+    table$addColumnInfo(name = "link", title = gettext("Link"), type = "string")
   }
   table$addColumnInfo(name = "ntrain", title = gettext("n(Train)"), type = "integer")
   table$addColumnInfo(name = "nnew", title = gettext("n(New)"), type = "integer")
@@ -344,6 +387,12 @@ is.jaspMachineLearning <- function(x) {
     row[["mtry"]] <- model[["mtry"]]
   } else if (inherits(model, "cv.glmnet")) {
     row[["lambda"]] <- model[["lambda.min"]]
+  } else if (inherits(model, "glm")) {
+    row[["family"]] <- gettext("Binomial")
+    row[["link"]] <- paste0(toupper(substr(model[["link"]], 1, 1)), substr(model[["link"]], 2, nchar(model[["link"]])))
+  } else if (inherits(model, "vglm")) {
+    row[["family"]] <- gettext("Multinomial")
+    row[["link"]] <- gettext("Logit")
   }
   if (length(presentVars) > 0) {
     row[["nnew"]] <- nrow(dataset)

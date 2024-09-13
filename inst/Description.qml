@@ -99,6 +99,12 @@ Description
 	}
 	Analysis
 	{
+		menu:	qsTr("Logistic / Multinomial")
+		title:	qsTr("Logistic / Multinomial Regression Classification")
+		func: 	"mlClassificationLogisticMultinomial"
+	}
+	Analysis
+	{
 		menu:	qsTr("Naive Bayes")
 		title:	qsTr("Naive Bayes Classification")
 		func: 	"mlClassificationNaiveBayes"

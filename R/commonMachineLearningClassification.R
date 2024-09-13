@@ -32,7 +32,8 @@
     "mutationMethod", "survivalMethod", "elitismProportion", "candidates",                # Neural network
     "noOfTrees", "maxTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors",   # Random forest
     "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon", "maxCost",  # Support vector machine
-    "smoothingParameter"                                                                  # Naive Bayes
+    "smoothingParameter",                                                                 # Naive Bayes
+    "intercept", "link"                                                                   # Logistic
   )
   if (includeSaveOptions) {
     opt <- c(opt, "saveModel", "savePath")
@@ -62,7 +63,7 @@
   if (type == "lda" || type == "randomForest" || type == "boosting") {
     # Require at least 2 features
     ready <- length(options[["predictors"]][options[["predictors"]] != ""]) >= 2 && options[["target"]] != ""
-  } else if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm" || type == "naivebayes") {
+  } else if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm" || type == "naivebayes" || type == "logistic") {
     # Require at least 1 features
     ready <- length(options[["predictors"]][options[["predictors"]] != ""]) >= 1 && options[["target"]] != ""
   }
@@ -93,7 +94,8 @@
         "neuralnet" = .neuralnetClassification(dataset, options, jaspResults),
         "rpart" = .decisionTreeClassification(dataset, options, jaspResults),
         "svm" = .svmClassification(dataset, options, jaspResults),
-        "naivebayes" = .naiveBayesClassification(dataset, options, jaspResults)
+        "naivebayes" = .naiveBayesClassification(dataset, options, jaspResults),
+        "logistic" = .logisticMultinomialClassification(dataset, options, jaspResults)
       )
     })
     if (isTryError(p)) { # Fail gracefully
@@ -116,7 +118,8 @@
     "neuralnet" = gettext("Neural Network Classification"),
     "rpart" = gettext("Decision Tree Classification"),
     "svm" = gettext("Support Vector Machine Classification"),
-    "naivebayes" = gettext("Naive Bayes Classification")
+    "naivebayes" = gettext("Naive Bayes Classification"),
+    "logistic" = gettext("Logistic / Multinomial Regression Classification")
   )
   tableTitle <- gettextf("Model Summary: %1$s", title)
   table <- createJaspTable(tableTitle)
@@ -147,6 +150,9 @@
     table$addColumnInfo(name = "vectors", title = gettext("Support Vectors"), type = "integer")
   } else if (type == "naivebayes") {
     table$addColumnInfo(name = "smoothing", title = gettext("Smoothing"), type = "number")
+  } else if (type == "logistic") {
+    table$addColumnInfo(name = "family", title = gettext("Family"), type = "string")
+    table$addColumnInfo(name = "link", title = gettext("Link"), type = "string")
   }
   # Add common columns
   table$addColumnInfo(name = "nTrain", title = gettext("n(Train)"), type = "integer")
@@ -164,7 +170,7 @@
   }
   # If no analysis is run, specify the required variables in a footnote
   if (!ready) {
-    table$addFootnote(gettextf("Please provide a target variable and at least %i feature variable(s).", if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm") 1L else 2L))
+    table$addFootnote(gettextf("Please provide a target variable and at least %i feature variable(s).", if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm" || type == "logistic") 1L else 2L))
   }
   if (options[["savePath"]] != "") {
     validNames <- (length(grep(" ", decodeColNames(colnames(dataset)))) == 0) && (length(grep("_", decodeColNames(colnames(dataset)))) == 0)
@@ -307,6 +313,22 @@
   } else if (type == "naivebayes") {
     row <- data.frame(
       smoothing = options[["smoothingParameter"]],
+      nTrain = nTrain,
+      nTest = classificationResult[["ntest"]],
+      testAcc = classificationResult[["testAcc"]]
+    )
+    table$addRows(row)
+  } else if (type == "logistic") {
+    if (classificationResult[["family"]] == "binomial") {
+      table$title <- gettext("Model Summary: Logistic Regression Classification")
+    } else {
+      table$title <- gettext("Model Summary: Multinomial Regression Classification")
+    }
+    family <- classificationResult[["family"]]
+    link <- classificationResult[["link"]]
+    row <- data.frame(
+      family = paste0(toupper(substr(family, 1, 1)), substr(family, 2, nchar(family))),
+      link = paste0(toupper(substr(link, 1, 1)), substr(link, 2, nchar(link))),
       nTrain = nTrain,
       nTest = classificationResult[["ntest"]],
       testAcc = classificationResult[["testAcc"]]
@@ -564,6 +586,26 @@
     fit <- e1071::naiveBayes(formula, data = dataset, laplace = options[["smoothingParameter"]])
     predictions <- as.factor(max.col(predict(fit, newdata = grid, type = "raw")))
     levels(predictions) <- unique(dataset[, options[["target"]]])
+  } else if (type == "logistic") {
+    if (classificationResult[["family"]] == "binomial") {
+      fit <- stats::glm(formula, data = dataset, family = stats::binomial(link = options[["link"]]))
+      predictions <- as.factor(round(predict(fit, grid, type = "response"), 0))
+      levels(predictions) <- unique(dataset[, options[["target"]]])
+    } else {
+      fit <- VGAM::vglm(formula, data = dataset, family = VGAM::multinomial())
+      logodds <- predict(fit, newdata = grid)
+      ncategories <- ncol(logodds) + 1
+      probabilities <- matrix(0, nrow = nrow(logodds), ncol = ncategories)
+      for (i in seq_len(ncategories - 1)) {
+        probabilities[, i] <- exp(logodds[, i])
+      }
+      probabilities[, ncategories] <- 1
+      row_sums <- rowSums(probabilities)
+      probabilities <- probabilities / row_sums
+      predicted_columns <- apply(probabilities, 1, which.max)
+      categories <- levels(dataset[[options[["target"]]]])
+      predictions <- as.factor(categories[predicted_columns])
+    }
   }
   shapes <- rep(21, nrow(dataset))
   if (type == "svm") {
@@ -703,6 +745,9 @@
     } else if (type == "naivebayes") {
       fit <- e1071::naiveBayes(formula = formula, data = typeData, laplace = options[["smoothingParameter"]])
       score <- max.col(predict(fit, test, type = "raw"))
+    } else if (type == "logistic") {
+      fit <- stats::glm(formula, data = typeData, family = stats::binomial(link = options[["link"]]))
+      score <- round(predict(fit, test, type = "response"), 0)
     }
     pred <- ROCR::prediction(score, actual.class)
     nbperf <- ROCR::performance(pred, "tpr", "fpr")
@@ -1118,5 +1163,11 @@
 .calcAUCScore.bayesClassification <- function(AUCformula, test, typeData, options, jaspResults, ...) {
   fit <- e1071::naiveBayes(AUCformula, data = typeData, laplace = options[["smoothingParameter"]])
   score <- max.col(predict(fit, test, type = "raw"))
+  return(score)
+}
+
+.calcAUCScore.logisticClassification <- function(AUCformula, test, typeData, options, jaspResults, ...) {
+  fit <- stats::glm(AUCformula, data = typeData, family = stats::binomial(link = options[["link"]]))
+  score <- round(predict(fit, test, type = "response"), 0)
   return(score)
 }
