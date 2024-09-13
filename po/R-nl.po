@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2024-09-13 20:51\n"
-"PO-Revision-Date: 2024-06-30 08:09+0000\n"
+"PO-Revision-Date: 2024-09-13 21:10+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/nl/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
-"X-Generator: Weblate 5.7-dev\n"
+"X-Generator: Weblate 5.8-dev\n"
 
 msgid "An error occurred in the analysis: %s"
 msgstr "Er is een fout opgetreden in de analyse: %s"
@@ -42,7 +42,7 @@ msgid "Naive Bayes Classification"
 msgstr "Naive Bayes Classificatie"
 
 msgid "Logistic / Multinomial Regression Classification"
-msgstr ""
+msgstr "Logistische / Multinomiale Regressie Classificatie"
 
 msgid "Model Summary: %1$s"
 msgstr "Model Samenvatting: %1$s"
@@ -93,10 +93,10 @@ msgid "Smoothing"
 msgstr "Afvlakking"
 
 msgid "Family"
-msgstr ""
+msgstr "Familie"
 
 msgid "Link"
-msgstr ""
+msgstr "Koppeling"
 
 msgid "n(Train)"
 msgstr "n(Train)"
@@ -176,12 +176,11 @@ msgid "The model is optimized with respect to the <i>sum of squares</i>."
 msgstr ""
 "Het model is geoptimaliseerd met betrekking tot de <i>kwadratensom</i>."
 
-#, fuzzy
 msgid "Model Summary: Logistic Regression Classification"
-msgstr "K-Dichtste Buren Classificatie"
+msgstr "Model Samenvatting: Logistische Regressie Classificatie"
 
 msgid "Model Summary: Multinomial Regression Classification"
-msgstr ""
+msgstr "Model Samenvatting: Multinomiale Regressie Classificatie"
 
 msgid "Confusion Matrix"
 msgstr "Verwarringsmatrix"
@@ -832,7 +831,7 @@ msgid "Standard Error"
 msgstr "Standaardfout"
 
 msgid "z"
-msgstr ""
+msgstr "z"
 
 msgid "%1$s%% Confidence interval"
 msgstr "%1$s%% Betrouwbaarheidsinterval"
@@ -1009,13 +1008,11 @@ msgstr "Support vector machine"
 msgid "Naive Bayes"
 msgstr "Naive Bayes"
 
-#, fuzzy
 msgid "Logistic regression"
-msgstr "Boosting Regressie"
+msgstr "Logistische regressie"
 
-#, fuzzy
 msgid "Multinomial regression"
-msgstr "Multinomiale Afwijking"
+msgstr "Multinomiale regressie"
 
 msgid "Error: The trained model is not created in JASP."
 msgstr "Fout: Het getrainde model is niet gemaakt in JASP."
@@ -1059,16 +1056,14 @@ msgstr "Dichtste Buren"
 msgid "n(New)"
 msgstr "n(Nieuw)"
 
-#, fuzzy
 msgid "Binomial"
-msgstr "Binomiale Deviatie"
+msgstr "Binomiaal"
 
-#, fuzzy
 msgid "Multinomial"
-msgstr "Multinomiale Afwijking"
+msgstr "Multinomiaal"
 
 msgid "Logit"
-msgstr ""
+msgstr "Logit"
 
 msgid "Predictions for New Data"
 msgstr "Voorspellingen voor Nieuwe Gegevens"
