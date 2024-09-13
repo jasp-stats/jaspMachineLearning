@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2024-06-29 03:25\n"
+"POT-Creation-Date: 2024-09-13 20:51\n"
 "PO-Revision-Date: 2022-08-29 00:16+0000\n"
 "Last-Translator: Laura Durans <lauraadurans@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
@@ -47,6 +47,9 @@ msgstr "Classificação de Vizinhos K-Nearest"
 #, fuzzy
 msgid "Naive Bayes Classification"
 msgstr "Classificação de Vizinhos K-Nearest"
+
+msgid "Logistic / Multinomial Regression Classification"
+msgstr ""
 
 msgid "Model Summary: %1$s"
 msgstr ""
@@ -96,6 +99,12 @@ msgid "Support Vectors"
 msgstr ""
 
 msgid "Smoothing"
+msgstr ""
+
+msgid "Family"
+msgstr ""
+
+msgid "Link"
 msgstr ""
 
 msgid "n(Train)"
@@ -165,6 +174,13 @@ msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
 msgstr ""
 
 msgid "The model is optimized with respect to the <i>sum of squares</i>."
+msgstr ""
+
+#, fuzzy
+msgid "Model Summary: Logistic Regression Classification"
+msgstr "Classificação de Vizinhos K-Nearest"
+
+msgid "Model Summary: Multinomial Regression Classification"
 msgstr ""
 
 msgid "Confusion Matrix"
@@ -781,6 +797,41 @@ msgid ""
 msgstr ""
 
 #, fuzzy
+msgid "Regression Coefficients"
+msgstr "Coeficiente de Correlação Amostra"
+
+msgid "Coefficient (%s)"
+msgstr ""
+
+#, fuzzy
+msgid "Standard Error"
+msgstr "Erro padrão"
+
+msgid "z"
+msgstr ""
+
+msgid "%1$s%% Confidence interval"
+msgstr ""
+
+msgid "Lower"
+msgstr ""
+
+msgid "Upper"
+msgstr ""
+
+msgid "The regression coefficients for numeric features are standardized."
+msgstr ""
+
+#, fuzzy
+msgid "The regression coefficients are unstandardized."
+msgstr "Coeficiente de Correlação Amostra"
+
+msgid ""
+"<b>Regression equation:</b>\n"
+"%1$s"
+msgstr ""
+
+#, fuzzy
 msgid "Posterior Statistics"
 msgstr "Posterior"
 
@@ -927,6 +978,14 @@ msgstr ""
 msgid "Naive Bayes"
 msgstr ""
 
+#, fuzzy
+msgid "Logistic regression"
+msgstr "Regressão"
+
+#, fuzzy
+msgid "Multinomial regression"
+msgstr "Regressão"
+
 msgid "Error: The trained model is not created in JASP."
 msgstr ""
 
@@ -964,6 +1023,15 @@ msgid "Nearest Neighbors"
 msgstr "Classificação de Vizinhos K-Nearest"
 
 msgid "n(New)"
+msgstr ""
+
+msgid "Binomial"
+msgstr ""
+
+msgid "Multinomial"
+msgstr ""
+
+msgid "Logit"
 msgstr ""
 
 msgid "Predictions for New Data"
@@ -1128,38 +1196,6 @@ msgstr ""
 #, fuzzy
 msgid "Relative Weight"
 msgstr "WLS Ponderado"
-
-#, fuzzy
-msgid "Regression Coefficients"
-msgstr "Coeficiente de Correlação Amostra"
-
-msgid "Coefficient (%s)"
-msgstr ""
-
-#, fuzzy
-msgid "Standard Error"
-msgstr "Erro padrão"
-
-msgid "%1$s%% Confidence interval"
-msgstr ""
-
-msgid "Lower"
-msgstr ""
-
-msgid "Upper"
-msgstr ""
-
-msgid "The regression coefficients for numeric features are standardized."
-msgstr ""
-
-#, fuzzy
-msgid "The regression coefficients are unstandardized."
-msgstr "Coeficiente de Correlação Amostra"
-
-msgid ""
-"<b>Regression equation:</b>\n"
-"%1$s"
-msgstr ""
 
 #, fuzzy
 msgid "Network Weights"

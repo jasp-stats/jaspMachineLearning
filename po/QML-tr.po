@@ -2726,3 +2726,63 @@ msgstr ""
 msgctxt "DataSplit|"
 msgid "e.g., testSet"
 msgstr ""
+
+msgctxt "Description|"
+msgid "Logistic / Multinomial"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Logistic / Multinomial Regression Classification"
+msgstr ""
+
+msgctxt "mlClassificationLogisticMultinomial|"
+msgid ""
+"Logistic regression is a statistical method used to model the relationship "
+"between a binary target variable (with two possible outcomes) and one or "
+"more feature variables. It predicts the probability of a specific outcome by "
+"using a logistic function, which ensures that the predicted probabilities "
+"are between 0 and 1. Multinomial regression extends logistic regression to "
+"handle target variables with more than two categories. Instead of predicting "
+"binary outcomes, multinomial regression is used for scenarios where the "
+"target variable has three or more unordered categories."
+msgstr ""
+
+msgctxt "mlClassificationLogisticMultinomial|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlClassificationLogisticMultinomial|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlClassificationLogisticMultinomial|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlClassificationLogisticMultinomial|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlClassificationLogisticMultinomial|"
+msgid "Link function (for binary classification)"
+msgstr ""
+
+msgctxt "mlClassificationLogisticMultinomial|"
+msgid "Logit"
+msgstr ""
+
+msgctxt "mlClassificationLogisticMultinomial|"
+msgid "Probit"
+msgstr ""
+
+msgctxt "mlClassificationLogisticMultinomial|"
+msgid "Cauchit"
+msgstr ""
+
+msgctxt "mlClassificationLogisticMultinomial|"
+msgid "Complimentary log-log"
+msgstr ""
+
+msgctxt "mlClassificationLogisticMultinomial|"
+msgid "Log"
+msgstr ""

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2024-06-29 03:25\n"
+"POT-Creation-Date: 2024-09-13 20:51\n"
 "PO-Revision-Date: 2024-06-30 08:09+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
@@ -40,6 +40,9 @@ msgstr "Support Vector Machine Classificatie"
 
 msgid "Naive Bayes Classification"
 msgstr "Naive Bayes Classificatie"
+
+msgid "Logistic / Multinomial Regression Classification"
+msgstr ""
 
 msgid "Model Summary: %1$s"
 msgstr "Model Samenvatting: %1$s"
@@ -88,6 +91,12 @@ msgstr "Ondersteuningsvectoren"
 
 msgid "Smoothing"
 msgstr "Afvlakking"
+
+msgid "Family"
+msgstr ""
+
+msgid "Link"
+msgstr ""
 
 msgid "n(Train)"
 msgstr "n(Train)"
@@ -166,6 +175,13 @@ msgstr "Het model is geoptimaliseerd met de <i>out-of-bag precisie</i>."
 msgid "The model is optimized with respect to the <i>sum of squares</i>."
 msgstr ""
 "Het model is geoptimaliseerd met betrekking tot de <i>kwadratensom</i>."
+
+#, fuzzy
+msgid "Model Summary: Logistic Regression Classification"
+msgstr "K-Dichtste Buren Classificatie"
+
+msgid "Model Summary: Multinomial Regression Classification"
+msgstr ""
 
 msgid "Confusion Matrix"
 msgstr "Verwarringsmatrix"
@@ -806,6 +822,41 @@ msgstr ""
 "Zowel de p-waarde van de scheefheid als die van de gepiektheid moeten > 0.05 "
 "zijn om multivariate normaliteiten te concluderen."
 
+msgid "Regression Coefficients"
+msgstr "Regressie Coëfficiënten"
+
+msgid "Coefficient (%s)"
+msgstr "Coëfficiënten (%s)"
+
+msgid "Standard Error"
+msgstr "Standaardfout"
+
+msgid "z"
+msgstr ""
+
+msgid "%1$s%% Confidence interval"
+msgstr "%1$s%% Betrouwbaarheidsinterval"
+
+msgid "Lower"
+msgstr "Onder"
+
+msgid "Upper"
+msgstr "Boven"
+
+msgid "The regression coefficients for numeric features are standardized."
+msgstr ""
+"De regressiecoefficiënten voor de numerieke kenmerken zijn gestandaardiseerd."
+
+msgid "The regression coefficients are unstandardized."
+msgstr "De regressiecoefficienten zijn niet gestandaardiseerd."
+
+msgid ""
+"<b>Regression equation:</b>\n"
+"%1$s"
+msgstr ""
+"<b>Regressievergelijking:</b>\n"
+"%1$s"
+
 msgid "Posterior Statistics"
 msgstr "Posterior Statistieken"
 
@@ -958,6 +1009,14 @@ msgstr "Support vector machine"
 msgid "Naive Bayes"
 msgstr "Naive Bayes"
 
+#, fuzzy
+msgid "Logistic regression"
+msgstr "Boosting Regressie"
+
+#, fuzzy
+msgid "Multinomial regression"
+msgstr "Multinomiale Afwijking"
+
 msgid "Error: The trained model is not created in JASP."
 msgstr "Fout: Het getrainde model is niet gemaakt in JASP."
 
@@ -999,6 +1058,17 @@ msgstr "Dichtste Buren"
 
 msgid "n(New)"
 msgstr "n(Nieuw)"
+
+#, fuzzy
+msgid "Binomial"
+msgstr "Binomiale Deviatie"
+
+#, fuzzy
+msgid "Multinomial"
+msgstr "Multinomiale Afwijking"
+
+msgid "Logit"
+msgstr ""
 
 msgid "Predictions for New Data"
 msgstr "Voorspellingen voor Nieuwe Gegevens"
@@ -1176,38 +1246,6 @@ msgstr "Proportie van Max. Afstand"
 
 msgid "Relative Weight"
 msgstr "Relatief Gewicht"
-
-msgid "Regression Coefficients"
-msgstr "Regressie Coëfficiënten"
-
-msgid "Coefficient (%s)"
-msgstr "Coëfficiënten (%s)"
-
-msgid "Standard Error"
-msgstr "Standaardfout"
-
-msgid "%1$s%% Confidence interval"
-msgstr "%1$s%% Betrouwbaarheidsinterval"
-
-msgid "Lower"
-msgstr "Onder"
-
-msgid "Upper"
-msgstr "Boven"
-
-msgid "The regression coefficients for numeric features are standardized."
-msgstr ""
-"De regressiecoefficiënten voor de numerieke kenmerken zijn gestandaardiseerd."
-
-msgid "The regression coefficients are unstandardized."
-msgstr "De regressiecoefficienten zijn niet gestandaardiseerd."
-
-msgid ""
-"<b>Regression equation:</b>\n"
-"%1$s"
-msgstr ""
-"<b>Regressievergelijking:</b>\n"
-"%1$s"
 
 msgid "Network Weights"
 msgstr "Netwerk Gewichten"

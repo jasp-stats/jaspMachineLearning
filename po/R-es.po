@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
-"POT-Creation-Date: 2024-06-29 03:25\n"
+"POT-Creation-Date: 2024-09-13 20:51\n"
 "PO-Revision-Date: 2024-06-29 07:30+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
@@ -39,6 +39,9 @@ msgstr "Clasificación de Máquinas de Vectores de Soporte"
 
 msgid "Naive Bayes Classification"
 msgstr "Clasificación ingenua de Bayes"
+
+msgid "Logistic / Multinomial Regression Classification"
+msgstr ""
 
 msgid "Model Summary: %1$s"
 msgstr "Resumen del modelo: %1$s"
@@ -87,6 +90,12 @@ msgstr "Vectores de Soporte"
 
 msgid "Smoothing"
 msgstr "Suavizado"
+
+msgid "Family"
+msgstr ""
+
+msgid "Link"
+msgstr ""
 
 msgid "n(Train)"
 msgstr "n(Adiestramiento)"
@@ -168,6 +177,13 @@ msgstr ""
 
 msgid "The model is optimized with respect to the <i>sum of squares</i>."
 msgstr "El modelo se optimiza respecto a la <i>suma de cuadrados\"</i>."
+
+#, fuzzy
+msgid "Model Summary: Logistic Regression Classification"
+msgstr "Clasificación de los K-Vecinos más próximos"
+
+msgid "Model Summary: Multinomial Regression Classification"
+msgstr ""
 
 msgid "Confusion Matrix"
 msgstr "Matriz de Desorden"
@@ -814,6 +830,42 @@ msgstr ""
 "Los dos valores p de los estadísticos de asimetría y curtosis deben ser > "
 "0.05 para cocluir la Normalidad Multivariante."
 
+msgid "Regression Coefficients"
+msgstr "Coeficientes de Regresión"
+
+msgid "Coefficient (%s)"
+msgstr "Coeficiente (%s)"
+
+msgid "Standard Error"
+msgstr "Error Típico"
+
+msgid "z"
+msgstr ""
+
+msgid "%1$s%% Confidence interval"
+msgstr "Intervalo con %1$s%% de Confianza"
+
+msgid "Lower"
+msgstr "Inferior"
+
+msgid "Upper"
+msgstr "Superior"
+
+msgid "The regression coefficients for numeric features are standardized."
+msgstr ""
+"Los coeficientes de regresión para características numéricas están "
+"tipificados."
+
+msgid "The regression coefficients are unstandardized."
+msgstr "Los coeficientes de regresión están sin tipificar."
+
+msgid ""
+"<b>Regression equation:</b>\n"
+"%1$s"
+msgstr ""
+"<b>Ecuación de regresión:</b>\n"
+"%1$s"
+
 msgid "Posterior Statistics"
 msgstr "Estadísticos posteriores"
 
@@ -966,6 +1018,14 @@ msgstr "Máquina de vectores de soporte"
 msgid "Naive Bayes"
 msgstr "Bayes ingenuo"
 
+#, fuzzy
+msgid "Logistic regression"
+msgstr "Regresión de Potenciación"
+
+#, fuzzy
+msgid "Multinomial regression"
+msgstr "Desviación de Multinomial"
+
 msgid "Error: The trained model is not created in JASP."
 msgstr "Fallo: El modelo ensayado no se creó en JASP."
 
@@ -1007,6 +1067,17 @@ msgstr "Vecinos Más Próximos"
 
 msgid "n(New)"
 msgstr "n(Nuevo)"
+
+#, fuzzy
+msgid "Binomial"
+msgstr "Desviación de Binomial"
+
+#, fuzzy
+msgid "Multinomial"
+msgstr "Desviación de Multinomial"
+
+msgid "Logit"
+msgstr ""
 
 msgid "Predictions for New Data"
 msgstr "Predicciones para los Datos Nuevos"
@@ -1184,39 +1255,6 @@ msgstr "Proporción de la Distancia Máxima"
 
 msgid "Relative Weight"
 msgstr "Ponderación Relativa"
-
-msgid "Regression Coefficients"
-msgstr "Coeficientes de Regresión"
-
-msgid "Coefficient (%s)"
-msgstr "Coeficiente (%s)"
-
-msgid "Standard Error"
-msgstr "Error Típico"
-
-msgid "%1$s%% Confidence interval"
-msgstr "Intervalo con %1$s%% de Confianza"
-
-msgid "Lower"
-msgstr "Inferior"
-
-msgid "Upper"
-msgstr "Superior"
-
-msgid "The regression coefficients for numeric features are standardized."
-msgstr ""
-"Los coeficientes de regresión para características numéricas están "
-"tipificados."
-
-msgid "The regression coefficients are unstandardized."
-msgstr "Los coeficientes de regresión están sin tipificar."
-
-msgid ""
-"<b>Regression equation:</b>\n"
-"%1$s"
-msgstr ""
-"<b>Ecuación de regresión:</b>\n"
-"%1$s"
 
 msgid "Network Weights"
 msgstr "Ponderaciones de Red"

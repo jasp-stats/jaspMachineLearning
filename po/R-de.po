@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2024-06-29 03:25\n"
+"POT-Creation-Date: 2024-09-13 20:51\n"
 "PO-Revision-Date: 2024-07-14 14:09+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
@@ -40,6 +40,9 @@ msgstr "Support Vector Machine-Klassifikation"
 
 msgid "Naive Bayes Classification"
 msgstr "Naive-Bayes-Klassifikation"
+
+msgid "Logistic / Multinomial Regression Classification"
+msgstr ""
 
 msgid "Model Summary: %1$s"
 msgstr "Modell-Zusammenfassung: %1$s"
@@ -88,6 +91,12 @@ msgstr "Support Vectors"
 
 msgid "Smoothing"
 msgstr "Glättung"
+
+msgid "Family"
+msgstr ""
+
+msgid "Link"
+msgstr ""
 
 msgid "n(Train)"
 msgstr "n(Train)"
@@ -166,6 +175,13 @@ msgid "The model is optimized with respect to the <i>sum of squares</i>."
 msgstr ""
 "Das Modell ist hinsichtlich der <i>Summe der Abweichungsquadrate</i> "
 "optimiert."
+
+#, fuzzy
+msgid "Model Summary: Logistic Regression Classification"
+msgstr "K-nächste-Nachbarn-Klassifikation"
+
+msgid "Model Summary: Multinomial Regression Classification"
+msgstr ""
 
 msgid "Confusion Matrix"
 msgstr "Konfusionsmatrix"
@@ -810,6 +826,41 @@ msgstr ""
 "Beide p-Werte der Schiefe- und Wölbungsstatistik sollten > 0.05 sein, um "
 "multivariate Normalität zu folgern."
 
+msgid "Regression Coefficients"
+msgstr "Regressionskoeffizienten"
+
+msgid "Coefficient (%s)"
+msgstr "Koeffizienten (%s)"
+
+msgid "Standard Error"
+msgstr "Standardfehler"
+
+msgid "z"
+msgstr ""
+
+msgid "%1$s%% Confidence interval"
+msgstr "%1$s%% Konfidenzintervall"
+
+msgid "Lower"
+msgstr "Untergrenze"
+
+msgid "Upper"
+msgstr "Obergrenze"
+
+msgid "The regression coefficients for numeric features are standardized."
+msgstr ""
+"Die Regressionskoeffizienten für numerische Merkmale sind standardisiert."
+
+msgid "The regression coefficients are unstandardized."
+msgstr "Die Regressionskoeffizienten sind unstandardisiert."
+
+msgid ""
+"<b>Regression equation:</b>\n"
+"%1$s"
+msgstr ""
+"<b>Regressionsgleichung:</b>\n"
+"%1$s"
+
 msgid "Posterior Statistics"
 msgstr "Posterior-Statistiken"
 
@@ -968,6 +1019,14 @@ msgstr "Support-Vektor-Maschine"
 msgid "Naive Bayes"
 msgstr "Naiv-Bayes"
 
+#, fuzzy
+msgid "Logistic regression"
+msgstr "Boosting-Regression"
+
+#, fuzzy
+msgid "Multinomial regression"
+msgstr "Multinomiale Devianz"
+
 msgid "Error: The trained model is not created in JASP."
 msgstr "Fehler: Das trainierte Modell ist nicht in JASP erstellt."
 
@@ -1011,6 +1070,17 @@ msgstr "Nächste-Nachbarn"
 
 msgid "n(New)"
 msgstr "n(Neu)"
+
+#, fuzzy
+msgid "Binomial"
+msgstr "Binomiale Devianz"
+
+#, fuzzy
+msgid "Multinomial"
+msgstr "Multinomiale Devianz"
+
+msgid "Logit"
+msgstr ""
 
 msgid "Predictions for New Data"
 msgstr "Vorhersagen für neue Daten"
@@ -1187,38 +1257,6 @@ msgstr "Anteil der max. Distanz"
 
 msgid "Relative Weight"
 msgstr "Relatives Gewicht"
-
-msgid "Regression Coefficients"
-msgstr "Regressionskoeffizienten"
-
-msgid "Coefficient (%s)"
-msgstr "Koeffizienten (%s)"
-
-msgid "Standard Error"
-msgstr "Standardfehler"
-
-msgid "%1$s%% Confidence interval"
-msgstr "%1$s%% Konfidenzintervall"
-
-msgid "Lower"
-msgstr "Untergrenze"
-
-msgid "Upper"
-msgstr "Obergrenze"
-
-msgid "The regression coefficients for numeric features are standardized."
-msgstr ""
-"Die Regressionskoeffizienten für numerische Merkmale sind standardisiert."
-
-msgid "The regression coefficients are unstandardized."
-msgstr "Die Regressionskoeffizienten sind unstandardisiert."
-
-msgid ""
-"<b>Regression equation:</b>\n"
-"%1$s"
-msgstr ""
-"<b>Regressionsgleichung:</b>\n"
-"%1$s"
 
 msgid "Network Weights"
 msgstr "Netzwerkgewichte"

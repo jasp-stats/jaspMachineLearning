@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.0\n"
-"POT-Creation-Date: 2024-06-29 03:25\n"
+"POT-Creation-Date: 2024-09-13 20:51\n"
 "PO-Revision-Date: 2024-09-05 15:09+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/"
@@ -40,6 +40,9 @@ msgstr ""
 
 msgid "Naive Bayes Classification"
 msgstr "Naiwny klasyfikator Bayesa"
+
+msgid "Logistic / Multinomial Regression Classification"
+msgstr ""
 
 msgid "Model Summary: %1$s"
 msgstr ""
@@ -87,6 +90,12 @@ msgid "Support Vectors"
 msgstr ""
 
 msgid "Smoothing"
+msgstr ""
+
+msgid "Family"
+msgstr ""
+
+msgid "Link"
 msgstr ""
 
 msgid "n(Train)"
@@ -159,6 +168,12 @@ msgstr ""
 
 msgid "The model is optimized with respect to the <i>sum of squares</i>."
 msgstr "Liczba skupień została ustalona w oparciu o <i>sumę kwadratów</i>."
+
+msgid "Model Summary: Logistic Regression Classification"
+msgstr ""
+
+msgid "Model Summary: Multinomial Regression Classification"
+msgstr ""
 
 msgid "Confusion Matrix"
 msgstr ""
@@ -767,6 +782,38 @@ msgid ""
 "conclude multivariate normality."
 msgstr ""
 
+msgid "Regression Coefficients"
+msgstr "Współczynniki regresji"
+
+msgid "Coefficient (%s)"
+msgstr ""
+
+msgid "Standard Error"
+msgstr "Błąd standardowy"
+
+msgid "z"
+msgstr ""
+
+msgid "%1$s%% Confidence interval"
+msgstr "%1$s%% przedział ufności"
+
+msgid "Lower"
+msgstr ""
+
+msgid "Upper"
+msgstr "Górny"
+
+msgid "The regression coefficients for numeric features are standardized."
+msgstr "Współczynniki regresji dla zmiennych numerycznych są standaryzowane."
+
+msgid "The regression coefficients are unstandardized."
+msgstr "Współczynniki regresji są niestandaryzowane."
+
+msgid ""
+"<b>Regression equation:</b>\n"
+"%1$s"
+msgstr ""
+
 msgid "Posterior Statistics"
 msgstr "Statystyki posterior"
 
@@ -911,6 +958,14 @@ msgstr ""
 msgid "Naive Bayes"
 msgstr "Naiwny k. Bayesa"
 
+#, fuzzy
+msgid "Logistic regression"
+msgstr "Regresja liniowa"
+
+#, fuzzy
+msgid "Multinomial regression"
+msgstr "Regresja liniowa"
+
 msgid "Error: The trained model is not created in JASP."
 msgstr ""
 
@@ -946,6 +1001,15 @@ msgid "Nearest Neighbors"
 msgstr ""
 
 msgid "n(New)"
+msgstr ""
+
+msgid "Binomial"
+msgstr ""
+
+msgid "Multinomial"
+msgstr ""
+
+msgid "Logit"
 msgstr ""
 
 msgid "Predictions for New Data"
@@ -1105,35 +1169,6 @@ msgid "Proportion of Max. Distance"
 msgstr ""
 
 msgid "Relative Weight"
-msgstr ""
-
-msgid "Regression Coefficients"
-msgstr "Współczynniki regresji"
-
-msgid "Coefficient (%s)"
-msgstr ""
-
-msgid "Standard Error"
-msgstr "Błąd standardowy"
-
-msgid "%1$s%% Confidence interval"
-msgstr "%1$s%% przedział ufności"
-
-msgid "Lower"
-msgstr ""
-
-msgid "Upper"
-msgstr "Górny"
-
-msgid "The regression coefficients for numeric features are standardized."
-msgstr "Współczynniki regresji dla zmiennych numerycznych są standaryzowane."
-
-msgid "The regression coefficients are unstandardized."
-msgstr "Współczynniki regresji są niestandaryzowane."
-
-msgid ""
-"<b>Regression equation:</b>\n"
-"%1$s"
 msgstr ""
 
 msgid "Network Weights"

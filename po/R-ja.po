@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.1\n"
-"POT-Creation-Date: 2024-06-29 03:25\n"
+"POT-Creation-Date: 2024-09-13 20:51\n"
 "PO-Revision-Date: 2024-07-02 16:09+0000\n"
 "Last-Translator: Daiki Hojo <dhojo.bayes@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
@@ -42,6 +42,9 @@ msgstr "ニューラルネットワーク分類"
 #, fuzzy
 msgid "Naive Bayes Classification"
 msgstr "ランダムフォレスト分類"
+
+msgid "Logistic / Multinomial Regression Classification"
+msgstr ""
 
 msgid "Model Summary: %1$s"
 msgstr ""
@@ -90,6 +93,12 @@ msgid "Support Vectors"
 msgstr ""
 
 msgid "Smoothing"
+msgstr ""
+
+msgid "Family"
+msgstr ""
+
+msgid "Link"
 msgstr ""
 
 msgid "n(Train)"
@@ -159,6 +168,13 @@ msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
 msgstr ""
 
 msgid "The model is optimized with respect to the <i>sum of squares</i>."
+msgstr ""
+
+#, fuzzy
+msgid "Model Summary: Logistic Regression Classification"
+msgstr "K - 近傍分類"
+
+msgid "Model Summary: Multinomial Regression Classification"
 msgstr ""
 
 msgid "Confusion Matrix"
@@ -759,6 +775,38 @@ msgid ""
 "conclude multivariate normality."
 msgstr ""
 
+msgid "Regression Coefficients"
+msgstr ""
+
+msgid "Coefficient (%s)"
+msgstr ""
+
+msgid "Standard Error"
+msgstr ""
+
+msgid "z"
+msgstr ""
+
+msgid "%1$s%% Confidence interval"
+msgstr "%1$s%% 信頼区間"
+
+msgid "Lower"
+msgstr ""
+
+msgid "Upper"
+msgstr ""
+
+msgid "The regression coefficients for numeric features are standardized."
+msgstr ""
+
+msgid "The regression coefficients are unstandardized."
+msgstr ""
+
+msgid ""
+"<b>Regression equation:</b>\n"
+"%1$s"
+msgstr ""
+
 #, fuzzy
 msgid "Posterior Statistics"
 msgstr "事後分布"
@@ -902,6 +950,12 @@ msgstr ""
 msgid "Naive Bayes"
 msgstr ""
 
+msgid "Logistic regression"
+msgstr ""
+
+msgid "Multinomial regression"
+msgstr ""
+
 msgid "Error: The trained model is not created in JASP."
 msgstr ""
 
@@ -937,6 +991,15 @@ msgid "Nearest Neighbors"
 msgstr ""
 
 msgid "n(New)"
+msgstr ""
+
+msgid "Binomial"
+msgstr ""
+
+msgid "Multinomial"
+msgstr ""
+
+msgid "Logit"
 msgstr ""
 
 msgid "Predictions for New Data"
@@ -1099,35 +1162,6 @@ msgstr ""
 #, fuzzy
 msgid "Relative Weight"
 msgstr "ウェイト"
-
-msgid "Regression Coefficients"
-msgstr ""
-
-msgid "Coefficient (%s)"
-msgstr ""
-
-msgid "Standard Error"
-msgstr ""
-
-msgid "%1$s%% Confidence interval"
-msgstr "%1$s%% 信頼区間"
-
-msgid "Lower"
-msgstr ""
-
-msgid "Upper"
-msgstr ""
-
-msgid "The regression coefficients for numeric features are standardized."
-msgstr ""
-
-msgid "The regression coefficients are unstandardized."
-msgstr ""
-
-msgid ""
-"<b>Regression equation:</b>\n"
-"%1$s"
-msgstr ""
 
 #, fuzzy
 msgid "Network Weights"
