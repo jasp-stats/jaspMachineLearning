@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2024-09-15 08:14+0000\n"
-"Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
+"Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/es/>\n"
 "Language: es\n"
@@ -3222,7 +3222,7 @@ msgstr "Logística / Multinomial"
 
 msgctxt "Description|"
 msgid "Logistic / Multinomial Regression Classification"
-msgstr "Clasificación de regresión logística / multinomial"
+msgstr "Clasificación de la Regresión Logística/Multinomial"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid ""
