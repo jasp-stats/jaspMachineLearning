@@ -29,6 +29,7 @@ The organization of the analyses within the Machine Learning module in JASP is a
        - Decision Tree
        - K-Nearest Neighbors
        - Linear Discriminant
+       - Logistic / Multinomial
        - Neural Network
        - Random Forest
        - Support Vector Machine
