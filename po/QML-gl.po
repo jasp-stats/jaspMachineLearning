@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-09-15 08:14+0000\n"
+"PO-Revision-Date: 2024-09-15 08:38+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/gl/>\n"
@@ -3209,47 +3209,52 @@ msgid ""
 "binary outcomes, multinomial regression is used for scenarios where the "
 "target variable has three or more unordered categories."
 msgstr ""
+"A regresión loxística é un método estatístico usado para modelar a relación "
+"entre unha variable obxectivo binaria (con dous posibles resultados) e unha "
+"ou máis variables características. Predí a probabilidade dun resultado "
+"concreto utilizando unha función loxística, que garante que as "
+"probabilidades preditas estean entre 0 e 1. A regresión multinomial estende "
+"a regresión loxística para manexar variables obxectivo con máis de dúas "
+"categorías. En troques de predicir resultados de tipo binario, a regresión "
+"multinomial utilízase para escenarios nos que a variable obxectivo ten tres "
+"ou máis categorías non ordenadas."
 
-#, fuzzy
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Tables"
 msgstr "Táboas"
 
-#, fuzzy
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Plots"
 msgstr "Gráficas"
 
-#, fuzzy
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Training Parameters"
 msgstr "Parámetros de ensaio"
 
-#, fuzzy
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Algorithmic Settings"
 msgstr "Configuracións Algorítmicas"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Link function (for binary classification)"
-msgstr ""
+msgstr "Función de enlace (para clasificación binaria)"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Logit"
-msgstr ""
+msgstr "Logit"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Probit"
-msgstr ""
+msgstr "Probit"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Cauchit"
-msgstr ""
+msgstr "Cauchit"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Complimentary log-log"
-msgstr ""
+msgstr "Log-log complementaria (CLOGLOG)"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Log"
-msgstr ""
+msgstr "Log"
