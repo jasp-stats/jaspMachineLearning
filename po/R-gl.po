@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2024-09-13 20:51\n"
-"PO-Revision-Date: 2024-07-13 08:13+0000\n"
+"PO-Revision-Date: 2024-09-15 09:32+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/gl/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.7-dev\n"
+"X-Generator: Weblate 5.8-dev\n"
 "X-Virgin-Header: remove this line if you change anything in the header.\n"
 "X-Language: gl_ES\n"
 "X-Source-Language: C\n"
@@ -49,7 +49,7 @@ msgid "Naive Bayes Classification"
 msgstr "Clasificación inxenua de Bayes"
 
 msgid "Logistic / Multinomial Regression Classification"
-msgstr ""
+msgstr "Clasificación da Regresión Loxística/Multinomial"
 
 msgid "Model Summary: %1$s"
 msgstr "Resumo do modelo: %1$s"
@@ -100,10 +100,10 @@ msgid "Smoothing"
 msgstr "Suavizado"
 
 msgid "Family"
-msgstr ""
+msgstr "Familia"
 
 msgid "Link"
-msgstr ""
+msgstr "Enlace"
 
 msgid "n(Train)"
 msgstr "n(Ensaio)"
@@ -183,12 +183,11 @@ msgstr ""
 msgid "The model is optimized with respect to the <i>sum of squares</i>."
 msgstr "O modelo optimízase respecto á <i>suma de cadrados\"</i>."
 
-#, fuzzy
 msgid "Model Summary: Logistic Regression Classification"
-msgstr "Clasificación dos K veciños máis próximos"
+msgstr "Resumo do modelo: Clasificación da Regresión Loxística"
 
 msgid "Model Summary: Multinomial Regression Classification"
-msgstr ""
+msgstr "Resumo do modelo: Clasificación da Regresión Multinomial"
 
 msgid "Confusion Matrix"
 msgstr "Matriz de Desarranxo"
@@ -838,7 +837,7 @@ msgid "Standard Error"
 msgstr "Erro Padrón"
 
 msgid "z"
-msgstr ""
+msgstr "z"
 
 msgid "%1$s%% Confidence interval"
 msgstr "Intervalo co %1$s%% de Confianza"
@@ -1016,13 +1015,11 @@ msgstr "Máquina de vectores de soporte"
 msgid "Naive Bayes"
 msgstr "Bayes Inxenuo"
 
-#, fuzzy
 msgid "Logistic regression"
-msgstr "Regresión de Potenciación"
+msgstr "Regresión loxística"
 
-#, fuzzy
 msgid "Multinomial regression"
-msgstr "Desviación de Multinomial"
+msgstr "Regresión Multinomial"
 
 msgid "Error: The trained model is not created in JASP."
 msgstr "Fallo: O modelo ensaiado non se creou en JASP."
@@ -1066,16 +1063,14 @@ msgstr "Veciños Máis Próximos"
 msgid "n(New)"
 msgstr "n(Novo)"
 
-#, fuzzy
 msgid "Binomial"
-msgstr "Desviación de Binomial"
+msgstr "Binomial"
 
-#, fuzzy
 msgid "Multinomial"
-msgstr "Desviación de Multinomial"
+msgstr "Multinomial"
 
 msgid "Logit"
-msgstr ""
+msgstr "Logit"
 
 msgid "Predictions for New Data"
 msgstr "Predicións para datos novos"
