@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-09-15 08:14+0000\n"
+"PO-Revision-Date: 2024-09-15 08:38+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/es/>\n"
@@ -3255,11 +3255,11 @@ msgstr "Gráficos"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Training Parameters"
-msgstr "Parámetros de entrenamiento"
+msgstr "Parámetros de adiestramiento"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Algorithmic Settings"
-msgstr "Configuraciones algorítmicas"
+msgstr "Configuraciones Algorítmicas"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Link function (for binary classification)"
@@ -3275,12 +3275,12 @@ msgstr "Probit"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Cauchit"
-msgstr "Cauchy-Lorentz (Cauchit)"
+msgstr "Cauchit"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Complimentary log-log"
-msgstr "Registro complementario"
+msgstr "Log-log complementaria (CLOGLOG)"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Log"
-msgstr "Registro"
+msgstr "Log"
