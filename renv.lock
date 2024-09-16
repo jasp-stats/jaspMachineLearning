@@ -31,7 +31,7 @@
     },
     "Deriv": {
       "Package": "Deriv",
-      "Version": "4.1.3",
+      "Version": "4.1.6",
       "Source": "Repository"
     },
     "Formula": {
@@ -96,7 +96,7 @@
     },
     "RcppArmadillo": {
       "Package": "RcppArmadillo",
-      "Version": "14.0.0-1",
+      "Version": "14.0.2-1",
       "Source": "Repository"
     },
     "RcppEigen": {
@@ -109,9 +109,14 @@
       "Version": "0.17",
       "Source": "Repository"
     },
+    "VGAM": {
+      "Package": "VGAM",
+      "Version": "1.1-11",
+      "Source": "Repository"
+    },
     "abind": {
       "Package": "abind",
-      "Version": "1.4-5",
+      "Version": "1.4-8",
       "Source": "Repository"
     },
     "askpass": {
@@ -141,7 +146,7 @@
     },
     "caTools": {
       "Package": "caTools",
-      "Version": "1.18.2",
+      "Version": "1.18.3",
       "Source": "Repository"
     },
     "cachem": {
@@ -346,7 +351,7 @@
     },
     "ggrepel": {
       "Package": "ggrepel",
-      "Version": "0.9.5",
+      "Version": "0.9.6",
       "Source": "Repository"
     },
     "ggridges": {
@@ -457,7 +462,7 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "jasp-stats",
       "RemoteRepo": "jaspBase",
-      "RemoteSha": "7de02c442478e028fe2036e3b906059bf504c13e"
+      "RemoteSha": "f12f1ffb8b2310c249fbe674596f5a08b3aac606"
     },
     "jaspGraphs": {
       "Package": "jaspGraphs",
@@ -467,7 +472,7 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "jasp-stats",
       "RemoteRepo": "jaspGraphs",
-      "RemoteSha": "e439c080e3841e0719c00ce35c376b34c833b546"
+      "RemoteSha": "17b7eeaf2e0c589aa182f0db807054ca37cc2d51"
     },
     "jpeg": {
       "Package": "jpeg",
@@ -586,7 +591,7 @@
     },
     "mvtnorm": {
       "Package": "mvtnorm",
-      "Version": "1.3-0",
+      "Version": "1.3-1",
       "Source": "Repository"
     },
     "network": {
@@ -691,7 +696,7 @@
     },
     "ps": {
       "Package": "ps",
-      "Version": "1.7.7",
+      "Version": "1.8.0",
       "Source": "Repository"
     },
     "pspline": {
@@ -716,7 +721,7 @@
     },
     "ragg": {
       "Package": "ragg",
-      "Version": "1.3.2",
+      "Version": "1.3.3",
       "Source": "Repository"
     },
     "randomForest": {
@@ -796,7 +801,7 @@
     },
     "sna": {
       "Package": "sna",
-      "Version": "2.7-2",
+      "Version": "2.8",
       "Source": "Repository"
     },
     "stabledist": {
@@ -851,7 +856,7 @@
     },
     "tinytex": {
       "Package": "tinytex",
-      "Version": "0.52",
+      "Version": "0.53",
       "Source": "Repository"
     },
     "utf8": {
