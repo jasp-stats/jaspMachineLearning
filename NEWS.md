@@ -2,4 +2,4 @@
 
 # Version 0.19.2
 
-* Added logistic / multinomial regression to the classification analyses.
+* Added logistic / multinomial regression to the classification analyses (#369).
