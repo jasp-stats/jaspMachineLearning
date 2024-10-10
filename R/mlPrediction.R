@@ -19,7 +19,7 @@ mlPrediction <- function(jaspResults, dataset, options, ...) {
 
   # Preparatory work
   model <- .mlPredictionReadModel(options)
-  dataset <- .mlPredictionReadData(options)
+  dataset <- .mlPredictionReadData(dataset, options)
 
   # Check if analysis is ready
   ready <- .mlPredictionReady(model, dataset, options)
@@ -302,8 +302,8 @@ is.jaspMachineLearning <- function(x) {
   return(ready)
 }
 
-.mlPredictionReadData <- function(options) {
-  dataset <- .readDataSetToEnd(columns = options[["predictors"]], exclude.na.listwise = options[["predictors"]])
+.mlPredictionReadData <- function(dataset, options) {
+  dataset <- jaspBase::excludeNaListwise(dataset, options[["predictors"]])
   if (options[["scaleVariables"]] && length(unlist(options[["predictors"]])) > 0) {
     dataset <- .scaleNumericData(dataset)
   }
