@@ -121,7 +121,7 @@
     },
     "askpass": {
       "Package": "askpass",
-      "Version": "1.2.0",
+      "Version": "1.2.1",
       "Source": "Repository"
     },
     "backports": {
@@ -136,7 +136,7 @@
     },
     "bitops": {
       "Package": "bitops",
-      "Version": "1.0-8",
+      "Version": "1.0-9",
       "Source": "Repository"
     },
     "bslib": {
@@ -301,7 +301,7 @@
     },
     "fpc": {
       "Package": "fpc",
-      "Version": "2.2-12",
+      "Version": "2.2-13",
       "Source": "Repository"
     },
     "fs": {
@@ -371,12 +371,12 @@
     },
     "glue": {
       "Package": "glue",
-      "Version": "1.7.0",
+      "Version": "1.8.0",
       "Source": "Repository"
     },
     "gplots": {
       "Package": "gplots",
-      "Version": "3.1.3.1",
+      "Version": "3.2.0",
       "Source": "Repository"
     },
     "gridExtra": {
@@ -462,7 +462,7 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "jasp-stats",
       "RemoteRepo": "jaspBase",
-      "RemoteSha": "24d4ae8eb2efcaae974b6c900ebf1c64020bb90e"
+      "RemoteSha": "79632a237c7bf6bb9b6c8fdf30cc59abccb923d1"
     },
     "jaspGraphs": {
       "Package": "jaspGraphs",
@@ -486,7 +486,7 @@
     },
     "jsonlite": {
       "Package": "jsonlite",
-      "Version": "1.8.8",
+      "Version": "1.8.9",
       "Source": "Repository"
     },
     "kernlab": {
@@ -521,7 +521,7 @@
     },
     "lavaan": {
       "Package": "lavaan",
-      "Version": "0.6-18",
+      "Version": "0.6-19",
       "Source": "Repository"
     },
     "libcoin": {
@@ -626,12 +626,12 @@
     },
     "officer": {
       "Package": "officer",
-      "Version": "0.6.6",
+      "Version": "0.6.7",
       "Source": "Repository"
     },
     "openssl": {
       "Package": "openssl",
-      "Version": "2.2.1",
+      "Version": "2.2.2",
       "Source": "Repository"
     },
     "partykit": {
@@ -681,7 +681,7 @@
     },
     "prabclus": {
       "Package": "prabclus",
-      "Version": "2.3-3",
+      "Version": "2.3-4",
       "Source": "Repository"
     },
     "processx": {
@@ -726,7 +726,7 @@
     },
     "randomForest": {
       "Package": "randomForest",
-      "Version": "4.7-1.1",
+      "Version": "4.7-1.2",
       "Source": "Repository"
     },
     "rappdirs": {
@@ -761,7 +761,7 @@
     },
     "robustbase": {
       "Package": "robustbase",
-      "Version": "0.99-4",
+      "Version": "0.99-4-1",
       "Source": "Repository"
     },
     "rpart": {
@@ -811,7 +811,7 @@
     },
     "statnet.common": {
       "Package": "statnet.common",
-      "Version": "4.9.0",
+      "Version": "4.10.0",
       "Source": "Repository"
     },
     "stringi": {
@@ -836,7 +836,7 @@
     },
     "sys": {
       "Package": "sys",
-      "Version": "3.4.2",
+      "Version": "3.4.3",
       "Source": "Repository"
     },
     "systemfonts": {
@@ -891,7 +891,7 @@
     },
     "xfun": {
       "Package": "xfun",
-      "Version": "0.47",
+      "Version": "0.48",
       "Source": "Repository"
     },
     "xml2": {
