@@ -342,7 +342,9 @@
       return()
     }
     model <- classificationResult[["model"]]
-    model[["jaspVars"]] <- decodeColNames(options[["predictors"]])
+    model[["jaspVars"]] <- list()
+    model[["jaspVars"]]$decoded <- list(target = decodeColNames(options[["target"]]), predictors = decodeColNames(options[["predictors"]]))
+    model[["jaspVars"]]$encoded = list(target = options[["target"]], predictors = options[["predictors"]])
     model[["jaspVersion"]] <- .baseCitation
     model[["explainer"]] <- classificationResult[["explainer"]]
     model <- .decodeJaspMLobject(model)
