@@ -44,21 +44,39 @@
   return(opt)
 }
 
-.readDataRegressionAnalyses <- function(dataset, options, jaspResults) {
-  dataset <- .readDataClassificationRegressionAnalyses(dataset, options)
-  if (length(unlist(options[["predictors"]])) > 0 && options[["scaleVariables"]]) {
-    dataset[, options[["predictors"]]] <- .scaleNumericData(dataset[, options[["predictors"]], drop = FALSE])
-  }
+.readDataRegressionAnalyses <- function(dataset, options, jaspResults, include_weights = FALSE) {
+  dataset <- .readDataClassificationRegressionAnalyses(dataset, options, include_weights)
   return(dataset)
 }
 
-.readDataClassificationRegressionAnalyses <- function(dataset, options) {
+.readDataClassificationRegressionAnalyses <- function(dataset, options, include_weights) {
 
+  target <- NULL
+  weights <- NULL
   testSetIndicator <- NULL
-  if (options[["testSetIndicatorVariable"]] != "" && options[["holdoutData"]] == "testSetIndicator")
-    testSetIndicator <- "testSetIndicatorVariable"
+  if (options[["target"]] != "") {
+    target <- options[["target"]]
+  }
+  if (include_weights && options[["weights"]] != "") {
+    weights <- options[["weights"]]
+  }
+  if (options[["testSetIndicatorVariable"]] != "" && options[["holdoutData"]] == "testSetIndicator") {
+    testSetIndicator <- options[["testSetIndicatorVariable"]]
+  }
 
-  return(.readAndAddCompleteRowIndices(options, c("target", "predictors"), testSetIndicator))
+  predictors <- unlist(options["predictors"])
+  predictors <- predictors[predictors != ""]
+  dataset <- jaspBase::excludeNaListwise(dataset, c(target, predictors, weights, testSetIndicator))
+
+  # Scale numeric predictors
+  if (length(unlist(options[["predictors"]])) > 0 && options[["scaleVariables"]]) {
+    dataset[, options[["predictors"]]] <- .scaleNumericData(dataset[, options[["predictors"]], drop = FALSE])
+  }
+  # Make sure the test set indicator is numeric
+  if (options[["testSetIndicatorVariable"]] != "" && options[["holdoutData"]] == "testSetIndicator")
+    dataset[[options[["testSetIndicatorVariable"]]]] <- as.numeric(dataset[[options[["testSetIndicatorVariable"]]]])
+  
+  return(dataset)
 }
 
 .readAndAddCompleteRowIndices <- function(options, optionNames = NULL, optionNamesAsNumeric = NULL) {

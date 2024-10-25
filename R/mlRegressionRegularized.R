@@ -18,7 +18,7 @@
 mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
 
   # Preparatory work
-  dataset <- .mlRegressionRegularizedReadData(dataset, options)
+  dataset <- .readDataRegressionAnalyses(dataset, options, include_weights = TRUE)
   .mlRegressionErrorHandling(dataset, options, type = "regularized")
 
   # Check if analysis is ready to run
@@ -56,29 +56,6 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
 
   # Create the lambda evaluation plot
   .mlRegressionRegularizedPlotLambda(options, jaspResults, ready, position = 10)
-}
-
-# Read dataset
-.mlRegressionRegularizedReadData <- function(dataset, options) {
-  target <- NULL
-  weights <- NULL
-  testSetIndicator <- NULL
-  if (options[["target"]] != "") {
-    target <- options[["target"]]
-  }
-  if (options[["weights"]] != "") {
-    weights <- options[["weights"]]
-  }
-  if (options[["testSetIndicatorVariable"]] != "" && options[["holdoutData"]] == "testSetIndicator")
-    testSetIndicator <- "testSetIndicatorVariable"
-
-  predictors <- unlist(options["predictors"])
-  predictors <- predictors[predictors != ""]
-  dataset <- .readAndAddCompleteRowIndices(options, c("target", "predictors", "weights"), testSetIndicator)
-  if (length(unlist(options[["predictors"]])) > 0 && options[["scaleVariables"]]) {
-    dataset[, options[["predictors"]]] <- .scaleNumericData(dataset[, options[["predictors"]], drop = FALSE])
-  }
-  return(dataset)
 }
 
 .regularizedRegression <- function(dataset, options, jaspResults) {
