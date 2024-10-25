@@ -45,9 +45,7 @@
 }
 
 .readDataRegressionAnalyses <- function(dataset, options, jaspResults) {
-  if (is.null(dataset)) {
-    dataset <- .readDataClassificationRegressionAnalyses(dataset, options)
-  }
+  dataset <- .readDataClassificationRegressionAnalyses(dataset, options)
   if (length(unlist(options[["predictors"]])) > 0 && options[["scaleVariables"]]) {
     dataset[, options[["predictors"]]] <- .scaleNumericData(dataset[, options[["predictors"]], drop = FALSE])
   }
@@ -72,9 +70,7 @@
         options[[name2]] <- rep("scale", length(options[[name]]))
     }
   dataset <- jaspBase::readDataSetByVariableTypes(options, c(optionNames, optionNamesAsNumeric))
-  complete.index <- which(complete.cases(dataset))
-  dataset <- na.omit(dataset)
-  rownames(dataset) <- as.character(complete.index)
+  dataset <- jaspBase::excludeNaListwise(dataset, c(options[["target"]], options[["predictors"]]))
   return(dataset)
 }
 
