@@ -454,7 +454,9 @@
       return()
     }
     model <- regressionResult[["model"]]
-    model[["jaspVars"]] <- decodeColNames(options[["predictors"]])
+    model[["jaspVars"]] <- list()
+    model[["jaspVars"]]$decoded <- list(target = decodeColNames(options[["target"]]), predictors = decodeColNames(options[["predictors"]]))
+    model[["jaspVars"]]$encoded = list(target = options[["target"]], predictors = options[["predictors"]])
     model[["jaspVersion"]] <- .baseCitation
     model[["explainer"]] <- regressionResult[["explainer"]]
     model <- .decodeJaspMLobject(model)
@@ -697,7 +699,7 @@
     } else {
       purpose <- "classification"
     }
-    predictors <- options[["predictors"]][which(decodeColNames(options[["predictors"]]) %in% model[["jaspVars"]])]
+    predictors <- options[["predictors"]][which(decodeColNames(options[["predictors"]]) %in% model[["jaspVars"]][["decoded"]]$predictors)]
   } else {
     predictors <- options[["predictors"]]
   }

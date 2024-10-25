@@ -119,21 +119,21 @@ is.jaspMachineLearning <- function(x) {
 }
 .mlPredictionGetPredictions.nn <- function(model, dataset) {
   if (inherits(model, "jaspClassification")) {
-    as.character(levels(factor(model[["data"]][, 1]))[max.col(neuralnet:::predict.nn(model, newdata = dataset))])
+    as.character(levels(factor(model[["data"]][[model[["jaspVars"]][["encoded"]]$target]]))[max.col(neuralnet:::predict.nn(model, newdata = dataset))])
   } else if (inherits(model, "jaspRegression")) {
     as.numeric(neuralnet:::predict.nn(model, newdata = dataset))
   }
 }
 .mlPredictionGetPredictions.rpart <- function(model, dataset) {
   if (inherits(model, "jaspClassification")) {
-    as.character(levels(factor(model[["data"]][, 1]))[max.col(rpart:::predict.rpart(model, newdata = dataset))])
+    as.character(levels(factor(model[["data"]][[model[["jaspVars"]][["encoded"]]$target]]))[max.col(rpart:::predict.rpart(model, newdata = dataset))])
   } else if (inherits(model, "jaspRegression")) {
     as.numeric(rpart:::predict.rpart(model, newdata = dataset))
   }
 }
 .mlPredictionGetPredictions.svm <- function(model, dataset) {
   if (inherits(model, "jaspClassification")) {
-    as.character(levels(factor(model[["data"]][, 1]))[e1071:::predict.svm(model, newdata = dataset)])
+    as.character(levels(factor(model[["data"]][[model[["jaspVars"]][["encoded"]]$target]]))[e1071:::predict.svm(model, newdata = dataset)])
   } else if (inherits(model, "jaspRegression")) {
     as.numeric(e1071:::predict.svm(model, newdata = dataset))
   }
@@ -142,7 +142,7 @@ is.jaspMachineLearning <- function(x) {
   as.character(e1071:::predict.naiveBayes(model, newdata = dataset, type = "class"))
 }
 .mlPredictionGetPredictions.glm <- function(model, dataset) {
-  as.character(levels(as.factor(model$model[, 1]))[round(predict(model, newdata = dataset, type = "response"), 0) + 1])
+  as.character(levels(as.factor(model$model[[model[["jaspVars"]][["encoded"]]$target]]))[round(predict(model, newdata = dataset, type = "response"), 0) + 1])
 }
 .mlPredictionGetPredictions.vglm <- function(model, dataset) {
   model[["original"]]@terms$terms <- model[["terms"]]
@@ -293,7 +293,7 @@ is.jaspMachineLearning <- function(x) {
 # also define methods for other objects
 .mlPredictionReady <- function(model, dataset, options) {
   if (!is.null(model)) {
-    modelVars <- model[["jaspVars"]]
+    modelVars <- model[["jaspVars"]][["decoded"]]$predictors
     presentVars <- decodeColNames(colnames(dataset))
     ready <- all(modelVars %in% presentVars)
   } else {
@@ -344,7 +344,7 @@ is.jaspMachineLearning <- function(x) {
   if (is.null(model)) {
     return()
   }
-  modelVars <- model[["jaspVars"]]
+  modelVars <- model[["jaspVars"]][["decoded"]]$predictors
   presentVars <- decodeColNames(colnames(dataset))
   if (!all(modelVars %in% presentVars)) {
     missingVars <- modelVars[which(!(modelVars %in% presentVars))]
@@ -422,7 +422,7 @@ is.jaspMachineLearning <- function(x) {
   selection <- predictions[indexes]
   cols <- list(row = indexes, pred = selection)
   if (options[["predictionsTableFeatures"]]) {
-    for (i in encodeColNames(model[["jaspVars"]])) {
+    for (i in model[["jaspVars"]][["encoded"]]$predictors) {
       if (.columnIsNominal(i)) {
         table$addColumnInfo(name = i, title = i, type = "string")
         var <- levels(dataset[[i]])[dataset[[i]]]
