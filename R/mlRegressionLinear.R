@@ -18,7 +18,7 @@
 mlRegressionLinear <- function(jaspResults, dataset, options, ...) {
 
   # Preparatory work
-  dataset <- .mlRegressionRegularizedReadData(dataset, options)
+  dataset <- .readDataRegressionAnalyses(dataset, options, include_weights = TRUE)
   .mlRegressionErrorHandling(dataset, options, type = "lm")
 
   # Check if analysis is ready to run
