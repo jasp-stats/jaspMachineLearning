@@ -53,7 +53,7 @@ Form
 			id:									predictors
 			name:								"predictors"
 			title:								qsTr("Features")
-			allowedColumns:						["scale", "ordinal", "nominal"]
+			allowedColumns:						["scale", "nominal"]
 			allowAnalysisOwnComputedColumns:	false
 		}
 	}
