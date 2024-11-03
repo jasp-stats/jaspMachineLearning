@@ -1,6 +1,8 @@
 Voorspellen
 ===
 
+Met de voorspellingsanalyse kun je een getraind machine-learningmodel laden en toepassen op nieuwe gegevens. Het is belangrijk dat de kenmerken in de nieuwe dataset dezelfde namen hebben als in de oorspronkelijke dataset die voor de training is gebruikt.
+
 ### Invoer
 
 #### Getraind model
