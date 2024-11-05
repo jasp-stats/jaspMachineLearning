@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.1\n"
 "POT-Creation-Date: 2024-09-13 20:51\n"
-"PO-Revision-Date: 2024-10-22 23:15+0000\n"
+"PO-Revision-Date: 2024-11-06 22:00+0000\n"
 "Last-Translator: Koji Kosugi <kosugitti@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/ja/>\n"
@@ -11,10 +11,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.8.2-dev\n"
+"X-Generator: Weblate 5.8.2\n"
 
 msgid "An error occurred in the analysis: %s"
-msgstr ""
+msgstr "以下の分析でエラーが生じました: %s"
 
 msgid "K-Nearest Neighbors Classification"
 msgstr "K - 近傍分類"
@@ -31,23 +31,20 @@ msgstr "ブースティング分類"
 msgid "Neural Network Classification"
 msgstr "ニューラルネットワーク分類"
 
-#, fuzzy
 msgid "Decision Tree Classification"
-msgstr "ブースティング分類"
+msgstr "決定木による分類"
 
-#, fuzzy
 msgid "Support Vector Machine Classification"
-msgstr "ニューラルネットワーク分類"
+msgstr "サポートベクターマシンによる分類"
 
-#, fuzzy
 msgid "Naive Bayes Classification"
-msgstr "ランダムフォレスト分類"
+msgstr "ナイーブベイズによる分類"
 
 msgid "Logistic / Multinomial Regression Classification"
-msgstr ""
+msgstr "ロジスティック/多項回帰による分類"
 
 msgid "Model Summary: %1$s"
-msgstr ""
+msgstr "モデルの要約: %1$s"
 
 msgid "Nearest neighbors"
 msgstr "最近傍"
@@ -67,9 +64,8 @@ msgstr "方法"
 msgid "Trees"
 msgstr "ツリー"
 
-#, fuzzy
 msgid "Features per split"
-msgstr "スプリットあたりの予測値"
+msgstr "分割ごとの特徴"
 
 msgid "Shrinkage"
 msgstr "収縮"
@@ -81,25 +77,25 @@ msgid "Nodes"
 msgstr "ノード"
 
 msgid "Complexity penalty"
-msgstr ""
+msgstr "複雑性ペナルティ"
 
 msgid "Splits"
-msgstr ""
+msgstr "分割"
 
 msgid "Violation cost"
-msgstr ""
+msgstr "違反コスト"
 
 msgid "Support Vectors"
-msgstr ""
+msgstr "サポートベクター"
 
 msgid "Smoothing"
-msgstr ""
+msgstr "スムージング"
 
 msgid "Family"
-msgstr ""
+msgstr "族"
 
 msgid "Link"
-msgstr ""
+msgstr "リンク関数"
 
 msgid "n(Train)"
 msgstr "n(訓練)"
@@ -119,9 +115,8 @@ msgstr "テスト精度"
 msgid "OOB Accuracy"
 msgstr "OOB精度"
 
-#, fuzzy
 msgid "Please provide a target variable and at least %i feature variable(s)."
-msgstr "ターゲット変数と少なくとも%i個の予測変数（複数可）を指定してください."
+msgstr "ターゲット変数と少なくとも%i個の予測変数を指定してください."
 
 msgid "The trained model is saved as <i>%1$s</i>."
 msgstr "学習したモデルは<i>%1$s</i>として保存されます."
@@ -132,6 +127,9 @@ msgid ""
 "remove all such characters from the variable names and try saving the model "
 "again."
 msgstr ""
+"トレーニングされたモデルは保存されて<b>いません</b>。モデルの中の変数名にスペ"
+"ース(' ')かアンダースコア('_')を含むものがあるからです。それらの文字列を変数"
+"名から削除し，モデルの保存をもう一度試してください。"
 
 msgid "The trained model is not saved until 'Save trained model' is checked."
 msgstr ""
@@ -139,43 +137,42 @@ msgstr ""
 
 msgid ""
 "The model is optimized with respect to the <i>validation set accuracy</i>."
-msgstr ""
+msgstr "モデルは<i>妥当化セットの精度</i>について最適化されます."
 
 msgid ""
 "The optimum number of nearest neighbors is the maximum number. You might "
 "want to adjust the range of optimization."
-msgstr ""
+msgstr "最寄の人数が最大値になっています。最適化の範囲を調整すべきです."
 
 msgid "Manhattan"
-msgstr ""
+msgstr "マンハッタン"
 
 msgid "Euclidean"
-msgstr ""
+msgstr "ユークリッド"
 
 msgid "Moment"
 msgstr "度数"
 
 msgid "MLE"
-msgstr ""
+msgstr "MLE"
 
 msgid "MVE"
-msgstr ""
+msgstr "MVE"
 
 msgid "t"
 msgstr "t"
 
 msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
-msgstr ""
+msgstr "モデルは<i>out-of-bagの正確さ</i>について最適化されます."
 
 msgid "The model is optimized with respect to the <i>sum of squares</i>."
-msgstr ""
+msgstr "モデルは<i>平方和</i>について最適化されます."
 
-#, fuzzy
 msgid "Model Summary: Logistic Regression Classification"
-msgstr "K - 近傍分類"
+msgstr "モデルの要約: ロジスティック回帰による分類"
 
 msgid "Model Summary: Multinomial Regression Classification"
-msgstr ""
+msgstr "モデルの要約: 多項回帰による分類"
 
 msgid "Confusion Matrix"
 msgstr "混同行列"
@@ -187,73 +184,68 @@ msgid "Predicted"
 msgstr "予測"
 
 msgid "Decision Boundary Matrix"
-msgstr ""
+msgstr "決定境界行列"
 
 msgid ""
 "Cannot create matrix: not enough numeric variables remain after removing "
 "factor variables. You need at least 2 numeric variables."
-msgstr ""
+msgstr "行列を作成できません。要因変数を除外すると十分な数の変数が残りません。少なく"
+"とも2変数は必要です."
 
 msgid "ROC Curves Plot"
-msgstr ""
+msgstr "ROCカーブプロット"
 
-#, fuzzy
 msgid "False Positive Rate"
 msgstr "偽陰性率"
 
-#, fuzzy
 msgid "True Positive Rate"
 msgstr "真陽性率"
 
 msgid "Perfect separation"
-msgstr ""
+msgstr "完全分類"
 
 msgid "Andrews Curves Plot"
-msgstr ""
+msgstr "アンドリュース・カーフ・プロット"
 
 msgid "Andrews curves require a minimum of 2 feature variables."
-msgstr ""
+msgstr "アンドリュースカーブは、2つの特性変数の最小値を必要とします."
 
 msgid "Box's M-test for Homogeneity of Covariance Matrices"
-msgstr ""
+msgstr "共分散行列の同質性のためのBoxのM検定"
 
 msgid "Model Performance Metrics"
-msgstr ""
+msgstr "モデルパフォーマンスの指標"
 
 msgid "Support"
-msgstr ""
+msgstr "サポート"
 
 msgid "Accuracy"
 msgstr "精度"
 
 msgid "Precision (Positive Predictive Value)"
-msgstr ""
+msgstr "正確性(正しく予測した値)"
 
-#, fuzzy
 msgid "Recall (True Positive Rate)"
-msgstr "真陽性率"
+msgstr "リコール(真陽性率)"
 
 msgid "False Discovery Rate"
 msgstr "偽発見率"
 
 msgid "F1 Score"
-msgstr ""
+msgstr "F1スコア"
 
 msgid "Matthews Correlation Coefficient"
-msgstr ""
+msgstr "Matthewsの相関係数"
 
 msgid "Area Under Curve (AUC)"
-msgstr ""
+msgstr "曲線下エリア(AUC)"
 
-#, fuzzy
 msgid "Negative Predictive Value"
-msgstr "予測"
+msgstr "負の予測値"
 
-#, fuzzy
 msgid "True Negative Rate"
-msgstr "真陽性率"
+msgstr "真陰性率"
 
-#, fuzzy
 msgid "False Negative Rate"
 msgstr "偽陰性率"
 
@@ -261,72 +253,76 @@ msgid "False Omission Rate"
 msgstr "False Omission Rate"
 
 msgid "Threat Score"
-msgstr ""
+msgstr "脅威スコア"
 
 msgid "Statistical Parity"
-msgstr ""
+msgstr "統計的パリティ"
 
 msgid "All metrics are calculated for every class against all other classes."
-msgstr ""
+msgstr "すべての指標はほかのすべてのクラスに対して計算されます."
 
 msgid "Average / Total"
-msgstr ""
+msgstr "平均/合計"
 
 msgid "Class Proportions"
-msgstr ""
+msgstr "クラスの比率"
 
 msgid "Data Set"
-msgstr ""
+msgstr "データセット"
 
 msgid "Training Set"
-msgstr ""
+msgstr "訓練セット"
 
 msgid "Validation Set"
-msgstr ""
+msgstr "妥当化セット"
 
 msgid "Training and Validation Set"
-msgstr ""
+msgstr "訓練セットと妥当化セット"
 
 msgid "Test Set"
-msgstr ""
+msgstr "テストセット"
 
 msgid ""
 "You have specified more clusters than distinct data points. Please choose a "
 "number lower than %s."
-msgstr ""
+msgstr "データ点よりも多くのクラスターを指定しています。%s "
+"未満の数字を選んでください."
 
 msgid ""
 "R package error: The hclust clustering algorithm from the stats R package "
 "cannot handle data that has 65536 or more rows. We are working on a solution "
 "for this problem. Please try another algorithm in the meantime."
 msgstr ""
+"Rパッケージのエラー: Rのstatsパッケージにあるhclustアルゴリズムは，データセッ"
+"トが65536行以上のデータを分析できません。私たちはこの問題の解決に取り組んでい"
+"ます。その間に，別のアルゴリズムを試してみてください。"
 
 msgid "K-Means Clustering"
-msgstr ""
+msgstr "K-Means クラスタリング"
 
 msgid "K-Medians Clustering"
-msgstr ""
+msgstr "K-Medians クラスタリング"
 
 msgid "K-Medoids Clustering"
-msgstr ""
+msgstr "K-Medoidsクラスタリング"
 
 msgid "Fuzzy C-Means Clustering"
-msgstr ""
+msgstr "Fuzzy C-Meansクラスタリング"
 
 msgid "Hierarchical Clustering"
-msgstr ""
+msgstr "階層的クラスタリング"
 
 msgid "Density-Based Clustering"
-msgstr ""
+msgstr "密度に基づいたクラスタリング"
 
 msgid "Random Forest Clustering"
-msgstr ""
+msgstr "ランダムフォレストによるクラスタリング"
 
 msgid "Model-Based Clustering"
-msgstr ""
+msgstr "モデルベースのクラスタリング"
 
 msgid "Clusters"
-msgstr ""
+msgstr "クラスター"
 
 msgid "N"
 msgstr "N"
@@ -341,21 +337,21 @@ msgid "BIC"
 msgstr "BIC"
 
 msgid "Silhouette"
-msgstr ""
+msgstr "シルエット"
 
 msgid "Please provide at least 2 features."
-msgstr ""
+msgstr "少なくとも2つの変数を提供して下さい."
 
 msgid "silhouette"
-msgstr ""
+msgstr "シルエット"
 
 msgid "The model is optimized with respect to the <i>%s</i> value."
-msgstr ""
+msgstr "このモデルは<i>%s</i>の値に対して最適化されます."
 
 msgid ""
 "The optimum number of clusters is the maximum number of clusters. You might "
 "want to adjust the range of optimization."
-msgstr ""
+msgstr "クラスターの最適な数はクラスターの最大値です。最適化の範囲を調整するべきです."
 
 msgid ""
 "The model contains 0 clusters and only Noisepoints, we advise to change "
@@ -599,11 +595,10 @@ msgid "R%1$s"
 msgstr ""
 
 msgid "Adjusted R%1$s"
-msgstr ""
+msgstr "調整済み R%1$s"
 
-#, fuzzy
 msgid "Please provide a target variable and at least %d feature variable(s)."
-msgstr "ターゲット変数と少なくとも%i個の予測変数（複数可）を指定してください."
+msgstr "ターゲット変数と少なくとも %d 個の予測変数（複数可）を指定してください."
 
 msgid ""
 "The model is optimized with respect to the <i>validation set mean squared "
