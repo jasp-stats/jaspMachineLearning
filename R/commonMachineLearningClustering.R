@@ -33,9 +33,7 @@
 .mlClusteringReadData <- function(dataset, options) {
   predictors <- unlist(options[["predictors"]])
   predictors <- predictors[predictors != ""]
-  if (is.null(dataset)) {
-    dataset <- .readAndAddCompleteRowIndices(options, "predictors")
-  }
+  dataset <- jaspBase::excludeNaListwise(dataset, predictors)
   if (options[["scaleVariables"]] && length(unlist(options[["predictors"]])) > 0) {
     dataset <- .scaleNumericData(dataset)
   }

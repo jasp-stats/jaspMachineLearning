@@ -422,7 +422,7 @@ is.jaspMachineLearning <- function(x) {
   selection <- predictions[indexes]
   cols <- list(row = indexes, pred = selection)
   if (options[["predictionsTableFeatures"]]) {
-    for (i in model[["jaspVars"]][["encoded"]]$predictors) {
+    for (i in colnames(dataset)) {
       if (.columnIsNominal(i)) {
         table$addColumnInfo(name = i, title = i, type = "string")
         var <- levels(dataset[[i]])[dataset[[i]]]

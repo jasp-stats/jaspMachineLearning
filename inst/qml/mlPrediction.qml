@@ -26,7 +26,7 @@ import "./common/tables" as TAB
 
 Form 
 {
-	info: qsTr("The prediction analysis enables you to load a trained machine learning model and apply it to new data.")
+	info: qsTr("The prediction analysis enables you to load a trained machine learning model and apply it to new data. It is important that the features in the new dataset have the same names as in the original dataset used for training.")
 
 	FileSelector
 	{
@@ -53,7 +53,7 @@ Form
 			id:									predictors
 			name:								"predictors"
 			title:								qsTr("Features")
-			allowedColumns:						["scale", "ordinal", "nominal"]
+			allowedColumns:						["scale", "nominal"]
 			allowAnalysisOwnComputedColumns:	false
 		}
 	}
