@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2024-11-20 18:45+0000\n"
+"Last-Translator: Yu Gong <yugong@outlook.com>\n"
+"Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
+"projects/jasp/jaspmachinelearning-qml/zh_Hans/>\n"
+"Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.9-dev\n"
 "X-Language: zh_Hans\n"
 "X-Qt-Contexts: true\n"
 
@@ -167,7 +173,7 @@ msgstr "训练参数"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlClassificationKnn|"
 msgid "Tables"
@@ -183,7 +189,7 @@ msgstr "训练参数"
 
 msgctxt "mlClassificationKnn|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlClassificationLda|"
 msgid "Tables"
@@ -239,7 +245,7 @@ msgstr "训练参数"
 
 msgctxt "mlClassificationLda|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Tables"
@@ -255,7 +261,7 @@ msgstr "训练参数"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Tables"
@@ -275,7 +281,7 @@ msgstr "训练参数"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Normal"
@@ -308,7 +314,7 @@ msgstr "训练参数"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Tables"
@@ -328,7 +334,7 @@ msgstr "训练参数"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Euclidean"
@@ -380,7 +386,7 @@ msgstr "训练参数"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Tables"
@@ -396,7 +402,7 @@ msgstr "训练参数"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Tables"
@@ -412,7 +418,7 @@ msgstr "训练参数"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlRegressionKnn|"
 msgid "Tables"
@@ -428,7 +434,7 @@ msgstr "训练参数"
 
 msgctxt "mlRegressionKnn|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Tables"
@@ -444,7 +450,7 @@ msgstr "训练参数"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Tables"
@@ -472,7 +478,7 @@ msgstr "训练参数"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Elastic net"
@@ -548,7 +554,7 @@ msgstr "训练参数"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Tables"
@@ -564,7 +570,7 @@ msgstr "训练参数"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "DataSplit|"
 msgid "Column name"
@@ -620,7 +626,7 @@ msgstr "随机"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Algorithm"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Trees"
@@ -700,7 +706,7 @@ msgstr "训练参数"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlClassificationSvm|"
 msgid "Tables"
@@ -716,7 +722,7 @@ msgstr "训练参数"
 
 msgctxt "mlClassificationSvm|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Center type"
@@ -748,7 +754,7 @@ msgstr "训练参数"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlRegressionSvm|"
 msgid "Tables"
@@ -764,7 +770,7 @@ msgstr "训练参数"
 
 msgctxt "mlRegressionSvm|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlPrediction|"
 msgid "Trained model"
@@ -780,7 +786,7 @@ msgstr "特征"
 
 msgctxt "mlPrediction|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlPrediction|"
 msgid "Tables"
@@ -2547,7 +2553,7 @@ msgstr "训练参数"
 
 msgctxt "mlRegressionLinear|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid ""
@@ -2745,8 +2751,7 @@ msgid ""
 "contains the mean and standard deviation of the feature given the target "
 "class. For categorical features, the table displays the conditional "
 "probabilities given the target class."
-msgstr ""
-"显示后验统计量的表。对于数字特征，包含目标类别下特征的平均值和标准偏差。对于"
+msgstr "显示后验统计量的表。对于数值特征，包含目标类别下特征的平均值和标准偏差。对于"
 "分类特征，显示目标类别的条件概率。"
 
 msgctxt "mlClassificationNaiveBayes|"
@@ -2759,7 +2764,7 @@ msgstr "训练参数"
 
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Smoothing parameter"
@@ -2825,7 +2830,7 @@ msgstr "训练参数"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Model"
@@ -2963,7 +2968,7 @@ msgstr "训练参数"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Algorithmic Settings"
-msgstr "算法参数"
+msgstr "算法设置"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Link function (for binary classification)"
@@ -2994,4 +2999,5 @@ msgid ""
 "The prediction analysis enables you to load a trained machine learning model "
 "and apply it to new data. It is important that the features in the new "
 "dataset have the same names as in the original dataset used for training."
-msgstr ""
+msgstr "预测分析能够加载训练好的机器学习模型并将其应用于新数据。新数据集中的特征必须"
+"与训练数据集中的特征具有相同的名称。"
