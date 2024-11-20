@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.2\n"
 "POT-Creation-Date: 2024-09-13 20:51\n"
-"PO-Revision-Date: 2024-04-30 07:07+0000\n"
-"Last-Translator: Cochrane <cunyikang@qq.com>\n"
+"PO-Revision-Date: 2024-11-19 12:00+0000\n"
+"Last-Translator: Yu Gong <yugong@outlook.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "jasp/jaspmachinelearning-r/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -26,7 +26,7 @@ msgid "Random Forest Classification"
 msgstr "随机森林分类"
 
 msgid "Boosting Classification"
-msgstr "增强(Boosting)分类"
+msgstr "提升(Boosting)分类"
 
 msgid "Neural Network Classification"
 msgstr "神经网络分类"
@@ -42,13 +42,13 @@ msgid "Naive Bayes Classification"
 msgstr "随机森林分类"
 
 msgid "Logistic / Multinomial Regression Classification"
-msgstr ""
+msgstr "逻辑斯蒂回归"
 
 msgid "Model Summary: %1$s"
-msgstr ""
+msgstr "模型概要：%1$s"
 
 msgid "Nearest neighbors"
-msgstr "近邻"
+msgstr "最近邻"
 
 msgid "Weights"
 msgstr "权重"
@@ -60,16 +60,16 @@ msgid "Linear Discriminants"
 msgstr "线性判别"
 
 msgid "Method"
-msgstr ""
+msgstr "方法"
 
 msgid "Trees"
 msgstr "树"
 
 msgid "Features per split"
-msgstr ""
+msgstr "拆分使用的特征数"
 
 msgid "Shrinkage"
-msgstr ""
+msgstr "压缩"
 
 msgid "Hidden Layers"
 msgstr "隐藏层"
@@ -78,74 +78,74 @@ msgid "Nodes"
 msgstr "节点"
 
 msgid "Complexity penalty"
-msgstr ""
+msgstr "复杂度惩罚"
 
 msgid "Splits"
-msgstr ""
+msgstr "拆分"
 
 msgid "Violation cost"
-msgstr ""
+msgstr "约束违反成本"
 
 msgid "Support Vectors"
-msgstr ""
+msgstr "支持向量"
 
 msgid "Smoothing"
-msgstr ""
+msgstr "平滑"
 
 msgid "Family"
-msgstr ""
+msgstr "函数族"
 
 msgid "Link"
-msgstr ""
+msgstr "链接"
 
 msgid "n(Train)"
-msgstr ""
+msgstr "n(训练)"
 
 msgid "n(Validation)"
-msgstr ""
+msgstr "n(验证)"
 
 msgid "n(Test)"
-msgstr ""
+msgstr "n(测试)"
 
 msgid "Validation Accuracy"
 msgstr "验证准确率"
 
 msgid "Test Accuracy"
-msgstr "测试正确率"
+msgstr "测试准确率"
 
 msgid "OOB Accuracy"
-msgstr ""
+msgstr "袋外准确率"
 
 msgid "Please provide a target variable and at least %i feature variable(s)."
-msgstr ""
+msgstr "请提供一个目标变量和至少 %i 个特征变量"
 
 msgid "The trained model is saved as <i>%1$s</i>."
-msgstr ""
+msgstr "训练的模型已保存为<i>%1$s</i>。"
 
 msgid ""
 "The trained model is <b>not</b> saved because the some of the variable names "
 "in the model contain spaces (i.e., ' ') or underscores (i.e., '_'). Please "
 "remove all such characters from the variable names and try saving the model "
 "again."
-msgstr ""
+msgstr "由于模型中的某些变量名包含空格或下划线，因此<b>未</b>保存训练好的模型。请删除变量名中的所有此类字符，并尝试重新保存模型。"
 
 msgid "The trained model is not saved until 'Save trained model' is checked."
-msgstr ""
+msgstr "只有选中“保存训练好的模型”，才能保存模型。"
 
 msgid ""
 "The model is optimized with respect to the <i>validation set accuracy</i>."
-msgstr ""
+msgstr "模型根据<i>验证集精度</i>进行了优化"
 
 msgid ""
 "The optimum number of nearest neighbors is the maximum number. You might "
 "want to adjust the range of optimization."
-msgstr ""
+msgstr "近邻的最佳数量是最大数量。您可能需要调整优化范围。"
 
 msgid "Manhattan"
-msgstr ""
+msgstr "曼哈顿距离"
 
 msgid "Euclidean"
-msgstr ""
+msgstr "欧式距离"
 
 msgid "Moment"
 msgstr ""
@@ -160,162 +160,162 @@ msgid "t"
 msgstr "t"
 
 msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
-msgstr ""
+msgstr "该模型根据<i>袋外准确率精度</i>进行了优化。"
 
 msgid "The model is optimized with respect to the <i>sum of squares</i>."
-msgstr ""
+msgstr "该模型根据 <i>平方和</i>进行了优化"
 
 #, fuzzy
 msgid "Model Summary: Logistic Regression Classification"
-msgstr "K近邻分类"
+msgstr "模型概要：逻辑回归分类"
 
 msgid "Model Summary: Multinomial Regression Classification"
-msgstr ""
+msgstr "模型概要：多类逻辑回归分类"
 
 msgid "Confusion Matrix"
-msgstr ""
+msgstr "混淆矩阵"
 
 msgid "Observed"
-msgstr ""
+msgstr "观测"
 
 msgid "Predicted"
-msgstr ""
+msgstr "预测"
 
 msgid "Decision Boundary Matrix"
-msgstr ""
+msgstr "决策边界矩阵"
 
 msgid ""
 "Cannot create matrix: not enough numeric variables remain after removing "
 "factor variables. You need at least 2 numeric variables."
-msgstr ""
+msgstr "无法创建矩阵：删除因子变量后剩余的数值变量不够。至少需要2个数值变量。"
 
 msgid "ROC Curves Plot"
-msgstr ""
+msgstr "ROC曲线"
 
 msgid "False Positive Rate"
-msgstr ""
+msgstr "假正率"
 
 msgid "True Positive Rate"
-msgstr ""
+msgstr "真正率"
 
 msgid "Perfect separation"
-msgstr ""
+msgstr "完美分割"
 
 msgid "Andrews Curves Plot"
-msgstr ""
+msgstr "区分度曲线"
 
 msgid "Andrews curves require a minimum of 2 feature variables."
-msgstr ""
+msgstr "区分度曲线至少需要 2 个特征变量。"
 
 msgid "Box's M-test for Homogeneity of Covariance Matrices"
-msgstr ""
+msgstr "协方差矩阵同质性的Box M-检验"
 
 msgid "Model Performance Metrics"
-msgstr ""
+msgstr "模型性能指标"
 
 msgid "Support"
-msgstr ""
+msgstr "支持度"
 
 msgid "Accuracy"
-msgstr ""
+msgstr "准确率"
 
 msgid "Precision (Positive Predictive Value)"
-msgstr ""
+msgstr "精确率"
 
 msgid "Recall (True Positive Rate)"
-msgstr ""
+msgstr "召回率"
 
 msgid "False Discovery Rate"
-msgstr ""
+msgstr "错误发现率"
 
 msgid "F1 Score"
-msgstr ""
+msgstr "F1分数"
 
 msgid "Matthews Correlation Coefficient"
-msgstr ""
+msgstr "Matthews相关系数"
 
 msgid "Area Under Curve (AUC)"
-msgstr ""
+msgstr "曲线下方面积(AUC)"
 
 msgid "Negative Predictive Value"
-msgstr ""
+msgstr "负预测值"
 
 msgid "True Negative Rate"
-msgstr ""
+msgstr "真负率"
 
 msgid "False Negative Rate"
-msgstr ""
+msgstr "假负率"
 
 msgid "False Omission Rate"
-msgstr ""
+msgstr "错误遗漏率"
 
 msgid "Threat Score"
-msgstr ""
+msgstr "威胁分值"
 
 msgid "Statistical Parity"
-msgstr ""
+msgstr "统计均等"
 
 msgid "All metrics are calculated for every class against all other classes."
-msgstr ""
+msgstr "所有指标都是针对每个类和所有其他类计算的"
 
 msgid "Average / Total"
-msgstr ""
+msgstr "平均/总计"
 
 msgid "Class Proportions"
-msgstr ""
+msgstr "类比例"
 
 msgid "Data Set"
-msgstr ""
+msgstr "数据集"
 
 msgid "Training Set"
-msgstr ""
+msgstr "训练集"
 
 msgid "Validation Set"
-msgstr ""
+msgstr "验证集"
 
 msgid "Training and Validation Set"
-msgstr ""
+msgstr "训练与验证集"
 
 msgid "Test Set"
-msgstr ""
+msgstr "测试集"
 
 msgid ""
 "You have specified more clusters than distinct data points. Please choose a "
 "number lower than %s."
-msgstr ""
+msgstr "您指定的簇数多于不同的数据点。请选择一个小于%s 的数字。"
 
 msgid ""
 "R package error: The hclust clustering algorithm from the stats R package "
 "cannot handle data that has 65536 or more rows. We are working on a solution "
 "for this problem. Please try another algorithm in the meantime."
-msgstr ""
+msgstr "R软件包错误：stats软件包中的hclust聚类算法无法处理65536行或更多行的数据。我们正在努力解决这个问题。在此期间，请尝试其他算法。"
 
 msgid "K-Means Clustering"
-msgstr ""
+msgstr "K均值聚类"
 
 msgid "K-Medians Clustering"
-msgstr ""
+msgstr "K中位数聚类"
 
 msgid "K-Medoids Clustering"
-msgstr ""
+msgstr "K中心点聚类"
 
 msgid "Fuzzy C-Means Clustering"
-msgstr ""
+msgstr "模糊C-均值聚类"
 
 msgid "Hierarchical Clustering"
-msgstr ""
+msgstr "层次聚类"
 
 msgid "Density-Based Clustering"
-msgstr ""
+msgstr "密度聚类"
 
 msgid "Random Forest Clustering"
-msgstr ""
+msgstr "随机森林聚类"
 
 msgid "Model-Based Clustering"
-msgstr ""
+msgstr "基于模型聚类"
 
 msgid "Clusters"
-msgstr ""
+msgstr "簇"
 
 msgid "N"
 msgstr ""
@@ -330,280 +330,280 @@ msgid "BIC"
 msgstr "BIC"
 
 msgid "Silhouette"
-msgstr ""
+msgstr "轮廓系数"
 
 msgid "Please provide at least 2 features."
-msgstr ""
+msgstr "请提供至少2个特征。"
 
 msgid "silhouette"
-msgstr ""
+msgstr "轮廓系数"
 
 msgid "The model is optimized with respect to the <i>%s</i> value."
-msgstr ""
+msgstr "根据 <i>%s</i> 值优化模型。"
 
 msgid ""
 "The optimum number of clusters is the maximum number of clusters. You might "
 "want to adjust the range of optimization."
-msgstr ""
+msgstr "簇的最佳数目就是簇的最大数目。您可能需要调整优化范围。"
 
 msgid ""
 "The model contains 0 clusters and only Noisepoints, we advise to change "
 "'Epsilon neighborhood size' and 'Min. core points' parameters under "
 "'Training parameters'."
-msgstr ""
+msgstr "该模型不包含簇，只有噪声点，建议更改“训练参数”下的“Epsilon邻域大小”和“最小核心点”参数。"
 
 msgid ""
 "The model contains 1 cluster and no Noisepoints. You may want to change "
 "'Epsilon neighborhood size' and 'Min. core points' parameters under "
 "'Training parameters'."
-msgstr ""
+msgstr "模型包含1个簇，没有噪音点。您可能需要更改“训练参数”下的“Epsilon邻域大小”和“最小核心点”参数。"
 
 msgid "spherical with equal volume"
-msgstr ""
+msgstr "等体积球形"
 
 msgid "spherical with unequal volume"
-msgstr ""
+msgstr "不等体积球形"
 
 msgid "diagonal with equal volume and shape"
-msgstr ""
+msgstr "等体积等形状的对角阵"
 
 msgid "diagonal with varying volume and equal shape"
-msgstr ""
+msgstr "体积不等，形状相同的对角阵"
 
 msgid "diagonal with equal volume and varying shape"
-msgstr ""
+msgstr "体积相等、形状不同的对角阵"
 
 msgid "diagonal with varying volume and shape"
-msgstr ""
+msgstr "体积和形状各异的对角阵"
 
 msgid "ellipsoidal with equal volume, shape, and orientation"
-msgstr ""
+msgstr "体积、形状和方向相同的椭圆体"
 
 msgid "ellipsoidal with equal shape and orientation"
-msgstr ""
+msgstr "形状和方向相同的椭圆体"
 
 msgid "ellipsoidal with equal volume and orientation"
-msgstr ""
+msgstr "等体积同方向的椭圆体"
 
 msgid "ellipsoidal with equal orientation"
-msgstr ""
+msgstr "等向椭圆体"
 
 msgid "ellipsoidal with equal volume and equal shape"
-msgstr ""
+msgstr "等体积等形状的椭圆体"
 
 msgid "ellipsoidal with equal shape"
-msgstr ""
+msgstr "等形状的椭圆体"
 
 msgid "ellipsoidal with equal volume"
-msgstr ""
+msgstr "等体积的椭圆体"
 
 msgid "ellipsoidal with varying volume, shape, and orientation"
-msgstr ""
+msgstr "具有不同体积、形状和方向的椭圆体"
 
 msgid "The model is %1$s."
-msgstr ""
+msgstr "模型为%1$s。"
 
 msgid "The features in the model are <b>unstandardized</b>."
-msgstr ""
+msgstr "模型中的特征<b>未标准化</b>。"
 
 msgid "Cluster Information"
-msgstr ""
+msgstr "簇信息"
 
 msgid "Cluster"
-msgstr ""
+msgstr "簇"
 
 msgid "Size"
-msgstr ""
+msgstr "大小"
 
 msgid "Explained proportion within-cluster heterogeneity"
-msgstr ""
+msgstr "簇内异质性的解释比例"
 
 msgid "Within sum of squares"
-msgstr ""
+msgstr "内平方和"
 
 msgid "Silhouette score"
-msgstr ""
+msgstr "轮廓系数"
 
 msgid "Center %s"
-msgstr ""
+msgstr "中心%s"
 
 msgid "Noisepoints"
-msgstr ""
+msgstr "噪声点"
 
 msgid "The Between Sum of Squares of the %1$s cluster model is %2$s"
-msgstr ""
+msgstr "聚类模型%1$s的外平方和为 %2$s"
 
 msgid "The Total Sum of Squares of the %1$s cluster model is %2$s"
-msgstr ""
+msgstr "聚类模型%1$s的总平方和为%2$s"
 
 msgid "Value"
-msgstr ""
+msgstr "值"
 
 msgid "Maximum diameter"
-msgstr ""
+msgstr "最大直径"
 
 msgid "Minimum separation"
-msgstr ""
+msgstr "最小间隔"
 
 msgid "Pearson's %s"
-msgstr ""
+msgstr "皮尔逊%s"
 
 msgid "Dunn index"
-msgstr ""
+msgstr "Dunn指数"
 
 msgid "Entropy"
-msgstr ""
+msgstr "熵"
 
 msgid "Calinski-Harabasz index"
-msgstr ""
+msgstr "Calinski-Harabasz指数"
 
 msgid "All metrics are based on the <i>euclidean</i> distance."
-msgstr ""
+msgstr "所有指标都基于<i>欧几里得</i>距离。"
 
 msgid "Evaluation metrics cannot be computed when there is only 1 cluster."
-msgstr ""
+msgstr "当只有一个簇时，无法计算指标。"
 
 msgid "t-SNE Cluster Plot"
-msgstr ""
+msgstr "t-SNE聚类图"
 
 msgid "Noisepoint"
-msgstr ""
+msgstr "噪声点"
 
 msgid "Elbow Method Plot"
-msgstr ""
+msgstr "肘部法图"
 
 msgid "WSS"
-msgstr ""
+msgstr "内平方和"
 
 msgid "Number of Clusters"
-msgstr ""
+msgstr "簇的数量"
 
 msgid "Lowest %s"
-msgstr ""
+msgstr "最低%s"
 
 msgid "Cluster Means"
-msgstr ""
+msgstr "簇均值"
 
 msgid "Cluster %s"
-msgstr ""
+msgstr "簇%s"
 
 msgid "Cluster Density Plots"
-msgstr ""
+msgstr "簇密度图"
 
 msgid "Density"
-msgstr ""
+msgstr "密度"
 
 msgid "Feature"
-msgstr ""
+msgstr "特征"
 
 msgid "All Features"
-msgstr ""
+msgstr "所有特征"
 
 msgid "Cluster Mean Plots"
-msgstr ""
+msgstr "簇均值图"
 
 msgid "Cluster Mean"
-msgstr ""
+msgstr "簇均值"
 
 msgid ""
 "Insufficient RAM available to compute the distance matrix. The analysis "
 "tried to allocate %s Gb"
-msgstr ""
+msgstr "可用内存不足，无法计算距离矩阵。分析尝试分配%sGb"
 
 msgid "An error occurred in the analysis: %1$s"
-msgstr ""
+msgstr "分析过程中出现错误：%1$s"
 
 msgid "Cluster Matrix Plot"
-msgstr ""
+msgstr "聚类矩阵图"
 
 msgid "The variable '%s' can't be both a feature and a test set indicator."
-msgstr ""
+msgstr "变量'%s'不能同时作为特征和测试集指标。"
 
 msgid ""
 "Your test set indicator should be binary, containing only 1 (included in "
 "test set) and 0 (excluded from test set)."
-msgstr ""
+msgstr "测试集指标应该是二进制的，只包含1（包含在 测试集中）和0（排除在测试集之外）。"
 
 msgid ""
 "There is only one observation in each level of the factor %1$s, please "
 "remove this factor as a feature."
-msgstr ""
+msgstr "因子%1$s的每个级别中只有一个观测值，请删除该因子。"
 
 msgid ""
 "There is only one observation in each level of the factors %1$s, please "
 "remove these factors as a feature."
-msgstr ""
+msgstr "因子%1$s的每个级别中只有一个观测值，请将这些因子作为特征删除。"
 
 msgid ""
 "You have specified more nearest neighbors than there are observations in the "
 "training set. Please choose a number lower than %d."
-msgstr ""
+msgstr "您指定的近邻数多于训练集中的观测值。请选择一个小于%d的数字。"
 
 msgid ""
 "You have specified more folds than there are observations in the training "
 "and validation set. Please choose a number lower than %d."
-msgstr ""
+msgstr "您指定的折叠数多于训练集和验证集中的观测数。请选择一个小于%d的数字。"
 
 msgid "K-Nearest Neighbors Regression"
-msgstr ""
+msgstr "K近邻回归"
 
 msgid "Regularized Linear Regression"
-msgstr ""
+msgstr "正则化线性回归"
 
 msgid "Random Forest Regression"
-msgstr ""
+msgstr "随机森林回归"
 
 msgid "Boosting Regression"
-msgstr ""
+msgstr "提升回归"
 
 msgid "Neural Network Regression"
-msgstr ""
+msgstr "神经网络回归"
 
 msgid "Decision Tree Regression"
-msgstr ""
+msgstr "决策树回归"
 
 msgid "Support Vector Machine Regression"
-msgstr ""
+msgstr "支持向量机回归"
 
 msgid "Linear Regression"
-msgstr ""
+msgstr "线性回归"
 
 msgid "Penalty"
-msgstr ""
+msgstr "惩罚"
 
 msgid "Loss function"
-msgstr ""
+msgstr "损失函数"
 
 msgid "Validation MSE"
-msgstr ""
+msgstr "验证MSE"
 
 msgid "Test MSE"
-msgstr ""
+msgstr "测试MSE"
 
 msgid "OOB Error"
-msgstr ""
+msgstr "袋外错误率"
 
 msgid "R%1$s"
 msgstr ""
 
 msgid "Adjusted R%1$s"
-msgstr ""
+msgstr "调整R%1$s"
 
 msgid "Please provide a target variable and at least %d feature variable(s)."
-msgstr ""
+msgstr "请提供一个目标变量和至少%d个特征变量"
 
 msgid ""
 "The model is optimized with respect to the <i>validation set mean squared "
 "error</i>."
-msgstr ""
+msgstr "根据<i>验证集均方误差</i>对模型进行了优化。"
 
 msgid "When %s is set to 0 linear regression is performed."
-msgstr ""
+msgstr "当%s设置为0时，将进行线性回归。"
 
 msgid ""
 "The model is optimized with respect to the <i>out-of-bag mean squared error</"
 "i>."
-msgstr ""
+msgstr "该模型根据<i>袋外均方误差</i>进行了优化。"
 
 msgid "Gaussian"
 msgstr ""
@@ -615,46 +615,46 @@ msgid "MSE(scaled)"
 msgstr ""
 
 msgid "R%s cannot be computed due to lack of variance in the predictions.</i>"
-msgstr ""
+msgstr "由于预测中缺乏方差，因此无法计算R%s。"
 
 msgid "Predictive Performance Plot"
-msgstr ""
+msgstr "预测性能图"
 
 msgid "Observed Test Values"
-msgstr ""
+msgstr "观测测试值"
 
 msgid "Predicted Test Values"
-msgstr ""
+msgstr "预测测试值"
 
 msgid "Data Split"
-msgstr ""
+msgstr "数据拆分"
 
 msgid "Train: %d"
-msgstr ""
+msgstr "训练:%d"
 
 msgid "Test: %d"
-msgstr ""
+msgstr "测试:%d"
 
 msgid "Total: %d"
-msgstr ""
+msgstr "合计:%d"
 
 msgid "Validation: %d"
-msgstr ""
+msgstr "验证:%d"
 
 msgid "Train and validation: %d"
-msgstr ""
+msgstr "训练和验证:%d"
 
 msgid "Additive Explanations for Predictions of New Cases"
-msgstr ""
+msgstr "新案例预测的可加解释"
 
 msgid "Additive Explanations for Predictions of Test Set Cases"
-msgstr ""
+msgstr "测试集预测的可加解释"
 
 msgid "Case"
-msgstr ""
+msgstr "案例"
 
 msgid "Predicted (Prob.)"
-msgstr ""
+msgstr "预测（概率）"
 
 msgid "Base"
 msgstr ""
@@ -666,63 +666,63 @@ msgstr "分析过程中发生了错误：%s"
 msgid ""
 "Displayed values represent feature contributions to the predicted value "
 "without features (column 'Base') for the test set."
-msgstr ""
+msgstr "显示值代表了特征对测试集（无Base列）预测值的贡献。"
 
 msgid ""
 "Displayed values represent feature contributions to the predicted class "
 "probability without features (column 'Base') for the test set."
-msgstr ""
+msgstr "显示值代表了特征对测试集（无Base列）预测概率值的贡献。"
 
 msgid "Feature Importance Metrics"
-msgstr ""
+msgstr "特征重要性度量"
 
 msgid "Mean dropout loss"
-msgstr ""
+msgstr "平均dropout损失"
 
 msgid "root mean squared error (RMSE)"
-msgstr ""
+msgstr "均方根误差 (RMSE)"
 
 msgid "1 - area under curve (AUC)"
-msgstr ""
+msgstr "1 - 曲线下方面积 (AUC)"
 
 msgid "cross entropy"
-msgstr ""
+msgstr "交叉熵"
 
 msgid "Mean dropout loss (defined as %1$s) is based on %2$s permutations."
-msgstr ""
+msgstr "平均dropout损失（定义为 %1$s）基于 %2$s 的置换。"
 
 msgid "The target variable should have at least 2 classes."
-msgstr ""
+msgstr "目标变量应至少有2个类"
 
 msgid "Linear Discriminant Coefficients"
-msgstr ""
+msgstr "线性判别系数"
 
 msgid "(Constant)"
-msgstr ""
+msgstr "（常量）"
 
 msgid "Prior and Posterior Class Probabilities"
-msgstr ""
+msgstr "类先验概率和后验概率"
 
 msgid "Prior"
-msgstr ""
+msgstr "先验概率"
 
 msgid "Posterior"
-msgstr ""
+msgstr "后验概率"
 
 msgid "Class Means in Training Data"
-msgstr ""
+msgstr "训练数据中的类平均"
 
 msgid "Linear Discriminant Matrix"
-msgstr ""
+msgstr "线性判别矩阵"
 
 msgid "Tests of Equality of Class Means"
-msgstr ""
+msgstr "类均值相等检验"
 
 msgid "The null hypothesis specifies equal class means."
-msgstr ""
+msgstr "零假设为类均值相等。"
 
 msgid "Tests of Equality of Covariance Matrices"
-msgstr ""
+msgstr "协方差矩阵相等性检验"
 
 msgid "df"
 msgstr "df"
@@ -731,252 +731,252 @@ msgid "p"
 msgstr "p"
 
 msgid "The null hypothesis specifies equal covariance matrices."
-msgstr ""
+msgstr "零假设为协方差矩阵相等。"
 
 msgid ""
 "There are one or more levels in the target variable with less than two "
 "observations."
-msgstr ""
+msgstr "目标变量中有一个或多个水平的观测值少于两个"
 
 msgid "Box's M"
-msgstr ""
+msgstr "Box M检验"
 
 msgid "Pooled Within-Class Matrices Correlations"
-msgstr ""
+msgstr "池化类内矩阵相关性"
 
 msgid "Tests for Multivariate Normality"
-msgstr ""
+msgstr "多元正态性检验"
 
 msgid "Statistic"
-msgstr ""
+msgstr "统计量"
 
 msgid "Skewness"
-msgstr ""
+msgstr "偏度"
 
 msgid "Kurtosis"
-msgstr ""
+msgstr "峰度"
 
 msgid ""
 "Both p-values of the skewness and kurtosis statistics should be > 0.05 to "
 "conclude multivariate normality."
-msgstr ""
+msgstr "偏度和峰度统计量的p值都应>0.05以得出多变量正态性结论。"
 
 msgid "Regression Coefficients"
-msgstr ""
+msgstr "回归系数"
 
 msgid "Coefficient (%s)"
-msgstr ""
+msgstr "系数（%s）"
 
 msgid "Standard Error"
-msgstr ""
+msgstr "标准误"
 
 msgid "z"
 msgstr ""
 
 msgid "%1$s%% Confidence interval"
-msgstr ""
+msgstr "%1$s%%置信区间"
 
 msgid "Lower"
-msgstr ""
+msgstr "下限"
 
 msgid "Upper"
-msgstr ""
+msgstr "上限"
 
 msgid "The regression coefficients for numeric features are standardized."
-msgstr ""
+msgstr "数值特征的回归系数已标准化。"
 
 msgid "The regression coefficients are unstandardized."
-msgstr ""
+msgstr "回归系数未标准化。"
 
 msgid ""
 "<b>Regression equation:</b>\n"
 "%1$s"
-msgstr ""
+msgstr "<b>回归方程：</b>\n%1$s"
 
 msgid "Posterior Statistics"
-msgstr ""
+msgstr "后验统计"
 
 msgid "Feature: %1$s"
-msgstr ""
+msgstr "特征：%1$s"
 
 msgid "Mean"
-msgstr ""
+msgstr "均值"
 
 msgid "Std. deviation"
-msgstr ""
+msgstr "标准差"
 
 msgid ""
 "The table displays the mean and standard deviation of the feature given the "
 "target class."
-msgstr ""
+msgstr "表显示了目标类别下特征的均值和标准差。"
 
 msgid ""
 "The table displays the conditional probabilities given the target class."
-msgstr ""
+msgstr "表显示了目标类别的条件概率。"
 
 msgid ""
 "Analysis not possible: The algorithm did not converge within the maximum "
 "number of training repetitions (%1$s)."
-msgstr ""
+msgstr "无法进行分析：算法未在最大训练次数(%1$s)内收敛。"
 
 msgid "Optimizing network topology"
-msgstr ""
+msgstr "优化网络拓扑"
 
 msgid "K-Distance Plot"
-msgstr ""
+msgstr "K-距离图"
 
 msgid "Points Sorted by Distance"
-msgstr ""
+msgstr "按距离排序的点"
 
 msgid ""
 "%s-Nearest Neighbors \n"
 "Distance"
-msgstr ""
+msgstr "%s-近邻\n距离"
 
 msgid "Maximum curvature = %s"
-msgstr ""
+msgstr "最大曲率=%s"
 
 msgid "End of recursion reached without converging"
-msgstr ""
+msgstr "递归结束但未收敛"
 
 msgid "x and y must be numeric and finite. Missing values not allowed."
-msgstr ""
+msgstr "x和y必须是有限的数值。不允许有缺失值。"
 
 msgid "x and y must be of equal length."
-msgstr ""
+msgstr "x和y的长度必须相等。"
 
 msgid "Need more points to find cutoff."
-msgstr ""
+msgstr "需要更多的点才能找到截止点。"
 
 msgid "Need to specify fraction of maximum slope."
-msgstr ""
+msgstr "需要指定最大斜率的分数。"
 
 msgid ""
 "Fraction of maximum slope must be positive and be less than or equal to 1."
-msgstr ""
+msgstr "最大坡度的分数必须为正数，且小于或等于 1。"
 
 msgid "Method must be either 'first' or 'curvature'."
-msgstr ""
+msgstr "方法必须是“first”或“曲率”。"
 
 msgid "Cutoff point is beyond range. Returning NA."
-msgstr ""
+msgstr "截止点超出范围。返回 NA。"
 
 msgid "Dendrogram"
-msgstr ""
+msgstr "树图"
 
 msgid ""
 "The %1$s-component %2$s model could not be fitted, try a different model or "
 "a different number of clusters."
-msgstr ""
+msgstr "无法拟合%1$s-成分%2$s模型，请尝试不同的模型或不同的簇数。"
 
 msgid "Estimated Model Parameters"
-msgstr ""
+msgstr "估计模型参数"
 
 msgid "Mixing Probabilities"
-msgstr ""
+msgstr "混合概率"
 
 msgid "Mixing probability"
-msgstr ""
+msgstr "混合概率"
 
 msgid "Component %1$s"
-msgstr ""
+msgstr "成分%1$s"
 
 msgid "Means"
-msgstr ""
+msgstr "均值"
 
 msgid "Covariance Matrix for Component %1$s"
-msgstr ""
+msgstr "成分 %1$s 的协方差矩阵"
 
 msgid "Scale of the Covariance"
-msgstr ""
+msgstr "协方差标度"
 
 msgid "Scale"
-msgstr ""
+msgstr "标度"
 
 msgid "Shape of the Covariance Matrix"
-msgstr ""
+msgstr "协方差矩阵的形状"
 
 msgid "Eigenvalues of the Covariance Matrix for Component %1$s"
-msgstr ""
+msgstr "成分%1$s的协方差矩阵的特征值"
 
 msgid "Feature Importance"
-msgstr ""
+msgstr "特征重要性"
 
 msgid "Mean decrease in Gini Index"
-msgstr ""
+msgstr "基尼系数的平均降幅"
 
 msgid "K-nearest neighbors"
-msgstr ""
+msgstr "K最近邻"
 
 msgid "Linear discriminant"
-msgstr ""
+msgstr "线性判别"
 
 msgid "Linear"
-msgstr ""
+msgstr "线性"
 
 msgid "Boosting"
-msgstr ""
+msgstr "提升"
 
 msgid "Random forest"
-msgstr ""
+msgstr "随机森林"
 
 msgid "Regularized linear regression"
-msgstr ""
+msgstr "正则化线性回归"
 
 msgid "Neural network"
-msgstr ""
+msgstr "神经网络"
 
 msgid "Decision tree"
-msgstr ""
+msgstr "决策树"
 
 msgid "Support vector machine"
-msgstr ""
+msgstr "支持向量机"
 
 msgid "Naive Bayes"
-msgstr ""
+msgstr "朴素贝叶斯"
 
 msgid "Logistic regression"
-msgstr ""
+msgstr "逻辑回归"
 
 msgid "Multinomial regression"
-msgstr ""
+msgstr "多类逻辑回归"
 
 msgid "Error: The trained model is not created in JASP."
-msgstr ""
+msgstr "错误：未在JASP中创建训练有素的模型。"
 
 msgid "The trained model (type: %1$s) is currently not supported in JASP."
-msgstr ""
+msgstr "JASP目前不支持训练的模型（类型：%1$s）。"
 
 msgid "Error: The trained model is created using a different version of JASP."
-msgstr ""
+msgstr "错误：训练的模型是使用不同版本的JASP创建的。"
 
 msgid "Loaded Model"
-msgstr ""
+msgstr "已加载模型"
 
 msgid "Classification"
-msgstr ""
+msgstr "分类"
 
 msgid "Regression"
-msgstr ""
+msgstr "回归"
 
 msgid "Loaded Model: %1$s"
-msgstr ""
+msgstr "已加载模型:%1$s"
 
 msgid ""
 "The trained model is not applied because the the following features are "
 "missing: <i>%1$s</i>."
-msgstr ""
+msgstr "未应用模型，因为缺少以下功能：<i>%1$s</i>。"
 
 msgid ""
 "The following features are unused because they are not a feature variable in "
 "the trained model: <i>%1$s</i>."
-msgstr ""
+msgstr "以下特征未使用，因为它们不是训练模型中的特征变量：<i>%1$s</i>。"
 
 msgid "Nearest Neighbors"
-msgstr ""
+msgstr "最近邻"
 
 msgid "n(New)"
-msgstr ""
+msgstr "n(新)"
 
 msgid "Binomial"
 msgstr ""
@@ -988,122 +988,122 @@ msgid "Logit"
 msgstr ""
 
 msgid "Predictions for New Data"
-msgstr ""
+msgstr "新数据的预测"
 
 msgid "Relative Influence"
-msgstr ""
+msgstr "相对影响"
 
 msgid "<i>Warning.</i>"
-msgstr ""
+msgstr "<i>警告</i>。"
 
 #, fuzzy
 msgid "An error occurred when computing the mean dropout loss: %1$s"
 msgstr "分析过程中发生了错误：%s"
 
 msgid "Out-of-bag Improvement Plot"
-msgstr ""
+msgstr "袋外提升图"
 
 msgid "Training set"
-msgstr ""
+msgstr "训练集"
 
 msgid ""
 "OOB Change in \n"
 " Multinomial Deviance"
-msgstr ""
+msgstr "在多项式偏差中\n袋外误差的变化"
 
 msgid ""
 "OOB Change in \n"
 " Binomial Deviance"
-msgstr ""
+msgstr "在二项式偏差中\n袋外误差的变化"
 
 msgid ""
 "OOB Change in \n"
 "%s Deviance"
-msgstr ""
+msgstr "在%s偏差中\n袋外误差的变化"
 
 msgid "Plotting not possible: The model is based on only a single tree."
-msgstr ""
+msgstr "无法绘图： 模型只基于一棵树。"
 
 msgid "Number of Trees"
-msgstr ""
+msgstr "树的数量"
 
 msgid "Deviance Plot"
-msgstr ""
+msgstr "偏差图"
 
 msgid "Multinomial Deviance"
-msgstr ""
+msgstr "多项式偏差"
 
 msgid "Binomial Deviance"
-msgstr ""
+msgstr "二项式偏差"
 
 msgid "%s Deviance"
-msgstr ""
+msgstr "%s偏差"
 
 msgid "Relative Influence Plot"
-msgstr ""
+msgstr "相对影响图"
 
 msgid ""
 "The minimum number of observations per node is too large. Ensure that `2 * "
 "Min. observations in node (%1$i) + 1` < `Training data used per tree (%2$s) "
 "* available training data (%3$i)` (in this case the minimum can be %4$i at "
 "most)."
-msgstr ""
+msgstr "每个节点的最小观测数过大。确保`2*节点(%1$i)的最小观测数+1<每棵树使用的训练数据(%2$s)*可用训练数据(%3$i)`（这种情况下，最小值最多为%4$i）。"
 
 msgid "Relative Importance"
-msgstr ""
+msgstr "相对重要性"
 
 msgid "No splits were made in the tree."
-msgstr ""
+msgstr "树中没有拆分"
 
 msgid "Splits in Tree"
-msgstr ""
+msgstr "树中的拆分"
 
 msgid "Obs. in Split"
-msgstr ""
+msgstr "拆分中的观测"
 
 msgid "Split Point"
-msgstr ""
+msgstr "拆分点"
 
 msgid "Improvement"
-msgstr ""
+msgstr "改进"
 
 msgid ""
 "For each level of the tree, only the split with the highest improvement in "
 "deviance is shown."
-msgstr ""
+msgstr "在树的每一层中，只显示偏差改进最大的拆分。"
 
 msgid "Decision Tree Plot"
-msgstr ""
+msgstr "决策树图"
 
 msgid "Plotting not possible: No splits were made in the tree."
-msgstr ""
+msgstr "无法绘制图：树中没有拆分。"
 
 msgid "Plotting not possible: An error occurred while creating this plot: %s"
-msgstr ""
+msgstr "无法绘制图：创建图时发生错误：%s"
 
 msgid "Classification Accuracy Plot"
-msgstr ""
+msgstr "分类准确率图"
 
 msgid "Mean Squared Error Plot"
-msgstr ""
+msgstr "均方误差图"
 
 msgid "Classification Accuracy"
-msgstr ""
+msgstr "分类准确率"
 
 msgid "Mean Squared Error"
-msgstr ""
+msgstr "均方误差"
 
 msgid "Validation set"
-msgstr ""
+msgstr "验证集"
 
 msgid "Complexity Penalty"
-msgstr ""
+msgstr "复杂度惩罚"
 
 msgid "Number of Nearest Neighbors"
-msgstr ""
+msgstr "最近邻数量"
 
 msgid "Training and validation set"
-msgstr ""
+msgstr "训练集和验证集"
 
 msgid "Rectangular"
 msgstr ""
@@ -1133,30 +1133,30 @@ msgid "Optimal"
 msgstr ""
 
 msgid "%1$s Weight Function"
-msgstr ""
+msgstr "%1$s权重函数"
 
 msgid ""
 "Plotting not possible: The selected weighting scheme cannot be visualized "
 "separately from the data."
-msgstr ""
+msgstr "无法绘图：所选加权方案无法与数据分开显示。"
 
 msgid "Proportion of Max. Distance"
-msgstr ""
+msgstr "最大距离的比例"
 
 msgid "Relative Weight"
-msgstr ""
+msgstr "相对权重"
 
 msgid "Network Weights"
-msgstr ""
+msgstr "网络权重"
 
 msgid "Node"
-msgstr ""
+msgstr "节点"
 
 msgid "Layer"
-msgstr ""
+msgstr "层"
 
 msgid "Weight"
-msgstr ""
+msgstr "权重"
 
 msgid "linear"
 msgstr ""
@@ -1207,22 +1207,22 @@ msgid "gaussian error linear unit (GeLU)"
 msgstr ""
 
 msgid "The weights are input for the %1$s activation function."
-msgstr ""
+msgstr "权重是%1$s激活函数的输入。"
 
 msgid "Network Structure Plot"
-msgstr ""
+msgstr "网络结构图"
 
 msgid "Intercept"
 msgstr "截距"
 
 msgid "Input layer"
-msgstr ""
+msgstr "输入层"
 
 msgid "Output layer"
-msgstr ""
+msgstr "输出层"
 
 msgid "Hidden layer %1$s"
-msgstr ""
+msgstr "隐含层%1$s"
 
 msgid "Binary"
 msgstr ""
@@ -1264,70 +1264,70 @@ msgid "GeLU"
 msgstr ""
 
 msgid "%1$s Activation Function"
-msgstr ""
+msgstr "%1$s激活函数"
 
 msgid "Input"
-msgstr ""
+msgstr "输入"
 
 msgid "Output"
-msgstr ""
+msgstr "输出"
 
 msgid "Generation"
-msgstr ""
+msgstr "代数"
 
 msgid "Mean decrease in accuracy"
-msgstr ""
+msgstr "准确率平均下降率"
 
 msgid "Total increase in node purity"
-msgstr ""
+msgstr "节点纯度的总增长"
 
 msgid "Out-of-bag Classification Accuracy Plot"
-msgstr ""
+msgstr "袋外分类准确率图"
 
 msgid "Out-of-bag Mean Squared Error Plot"
-msgstr ""
+msgstr "袋外均方误差图"
 
 msgid "Out-of-bag %sClassification Accuracy"
-msgstr ""
+msgstr "袋外%s分类准确率"
 
 msgid "Out-of-bag %sMean Squared Error"
-msgstr ""
+msgstr "袋外%s均方误差"
 
 msgid "Mean Decrease in Accuracy"
-msgstr ""
+msgstr "准确率平均下降率"
 
 msgid "Total Increase in Node Purity"
-msgstr ""
+msgstr "节点纯度总提高"
 
 msgid "L2 (Ridge)"
-msgstr ""
+msgstr "L2(岭回归)"
 
 msgid "L1 (Lasso)"
-msgstr ""
+msgstr "L1(Lasso)"
 
 msgid "Elastic Net"
-msgstr ""
+msgstr "弹性网络"
 
 msgid "Variable Trace Plot"
 msgstr ""
 
 msgid "Coefficients"
-msgstr ""
+msgstr "系数"
 
 msgid "Lambda Evaluation Plot"
-msgstr ""
+msgstr "Lambda评估图"
 
 msgid "Cross-Validated %sMean Squared Error"
-msgstr ""
+msgstr "交叉验证%s均方差"
 
 msgid "Min. CV MSE"
-msgstr ""
+msgstr "最小交叉验证均方差"
 
 msgid "%s 1 SE"
-msgstr ""
+msgstr "%s 1标准差"
 
 msgid "Row"
-msgstr ""
+msgstr "行"
 
 msgid "Cost of Constraints Violation"
-msgstr ""
+msgstr "约束违反成本"
