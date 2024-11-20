@@ -32,9 +32,9 @@ CheckBox
 	{
 		name:			"seed"
 		defaultValue:	1
-		min:			0
+		min:			-999999
 		max:			999999
-		fieldWidth:		60
+		fieldWidth:		60 * preferencesModel.uiScale
 		info:			qsTr("The value of the seed.")
 	}
 }
