@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-11-20 18:45+0000\n"
+"PO-Revision-Date: 2024-11-21 18:23+0000\n"
 "Last-Translator: Yu Gong <yugong@outlook.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
 "projects/jasp/jaspmachinelearning-qml/zh_Hans/>\n"
@@ -462,7 +462,7 @@ msgstr "图"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Variable trace"
-msgstr ""
+msgstr "自变量系数变化轨迹"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Legend"
