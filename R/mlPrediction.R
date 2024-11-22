@@ -302,6 +302,14 @@ is.jaspMachineLearning <- function(x) {
   return(ready)
 }
 
+# Ensure names in prediction data match names in training data
+.matchDecodedNames <- function(names, model) {
+  decoded <- model[["jaspVars"]][["decoded"]]$predictors
+  encoded <- model[["jaspVars"]][["encoded"]]$predictors
+  matched_indices <- match(decodeColNames(names), decoded)
+  names[!is.na(matched_indices)] <- encoded[matched_indices[!is.na(matched_indices)]]
+}
+
 .mlPredictionReadData <- function(dataset, options) {
   dataset <- jaspBase::excludeNaListwise(dataset, options[["predictors"]])
   if (options[["scaleVariables"]] && length(unlist(options[["predictors"]])) > 0) {
