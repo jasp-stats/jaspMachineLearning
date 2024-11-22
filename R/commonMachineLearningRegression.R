@@ -714,6 +714,14 @@
       purpose <- "classification"
     }
     predictors <- options[["predictors"]][which(decodeColNames(options[["predictors"]]) %in% model[["jaspVars"]][["decoded"]]$predictors)]
+    # Ensure same encoding in prediction data as in training data
+    for (i in seq_along(predictors)) {
+      for (j in seq_along(model[["jaspVars"]][["decoded"]]$predictors)) {
+        if (decodeColNames(predictors[i]) == model[["jaspVars"]][["decoded"]]$predictors[j]) {
+          predictors[i] <- model[["jaspVars"]][["encoded"]]$predictors[j]
+        }
+      }
+    }
   } else {
     predictors <- options[["predictors"]]
   }
@@ -746,6 +754,14 @@
     x_test <- result[["test"]][, predictors]
   } else {
     explainer <- model[["explainer"]]
+    # Ensure same encoding in prediction data as in training data
+    for (i in seq_along(colnames(dataset))) {
+      for (j in seq_along(model[["jaspVars"]][["decoded"]]$predictors)) {
+        if (decodeColNames(colnames(dataset)[i]) == model[["jaspVars"]][["decoded"]]$predictors[j]) {
+          colnames(dataset)[i] <- model[["jaspVars"]][["encoded"]]$predictors[j]
+        }
+      }
+    }
     x_test <- dataset[, predictors]
     predictions <- .mlPredictionsState(model, dataset, options, jaspResults, ready)[options[["fromIndex"]]:options[["toIndex"]]]
   }
