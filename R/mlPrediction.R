@@ -364,16 +364,20 @@ is.jaspMachineLearning <- function(x) {
   selection <- predictions[indexes]
   cols <- list(row = indexes, pred = selection)
   if (options[["predictionsTableFeatures"]]) {
-    for (i in colnames(dataset)) {
-      if (.columnIsNominal(i)) {
-        table$addColumnInfo(name = i, title = i, type = "string")
+    modelVars_encoded <- model[["jaspVars"]][["encoded"]]$predictors
+    modelVars_decoded <- model[["jaspVars"]][["decoded"]]$predictors
+    matched_names <- match(colnames(dataset), modelVars_encoded)
+    for (i in seq_len(ncol(dataset))) {
+      colName <- modelVars_decoded[matched_names[i]]
+      if (is.factor(dataset[[i]])) {
+        table$addColumnInfo(name = colName, title = colName, type = "string")
         var <- levels(dataset[[i]])[dataset[[i]]]
       } else {
-        table$addColumnInfo(name = i, title = i, type = "number")
+        table$addColumnInfo(name = colName, title = colName, type = "number")
         var <- dataset[[i]]
       }
       var <- var[indexes]
-      cols[[i]] <- var
+      cols[[colName]] <- var
     }
   }
   table$setData(cols)
