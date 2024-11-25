@@ -255,7 +255,7 @@ is.jaspMachineLearning <- function(x) {
     return(jaspResults[["predictions"]]$object)
   } else {
     if (ready) {
-      dataset <- dataset[, which(colnames(dataset) %in% model[["jaspVars"]][["encoded"]]$predictors)]
+      dataset <- dataset[which(colnames(dataset) %in% model[["jaspVars"]][["encoded"]]$predictors)]
       jaspResults[["predictions"]] <- createJaspState(.mlPredictionGetPredictions(model, dataset))
       jaspResults[["predictions"]]$dependOn(options = c("loadPath", "predictors", "scaleVariables"))
       return(jaspResults[["predictions"]]$object)
