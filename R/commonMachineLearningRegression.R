@@ -473,7 +473,6 @@
     model[["jaspVars"]]$encoded = list(target = options[["target"]], predictors = options[["predictors"]])
     model[["jaspVersion"]] <- .baseCitation
     model[["explainer"]] <- regressionResult[["explainer"]]
-    model <- .decodeJaspMLobject(model)
     class(model) <- c(class(regressionResult[["model"]]), "jaspRegression", "jaspMachineLearning")
     path <- options[["savePath"]]
     if (!endsWith(path, ".jaspML")) {
@@ -713,7 +712,7 @@
     } else {
       purpose <- "classification"
     }
-    predictors <- options[["predictors"]][which(decodeColNames(options[["predictors"]]) %in% model[["jaspVars"]][["decoded"]]$predictors)]
+    predictors <- model[["jaspVars"]][["encoded"]]$predictors
   } else {
     predictors <- options[["predictors"]]
   }
@@ -724,7 +723,7 @@
     } else {
       .mlClassificationDependencies(options)
     },
-    "tableShap", "fromIndex", "toIndex"
+    "tableShap", "fromIndex", "toIndex", "trainedModelFilePath"
   ))
   table$addColumnInfo(name = "id", title = gettext("Case"), type = "integer")
   if (purpose == "regression") {

@@ -342,7 +342,6 @@
     model[["jaspVars"]]$encoded = list(target = options[["target"]], predictors = options[["predictors"]])
     model[["jaspVersion"]] <- .baseCitation
     model[["explainer"]] <- classificationResult[["explainer"]]
-    model <- .decodeJaspMLobject(model)
     class(model) <- c(class(classificationResult[["model"]]), "jaspClassification", "jaspMachineLearning")
     path <- options[["savePath"]]
     if (!endsWith(path, ".jaspML")) {
