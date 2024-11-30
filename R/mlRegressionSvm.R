@@ -74,6 +74,8 @@ mlRegressionSvm <- function(jaspResults, dataset, options, state = NULL) {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
+    # Check for factor levels in the test set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
     cost <- options[["cost"]]
     trainingFit <- e1071::svm(
       formula = formula, data = trainingSet, type = "eps-regression", kernel = options[["weights"]], cost = cost, tolerance = options[["tolerance"]],
@@ -85,6 +87,10 @@ mlRegressionSvm <- function(jaspResults, dataset, options, state = NULL) {
     testSet <- dataset[-trainingIndex, ]
     validationSet <- trainingAndValidationSet[validationIndex, ]
     trainingSet <- trainingAndValidationSet[-validationIndex, ]
+    # Check for factor levels in the test set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
+    # Check for factor levels in the validation set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, validationSet, "validation")
     costs <- seq(0.01, options[["maxCost"]], 0.01)
     errorStore <- trainErrorStore <- numeric(length(costs))
     startProgressbar(length(costs))

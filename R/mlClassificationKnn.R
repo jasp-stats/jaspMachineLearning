@@ -89,6 +89,8 @@ mlClassificationKnn <- function(jaspResults, dataset, options, ...) {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
+    # Check for factor levels in the test set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
     testFit <- kknn::kknn(
       formula = formula, train = trainingSet, test = testSet, k = options[["noOfNearestNeighbours"]],
       distance = distance, kernel = weights, scale = FALSE
@@ -100,6 +102,10 @@ mlClassificationKnn <- function(jaspResults, dataset, options, ...) {
     testSet <- dataset[-trainingIndex, ]
     validationSet <- trainingAndValidationSet[validationIndex, ]
     trainingSet <- trainingAndValidationSet[-validationIndex, ]
+    # Check for factor levels in the test set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
+    # Check for factor levels in the validation set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, validationSet, "validation")
     if (options[["modelValid"]] == "validationManual") {
       nnRange <- 1:options[["maxNearestNeighbors"]]
       accuracyStore <- numeric(length(nnRange))

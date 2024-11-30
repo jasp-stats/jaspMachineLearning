@@ -87,6 +87,8 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
+    # Check for factor levels in the test set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
     trainingFit <- glmnet::cv.glmnet(
       x = as.matrix(trainingSet[, options[["predictors"]]]), y = trainingSet[, options[["target"]]],
       nfolds = 10, type.measure = "deviance",
@@ -106,6 +108,10 @@ mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
     testSet <- dataset[-trainingIndex, ]
     validationSet <- trainingAndValidationSet[validationIndex, ]
     trainingSet <- trainingAndValidationSet[-validationIndex, ]
+    # Check for factor levels in the test set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
+    # Check for factor levels in the validation set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, validationSet, "validation")
     trainingWeights <- weights[trainingIndex]
     trainingFit <- glmnet::cv.glmnet(
       x = as.matrix(trainingSet[, options[["predictors"]]]), y = trainingSet[, options[["target"]]],

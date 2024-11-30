@@ -141,6 +141,40 @@
   }
 }
 
+.checkForNewFactorLevelsInPredictionSet <- function(trainingSet, predictionSet, type, model = NULL) {
+  factorNames <- colnames(predictionSet)[sapply(predictionSet, is.factor)]
+  factorNames <- factorNames[which(factorNames %in% colnames(trainingSet))]
+  factorsWithNewLevels <- character()
+  missingLevelsInTrainingSet <- list()
+  for (i in seq_along(factorNames)) {
+    currentFactor <- factorNames[i]
+    factorLevelsInTrainingSet <- unique(trainingSet[[currentFactor]])
+    factorLevelsInPredictionSet <- unique(predictionSet[[currentFactor]])
+    missingLevelsIndex <- which(!(factorLevelsInPredictionSet %in% factorLevelsInTrainingSet))
+    if (length(missingLevelsIndex) > 0) {
+      if (type != "prediction") {
+        factorsWithNewLevels <- c(factorsWithNewLevels, currentFactor)
+        missingLevelsInTrainingSet[[currentFactor]] <- factorLevelsInPredictionSet[missingLevelsIndex]
+      } else {
+        currentFactor <- model[["jaspVars"]][["decoded"]]$predictors[which(model[["jaspVars"]][["encoded"]]$predictors == currentFactor)]
+        factorsWithNewLevels <- c(factorsWithNewLevels, currentFactor)
+        missingLevelsInTrainingSet[[currentFactor]] <- factorLevelsInPredictionSet[missingLevelsIndex]
+      }
+    }
+  }
+  if (length(factorsWithNewLevels) > 0) {
+    setType <- switch(type, "test" = gettext("test set"), "validation" = gettext("validation set"), "prediction" = gettext("new dataset"))
+    additionalMessage <- switch(type,
+      "test" = gettext(" or use a different test set (e.g., automatically by setting a different seed or manually by specifying the test set indicator)"), 
+      "validation" = gettext(" or use a different validation set by setting a different seed"),
+      "prediction" = "")
+    factorMessage <- paste(sapply(factorsWithNewLevels, function(i) {
+        paste0("Factor: ", i, "; Levels: ", paste(missingLevelsInTrainingSet[[i]], collapse = ", "))
+      }), collapse = "\n")
+    jaspBase:::.quitAnalysis(gettextf("Some factors in the %1$s have levels that do not appear in the training set. Please remove the rows with the following levels from the dataset%2$s.\n\n%3$s", setType, additionalMessage, factorMessage))
+  }
+}
+
 .getCustomErrorChecksKnnBoosting <- function(dataset, options, type) {
   if (!type %in% c("knn", "boosting")) {
     return()

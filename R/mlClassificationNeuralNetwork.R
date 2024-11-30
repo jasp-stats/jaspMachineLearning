@@ -95,6 +95,8 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   if (options[["modelOptimization"]] == "manual") {
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
+    # Check for factor levels in the test set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
     structure <- .getNeuralNetworkStructure(options)
     p <- try({
       fit <- neuralnet::neuralnet(
@@ -120,6 +122,10 @@ mlClassificationNeuralNetwork <- function(jaspResults, dataset, options, ...) {
     testSet <- dataset[-trainingIndex, ]
     validationSet <- trainingAndValidationSet[validationIndex, ]
     trainingSet <- trainingAndValidationSet[-validationIndex, ]
+    # Check for factor levels in the test set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
+    # Check for factor levels in the validation set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, validationSet, "validation")
     accuracyStore <- numeric(options[["maxGenerations"]])
     trainAccuracyStore <- numeric(options[["maxGenerations"]])
     # For plotting

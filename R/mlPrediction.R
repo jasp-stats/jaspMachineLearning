@@ -252,9 +252,13 @@ is.jaspMachineLearning <- function(x) {
     dataset <- dataset[, which(decodeColNames(colnames(dataset)) %in% model[["jaspVars"]][["decoded"]]$predictors)]
     # Ensure the column names in the dataset match those in the training data
     colnames(dataset) <- .matchDecodedNames(colnames(dataset), model)
+    # Retrieve the training set
+    trainingSet <- model[["explainer"]]$data
+    # Check for factor levels in the test set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, dataset, "prediction", model)
     # Ensure factor variables in dataset have same levels as those in the training data
     factorColumns <- colnames(dataset)[sapply(dataset, is.factor)]
-    dataset[factorColumns] <- lapply(factorColumns, function(i) factor(dataset[[i]], levels = levels(model[["explainer"]]$data[[i]])))
+    dataset[factorColumns] <- lapply(factorColumns, function(i) factor(dataset[[i]], levels = levels(trainingSet[[i]])))
   }
   return(dataset)
 }

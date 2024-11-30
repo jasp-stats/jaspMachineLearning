@@ -80,6 +80,8 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
   testIndicatorColumn[trainingIndex] <- 0
   # Just create a train and a test set (no optimization)
   testSet <- dataset[-trainingIndex, ]
+  # Check for factor levels in the test set that are not in the training set
+  .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
   # Create the formula
   if (options[["intercept"]]) {
     formula <- formula(paste(options[["target"]], "~ 1 + ", paste(options[["predictors"]], collapse = " + ")))

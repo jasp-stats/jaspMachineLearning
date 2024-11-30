@@ -81,6 +81,8 @@ mlClassificationNaiveBayes <- function(jaspResults, dataset, options, ...) {
   testIndicatorColumn[trainingIndex] <- 0
   # Just create a train and a test set (no optimization)
   testSet <- dataset[-trainingIndex, ]
+  # Check for factor levels in the test set that are not in the training set
+  .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
   trainingFit <- e1071::naiveBayes(formula, data = trainingSet, laplace = options[["smoothingParameter"]])
   # Use the specified model to make predictions for dataset
   testPredictions <- predict(trainingFit, newdata = testSet, type = "class")

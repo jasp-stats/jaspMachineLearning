@@ -112,6 +112,8 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   }
   trainingSet <- dataset[trainingIndex, ]
   testSet <- dataset[-trainingIndex, ]
+  # Check for factor levels in the test set that are not in the training set
+  .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
   # Create the generated test set indicator
   testIndicatorColumn <- rep(1, nrow(dataset))
   testIndicatorColumn[trainingIndex] <- 0
