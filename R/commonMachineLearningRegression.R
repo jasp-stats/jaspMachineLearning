@@ -72,10 +72,6 @@
   if (length(unlist(options[["predictors"]])) > 0 && options[["scaleVariables"]]) {
     dataset[, options[["predictors"]]] <- .scaleNumericData(dataset[, options[["predictors"]], drop = FALSE])
   }
-  # Make sure the test set indicator is numeric
-  if (options[["testSetIndicatorVariable"]] != "" && options[["holdoutData"]] == "testSetIndicator")
-    dataset[[options[["testSetIndicatorVariable"]]]] <- as.numeric(dataset[[options[["testSetIndicatorVariable"]]]])
-  
   return(dataset)
 }
 

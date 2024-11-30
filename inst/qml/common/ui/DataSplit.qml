@@ -84,7 +84,7 @@ Section
 			name: 								"testSetIndicator"
 			label: 								qsTr("Test set indicator")
 			childrenOnSameRow: 					true
-			info:								qsTr("Use an indicator variable to select data for the test set. This indicator should be a column in your data that consists of only 0 (excluded from the test set) and 1 (included in the test set). The data will then be split into a training (and validation if requested) set (0), and a test set (1) according to your indicator.")
+			info:								qsTr("Use an indicator variable to select data for the test set. This indicator should be a column of type scale in your data that consists of only 0 (excluded from the test set) and 1 (included in the test set). The data will then be split into a training (and validation if requested) set (0), and a test set (1) according to your indicator.")
 
 			DropDown
 			{
@@ -94,6 +94,7 @@ Section
 				addEmptyValue: 					true
 				placeholderText: 				qsTr("None")
 				info:							qsTr("The variable in the data set that is used as the test set indicator.")
+				source:							[ { model: columnsModel, use: "type=scale"} ]
 			}
 		}
 	}
