@@ -94,7 +94,7 @@ Section
 				addEmptyValue: 					true
 				placeholderText: 				qsTr("None")
 				info:							qsTr("The variable in the data set that is used as the test set indicator.")
-				source:							[ { model: columnsModel, use: "type=scale"} ]
+				allowedColumns:					"scale"
 			}
 		}
 	}
