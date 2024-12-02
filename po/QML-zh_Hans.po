@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2024-12-02 18:36+0000\n"
+"Last-Translator: tao guo <guotao3s@163.com>\n"
+"Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
+"projects/jasp/jaspmachinelearning-qml/zh_Hans/>\n"
+"Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.9-dev\n"
 "X-Language: zh_Hans\n"
 "X-Qt-Contexts: true\n"
 
@@ -279,7 +285,7 @@ msgstr "算法设置"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Normal"
-msgstr ""
+msgstr "归一化"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Correlated"
@@ -289,7 +295,6 @@ msgctxt "mlClusteringDensityBased|"
 msgid "Model Optimization"
 msgstr "模型优化"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Fixed"
 msgstr "固定"
@@ -929,7 +934,7 @@ msgstr "节点中的最小观测数，以便尝试分割。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Min. observations in terminal"
-msgstr ""
+msgstr "Min. observations in terminal"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The minimum number of observations in any terminal node."
@@ -979,43 +984,43 @@ msgstr "权重"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Rectangular"
-msgstr ""
+msgstr "矩形"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Triangular"
-msgstr ""
+msgstr "三角形"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Epanechnikov"
-msgstr ""
+msgstr "Epanechnikov核函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Biweight"
-msgstr ""
+msgstr "Biweight"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Triweight"
-msgstr ""
+msgstr "Triweight核函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Cosine"
-msgstr ""
+msgstr "余弦函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Inverse"
-msgstr ""
+msgstr "取反"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Gaussian"
-msgstr ""
+msgstr "高斯"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Rank"
-msgstr ""
+msgstr "Rank函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Optimal"
-msgstr ""
+msgstr "最优"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
@@ -1116,14 +1121,13 @@ msgctxt "AlgorithmicSettings|"
 msgid "Activation function"
 msgstr "激活函数"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Linear"
 msgstr "线性"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Binary"
-msgstr ""
+msgstr "二分类"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Logistic sigmoid"
@@ -1131,47 +1135,47 @@ msgstr "sigmoid"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Sine"
-msgstr ""
+msgstr "正弦"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Inverse tangent"
-msgstr ""
+msgstr "反正切函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Hyperbolic tangent"
-msgstr ""
+msgstr "双曲正切函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "ReLU"
-msgstr ""
+msgstr "ReLU函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Softplus"
-msgstr ""
+msgstr "Softplus 函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Softsign"
-msgstr ""
+msgstr "Softsign 函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "ELU"
-msgstr ""
+msgstr "ELU 函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "LReLU"
-msgstr ""
+msgstr "LReLU 函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "SiLU"
-msgstr ""
+msgstr "SiLU 函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Mish"
-msgstr ""
+msgstr "Mish 函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "GeLU"
-msgstr ""
+msgstr "GeLU函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
@@ -1222,19 +1226,19 @@ msgstr "反向传播"
 
 msgctxt "AlgorithmicSettings|"
 msgid "rprop+"
-msgstr ""
+msgstr "rprop+ 函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "rprop-"
-msgstr ""
+msgstr "rprop- 函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "grprop-sag"
-msgstr ""
+msgstr "GRPROP-SAG 优化算法"
 
 msgctxt "AlgorithmicSettings|"
 msgid "grprop-slr"
-msgstr ""
+msgstr "grprop-slr 优化算法"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
@@ -1358,23 +1362,23 @@ msgstr "父代选择"
 
 msgctxt "ModelOptimization|"
 msgid "Roulette wheel"
-msgstr ""
+msgstr "轮盘赌选择法"
 
 msgctxt "ModelOptimization|"
 msgid "Universal"
-msgstr ""
+msgstr "通用性"
 
 msgctxt "ModelOptimization|"
 msgid "Rank"
-msgstr ""
+msgstr "Rank函数"
 
 msgctxt "ModelOptimization|"
 msgid "Tournament"
-msgstr ""
+msgstr "锦标赛"
 
 msgctxt "ModelOptimization|"
 msgid "Random"
-msgstr ""
+msgstr "随机"
 
 msgctxt "ModelOptimization|"
 msgid "How to select suviving networks."
@@ -1394,15 +1398,15 @@ msgstr "交叉方法"
 
 msgctxt "ModelOptimization|"
 msgid "Uniform"
-msgstr ""
+msgstr "Uniform"
 
 msgctxt "ModelOptimization|"
 msgid "One-point"
-msgstr ""
+msgstr "单点"
 
 msgctxt "ModelOptimization|"
 msgid "Multi-point"
-msgstr ""
+msgstr "多点"
 
 msgctxt "ModelOptimization|"
 msgid "How to crossover two candidate networks."
@@ -1414,19 +1418,19 @@ msgstr "突变"
 
 msgctxt "ModelOptimization|"
 msgid "Reset"
-msgstr ""
+msgstr "重新设置"
 
 msgctxt "ModelOptimization|"
 msgid "Swap"
-msgstr ""
+msgstr "交换"
 
 msgctxt "ModelOptimization|"
 msgid "Scramble"
-msgstr ""
+msgstr "Scramble优化算法"
 
 msgctxt "ModelOptimization|"
 msgid "Inversion"
-msgstr ""
+msgstr "取反"
 
 msgctxt "ModelOptimization|"
 msgid "How to mutate a network."
@@ -1446,11 +1450,11 @@ msgstr "生存方法"
 
 msgctxt "ModelOptimization|"
 msgid "Fitness-based"
-msgstr ""
+msgstr "基于适应度"
 
 msgctxt "ModelOptimization|"
 msgid "Age-based"
-msgstr ""
+msgstr "存活代数"
 
 msgctxt "ModelOptimization|"
 msgid "How to choose which networks survive and die in a generation."
@@ -1618,15 +1622,15 @@ msgstr "在此框中，输入包含样本权重的可选变量"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Radial"
-msgstr ""
+msgstr "径向"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Polynomial"
-msgstr ""
+msgstr "多项式"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Sigmoid"
-msgstr ""
+msgstr "Sigmoid函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
@@ -1638,7 +1642,7 @@ msgstr ""
 
 msgctxt "AlgorithmicSettings|"
 msgid "Degree"
-msgstr ""
+msgstr "度"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The degree of polynomial used."
@@ -1662,7 +1666,7 @@ msgstr "复杂度参数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Tolerance of termination criterion"
-msgstr ""
+msgstr "终止准则的容忍度"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The tolerance of termination criterion."
@@ -2831,38 +2835,37 @@ msgctxt "mlClusteringModelBased|"
 msgid "Model"
 msgstr "模型"
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Auto"
 msgstr "自动"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EII"
-msgstr ""
+msgstr "期望初始化与迭代"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VII"
-msgstr ""
+msgstr "方差膨胀因子"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EEI"
-msgstr ""
+msgstr "经验估计指数"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VEI"
-msgstr ""
+msgstr "方差解释指数"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EVI"
-msgstr ""
+msgstr "外部验证指数"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EEE"
-msgstr ""
+msgstr "外部聚类评估"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VEE"
-msgstr ""
+msgstr "聚类有效性估计"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EVE"
@@ -2971,23 +2974,23 @@ msgstr "连接函数（用于二分类）"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Logit"
-msgstr ""
+msgstr "Logit 函数"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Probit"
-msgstr ""
+msgstr "Probit模型"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Cauchit"
-msgstr ""
+msgstr "Cauchit 函数"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Complimentary log-log"
-msgstr ""
+msgstr "cloglog"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Log"
-msgstr ""
+msgstr "对数函数"
 
 msgctxt "mlPrediction|"
 msgid ""
