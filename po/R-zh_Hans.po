@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.2\n"
 "POT-Creation-Date: 2024-09-13 20:51\n"
-"PO-Revision-Date: 2024-11-21 18:23+0000\n"
-"Last-Translator: Yu Gong <yugong@outlook.com>\n"
+"PO-Revision-Date: 2024-12-02 06:41+0000\n"
+"Last-Translator: tao guo <guotao3s@163.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
 "projects/jasp/jaspmachinelearning-r/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -37,7 +37,6 @@ msgstr "决策树分类"
 msgid "Support Vector Machine Classification"
 msgstr "支持向量机分类"
 
-#, fuzzy
 msgid "Naive Bayes Classification"
 msgstr "随机森林分类"
 
@@ -148,7 +147,7 @@ msgid "Euclidean"
 msgstr "欧式距离"
 
 msgid "Moment"
-msgstr ""
+msgstr "动量"
 
 msgid "MLE"
 msgstr "极大似然估计"
@@ -318,10 +317,10 @@ msgid "Clusters"
 msgstr "簇"
 
 msgid "N"
-msgstr ""
+msgstr "N"
 
 msgid "R%s"
-msgstr ""
+msgstr "R%s"
 
 msgid "AIC"
 msgstr "AIC"
@@ -584,7 +583,7 @@ msgid "OOB Error"
 msgstr "袋外错误率"
 
 msgid "R%1$s"
-msgstr ""
+msgstr "R%1$s"
 
 msgid "Adjusted R%1$s"
 msgstr "调整R%1$s"
@@ -606,13 +605,13 @@ msgid ""
 msgstr "该模型根据<i>袋外均方误差</i>进行了优化。"
 
 msgid "Gaussian"
-msgstr ""
+msgstr "高斯"
 
 msgid "Laplace"
-msgstr ""
+msgstr "拉普拉斯"
 
 msgid "MSE(scaled)"
-msgstr ""
+msgstr "均方误差（缩放）"
 
 msgid "R%s cannot be computed due to lack of variance in the predictions.</i>"
 msgstr "由于预测中缺乏方差，因此无法计算R%s。"
@@ -657,9 +656,8 @@ msgid "Predicted (Prob.)"
 msgstr "预测（概率）"
 
 msgid "Base"
-msgstr ""
+msgstr "基础模型"
 
-#, fuzzy
 msgid "An error occurred when computing the results for this table: %1$s"
 msgstr "分析过程中发生了错误：%s"
 
@@ -771,7 +769,7 @@ msgid "Standard Error"
 msgstr "标准误"
 
 msgid "z"
-msgstr ""
+msgstr "z"
 
 msgid "%1$s%% Confidence interval"
 msgstr "%1$s%%置信区间"
@@ -979,10 +977,10 @@ msgid "n(New)"
 msgstr "n(新)"
 
 msgid "Binomial"
-msgstr ""
+msgstr "二项分布"
 
 msgid "Multinomial"
-msgstr ""
+msgstr "多项分布"
 
 msgid "Logit"
 msgstr ""
@@ -1106,10 +1104,10 @@ msgid "Training and validation set"
 msgstr "训练集和验证集"
 
 msgid "Rectangular"
-msgstr ""
+msgstr "矩阵"
 
 msgid "Triangular"
-msgstr ""
+msgstr "三角形"
 
 msgid "Epanechnikov"
 msgstr ""
@@ -1121,7 +1119,7 @@ msgid "Triweight"
 msgstr ""
 
 msgid "Cosine"
-msgstr ""
+msgstr "余弦"
 
 msgid "Inverse"
 msgstr ""
@@ -1130,7 +1128,7 @@ msgid "Rank"
 msgstr ""
 
 msgid "Optimal"
-msgstr ""
+msgstr "最优的"
 
 msgid "%1$s Weight Function"
 msgstr "%1$s权重函数"
@@ -1159,7 +1157,7 @@ msgid "Weight"
 msgstr "权重"
 
 msgid "linear"
-msgstr ""
+msgstr "线性"
 
 msgid "binary step"
 msgstr ""
@@ -1168,28 +1166,28 @@ msgid "logistic sigmoid"
 msgstr ""
 
 msgid "sine"
-msgstr ""
+msgstr "正弦"
 
 msgid "cosine"
-msgstr ""
+msgstr "余弦"
 
 msgid "inverse tangent"
-msgstr ""
+msgstr "反正切函数"
 
 msgid "hyperbolic tangent"
-msgstr ""
+msgstr "双曲正切函数"
 
 msgid "rectified linear unit (ReLU)"
-msgstr ""
+msgstr "线性整流函数（ReLU）"
 
 msgid "softplus"
 msgstr ""
 
 msgid "softsign"
-msgstr ""
+msgstr "softsign函数"
 
 msgid "exponential linear unit (ELU)"
-msgstr ""
+msgstr "指数线性单元(ELU)"
 
 msgid "leaky rectified linear unit (Leaky ReLU)"
 msgstr ""
