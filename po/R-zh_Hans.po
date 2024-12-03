@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.2\n"
 "POT-Creation-Date: 2024-09-13 20:51\n"
-"PO-Revision-Date: 2024-12-02 18:36+0000\n"
-"Last-Translator: Shun Wang <shuonwang@gmail.com>\n"
+"PO-Revision-Date: 2024-12-04 07:02+0000\n"
+"Last-Translator: tao guo <guotao3s@163.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
 "projects/jasp/jaspmachinelearning-r/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -153,7 +153,7 @@ msgid "MLE"
 msgstr "极大似然估计"
 
 msgid "MVE"
-msgstr ""
+msgstr "MVE"
 
 msgid "t"
 msgstr "t"
@@ -164,7 +164,6 @@ msgstr "该模型根据<i>袋外准确率精度</i>进行了优化。"
 msgid "The model is optimized with respect to the <i>sum of squares</i>."
 msgstr "该模型根据 <i>平方和</i>进行了优化"
 
-#, fuzzy
 msgid "Model Summary: Logistic Regression Classification"
 msgstr "模型概要：逻辑回归分类"
 
@@ -983,7 +982,7 @@ msgid "Multinomial"
 msgstr "多项分布"
 
 msgid "Logit"
-msgstr ""
+msgstr "Logit"
 
 msgid "Predictions for New Data"
 msgstr "新数据的预测"
@@ -994,7 +993,6 @@ msgstr "相对影响"
 msgid "<i>Warning.</i>"
 msgstr "<i>警告</i>。"
 
-#, fuzzy
 msgid "An error occurred when computing the mean dropout loss: %1$s"
 msgstr "分析过程中发生了错误：%s"
 
@@ -1110,22 +1108,22 @@ msgid "Triangular"
 msgstr "三角形"
 
 msgid "Epanechnikov"
-msgstr ""
+msgstr "Epanechnikov核函数"
 
 msgid "Biweight"
-msgstr ""
+msgstr "Biweight核函数"
 
 msgid "Triweight"
-msgstr ""
+msgstr "Triweight核函数"
 
 msgid "Cosine"
 msgstr "余弦"
 
 msgid "Inverse"
-msgstr ""
+msgstr "Inverse函数"
 
 msgid "Rank"
-msgstr ""
+msgstr "Rank"
 
 msgid "Optimal"
 msgstr "最优的"
@@ -1160,10 +1158,10 @@ msgid "linear"
 msgstr "线性"
 
 msgid "binary step"
-msgstr ""
+msgstr "二元阶跃函数"
 
 msgid "logistic sigmoid"
-msgstr ""
+msgstr "逻辑Sigmoid函数"
 
 msgid "sine"
 msgstr "正弦"
@@ -1181,7 +1179,7 @@ msgid "rectified linear unit (ReLU)"
 msgstr "线性整流函数（ReLU）"
 
 msgid "softplus"
-msgstr ""
+msgstr "Softplus函数"
 
 msgid "softsign"
 msgstr "softsign函数"
@@ -1190,19 +1188,19 @@ msgid "exponential linear unit (ELU)"
 msgstr "指数线性单元(ELU)"
 
 msgid "leaky rectified linear unit (Leaky ReLU)"
-msgstr ""
+msgstr "泄漏型修正线性单元( ReLU )函数"
 
 msgid "sigmoid linear unit (SiLU)"
-msgstr ""
+msgstr "SiLU 函数"
 
 msgid "mish"
-msgstr ""
+msgstr "mish 函数"
 
 msgid "gaussian"
-msgstr ""
+msgstr "高斯"
 
 msgid "gaussian error linear unit (GeLU)"
-msgstr ""
+msgstr "GeLU 函数"
 
 msgid "The weights are input for the %1$s activation function."
 msgstr "权重是%1$s激活函数的输入。"
@@ -1223,43 +1221,43 @@ msgid "Hidden layer %1$s"
 msgstr "隐含层%1$s"
 
 msgid "Binary"
-msgstr ""
+msgstr "二元函数"
 
 msgid "Logistic Sigmoid"
-msgstr ""
+msgstr "逻辑 Sigmoid 函数"
 
 msgid "Sine"
-msgstr ""
+msgstr "正弦函数"
 
 msgid "Inverse Tangent"
-msgstr ""
+msgstr "反正切函数"
 
 msgid "Hyperbolic Tangent"
-msgstr ""
+msgstr "双曲正切函数"
 
 msgid "ReLU"
-msgstr ""
+msgstr "ReLU 函数"
 
 msgid "Softplus"
-msgstr ""
+msgstr "Softplus 函数"
 
 msgid "Softsign"
-msgstr ""
+msgstr "Softsign 函数"
 
 msgid "ELU"
-msgstr ""
+msgstr "ELU"
 
 msgid "Leaky ReLU"
-msgstr ""
+msgstr "Leaky ReLU 函数"
 
 msgid "SiLU"
-msgstr ""
+msgstr "SiLU 函数"
 
 msgid "Mish"
-msgstr ""
+msgstr "Mish 函数"
 
 msgid "GeLU"
-msgstr ""
+msgstr "GeLU 函数"
 
 msgid "%1$s Activation Function"
 msgstr "%1$s激活函数"
