@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-12-02 18:36+0000\n"
+"PO-Revision-Date: 2024-12-04 07:00+0000\n"
 "Last-Translator: tao guo <guotao3s@163.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
 "projects/jasp/jaspmachinelearning-qml/zh_Hans/>\n"
@@ -2869,27 +2869,27 @@ msgstr "聚类有效性估计"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EVE"
-msgstr ""
+msgstr "EVE"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VVE"
-msgstr ""
+msgstr "VVE"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EEV"
-msgstr ""
+msgstr "EEV"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VEV"
-msgstr ""
+msgstr "VEV"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EVV"
-msgstr ""
+msgstr "EVV"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VVV"
-msgstr ""
+msgstr "VVV"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Choose the model to be fitted in the EM step of the clustering."
