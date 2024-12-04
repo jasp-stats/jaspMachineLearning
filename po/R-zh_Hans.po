@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.2\n"
 "POT-Creation-Date: 2024-09-13 20:51\n"
-"PO-Revision-Date: 2024-12-04 07:02+0000\n"
+"PO-Revision-Date: 2024-12-05 02:55+0000\n"
 "Last-Translator: tao guo <guotao3s@163.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
 "projects/jasp/jaspmachinelearning-r/zh_Hans/>\n"
@@ -116,7 +116,7 @@ msgid "OOB Accuracy"
 msgstr "袋外准确率"
 
 msgid "Please provide a target variable and at least %i feature variable(s)."
-msgstr "请提供一个目标变量和至少 %i 个特征变量"
+msgstr "请提供一个目标变量和至少 %i 个特征变量。"
 
 msgid "The trained model is saved as <i>%1$s</i>."
 msgstr "训练的模型已保存为<i>%1$s</i>。"
@@ -133,7 +133,7 @@ msgstr "只有选中“保存训练好的模型”，才能保存模型。"
 
 msgid ""
 "The model is optimized with respect to the <i>validation set accuracy</i>."
-msgstr "模型根据<i>验证集精度</i>进行了优化"
+msgstr "模型根据<i>验证集精度</i>进行了优化。"
 
 msgid ""
 "The optimum number of nearest neighbors is the maximum number. You might "
@@ -162,7 +162,7 @@ msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
 msgstr "该模型根据<i>袋外准确率精度</i>进行了优化。"
 
 msgid "The model is optimized with respect to the <i>sum of squares</i>."
-msgstr "该模型根据 <i>平方和</i>进行了优化"
+msgstr "该模型根据 <i>平方和</i>进行了优化。"
 
 msgid "Model Summary: Logistic Regression Classification"
 msgstr "模型概要：逻辑回归分类"
@@ -254,7 +254,7 @@ msgid "Statistical Parity"
 msgstr "统计均等"
 
 msgid "All metrics are calculated for every class against all other classes."
-msgstr "所有指标都是针对每个类和所有其他类计算的"
+msgstr "所有指标都是针对每个类和所有其他类计算的。"
 
 msgid "Average / Total"
 msgstr "平均/总计"
@@ -588,7 +588,7 @@ msgid "Adjusted R%1$s"
 msgstr "调整R%1$s"
 
 msgid "Please provide a target variable and at least %d feature variable(s)."
-msgstr "请提供一个目标变量和至少%d个特征变量"
+msgstr "请提供一个目标变量和至少%d个特征变量。"
 
 msgid ""
 "The model is optimized with respect to the <i>validation set mean squared "
@@ -613,7 +613,7 @@ msgid "MSE(scaled)"
 msgstr "均方误差（缩放）"
 
 msgid "R%s cannot be computed due to lack of variance in the predictions.</i>"
-msgstr "由于预测中缺乏方差，因此无法计算R%s。"
+msgstr "由于预测中缺乏方差，因此无法计算R%s"
 
 msgid "Predictive Performance Plot"
 msgstr "预测性能图"
@@ -689,7 +689,7 @@ msgid "Mean dropout loss (defined as %1$s) is based on %2$s permutations."
 msgstr "平均dropout损失（定义为 %1$s）基于 %2$s 的置换。"
 
 msgid "The target variable should have at least 2 classes."
-msgstr "目标变量应至少有2个类"
+msgstr "目标变量应至少有2个类。"
 
 msgid "Linear Discriminant Coefficients"
 msgstr "线性判别系数"
@@ -733,7 +733,7 @@ msgstr "零假设为协方差矩阵相等。"
 msgid ""
 "There are one or more levels in the target variable with less than two "
 "observations."
-msgstr "目标变量中有一个或多个水平的观测值少于两个"
+msgstr "目标变量中有一个或多个水平的观测值少于两个。"
 
 msgid "Box's M"
 msgstr "Box M检验"
@@ -991,7 +991,7 @@ msgid "Relative Influence"
 msgstr "相对影响"
 
 msgid "<i>Warning.</i>"
-msgstr "<i>警告</i>。"
+msgstr "<i>警告</i>"
 
 msgid "An error occurred when computing the mean dropout loss: %1$s"
 msgstr "分析过程中发生了错误：%s"
@@ -1049,7 +1049,7 @@ msgid "Relative Importance"
 msgstr "相对重要性"
 
 msgid "No splits were made in the tree."
-msgstr "树中没有拆分"
+msgstr "树中没有划分。"
 
 msgid "Splits in Tree"
 msgstr "树中的拆分"
