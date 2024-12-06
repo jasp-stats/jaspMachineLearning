@@ -86,6 +86,8 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
+    # Check for factor levels in the test set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
     noOfFolds <- 0
     .mlBoostingCheckMinObsNode(options, trainingSet) # Check for min obs in nodes
     trainingFit <- gbm::gbm(
@@ -101,6 +103,10 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
     testSet <- dataset[-trainingIndex, ]
     validationSet <- trainingAndValidationSet[validationIndex, ]
     trainingSet <- trainingAndValidationSet[-validationIndex, ]
+    # Check for factor levels in the test set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
+    # Check for factor levels in the validation set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, validationSet, "validation")
     if (options[["modelValid"]] == "validationManual") {
       noOfFolds <- 0
     } else if (options[["modelValid"]] == "validationKFold") {

@@ -140,6 +140,8 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
+    # Check for factor levels in the test set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
     # Structure of neural network
     structure <- .getNeuralNetworkStructure(options)
     p <- try({
@@ -167,6 +169,10 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
     testSet <- dataset[-trainingIndex, ]
     valid <- trainingAndValidationSet[validationIndex, ]
     trainingSet <- trainingAndValidationSet[-validationIndex, ]
+    # Check for factor levels in the test set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
+    # Check for factor levels in the validation set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, valid, "validation")
     errorStore <- numeric(options[["maxGenerations"]])
     trainErrorStore <- numeric(options[["maxGenerations"]])
     # For plotting

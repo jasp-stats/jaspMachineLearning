@@ -80,6 +80,8 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
+    # Check for factor levels in the test set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
     testFit <- randomForest::randomForest(
       x = trainingSet[, options[["predictors"]]], y = trainingSet[, options[["target"]]],
       xtest = testSet[, options[["predictors"]]], ytest = testSet[, options[["target"]]],
@@ -94,6 +96,10 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
     testSet <- dataset[-trainingIndex, ]
     validationSet <- trainingAndValidationSet[validationIndex, ]
     trainingSet <- trainingAndValidationSet[-validationIndex, ]
+    # Check for factor levels in the test set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
+    # Check for factor levels in the validation set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, validationSet, "validation")
     validationFit <- randomForest::randomForest(
       x = trainingSet[, options[["predictors"]]], y = trainingSet[, options[["target"]]],
       xtest = validationSet[, options[["predictors"]]], ytest = validationSet[, options[["target"]]],

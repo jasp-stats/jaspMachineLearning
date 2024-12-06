@@ -68,6 +68,8 @@ mlRegressionLinear <- function(jaspResults, dataset, options, ...) {
   # Just create a train and a test set (no optimization)
   trainingSet <- trainingAndValidationSet
   testSet <- dataset[-trainingIndex, ]
+  # Check for factor levels in the test set that are not in the training set
+  .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
   if (options[["intercept"]]) {
     formula <- formula(paste(options[["target"]], "~ 1 + ", paste(options[["predictors"]], collapse = " + ")))
   } else {

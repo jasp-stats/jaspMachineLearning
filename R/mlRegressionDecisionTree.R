@@ -77,6 +77,8 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
+    # Check for factor levels in the test set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
     complexityPenalty <- options[["complexityParameter"]]
     trainingFit <- rpart::rpart(
       formula = formula, data = trainingSet, method = "anova", x = TRUE, y = TRUE,
@@ -89,6 +91,10 @@ mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL
     testSet <- dataset[-trainingIndex, ]
     validationSet <- trainingAndValidationSet[validationIndex, ]
     trainingSet <- trainingAndValidationSet[-validationIndex, ]
+    # Check for factor levels in the test set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
+    # Check for factor levels in the validation set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, validationSet, "validation")
     cps <- seq(0, options[["maxComplexityParameter"]], by = 0.01)
     errorStore <- trainErrorStore <- numeric(length(cps))
     startProgressbar(length(cps))

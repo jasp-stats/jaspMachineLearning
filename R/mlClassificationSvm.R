@@ -86,6 +86,8 @@ mlClassificationSvm <- function(jaspResults, dataset, options, ...) {
     # Just create a train and a test set (no optimization)
     trainingSet <- trainingAndValidationSet
     testSet <- dataset[-trainingIndex, ]
+    # Check for factor levels in the test set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
     cost <- options[["cost"]]
     trainingFit <- e1071::svm(
       formula = formula, data = trainingSet, type = "C-classification", kernel = options[["weights"]], cost = cost, tolerance = options[["tolerance"]],
@@ -97,6 +99,10 @@ mlClassificationSvm <- function(jaspResults, dataset, options, ...) {
     testSet <- dataset[-trainingIndex, ]
     validationSet <- trainingAndValidationSet[validationIndex, ]
     trainingSet <- trainingAndValidationSet[-validationIndex, ]
+    # Check for factor levels in the test set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
+    # Check for factor levels in the validation set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, validationSet, "validation")
     costs <- seq(0.01, options[["maxCost"]], 0.01)
     accuracyStore <- trainAccuracyStore <- numeric(length(costs))
     startProgressbar(length(costs))

@@ -221,7 +221,7 @@ is.jaspMachineLearning <- function(x) {
 
 # also define methods for other objects
 .mlPredictionReady <- function(model, dataset, options) {
-  if (!is.null(model)) {
+  if (!is.null(model) && !is.null(dataset)) {
     modelVars <- model[["jaspVars"]][["encoded"]]$predictors
     presentVars <- colnames(dataset)
     ready <- all(modelVars %in% presentVars)
@@ -241,12 +241,25 @@ is.jaspMachineLearning <- function(x) {
 }
 
 .mlPredictionReadData <- function(dataset, options, model) {
-  dataset <- jaspBase::excludeNaListwise(dataset, options[["predictors"]])
-  if (options[["scaleVariables"]] && length(unlist(options[["predictors"]])) > 0) {
-    dataset <- .scaleNumericData(dataset)
+  if (length(options[["predictors"]]) == 0) {
+    dataset <- NULL
+  } else {
+    dataset <- jaspBase::excludeNaListwise(dataset, options[["predictors"]])
+    if (options[["scaleVariables"]] && length(unlist(options[["predictors"]])) > 0) {
+      dataset <- .scaleNumericData(dataset)
+    }
+    # Select only the predictors in the model to prevent accidental double column names
+    dataset <- dataset[, which(decodeColNames(colnames(dataset)) %in% model[["jaspVars"]][["decoded"]]$predictors)]
+    # Ensure the column names in the dataset match those in the training data
+    colnames(dataset) <- .matchDecodedNames(colnames(dataset), model)
+    # Retrieve the training set
+    trainingSet <- model[["explainer"]]$data
+    # Check for factor levels in the test set that are not in the training set
+    .checkForNewFactorLevelsInPredictionSet(trainingSet, dataset, "prediction", model)
+    # Ensure factor variables in dataset have same levels as those in the training data
+    factorColumns <- colnames(dataset)[sapply(dataset, is.factor)]
+    dataset[factorColumns] <- lapply(factorColumns, function(i) factor(dataset[[i]], levels = levels(trainingSet[[i]])))
   }
-  dataset <- dataset[, which(decodeColNames(colnames(dataset)) %in% model[["jaspVars"]][["decoded"]]$predictors)] # Filter only predictors to prevent accidental double column names
-  colnames(dataset) <- .matchDecodedNames(colnames(dataset), model)
   return(dataset)
 }
 
