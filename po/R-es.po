@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
 "POT-Creation-Date: 2024-12-07 03:27\n"
-"PO-Revision-Date: 2024-11-14 16:46+0000\n"
+"PO-Revision-Date: 2024-12-08 08:00+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/es/>\n"
@@ -289,13 +289,13 @@ msgid "Training Set"
 msgstr "Conjunto de Adiestramiento"
 
 msgid "Validation Set"
-msgstr "Conjunto de Verificación"
+msgstr "Conjunto de validación"
 
 msgid "Training and Validation Set"
 msgstr "Conjunto de adiestramiento y validación"
 
 msgid "Test Set"
-msgstr "Conjunto de Contraste"
+msgstr "Conjunto de contraste"
 
 msgid ""
 "You have specified more clusters than distinct data points. Please choose a "
@@ -579,24 +579,26 @@ msgstr ""
 "Solo hay una observación en cada nivel de los factores %1$s; por favor, "
 "elimina esos factores como características."
 
-#, fuzzy
 msgid "test set"
-msgstr "Conjunto de Contraste"
+msgstr "Conjunto de contraste"
 
-#, fuzzy
 msgid "validation set"
 msgstr "Conjunto de validación"
 
 msgid "new dataset"
-msgstr ""
+msgstr "Nuevo conjunto de datos"
 
 msgid ""
 "or use a different test set (e.g., automatically by setting a different seed "
 "or manually by specifying the test set indicator)"
 msgstr ""
+"o usar un conjunto distinto de contrastes (p.e., automáticamente "
+"estableciendo una semilla distinta, o manualmente especificando el indicador "
+"de conjunto de contrastes )"
 
 msgid "or use a different validation set by setting a different seed"
 msgstr ""
+"o usar un conjunto distinto de contrastes estableciendo una semilla distinta"
 
 msgid ""
 "Some factors in the %1$s have levels that do not appear in the training set. "
@@ -604,6 +606,11 @@ msgid ""
 "\n"
 "%3$s"
 msgstr ""
+"Algunos factores en %1$s tienen niveles que no aparecen en el conjunto de "
+"adiestramiento. Por favor, elimina las filas con los siguientes niveles, del "
+"conjunto de datos %2$s.\n"
+"\n"
+"%3$s"
 
 msgid ""
 "You have specified more nearest neighbors than there are observations in the "
