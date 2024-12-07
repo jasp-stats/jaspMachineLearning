@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
-"POT-Creation-Date: 2024-09-13 20:51\n"
+"POT-Creation-Date: 2024-12-07 03:27\n"
 "PO-Revision-Date: 2024-11-14 16:46+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
@@ -578,6 +578,32 @@ msgid ""
 msgstr ""
 "Solo hay una observación en cada nivel de los factores %1$s; por favor, "
 "elimina esos factores como características."
+
+#, fuzzy
+msgid "test set"
+msgstr "Conjunto de Contraste"
+
+#, fuzzy
+msgid "validation set"
+msgstr "Conjunto de validación"
+
+msgid "new dataset"
+msgstr ""
+
+msgid ""
+"or use a different test set (e.g., automatically by setting a different seed "
+"or manually by specifying the test set indicator)"
+msgstr ""
+
+msgid "or use a different validation set by setting a different seed"
+msgstr ""
+
+msgid ""
+"Some factors in the %1$s have levels that do not appear in the training set. "
+"Please remove the rows with the following levels from the dataset%2$s.\n"
+"\n"
+"%3$s"
+msgstr ""
 
 msgid ""
 "You have specified more nearest neighbors than there are observations in the "

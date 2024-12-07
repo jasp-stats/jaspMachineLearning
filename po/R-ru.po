@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.2\n"
-"POT-Creation-Date: 2024-09-13 20:51\n"
+"POT-Creation-Date: 2024-12-07 03:27\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -527,6 +527,30 @@ msgstr ""
 msgid ""
 "There is only one observation in each level of the factors %1$s, please "
 "remove these factors as a feature."
+msgstr ""
+
+msgid "test set"
+msgstr ""
+
+msgid "validation set"
+msgstr ""
+
+msgid "new dataset"
+msgstr ""
+
+msgid ""
+"or use a different test set (e.g., automatically by setting a different seed "
+"or manually by specifying the test set indicator)"
+msgstr ""
+
+msgid "or use a different validation set by setting a different seed"
+msgstr ""
+
+msgid ""
+"Some factors in the %1$s have levels that do not appear in the training set. "
+"Please remove the rows with the following levels from the dataset%2$s.\n"
+"\n"
+"%3$s"
 msgstr ""
 
 msgid ""

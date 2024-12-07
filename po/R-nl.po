@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2024-09-13 20:51\n"
+"POT-Creation-Date: 2024-12-07 03:27\n"
 "PO-Revision-Date: 2024-09-13 21:10+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
@@ -571,6 +571,32 @@ msgid ""
 msgstr ""
 "Er is slechts één waarneming in elk niveau van de factoren %1$s, gelieve "
 "deze factoren als kenmerk te verwijderen."
+
+#, fuzzy
+msgid "test set"
+msgstr "Testset"
+
+#, fuzzy
+msgid "validation set"
+msgstr "Validatieset"
+
+msgid "new dataset"
+msgstr ""
+
+msgid ""
+"or use a different test set (e.g., automatically by setting a different seed "
+"or manually by specifying the test set indicator)"
+msgstr ""
+
+msgid "or use a different validation set by setting a different seed"
+msgstr ""
+
+msgid ""
+"Some factors in the %1$s have levels that do not appear in the training set. "
+"Please remove the rows with the following levels from the dataset%2$s.\n"
+"\n"
+"%3$s"
+msgstr ""
 
 msgid ""
 "You have specified more nearest neighbors than there are observations in the "

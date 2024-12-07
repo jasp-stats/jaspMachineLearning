@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2024-09-13 20:51\n"
+"POT-Creation-Date: 2024-12-07 03:27\n"
 "PO-Revision-Date: 2022-08-29 00:16+0000\n"
 "Last-Translator: Laura Durans <lauraadurans@gmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
@@ -558,6 +558,31 @@ msgstr ""
 msgid ""
 "There is only one observation in each level of the factors %1$s, please "
 "remove these factors as a feature."
+msgstr ""
+
+msgid "test set"
+msgstr ""
+
+#, fuzzy
+msgid "validation set"
+msgstr "Validação: %d"
+
+msgid "new dataset"
+msgstr ""
+
+msgid ""
+"or use a different test set (e.g., automatically by setting a different seed "
+"or manually by specifying the test set indicator)"
+msgstr ""
+
+msgid "or use a different validation set by setting a different seed"
+msgstr ""
+
+msgid ""
+"Some factors in the %1$s have levels that do not appear in the training set. "
+"Please remove the rows with the following levels from the dataset%2$s.\n"
+"\n"
+"%3$s"
 msgstr ""
 
 msgid ""
