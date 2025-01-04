@@ -2,676 +2,732 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.19.2\n"
 "POT-Creation-Date: 2024-12-07 03:27\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-01-04 21:55+0000\n"
+"Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
+"Language-Team: Tamil <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-r/ta/>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 msgid "An error occurred in the analysis: %s"
-msgstr ""
+msgstr "பகுப்பாய்வில் பிழை ஏற்பட்டது: %s"
 
 msgid "K-Nearest Neighbors Classification"
-msgstr ""
+msgstr "கே-அருகிலுள்ள அண்டை வகைப்பாடு"
 
 msgid "Linear Discriminant Classification"
-msgstr ""
+msgstr "நேரியல் பாரபட்சமான வகைப்பாடு"
 
 msgid "Random Forest Classification"
-msgstr ""
+msgstr "சீரற்ற வன வகைப்பாடு"
 
 msgid "Boosting Classification"
-msgstr ""
+msgstr "வகைப்பாட்டை அதிகரிக்கும்"
 
 msgid "Neural Network Classification"
-msgstr ""
+msgstr "நரம்பியல் பிணைய வகைப்பாடு"
 
 msgid "Decision Tree Classification"
-msgstr ""
+msgstr "முடிவு மரம் வகைப்பாடு"
 
 msgid "Support Vector Machine Classification"
-msgstr ""
+msgstr "திசையன் இயந்திர வகைப்பாட்டை ஆதரிக்கவும்"
 
 msgid "Naive Bayes Classification"
-msgstr ""
+msgstr "அப்பாவியாக பேய்ச் வகைப்பாடு"
 
 msgid "Logistic / Multinomial Regression Classification"
-msgstr ""
+msgstr "லாசிச்டிக் / பன்முக பின்னடைவு வகைப்பாடு"
 
 msgid "Model Summary: %1$s"
-msgstr ""
+msgstr "மாதிரி சுருக்கம்: %1$s"
 
 msgid "Nearest neighbors"
-msgstr ""
+msgstr "அருகிலுள்ள அயலவர்கள்"
 
 msgid "Weights"
-msgstr ""
+msgstr "எடைகள்"
 
 msgid "Distance"
-msgstr ""
+msgstr "தூரம்"
 
 msgid "Linear Discriminants"
-msgstr ""
+msgstr "பாரபட்சமான நேரியல்"
 
 msgid "Method"
-msgstr ""
+msgstr "முறை"
 
 msgid "Trees"
-msgstr ""
+msgstr "மரங்கள்"
 
 msgid "Features per split"
-msgstr ""
+msgstr "பிளவுக்கு நற்பொருத்தங்கள்"
 
 msgid "Shrinkage"
-msgstr ""
+msgstr "சுருக்கம்"
 
 msgid "Hidden Layers"
-msgstr ""
+msgstr "மறைக்கப்பட்ட அடுக்குகள்"
 
 msgid "Nodes"
-msgstr ""
+msgstr "முனைகள்"
 
 msgid "Complexity penalty"
-msgstr ""
+msgstr "சிக்கலான தண்டம்"
 
 msgid "Splits"
-msgstr ""
+msgstr "பிளவுகள்"
 
 msgid "Violation cost"
-msgstr ""
+msgstr "மீறல் செலவு"
 
 msgid "Support Vectors"
-msgstr ""
+msgstr "உதவி திசையன்கள்"
 
 msgid "Smoothing"
-msgstr ""
+msgstr "மென்மையான"
 
 msgid "Family"
-msgstr ""
+msgstr "குடும்பம்"
 
 msgid "Link"
-msgstr ""
+msgstr "இணைப்பு"
 
 msgid "n(Train)"
-msgstr ""
+msgstr "n (ரயில்)"
 
 msgid "n(Validation)"
-msgstr ""
+msgstr "n (சரிபார்ப்பு)"
 
 msgid "n(Test)"
-msgstr ""
+msgstr "n (சோதனை)"
 
 msgid "Validation Accuracy"
-msgstr ""
+msgstr "சரிபார்ப்பு துல்லியம்"
 
 msgid "Test Accuracy"
-msgstr ""
+msgstr "சோதனை துல்லியம்"
 
 msgid "OOB Accuracy"
-msgstr ""
+msgstr "OOB துல்லியம்"
 
 msgid "Please provide a target variable and at least %i feature variable(s)."
-msgstr ""
+msgstr "தயவுசெய்து இலக்கு மாறி மற்றும் குறைந்தது %i அம்ச மாறி (கள்) வழங்கவும்."
 
 msgid "The trained model is saved as <i>%1$s</i>."
-msgstr ""
+msgstr "பயிற்சி பெற்ற மாதிரி <i>%1$s </i> என சேமிக்கப்படுகிறது."
 
 msgid "The trained model is <b>not</b> saved because the some of the variable names in the model contain spaces (i.e., ' ') or underscores (i.e., '_'). Please remove all such characters from the variable names and try saving the model again."
 msgstr ""
+"பயிற்சி பெற்ற மாதிரி <b> இல்லை </b> சேமிக்கப்படுகிறது, ஏனெனில் மாதிரியில் உள்ள சில "
+"மாறி பெயர்களில் இடைவெளிகள் (அதாவது, '') அல்லது அடிக்கோடிட்டுக் காட்டுகின்றன (அதாவது, "
+"'_'). இதுபோன்ற அனைத்து எழுத்துக்களையும் மாறி பெயர்களிலிருந்து அகற்றி மீண்டும் மாதிரியைச் "
+"சேமிக்க முயற்சிக்கவும்."
 
 msgid "The trained model is not saved until 'Save trained model' is checked."
 msgstr ""
+"'பயிற்சி பெற்ற மாதிரியை சேமி' சரிபார்க்கும் வரை பயிற்சி பெற்ற மாதிரி சேமிக்கப்படாது."
 
 msgid "The model is optimized with respect to the <i>validation set accuracy</i>."
 msgstr ""
+"<i> சரிபார்ப்பு தொகுப்பு துல்லியம் </i> தொடர்பாக மாதிரி உகந்ததாக உள்ளது."
 
 msgid "The optimum number of nearest neighbors is the maximum number. You might want to adjust the range of optimization."
 msgstr ""
+"அருகிலுள்ள அண்டை நாடுகளின் உகந்த எண்ணிக்கை அதிகபட்ச எண். தேர்வுமுறை வரம்பை நீங்கள் சரிசெய்"
+"ய விரும்பலாம்."
 
 msgid "Manhattan"
-msgstr ""
+msgstr "மன்ஆட்டன்"
 
 msgid "Euclidean"
-msgstr ""
+msgstr "யூக்ளிடியன்"
 
 msgid "Moment"
-msgstr ""
+msgstr "திருப்பம்"
 
 msgid "MLE"
-msgstr ""
+msgstr "MLE"
 
 msgid "MVE"
-msgstr ""
+msgstr "எம்.வி."
 
 msgid "t"
-msgstr ""
+msgstr "டி"
 
 msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
 msgstr ""
+"இந்த மாதிரி <i> பாக்-க்கு வெளியே துல்லியம் </i> தொடர்பாக உகந்ததாக உள்ளது."
 
 msgid "The model is optimized with respect to the <i>sum of squares</i>."
-msgstr ""
+msgstr "<i> சதுரங்களின் தொகை </i> தொடர்பாக மாதிரி உகந்ததாக உள்ளது."
 
 msgid "Model Summary: Logistic Regression Classification"
-msgstr ""
+msgstr "மாதிரி சுருக்கம்: லாசிச்டிக் பின்னடைவு வகைப்பாடு"
 
 msgid "Model Summary: Multinomial Regression Classification"
-msgstr ""
+msgstr "மாதிரி சுருக்கம்: பன்முக பின்னடைவு வகைப்பாடு"
 
 msgid "Confusion Matrix"
 msgstr ""
 
 msgid "Observed"
-msgstr ""
+msgstr "கவனிக்கப்பட்டது"
 
 msgid "Predicted"
-msgstr ""
+msgstr "கணிக்கப்பட்டுள்ளது"
 
 msgid "Decision Boundary Matrix"
-msgstr ""
+msgstr "முடிவு எல்லை அணி"
 
 msgid "Cannot create matrix: not enough numeric variables remain after removing factor variables. You need at least 2 numeric variables."
 msgstr ""
+"மேட்ரிக்சை உருவாக்க முடியாது: காரணி மாறிகள் அகற்றிய பின் போதுமான எண் மாறிகள் இருக்காது"
+". உங்களுக்கு குறைந்தது 2 எண் மாறிகள் தேவை."
 
 msgid "ROC Curves Plot"
-msgstr ""
+msgstr "ROC வளைவுகள் சூழ்ச்சி"
 
 msgid "False Positive Rate"
-msgstr ""
+msgstr "தவறான நேர்மறை விகிதம்"
 
 msgid "True Positive Rate"
-msgstr ""
+msgstr "உண்மையான நேர்மறை வீதம்"
 
 msgid "Perfect separation"
-msgstr ""
+msgstr "சரியான பிரிப்பு"
 
 msgid "Andrews Curves Plot"
-msgstr ""
+msgstr "ஆண்ட்ரூச் வளைவுகள் சூழ்ச்சி"
 
 msgid "Andrews curves require a minimum of 2 feature variables."
-msgstr ""
+msgstr "ஆண்ட்ரூச் வளைவுகளுக்கு குறைந்தபட்சம் 2 அம்ச மாறிகள் தேவை."
 
 msgid "Box's M-test for Homogeneity of Covariance Matrices"
-msgstr ""
+msgstr "கோவாரன்ச் மெட்ரிக்குகளின் ஒருமைப்பாட்டிற்கான பெட்டியின் எம்-சோதனை"
 
 msgid "Model Performance Metrics"
-msgstr ""
+msgstr "மாதிரி செயல்திறன் அளவீடுகள்"
 
 msgid "Support"
-msgstr ""
+msgstr "உதவி"
 
 msgid "Accuracy"
 msgstr ""
 
 msgid "Precision (Positive Predictive Value)"
-msgstr ""
+msgstr "துல்லியம் (நேர்மறை முன்கணிப்பு மதிப்பு)"
 
 msgid "Recall (True Positive Rate)"
-msgstr ""
+msgstr "நினைவுகூருங்கள் (உண்மையான நேர்மறை விகிதம்)"
 
 msgid "False Discovery Rate"
-msgstr ""
+msgstr "தவறான கண்டுபிடிப்பு வீதம்"
 
 msgid "F1 Score"
-msgstr ""
+msgstr "எஃப் 1 மதிப்பெண்"
 
 msgid "Matthews Correlation Coefficient"
-msgstr ""
+msgstr "மேத்யூச் தொடர்பு குணகம்"
 
 msgid "Area Under Curve (AUC)"
-msgstr ""
+msgstr "வளைவின் கீழ் (ஏ.யூ.சி) பகுதி"
 
 msgid "Negative Predictive Value"
-msgstr ""
+msgstr "எதிர்மறை முன்கணிப்பு மதிப்பு"
 
 msgid "True Negative Rate"
-msgstr ""
+msgstr "உண்மையான எதிர்மறை வீதம்"
 
 msgid "False Negative Rate"
-msgstr ""
+msgstr "தவறான எதிர்மறை வீதம்"
 
 msgid "False Omission Rate"
-msgstr ""
+msgstr "தவறான புறக்கணிப்பு வீதம்"
 
 msgid "Threat Score"
-msgstr ""
+msgstr "அச்சுறுத்தல் மதிப்பெண்"
 
 msgid "Statistical Parity"
-msgstr ""
+msgstr "புள்ளிவிவர ஒரு நிகர்"
 
 msgid "All metrics are calculated for every class against all other classes."
 msgstr ""
+"அனைத்து அளவீடுகளும் மற்ற எல்லா வகுப்புகளுக்கும் எதிராக ஒவ்வொரு வகுப்பிற்கும் "
+"கணக்கிடப்படுகின்றன."
 
 msgid "Average / Total"
-msgstr ""
+msgstr "சராசரி / மொத்தம்"
 
 msgid "Class Proportions"
-msgstr ""
+msgstr "வர்க்க விகிதங்கள்"
 
 msgid "Data Set"
-msgstr ""
+msgstr "தரவு தொகுப்பு"
 
 msgid "Training Set"
-msgstr ""
+msgstr "பயிற்சி தொகுப்பு"
 
 msgid "Validation Set"
-msgstr ""
+msgstr "சரிபார்ப்பு தொகுப்பு"
 
 msgid "Training and Validation Set"
-msgstr ""
+msgstr "பயிற்சி மற்றும் சரிபார்ப்பு தொகுப்பு"
 
 msgid "Test Set"
-msgstr ""
+msgstr "சோதனை தொகுப்பு"
 
 msgid "You have specified more clusters than distinct data points. Please choose a number lower than %s."
 msgstr ""
+"தனித்துவமான தரவு புள்ளிகளைக் காட்டிலும் அதிகமான கொத்துக்களைக் குறிப்பிட்டுள்ளீர்கள். %s ஐ "
+"விட குறைவான எண்ணைத் தேர்வுசெய்க."
 
 msgid "R package error: The hclust clustering algorithm from the stats R package cannot handle data that has 65536 or more rows. We are working on a solution for this problem. Please try another algorithm in the meantime."
 msgstr ""
+"ஆர் தொகுப்பு பிழை: புள்ளிவிவரங்கள் ஆர் தொகுப்பிலிருந்து HCLUST கிளச்டரிங் வழிமுறை "
+"65536 அல்லது அதற்கு மேற்பட்ட வரிசைகளைக் கொண்ட தரவைக் கையாள முடியாது. இந்த சிக்கலுக்கான "
+"தீர்வில் நாங்கள் பணியாற்றி வருகிறோம். இதற்கிடையில் மற்றொரு வழிமுறையை முயற்சிக்கவும்."
 
 msgid "K-Means Clustering"
-msgstr ""
+msgstr "கே-மெீன்ச் கிளச்டரிங்"
 
 msgid "K-Medians Clustering"
-msgstr ""
+msgstr "கே-மெடியன்ச் கிளச்டரிங்"
 
 msgid "K-Medoids Clustering"
-msgstr ""
+msgstr "கே-மெடோயிட்ச் கிளச்டரிங்"
 
 msgid "Fuzzy C-Means Clustering"
-msgstr ""
+msgstr "தெளிவற்ற சி-அதாவது கிளச்டரிங்"
 
 msgid "Hierarchical Clustering"
-msgstr ""
+msgstr "படிநிலை கிளச்டரிங்"
 
 msgid "Density-Based Clustering"
-msgstr ""
+msgstr "அடர்த்தி அடிப்படையிலான கிளச்டரிங்"
 
 msgid "Random Forest Clustering"
-msgstr ""
+msgstr "சீரற்ற வன கிளச்டரிங்"
 
 msgid "Model-Based Clustering"
-msgstr ""
+msgstr "மாதிரி அடிப்படையிலான கிளச்டரிங்"
 
 msgid "Clusters"
-msgstr ""
+msgstr "கொத்துகள்"
 
 msgid "N"
-msgstr ""
+msgstr "N"
 
 msgid "R%s"
-msgstr ""
+msgstr "R%s"
 
 msgid "AIC"
-msgstr ""
+msgstr "Aic"
 
 msgid "BIC"
-msgstr ""
+msgstr "பிக்"
 
 msgid "Silhouette"
-msgstr ""
+msgstr "நிழல்"
 
 msgid "Please provide at least 2 features."
-msgstr ""
+msgstr "குறைந்தது 2 அம்சங்களை வழங்கவும்."
 
 msgid "silhouette"
-msgstr ""
+msgstr "நிழல்"
 
 msgid "The model is optimized with respect to the <i>%s</i> value."
-msgstr ""
+msgstr "<i>%s </i> மதிப்பைப் பொறுத்து மாதிரி உகந்ததாகும்."
 
 msgid "The optimum number of clusters is the maximum number of clusters. You might want to adjust the range of optimization."
 msgstr ""
+"கொத்துக்களின் உகந்த எண்ணிக்கை அதிகபட்ச கொத்துக்களின் எண்ணிக்கையாகும். தேர்வுமுறை வரம்பை நீங்கள்"
+" சரிசெய்ய விரும்பலாம்."
 
 msgid "The model contains 0 clusters and only Noisepoints, we advise to change 'Epsilon neighborhood size' and 'Min. core points' parameters under 'Training parameters'."
 msgstr ""
+"மாதிரியில் 0 கிளச்டர்கள் மற்றும் ஒலி மட்டுமே உள்ளன, 'எப்சிலன் அண்டை அளவு' மற்றும் "
+"'மணித்துளி' மாற்ற நாங்கள் அறிவுறுத்துகிறோம். முக்கிய புள்ளிகள் 'பயிற்சி அளவுருக்கள்' கீழ் "
+"'அளவுருக்கள்."
 
 msgid "The model contains 1 cluster and no Noisepoints. You may want to change 'Epsilon neighborhood size' and 'Min. core points' parameters under 'Training parameters'."
 msgstr ""
+"மாதிரியில் 1 கிளச்டர் மற்றும் ஒலி இல்லை. நீங்கள் 'எப்சிலன் அண்டை அளவு' மற்றும் 'மணித்துளி "
+"மாற்ற விரும்பலாம். முக்கிய புள்ளிகள் 'பயிற்சி அளவுருக்கள்' கீழ் 'அளவுருக்கள்."
 
 msgid "spherical with equal volume"
-msgstr ""
+msgstr "சம அளவுடன் கோளமானது"
 
 msgid "spherical with unequal volume"
-msgstr ""
+msgstr "சமமற்ற அளவோடு கோளமானது"
 
 msgid "diagonal with equal volume and shape"
-msgstr ""
+msgstr "சம அளவு மற்றும் வடிவத்துடன் மூலைவிட்டம்"
 
 msgid "diagonal with varying volume and equal shape"
-msgstr ""
+msgstr "மாறுபட்ட அளவு மற்றும் சம வடிவத்துடன் மூலைவிட்டம்"
 
 msgid "diagonal with equal volume and varying shape"
-msgstr ""
+msgstr "சம அளவு மற்றும் மாறுபட்ட வடிவத்துடன் மூலைவிட்டம்"
 
 msgid "diagonal with varying volume and shape"
-msgstr ""
+msgstr "மாறுபட்ட அளவு மற்றும் வடிவத்துடன் மூலைவிட்டம்"
 
 msgid "ellipsoidal with equal volume, shape, and orientation"
-msgstr ""
+msgstr "சம அளவு, வடிவம் மற்றும் நோக்குநிலை கொண்ட நீள்வட்ட"
 
 msgid "ellipsoidal with equal shape and orientation"
-msgstr ""
+msgstr "சமமான வடிவம் மற்றும் நோக்குநிலையுடன் நீள்வட்ட"
 
 msgid "ellipsoidal with equal volume and orientation"
-msgstr ""
+msgstr "சம அளவு மற்றும் நோக்குநிலையுடன் நீள்வட்ட"
 
 msgid "ellipsoidal with equal orientation"
-msgstr ""
+msgstr "சமமான நோக்குநிலையுடன் நீள்வட்ட"
 
 msgid "ellipsoidal with equal volume and equal shape"
-msgstr ""
+msgstr "சம அளவு மற்றும் சம வடிவத்துடன் நீள்வட்ட"
 
 msgid "ellipsoidal with equal shape"
-msgstr ""
+msgstr "சம வடிவத்துடன் நீள்வட்ட"
 
 msgid "ellipsoidal with equal volume"
-msgstr ""
+msgstr "சம அளவுடன் நீள்வட்ட"
 
 msgid "ellipsoidal with varying volume, shape, and orientation"
-msgstr ""
+msgstr "மாறுபட்ட அளவு, வடிவம் மற்றும் நோக்குநிலை ஆகியவற்றுடன் நீள்வட்ட"
 
 msgid "The model is %1$s."
-msgstr ""
+msgstr "மாதிரி %1$s."
 
 msgid "The features in the model are <b>unstandardized</b>."
-msgstr ""
+msgstr "மாதிரியில் உள்ள நற்பொருத்தங்கள் <b> தடையில்லா </b>."
 
 msgid "Cluster Information"
-msgstr ""
+msgstr "கொத்து செய்தி"
 
 msgid "Cluster"
-msgstr ""
+msgstr "கொத்து"
 
 msgid "Size"
-msgstr ""
+msgstr "அளவு"
 
 msgid "Explained proportion within-cluster heterogeneity"
-msgstr ""
+msgstr "கொத்து பன்முகத்தன்மைக்குள் விகிதாச்சாரம் விளக்கப்பட்டது"
 
 msgid "Within sum of squares"
-msgstr ""
+msgstr "சதுரங்களின் தொகைக்குள்"
 
 msgid "Silhouette score"
-msgstr ""
+msgstr "நிழல் மதிப்பெண்"
 
 msgid "Center %s"
-msgstr ""
+msgstr "நடுவண் %s"
 
 msgid "Noisepoints"
-msgstr ""
+msgstr "ஒலி"
 
 msgid "The Between Sum of Squares of the %1$s cluster model is %2$s"
-msgstr ""
+msgstr "%1$s கிளச்டர் மாதிரியின் சதுரங்களின் தொகைக்கு இடையில் %2$s ஆகும்"
 
 msgid "The Total Sum of Squares of the %1$s cluster model is %2$s"
-msgstr ""
+msgstr "%1$s கிளச்டர் மாதிரியின் சதுரங்களின் மொத்த தொகை %2$s ஆகும்"
 
 msgid "Value"
-msgstr ""
+msgstr "மதிப்பு"
 
 msgid "Maximum diameter"
-msgstr ""
+msgstr "அதிகபட்ச விட்டம்"
 
 msgid "Minimum separation"
-msgstr ""
+msgstr "குறைந்தபட்ச பிரிப்பு"
 
 msgid "Pearson's %s"
-msgstr ""
+msgstr "பியர்சனின் %s"
 
 msgid "Dunn index"
-msgstr ""
+msgstr "டன் இன்டெக்ச்"
 
 msgid "Entropy"
-msgstr ""
+msgstr "என்ட்ரோபி"
 
 msgid "Calinski-Harabasz index"
-msgstr ""
+msgstr "காலின்ச்கி-அராபாச் அட்டவணை"
 
 msgid "All metrics are based on the <i>euclidean</i> distance."
-msgstr ""
+msgstr "அனைத்து அளவீடுகளும் <i> யூக்ளிடியன் </i> தூரத்தை அடிப்படையாகக் கொண்டவை."
 
 msgid "Evaluation metrics cannot be computed when there is only 1 cluster."
 msgstr ""
+"1 கிளச்டர் மட்டுமே இருக்கும்போது மதிப்பீட்டு அளவீடுகளை கணக்கிட முடியாது."
 
 msgid "t-SNE Cluster Plot"
-msgstr ""
+msgstr "டி-எச்.என்.இ கிளச்டர் சூழ்ச்சி"
 
 msgid "Noisepoint"
-msgstr ""
+msgstr "ஒலி"
 
 msgid "Elbow Method Plot"
-msgstr ""
+msgstr "முழங்கை முறை சூழ்ச்சி"
 
 msgid "WSS"
-msgstr ""
+msgstr "WSS"
 
 msgid "Number of Clusters"
-msgstr ""
+msgstr "கொத்துக்களின் எண்ணிக்கை"
 
 msgid "Lowest %s"
-msgstr ""
+msgstr "மிகக் குறைந்த %s"
 
 msgid "Cluster Means"
-msgstr ""
+msgstr "கொத்து என்றால்"
 
 msgid "Cluster %s"
-msgstr ""
+msgstr "கிளச்டர் %s"
 
 msgid "Cluster Density Plots"
-msgstr ""
+msgstr "கொத்து அடர்த்தி அடுக்கு"
 
 msgid "Density"
 msgstr ""
 
 msgid "Feature"
-msgstr ""
+msgstr "நற்பொருத்தம்"
 
 msgid "All Features"
-msgstr ""
+msgstr "அனைத்து அம்சங்களும்"
 
 msgid "Cluster Mean Plots"
-msgstr ""
+msgstr "கொத்து சராசரி அடுக்கு"
 
 msgid "Cluster Mean"
-msgstr ""
+msgstr "கொத்து சராசரி"
 
 msgid "Insufficient RAM available to compute the distance matrix. The analysis tried to allocate %s Gb"
 msgstr ""
+"தூர மேட்ரிக்சைக் கணக்கிட போதுமான ரேம் கிடைக்கவில்லை. பகுப்பாய்வு %s GB ஐ ஒதுக்க "
+"முயற்சித்தது"
 
 msgid "An error occurred in the analysis: %1$s"
-msgstr ""
+msgstr "பகுப்பாய்வில் பிழை ஏற்பட்டது: %1$s"
 
 msgid "Cluster Matrix Plot"
-msgstr ""
+msgstr "கிளச்டர் மேட்ரிக்ச் சூழ்ச்சி"
 
 msgid "The variable '%s' can't be both a feature and a test set indicator."
 msgstr ""
+"'%s' மாறி ஒரு நற்பொருத்தம் மற்றும் சோதனை தொகுப்பு காட்டி இரண்டாக இருக்க முடியாது."
 
 msgid "Your test set indicator should be binary, containing only 1 (included in test set) and 0 (excluded from test set)."
 msgstr ""
+"உங்கள் சோதனை தொகுப்பு காட்டி பைனரியாக இருக்க வேண்டும், இதில் 1 (சோதனை தொகுப்பில் "
+"சேர்க்கப்பட்டுள்ளது) மற்றும் 0 (சோதனை தொகுப்பிலிருந்து விலக்கப்பட்டுள்ளது) மட்டுமே உள்ளன."
 
 msgid "There is only one observation in each level of the factor %1$s, please remove this factor as a feature."
 msgstr ""
+"%1$s காரணி ஒவ்வொரு மட்டத்திலும் ஒரே ஒரு அவதானிப்பு மட்டுமே உள்ளது, தயவுசெய்து இந்த "
+"காரணியை ஒரு அம்சமாக அகற்றவும்."
 
 msgid "There is only one observation in each level of the factors %1$s, please remove these factors as a feature."
 msgstr ""
+"%1$s காரணிகளின் ஒவ்வொரு மட்டத்திலும் ஒரே ஒரு அவதானிப்பு மட்டுமே உள்ளது, தயவுசெய்து இந்"
+"த காரணிகளை ஒரு அம்சமாக அகற்றவும்."
 
 msgid "test set"
-msgstr ""
+msgstr "சோதனை தொகுப்பு"
 
 msgid "validation set"
-msgstr ""
+msgstr "சரிபார்ப்பு தொகுப்பு"
 
 msgid "new dataset"
-msgstr ""
+msgstr "புதிய தரவுத்தொகுப்பு"
 
 msgid "or use a different test set (e.g., automatically by setting a different seed or manually by specifying the test set indicator)"
 msgstr ""
+"அல்லது வேறு சோதனை தொகுப்பைப் பயன்படுத்தவும் (எ.கா., தானாகவே வேறு விதை அமைப்பதன் மூலம் "
+"அல்லது கைமுறையாக சோதனை தொகுப்பு குறிகாட்டியைக் குறிப்பிடுவதன் மூலம்)"
 
 msgid "or use a different validation set by setting a different seed"
-msgstr ""
+msgstr "அல்லது வேறு விதை அமைப்பதன் மூலம் வேறுபட்ட சரிபார்ப்பைப் பயன்படுத்தவும்"
 
 msgid "Some factors in the %1$s have levels that do not appear in the training set. Please remove the rows with the following levels from the dataset%2$s.\n\n%3$s"
 msgstr ""
+"%1$s இல் உள்ள சில காரணிகள் பயிற்சி தொகுப்பில் தோன்றாத அளவைக் கொண்டுள்ளன. "
+"தரவுத்தொகுப்பு%2$s இலிருந்து பின்வரும் நிலைகளுடன் வரிசைகளை அகற்றவும்.\n"
+"\n"
+" %3$s"
 
 msgid "You have specified more nearest neighbors than there are observations in the training set. Please choose a number lower than %d."
 msgstr ""
+"பயிற்சி தொகுப்பில் அவதானிப்புகள் இருப்பதை விட அருகிலுள்ள அண்டை நாடுகளை நீங்கள் "
+"குறிப்பிட்டுள்ளீர்கள். %d ஐ விடக் குறைவான எண்ணைத் தேர்வுசெய்க."
 
 msgid "You have specified more folds than there are observations in the training and validation set. Please choose a number lower than %d."
 msgstr ""
+"பயிற்சி மற்றும் சரிபார்ப்பு தொகுப்பில் அவதானிப்புகள் இருப்பதை விட அதிகமான மடிப்புகளை "
+"நீங்கள் குறிப்பிட்டுள்ளீர்கள். %d ஐ விடக் குறைவான எண்ணைத் தேர்வுசெய்க."
 
 msgid "K-Nearest Neighbors Regression"
-msgstr ""
+msgstr "கே-அருகிலுள்ள அண்டை பின்னடைவு"
 
 msgid "Regularized Linear Regression"
-msgstr ""
+msgstr "நேரியல் பின்னடைவை முறைப்படுத்தியது"
 
 msgid "Random Forest Regression"
-msgstr ""
+msgstr "சீரற்ற வன பின்னடைவு"
 
 msgid "Boosting Regression"
-msgstr ""
+msgstr "பின்னடைவை அதிகரிக்கும்"
 
 msgid "Neural Network Regression"
-msgstr ""
+msgstr "நரம்பியல் பிணையம் பின்னடைவு"
 
 msgid "Decision Tree Regression"
-msgstr ""
+msgstr "முடிவு மரம் பின்னடைவு"
 
 msgid "Support Vector Machine Regression"
-msgstr ""
+msgstr "திசையன் இயந்திர பின்னடைவை ஆதரிக்கவும்"
 
 msgid "Linear Regression"
-msgstr ""
+msgstr "நேரியல் பின்னடைவு"
 
 msgid "Penalty"
-msgstr ""
+msgstr "தண்டம்"
 
 msgid "Loss function"
-msgstr ""
+msgstr "இழப்பு செயல்பாடு"
 
 msgid "Validation MSE"
-msgstr ""
+msgstr "சரிபார்ப்பு எம்.எச்.இ."
 
 msgid "Test MSE"
-msgstr ""
+msgstr "சோதனை MSE"
 
 msgid "OOB Error"
-msgstr ""
+msgstr "OOB பிழை"
 
 msgid "R%1$s"
-msgstr ""
+msgstr "R%1$s"
 
 msgid "Adjusted R%1$s"
-msgstr ""
+msgstr "சரிசெய்யப்பட்ட r%1$s"
 
 msgid "Please provide a target variable and at least %d feature variable(s)."
-msgstr ""
+msgstr "இலக்கு மாறி மற்றும் குறைந்தது %d அம்ச மாறி (கள்) ஆகியவற்றை வழங்கவும்."
 
 msgid "The model is optimized with respect to the <i>validation set mean squared error</i>."
 msgstr ""
+"<i> சரிபார்ப்பு தொகுப்பு சராசரி ச்கொயர் பிழை </i> தொடர்பாக மாதிரி உகந்ததாக உள்ளது."
 
 msgid "When %s is set to 0 linear regression is performed."
-msgstr ""
+msgstr "%s 0 நேரியல் பின்னடைவு என அமைக்கப்படும் போது."
 
 msgid "The model is optimized with respect to the <i>out-of-bag mean squared error</i>."
 msgstr ""
+"<i> பேக் அவுட்-ஆஃப்-பேக் சராசரி சதுர பிழை </i> தொடர்பாக மாதிரி உகந்ததாக உள்ளது."
 
 msgid "Gaussian"
-msgstr ""
+msgstr "காசியன்"
 
 msgid "Laplace"
-msgstr ""
+msgstr "லாப்லேச்"
 
 msgid "MSE(scaled)"
-msgstr ""
+msgstr "MSE (அளவிடப்பட்டது)"
 
 msgid "R%s cannot be computed due to lack of variance in the predictions.</i>"
-msgstr ""
+msgstr "கணிப்புகளில் மாறுபாடு இல்லாததால் r%களை கணக்கிட முடியாது. </I>"
 
 msgid "Predictive Performance Plot"
-msgstr ""
+msgstr "முன்கணிப்பு செயல்திறன் சூழ்ச்சி"
 
 msgid "Observed Test Values"
-msgstr ""
+msgstr "கவனிக்கப்பட்ட சோதனை மதிப்புகள்"
 
 msgid "Predicted Test Values"
-msgstr ""
+msgstr "கணிக்கப்பட்ட சோதனை மதிப்புகள்"
 
 msgid "Data Split"
-msgstr ""
+msgstr "தரவு பிளவு"
 
 msgid "Train: %d"
-msgstr ""
+msgstr "ரயில்: %d"
 
 msgid "Test: %d"
-msgstr ""
+msgstr "சோதனை: %d"
 
 msgid "Total: %d"
-msgstr ""
+msgstr "மொத்தம்: %d"
 
 msgid "Validation: %d"
-msgstr ""
+msgstr "சரிபார்ப்பு: %d"
 
 msgid "Train and validation: %d"
-msgstr ""
+msgstr "ரயில் மற்றும் சரிபார்ப்பு: %d"
 
 msgid "Additive Explanations for Predictions of New Cases"
-msgstr ""
+msgstr "புதிய நிகழ்வுகளின் கணிப்புகளுக்கான சேர்க்கை விளக்கங்கள்"
 
 msgid "Additive Explanations for Predictions of Test Set Cases"
-msgstr ""
+msgstr "சோதனை தொகுப்பு நிகழ்வுகளின் கணிப்புகளுக்கான சேர்க்கை விளக்கங்கள்"
 
 msgid "Case"
-msgstr ""
+msgstr "வழக்கு"
 
 msgid "Predicted (Prob.)"
-msgstr ""
+msgstr "கணிக்கப்பட்ட (ஆய்வு.)"
 
 msgid "Base"
-msgstr ""
+msgstr "காரம்"
 
 msgid "An error occurred when computing the results for this table: %1$s"
-msgstr ""
+msgstr "இந்த அட்டவணைக்கான முடிவுகளை கணக்கிடும்போது பிழை ஏற்பட்டது: %1$s"
 
 msgid "Displayed values represent feature contributions to the predicted value without features (column 'Base') for the test set."
 msgstr ""
+"காட்டப்படும் மதிப்புகள் சோதனை தொகுப்பிற்கான நற்பொருத்தங்கள் (நெடுவரிசை 'அடிப்படை') இல்லாமல்"
+" கணிக்கப்பட்ட மதிப்புக்கு அம்ச பங்களிப்புகளைக் குறிக்கின்றன."
 
 msgid "Displayed values represent feature contributions to the predicted class probability without features (column 'Base') for the test set."
 msgstr ""
+"காட்டப்படும் மதிப்புகள் சோதனை தொகுப்பிற்கான நற்பொருத்தங்கள் (நெடுவரிசை 'அடிப்படை') இல்லாமல்"
+" கணிக்கப்பட்ட வகுப்பு நிகழ்தகவுக்கான அம்ச பங்களிப்புகளைக் குறிக்கின்றன."
 
 msgid "Feature Importance Metrics"
-msgstr ""
+msgstr "அம்ச முக்கியத்துவம் அளவீடுகள்"
 
 msgid "Mean dropout loss"
-msgstr ""
+msgstr "சராசரி கைவிடுதல் இழப்பு"
 
 msgid "root mean squared error (RMSE)"
-msgstr ""
+msgstr "ரூட் சராசரி சதுர பிழை (ஆர்.எம்.எச்.இ)"
 
 msgid "1 - area under curve (AUC)"
-msgstr ""
+msgstr "1 - வளைவின் கீழ் பகுதி (ஏ.யூ.சி)"
 
 msgid "cross entropy"
-msgstr ""
+msgstr "குறுக்கு என்ட்ரோபி"
 
 msgid "Mean dropout loss (defined as %1$s) is based on %2$s permutations."
 msgstr ""
+"சராசரி கைவிடுதல் இழப்பு ( %1$s என வரையறுக்கப்படுகிறது) %2$s வரிசைமாற்றங்களை "
+"அடிப்படையாகக் கொண்டது."
 
 msgid "The target variable should have at least 2 classes."
-msgstr ""
+msgstr "இலக்கு மாறியில் குறைந்தது 2 வகுப்புகள் இருக்க வேண்டும்."
 
 msgid "Linear Discriminant Coefficients"
-msgstr ""
+msgstr "நேரியல் பாரபட்சமான குணகங்கள்"
 
 msgid "(Constant)"
-msgstr ""
+msgstr "(மாறிலி)"
 
 msgid "Prior and Posterior Class Probabilities"
-msgstr ""
+msgstr "முன் மற்றும் பின்புற வகுப்பு நிகழ்தகவுகள்"
 
 msgid "Prior"
 msgstr ""
@@ -680,67 +736,71 @@ msgid "Posterior"
 msgstr ""
 
 msgid "Class Means in Training Data"
-msgstr ""
+msgstr "வகுப்பு என்றால் பயிற்சி தரவுகளில்"
 
 msgid "Linear Discriminant Matrix"
-msgstr ""
+msgstr "நேரியல் பாகுபாடு மேட்ரிக்ச்"
 
 msgid "Tests of Equality of Class Means"
-msgstr ""
+msgstr "வர்க்கத்தின் சமத்துவத்தின் சோதனைகள்"
 
 msgid "The null hypothesis specifies equal class means."
-msgstr ""
+msgstr "சுழிய கருதுகோள் சம வகுப்பு வழிமுறைகளைக் குறிப்பிடுகிறது."
 
 msgid "Tests of Equality of Covariance Matrices"
-msgstr ""
+msgstr "கோவாரன்ச் மெட்ரிக்சின் சமத்துவத்தின் சோதனைகள்"
 
 msgid "df"
-msgstr ""
+msgstr "டி.எஃப்"
 
 msgid "p"
-msgstr ""
+msgstr "ப"
 
 msgid "The null hypothesis specifies equal covariance matrices."
-msgstr ""
+msgstr "சுழிய கருதுகோள் சமமான கோவாரன்ச் மெட்ரிக்குகளைக் குறிப்பிடுகிறது."
 
 msgid "There are one or more levels in the target variable with less than two observations."
 msgstr ""
+"இலக்கு மாறியில் ஒன்று அல்லது அதற்கு மேற்பட்ட நிலைகள் இரண்டு அவதானிப்புகளுக்கும் குறைவாக "
+"உள்ளன."
 
 msgid "Box's M"
-msgstr ""
+msgstr "பெட்டியின் மீ"
 
 msgid "Pooled Within-Class Matrices Correlations"
-msgstr ""
+msgstr "வகுப்பு மெட்ரிக்ச் தொடர்புகள்"
 
 msgid "Tests for Multivariate Normality"
-msgstr ""
+msgstr "பன்முக இயல்புநிலைக்கான சோதனைகள்"
 
 msgid "Statistic"
-msgstr ""
+msgstr "புள்ளிவிவரம்"
 
 msgid "Skewness"
-msgstr ""
+msgstr "வளைவு"
 
 msgid "Kurtosis"
-msgstr ""
+msgstr "கர்டோசிச்"
 
 msgid "Both p-values of the skewness and kurtosis statistics should be > 0.05 to conclude multivariate normality."
 msgstr ""
+"வளைவு மற்றும் கர்டோசிச் புள்ளிவிவரங்களின் பி-மதிப்புகள் இரண்டும் பன்முக இயல்புநிலையை முடிக்"
+"க> 0.05 ஆக இருக்க வேண்டும்."
 
 msgid "Regression Coefficients"
-msgstr ""
+msgstr "பின்னடைவு குணகங்கள்"
 
 msgid "Coefficient (%s)"
-msgstr ""
+msgstr "குணகம் (%s)"
 
 msgid "Standard Error"
-msgstr ""
+msgstr "நிலையான பிழை"
 
 msgid "z"
-msgstr ""
+msgstr "சட்"
 
 msgid "%1$s%% Confidence interval"
-msgstr ""
+msgstr "%1$s %% நம்பிக்கை இடைவெளி"
 
 msgid "Lower"
 msgstr ""
@@ -749,520 +809,556 @@ msgid "Upper"
 msgstr ""
 
 msgid "The regression coefficients for numeric features are standardized."
-msgstr ""
+msgstr "எண் அம்சங்களுக்கான பின்னடைவு குணகங்கள் தரப்படுத்தப்பட்டுள்ளன."
 
 msgid "The regression coefficients are unstandardized."
-msgstr ""
+msgstr "பின்னடைவு குணகங்கள் நிலையற்றவை."
 
 msgid "<b>Regression equation:</b>\n%1$s"
 msgstr ""
+"<b> பின்னடைவு சமன்பாடு: </b>\n"
+" %1$s"
 
 msgid "Posterior Statistics"
-msgstr ""
+msgstr "பின்புற புள்ளிவிவரங்கள்"
 
 msgid "Feature: %1$s"
-msgstr ""
+msgstr "அம்சம்: %1$s"
 
 msgid "Mean"
 msgstr ""
 
 msgid "Std. deviation"
-msgstr ""
+msgstr "Std. விலகல்"
 
 msgid "The table displays the mean and standard deviation of the feature given the target class."
 msgstr ""
+"இலக்கு வகுப்பிற்கு வழங்கப்பட்ட அம்சத்தின் சராசரி மற்றும் நிலையான விலகலை அட்டவணை "
+"காட்டுகிறது."
 
 msgid "The table displays the conditional probabilities given the target class."
 msgstr ""
+"இலக்கு வகுப்பிற்கு வழங்கப்பட்ட நிபந்தனை நிகழ்தகவுகளை அட்டவணை காட்டுகிறது."
 
 msgid "Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s)."
 msgstr ""
+"பகுப்பாய்வு சாத்தியமில்லை: வழிமுறை அதிகபட்ச பயிற்சி மறுபடியும் (%1$s) க்குள் "
+"ஒன்றிணைக்கப்படவில்லை."
 
 msgid "Optimizing network topology"
-msgstr ""
+msgstr "பிணையம் டோபாலசியை மேம்படுத்துதல்"
 
 msgid "K-Distance Plot"
-msgstr ""
+msgstr "கே-டிச்டன்ச் சூழ்ச்சி"
 
 msgid "Points Sorted by Distance"
-msgstr ""
+msgstr "புள்ளிகள் தூரத்தால் வரிசைப்படுத்தப்படுகின்றன"
 
 msgid "%s-Nearest Neighbors \nDistance"
 msgstr ""
+"%s-NEREST அயலவர்கள்\n"
+" தூரம்"
 
 msgid "Maximum curvature = %s"
-msgstr ""
+msgstr "அதிகபட்ச வளைவு = %s"
 
 msgid "End of recursion reached without converging"
-msgstr ""
+msgstr "மறுநிகழ்வின் முடிவு ஒன்றிணைக்காமல் அடைந்தது"
 
 msgid "x and y must be numeric and finite. Missing values not allowed."
 msgstr ""
+"ஃச் மற்றும் ஒய் எண் மற்றும் வரையறுக்கப்பட்டதாக இருக்க வேண்டும். காணாமல் போன மதிப்புகள் "
+"அனுமதிக்கப்படவில்லை."
 
 msgid "x and y must be of equal length."
-msgstr ""
+msgstr "ஃச் மற்றும் ஒய் சம நீளமாக இருக்க வேண்டும்."
 
 msgid "Need more points to find cutoff."
-msgstr ""
+msgstr "வெட்டு கண்டுபிடிக்க கூடுதல் புள்ளிகள் தேவை."
 
 msgid "Need to specify fraction of maximum slope."
-msgstr ""
+msgstr "அதிகபட்ச சாய்வின் பகுதியைக் குறிப்பிட வேண்டும்."
 
 msgid "Fraction of maximum slope must be positive and be less than or equal to 1."
 msgstr ""
+"அதிகபட்ச சாய்வின் பின்னம் நேர்மறையாக இருக்க வேண்டும் மற்றும் 1 ஐ விட குறைவாகவோ அல்லது "
+"சமமாகவோ இருக்க வேண்டும்."
 
 msgid "Method must be either 'first' or 'curvature'."
-msgstr ""
+msgstr "முறை 'முதல்' அல்லது 'வளைவு' ஆக இருக்க வேண்டும்."
 
 msgid "Cutoff point is beyond range. Returning NA."
-msgstr ""
+msgstr "வெட்டு புள்ளி வரம்பிற்கு அப்பாற்பட்டது. திரும்பும் நா."
 
 msgid "Dendrogram"
-msgstr ""
+msgstr "டென்ட்ரோகிராம்"
 
 msgid "The %1$s-component %2$s model could not be fitted, try a different model or a different number of clusters."
 msgstr ""
+"%1$s- கூறு %2$s மாதிரியை பொருத்த முடியவில்லை, வேறு மாதிரி அல்லது வேறு "
+"எண்ணிக்கையிலான கொத்துக்களை முயற்சிக்கவும்."
 
 msgid "Estimated Model Parameters"
-msgstr ""
+msgstr "மதிப்பிடப்பட்ட மாதிரி அளவுருக்கள்"
 
 msgid "Mixing Probabilities"
-msgstr ""
+msgstr "கலப்பு நிகழ்தகவுகள்"
 
 msgid "Mixing probability"
-msgstr ""
+msgstr "கலப்பு நிகழ்தகவு"
 
 msgid "Component %1$s"
-msgstr ""
+msgstr "கூறு %1$s"
 
 msgid "Means"
-msgstr ""
+msgstr "அர்த்தங்கள்"
 
 msgid "Covariance Matrix for Component %1$s"
-msgstr ""
+msgstr "கூறு %1$s க்கான கோவாரன்ச் மேட்ரிக்ச்"
 
 msgid "Scale of the Covariance"
-msgstr ""
+msgstr "கோவாரன்ச் அளவு"
 
 msgid "Scale"
-msgstr ""
+msgstr "அளவு"
 
 msgid "Shape of the Covariance Matrix"
-msgstr ""
+msgstr "கோவாரன்ச் மேட்ரிக்சின் வடிவம்"
 
 msgid "Eigenvalues of the Covariance Matrix for Component %1$s"
-msgstr ""
+msgstr "கூறு %1$s க்கான கோவாரன்ச் மேட்ரிக்சின் ஈசென்வெல்யூச்"
 
 msgid "Feature Importance"
-msgstr ""
+msgstr "அம்ச முக்கியத்துவம்"
 
 msgid "Mean decrease in Gini Index"
-msgstr ""
+msgstr "கினி குறியீட்டில் சராசரி குறைவு"
 
 msgid "K-nearest neighbors"
-msgstr ""
+msgstr "கே-அருகிலுள்ள அயலவர்கள்"
 
 msgid "Linear discriminant"
-msgstr ""
+msgstr "நேரியல் பாகுபாடு"
 
 msgid "Linear"
-msgstr ""
+msgstr "நேரியல்"
 
 msgid "Boosting"
-msgstr ""
+msgstr "அதிகரிக்கும்"
 
 msgid "Random forest"
-msgstr ""
+msgstr "சீரற்ற காடு"
 
 msgid "Regularized linear regression"
-msgstr ""
+msgstr "நேரியல் பின்னடைவை முறைப்படுத்தியது"
 
 msgid "Neural network"
-msgstr ""
+msgstr "நரம்பியல் பிணையம்"
 
 msgid "Decision tree"
-msgstr ""
+msgstr "முடிவு மரம்"
 
 msgid "Support vector machine"
-msgstr ""
+msgstr "திசையன் இயந்திரத்தை ஆதரிக்கவும்"
 
 msgid "Naive Bayes"
-msgstr ""
+msgstr "அப்பாவியாக பேயச்"
 
 msgid "Logistic regression"
-msgstr ""
+msgstr "லாசிச்டிக் பின்னடைவு"
 
 msgid "Multinomial regression"
-msgstr ""
+msgstr "பன்முக பின்னடைவு"
 
 msgid "Error: The trained model is not created in JASP."
-msgstr ""
+msgstr "பிழை: பயிற்சி பெற்ற மாதிரி JASP இல் உருவாக்கப்படவில்லை."
 
 msgid "The trained model (type: %1$s) is currently not supported in JASP."
-msgstr ""
+msgstr "பயிற்சி பெற்ற மாதிரி (வகை: %1$s) தற்போது JASP இல் ஆதரிக்கப்படவில்லை."
 
 msgid "Error: The trained model is created using a different version of JASP."
 msgstr ""
+"பிழை: JASP இன் வேறுபட்ட பதிப்பைப் பயன்படுத்தி பயிற்சி பெற்ற மாதிரி உருவாக்கப்படுகிறது."
 
 msgid "Loaded Model"
-msgstr ""
+msgstr "ஏற்றப்பட்ட மாதிரி"
 
 msgid "Classification"
-msgstr ""
+msgstr "வகைப்பாடு"
 
 msgid "Regression"
-msgstr ""
+msgstr "பின்னடைவு"
 
 msgid "Loaded Model: %1$s"
-msgstr ""
+msgstr "ஏற்றப்பட்ட மாதிரி: %1$s"
 
 msgid "The trained model is not applied because the the following features are missing: <i>%1$s</i>."
 msgstr ""
+"பின்வரும் நற்பொருத்தங்கள் காணவில்லை என்பதால் பயிற்சி பெற்ற மாதிரி பயன்படுத்தப்படவில்லை: "
+"<i>%1$s </i>."
 
 msgid "The following features are unused because they are not a feature variable in the trained model: <i>%1$s</i>."
 msgstr ""
+"பின்வரும் நற்பொருத்தங்கள் பயன்படுத்தப்படாது, ஏனெனில் அவை பயிற்சி பெற்ற மாதிரியில் அம்ச "
+"மாறுபாடு அல்ல: <i>%1$s </i>."
 
 msgid "Nearest Neighbors"
-msgstr ""
+msgstr "அருகிலுள்ள அயலவர்கள்"
 
 msgid "n(New)"
-msgstr ""
+msgstr "n (புதியது)"
 
 msgid "Binomial"
-msgstr ""
+msgstr "ஈருறுப்பு"
 
 msgid "Multinomial"
-msgstr ""
+msgstr "பல்லுறுப்பு"
 
 msgid "Logit"
-msgstr ""
+msgstr "உள்நுழைவு"
 
 msgid "Predictions for New Data"
-msgstr ""
+msgstr "புதிய தரவுகளுக்கான கணிப்புகள்"
 
 msgid "Relative Influence"
-msgstr ""
+msgstr "உறவினர் செல்வாக்கு"
 
 msgid "<i>Warning.</i>"
-msgstr ""
+msgstr "<i> எச்சரிக்கை. </i>"
 
 msgid "An error occurred when computing the mean dropout loss: %1$s"
-msgstr ""
+msgstr "சராசரி கைவிடுதல் இழப்பைக் கணக்கிடும்போது பிழை ஏற்பட்டது: %1$s"
 
 msgid "Out-of-bag Improvement Plot"
-msgstr ""
+msgstr "பேக் மேம்பாட்டு சூழ்ச்சி"
 
 msgid "Training set"
-msgstr ""
+msgstr "பயிற்சி தொகுப்பு"
 
 msgid "OOB Change in \n Multinomial Deviance"
 msgstr ""
+"OOB மாற்றம்\n"
+" மல்டினோமியல் விலகல்"
 
 msgid "OOB Change in \n Binomial Deviance"
 msgstr ""
+"OOB மாற்றம்\n"
+" பைனோமியல் விலகல்"
 
 msgid "OOB Change in \n%s Deviance"
 msgstr ""
+"OOB மாற்றம்\n"
+" %s விலகல்"
 
 msgid "Plotting not possible: The model is based on only a single tree."
 msgstr ""
+"சூழ்ச்சி செய்ய முடியாது: மாதிரி ஒரு மரத்தை மட்டுமே அடிப்படையாகக் கொண்டது."
 
 msgid "Number of Trees"
-msgstr ""
+msgstr "மரங்களின் எண்ணிக்கை"
 
 msgid "Deviance Plot"
-msgstr ""
+msgstr "விலகல் சூழ்ச்சி"
 
 msgid "Multinomial Deviance"
-msgstr ""
+msgstr "மல்டினோமியல் விலகல்"
 
 msgid "Binomial Deviance"
-msgstr ""
+msgstr "பைனோமியல் விலகல்"
 
 msgid "%s Deviance"
-msgstr ""
+msgstr "%s விலகல்"
 
 msgid "Relative Influence Plot"
-msgstr ""
+msgstr "உறவினர் செல்வாக்கு சூழ்ச்சி"
 
 msgid "The minimum number of observations per node is too large. Ensure that `2 * Min. observations in node (%1$i) + 1` < `Training data used per tree (%2$s) * available training data (%3$i)` (in this case the minimum can be %4$i at most)."
 msgstr ""
+"ஒரு முனைக்கு குறைந்தபட்ச அவதானிப்புகள் மிகப் பெரியவை. `2 * மணித்துளி என்பதை "
+"உறுதிப்படுத்தவும். முனையில் உள்ள அவதானிப்புகள் (%1 $ i) + 1` <`ஒரு மரத்திற்கு (%2$s) "
+"பயன்படுத்தப்படும் பயிற்சி தரவு * கிடைக்கக்கூடிய பயிற்சி தரவு (%3 $ i)` (இந்த விசயத்தில் "
+"குறைந்தபட்சம்%4 $ i ஆக இருக்கலாம் )."
 
 msgid "Relative Importance"
-msgstr ""
+msgstr "உறவினர் முக்கியத்துவம்"
 
 msgid "No splits were made in the tree."
-msgstr ""
+msgstr "மரத்தில் பிளவுகள் எதுவும் செய்யப்படவில்லை."
 
 msgid "Splits in Tree"
-msgstr ""
+msgstr "மரத்தில் பிரிக்கிறது"
 
 msgid "Obs. in Split"
-msgstr ""
+msgstr "ஆப்ச். பிளவு"
 
 msgid "Split Point"
-msgstr ""
+msgstr "பிளவு புள்ளி"
 
 msgid "Improvement"
-msgstr ""
+msgstr "முன்னேற்றம்"
 
 msgid "For each level of the tree, only the split with the highest improvement in deviance is shown."
 msgstr ""
+"மரத்தின் ஒவ்வொரு நிலைக்கும், விலகலில் அதிக முன்னேற்றத்தைக் கொண்ட பிளவு மட்டுமே "
+"காட்டப்பட்டுள்ளது."
 
 msgid "Decision Tree Plot"
-msgstr ""
+msgstr "முடிவு மர சூழ்ச்சி"
 
 msgid "Plotting not possible: No splits were made in the tree."
-msgstr ""
+msgstr "சூழ்ச்சி செய்ய முடியாது: மரத்தில் பிளவுகள் எதுவும் செய்யப்படவில்லை."
 
 msgid "Plotting not possible: An error occurred while creating this plot: %s"
 msgstr ""
+"சூழ்ச்சி செய்ய முடியாது: இந்த சதித்திட்டத்தை உருவாக்கும் போது பிழை ஏற்பட்டது: %s"
 
 msgid "Classification Accuracy Plot"
-msgstr ""
+msgstr "வகைப்பாடு துல்லியம் சூழ்ச்சி"
 
 msgid "Mean Squared Error Plot"
-msgstr ""
+msgstr "சராசரி சதுர பிழை சூழ்ச்சி"
 
 msgid "Classification Accuracy"
-msgstr ""
+msgstr "வகைப்பாடு துல்லியம்"
 
 msgid "Mean Squared Error"
-msgstr ""
+msgstr "சராசரி சதுர பிழை"
 
 msgid "Validation set"
-msgstr ""
+msgstr "சரிபார்ப்பு தொகுப்பு"
 
 msgid "Complexity Penalty"
-msgstr ""
+msgstr "சிக்கலான தண்டம்"
 
 msgid "Number of Nearest Neighbors"
-msgstr ""
+msgstr "அருகிலுள்ள அண்டை நாடுகளின் எண்ணிக்கை"
 
 msgid "Training and validation set"
-msgstr ""
+msgstr "பயிற்சி மற்றும் சரிபார்ப்பு தொகுப்பு"
 
 msgid "Rectangular"
-msgstr ""
+msgstr "செவ்வக"
 
 msgid "Triangular"
-msgstr ""
+msgstr "முக்கோண"
 
 msgid "Epanechnikov"
-msgstr ""
+msgstr "Epanechnikov"
 
 msgid "Biweight"
-msgstr ""
+msgstr "இரு எடை"
 
 msgid "Triweight"
-msgstr ""
+msgstr "ட்ரைவெயிட்"
 
 msgid "Cosine"
-msgstr ""
+msgstr "துணைசெவ்வளைவு"
 
 msgid "Inverse"
-msgstr ""
+msgstr "தலைகீழ்"
 
 msgid "Rank"
-msgstr ""
+msgstr "தரவரிசை"
 
 msgid "Optimal"
-msgstr ""
+msgstr "உகந்த"
 
 msgid "%1$s Weight Function"
-msgstr ""
+msgstr "%1$s எடை செயல்பாடு"
 
 msgid "Plotting not possible: The selected weighting scheme cannot be visualized separately from the data."
 msgstr ""
+"சூழ்ச்சி செய்ய முடியாது: தேர்ந்தெடுக்கப்பட்ட வெயிட்டிங் திட்டத்தை தரவிலிருந்து தனித்தனியாக "
+"காட்சிப்படுத்த முடியாது."
 
 msgid "Proportion of Max. Distance"
-msgstr ""
+msgstr "அதிகபட்சத்தின் விகிதம். தூரம்"
 
 msgid "Relative Weight"
-msgstr ""
+msgstr "உறவினர் எடை"
 
 msgid "Network Weights"
-msgstr ""
+msgstr "பிணையம் எடைகள்"
 
 msgid "Node"
-msgstr ""
+msgstr "கணு"
 
 msgid "Layer"
-msgstr ""
+msgstr "அடுக்கு"
 
 msgid "Weight"
-msgstr ""
+msgstr "எடை"
 
 msgid "linear"
-msgstr ""
+msgstr "நேரியல்"
 
 msgid "binary step"
-msgstr ""
+msgstr "இருமை படி"
 
 msgid "logistic sigmoid"
-msgstr ""
+msgstr "லாசிச்டிக் சிக்மாய்டு"
 
 msgid "sine"
-msgstr ""
+msgstr "செவ்வளை"
 
 msgid "cosine"
-msgstr ""
+msgstr "துணைசெவ்வளைவு"
 
 msgid "inverse tangent"
-msgstr ""
+msgstr "தலைகீழ் தொடுகோடு"
 
 msgid "hyperbolic tangent"
-msgstr ""
+msgstr "ஐபர்போலிக் தொடுகோடு"
 
 msgid "rectified linear unit (ReLU)"
-msgstr ""
+msgstr "சரிசெய்யப்பட்ட நேரியல் அலகு (RELU)"
 
 msgid "softplus"
-msgstr ""
+msgstr "மென்பொருள்"
 
 msgid "softsign"
-msgstr ""
+msgstr "சாஃப்டைன்"
 
 msgid "exponential linear unit (ELU)"
-msgstr ""
+msgstr "அதிவேக நேரியல் அலகு (ELU)"
 
 msgid "leaky rectified linear unit (Leaky ReLU)"
-msgstr ""
+msgstr "கசிந்த சரிசெய்யப்பட்ட நேரியல் அலகு (கசிவு ரெல்யூ)"
 
 msgid "sigmoid linear unit (SiLU)"
-msgstr ""
+msgstr "சிக்மாய்டு நேரியல் அலகு (சிலு)"
 
 msgid "mish"
-msgstr ""
+msgstr "மிச்"
 
 msgid "gaussian"
-msgstr ""
+msgstr "காசியன்"
 
 msgid "gaussian error linear unit (GeLU)"
-msgstr ""
+msgstr "காசியன் பிழை நேரியல் அலகு (செலு)"
 
 msgid "The weights are input for the %1$s activation function."
-msgstr ""
+msgstr "எடைகள் %1$s செயல்படுத்தும் செயல்பாட்டிற்கான உள்ளீடு ஆகும்."
 
 msgid "Network Structure Plot"
-msgstr ""
+msgstr "பிணைய கட்டமைப்பு சூழ்ச்சி"
 
 msgid "Intercept"
-msgstr ""
+msgstr "இடைமறிப்பு"
 
 msgid "Input layer"
-msgstr ""
+msgstr "உள்ளீட்டு அடுக்கு"
 
 msgid "Output layer"
-msgstr ""
+msgstr "வெளியீட்டு அடுக்கு"
 
 msgid "Hidden layer %1$s"
-msgstr ""
+msgstr "மறைக்கப்பட்ட அடுக்கு %1$s"
 
 msgid "Binary"
-msgstr ""
+msgstr "இருமம்"
 
 msgid "Logistic Sigmoid"
-msgstr ""
+msgstr "லாசிச்டிக் சிக்மாய்டு"
 
 msgid "Sine"
-msgstr ""
+msgstr "செவ்வளை"
 
 msgid "Inverse Tangent"
-msgstr ""
+msgstr "தலைகீழ் தொடுகோடு"
 
 msgid "Hyperbolic Tangent"
-msgstr ""
+msgstr "ஐபர்போலிக் தொடுகோடு"
 
 msgid "ReLU"
-msgstr ""
+msgstr "மீண்டும் தொடங்குங்கள்"
 
 msgid "Softplus"
-msgstr ""
+msgstr "மென்பொருள்"
 
 msgid "Softsign"
-msgstr ""
+msgstr "சாஃப்டைன்"
 
 msgid "ELU"
-msgstr ""
+msgstr "எலு"
 
 msgid "Leaky ReLU"
-msgstr ""
+msgstr "கசிவு ரெல்லு"
 
 msgid "SiLU"
-msgstr ""
+msgstr "சக்தியின் ஆற்றல்"
 
 msgid "Mish"
-msgstr ""
+msgstr "மிச்"
 
 msgid "GeLU"
-msgstr ""
+msgstr "சேவ்"
 
 msgid "%1$s Activation Function"
-msgstr ""
+msgstr "%1$s செயல்படுத்தும் செயல்பாடு"
 
 msgid "Input"
-msgstr ""
+msgstr "உள்ளீடு"
 
 msgid "Output"
-msgstr ""
+msgstr "வெளியீடு"
 
 msgid "Generation"
-msgstr ""
+msgstr "தலைமுறை"
 
 msgid "Mean decrease in accuracy"
-msgstr ""
+msgstr "துல்லியத்தில் குறைவு"
 
 msgid "Total increase in node purity"
-msgstr ""
+msgstr "முனை தூய்மையின் மொத்த அதிகரிப்பு"
 
 msgid "Out-of-bag Classification Accuracy Plot"
-msgstr ""
+msgstr "பேக்-க்கு வெளியே வகைப்பாடு துல்லியம் சூழ்ச்சி"
 
 msgid "Out-of-bag Mean Squared Error Plot"
-msgstr ""
+msgstr "பேக் சராசரி சதுர பிழை சூழ்ச்சி"
 
 msgid "Out-of-bag %sClassification Accuracy"
-msgstr ""
+msgstr "பாக்-க்கு வெளியே %வகைப்பாடு துல்லியம்"
 
 msgid "Out-of-bag %sMean Squared Error"
-msgstr ""
+msgstr "பேக் %சராசரி சதுர பிழை"
 
 msgid "Mean Decrease in Accuracy"
-msgstr ""
+msgstr "துல்லியத்தில் குறைவு"
 
 msgid "Total Increase in Node Purity"
-msgstr ""
+msgstr "முனை தூய்மையின் மொத்த அதிகரிப்பு"
 
 msgid "L2 (Ridge)"
-msgstr ""
+msgstr "எல் 2 (ரிட்ச்)"
 
 msgid "L1 (Lasso)"
-msgstr ""
+msgstr "எல் 1 (லாசோ)"
 
 msgid "Elastic Net"
-msgstr ""
+msgstr "மீள் நிகர"
 
 msgid "Variable Trace Plot"
-msgstr ""
+msgstr "மாறி சுவடு சூழ்ச்சி"
 
 msgid "Coefficients"
-msgstr ""
+msgstr "குணகங்கள்"
 
 msgid "Lambda Evaluation Plot"
-msgstr ""
+msgstr "லாம்ப்டா மதிப்பீட்டு சூழ்ச்சி"
 
 msgid "Cross-Validated %sMean Squared Error"
-msgstr ""
+msgstr "குறுக்கு சரிபார்ப்பு என்பது சதுர பிழை"
 
 msgid "Min. CV MSE"
-msgstr ""
+msgstr "மணித்துளி. சி.வி எம்.எச்.இ."
 
 msgid "%s 1 SE"
-msgstr ""
+msgstr "1 உடன் %"
 
 msgid "Row"
-msgstr ""
+msgstr "நிரை"
 
 msgid "Cost of Constraints Violation"
-msgstr ""
+msgstr "தடைகள் மீறல் செலவு"
