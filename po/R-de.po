@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2024-12-07 03:27\n"
-"PO-Revision-Date: 2024-11-04 11:00+0000\n"
+"PO-Revision-Date: 2025-01-25 20:47+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/de/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n==0 ? 0 : n==1 ? 0 : 1;\n"
-"X-Generator: Weblate 5.8.2\n"
+"X-Generator: Weblate 5.10-dev\n"
 
 msgid "An error occurred in the analysis: %s"
 msgstr "In der Analyse ist ein Fehler aufgetreten: %s"
@@ -42,7 +42,7 @@ msgid "Naive Bayes Classification"
 msgstr "Naive-Bayes-Klassifikation"
 
 msgid "Logistic / Multinomial Regression Classification"
-msgstr ""
+msgstr "Logistische / Multinomiale Regressions-Klassifikation"
 
 msgid "Model Summary: %1$s"
 msgstr "Modell-Zusammenfassung: %1$s"
@@ -93,10 +93,10 @@ msgid "Smoothing"
 msgstr "Glättung"
 
 msgid "Family"
-msgstr ""
+msgstr "Familie"
 
 msgid "Link"
-msgstr ""
+msgstr "Linkfunktion"
 
 msgid "n(Train)"
 msgstr "n(Train)"
@@ -176,12 +176,11 @@ msgstr ""
 "Das Modell ist hinsichtlich der <i>Summe der Abweichungsquadrate</i> "
 "optimiert."
 
-#, fuzzy
 msgid "Model Summary: Logistic Regression Classification"
-msgstr "K-nächste-Nachbarn-Klassifikation"
+msgstr "Modellzusammenfassung: Logistische Regressions-Klassifikation"
 
 msgid "Model Summary: Multinomial Regression Classification"
-msgstr ""
+msgstr "Modellzusammenfassung: Multinomiale Regressions-Klassifikation"
 
 msgid "Confusion Matrix"
 msgstr "Konfusionsmatrix"
@@ -576,16 +575,14 @@ msgstr ""
 "Es gibt nur eine Beobachtung in jeder Stufe der Faktoren %1$s, bitte "
 "entfernen Sie diese Faktoren als Merkmal."
 
-#, fuzzy
 msgid "test set"
 msgstr "Test-Menge"
 
-#, fuzzy
 msgid "validation set"
 msgstr "Validations-Menge"
 
 msgid "new dataset"
-msgstr ""
+msgstr "Neuer Datensatz"
 
 msgid ""
 "or use a different test set (e.g., automatically by setting a different seed "
