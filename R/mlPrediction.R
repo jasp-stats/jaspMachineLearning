@@ -249,7 +249,7 @@ is.jaspMachineLearning <- function(x) {
       dataset <- .scaleNumericData(dataset)
     }
     # Select only the predictors in the model to prevent accidental double column names
-    dataset <- dataset[, which(decodeColNames(colnames(dataset)) %in% model[["jaspVars"]][["decoded"]]$predictors)]
+    dataset <- dataset[, which(decodeColNames(colnames(dataset)) %in% model[["jaspVars"]][["decoded"]]$predictors), drop = FALSE]
     # Ensure the column names in the dataset match those in the training data
     colnames(dataset) <- .matchDecodedNames(colnames(dataset), model)
     # Retrieve the training set
