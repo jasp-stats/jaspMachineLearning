@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2024-12-07 03:27\n"
-"PO-Revision-Date: 2025-01-25 20:47+0000\n"
+"PO-Revision-Date: 2025-02-11 10:02+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/de/>\n"
@@ -588,9 +588,14 @@ msgid ""
 "or use a different test set (e.g., automatically by setting a different seed "
 "or manually by specifying the test set indicator)"
 msgstr ""
+"oder verwenden Sie einen anderen Datensatz (z. B., automatisch durch Setzen "
+"eines anderen Startwerts für Zufallszahlen oder manuell durch Angabe des "
+"Testmengen-Indikators)"
 
 msgid "or use a different validation set by setting a different seed"
 msgstr ""
+"oder verwenden Sie eine andere Validierungsmenge durch setzen eines anderen "
+"Startwerts für Zufallszahlen"
 
 msgid ""
 "Some factors in the %1$s have levels that do not appear in the training set. "
@@ -1094,16 +1099,14 @@ msgstr "Nächste-Nachbarn"
 msgid "n(New)"
 msgstr "n(Neu)"
 
-#, fuzzy
 msgid "Binomial"
-msgstr "Binomiale Devianz"
+msgstr "Binomial"
 
-#, fuzzy
 msgid "Multinomial"
-msgstr "Multinomiale Devianz"
+msgstr "Multinomial"
 
 msgid "Logit"
-msgstr ""
+msgstr "Logit"
 
 msgid "Predictions for New Data"
 msgstr "Vorhersagen für neue Daten"
