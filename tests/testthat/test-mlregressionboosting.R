@@ -53,9 +53,6 @@ options$predictors <- list("Malic", "Ash", "Alcalinity", "Magnesium", "Phenols",
                            "Nonflavanoids", "Proanthocyanins", "Color", "Hue", "Dilution",
                            "Proline")
 options$predictors.types <- rep("scale", length(options$predictors))
-options$predictors.types <- rep("scale", length(options$predictors))
-options$predictors.types <- rep("scale", length(options$predictors))
-options$predictors.types <- rep("scale", length(options$predictors))
 options$setSeed <- TRUE
 options$target <- "Alcohol"
 options$target.types <- "scale"
@@ -122,8 +119,8 @@ test_that("Boosting Regression table results match", {
 test_that("Evaluation Metrics table results match", {
   table <- results[["results"]][["validationMeasures"]][["data"]]
   jaspTools::expect_equal_tables(table,
-                      list("MSE", 0.28, "MSE(scaled)", 0.374, "RMSE", 0.529, "MAE / MAD", 0.425, "MAPE", "3.33%",
-                           "R<unicode><unicode>", 0.652))
+                      list("Values", 0.425372298267314, 0.0332803311026787, 0.280491345224988,
+	 0.373676054903572, 0.652325557162448, 0.529614336309911))
 })
 
 test_that("Feature Contributions to Predictions for Test Set Cases table results match", {

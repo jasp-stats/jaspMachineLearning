@@ -95,8 +95,8 @@ test_that("K-Nearest Neighbors Regression table results match", {
 test_that("Model Performance Metrics table results match", {
 	table <- results[["results"]][["validationMeasures"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list("MSE", 0.379, "MSE(scaled)", 0.583, "RMSE", 0.616, "MAE / MAD", 0.512, "MAPE", "3.98%",
-			 "R<unicode>", 0.49))
+		list("Values", 0.5115, 0.0397883922098345, 0.37930375, 0.582791945895268,
+	 0.490046981289794, 0.615876408056032))
 })
 
 test_that("Feature Importance Metrics table results match", {

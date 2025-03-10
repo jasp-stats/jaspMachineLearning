@@ -527,10 +527,14 @@
   table <- createJaspTable(title = gettext("Model Performance Metrics"))
   table$position <- position
   table$dependOn(options = c(.mlRegressionDependencies(options), "validationMeasures"))
-  table$addColumnInfo(name = "measures", title = "", type = "string")
-  table$addColumnInfo(name = "values", title = gettext("Value"), type = "string")
-  measures <- c("MSE", gettext("MSE(scaled)"), "RMSE", "MAE / MAD", "MAPE", "R\u00B2")
-  table[["measures"]] <- measures
+  table$addColumnInfo(name = "colTitle", title = "", type = "string")
+  table$addColumnInfo(name = "mse", title = "MSE", type = "number")
+  table$addColumnInfo(name = "mse_scaled", title = gettext("MSE(scaled)"), type = "number")
+  table$addColumnInfo(name = "rmse", title = "RMSE", type = "number")
+  table$addColumnInfo(name = "mae", title = "MAE / MAD", type = "number")
+  table$addColumnInfo(name = "mape", title = "MAPE", type = "number", format = "pc")
+  table$addColumnInfo(name = "r_squared", title = "R\u00B2", type = "number")
+  table$transpose <- TRUE
   jaspResults[["validationMeasures"]] <- table
   if (!ready) {
     return()
@@ -540,16 +544,22 @@
   predDat <- predDat[complete.cases(predDat), ]
   obs <- predDat[["obs"]]
   pred <- predDat[["pred"]]
-  mse <- round(regressionResult[["testMSE"]], 3)
+  mse <- regressionResult[["testMSE"]]
   obs_scaled <- (obs - mean(obs)) / sd(obs)
   pred_scaled <- (pred - mean(pred)) / sd(pred)
-  mse_scaled <- round(mean((obs_scaled - pred_scaled)^2), 3)
-  rmse <- round(sqrt(mse), 3)
-  mae <- round(mean(abs(obs - pred)), 3)
-  mape <- paste0(round(mean(abs((obs - pred) / obs)) * 100, 2), "%")
-  r_squared <- round(cor(obs, pred)^2, 3)
-  values <- c(mse, mse_scaled, rmse, mae, mape, r_squared)
-  table[["values"]] <- values
+  mse_scaled <- mean((obs_scaled - pred_scaled)^2)
+  rmse <- sqrt(mse)
+  mae <- mean(abs(obs - pred))
+  mape <- mean(abs((obs - pred) / obs))
+  r_squared <- cor(obs, pred)^2
+  table[["colTitle"]] <- gettext("Values")
+  table[["mse"]] <- mse
+  table[["mse_scaled"]] <- mse_scaled
+  table[["mae"]] <- mae
+  table[["mape"]] <- mape
+  table[["rmse"]] <- rmse
+  table[["mape"]] <- mape
+  table[["r_squared"]] <- r_squared
   if (is.na(r_squared)) {
     table$addFootnote(gettextf("R%s cannot be computed due to lack of variance in the predictions.</i>", "\u00B2"))
   }

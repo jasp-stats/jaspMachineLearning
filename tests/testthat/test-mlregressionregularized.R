@@ -97,8 +97,8 @@ test_that("Regularized Linear Regression table results match", {
 test_that("Model Performance Metrics table results match", {
 	table <- results[["results"]][["validationMeasures"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list("MSE", 0.316, "MSE(scaled)", 0.504, "RMSE", 0.562, "MAE / MAD", 0.428, "MAPE", "3.34%",
-			 "R<unicode>", 0.549))
+		list("Values", 0.427706057315286, 0.0333852369095772, 0.315722256934242,
+	 0.503930362151054, 0.548524025364545, 0.561891677224571))
 })
 
 test_that("Variable Trace Plot matches", {
