@@ -198,6 +198,6 @@ test_that("Additive Explanations for Predictions of Test Set Cases table results
 test_that("Model Performance Metrics table results match", {
 	table <- results[["results"]][["validationMeasures"]][["data"]]
 	jaspTools::expect_equal_tables(table,
-		list("MSE", 0.079, "MSE(scaled)", 0.149, "RMSE", 0.281, "MAE / MAD", 0.234, "MAPE", "4.05%",
-			 "R<unicode>", 0.852))
+		list("Values", 0.233880681803325, 0.0405178555867029, 0.0785792724199296,
+	 0.14900759463868, 0.851794443398157, 0.280319946525269))
 })

@@ -121,8 +121,8 @@ test_that("Evaluation Metrics table results match", {
   testthat::skip_on_os("mac")
   table <- results[["results"]][["validationMeasures"]][["data"]]
   jaspTools::expect_equal_tables(table,
-                      list("MSE", 0.355, "MSE(scaled)", 0.531, "RMSE", 0.596, "MAE / MAD", 0.473, "MAPE", "3.71%",
-                           "R<unicode><unicode>", 0.528))
+                      list("Values", 0.473497619047619, 0.0371154907694286, 0.355223330180166,
+	 0.531126446557653, 0.527985480021831, 0.59600614944828))
 })
 
 test_that("Feature Importance Metrics table results match", {
@@ -174,8 +174,8 @@ test_that("Evaluation Metrics table results match", {
   testthat::skip_on_os(c("windows", "linux"))
   table <- results[["results"]][["validationMeasures"]][["data"]]
   jaspTools::expect_equal_tables(table,
-                      list("MSE", 0.355, "MSE(scaled)", 0.531, "RMSE", 0.596, "MAE / MAD", 0.474, "MAPE", "3.72%",
-                           "R<unicode><unicode>", 0.528))
+                      list("Values", 0.474173308270677, 0.0371687545468009, 0.355223330180166,
+	 0.530948953827784, 0.528118252477076, 0.59600614944828))
 })
 
 test_that("Feature Importance Metrics table results match", {
