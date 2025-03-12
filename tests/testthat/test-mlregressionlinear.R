@@ -9,7 +9,7 @@ options$saveModel <- FALSE
 options$holdoutData <- "holdoutManual"
 options$modelOptimization <- "manual"
 options$predictedPerformancePlot <- TRUE
-options$predictors <- list("Petal.Width", "Sepal.Length", "Sepal.Width", "Species")
+options$predictors <- c("Petal.Width", "Sepal.Length", "Sepal.Width", "Species")
 options$predictors.types <- c("scale", "scale", "scale", "nominal")
 options$setSeed <- TRUE
 options$target <- "Petal.Length"

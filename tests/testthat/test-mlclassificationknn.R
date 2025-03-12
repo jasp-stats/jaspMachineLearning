@@ -38,7 +38,7 @@ options$modelValid <- "validationManual"
 options$noOfFolds <- 5
 options$errorVsKPlot <- TRUE
 options$weightsPlot <- TRUE
-options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols",
+options$predictors <- c("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols",
                            "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color",
                            "Hue", "Dilution", "Proline")
 options$predictors.types <- rep("scale", length(options$predictors))

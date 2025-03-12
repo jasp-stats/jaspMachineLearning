@@ -49,7 +49,7 @@ options$deviancePlot <- TRUE
 options$outOfBagImprovementPlot <- TRUE
 options$relativeInfluencePlot <- TRUE
 options$predictedPerformancePlot <- TRUE
-options$predictors <- list("Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", "Flavanoids",
+options$predictors <- c("Malic", "Ash", "Alcalinity", "Magnesium", "Phenols", "Flavanoids",
                            "Nonflavanoids", "Proanthocyanins", "Color", "Hue", "Dilution",
                            "Proline")
 options$predictors.types <- rep("scale", length(options$predictors))

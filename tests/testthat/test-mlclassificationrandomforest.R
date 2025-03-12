@@ -39,7 +39,7 @@ options$noOfFolds <- 5
 options$accuracyDecreasePlot <- TRUE
 options$purityIncreasePlot <- TRUE
 options$treesVsModelErrorPlot <- TRUE
-options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols",
+options$predictors <- c("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols",
                            "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color",
                            "Hue", "Dilution", "Proline")
 options$predictors.types <- rep("scale", length(options$predictors))
