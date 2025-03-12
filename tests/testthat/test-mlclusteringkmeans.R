@@ -2,7 +2,7 @@ context("Machine Learning K-Means Clustering")
 
 # Test fixed model #############################################################
 options <- initMlOptions("mlClusteringKMeans")
-options$predictors <- list("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
+options$predictors <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
 options$predictors.types <- rep("scale", length(options$predictors))
 options$modelOptimization <- "manual"
 options$predictionsColumn <- ""
@@ -18,7 +18,7 @@ jaspTools::expect_equal_tables(table,
 
 # Test optimized model #########################################################
 options <- initMlOptions("mlClusteringKMeans")
-options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols",
+options$predictors <- c("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols",
     "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color",
     "Hue", "Dilution", "Proline")
 options$predictors.types <- rep("scale", length(options$predictors))
@@ -104,7 +104,7 @@ test_that("t-SNE Cluster Plot matches", {
 context("Machine Learning K-Medians Clustering")
 
 options <- initMlOptions("mlClusteringKMeans")
-options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols",
+options$predictors <- c("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols",
     "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color",
     "Hue", "Dilution", "Proline")
 options$predictors.types <- rep("scale", length(options$predictors))
@@ -186,7 +186,7 @@ test_that("Elbow Method Plot matches", {
 context("Machine Learning K-Medoids Clustering")
 
 options <- initMlOptions("mlClusteringKMeans")
-options$predictors <- list("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols",
+options$predictors <- c("Alcohol", "Malic", "Ash", "Alcalinity", "Magnesium", "Phenols",
     "Flavanoids", "Nonflavanoids", "Proanthocyanins", "Color",
     "Hue", "Dilution", "Proline")
 options$predictors.types <- rep("scale", length(options$predictors))
