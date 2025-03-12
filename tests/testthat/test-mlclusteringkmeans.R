@@ -198,7 +198,7 @@ options$validationMeasures <- TRUE
 options$elbowMethodPlot <- TRUE
 options$clusterMeanPlot <- TRUE
 options$centers <- "medoids"
-options$algorithm <- "pam"
+options$algorithm <- "clara"
 options$setSeed <- TRUE
 options$modelOptimization <- "optimized"
 options$addPredictions <- FALSE
