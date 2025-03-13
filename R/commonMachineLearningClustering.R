@@ -471,7 +471,7 @@
     clusterSubset <- subset(dataset, clusters == i)
     clusterMeans <- rbind(clusterMeans, colMeans(clusterSubset))
   }
-  clusterMeans <- cbind(cluster = clusterTitles, data.frame(clusterMeans))
+  clusterMeans <- cbind(cluster = clusterTitles, data.frame(clusterMeans[, options[["predictors"]], drop = FALSE]))
   colnames(clusterMeans) <- c("cluster", as.character(options[["predictors"]]))
   table$setData(clusterMeans)
 }
@@ -534,13 +534,14 @@
   if (!ready) {
     return()
   }
+  clusterDataset <- data.frame(dataset[, options[["predictors"]], drop = FALSE])
   clusterResult <- jaspResults[["clusterResult"]]$object
   if (options[["clusterMeanPlotSingleFigure"]]) {
     clusters <- as.factor(clusterResult[["pred.values"]])
     xBreaks <- c(1, (as.numeric(levels(clusters)) + 1) * length(options[["predictors"]]))
-    clusterMeansData <- aggregate(dataset, list(clusters), mean)
-    clusterSdData <- aggregate(dataset, list(clusters), sd)
-    clusterLengthData <- aggregate(dataset, list(clusters), length)
+    clusterMeansData <- aggregate(clusterDataset, list(clusters), mean)
+    clusterSdData <- aggregate(clusterDataset, list(clusters), sd)
+    clusterLengthData <- aggregate(clusterDataset, list(clusters), length)
     clusterCoord <- rep(clusterMeansData[, 1], length(options[["predictors"]]))
     xCoord <- numeric()
     for (i in 1:length(options[["predictors"]])) {
@@ -586,9 +587,9 @@
     for (variable in unlist(options[["predictors"]])) {
       clusters <- as.factor(clusterResult[["pred.values"]])
       xBreaks <- as.numeric(levels(clusters))
-      clusterMeansData <- aggregate(dataset[[variable]], list(clusters), mean)
-      clusterSdData <- aggregate(dataset[[variable]], list(clusters), sd)
-      clusterLengthData <- aggregate(dataset[[variable]], list(clusters), length)
+      clusterMeansData <- aggregate(clusterDataset[[variable]], list(clusters), mean)
+      clusterSdData <- aggregate(clusterDataset[[variable]], list(clusters), sd)
+      clusterLengthData <- aggregate(clusterDataset[[variable]], list(clusters), length)
       plotData <- data.frame(
         Cluster = clusterMeansData[, 1],
         value = clusterMeansData[, 2],
