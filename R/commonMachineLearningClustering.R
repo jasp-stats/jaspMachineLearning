@@ -471,7 +471,7 @@
     clusterSubset <- subset(dataset, clusters == i)
     clusterMeans <- rbind(clusterMeans, colMeans(clusterSubset))
   }
-  clusterMeans <- cbind(cluster = clusterTitles, data.frame(clusterMeans))
+  clusterMeans <- cbind(cluster = clusterTitles, data.frame(clusterMeans[, options[["predictors"]], drop = FALSE]))
   colnames(clusterMeans) <- c("cluster", as.character(options[["predictors"]]))
   table$setData(clusterMeans)
 }
