@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-12-07 03:27\n"
+"POT-Creation-Date: 2025-03-15 03:25\n"
 "PO-Revision-Date: 2024-12-08 08:00+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
@@ -609,8 +609,8 @@ msgid ""
 "%3$s"
 msgstr ""
 "Algúns factores en %1$s teñen niveis que non aparecen no conxunto de ensaio. "
-"Por favor, elimina as filas cos seguintes niveis, do conxunto de datos %2$s."
-"\n"
+"Por favor, elimina as filas cos seguintes niveis, do conxunto de datos "
+"%2$s.\n"
 "\n"
 "%3$s"
 
@@ -703,6 +703,10 @@ msgstr "Laplace"
 
 msgid "MSE(scaled)"
 msgstr "ECM(MSE, escalado)"
+
+#, fuzzy
+msgid "Values"
+msgstr "Valor"
 
 msgid "R%s cannot be computed due to lack of variance in the predictions.</i>"
 msgstr ""

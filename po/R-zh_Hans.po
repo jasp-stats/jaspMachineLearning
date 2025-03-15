@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.2\n"
-"POT-Creation-Date: 2024-12-07 03:27\n"
+"POT-Creation-Date: 2025-03-15 03:25\n"
 "PO-Revision-Date: 2024-12-08 10:48+0000\n"
 "Last-Translator: Shun Wang <shuonwang@gmail.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
@@ -553,7 +553,8 @@ msgstr "新数据集"
 msgid ""
 "or use a different test set (e.g., automatically by setting a different seed "
 "or manually by specifying the test set indicator)"
-msgstr "或者使用不同的测试集（如：通过设置不同的随机数种子来自动生成测试集或者手工指"
+msgstr ""
+"或者使用不同的测试集（如：通过设置不同的随机数种子来自动生成测试集或者手工指"
 "定测试集的指示变量）"
 
 msgid "or use a different validation set by setting a different seed"
@@ -649,6 +650,10 @@ msgstr "拉普拉斯"
 
 msgid "MSE(scaled)"
 msgstr "均方误差（缩放）"
+
+#, fuzzy
+msgid "Values"
+msgstr "值"
 
 msgid "R%s cannot be computed due to lack of variance in the predictions.</i>"
 msgstr "由于预测中缺乏方差，因此无法计算R%s</i>"

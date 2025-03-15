@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: JASP 0.9.2\n"
-"POT-Creation-Date: 2024-12-07 03:27\n"
+"POT-Creation-Date: 2025-03-15 03:25\n"
 "PO-Revision-Date: 2024-12-08 08:00+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/jasp/"
@@ -702,6 +702,10 @@ msgstr "Laplace"
 
 msgid "MSE(scaled)"
 msgstr "ECM(MSE, escalado)"
+
+#, fuzzy
+msgid "Values"
+msgstr "Valor"
 
 msgid "R%s cannot be computed due to lack of variance in the predictions.</i>"
 msgstr ""

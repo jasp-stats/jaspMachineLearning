@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.0\n"
-"POT-Creation-Date: 2024-12-07 03:27\n"
+"POT-Creation-Date: 2025-03-15 03:25\n"
 "PO-Revision-Date: 2024-09-05 15:09+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/"
@@ -655,6 +655,10 @@ msgstr "Laplace"
 
 msgid "MSE(scaled)"
 msgstr ""
+
+#, fuzzy
+msgid "Values"
+msgstr "Wartość"
 
 msgid "R%s cannot be computed due to lack of variance in the predictions.</i>"
 msgstr ""
