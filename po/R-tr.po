@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.0\n"
 "POT-Creation-Date: 2025-03-15 03:25\n"
-"PO-Revision-Date: 2025-03-19 23:04+0000\n"
+"PO-Revision-Date: 2025-03-20 03:45+0000\n"
 "Last-Translator: Uğur ÇELİK <prof_ugur@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/tr/>\n"
@@ -157,7 +157,7 @@ msgid "MVE"
 msgstr ""
 
 msgid "t"
-msgstr ""
+msgstr "t"
 
 msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
 msgstr ""
@@ -324,10 +324,10 @@ msgid "R%s"
 msgstr ""
 
 msgid "AIC"
-msgstr ""
+msgstr "AIC"
 
 msgid "BIC"
-msgstr ""
+msgstr "BIC"
 
 msgid "Silhouette"
 msgstr ""
@@ -774,7 +774,7 @@ msgid "Tests for Multivariate Normality"
 msgstr ""
 
 msgid "Statistic"
-msgstr ""
+msgstr "İstatistik"
 
 msgid "Skewness"
 msgstr "Çarpıklık"
@@ -1238,7 +1238,7 @@ msgid "Network Structure Plot"
 msgstr ""
 
 msgid "Intercept"
-msgstr ""
+msgstr "Kesişim"
 
 msgid "Input layer"
 msgstr ""
@@ -1337,7 +1337,7 @@ msgid "Variable Trace Plot"
 msgstr ""
 
 msgid "Coefficients"
-msgstr ""
+msgstr "Katsayılar"
 
 msgid "Lambda Evaluation Plot"
 msgstr ""
