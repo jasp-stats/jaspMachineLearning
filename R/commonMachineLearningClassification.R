@@ -585,8 +585,8 @@
   } else if (type == "logistic") {
     if (classificationResult[["family"]] == "binomial") {
       fit <- stats::glm(formula, data = dataset, family = stats::binomial(link = options[["link"]]))
-      predictions <- as.factor(round(predict(fit, grid, type = "response"), 0))
-      levels(predictions) <- unique(dataset[, options[["target"]]])
+      probabilities <- predict(fit, grid, type = "response")
+      predictions <- levels(dataset[, options[["target"]]])[round(probabilities, 0) + 1]
     } else {
       fit <- VGAM::vglm(formula, data = dataset, family = VGAM::multinomial())
       logodds <- predict(fit, newdata = grid)
