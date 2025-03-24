@@ -564,13 +564,13 @@
       act.fct = jaspResults[["actfct"]]$object,
       linear.output = FALSE
     )
-    predictions <- as.factor(max.col(predict(fit, newdata = grid)))
-    levels(predictions) <- unique(dataset[, options[["target"]]])
+    probabilities <- predict(fit, newdata = grid)
+    predictions <- levels(dataset[, options[["target"]]])[apply(probabilities, 1, which.max)]
   } else if (type == "rpart") {
     classificationResult <- jaspResults[["classificationResult"]]$object
     fit <- rpart::rpart(formula, data = dataset, method = "class", control = rpart::rpart.control(minsplit = options[["minObservationsForSplit"]], minbucket = options[["minObservationsInNode"]], maxdepth = options[["interactionDepth"]], cp = classificationResult[["penalty"]]))
-    predictions <- as.factor(max.col(predict(fit, newdata = grid)))
-    levels(predictions) <- unique(dataset[, options[["target"]]])
+    probabilities <- predict(fit, newdata = grid)
+    predictions <- colnames(probabilities)[apply(probabilities, 1, which.max)]
   } else if (type == "svm") {
     classificationResult <- jaspResults[["classificationResult"]]$object
     fit <- e1071::svm(formula,
@@ -580,13 +580,13 @@
     predictions <- predict(fit, newdata = grid)
   } else if (type == "naivebayes") {
     fit <- e1071::naiveBayes(formula, data = dataset, laplace = options[["smoothingParameter"]])
-    predictions <- as.factor(max.col(predict(fit, newdata = grid, type = "raw")))
-    levels(predictions) <- unique(dataset[, options[["target"]]])
+    probabilities <- predict(fit, newdata = grid, type = "raw")
+    predictions <- colnames(probabilities)[apply(probabilities, 1, which.max)]
   } else if (type == "logistic") {
     if (classificationResult[["family"]] == "binomial") {
       fit <- stats::glm(formula, data = dataset, family = stats::binomial(link = options[["link"]]))
-      predictions <- as.factor(round(predict(fit, grid, type = "response"), 0))
-      levels(predictions) <- unique(dataset[, options[["target"]]])
+      probabilities <- predict(fit, grid, type = "response")
+      predictions <- levels(dataset[, options[["target"]]])[round(probabilities, 0) + 1]
     } else {
       fit <- VGAM::vglm(formula, data = dataset, family = VGAM::multinomial())
       logodds <- predict(fit, newdata = grid)
