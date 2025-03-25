@@ -1,9 +1,16 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2025-03-26 01:12+0000\n"
+"Last-Translator: Marko Bojović <bojovicmarko@outlook.com>\n"
+"Language-Team: Serbian <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/sr/>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.11-dev\n"
 "X-Qt-Contexts: true\n"
 
 msgctxt "Description|"
@@ -124,7 +131,7 @@ msgstr ""
 
 msgctxt "DataSplit|"
 msgid "None"
-msgstr ""
+msgstr "Ништа"
 
 msgctxt "DataSplit|"
 msgid "Training and Validation Data"
@@ -152,7 +159,7 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "Plots"
-msgstr ""
+msgstr "Графикон „Plots“"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Training Parameters"
@@ -168,7 +175,7 @@ msgstr ""
 
 msgctxt "mlClassificationKnn|"
 msgid "Plots"
-msgstr ""
+msgstr "Графикон „Plots“"
 
 msgctxt "mlClassificationKnn|"
 msgid "Training Parameters"
@@ -212,7 +219,7 @@ msgstr ""
 
 msgctxt "mlClassificationLda|"
 msgid "Plots"
-msgstr ""
+msgstr "Графикон „Plots“"
 
 msgctxt "mlClassificationLda|"
 msgid "Linear discriminant matrix"
@@ -240,7 +247,7 @@ msgstr ""
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Plots"
-msgstr ""
+msgstr "Графикон „Plots“"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Training Parameters"
@@ -256,7 +263,7 @@ msgstr ""
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Plots"
-msgstr ""
+msgstr "Графикон „Plots“"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "K-distance plot"
@@ -284,7 +291,7 @@ msgstr ""
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Fixed"
-msgstr ""
+msgstr "Поправљено"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Tables"
@@ -292,7 +299,7 @@ msgstr ""
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Plots"
-msgstr ""
+msgstr "Графикон „Plots“"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Training Parameters"
@@ -308,7 +315,7 @@ msgstr ""
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Plots"
-msgstr ""
+msgstr "Графикон „Plots“"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Dendrogram"
@@ -364,7 +371,7 @@ msgstr ""
 
 msgctxt "mlClusteringKMeans|"
 msgid "Plots"
-msgstr ""
+msgstr "Графикон „Plots“"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Training Parameters"
@@ -380,7 +387,7 @@ msgstr ""
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Plots"
-msgstr ""
+msgstr "Графикон „Plots“"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Training Parameters"
@@ -476,7 +483,7 @@ msgstr ""
 
 msgctxt "mlRegressionRegularized|"
 msgid "Fixed"
-msgstr ""
+msgstr "Поправљено"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Optimized"
@@ -841,23 +848,23 @@ msgstr ""
 
 msgctxt "Deviance|"
 msgid "Deviance"
-msgstr ""
+msgstr "Девијанса"
 
 msgctxt "Deviance|"
 msgid "Shows the prediction error plotted against the number of trees."
-msgstr ""
+msgstr "Приказује грешку предвиђања у односу на број стабала."
 
 msgctxt "ModelOptimization|"
 msgid "Number of Trees"
-msgstr ""
+msgstr "Број стабала"
 
 msgctxt "ModelOptimization|"
 msgid "Choose how to optimize the model."
-msgstr ""
+msgstr "Изаберите како да оптимизујете модел."
 
 msgctxt "ModelOptimization|"
 msgid "Fixed"
-msgstr ""
+msgstr "Поправљено"
 
 msgctxt "ModelOptimization|"
 msgid "Enables you to use a user-specified number of decision trees."
@@ -1948,7 +1955,7 @@ msgstr ""
 
 msgctxt "ClusterDetermination|"
 msgid "Fixed"
-msgstr ""
+msgstr "Поправљено"
 
 msgctxt "ClusterDetermination|"
 msgid ""
@@ -2617,7 +2624,7 @@ msgstr ""
 
 msgctxt "mlClusteringModelBased|"
 msgid "Model"
-msgstr ""
+msgstr "Модел"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Auto"
