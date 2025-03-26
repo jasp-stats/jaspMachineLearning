@@ -24,6 +24,7 @@ Group
 {
 	property alias enabled:			exportSection.enabled
 	property alias showSave:		saveGroup.visible
+	property bool showProbs:		false
 
 	id:								exportSection
 	title:							qsTr("Export Results")
@@ -44,6 +45,15 @@ Group
 			fieldWidth:				120
 			enabled:				addPredictions.checked
 			info:					qsTr("The column name for the predicted values.")
+		}
+
+		CheckBox
+		{
+			id:						probabilities
+			name:					"addProbabilities"
+			text:					qsTr("Add probabilities (classification only)")
+			visible:				showProbs
+			info:					qsTr("In classification analyses, also add the predicted probabilities for each class to the data.")
 		}
 	}
 
