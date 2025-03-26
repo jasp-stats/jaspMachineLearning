@@ -88,74 +88,103 @@ is.jaspMachineLearning <- function(x) {
 }
 .mlPredictionGetPredictions.kknn <- function(model, dataset) {
   if (inherits(model, "jaspClassification")) {
-    as.character(kknn:::predict.train.kknn(model[["predictive"]], dataset))
+    hard <- as.character(kknn:::predict.train.kknn(model[["predictive"]], dataset))
+    soft <- kknn:::predict.train.kknn(model[["predictive"]], dataset, type = "prob")
+    return(list(hard, soft))
   } else if (inherits(model, "jaspRegression")) {
-    as.numeric(kknn:::predict.train.kknn(model[["predictive"]], dataset))
+    hard <- as.numeric(kknn:::predict.train.kknn(model[["predictive"]], dataset))
+    return(list(hard))
   }
 }
 .mlPredictionGetPredictions.lda <- function(model, dataset) {
-  as.character(MASS:::predict.lda(model, newdata = dataset)$class)
+  hard <- as.character(MASS:::predict.lda(model, newdata = dataset)$class)
+  soft <- MASS:::predict.lda(model, newdata = dataset)$posterior
+  return(list(hard, soft))
 }
 .mlPredictionGetPredictions.lm <- function(model, dataset) {
-  as.numeric(predict(model, newdata = dataset))
+  hard <- as.numeric(predict(model, newdata = dataset))
+  return(list(hard))
 }
 .mlPredictionGetPredictions.gbm <- function(model, dataset) {
   if (inherits(model, "jaspClassification")) {
-    tmp <- gbm:::predict.gbm(model, newdata = dataset, n.trees = model[["n.trees"]], type = "response")
-    as.character(colnames(tmp)[apply(tmp, 1, which.max)])
+    soft <- gbm:::predict.gbm(model, newdata = dataset, n.trees = model[["n.trees"]], type = "response")
+    hard <- as.character(colnames(soft)[apply(soft, 1, which.max)])
+    return(list(hard, soft[, , 1]))
   } else if (inherits(model, "jaspRegression")) {
-    as.numeric(gbm:::predict.gbm(model, newdata = dataset, n.trees = model[["n.trees"]], type = "response"))
+    hard <- as.numeric(gbm:::predict.gbm(model, newdata = dataset, n.trees = model[["n.trees"]], type = "response"))
+    return(list(hard))
   }
 }
 .mlPredictionGetPredictions.randomForest <- function(model, dataset) {
   if (inherits(model, "jaspClassification")) {
-    as.character(randomForest:::predict.randomForest(model, newdata = dataset))
+    hard <- as.character(randomForest:::predict.randomForest(model, newdata = dataset))
+    soft <- predict(model, newdata = dataset, type = "prob")
+    return(list(hard, soft))
   } else if (inherits(model, "jaspRegression")) {
-    as.numeric(randomForest:::predict.randomForest(model, newdata = dataset))
+    hard <- as.numeric(randomForest:::predict.randomForest(model, newdata = dataset))
+    return(list(hard))
   }
 }
 .mlPredictionGetPredictions.cv.glmnet <- function(model, dataset) {
-  as.numeric(glmnet:::predict.cv.glmnet(model, newx = data.matrix(dataset)))
+  hard <- as.numeric(glmnet:::predict.cv.glmnet(model, newx = data.matrix(dataset)))
+  return(list(hard))
 }
 .mlPredictionGetPredictions.nn <- function(model, dataset) {
   if (inherits(model, "jaspClassification")) {
-    as.character(levels(factor(model[["data"]][[model[["jaspVars"]][["encoded"]]$target]]))[max.col(neuralnet:::predict.nn(model, newdata = dataset))])
+    soft <- neuralnet:::predict.nn(model, newdata = dataset)
+    colnames(soft) <- levels(factor(model[["data"]][[model[["jaspVars"]][["encoded"]]$target]]))
+    hard <- colnames(soft)[apply(soft, 1, which.max)]
+    return(list(hard, soft))
   } else if (inherits(model, "jaspRegression")) {
-    as.numeric(neuralnet:::predict.nn(model, newdata = dataset))
+    hard <- as.numeric(neuralnet:::predict.nn(model, newdata = dataset))
+    return(list(hard))
   }
 }
 .mlPredictionGetPredictions.rpart <- function(model, dataset) {
   if (inherits(model, "jaspClassification")) {
-    as.character(levels(factor(model[["data"]][[model[["jaspVars"]][["encoded"]]$target]]))[max.col(rpart:::predict.rpart(model, newdata = dataset))])
+    soft <- rpart:::predict.rpart(model, newdata = dataset)
+    colnames(soft) <- levels(factor(model[["data"]][[model[["jaspVars"]][["encoded"]]$target]]))
+    hard <- colnames(soft)[apply(soft, 1, which.max)]
+    return(list(hard, soft))
   } else if (inherits(model, "jaspRegression")) {
-    as.numeric(rpart:::predict.rpart(model, newdata = dataset))
+    hard <- as.numeric(rpart:::predict.rpart(model, newdata = dataset))
+    return(list(hard))
   }
 }
 .mlPredictionGetPredictions.svm <- function(model, dataset) {
   if (inherits(model, "jaspClassification")) {
-    as.character(levels(factor(model[["data"]][[model[["jaspVars"]][["encoded"]]$target]]))[e1071:::predict.svm(model, newdata = dataset)])
+    soft <- attr(e1071:::predict.svm(model, newdata = dataset, probability = TRUE), "probabilities")
+    hard <- as.character(e1071:::predict.svm(model, newdata = dataset))
+    return(list(hard, soft))
   } else if (inherits(model, "jaspRegression")) {
-    as.numeric(e1071:::predict.svm(model, newdata = dataset))
+    hard <- as.numeric(e1071:::predict.svm(model, newdata = dataset))
+    return(list(hard))
   }
 }
 .mlPredictionGetPredictions.naiveBayes <- function(model, dataset) {
-  as.character(e1071:::predict.naiveBayes(model, newdata = dataset, type = "class"))
+  soft <- e1071:::predict.naiveBayes(model, newdata = dataset, type = "raw")
+  hard <- as.character(e1071:::predict.naiveBayes(model, newdata = dataset, type = "class"))
+  return(list(hard, soft))
 }
 .mlPredictionGetPredictions.glm <- function(model, dataset) {
-  as.character(levels(as.factor(model$model[[model[["jaspVars"]][["encoded"]]$target]]))[round(predict(model, newdata = dataset, type = "response"), 0) + 1])
+  probs <- predict(model, newdata = dataset, type = "response")
+  soft <- matrix(c(1 - probs, probs), ncol = 2)
+  colnames(soft) <- levels(as.factor(model$model[[model[["jaspVars"]][["encoded"]]$target]]))
+  hard <- colnames(soft)[apply(soft, 1, which.max)]
+  return(list(hard, soft))
 }
 .mlPredictionGetPredictions.vglm <- function(model, dataset) {
   logodds <- predict(model[["original"]], newdata = dataset)
   ncategories <- ncol(logodds) + 1
-  probabilities <- matrix(0, nrow = nrow(logodds), ncol = ncategories)
+  soft <- matrix(0, nrow = nrow(logodds), ncol = ncategories)
   for (i in seq_len(ncategories - 1)) {
-    probabilities[, i] <- exp(logodds[, i])
+    soft[, i] <- exp(logodds[, i])
   }
-  probabilities[, ncategories] <- 1
-  row_sums <- rowSums(probabilities)
-  probabilities <- probabilities / row_sums
-  predicted_columns <- apply(probabilities, 1, which.max)
-  as.character(levels(as.factor(model$target))[predicted_columns])
+  soft[, ncategories] <- 1
+  soft <- soft / rowSums(soft)
+  colnames(soft) <- as.character(levels(as.factor(model$target)))
+  hard <- colnames(soft)[apply(soft, 1, which.max)]
+  return(list(hard, soft))
 }
 
 # S3 method to make find out number of observations in training data
@@ -372,7 +401,7 @@ is.jaspMachineLearning <- function(x) {
   if (!ready) {
     return()
   }
-  predictions <- .mlPredictionsState(model, dataset, options, jaspResults, ready)
+  predictions <- .mlPredictionsState(model, dataset, options, jaspResults, ready)[[1]]
   indexes <- options[["fromIndex"]]:options[["toIndex"]]
   selection <- predictions[indexes]
   cols <- list(row = indexes, pred = selection)
@@ -397,12 +426,29 @@ is.jaspMachineLearning <- function(x) {
 }
 
 .mlPredictionsAddPredictions <- function(model, dataset, options, jaspResults, ready) {
-  if (options[["addPredictions"]] && is.null(jaspResults[["predictionsColumn"]]) && options[["predictionsColumn"]] != "" && ready) {
-    predictionsColumn <- rep(NA, max(as.numeric(rownames(dataset))))
-    predictionsColumn[as.numeric(rownames(dataset))] <- .mlPredictionsState(model, dataset, options, jaspResults, ready)
-    jaspResults[["predictionsColumn"]] <- createJaspColumn(columnName = options[["predictionsColumn"]])
-    jaspResults[["predictionsColumn"]]$dependOn(options = c("predictionsColumn", "predictors", "trainedModelFilePath", "scaleVariables", "addPredictions"))
-    if (inherits(model, "jaspClassification")) jaspResults[["predictionsColumn"]]$setNominal(predictionsColumn)
-    if (inherits(model, "jaspRegression")) jaspResults[["predictionsColumn"]]$setScale(predictionsColumn)
+  if (options[["addPredictions"]] && options[["predictionsColumn"]] != "" && ready) {
+    predictions <- .mlPredictionsState(model, dataset, options, jaspResults, ready)
+    # Add hard predictions for regression and classification
+    if (is.null(jaspResults[["predictionsColumn"]])) {
+      predictionsColumn <- rep(NA, max(as.numeric(rownames(dataset))))
+      predictionsColumn[as.numeric(rownames(dataset))] <- predictions[[1]]
+      jaspResults[["predictionsColumn"]] <- createJaspColumn(columnName = options[["predictionsColumn"]])
+      jaspResults[["predictionsColumn"]]$dependOn(options = c("predictionsColumn", "predictors", "trainedModelFilePath", "scaleVariables", "addPredictions"))
+      if (inherits(model, "jaspClassification")) jaspResults[["predictionsColumn"]]$setNominal(predictionsColumn)
+      if (inherits(model, "jaspRegression")) jaspResults[["predictionsColumn"]]$setScale(predictionsColumn)
+    }
+    # Add predicted probabilities for classification only
+    if (inherits(model, "jaspClassification") && options[["addProbabilities"]]) {
+      classNames <- colnames(predictions[[2]])
+      for (i in seq_along(classNames)) {
+        colName <- paste0(decodeColNames(options[["predictionsColumn"]]), "_", classNames[i])
+        if (!is.null(jaspResults[[colName]])) {
+          break
+        }
+        jaspResults[[colName]] <- createJaspColumn(columnName = colName)
+        jaspResults[[colName]]$dependOn(options = c("predictionsColumn", "predictors", "trainedModelFilePath", "scaleVariables", "addPredictions", "addProbabilities"))
+        jaspResults[[colName]]$setScale(predictions[[2]][, i])
+      }
+    }
   }
 }
