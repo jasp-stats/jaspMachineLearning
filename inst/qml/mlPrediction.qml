@@ -116,5 +116,6 @@ Form
 	UI.ExportResults {
 		enabled:								predictors.count > 1
 		showSave:								false
+		showProbs:								true
 	}
 }
