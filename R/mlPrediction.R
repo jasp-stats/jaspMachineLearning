@@ -88,8 +88,8 @@ is.jaspMachineLearning <- function(x) {
 }
 .mlPredictionGetPredictions.kknn <- function(model, dataset) {
   if (inherits(model, "jaspClassification")) {
-    hard <- as.character(kknn:::predict.train.kknn(model[["predictive"]], dataset))
     soft <- kknn:::predict.train.kknn(model[["predictive"]], dataset, type = "prob")
+    hard <- colnames(soft)[max.col(soft, ties.method = "random")]
     return(list(hard, soft))
   } else if (inherits(model, "jaspRegression")) {
     hard <- as.numeric(kknn:::predict.train.kknn(model[["predictive"]], dataset))
@@ -97,8 +97,8 @@ is.jaspMachineLearning <- function(x) {
   }
 }
 .mlPredictionGetPredictions.lda <- function(model, dataset) {
-  hard <- as.character(MASS:::predict.lda(model, newdata = dataset)$class)
   soft <- MASS:::predict.lda(model, newdata = dataset)$posterior
+  hard <- colnames(soft)[max.col(soft, ties.method = "random")]
   return(list(hard, soft))
 }
 .mlPredictionGetPredictions.lm <- function(model, dataset) {
@@ -107,9 +107,9 @@ is.jaspMachineLearning <- function(x) {
 }
 .mlPredictionGetPredictions.gbm <- function(model, dataset) {
   if (inherits(model, "jaspClassification")) {
-    soft <- gbm:::predict.gbm(model, newdata = dataset, n.trees = model[["n.trees"]], type = "response")
-    hard <- as.character(colnames(soft)[apply(soft, 1, which.max)])
-    return(list(hard, soft[, , 1]))
+    soft <- gbm:::predict.gbm(model, newdata = dataset, n.trees = model[["n.trees"]], type = "response")[, , 1]
+    hard <- colnames(soft)[max.col(soft, ties.method = "random")]
+    return(list(hard, soft))
   } else if (inherits(model, "jaspRegression")) {
     hard <- as.numeric(gbm:::predict.gbm(model, newdata = dataset, n.trees = model[["n.trees"]], type = "response"))
     return(list(hard))
@@ -117,8 +117,8 @@ is.jaspMachineLearning <- function(x) {
 }
 .mlPredictionGetPredictions.randomForest <- function(model, dataset) {
   if (inherits(model, "jaspClassification")) {
-    hard <- as.character(randomForest:::predict.randomForest(model, newdata = dataset))
     soft <- predict(model, newdata = dataset, type = "prob")
+    hard <- colnames(soft)[max.col(soft, ties.method = "random")]
     return(list(hard, soft))
   } else if (inherits(model, "jaspRegression")) {
     hard <- as.numeric(randomForest:::predict.randomForest(model, newdata = dataset))
@@ -133,7 +133,7 @@ is.jaspMachineLearning <- function(x) {
   if (inherits(model, "jaspClassification")) {
     soft <- neuralnet:::predict.nn(model, newdata = dataset)
     colnames(soft) <- levels(factor(model[["data"]][[model[["jaspVars"]][["encoded"]]$target]]))
-    hard <- colnames(soft)[apply(soft, 1, which.max)]
+    hard <- colnames(soft)[max.col(soft, ties.method = "random")]
     return(list(hard, soft))
   } else if (inherits(model, "jaspRegression")) {
     hard <- as.numeric(neuralnet:::predict.nn(model, newdata = dataset))
@@ -144,7 +144,7 @@ is.jaspMachineLearning <- function(x) {
   if (inherits(model, "jaspClassification")) {
     soft <- rpart:::predict.rpart(model, newdata = dataset)
     colnames(soft) <- levels(factor(model[["data"]][[model[["jaspVars"]][["encoded"]]$target]]))
-    hard <- colnames(soft)[apply(soft, 1, which.max)]
+    hard <- colnames(soft)[max.col(soft, ties.method = "random")]
     return(list(hard, soft))
   } else if (inherits(model, "jaspRegression")) {
     hard <- as.numeric(rpart:::predict.rpart(model, newdata = dataset))
@@ -154,7 +154,7 @@ is.jaspMachineLearning <- function(x) {
 .mlPredictionGetPredictions.svm <- function(model, dataset) {
   if (inherits(model, "jaspClassification")) {
     soft <- attr(e1071:::predict.svm(model, newdata = dataset, probability = TRUE), "probabilities")
-    hard <- as.character(e1071:::predict.svm(model, newdata = dataset))
+    hard <- colnames(soft)[max.col(soft, ties.method = "random")]
     return(list(hard, soft))
   } else if (inherits(model, "jaspRegression")) {
     hard <- as.numeric(e1071:::predict.svm(model, newdata = dataset))
@@ -163,14 +163,14 @@ is.jaspMachineLearning <- function(x) {
 }
 .mlPredictionGetPredictions.naiveBayes <- function(model, dataset) {
   soft <- e1071:::predict.naiveBayes(model, newdata = dataset, type = "raw")
-  hard <- as.character(e1071:::predict.naiveBayes(model, newdata = dataset, type = "class"))
+  hard <- colnames(soft)[max.col(soft, ties.method = "random")]
   return(list(hard, soft))
 }
 .mlPredictionGetPredictions.glm <- function(model, dataset) {
   probs <- predict(model, newdata = dataset, type = "response")
   soft <- matrix(c(1 - probs, probs), ncol = 2)
   colnames(soft) <- levels(as.factor(model$model[[model[["jaspVars"]][["encoded"]]$target]]))
-  hard <- colnames(soft)[apply(soft, 1, which.max)]
+  hard <- colnames(soft)[max.col(soft, ties.method = "random")]
   return(list(hard, soft))
 }
 .mlPredictionGetPredictions.vglm <- function(model, dataset) {
@@ -183,7 +183,7 @@ is.jaspMachineLearning <- function(x) {
   soft[, ncategories] <- 1
   soft <- soft / rowSums(soft)
   colnames(soft) <- as.character(levels(as.factor(model$target)))
-  hard <- colnames(soft)[apply(soft, 1, which.max)]
+  hard <- colnames(soft)[max.col(soft, ties.method = "random")]
   return(list(hard, soft))
 }
 
