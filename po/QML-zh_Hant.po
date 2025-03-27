@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2025-03-27 06:30+0000\n"
+"Last-Translator: 陳寬裕 <pf.kuan.yu.chen@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/jasp/jaspmachinelearning-qml/zh_Hant/>\n"
+"Language: zh_Hant\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.11-dev\n"
 "X-Language: zh_Hant\n"
 "X-Qt-Contexts: true\n"
 
@@ -233,7 +239,6 @@ msgctxt "mlClassificationLda|"
 msgid "Scatter plots"
 msgstr "散佈圖"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Training Parameters"
 msgstr "訓練參數"
@@ -253,7 +258,6 @@ msgctxt "mlClassificationRandomForest|"
 msgid "Plots"
 msgstr "圖"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Training Parameters"
 msgstr "訓練參數"
@@ -277,7 +281,6 @@ msgctxt "mlClusteringDensityBased|"
 msgid "K-distance plot"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Training Parameters"
 msgstr "訓練參數"
@@ -313,7 +316,6 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Plots"
 msgstr "圖"
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Training Parameters"
 msgstr "訓練參數"
@@ -337,7 +339,6 @@ msgctxt "mlClusteringHierarchical|"
 msgid "Dendrogram"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Training Parameters"
 msgstr "訓練參數"
@@ -393,7 +394,6 @@ msgctxt "mlClusteringKMeans|"
 msgid "Plots"
 msgstr "圖"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Training Parameters"
 msgstr "訓練參數"
@@ -413,7 +413,6 @@ msgctxt "mlClusteringRandomForest|"
 msgid "Plots"
 msgstr "圖"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Training Parameters"
 msgstr "訓練參數"
@@ -433,7 +432,6 @@ msgctxt "mlRegressionBoosting|"
 msgid "Plots"
 msgstr "圖"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Training Parameters"
 msgstr "訓練參數"
@@ -453,7 +451,6 @@ msgctxt "mlRegressionKnn|"
 msgid "Plots"
 msgstr "圖"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Training Parameters"
 msgstr "訓練參數"
@@ -473,7 +470,6 @@ msgctxt "mlRegressionRandomForest|"
 msgid "Plots"
 msgstr "圖"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Training Parameters"
 msgstr "訓練參數"
@@ -506,7 +502,6 @@ msgctxt "mlRegressionRegularized|"
 msgid "λ evaluation"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Training Parameters"
 msgstr "訓練參數"
@@ -560,7 +555,7 @@ msgstr "匯出結果"
 
 msgctxt "ExportResults|"
 msgid "Add predictions to data"
-msgstr "在資料添加預測值"
+msgstr "在資料檔中添加預測值欄位"
 
 msgctxt "ExportResults|"
 msgid "Column name"
@@ -592,7 +587,6 @@ msgctxt "mlClassificationNeuralNetwork|"
 msgid "Plots"
 msgstr "圖"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Training Parameters"
 msgstr "訓練參數"
@@ -612,7 +606,6 @@ msgctxt "mlRegressionNeuralNetwork|"
 msgid "Plots"
 msgstr "圖"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Training Parameters"
 msgstr "訓練參數"
@@ -653,7 +646,7 @@ msgstr "最大遞迴數"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Fuzziness parameter"
-msgstr ""
+msgstr "模糊度參數"
 
 #, fuzzy
 msgctxt "mlClusteringHierarchical|"
@@ -754,7 +747,6 @@ msgctxt "mlClassificationDecisionTree|"
 msgid "Plots"
 msgstr "圖"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Training Parameters"
 msgstr "訓練參數"
@@ -774,7 +766,6 @@ msgctxt "mlClassificationSvm|"
 msgid "Plots"
 msgstr "圖"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Training Parameters"
 msgstr "訓練參數"
@@ -812,7 +803,6 @@ msgctxt "mlRegressionDecisionTree|"
 msgid "Plots"
 msgstr "圖"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Training Parameters"
 msgstr "訓練參數"
@@ -832,7 +822,6 @@ msgctxt "mlRegressionSvm|"
 msgid "Plots"
 msgstr "圖"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Training Parameters"
 msgstr "訓練參數"
@@ -852,7 +841,7 @@ msgstr ""
 
 msgctxt "mlPrediction|"
 msgid "Features"
-msgstr "特徵"
+msgstr "欲萃取特徵的變數"
 
 #, fuzzy
 msgctxt "mlPrediction|"
@@ -1695,15 +1684,15 @@ msgstr ""
 
 msgctxt "AlgorithmicSettings|"
 msgid "Gamma parameter"
-msgstr ""
+msgstr "Gamma參數"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The gamma parameter used."
-msgstr ""
+msgstr "用過的Gamma參數"
 
 msgctxt "AlgorithmicSettings|"
 msgid "r parameter"
-msgstr ""
+msgstr "r 參數"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The complexity parameter used."
@@ -1748,7 +1737,7 @@ msgstr ""
 
 msgctxt "ClusterDensity|"
 msgid "Cluster densities"
-msgstr ""
+msgstr "集群密度"
 
 msgctxt "ClusterDensity|"
 msgid ""
@@ -1766,7 +1755,7 @@ msgstr ""
 
 msgctxt "ClusterMatrix|"
 msgid "Cluster matrix plot"
-msgstr ""
+msgstr "集群矩陣圖"
 
 msgctxt "ClusterMatrix|"
 msgid ""
@@ -1776,7 +1765,7 @@ msgstr ""
 
 msgctxt "ClusterMeans|"
 msgid "Cluster means"
-msgstr ""
+msgstr "集群平均數"
 
 msgctxt "ClusterMeans|"
 msgid ""
@@ -1786,7 +1775,7 @@ msgstr ""
 
 msgctxt "ClusterMeans|"
 msgid "Display barplot"
-msgstr ""
+msgstr "顯示長條圖"
 
 msgctxt "ClusterMeans|"
 msgid "Transform the cluster mean figure into a barplot."
@@ -1794,7 +1783,7 @@ msgstr ""
 
 msgctxt "ClusterMeans|"
 msgid "Group into one figure"
-msgstr ""
+msgstr "合併成一個單一的圖形"
 
 msgctxt "ClusterMeans|"
 msgid "Group the plots per feature into a single figure."
@@ -1841,7 +1830,7 @@ msgstr ""
 
 msgctxt "ElbowMethod|"
 msgid "Elbow method"
-msgstr ""
+msgstr "肘部法則"
 
 msgctxt "ElbowMethod|"
 msgid ""
@@ -1872,7 +1861,7 @@ msgstr ""
 
 msgctxt "Tsne|"
 msgid "t-SNE cluster plot"
-msgstr ""
+msgstr "t-SNE集群圖"
 
 msgctxt "Tsne|"
 msgid ""
@@ -1918,7 +1907,7 @@ msgstr ""
 
 msgctxt "ClusterInfo|"
 msgid "Cluster information"
-msgstr ""
+msgstr "集群資訊"
 
 msgctxt "ClusterInfo|"
 msgid ""
@@ -1930,7 +1919,7 @@ msgstr ""
 
 msgctxt "ClusterInfo|"
 msgid "Within sum of squares"
-msgstr ""
+msgstr "組內平方和"
 
 msgctxt "ClusterInfo|"
 msgid ""
@@ -1940,7 +1929,7 @@ msgstr ""
 
 msgctxt "ClusterInfo|"
 msgid "Silhouette score"
-msgstr ""
+msgstr "輪廓係數"
 
 msgctxt "ClusterInfo|"
 msgid "Adds a row with the silhouette score of each cluster to the table."
@@ -1948,7 +1937,7 @@ msgstr ""
 
 msgctxt "ClusterInfo|"
 msgid "Centers"
-msgstr ""
+msgstr "集群中心點"
 
 msgctxt "ClusterInfo|"
 msgid ""
@@ -1958,7 +1947,7 @@ msgstr ""
 
 msgctxt "ClusterInfo|"
 msgid "Between sum of squares"
-msgstr ""
+msgstr "組間平方和"
 
 msgctxt "ClusterInfo|"
 msgid ""
@@ -1968,7 +1957,7 @@ msgstr ""
 
 msgctxt "ClusterInfo|"
 msgid "Total sum of squares"
-msgstr ""
+msgstr "總平方和"
 
 msgctxt "ClusterInfo|"
 msgid ""
@@ -2029,7 +2018,7 @@ msgstr ""
 
 msgctxt "ModelPerformance|"
 msgid "Model performance"
-msgstr ""
+msgstr "模型表現"
 
 msgctxt "ModelPerformance|"
 msgid ""
@@ -2041,7 +2030,7 @@ msgstr ""
 
 msgctxt "ClusterDetermination|"
 msgid "Cluster Determination"
-msgstr ""
+msgstr "集群決策"
 
 msgctxt "ClusterDetermination|"
 msgid "Choose how to determine the number of clusters in the model."
@@ -2060,7 +2049,7 @@ msgstr ""
 
 msgctxt "ClusterDetermination|"
 msgid "Clusters"
-msgstr ""
+msgstr "集群數"
 
 msgctxt "ClusterDetermination|"
 msgid "The number of clusters to be fitted."
@@ -2068,7 +2057,7 @@ msgstr ""
 
 msgctxt "ClusterDetermination|"
 msgid "Optimized according to"
-msgstr ""
+msgstr "依據...，進行最佳化"
 
 msgctxt "ClusterDetermination|"
 msgid ""
@@ -2090,7 +2079,7 @@ msgstr ""
 
 msgctxt "ClusterDetermination|"
 msgid "Max. clusters"
-msgstr ""
+msgstr "最大集群數"
 
 msgctxt "ClusterDetermination|"
 msgid ""
@@ -2173,7 +2162,7 @@ msgstr ""
 
 msgctxt "ScaleVariables|"
 msgid "Scale features"
-msgstr ""
+msgstr "特徵縮放"
 
 msgctxt "ScaleVariables|"
 msgid ""
