@@ -786,7 +786,7 @@
   } else {
     explainer <- model[["explainer"]]
     x_test <- dataset[, predictors]
-    predictions <- .mlPredictionsState(model, dataset, options, jaspResults, ready)[options[["fromIndex"]]:options[["toIndex"]]]
+    predictions <- .mlPredictionsState(model, dataset, options, jaspResults, ready)[[1]][options[["fromIndex"]]:options[["toIndex"]]]
   }
   from <- min(c(options[["fromIndex"]], options[["toIndex"]] - 1, nrow(x_test)))
   to <- min(c(options[["toIndex"]], nrow(x_test)))
