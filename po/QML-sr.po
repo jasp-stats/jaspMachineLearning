@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-03-26 01:12+0000\n"
+"PO-Revision-Date: 2025-03-28 12:20+0000\n"
 "Last-Translator: Marko Bojović <bojovicmarko@outlook.com>\n"
 "Language-Team: Serbian <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/sr/>\n"
@@ -15,103 +15,103 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Machine Learning"
-msgstr ""
+msgstr "Машинско учење"
 
 msgctxt "Description|"
 msgid "Regression"
-msgstr ""
+msgstr "Регресија"
 
 msgctxt "Description|"
 msgid "Boosting"
-msgstr ""
+msgstr "Појачавање"
 
 msgctxt "Description|"
 msgid "Boosting Regression"
-msgstr ""
+msgstr "Регресија са појачањем"
 
 msgctxt "Description|"
 msgid "K-Nearest Neighbors"
-msgstr ""
+msgstr "К-најближих суседа"
 
 msgctxt "Description|"
 msgid "K-Nearest Neighbors Regression"
-msgstr ""
+msgstr "Регресија К-најближих суседа"
 
 msgctxt "Description|"
 msgid "Random Forest"
-msgstr ""
+msgstr "Случајна шума"
 
 msgctxt "Description|"
 msgid "Random Forest Regression"
-msgstr ""
+msgstr "Регресија случајне шуме"
 
 msgctxt "Description|"
 msgid "Regularized Linear"
-msgstr ""
+msgstr "Регуларизована линеарна"
 
 msgctxt "Description|"
 msgid "Regularized Linear Regression"
-msgstr ""
+msgstr "Регуларизована линеарна регресија"
 
 msgctxt "Description|"
 msgid "Classification"
-msgstr ""
+msgstr "Класификација"
 
 msgctxt "Description|"
 msgid "Boosting Classification"
-msgstr ""
+msgstr "Класификација са појачањем"
 
 msgctxt "Description|"
 msgid "K-Nearest Neighbors Classification"
-msgstr ""
+msgstr "Класификација К-најближих суседа"
 
 msgctxt "Description|"
 msgid "Linear Discriminant"
-msgstr ""
+msgstr "Линеарна дискриминативна"
 
 msgctxt "Description|"
 msgid "Linear Discriminant Classification"
-msgstr ""
+msgstr "Линеарна дискриминативна класификација"
 
 msgctxt "Description|"
 msgid "Random Forest Classification"
-msgstr ""
+msgstr "Класификација случајном шумом"
 
 msgctxt "Description|"
 msgid "Clustering"
-msgstr ""
+msgstr "Груписање"
 
 msgctxt "Description|"
 msgid "Density-Based"
-msgstr ""
+msgstr "На основу густине"
 
 msgctxt "Description|"
 msgid "Density-Based Clustering"
-msgstr ""
+msgstr "Груписање засновано на густини"
 
 msgctxt "Description|"
 msgid "Fuzzy C-Means"
-msgstr ""
+msgstr "Нејасне C-средине"
 
 msgctxt "Description|"
 msgid "Fuzzy C-Means Clustering"
-msgstr ""
+msgstr "Кластеризација нејасним C-срединама"
 
 msgctxt "Description|"
 msgid "Hierarchical"
-msgstr ""
+msgstr "Хијерархијска"
 
 msgctxt "Description|"
 msgid "Hierarchical Clustering"
-msgstr ""
+msgstr "Хијерархијска кластеризација"
 
 msgctxt "Description|"
 msgid "Random Forest Clustering"
-msgstr ""
+msgstr "Кластеризација случајном шумом"
 
 msgctxt "DataSplit|"
 msgid "Data Split Preferences"
-msgstr ""
+msgstr "Подешавања поделе података"
 
 msgctxt "DataSplit|"
 msgid "Holdout Test Data"
@@ -155,11 +155,11 @@ msgstr ""
 
 msgctxt "mlClassificationBoosting|"
 msgid "Tables"
-msgstr ""
+msgstr "Табеле"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Plots"
-msgstr "Графикон „Plots“"
+msgstr "Графикони"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Training Parameters"
@@ -171,11 +171,11 @@ msgstr ""
 
 msgctxt "mlClassificationKnn|"
 msgid "Tables"
-msgstr ""
+msgstr "Табеле"
 
 msgctxt "mlClassificationKnn|"
 msgid "Plots"
-msgstr "Графикон „Plots“"
+msgstr "Графикони"
 
 msgctxt "mlClassificationKnn|"
 msgid "Training Parameters"
@@ -187,11 +187,11 @@ msgstr ""
 
 msgctxt "mlClassificationLda|"
 msgid "Tables"
-msgstr ""
+msgstr "Табеле"
 
 msgctxt "mlClassificationLda|"
 msgid "Coefficients"
-msgstr ""
+msgstr "Коефицијенти"
 
 msgctxt "mlClassificationLda|"
 msgid "Prior and posterior probabilities"
@@ -219,7 +219,7 @@ msgstr ""
 
 msgctxt "mlClassificationLda|"
 msgid "Plots"
-msgstr "Графикон „Plots“"
+msgstr "Графикони"
 
 msgctxt "mlClassificationLda|"
 msgid "Linear discriminant matrix"
@@ -243,11 +243,11 @@ msgstr ""
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Tables"
-msgstr ""
+msgstr "Табеле"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Plots"
-msgstr "Графикон „Plots“"
+msgstr "Графикони"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Training Parameters"
@@ -259,11 +259,11 @@ msgstr ""
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Tables"
-msgstr ""
+msgstr "Табеле"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Plots"
-msgstr "Графикон „Plots“"
+msgstr "Графикони"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "K-distance plot"
@@ -295,11 +295,11 @@ msgstr "Поправљено"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Tables"
-msgstr ""
+msgstr "Табеле"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Plots"
-msgstr "Графикон „Plots“"
+msgstr "Графикони"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Training Parameters"
@@ -311,11 +311,11 @@ msgstr ""
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Tables"
-msgstr ""
+msgstr "Табеле"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Plots"
-msgstr "Графикон „Plots“"
+msgstr "Графикони"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Dendrogram"
@@ -351,7 +351,7 @@ msgstr ""
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Median"
-msgstr ""
+msgstr "Медијана"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Ward.D"
@@ -367,11 +367,11 @@ msgstr ""
 
 msgctxt "mlClusteringKMeans|"
 msgid "Tables"
-msgstr ""
+msgstr "Табеле"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Plots"
-msgstr "Графикон „Plots“"
+msgstr "Графикони"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Training Parameters"
@@ -383,11 +383,11 @@ msgstr ""
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Tables"
-msgstr ""
+msgstr "Табеле"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Plots"
-msgstr "Графикон „Plots“"
+msgstr "Графикони"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Training Parameters"
@@ -399,11 +399,11 @@ msgstr ""
 
 msgctxt "mlRegressionBoosting|"
 msgid "Tables"
-msgstr ""
+msgstr "Табеле"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Plots"
-msgstr ""
+msgstr "Графикони"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Training Parameters"
@@ -415,11 +415,11 @@ msgstr ""
 
 msgctxt "mlRegressionKnn|"
 msgid "Tables"
-msgstr ""
+msgstr "Табеле"
 
 msgctxt "mlRegressionKnn|"
 msgid "Plots"
-msgstr ""
+msgstr "Графикони"
 
 msgctxt "mlRegressionKnn|"
 msgid "Training Parameters"
@@ -431,7 +431,7 @@ msgstr ""
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Tables"
-msgstr ""
+msgstr "Табеле"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Plots"
@@ -447,7 +447,7 @@ msgstr ""
 
 msgctxt "mlRegressionRegularized|"
 msgid "Tables"
-msgstr ""
+msgstr "Табеле"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Plots"
@@ -541,7 +541,7 @@ msgstr ""
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Tables"
-msgstr ""
+msgstr "Табеле"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Plots"
@@ -557,7 +557,7 @@ msgstr ""
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Tables"
-msgstr ""
+msgstr "Табеле"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Plots"
@@ -693,7 +693,7 @@ msgstr ""
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Tables"
-msgstr ""
+msgstr "Табеле"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Plots"
@@ -709,7 +709,7 @@ msgstr ""
 
 msgctxt "mlClassificationSvm|"
 msgid "Tables"
-msgstr ""
+msgstr "Табеле"
 
 msgctxt "mlClassificationSvm|"
 msgid "Plots"
@@ -741,7 +741,7 @@ msgstr ""
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Tables"
-msgstr ""
+msgstr "Табеле"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Plots"
@@ -757,7 +757,7 @@ msgstr ""
 
 msgctxt "mlRegressionSvm|"
 msgid "Tables"
-msgstr ""
+msgstr "Табеле"
 
 msgctxt "mlRegressionSvm|"
 msgid "Plots"
@@ -789,11 +789,11 @@ msgstr ""
 
 msgctxt "mlPrediction|"
 msgid "Tables"
-msgstr ""
+msgstr "Табеле"
 
 msgctxt "mlPrediction|"
 msgid "to"
-msgstr ""
+msgstr "до"
 
 msgctxt "Description|"
 msgid "Linear"
@@ -1383,7 +1383,7 @@ msgstr ""
 
 msgctxt "ModelOptimization|"
 msgid "Reset"
-msgstr ""
+msgstr "Ресетуј"
 
 msgctxt "ModelOptimization|"
 msgid "Swap"
@@ -1519,7 +1519,7 @@ msgstr ""
 
 msgctxt "CoefficientTable|"
 msgid "Coefficients"
-msgstr ""
+msgstr "Коефицијенти"
 
 msgctxt "CoefficientTable|"
 msgid "Shows a table containing the regression coefficients."
@@ -1602,7 +1602,7 @@ msgstr ""
 
 msgctxt "AlgorithmicSettings|"
 msgid "Degree"
-msgstr ""
+msgstr "Степен"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The degree of polynomial used."
@@ -1919,7 +1919,7 @@ msgstr ""
 
 msgctxt "ExplainPredictions|"
 msgid "to"
-msgstr ""
+msgstr "до"
 
 msgctxt "ExplainPredictions|"
 msgid "The test set index of the last row to be displayed in the table."
