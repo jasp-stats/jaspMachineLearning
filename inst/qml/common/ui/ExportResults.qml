@@ -53,7 +53,7 @@ Group
 			name:					"addProbabilities"
 			text:					qsTr("Add probabilities (classification only)")
 			visible:				showProbs
-			info:					qsTr("In classification analyses, also add the predicted probabilities for each class to the data.")
+			info:					qsTr("In classification analyses, append the predicted probabilities for each class to the data. For neural networks, this option provides the output of the final layer.")
 		}
 	}
 
