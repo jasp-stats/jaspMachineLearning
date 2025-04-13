@@ -167,14 +167,14 @@
   if (!ready) {
     table$addFootnote(gettextf("Please provide a target variable and at least %i feature variable(s).", if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm" || type == "logistic") 1L else 2L))
   }
-  if (options[["savePath"]] != "") {
+  if (options[["saveModel"]]) {
     validNames <- (length(grep(" ", decodeColNames(colnames(dataset)))) == 0) && (length(grep("_", decodeColNames(colnames(dataset)))) == 0)
-    if (options[["saveModel"]] && validNames) {
+    if (options[["savePath"]] != "" && validNames) {
       table$addFootnote(gettextf("The trained model is saved as <i>%1$s</i>.", basename(options[["savePath"]])))
-    } else if (options[["saveModel"]] && !validNames) {
+    } else if (options[["savePath"]] != "" && !validNames) {
       table$addFootnote(gettext("The trained model is <b>not</b> saved because the some of the variable names in the model contain spaces (i.e., ' ') or underscores (i.e., '_'). Please remove all such characters from the variable names and try saving the model again."))
     } else {
-      table$addFootnote(gettext("The trained model is not saved until 'Save trained model' is checked."))
+      table$addFootnote(gettext("The trained model is not saved until a file name is specified under 'Save as'."))
     }
   }
   jaspResults[["classificationTable"]] <- table
