@@ -61,26 +61,22 @@ Group
 	{
 		id:							saveGroup
 
-		FileSelector
-		{
-			id:						savePath
-			name:					"savePath"
-			label:					qsTr("Save as")
-			placeholderText:		qsTr("e.g., location/model.jaspML")
-			filter:					"*.jaspML"
-			save:					true
-			fieldWidth:				180 * preferencesModel.uiScale
-			info:					qsTr("The file path for the saved model.")
-		}
-
 		CheckBox
 		{
-			id:						saveModel
 			name:					"saveModel"
 			text:					qsTr("Save trained model")
-			enabled:				showSave && savePath.value != ""
-			Layout.leftMargin:		10 * preferencesModel.uiScale
 			info:					qsTr("When clicked, the model is exported to the specified file path.")
+
+			FileSelector
+			{
+				name:				"savePath"
+				label:				qsTr("Save as")
+				placeholderText:	qsTr("e.g., location/model.jaspML")
+				filter:				"*.jaspML"
+				save:				true
+				fieldWidth:			180 * preferencesModel.uiScale
+				info:				qsTr("The file path for the saved model.")
+			}
 		}
 	}
 }
