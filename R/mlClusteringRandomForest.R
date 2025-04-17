@@ -148,7 +148,7 @@ mlClusteringRandomForest <- function(jaspResults, dataset, options, ...) {
   table$position <- position
   table$dependOn(options = c(.mlClusteringDependencies(), "featureImportanceTable"))
   table$addColumnInfo(name = "variable", title = "", type = "string")
-  table$addColumnInfo(name = "measure", title = gettext("Mean decrease in Gini Index"), type = "number", format = "sf:4")
+  table$addColumnInfo(name = "measure", title = gettext("Mean decrease in Gini Index"), type = "number")
   jaspResults[["importanceTable"]] <- table
   if (!ready) {
     return()
