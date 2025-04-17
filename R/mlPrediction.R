@@ -274,13 +274,18 @@ is.jaspMachineLearning <- function(x) {
     dataset <- NULL
   } else {
     dataset <- jaspBase::excludeNaListwise(dataset, options[["predictors"]])
-    if (options[["scaleVariables"]] && length(unlist(options[["predictors"]])) > 0) {
-      dataset <- .scaleNumericData(dataset)
-    }
     # Select only the predictors in the model to prevent accidental double column names
     dataset <- dataset[, which(decodeColNames(colnames(dataset)) %in% model[["jaspVars"]][["decoded"]]$predictors), drop = FALSE]
     # Ensure the column names in the dataset match those in the training data
     colnames(dataset) <- .matchDecodedNames(colnames(dataset), model)
+    # Scale the features with the same scaling as the origingal dataset
+    if (options[["scaleVariables"]] && length(unlist(options[["predictors"]])) > 0) {
+      if (is.null(model[["jaspScaling"]])) {
+        dataset <- .scaleNumericData(dataset)
+      } else {
+        dataset <- .setJaspScaling(dataset, model$jaspScaling[[1]], model$jaspScaling[[2]])
+      }
+    }
     # Retrieve the training set
     trainingSet <- model[["explainer"]]$data
     # Check for factor levels in the test set that are not in the training set
