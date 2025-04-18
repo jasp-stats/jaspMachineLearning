@@ -269,6 +269,16 @@ is.jaspMachineLearning <- function(x) {
   return(names)
 }
 
+.setJaspScaling <- function(x, centers, scales) {
+  if (nrow(x) == 0) {
+    return(x)
+  }
+  for (col in names(centers)) {
+    x[, col] <- (x[, col] - centers[col]) / scales[col]
+  }
+  return(x)
+}
+
 .mlPredictionReadData <- function(dataset, options, model) {
   if (length(options[["predictors"]]) == 0) {
     dataset <- NULL
@@ -276,23 +286,21 @@ is.jaspMachineLearning <- function(x) {
     dataset <- jaspBase::excludeNaListwise(dataset, options[["predictors"]])
     # Select only the predictors in the model to prevent accidental double column names
     dataset <- dataset[, which(decodeColNames(colnames(dataset)) %in% model[["jaspVars"]][["decoded"]]$predictors), drop = FALSE]
-    # Ensure the column names in the dataset match those in the training data
-    colnames(dataset) <- .matchDecodedNames(colnames(dataset), model)
-    # Scale the features with the same scaling as the origingal dataset
-    if (options[["scaleVariables"]] && length(unlist(options[["predictors"]])) > 0) {
-      if (is.null(model[["jaspScaling"]])) {
-        dataset <- .scaleNumericData(dataset)
-      } else {
+    if (NCOL(dataset) > 0) {
+      # Ensure the column names in the dataset match those in the training data
+      colnames(dataset) <- .matchDecodedNames(colnames(dataset), model)
+      # Scale the features with the same scaling as the original dataset
+      if (!is.null(model[["jaspScaling"]])) {
         dataset <- .setJaspScaling(dataset, model$jaspScaling[[1]], model$jaspScaling[[2]])
       }
+      # Retrieve the training set
+      trainingSet <- model[["explainer"]]$data
+      # Check for factor levels in the test set that are not in the training set
+      .checkForNewFactorLevelsInPredictionSet(trainingSet, dataset, "prediction", model)
+      # Ensure factor variables in dataset have same levels as those in the training data
+      factorColumns <- colnames(dataset)[sapply(dataset, is.factor)]
+      dataset[factorColumns] <- lapply(factorColumns, function(i) factor(dataset[[i]], levels = levels(trainingSet[[i]])))
     }
-    # Retrieve the training set
-    trainingSet <- model[["explainer"]]$data
-    # Check for factor levels in the test set that are not in the training set
-    .checkForNewFactorLevelsInPredictionSet(trainingSet, dataset, "prediction", model)
-    # Ensure factor variables in dataset have same levels as those in the training data
-    factorColumns <- colnames(dataset)[sapply(dataset, is.factor)]
-    dataset[factorColumns] <- lapply(factorColumns, function(i) factor(dataset[[i]], levels = levels(trainingSet[[i]])))
   }
   return(dataset)
 }
@@ -304,7 +312,7 @@ is.jaspMachineLearning <- function(x) {
     if (ready) {
       dataset <- dataset[which(colnames(dataset) %in% model[["jaspVars"]][["encoded"]]$predictors)]
       jaspResults[["predictions"]] <- createJaspState(.mlPredictionGetPredictions(model, dataset))
-      jaspResults[["predictions"]]$dependOn(options = c("loadPath", "predictors", "scaleVariables"))
+      jaspResults[["predictions"]]$dependOn(options = c("loadPath", "predictors"))
       return(jaspResults[["predictions"]]$object)
     } else {
       return(NULL)
@@ -330,6 +338,11 @@ is.jaspMachineLearning <- function(x) {
   jaspResults[["modelSummaryTable"]] <- table
   if (is.null(model)) {
     return()
+  }
+  if (is.null(model[["jaspScaling"]])) {
+    table$addFootnote(gettext("The features in the new data are unscaled."))
+  } else {
+    table$addFootnote(gettext("The features in the new data are scaled."))
   }
   modelVars_encoded <- model[["jaspVars"]][["encoded"]]$predictors
   modelVars_decoded <- model[["jaspVars"]][["decoded"]]$predictors
@@ -394,7 +407,7 @@ is.jaspMachineLearning <- function(x) {
     return()
   }
   table <- createJaspTable(gettext("Predictions for New Data"))
-  table$dependOn(options = c("predictors", "trainedModelFilePath", "predictionsTable", "predictionsTableFeatures", "scaleVariables", "fromIndex", "toIndex"))
+  table$dependOn(options = c("predictors", "trainedModelFilePath", "predictionsTable", "predictionsTableFeatures", "fromIndex", "toIndex"))
   table$position <- position
   table$addColumnInfo(name = "row", title = gettext("Case"), type = "integer")
   if (!is.null(model) && inherits(model, "jaspClassification")) {
@@ -438,7 +451,7 @@ is.jaspMachineLearning <- function(x) {
       predictionsColumn <- rep(NA, max(as.numeric(rownames(dataset))))
       predictionsColumn[as.numeric(rownames(dataset))] <- predictions[[1]]
       jaspResults[["predictionsColumn"]] <- createJaspColumn(columnName = options[["predictionsColumn"]])
-      jaspResults[["predictionsColumn"]]$dependOn(options = c("predictionsColumn", "predictors", "trainedModelFilePath", "scaleVariables", "addPredictions"))
+      jaspResults[["predictionsColumn"]]$dependOn(options = c("predictionsColumn", "predictors", "trainedModelFilePath", "addPredictions"))
       if (inherits(model, "jaspClassification")) jaspResults[["predictionsColumn"]]$setNominal(predictionsColumn)
       if (inherits(model, "jaspRegression")) jaspResults[["predictionsColumn"]]$setScale(predictionsColumn)
     }
@@ -451,7 +464,7 @@ is.jaspMachineLearning <- function(x) {
           break
         }
         jaspResults[[colName]] <- createJaspColumn(columnName = colName)
-        jaspResults[[colName]]$dependOn(options = c("predictionsColumn", "predictors", "trainedModelFilePath", "scaleVariables", "addPredictions", "addProbabilities"))
+        jaspResults[[colName]]$dependOn(options = c("predictionsColumn", "predictors", "trainedModelFilePath", "addPredictions", "addProbabilities"))
         jaspResults[[colName]]$setScale(predictions[[2]][, i])
       }
     }

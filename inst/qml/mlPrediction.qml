@@ -59,13 +59,6 @@ Form
 
 	Group
 	{
-		title:									qsTr("Algorithmic Settings")
-
-		UI.ScaleVariables { }
-	}
-
-	Group
-	{
 		title:									qsTr("Tables")
 
 		CheckBox

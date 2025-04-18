@@ -70,6 +70,7 @@
 
   # Scale numeric predictors
   if (length(unlist(options[["predictors"]])) > 0 && options[["scaleVariables"]]) {
+    attr(dataset, which = "jaspScaling") <- .getJaspScaling(dataset[, options[["predictors"]], drop = FALSE])
     dataset[, options[["predictors"]]] <- .scaleNumericData(dataset[, options[["predictors"]], drop = FALSE])
   }
   return(dataset)
@@ -501,8 +502,7 @@
     model[["jaspVars"]] <- list()
     model[["jaspVars"]]$decoded <- list(target = decodeColNames(options[["target"]]), predictors = decodeColNames(options[["predictors"]]))
     model[["jaspVars"]]$encoded = list(target = options[["target"]], predictors = options[["predictors"]])
-    model[["jaspScaling"]] <- .getJaspScaling(dataset[, options[["predictors"]], drop = FALSE])
-	print(model[["jaspScaling"]])
+    model[["jaspScaling"]] <- attr(dataset, "jaspScaling")
     model[["jaspVersion"]] <- .baseCitation
     model[["explainer"]] <- regressionResult[["explainer"]]
     class(model) <- c(class(regressionResult[["model"]]), "jaspRegression", "jaspMachineLearning")
@@ -687,32 +687,10 @@
 
 .getJaspScaling <- function(x) {
   idx <- sapply(x, function(x) is.numeric(x) && length(unique(x)) > 1)
-  colNames <- list(encoded = colnames(x), decoded = decodeColNames(colnames(x)))
-  cols_to_scale <- colNames[["decoded"]][idx]
-  centers <- setNames(numeric(length(cols_to_scale)), cols_to_scale)
-  scales <- setNames(numeric(length(cols_to_scale)), cols_to_scale)
-  for (col in cols_to_scale) {
-    encodedColName <- colNames[["encoded"]][which(colNames[["decoded"]] == col)]
-    centers[col] <- mean(x[[encodedColName]])
-    scales[col] <- sd(x[[encodedColName]])
-  }
-  return(list(centers, scaling))
-}
-
-.setJaspScaling <- function(x, center, scale) {
-  if (nrow(x) == 0) {
-    return(x)
-  }
-  idx <- sapply(x, function(x) is.numeric(x) && length(unique(x)) > 1)
-  colNames <- list(encoded = colnames(x), decoded = decodeColNames(colnames(x)))
-  cols_to_scale <- colNames[["decoded"]][idx]
-  for (col in cols_to_scale) {
-    encodedColName <- colNames[["encoded"]][which(colNames[["decoded"]] == col)]
-    x[, encodedColName] <- scale(x[, encodedColName, drop = FALSE], center = center[col], scale = scale[col])
-  }
-  attr(x, which = "scaled:center") <- NULL
-  attr(x, which = "scaled:scale") <- NULL
-  return(x)
+  cols_to_scale <- colnames(x)[idx]
+  centers <- sapply(x[cols_to_scale], mean)
+  scales <- sapply(x[cols_to_scale], sd)
+  return(list(centers, scales))
 }
 
 # these could also extend the S3 method scale although that could be somewhat unexpected
