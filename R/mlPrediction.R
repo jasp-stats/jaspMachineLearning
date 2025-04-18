@@ -340,9 +340,9 @@ is.jaspMachineLearning <- function(x) {
     return()
   }
   if (is.null(model[["jaspScaling"]])) {
-    table$addFootnote(gettext("The features in the new data are unscaled."))
+    table$addFootnote(gettext("The features in the new data are unscaled, consistent with the training set."))
   } else {
-    table$addFootnote(gettext("The features in the new data are scaled."))
+    table$addFootnote(gettext("The features in the new data are scaled the same as those in the training set."))
   }
   modelVars_encoded <- model[["jaspVars"]][["encoded"]]$predictors
   modelVars_decoded <- model[["jaspVars"]][["decoded"]]$predictors
