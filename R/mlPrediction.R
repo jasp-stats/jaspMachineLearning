@@ -286,7 +286,7 @@ is.jaspMachineLearning <- function(x) {
     dataset <- jaspBase::excludeNaListwise(dataset, options[["predictors"]])
     # Select only the predictors in the model to prevent accidental double column names
     dataset <- dataset[, which(decodeColNames(colnames(dataset)) %in% model[["jaspVars"]][["decoded"]]$predictors), drop = FALSE]
-    if (NCOL(dataset) > 0) {
+    if (NCOL(dataset) == length(model[["jaspVars"]][["decoded"]]$predictors)) {
       # Ensure the column names in the dataset match those in the training data
       colnames(dataset) <- .matchDecodedNames(colnames(dataset), model)
       # Scale the features with the same scaling as the original dataset
