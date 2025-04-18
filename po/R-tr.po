@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.0\n"
-"POT-Creation-Date: 2025-03-15 03:25\n"
+"POT-Creation-Date: 2025-04-18 13:48\n"
 "PO-Revision-Date: 2025-04-04 15:07+0000\n"
 "Last-Translator: Uğur ÇELİK <prof_ugur@hotmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/jasp/"
@@ -129,7 +129,9 @@ msgid ""
 "again."
 msgstr ""
 
-msgid "The trained model is not saved until 'Save trained model' is checked."
+msgid ""
+"The trained model is not saved until a file name is specified under 'Save "
+"as'."
 msgstr ""
 
 msgid ""
@@ -986,6 +988,15 @@ msgid "Regression"
 msgstr ""
 
 msgid "Loaded Model: %1$s"
+msgstr ""
+
+msgid ""
+"The features in the new data are unscaled, consistent with the training set."
+msgstr ""
+
+msgid ""
+"The features in the new data are scaled the same as those in the training "
+"set."
 msgstr ""
 
 msgid ""

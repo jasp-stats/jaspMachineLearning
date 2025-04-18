@@ -778,10 +778,6 @@ msgid "Features"
 msgstr "特征"
 
 msgctxt "mlPrediction|"
-msgid "Algorithmic Settings"
-msgstr "算法设置"
-
-msgctxt "mlPrediction|"
 msgid "Tables"
 msgstr "表"
 

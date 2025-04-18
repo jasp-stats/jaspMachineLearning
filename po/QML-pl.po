@@ -792,10 +792,6 @@ msgid "Features"
 msgstr "Zmienne"
 
 msgctxt "mlPrediction|"
-msgid "Algorithmic Settings"
-msgstr "Ustawienia algorytmu"
-
-msgctxt "mlPrediction|"
 msgid "Tables"
 msgstr "Tabele"
 

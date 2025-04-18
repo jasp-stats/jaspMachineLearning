@@ -789,10 +789,6 @@ msgid "Features"
 msgstr "Fitur"
 
 msgctxt "mlPrediction|"
-msgid "Algorithmic Settings"
-msgstr "Pengaturan Algoritmik"
-
-msgctxt "mlPrediction|"
 msgid "Tables"
 msgstr "Tabel"
 

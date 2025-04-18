@@ -804,11 +804,6 @@ msgstr ""
 
 #, fuzzy
 msgctxt "mlPrediction|"
-msgid "Algorithmic Settings"
-msgstr "Configurações do algoritmo"
-
-#, fuzzy
-msgctxt "mlPrediction|"
 msgid "Tables"
 msgstr "Tabelas"
 

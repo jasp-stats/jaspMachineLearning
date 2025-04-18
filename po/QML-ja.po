@@ -801,11 +801,6 @@ msgstr "特徴量"
 
 #, fuzzy
 msgctxt "mlPrediction|"
-msgid "Algorithmic Settings"
-msgstr "アルゴリズムの設定"
-
-#, fuzzy
-msgctxt "mlPrediction|"
 msgid "Tables"
 msgstr "表"
 

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.19.2\n"
-"POT-Creation-Date: 2025-03-15 03:25\n"
+"POT-Creation-Date: 2025-04-18 13:48\n"
 "PO-Revision-Date: 2025-01-06 17:36+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/jasp/"
@@ -132,7 +132,10 @@ msgstr ""
 "'_'). இதுபோன்ற அனைத்து எழுத்துக்களையும் மாறி பெயர்களிலிருந்து அகற்றி மீண்டும் மாதிரியைச் "
 "சேமிக்க முயற்சிக்கவும்."
 
-msgid "The trained model is not saved until 'Save trained model' is checked."
+#, fuzzy
+msgid ""
+"The trained model is not saved until a file name is specified under 'Save "
+"as'."
 msgstr ""
 "'பயிற்சி பெற்ற மாதிரியை சேமி' சரிபார்க்கும் வரை பயிற்சி பெற்ற மாதிரி சேமிக்கப்படாது."
 
@@ -1055,6 +1058,15 @@ msgstr "பின்னடைவு"
 
 msgid "Loaded Model: %1$s"
 msgstr "ஏற்றப்பட்ட மாதிரி: %1$s"
+
+msgid ""
+"The features in the new data are unscaled, consistent with the training set."
+msgstr ""
+
+msgid ""
+"The features in the new data are scaled the same as those in the training "
+"set."
+msgstr ""
 
 msgid ""
 "The trained model is not applied because the the following features are "

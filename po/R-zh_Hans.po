@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.2\n"
-"POT-Creation-Date: 2025-03-15 03:25\n"
+"POT-Creation-Date: 2025-04-18 13:48\n"
 "PO-Revision-Date: 2024-12-08 10:48+0000\n"
 "Last-Translator: Shun Wang <shuonwang@gmail.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
@@ -130,7 +130,10 @@ msgstr ""
 "由于模型中的某些变量名包含空格或下划线，因此<b>未</b>保存训练好的模型。请删除"
 "变量名中的所有此类字符，并尝试重新保存模型。"
 
-msgid "The trained model is not saved until 'Save trained model' is checked."
+#, fuzzy
+msgid ""
+"The trained model is not saved until a file name is specified under 'Save "
+"as'."
 msgstr "只有选中“保存训练好的模型”，才能保存模型。"
 
 msgid ""
@@ -1005,6 +1008,15 @@ msgstr "回归"
 
 msgid "Loaded Model: %1$s"
 msgstr "已加载模型:%1$s"
+
+msgid ""
+"The features in the new data are unscaled, consistent with the training set."
+msgstr ""
+
+msgid ""
+"The features in the new data are scaled the same as those in the training "
+"set."
+msgstr ""
 
 msgid ""
 "The trained model is not applied because the the following features are "

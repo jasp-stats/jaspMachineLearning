@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.1\n"
-"POT-Creation-Date: 2025-03-15 03:25\n"
+"POT-Creation-Date: 2025-04-18 13:48\n"
 "PO-Revision-Date: 2024-11-06 22:00+0000\n"
 "Last-Translator: Koji Kosugi <kosugitti@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
@@ -131,7 +131,10 @@ msgstr ""
 "ペース(' ')かアンダースコア('_')を含むものがあるからです。それらの文字列を変"
 "数名から削除し，モデルの保存をもう一度試してください。"
 
-msgid "The trained model is not saved until 'Save trained model' is checked."
+#, fuzzy
+msgid ""
+"The trained model is not saved until a file name is specified under 'Save "
+"as'."
 msgstr ""
 "学習したモデルは、'学習モデルを保存する' にチェックされるまで保存されません."
 
@@ -1004,6 +1007,15 @@ msgid "Regression"
 msgstr ""
 
 msgid "Loaded Model: %1$s"
+msgstr ""
+
+msgid ""
+"The features in the new data are unscaled, consistent with the training set."
+msgstr ""
+
+msgid ""
+"The features in the new data are scaled the same as those in the training "
+"set."
 msgstr ""
 
 msgid ""

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-03-15 03:25\n"
+"POT-Creation-Date: 2025-04-18 13:48\n"
 "PO-Revision-Date: 2025-04-12 03:25+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
@@ -142,7 +142,10 @@ msgstr ""
 "favor, elimina todos eses caracteres dos nomes das variables e intenta "
 "gardar de novo o modelo."
 
-msgid "The trained model is not saved until 'Save trained model' is checked."
+#, fuzzy
+msgid ""
+"The trained model is not saved until a file name is specified under 'Save "
+"as'."
 msgstr ""
 "O modelo ensaiado non se garda ata que se marque 'Gardar o modelo ensaiado'."
 
@@ -1078,6 +1081,15 @@ msgstr "Regresión"
 
 msgid "Loaded Model: %1$s"
 msgstr "Modelo Cargado: %1$s"
+
+msgid ""
+"The features in the new data are unscaled, consistent with the training set."
+msgstr ""
+
+msgid ""
+"The features in the new data are scaled the same as those in the training "
+"set."
+msgstr ""
 
 msgid ""
 "The trained model is not applied because the the following features are "

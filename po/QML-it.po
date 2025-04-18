@@ -2409,10 +2409,6 @@ msgid "Features"
 msgstr ""
 
 msgctxt "mlPrediction|"
-msgid "Algorithmic Settings"
-msgstr ""
-
-msgctxt "mlPrediction|"
 msgid "Tables"
 msgstr ""
 

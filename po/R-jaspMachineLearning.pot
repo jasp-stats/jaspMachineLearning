@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.19.2\n"
-"POT-Creation-Date: 2025-03-15 03:25\n"
+"POT-Creation-Date: 2025-04-18 13:48\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -121,7 +121,7 @@ msgstr ""
 msgid "The trained model is <b>not</b> saved because the some of the variable names in the model contain spaces (i.e., ' ') or underscores (i.e., '_'). Please remove all such characters from the variable names and try saving the model again."
 msgstr ""
 
-msgid "The trained model is not saved until 'Save trained model' is checked."
+msgid "The trained model is not saved until a file name is specified under 'Save as'."
 msgstr ""
 
 msgid "The model is optimized with respect to the <i>validation set accuracy</i>."
@@ -917,6 +917,12 @@ msgid "Regression"
 msgstr ""
 
 msgid "Loaded Model: %1$s"
+msgstr ""
+
+msgid "The features in the new data are unscaled, consistent with the training set."
+msgstr ""
+
+msgid "The features in the new data are scaled the same as those in the training set."
 msgstr ""
 
 msgid "The trained model is not applied because the the following features are missing: <i>%1$s</i>."

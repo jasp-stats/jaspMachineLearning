@@ -839,11 +839,6 @@ msgstr "欲萃取特徵的變數"
 
 #, fuzzy
 msgctxt "mlPrediction|"
-msgid "Algorithmic Settings"
-msgstr "演算法設定"
-
-#, fuzzy
-msgctxt "mlPrediction|"
 msgid "Tables"
 msgstr "表"
 
