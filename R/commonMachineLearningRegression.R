@@ -753,8 +753,10 @@
       purpose <- "classification"
     }
     predictors <- model[["jaspVars"]][["encoded"]]$predictors
+    predictorNames <- model[["jaspVars"]][["decoded"]]$predictors
   } else {
     predictors <- options[["predictors"]]
+    predictorNames <- options[["predictors"]]
   }
   table$position <- position
   table$dependOn(options = c(
@@ -767,12 +769,12 @@
   ))
   table$addColumnInfo(name = "id", title = gettext("Case"), type = "integer")
   if (purpose == "regression") {
-    table$addColumnInfo(name = "pred", title = gettext("Predicted"), type = "number")
+    table$addColumnInfo(name = "pred_jaspname", title = gettext("Predicted"), type = "number")
   } else {
-    table$addColumnInfo(name = "pred", title = gettext("Predicted (Prob.)"), type = "string")
+    table$addColumnInfo(name = "pred_jaspname", title = gettext("Predicted (Prob.)"), type = "string")
   }
   table$addColumnInfo(name = "avg", title = gettext("Base"), type = "number")
-  for (i in predictors) {
+  for (i in predictorNames) {
     table$addColumnInfo(name = i, title = i, type = "number")
   }
   jaspResults[["tableShap"]] <- table
@@ -791,7 +793,7 @@
   from <- min(c(options[["fromIndex"]], options[["toIndex"]] - 1, nrow(x_test)))
   to <- min(c(options[["toIndex"]], nrow(x_test)))
   out <- as.data.frame(matrix(NA, nrow = length(from:to), ncol = 3 + length(predictors)))
-  colnames(out) <- c("id", "pred", "avg", predictors)
+  colnames(out) <- c("id", "pred_jaspname", "avg", predictorNames)
   p <- try({
     for (i in seq_along(from:to)) {
       out[i, 1] <- (from:to)[i]
