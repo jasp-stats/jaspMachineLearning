@@ -340,6 +340,7 @@
     model[["jaspVars"]] <- list()
     model[["jaspVars"]]$decoded <- list(target = decodeColNames(options[["target"]]), predictors = decodeColNames(options[["predictors"]]))
     model[["jaspVars"]]$encoded = list(target = options[["target"]], predictors = options[["predictors"]])
+    model[["jaspScaling"]] <- attr(dataset, "jaspScaling")
     model[["jaspVersion"]] <- .baseCitation
     model[["explainer"]] <- classificationResult[["explainer"]]
     class(model) <- c(class(classificationResult[["model"]]), "jaspClassification", "jaspMachineLearning")
