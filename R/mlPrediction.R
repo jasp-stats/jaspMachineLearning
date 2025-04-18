@@ -297,7 +297,7 @@ is.jaspMachineLearning <- function(x) {
       trainingSet <- model[["explainer"]]$data
       # Check for factor levels in the test set that are not in the training set
       .checkForNewFactorLevelsInPredictionSet(trainingSet, dataset, "prediction", model)
-      # Ensure factor variables in dataset have same levels as those in the training data
+      # Ensure that factor variables in the dataset have their levels ordered the same way as in the training data
       factorColumns <- colnames(dataset)[sapply(dataset, is.factor)]
       dataset[factorColumns] <- lapply(factorColumns, function(i) factor(dataset[[i]], levels = levels(trainingSet[[i]])))
     }
