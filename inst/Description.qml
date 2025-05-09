@@ -17,7 +17,9 @@ Description
 	GroupTitle
 	{
 		title:		qsTr("Supervised Learning")
+		icon:		"supervised-learning.svg"
 	}
+
 	GroupTitleSmall
 	{
 		title:		qsTr("Regression")
@@ -148,7 +150,9 @@ Description
 	GroupTitle
 	{
 		title:		qsTr("Unsupervised Learning")
+		icon:		"unsupervised-learning.svg"
 	}
+	
 	GroupTitleSmall
 	{
 		title:		qsTr("Clustering")
