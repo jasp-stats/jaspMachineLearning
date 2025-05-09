@@ -16,6 +16,10 @@ Description
 
 	GroupTitle
 	{
+		title:		qsTr("Supervised Learning")
+	}
+	GroupTitleSmall
+	{
 		title:		qsTr("Regression")
 		icon: 		"analysis-ml-regression.svg"
 	}
@@ -69,7 +73,7 @@ Description
 	}
 
 
-	GroupTitle
+	GroupTitleSmall
 	{
 		title:		qsTr("Classification")
 		icon: 		"analysis-ml-classification.svg"
@@ -129,8 +133,23 @@ Description
 		func:		"mlClassificationSvm"
 	}
 
+	GroupTitleSmall
+	{
+		title:		qsTr("Prediction")
+		icon: 		"analysis-ml-prediction.svg"
+	}
+	Analysis
+	{
+		menu:		qsTr("Prediction")
+		title:		qsTr("Prediction")
+		func:		"mlPrediction"
+	}
 
 	GroupTitle
+	{
+		title:		qsTr("Unsupervised Learning")
+	}
+	GroupTitleSmall
 	{
 		title:		qsTr("Clustering")
 		icon: 		"analysis-ml-clustering.svg"
@@ -170,17 +189,5 @@ Description
 		menu:		qsTr("Random Forest")
 		title:		qsTr("Random Forest Clustering")
 		func:		"mlClusteringRandomForest"
-	}
-
-	GroupTitle
-	{
-		title:		qsTr("Prediction")
-		icon: 		"analysis-ml-prediction.svg"
-	}
-	Analysis
-	{
-		menu:		qsTr("Prediction")
-		title:		qsTr("Prediction")
-		func:		"mlPrediction"
 	}
 }
