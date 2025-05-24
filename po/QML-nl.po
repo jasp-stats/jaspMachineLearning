@@ -3236,3 +3236,11 @@ msgstr ""
 "Voeg bij classificatieanalyses de voorspelde kansen voor elke klasse toe aan "
 "de data. Voor neurale netwerken levert deze optie de output van de laatste "
 "laag."
+
+msgctxt "Description|"
+msgid "Supervised Learning"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Unsupervised Learning"
+msgstr ""

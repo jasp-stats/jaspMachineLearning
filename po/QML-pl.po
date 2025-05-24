@@ -2896,3 +2896,11 @@ msgid ""
 "class to the data. For neural networks, this option provides the output of "
 "the final layer."
 msgstr ""
+
+msgctxt "Description|"
+msgid "Supervised Learning"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Unsupervised Learning"
+msgstr ""

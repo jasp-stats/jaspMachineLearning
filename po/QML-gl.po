@@ -3264,3 +3264,11 @@ msgstr ""
 "Na análise de clasificación, engadir as probabilidades preditas para cada "
 "clase, aos datos. Para redes neuronais, esta opción proporciona o resultado "
 "do estrato final."
+
+msgctxt "Description|"
+msgid "Supervised Learning"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Unsupervised Learning"
+msgstr ""
