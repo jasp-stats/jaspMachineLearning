@@ -48,5 +48,4 @@ Suggests:
 Remotes:
   jasp-stats/jaspBase,
   jasp-stats/jaspGraphs,
-  vandenman/kknn,
   RensDofferhoff/ggdendro
