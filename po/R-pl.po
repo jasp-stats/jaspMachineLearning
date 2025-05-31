@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.0\n"
 "POT-Creation-Date: 2025-04-18 13:48\n"
-"PO-Revision-Date: 2025-05-30 02:03+0000\n"
+"PO-Revision-Date: 2025-06-01 21:05+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/pl/>\n"
@@ -339,9 +339,8 @@ msgstr "AIC"
 msgid "BIC"
 msgstr "BIC"
 
-#, fuzzy
 msgid "Silhouette"
-msgstr "sylwetka (silhouette)"
+msgstr "Sylwetka (silhouette)"
 
 msgid "Please provide at least 2 features."
 msgstr "Proszę wprowadzić co najmniej 2 zmienne."
@@ -414,7 +413,7 @@ msgid "ellipsoidal with varying volume, shape, and orientation"
 msgstr ""
 
 msgid "The model is %1$s."
-msgstr ""
+msgstr "Model jest %1$s."
 
 msgid "The features in the model are <b>unstandardized</b>."
 msgstr "Zmienne w modelu są <b>niestandaryzowane</b>."
