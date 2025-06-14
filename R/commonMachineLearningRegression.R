@@ -36,7 +36,7 @@
     "mutationMethod", "survivalMethod", "elitismProportion", "candidates",                # Neural network
     "noOfTrees", "maxTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors",   # Random forest
     "convergenceThreshold", "penalty", "alpha", "intercept", "lambda",                    # Regularized
-    "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon", "maxCost"   # Support vector machine
+    "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon", "maxCost"  # Support vector machine
   )
   if (includeSaveOptions) {
     opt <- c(opt, "saveModel", "savePath")
@@ -166,7 +166,7 @@
   if (length(factorsWithNewLevels) > 0) {
     setType <- switch(type, "test" = gettext("test set"), "validation" = gettext("validation set"), "prediction" = gettext("new dataset"))
     additionalMessage <- switch(type,
-      "test" = gettext(" or use a different test set (e.g., automatically by setting a different seed or manually by specifying the test set indicator)"), 
+      "test" = gettext(" or use a different test set (e.g., automatically by setting a different seed or manually by specifying the test set indicator)"),
       "validation" = gettext(" or use a different validation set by setting a different seed"),
       "prediction" = "")
     factorMessage <- paste(sapply(factorsWithNewLevels, function(i) {
@@ -597,7 +597,7 @@
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Data Split"), width = 800, height = 30)
   plot$position <- position
-  plot$dependOn(options = c("dataSplitPlot", "target", "predictors", "trainingDataManual", "modelValid", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "holdoutData", "testDataManual", "modelOptimization"))
+  plot$dependOn(options = c("balanceLabels", "dataSplitPlot", "target", "predictors", "trainingDataManual", "modelValid", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "holdoutData", "testDataManual", "modelOptimization"))
   jaspResults[["plotDataSplit"]] <- plot
   if (!ready) {
     return()
