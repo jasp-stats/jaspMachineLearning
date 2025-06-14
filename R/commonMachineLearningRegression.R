@@ -597,7 +597,7 @@
   }
   plot <- createJaspPlot(plot = NULL, title = gettext("Data Split"), width = 800, height = 30)
   plot$position <- position
-  plot$dependOn(options = c("balanceLabels", "dataSplitPlot", "target", "predictors", "trainingDataManual", "modelValid", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "holdoutData", "testDataManual", "modelOptimization"))
+  plot$dependOn(options = c("balanceSamplingMethod", "balanceLabels", "dataSplitPlot", "target", "predictors", "trainingDataManual", "modelValid", "testSetIndicatorVariable", "testSetIndicator", "validationDataManual", "holdoutData", "testDataManual", "modelOptimization"))
   jaspResults[["plotDataSplit"]] <- plot
   if (!ready) {
     return()

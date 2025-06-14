@@ -161,6 +161,15 @@ Section
 	{ 
 		name: "balanceLabels"
 		label: qsTr("Balance sample size of target levels")
-		info: qsTr("When clicked, the dataset is balanced to have the same sample size for all levels of the target variable.")
+		info: qsTr("When clicked, the dataset is balanced to have the same sample size for all levels of the target variable. This is done either through over- or under-sampling")
+
+		RadioButtonGroup
+		
+		{
+			name: "balanceSamplingMethod"
+
+			RadioButton{ value: "minSample"; label: qsTr("Balance using undersampling"); checked: true}
+			RadioButton{ value: "maxSample"; label: qsTr("Balance using oversampling")}
+		}
 	}
 }

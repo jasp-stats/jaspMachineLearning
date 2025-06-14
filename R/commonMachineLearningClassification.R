@@ -34,7 +34,7 @@
     "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon", "maxCost",  # Support vector machine
     "smoothingParameter",                                                                 # Naive Bayes
     "intercept", "link",                                                                  # Logistic
-	  "balanceLabels"                                                                       # Common
+	  "balanceLabels", "balanceSamplingMethod"                                                                     # Common
   )
   if (includeSaveOptions) {
     opt <- c(opt, "saveModel", "savePath")
@@ -47,12 +47,25 @@
   target <- dataset[, options[["target"]]]
   split_data <- split(dataset, target)
 
-  # Determine minimum sample size out of all levels
-  min_size <- min(sapply(split_data, nrow))
+  # Either over- or undersampling, based on user choice
+  if (options[["balanceSamplingMethod"]] == "minSample") {
 
-  # For each level, sample the minimum number of samples, resulting in a balanced dataset
-  collection <- lapply(split_data, function(df) {df[sample(nrow(df), size = min_size, replace = FALSE), ]})
-  balanced_dataset <- do.call(rbind, collection)
+    # Determine minimum sample size out of all levels
+    min_size <- min(sapply(split_data, nrow))
+
+    # For each level, undersample to the minimum sample size found, using without-replacement sampling
+    collection <- lapply(split_data, function(df) {df[sample(nrow(df), size = min_size, replace = FALSE), ]})
+    balanced_dataset <- do.call(rbind, collection)
+  }
+  else {
+
+    # Determine minimum sample size out of all levels
+    max_size <- max(sapply(split_data, nrow))
+
+    # For each level, oversample to the maximum sample size found, using with-replacement sampling
+    collection <- lapply(split_data, function(df) {df[sample(nrow(df), size = max_size, replace = TRUE), ]})
+    balanced_dataset <- do.call(rbind, collection)
+  }
 
   return (balanced_dataset)
 }
