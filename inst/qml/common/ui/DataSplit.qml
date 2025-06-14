@@ -25,6 +25,7 @@ Section
 	property alias leaveOneOutVisible:			leaveOneOut.visible
 	property alias kFoldsVisible:				kFolds.visible
 	property alias trainingValidationSplit:		trainingValidationSplit.visible
+	property alias balanceTargetClasses: 		balanceTargetClasses.visible
 
 	title: 										qsTr("Data Split Preferences")
 
@@ -155,6 +156,22 @@ Section
 			text:								qsTr("Leave-one-out")
 			name:								"validationLeaveOneOut"
 			info:								qsTr("Partition the remaining data in *n* parts.")
+		}
+	}
+
+    CheckBox 
+	{ 
+		id: balanceTargetClasses
+		name: "balanceLabels"
+		label: qsTr("Balance sample size of target classes")
+		info: qsTr("When clicked, the dataset is balanced to have the same sample size for all classes of the target variable. This is done either through over- or undersampling")
+
+		RadioButtonGroup
+		{
+			name: "balanceSamplingMethod"
+
+			RadioButton{ value: "minSample"; label: qsTr("Undersample"); checked: true; info: qsTr("Balances the target classes by undersampling to match the size of the smallest class.")}
+			RadioButton{ value: "maxSample"; label: qsTr("Oversample"); info: qsTr("Balances the target classes by oversampling to match the size of the largest class. This is done by sampling with replacement for smaller classes.")}
 		}
 	}
 }

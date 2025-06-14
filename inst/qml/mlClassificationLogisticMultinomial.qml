@@ -55,7 +55,6 @@ Form
 
 	UI.ExportResults { enabled: vars.predictorCount > 0 && vars.targetCount > 0 }
 	UI.DataSplit { trainingValidationSplit: false }
-	UI.BalanceTarget {}
 
 	Section
 	{
