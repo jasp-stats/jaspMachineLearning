@@ -33,7 +33,8 @@
     "noOfTrees", "maxTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors",   # Random forest
     "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon", "maxCost",  # Support vector machine
     "smoothingParameter",                                                                 # Naive Bayes
-    "intercept", "link"                                                                   # Logistic
+    "intercept", "link",                                                                  # Logistic
+	  "balanceLabels", "balanceSamplingMethod"                                                                     # Common
   )
   if (includeSaveOptions) {
     opt <- c(opt, "saveModel", "savePath")
@@ -41,9 +42,43 @@
   return(opt)
 }
 
+.mlBalanceDataset <- function(dataset, options) {
+  # Extract targets and split data
+  target <- dataset[, options[["target"]]]
+  split_data <- split(dataset, target)
+
+  # Either over- or undersampling, based on user choice
+  if (options[["balanceSamplingMethod"]] == "minSample") {
+
+    # Determine minimum sample size out of all levels
+    min_size <- min(sapply(split_data, nrow))
+
+    # For each level, undersample to the minimum sample size found, using without-replacement sampling
+    collection <- lapply(split_data, function(df) {df[sample(nrow(df), size = min_size, replace = FALSE), ]})
+    balanced_dataset <- do.call(rbind, collection)
+  }
+  else {
+
+    # Determine minimum sample size out of all levels
+    max_size <- max(sapply(split_data, nrow))
+
+    # For each level, oversample to the maximum sample size found, using with-replacement sampling
+    collection <- lapply(split_data, function(df) {df[sample(nrow(df), size = max_size, replace = TRUE), ]})
+    balanced_dataset <- do.call(rbind, collection)
+  }
+
+  return (balanced_dataset)
+}
+
 .mlClassificationReadData <- function(dataset, options) {
   dataset <- .readDataClassificationRegressionAnalyses(dataset, options, include_weights = FALSE)
   if (options[["target"]] != "") {
+
+    # Balance Dataset based on selected Target
+    if (options[["balanceLabels"]] == TRUE) {
+      dataset <- .mlBalanceDataset(dataset, options)
+    }
+
     dataset[, options[["target"]]] <- factor(dataset[, options[["target"]]], ordered = FALSE)
   }
   return(dataset)
