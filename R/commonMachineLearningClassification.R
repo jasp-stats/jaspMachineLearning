@@ -62,7 +62,7 @@
   if (options[["target"]] != "") {
 
     # Balance Dataset based on selected Target
-    if (options[["balanceLabels"]] == "balanced") {
+    if (options[["balanceLabels"]] == TRUE) {
       dataset <- .mlBalanceDataset(dataset, options)
     }
 
