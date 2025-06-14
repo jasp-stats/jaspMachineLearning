@@ -33,7 +33,7 @@
     "noOfTrees", "maxTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors",   # Random forest
     "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon", "maxCost",  # Support vector machine
     "smoothingParameter",                                                                 # Naive Bayes
-    "intercept", "link",
+    "intercept", "link",                                                                  # Logistic
 	  "balanceLabels"                                                                       # Common
   )
   if (includeSaveOptions) {

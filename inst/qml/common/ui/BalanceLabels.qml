@@ -28,8 +28,8 @@ RadioButtonGroup
         value: "balanced"
         label: qsTr("Balance distribution of labels")
         checked: true
-
     }
+    
     RadioButton
     {
         value:"unbalanced" 

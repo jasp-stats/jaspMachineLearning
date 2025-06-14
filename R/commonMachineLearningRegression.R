@@ -36,7 +36,7 @@
     "mutationMethod", "survivalMethod", "elitismProportion", "candidates",                # Neural network
     "noOfTrees", "maxTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors",   # Random forest
     "convergenceThreshold", "penalty", "alpha", "intercept", "lambda",                    # Regularized
-    "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon", "maxCost"  # Support vector machine
+    "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon", "maxCost"   # Support vector machine
   )
   if (includeSaveOptions) {
     opt <- c(opt, "saveModel", "savePath")
