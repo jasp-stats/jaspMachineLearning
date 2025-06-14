@@ -25,14 +25,14 @@ RadioButtonGroup
     title: qsTr("Whether to have equal distribution of labels in the data")
     RadioButton
     {
-        name: "balanced"
-        text: qsTr("Balance distribution of labels")
+        value: "balanced"
+        label: qsTr("Balance distribution of labels")
         checked: true
 
     }
     RadioButton
     {
-        name:"unbalanced" 
-        text: qsTr("Keep original distribution of labels")
+        value:"unbalanced" 
+        label: qsTr("Keep original distribution of labels")
     }
 }

@@ -98,6 +98,7 @@ Form
 	Section 
 	{
 		title: qsTr("Balancing Labels")
+		
 		UI.BalanceLabels { }
 	}
 }

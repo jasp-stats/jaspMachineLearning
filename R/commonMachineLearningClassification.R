@@ -33,7 +33,8 @@
     "noOfTrees", "maxTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors",   # Random forest
     "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon", "maxCost",  # Support vector machine
     "smoothingParameter",                                                                 # Naive Bayes
-    "intercept", "link"                                                                   # Logistic
+    "intercept", "link",
+	  "balanceLabels"                                                                       # Common
   )
   if (includeSaveOptions) {
     opt <- c(opt, "saveModel", "savePath")
@@ -41,9 +42,30 @@
   return(opt)
 }
 
+.balance_dataset <- function(dataset, options) {
+  # Extract targets and split data
+  target <- dataset[, options[["target"]]]
+  split_data <- split(dataset, target)
+
+  # Determine minimum sample size out of all levels
+  min_size <- min(sapply(split_data, nrow))
+
+  # For each level, sample the minimum number of samples, resulting in a balanced dataset
+  collection <- lapply(split_data, function(df) {df[sample(nrow(df), size = min_size, replace = FALSE), ]})
+  balanced_dataset <- do.call(rbind, collection)
+
+  return (balanced_dataset)
+}
+
 .mlClassificationReadData <- function(dataset, options) {
   dataset <- .readDataClassificationRegressionAnalyses(dataset, options, include_weights = FALSE)
   if (options[["target"]] != "") {
+
+    # Balance Dataset based on selected Target
+    if (options[["balanceLabels"]] == "balanced") {
+      dataset <- .balance_dataset(dataset, options)
+    }
+
     dataset[, options[["target"]]] <- factor(dataset[, options[["target"]]], ordered = FALSE)
   }
   return(dataset)
