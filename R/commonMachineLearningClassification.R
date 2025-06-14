@@ -42,7 +42,7 @@
   return(opt)
 }
 
-.balance_dataset <- function(dataset, options) {
+.mlBalanceDataset <- function(dataset, options) {
   # Extract targets and split data
   target <- dataset[, options[["target"]]]
   split_data <- split(dataset, target)
@@ -63,7 +63,7 @@
 
     # Balance Dataset based on selected Target
     if (options[["balanceLabels"]] == "balanced") {
-      dataset <- .balance_dataset(dataset, options)
+      dataset <- .mlBalanceDataset(dataset, options)
     }
 
     dataset[, options[["target"]]] <- factor(dataset[, options[["target"]]], ordered = FALSE)
