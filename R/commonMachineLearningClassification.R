@@ -43,42 +43,42 @@
 }
 
 .mlBalanceDataset <- function(dataset, options) {
-  # Extract targets and split data
-  target <- dataset[, options[["target"]]]
-  split_data <- split(dataset, target)
 
-  # Either over- or undersampling, based on user choice
+  # Extract classes and split data into into homogeneous class groups
+  classes <- dataset[, options[["target"]]]
+  splitData <- split(dataset, classes)
+
+  # If user chooses not to balance classes, just return the original dataset
+  if (!isTRUE(options[["balanceLabels"]])){
+    return (dataset)
+  }
+
+  # User chooses undersampling
   if (options[["balanceSamplingMethod"]] == "minSample") {
 
     # Determine minimum sample size out of all levels
-    min_size <- min(sapply(split_data, nrow))
-
-    # For each level, undersample to the minimum sample size found, using without-replacement sampling
-    collection <- lapply(split_data, function(df) {df[sample(nrow(df), size = min_size, replace = FALSE), ]})
-    balanced_dataset <- do.call(rbind, collection)
+    n <- min(sapply(splitData, nrow))
+    withReplacement <- FALSE
   }
+
+  # User chooses oversampling
   else {
 
     # Determine minimum sample size out of all levels
-    max_size <- max(sapply(split_data, nrow))
-
-    # For each level, oversample to the maximum sample size found, using with-replacement sampling
-    collection <- lapply(split_data, function(df) {df[sample(nrow(df), size = max_size, replace = TRUE), ]})
-    balanced_dataset <- do.call(rbind, collection)
+    n <- max(sapply(splitData, nrow))
+    withReplacement <- TRUE
   }
 
-  return (balanced_dataset)
+  # For each level, sample n observations using the chosen method.
+  balancedSplits <- lapply(splitData, function(df) {df[sample(nrow(df), size = n, replace = withReplacement), ]})
+  balanced_dataset <- do.call(rbind, balancedSplits)
+
+  return(balanced_dataset)
 }
 
 .mlClassificationReadData <- function(dataset, options) {
   dataset <- .readDataClassificationRegressionAnalyses(dataset, options, include_weights = FALSE)
   if (options[["target"]] != "") {
-
-    # Balance Dataset based on selected Target
-    if (options[["balanceLabels"]] == TRUE) {
-      dataset <- .mlBalanceDataset(dataset, options)
-    }
-
     dataset[, options[["target"]]] <- factor(dataset[, options[["target"]]], ordered = FALSE)
   }
   return(dataset)
