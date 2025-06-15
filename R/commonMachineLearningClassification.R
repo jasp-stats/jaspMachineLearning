@@ -33,12 +33,47 @@
     "noOfTrees", "maxTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors",   # Random forest
     "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon", "maxCost",  # Support vector machine
     "smoothingParameter",                                                                 # Naive Bayes
-    "intercept", "link"                                                                   # Logistic
+    "intercept", "link",                                                                  # Logistic
+	  "balanceLabels", "balanceSamplingMethod"                                                                     # Common
   )
   if (includeSaveOptions) {
     opt <- c(opt, "saveModel", "savePath")
   }
   return(opt)
+}
+
+.mlBalanceDataset <- function(dataset, options) {
+
+  # Extract classes and split data into into homogeneous class groups
+  classes <- dataset[, options[["target"]]]
+  splitData <- split(dataset, classes)
+
+  # If user chooses not to balance classes, just return the original dataset
+  if (!isTRUE(options[["balanceLabels"]])){
+    return (dataset)
+  }
+
+  # User chooses undersampling
+  if (options[["balanceSamplingMethod"]] == "minSample") {
+
+    # Determine minimum sample size out of all levels
+    n <- min(sapply(splitData, nrow))
+    withReplacement <- FALSE
+  }
+
+  # User chooses oversampling
+  else {
+
+    # Determine minimum sample size out of all levels
+    n <- max(sapply(splitData, nrow))
+    withReplacement <- TRUE
+  }
+
+  # For each level, sample n observations using the chosen method.
+  balancedSplits <- lapply(splitData, function(df) {df[sample(nrow(df), size = n, replace = withReplacement), ]})
+  balanced_dataset <- do.call(rbind, balancedSplits)
+
+  return(balanced_dataset)
 }
 
 .mlClassificationReadData <- function(dataset, options) {
