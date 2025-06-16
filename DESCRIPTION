@@ -10,7 +10,7 @@ Description: Explore the relation between variables using data-driven methods fo
 License: GPL (>= 2)
 Encoding: UTF-8
 Depends:
-  kknn
+  kknn (>= 1.4.1)
 Imports:
   AUC,
   cluster,
@@ -48,5 +48,4 @@ Suggests:
 Remotes:
   jasp-stats/jaspBase,
   jasp-stats/jaspGraphs,
-  vandenman/kknn,
   RensDofferhoff/ggdendro
