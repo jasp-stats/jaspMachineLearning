@@ -42,38 +42,36 @@
   return(opt)
 }
 
+# Function balancing the size of classes of a discrete dependent variable in a dataset
 .mlBalanceDataset <- function(dataset, options) {
+  # To balance the classes, this function uses either under- or oversampling to adjust
+  # the size of each class to either the minimum or maximum class size found in the data.
+  # The sampling method is random sampling.
 
-  # Extract classes and split data into into homogeneous class groups
+  # Ensures that if the option is not selected, balancing will not occur.
+  if (!isTRUE(options[["balanceLabels"]]))
+    return(dataset)
+
   classes <- dataset[, options[["target"]]]
   splitData <- split(dataset, classes)
 
-  # If user chooses not to balance classes, just return the original dataset
-  if (!isTRUE(options[["balanceLabels"]])){
-    return (dataset)
-  }
-
-  # User chooses undersampling
   if (options[["balanceSamplingMethod"]] == "minSample") {
-
-    # Determine minimum sample size out of all levels
     n <- min(sapply(splitData, nrow))
-    withReplacement <- FALSE
+    replace <- FALSE
   }
 
-  # User chooses oversampling
   else {
-
-    # Determine minimum sample size out of all levels
     n <- max(sapply(splitData, nrow))
-    withReplacement <- TRUE
+    replace <- TRUE
   }
 
-  # For each level, sample n observations using the chosen method.
-  balancedSplits <- lapply(splitData, function(df) {df[sample(nrow(df), size = n, replace = withReplacement), ]})
-  balanced_dataset <- do.call(rbind, balancedSplits)
+  balancedSplits <- lapply(
+    X   = splitData,
+    FUN = function(df) {df[sample(nrow(df), size = n, replace = replace), ]}
+    )
+  balancedDataset <- do.call(rbind, balancedSplits)
 
-  return(balanced_dataset)
+  return(balancedDataset)
 }
 
 .mlClassificationReadData <- function(dataset, options) {

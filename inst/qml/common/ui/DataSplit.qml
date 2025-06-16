@@ -170,8 +170,20 @@ Section
 		{
 			name: "balanceSamplingMethod"
 
-			RadioButton{ value: "minSample"; label: qsTr("Undersample"); checked: true; info: qsTr("Balances the target classes by undersampling to match the size of the smallest class.")}
-			RadioButton{ value: "maxSample"; label: qsTr("Oversample"); info: qsTr("Balances the target classes by oversampling to match the size of the largest class. This is done by sampling with replacement for smaller classes.")}
+			RadioButton
+			{ 
+				value: "minSample" 
+				label: qsTr("Undersample") 
+				checked: true 
+				info: qsTr("Balances the target classes by undersampling to match the size of the smallest class.")
+			}
+			
+			RadioButton
+			{ 
+				value: "maxSample" 
+				label: qsTr("Oversample") 
+				info: qsTr("Balances the target classes by oversampling to match the size of the largest class. This is done by sampling with replacement for smaller classes.")
+			}
 		}
 	}
 }
