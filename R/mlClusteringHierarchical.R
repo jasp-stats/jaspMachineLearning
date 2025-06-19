@@ -49,7 +49,7 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
   .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 7, type = "hierarchical")
 
   # Create the cluster means plot
-  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 8)
+  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 8, type = "hierarchical")
 
   # Create the cluster densities plot
   .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 9)
