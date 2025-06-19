@@ -52,7 +52,7 @@ mlClusteringRandomForest <- function(jaspResults, dataset, options, ...) {
   .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 8, type = "randomForest")
 
   # Create the cluster means plot
-  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 9)
+  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 9, type = "randomForest")
 
   # Create the cluster densities plot
   .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 10)

@@ -523,7 +523,7 @@
   }
 }
 
-.mlClusteringPlotMeans <- function(dataset, options, jaspResults, ready, position) {
+.mlClusteringPlotMeans <- function(dataset, options, jaspResults, ready, position, type) {
   if (!is.null(jaspResults[["clusterMeans"]]) || !options[["clusterMeanPlot"]]) {
     return()
   }
@@ -536,8 +536,14 @@
   }
   clusterDataset <- data.frame(dataset[, options[["predictors"]], drop = FALSE])
   clusterResult <- jaspResults[["clusterResult"]]$object
+  predictions <- clusterResult[["pred.values"]]
+  ncolors <- clusterResult[["clusters"]]
+  if (type == "densitybased") {
+    ncolors <- ncolors + 1
+    predictions[predictions == 0] <- gettext("Noisepoint")
+  }
+  clusters <- as.factor(predictions)
   if (options[["clusterMeanPlotSingleFigure"]]) {
-    clusters <- as.factor(clusterResult[["pred.values"]])
     xBreaks <- c(1, (as.numeric(levels(clusters)) + 1) * length(options[["predictors"]]))
     clusterMeansData <- aggregate(clusterDataset, list(clusters), mean)
     clusterSdData <- aggregate(clusterDataset, list(clusters), sd)
@@ -578,14 +584,13 @@
     }
     p <- p + ggplot2::scale_x_continuous(name = NULL, breaks = xBreaks, labels = xLabels) +
       ggplot2::scale_y_continuous(name = gettext("Cluster Mean"), breaks = yBreaks, limits = range(yBreaks)) +
-      ggplot2::scale_fill_manual(name = gettext("Cluster"), values = .mlColorScheme(length(unique(clusterResult[["pred.values"]])))) +
+      ggplot2::scale_fill_manual(name = gettext("Cluster"), values = .mlColorScheme(ncolors)) +
       jaspGraphs::geom_rangeframe(sides = "l") +
       jaspGraphs::themeJaspRaw(legend.position = "right") +
       ggplot2::theme(axis.ticks.x = ggplot2::element_blank(), axis.text.x = ggplot2::element_text(angle = 20))
     plot[["oneFigure"]] <- createJaspPlot(plot = p, title = gettext("All Features"), height = 400, width = 200 * length(options[["predictors"]]))
   } else {
     for (variable in unlist(options[["predictors"]])) {
-      clusters <- as.factor(clusterResult[["pred.values"]])
       xBreaks <- as.numeric(levels(clusters))
       clusterMeansData <- aggregate(clusterDataset[[variable]], list(clusters), mean)
       clusterSdData <- aggregate(clusterDataset[[variable]], list(clusters), sd)
@@ -608,7 +613,7 @@
       }
       p <- p + ggplot2::scale_x_discrete(name = gettext("Cluster"), breaks = xBreaks) +
         ggplot2::scale_y_continuous(name = variable, breaks = yBreaks, limits = range(yBreaks)) +
-        ggplot2::scale_fill_manual(name = gettext("Cluster"), values = .mlColorScheme(length(unique(clusterResult[["pred.values"]])))) +
+        ggplot2::scale_fill_manual(name = gettext("Cluster"), values = .mlColorScheme(ncolors)) +
         jaspGraphs::geom_rangeframe(sides = "l") +
         jaspGraphs::themeJaspRaw() +
         ggplot2::theme(axis.ticks.x = ggplot2::element_blank())
