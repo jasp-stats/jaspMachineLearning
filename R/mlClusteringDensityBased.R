@@ -46,13 +46,13 @@ mlClusteringDensityBased <- function(jaspResults, dataset, options, ...) {
   .mlClusteringPlotTsne(dataset, options, jaspResults, ready, position = 6, type = "densitybased")
 
   # Create the matrix plot
-  .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 7)
+  .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 7, type = "densitybased")
 
   # Create the cluster means plot
-  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 8)
+  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 8, type = "densitybased")
 
   # Create the cluster densities plot
-  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 9)
+  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 9, type = "densitybased")
 }
 
 .densityBasedClustering <- function(dataset, options, jaspResults) {

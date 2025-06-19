@@ -46,13 +46,13 @@ mlClusteringFuzzyCMeans <- function(jaspResults, dataset, options, ...) {
   .mlClusteringPlotTsne(dataset, options, jaspResults, ready, position = 6, type = "cmeans")
 
   # Create the matrix plot
-  .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 7)
+  .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 7, type = "cmeans")
 
   # Create the cluster means plot
-  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 8)
+  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 8, type = "cmeans")
 
   # Create the cluster densities plot
-  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 9)
+  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 9, type = "cmeans")
 }
 
 .cMeansClustering <- function(dataset, options, jaspResults, ready) {
