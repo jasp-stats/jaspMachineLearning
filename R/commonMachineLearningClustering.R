@@ -476,7 +476,7 @@
   table$setData(clusterMeans)
 }
 
-.mlClusteringPlotDensities <- function(dataset, options, jaspResults, ready, position) {
+.mlClusteringPlotDensities <- function(dataset, options, jaspResults, ready, position, type) {
   if (!is.null(jaspResults[["clusterDensities"]]) || !options[["clusterDensityPlot"]]) {
     return()
   }
@@ -488,9 +488,15 @@
     return()
   }
   clusterResult <- jaspResults[["clusterResult"]]$object
+  predictions <- clusterResult[["pred.values"]]
+  ncolors <- clusterResult[["clusters"]]
+  if (type == "densitybased") {
+    ncolors <- ncolors + 1
+    predictions[predictions == 0] <- gettext("Noisepoint")
+  }
+  clusters <- as.factor(predictions)
   if (!options[["clusterDensityPlotSingleFigure"]]) {
     for (variable in unlist(options[["predictors"]])) {
-      clusters <- as.factor(clusterResult[["pred.values"]])
       xBreaks <- jaspGraphs::getPrettyAxisBreaks(dataset[[variable]], min.n = 4)
       plotData <- data.frame(
         cluster = clusters,
@@ -500,7 +506,7 @@
         ggplot2::geom_density(mapping = ggplot2::aes(fill = cluster), color = "black", alpha = 0.6) +
         ggplot2::scale_x_continuous(name = variable, breaks = xBreaks, limits = range(xBreaks)) +
         ggplot2::scale_y_continuous(name = gettext("Density")) +
-        ggplot2::scale_fill_manual(name = gettext("Cluster"), values = .mlColorScheme(length(levels(clusters)))) +
+        ggplot2::scale_fill_manual(name = gettext("Cluster"), values = .mlColorScheme(ncolors)) +
         jaspGraphs::geom_rangeframe() +
         jaspGraphs::themeJaspRaw(legend.position = "right") +
         ggplot2::theme(axis.ticks.y = ggplot2::element_blank(), axis.text.y = ggplot2::element_blank())
@@ -509,11 +515,11 @@
     }
   } else {
     dataList <- c(dataset[, options[["predictors"]]])
-    plotData <- data.frame(value = unlist(dataList), variable = rep(options[["predictors"]], lengths(dataList)), cluster = rep(clusterResult[["pred.values"]], length(options[["predictors"]])))
+    plotData <- data.frame(value = unlist(dataList), variable = rep(options[["predictors"]], lengths(dataList)), cluster = rep(predictions, length(options[["predictors"]])))
     xBreaks <- jaspGraphs::getPrettyAxisBreaks(plotData[["value"]])
     p <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = value, y = factor(variable), height = ..density.., fill = factor(cluster))) +
       ggridges::geom_density_ridges(stat = "density", alpha = .6) +
-      ggplot2::scale_fill_manual(name = gettext("Cluster"), values = .mlColorScheme(length(unique(clusterResult[["pred.values"]])))) +
+      ggplot2::scale_fill_manual(name = gettext("Cluster"), values = .mlColorScheme(ncolors)) +
       ggplot2::scale_x_continuous(name = gettext("Value"), breaks = xBreaks, limits = range(xBreaks)) +
       ggplot2::scale_y_discrete(name = gettext("Feature")) +
       jaspGraphs::geom_rangeframe(sides = "b") +
