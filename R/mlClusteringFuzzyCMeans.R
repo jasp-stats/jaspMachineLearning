@@ -52,7 +52,7 @@ mlClusteringFuzzyCMeans <- function(jaspResults, dataset, options, ...) {
   .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 8, type = "cmeans")
 
   # Create the cluster densities plot
-  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 9)
+  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 9, type = "cmeans")
 }
 
 .cMeansClustering <- function(dataset, options, jaspResults, ready) {

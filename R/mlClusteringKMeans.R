@@ -52,7 +52,7 @@ mlClusteringKMeans <- function(jaspResults, dataset, options, ...) {
   .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 8, type = "kmeans")
 
   # Create the cluster densities plot
-  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 9)
+  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 9, type = "kmeans")
 }
 
 .kMeansClustering <- function(dataset, options, jaspResults, ready) {
