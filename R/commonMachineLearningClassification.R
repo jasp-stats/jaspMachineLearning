@@ -33,12 +33,45 @@
     "noOfTrees", "maxTrees", "baggingFraction", "noOfPredictors", "numberOfPredictors",   # Random forest
     "complexityParameter", "degree", "gamma", "cost", "tolerance", "epsilon", "maxCost",  # Support vector machine
     "smoothingParameter",                                                                 # Naive Bayes
-    "intercept", "link"                                                                   # Logistic
+    "intercept", "link",                                                                  # Logistic
+	  "balanceLabels", "balanceSamplingMethod"                                                                     # Common
   )
   if (includeSaveOptions) {
     opt <- c(opt, "saveModel", "savePath")
   }
   return(opt)
+}
+
+# Function balancing the size of classes of a discrete dependent variable in a dataset
+.mlBalanceDataset <- function(dataset, options) {
+  # To balance the classes, this function uses either under- or oversampling to adjust
+  # the size of each class to either the minimum or maximum class size found in the data.
+  # The sampling method is random sampling.
+
+  # Ensures that if the option is not selected, balancing will not occur.
+  if (!isTRUE(options[["balanceLabels"]]))
+    return(dataset)
+
+  classes <- dataset[, options[["target"]]]
+  splitData <- split(dataset, classes)
+
+  if (options[["balanceSamplingMethod"]] == "minSample") {
+    n <- min(sapply(splitData, nrow))
+    replace <- FALSE
+  }
+
+  else {
+    n <- max(sapply(splitData, nrow))
+    replace <- TRUE
+  }
+
+  balancedSplits <- lapply(
+    X   = splitData,
+    FUN = function(df) {df[sample(nrow(df), size = n, replace = replace), ]}
+    )
+  balancedDataset <- do.call(rbind, balancedSplits)
+
+  return(balancedDataset)
 }
 
 .mlClassificationReadData <- function(dataset, options) {
