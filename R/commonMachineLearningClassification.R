@@ -520,9 +520,9 @@
   x_max <- xBreaks[length(xBreaks)]
   y_min <- yBreaks[1]
   y_max <- yBreaks[length(yBreaks)]
-  # Adjust the graining
-  hs <- min(c(diff(range(xBreaks)), diff(range(yBreaks)))) / 50
-  grid <- as.data.frame(expand.grid(seq(x_min, x_max, by = hs), seq(y_min, y_max, by = hs)))
+  xseq <- seq(x_min, x_max, length.out = 100)
+  yseq <- seq(y_min, y_max, length.out = 100)
+  grid <- as.data.frame(expand.grid(xseq, yseq))
   colnames(grid) <- colnames(predictors)
   classificationResult <- jaspResults[["classificationResult"]]$object
   if (type == "lda") {
