@@ -455,6 +455,9 @@
   plot$dependOn(options = c(.mlClassificationDependencies(options), "decisionBoundary", "pointsShown", "legendShown"))
   jaspResults[["decisionBoundary"]] <- plot
   if (!ready || length(options[["predictors"]]) < 2) {
+    if (length(options[["predictors"]]) == 1) {
+      plot$setError(gettext("Cannot create plot: You need at least two (numeric) features to create the decision boundary matrix. You have currently included only one feature."))
+    }
     return()
   }
   .classificationFillDecisionBoundary(dataset, options, jaspResults, plot, type)
