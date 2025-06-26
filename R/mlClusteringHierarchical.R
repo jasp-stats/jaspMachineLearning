@@ -46,13 +46,13 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
   .mlClusteringPlotTsne(dataset, options, jaspResults, ready, position = 6, type = "hierarchical")
 
   # Create the matrix plot
-  .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 7)
+  .mlClusteringMatrixPlot(dataset, options, jaspResults, ready, position = 7, type = "hierarchical")
 
   # Create the cluster means plot
-  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 8)
+  .mlClusteringPlotMeans(dataset, options, jaspResults, ready, position = 8, type = "hierarchical")
 
   # Create the cluster densities plot
-  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 9)
+  .mlClusteringPlotDensities(dataset, options, jaspResults, ready, position = 9, type = "hierarchical")
 
   # Create dendrogram
   .mlClusteringHierarchicalDendogram(dataset, options, jaspResults, ready, position = 10)

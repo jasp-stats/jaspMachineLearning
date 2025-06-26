@@ -509,7 +509,13 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
   if (!ready) {
     return()
   }
-  result <- mvnormalTest::mardia(dataset[, options[["predictors"]]])
+  p <- try({
+    result <- mvnormalTest::mardia(dataset[, options[["predictors"]]])
+  })
+  if (isTryError(p)) { # Fail gracefully
+    table$setError(gettextf("An error occurred when creating this table: %s", jaspBase:::.extractErrorMessage(p)))
+    return()
+  }
   table[["statistic"]] <- as.numeric(as.character(result[["mv.test"]][1:2, "Statistic"]))
   table[["p"]] <- as.numeric(as.character(result[["mv.test"]][1:2, "p-value"]))
 }
