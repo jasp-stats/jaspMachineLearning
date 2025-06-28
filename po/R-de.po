@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2025-04-18 13:48\n"
+"POT-Creation-Date: 2025-06-28 03:36\n"
 "PO-Revision-Date: 2025-02-11 10:02+0000\n"
 "Last-Translator: Johannes Keyser <joke@fsfe.org>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/jasp/"
@@ -196,6 +196,11 @@ msgstr "Vorhergesagt"
 
 msgid "Decision Boundary Matrix"
 msgstr "Matrix der Entscheidungsgrenzen"
+
+msgid ""
+"Cannot create plot: You need at least two (numeric) features to create the "
+"decision boundary matrix. You have currently included only one feature."
+msgstr ""
 
 msgid ""
 "Cannot create matrix: not enough numeric variables remain after removing "
@@ -860,6 +865,11 @@ msgid ""
 msgstr ""
 "Beide p-Werte der Schiefe- und Wölbungsstatistik sollten > 0.05 sein, um "
 "multivariate Normalität zu folgern."
+
+#, fuzzy
+msgid "An error occurred when creating this table: %s"
+msgstr ""
+"Ein Fehler trat auf bei der Berechnung der Ergebnisse für diese Tabelle: %1$s"
 
 msgid "Regression Coefficients"
 msgstr "Regressionskoeffizienten"

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.0\n"
-"POT-Creation-Date: 2025-04-18 13:48\n"
+"POT-Creation-Date: 2025-06-28 03:36\n"
 "PO-Revision-Date: 2025-05-16 23:05+0000\n"
 "Last-Translator: Ertuğrul Uyar <ertugruluyar.academic@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/jasp/"
@@ -184,6 +184,11 @@ msgid "Predicted"
 msgstr ""
 
 msgid "Decision Boundary Matrix"
+msgstr ""
+
+msgid ""
+"Cannot create plot: You need at least two (numeric) features to create the "
+"decision boundary matrix. You have currently included only one feature."
 msgstr ""
 
 msgid ""
@@ -788,6 +793,10 @@ msgid ""
 "Both p-values of the skewness and kurtosis statistics should be > 0.05 to "
 "conclude multivariate normality."
 msgstr ""
+
+#, fuzzy
+msgid "An error occurred when creating this table: %s"
+msgstr "Analizde bir hata oluştu: %s"
 
 msgid "Regression Coefficients"
 msgstr ""

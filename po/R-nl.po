@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2025-04-18 13:48\n"
+"POT-Creation-Date: 2025-06-28 03:36\n"
 "PO-Revision-Date: 2025-04-19 11:43+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
@@ -195,6 +195,11 @@ msgstr "Voorspeld"
 
 msgid "Decision Boundary Matrix"
 msgstr "Beslissingsgrens Matrix"
+
+msgid ""
+"Cannot create plot: You need at least two (numeric) features to create the "
+"decision boundary matrix. You have currently included only one feature."
+msgstr ""
 
 msgid ""
 "Cannot create matrix: not enough numeric variables remain after removing "
@@ -859,6 +864,12 @@ msgid ""
 msgstr ""
 "Zowel de p-waarde van de scheefheid als die van de gepiektheid moeten > 0.05 "
 "zijn om multivariate normaliteiten te concluderen."
+
+#, fuzzy
+msgid "An error occurred when creating this table: %s"
+msgstr ""
+"Er is een fout opgetreden bij het berekenen van de resultaten voor deze "
+"tabel: %1$s"
 
 msgid "Regression Coefficients"
 msgstr "Regressie Coëfficiënten"

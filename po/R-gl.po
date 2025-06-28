@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-04-18 13:48\n"
+"POT-Creation-Date: 2025-06-28 03:36\n"
 "PO-Revision-Date: 2025-06-23 17:16+0000\n"
 "Last-Translator: ecadrian <ecadrian@hotmail.com>\n"
 "Language-Team: Galician <https://hosted.weblate.org/projects/jasp/"
@@ -203,6 +203,11 @@ msgstr "Predito"
 
 msgid "Decision Boundary Matrix"
 msgstr "Matriz Límite de Decisión"
+
+msgid ""
+"Cannot create plot: You need at least two (numeric) features to create the "
+"decision boundary matrix. You have currently included only one feature."
+msgstr ""
 
 msgid ""
 "Cannot create matrix: not enough numeric variables remain after removing "
@@ -865,6 +870,10 @@ msgid ""
 msgstr ""
 "Os dous valores p dos estatísticos de asimetría e curtose deben ser > 0.05 "
 "para cocluír a Normalidade Multivariante."
+
+#, fuzzy
+msgid "An error occurred when creating this table: %s"
+msgstr "Aconteceu un fallo ao calcular os resultados para esta táboa: %1$s"
 
 msgid "Regression Coefficients"
 msgstr "Coeficientes da Regresión"

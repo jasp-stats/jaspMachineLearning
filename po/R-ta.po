@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.19.2\n"
-"POT-Creation-Date: 2025-04-18 13:48\n"
+"POT-Creation-Date: 2025-06-28 03:36\n"
 "PO-Revision-Date: 2025-01-06 17:36+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/jasp/"
@@ -191,6 +191,11 @@ msgstr "கணிக்கப்பட்டுள்ளது"
 
 msgid "Decision Boundary Matrix"
 msgstr "முடிவு எல்லை அணி"
+
+msgid ""
+"Cannot create plot: You need at least two (numeric) features to create the "
+"decision boundary matrix. You have currently included only one feature."
+msgstr ""
 
 msgid ""
 "Cannot create matrix: not enough numeric variables remain after removing "
@@ -842,6 +847,10 @@ msgid ""
 msgstr ""
 "வளைவு மற்றும் கர்டோசிச் புள்ளிவிவரங்களின் பி-மதிப்புகள் இரண்டும் பன்முக இயல்புநிலையை "
 "முடிக்க> 0.05 ஆக இருக்க வேண்டும்."
+
+#, fuzzy
+msgid "An error occurred when creating this table: %s"
+msgstr "இந்த அட்டவணைக்கான முடிவுகளை கணக்கிடும்போது பிழை ஏற்பட்டது: %1$s"
 
 msgid "Regression Coefficients"
 msgstr "பின்னடைவு குணகங்கள்"

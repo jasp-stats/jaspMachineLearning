@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.2\n"
-"POT-Creation-Date: 2025-04-18 13:48\n"
+"POT-Creation-Date: 2025-06-28 03:36\n"
 "PO-Revision-Date: 2024-12-08 10:48+0000\n"
 "Last-Translator: Shun Wang <shuonwang@gmail.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
@@ -186,6 +186,11 @@ msgstr "预测"
 
 msgid "Decision Boundary Matrix"
 msgstr "决策边界矩阵"
+
+msgid ""
+"Cannot create plot: You need at least two (numeric) features to create the "
+"decision boundary matrix. You have currently included only one feature."
+msgstr ""
 
 msgid ""
 "Cannot create matrix: not enough numeric variables remain after removing "
@@ -803,6 +808,10 @@ msgid ""
 "Both p-values of the skewness and kurtosis statistics should be > 0.05 to "
 "conclude multivariate normality."
 msgstr "偏度和峰度统计量的p值都应>0.05以得出多变量正态性结论。"
+
+#, fuzzy
+msgid "An error occurred when creating this table: %s"
+msgstr "分析过程中发生了错误：%1$s"
 
 msgid "Regression Coefficients"
 msgstr "回归系数"
