@@ -490,7 +490,6 @@
   saveResult <- .mlSaveModelToDisk(options, regressionResult, dataset, class = "jaspRegression")
   .mlPossiblyShowSaveResult(table, saveResult, options)
 
-
 }
 
 .mlAddSaveModelInfo <- function(table, options) {
@@ -533,8 +532,14 @@
 
   if (identical(saveResult[["error"]], "success") && isTRUE(saveResult[["exists"]])) {
     table$addFootnote(gettextf("The model is saved as <i>%1$s</i>.", basename(options[["savePath"]])))
-  } else if (!identical(saveResult[["error"]], "success")) {
-    table$addFootnote(gettextf("The model could not be saved because the following error occured: %s", saveResult[["error"]][["message"]]))
+  } else if (isTryError(saveResult[["error"]])) {
+    msg <- .extractErrorMessage(saveResult[["error"]])
+    if (grepl(x = msg, pattern = "cannot open the connection", fixed = TRUE) && !dir.exists(dirname(options[["savePath"]]))) {
+      # likely occurs most often when using a downloaded jasp file that contains a path that is valid another computer
+      table$addFootnote(gettextf("The model could not be saved because the parent directory '%s' does not exist.", dirname(options[["savePath"]])))
+    } else
+      table$addFootnote(gettextf("The model could not be saved because the following error occured: %s", msg))
+
   } else if (!isTRUE(saveResult[["exists"]])) {
     table$addFootnote(gettext("The model could not be saved because an unexpected error occured."))
   }
