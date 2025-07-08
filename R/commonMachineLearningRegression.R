@@ -535,8 +535,8 @@
     table$addFootnote(gettextf("The model is saved as <i>%1$s</i>.", basename(options[["savePath"]])))
   } else if (!identical(saveResult[["error"]], "success")) {
     table$addFootnote(gettextf("The model could not be saved because the following error occured: %s", saveResult[["error"]][["message"]]))
-  } else if (!isTRUE(saveResult[["exists"]]) && !is.null(saveResult[["error"]])) {
-    table$addFootnote(gettextf("The model could not be saved because an unexpected error occured."))
+  } else if (!isTRUE(saveResult[["exists"]])) {
+    table$addFootnote(gettext("The model could not be saved because an unexpected error occured."))
   }
 }
 
