@@ -794,10 +794,10 @@
   if (is.null(model)) {
     result <- switch(purpose, "regression" = jaspResults[["regressionResult"]]$object, "classification" = jaspResults[["classificationResult"]]$object)
     explainer <- result[["explainer"]]
-    x_test <- result[["test"]][, predictors]
+    x_test <- result[["test"]][, predictors, drop = FALSE]
   } else {
     explainer <- model[["explainer"]]
-    x_test <- dataset[, predictors]
+    x_test <- dataset[, predictors, drop = FALSE]
     predictions <- .mlPredictionsState(model, dataset, options, jaspResults, ready)[[1]][options[["fromIndex"]]:options[["toIndex"]]]
   }
   from <- min(c(options[["fromIndex"]], options[["toIndex"]] - 1, nrow(x_test)))
