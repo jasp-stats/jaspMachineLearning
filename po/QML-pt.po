@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-08-05 23:02+0000\n"
+"PO-Revision-Date: 2025-08-06 07:43+0000\n"
 "Last-Translator: Wendel Paulo Silvestre <wpsilvestre@ucs.br>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/pt/>\n"
@@ -52,11 +52,11 @@ msgstr "Dobra em K com"
 
 msgctxt "DataSplit|"
 msgid "folds"
-msgstr ""
+msgstr "dobras"
 
 msgctxt "DataSplit|"
 msgid "Leave-one-out"
-msgstr ""
+msgstr "Deixe um de fora"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Tables"
@@ -1470,7 +1470,7 @@ msgstr ""
 
 msgctxt "AlgorithmicSettings|"
 msgid "Auto"
-msgstr "Automático"
+msgstr "Auto"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Manual"
@@ -2617,7 +2617,7 @@ msgstr ""
 
 msgctxt "mlClusteringModelBased|"
 msgid "Auto"
-msgstr "Automático"
+msgstr "Auto"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EII"
