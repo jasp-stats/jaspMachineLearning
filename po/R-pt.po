@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2025-06-28 03:36\n"
-"PO-Revision-Date: 2025-08-05 23:02+0000\n"
+"PO-Revision-Date: 2025-08-06 07:43+0000\n"
 "Last-Translator: Wendel Paulo Silvestre <wpsilvestre@ucs.br>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/pt/>\n"
@@ -45,34 +45,34 @@ msgid "Naive Bayes Classification"
 msgstr "Classificação Bayes Ingênua"
 
 msgid "Logistic / Multinomial Regression Classification"
-msgstr ""
+msgstr "Classificação da Regressão Logística / Multinomial"
 
 msgid "Model Summary: %1$s"
-msgstr ""
+msgstr "Resumo do Modelo: %1$s"
 
 msgid "Nearest neighbors"
-msgstr ""
+msgstr "Vizinhos mais próximos"
 
 msgid "Weights"
 msgstr "Pesos"
 
 msgid "Distance"
-msgstr ""
+msgstr "Distância"
 
 msgid "Linear Discriminants"
-msgstr ""
+msgstr "Discriminantes Lineares"
 
 msgid "Method"
-msgstr ""
+msgstr "Método"
 
 msgid "Trees"
-msgstr ""
+msgstr "Árvores"
 
 msgid "Features per split"
-msgstr ""
+msgstr "Recursos por divisão"
 
 msgid "Shrinkage"
-msgstr ""
+msgstr "Encolhimento"
 
 msgid "Hidden Layers"
 msgstr ""
