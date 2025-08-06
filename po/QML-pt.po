@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2025-08-06 07:43+0000\n"
+"Last-Translator: Wendel Paulo Silvestre <wpsilvestre@ucs.br>\n"
+"Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/pt/>\n"
+"Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.13-dev\n"
 "X-Language: pt\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -14,7 +20,7 @@ msgstr "Preferências de Divisão de Dados"
 
 msgctxt "DataSplit|"
 msgid "Holdout Test Data"
-msgstr ""
+msgstr "Dados de teste de retenção"
 
 msgctxt "DataSplit|"
 msgid "Sample"
@@ -26,7 +32,7 @@ msgstr "% de todos os dados"
 
 msgctxt "DataSplit|"
 msgid "Add generated indicator to data"
-msgstr ""
+msgstr "Adicionar indicador gerado aos dados"
 
 msgctxt "DataSplit|"
 msgid "None"
@@ -42,15 +48,15 @@ msgstr "% para dados de validação"
 
 msgctxt "DataSplit|"
 msgid "K-fold with"
-msgstr ""
+msgstr "Dobra em K com"
 
 msgctxt "DataSplit|"
 msgid "folds"
-msgstr ""
+msgstr "dobras"
 
 msgctxt "DataSplit|"
 msgid "Leave-one-out"
-msgstr ""
+msgstr "Deixe um de fora"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Tables"
@@ -534,45 +540,37 @@ msgctxt "ExportResults|"
 msgid "Save trained model"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Tables"
 msgstr "Tabelas"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Plots"
-msgstr "Diagramas"
+msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Training Parameters"
-msgstr "Parâmetros de treinamento"
+msgstr "Parâmetros de Treinamento"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Algorithmic Settings"
-msgstr "Configurações do algoritmo"
+msgstr "Configurações do Algoritmo"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Tables"
 msgstr "Tabelas"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Plots"
-msgstr "Diagramas"
+msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Training Parameters"
-msgstr "Parâmetros de treinamento"
+msgstr "Parâmetros de Treinamento"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Algorithmic Settings"
-msgstr "Configurações do algoritmo"
+msgstr "Configurações do Algoritmo"
 
 msgctxt "DataSplit|"
 msgid "Column name"
@@ -694,45 +692,37 @@ msgctxt "Description|"
 msgid "Neighborhood-Based Clustering"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Tables"
 msgstr "Tabelas"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Plots"
-msgstr "Diagramas"
+msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Training Parameters"
 msgstr "Parâmetros de treinamento"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Algorithmic Settings"
-msgstr "Configurações do algoritmo"
+msgstr "Configurações do Algoritmo"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Tables"
 msgstr "Tabelas"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Plots"
-msgstr "Diagramas"
+msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Training Parameters"
-msgstr "Parâmetros de treinamento"
+msgstr "Parâmetros de Treinamento"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Algorithmic Settings"
-msgstr "Configurações do algoritmo"
+msgstr "Configurações do Algoritmo"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Center type"
@@ -750,45 +740,37 @@ msgctxt "mlClusteringKMeans|"
 msgid "Manhattan"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Tables"
 msgstr "Tabelas"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Plots"
-msgstr "Diagramas"
+msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Training Parameters"
-msgstr "Parâmetros de treinamento"
+msgstr "Parâmetros de Treinamento"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Algorithmic Settings"
-msgstr "Configurações do algoritmo"
+msgstr "Configurações do Algoritmo"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Tables"
 msgstr "Tabelas"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Plots"
-msgstr "Diagramas"
+msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Training Parameters"
-msgstr "Parâmetros de treinamento"
+msgstr "Parâmetros de Treinamento"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Algorithmic Settings"
-msgstr "Configurações do algoritmo"
+msgstr "Configurações do Algoritmo"
 
 msgctxt "mlPrediction|"
 msgid "Trained model"
@@ -802,7 +784,6 @@ msgctxt "mlPrediction|"
 msgid "Features"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlPrediction|"
 msgid "Tables"
 msgstr "Tabelas"
@@ -862,7 +843,6 @@ msgid ""
 "tree."
 msgstr ""
 
-#, fuzzy
 msgctxt "Deviance|"
 msgid "Deviance"
 msgstr "Desvio"
@@ -871,16 +851,14 @@ msgctxt "Deviance|"
 msgid "Shows the prediction error plotted against the number of trees."
 msgstr ""
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Number of Trees"
-msgstr "Número de árvores"
+msgstr "Número de Árvores"
 
 msgctxt "ModelOptimization|"
 msgid "Choose how to optimize the model."
 msgstr ""
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Fixed"
 msgstr "Fixo"
@@ -897,7 +875,6 @@ msgctxt "ModelOptimization|"
 msgid "The number of trees."
 msgstr ""
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Optimized"
 msgstr "Otimizado"
@@ -928,7 +905,6 @@ msgid ""
 "improvement of the model. Accuracy is assessed for the training set."
 msgstr ""
 
-#, fuzzy
 msgctxt "RelativeInfluence|"
 msgid "Relative influence"
 msgstr "Influência relativa"
@@ -1060,7 +1036,6 @@ msgid ""
 "nearest neighbors. Can be either Euclidean or Manhattan distance."
 msgstr ""
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Number of Nearest Neighbors"
 msgstr "Número de vizinhos próximos"
@@ -1097,7 +1072,6 @@ msgctxt "OptimPlot|"
 msgid "Mean squared error"
 msgstr ""
 
-#, fuzzy
 msgctxt "OptimPlot|"
 msgid "Classification accuracy"
 msgstr "Precisão da classificação"
@@ -1300,7 +1274,6 @@ msgctxt "ModelOptimization|"
 msgid "Network Topology"
 msgstr ""
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Manual"
 msgstr "Manual"
@@ -1495,12 +1468,10 @@ msgctxt "AlgorithmicSettings|"
 msgid "Features per split"
 msgstr ""
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Auto"
 msgstr "Auto"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Manual"
 msgstr "Manual"
@@ -1581,10 +1552,9 @@ msgctxt "Intercept|"
 msgid "Whether to include an intercept in the regression formula."
 msgstr ""
 
-#, fuzzy
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "Target"
-msgstr "Objetivo"
+msgstr "Alvo"
 
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "In this box, the variable that needs to be predicted should be entered."
@@ -1677,10 +1647,9 @@ msgid ""
 "the algorithm."
 msgstr ""
 
-#, fuzzy
 msgctxt "AndrewsCurve|"
 msgid "Andrews curves"
-msgstr "Gráfico de Andrews"
+msgstr "Curvas de Andrews"
 
 msgctxt "AndrewsCurve|"
 msgid ""
@@ -1751,7 +1720,6 @@ msgid ""
 "Shows how the data is split into training (and validation), and test set."
 msgstr ""
 
-#, fuzzy
 msgctxt "DecisionBoundary|"
 msgid "Decision boundary matrix"
 msgstr "Matriz de limites de decisão"
@@ -1763,7 +1731,6 @@ msgid ""
 "classes are visualized. Can only be made for numeric features."
 msgstr ""
 
-#, fuzzy
 msgctxt "DecisionBoundary|"
 msgid "Legend"
 msgstr "Legenda"
@@ -1802,10 +1769,9 @@ msgid ""
 "predicted values."
 msgstr ""
 
-#, fuzzy
 msgctxt "RocCurve|"
 msgid "ROC curves"
-msgstr "Curva ROC"
+msgstr "Curvas ROC"
 
 msgctxt "RocCurve|"
 msgid "Displays ROC curves for each class predicted against all other classes."
@@ -1827,7 +1793,6 @@ msgid ""
 "as the t-SNE algorithm uses random starting values."
 msgstr ""
 
-#, fuzzy
 msgctxt "Tsne|"
 msgid "Legend"
 msgstr "Legenda"
@@ -1846,7 +1811,6 @@ msgid ""
 "plot."
 msgstr ""
 
-#, fuzzy
 msgctxt "ClassProportions|"
 msgid "Class proportions"
 msgstr "Proporções de categoria"
@@ -1930,7 +1894,6 @@ msgid ""
 "classes. Used to assess model accuracy."
 msgstr ""
 
-#, fuzzy
 msgctxt "ConfusionMatrix|"
 msgid "Display proportions"
 msgstr "Mostrar proporções"
@@ -1979,7 +1942,6 @@ msgctxt "ClusterDetermination|"
 msgid "Choose how to determine the number of clusters in the model."
 msgstr ""
 
-#, fuzzy
 msgctxt "ClusterDetermination|"
 msgid "Fixed"
 msgstr "Fixo"
@@ -2131,10 +2093,9 @@ msgctxt "SetSeed|"
 msgid "The value of the seed."
 msgstr ""
 
-#, fuzzy
 msgctxt "VariablesFormClassification|"
 msgid "Target"
-msgstr "Objetivo"
+msgstr "Alvo"
 
 msgctxt "VariablesFormClassification|"
 msgid "In this box, the variable that needs to be predicted should be entered."
@@ -2160,10 +2121,9 @@ msgid ""
 "algorithm should be entered."
 msgstr ""
 
-#, fuzzy
 msgctxt "VariablesFormRegression|"
 msgid "Target"
-msgstr "Objetivo"
+msgstr "Alvo"
 
 msgctxt "VariablesFormRegression|"
 msgid "In this box, the variable that needs to be predicted should be entered."
@@ -2397,22 +2357,18 @@ msgid ""
 "or more features (predictors) and a continuous dependent (target) variable."
 msgstr ""
 
-#, fuzzy
 msgctxt "mlRegressionLinear|"
 msgid "Tables"
 msgstr "Tabelas"
 
-#, fuzzy
 msgctxt "mlRegressionLinear|"
 msgid "Plots"
-msgstr "Diagramas"
+msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlRegressionLinear|"
 msgid "Training Parameters"
 msgstr "Parâmetros de treinamento"
 
-#, fuzzy
 msgctxt "mlRegressionLinear|"
 msgid "Algorithmic Settings"
 msgstr "Configurações do algoritmo"
@@ -2563,7 +2519,6 @@ msgid ""
 "- The features are normally distributed given the target class."
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Tables"
 msgstr "Tabelas"
@@ -2580,17 +2535,14 @@ msgid ""
 "probabilities given the target class."
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Plots"
-msgstr "Diagramas"
+msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Training Parameters"
 msgstr "Parâmetros de treinamento"
 
-#, fuzzy
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Algorithmic Settings"
 msgstr "Configurações do algoritmo"
@@ -2633,7 +2585,6 @@ msgid ""
 "model-based agglomerative clustering."
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Tables"
 msgstr "Tabelas"
@@ -2648,26 +2599,22 @@ msgid ""
 "variable."
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Plots"
-msgstr "Diagramas"
+msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Training Parameters"
-msgstr "Parâmetros de treinamento"
+msgstr "Parâmetros de Treinamento"
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Algorithmic Settings"
-msgstr "Configurações do algoritmo"
+msgstr "Configurações do Algoritmo"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Model"
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Auto"
 msgstr "Auto"
@@ -2780,25 +2727,21 @@ msgid ""
 "target variable has three or more unordered categories."
 msgstr ""
 
-#, fuzzy
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Tables"
 msgstr "Tabelas"
 
-#, fuzzy
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Plots"
-msgstr "Diagramas"
+msgstr "Gráficos"
 
-#, fuzzy
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Training Parameters"
-msgstr "Parâmetros de treinamento"
+msgstr "Parâmetros de Treinamento"
 
-#, fuzzy
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Algorithmic Settings"
-msgstr "Configurações do algoritmo"
+msgstr "Configurações do Algoritmo"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Link function (for binary classification)"
