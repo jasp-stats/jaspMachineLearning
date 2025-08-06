@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2025-06-28 03:36\n"
-"PO-Revision-Date: 2022-08-29 00:16+0000\n"
-"Last-Translator: Laura Durans <lauraadurans@gmail.com>\n"
+"PO-Revision-Date: 2025-08-06 07:43+0000\n"
+"Last-Translator: Wendel Paulo Silvestre <wpsilvestre@ucs.br>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/pt/>\n"
 "Language: pt\n"
@@ -12,72 +12,67 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.14.1-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 "X-Language: en_US\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
 
 msgid "An error occurred in the analysis: %s"
-msgstr ""
+msgstr "Um erro ocorreu na análise: %s"
 
 msgid "K-Nearest Neighbors Classification"
 msgstr "Classificação de Vizinhos K-Nearest"
 
 msgid "Linear Discriminant Classification"
-msgstr ""
+msgstr "Classificação Discriminante Linear"
 
 msgid "Random Forest Classification"
-msgstr ""
+msgstr "Classificação de Floresta Aleatória"
 
 msgid "Boosting Classification"
-msgstr ""
+msgstr "Classificação Boosting"
 
-#, fuzzy
 msgid "Neural Network Classification"
-msgstr "Classificação de Vizinhos K-Nearest"
+msgstr "Classificação de Redes Neurais"
 
-#, fuzzy
 msgid "Decision Tree Classification"
-msgstr "Classificação de Vizinhos K-Nearest"
+msgstr "Classificação da Árvore de Decisão"
 
-#, fuzzy
 msgid "Support Vector Machine Classification"
-msgstr "Classificação de Vizinhos K-Nearest"
+msgstr "Classificação de Máquinas de Vetores de Suporte"
 
-#, fuzzy
 msgid "Naive Bayes Classification"
-msgstr "Classificação de Vizinhos K-Nearest"
+msgstr "Classificação Bayes Ingênua"
 
 msgid "Logistic / Multinomial Regression Classification"
-msgstr ""
+msgstr "Classificação da Regressão Logística / Multinomial"
 
 msgid "Model Summary: %1$s"
-msgstr ""
+msgstr "Resumo do Modelo: %1$s"
 
 msgid "Nearest neighbors"
-msgstr ""
+msgstr "Vizinhos mais próximos"
 
-#, fuzzy
 msgid "Weights"
-msgstr "WLS Ponderado"
+msgstr "Pesos"
 
 msgid "Distance"
-msgstr ""
+msgstr "Distância"
 
 msgid "Linear Discriminants"
-msgstr ""
+msgstr "Discriminantes Lineares"
 
 msgid "Method"
-msgstr ""
+msgstr "Método"
 
 msgid "Trees"
-msgstr ""
+msgstr "Árvores"
 
 msgid "Features per split"
-msgstr ""
+msgstr "Recursos por divisão"
 
 msgid "Shrinkage"
-msgstr ""
+msgstr "Encolhimento"
 
 msgid "Hidden Layers"
 msgstr ""
@@ -88,9 +83,8 @@ msgstr ""
 msgid "Complexity penalty"
 msgstr ""
 
-#, fuzzy
 msgid "Splits"
-msgstr "Dividir"
+msgstr "Divisões"
 
 msgid "Violation cost"
 msgstr ""
@@ -119,9 +113,8 @@ msgstr ""
 msgid "Validation Accuracy"
 msgstr ""
 
-#, fuzzy
 msgid "Test Accuracy"
-msgstr "Acuracia numerica"
+msgstr "Precisão do Teste"
 
 msgid "OOB Accuracy"
 msgstr ""
@@ -162,9 +155,8 @@ msgstr ""
 msgid "Moment"
 msgstr "Momento"
 
-#, fuzzy
 msgid "MLE"
-msgstr "ML"
+msgstr "MLE"
 
 msgid "MVE"
 msgstr ""
@@ -178,9 +170,8 @@ msgstr ""
 msgid "The model is optimized with respect to the <i>sum of squares</i>."
 msgstr ""
 
-#, fuzzy
 msgid "Model Summary: Logistic Regression Classification"
-msgstr "Classificação de Vizinhos K-Nearest"
+msgstr "Resumo do Modelo: Classificação de Regressão Logística"
 
 msgid "Model Summary: Multinomial Regression Classification"
 msgstr ""
@@ -210,13 +201,11 @@ msgstr ""
 msgid "ROC Curves Plot"
 msgstr ""
 
-#, fuzzy
 msgid "False Positive Rate"
-msgstr "Taxa de falsos positivos"
+msgstr "Taxa de Falsos Positivos"
 
-#, fuzzy
 msgid "True Positive Rate"
-msgstr "Taxa de positivos verdadeiros"
+msgstr "Taxa de Positivos Verdadeiros"
 
 msgid "Perfect separation"
 msgstr ""
@@ -236,46 +225,38 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
-#, fuzzy
 msgid "Accuracy"
-msgstr "Acuracia numerica"
+msgstr "Precisão"
 
 msgid "Precision (Positive Predictive Value)"
 msgstr ""
 
-#, fuzzy
 msgid "Recall (True Positive Rate)"
-msgstr "Taxa de positivos verdadeiros"
+msgstr "Revocação (Taxa de Positivos Verdadeiros)"
 
-#, fuzzy
 msgid "False Discovery Rate"
-msgstr "Taxa de falsos positivos"
+msgstr "Taxa de descobrimentos falsos"
 
 msgid "F1 Score"
 msgstr ""
 
-#, fuzzy
 msgid "Matthews Correlation Coefficient"
-msgstr "Coeficiente de Correlação Amostra"
+msgstr "Coeficiente de Correlação de Matthews"
 
 msgid "Area Under Curve (AUC)"
 msgstr ""
 
-#, fuzzy
 msgid "Negative Predictive Value"
-msgstr "momentos observados"
+msgstr "Valor Preditivo Negativo"
 
-#, fuzzy
 msgid "True Negative Rate"
-msgstr "Taxa de positivos verdadeiros"
+msgstr "Taxa de Negativos Verdadeiros"
 
-#, fuzzy
 msgid "False Negative Rate"
-msgstr "Taxa de falsos positivos"
+msgstr "Taxa de Falsos Negativos"
 
-#, fuzzy
 msgid "False Omission Rate"
-msgstr "Taxa de falsos positivos"
+msgstr "Taxa de Falsa Omissão"
 
 msgid "Threat Score"
 msgstr ""
@@ -289,13 +270,11 @@ msgstr ""
 msgid "Average / Total"
 msgstr ""
 
-#, fuzzy
 msgid "Class Proportions"
-msgstr "Opções de Módulos"
+msgstr "Proporções de Classes"
 
-#, fuzzy
 msgid "Data Set"
-msgstr "Dados"
+msgstr "Conjunto de Dados"
 
 msgid "Training Set"
 msgstr ""
@@ -448,9 +427,8 @@ msgstr ""
 msgid "Explained proportion within-cluster heterogeneity"
 msgstr ""
 
-#, fuzzy
 msgid "Within sum of squares"
-msgstr "Soma dos quadrados"
+msgstr "Dentro da soma dos quadrados"
 
 msgid "Silhouette score"
 msgstr ""
@@ -476,9 +454,8 @@ msgstr ""
 msgid "Minimum separation"
 msgstr ""
 
-#, fuzzy
 msgid "Pearson's %s"
-msgstr "r de Pearson"
+msgstr "%s de Pearson"
 
 msgid "Dunn index"
 msgstr ""
@@ -504,9 +481,8 @@ msgstr ""
 msgid "Elbow Method Plot"
 msgstr ""
 
-#, fuzzy
 msgid "WSS"
-msgstr "WLS"
+msgstr "WSS"
 
 msgid "Number of Clusters"
 msgstr ""
@@ -570,9 +546,8 @@ msgstr ""
 msgid "test set"
 msgstr ""
 
-#, fuzzy
 msgid "validation set"
-msgstr "Validação: %d"
+msgstr "Conjunto de validação"
 
 msgid "new dataset"
 msgstr ""
@@ -611,26 +586,23 @@ msgstr ""
 msgid "Random Forest Regression"
 msgstr ""
 
-#, fuzzy
 msgid "Boosting Regression"
-msgstr "Regressão"
+msgstr "Boosting a Regressão"
 
 msgid "Neural Network Regression"
 msgstr ""
 
-#, fuzzy
 msgid "Decision Tree Regression"
-msgstr "Regressão"
+msgstr "Regressão da Árvore de Decisão"
 
 msgid "Support Vector Machine Regression"
 msgstr ""
 
-#, fuzzy
 msgid "Linear Regression"
-msgstr "Regressão"
+msgstr "Regressão Linear"
 
 msgid "Penalty"
-msgstr ""
+msgstr "Penalidade"
 
 msgid "Loss function"
 msgstr ""
@@ -675,9 +647,8 @@ msgstr ""
 msgid "MSE(scaled)"
 msgstr ""
 
-#, fuzzy
 msgid "Values"
-msgstr "Valor"
+msgstr "Valores"
 
 msgid "R%s cannot be computed due to lack of variance in the predictions.</i>"
 msgstr ""
@@ -685,17 +656,14 @@ msgstr ""
 msgid "Predictive Performance Plot"
 msgstr ""
 
-#, fuzzy
 msgid "Observed Test Values"
-msgstr "momentos observados"
+msgstr "Valores de Teste Observados"
 
-#, fuzzy
 msgid "Predicted Test Values"
-msgstr "momentos observados"
+msgstr "Valores de Teste Previstos"
 
-#, fuzzy
 msgid "Data Split"
-msgstr "Dividir"
+msgstr "Dividir Dados"
 
 msgid "Train: %d"
 msgstr ""
@@ -721,9 +689,8 @@ msgstr ""
 msgid "Case"
 msgstr ""
 
-#, fuzzy
 msgid "Predicted (Prob.)"
-msgstr "Previsto"
+msgstr "Previsto (Prob.)"
 
 msgid "Base"
 msgstr ""
@@ -747,16 +714,14 @@ msgstr ""
 msgid "Mean dropout loss"
 msgstr ""
 
-#, fuzzy
 msgid "root mean squared error (RMSE)"
-msgstr "Erro padrão"
+msgstr "raiz do erro quadrático médio (RMSE)"
 
 msgid "1 - area under curve (AUC)"
 msgstr ""
 
-#, fuzzy
 msgid "cross entropy"
-msgstr "Entropia"
+msgstr "entropia cruzada"
 
 msgid "Mean dropout loss (defined as %1$s) is based on %2$s permutations."
 msgstr ""
@@ -791,9 +756,8 @@ msgstr ""
 msgid "The null hypothesis specifies equal class means."
 msgstr ""
 
-#, fuzzy
 msgid "Tests of Equality of Covariance Matrices"
-msgstr "Matriz de covariância residual"
+msgstr "Testes de Igualdade de Matrizes de Covariância"
 
 msgid "df"
 msgstr "gl"
@@ -835,44 +799,40 @@ msgstr ""
 msgid "An error occurred when creating this table: %s"
 msgstr ""
 
-#, fuzzy
 msgid "Regression Coefficients"
-msgstr "Coeficiente de Correlação Amostra"
+msgstr "Coeficientes de Regressão"
 
 msgid "Coefficient (%s)"
 msgstr ""
 
-#, fuzzy
 msgid "Standard Error"
-msgstr "Erro padrão"
+msgstr "Erro Padrão"
 
 msgid "z"
-msgstr ""
+msgstr "z"
 
 msgid "%1$s%% Confidence interval"
-msgstr ""
+msgstr "Intervalo de confiança %1$s%%"
 
 msgid "Lower"
-msgstr ""
+msgstr "Inferior"
 
 msgid "Upper"
-msgstr ""
+msgstr "Superior"
 
 msgid "The regression coefficients for numeric features are standardized."
 msgstr ""
 
-#, fuzzy
 msgid "The regression coefficients are unstandardized."
-msgstr "Coeficiente de Correlação Amostra"
+msgstr "Os coeficientes de regressão não estão padronizados."
 
 msgid ""
 "<b>Regression equation:</b>\n"
 "%1$s"
 msgstr ""
 
-#, fuzzy
 msgid "Posterior Statistics"
-msgstr "Posterior"
+msgstr "Estatística a posteriori"
 
 msgid "Feature: %1$s"
 msgstr ""
@@ -906,11 +866,12 @@ msgstr ""
 msgid "Points Sorted by Distance"
 msgstr ""
 
-#, fuzzy
 msgid ""
 "%s-Nearest Neighbors \n"
 "Distance"
-msgstr "Classificação de Vizinhos K-Nearest"
+msgstr ""
+"%s vizinhos mais próximos \n"
+"Distância"
 
 msgid "Maximum curvature = %s"
 msgstr ""
@@ -972,9 +933,8 @@ msgstr ""
 msgid "Scale"
 msgstr ""
 
-#, fuzzy
 msgid "Shape of the Covariance Matrix"
-msgstr "Matriz de covariância residual"
+msgstr "Forma da Matriz de Covariância"
 
 msgid "Eigenvalues of the Covariance Matrix for Component %1$s"
 msgstr ""
@@ -985,9 +945,8 @@ msgstr ""
 msgid "Mean decrease in Gini Index"
 msgstr ""
 
-#, fuzzy
 msgid "K-nearest neighbors"
-msgstr "Classificação de Vizinhos K-Nearest"
+msgstr "K-ésimo vizinhos mais próximos"
 
 msgid "Linear discriminant"
 msgstr ""
@@ -1007,9 +966,8 @@ msgstr ""
 msgid "Neural network"
 msgstr ""
 
-#, fuzzy
 msgid "Decision tree"
-msgstr "Regressão"
+msgstr "Árvore de Decisão"
 
 msgid "Support vector machine"
 msgstr ""
@@ -1017,13 +975,11 @@ msgstr ""
 msgid "Naive Bayes"
 msgstr ""
 
-#, fuzzy
 msgid "Logistic regression"
-msgstr "Regressão"
+msgstr "Regressão logística"
 
-#, fuzzy
 msgid "Multinomial regression"
-msgstr "Regressão"
+msgstr "Regressão multinomial"
 
 msgid "Error: The trained model is not created in JASP."
 msgstr ""
@@ -1040,7 +996,6 @@ msgstr ""
 msgid "Classification"
 msgstr ""
 
-#, fuzzy
 msgid "Regression"
 msgstr "Regressão"
 
@@ -1066,9 +1021,8 @@ msgid ""
 "the trained model: <i>%1$s</i>."
 msgstr ""
 
-#, fuzzy
 msgid "Nearest Neighbors"
-msgstr "Classificação de Vizinhos K-Nearest"
+msgstr "Vizinhos mais Próximos"
 
 msgid "n(New)"
 msgstr ""
@@ -1118,9 +1072,8 @@ msgstr ""
 msgid "Plotting not possible: The model is based on only a single tree."
 msgstr ""
 
-#, fuzzy
 msgid "Number of Trees"
-msgstr "Soma dos quadrados"
+msgstr "Número de Árvores"
 
 msgid "Deviance Plot"
 msgstr ""
@@ -1185,9 +1138,8 @@ msgstr ""
 msgid "Classification Accuracy"
 msgstr ""
 
-#, fuzzy
 msgid "Mean Squared Error"
-msgstr "Erro padrão"
+msgstr "Erro Quadrático Médio"
 
 msgid "Validation set"
 msgstr ""
@@ -1210,13 +1162,11 @@ msgstr ""
 msgid "Epanechnikov"
 msgstr ""
 
-#, fuzzy
 msgid "Biweight"
-msgstr "WLS Ponderado"
+msgstr "Biponderada"
 
-#, fuzzy
 msgid "Triweight"
-msgstr "WLS Ponderado"
+msgstr "Triponderada"
 
 msgid "Cosine"
 msgstr ""
@@ -1241,13 +1191,11 @@ msgstr ""
 msgid "Proportion of Max. Distance"
 msgstr ""
 
-#, fuzzy
 msgid "Relative Weight"
-msgstr "WLS Ponderado"
+msgstr "Peso Relativo"
 
-#, fuzzy
 msgid "Network Weights"
-msgstr "WLS Ponderado"
+msgstr "Peso de Redes"
 
 msgid "Node"
 msgstr ""
@@ -1255,9 +1203,8 @@ msgstr ""
 msgid "Layer"
 msgstr ""
 
-#, fuzzy
 msgid "Weight"
-msgstr "WLS Ponderado"
+msgstr "Peso"
 
 msgid "linear"
 msgstr ""
@@ -1428,7 +1375,7 @@ msgid "%s 1 SE"
 msgstr ""
 
 msgid "Row"
-msgstr ""
+msgstr "Linha"
 
 msgid "Cost of Constraints Violation"
 msgstr ""
