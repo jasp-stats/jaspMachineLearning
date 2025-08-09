@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-08-06 07:43+0000\n"
+"PO-Revision-Date: 2025-08-10 18:01+0000\n"
 "Last-Translator: Wendel Paulo Silvestre <wpsilvestre@ucs.br>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/pt/>\n"
@@ -1896,7 +1896,7 @@ msgstr ""
 
 msgctxt "ConfusionMatrix|"
 msgid "Display proportions"
-msgstr "Mostrar proporções"
+msgstr "Exibir proporções"
 
 msgctxt "ConfusionMatrix|"
 msgid "Displays proportions in the confusion matrix instead of counts."
