@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
 "POT-Creation-Date: 2025-06-28 03:36\n"
-"PO-Revision-Date: 2025-08-06 07:43+0000\n"
+"PO-Revision-Date: 2025-08-24 15:02+0000\n"
 "Last-Translator: Wendel Paulo Silvestre <wpsilvestre@ucs.br>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/pt/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13-dev\n"
+"X-Generator: Weblate 5.13\n"
 "X-Language: en_US\n"
 "X-Source-Language: American English\n"
 "X-Qt-Contexts: true\n"
@@ -75,55 +75,57 @@ msgid "Shrinkage"
 msgstr "Encolhimento"
 
 msgid "Hidden Layers"
-msgstr ""
+msgstr "Camadas Ocultas"
 
 msgid "Nodes"
-msgstr ""
+msgstr "Nós"
 
 msgid "Complexity penalty"
-msgstr ""
+msgstr "Penalidade de complexidade"
 
 msgid "Splits"
 msgstr "Divisões"
 
 msgid "Violation cost"
-msgstr ""
+msgstr "Custo de violação"
 
 msgid "Support Vectors"
-msgstr ""
+msgstr "Vetores de Suporte"
 
 msgid "Smoothing"
-msgstr ""
+msgstr "Suavização"
 
 msgid "Family"
-msgstr ""
+msgstr "Família"
 
 msgid "Link"
-msgstr ""
+msgstr "Ligação"
 
 msgid "n(Train)"
-msgstr ""
+msgstr "n(Treinamento)"
 
 msgid "n(Validation)"
-msgstr ""
+msgstr "n(Validação)"
 
 msgid "n(Test)"
-msgstr ""
+msgstr "n(Teste)"
 
 msgid "Validation Accuracy"
-msgstr ""
+msgstr "Exatidão da Validação"
 
 msgid "Test Accuracy"
 msgstr "Precisão do Teste"
 
 msgid "OOB Accuracy"
-msgstr ""
+msgstr "Exatidão da OOB"
 
 msgid "Please provide a target variable and at least %i feature variable(s)."
 msgstr ""
+"Forneça uma variável de destino e pelo menos %i variável(is) de "
+"característica(s)."
 
 msgid "The trained model is saved as <i>%1$s</i>."
-msgstr ""
+msgstr "O modelo treinado está salvo como <i>%1$s</i>."
 
 msgid ""
 "The trained model is <b>not</b> saved because the some of the variable names "
@@ -131,26 +133,35 @@ msgid ""
 "remove all such characters from the variable names and try saving the model "
 "again."
 msgstr ""
+"O modelo treinado <b>não</b> foi salvo porque alguns dos nomes de variáveis "
+"no modelo contêm espaços (por exemplo, ' ') ou sublinhados (por exemplo, '_')"
+". Remova todos esses caracteres dos nomes das variáveis e tente salvar o "
+"modelo novamente."
 
 msgid ""
 "The trained model is not saved until a file name is specified under 'Save "
 "as'."
 msgstr ""
+"O modelo treinado não é salvo até que um nome de arquivo seja especificado "
+"em 'Salvar como'."
 
 msgid ""
 "The model is optimized with respect to the <i>validation set accuracy</i>."
 msgstr ""
+"O modelo é otimizado em relação à <i>exatidão do conjunto de validação</i>."
 
 msgid ""
 "The optimum number of nearest neighbors is the maximum number. You might "
 "want to adjust the range of optimization."
 msgstr ""
+"O número ideal de vizinhos mais próximos é o número máximo. Talvez você "
+"queira ajustar o intervalo de otimização."
 
 msgid "Manhattan"
-msgstr ""
+msgstr "Manhattan"
 
 msgid "Euclidean"
-msgstr ""
+msgstr "Euclidiana"
 
 msgid "Moment"
 msgstr "Momento"
@@ -159,25 +170,25 @@ msgid "MLE"
 msgstr "MLE"
 
 msgid "MVE"
-msgstr ""
+msgstr "EVM"
 
 msgid "t"
 msgstr "t"
 
 msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
-msgstr ""
+msgstr "O modelo é otimizado em relação à <i>exatidão 'fora da bolsa'</i>."
 
 msgid "The model is optimized with respect to the <i>sum of squares</i>."
-msgstr ""
+msgstr "O modelo é otimizado em relação à <i>soma dos quadrados</i>."
 
 msgid "Model Summary: Logistic Regression Classification"
 msgstr "Resumo do Modelo: Classificação de Regressão Logística"
 
 msgid "Model Summary: Multinomial Regression Classification"
-msgstr ""
+msgstr "Resumo do Modelo: Classificação de Regressão Multinomial"
 
 msgid "Confusion Matrix"
-msgstr ""
+msgstr "Matriz de Confusão"
 
 msgid "Observed"
 msgstr "Observado"
@@ -186,20 +197,26 @@ msgid "Predicted"
 msgstr "Previsto"
 
 msgid "Decision Boundary Matrix"
-msgstr ""
+msgstr "Matriz de Limite de Decisão"
 
 msgid ""
 "Cannot create plot: You need at least two (numeric) features to create the "
 "decision boundary matrix. You have currently included only one feature."
 msgstr ""
+"Não é possível criar o gráfico: você precisa de pelo menos duas "
+"características (numéricas) para criar a matriz de limites de decisão. No "
+"momento, você incluiu apenas uma característica."
 
 msgid ""
 "Cannot create matrix: not enough numeric variables remain after removing "
 "factor variables. You need at least 2 numeric variables."
 msgstr ""
+"Não é possível criar a matriz: não há variáveis numéricas suficientes após a "
+"remoção das variáveis fatoriais. Você precisa de pelo menos 2 variáveis "
+"numéricas."
 
 msgid "ROC Curves Plot"
-msgstr ""
+msgstr "Gráficos das Curvas ROC"
 
 msgid "False Positive Rate"
 msgstr "Taxa de Falsos Positivos"
@@ -208,43 +225,44 @@ msgid "True Positive Rate"
 msgstr "Taxa de Positivos Verdadeiros"
 
 msgid "Perfect separation"
-msgstr ""
+msgstr "Separação perfeita"
 
 msgid "Andrews Curves Plot"
-msgstr ""
+msgstr "Gráfico das Curvas de Andrews"
 
 msgid "Andrews curves require a minimum of 2 feature variables."
 msgstr ""
+"As curvas de Andrews exigem um mínimo de 2 variáveis de características."
 
 msgid "Box's M-test for Homogeneity of Covariance Matrices"
-msgstr ""
+msgstr "Teste M de Box para Homogeneidade das Matrizes de Covariância"
 
 msgid "Model Performance Metrics"
-msgstr ""
+msgstr "Métricas de Desempenho do Modelo"
 
 msgid "Support"
-msgstr ""
+msgstr "Suporte"
 
 msgid "Accuracy"
 msgstr "Precisão"
 
 msgid "Precision (Positive Predictive Value)"
-msgstr ""
+msgstr "Precisão (Valor Preditivo Positivo)"
 
 msgid "Recall (True Positive Rate)"
 msgstr "Revocação (Taxa de Positivos Verdadeiros)"
 
 msgid "False Discovery Rate"
-msgstr "Taxa de descobrimentos falsos"
+msgstr "Taxa de Descobrimentos Falsos"
 
 msgid "F1 Score"
-msgstr ""
+msgstr "Pontuação F1"
 
 msgid "Matthews Correlation Coefficient"
 msgstr "Coeficiente de Correlação de Matthews"
 
 msgid "Area Under Curve (AUC)"
-msgstr ""
+msgstr "Área Sob a Curva (ASC)"
 
 msgid "Negative Predictive Value"
 msgstr "Valor Preditivo Negativo"
@@ -259,16 +277,18 @@ msgid "False Omission Rate"
 msgstr "Taxa de Falsa Omissão"
 
 msgid "Threat Score"
-msgstr ""
+msgstr "Pontuação de Ameaça"
 
 msgid "Statistical Parity"
-msgstr ""
+msgstr "Paridade Estatística"
 
 msgid "All metrics are calculated for every class against all other classes."
 msgstr ""
+"Todas as métricas são calculadas para cada classe em relação a todas as "
+"outras classes."
 
 msgid "Average / Total"
-msgstr ""
+msgstr "Média / Total"
 
 msgid "Class Proportions"
 msgstr "Proporções de Classes"
@@ -277,54 +297,59 @@ msgid "Data Set"
 msgstr "Conjunto de Dados"
 
 msgid "Training Set"
-msgstr ""
+msgstr "Conjunto de Treinamento"
 
 msgid "Validation Set"
-msgstr ""
+msgstr "Conjunto de Validação"
 
 msgid "Training and Validation Set"
-msgstr ""
+msgstr "Conjunto de Treinamento e Validação"
 
 msgid "Test Set"
-msgstr ""
+msgstr "Conjunto de Teste"
 
 msgid ""
 "You have specified more clusters than distinct data points. Please choose a "
 "number lower than %s."
 msgstr ""
+"Você especificou mais agrupamentos do que pontos de dados distintos. Escolha "
+"um número menor que %s."
 
 msgid ""
 "R package error: The hclust clustering algorithm from the stats R package "
 "cannot handle data that has 65536 or more rows. We are working on a solution "
 "for this problem. Please try another algorithm in the meantime."
 msgstr ""
+"Erro no pacote R: O algoritmo de agrupamento hclust do pacote stats R não "
+"consegue lidar com dados com 65.536 linhas ou mais. Estamos trabalhando em "
+"uma solução para este problema. Tente outro algoritmo enquanto isso."
 
 msgid "K-Means Clustering"
-msgstr ""
+msgstr "Agrupamento de K-Médias"
 
 msgid "K-Medians Clustering"
-msgstr ""
+msgstr "Agrupamento de K-Medianas"
 
 msgid "K-Medoids Clustering"
-msgstr ""
+msgstr "Agrupamento de K-Medoides"
 
 msgid "Fuzzy C-Means Clustering"
-msgstr ""
+msgstr "Agrupamento C-Médias Difuso"
 
 msgid "Hierarchical Clustering"
-msgstr ""
+msgstr "Agrupamento Hierárquico"
 
 msgid "Density-Based Clustering"
-msgstr ""
+msgstr "Agrupamento Baseado na Densidade"
 
 msgid "Random Forest Clustering"
-msgstr ""
+msgstr "Agrupamento de Floresta Aleatória"
 
 msgid "Model-Based Clustering"
-msgstr ""
+msgstr "Agrupamento Baseado em Modelo"
 
 msgid "Clusters"
-msgstr ""
+msgstr "Agrupamentos"
 
 msgid "N"
 msgstr "N"
@@ -339,226 +364,251 @@ msgid "BIC"
 msgstr "BIC"
 
 msgid "Silhouette"
-msgstr ""
+msgstr "Silhueta"
 
 msgid "Please provide at least 2 features."
-msgstr ""
+msgstr "Por favor, forneça pelo menos 2 características."
 
 msgid "silhouette"
-msgstr ""
+msgstr "silhueta"
 
 msgid "The model is optimized with respect to the <i>%s</i> value."
-msgstr ""
+msgstr "O modelo é otimizado em relação ao valor <i>%s</i>."
 
 msgid ""
 "The optimum number of clusters is the maximum number of clusters. You might "
 "want to adjust the range of optimization."
 msgstr ""
+"O número ideal de agrupamentos é o número máximo de agrupamentos. Talvez "
+"você queira ajustar o intervalo de otimização."
 
 msgid ""
 "The model contains 0 clusters and only Noisepoints, we advise to change "
 "'Epsilon neighborhood size' and 'Min. core points' parameters under "
 "'Training parameters'."
 msgstr ""
+"O modelo contém 0 agrupamentos e apenas pontos de ruído. Recomendamos "
+"alterar os parâmetros 'Tamanho da vizinhança Epsilon' e 'Pontos mínimos do "
+"núcleo' em 'Parâmetros de treinamento'."
 
 msgid ""
 "The model contains 1 cluster and no Noisepoints. You may want to change "
 "'Epsilon neighborhood size' and 'Min. core points' parameters under "
 "'Training parameters'."
 msgstr ""
+"O modelo contém 1 agrupamento e apenas pontos de ruído. Recomendamos alterar "
+"os parâmetros 'Tamanho da vizinhança Epsilon' e 'Pontos mínimos do núcleo' "
+"em 'Parâmetros de treinamento'."
 
 msgid "spherical with equal volume"
-msgstr ""
+msgstr "esférico com volume igual"
 
 msgid "spherical with unequal volume"
-msgstr ""
+msgstr "esférico com volume desigual"
 
 msgid "diagonal with equal volume and shape"
-msgstr ""
+msgstr "diagonal com iguais volume e forma"
 
 msgid "diagonal with varying volume and equal shape"
-msgstr ""
+msgstr "diagonal com volume variável e forma igual"
 
 msgid "diagonal with equal volume and varying shape"
-msgstr ""
+msgstr "diagonal com volume igual e forma variável"
 
 msgid "diagonal with varying volume and shape"
-msgstr ""
+msgstr "diagonal com volume e forma variáveis"
 
 msgid "ellipsoidal with equal volume, shape, and orientation"
-msgstr ""
+msgstr "elipsoidal com volume, forma e orientação iguais"
 
 msgid "ellipsoidal with equal shape and orientation"
-msgstr ""
+msgstr "elipsoidal com forma e orientação iguais"
 
 msgid "ellipsoidal with equal volume and orientation"
-msgstr ""
+msgstr "elipsoidal com volume e orientação iguais"
 
 msgid "ellipsoidal with equal orientation"
-msgstr ""
+msgstr "elipsoidal com orientação igual"
 
 msgid "ellipsoidal with equal volume and equal shape"
-msgstr ""
+msgstr "elipsoidal com volume igual e forma igual"
 
 msgid "ellipsoidal with equal shape"
-msgstr ""
+msgstr "elipsoidal com forma igual"
 
 msgid "ellipsoidal with equal volume"
-msgstr ""
+msgstr "elipsoidal com volume igual"
 
 msgid "ellipsoidal with varying volume, shape, and orientation"
-msgstr ""
+msgstr "elipsoidal com volume, forma e orientação variáveis"
 
 msgid "The model is %1$s."
-msgstr ""
+msgstr "O modelo é %1$s."
 
 msgid "The features in the model are <b>unstandardized</b>."
-msgstr ""
+msgstr "As características no modelo são <b>não padronizadas</b>."
 
 msgid "Cluster Information"
-msgstr ""
+msgstr "Informação dos Agrupamentos"
 
 msgid "Cluster"
-msgstr ""
+msgstr "Agrupamento"
 
 msgid "Size"
-msgstr ""
+msgstr "Tamanho"
 
 msgid "Explained proportion within-cluster heterogeneity"
-msgstr ""
+msgstr "Proporção explicada da heterogeneidade dentro do agrupamento"
 
 msgid "Within sum of squares"
 msgstr "Dentro da soma dos quadrados"
 
 msgid "Silhouette score"
-msgstr ""
+msgstr "Pontuação de silhueta"
 
 msgid "Center %s"
-msgstr ""
+msgstr "Centro %s"
 
 msgid "Noisepoints"
-msgstr ""
+msgstr "Pontos de ruído"
 
 msgid "The Between Sum of Squares of the %1$s cluster model is %2$s"
 msgstr ""
+"A soma dos quadrados intermediários do modelo de agrupamento %1$s é %2$s"
 
 msgid "The Total Sum of Squares of the %1$s cluster model is %2$s"
-msgstr ""
+msgstr "A soma total dos quadrados do modelo de agrupamento %1$s é %2$s"
 
 msgid "Value"
 msgstr "Valor"
 
 msgid "Maximum diameter"
-msgstr ""
+msgstr "Diâmetro máximo"
 
 msgid "Minimum separation"
-msgstr ""
+msgstr "Separação mínima"
 
 msgid "Pearson's %s"
 msgstr "%s de Pearson"
 
 msgid "Dunn index"
-msgstr ""
+msgstr "Índice de Dunn"
 
 msgid "Entropy"
 msgstr "Entropia"
 
 msgid "Calinski-Harabasz index"
-msgstr ""
+msgstr "Índice de Calinski-Harabasz"
 
 msgid "All metrics are based on the <i>euclidean</i> distance."
-msgstr ""
+msgstr "Todas as métricas são baseadas na distância <i>euclidiana</i>."
 
 msgid "Evaluation metrics cannot be computed when there is only 1 cluster."
 msgstr ""
+"Métricas de avaliação não podem ser computadas quando há apenas 1 "
+"agrupamento."
 
 msgid "t-SNE Cluster Plot"
-msgstr ""
+msgstr "Gráfico de Agrupamento t-SNE"
 
 msgid "Noisepoint"
-msgstr ""
+msgstr "Ponto de ruído"
 
 msgid "Elbow Method Plot"
-msgstr ""
+msgstr "Gráfico do Método do Cotovelo"
 
 msgid "WSS"
 msgstr "WSS"
 
 msgid "Number of Clusters"
-msgstr ""
+msgstr "Número de Agrupamentos"
 
 msgid "Lowest %s"
-msgstr ""
+msgstr "%s mais baixo"
 
 msgid "Cluster Means"
-msgstr ""
+msgstr "Médias dos Agrupamentos"
 
 msgid "Cluster %s"
-msgstr ""
+msgstr "Agrupamento %s"
 
 msgid "Cluster Density Plots"
-msgstr ""
+msgstr "Gráficos de Densidade dos Agrupamentos"
 
 msgid "Density"
 msgstr "Densidade"
 
 msgid "Feature"
-msgstr ""
+msgstr "Característica"
 
 msgid "All Features"
-msgstr ""
+msgstr "Todas as Características"
 
 msgid "Cluster Mean Plots"
-msgstr ""
+msgstr "Gráficos das Médias dos Agrupamentos"
 
 msgid "Cluster Mean"
-msgstr ""
+msgstr "Média dos Agrupamentos"
 
 msgid ""
 "Insufficient RAM available to compute the distance matrix. The analysis "
 "tried to allocate %s Gb"
 msgstr ""
+"Não há RAM suficiente disponível para calcular a matriz de distância. A "
+"análise tentou alocar %s Gb"
 
 msgid "An error occurred in the analysis: %1$s"
-msgstr ""
+msgstr "Um erro ocorreu na análise: %1$s"
 
 msgid "Cluster Matrix Plot"
-msgstr ""
+msgstr "Gráfico da Mariz dos Agrupamentos"
 
 msgid "The variable '%s' can't be both a feature and a test set indicator."
 msgstr ""
+"A variável '%s' não pode ser uma característica e um indicador de conjunto "
+"de testes."
 
 msgid ""
 "Your test set indicator should be binary, containing only 1 (included in "
 "test set) and 0 (excluded from test set)."
 msgstr ""
+"Seu indicador de conjunto de teste deve ser binário, contendo apenas 1 ("
+"incluído no conjunto de teste) e 0 (excluído do conjunto de teste)."
 
 msgid ""
 "There is only one observation in each level of the factor %1$s, please "
 "remove this factor as a feature."
 msgstr ""
+"Há apenas uma observação em cada nível do fator %1$s, remova este fator como "
+"uma característica."
 
 msgid ""
 "There is only one observation in each level of the factors %1$s, please "
 "remove these factors as a feature."
 msgstr ""
+"Há apenas uma observação em cada nível dos fatores %1$s, remova esses "
+"fatores como uma característica."
 
 msgid "test set"
-msgstr ""
+msgstr "conjunto de teste"
 
 msgid "validation set"
-msgstr "Conjunto de validação"
+msgstr "conjunto de validação"
 
 msgid "new dataset"
-msgstr ""
+msgstr "novo conjunto de dados"
 
 msgid ""
 "or use a different test set (e.g., automatically by setting a different seed "
 "or manually by specifying the test set indicator)"
 msgstr ""
+"ou use um conjunto de teste diferente (e.g., automaticamente definindo uma "
+"semente diferente ou manualmente especificando o indicador do conjunto de "
+"teste)"
 
 msgid "or use a different validation set by setting a different seed"
 msgstr ""
+"ou use um conjunto de validação diferente definindo uma semente diferente"
 
 msgid ""
 "Some factors in the %1$s have levels that do not appear in the training set. "
@@ -566,37 +616,46 @@ msgid ""
 "\n"
 "%3$s"
 msgstr ""
+"Alguns fatores em %1$s possuem níveis que não aparecem no conjunto de "
+"treinamento. Remova as linhas com os seguintes níveis do conjunto de dados "
+"%2$s.\n"
+"\n"
+"%3$s"
 
 msgid ""
 "You have specified more nearest neighbors than there are observations in the "
 "training set. Please choose a number lower than %d."
 msgstr ""
+"Você especificou mais vizinhos mais próximos do que observações no conjunto "
+"de treinamento. Escolha um número menor que %d."
 
 msgid ""
 "You have specified more folds than there are observations in the training "
 "and validation set. Please choose a number lower than %d."
 msgstr ""
+"Você especificou mais dobras do que observações no conjunto de treinamento e "
+"validação. Escolha um número menor que %d."
 
 msgid "K-Nearest Neighbors Regression"
-msgstr ""
+msgstr "Regressão de K-Vizinhos Mais Próximos"
 
 msgid "Regularized Linear Regression"
-msgstr ""
+msgstr "Regressão Linear Regularizada"
 
 msgid "Random Forest Regression"
-msgstr ""
+msgstr "Regressão de Floresta Aleatória"
 
 msgid "Boosting Regression"
 msgstr "Boosting a Regressão"
 
 msgid "Neural Network Regression"
-msgstr ""
+msgstr "Regressão de Rede Neural"
 
 msgid "Decision Tree Regression"
 msgstr "Regressão da Árvore de Decisão"
 
 msgid "Support Vector Machine Regression"
-msgstr ""
+msgstr "Regressão da Máquina de Vetores de Suporte"
 
 msgid "Linear Regression"
 msgstr "Regressão Linear"
@@ -605,56 +664,63 @@ msgid "Penalty"
 msgstr "Penalidade"
 
 msgid "Loss function"
-msgstr ""
+msgstr "Função de perda"
 
 msgid "Validation MSE"
-msgstr ""
+msgstr "EQM da Validação"
 
 msgid "Test MSE"
-msgstr ""
+msgstr "EQM do Teste"
 
 msgid "OOB Error"
-msgstr ""
+msgstr "Erro OOB"
 
 msgid "R%1$s"
-msgstr ""
+msgstr "R%1$s"
 
 msgid "Adjusted R%1$s"
-msgstr ""
+msgstr "R%1$s Ajustado"
 
 msgid "Please provide a target variable and at least %d feature variable(s)."
 msgstr ""
+"Por favor, forneça uma variável alvo e pelo menos %d variável(is) de "
+"característica."
 
 msgid ""
 "The model is optimized with respect to the <i>validation set mean squared "
 "error</i>."
 msgstr ""
+"O modelo é otimizado em relação ao <i>erro quadrático médio do conjunto de "
+"validação</i>."
 
 msgid "When %s is set to 0 linear regression is performed."
-msgstr ""
+msgstr "Quando %s é definido como 0, uma regressão linear é realizada."
 
 msgid ""
 "The model is optimized with respect to the <i>out-of-bag mean squared error</"
 "i>."
 msgstr ""
+"O modelo é otimizado em relação ao <i>erro quadrático médio 'fora da "
+"sacola'</i>."
 
 msgid "Gaussian"
-msgstr ""
+msgstr "Gaussiano"
 
 msgid "Laplace"
-msgstr ""
+msgstr "Laplace"
 
 msgid "MSE(scaled)"
-msgstr ""
+msgstr "EQM(escalonado)"
 
 msgid "Values"
 msgstr "Valores"
 
 msgid "R%s cannot be computed due to lack of variance in the predictions.</i>"
 msgstr ""
+"R%s não podem ser calculados devido à falta de variância nas previsões.</i>"
 
 msgid "Predictive Performance Plot"
-msgstr ""
+msgstr "Gráfico de Desempenho Preditivo"
 
 msgid "Observed Test Values"
 msgstr "Valores de Teste Observados"
@@ -666,77 +732,83 @@ msgid "Data Split"
 msgstr "Dividir Dados"
 
 msgid "Train: %d"
-msgstr ""
+msgstr "Treino: %d"
 
 msgid "Test: %d"
-msgstr ""
+msgstr "Teste: %d"
 
 msgid "Total: %d"
-msgstr ""
+msgstr "Total: %d"
 
 msgid "Validation: %d"
 msgstr "Validação: %d"
 
 msgid "Train and validation: %d"
-msgstr ""
+msgstr "Treino e validação: %d"
 
 msgid "Additive Explanations for Predictions of New Cases"
-msgstr ""
+msgstr "Explicações Aditivas para Previsões de Novos Casos"
 
 msgid "Additive Explanations for Predictions of Test Set Cases"
-msgstr ""
+msgstr "Explicações Aditivas para Previsões de Casos de Conjuntos de Teste"
 
 msgid "Case"
-msgstr ""
+msgstr "Caso"
 
 msgid "Predicted (Prob.)"
 msgstr "Previsto (Prob.)"
 
 msgid "Base"
-msgstr ""
+msgstr "Base"
 
 msgid "An error occurred when computing the results for this table: %1$s"
-msgstr ""
+msgstr "Um erro ocorreu ao calcular os resultados para esta tabela: %1$s"
 
 msgid ""
 "Displayed values represent feature contributions to the predicted value "
 "without features (column 'Base') for the test set."
 msgstr ""
+"Os valores exibidos representam contribuições de recursos para o valor "
+"previsto sem características (coluna 'Base') para o conjunto de teste."
 
 msgid ""
 "Displayed values represent feature contributions to the predicted class "
 "probability without features (column 'Base') for the test set."
 msgstr ""
+"Os valores exibidos representam contribuições de recursos para a "
+"probabilidade de classe prevista sem características (coluna 'Base') para o "
+"conjunto de teste."
 
 msgid "Feature Importance Metrics"
-msgstr ""
+msgstr "Métricas de Importância das Características"
 
 msgid "Mean dropout loss"
-msgstr ""
+msgstr "Perda média de abandono"
 
 msgid "root mean squared error (RMSE)"
 msgstr "raiz do erro quadrático médio (RMSE)"
 
 msgid "1 - area under curve (AUC)"
-msgstr ""
+msgstr "1 - área sob a curva (ASC)"
 
 msgid "cross entropy"
 msgstr "entropia cruzada"
 
 msgid "Mean dropout loss (defined as %1$s) is based on %2$s permutations."
 msgstr ""
+"A perda média de abandono (definida como %1$s) é baseada em %2$s permutações."
 
 msgid "The target variable should have at least 2 classes."
-msgstr ""
+msgstr "A variável alvo deve ter pelo menos 2 classes."
 
 msgid "Linear Discriminant Coefficients"
-msgstr ""
+msgstr "Coeficientes do Discriminante Linear"
 
 msgid "(Constant)"
-msgstr ""
+msgstr "(Constante)"
 
 msgid "Prior and Posterior Class Probabilities"
-msgstr ""
+msgstr "Probabilidades de Classe Anterior e Posterior"
 
 msgid "Prior"
 msgstr "Anterior"
@@ -745,16 +817,16 @@ msgid "Posterior"
 msgstr "Posterior"
 
 msgid "Class Means in Training Data"
-msgstr ""
+msgstr "Médias de Classe em Dados de Treinamento"
 
 msgid "Linear Discriminant Matrix"
-msgstr ""
+msgstr "Matriz Discriminante Linear"
 
 msgid "Tests of Equality of Class Means"
-msgstr ""
+msgstr "Testes de Igualdade de Médias de Classe"
 
 msgid "The null hypothesis specifies equal class means."
-msgstr ""
+msgstr "A hipótese nula especifica médias das classes iguais."
 
 msgid "Tests of Equality of Covariance Matrices"
 msgstr "Testes de Igualdade de Matrizes de Covariância"
@@ -766,44 +838,46 @@ msgid "p"
 msgstr "p"
 
 msgid "The null hypothesis specifies equal covariance matrices."
-msgstr ""
+msgstr "A hipótese nula especifica matrizes de covariância iguais."
 
 msgid ""
 "There are one or more levels in the target variable with less than two "
 "observations."
-msgstr ""
+msgstr "Há um ou mais níveis na variável alvo com menos de duas observações."
 
 msgid "Box's M"
-msgstr ""
+msgstr "M de Box"
 
 msgid "Pooled Within-Class Matrices Correlations"
-msgstr ""
+msgstr "Correlações de Matrizes dentro de Classes Combinadas"
 
 msgid "Tests for Multivariate Normality"
-msgstr ""
+msgstr "Testes para Normalidade Multivariada"
 
 msgid "Statistic"
-msgstr ""
+msgstr "Estatística"
 
 msgid "Skewness"
-msgstr ""
+msgstr "Assimetria"
 
 msgid "Kurtosis"
-msgstr ""
+msgstr "Curtose"
 
 msgid ""
 "Both p-values of the skewness and kurtosis statistics should be > 0.05 to "
 "conclude multivariate normality."
 msgstr ""
+"Ambos os valores-p das estatísticas de assimetria e curtose devem ser > 0,05 "
+"para concluir a normalidade multivariada."
 
 msgid "An error occurred when creating this table: %s"
-msgstr ""
+msgstr "Um erro ocorreu ao criar esta tabela: %s"
 
 msgid "Regression Coefficients"
 msgstr "Coeficientes de Regressão"
 
 msgid "Coefficient (%s)"
-msgstr ""
+msgstr "Coeficiente (%s)"
 
 msgid "Standard Error"
 msgstr "Erro Padrão"
@@ -822,6 +896,7 @@ msgstr "Superior"
 
 msgid "The regression coefficients for numeric features are standardized."
 msgstr ""
+"Os coeficientes de regressão para características numéricas são padronizados."
 
 msgid "The regression coefficients are unstandardized."
 msgstr "Os coeficientes de regressão não estão padronizados."
@@ -830,41 +905,47 @@ msgid ""
 "<b>Regression equation:</b>\n"
 "%1$s"
 msgstr ""
+"<b>Equação de regressão:</b>\n"
+"%1$s"
 
 msgid "Posterior Statistics"
 msgstr "Estatística a posteriori"
 
 msgid "Feature: %1$s"
-msgstr ""
+msgstr "Característica: %1$s"
 
 msgid "Mean"
-msgstr ""
+msgstr "Média"
 
 msgid "Std. deviation"
-msgstr ""
+msgstr "Desvio pad."
 
 msgid ""
 "The table displays the mean and standard deviation of the feature given the "
 "target class."
 msgstr ""
+"A tabela exibe a média e o desvio padrão da característica, dada a classe "
+"alvo."
 
 msgid ""
 "The table displays the conditional probabilities given the target class."
-msgstr ""
+msgstr "A tabela exibe as probabilidades condicionais dada a classe alvo."
 
 msgid ""
 "Analysis not possible: The algorithm did not converge within the maximum "
 "number of training repetitions (%1$s)."
 msgstr ""
+"Análise não possível: O algoritmo não convergiu dentro do número máximo de "
+"repetições de treinamento (%1$s)."
 
 msgid "Optimizing network topology"
-msgstr ""
+msgstr "Otimizando a topologia da rede"
 
 msgid "K-Distance Plot"
-msgstr ""
+msgstr "Gráfico de K-Distâncias"
 
 msgid "Points Sorted by Distance"
-msgstr ""
+msgstr "Pontos Classificados pela Distância"
 
 msgid ""
 "%s-Nearest Neighbors \n"
@@ -874,106 +955,109 @@ msgstr ""
 "Distância"
 
 msgid "Maximum curvature = %s"
-msgstr ""
+msgstr "Curvatura máxima = %s"
 
 msgid "End of recursion reached without converging"
-msgstr ""
+msgstr "Fim da recursão alcançado sem convergir"
 
 msgid "x and y must be numeric and finite. Missing values not allowed."
 msgstr ""
+"x e y devem ser numéricos e finitos. Valores ausentes não são permitidos."
 
 msgid "x and y must be of equal length."
-msgstr ""
+msgstr "x e y devem ter o mesmo comprimento."
 
 msgid "Need more points to find cutoff."
-msgstr ""
+msgstr "Precisa-se de mais pontos para encontrar o valor de corte."
 
 msgid "Need to specify fraction of maximum slope."
-msgstr ""
+msgstr "É necessário especificar a fração da inclinação máxima."
 
 msgid ""
 "Fraction of maximum slope must be positive and be less than or equal to 1."
-msgstr ""
+msgstr "A fração da inclinação máxima deve ser positiva e menor ou igual a 1."
 
 msgid "Method must be either 'first' or 'curvature'."
-msgstr ""
+msgstr "O método deve ser 'primeiro' ou 'curvatura'."
 
 msgid "Cutoff point is beyond range. Returning NA."
-msgstr ""
+msgstr "O valor de corte está além da faixa. Retornando NA."
 
 msgid "Dendrogram"
-msgstr ""
+msgstr "Dendrograma"
 
 msgid ""
 "The %1$s-component %2$s model could not be fitted, try a different model or "
 "a different number of clusters."
 msgstr ""
+"O modelo %1$s-componente %2$s não pôde ser ajustado, tente um modelo "
+"diferente ou um número diferente de agrupamentos."
 
 msgid "Estimated Model Parameters"
-msgstr ""
+msgstr "Parâmetros do Modelo Estimado"
 
 msgid "Mixing Probabilities"
-msgstr ""
+msgstr "Misturando Probabilidades"
 
 msgid "Mixing probability"
-msgstr ""
+msgstr "Probabilidade de mistura"
 
 msgid "Component %1$s"
-msgstr ""
+msgstr "Componente %1$s"
 
 msgid "Means"
-msgstr ""
+msgstr "Médias"
 
 msgid "Covariance Matrix for Component %1$s"
-msgstr ""
+msgstr "Matriz de Covariância para o Componente %1$s"
 
 msgid "Scale of the Covariance"
-msgstr ""
+msgstr "Escala da Covariância"
 
 msgid "Scale"
-msgstr ""
+msgstr "Escala"
 
 msgid "Shape of the Covariance Matrix"
 msgstr "Forma da Matriz de Covariância"
 
 msgid "Eigenvalues of the Covariance Matrix for Component %1$s"
-msgstr ""
+msgstr "Autovalores da Matriz de Covariância para o Componente %1$s"
 
 msgid "Feature Importance"
-msgstr ""
+msgstr "Importância da Característica"
 
 msgid "Mean decrease in Gini Index"
-msgstr ""
+msgstr "Decréscimo médio no Índice de Gini"
 
 msgid "K-nearest neighbors"
 msgstr "K-ésimo vizinhos mais próximos"
 
 msgid "Linear discriminant"
-msgstr ""
+msgstr "Discriminante linear"
 
 msgid "Linear"
-msgstr ""
+msgstr "Linear"
 
 msgid "Boosting"
-msgstr ""
+msgstr "Boosting"
 
 msgid "Random forest"
-msgstr ""
+msgstr "Floresta aleatória"
 
 msgid "Regularized linear regression"
-msgstr ""
+msgstr "Regressão linear regularizada"
 
 msgid "Neural network"
-msgstr ""
+msgstr "Rede neural"
 
 msgid "Decision tree"
 msgstr "Árvore de Decisão"
 
 msgid "Support vector machine"
-msgstr ""
+msgstr "Máquina de vetores de suporte"
 
 msgid "Naive Bayes"
-msgstr ""
+msgstr "Bayes Ingênuo"
 
 msgid "Logistic regression"
 msgstr "Regressão logística"
@@ -982,113 +1066,127 @@ msgid "Multinomial regression"
 msgstr "Regressão multinomial"
 
 msgid "Error: The trained model is not created in JASP."
-msgstr ""
+msgstr "Erro: O modelo treinado não foi criado no JASP."
 
 msgid "The trained model (type: %1$s) is currently not supported in JASP."
-msgstr ""
+msgstr "O modelo treinado (tipo: %1$s) não é suportado atualmente no JASP."
 
 msgid "Error: The trained model is created using a different version of JASP."
-msgstr ""
+msgstr "Erro: O modelo treinado foi criado usando uma versão diferente do JASP."
 
 msgid "Loaded Model"
-msgstr ""
+msgstr "Modelo Carregado"
 
 msgid "Classification"
-msgstr ""
+msgstr "Classificação"
 
 msgid "Regression"
 msgstr "Regressão"
 
 msgid "Loaded Model: %1$s"
-msgstr ""
+msgstr "Modelo Carregado: %1$s"
 
 msgid ""
 "The features in the new data are unscaled, consistent with the training set."
 msgstr ""
+"As características nos novos dados não são escalonadas, consistentes com o "
+"conjunto de treinamento."
 
 msgid ""
 "The features in the new data are scaled the same as those in the training "
 "set."
 msgstr ""
+"As características nos novos dados são dimensionadas da mesma forma que "
+"aquelas no conjunto de treinamento."
 
 msgid ""
 "The trained model is not applied because the the following features are "
 "missing: <i>%1$s</i>."
 msgstr ""
+"O modelo treinado não é aplicado porque as seguintes características estão "
+"faltando: <i>%1$s</i>."
 
 msgid ""
 "The following features are unused because they are not a feature variable in "
 "the trained model: <i>%1$s</i>."
 msgstr ""
+"As seguintes características não são utilizadas porque não são uma variável "
+"de característica no modelo treinado: <i>%1$s</i>."
 
 msgid "Nearest Neighbors"
 msgstr "Vizinhos mais Próximos"
 
 msgid "n(New)"
-msgstr ""
+msgstr "n(Novo)"
 
 msgid "Binomial"
-msgstr ""
+msgstr "Binomial"
 
 msgid "Multinomial"
-msgstr ""
+msgstr "Multinomial"
 
 msgid "Logit"
-msgstr ""
+msgstr "Logit"
 
 msgid "Predictions for New Data"
-msgstr ""
+msgstr "Previsões para Novos Dados"
 
 msgid "Relative Influence"
-msgstr ""
+msgstr "Influência Relativa"
 
 msgid "<i>Warning.</i>"
-msgstr ""
+msgstr "<i>Aviso.</i>"
 
 msgid "An error occurred when computing the mean dropout loss: %1$s"
-msgstr ""
+msgstr "Ocorreu um erro ao calcular a perda média de abandono: %1$s"
 
 msgid "Out-of-bag Improvement Plot"
-msgstr ""
+msgstr "Gráfico de Melhoria 'Fora da Sacola'"
 
 msgid "Training set"
-msgstr ""
+msgstr "Conjunto de treinamento"
 
 msgid ""
 "OOB Change in \n"
 " Multinomial Deviance"
 msgstr ""
+"Mudança OOB em\n"
+" Desvio Multinomial"
 
 msgid ""
 "OOB Change in \n"
 " Binomial Deviance"
 msgstr ""
+"Mudança OOB em \n"
+" Desvio Binomial"
 
 msgid ""
 "OOB Change in \n"
 "%s Deviance"
 msgstr ""
+"Mudança OOB em\n"
+"Desvio %s"
 
 msgid "Plotting not possible: The model is based on only a single tree."
-msgstr ""
+msgstr "Não é possível plotar: O modelo é baseado em apenas uma única árvore."
 
 msgid "Number of Trees"
 msgstr "Número de Árvores"
 
 msgid "Deviance Plot"
-msgstr ""
+msgstr "Gráfico de Desvios"
 
 msgid "Multinomial Deviance"
-msgstr ""
+msgstr "Desvio Multinomial"
 
 msgid "Binomial Deviance"
-msgstr ""
+msgstr "Desvio Binomial"
 
 msgid "%s Deviance"
-msgstr ""
+msgstr "Desvio %s"
 
 msgid "Relative Influence Plot"
-msgstr ""
+msgstr "Gráfico de Influência Relativa"
 
 msgid ""
 "The minimum number of observations per node is too large. Ensure that `2 * "
@@ -1096,71 +1194,77 @@ msgid ""
 "* available training data (%3$i)` (in this case the minimum can be %4$i at "
 "most)."
 msgstr ""
+"O número máximo de observações por nó é muito grande. Certifique-se de que `"
+"2 * Observações mínimas no nó (%1$i) + 1` < `Dados de treinamento usados por "
+"árvore (%2$s) * Dados de treinamento disponíveis (%3$i)` (neste caso, o "
+"mínimo pode ser %4$i no máximo)."
 
 msgid "Relative Importance"
-msgstr ""
+msgstr "Importância Relativa"
 
 msgid "No splits were made in the tree."
-msgstr ""
+msgstr "Nenhuma divisão foi feita na árvore."
 
 msgid "Splits in Tree"
-msgstr ""
+msgstr "Divisões na Árvore"
 
 msgid "Obs. in Split"
-msgstr ""
+msgstr "Obs. na Divisão"
 
 msgid "Split Point"
-msgstr ""
+msgstr "Ponto de Divisão"
 
 msgid "Improvement"
-msgstr ""
+msgstr "Melhoria"
 
 msgid ""
 "For each level of the tree, only the split with the highest improvement in "
 "deviance is shown."
 msgstr ""
+"Para cada nível da árvore, apenas a divisão com a maior melhoria no desvio é "
+"mostrada."
 
 msgid "Decision Tree Plot"
-msgstr ""
+msgstr "Gráfico da Árvore de Decisão"
 
 msgid "Plotting not possible: No splits were made in the tree."
-msgstr ""
+msgstr "Plotagem não possível: Nenhuma divisão foi feita na árvore."
 
 msgid "Plotting not possible: An error occurred while creating this plot: %s"
-msgstr ""
+msgstr "Plotagem não possível: Ocorreu um erro ao criar este gráfico: %s"
 
 msgid "Classification Accuracy Plot"
-msgstr ""
+msgstr "Gráfico de Exatidão de Classificação"
 
 msgid "Mean Squared Error Plot"
-msgstr ""
+msgstr "Gráfico de Erro Quadrático Médio"
 
 msgid "Classification Accuracy"
-msgstr ""
+msgstr "Exatidão da Classificação"
 
 msgid "Mean Squared Error"
 msgstr "Erro Quadrático Médio"
 
 msgid "Validation set"
-msgstr ""
+msgstr "Conjunto de validação"
 
 msgid "Complexity Penalty"
-msgstr ""
+msgstr "Penalidade de Complexidade"
 
 msgid "Number of Nearest Neighbors"
-msgstr ""
+msgstr "Número de Vizinhos Mais Próximos"
 
 msgid "Training and validation set"
-msgstr ""
+msgstr "Conjunto de treinamento e validação"
 
 msgid "Rectangular"
-msgstr ""
+msgstr "Retangular"
 
 msgid "Triangular"
-msgstr ""
+msgstr "Triangular"
 
 msgid "Epanechnikov"
-msgstr ""
+msgstr "Epanechnikov"
 
 msgid "Biweight"
 msgstr "Biponderada"
@@ -1169,27 +1273,29 @@ msgid "Triweight"
 msgstr "Triponderada"
 
 msgid "Cosine"
-msgstr ""
+msgstr "Cosseno"
 
 msgid "Inverse"
-msgstr ""
+msgstr "Inverso"
 
 msgid "Rank"
-msgstr ""
+msgstr "Ranque"
 
 msgid "Optimal"
-msgstr ""
+msgstr "Ótimo"
 
 msgid "%1$s Weight Function"
-msgstr ""
+msgstr "%1$s função de ponderação"
 
 msgid ""
 "Plotting not possible: The selected weighting scheme cannot be visualized "
 "separately from the data."
 msgstr ""
+"Plotagem não possível: O esquema de ponderação selecionado não pode ser "
+"visualizado separadamente dos dados."
 
 msgid "Proportion of Max. Distance"
-msgstr ""
+msgstr "Proporção da Distância Máx."
 
 msgid "Relative Weight"
 msgstr "Peso Relativo"
@@ -1198,187 +1304,187 @@ msgid "Network Weights"
 msgstr "Peso de Redes"
 
 msgid "Node"
-msgstr ""
+msgstr "Nó"
 
 msgid "Layer"
-msgstr ""
+msgstr "Camada"
 
 msgid "Weight"
 msgstr "Peso"
 
 msgid "linear"
-msgstr ""
+msgstr "linear"
 
 msgid "binary step"
-msgstr ""
+msgstr "passo binário"
 
 msgid "logistic sigmoid"
-msgstr ""
+msgstr "sigmoide logístico"
 
 msgid "sine"
-msgstr ""
+msgstr "seno"
 
 msgid "cosine"
-msgstr ""
+msgstr "cosseno"
 
 msgid "inverse tangent"
-msgstr ""
+msgstr "tangente inversa"
 
 msgid "hyperbolic tangent"
-msgstr ""
+msgstr "tangente hiperbólica"
 
 msgid "rectified linear unit (ReLU)"
-msgstr ""
+msgstr "unidade linear corrigida (ReLU)"
 
 msgid "softplus"
-msgstr ""
+msgstr "softplus"
 
 msgid "softsign"
-msgstr ""
+msgstr "softsign"
 
 msgid "exponential linear unit (ELU)"
-msgstr ""
+msgstr "unidade linear exponencial (ELU)"
 
 msgid "leaky rectified linear unit (Leaky ReLU)"
-msgstr ""
+msgstr "unidade linear retificada permeável (Leaky ReLU)"
 
 msgid "sigmoid linear unit (SiLU)"
-msgstr ""
+msgstr "unidade linear sigmoide (SiLU)"
 
 msgid "mish"
-msgstr ""
+msgstr "mish"
 
 msgid "gaussian"
-msgstr ""
+msgstr "gaussiana"
 
 msgid "gaussian error linear unit (GeLU)"
-msgstr ""
+msgstr "unidade linear de erro gaussiano (GeLU)"
 
 msgid "The weights are input for the %1$s activation function."
-msgstr ""
+msgstr "Os pesos são inseridos para a função de ativação %1$s."
 
 msgid "Network Structure Plot"
-msgstr ""
+msgstr "Gráfico de Estrutura de Rede"
 
 msgid "Intercept"
 msgstr "Intercepto"
 
 msgid "Input layer"
-msgstr ""
+msgstr "Camada de entrada"
 
 msgid "Output layer"
-msgstr ""
+msgstr "Camada de saída"
 
 msgid "Hidden layer %1$s"
-msgstr ""
+msgstr "Camada escondida %1$s"
 
 msgid "Binary"
-msgstr ""
+msgstr "Binário"
 
 msgid "Logistic Sigmoid"
-msgstr ""
+msgstr "Sigmoide Logístico"
 
 msgid "Sine"
-msgstr ""
+msgstr "Seno"
 
 msgid "Inverse Tangent"
-msgstr ""
+msgstr "Tangente Inversa"
 
 msgid "Hyperbolic Tangent"
-msgstr ""
+msgstr "Tangente Hiperbólica"
 
 msgid "ReLU"
-msgstr ""
+msgstr "ReLU"
 
 msgid "Softplus"
-msgstr ""
+msgstr "Softplus"
 
 msgid "Softsign"
-msgstr ""
+msgstr "Softsign"
 
 msgid "ELU"
-msgstr ""
+msgstr "ELU"
 
 msgid "Leaky ReLU"
-msgstr ""
+msgstr "Leaky ReLU"
 
 msgid "SiLU"
-msgstr ""
+msgstr "SiLU"
 
 msgid "Mish"
-msgstr ""
+msgstr "Mish"
 
 msgid "GeLU"
-msgstr ""
+msgstr "GeLU"
 
 msgid "%1$s Activation Function"
-msgstr ""
+msgstr "%1$s Função de Ativação"
 
 msgid "Input"
-msgstr ""
+msgstr "Entrada"
 
 msgid "Output"
-msgstr ""
+msgstr "Saída"
 
 msgid "Generation"
-msgstr ""
+msgstr "Geração"
 
 msgid "Mean decrease in accuracy"
-msgstr ""
+msgstr "Decréscimo médio na exatidão"
 
 msgid "Total increase in node purity"
-msgstr ""
+msgstr "Crescimento total na pureza de nó"
 
 msgid "Out-of-bag Classification Accuracy Plot"
-msgstr ""
+msgstr "Gráfico de Exatidão da Classificação 'Fora da Sacola'"
 
 msgid "Out-of-bag Mean Squared Error Plot"
-msgstr ""
+msgstr "Gráfico de Erro Quadrático Médio 'Fora da Sacola'"
 
 msgid "Out-of-bag %sClassification Accuracy"
-msgstr ""
+msgstr "Precisão de Classificação %s 'fora da sacola'"
 
 msgid "Out-of-bag %sMean Squared Error"
-msgstr ""
+msgstr "Erro Quadrático Médio %s 'fora da sacola'"
 
 msgid "Mean Decrease in Accuracy"
-msgstr ""
+msgstr "Decréscimo Médio na Exatidão"
 
 msgid "Total Increase in Node Purity"
-msgstr ""
+msgstr "Crescimento Total na Pureza de Nó"
 
 msgid "L2 (Ridge)"
-msgstr ""
+msgstr "L2 (Cume)"
 
 msgid "L1 (Lasso)"
-msgstr ""
+msgstr "L1 (Lasso)"
 
 msgid "Elastic Net"
-msgstr ""
+msgstr "Rede Elástica"
 
 msgid "Variable Trace Plot"
-msgstr ""
+msgstr "Gráfico de Traço da Variável"
 
 msgid "Coefficients"
 msgstr "Coeficientes"
 
 msgid "Lambda Evaluation Plot"
-msgstr ""
+msgstr "Gráfico de Avaliação Lambda"
 
 msgid "Cross-Validated %sMean Squared Error"
-msgstr ""
+msgstr "Erro Quadrático Médio %s Validado Cruzado"
 
 msgid "Min. CV MSE"
-msgstr ""
+msgstr "Mín. CV EQM"
 
 msgid "%s 1 SE"
-msgstr ""
+msgstr "%s 1 DP"
 
 msgid "Row"
 msgstr "Linha"
 
 msgid "Cost of Constraints Violation"
-msgstr ""
+msgstr "Custo da Violação de Restrições"
 
 #, fuzzy
 #~ msgid "Precision"
