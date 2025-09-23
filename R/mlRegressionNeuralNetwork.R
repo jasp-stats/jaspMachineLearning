@@ -510,7 +510,7 @@ mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
   xBreaks <- jaspGraphs::getPrettyAxisBreaks(c(-6, 6), min.n = 4)
   yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(-1, 1), min.n = 4)
   p <- ggplot2::ggplot() +
-    ggplot2::stat_function(fun = ac, size = 1) +
+    ggplot2::stat_function(fun = ac, linewidth = 1) +
     ggplot2::scale_x_continuous(name = gettext("Input"), breaks = xBreaks, limits = c(-6, 6)) +
     ggplot2::scale_y_continuous(name = gettext("Output"), breaks = yBreaks, limits = c(-1, 1)) +
     jaspGraphs::geom_rangeframe() +

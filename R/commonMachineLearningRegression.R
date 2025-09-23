@@ -612,7 +612,7 @@
     nTest <- result[["ntest"]]
     plotData <- data.frame(y = c(nTrain, nTest), x = c("Train", "Test"), group = c(1, 1))
     p <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = group, y = y, fill = factor(x, levels = c("Test", "Train")))) +
-      ggplot2::geom_bar(stat = "identity", col = "black", size = 0.5) +
+      ggplot2::geom_bar(stat = "identity", col = "black", linewidth = 0.5) +
       ggplot2::scale_y_continuous(name = NULL, limits = c(0, nTrain + nTest + ((nTrain + nTest) / 5))) + # adjust limits to include "Total" text
       ggplot2::coord_flip() +
       ggplot2::labs(x = NULL) +
@@ -629,7 +629,7 @@
       nTest <- result[["ntest"]]
       plotData <- data.frame(y = c(nTrain, nValid, nTest), x = c("Train", "Validation", "Test"), group = c(1, 1, 1))
       p <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = group, y = y, fill = factor(x, levels = c("Test", "Validation", "Train")))) +
-        ggplot2::geom_bar(stat = "identity", col = "black", size = 0.5) +
+        ggplot2::geom_bar(stat = "identity", col = "black", linewidth = 0.5) +
         ggplot2::scale_y_continuous(name = NULL, limits = c(0, nTrain + nValid + nTest + ((nTrain + nValid + nTest) / 5))) + # adjust limits to include "Total" text
         ggplot2::coord_flip() +
         ggplot2::labs(x = NULL) +
@@ -651,7 +651,7 @@
       nTest <- result[["ntest"]]
       plotData <- data.frame(y = c(nTrainAndValid, nTest), x = c("Train and validation", "Test"), group = c(1, 1))
       p <- ggplot2::ggplot(data = plotData, mapping = ggplot2::aes(x = group, y = y, fill = factor(x, levels = c("Test", "Train and validation")))) +
-        ggplot2::geom_bar(stat = "identity", col = "black", size = 0.5) +
+        ggplot2::geom_bar(stat = "identity", col = "black", linewidth = 0.5) +
         ggplot2::scale_y_continuous(name = NULL, limits = c(0, nTrainAndValid + nTest + ((nTrainAndValid + nTest) / 5))) + # adjust limits to include "Total" text
         ggplot2::coord_flip() +
         ggplot2::xlab(NULL) +

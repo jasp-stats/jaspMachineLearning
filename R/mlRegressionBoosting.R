@@ -261,7 +261,7 @@ mlRegressionBoosting <- function(jaspResults, dataset, options, ...) {
       mapping = ggplot2::aes(x = xstart, xend = xend, y = ystart, yend = yend), linetype = "dashed", col = "darkgrey"
     ) +
     jaspGraphs::geom_line(mapping = ggplot2::aes(linetype = type)) +
-    ggplot2::geom_smooth(method = "loess", formula = y ~ x, size = 1, colour = "darkred", se = FALSE) +
+    ggplot2::geom_smooth(method = "loess", formula = y ~ x, linewidth = 1, colour = "darkred", se = FALSE) +
     ggplot2::scale_x_continuous(name = gettext("Number of Trees"), labels = xLabels, breaks = xBreaks, limits = c(0, max(xBreaks))) +
     ggplot2::scale_y_continuous(name = ylab, labels = yLabels, breaks = yBreaks, limits = range(yBreaks)) +
     ggplot2::labs(linetype = NULL) +
