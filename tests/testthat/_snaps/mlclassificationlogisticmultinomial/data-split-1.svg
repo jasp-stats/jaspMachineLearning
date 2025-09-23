@@ -21,22 +21,22 @@
 <rect x='0.00' y='0.00' width='720.00' height='576.00' style='stroke-width: 10.67; stroke: none;' />
 </g>
 <defs>
-  <clipPath id='cpOC41MHw3MjAuMDB8MjAuNzF8NTY3LjUw'>
-    <rect x='8.50' y='20.71' width='711.50' height='546.79' />
+  <clipPath id='cpMC4wMHw3MjAuMDB8MjAuNzF8NTc2LjAw'>
+    <rect x='0.00' y='20.71' width='720.00' height='555.29' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpOC41MHw3MjAuMDB8MjAuNzF8NTY3LjUw)'>
-<rect x='8.50' y='20.71' width='711.50' height='546.79' style='stroke-width: 10.67; stroke: none;' />
-<rect x='40.84' y='45.56' width='431.21' height='497.08' style='stroke-width: 1.07; stroke-linecap: butt; stroke-linejoin: miter; fill: #5CACEE;' />
-<rect x='472.05' y='45.56' width='107.80' height='497.08' style='stroke-width: 1.07; stroke-linecap: butt; stroke-linejoin: miter; fill: #EE5C42;' />
-<text x='45.97' y='298.02' style='font-size: 11.38px; font-family: sans;' textLength='51.24px' lengthAdjust='spacingAndGlyphs'>Train: 160</text>
-<text x='476.17' y='298.02' style='font-size: 11.38px; font-family: sans;' textLength='41.12px' lengthAdjust='spacingAndGlyphs'>Test: 40</text>
-<text x='584.92' y='298.02' style='font-size: 11.38px; font-family: sans;' textLength='50.61px' lengthAdjust='spacingAndGlyphs'>Total: 200</text>
-<rect x='8.50' y='20.71' width='711.50' height='546.79' style='stroke-width: 0.00; stroke: none;' />
+<g clip-path='url(#cpMC4wMHw3MjAuMDB8MjAuNzF8NTc2LjAw)'>
+<rect x='0.00' y='20.71' width='720.00' height='555.29' style='stroke-width: 10.67; stroke: none;' />
+<rect x='32.73' y='45.95' width='436.36' height='504.81' style='stroke-width: 1.07; stroke-linecap: butt; stroke-linejoin: miter; fill: #5CACEE;' />
+<rect x='469.09' y='45.95' width='109.09' height='504.81' style='stroke-width: 1.07; stroke-linecap: butt; stroke-linejoin: miter; fill: #EE5C42;' />
+<text x='37.85' y='302.27' style='font-size: 11.38px; font-family: sans;' textLength='51.24px' lengthAdjust='spacingAndGlyphs'>Train: 160</text>
+<text x='473.20' y='302.27' style='font-size: 11.38px; font-family: sans;' textLength='41.12px' lengthAdjust='spacingAndGlyphs'>Test: 40</text>
+<text x='583.24' y='302.27' style='font-size: 11.38px; font-family: sans;' textLength='50.61px' lengthAdjust='spacingAndGlyphs'>Total: 200</text>
+<rect x='0.00' y='20.71' width='720.00' height='555.29' style='stroke-width: 0.00; stroke: none;' />
 </g>
 <g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
-<polyline points='8.50,567.50 8.50,20.71 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt;' />
-<polyline points='8.50,567.50 720.00,567.50 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt;' />
-<text x='364.25' y='11.70' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='84.10px' lengthAdjust='spacingAndGlyphs'>data-split-1</text>
+<polyline points='0.00,576.00 0.00,20.71 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt;' />
+<polyline points='0.00,576.00 720.00,576.00 ' style='stroke-width: 0.00; stroke: none; stroke-linecap: butt;' />
+<text x='360.00' y='11.70' text-anchor='middle' style='font-size: 17.00px; font-family: sans;' textLength='84.10px' lengthAdjust='spacingAndGlyphs'>data-split-1</text>
 </g>
 </svg>
