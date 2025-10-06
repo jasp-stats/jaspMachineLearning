@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.0\n"
 "POT-Creation-Date: 2025-06-28 03:36\n"
-"PO-Revision-Date: 2025-09-15 01:01+0000\n"
-"Last-Translator: hakan dokumuş <dokumushakan@gmail.com>\n"
+"PO-Revision-Date: 2025-10-07 21:02+0000\n"
+"Last-Translator: Hamza Yalçin <h.yalcin08@gmail.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/tr/>\n"
 "Language: tr\n"
@@ -177,10 +177,10 @@ msgid "Confusion Matrix"
 msgstr ""
 
 msgid "Observed"
-msgstr ""
+msgstr "Gözlemlenen"
 
 msgid "Predicted"
-msgstr ""
+msgstr "Tahmin Edilen"
 
 msgid "Decision Boundary Matrix"
 msgstr ""
@@ -443,7 +443,7 @@ msgid "The Total Sum of Squares of the %1$s cluster model is %2$s"
 msgstr ""
 
 msgid "Value"
-msgstr ""
+msgstr "Değer"
 
 msgid "Maximum diameter"
 msgstr ""
@@ -736,10 +736,10 @@ msgid "Prior and Posterior Class Probabilities"
 msgstr ""
 
 msgid "Prior"
-msgstr "Önceki"
+msgstr "Önsel"
 
 msgid "Posterior"
-msgstr ""
+msgstr "Sonsal"
 
 msgid "Class Means in Training Data"
 msgstr ""
@@ -757,7 +757,7 @@ msgid "Tests of Equality of Covariance Matrices"
 msgstr ""
 
 msgid "df"
-msgstr "sd (serbestlik derecesi)"
+msgstr "sd"
 
 msgid "p"
 msgstr "p"
@@ -992,7 +992,7 @@ msgid "Classification"
 msgstr ""
 
 msgid "Regression"
-msgstr ""
+msgstr "Regresyon"
 
 msgid "Loaded Model: %1$s"
 msgstr ""
@@ -1256,7 +1256,7 @@ msgid "Network Structure Plot"
 msgstr ""
 
 msgid "Intercept"
-msgstr "Kesişim"
+msgstr "Kesme Noktası"
 
 msgid "Input layer"
 msgstr ""
