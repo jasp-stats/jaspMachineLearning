@@ -294,7 +294,7 @@ mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
   yBreaks <- jaspGraphs::getPrettyAxisBreaks(c(0, 1), min.n = 4) # 0.001 for Inf at x = 0 in 'inv' weights
   plotFunc <- function(x) func(x) / func(0.001)
   p <- ggplot2::ggplot() +
-    ggplot2::stat_function(fun = plotFunc, size = 1, xlim = c(0.001, 1)) +
+    ggplot2::stat_function(fun = plotFunc, linewidth = 1, xlim = c(0.001, 1)) +
     ggplot2::scale_x_continuous(name = gettext("Proportion of Max. Distance"), breaks = xBreaks, limits = c(0, 1)) +
     ggplot2::scale_y_continuous(name = gettext("Relative Weight"), breaks = yBreaks, limits = c(0, 1)) +
     jaspGraphs::geom_rangeframe() +
