@@ -4,16 +4,10 @@ import JASP.Module
 Description
 {
 	title:			qsTr("Machine Learning")
-	name:			"jaspMachineLearning"
 	description:	qsTr("Explore the relation between variables using data-driven methods for regression, classification, and clustering")
-	version			: "0.95.0"
-	author:			"JASP Team"
-	maintainer:		"JASP Team <info@jasp-stats.org>"
-	website:		"www.jasp-stats.org"
-	license:		"GPL (>= 2)"
 	icon:			"analysis-ml-ribbon.svg"
-	preloadData:	true
-
+	hasWrappers: 	false
+	
 	GroupTitle
 	{
 		title:		qsTr("Supervised Learning")
