@@ -62,7 +62,7 @@ mlClusteringHierarchical <- function(jaspResults, dataset, options, ...) {
   if (options[["linkage"]] == "wardD") {
     linkage <- "ward.D"
   } else if (options[["linkage"]] == "wardD2") {
-    linkage <- "ward.D"
+    linkage <- "ward.D2"
   } else {
     linkage <- options[["linkage"]]
   }
