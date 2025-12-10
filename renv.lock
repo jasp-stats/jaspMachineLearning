@@ -84,10 +84,10 @@
       "Version": "7.3-65",
       "Source": "Repository",
       "Requirements": [
-        "graphics",
-        "grDevices",
         "methods",
         "R",
+        "grDevices",
+        "graphics",
         "stats",
         "utils"
       ]
@@ -97,14 +97,14 @@
       "Version": "1.7-4",
       "Source": "Repository",
       "Requirements": [
-        "graphics",
         "grDevices",
+        "graphics",
         "grid",
         "lattice",
-        "methods",
-        "R",
         "stats",
-        "utils"
+        "utils",
+        "R",
+        "methods"
       ]
     },
     "R6": {
@@ -149,11 +149,10 @@
     },
     "Rcpp": {
       "Package": "Rcpp",
-      "Version": "1.1.0.8.1",
+      "Version": "1.1.0",
       "Source": "Repository",
       "Requirements": [
         "methods",
-        "R",
         "utils"
       ]
     },
@@ -297,9 +296,9 @@
       "Requirements": [
         "graphics",
         "grDevices",
-        "R",
         "stats",
-        "utils"
+        "utils",
+        "R"
       ]
     },
     "coda": {
@@ -999,12 +998,12 @@
       "Version": "0.22-7",
       "Source": "Repository",
       "Requirements": [
-        "graphics",
-        "grDevices",
         "grid",
-        "R",
+        "grDevices",
+        "graphics",
         "stats",
-        "utils"
+        "utils",
+        "R"
       ]
     },
     "libcoin": {
@@ -1365,10 +1364,10 @@
       "Version": "4.1.24",
       "Source": "Repository",
       "Requirements": [
-        "graphics",
-        "grDevices",
         "R",
-        "stats"
+        "graphics",
+        "stats",
+        "grDevices"
       ]
     },
     "rvg": {
@@ -1495,10 +1494,10 @@
         "graphics",
         "Matrix",
         "methods",
-        "R",
         "splines",
         "stats",
-        "utils"
+        "utils",
+        "R"
       ]
     },
     "svglite": {
