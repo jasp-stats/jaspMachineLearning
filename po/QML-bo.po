@@ -1,0 +1,2810 @@
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2025-12-27 03:41+0000\n"
+"Last-Translator: Zev Oster <zevelijah@gmail.com>\n"
+"Language-Team: Tibetan <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/bo/>\n"
+"Language: bo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.15.1\n"
+"X-Qt-Contexts: true\n"
+
+msgctxt "Description|"
+msgid "Machine Learning"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Regression"
+msgstr "ཕྱིར་ལྡོག།"
+
+msgctxt "Description|"
+msgid "Boosting"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Boosting Regression"
+msgstr ""
+
+msgctxt "Description|"
+msgid "K-Nearest Neighbors"
+msgstr ""
+
+msgctxt "Description|"
+msgid "K-Nearest Neighbors Regression"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Random Forest"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Random Forest Regression"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Regularized Linear"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Regularized Linear Regression"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Classification"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Boosting Classification"
+msgstr ""
+
+msgctxt "Description|"
+msgid "K-Nearest Neighbors Classification"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Linear Discriminant"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Linear Discriminant Classification"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Random Forest Classification"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Clustering"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Density-Based"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Density-Based Clustering"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Fuzzy C-Means"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Fuzzy C-Means Clustering"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Hierarchical"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Hierarchical Clustering"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Random Forest Clustering"
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "Data Split Preferences"
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "Holdout Test Data"
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "Sample"
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "% of all data"
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "Add generated indicator to data"
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "None"
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "Training and Validation Data"
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "% for validation data"
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "K-fold with"
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "folds"
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "Leave-one-out"
+msgstr ""
+
+msgctxt "mlClassificationBoosting|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlClassificationBoosting|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlClassificationBoosting|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlClassificationBoosting|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlClassificationKnn|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlClassificationKnn|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlClassificationKnn|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlClassificationKnn|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid "Coefficients"
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid "Prior and posterior probabilities"
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid "Class means training data"
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid "Assumption Checks"
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid "Equality of class means"
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid "Equality of covariance matrices"
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid "Multicollinearity"
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid "Linear discriminant matrix"
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid "Densities"
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid "Scatter plots"
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlClassificationRandomForest|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlClusteringDensityBased|"
+msgid "K-distance plot"
+msgstr ""
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Normal"
+msgstr ""
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Correlated"
+msgstr ""
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Model Optimization"
+msgstr ""
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Fixed"
+msgstr ""
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Dendrogram"
+msgstr ""
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Euclidean"
+msgstr ""
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Average"
+msgstr ""
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Single"
+msgstr ""
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Complete"
+msgstr ""
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Centroid"
+msgstr ""
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Median"
+msgstr ""
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Ward.D"
+msgstr ""
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Ward.D2"
+msgstr ""
+
+msgctxt "mlClusteringHierarchical|"
+msgid "McQuitty"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlRegressionBoosting|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlRegressionBoosting|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlRegressionBoosting|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlRegressionBoosting|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlRegressionKnn|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlRegressionKnn|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlRegressionKnn|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlRegressionKnn|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlRegressionRandomForest|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlRegressionRegularized|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlRegressionRegularized|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlRegressionRegularized|"
+msgid "Variable trace"
+msgstr ""
+
+msgctxt "mlRegressionRegularized|"
+msgid "Legend"
+msgstr ""
+
+msgctxt "mlRegressionRegularized|"
+msgid "λ evaluation"
+msgstr ""
+
+msgctxt "mlRegressionRegularized|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlRegressionRegularized|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlRegressionRegularized|"
+msgid "Elastic net"
+msgstr ""
+
+msgctxt "mlRegressionRegularized|"
+msgid "Lambda (λ)"
+msgstr ""
+
+msgctxt "mlRegressionRegularized|"
+msgid "Fixed"
+msgstr ""
+
+msgctxt "mlRegressionRegularized|"
+msgid "Optimized"
+msgstr ""
+
+msgctxt "Description|"
+msgid ""
+"Explore the relation between variables using data-driven methods for "
+"regression, classification, and clustering"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Neural Network"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Neural Network Regression"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Neural Network Classification"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Prediction"
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "Export Results"
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "Add predictions to data"
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "Column name"
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "e.g., predicted"
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "Save as"
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "e.g., location/model.jaspML"
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "Save trained model"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "Column name"
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "Test set indicator"
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid "Estimation method"
+msgstr ""
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Epsilon neighborhood size"
+msgstr ""
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Min. core points"
+msgstr ""
+
+msgctxt "mlClusteringDensityBased|"
+msgid "Distance"
+msgstr ""
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Max. iterations"
+msgstr ""
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid "Fuzziness parameter"
+msgstr ""
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Distance"
+msgstr ""
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Pearson"
+msgstr ""
+
+msgctxt "mlClusteringHierarchical|"
+msgid "Linkage"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Max. iterations"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Random sets"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Algorithm"
+msgstr ""
+
+msgctxt "mlClusteringRandomForest|"
+msgid "Trees"
+msgstr ""
+
+msgctxt "mlRegressionBoosting|"
+msgid "Loss function"
+msgstr ""
+
+msgctxt "mlRegressionRegularized|"
+msgid "Convergence threshold"
+msgstr ""
+
+msgctxt "mlRegressionRegularized|"
+msgid "Penalty"
+msgstr ""
+
+msgctxt "mlRegressionRegularized|"
+msgid "Lasso"
+msgstr ""
+
+msgctxt "mlRegressionRegularized|"
+msgid "Ridge"
+msgstr ""
+
+msgctxt "mlRegressionRegularized|"
+msgid "Elastic net parameter (α)"
+msgstr ""
+
+msgctxt "mlRegressionRegularized|"
+msgid "Largest λ within 1 SE of min"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Decision Tree"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Decision Tree Regression"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Support Vector Machine"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Support Vector Machine Regression"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Decision Tree Classification"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Support Vector Machine Classification"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Neighborhood-Based"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Neighborhood-Based Clustering"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Center type"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Distance"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Euclidean"
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid "Manhattan"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "Trained model"
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "e.g., location/model.jaspML"
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "Features"
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "to"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Linear"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Linear Regression"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Shrinkage"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"A shrinkage parameter applied to each tree in the expansion. Also known as "
+"the learning rate or step-size reduction 0.001 to 0.1 usually work, but a "
+"smaller learning rate typically requires more trees."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Interaction depth"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"Integer specifying the maximum depth of each tree (i.e., the highest level "
+"of variable interactions allowed. A value of 1 implies an additive model, a "
+"value of 2 implies a model with up to 2-way interactions, etc. Default is 1."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Min. observations in node"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"Integer specifying the minimum number of observations in the terminal nodes "
+"of the trees. Note that this is the actual number of observations, not the "
+"total weight."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Training data used per tree"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"Select the percentage of training data that is used to train each individual "
+"tree."
+msgstr ""
+
+msgctxt "Deviance|"
+msgid "Deviance"
+msgstr ""
+
+msgctxt "Deviance|"
+msgid "Shows the prediction error plotted against the number of trees."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Number of Trees"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Choose how to optimize the model."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Fixed"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Enables you to use a user-specified number of decision trees."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Trees"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "The number of trees."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Optimized"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid ""
+"Enables you to optimize the prediction error on a validation data set with "
+"respect to the number of trees."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Max. trees"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid ""
+"Sets the maximum number of possible decision trees to be considered. At "
+"default, this is set to 100."
+msgstr ""
+
+msgctxt "Oob|"
+msgid "Out-of-bag improvement"
+msgstr ""
+
+msgctxt "Oob|"
+msgid ""
+"Plots the number of trees against the out-of-bag classification accuracy "
+"improvement of the model. Accuracy is assessed for the training set."
+msgstr ""
+
+msgctxt "RelativeInfluence|"
+msgid "Relative influence"
+msgstr ""
+
+msgctxt "RelativeInfluence|"
+msgid "Shows the relative influence of the features."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Min. observations for split"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"The minimum number of observations that must exist in a node in order for a "
+"split to be attempted."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Min. observations in terminal"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "The minimum number of observations in any terminal node."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Max. interaction depth"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Set the maximum depth of any node of the final tree."
+msgstr ""
+
+msgctxt "AttemptedSplits|"
+msgid "Attempted splits"
+msgstr ""
+
+msgctxt "AttemptedSplits|"
+msgid ""
+"Shows the splits made by the algorithm, the corresponding features and split "
+"points, and the number of observations (which are not missing and are of "
+"positive weight) sent left or right by the split. It also shows the "
+"improvement in deviance given by the splits."
+msgstr ""
+
+msgctxt "AttemptedSplits|"
+msgid "Only show splits in tree"
+msgstr ""
+
+msgctxt "AttemptedSplits|"
+msgid "Remove splits that do not occur in the final tree from the table."
+msgstr ""
+
+msgctxt "TreePlot|"
+msgid "Decision tree"
+msgstr ""
+
+msgctxt "TreePlot|"
+msgid "Creates a plot that visualizes the decision tree and its leafs."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Weights"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Rectangular"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Triangular"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Epanechnikov"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Biweight"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Triweight"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Cosine"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Inverse"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Gaussian"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Rank"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Optimal"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"Sets the weighting scheme for the nearest neighbors. The default rectangular "
+"option results in standard knn, while the other options expand the algorithm "
+"by weighing the nearest neighbors. See also the kknn package."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Distance"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Euclidian"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Manhattan"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"The distance metric to be used when determining the similarity between "
+"nearest neighbors. Can be either Euclidean or Manhattan distance."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Number of Nearest Neighbors"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Enables you to use a user-specified number of nearest neighbors."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Nearest neighbors"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "The number of nearest neighbors to be used."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid ""
+"Enables you to optimize the prediction error on a validation data set with "
+"respect to the number of nearest neighbors."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Max. nearest neighbors"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid ""
+"Sets the maximum number of possible nearest neighbors to be considered. At "
+"default, this is set to 10."
+msgstr ""
+
+msgctxt "OptimPlot|"
+msgid "Mean squared error"
+msgstr ""
+
+msgctxt "OptimPlot|"
+msgid "Classification accuracy"
+msgstr ""
+
+msgctxt "OptimPlot|"
+msgid ""
+"For regression, Plots the number of nearest neighbors against the MSE of the "
+"model. Accuracy is assessed for the training (and validation) set. For "
+"classification, plots the number of nearest neighbors against the "
+"classification accuracy of the model. Accuracy is assessed for the training "
+"(and validation) set."
+msgstr ""
+
+msgctxt "WeightFunction|"
+msgid "Weight function"
+msgstr ""
+
+msgctxt "WeightFunction|"
+msgid "Shows how the weights are assigned as a function of the distance."
+msgstr ""
+
+msgctxt "ActivationFunctionPlot|"
+msgid "Activation function"
+msgstr ""
+
+msgctxt "ActivationFunctionPlot|"
+msgid "Creates a plot of the activation function."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Activation function"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Linear"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Binary"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Logistic sigmoid"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Sine"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Inverse tangent"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Hyperbolic tangent"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "ReLU"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Softplus"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Softsign"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "ELU"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "LReLU"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "SiLU"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Mish"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "GeLU"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"Sets the activation function for the signal in each hidden layer. Available "
+"options are:\n"
+"- linear: *f(x) = x*\n"
+"- Binary: *f(x) = 0 if x < 0, 1 if x > 0\n"
+"- Logistic sigmoid: *f(x) = 1 / (1 + e^(-x))*\n"
+"- Sine: *f(x) = sin(x)*\n"
+"- Cosine: *f(x) = cos(x)*\n"
+"- Inverse tangent: *f(x) = arctan(x)*\n"
+"- Hyperbolic tangent: *f(x) = tanh(x)*\n"
+"- ReLU: *f(x) =  0 if x < 0, x if x > 0*\n"
+"- Softplus: *f(x) = log(1 + e^x)*\n"
+"- Softsign: *f(x) = x / (abs(x) + 1)*\n"
+"- ELU: *f(x) = e^x - 1 if x <= 0, x if x > 0*\n"
+"- LReLU: *f(x) = 0.01 * x if x < 0, x if x > 0*\n"
+"- SiLU: *f(x) = x / (1 + e^(-x))*\n"
+"- Mish: *f(x) = x * tanh(log(1 + e^x))*\n"
+"- Gaussian: *f(x) = e * (-x^2)*\n"
+"- GeLU: *f(x) = 0.5 * x * (1 + tanh(sqrt(2 / pi) * (x + 0.044715 * x^3)))*"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Algorithm"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Backpropagation"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "rprop+"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "rprop-"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "grprop-sag"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "grprop-slr"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"Sets the algorithm for the network training. The backpropagation option is "
+"standard for training neural networks, but other options are `rprop+` "
+"(default) for resilient backpropagation with backtracing, `rprop-` for "
+"resilient backpropagation without backtracing, `gprop-sag` for the globally "
+"convergent algorithm that modifies the learning rate associated with the "
+"smallest absolute gradient, or `gprop-slr` for the globally convergent "
+"algorithm that modifies the learning rate associated with the smallest "
+"learning rate itself."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Learning rate"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "The learning rate used by the backpropagation algorithm."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Loss function"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Sum of squares"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Cross-entropy"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "The loss function used."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Stopping criteria loss function"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"The threshold for the partial derivatives of the error function as stopping "
+"criteria."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Max. training repetitions"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "The maximum number of repetitions used in training the network."
+msgstr ""
+
+msgctxt "Coefficients|"
+msgid "Network weights"
+msgstr ""
+
+msgctxt "Coefficients|"
+msgid ""
+"Shows the connections in the neural network together with their weights."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Network Topology"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Manual"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Specify the nodes in each hidden layer of the neural network."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Nodes"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Hidden layer "
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Optimize the topology of the network using a genetic algorithm."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Population size"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Size of population used in genetic optimization."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Generations"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Number of generations used in genetic optimization."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Max. number of layers"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Max. nodes in each layer"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Parent selection"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Roulette wheel"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Universal"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Rank"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Tournament"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Random"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "How to select suviving networks."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Candidates"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Number of candidates for tournament selection"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Crossover method"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Uniform"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "One-point"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Multi-point"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "How to crossover two candidate networks."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Mutations"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Reset"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Swap"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Scramble"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Inversion"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "How to mutate a network."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Probability"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "The mutation probability of a random network in each generation."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Survival method"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Fitness-based"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Age-based"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "How to choose which networks survive and die in a generation."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Elitism"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Keep top networks from dying out."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Percentage of top networks to keep."
+msgstr ""
+
+msgctxt "NetworkPlot|"
+msgid "Network structure"
+msgstr ""
+
+msgctxt "NetworkPlot|"
+msgid ""
+"Creates a plot that visualizes the structure (nodes and edges) of the "
+"network."
+msgstr ""
+
+msgctxt "OptimPlot|"
+msgid ""
+"For regression, plots the average mean squared error of the population of "
+"neural networks against the number of generations in the evoluationary "
+"optimization algorithm. For classification, plots the average classification "
+"accuracy of the population of neural networks against the number of "
+"generations in the evoluationary optimization algorithm. Accuracy is "
+"assessed for the training (and validation) set."
+msgstr ""
+
+msgctxt "AccuracyDecrease|"
+msgid "Mean decrease in accuracy"
+msgstr ""
+
+msgctxt "AccuracyDecrease|"
+msgid ""
+"Displays a figure with the mean decrease in accuracy per feature in the "
+"model."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Features per split"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Auto"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Manual"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"Set the number of feature variables that is used within each split in the "
+"decision trees. Defaults to auto."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "The number of feature variables in each split."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "The number of trees to be used."
+msgstr ""
+
+msgctxt "NodePurity|"
+msgid "Total increase in node purity"
+msgstr ""
+
+msgctxt "NodePurity|"
+msgid ""
+"Displays a figure with total increase in node purity per feature in the "
+"model."
+msgstr ""
+
+msgctxt "Oob|"
+msgid "Out-of-bag error"
+msgstr ""
+
+msgctxt "Oob|"
+msgid "Out-of-bag accuracy"
+msgstr ""
+
+msgctxt "Oob|"
+msgid ""
+"Plots the number of trees against the out-of-bag mean squared error "
+"(regression) or accuracy (classification) of the model."
+msgstr ""
+
+msgctxt "CoefficientTable|"
+msgid "Coefficients"
+msgstr ""
+
+msgctxt "CoefficientTable|"
+msgid "Shows a table containing the regression coefficients."
+msgstr ""
+
+msgctxt "CoefficientTable|"
+msgid "Confidence interval"
+msgstr ""
+
+msgctxt "CoefficientTable|"
+msgid "Display confidence intervals around estimated regression coefficients."
+msgstr ""
+
+msgctxt "CoefficientTable|"
+msgid "The confidence level for the interval."
+msgstr ""
+
+msgctxt "CoefficientTable|"
+msgid "Display equation"
+msgstr ""
+
+msgctxt "CoefficientTable|"
+msgid ""
+"Display the regression equation with the estimated values of the "
+"coefficients."
+msgstr ""
+
+msgctxt "Intercept|"
+msgid "Include intercept"
+msgstr ""
+
+msgctxt "Intercept|"
+msgid "Whether to include an intercept in the regression formula."
+msgstr ""
+
+msgctxt "VariablesFormRegularizedRegression|"
+msgid "Target"
+msgstr ""
+
+msgctxt "VariablesFormRegularizedRegression|"
+msgid "In this box, the variable that needs to be predicted should be entered."
+msgstr ""
+
+msgctxt "VariablesFormRegularizedRegression|"
+msgid "Features"
+msgstr ""
+
+msgctxt "VariablesFormRegularizedRegression|"
+msgid ""
+"In this box, the variables that provide information about the target "
+"variable should be entered."
+msgstr ""
+
+msgctxt "VariablesFormRegularizedRegression|"
+msgid "Weights"
+msgstr ""
+
+msgctxt "VariablesFormRegularizedRegression|"
+msgid ""
+"In this box, an optional variable containing case weights can be entered."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Radial"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Polynomial"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Sigmoid"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid ""
+"The kernel used in training and predicting. Possible kernels are 'linear', "
+"'radial', 'polynomial', and 'sigmoid'."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Degree"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "The degree of polynomial used."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Gamma parameter"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "The gamma parameter used."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "r parameter"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "The complexity parameter used."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Tolerance of termination criterion"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "The tolerance of termination criterion."
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "Epsilon"
+msgstr ""
+
+msgctxt "AlgorithmicSettings|"
+msgid "The epsilon parameter in the insensitive-loss function."
+msgstr ""
+
+msgctxt "SupportVectors|"
+msgid "Support vectors"
+msgstr ""
+
+msgctxt "SupportVectors|"
+msgid ""
+"Shows a table containing the data (points) indicated as support vectors by "
+"the algorithm."
+msgstr ""
+
+msgctxt "AndrewsCurve|"
+msgid "Andrews curves"
+msgstr ""
+
+msgctxt "AndrewsCurve|"
+msgid ""
+"Is a way to visualize structure in high-dimensional data. Lines that cluster "
+"are observations that are more alike."
+msgstr ""
+
+msgctxt "ClusterDensity|"
+msgid "Cluster densities"
+msgstr ""
+
+msgctxt "ClusterDensity|"
+msgid ""
+"For each feature variable, generates a plot showing the overlapping "
+"densities for the clusters."
+msgstr ""
+
+msgctxt "ClusterDensity|"
+msgid "Group into one figure"
+msgstr ""
+
+msgctxt "ClusterDensity|"
+msgid "Group the density plots per feature into a single figure."
+msgstr ""
+
+msgctxt "ClusterMatrix|"
+msgid "Cluster matrix plot"
+msgstr ""
+
+msgctxt "ClusterMatrix|"
+msgid ""
+"Creates a *n* x *n* plot that visualizes to which cluster every observation "
+"belongs according to the current model."
+msgstr ""
+
+msgctxt "ClusterMeans|"
+msgid "Cluster means"
+msgstr ""
+
+msgctxt "ClusterMeans|"
+msgid ""
+"Creates a plot that visualizes and compares the mean of the feature "
+"variables in each cluster."
+msgstr ""
+
+msgctxt "ClusterMeans|"
+msgid "Display barplot"
+msgstr ""
+
+msgctxt "ClusterMeans|"
+msgid "Transform the cluster mean figure into a barplot."
+msgstr ""
+
+msgctxt "ClusterMeans|"
+msgid "Group into one figure"
+msgstr ""
+
+msgctxt "ClusterMeans|"
+msgid "Group the plots per feature into a single figure."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "Data split"
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid ""
+"Shows how the data is split into training (and validation), and test set."
+msgstr ""
+
+msgctxt "DecisionBoundary|"
+msgid "Decision boundary matrix"
+msgstr ""
+
+msgctxt "DecisionBoundary|"
+msgid ""
+"Creates a *n* x *n* plot that visualizes how every observation would be "
+"classified if predicted through the current model. Boundaries between "
+"classes are visualized. Can only be made for numeric features."
+msgstr ""
+
+msgctxt "DecisionBoundary|"
+msgid "Legend"
+msgstr ""
+
+msgctxt "DecisionBoundary|"
+msgid "Show a legend next to the figure."
+msgstr ""
+
+msgctxt "DecisionBoundary|"
+msgid "Add data points"
+msgstr ""
+
+msgctxt "DecisionBoundary|"
+msgid "Show the observations in the data set as points in the plot."
+msgstr ""
+
+msgctxt "ElbowMethod|"
+msgid "Elbow method"
+msgstr ""
+
+msgctxt "ElbowMethod|"
+msgid ""
+"Generates a plot with the total within sum of squares on the y-axis and the "
+"number of clusters on the x-axis. This plot can be used for determining the "
+"optimal number of clusters. The plot shows three curves using AIC, BIC, and "
+"'elbow method' optimization."
+msgstr ""
+
+msgctxt "PredictivePerformance|"
+msgid "Predictive performance"
+msgstr ""
+
+msgctxt "PredictivePerformance|"
+msgid ""
+"Plots the true values of the observations in the test set against their "
+"predicted values."
+msgstr ""
+
+msgctxt "RocCurve|"
+msgid "ROC curves"
+msgstr ""
+
+msgctxt "RocCurve|"
+msgid "Displays ROC curves for each class predicted against all other classes."
+msgstr ""
+
+msgctxt "Tsne|"
+msgid "t-SNE cluster plot"
+msgstr ""
+
+msgctxt "Tsne|"
+msgid ""
+"Generates a t-SNE plot of the clustering output. t-SNE plots are used for "
+"visualizing high-dimensional data in a low-dimensional space of two "
+"dimensions aiming to illustrate the relative distances between data "
+"observations. The t-SNE two-dimensional space makes the axes "
+"uninterpretable. A t-SNE plot seeks to give an impression of the relative "
+"distances between observations and clusters. To recreate the same t-SNE plot "
+"across several clustering analyses you can set their seed to the same value, "
+"as the t-SNE algorithm uses random starting values."
+msgstr ""
+
+msgctxt "Tsne|"
+msgid "Legend"
+msgstr ""
+
+msgctxt "Tsne|"
+msgid "Show a legend next to the figure."
+msgstr ""
+
+msgctxt "Tsne|"
+msgid "Add data labels"
+msgstr ""
+
+msgctxt "Tsne|"
+msgid ""
+"Add the row numbers of the observations in the data set as labels to the "
+"plot."
+msgstr ""
+
+msgctxt "ClassProportions|"
+msgid "Class proportions"
+msgstr ""
+
+msgctxt "ClassProportions|"
+msgid ""
+"Displays a table that shows the proportions of each class in the data set, "
+"training (and validaton), and test set."
+msgstr ""
+
+msgctxt "ClusterInfo|"
+msgid "Cluster information"
+msgstr ""
+
+msgctxt "ClusterInfo|"
+msgid ""
+"Displays the size of each cluster and the explained proportion of within-"
+"cluster heterogeneity. The latter is the cluster within sum of squares "
+"divided by its total over the various clusters. These outputs are shown by "
+"default."
+msgstr ""
+
+msgctxt "ClusterInfo|"
+msgid "Within sum of squares"
+msgstr ""
+
+msgctxt "ClusterInfo|"
+msgid ""
+"Adds a row with the within sum of squares of each cluster to the table. This "
+"option is selected by default."
+msgstr ""
+
+msgctxt "ClusterInfo|"
+msgid "Silhouette score"
+msgstr ""
+
+msgctxt "ClusterInfo|"
+msgid "Adds a row with the silhouette score of each cluster to the table."
+msgstr ""
+
+msgctxt "ClusterInfo|"
+msgid "Centers"
+msgstr ""
+
+msgctxt "ClusterInfo|"
+msgid ""
+"Adds a row with the center per feature of each cluster to the table. The "
+"center can be the mean, median or mode depending on the clustering algorithm."
+msgstr ""
+
+msgctxt "ClusterInfo|"
+msgid "Between sum of squares"
+msgstr ""
+
+msgctxt "ClusterInfo|"
+msgid ""
+"Adds a note with the between sum of squares of the cluster model to the "
+"table."
+msgstr ""
+
+msgctxt "ClusterInfo|"
+msgid "Total sum of squares"
+msgstr ""
+
+msgctxt "ClusterInfo|"
+msgid ""
+"Adds a note with the total sum of squares of the cluster model to the table."
+msgstr ""
+
+msgctxt "ClusterMeans|"
+msgid "Shows a table containing the cluster means for each feature variable."
+msgstr ""
+
+msgctxt "ConfusionMatrix|"
+msgid "Confusion matrix"
+msgstr ""
+
+msgctxt "ConfusionMatrix|"
+msgid ""
+"Displays a table that shows the observed classes against the predicted "
+"classes. Used to assess model accuracy."
+msgstr ""
+
+msgctxt "ConfusionMatrix|"
+msgid "Display proportions"
+msgstr ""
+
+msgctxt "ConfusionMatrix|"
+msgid "Displays proportions in the confusion matrix instead of counts."
+msgstr ""
+
+msgctxt "ExplainPredictions|"
+msgid "Explain predictions"
+msgstr ""
+
+msgctxt "ExplainPredictions|"
+msgid "Cases"
+msgstr ""
+
+msgctxt "ExplainPredictions|"
+msgid "The test set index of the first row to be displayed in the table."
+msgstr ""
+
+msgctxt "ExplainPredictions|"
+msgid "to"
+msgstr ""
+
+msgctxt "ExplainPredictions|"
+msgid "The test set index of the last row to be displayed in the table."
+msgstr ""
+
+msgctxt "FeatureImportance|"
+msgid "Feature importance"
+msgstr ""
+
+msgctxt "FeatureImportance|"
+msgid "Shows the available feature importance metrics for the fitted model."
+msgstr ""
+
+msgctxt "ModelPerformance|"
+msgid "Model performance"
+msgstr ""
+
+msgctxt "ClusterDetermination|"
+msgid "Cluster Determination"
+msgstr ""
+
+msgctxt "ClusterDetermination|"
+msgid "Choose how to determine the number of clusters in the model."
+msgstr ""
+
+msgctxt "ClusterDetermination|"
+msgid "Fixed"
+msgstr ""
+
+msgctxt "ClusterDetermination|"
+msgid ""
+"Enables you to generate a fixed amount of clusters. This allows you to "
+"generate your own specified number of clusters, and thus, optimize manually."
+msgstr ""
+
+msgctxt "ClusterDetermination|"
+msgid "Clusters"
+msgstr ""
+
+msgctxt "ClusterDetermination|"
+msgid "The number of clusters to be fitted."
+msgstr ""
+
+msgctxt "ClusterDetermination|"
+msgid "Optimized according to"
+msgstr ""
+
+msgctxt "ClusterDetermination|"
+msgid ""
+"Enables you to choose an optimization method. BIC optimization is set as "
+"default."
+msgstr ""
+
+msgctxt "ClusterDetermination|"
+msgid ""
+"The method of optimization. The options are AIC, BIC, and silhouette. The "
+"AIC uses the within sum of squares (within-cluster variation), the number of "
+"generated clusters and the number of dimensions for optimizing the "
+"clustering output. The BIC uses the within sum of squares (within-cluster "
+"variation), the number of generated clusters, the number of dimensions, and "
+"the sample size for optimizing the clustering output. The silhouette value "
+"uses the similarity of observations within a cluster and their dissimilarity "
+"to other clusters for optimizing the clustering output."
+msgstr ""
+
+msgctxt "ClusterDetermination|"
+msgid "Max. clusters"
+msgstr ""
+
+msgctxt "ClusterDetermination|"
+msgid ""
+"Sets the maximum number of possible clusters to be generated. At default, "
+"this is set to 10."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "Choose how to create the test set."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid ""
+"Choose a percentage to randomly sample from your data to derive prediction "
+"error. Generates an internal indicator variable that indicates whether the "
+"observation is included (1) or excluded (0) from the test set."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "The percentage of observations to use for the test set."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid ""
+"Add the generated test set indicator from the option above to your data set."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "The column name for the generated test set indicator."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "The variable in the data set that is used as the test set indicator."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "Choose how to create the validation set."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid ""
+"Randomly sample a percentage from the remaining training data (after "
+"selecting the test set)."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "The percentage of observations to use for the validation set."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "Partition the remaining data in *k* parts."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "The number of folds to be used."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "Partition the remaining data in *n* parts."
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid ""
+"Generates a new column in your dataset with the values of your regression "
+"result. This gives you the option to inspect, cluster, or predict the "
+"generated values."
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "The column name for the predicted values."
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "The file path for the saved model."
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "When clicked, the model is exported to the specified file path."
+msgstr ""
+
+msgctxt "ScaleVariables|"
+msgid "Scale features"
+msgstr ""
+
+msgctxt "ScaleVariables|"
+msgid ""
+"Standardizes the continuous features in the dataset. Standardization ensures "
+"that values of features from different scales range into a specific similar "
+"scale. As a result, standardizing provides numerical stability. JASP uses "
+"the Z-score standardization of a mean of 0 and a standard deviation of 1. "
+"This option is selected by default."
+msgstr ""
+
+msgctxt "SetSeed|"
+msgid "Set seed"
+msgstr ""
+
+msgctxt "SetSeed|"
+msgid ""
+"Gives the option to set a seed for your analysis. Setting a seed will "
+"exclude random processes influencing an analysis. For example, setting a "
+"seed makes it possible to re-run analyses with the same data splits."
+msgstr ""
+
+msgctxt "SetSeed|"
+msgid "The value of the seed."
+msgstr ""
+
+msgctxt "VariablesFormClassification|"
+msgid "Target"
+msgstr ""
+
+msgctxt "VariablesFormClassification|"
+msgid "In this box, the variable that needs to be predicted should be entered."
+msgstr ""
+
+msgctxt "VariablesFormClassification|"
+msgid "Features"
+msgstr ""
+
+msgctxt "VariablesFormClassification|"
+msgid ""
+"In this box, the variables that provide information about the target "
+"variable should be entered."
+msgstr ""
+
+msgctxt "VariablesFormClustering|"
+msgid "Features"
+msgstr ""
+
+msgctxt "VariablesFormClustering|"
+msgid ""
+"In this box, the variables are need to be considered by the clustering "
+"algorithm should be entered."
+msgstr ""
+
+msgctxt "VariablesFormRegression|"
+msgid "Target"
+msgstr ""
+
+msgctxt "VariablesFormRegression|"
+msgid "In this box, the variable that needs to be predicted should be entered."
+msgstr ""
+
+msgctxt "VariablesFormRegression|"
+msgid "Features"
+msgstr ""
+
+msgctxt "VariablesFormRegression|"
+msgid ""
+"In this box, the variables that provide information about the target "
+"variable should be entered."
+msgstr ""
+
+msgctxt "mlClassificationBoosting|"
+msgid ""
+"Boosting works by sequentially adding features to an decision tree ensemble, "
+"each one correcting its predecessor. However, instead of changing the "
+"weights for every incorrect classified observation at every iteration, "
+"Boosting method tries to fit the new feature to the residual errors made by "
+"the previous feature.\n"
+"### Assumptions\n"
+"- The target variable is a nominal or ordinal variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal variables."
+msgstr ""
+
+msgctxt "mlClassificationDecisionTree|"
+msgid ""
+"Decision Trees is a supervised learning algorithm that uses a decision tree "
+"as a predictive model to go from observations about an item (represented in "
+"the roots of the tree) to conclusions about the item's target value "
+"(represented in the endpoints of the tree).\n"
+"### Assumptions\n"
+"- The target is a nominal or ordinal variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal variables."
+msgstr ""
+
+msgctxt "mlClassificationKnn|"
+msgid ""
+"K-nearest neighbors is a method of classification that looks at the *k* "
+"number of feature observations that are most similar to new observations to "
+"make a prediction for their class assignments. The number of nearest "
+"neighbors is intrinsincly linked to model complexity, as small numbers "
+"increase the flexibility of the model.\n"
+"### Assumptions\n"
+"- The target is a nominal or ordinal variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal variables."
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid ""
+"Linear Discriminant Analysis (LDA) is a method of classification that aims "
+"to find *p - 1* components that discriminate best between the classes in the "
+"target variable. LDA is a linear classifier, meaning that the decision "
+"boundaries between classes are linear.\n"
+"### Assumptions\n"
+"- The target variable is a nominal or ordinal variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal "
+"variables.\n"
+"- Equality of class means: The class means should be equal, can be checked "
+"with the corresponding table.\n"
+"- Equality of covariance matrices: The covariance matrices should be equal, "
+"can be checked with the corresponding table.\n"
+"- Multicollinearity: The classes should not correlate within each other, can "
+"be checked with the corresponding table."
+msgstr ""
+
+msgctxt "mlClassificationLda|"
+msgid "Multivariate normality"
+msgstr ""
+
+msgctxt "mlClassificationNeuralNetwork|"
+msgid ""
+"Feedforward neural networks are predictive algorithms inspired by the "
+"biological neural networks that constitute brains. A neuron (node) that "
+"receives a signal then processes it and can send signals to neurons "
+"connected to it. The signal at a node is a real number, and the output of "
+"each node is computed by sending the signal trough the activation function. "
+"The number of layers and nodes in the network is intrinsincly linked to "
+"model complexity, as high numbers increase the flexibility of the model.\n"
+"### Assumptions\n"
+"- The target is a nominal or ordinal variable.\n"
+"- The feature variables consist of continuous variables."
+msgstr ""
+
+msgctxt "mlClassificationRandomForest|"
+msgid ""
+"Random Forest is a method of classification that creates a set of decision "
+"trees that consists of a large number of individual trees which operate as "
+"an ensemble. Each individual tree in the random forest returns a class "
+"prediction and the class with the most votes becomes the model's "
+"prediction.\n"
+"### Assumptions\n"
+"- The target variable is a nominal or ordinal variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal variables."
+msgstr ""
+
+msgctxt "mlClassificationSvm|"
+msgid ""
+"Support Vector Machines is a supervised learning algorithm that maps "
+"training examples to points in space so as to maximise the width of the gap "
+"between the two categories. New examples are then mapped into that same "
+"space and predicted to belong to a category based on which side of the gap "
+"they fall.\n"
+"### Assumptions\n"
+"- The target is a nominal or ordinal variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal variables."
+msgstr ""
+
+msgctxt "mlClusteringDensityBased|"
+msgid ""
+"Density-based clustering is a soft clustering method where clusters are "
+"constructed as maximal sets of points that are connected to points whose "
+"density exceeds some threshold. The density is produced by the concept that "
+"for each point within a cluster, the neighborhood within a given radius has "
+"to contain at least a minimum amount of points, that results in the density "
+"of that neighborhood to exceed a certain threshold. A density-based cluster "
+"is recognized by points having a higher density than points outside of the "
+"cluster. The set of all high-density points is called the density level. The "
+"points that do not exceed a density level are identified as outliers. The "
+"density level influences the amount of generated clusters.\n"
+"### Assumptions\n"
+"- The data consists of continuous variables.\n"
+"- (Normally distributed data aids the clustering process)."
+msgstr ""
+
+msgctxt "mlClusteringFuzzyCMeans|"
+msgid ""
+"Fuzzy c-means clustering is a soft partitioning method that provides an "
+"output that contains the degree of association for each observation to each "
+"cluster. This makes it possible for data observations to be partially "
+"assigned to multiple clusters and give a degree of confidence about cluster "
+"membership. Fuzzy c-means' approach is quite similar to that of k-means "
+"clustering, apart from its soft approach.\n"
+"### Assumptions\n"
+"- The data consists of continuous variables.\n"
+"- (Normally distributed data aids the clustering process)."
+msgstr ""
+
+msgctxt "mlClusteringHierarchical|"
+msgid ""
+"Hierarchical clustering is a hard partitioning algorithm which aims to "
+"partition data into several clusters, where each observation belongs to only "
+"one group. The data is divided in such a way that the degree of similarity "
+"between two data observations is maximal if they belong to the same group "
+"and minimal if not.\n"
+"### Assumptions\n"
+"- The data consists of continuous variables.\n"
+"- (Normally distributed data aids the clustering process)."
+msgstr ""
+
+msgctxt "mlClusteringKMeans|"
+msgid ""
+"Neighborhood-Based clustering methods are a set of hard partitioning "
+"algorithm which aims to partition data into several clusters, where each "
+"observation belongs to only one group. The data is divided in such a way "
+"that the degree of similarity between two data observations is maximal if "
+"they belong to the same group and minimal if not.\n"
+"### Assumptions\n"
+"- The data consists of continuous variables.\n"
+"- (Normally distributed data aids the clustering process)."
+msgstr ""
+
+msgctxt "mlClusteringRandomForest|"
+msgid ""
+"Random Forest clustering is a hard partitioning algorithm which aims to "
+"partition data into several clusters, where each observation belongs to only "
+"one group. This clustering method uses the Random Forest algorithm in an "
+"unsupervised way, with the outcome variable 'y' set to NULL. The Random "
+"Forest algorithm generates a proximity matrix which gives an estimate of the "
+"distance between observations based on the frequency of observations ending "
+"up in the same leaf node.\n"
+"### Assumptions\n"
+"- The data consists of continuous variables.\n"
+"- (Normally distributed data aids the clustering process)."
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "Cases"
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "Add features"
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "Explain predictions"
+msgstr ""
+
+msgctxt "mlRegressionBoosting|"
+msgid ""
+"Boosting works by sequentially adding features to an decision tree ensemble, "
+"each one correcting its predecessor. Boosting tries to fit the new feature "
+"to the residual errors made by the previous feature.\n"
+"### Assumptions\n"
+"- The target variable is a continuous variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal variables."
+msgstr ""
+
+msgctxt "mlRegressionBoosting|"
+msgid "The loss function used."
+msgstr ""
+
+msgctxt "mlRegressionDecisionTree|"
+msgid ""
+"Decision Trees is a supervised learning algorithm that uses a decision tree "
+"as a predictive model to go from observations about an item (represented in "
+"the roots of the tree) to conclusions about the item's target value "
+"(represented in the endpoints of the tree).\n"
+"### Assumptions\n"
+"- The target variable is a continuous variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal variables."
+msgstr ""
+
+msgctxt "mlRegressionKnn|"
+msgid ""
+"K-nearest neighbors is a method of regression that looks at the *k* number "
+"of feature observations that are most similar to new observations to make a "
+"prediction for their values. The number of nearest neighbors is intrinsincly "
+"linked to model complexity, as small numbers increase the flexibility of the "
+"model.\n"
+"### Assumptions\n"
+"- The target variable is a continuous variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal variables."
+msgstr ""
+
+msgctxt "mlRegressionLinear|"
+msgid ""
+"Linear regression allows the user to model a linear relationship between one "
+"or more features (predictors) and a continuous dependent (target) variable."
+msgstr ""
+
+msgctxt "mlRegressionLinear|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlRegressionLinear|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlRegressionLinear|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlRegressionLinear|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlRegressionNeuralNetwork|"
+msgid ""
+"Feedforward neural networks are predictive algorithms inspired by the "
+"biological neural networks that constitute brains. A neuron (node) that "
+"receives a signal then processes it and can send signals to neurons "
+"connected to it. The signal at a node is a real number, and the output of "
+"each node is computed by sending the signal trough the activation function. "
+"The number of layers and nodes in the network is intrinsincly linked to "
+"model complexity, as high numbers increase the flexibility of the model.\n"
+"### Assumptions\n"
+"- The target variable is a continuous variable.\n"
+"- The feature variables consist of continuous."
+msgstr ""
+
+msgctxt "mlRegressionRandomForest|"
+msgid ""
+"Random Forest is a method of regression that creates a set of decision trees "
+"that consists of a large number of individual trees which operate as an "
+"ensemble.\n"
+"### Assumptions\n"
+"- The target variable is a continuous variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal variables."
+msgstr ""
+
+msgctxt "mlRegressionRegularized|"
+msgid ""
+"Regularized linear regression is an adaptation of linear regression in which "
+"the coefficients are shrunken towards 0. This is done by applying a penalty "
+"(e.g., ridge, lasso, or elastic net). The parameter λ controls the degree to "
+"which parameters are shrunken.\n"
+"### Assumptions\n"
+"- The target variable is a continuous variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal variables."
+msgstr ""
+
+msgctxt "mlRegressionSvm|"
+msgid ""
+"Support Vector Machines is a supervised learning algorithm that maps "
+"training examples to points in space so as to maximise the width of the gap "
+"between the two categories. New examples are then mapped into that same "
+"space and predicted to belong to a category based on which side of the gap "
+"they fall.\n"
+"### Assumptions\n"
+"- The target variable is a continuous variable.\n"
+"- The feature variables consist of continuous, nominal, or ordinal variable"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Naive Bayes"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Naive Bayes Classification"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Tree Complexity"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Enables you to use a user-specified complexity penalty."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Complexity penalty"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid ""
+"The complexity penalty to be used. Any split that does not decrease the "
+"overall lack of fit by a factor of this parameter is not attempted."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid ""
+"Enables you to optimize the prediction error on a validation data set with "
+"respect to the complexity penalty."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Max. complexity penalty"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid ""
+"Sets the maximum value of the complexity penalty to be considered. At "
+"default, this is set to 1."
+msgstr ""
+
+msgctxt "OptimPlot|"
+msgid ""
+"For regression, Plots the complexity penalty against the MSE of the model. "
+"Accuracy is assessed for the training (and validation) set. For "
+"classification, plots the complexity penalty against the classification "
+"accuracy of the model. Accuracy is assessed for the training (and "
+"validation) set."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Costs of Contraints Violation"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Enables you to use a user-specified cost of constraints violation."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Violation cost"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid ""
+"Enables you to optimize the prediction error on a validation data set with "
+"respect to the cost of constraints violation."
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid "Max. violation cost"
+msgstr ""
+
+msgctxt "ModelOptimization|"
+msgid ""
+"Sets the maximum value of the cost of constraints violation to be "
+"considered. At default, this is set to 5."
+msgstr ""
+
+msgctxt "OptimPlot|"
+msgid ""
+"For regression, Plots the cost of contraints violation against the MSE of "
+"the model. Accuracy is assessed for the training (and validation) set. For "
+"classification, plots the cost of contraints violation against the "
+"classification accuracy of the model. Accuracy is assessed for the training "
+"(and validation) set."
+msgstr ""
+
+msgctxt "mlClassificationNaiveBayes|"
+msgid ""
+"Naive Bayes computes the conditional posterior probabilities of a "
+"categorical class variable given independent predictor variables using the "
+"Bayes rule.\n"
+"### Assumptions\n"
+"- The target variable is a nominal or ordinal variable.\n"
+"- The features are independent.\n"
+"- The features are normally distributed given the target class."
+msgstr ""
+
+msgctxt "mlClassificationNaiveBayes|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlClassificationNaiveBayes|"
+msgid "Posterior statistics"
+msgstr ""
+
+msgctxt "mlClassificationNaiveBayes|"
+msgid ""
+"Show tables with the posterior statistics. For numeric features, the table "
+"contains the mean and standard deviation of the feature given the target "
+"class. For categorical features, the table displays the conditional "
+"probabilities given the target class."
+msgstr ""
+
+msgctxt "mlClassificationNaiveBayes|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlClassificationNaiveBayes|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlClassificationNaiveBayes|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlClassificationNaiveBayes|"
+msgid "Smoothing parameter"
+msgstr ""
+
+msgctxt "mlClassificationNaiveBayes|"
+msgid ""
+"A positive double controlling the amount of Laplace smoothing applied. The "
+"default (0) disables Laplace smoothing alltogether."
+msgstr ""
+
+msgctxt "FeatureImportance|"
+msgid "Permutations"
+msgstr ""
+
+msgctxt "FeatureImportance|"
+msgid ""
+"Sets the number of permutations on which the mean dropout loss is based."
+msgstr ""
+
+msgctxt "Description|"
+msgid "Model-Based"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Model-Based Clustering"
+msgstr ""
+
+msgctxt "ClusterMatrix|"
+msgid "Display components"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid ""
+"Model-based clustering is based on parameterized finite Gaussian mixture "
+"models. The models are estimated by EM algorithm initialized by hierarchical "
+"model-based agglomerative clustering."
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "Parameter estimates"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid ""
+"Shows tables containing the model parameters for each cluster and feature "
+"variable."
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "Model"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "Auto"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "EII"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "VII"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "EEI"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "VEI"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "EVI"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "EEE"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "VEE"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "EVE"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "VVE"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "EEV"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "VEV"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "EVV"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "VVV"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "Choose the model to be fitted in the EM step of the clustering."
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "Max. iterations"
+msgstr ""
+
+msgctxt "mlClusteringModelBased|"
+msgid "The maximum number of iterations for the M-step in the algorithm."
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid "Predictions for new data"
+msgstr ""
+
+msgctxt "ConfusionMatrix|"
+msgid "Transpose matrix"
+msgstr ""
+
+msgctxt "ConfusionMatrix|"
+msgid "Transposes the confusion matrix."
+msgstr ""
+
+msgctxt "ExplainPredictions|"
+msgid ""
+"Shows a decomposition of the predictions of the model into contributions "
+"that can be attributed to individual model features. This feature uses the "
+"breakdown algoritm from the `ibreakdown` R package. For more details about "
+"this method, see Gosiewska and Biecek (2019)."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid "e.g., testSet"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Logistic / Multinomial"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Logistic / Multinomial Regression Classification"
+msgstr ""
+
+msgctxt "mlClassificationLogisticMultinomial|"
+msgid ""
+"Logistic regression is a statistical method used to model the relationship "
+"between a binary target variable (with two possible outcomes) and one or "
+"more feature variables. It predicts the probability of a specific outcome by "
+"using a logistic function, which ensures that the predicted probabilities "
+"are between 0 and 1. Multinomial regression extends logistic regression to "
+"handle target variables with more than two categories. Instead of predicting "
+"binary outcomes, multinomial regression is used for scenarios where the "
+"target variable has three or more unordered categories."
+msgstr ""
+
+msgctxt "mlClassificationLogisticMultinomial|"
+msgid "Tables"
+msgstr ""
+
+msgctxt "mlClassificationLogisticMultinomial|"
+msgid "Plots"
+msgstr ""
+
+msgctxt "mlClassificationLogisticMultinomial|"
+msgid "Training Parameters"
+msgstr ""
+
+msgctxt "mlClassificationLogisticMultinomial|"
+msgid "Algorithmic Settings"
+msgstr ""
+
+msgctxt "mlClassificationLogisticMultinomial|"
+msgid "Link function (for binary classification)"
+msgstr ""
+
+msgctxt "mlClassificationLogisticMultinomial|"
+msgid "Logit"
+msgstr ""
+
+msgctxt "mlClassificationLogisticMultinomial|"
+msgid "Probit"
+msgstr ""
+
+msgctxt "mlClassificationLogisticMultinomial|"
+msgid "Cauchit"
+msgstr ""
+
+msgctxt "mlClassificationLogisticMultinomial|"
+msgid "Complimentary log-log"
+msgstr ""
+
+msgctxt "mlClassificationLogisticMultinomial|"
+msgid "Log"
+msgstr ""
+
+msgctxt "mlPrediction|"
+msgid ""
+"The prediction analysis enables you to load a trained machine learning model "
+"and apply it to new data. It is important that the features in the new "
+"dataset have the same names as in the original dataset used for training."
+msgstr ""
+
+msgctxt "DataSplit|"
+msgid ""
+"Use an indicator variable to select data for the test set. This indicator "
+"should be a column of type scale in your data that consists of only 0 "
+"(excluded from the test set) and 1 (included in the test set). The data will "
+"then be split into a training (and validation if requested) set (0), and a "
+"test set (1) according to your indicator."
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "Add probabilities (classification only)"
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid ""
+"In classification analyses, append the predicted probabilities for each "
+"class to the data. For neural networks, this option provides the output of "
+"the final layer."
+msgstr ""
+
+msgctxt "Description|"
+msgid "Supervised Learning"
+msgstr ""
+
+msgctxt "Description|"
+msgid "Unsupervised Learning"
+msgstr ""
+
+msgctxt "ModelPerformance|"
+msgid ""
+"Displays available model performance metrics. For regression, these metrics "
+"include mean squared error (MSE), root mean squared error (RMSE), R<sup>2</"
+"sup> and more. For classification, these metrics include precision, recall, "
+"the F1-score, support, AUC (area under the ROC curve) and more. For "
+"clustering, these metrics include entropy, Dunn index and more."
+msgstr ""
