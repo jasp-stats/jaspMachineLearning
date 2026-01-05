@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-12-27 03:41+0000\n"
+"PO-Revision-Date: 2026-01-06 15:01+0000\n"
 "Last-Translator: Zev Oster <zevelijah@gmail.com>\n"
 "Language-Team: Tibetan <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-qml/bo/>\n"
@@ -16,6 +16,7 @@ msgctxt "Description|"
 msgid "Machine Learning"
 msgstr ""
 
+#, fuzzy
 msgctxt "Description|"
 msgid "Regression"
 msgstr "ཕྱིར་ལྡོག།"
