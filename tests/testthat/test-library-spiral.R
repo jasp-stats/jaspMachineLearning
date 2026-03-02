@@ -1,12 +1,12 @@
-context("Example: spiral")
+context("Library: spiral")
 
 # This test file was auto-generated from a JASP example file.
-# The JASP file is stored in the module's examples/ folder.
+# The JASP file is stored in tests/testthat/jaspfiles/library/.
 
 test_that("mlClassificationSvm results match", {
 
   # Load from JASP example file
-  jaspFile <- testthat::test_path("..", "..", "examples", "spiral.jasp")
+  jaspFile <- testthat::test_path("jaspfiles", "library", "spiral.jasp")
   opts <- jaspTools::analysisOptions(jaspFile)
   dataset <- jaspTools::extractDatasetFromJASPFile(jaspFile)
 
