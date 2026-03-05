@@ -750,6 +750,67 @@
   }
 }
 
+.mlPredictionsToMatrix <- function(predictions) {
+  if (is.data.frame(predictions) || is.matrix(predictions)) {
+    return(as.matrix(predictions))
+  }
+  if (is.array(predictions)) {
+    if (length(dim(predictions)) == 3) {
+      return(predictions[, , dim(predictions)[3], drop = FALSE])
+    }
+    return(as.matrix(predictions))
+  }
+  if (is.atomic(predictions)) {
+    return(matrix(predictions, ncol = 1))
+  }
+  return(NULL)
+}
+
+.mlSinglePredictorShapFallback <- function(observation, explainer, purpose, predictedLabel = NULL, classLevels = NULL) {
+  trainPredictions <- explainer$predict_function(explainer$model, explainer$data)
+  casePrediction <- explainer$predict_function(explainer$model, observation)
+
+  if (purpose == "regression") {
+    casePrediction <- as.numeric(casePrediction)[1]
+    basePrediction <- mean(as.numeric(trainPredictions), na.rm = TRUE)
+    return(list(
+      predicted = casePrediction,
+      base = basePrediction,
+      contribution = casePrediction - basePrediction
+    ))
+  }
+
+  trainPredictions <- .mlPredictionsToMatrix(trainPredictions)
+  casePrediction <- .mlPredictionsToMatrix(casePrediction)
+
+  if (is.null(trainPredictions) || is.null(casePrediction) || ncol(casePrediction) < 1) {
+    stop("Could not compute fallback additive explanations for classification.")
+  }
+
+  predictedIndex <- which.max(casePrediction[1, ])
+  predictedProb <- casePrediction[1, predictedIndex]
+  baseProb <- mean(trainPredictions[, predictedIndex], na.rm = TRUE)
+
+  if (!is.null(predictedLabel)) {
+    label <- predictedLabel
+  } else {
+    labels <- classLevels
+    if (is.null(labels) || length(labels) < predictedIndex) {
+      labels <- colnames(casePrediction)
+    }
+    if (is.null(labels) || length(labels) < predictedIndex) {
+      labels <- as.character(seq_len(ncol(casePrediction)))
+    }
+    label <- labels[predictedIndex]
+  }
+
+  return(list(
+    predicted = paste0(label, " (", round(predictedProb, 3), ")"),
+    base = baseProb,
+    contribution = predictedProb - baseProb
+  ))
+}
+
 .mlTableShap <- function(dataset, options, jaspResults, ready, position, purpose, model = NULL) {
   if (!is.null(jaspResults[["tableShap"]]) || !options[["tableShap"]]) {
     return()
@@ -807,7 +868,32 @@
   p <- try({
     for (i in seq_along(from:to)) {
       out[i, 1] <- (from:to)[i]
-      shap <- DALEX::predict_parts(explainer, new_observation = as.data.frame(x_test[(from:to)[i], predictors, drop = FALSE]))
+      observation <- as.data.frame(x_test[(from:to)[i], predictors, drop = FALSE])
+      shap <- try(DALEX::predict_parts(explainer, new_observation = observation), silent = TRUE)
+
+      if (isTryError(shap)) {
+        fallbackRequired <- length(predictors) == 1 &&
+          is.numeric(x_test[[predictors[1]]]) &&
+          grepl("replacement has 1 row, data has", .extractErrorMessage(shap), fixed = TRUE)
+
+        if (!fallbackRequired) {
+          stop(shap)
+        }
+
+        fallback <- .mlSinglePredictorShapFallback(
+          observation = observation,
+          explainer = explainer,
+          purpose = purpose,
+          predictedLabel = if (purpose == "classification" && !is.null(model)) as.character(predictions[i]) else NULL,
+          classLevels = if (purpose == "classification" && is.null(model)) levels(result[["test"]][, options[["target"]]]) else NULL
+        )
+
+        out[i, 2] <- fallback[["predicted"]]
+        out[i, 3] <- fallback[["base"]]
+        out[i, 4] <- fallback[["contribution"]]
+        next
+      }
+
       if (purpose == "regression") {
         out[i, 2] <- shap[which(shap[["variable"]] == "prediction"), "contribution"]
       } else {
