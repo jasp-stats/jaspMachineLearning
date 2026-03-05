@@ -1036,14 +1036,13 @@
       "RemoteHost": "api.github.com",
       "RemoteUsername": "jasp-stats",
       "RemoteRepo": "jaspBase",
-      "RemoteSha": "836023e9f57d39427fc805fb0f4bb2e48a838d56"
+      "RemoteSha": "1d5c8604cdc34555bdcd6d76aadfda580346aaf7"
     },
     "jaspGraphs": {
       "Package": "jaspGraphs",
       "Version": "0.20.0",
       "Source": "GitHub",
       "Requirements": [
-        "testthat",
         "cli",
         "ggplot2",
         "gridExtra",
@@ -1054,13 +1053,15 @@
         "plotly",
         "R6",
         "rlang",
-        "scales"
+        "scales",
+        "testthat",
+        "vdiffr"
       ],
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteUsername": "jasp-stats",
       "RemoteRepo": "jaspGraphs",
-      "RemoteSha": "1a0f11bf210637b7428f337f8598bee8a62c8495"
+      "RemoteSha": "5c68ba4b81afc55e2092e733fe334819c85e354a"
     },
     "jquerylib": {
       "Package": "jquerylib",
