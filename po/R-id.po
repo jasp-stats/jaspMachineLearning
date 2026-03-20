@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.95.5\n"
 "POT-Creation-Date: 2025-11-15 03:31\n"
-"PO-Revision-Date: 2026-03-20 12:46+0000\n"
+"PO-Revision-Date: 2026-03-21 03:55+0000\n"
 "Last-Translator: Zahid Rizky Fakhri <zahidrizkyfakhri@gmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/id/>\n"
@@ -149,7 +149,7 @@ msgid "MVE"
 msgstr ""
 
 msgid "t"
-msgstr ""
+msgstr "t"
 
 msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
 msgstr ""
@@ -311,10 +311,10 @@ msgid "R%s"
 msgstr "R%s"
 
 msgid "AIC"
-msgstr ""
+msgstr "AIC"
 
 msgid "BIC"
-msgstr ""
+msgstr "BIC"
 
 msgid "Silhouette"
 msgstr ""
@@ -707,7 +707,7 @@ msgid "df"
 msgstr ""
 
 msgid "p"
-msgstr ""
+msgstr "p"
 
 msgid "The null hypothesis specifies equal covariance matrices."
 msgstr ""
@@ -725,7 +725,7 @@ msgid "Tests for Multivariate Normality"
 msgstr ""
 
 msgid "Statistic"
-msgstr ""
+msgstr "Statistik"
 
 msgid "Skewness"
 msgstr ""
@@ -746,7 +746,7 @@ msgid "Coefficient (%s)"
 msgstr ""
 
 msgid "Standard Error"
-msgstr ""
+msgstr "Galat Standar"
 
 msgid "z"
 msgstr "z"
@@ -755,10 +755,10 @@ msgid "%1$s%% Confidence interval"
 msgstr ""
 
 msgid "Lower"
-msgstr ""
+msgstr "Bawah"
 
 msgid "Upper"
-msgstr ""
+msgstr "Atas"
 
 msgid "The regression coefficients for numeric features are standardized."
 msgstr ""
@@ -1166,7 +1166,7 @@ msgid "Network Structure Plot"
 msgstr ""
 
 msgid "Intercept"
-msgstr ""
+msgstr "Intersepsi"
 
 msgid "Input layer"
 msgstr ""
@@ -1265,7 +1265,7 @@ msgid "Variable Trace Plot"
 msgstr ""
 
 msgid "Coefficients"
-msgstr ""
+msgstr "Koefisien"
 
 msgid "Lambda Evaluation Plot"
 msgstr ""
