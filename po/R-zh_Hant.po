@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.19.2\n"
 "POT-Creation-Date: 2025-06-28 03:36\n"
-"PO-Revision-Date: 2026-03-31 15:09+0000\n"
+"PO-Revision-Date: 2026-04-01 16:09+0000\n"
 "Last-Translator: 陳正昌 <chencc99@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
 "projects/jasp/jaspmachinelearning-r/zh_Hant/>\n"
@@ -14,16 +14,16 @@ msgstr ""
 "X-Generator: Weblate 5.17-dev\n"
 
 msgid "An error occurred in the analysis: %s"
-msgstr ""
+msgstr "分析過程中發生錯誤：%s"
 
 msgid "K-Nearest Neighbors Classification"
-msgstr ""
+msgstr "K 最近鄰分類法"
 
 msgid "Linear Discriminant Classification"
-msgstr ""
+msgstr "線性判別分類法"
 
 msgid "Random Forest Classification"
-msgstr ""
+msgstr "隨機森林分類法"
 
 msgid "Boosting Classification"
 msgstr ""
@@ -164,7 +164,7 @@ msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
 msgstr ""
 
 msgid "The model is optimized with respect to the <i>sum of squares</i>."
-msgstr ""
+msgstr "模型係針對<i>平方和</i>進行最佳化。"
 
 msgid "Model Summary: Logistic Regression Classification"
 msgstr ""
@@ -231,7 +231,7 @@ msgid "Recall (True Positive Rate)"
 msgstr ""
 
 msgid "False Discovery Rate"
-msgstr ""
+msgstr "虛假發現率"
 
 msgid "F1 Score"
 msgstr ""
@@ -252,7 +252,7 @@ msgid "False Negative Rate"
 msgstr ""
 
 msgid "False Omission Rate"
-msgstr ""
+msgstr "偽陰遺漏率"
 
 msgid "Threat Score"
 msgstr ""
@@ -436,10 +436,10 @@ msgid "Noisepoints"
 msgstr ""
 
 msgid "The Between Sum of Squares of the %1$s cluster model is %2$s"
-msgstr ""
+msgstr "%1$s 集群模型之組間平方和為 %2$s"
 
 msgid "The Total Sum of Squares of the %1$s cluster model is %2$s"
-msgstr ""
+msgstr "%1$s 集群模型之總平方和為 %2$s"
 
 msgid "Value"
 msgstr ""
@@ -735,10 +735,10 @@ msgid "Prior and Posterior Class Probabilities"
 msgstr ""
 
 msgid "Prior"
-msgstr ""
+msgstr "先驗"
 
 msgid "Posterior"
-msgstr ""
+msgstr "後驗"
 
 msgid "Class Means in Training Data"
 msgstr ""
@@ -756,7 +756,7 @@ msgid "Tests of Equality of Covariance Matrices"
 msgstr ""
 
 msgid "df"
-msgstr ""
+msgstr "自由度"
 
 msgid "p"
 msgstr ""
@@ -1198,7 +1198,7 @@ msgid "Layer"
 msgstr ""
 
 msgid "Weight"
-msgstr ""
+msgstr "權重"
 
 msgid "linear"
 msgstr ""
