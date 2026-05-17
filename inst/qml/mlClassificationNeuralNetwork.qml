@@ -57,7 +57,7 @@ Form
 	}
 
 	UI.ExportResults { enabled: vars.predictorCount > 0 && vars.targetCount > 0 }
-	UI.DataSplit { leaveOneOutVisible: false; kFoldsVisible: false }
+	UI.DataSplit { leaveOneOutVisible: false; kFoldsVisible: false; balanceTargetClasses: false }
 
 	Section
 	{
