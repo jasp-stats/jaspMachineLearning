@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.95.5\n"
 "POT-Creation-Date: 2025-11-15 03:31\n"
-"PO-Revision-Date: 2026-04-29 00:22+0000\n"
-"Last-Translator: Zahid Rizky Fakhri <zahidrizkyfakhri@gmail.com>\n"
+"PO-Revision-Date: 2026-05-17 06:11+0000\n"
+"Last-Translator: Arif Budiman <arifpedia@gmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/id/>\n"
 "Language: id\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 
 msgid "An error occurred in the analysis: %s"
 msgstr ""
@@ -50,7 +50,7 @@ msgid "Nearest neighbors"
 msgstr ""
 
 msgid "Weights"
-msgstr ""
+msgstr "Bobot"
 
 msgid "Distance"
 msgstr ""
@@ -140,7 +140,7 @@ msgid "Euclidean"
 msgstr ""
 
 msgid "Moment"
-msgstr ""
+msgstr "Momen"
 
 msgid "MLE"
 msgstr ""
@@ -470,7 +470,7 @@ msgid "Cluster Density Plots"
 msgstr ""
 
 msgid "Density"
-msgstr "Kepadatan"
+msgstr "Densitas"
 
 msgid "Feature"
 msgstr ""
@@ -728,10 +728,10 @@ msgid "Statistic"
 msgstr "Statistik"
 
 msgid "Skewness"
-msgstr ""
+msgstr "Kecondongan"
 
 msgid "Kurtosis"
-msgstr ""
+msgstr "Kurtosis"
 
 msgid "Both p-values of the skewness and kurtosis statistics should be > 0.05 to conclude multivariate normality."
 msgstr ""
@@ -746,7 +746,7 @@ msgid "Coefficient (%s)"
 msgstr ""
 
 msgid "Standard Error"
-msgstr "Galat Standar"
+msgstr "Kesalahan Standar"
 
 msgid "z"
 msgstr "z"
@@ -755,10 +755,10 @@ msgid "%1$s%% Confidence interval"
 msgstr "%1$s%% Interval kepercayaan"
 
 msgid "Lower"
-msgstr "Bawah"
+msgstr "Batas Bawah"
 
 msgid "Upper"
-msgstr "Atas"
+msgstr "Batas Atas"
 
 msgid "The regression coefficients for numeric features are standardized."
 msgstr ""
@@ -776,10 +776,10 @@ msgid "Feature: %1$s"
 msgstr ""
 
 msgid "Mean"
-msgstr "Rerata"
+msgstr "Rata-rata"
 
 msgid "Std. deviation"
-msgstr "Deviasi std."
+msgstr "Std. deviasi"
 
 msgid "The table displays the mean and standard deviation of the feature given the target class."
 msgstr ""
@@ -962,7 +962,7 @@ msgid "Relative Influence"
 msgstr ""
 
 msgid "<i>Warning.</i>"
-msgstr ""
+msgstr "<i>Peringatan.</i>"
 
 msgid "An error occurred when computing the mean dropout loss: %1$s"
 msgstr ""
