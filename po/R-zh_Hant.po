@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.19.2\n"
 "POT-Creation-Date: 2025-06-28 03:36\n"
-"PO-Revision-Date: 2026-04-21 04:09+0000\n"
+"PO-Revision-Date: 2026-06-17 12:01+0000\n"
 "Last-Translator: 陳正昌 <chencc99@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
 "projects/jasp/jaspmachinelearning-r/zh_Hant/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 msgid "An error occurred in the analysis: %s"
 msgstr "分析過程中發生錯誤：%s"
@@ -26,100 +26,100 @@ msgid "Random Forest Classification"
 msgstr "隨機森林分類法"
 
 msgid "Boosting Classification"
-msgstr ""
+msgstr "提升式分類"
 
 msgid "Neural Network Classification"
-msgstr ""
+msgstr "類神經網路分類"
 
 msgid "Decision Tree Classification"
-msgstr ""
+msgstr "決策樹分類"
 
 msgid "Support Vector Machine Classification"
-msgstr ""
+msgstr "支持向量機分類"
 
 msgid "Naive Bayes Classification"
-msgstr ""
+msgstr "單純貝氏分類"
 
 msgid "Logistic / Multinomial Regression Classification"
-msgstr ""
+msgstr "邏輯 / 多項邏輯回歸分類"
 
 msgid "Model Summary: %1$s"
 msgstr "模型摘要: %1$s"
 
 msgid "Nearest neighbors"
-msgstr ""
+msgstr "最近鄰"
 
 msgid "Weights"
-msgstr ""
+msgstr "權重"
 
 msgid "Distance"
-msgstr ""
+msgstr "距離"
 
 msgid "Linear Discriminants"
-msgstr ""
+msgstr "線性區別分析"
 
 msgid "Method"
-msgstr ""
+msgstr "方法"
 
 msgid "Trees"
-msgstr ""
+msgstr "樹"
 
 msgid "Features per split"
-msgstr ""
+msgstr "每次分裂所使用的特徵數量"
 
 msgid "Shrinkage"
-msgstr ""
+msgstr "收縮"
 
 msgid "Hidden Layers"
-msgstr ""
+msgstr "隱藏層"
 
 msgid "Nodes"
-msgstr ""
+msgstr "節點"
 
 msgid "Complexity penalty"
-msgstr ""
+msgstr "複雜度懲罰"
 
 msgid "Splits"
-msgstr ""
+msgstr "分割點"
 
 msgid "Violation cost"
-msgstr ""
+msgstr "違反成本"
 
 msgid "Support Vectors"
-msgstr ""
+msgstr "支持向量"
 
 msgid "Smoothing"
-msgstr ""
+msgstr "平滑化"
 
 msgid "Family"
-msgstr ""
+msgstr "族系"
 
 msgid "Link"
-msgstr ""
+msgstr "連結"
 
 msgid "n(Train)"
-msgstr ""
+msgstr "n(訓練)"
 
 msgid "n(Validation)"
-msgstr ""
+msgstr "n(驗證集樣本數)"
 
 msgid "n(Test)"
-msgstr ""
+msgstr "n(測試)"
 
 msgid "Validation Accuracy"
-msgstr ""
+msgstr "驗證準確率"
 
 msgid "Test Accuracy"
-msgstr ""
+msgstr "測試準確率"
 
 msgid "OOB Accuracy"
-msgstr ""
+msgstr "袋外 (OOB) 準確率"
 
 msgid "Please provide a target variable and at least %i feature variable(s)."
-msgstr ""
+msgstr "請提供目標變數以及至少 %i 個特徵變數。"
 
 msgid "The trained model is saved as <i>%1$s</i>."
-msgstr ""
+msgstr "已訓練的模型已儲存為 <i>%1$s</i>。"
 
 msgid ""
 "The trained model is <b>not</b> saved because the some of the variable names "
@@ -127,35 +127,37 @@ msgid ""
 "remove all such characters from the variable names and try saving the model "
 "again."
 msgstr ""
+"已訓練之模型<b>未</b>儲存，因為模型中部分變數名稱包含空格（即 ' '）或底線（"
+"即 '_'）。請將變數名稱中之此類字元全部移除，然後再次嘗試儲存模型。"
 
 msgid ""
 "The trained model is not saved until a file name is specified under 'Save "
 "as'."
-msgstr ""
+msgstr "在「另存新檔」中指定檔名之前，已訓練之模型不會被儲存。"
 
 msgid ""
 "The model is optimized with respect to the <i>validation set accuracy</i>."
-msgstr ""
+msgstr "模型係針對<i>驗證集準確度</i>進行最佳化。"
 
 msgid ""
 "The optimum number of nearest neighbors is the maximum number. You might "
 "want to adjust the range of optimization."
-msgstr ""
+msgstr "最適近鄰數目為最大值。您可能需調整最佳化之範圍。"
 
 msgid "Manhattan"
-msgstr ""
+msgstr "曼哈頓距離"
 
 msgid "Euclidean"
-msgstr ""
+msgstr "歐幾里得距離"
 
 msgid "Moment"
-msgstr ""
+msgstr "動差"
 
 msgid "MLE"
-msgstr ""
+msgstr "最大概似估計"
 
 msgid "MVE"
-msgstr ""
+msgstr "最小變異估計"
 
 msgid "t"
 msgstr ""
@@ -267,7 +269,7 @@ msgid "Average / Total"
 msgstr ""
 
 msgid "Class Proportions"
-msgstr ""
+msgstr "類別比例"
 
 msgid "Data Set"
 msgstr ""
@@ -317,7 +319,7 @@ msgid "Random Forest Clustering"
 msgstr ""
 
 msgid "Model-Based Clustering"
-msgstr ""
+msgstr "基於模型的分群"
 
 msgid "Clusters"
 msgstr "集群"
@@ -338,78 +340,82 @@ msgid "Silhouette"
 msgstr "輪廓係數"
 
 msgid "Please provide at least 2 features."
-msgstr ""
+msgstr "請至少提供 2 個特徵變數。"
 
 msgid "silhouette"
-msgstr ""
+msgstr "輪廓係數"
 
 msgid "The model is optimized with respect to the <i>%s</i> value."
-msgstr ""
+msgstr "模型係針對<i>%s</i>值進行最佳化。"
 
 msgid ""
 "The optimum number of clusters is the maximum number of clusters. You might "
 "want to adjust the range of optimization."
-msgstr ""
+msgstr "最佳群集數為最大群集數。您可能需要調整最佳化的範圍。"
 
 msgid ""
 "The model contains 0 clusters and only Noisepoints, we advise to change "
 "'Epsilon neighborhood size' and 'Min. core points' parameters under "
 "'Training parameters'."
 msgstr ""
+"該模型包含 0 個集群且僅有雜訊點，建議您變更「訓練參數」下之「Epsilon 鄰域大小"
+"」與「最小核心點數」參數。"
 
 msgid ""
 "The model contains 1 cluster and no Noisepoints. You may want to change "
 "'Epsilon neighborhood size' and 'Min. core points' parameters under "
 "'Training parameters'."
 msgstr ""
+"該模型包含 1 個集群且無雜訊點。您可能需變更「訓練參數」下之「Epsilon 鄰域大小"
+"」與「最小核心點數」參數。"
 
 msgid "spherical with equal volume"
-msgstr ""
+msgstr "球形且等體積"
 
 msgid "spherical with unequal volume"
-msgstr ""
+msgstr "球形但體積不相等"
 
 msgid "diagonal with equal volume and shape"
-msgstr ""
+msgstr "對角線且等體積與等形狀"
 
 msgid "diagonal with varying volume and equal shape"
-msgstr ""
+msgstr "對角線且變異體積與等形狀"
 
 msgid "diagonal with equal volume and varying shape"
-msgstr ""
+msgstr "對角線且等體積與變異形狀"
 
 msgid "diagonal with varying volume and shape"
-msgstr ""
+msgstr "對角線且變異體積與形狀"
 
 msgid "ellipsoidal with equal volume, shape, and orientation"
-msgstr ""
+msgstr "橢球體且等體積、等形狀與等方向"
 
 msgid "ellipsoidal with equal shape and orientation"
-msgstr ""
+msgstr "橢球體且等形狀與等方向"
 
 msgid "ellipsoidal with equal volume and orientation"
-msgstr ""
+msgstr "橢球體且等體積與等方向"
 
 msgid "ellipsoidal with equal orientation"
-msgstr ""
+msgstr "橢球體且等方向"
 
 msgid "ellipsoidal with equal volume and equal shape"
-msgstr ""
+msgstr "橢球體且等體積與等形狀"
 
 msgid "ellipsoidal with equal shape"
-msgstr ""
+msgstr "橢球體且等形狀"
 
 msgid "ellipsoidal with equal volume"
-msgstr ""
+msgstr "橢球體且等體積"
 
 msgid "ellipsoidal with varying volume, shape, and orientation"
-msgstr ""
+msgstr "橢球體且變異體積、形狀與方向"
 
 msgid "The model is %1$s."
-msgstr ""
+msgstr "該模型為 %1$s。"
 
 msgid "The features in the model are <b>unstandardized</b>."
-msgstr ""
+msgstr "模型中的特徵為<b>未標準化</b>。"
 
 msgid "Cluster Information"
 msgstr "集群資訊"
@@ -433,7 +439,7 @@ msgid "Center %s"
 msgstr "中心 %s"
 
 msgid "Noisepoints"
-msgstr ""
+msgstr "雜訊點"
 
 msgid "The Between Sum of Squares of the %1$s cluster model is %2$s"
 msgstr "%1$s 集群模型之組間平方和為 %2$s"
@@ -442,49 +448,49 @@ msgid "The Total Sum of Squares of the %1$s cluster model is %2$s"
 msgstr "%1$s 集群模型之總平方和為 %2$s"
 
 msgid "Value"
-msgstr ""
+msgstr "數值"
 
 msgid "Maximum diameter"
-msgstr ""
+msgstr "最大直徑"
 
 msgid "Minimum separation"
-msgstr ""
+msgstr "最小間隔"
 
 msgid "Pearson's %s"
-msgstr ""
+msgstr "皮爾森 %s"
 
 msgid "Dunn index"
-msgstr ""
+msgstr "Dunn 指數"
 
 msgid "Entropy"
-msgstr ""
+msgstr "熵"
 
 msgid "Calinski-Harabasz index"
-msgstr ""
+msgstr "Calinski-Harabasz 指數"
 
 msgid "All metrics are based on the <i>euclidean</i> distance."
-msgstr ""
+msgstr "所有指標皆基於<i>歐幾里得</i>距離。"
 
 msgid "Evaluation metrics cannot be computed when there is only 1 cluster."
-msgstr ""
+msgstr "當僅有 1 個集群時，無法計算評估指標。"
 
 msgid "t-SNE Cluster Plot"
-msgstr ""
+msgstr "t-SNE 集群圖"
 
 msgid "Noisepoint"
-msgstr ""
+msgstr "雜訊點"
 
 msgid "Elbow Method Plot"
-msgstr ""
+msgstr "肘部法則圖"
 
 msgid "WSS"
-msgstr ""
+msgstr "組內平方和 (WSS)"
 
 msgid "Number of Clusters"
 msgstr "集群的數量"
 
 msgid "Lowest %s"
-msgstr ""
+msgstr "最低 %s"
 
 msgid "Cluster Means"
 msgstr "集群平均數"
@@ -493,19 +499,19 @@ msgid "Cluster %s"
 msgstr "集群 %s"
 
 msgid "Cluster Density Plots"
-msgstr ""
+msgstr "集群密度圖"
 
 msgid "Density"
 msgstr "密度"
 
 msgid "Feature"
-msgstr ""
+msgstr "特徵"
 
 msgid "All Features"
-msgstr ""
+msgstr "所有特徵"
 
 msgid "Cluster Mean Plots"
-msgstr ""
+msgstr "集群平均數圖"
 
 msgid "Cluster Mean"
 msgstr "集群平均數"
@@ -513,48 +519,50 @@ msgstr "集群平均數"
 msgid ""
 "Insufficient RAM available to compute the distance matrix. The analysis "
 "tried to allocate %s Gb"
-msgstr ""
+msgstr "可用 RAM 不足，無法計算距離矩陣。該分析嘗試配置 %s Gb"
 
 msgid "An error occurred in the analysis: %1$s"
-msgstr ""
+msgstr "分析時發生錯誤：%1$s"
 
 msgid "Cluster Matrix Plot"
-msgstr ""
+msgstr "集群矩陣圖"
 
 msgid "The variable '%s' can't be both a feature and a test set indicator."
-msgstr ""
+msgstr "變數 '%s' 不能同時作為特徵與測試集指標變數。"
 
 msgid ""
 "Your test set indicator should be binary, containing only 1 (included in "
 "test set) and 0 (excluded from test set)."
-msgstr ""
+msgstr "您的測試集指標變數應為二元變數，僅包含 1（納入測試集）與 0（排除於測試集）。"
 
 msgid ""
 "There is only one observation in each level of the factor %1$s, please "
 "remove this factor as a feature."
-msgstr ""
+msgstr "因子 %1$s 之每個水準中僅有一個觀測值，請將此因子從特徵中移除。"
 
 msgid ""
 "There is only one observation in each level of the factors %1$s, please "
 "remove these factors as a feature."
-msgstr ""
+msgstr "因子 %1$s 之每個水準中僅有一個觀測值，請將這些因子從特徵中移除。"
 
 msgid "test set"
-msgstr ""
+msgstr "測試集"
 
 msgid "validation set"
-msgstr ""
+msgstr "驗證集"
 
 msgid "new dataset"
-msgstr ""
+msgstr "新資料集"
 
 msgid ""
 "or use a different test set (e.g., automatically by setting a different seed "
 "or manually by specifying the test set indicator)"
 msgstr ""
+"或使用不同之測試集（例如，透過設定不同種子值自動產生，或透過指定測試集指標變"
+"數手動設定）"
 
 msgid "or use a different validation set by setting a different seed"
-msgstr ""
+msgstr "或透過設定不同種子值以使用不同之驗證集"
 
 msgid ""
 "Some factors in the %1$s have levels that do not appear in the training set. "
@@ -562,55 +570,59 @@ msgid ""
 "\n"
 "%3$s"
 msgstr ""
+"在 %1$s 中，有些因子包含在訓練集中未出現的水準。請從資料集中移除包含以下水準"
+"的列%2$s。\n"
+"\n"
+"%3$s"
 
 msgid ""
 "You have specified more nearest neighbors than there are observations in the "
 "training set. Please choose a number lower than %d."
-msgstr ""
+msgstr "您指定之近鄰數目多於訓練集中之觀測值數目。請選擇低於 %d 之數值。"
 
 msgid ""
 "You have specified more folds than there are observations in the training "
 "and validation set. Please choose a number lower than %d."
-msgstr ""
+msgstr "您指定之折數多於訓練集與驗證集中之觀測值數目。請選擇低於 %d 之數值。"
 
 msgid "K-Nearest Neighbors Regression"
-msgstr ""
+msgstr "K-近鄰迴歸"
 
 msgid "Regularized Linear Regression"
-msgstr ""
+msgstr "正規化線性迴歸"
 
 msgid "Random Forest Regression"
-msgstr ""
+msgstr "隨機森林迴歸"
 
 msgid "Boosting Regression"
-msgstr ""
+msgstr "提升法迴歸"
 
 msgid "Neural Network Regression"
-msgstr ""
+msgstr "類神經網路迴歸"
 
 msgid "Decision Tree Regression"
-msgstr ""
+msgstr "決策樹迴歸"
 
 msgid "Support Vector Machine Regression"
-msgstr ""
+msgstr "支援向量機迴歸"
 
 msgid "Linear Regression"
-msgstr ""
+msgstr "線性迴歸"
 
 msgid "Penalty"
-msgstr ""
+msgstr "懲罰"
 
 msgid "Loss function"
-msgstr ""
+msgstr "損失函數"
 
 msgid "Validation MSE"
-msgstr ""
+msgstr "驗證均方誤差 (MSE)"
 
 msgid "Test MSE"
-msgstr ""
+msgstr "測試均方誤差 (MSE)"
 
 msgid "OOB Error"
-msgstr ""
+msgstr "袋外 (OOB) 誤差"
 
 msgid "R%1$s"
 msgstr ""
@@ -871,161 +883,161 @@ msgid "Maximum curvature = %s"
 msgstr ""
 
 msgid "End of recursion reached without converging"
-msgstr ""
+msgstr "遞迴已達終止條件但未收斂"
 
 msgid "x and y must be numeric and finite. Missing values not allowed."
-msgstr ""
+msgstr "x 與 y 必須為數值且有限。不允許有遺漏值。"
 
 msgid "x and y must be of equal length."
-msgstr ""
+msgstr "x 與 y 必須具有相同長度。"
 
 msgid "Need more points to find cutoff."
-msgstr ""
+msgstr "需要更多點以找出切斷點。"
 
 msgid "Need to specify fraction of maximum slope."
-msgstr ""
+msgstr "需指定最大斜率之分數。"
 
 msgid ""
 "Fraction of maximum slope must be positive and be less than or equal to 1."
-msgstr ""
+msgstr "最大斜率之分數必須為正數且小於或等於 1。"
 
 msgid "Method must be either 'first' or 'curvature'."
-msgstr ""
+msgstr "方法必須為「first」或「curvature」。"
 
 msgid "Cutoff point is beyond range. Returning NA."
-msgstr ""
+msgstr "切斷點超出範圍。回傳 NA。"
 
 msgid "Dendrogram"
-msgstr ""
+msgstr "樹狀圖"
 
 msgid ""
 "The %1$s-component %2$s model could not be fitted, try a different model or "
 "a different number of clusters."
-msgstr ""
+msgstr "%1$s 成分 %2$s 模型無法擬合，請嘗試使用不同的模型或不同的群集數量。"
 
 msgid "Estimated Model Parameters"
-msgstr ""
+msgstr "估計之模型參數"
 
 msgid "Mixing Probabilities"
-msgstr ""
+msgstr "混合機率"
 
 msgid "Mixing probability"
-msgstr ""
+msgstr "混合機率"
 
 msgid "Component %1$s"
-msgstr ""
+msgstr "成分 %1$s"
 
 msgid "Means"
-msgstr ""
+msgstr "平均數"
 
 msgid "Covariance Matrix for Component %1$s"
-msgstr ""
+msgstr "成分 %1$s 之共變數矩陣"
 
 msgid "Scale of the Covariance"
-msgstr ""
+msgstr "共變數之尺度"
 
 msgid "Scale"
-msgstr ""
+msgstr "尺度"
 
 msgid "Shape of the Covariance Matrix"
-msgstr ""
+msgstr "共變數矩陣之形狀"
 
 msgid "Eigenvalues of the Covariance Matrix for Component %1$s"
-msgstr ""
+msgstr "成分 %1$s 之共變數矩陣的特徵值"
 
 msgid "Feature Importance"
-msgstr ""
+msgstr "特徵重要性"
 
 msgid "Mean decrease in Gini Index"
-msgstr ""
+msgstr "Gini 指數平均減少量"
 
 msgid "K-nearest neighbors"
-msgstr ""
+msgstr "K-近鄰法"
 
 msgid "Linear discriminant"
-msgstr ""
+msgstr "線性區別分析"
 
 msgid "Linear"
-msgstr ""
+msgstr "線性"
 
 msgid "Boosting"
-msgstr ""
+msgstr "提升法"
 
 msgid "Random forest"
-msgstr ""
+msgstr "隨機森林"
 
 msgid "Regularized linear regression"
-msgstr ""
+msgstr "正規化線性迴歸"
 
 msgid "Neural network"
-msgstr ""
+msgstr "類神經網路"
 
 msgid "Decision tree"
-msgstr ""
+msgstr "決策樹"
 
 msgid "Support vector machine"
-msgstr ""
+msgstr "支援向量機"
 
 msgid "Naive Bayes"
-msgstr ""
+msgstr "單純貝氏"
 
 msgid "Logistic regression"
-msgstr ""
+msgstr "邏輯斯迴歸"
 
 msgid "Multinomial regression"
-msgstr ""
+msgstr "多項式迴歸"
 
 msgid "Error: The trained model is not created in JASP."
-msgstr ""
+msgstr "錯誤：該已訓練模型並非於 JASP 中建立。"
 
 msgid "The trained model (type: %1$s) is currently not supported in JASP."
-msgstr ""
+msgstr "該已訓練模型（類型：%1$s）目前不受 JASP 支援。"
 
 msgid "Error: The trained model is created using a different version of JASP."
-msgstr ""
+msgstr "錯誤：該已訓練模型係使用不同版本之 JASP 建立。"
 
 msgid "Loaded Model"
-msgstr ""
+msgstr "已載入模型"
 
 msgid "Classification"
-msgstr ""
+msgstr "分類"
 
 msgid "Regression"
 msgstr "迴歸"
 
 msgid "Loaded Model: %1$s"
-msgstr ""
+msgstr "已載入模型：%1$s"
 
 msgid ""
 "The features in the new data are unscaled, consistent with the training set."
-msgstr ""
+msgstr "新資料中之特徵未經縮放，與訓練集一致。"
 
 msgid ""
 "The features in the new data are scaled the same as those in the training "
 "set."
-msgstr ""
+msgstr "新資料中的特徵已使用與訓練集相同的尺度進行標準化。"
 
 msgid ""
 "The trained model is not applied because the the following features are "
 "missing: <i>%1$s</i>."
-msgstr ""
+msgstr "由於缺少以下特徵：<i>%1$s</i>，因此未套用已訓練的模型。"
 
 msgid ""
 "The following features are unused because they are not a feature variable in "
 "the trained model: <i>%1$s</i>."
-msgstr ""
+msgstr "以下變數在已訓練模型中不是特徵變數，因此未被使用：<i>%1$s</i>。"
 
 msgid "Nearest Neighbors"
-msgstr ""
+msgstr "最近鄰"
 
 msgid "n(New)"
-msgstr ""
+msgstr "n（新資料）"
 
 msgid "Binomial"
-msgstr ""
+msgstr "二項式"
 
 msgid "Multinomial"
-msgstr ""
+msgstr "多項式"
 
 msgid "Logit"
 msgstr ""
@@ -1201,10 +1213,10 @@ msgid "Weight"
 msgstr "權重"
 
 msgid "linear"
-msgstr ""
+msgstr "線性"
 
 msgid "binary step"
-msgstr ""
+msgstr "二元逐步"
 
 msgid "logistic sigmoid"
 msgstr ""
