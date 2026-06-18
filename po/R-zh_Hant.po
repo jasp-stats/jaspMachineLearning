@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.19.2\n"
 "POT-Creation-Date: 2025-06-28 03:36\n"
-"PO-Revision-Date: 2026-06-17 12:01+0000\n"
+"PO-Revision-Date: 2026-06-19 03:07+0000\n"
 "Last-Translator: 陳正昌 <chencc99@gmail.com>\n"
 "Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
 "projects/jasp/jaspmachinelearning-r/zh_Hant/>\n"
@@ -163,139 +163,143 @@ msgid "t"
 msgstr ""
 
 msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
-msgstr ""
+msgstr "該模型以<i>袋外準確率</i>為最佳化目標。"
 
 msgid "The model is optimized with respect to the <i>sum of squares</i>."
 msgstr "模型係針對<i>平方和</i>進行最佳化。"
 
 msgid "Model Summary: Logistic Regression Classification"
-msgstr ""
+msgstr "模型摘要：邏輯斯迴歸分類"
 
 msgid "Model Summary: Multinomial Regression Classification"
-msgstr ""
+msgstr "模型摘要：多項式迴歸分類"
 
 msgid "Confusion Matrix"
 msgstr "混淆矩陣"
 
 msgid "Observed"
-msgstr ""
+msgstr "觀測值"
 
 msgid "Predicted"
-msgstr ""
+msgstr "預測值"
 
 msgid "Decision Boundary Matrix"
-msgstr ""
+msgstr "決策邊界矩陣"
 
 msgid ""
 "Cannot create plot: You need at least two (numeric) features to create the "
 "decision boundary matrix. You have currently included only one feature."
 msgstr ""
+"無法建立圖形：建立決策邊界矩陣至少需要兩個（數值）特徵。您目前僅納入一個特徵"
+"。"
 
 msgid ""
 "Cannot create matrix: not enough numeric variables remain after removing "
 "factor variables. You need at least 2 numeric variables."
-msgstr ""
+msgstr "無法建立矩陣：移除因子變數後，剩餘的數值變數不足。至少需要 2 個數值變數。"
 
 msgid "ROC Curves Plot"
-msgstr ""
+msgstr "ROC 曲線圖"
 
 msgid "False Positive Rate"
-msgstr ""
+msgstr "偽陽性率"
 
 msgid "True Positive Rate"
-msgstr ""
+msgstr "偽陰性率"
 
 msgid "Perfect separation"
-msgstr ""
+msgstr "完全分離"
 
 msgid "Andrews Curves Plot"
-msgstr ""
+msgstr "Andrews 曲線圖"
 
 msgid "Andrews curves require a minimum of 2 feature variables."
-msgstr ""
+msgstr "Andrews 曲線至少需要 2 個特徵變數。"
 
 msgid "Box's M-test for Homogeneity of Covariance Matrices"
-msgstr ""
+msgstr "Box's M 檢定：共變數矩陣同質性檢定"
 
 msgid "Model Performance Metrics"
-msgstr ""
+msgstr "模型效能指標"
 
 msgid "Support"
-msgstr ""
+msgstr "支持"
 
 msgid "Accuracy"
-msgstr ""
+msgstr "準確率"
 
 msgid "Precision (Positive Predictive Value)"
-msgstr ""
+msgstr "精確率（陽性預測值）"
 
 msgid "Recall (True Positive Rate)"
-msgstr ""
+msgstr "召回率（真陽性率）"
 
 msgid "False Discovery Rate"
 msgstr "虛假發現率"
 
 msgid "F1 Score"
-msgstr ""
+msgstr "F1 分數"
 
 msgid "Matthews Correlation Coefficient"
-msgstr ""
+msgstr "Matthews 相關係數"
 
 msgid "Area Under Curve (AUC)"
-msgstr ""
+msgstr "曲線下面積（AUC）"
 
 msgid "Negative Predictive Value"
-msgstr ""
+msgstr "陰性預測值"
 
 msgid "True Negative Rate"
-msgstr ""
+msgstr "真陰性率"
 
 msgid "False Negative Rate"
-msgstr ""
+msgstr "偽陰性率"
 
 msgid "False Omission Rate"
 msgstr "偽陰遺漏率"
 
 msgid "Threat Score"
-msgstr ""
+msgstr "威脅分數"
 
 msgid "Statistical Parity"
-msgstr ""
+msgstr "統計平權"
 
 msgid "All metrics are calculated for every class against all other classes."
-msgstr ""
+msgstr "所有指標均針對每個類別相對於所有其他類別進行計算。"
 
 msgid "Average / Total"
-msgstr ""
+msgstr "平均值 / 總計"
 
 msgid "Class Proportions"
 msgstr "類別比例"
 
 msgid "Data Set"
-msgstr ""
+msgstr "資料集"
 
 msgid "Training Set"
-msgstr ""
+msgstr "訓練集"
 
 msgid "Validation Set"
-msgstr ""
+msgstr "驗證集"
 
 msgid "Training and Validation Set"
-msgstr ""
+msgstr "訓練集與驗證集"
 
 msgid "Test Set"
-msgstr ""
+msgstr "測試集"
 
 msgid ""
 "You have specified more clusters than distinct data points. Please choose a "
 "number lower than %s."
-msgstr ""
+msgstr "您指定的群集數多於不重複資料點數。請選擇低於 %s 的數值。"
 
 msgid ""
 "R package error: The hclust clustering algorithm from the stats R package "
 "cannot handle data that has 65536 or more rows. We are working on a solution "
 "for this problem. Please try another algorithm in the meantime."
 msgstr ""
+"R 套件錯誤：stats R 套件中的 hclust 分群演算法無法處理 65536 列或更多列的資料"
+"。我們正在針對此問題研擬解決方案。在此期間，請嘗試其他演算法。"
 
 msgid "K-Means Clustering"
 msgstr "k平均數集群法"
@@ -304,7 +308,7 @@ msgid "K-Medians Clustering"
 msgstr "k中位數集群法"
 
 msgid "K-Medoids Clustering"
-msgstr ""
+msgstr "K-medoids 分群"
 
 msgid "Fuzzy C-Means Clustering"
 msgstr "模糊C-平均數集群法"
@@ -313,10 +317,10 @@ msgid "Hierarchical Clustering"
 msgstr "階層集群法"
 
 msgid "Density-Based Clustering"
-msgstr ""
+msgstr "密度基礎集群分析"
 
 msgid "Random Forest Clustering"
-msgstr ""
+msgstr "隨機森林集群分析"
 
 msgid "Model-Based Clustering"
 msgstr "基於模型的分群"
@@ -753,19 +757,19 @@ msgid "Posterior"
 msgstr "後驗"
 
 msgid "Class Means in Training Data"
-msgstr ""
+msgstr "訓練資料中各類別的平均值"
 
 msgid "Linear Discriminant Matrix"
-msgstr ""
+msgstr "線性區別矩陣"
 
 msgid "Tests of Equality of Class Means"
-msgstr ""
+msgstr "各類別平均數相等性檢定"
 
 msgid "The null hypothesis specifies equal class means."
-msgstr ""
+msgstr "虛無假設指定各類別平均數相等。"
 
 msgid "Tests of Equality of Covariance Matrices"
-msgstr ""
+msgstr "共變數矩陣相等性檢定"
 
 msgid "df"
 msgstr "自由度"
@@ -797,24 +801,24 @@ msgid "Skewness"
 msgstr "偏態"
 
 msgid "Kurtosis"
-msgstr ""
+msgstr "峰度"
 
 msgid ""
 "Both p-values of the skewness and kurtosis statistics should be > 0.05 to "
 "conclude multivariate normality."
-msgstr ""
+msgstr "偏態與峰度統計量之 p 值均須大於 0.05，始可推論具備多變量常態性。"
 
 msgid "An error occurred when creating this table: %s"
-msgstr ""
+msgstr "建立此表格時發生錯誤：%s"
 
 msgid "Regression Coefficients"
-msgstr ""
+msgstr "迴歸係數"
 
 msgid "Coefficient (%s)"
-msgstr ""
+msgstr "係數（%s）"
 
 msgid "Standard Error"
-msgstr ""
+msgstr "標準誤"
 
 msgid "z"
 msgstr ""
@@ -849,38 +853,40 @@ msgid "Mean"
 msgstr "平均數"
 
 msgid "Std. deviation"
-msgstr ""
+msgstr "標準差"
 
 msgid ""
 "The table displays the mean and standard deviation of the feature given the "
 "target class."
-msgstr ""
+msgstr "此表格顯示給定目標類別下，該特徵之平均數與標準差。"
 
 msgid ""
 "The table displays the conditional probabilities given the target class."
-msgstr ""
+msgstr "此表格顯示給定目標類別下之條件機率。"
 
 msgid ""
 "Analysis not possible: The algorithm did not converge within the maximum "
 "number of training repetitions (%1$s)."
-msgstr ""
+msgstr "無法進行分析：演算法在最大訓練疊代次數（%1$s）內未收斂。"
 
 msgid "Optimizing network topology"
-msgstr ""
+msgstr "最佳化網路拓撲結構"
 
 msgid "K-Distance Plot"
-msgstr ""
+msgstr "K-距離圖"
 
 msgid "Points Sorted by Distance"
-msgstr ""
+msgstr "依距離排序之資料點"
 
 msgid ""
 "%s-Nearest Neighbors \n"
 "Distance"
 msgstr ""
+"%s-最近鄰  \n"
+"距離"
 
 msgid "Maximum curvature = %s"
-msgstr ""
+msgstr "最大曲率 = %s"
 
 msgid "End of recursion reached without converging"
 msgstr "遞迴已達終止條件但未收斂"
@@ -1079,22 +1085,22 @@ msgid "Plotting not possible: The model is based on only a single tree."
 msgstr "無法繪圖：此模型僅基於單一決策樹。"
 
 msgid "Number of Trees"
-msgstr ""
+msgstr "樹木數量"
 
 msgid "Deviance Plot"
-msgstr ""
+msgstr "離差圖"
 
 msgid "Multinomial Deviance"
-msgstr ""
+msgstr "多項式離差"
 
 msgid "Binomial Deviance"
-msgstr ""
+msgstr "二項式離差"
 
 msgid "%s Deviance"
-msgstr ""
+msgstr "%s 離差"
 
 msgid "Relative Influence Plot"
-msgstr ""
+msgstr "相對影響力圖"
 
 msgid ""
 "The minimum number of observations per node is too large. Ensure that `2 * "
@@ -1102,32 +1108,35 @@ msgid ""
 "* available training data (%3$i)` (in this case the minimum can be %4$i at "
 "most)."
 msgstr ""
+"每個節點的最小觀測數過大。請確保 2 * 節點內最小觀測數（%1$i） + 1 < 每棵樹使"
+"用之訓練資料（%2$s） * 可用訓練資料總數（%3$i）（在此情況下，最小值最多可為 "
+"%4$i）。"
 
 msgid "Relative Importance"
-msgstr ""
+msgstr "相對重要性"
 
 msgid "No splits were made in the tree."
-msgstr ""
+msgstr "該樹狀模型中未進行任何分割。"
 
 msgid "Splits in Tree"
-msgstr ""
+msgstr "樹狀模型中之分割"
 
 msgid "Obs. in Split"
-msgstr ""
+msgstr "分割中之觀測數"
 
 msgid "Split Point"
-msgstr ""
+msgstr "分割點"
 
 msgid "Improvement"
-msgstr ""
+msgstr "改進值"
 
 msgid ""
 "For each level of the tree, only the split with the highest improvement in "
 "deviance is shown."
-msgstr ""
+msgstr "針對樹狀模型的每一層級，僅顯示離差改進值最高之分割點。"
 
 msgid "Decision Tree Plot"
-msgstr ""
+msgstr "決策樹圖"
 
 msgid "Plotting not possible: No splits were made in the tree."
 msgstr "無法繪圖：該決策樹未進行任何分裂。"
@@ -1136,37 +1145,37 @@ msgid "Plotting not possible: An error occurred while creating this plot: %s"
 msgstr "無法繪圖：在建立此圖形時發生錯誤：%s"
 
 msgid "Classification Accuracy Plot"
-msgstr ""
+msgstr "分類準確率圖"
 
 msgid "Mean Squared Error Plot"
-msgstr ""
+msgstr "均方誤差圖"
 
 msgid "Classification Accuracy"
-msgstr ""
+msgstr "分類準確率"
 
 msgid "Mean Squared Error"
-msgstr ""
+msgstr "均方誤差"
 
 msgid "Validation set"
-msgstr ""
+msgstr "驗證集"
 
 msgid "Complexity Penalty"
-msgstr ""
+msgstr "複雜度懲罰"
 
 msgid "Number of Nearest Neighbors"
-msgstr ""
+msgstr "最近鄰數"
 
 msgid "Training and validation set"
-msgstr ""
+msgstr "訓練集與驗證集"
 
 msgid "Rectangular"
-msgstr ""
+msgstr "矩形的"
 
 msgid "Triangular"
-msgstr ""
+msgstr "三角形的"
 
 msgid "Epanechnikov"
-msgstr ""
+msgstr "Epanechnikov 核函數"
 
 msgid "Biweight"
 msgstr ""
@@ -1270,13 +1279,13 @@ msgid "Intercept"
 msgstr "截距"
 
 msgid "Input layer"
-msgstr ""
+msgstr "輸入層"
 
 msgid "Output layer"
-msgstr ""
+msgstr "輸出層"
 
 msgid "Hidden layer %1$s"
-msgstr ""
+msgstr "隱藏層 %1$s"
 
 msgid "Binary"
 msgstr ""
@@ -1318,40 +1327,40 @@ msgid "GeLU"
 msgstr ""
 
 msgid "%1$s Activation Function"
-msgstr ""
+msgstr "%1$s 激活函數"
 
 msgid "Input"
-msgstr ""
+msgstr "輸入"
 
 msgid "Output"
-msgstr ""
+msgstr "輸出"
 
 msgid "Generation"
-msgstr ""
+msgstr "世代"
 
 msgid "Mean decrease in accuracy"
-msgstr ""
+msgstr "平均準確率下降量"
 
 msgid "Total increase in node purity"
-msgstr ""
+msgstr "節點純度的總增量"
 
 msgid "Out-of-bag Classification Accuracy Plot"
-msgstr ""
+msgstr "袋外分類準確率圖"
 
 msgid "Out-of-bag Mean Squared Error Plot"
-msgstr ""
+msgstr "袋外均方誤差圖"
 
 msgid "Out-of-bag %sClassification Accuracy"
-msgstr ""
+msgstr "袋外 %s分類準確率"
 
 msgid "Out-of-bag %sMean Squared Error"
-msgstr ""
+msgstr "袋外 %s均方誤差"
 
 msgid "Mean Decrease in Accuracy"
-msgstr ""
+msgstr "平均準確率下降量"
 
 msgid "Total Increase in Node Purity"
-msgstr ""
+msgstr "節點純度的總增量"
 
 msgid "L2 (Ridge)"
 msgstr ""
