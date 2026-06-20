@@ -1,9 +1,15 @@
 msgid ""
 msgstr ""
+"PO-Revision-Date: 2026-06-20 04:43+0000\n"
+"Last-Translator: 陳正昌 <chencc99@gmail.com>\n"
+"Language-Team: Chinese (Traditional Han script) <https://hosted.weblate.org/"
+"projects/jasp/jaspmachinelearning-qml/zh_Hant/>\n"
+"Language: zh_Hant\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 "X-Language: zh_Hant\n"
 "X-Qt-Contexts: true\n"
 
@@ -121,7 +127,7 @@ msgstr "%所有資料"
 
 msgctxt "DataSplit|"
 msgid "Add generated indicator to data"
-msgstr ""
+msgstr "將產生的指標加入資料集"
 
 msgctxt "DataSplit|"
 msgid "None"
@@ -163,27 +169,22 @@ msgctxt "mlClassificationBoosting|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Plots"
 msgstr "圖"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Training Parameters"
 msgstr "訓練參數"
 
-#, fuzzy
 msgctxt "mlClassificationKnn|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Tables"
 msgstr "表"
@@ -198,7 +199,7 @@ msgstr "先驗及後驗機率"
 
 msgctxt "mlClassificationLda|"
 msgid "Class means training data"
-msgstr ""
+msgstr "訓練資料之類別平均數"
 
 msgctxt "mlClassificationLda|"
 msgid "Assumption Checks"
@@ -206,17 +207,16 @@ msgstr "前提假設的檢驗"
 
 msgctxt "mlClassificationLda|"
 msgid "Equality of class means"
-msgstr ""
+msgstr "類別平均數相等性檢定"
 
 msgctxt "mlClassificationLda|"
 msgid "Equality of covariance matrices"
-msgstr ""
+msgstr "共變異數矩陣同質性檢定"
 
 msgctxt "mlClassificationLda|"
 msgid "Multicollinearity"
 msgstr "多重共線性"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Plots"
 msgstr "圖"
@@ -237,17 +237,14 @@ msgctxt "mlClassificationLda|"
 msgid "Training Parameters"
 msgstr "訓練參數"
 
-#, fuzzy
 msgctxt "mlClassificationLda|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Plots"
 msgstr "圖"
@@ -256,30 +253,26 @@ msgctxt "mlClassificationRandomForest|"
 msgid "Training Parameters"
 msgstr "訓練參數"
 
-#, fuzzy
 msgctxt "mlClassificationRandomForest|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Plots"
 msgstr "圖"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "K-distance plot"
-msgstr ""
+msgstr "K 距離圖"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Training Parameters"
 msgstr "訓練參數"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
@@ -300,12 +293,10 @@ msgctxt "mlClusteringDensityBased|"
 msgid "Fixed"
 msgstr "固定"
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Plots"
 msgstr "圖"
@@ -314,17 +305,14 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Training Parameters"
 msgstr "訓練參數"
 
-#, fuzzy
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Plots"
 msgstr "圖"
@@ -337,7 +325,6 @@ msgctxt "mlClusteringHierarchical|"
 msgid "Training Parameters"
 msgstr "訓練參數"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
@@ -378,12 +365,10 @@ msgctxt "mlClusteringHierarchical|"
 msgid "McQuitty"
 msgstr "McQuitty 法"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Plots"
 msgstr "圖"
@@ -392,17 +377,14 @@ msgctxt "mlClusteringKMeans|"
 msgid "Training Parameters"
 msgstr "訓練參數"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Plots"
 msgstr "圖"
@@ -411,17 +393,14 @@ msgctxt "mlClusteringRandomForest|"
 msgid "Training Parameters"
 msgstr "訓練參數"
 
-#, fuzzy
 msgctxt "mlClusteringRandomForest|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Plots"
 msgstr "圖"
@@ -430,17 +409,14 @@ msgctxt "mlRegressionBoosting|"
 msgid "Training Parameters"
 msgstr "訓練參數"
 
-#, fuzzy
 msgctxt "mlRegressionBoosting|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Plots"
 msgstr "圖"
@@ -449,17 +425,14 @@ msgctxt "mlRegressionKnn|"
 msgid "Training Parameters"
 msgstr "訓練參數"
 
-#, fuzzy
 msgctxt "mlRegressionKnn|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Plots"
 msgstr "圖"
@@ -468,46 +441,41 @@ msgctxt "mlRegressionRandomForest|"
 msgid "Training Parameters"
 msgstr "訓練參數"
 
-#, fuzzy
 msgctxt "mlRegressionRandomForest|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Plots"
 msgstr "圖"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Variable trace"
-msgstr ""
+msgstr "變數軌跡"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Legend"
 msgstr "圖例"
 
 msgctxt "mlRegressionRegularized|"
 msgid "λ evaluation"
-msgstr ""
+msgstr "λ 參數評估"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Training Parameters"
 msgstr "訓練參數"
 
-#, fuzzy
 msgctxt "mlRegressionRegularized|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Elastic net"
-msgstr ""
+msgstr "彈性網路"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Lambda (λ)"
@@ -525,7 +493,7 @@ msgctxt "Description|"
 msgid ""
 "Explore the relation between variables using data-driven methods for "
 "regression, classification, and clustering"
-msgstr ""
+msgstr "使用資料驅動之迴歸、分類與分群方法，探索變數間之關係"
 
 msgctxt "Description|"
 msgid "Neural Network"
@@ -565,18 +533,16 @@ msgstr "另存新檔"
 
 msgctxt "ExportResults|"
 msgid "e.g., location/model.jaspML"
-msgstr ""
+msgstr "例如：location/model.jaspML"
 
 msgctxt "ExportResults|"
 msgid "Save trained model"
 msgstr "儲存訓練模型"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Plots"
 msgstr "圖"
@@ -585,17 +551,14 @@ msgctxt "mlClassificationNeuralNetwork|"
 msgid "Training Parameters"
 msgstr "訓練參數"
 
-#, fuzzy
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Plots"
 msgstr "圖"
@@ -604,7 +567,6 @@ msgctxt "mlRegressionNeuralNetwork|"
 msgid "Training Parameters"
 msgstr "訓練參數"
 
-#, fuzzy
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
@@ -615,7 +577,7 @@ msgstr "欄位名稱"
 
 msgctxt "DataSplit|"
 msgid "Test set indicator"
-msgstr ""
+msgstr "測試集指標變數"
 
 msgctxt "mlClassificationLda|"
 msgid "Estimation method"
@@ -623,13 +585,12 @@ msgstr "推估方法"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Epsilon neighborhood size"
-msgstr ""
+msgstr "Epsilon 鄰域大小"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Min. core points"
-msgstr ""
+msgstr "最小核心點數"
 
-#, fuzzy
 msgctxt "mlClusteringDensityBased|"
 msgid "Distance"
 msgstr "距離"
@@ -642,7 +603,6 @@ msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Fuzziness parameter"
 msgstr "模糊度參數"
 
-#, fuzzy
 msgctxt "mlClusteringHierarchical|"
 msgid "Distance"
 msgstr "距離"
@@ -681,7 +641,7 @@ msgstr "收斂門檻"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Penalty"
-msgstr ""
+msgstr "懲罰項"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Lasso"
@@ -693,11 +653,11 @@ msgstr "脊"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Elastic net parameter (α)"
-msgstr ""
+msgstr "彈性網絡參數（α）"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Largest λ within 1 SE of min"
-msgstr ""
+msgstr "最小值之一倍標準誤內的最大 λ 值"
 
 msgctxt "Description|"
 msgid "Decision Tree"
@@ -725,18 +685,16 @@ msgstr "支援向量機分類"
 
 msgctxt "Description|"
 msgid "Neighborhood-Based"
-msgstr ""
+msgstr "基於鄰域"
 
 msgctxt "Description|"
 msgid "Neighborhood-Based Clustering"
-msgstr ""
+msgstr "基於鄰域分類"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Plots"
 msgstr "圖"
@@ -745,17 +703,14 @@ msgctxt "mlClassificationDecisionTree|"
 msgid "Training Parameters"
 msgstr "訓練參數"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Plots"
 msgstr "圖"
@@ -764,21 +719,18 @@ msgctxt "mlClassificationSvm|"
 msgid "Training Parameters"
 msgstr "訓練參數"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Center type"
-msgstr ""
+msgstr "中心類型"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Distance"
 msgstr "距離"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Euclidean"
 msgstr "歐幾里得"
@@ -787,12 +739,10 @@ msgctxt "mlClusteringKMeans|"
 msgid "Manhattan"
 msgstr "曼哈頓"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Plots"
 msgstr "圖"
@@ -801,17 +751,14 @@ msgctxt "mlRegressionDecisionTree|"
 msgid "Training Parameters"
 msgstr "訓練參數"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Plots"
 msgstr "圖"
@@ -820,7 +767,6 @@ msgctxt "mlRegressionSvm|"
 msgid "Training Parameters"
 msgstr "訓練參數"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
@@ -831,20 +777,19 @@ msgstr "訓練後的模型"
 
 msgctxt "mlPrediction|"
 msgid "e.g., location/model.jaspML"
-msgstr ""
+msgstr "例如：location/model.jaspML"
 
 msgctxt "mlPrediction|"
 msgid "Features"
 msgstr "欲萃取特徵的變數"
 
-#, fuzzy
 msgctxt "mlPrediction|"
 msgid "Tables"
 msgstr "表"
 
 msgctxt "mlPrediction|"
 msgid "to"
-msgstr ""
+msgstr "到"
 
 msgctxt "Description|"
 msgid "Linear"
@@ -856,7 +801,7 @@ msgstr "線性迴歸"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Shrinkage"
-msgstr ""
+msgstr "收縮"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
@@ -864,10 +809,12 @@ msgid ""
 "the learning rate or step-size reduction 0.001 to 0.1 usually work, but a "
 "smaller learning rate typically requires more trees."
 msgstr ""
+"應用於擴展中每棵樹之收縮參數。亦稱為學習率或步長縮減，通常介於0.001至0.1之間"
+"，但較小之學習率通常需要較多樹木。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Interaction depth"
-msgstr ""
+msgstr "互動深度"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
@@ -875,6 +822,8 @@ msgid ""
 "of variable interactions allowed. A value of 1 implies an additive model, a "
 "value of 2 implies a model with up to 2-way interactions, etc. Default is 1."
 msgstr ""
+"整數，指定每棵樹之最大深度（亦即允許之變數互動的最高層級。值為1表示相加性模型"
+"，值為2表示最多包含二階互動之模型，以此類推。預設值為1。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Min. observations in node"
@@ -886,6 +835,8 @@ msgid ""
 "of the trees. Note that this is the actual number of observations, not the "
 "total weight."
 msgstr ""
+"整數，指定樹之終端節點中的最小觀測值數目。請注意，此為實際觀測值數目，而非總"
+"權重。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Training data used per tree"
@@ -897,14 +848,13 @@ msgid ""
 "tree."
 msgstr "選擇訓練每棵樹使用訓練資料集資料的值比例。"
 
-#, fuzzy
 msgctxt "Deviance|"
 msgid "Deviance"
 msgstr "離差量數"
 
 msgctxt "Deviance|"
 msgid "Shows the prediction error plotted against the number of trees."
-msgstr ""
+msgstr "將預測誤差隨樹的數量變化的關係繪製成圖。"
 
 msgctxt "ModelOptimization|"
 msgid "Number of Trees"
@@ -938,19 +888,18 @@ msgctxt "ModelOptimization|"
 msgid ""
 "Enables you to optimize the prediction error on a validation data set with "
 "respect to the number of trees."
-msgstr ""
+msgstr "允許您針對樹的數量，在驗證資料集上最佳化預測誤差。"
 
 msgctxt "ModelOptimization|"
 msgid "Max. trees"
-msgstr ""
+msgstr "最大樹數"
 
 msgctxt "ModelOptimization|"
 msgid ""
 "Sets the maximum number of possible decision trees to be considered. At "
 "default, this is set to 100."
-msgstr ""
+msgstr "設定可考慮的最大決策樹數量。預設為 100。"
 
-#, fuzzy
 msgctxt "Oob|"
 msgid "Out-of-bag improvement"
 msgstr "袋外提升"
@@ -959,16 +908,15 @@ msgctxt "Oob|"
 msgid ""
 "Plots the number of trees against the out-of-bag classification accuracy "
 "improvement of the model. Accuracy is assessed for the training set."
-msgstr ""
+msgstr "將樹的數量與模型的袋外分類準確率改善量作圖。準確率以訓練集進行評估。"
 
-#, fuzzy
 msgctxt "RelativeInfluence|"
 msgid "Relative influence"
 msgstr "相對影響力"
 
 msgctxt "RelativeInfluence|"
 msgid "Shows the relative influence of the features."
-msgstr ""
+msgstr "顯示特徵的相對影響力。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Min. observations for split"
@@ -978,7 +926,7 @@ msgctxt "AlgorithmicSettings|"
 msgid ""
 "The minimum number of observations that must exist in a node in order for a "
 "split to be attempted."
-msgstr ""
+msgstr "在節點中必須存在、才能進行分裂的最小觀測值數量。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Min. observations in terminal"
@@ -990,15 +938,15 @@ msgstr "任何葉節點內的最少觀測值數量。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Max. interaction depth"
-msgstr ""
+msgstr "最大互動深度"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Set the maximum depth of any node of the final tree."
-msgstr ""
+msgstr "設定最終樹中任一節點的最大深度。"
 
 msgctxt "AttemptedSplits|"
 msgid "Attempted splits"
-msgstr ""
+msgstr "嘗試分裂次數"
 
 msgctxt "AttemptedSplits|"
 msgid ""
@@ -1007,34 +955,36 @@ msgid ""
 "positive weight) sent left or right by the split. It also shows the "
 "improvement in deviance given by the splits."
 msgstr ""
+"顯示演算法所進行的分裂、對應的特徵與分裂點，以及被分到左側或右側的觀測值數量"
+"（不含缺失值且權重大於 0）。同時也顯示這些分裂所帶來的偏差改善量。"
 
 msgctxt "AttemptedSplits|"
 msgid "Only show splits in tree"
-msgstr ""
+msgstr "僅顯示樹中的分裂"
 
 msgctxt "AttemptedSplits|"
 msgid "Remove splits that do not occur in the final tree from the table."
-msgstr ""
+msgstr "將未出現在最終樹中的分裂從表格中移除。"
 
 msgctxt "TreePlot|"
 msgid "Decision tree"
-msgstr ""
+msgstr "決策樹"
 
 msgctxt "TreePlot|"
 msgid "Creates a plot that visualizes the decision tree and its leafs."
-msgstr ""
+msgstr "設定最終樹中任何節點的最大深度。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Weights"
-msgstr ""
+msgstr "權重"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Rectangular"
-msgstr ""
+msgstr "矩形的"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Triangular"
-msgstr ""
+msgstr "三角形的"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Epanechnikov"
@@ -1115,25 +1065,25 @@ msgctxt "ModelOptimization|"
 msgid ""
 "Enables you to optimize the prediction error on a validation data set with "
 "respect to the number of nearest neighbors."
-msgstr ""
+msgstr "使你能針對最近鄰居的數量，在驗證資料集上最佳化預測誤差。"
 
 msgctxt "ModelOptimization|"
 msgid "Max. nearest neighbors"
-msgstr ""
+msgstr "最大最近鄰居數"
 
 msgctxt "ModelOptimization|"
 msgid ""
 "Sets the maximum number of possible nearest neighbors to be considered. At "
 "default, this is set to 10."
-msgstr ""
+msgstr "設定可考慮的最近鄰居最大數量。預設值為 10。"
 
 msgctxt "OptimPlot|"
 msgid "Mean squared error"
-msgstr ""
+msgstr "均方誤差"
 
 msgctxt "OptimPlot|"
 msgid "Classification accuracy"
-msgstr ""
+msgstr "分類準確率"
 
 msgctxt "OptimPlot|"
 msgid ""
@@ -1143,55 +1093,57 @@ msgid ""
 "classification accuracy of the model. Accuracy is assessed for the training "
 "(and validation) set."
 msgstr ""
+"對於迴歸問題，將最近鄰居數量與模型的均方誤差（MSE）進行繪圖。準確度以訓練集（"
+"以及驗證集）進行評估。對於分類問題，將最近鄰居數量與模型的分類準確率進行繪圖"
+"。準確率以訓練集（以及驗證集）進行評估。"
 
 msgctxt "WeightFunction|"
 msgid "Weight function"
-msgstr ""
+msgstr "權重函數"
 
 msgctxt "WeightFunction|"
 msgid "Shows how the weights are assigned as a function of the distance."
-msgstr ""
+msgstr "顯示權重如何隨距離函數分配。"
 
 msgctxt "ActivationFunctionPlot|"
 msgid "Activation function"
-msgstr ""
+msgstr "激活函數"
 
 msgctxt "ActivationFunctionPlot|"
 msgid "Creates a plot of the activation function."
-msgstr ""
+msgstr "繪製激活函數的圖形。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Activation function"
-msgstr ""
+msgstr "激活函數"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Linear"
 msgstr "線性"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Binary"
-msgstr ""
+msgstr "二元的"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Logistic sigmoid"
-msgstr ""
+msgstr "邏輯式 Sigmoid 函數"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Sine"
-msgstr ""
+msgstr "Sine：正弦（函數）"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Inverse tangent"
-msgstr ""
+msgstr "Inverse tangent：反正切（函數）"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Hyperbolic tangent"
-msgstr ""
+msgstr "Hyperbolic tangent：雙曲正切（函數）"
 
 msgctxt "AlgorithmicSettings|"
 msgid "ReLU"
-msgstr ""
+msgstr "ReLU：整流線性單元"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Softplus"
@@ -1303,209 +1255,208 @@ msgstr ""
 
 msgctxt "AlgorithmicSettings|"
 msgid "The loss function used."
-msgstr ""
+msgstr "所使用的損失函數。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Stopping criteria loss function"
-msgstr ""
+msgstr "以損失函數作為停止準則"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
 "The threshold for the partial derivatives of the error function as stopping "
 "criteria."
-msgstr ""
+msgstr "以誤差函數的偏導數為停止準則的閾值。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Max. training repetitions"
-msgstr ""
+msgstr "最大訓練重複次數"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The maximum number of repetitions used in training the network."
-msgstr ""
+msgstr "訓練網路中使用的最大重複次數。"
 
 msgctxt "Coefficients|"
 msgid "Network weights"
-msgstr ""
+msgstr "網路權重"
 
 msgctxt "Coefficients|"
 msgid ""
 "Shows the connections in the neural network together with their weights."
-msgstr ""
+msgstr "顯示神經網路中的連結及其權重。"
 
 msgctxt "ModelOptimization|"
 msgid "Network Topology"
-msgstr ""
+msgstr "網路拓撲"
 
 msgctxt "ModelOptimization|"
 msgid "Manual"
-msgstr ""
+msgstr "手動"
 
 msgctxt "ModelOptimization|"
 msgid "Specify the nodes in each hidden layer of the neural network."
-msgstr ""
+msgstr "指定神經網路各隱藏層中的節點數量。"
 
 msgctxt "ModelOptimization|"
 msgid "Nodes"
-msgstr ""
+msgstr "節點"
 
 msgctxt "ModelOptimization|"
 msgid "Hidden layer "
-msgstr ""
+msgstr "隱藏層 "
 
 msgctxt "ModelOptimization|"
 msgid "Optimize the topology of the network using a genetic algorithm."
-msgstr ""
+msgstr "使用遺傳演算法最佳化神經網路拓撲結構。"
 
 msgctxt "ModelOptimization|"
 msgid "Population size"
-msgstr ""
+msgstr "族群大小"
 
 msgctxt "ModelOptimization|"
 msgid "Size of population used in genetic optimization."
-msgstr ""
+msgstr "用於遺傳最佳化的族群大小。"
 
 msgctxt "ModelOptimization|"
 msgid "Generations"
-msgstr ""
+msgstr "世代數"
 
 msgctxt "ModelOptimization|"
 msgid "Number of generations used in genetic optimization."
-msgstr ""
+msgstr "用於遺傳最佳化的世代數。"
 
 msgctxt "ModelOptimization|"
 msgid "Max. number of layers"
-msgstr ""
+msgstr "最大層數"
 
 msgctxt "ModelOptimization|"
 msgid "Max. nodes in each layer"
-msgstr ""
+msgstr "每一層的最大節點數"
 
 msgctxt "ModelOptimization|"
 msgid "Parent selection"
-msgstr ""
+msgstr "父代選擇"
 
 msgctxt "ModelOptimization|"
 msgid "Roulette wheel"
-msgstr ""
+msgstr "輪盤法"
 
 msgctxt "ModelOptimization|"
 msgid "Universal"
-msgstr ""
+msgstr "均勻隨機"
 
 msgctxt "ModelOptimization|"
 msgid "Rank"
-msgstr ""
+msgstr "等級"
 
 msgctxt "ModelOptimization|"
 msgid "Tournament"
-msgstr ""
+msgstr "競賽式選擇"
 
 msgctxt "ModelOptimization|"
 msgid "Random"
-msgstr ""
+msgstr "隨機選擇"
 
 msgctxt "ModelOptimization|"
 msgid "How to select suviving networks."
-msgstr ""
+msgstr "存活網路選擇方式。"
 
 msgctxt "ModelOptimization|"
 msgid "Candidates"
-msgstr ""
+msgstr "候選個體"
 
 msgctxt "ModelOptimization|"
 msgid "Number of candidates for tournament selection"
-msgstr ""
+msgstr "錦標賽選擇中的候選個體數量"
 
 msgctxt "ModelOptimization|"
 msgid "Crossover method"
-msgstr ""
+msgstr "交叉方法"
 
 msgctxt "ModelOptimization|"
 msgid "Uniform"
-msgstr ""
+msgstr "均勻"
 
 msgctxt "ModelOptimization|"
 msgid "One-point"
-msgstr ""
+msgstr "單點"
 
 msgctxt "ModelOptimization|"
 msgid "Multi-point"
-msgstr ""
+msgstr "多點"
 
 msgctxt "ModelOptimization|"
 msgid "How to crossover two candidate networks."
-msgstr ""
+msgstr "如何對兩個候選網路進行交叉操作。"
 
 msgctxt "ModelOptimization|"
 msgid "Mutations"
-msgstr ""
+msgstr "突變"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Reset"
 msgstr "重置"
 
 msgctxt "ModelOptimization|"
 msgid "Swap"
-msgstr ""
+msgstr "交換"
 
 msgctxt "ModelOptimization|"
 msgid "Scramble"
-msgstr ""
+msgstr "重排"
 
 msgctxt "ModelOptimization|"
 msgid "Inversion"
-msgstr ""
+msgstr "反轉"
 
 msgctxt "ModelOptimization|"
 msgid "How to mutate a network."
-msgstr ""
+msgstr "如何對網路進行突變操作。"
 
 msgctxt "ModelOptimization|"
 msgid "Probability"
-msgstr ""
+msgstr "機率"
 
 msgctxt "ModelOptimization|"
 msgid "The mutation probability of a random network in each generation."
-msgstr ""
+msgstr "每一世代中隨機網路的突變機率。"
 
 msgctxt "ModelOptimization|"
 msgid "Survival method"
-msgstr ""
+msgstr "存活方法"
 
 msgctxt "ModelOptimization|"
 msgid "Fitness-based"
-msgstr ""
+msgstr "基於適應度"
 
 msgctxt "ModelOptimization|"
 msgid "Age-based"
-msgstr ""
+msgstr "基於年齡"
 
 msgctxt "ModelOptimization|"
 msgid "How to choose which networks survive and die in a generation."
-msgstr ""
+msgstr "如何決定在每一代中哪些網路存活、哪些網路淘汰。"
 
 msgctxt "ModelOptimization|"
 msgid "Elitism"
-msgstr ""
+msgstr "精英保留"
 
 msgctxt "ModelOptimization|"
 msgid "Keep top networks from dying out."
-msgstr ""
+msgstr "保留表現最佳的網路，使其不被淘汰。"
 
 msgctxt "ModelOptimization|"
 msgid "Percentage of top networks to keep."
-msgstr ""
+msgstr "精英保留比例。"
 
 msgctxt "NetworkPlot|"
 msgid "Network structure"
-msgstr ""
+msgstr "網路結構"
 
 msgctxt "NetworkPlot|"
 msgid ""
 "Creates a plot that visualizes the structure (nodes and edges) of the "
 "network."
-msgstr ""
+msgstr "建立一個圖，用於視覺化網路的結構（節點與連線）。"
 
 msgctxt "OptimPlot|"
 msgid ""
@@ -1516,10 +1467,13 @@ msgid ""
 "generations in the evoluationary optimization algorithm. Accuracy is "
 "assessed for the training (and validation) set."
 msgstr ""
+"對於迴歸問題，將神經網路族群在每一代進化最佳化過程中的平均均方誤差，對應於世"
+"代數進行繪圖。對於分類問題，將神經網路族群在每一代進化最佳化過程中的平均分類"
+"準確率，對應於世代數進行繪圖。準確率同時以訓練集（以及驗證集）進行評估。"
 
 msgctxt "AccuracyDecrease|"
 msgid "Mean decrease in accuracy"
-msgstr ""
+msgstr "平均準確率下降量"
 
 msgctxt "AccuracyDecrease|"
 msgid ""
@@ -1529,33 +1483,33 @@ msgstr "顯示模型中各特徵對準確率平均降低幅度之圖形。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Features per split"
-msgstr ""
+msgstr "每次分裂所使用的特徵數量"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Auto"
-msgstr ""
+msgstr "自動"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Manual"
-msgstr ""
+msgstr "手動"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
 "Set the number of feature variables that is used within each split in the "
 "decision trees. Defaults to auto."
-msgstr ""
+msgstr "設定決策樹中每次分裂時使用的特徵變數數量。預設為自動。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The number of feature variables in each split."
-msgstr ""
+msgstr "每次分裂所使用的特徵變數數量。"
 
 msgctxt "ModelOptimization|"
 msgid "The number of trees to be used."
-msgstr ""
+msgstr "使用樹的數量。"
 
 msgctxt "NodePurity|"
 msgid "Total increase in node purity"
-msgstr ""
+msgstr "節點純度的總增量"
 
 msgctxt "NodePurity|"
 msgid ""
@@ -1565,34 +1519,33 @@ msgstr "顯示模型中各特徵之節點純度總增加量之圖形。"
 
 msgctxt "Oob|"
 msgid "Out-of-bag error"
-msgstr ""
+msgstr "袋外誤差"
 
 msgctxt "Oob|"
 msgid "Out-of-bag accuracy"
-msgstr ""
+msgstr "袋外準確率"
 
 msgctxt "Oob|"
 msgid ""
 "Plots the number of trees against the out-of-bag mean squared error "
 "(regression) or accuracy (classification) of the model."
-msgstr ""
+msgstr "將樹的數量與模型的袋外平均均方誤差（迴歸）或準確率（分類）進行對應繪圖。"
 
-#, fuzzy
 msgctxt "CoefficientTable|"
 msgid "Coefficients"
 msgstr "係數"
 
 msgctxt "CoefficientTable|"
 msgid "Shows a table containing the regression coefficients."
-msgstr ""
+msgstr "顯示一個包含迴歸係數的表格。"
 
 msgctxt "CoefficientTable|"
 msgid "Confidence interval"
-msgstr ""
+msgstr "信賴區間"
 
 msgctxt "CoefficientTable|"
 msgid "Display confidence intervals around estimated regression coefficients."
-msgstr ""
+msgstr "在估計的迴歸係數周圍顯示信賴區間。"
 
 msgctxt "CoefficientTable|"
 msgid "The confidence level for the interval."
@@ -1600,32 +1553,30 @@ msgstr "區間的信賴水準。"
 
 msgctxt "CoefficientTable|"
 msgid "Display equation"
-msgstr ""
+msgstr "顯示方程式"
 
 msgctxt "CoefficientTable|"
 msgid ""
 "Display the regression equation with the estimated values of the "
 "coefficients."
-msgstr ""
+msgstr "顯示帶有估計係數的迴歸方程式。"
 
 msgctxt "Intercept|"
 msgid "Include intercept"
-msgstr ""
+msgstr "包含截距"
 
 msgctxt "Intercept|"
 msgid "Whether to include an intercept in the regression formula."
-msgstr ""
+msgstr "是否在迴歸公式中包含截距項。"
 
-#, fuzzy
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "Target"
 msgstr "目標"
 
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "In this box, the variable that needs to be predicted should be entered."
-msgstr ""
+msgstr "在此方框中，應輸入需預測之變數。"
 
-#, fuzzy
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "Features"
 msgstr "特徵"
@@ -1634,42 +1585,44 @@ msgctxt "VariablesFormRegularizedRegression|"
 msgid ""
 "In this box, the variables that provide information about the target "
 "variable should be entered."
-msgstr ""
+msgstr "在此輸入框中，應輸入提供目標變數資訊的自變數。"
 
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "Weights"
-msgstr ""
+msgstr "權重"
 
 msgctxt "VariablesFormRegularizedRegression|"
 msgid ""
 "In this box, an optional variable containing case weights can be entered."
-msgstr ""
+msgstr "此欄位可輸入一個可選變數，用於提供個案權重。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Radial"
-msgstr ""
+msgstr "徑向"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Polynomial"
-msgstr ""
+msgstr "多項式"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Sigmoid"
-msgstr ""
+msgstr "S 型函數"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
 "The kernel used in training and predicting. Possible kernels are 'linear', "
 "'radial', 'polynomial', and 'sigmoid'."
 msgstr ""
+"訓練與預測中使用的核函數（kernel）。可選的核函數包括「linear（線性）」、「"
+"radial（徑向）」、「polynomial（多項式）」與「sigmoid（S 型）」。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Degree"
-msgstr ""
+msgstr "階數"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The degree of polynomial used."
-msgstr ""
+msgstr "所使用多項式的階數。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Gamma parameter"
@@ -1685,44 +1638,43 @@ msgstr "r 參數"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The complexity parameter used."
-msgstr ""
+msgstr "所使用的複雜度參數。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Tolerance of termination criterion"
-msgstr ""
+msgstr "停止準則的容忍度"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The tolerance of termination criterion."
-msgstr ""
+msgstr "停止條件的容忍度。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Epsilon"
-msgstr ""
+msgstr "Epsilon（ε）"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The epsilon parameter in the insensitive-loss function."
-msgstr ""
+msgstr "不敏感損失函數中的 epsilon 參數。"
 
 msgctxt "SupportVectors|"
 msgid "Support vectors"
-msgstr ""
+msgstr "支持向量"
 
 msgctxt "SupportVectors|"
 msgid ""
 "Shows a table containing the data (points) indicated as support vectors by "
 "the algorithm."
-msgstr ""
+msgstr "顯示一個表格，列出被演算法判定為支持向量的資料（點）。"
 
-#, fuzzy
 msgctxt "AndrewsCurve|"
 msgid "Andrews curves"
-msgstr "Andrews曲線"
+msgstr "Andrews 曲線"
 
 msgctxt "AndrewsCurve|"
 msgid ""
 "Is a way to visualize structure in high-dimensional data. Lines that cluster "
 "are observations that are more alike."
-msgstr ""
+msgstr "一種用於在高維資料中視覺化結構的方法。線條聚集表示觀測值之間更為相似。"
 
 msgctxt "ClusterDensity|"
 msgid "Cluster densities"
@@ -1732,9 +1684,8 @@ msgctxt "ClusterDensity|"
 msgid ""
 "For each feature variable, generates a plot showing the overlapping "
 "densities for the clusters."
-msgstr ""
+msgstr "針對每一個特徵變數，產生一個圖形，用於呈現各群集之間重疊的機率密度分布。"
 
-#, fuzzy
 msgctxt "ClusterDensity|"
 msgid "Group into one figure"
 msgstr "合併成一個單一的圖形"
@@ -1742,6 +1693,8 @@ msgstr "合併成一個單一的圖形"
 msgctxt "ClusterDensity|"
 msgid "Group the density plots per feature into a single figure."
 msgstr ""
+"將每一個特徵變數的密度圖「整合在同一張圖中」，用於同一特徵下不同群集的重疊比"
+"較。"
 
 msgctxt "ClusterMatrix|"
 msgid "Cluster matrix plot"
@@ -1751,7 +1704,7 @@ msgctxt "ClusterMatrix|"
 msgid ""
 "Creates a *n* x *n* plot that visualizes to which cluster every observation "
 "belongs according to the current model."
-msgstr ""
+msgstr "建立一個 *n* × *n* 圖，用於依據目前模型顯示每個觀測值被分配到哪一個群集。"
 
 msgctxt "ClusterMeans|"
 msgid "Cluster means"
@@ -1761,7 +1714,7 @@ msgctxt "ClusterMeans|"
 msgid ""
 "Creates a plot that visualizes and compares the mean of the feature "
 "variables in each cluster."
-msgstr ""
+msgstr "繪製一個圖，用於視覺化並比較各群集中每個特徵變數的平均值。"
 
 msgctxt "ClusterMeans|"
 msgid "Display barplot"
@@ -1769,7 +1722,7 @@ msgstr "顯示長條圖"
 
 msgctxt "ClusterMeans|"
 msgid "Transform the cluster mean figure into a barplot."
-msgstr ""
+msgstr "將群集平均值圖轉換為長條圖。"
 
 msgctxt "ClusterMeans|"
 msgid "Group into one figure"
@@ -1777,9 +1730,8 @@ msgstr "合併成一個單一的圖形"
 
 msgctxt "ClusterMeans|"
 msgid "Group the plots per feature into a single figure."
-msgstr ""
+msgstr "將各特徵的圖形彙整於單一圖示中。"
 
-#, fuzzy
 msgctxt "DataSplit|"
 msgid "Data split"
 msgstr "資料切割"
@@ -1787,9 +1739,8 @@ msgstr "資料切割"
 msgctxt "DataSplit|"
 msgid ""
 "Shows how the data is split into training (and validation), and test set."
-msgstr ""
+msgstr "將資料劃分為訓練集（與驗證集）及測試集的方式呈現。"
 
-#, fuzzy
 msgctxt "DecisionBoundary|"
 msgid "Decision boundary matrix"
 msgstr "決策邊界矩陣"
@@ -1800,15 +1751,16 @@ msgid ""
 "classified if predicted through the current model. Boundaries between "
 "classes are visualized. Can only be made for numeric features."
 msgstr ""
+"建立一個 *n* × *n* 圖，用於顯示在目前模型下，每個觀測值若進行預測時會被分類到"
+"的類別，並以圖形方式呈現各類別之間的決策邊界（僅限數值型特徵）。"
 
-#, fuzzy
 msgctxt "DecisionBoundary|"
 msgid "Legend"
 msgstr "圖例"
 
 msgctxt "DecisionBoundary|"
 msgid "Show a legend next to the figure."
-msgstr ""
+msgstr "在圖旁顯示圖例。"
 
 msgctxt "DecisionBoundary|"
 msgid "Add data points"
@@ -1816,7 +1768,7 @@ msgstr "新增資料點"
 
 msgctxt "DecisionBoundary|"
 msgid "Show the observations in the data set as points in the plot."
-msgstr ""
+msgstr "將資料集中各觀測值以點的形式顯示在圖中。"
 
 msgctxt "ElbowMethod|"
 msgid "Elbow method"
@@ -1835,22 +1787,21 @@ msgstr ""
 
 msgctxt "PredictivePerformance|"
 msgid "Predictive performance"
-msgstr ""
+msgstr "預測效能"
 
 msgctxt "PredictivePerformance|"
 msgid ""
 "Plots the true values of the observations in the test set against their "
 "predicted values."
-msgstr ""
+msgstr "繪製測試集中觀測值之真實值對其預測值圖。"
 
-#, fuzzy
 msgctxt "RocCurve|"
 msgid "ROC curves"
-msgstr "ROC曲線"
+msgstr "ROC 曲線"
 
 msgctxt "RocCurve|"
 msgid "Displays ROC curves for each class predicted against all other classes."
-msgstr ""
+msgstr "針對每個類別，繪製其對所有其他類別之 ROC 曲線。"
 
 msgctxt "Tsne|"
 msgid "t-SNE cluster plot"
@@ -1873,14 +1824,13 @@ msgstr ""
 "生成相同的 t-SNE 圖，可以將隨機起點(或稱種子，seed）設為相同，因為 t-SNE 演算"
 "法會使用隨機的起始值。"
 
-#, fuzzy
 msgctxt "Tsne|"
 msgid "Legend"
 msgstr "圖例"
 
 msgctxt "Tsne|"
 msgid "Show a legend next to the figure."
-msgstr ""
+msgstr "在圖旁顯示圖例。"
 
 msgctxt "Tsne|"
 msgid "Add data labels"
@@ -1892,7 +1842,6 @@ msgid ""
 "plot."
 msgstr "將資料集中各觀測值的列號（row numbers）作為標籤，加入到圖中。"
 
-#, fuzzy
 msgctxt "ClassProportions|"
 msgid "Class proportions"
 msgstr "類別比例"
@@ -1933,7 +1882,7 @@ msgstr "輪廓係數(Silhouette)"
 
 msgctxt "ClusterInfo|"
 msgid "Adds a row with the silhouette score of each cluster to the table."
-msgstr ""
+msgstr "在表格中新增一列，顯示每個群集的輪廓係數。"
 
 msgctxt "ClusterInfo|"
 msgid "Centers"
@@ -1944,6 +1893,8 @@ msgid ""
 "Adds a row with the center per feature of each cluster to the table. The "
 "center can be the mean, median or mode depending on the clustering algorithm."
 msgstr ""
+"在表格中加入一列，顯示各群集中每個特徵的中心值（例如平均數、中位數或眾數，依"
+"群集方法而定）。"
 
 msgctxt "ClusterInfo|"
 msgid "Between sum of squares"
@@ -1966,9 +1917,8 @@ msgstr "新增一註記至表格中，顯示集群模型之總平方和。"
 
 msgctxt "ClusterMeans|"
 msgid "Shows a table containing the cluster means for each feature variable."
-msgstr ""
+msgstr "顯示一個表格，呈現各群集中每個特徵變數的群集平均值。"
 
-#, fuzzy
 msgctxt "ConfusionMatrix|"
 msgid "Confusion matrix"
 msgstr "混淆矩陣"
@@ -1979,42 +1929,41 @@ msgid ""
 "classes. Used to assess model accuracy."
 msgstr "顯示觀察類別與預測類別對照之表格，用於評估模型準確度。"
 
-#, fuzzy
 msgctxt "ConfusionMatrix|"
 msgid "Display proportions"
 msgstr "顯示比例"
 
 msgctxt "ConfusionMatrix|"
 msgid "Displays proportions in the confusion matrix instead of counts."
-msgstr ""
+msgstr "在混淆矩陣中以比例顯示，而非以次數呈現。"
 
 msgctxt "ExplainPredictions|"
 msgid "Explain predictions"
-msgstr ""
+msgstr "解釋預測結果"
 
 msgctxt "ExplainPredictions|"
 msgid "Cases"
-msgstr ""
+msgstr "個案（資料觀測值）"
 
 msgctxt "ExplainPredictions|"
 msgid "The test set index of the first row to be displayed in the table."
-msgstr ""
+msgstr "在表格中顯示的第一列測試集索引。"
 
 msgctxt "ExplainPredictions|"
 msgid "to"
-msgstr ""
+msgstr "到"
 
 msgctxt "ExplainPredictions|"
 msgid "The test set index of the last row to be displayed in the table."
-msgstr ""
+msgstr "在表格中顯示的最後一列測試集索引。"
 
 msgctxt "FeatureImportance|"
 msgid "Feature importance"
-msgstr ""
+msgstr "特徵重要性"
 
 msgctxt "FeatureImportance|"
 msgid "Shows the available feature importance metrics for the fitted model."
-msgstr ""
+msgstr "顯示已擬合模型可用的特徵重要性指標。"
 
 msgctxt "ModelPerformance|"
 msgid "Model performance"
@@ -2028,7 +1977,6 @@ msgctxt "ClusterDetermination|"
 msgid "Choose how to determine the number of clusters in the model."
 msgstr "選擇用何種方式來決定模型中的集群數量。"
 
-#, fuzzy
 msgctxt "ClusterDetermination|"
 msgid "Fixed"
 msgstr "固定"
@@ -2084,11 +2032,11 @@ msgctxt "ClusterDetermination|"
 msgid ""
 "Sets the maximum number of possible clusters to be generated. At default, "
 "this is set to 10."
-msgstr ""
+msgstr "設定可能生成之集群的最大數量。預設值為10。"
 
 msgctxt "DataSplit|"
 msgid "Choose how to create the test set."
-msgstr ""
+msgstr "選擇如何建立測試集。"
 
 msgctxt "DataSplit|"
 msgid ""
@@ -2096,49 +2044,51 @@ msgid ""
 "error. Generates an internal indicator variable that indicates whether the "
 "observation is included (1) or excluded (0) from the test set."
 msgstr ""
+"選擇從資料中隨機抽樣的比例，以計算預測誤差。會產生一個內部指示變數，用來標示"
+"觀測值是否被納入（1）或排除（0）於測試集中。"
 
 msgctxt "DataSplit|"
 msgid "The percentage of observations to use for the test set."
-msgstr ""
+msgstr "用於測試集的觀測值百分比。"
 
 msgctxt "DataSplit|"
 msgid ""
 "Add the generated test set indicator from the option above to your data set."
-msgstr ""
+msgstr "將上述選項所生成之測試集指標變數加入您的資料集。"
 
 msgctxt "DataSplit|"
 msgid "The column name for the generated test set indicator."
-msgstr ""
+msgstr "所生成之測試集指標變數的欄位名稱。"
 
 msgctxt "DataSplit|"
 msgid "The variable in the data set that is used as the test set indicator."
-msgstr ""
+msgstr "資料集中用作測試集指標變數的變數。"
 
 msgctxt "DataSplit|"
 msgid "Choose how to create the validation set."
-msgstr ""
+msgstr "選擇驗證集的建立方式。"
 
 msgctxt "DataSplit|"
 msgid ""
 "Randomly sample a percentage from the remaining training data (after "
 "selecting the test set)."
-msgstr ""
+msgstr "從剩餘的訓練資料（在選定測試集之後）中隨機抽取一個百分比。"
 
 msgctxt "DataSplit|"
 msgid "The percentage of observations to use for the validation set."
-msgstr ""
+msgstr "用於驗證集的觀測值百分比。"
 
 msgctxt "DataSplit|"
 msgid "Partition the remaining data in *k* parts."
-msgstr ""
+msgstr "將剩餘資料劃分為 *k* 等份。"
 
 msgctxt "DataSplit|"
 msgid "The number of folds to be used."
-msgstr ""
+msgstr "所使用的折數。"
 
 msgctxt "DataSplit|"
 msgid "Partition the remaining data in *n* parts."
-msgstr ""
+msgstr "將剩餘資料劃分為 *n* 等份。"
 
 msgctxt "ExportResults|"
 msgid ""
@@ -2146,18 +2096,20 @@ msgid ""
 "result. This gives you the option to inspect, cluster, or predict the "
 "generated values."
 msgstr ""
+"在您的資料集中生成一個新欄位，內容為迴歸結果之預測值。此功能讓您得以檢視、分"
+"群或預測該生成之數值。"
 
 msgctxt "ExportResults|"
 msgid "The column name for the predicted values."
-msgstr ""
+msgstr "預測值之欄位名稱。"
 
 msgctxt "ExportResults|"
 msgid "The file path for the saved model."
-msgstr ""
+msgstr "儲存模型之檔案路徑。"
 
 msgctxt "ExportResults|"
 msgid "When clicked, the model is exported to the specified file path."
-msgstr ""
+msgstr "點擊後，模型將匯出至指定之檔案路徑。"
 
 msgctxt "ScaleVariables|"
 msgid "Scale features"
@@ -2192,18 +2144,16 @@ msgstr ""
 
 msgctxt "SetSeed|"
 msgid "The value of the seed."
-msgstr ""
+msgstr "隨機種子的值。"
 
-#, fuzzy
 msgctxt "VariablesFormClassification|"
 msgid "Target"
 msgstr "目標"
 
 msgctxt "VariablesFormClassification|"
 msgid "In this box, the variable that needs to be predicted should be entered."
-msgstr ""
+msgstr "在此方框中，應輸入需預測之變數。"
 
-#, fuzzy
 msgctxt "VariablesFormClassification|"
 msgid "Features"
 msgstr "特徵"
@@ -2212,9 +2162,8 @@ msgctxt "VariablesFormClassification|"
 msgid ""
 "In this box, the variables that provide information about the target "
 "variable should be entered."
-msgstr ""
+msgstr "在此輸入框中，應輸入提供目標變數資訊的自變數。"
 
-#, fuzzy
 msgctxt "VariablesFormClustering|"
 msgid "Features"
 msgstr "特徵"
@@ -2223,18 +2172,16 @@ msgctxt "VariablesFormClustering|"
 msgid ""
 "In this box, the variables are need to be considered by the clustering "
 "algorithm should be entered."
-msgstr ""
+msgstr "在此方框中，應輸入集群演算法需考量之變數。"
 
-#, fuzzy
 msgctxt "VariablesFormRegression|"
 msgid "Target"
 msgstr "目標"
 
 msgctxt "VariablesFormRegression|"
 msgid "In this box, the variable that needs to be predicted should be entered."
-msgstr ""
+msgstr "在此方框中，應輸入需預測之變數。"
 
-#, fuzzy
 msgctxt "VariablesFormRegression|"
 msgid "Features"
 msgstr "特徵"
@@ -2243,7 +2190,7 @@ msgctxt "VariablesFormRegression|"
 msgid ""
 "In this box, the variables that provide information about the target "
 "variable should be entered."
-msgstr ""
+msgstr "在此輸入框中，應輸入提供目標變數資訊的自變數。"
 
 msgctxt "mlClassificationBoosting|"
 msgid ""
@@ -2256,6 +2203,12 @@ msgid ""
 "- The target variable is a nominal or ordinal variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"Boosting（提升法）之運作方式為依序將特徵加入決策樹集成中，每一棵樹皆對前一棵"
+"樹進行修正。然而，與每次迭代時調整每一筆錯誤分類觀測值之權重不同，Boosting方"
+"法係嘗試將新特徵擬合至前一特徵所產生之殘差誤差。\n"
+"### 假設\n"
+"- 目標變數為名義或次序變數。\n"
+"- 特徵變數包含連續、名義或次序變數。"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid ""
@@ -2267,6 +2220,11 @@ msgid ""
 "- The target is a nominal or ordinal variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"決策樹是一種監督式學習演算法，使用決策樹作為預測模型，從關於某項目之觀測（表"
+"示於樹之根部）推導至該項目目標值之結論（表示於樹之終端）。\n"
+"### 假設\n"
+"- 目標變數為名義或次序變數。\n"
+"- 特徵變數包含連續、名義或次序變數。"
 
 msgctxt "mlClassificationKnn|"
 msgid ""
@@ -2279,6 +2237,11 @@ msgid ""
 "- The target is a nominal or ordinal variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"K-近鄰法是一種分類方法，透過尋找與新觀測值最相似之 *k* 個特徵觀測值，來預測其"
+"類別歸屬。近鄰數目與模型複雜度有內在關聯，因為較小的數值會增加模型之彈性。\n"
+"### 假設\n"
+"- 目標變數為名義或次序變數。\n"
+"- 特徵變數包含連續、名義或次序變數。"
 
 msgctxt "mlClassificationLda|"
 msgid ""
@@ -2297,10 +2260,18 @@ msgid ""
 "- Multicollinearity: The classes should not correlate within each other, can "
 "be checked with the corresponding table."
 msgstr ""
+"線性判別分析（LDA）是一種分類方法，旨在找出 *p - 1* 個最能區別目標變數中各類"
+"別之成分。LDA 為線性分類器，意指類別間之決策邊界為線性。\n"
+"### 假設\n"
+"- 目標變數為名義或次序變數。\n"
+"- 特徵變數包含連續、名義或次序變數。\n"
+"- 各類別平均數相等：各類別之平均數應相等，可透過對應表格進行檢核。\n"
+"- 共變異數矩陣相等：各類別之共變異數矩陣應相等，可透過對應表格進行檢核。\n"
+"- 多元共線性：各類別之間不應具有相關性，可透過對應表格進行檢核。"
 
 msgctxt "mlClassificationLda|"
 msgid "Multivariate normality"
-msgstr ""
+msgstr "多變量常態性"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid ""
@@ -2315,6 +2286,13 @@ msgid ""
 "- The target is a nominal or ordinal variable.\n"
 "- The feature variables consist of continuous variables."
 msgstr ""
+"前饋神經網路是一種受生物神經網路（構成大腦之基礎）啟發之預測演算法。神經元（"
+"節點）接收訊號後加以處理，並可將訊號傳送至與其相連之神經元。節點上之訊號為實"
+"數，每個節點之輸出係將訊號通過激活函數計算而得。網路中之層數與節點數與模型複"
+"雜度有內在關聯，因為較高之數值會增加模型之彈性。\n"
+"### 假設\n"
+"- 目標變數為名義或次序變數。\n"
+"- 特徵變數包含連續變數。"
 
 msgctxt "mlClassificationRandomForest|"
 msgid ""
@@ -2327,6 +2305,12 @@ msgid ""
 "- The target variable is a nominal or ordinal variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"隨機森林是一種分類方法，透過建立一組決策樹（包含大量個別樹木）以集成方式運作"
+"。隨機森林中每一棵個別樹木皆回傳一個類別預測，獲得最多票數之類別即為模型之預"
+"測結果。\n"
+"### 假設\n"
+"- 目標變數為名義或次序變數。\n"
+"- 特徵變數包含連續、名義或次序變數。"
 
 msgctxt "mlClassificationSvm|"
 msgid ""
@@ -2339,6 +2323,12 @@ msgid ""
 "- The target is a nominal or ordinal variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"支援向量機是一種監督式學習演算法，將訓練樣本映射至空間中之點，以使兩個類別之"
+"間的間隔寬度最大化。新樣本隨後被映射至同一空間，並根據其落在間隔之哪一側來預"
+"測其所屬類別。\n"
+"### 假設\n"
+"- 目標變數為名義或次序變數。\n"
+"- 特徵變數包含連續、名義或次序變數。"
 
 msgctxt "mlClusteringDensityBased|"
 msgid ""
@@ -2356,6 +2346,14 @@ msgid ""
 "- The data consists of continuous variables.\n"
 "- (Normally distributed data aids the clustering process)."
 msgstr ""
+"密度分群法是一種軟分群方法，其中集群被建構為最大集合之點，這些點與密度超過某"
+"個閾值之點相連。密度之概念源自於：在一個集群中的每個點，其給定半徑內之鄰域必"
+"須包含至少一定數量之點，從而使該鄰域之密度超過某個閾值。密度集群之特徵在於其"
+"內部點之密度高於集群外部之點。所有高密度點之集合稱為密度水準。未超過密度水準"
+"之點被識別為離群值。密度水準會影響所生成集群之數量。\n"
+"### 假設\n"
+"- 資料包含連續變數。\n"
+"- （常態分佈之資料有助於分群過程）。"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid ""
@@ -2369,6 +2367,12 @@ msgid ""
 "- The data consists of continuous variables.\n"
 "- (Normally distributed data aids the clustering process)."
 msgstr ""
+"模糊C-means分群法是一種軟性分割方法，其輸出結果包含每個觀測值對每個集群之歸屬"
+"程度。這使得資料觀測值得以部分歸屬於多個集群，並提供關於集群歸屬之信賴程度。"
+"模糊C-means之方法與K-means分群法相當類似，差別在於其軟性之處理方式。\n"
+"### 假設\n"
+"- 資料包含連續變數。\n"
+"- （常態分佈之資料有助於分群過程）。"
 
 msgctxt "mlClusteringHierarchical|"
 msgid ""
@@ -2381,6 +2385,12 @@ msgid ""
 "- The data consists of continuous variables.\n"
 "- (Normally distributed data aids the clustering process)."
 msgstr ""
+"階層式分群法是一種硬性分割演算法，旨在將資料劃分為數個集群，其中每個觀測值僅"
+"歸屬於單一群組。資料之劃分方式為：若兩個觀測值屬於同一群組，則其相似度最大；"
+"若不屬於同一群組，則其相似度最小。\n"
+"### 假設\n"
+"- 資料包含連續變數。\n"
+"- （常態分佈之資料有助於分群過程）。"
 
 msgctxt "mlClusteringKMeans|"
 msgid ""
@@ -2393,6 +2403,12 @@ msgid ""
 "- The data consists of continuous variables.\n"
 "- (Normally distributed data aids the clustering process)."
 msgstr ""
+"鄰近基礎分群法是一組硬性分割演算法，旨在將資料劃分為數個集群，其中每個觀測值"
+"僅歸屬於單一群組。資料之劃分方式為：若兩個觀測值屬於同一群組，則其相似度最大"
+"；若不屬於同一群組，則其相似度最小。\n"
+"### 假設\n"
+"- 資料包含連續變數。\n"
+"- （常態分佈之資料有助於分群過程）。"
 
 msgctxt "mlClusteringRandomForest|"
 msgid ""
@@ -2407,18 +2423,25 @@ msgid ""
 "- The data consists of continuous variables.\n"
 "- (Normally distributed data aids the clustering process)."
 msgstr ""
+"隨機森林分群法是一種硬性分割演算法，旨在將資料劃分為數個集群，其中每個觀測值"
+"僅歸屬於單一群組。此分群方法以非監督方式使用隨機森林演算法，並將結果變數 'y' "
+"設為 NULL。隨機森林演算法會生成一個鄰近矩陣，該矩陣根據觀測值落入相同葉節點之"
+"頻率，提供觀測值間距離之估計。\n"
+"### 假設\n"
+"- 資料包含連續變數。\n"
+"- （常態分佈之資料有助於分群過程）。"
 
 msgctxt "mlPrediction|"
 msgid "Cases"
-msgstr ""
+msgstr "個案（資料觀測值）"
 
 msgctxt "mlPrediction|"
 msgid "Add features"
-msgstr ""
+msgstr "新增特徵"
 
 msgctxt "mlPrediction|"
 msgid "Explain predictions"
-msgstr ""
+msgstr "解釋預測結果"
 
 msgctxt "mlRegressionBoosting|"
 msgid ""
@@ -2429,10 +2452,15 @@ msgid ""
 "- The target variable is a continuous variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"Boosting（提升法）之運作方式為依序將特徵加入決策樹集成中，每一棵樹皆對前一棵"
+"樹進行修正。Boosting 係嘗試將新特徵擬合至前一特徵所產生之殘差誤差。\n"
+"### 假設\n"
+"- 目標變數為連續變數。\n"
+"- 特徵變數包含連續、名義或次序變數。"
 
 msgctxt "mlRegressionBoosting|"
 msgid "The loss function used."
-msgstr ""
+msgstr "所使用之損失函數。"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid ""
@@ -2444,6 +2472,11 @@ msgid ""
 "- The target variable is a continuous variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"決策樹是一種監督式學習演算法，使用決策樹作為預測模型，從關於某項目之觀測（表"
+"示於樹之根部）推導至該項目目標值之結論（表示於樹之終端）。\n"
+"### 假設\n"
+"- 目標變數為連續變數。\n"
+"- 特徵變數包含連續、名義或次序變數。"
 
 msgctxt "mlRegressionKnn|"
 msgid ""
@@ -2456,29 +2489,32 @@ msgid ""
 "- The target variable is a continuous variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"K-近鄰法是一種迴歸方法，透過尋找與新觀測值最相似之 *k* 個特徵觀測值，來預測其"
+"數值。近鄰數目與模型複雜度有內在關聯，因為較小的數值會增加模型之彈性。\n"
+"### 假設\n"
+"- 目標變數為連續變數。\n"
+"- 特徵變數包含連續、名義或次序變數。"
 
 msgctxt "mlRegressionLinear|"
 msgid ""
 "Linear regression allows the user to model a linear relationship between one "
 "or more features (predictors) and a continuous dependent (target) variable."
 msgstr ""
+"線性迴歸允許使用者建立一個或多個特徵（預測變數）與連續型依變數（目標變數）之"
+"間的線性關係模型。"
 
-#, fuzzy
 msgctxt "mlRegressionLinear|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlRegressionLinear|"
 msgid "Plots"
 msgstr "圖"
 
-#, fuzzy
 msgctxt "mlRegressionLinear|"
 msgid "Training Parameters"
 msgstr "訓練參數"
 
-#, fuzzy
 msgctxt "mlRegressionLinear|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
@@ -2496,6 +2532,13 @@ msgid ""
 "- The target variable is a continuous variable.\n"
 "- The feature variables consist of continuous."
 msgstr ""
+"前饋神經網路是一種受生物神經網路（構成大腦之基礎）啟發之預測演算法。神經元（"
+"節點）接收訊號後加以處理，並可將訊號傳送至與其相連之神經元。節點上之訊號為實"
+"數，每個節點之輸出係將訊號通過激活函數計算而得。網路中之層數與節點數與模型複"
+"雜度有內在關聯，因為較高之數值會增加模型之彈性。\n"
+"### 假設\n"
+"- 目標變數為連續變數。\n"
+"- 特徵變數包含連續變數。"
 
 msgctxt "mlRegressionRandomForest|"
 msgid ""
@@ -2506,6 +2549,11 @@ msgid ""
 "- The target variable is a continuous variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"隨機森林是一種迴歸方法，透過建立一組決策樹（包含大量個別樹木）以集成方式運作"
+"。\n"
+"### 假設\n"
+"- 目標變數為連續變數。\n"
+"- 特徵變數包含連續、名義或次序變數。"
 
 msgctxt "mlRegressionRegularized|"
 msgid ""
@@ -2517,6 +2565,11 @@ msgid ""
 "- The target variable is a continuous variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"正規化線性迴歸是線性迴歸之一種調整方式，其係數被收縮至 0。此係透過施加懲罰項"
+"（例如 ridge、lasso 或 elastic net）來達成。參數 λ 控制係數被收縮之程度。\n"
+"### 假設\n"
+"- 目標變數為連續變數。\n"
+"- 特徵變數包含連續、名義或次序變數。"
 
 msgctxt "mlRegressionSvm|"
 msgid ""
@@ -2529,48 +2582,56 @@ msgid ""
 "- The target variable is a continuous variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variable"
 msgstr ""
+"支援向量機是一種監督式學習演算法，將訓練樣本映射至空間中之點，以使兩個類別之"
+"間的間隔寬度最大化。新樣本隨後被映射至同一空間，並根據其落在間隔之哪一側來預"
+"測其所屬類別。\n"
+"### 假設\n"
+"- 目標變數為連續變數。\n"
+"- 特徵變數包含連續、名義或次序變數"
 
 msgctxt "Description|"
 msgid "Naive Bayes"
-msgstr ""
+msgstr "單純貝氏"
 
 msgctxt "Description|"
 msgid "Naive Bayes Classification"
-msgstr ""
+msgstr "單純貝氏分類法"
 
 msgctxt "ModelOptimization|"
 msgid "Tree Complexity"
-msgstr ""
+msgstr "樹複雜度"
 
 msgctxt "ModelOptimization|"
 msgid "Enables you to use a user-specified complexity penalty."
-msgstr ""
+msgstr "啟用使用者自訂之複雜度懲罰。"
 
 msgctxt "ModelOptimization|"
 msgid "Complexity penalty"
-msgstr ""
+msgstr "複雜度懲罰"
 
 msgctxt "ModelOptimization|"
 msgid ""
 "The complexity penalty to be used. Any split that does not decrease the "
 "overall lack of fit by a factor of this parameter is not attempted."
 msgstr ""
+"所用之複雜度懲罰。任何未能將整體擬合不良程度降低此參數倍數之分割，將不予嘗試"
+"。"
 
 msgctxt "ModelOptimization|"
 msgid ""
 "Enables you to optimize the prediction error on a validation data set with "
 "respect to the complexity penalty."
-msgstr ""
+msgstr "啟用針對複雜度懲罰，於驗證資料集上最佳化預測誤差之功能。"
 
 msgctxt "ModelOptimization|"
 msgid "Max. complexity penalty"
-msgstr ""
+msgstr "最大複雜度懲罰"
 
 msgctxt "ModelOptimization|"
 msgid ""
 "Sets the maximum value of the complexity penalty to be considered. At "
 "default, this is set to 1."
-msgstr ""
+msgstr "設定納入考量之複雜度懲罰的最大值。預設值為1。"
 
 msgctxt "OptimPlot|"
 msgid ""
@@ -2580,34 +2641,36 @@ msgid ""
 "accuracy of the model. Accuracy is assessed for the training (and "
 "validation) set."
 msgstr ""
+"針對迴歸，繪製複雜度懲罰對模型MSE之圖。準確度以訓練集（及驗證集）評估。針對分"
+"類，繪製複雜度懲罰對模型分類準確度之圖。準確度以訓練集（及驗證集）評估。"
 
 msgctxt "ModelOptimization|"
 msgid "Costs of Contraints Violation"
-msgstr ""
+msgstr "違反限制式之成本"
 
 msgctxt "ModelOptimization|"
 msgid "Enables you to use a user-specified cost of constraints violation."
-msgstr ""
+msgstr "啟用使用者自訂之違反限制式成本。"
 
 msgctxt "ModelOptimization|"
 msgid "Violation cost"
-msgstr ""
+msgstr "違反成本"
 
 msgctxt "ModelOptimization|"
 msgid ""
 "Enables you to optimize the prediction error on a validation data set with "
 "respect to the cost of constraints violation."
-msgstr ""
+msgstr "啟用針對違反限制式成本，於驗證資料集上最佳化預測誤差之功能。"
 
 msgctxt "ModelOptimization|"
 msgid "Max. violation cost"
-msgstr ""
+msgstr "最大違反成本"
 
 msgctxt "ModelOptimization|"
 msgid ""
 "Sets the maximum value of the cost of constraints violation to be "
 "considered. At default, this is set to 5."
-msgstr ""
+msgstr "設定納入考量之違反限制式成本的最大值。預設值為5。"
 
 msgctxt "OptimPlot|"
 msgid ""
@@ -2617,6 +2680,9 @@ msgid ""
 "classification accuracy of the model. Accuracy is assessed for the training "
 "(and validation) set."
 msgstr ""
+"針對迴歸，繪製違反限制式成本對模型MSE之圖。準確度以訓練集（及驗證集）評估。針"
+"對分類，繪製違反限制式成本對模型分類準確度之圖。準確度以訓練集（及驗證集）評"
+"估。"
 
 msgctxt "mlClassificationNaiveBayes|"
 msgid ""
@@ -2628,8 +2694,13 @@ msgid ""
 "- The features are independent.\n"
 "- The features are normally distributed given the target class."
 msgstr ""
+"單純貝氏分類法使用貝氏定理，在給定獨立預測變數之條件下，計算類別型目標變數之"
+"條件事後機率。\n"
+"### 假設\n"
+"- 目標變數為名義或次序變數。\n"
+"- 特徵之間相互獨立。\n"
+"- 在給定目標類別之條件下，特徵呈常態分佈。"
 
-#, fuzzy
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Tables"
 msgstr "表"
@@ -2645,18 +2716,17 @@ msgid ""
 "class. For categorical features, the table displays the conditional "
 "probabilities given the target class."
 msgstr ""
+"顯示包含事後統計量之表格。對於數值型特徵，表格包含在給定目標類別下，該特徵之"
+"平均數與標準差。對於類別型特徵，表格顯示在給定目標類別下之條件機率。"
 
-#, fuzzy
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Plots"
 msgstr "圖"
 
-#, fuzzy
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Training Parameters"
 msgstr "訓練參數"
 
-#, fuzzy
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
@@ -2670,27 +2740,29 @@ msgid ""
 "A positive double controlling the amount of Laplace smoothing applied. The "
 "default (0) disables Laplace smoothing alltogether."
 msgstr ""
+"一個正數值，用於控制拉普拉斯平滑法之應用程度。預設值（0）為完全停用拉普拉斯平"
+"滑法。"
 
 msgctxt "FeatureImportance|"
 msgid "Permutations"
-msgstr ""
+msgstr "排列"
 
 msgctxt "FeatureImportance|"
 msgid ""
 "Sets the number of permutations on which the mean dropout loss is based."
-msgstr ""
+msgstr "設定用於計算平均遺失損失之排列次數。"
 
 msgctxt "Description|"
 msgid "Model-Based"
-msgstr ""
+msgstr "基於模型"
 
 msgctxt "Description|"
 msgid "Model-Based Clustering"
-msgstr ""
+msgstr "基於模型的分群"
 
 msgctxt "ClusterMatrix|"
 msgid "Display components"
-msgstr ""
+msgstr "顯示成分"
 
 msgctxt "mlClusteringModelBased|"
 msgid ""
@@ -2698,8 +2770,9 @@ msgid ""
 "models. The models are estimated by EM algorithm initialized by hierarchical "
 "model-based agglomerative clustering."
 msgstr ""
+"模型基礎分群法係基於參數化之有限高斯混合模型。該模型係透過EM演算法估計，並以"
+"階層式模型基礎凝聚分群法進行初始化。"
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Tables"
 msgstr "表"
@@ -2712,30 +2785,27 @@ msgctxt "mlClusteringModelBased|"
 msgid ""
 "Shows tables containing the model parameters for each cluster and feature "
 "variable."
-msgstr ""
+msgstr "顯示包含每個集群與特徵變數之模型參數的表格。"
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Plots"
 msgstr "圖"
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Training Parameters"
 msgstr "訓練參數"
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Model"
-msgstr ""
+msgstr "模型"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Auto"
-msgstr ""
+msgstr "自動"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EII"
@@ -2791,27 +2861,27 @@ msgstr ""
 
 msgctxt "mlClusteringModelBased|"
 msgid "Choose the model to be fitted in the EM step of the clustering."
-msgstr ""
+msgstr "選擇分群之 EM 步驟中所擬合之模型。"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Max. iterations"
-msgstr ""
+msgstr "最大疊代次數"
 
 msgctxt "mlClusteringModelBased|"
 msgid "The maximum number of iterations for the M-step in the algorithm."
-msgstr ""
+msgstr "演算法中 M 步驟之最大疊代次數。"
 
 msgctxt "mlPrediction|"
 msgid "Predictions for new data"
-msgstr ""
+msgstr "對新資料之預測結果"
 
 msgctxt "ConfusionMatrix|"
 msgid "Transpose matrix"
-msgstr ""
+msgstr "轉置矩陣"
 
 msgctxt "ConfusionMatrix|"
 msgid "Transposes the confusion matrix."
-msgstr ""
+msgstr "轉置混淆矩陣。"
 
 msgctxt "ExplainPredictions|"
 msgid ""
@@ -2820,18 +2890,21 @@ msgid ""
 "breakdown algoritm from the `ibreakdown` R package. For more details about "
 "this method, see Gosiewska and Biecek (2019)."
 msgstr ""
+"將模型之預測結果拆解為可歸因於各模型特徵之貢獻。此功能使用 ibreakdown R 套件"
+"之 `breakdown` 演算法。有關此方法之詳細說明，請參閱 Gosiewska 與 Biecek "
+"(2019)。"
 
 msgctxt "DataSplit|"
 msgid "e.g., testSet"
-msgstr ""
+msgstr "例如：testSet"
 
 msgctxt "Description|"
 msgid "Logistic / Multinomial"
-msgstr ""
+msgstr "邏輯斯 / 多項式"
 
 msgctxt "Description|"
 msgid "Logistic / Multinomial Regression Classification"
-msgstr ""
+msgstr "邏輯斯 / 多項式迴歸分類法"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid ""
@@ -2844,30 +2917,31 @@ msgid ""
 "binary outcomes, multinomial regression is used for scenarios where the "
 "target variable has three or more unordered categories."
 msgstr ""
+"邏輯斯迴歸是一種統計方法，用於建立二元目標變數（具有兩種可能結果）與一個或多"
+"個特徵變數之間的關係模型。其透過邏輯斯函數預測特定結果之機率，該函數確保預測"
+"機率介於 0 與 1 之間。多項式迴歸則將邏輯斯迴歸延伸至處理具有超過兩個類別之目"
+"標變數。多項式迴歸並非預測二元結果，而是用於目標變數具有三個或更多非次序類別"
+"之情境。"
 
-#, fuzzy
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Plots"
 msgstr "圖"
 
-#, fuzzy
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Training Parameters"
 msgstr "訓練參數"
 
-#, fuzzy
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Algorithmic Settings"
 msgstr "演算法設定"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Link function (for binary classification)"
-msgstr ""
+msgstr "連結函數（用於二元分類）"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Logit"
@@ -2895,6 +2969,8 @@ msgid ""
 "and apply it to new data. It is important that the features in the new "
 "dataset have the same names as in the original dataset used for training."
 msgstr ""
+"預測分析功能讓您載入已訓練之機器學習模型，並將其應用於新資料。請注意，新資料"
+"集中之特徵名稱必須與原始訓練資料集之名稱相同。"
 
 msgctxt "DataSplit|"
 msgid ""
@@ -2918,11 +2994,11 @@ msgstr ""
 
 msgctxt "Description|"
 msgid "Supervised Learning"
-msgstr ""
+msgstr "監督式學習"
 
 msgctxt "Description|"
 msgid "Unsupervised Learning"
-msgstr ""
+msgstr "非監督式學習"
 
 msgctxt "ModelPerformance|"
 msgid ""
