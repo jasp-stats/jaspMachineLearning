@@ -44,7 +44,7 @@ Form
 	{
 		title: qsTr("Plots")
 
-		FIG.DataSplit { }
+		FIG.DataSplit {}
 		FIG.PredictivePerformance { }
 		BOOSTING.Oob { }
 		BOOSTING.Deviance { }
@@ -52,7 +52,12 @@ Form
 	}
 
 	UI.ExportResults { enabled:	vars.predictorCount > 1 && vars.targetCount > 0 }
-	UI.DataSplit { leaveOneOutVisible: false; trainingValidationSplit: !optim.isManual }
+	UI.DataSplit 
+	{ 
+		leaveOneOutVisible: 		false
+		trainingValidationSplit: 	!optim.isManual
+		balanceTargetClasses: 		false 
+	}
 
 	Section
 	{
