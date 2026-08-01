@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.1\n"
 "POT-Creation-Date: 2025-06-28 03:36\n"
-"PO-Revision-Date: 2026-05-21 07:11+0000\n"
-"Last-Translator: Akira Harada <momoldo@gmail.com>\n"
+"PO-Revision-Date: 2026-08-01 04:23+0000\n"
+"Last-Translator: Koji Kosugi <kosugitti@gmail.com>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/ja/>\n"
 "Language: ja\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 msgid "An error occurred in the analysis: %s"
 msgstr "以下の分析でエラーが生じました: %s"
@@ -50,7 +50,7 @@ msgid "Nearest neighbors"
 msgstr "最近傍"
 
 msgid "Weights"
-msgstr "ウェイト"
+msgstr "重み"
 
 msgid "Distance"
 msgstr "距離"
@@ -131,12 +131,10 @@ msgstr ""
 "ペース(' ')かアンダースコア('_')を含むものがあるからです。それらの文字列を変"
 "数名から削除し，モデルの保存をもう一度試してください。"
 
-#, fuzzy
 msgid ""
 "The trained model is not saved until a file name is specified under 'Save "
 "as'."
-msgstr ""
-"学習したモデルは、'学習モデルを保存する' にチェックされるまで保存されません."
+msgstr "学習したモデルは、'学習モデルを保存する' にチェックされるまで保存されません."
 
 msgid ""
 "The model is optimized with respect to the <i>validation set accuracy</i>."
@@ -181,7 +179,7 @@ msgid "Confusion Matrix"
 msgstr "混同行列"
 
 msgid "Observed"
-msgstr "観測された"
+msgstr "観測値"
 
 msgid "Predicted"
 msgstr "予測"
@@ -193,6 +191,8 @@ msgid ""
 "Cannot create plot: You need at least two (numeric) features to create the "
 "decision boundary matrix. You have currently included only one feature."
 msgstr ""
+"プロットを作れません。決定境界の行列を作るには数値の特徴量が少なくとも2つ必要"
+"ですが、現在は1つしか含まれていません。"
 
 msgid ""
 "Cannot create matrix: not enough numeric variables remain after removing "
@@ -205,7 +205,7 @@ msgid "ROC Curves Plot"
 msgstr "ROCカーブプロット"
 
 msgid "False Positive Rate"
-msgstr "偽陰性率"
+msgstr "偽陽性率"
 
 msgid "True Positive Rate"
 msgstr "真陽性率"
@@ -332,7 +332,7 @@ msgid "Model-Based Clustering"
 msgstr "モデルベースのクラスタリング"
 
 msgid "Clusters"
-msgstr "クラスター"
+msgstr "クラスタ数"
 
 msgid "N"
 msgstr "N"
@@ -369,208 +369,217 @@ msgid ""
 "'Epsilon neighborhood size' and 'Min. core points' parameters under "
 "'Training parameters'."
 msgstr ""
+"モデルのクラスタ数が0でノイズ点のみです。「学習のパラメータ」にある「"
+"イプシロン近傍の大きさ」と「コア点の最小数」を変えることをお勧めします。"
 
 msgid ""
 "The model contains 1 cluster and no Noisepoints. You may want to change "
 "'Epsilon neighborhood size' and 'Min. core points' parameters under "
 "'Training parameters'."
 msgstr ""
+"モデルのクラスタ数が1でノイズ点がありません。「学習のパラメータ」にある「"
+"イプシロン近傍の大きさ」と「コア点の最小数」を変えるとよいかもしれません。"
 
 msgid "spherical with equal volume"
-msgstr ""
+msgstr "球形・等体積"
 
 msgid "spherical with unequal volume"
-msgstr ""
+msgstr "球形・不等体積"
 
 msgid "diagonal with equal volume and shape"
-msgstr ""
+msgstr "対角・等体積かつ等形状"
 
 msgid "diagonal with varying volume and equal shape"
-msgstr ""
+msgstr "対角・体積可変かつ等形状"
 
 msgid "diagonal with equal volume and varying shape"
-msgstr ""
+msgstr "対角・等体積かつ形状可変"
 
 msgid "diagonal with varying volume and shape"
-msgstr ""
+msgstr "対角・体積も形状も可変"
 
 msgid "ellipsoidal with equal volume, shape, and orientation"
-msgstr ""
+msgstr "楕円体・体積も形状も向きも等しい"
 
 msgid "ellipsoidal with equal shape and orientation"
-msgstr ""
+msgstr "楕円体・形状と向きが等しい"
 
 msgid "ellipsoidal with equal volume and orientation"
-msgstr ""
+msgstr "楕円体・体積と向きが等しい"
 
 msgid "ellipsoidal with equal orientation"
-msgstr ""
+msgstr "楕円体・向きが等しい"
 
 msgid "ellipsoidal with equal volume and equal shape"
-msgstr ""
+msgstr "楕円体・体積と形状が等しい"
 
 msgid "ellipsoidal with equal shape"
-msgstr ""
+msgstr "楕円体・形状が等しい"
 
 msgid "ellipsoidal with equal volume"
-msgstr ""
+msgstr "楕円体・体積が等しい"
 
 msgid "ellipsoidal with varying volume, shape, and orientation"
-msgstr ""
+msgstr "楕円体・体積も形状も向きも可変"
 
-#, fuzzy
 msgid "The model is %1$s."
-msgstr "学習したモデルは<i>%1$s</i>として保存されます."
+msgstr "モデルは %1$s です。"
 
 msgid "The features in the model are <b>unstandardized</b>."
-msgstr ""
+msgstr "モデルの特徴量は <b>標準化されていません</b>。"
 
 msgid "Cluster Information"
-msgstr ""
+msgstr "クラスタの情報"
 
 msgid "Cluster"
-msgstr ""
+msgstr "クラスタ"
 
 msgid "Size"
-msgstr ""
+msgstr "大きさ"
 
 msgid "Explained proportion within-cluster heterogeneity"
-msgstr ""
+msgstr "クラスタ内の異質性の説明された割合"
 
 msgid "Within sum of squares"
-msgstr ""
+msgstr "クラスタ内平方和"
 
 msgid "Silhouette score"
-msgstr ""
+msgstr "シルエット係数"
 
 msgid "Center %s"
-msgstr ""
+msgstr "中心 %s"
 
 msgid "Noisepoints"
-msgstr ""
+msgstr "ノイズ点"
 
 msgid "The Between Sum of Squares of the %1$s cluster model is %2$s"
-msgstr ""
+msgstr "%1$s クラスタモデルのクラスタ間平方和は %2$s です"
 
 msgid "The Total Sum of Squares of the %1$s cluster model is %2$s"
-msgstr ""
+msgstr "%1$s クラスタモデルの全平方和は %2$s です"
 
 msgid "Value"
 msgstr "値"
 
 msgid "Maximum diameter"
-msgstr ""
+msgstr "最大直径"
 
 msgid "Minimum separation"
-msgstr ""
+msgstr "最小分離度"
 
 msgid "Pearson's %s"
-msgstr ""
+msgstr "ピアソンの %s"
 
 msgid "Dunn index"
-msgstr ""
+msgstr "ダン指数"
 
 msgid "Entropy"
-msgstr ""
+msgstr "エントロピー"
 
 msgid "Calinski-Harabasz index"
-msgstr ""
+msgstr "Calinski-Harabasz指数"
 
 msgid "All metrics are based on the <i>euclidean</i> distance."
-msgstr ""
+msgstr "すべての指標は <i>ユークリッド</i> 距離に基づいています。"
 
 msgid "Evaluation metrics cannot be computed when there is only 1 cluster."
-msgstr ""
+msgstr "クラスタが1つしかない場合、評価の指標は計算できません。"
 
 msgid "t-SNE Cluster Plot"
-msgstr ""
+msgstr "t-SNEクラスタプロット"
 
 msgid "Noisepoint"
-msgstr ""
+msgstr "ノイズ点"
 
 msgid "Elbow Method Plot"
-msgstr ""
+msgstr "エルボー法のプロット"
 
 msgid "WSS"
-msgstr ""
+msgstr "クラスタ内平方和"
 
 msgid "Number of Clusters"
-msgstr ""
+msgstr "クラスタ数"
 
 msgid "Lowest %s"
-msgstr ""
+msgstr "最小の %s"
 
 msgid "Cluster Means"
-msgstr ""
+msgstr "クラスタ平均"
 
 msgid "Cluster %s"
-msgstr ""
+msgstr "クラスタ %s"
 
 msgid "Cluster Density Plots"
-msgstr ""
+msgstr "クラスタの密度プロット"
 
 msgid "Density"
 msgstr "密度"
 
 msgid "Feature"
-msgstr ""
+msgstr "特徴量"
 
 msgid "All Features"
-msgstr ""
+msgstr "すべての特徴量"
 
 msgid "Cluster Mean Plots"
-msgstr ""
+msgstr "クラスタ平均のプロット"
 
 msgid "Cluster Mean"
-msgstr ""
+msgstr "クラスタ平均"
 
 msgid ""
 "Insufficient RAM available to compute the distance matrix. The analysis "
 "tried to allocate %s Gb"
-msgstr ""
+msgstr "距離行列を計算するのに十分なメモリがありません。%s Gb を確保しようとしました"
 
 msgid "An error occurred in the analysis: %1$s"
-msgstr ""
+msgstr "分析でエラーが発生しました: %1$s"
 
 msgid "Cluster Matrix Plot"
-msgstr ""
+msgstr "クラスタ行列のプロット"
 
 msgid "The variable '%s' can't be both a feature and a test set indicator."
-msgstr ""
+msgstr "変数 '%s' を特徴量とテストセットの指標の両方に使うことはできません。"
 
 msgid ""
 "Your test set indicator should be binary, containing only 1 (included in "
 "test set) and 0 (excluded from test set)."
 msgstr ""
+"テストセットの指標は2値である必要があり、1(テストセットに含める)と0"
+"(テストセットから除外)のみを含んでいなければなりません。"
 
 msgid ""
 "There is only one observation in each level of the factor %1$s, please "
 "remove this factor as a feature."
 msgstr ""
+"要因 %1$s の各水準に観測が1つしかありません。この要因を特徴量から外してくださ"
+"い。"
 
 msgid ""
 "There is only one observation in each level of the factors %1$s, please "
 "remove these factors as a feature."
 msgstr ""
+"要因 %1$s の各水準に観測が1つしかありません。これらの要因を特徴量から外してく"
+"ださい。"
 
-#, fuzzy
 msgid "test set"
 msgstr "テストセット"
 
-#, fuzzy
 msgid "validation set"
-msgstr "妥当化セット"
+msgstr "検証セット"
 
 msgid "new dataset"
-msgstr ""
+msgstr "新しいデータセット"
 
 msgid ""
 "or use a different test set (e.g., automatically by setting a different seed "
 "or manually by specifying the test set indicator)"
 msgstr ""
+"または別のテストセットを使ってください(シードを変えて自動で作るか、"
+"テストセットの指標を手動で指定します)"
 
 msgid "or use a different validation set by setting a different seed"
-msgstr ""
+msgstr "または別のシードを設定して、別の検証セットを使ってください"
 
 msgid ""
 "Some factors in the %1$s have levels that do not appear in the training set. "
@@ -578,58 +587,66 @@ msgid ""
 "\n"
 "%3$s"
 msgstr ""
+"%1$s の一部の要因に、訓練セットには現れない水準があります。次の水準を持つ行を"
+"データセット%2$sから取り除いてください。\n"
+"\n"
+"%3$s"
 
 msgid ""
 "You have specified more nearest neighbors than there are observations in the "
 "training set. Please choose a number lower than %d."
 msgstr ""
+"訓練セットの観測数より多い近傍数を指定しています。%d より小さい数を選んでくだ"
+"さい。"
 
 msgid ""
 "You have specified more folds than there are observations in the training "
 "and validation set. Please choose a number lower than %d."
 msgstr ""
+"訓練セットと検証セットの観測数より多い分割数を指定しています。%d より小さい数"
+"を選んでください。"
 
 msgid "K-Nearest Neighbors Regression"
-msgstr ""
+msgstr "k近傍法による回帰"
 
 msgid "Regularized Linear Regression"
-msgstr ""
+msgstr "正則化線形回帰"
 
 msgid "Random Forest Regression"
-msgstr ""
+msgstr "ランダムフォレストによる回帰"
 
 msgid "Boosting Regression"
-msgstr ""
+msgstr "ブースティングによる回帰"
 
 msgid "Neural Network Regression"
-msgstr ""
+msgstr "ニューラルネットワークによる回帰"
 
 msgid "Decision Tree Regression"
-msgstr ""
+msgstr "決定木による回帰"
 
 msgid "Support Vector Machine Regression"
-msgstr ""
+msgstr "サポートベクターマシンによる回帰"
 
 msgid "Linear Regression"
-msgstr ""
+msgstr "線形回帰"
 
 msgid "Penalty"
 msgstr "ペナルティ"
 
 msgid "Loss function"
-msgstr ""
+msgstr "損失関数"
 
 msgid "Validation MSE"
-msgstr ""
+msgstr "検証セットのMSE"
 
 msgid "Test MSE"
-msgstr ""
+msgstr "テストセットのMSE"
 
 msgid "OOB Error"
-msgstr ""
+msgstr "OOB誤差"
 
 msgid "R%1$s"
-msgstr ""
+msgstr "R%1$s"
 
 msgid "Adjusted R%1$s"
 msgstr "調整済み R%1$s"
@@ -641,118 +658,119 @@ msgstr ""
 msgid ""
 "The model is optimized with respect to the <i>validation set mean squared "
 "error</i>."
-msgstr ""
+msgstr "モデルは <i>検証セットの平均二乗誤差</i>について最適化されています。"
 
 msgid "When %s is set to 0 linear regression is performed."
-msgstr ""
+msgstr "%s を0にすると線形回帰が行われます。"
 
 msgid ""
 "The model is optimized with respect to the <i>out-of-bag mean squared error</"
 "i>."
-msgstr ""
+msgstr "モデルは <i>アウトオブバッグの平均二乗誤差</i>について最適化されています。"
 
 msgid "Gaussian"
-msgstr ""
+msgstr "ガウス"
 
 msgid "Laplace"
-msgstr ""
+msgstr "ラプラス"
 
 msgid "MSE(scaled)"
-msgstr ""
+msgstr "MSE(スケーリング済み)"
 
-#, fuzzy
 msgid "Values"
 msgstr "値"
 
 msgid "R%s cannot be computed due to lack of variance in the predictions.</i>"
-msgstr ""
+msgstr "予測に分散がないため R%s を計算できません。</i>"
 
 msgid "Predictive Performance Plot"
-msgstr ""
+msgstr "予測性能のプロット"
 
 msgid "Observed Test Values"
-msgstr ""
+msgstr "観測されたテストセットの値"
 
-#, fuzzy
 msgid "Predicted Test Values"
-msgstr "予測"
+msgstr "予測されたテスト値"
 
 msgid "Data Split"
-msgstr ""
+msgstr "データの分割"
 
 msgid "Train: %d"
-msgstr ""
+msgstr "訓練: %d"
 
 msgid "Test: %d"
-msgstr ""
+msgstr "テスト: %d"
 
 msgid "Total: %d"
-msgstr ""
+msgstr "合計: %d"
 
 msgid "Validation: %d"
-msgstr ""
+msgstr "検証: %d"
 
 msgid "Train and validation: %d"
-msgstr ""
+msgstr "訓練と検証: %d"
 
 msgid "Additive Explanations for Predictions of New Cases"
-msgstr ""
+msgstr "新しいケースの予測についての加法的な説明"
 
 msgid "Additive Explanations for Predictions of Test Set Cases"
-msgstr ""
+msgstr "テストセットのケースの予測についての加法的な説明"
 
 msgid "Case"
 msgstr "ケース"
 
-#, fuzzy
 msgid "Predicted (Prob.)"
-msgstr "予測"
+msgstr "予測 (確率)"
 
 msgid "Base"
-msgstr ""
+msgstr "ベース"
 
 msgid "An error occurred when computing the results for this table: %1$s"
-msgstr ""
+msgstr "この表の結果を計算する際にエラーが発生しました: %1$s"
 
 msgid ""
 "Displayed values represent feature contributions to the predicted value "
 "without features (column 'Base') for the test set."
 msgstr ""
+"表示される値は、テストセットについて、特徴量がない場合の予測値(列「ベース」)"
+"に対する各特徴量の寄与を表します。"
 
 msgid ""
 "Displayed values represent feature contributions to the predicted class "
 "probability without features (column 'Base') for the test set."
 msgstr ""
+"表示される値は、テストセットについて、特徴量がない場合の予測クラス確率(列「"
+"ベース」)に対する各特徴量の寄与を表します。"
 
 msgid "Feature Importance Metrics"
-msgstr ""
+msgstr "特徴量の重要度の指標"
 
 msgid "Mean dropout loss"
-msgstr ""
+msgstr "平均ドロップアウト損失"
 
 msgid "root mean squared error (RMSE)"
-msgstr ""
+msgstr "二乗平均平方根誤差(RMSE)"
 
 msgid "1 - area under curve (AUC)"
-msgstr ""
+msgstr "1 - 曲線下面積(AUC)"
 
 msgid "cross entropy"
-msgstr ""
+msgstr "交差エントロピー"
 
 msgid "Mean dropout loss (defined as %1$s) is based on %2$s permutations."
-msgstr ""
+msgstr "平均ドロップアウト損失(%1$s と定義)は %2$s 回の並べ替えに基づいています。"
 
 msgid "The target variable should have at least 2 classes."
-msgstr ""
+msgstr "ターゲット変数には少なくとも2つのクラスが必要です。"
 
 msgid "Linear Discriminant Coefficients"
-msgstr ""
+msgstr "線形判別係数"
 
 msgid "(Constant)"
-msgstr ""
+msgstr "(定数)"
 
 msgid "Prior and Posterior Class Probabilities"
-msgstr ""
+msgstr "クラスの事前確率と事後確率"
 
 msgid "Prior"
 msgstr "事前分布"
@@ -761,19 +779,19 @@ msgid "Posterior"
 msgstr "事後分布"
 
 msgid "Class Means in Training Data"
-msgstr ""
+msgstr "訓練データにおけるクラス平均"
 
 msgid "Linear Discriminant Matrix"
-msgstr ""
+msgstr "線形判別行列"
 
 msgid "Tests of Equality of Class Means"
-msgstr ""
+msgstr "クラス平均の等質性の検定"
 
 msgid "The null hypothesis specifies equal class means."
-msgstr ""
+msgstr "帰無仮説はクラス平均が等しいというものです。"
 
 msgid "Tests of Equality of Covariance Matrices"
-msgstr ""
+msgstr "共分散行列の等質性の検定"
 
 msgid "df"
 msgstr "df"
@@ -782,78 +800,80 @@ msgid "p"
 msgstr "p"
 
 msgid "The null hypothesis specifies equal covariance matrices."
-msgstr ""
+msgstr "帰無仮説は共分散行列が等しいというものです。"
 
 msgid ""
 "There are one or more levels in the target variable with less than two "
 "observations."
-msgstr ""
+msgstr "ターゲット変数に、観測が2つ未満の水準が1つ以上あります。"
 
 msgid "Box's M"
-msgstr ""
+msgstr "BoxのM"
 
 msgid "Pooled Within-Class Matrices Correlations"
-msgstr ""
+msgstr "プールしたクラス内行列の相関"
 
 msgid "Tests for Multivariate Normality"
-msgstr ""
+msgstr "多変量正規性の検定"
 
 msgid "Statistic"
 msgstr "統計量"
 
 msgid "Skewness"
-msgstr ""
+msgstr "歪度"
 
 msgid "Kurtosis"
-msgstr ""
+msgstr "尖度"
 
 msgid ""
 "Both p-values of the skewness and kurtosis statistics should be > 0.05 to "
 "conclude multivariate normality."
 msgstr ""
+"多変量正規性を結論するには、歪度と尖度の統計量のp値がどちらも 0.05 より大きい"
+"必要があります。"
 
-#, fuzzy
 msgid "An error occurred when creating this table: %s"
-msgstr "以下の分析でエラーが生じました: %s"
+msgstr "この表の作成中にエラーが発生しました: %s"
 
 msgid "Regression Coefficients"
 msgstr "回帰係数"
 
 msgid "Coefficient (%s)"
-msgstr ""
+msgstr "係数 (%s)"
 
 msgid "Standard Error"
-msgstr ""
+msgstr "標準誤差"
 
 msgid "z"
-msgstr ""
+msgstr "z"
 
 msgid "%1$s%% Confidence interval"
 msgstr "%1$s%% 信頼区間"
 
 msgid "Lower"
-msgstr ""
+msgstr "下限"
 
 msgid "Upper"
-msgstr ""
+msgstr "上限"
 
 msgid "The regression coefficients for numeric features are standardized."
-msgstr ""
+msgstr "数値の特徴量については、回帰係数は標準化されています。"
 
 msgid "The regression coefficients are unstandardized."
-msgstr ""
+msgstr "回帰係数は標準化されていません。"
 
 msgid ""
 "<b>Regression equation:</b>\n"
 "%1$s"
 msgstr ""
+"<b>回帰式:</b>\n"
+"%1$s"
 
-#, fuzzy
 msgid "Posterior Statistics"
-msgstr "事後分布"
+msgstr "事後統計量"
 
 msgid "Feature: %1$s"
-msgstr ""
+msgstr "特徴量: %1$s"
 
 msgid "Mean"
 msgstr "平均値"
@@ -865,246 +885,260 @@ msgid ""
 "The table displays the mean and standard deviation of the feature given the "
 "target class."
 msgstr ""
+"この表は、ターゲットのクラスが与えられたもとでの特徴量の平均と標準偏差を示し"
+"ます。"
 
 msgid ""
 "The table displays the conditional probabilities given the target class."
-msgstr ""
+msgstr "この表は、ターゲットのクラスが与えられたもとでの条件つき確率を示します。"
 
 msgid ""
 "Analysis not possible: The algorithm did not converge within the maximum "
 "number of training repetitions (%1$s)."
 msgstr ""
+"分析できません。学習の繰り返しの最大回数(%1$s)以内にアルゴリズムが収束しませ"
+"んでした。"
 
 msgid "Optimizing network topology"
-msgstr ""
+msgstr "ネットワークの構造を最適化しています"
 
 msgid "K-Distance Plot"
-msgstr ""
+msgstr "k距離プロット"
 
 msgid "Points Sorted by Distance"
-msgstr ""
+msgstr "距離で並べ替えた点"
 
 msgid ""
 "%s-Nearest Neighbors \n"
 "Distance"
 msgstr ""
+"%s近傍\n"
+"の距離"
 
 msgid "Maximum curvature = %s"
-msgstr ""
+msgstr "最大曲率 = %s"
 
 msgid "End of recursion reached without converging"
-msgstr ""
+msgstr "収束しないまま再帰が終了しました"
 
 msgid "x and y must be numeric and finite. Missing values not allowed."
-msgstr ""
+msgstr "x と y は数値かつ有限である必要があります。欠測値は使えません。"
 
 msgid "x and y must be of equal length."
-msgstr ""
+msgstr "x と y は同じ長さである必要があります。"
 
 msgid "Need more points to find cutoff."
-msgstr ""
+msgstr "区切り点を見つけるには、より多くの点が必要です。"
 
 msgid "Need to specify fraction of maximum slope."
-msgstr ""
+msgstr "最大の傾きに対する割合を指定する必要があります。"
 
 msgid ""
 "Fraction of maximum slope must be positive and be less than or equal to 1."
-msgstr ""
+msgstr "最大の傾きに対する割合は正で、1以下である必要があります。"
 
 msgid "Method must be either 'first' or 'curvature'."
-msgstr ""
+msgstr "方法は 'first' か 'curvature' のいずれかである必要があります。"
 
 msgid "Cutoff point is beyond range. Returning NA."
-msgstr ""
+msgstr "区切り点が範囲外です。NAを返します。"
 
 msgid "Dendrogram"
-msgstr ""
+msgstr "デンドログラム"
 
 msgid ""
 "The %1$s-component %2$s model could not be fitted, try a different model or "
 "a different number of clusters."
 msgstr ""
+"%1$s成分の %2$s モデルをあてはめられませんでした。別のモデルか別のクラスタ数"
+"をお試しください。"
 
 msgid "Estimated Model Parameters"
-msgstr ""
+msgstr "推定されたモデルのパラメータ"
 
 msgid "Mixing Probabilities"
-msgstr ""
+msgstr "混合確率"
 
 msgid "Mixing probability"
-msgstr ""
+msgstr "混合確率"
 
 msgid "Component %1$s"
-msgstr ""
+msgstr "成分 %1$s"
 
 msgid "Means"
-msgstr ""
+msgstr "平均"
 
 msgid "Covariance Matrix for Component %1$s"
-msgstr ""
+msgstr "成分 %1$s の共分散行列"
 
 msgid "Scale of the Covariance"
-msgstr ""
+msgstr "共分散のスケール"
 
 msgid "Scale"
-msgstr ""
+msgstr "スケール"
 
 msgid "Shape of the Covariance Matrix"
-msgstr ""
+msgstr "共分散行列の形状"
 
 msgid "Eigenvalues of the Covariance Matrix for Component %1$s"
-msgstr ""
+msgstr "成分 %1$s の共分散行列の固有値"
 
 msgid "Feature Importance"
-msgstr ""
+msgstr "特徴量の重要度"
 
 msgid "Mean decrease in Gini Index"
-msgstr ""
+msgstr "ジニ係数の平均減少量"
 
 msgid "K-nearest neighbors"
-msgstr ""
+msgstr "k近傍法"
 
 msgid "Linear discriminant"
-msgstr ""
+msgstr "線形判別"
 
 msgid "Linear"
-msgstr ""
+msgstr "線形"
 
 msgid "Boosting"
-msgstr ""
+msgstr "ブースティング"
 
 msgid "Random forest"
-msgstr ""
+msgstr "ランダムフォレスト"
 
 msgid "Regularized linear regression"
-msgstr ""
+msgstr "正則化線形回帰"
 
 msgid "Neural network"
-msgstr ""
+msgstr "ニューラルネットワーク"
 
 msgid "Decision tree"
-msgstr ""
+msgstr "決定木"
 
 msgid "Support vector machine"
-msgstr ""
+msgstr "サポートベクターマシン"
 
 msgid "Naive Bayes"
-msgstr ""
+msgstr "単純ベイズ"
 
 msgid "Logistic regression"
-msgstr ""
+msgstr "ロジスティック回帰"
 
 msgid "Multinomial regression"
-msgstr ""
+msgstr "多項回帰"
 
 msgid "Error: The trained model is not created in JASP."
-msgstr ""
+msgstr "エラー: 学習済みモデルがJASPで作られたものではありません。"
 
 msgid "The trained model (type: %1$s) is currently not supported in JASP."
-msgstr ""
+msgstr "この学習済みモデル(種類: %1$s)は、現在のJASPでは対応していません。"
 
 msgid "Error: The trained model is created using a different version of JASP."
-msgstr ""
+msgstr "エラー: 学習済みモデルが別のバージョンのJASPで作られています。"
 
 msgid "Loaded Model"
-msgstr ""
+msgstr "読み込んだモデル"
 
 msgid "Classification"
-msgstr ""
+msgstr "分類"
 
 msgid "Regression"
-msgstr ""
+msgstr "回帰"
 
 msgid "Loaded Model: %1$s"
-msgstr ""
+msgstr "読み込んだモデル: %1$s"
 
 msgid ""
 "The features in the new data are unscaled, consistent with the training set."
-msgstr ""
+msgstr "新しいデータの特徴量はスケーリングされておらず、訓練セットと揃っています。"
 
 msgid ""
 "The features in the new data are scaled the same as those in the training "
 "set."
-msgstr ""
+msgstr "新しいデータの特徴量は、訓練セットと同じようにスケーリングされています。"
 
 msgid ""
 "The trained model is not applied because the the following features are "
 "missing: <i>%1$s</i>."
-msgstr ""
+msgstr "次の特徴量が不足しているため、学習済みモデルは適用されません: <i>%1$s</i>。"
 
 msgid ""
 "The following features are unused because they are not a feature variable in "
 "the trained model: <i>%1$s</i>."
-msgstr ""
+msgstr "次の特徴量は、学習済みモデルの特徴量ではないため使われません: <i>%1$s</i>。"
 
 msgid "Nearest Neighbors"
-msgstr ""
+msgstr "近傍"
 
 msgid "n(New)"
-msgstr ""
+msgstr "n(新規)"
 
 msgid "Binomial"
-msgstr ""
+msgstr "二項"
 
 msgid "Multinomial"
-msgstr ""
+msgstr "多項"
 
 msgid "Logit"
-msgstr ""
+msgstr "ロジット"
 
 msgid "Predictions for New Data"
-msgstr ""
+msgstr "新しいデータに対する予測"
 
 msgid "Relative Influence"
-msgstr ""
+msgstr "相対的な影響力"
 
 msgid "<i>Warning.</i>"
-msgstr ""
+msgstr "<i>警告。</i>"
 
 msgid "An error occurred when computing the mean dropout loss: %1$s"
-msgstr ""
+msgstr "平均ドロップアウト損失を計算する際にエラーが発生しました: %1$s"
 
 msgid "Out-of-bag Improvement Plot"
-msgstr ""
+msgstr "アウトオブバッグの改善のプロット"
 
 msgid "Training set"
-msgstr ""
+msgstr "訓練セット"
 
 msgid ""
 "OOB Change in \n"
 " Multinomial Deviance"
 msgstr ""
+"多項デビアンスの\n"
+"OOBの変化"
 
 msgid ""
 "OOB Change in \n"
 " Binomial Deviance"
 msgstr ""
+"二項デビアンスの\n"
+"OOBの変化"
 
 msgid ""
 "OOB Change in \n"
 "%s Deviance"
 msgstr ""
+"%s デビアンスの\n"
+"OOBの変化"
 
 msgid "Plotting not possible: The model is based on only a single tree."
-msgstr ""
+msgstr "プロットできません。モデルが単一の木に基づいています。"
 
 msgid "Number of Trees"
-msgstr ""
+msgstr "木の数"
 
 msgid "Deviance Plot"
-msgstr ""
+msgstr "デビアンスのプロット"
 
 msgid "Multinomial Deviance"
-msgstr ""
+msgstr "多項デビアンス"
 
 msgid "Binomial Deviance"
-msgstr ""
+msgstr "二項デビアンス"
 
 msgid "%s Deviance"
-msgstr ""
+msgstr "%s デビアンス"
 
 msgid "Relative Influence Plot"
-msgstr ""
+msgstr "相対的な影響力のプロット"
 
 msgid ""
 "The minimum number of observations per node is too large. Ensure that `2 * "
@@ -1112,290 +1146,291 @@ msgid ""
 "* available training data (%3$i)` (in this case the minimum can be %4$i at "
 "most)."
 msgstr ""
+"ノードあたりの最小観測数が大きすぎます。`2 × ノードの最小観測数 (%1$i) + 1` "
+"< `1本の木に使う訓練データ (%2$s) × 利用できる訓練データ (%3$i)` となるように"
+"してください(この場合、最小値は最大でも %4$i です)。"
 
 msgid "Relative Importance"
-msgstr ""
+msgstr "相対的な重要度"
 
 msgid "No splits were made in the tree."
-msgstr ""
+msgstr "木に分割が作られませんでした。"
 
 msgid "Splits in Tree"
-msgstr ""
+msgstr "木の分割"
 
 msgid "Obs. in Split"
-msgstr ""
+msgstr "分割の観測数"
 
 msgid "Split Point"
-msgstr ""
+msgstr "分割点"
 
 msgid "Improvement"
-msgstr ""
+msgstr "改善"
 
 msgid ""
 "For each level of the tree, only the split with the highest improvement in "
 "deviance is shown."
-msgstr ""
+msgstr "木の各水準について、デビアンスの改善が最も大きい分割のみを表示しています。"
 
 msgid "Decision Tree Plot"
-msgstr ""
+msgstr "決定木のプロット"
 
 msgid "Plotting not possible: No splits were made in the tree."
-msgstr ""
+msgstr "プロットできません。木に分割が作られませんでした。"
 
 msgid "Plotting not possible: An error occurred while creating this plot: %s"
-msgstr ""
+msgstr "プロットできません。このプロットの作成中にエラーが発生しました: %s"
 
 msgid "Classification Accuracy Plot"
-msgstr ""
+msgstr "分類正解率のプロット"
 
 msgid "Mean Squared Error Plot"
-msgstr ""
+msgstr "平均二乗誤差のプロット"
 
 msgid "Classification Accuracy"
-msgstr ""
+msgstr "分類正解率"
 
 msgid "Mean Squared Error"
-msgstr ""
+msgstr "平均二乗誤差"
 
 msgid "Validation set"
-msgstr ""
+msgstr "検証セット"
 
 msgid "Complexity Penalty"
-msgstr ""
+msgstr "複雑さの罰則"
 
 msgid "Number of Nearest Neighbors"
-msgstr ""
+msgstr "近傍の数"
 
 msgid "Training and validation set"
-msgstr ""
+msgstr "訓練セットと検証セット"
 
 msgid "Rectangular"
-msgstr ""
+msgstr "矩形"
 
 msgid "Triangular"
-msgstr ""
+msgstr "三角"
 
 msgid "Epanechnikov"
-msgstr ""
+msgstr "エパネチニコフ"
 
-#, fuzzy
 msgid "Biweight"
-msgstr "重み"
+msgstr "バイウェイト"
 
-#, fuzzy
 msgid "Triweight"
-msgstr "重み"
+msgstr "トライウェイト"
 
 msgid "Cosine"
-msgstr ""
+msgstr "コサイン"
 
 msgid "Inverse"
-msgstr ""
+msgstr "逆数"
 
 msgid "Rank"
-msgstr ""
+msgstr "順位"
 
 msgid "Optimal"
-msgstr ""
+msgstr "最適"
 
 msgid "%1$s Weight Function"
-msgstr ""
+msgstr "%1$s の重み関数"
 
 msgid ""
 "Plotting not possible: The selected weighting scheme cannot be visualized "
 "separately from the data."
 msgstr ""
+"プロットできません。選択した重みづけの方式は、データと切り離して可視化できま"
+"せん。"
 
 msgid "Proportion of Max. Distance"
-msgstr ""
+msgstr "最大距離に対する割合"
 
-#, fuzzy
 msgid "Relative Weight"
-msgstr "ウェイト"
+msgstr "相対重み"
 
-#, fuzzy
 msgid "Network Weights"
-msgstr "ウェイト"
+msgstr "ネットワーク重み"
 
 msgid "Node"
-msgstr ""
+msgstr "ノード"
 
 msgid "Layer"
-msgstr ""
+msgstr "層"
 
 msgid "Weight"
 msgstr "重み"
 
 msgid "linear"
-msgstr ""
+msgstr "線形"
 
 msgid "binary step"
-msgstr ""
+msgstr "二値ステップ"
 
 msgid "logistic sigmoid"
-msgstr ""
+msgstr "ロジスティックシグモイド"
 
 msgid "sine"
-msgstr ""
+msgstr "サイン"
 
 msgid "cosine"
-msgstr ""
+msgstr "コサイン"
 
 msgid "inverse tangent"
-msgstr ""
+msgstr "逆正接"
 
 msgid "hyperbolic tangent"
-msgstr ""
+msgstr "双曲線正接"
 
 msgid "rectified linear unit (ReLU)"
-msgstr ""
+msgstr "正規化線形ユニット(ReLU)"
 
 msgid "softplus"
-msgstr ""
+msgstr "ソフトプラス"
 
 msgid "softsign"
-msgstr ""
+msgstr "ソフトサイン"
 
 msgid "exponential linear unit (ELU)"
-msgstr ""
+msgstr "指数線形ユニット(ELU)"
 
 msgid "leaky rectified linear unit (Leaky ReLU)"
-msgstr ""
+msgstr "漏洩正規化線形ユニット(Leaky ReLU)"
 
 msgid "sigmoid linear unit (SiLU)"
-msgstr ""
+msgstr "シグモイド線形ユニット(SiLU)"
 
 msgid "mish"
-msgstr ""
+msgstr "Mish"
 
 msgid "gaussian"
-msgstr ""
+msgstr "ガウス"
 
 msgid "gaussian error linear unit (GeLU)"
-msgstr ""
+msgstr "ガウス誤差線形ユニット(GeLU)"
 
 msgid "The weights are input for the %1$s activation function."
-msgstr ""
+msgstr "この重みは %1$s の活性化関数への入力です。"
 
 msgid "Network Structure Plot"
-msgstr ""
+msgstr "ネットワーク構造のプロット"
 
 msgid "Intercept"
-msgstr ""
+msgstr "切片"
 
 msgid "Input layer"
-msgstr ""
+msgstr "入力層"
 
 msgid "Output layer"
-msgstr ""
+msgstr "出力層"
 
 msgid "Hidden layer %1$s"
-msgstr ""
+msgstr "隠れ層 %1$s"
 
 msgid "Binary"
-msgstr ""
+msgstr "二値"
 
 msgid "Logistic Sigmoid"
-msgstr ""
+msgstr "ロジスティックシグモイド"
 
 msgid "Sine"
-msgstr ""
+msgstr "サイン"
 
 msgid "Inverse Tangent"
-msgstr ""
+msgstr "逆正接"
 
 msgid "Hyperbolic Tangent"
-msgstr ""
+msgstr "双曲線正接"
 
 msgid "ReLU"
-msgstr ""
+msgstr "ReLU"
 
 msgid "Softplus"
-msgstr ""
+msgstr "ソフトプラス"
 
 msgid "Softsign"
-msgstr ""
+msgstr "ソフトサイン"
 
 msgid "ELU"
-msgstr ""
+msgstr "ELU"
 
 msgid "Leaky ReLU"
-msgstr ""
+msgstr "Leaky ReLU"
 
 msgid "SiLU"
-msgstr ""
+msgstr "SiLU"
 
 msgid "Mish"
-msgstr ""
+msgstr "Mish"
 
 msgid "GeLU"
-msgstr ""
+msgstr "GeLU"
 
 msgid "%1$s Activation Function"
-msgstr ""
+msgstr "%1$s の活性化関数"
 
 msgid "Input"
-msgstr ""
+msgstr "入力"
 
 msgid "Output"
-msgstr ""
+msgstr "出力"
 
 msgid "Generation"
-msgstr ""
+msgstr "世代"
 
 msgid "Mean decrease in accuracy"
-msgstr ""
+msgstr "正解率の平均減少量"
 
 msgid "Total increase in node purity"
-msgstr ""
+msgstr "ノード純度の増加の合計"
 
 msgid "Out-of-bag Classification Accuracy Plot"
-msgstr ""
+msgstr "アウトオブバッグの分類正解率のプロット"
 
 msgid "Out-of-bag Mean Squared Error Plot"
-msgstr ""
+msgstr "アウトオブバッグの平均二乗誤差のプロット"
 
 msgid "Out-of-bag %sClassification Accuracy"
-msgstr ""
+msgstr "アウトオブバッグの%s分類正解率"
 
 msgid "Out-of-bag %sMean Squared Error"
-msgstr ""
+msgstr "アウトオブバッグの%s平均二乗誤差"
 
 msgid "Mean Decrease in Accuracy"
-msgstr ""
+msgstr "正解率の平均減少量"
 
 msgid "Total Increase in Node Purity"
-msgstr ""
+msgstr "ノード純度の増加の合計"
 
 msgid "L2 (Ridge)"
-msgstr ""
+msgstr "L2 (リッジ)"
 
 msgid "L1 (Lasso)"
-msgstr ""
+msgstr "L1 (ラッソ)"
 
 msgid "Elastic Net"
-msgstr ""
+msgstr "エラスティックネット"
 
 msgid "Variable Trace Plot"
-msgstr ""
+msgstr "変数のトレースプロット"
 
 msgid "Coefficients"
 msgstr "係数"
 
 msgid "Lambda Evaluation Plot"
-msgstr ""
+msgstr "ラムダの評価プロット"
 
 msgid "Cross-Validated %sMean Squared Error"
-msgstr ""
+msgstr "交差検証による%s平均二乗誤差"
 
 msgid "Min. CV MSE"
-msgstr ""
+msgstr "最小のCV MSE"
 
 msgid "%s 1 SE"
-msgstr ""
+msgstr "%s 1標準誤差"
 
 msgid "Row"
 msgstr "行"
 
 msgid "Cost of Constraints Violation"
-msgstr ""
+msgstr "制約違反のコスト"
