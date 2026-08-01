@@ -6,6 +6,12 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Language: ja\n"
 "X-Qt-Contexts: true\n"
+"PO-Revision-Date: 2026-07-27 10:02+0000\n"
+"Last-Translator: Koji Kosugi <kosugitti@gmail.com>\n"
+"Language-Team: Japanese <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-qml/ja/>\n"
+"Language: ja\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 msgctxt "Description|"
 msgid "Machine Learning"
@@ -157,7 +163,7 @@ msgstr "プロット"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Algorithmic Settings"
@@ -173,7 +179,7 @@ msgstr "プロット"
 
 msgctxt "mlClassificationKnn|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
 msgctxt "mlClassificationKnn|"
 msgid "Algorithmic Settings"
@@ -229,7 +235,7 @@ msgstr "散布図"
 
 msgctxt "mlClassificationLda|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
 msgctxt "mlClassificationLda|"
 msgid "Algorithmic Settings"
@@ -245,7 +251,7 @@ msgstr "プロット"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Algorithmic Settings"
@@ -265,7 +271,7 @@ msgstr "K-距離プロット"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Algorithmic Settings"
@@ -297,7 +303,7 @@ msgstr "プロット"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Algorithmic Settings"
@@ -317,7 +323,7 @@ msgstr "デンドログラム"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Algorithmic Settings"
@@ -369,7 +375,7 @@ msgstr "プロット"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Algorithmic Settings"
@@ -385,7 +391,7 @@ msgstr "プロット"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Algorithmic Settings"
@@ -401,7 +407,7 @@ msgstr "プロット"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Algorithmic Settings"
@@ -417,7 +423,7 @@ msgstr "プロット"
 
 msgctxt "mlRegressionKnn|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
 msgctxt "mlRegressionKnn|"
 msgid "Algorithmic Settings"
@@ -433,7 +439,7 @@ msgstr "プロット"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Algorithmic Settings"
@@ -461,7 +467,7 @@ msgstr "λ評価"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Algorithmic Settings"
@@ -529,7 +535,7 @@ msgstr "名前を付けて保存"
 
 msgctxt "ExportResults|"
 msgid "e.g., location/model.jaspML"
-msgstr "e.g., 場所/model.jaspML"
+msgstr "例: 場所/model.jaspML"
 
 msgctxt "ExportResults|"
 msgid "Save trained model"
@@ -545,7 +551,7 @@ msgstr "プロット"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Algorithmic Settings"
@@ -561,7 +567,7 @@ msgstr "プロット"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Algorithmic Settings"
@@ -687,42 +693,34 @@ msgctxt "Description|"
 msgid "Neighborhood-Based Clustering"
 msgstr "近傍ベース分類"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Plots"
 msgstr "プロット"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
-#, fuzzy
 msgctxt "mlClassificationDecisionTree|"
 msgid "Algorithmic Settings"
 msgstr "アルゴリズムの設定"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Plots"
 msgstr "プロット"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
-#, fuzzy
 msgctxt "mlClassificationSvm|"
 msgid "Algorithmic Settings"
 msgstr "アルゴリズムの設定"
@@ -731,57 +729,46 @@ msgctxt "mlClusteringKMeans|"
 msgid "Center type"
 msgstr "代表値型"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Distance"
 msgstr "距離"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Euclidean"
 msgstr "ユークリッド"
 
-#, fuzzy
 msgctxt "mlClusteringKMeans|"
 msgid "Manhattan"
 msgstr "マンハッタン"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Plots"
 msgstr "プロット"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
-#, fuzzy
 msgctxt "mlRegressionDecisionTree|"
 msgid "Algorithmic Settings"
 msgstr "アルゴリズムの設定"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Plots"
 msgstr "プロット"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
-#, fuzzy
 msgctxt "mlRegressionSvm|"
 msgid "Algorithmic Settings"
 msgstr "アルゴリズムの設定"
@@ -790,16 +777,14 @@ msgctxt "mlPrediction|"
 msgid "Trained model"
 msgstr "学習済みモデル"
 
-#, fuzzy
 msgctxt "mlPrediction|"
 msgid "e.g., location/model.jaspML"
-msgstr "e.g., 場所/model.jaspML"
+msgstr "例: 場所/model.jaspML"
 
 msgctxt "mlPrediction|"
 msgid "Features"
 msgstr "特徴量"
 
-#, fuzzy
 msgctxt "mlPrediction|"
 msgid "Tables"
 msgstr "表"
@@ -808,7 +793,6 @@ msgctxt "mlPrediction|"
 msgid "to"
 msgstr "次まで"
 
-#, fuzzy
 msgctxt "Description|"
 msgid "Linear"
 msgstr "線形"
@@ -817,7 +801,6 @@ msgctxt "Description|"
 msgid "Linear Regression"
 msgstr "線形回帰"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Shrinkage"
 msgstr "収縮"
@@ -828,8 +811,10 @@ msgid ""
 "the learning rate or step-size reduction 0.001 to 0.1 usually work, but a "
 "smaller learning rate typically requires more trees."
 msgstr ""
+"各木に適用される縮小のパラメータです。学習率やステップサイズの縮小とも呼ばれ"
+"ます。ふつうは0.001から0.1でうまくいきますが、学習率が小さいほど多くの木が必"
+"要になります。"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Interaction depth"
 msgstr "交互作用の深さ"
@@ -840,8 +825,10 @@ msgid ""
 "of variable interactions allowed. A value of 1 implies an additive model, a "
 "value of 2 implies a model with up to 2-way interactions, etc. Default is 1."
 msgstr ""
+"各木の最大の深さ(すなわち許される変数の交互作用の最も高い次数)を指定する整数"
+"です。1なら加法モデル、2なら2次までの交互作用を含むモデルになります。既定は1"
+"です。"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Min. observations in node"
 msgstr "ノード内の最小観測値"
@@ -852,8 +839,9 @@ msgid ""
 "of the trees. Note that this is the actual number of observations, not the "
 "total weight."
 msgstr ""
+"木の終端ノードに含まれる観測数の最小値を指定する整数です。これは重みの合計で"
+"はなく、実際の観測数であることに注意してください。"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Training data used per tree"
 msgstr "1ツリーあたりの学習データ"
@@ -862,44 +850,40 @@ msgctxt "AlgorithmicSettings|"
 msgid ""
 "Select the percentage of training data that is used to train each individual "
 "tree."
-msgstr ""
+msgstr "個々の木の学習に使う訓練データの割合を選びます。"
 
 msgctxt "Deviance|"
 msgid "Deviance"
-msgstr ""
+msgstr "デビアンス"
 
 msgctxt "Deviance|"
 msgid "Shows the prediction error plotted against the number of trees."
-msgstr ""
+msgstr "木の数に対する予測誤差をプロットします。"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Number of Trees"
 msgstr "ツリー数"
 
 msgctxt "ModelOptimization|"
 msgid "Choose how to optimize the model."
-msgstr ""
+msgstr "モデルの最適化の方法を選びます。"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Fixed"
 msgstr "固定"
 
 msgctxt "ModelOptimization|"
 msgid "Enables you to use a user-specified number of decision trees."
-msgstr ""
+msgstr "決定木の数をユーザが指定できるようにします。"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Trees"
 msgstr "ツリー"
 
 msgctxt "ModelOptimization|"
 msgid "The number of trees."
-msgstr ""
+msgstr "木の数です。"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Optimized"
 msgstr "最適化"
@@ -908,9 +892,8 @@ msgctxt "ModelOptimization|"
 msgid ""
 "Enables you to optimize the prediction error on a validation data set with "
 "respect to the number of trees."
-msgstr ""
+msgstr "検証データセットでの予測誤差を、木の数について最適化できるようにします。"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Max. trees"
 msgstr "最大ツリー数"
@@ -919,9 +902,8 @@ msgctxt "ModelOptimization|"
 msgid ""
 "Sets the maximum number of possible decision trees to be considered. At "
 "default, this is set to 100."
-msgstr ""
+msgstr "考慮する決定木の数の上限を設定します。既定では100です。"
 
-#, fuzzy
 msgctxt "Oob|"
 msgid "Out-of-bag improvement"
 msgstr "アウトオブバッグの改善"
@@ -931,45 +913,48 @@ msgid ""
 "Plots the number of trees against the out-of-bag classification accuracy "
 "improvement of the model. Accuracy is assessed for the training set."
 msgstr ""
+"木の数に対する、モデルのアウトオブバッグの分類正解率の改善をプロットします。"
+"正解率は訓練セットで評価されます。"
 
-#, fuzzy
 msgctxt "RelativeInfluence|"
 msgid "Relative influence"
 msgstr "相対的な影響力"
 
 msgctxt "RelativeInfluence|"
 msgid "Shows the relative influence of the features."
-msgstr ""
+msgstr "特徴量の相対的な影響力を表示します。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Min. observations for split"
-msgstr ""
+msgstr "分割に必要な最小観測数"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
 "The minimum number of observations that must exist in a node in order for a "
 "split to be attempted."
 msgstr ""
+"分割を試みるために、そのノードに存在していなければならない観測数の最小値です"
+"。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Min. observations in terminal"
-msgstr ""
+msgstr "終端ノードの最小観測数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The minimum number of observations in any terminal node."
-msgstr ""
+msgstr "終端ノードに含まれる観測数の最小値です。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Max. interaction depth"
-msgstr ""
+msgstr "交互作用の最大の深さ"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Set the maximum depth of any node of the final tree."
-msgstr ""
+msgstr "最終的な木の各ノードの最大の深さを設定します。"
 
 msgctxt "AttemptedSplits|"
 msgid "Attempted splits"
-msgstr ""
+msgstr "試みた分割"
 
 msgctxt "AttemptedSplits|"
 msgid ""
@@ -978,72 +963,66 @@ msgid ""
 "positive weight) sent left or right by the split. It also shows the "
 "improvement in deviance given by the splits."
 msgstr ""
+"アルゴリズムが行った分割と、対応する特徴量、分割点、そして分割によって左右に"
+"振り分けられた観測数(欠測でなく、正の重みを持つもの)を表示します。分割による"
+"デビアンスの改善も示されます。"
 
 msgctxt "AttemptedSplits|"
 msgid "Only show splits in tree"
-msgstr ""
+msgstr "木に含まれる分割のみ表示"
 
 msgctxt "AttemptedSplits|"
 msgid "Remove splits that do not occur in the final tree from the table."
-msgstr ""
+msgstr "最終的な木に現れない分割を表から取り除きます。"
 
 msgctxt "TreePlot|"
 msgid "Decision tree"
-msgstr ""
+msgstr "決定木"
 
 msgctxt "TreePlot|"
 msgid "Creates a plot that visualizes the decision tree and its leafs."
-msgstr ""
+msgstr "決定木とその葉を可視化したプロットを作ります。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Weights"
-msgstr ""
+msgstr "重み"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Rectangular"
 msgstr "矩形"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Triangular"
-msgstr ""
+msgstr "三角"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Epanechnikov"
 msgstr "エパネチニコフ"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Biweight"
 msgstr "バイウェイト"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Triweight"
 msgstr "トライウェイト"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Cosine"
 msgstr "コサイン"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Inverse"
 msgstr "逆"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Gaussian"
 msgstr "正規"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Rank"
 msgstr "ランク"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Optimal"
 msgstr "最適"
@@ -1054,18 +1033,18 @@ msgid ""
 "option results in standard knn, while the other options expand the algorithm "
 "by weighing the nearest neighbors. See also the kknn package."
 msgstr ""
+"近傍に対する重みづけの方式を設定します。既定の矩形は標準的なk近傍法になり、そ"
+"れ以外の選択肢は近傍に重みをつけてアルゴリズムを拡張します。kknnパッケージも"
+"あわせて参照してください。"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Distance"
 msgstr "距離"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Euclidian"
 msgstr "ユークリッド"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Manhattan"
 msgstr "マンハッタン"
@@ -1075,32 +1054,31 @@ msgid ""
 "The distance metric to be used when determining the similarity between "
 "nearest neighbors. Can be either Euclidean or Manhattan distance."
 msgstr ""
+"近傍どうしの類似度を求めるときに使う距離の指標です。ユークリッド距離か"
+"マンハッタン距離を選べます。"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Number of Nearest Neighbors"
 msgstr "近傍の数"
 
 msgctxt "ModelOptimization|"
 msgid "Enables you to use a user-specified number of nearest neighbors."
-msgstr ""
+msgstr "近傍の数をユーザが指定できるようにします。"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Nearest neighbors"
 msgstr "最近傍"
 
 msgctxt "ModelOptimization|"
 msgid "The number of nearest neighbors to be used."
-msgstr ""
+msgstr "使用する近傍の数です。"
 
 msgctxt "ModelOptimization|"
 msgid ""
 "Enables you to optimize the prediction error on a validation data set with "
 "respect to the number of nearest neighbors."
-msgstr ""
+msgstr "検証データセットでの予測誤差を、近傍の数について最適化できるようにします。"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Max. nearest neighbors"
 msgstr "最大最近傍数"
@@ -1109,17 +1087,15 @@ msgctxt "ModelOptimization|"
 msgid ""
 "Sets the maximum number of possible nearest neighbors to be considered. At "
 "default, this is set to 10."
-msgstr ""
+msgstr "考慮する近傍の数の上限を設定します。既定では10です。"
 
-#, fuzzy
 msgctxt "OptimPlot|"
 msgid "Mean squared error"
 msgstr "平均2乗誤差"
 
-#, fuzzy
 msgctxt "OptimPlot|"
 msgid "Classification accuracy"
-msgstr "分類の正確性"
+msgstr "分類の正解率"
 
 msgctxt "OptimPlot|"
 msgid ""
@@ -1129,63 +1105,57 @@ msgid ""
 "classification accuracy of the model. Accuracy is assessed for the training "
 "(and validation) set."
 msgstr ""
+"回帰の場合、近傍の数に対するモデルのMSEをプロットします。精度は訓練セット(と"
+"検証セット)で評価されます。分類の場合、近傍の数に対するモデルの分類正解率を"
+"プロットします。正解率は訓練セット(と検証セット)で評価されます。"
 
 msgctxt "WeightFunction|"
 msgid "Weight function"
-msgstr ""
+msgstr "重み関数"
 
 msgctxt "WeightFunction|"
 msgid "Shows how the weights are assigned as a function of the distance."
-msgstr ""
+msgstr "距離の関数として重みがどう割り当てられるかを示します。"
 
-#, fuzzy
 msgctxt "ActivationFunctionPlot|"
 msgid "Activation function"
 msgstr "活性化関数"
 
 msgctxt "ActivationFunctionPlot|"
 msgid "Creates a plot of the activation function."
-msgstr ""
+msgstr "活性化関数のプロットを作ります。"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Activation function"
 msgstr "活性化関数"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Linear"
 msgstr "線形"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Binary"
 msgstr "2値"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Logistic sigmoid"
 msgstr "ロジスティックシグモイド"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Sine"
 msgstr "サイン"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Inverse tangent"
 msgstr "逆タンジェント"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Hyperbolic tangent"
 msgstr "ハイパーボリックタンジェント"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "ReLU"
-msgstr "ReLu"
+msgstr "ReLU"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Softplus"
@@ -1195,7 +1165,6 @@ msgctxt "AlgorithmicSettings|"
 msgid "Softsign"
 msgstr "Softsign"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "ELU"
 msgstr "ELU"
@@ -1237,13 +1206,28 @@ msgid ""
 "- Gaussian: *f(x) = e * (-x^2)*\n"
 "- GeLU: *f(x) = 0.5 * x * (1 + tanh(sqrt(2 / pi) * (x + 0.044715 * x^3)))*"
 msgstr ""
+"各隠れ層の信号に使う活性化関数を設定します。次の選択肢があります。\n"
+"- linear: *f(x) = x*\n"
+"- Binary: *f(x) = 0 if x < 0, 1 if x > 0\n"
+"- Logistic sigmoid: *f(x) = 1 / (1 + e^(-x))*\n"
+"- Sine: *f(x) = sin(x)*\n"
+"- Cosine: *f(x) = cos(x)*\n"
+"- Inverse tangent: *f(x) = arctan(x)*\n"
+"- Hyperbolic tangent: *f(x) = tanh(x)*\n"
+"- ReLU: *f(x) =  0 if x < 0, x if x > 0*\n"
+"- Softplus: *f(x) = log(1 + e^x)*\n"
+"- Softsign: *f(x) = x / (abs(x) + 1)*\n"
+"- ELU: *f(x) = e^x - 1 if x <= 0, x if x > 0*\n"
+"- LReLU: *f(x) = 0.01 * x if x < 0, x if x > 0*\n"
+"- SiLU: *f(x) = x / (1 + e^(-x))*\n"
+"- Mish: *f(x) = x * tanh(log(1 + e^x))*\n"
+"- Gaussian: *f(x) = e * (-x^2)*\n"
+"- GeLU: *f(x) = 0.5 * x * (1 + tanh(sqrt(2 / pi) * (x + 0.044715 * x^3)))*"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Algorithm"
 msgstr "アルゴリズム"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Backpropagation"
 msgstr "誤差逆伝播法"
@@ -1275,36 +1259,37 @@ msgid ""
 "algorithm that modifies the learning rate associated with the smallest "
 "learning rate itself."
 msgstr ""
+"ネットワークの学習に使うアルゴリズムを設定します。バックプロパゲーションは"
+"ニューラルネットワークの学習の標準的な選択肢ですが、ほかに `rprop+`(既定。"
+"バックトレースありの弾性バックプロパゲーション)、`rprop-`(バックトレースなし"
+"の弾性バックプロパゲーション)、`gprop-sag`(勾配の絶対値が最も小さいものに対応"
+"する学習率を変更する大域的収束アルゴリズム)、`gprop-slr`(学習率が最も小さいも"
+"のに対応する学習率を変更する大域的収束アルゴリズム)を選べます。"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Learning rate"
 msgstr "学習率"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The learning rate used by the backpropagation algorithm."
-msgstr ""
+msgstr "バックプロパゲーションのアルゴリズムが使う学習率です。"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Loss function"
 msgstr "損失関数"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Sum of squares"
 msgstr "平方和"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Cross-entropy"
 msgstr "クロスエントロピー"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The loss function used."
-msgstr ""
+msgstr "使用する損失関数です。"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Stopping criteria loss function"
 msgstr "停止基準 損失関数"
@@ -1313,18 +1298,16 @@ msgctxt "AlgorithmicSettings|"
 msgid ""
 "The threshold for the partial derivatives of the error function as stopping "
 "criteria."
-msgstr ""
+msgstr "停止基準となる、誤差関数の偏微分の閾値です。"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Max. training repetitions"
 msgstr "トレーニングの最大反復回数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The maximum number of repetitions used in training the network."
-msgstr ""
+msgstr "ネットワークの学習で使う繰り返しの最大回数です。"
 
-#, fuzzy
 msgctxt "Coefficients|"
 msgid "Network weights"
 msgstr "ネットワーク重み"
@@ -1332,200 +1315,172 @@ msgstr "ネットワーク重み"
 msgctxt "Coefficients|"
 msgid ""
 "Shows the connections in the neural network together with their weights."
-msgstr ""
+msgstr "ニューラルネットワークの結合と、その重みを表示します。"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Network Topology"
 msgstr "ネットワークトポロジー"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Manual"
 msgstr "手動"
 
 msgctxt "ModelOptimization|"
 msgid "Specify the nodes in each hidden layer of the neural network."
-msgstr ""
+msgstr "ニューラルネットワークの各隠れ層のノード数を指定します。"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Nodes"
 msgstr "ノード"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Hidden layer "
 msgstr "隠れ層 "
 
 msgctxt "ModelOptimization|"
 msgid "Optimize the topology of the network using a genetic algorithm."
-msgstr ""
+msgstr "遺伝的アルゴリズムでネットワークの構造を最適化します。"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Population size"
 msgstr "母集団の大きさ"
 
 msgctxt "ModelOptimization|"
 msgid "Size of population used in genetic optimization."
-msgstr ""
+msgstr "遺伝的最適化で使う個体群の大きさです。"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Generations"
 msgstr "世代"
 
 msgctxt "ModelOptimization|"
 msgid "Number of generations used in genetic optimization."
-msgstr ""
+msgstr "遺伝的最適化で使う世代の数です。"
 
 msgctxt "ModelOptimization|"
 msgid "Max. number of layers"
-msgstr ""
+msgstr "層数の最大値"
 
 msgctxt "ModelOptimization|"
 msgid "Max. nodes in each layer"
-msgstr ""
+msgstr "各層のノード数の最大値"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Parent selection"
 msgstr "親の選択"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Roulette wheel"
 msgstr "ルーレットホイール"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Universal"
 msgstr "ユニバーサル"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Rank"
 msgstr "ランク"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Tournament"
 msgstr "トーナメント"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Random"
 msgstr "ランダム"
 
 msgctxt "ModelOptimization|"
 msgid "How to select suviving networks."
-msgstr ""
+msgstr "生き残るネットワークの選び方です。"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Candidates"
 msgstr "候補"
 
 msgctxt "ModelOptimization|"
 msgid "Number of candidates for tournament selection"
-msgstr ""
+msgstr "トーナメント選択の候補の数です"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Crossover method"
 msgstr "クロスオーバー法"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Uniform"
 msgstr "一様"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "One-point"
 msgstr "ワンポイント"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Multi-point"
 msgstr "マルチポイント"
 
 msgctxt "ModelOptimization|"
 msgid "How to crossover two candidate networks."
-msgstr ""
+msgstr "2つの候補ネットワークをどう交叉させるかを指定します。"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Mutations"
 msgstr "変異"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Reset"
 msgstr "リセット"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Swap"
 msgstr "スワップ"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Scramble"
 msgstr "スクランブル"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Inversion"
 msgstr "反転"
 
 msgctxt "ModelOptimization|"
 msgid "How to mutate a network."
-msgstr ""
+msgstr "ネットワークをどう突然変異させるかを指定します。"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Probability"
 msgstr "確率"
 
 msgctxt "ModelOptimization|"
 msgid "The mutation probability of a random network in each generation."
-msgstr ""
+msgstr "各世代で無作為なネットワークが突然変異する確率です。"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Survival method"
 msgstr "サバイバル法"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Fitness-based"
 msgstr "フィットネスベース"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Age-based"
 msgstr "年齢ベース"
 
 msgctxt "ModelOptimization|"
 msgid "How to choose which networks survive and die in a generation."
-msgstr ""
+msgstr "1つの世代でどのネットワークが生き残り、どれが淘汰されるかの決め方です。"
 
-#, fuzzy
 msgctxt "ModelOptimization|"
 msgid "Elitism"
 msgstr "エリート主義"
 
 msgctxt "ModelOptimization|"
 msgid "Keep top networks from dying out."
-msgstr ""
+msgstr "上位のネットワークが淘汰されないようにします。"
 
 msgctxt "ModelOptimization|"
 msgid "Percentage of top networks to keep."
-msgstr ""
+msgstr "残す上位ネットワークの割合です。"
 
-#, fuzzy
 msgctxt "NetworkPlot|"
 msgid "Network structure"
 msgstr "ネットワーク構造"
@@ -1534,7 +1489,7 @@ msgctxt "NetworkPlot|"
 msgid ""
 "Creates a plot that visualizes the structure (nodes and edges) of the "
 "network."
-msgstr ""
+msgstr "ネットワークの構造(ノードとエッジ)を可視化したプロットを作ります。"
 
 msgctxt "OptimPlot|"
 msgid ""
@@ -1545,28 +1500,29 @@ msgid ""
 "generations in the evoluationary optimization algorithm. Accuracy is "
 "assessed for the training (and validation) set."
 msgstr ""
+"回帰の場合、進化的最適化アルゴリズムの世代数に対する、ニューラルネットワーク"
+"の個体群の平均二乗誤差の平均をプロットします。分類の場合、世代数に対する個体"
+"群の平均分類正解率をプロットします。正解率は訓練セット(と検証セット)で評価さ"
+"れます。"
 
-#, fuzzy
 msgctxt "AccuracyDecrease|"
 msgid "Mean decrease in accuracy"
-msgstr "精度低下の平均値"
+msgstr "正解率の平均減少量"
 
 msgctxt "AccuracyDecrease|"
 msgid ""
 "Displays a figure with the mean decrease in accuracy per feature in the "
 "model."
-msgstr ""
+msgstr "モデルの特徴量ごとの正解率の平均減少量を示す図を表示します。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Features per split"
-msgstr ""
+msgstr "分割あたりの特徴量数"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Auto"
 msgstr "自動"
 
-#, fuzzy
 msgctxt "AlgorithmicSettings|"
 msgid "Manual"
 msgstr "手動"
@@ -1575,17 +1531,16 @@ msgctxt "AlgorithmicSettings|"
 msgid ""
 "Set the number of feature variables that is used within each split in the "
 "decision trees. Defaults to auto."
-msgstr ""
+msgstr "決定木の各分割で使う特徴量の数を設定します。既定は自動です。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The number of feature variables in each split."
-msgstr ""
+msgstr "各分割における特徴量の数です。"
 
 msgctxt "ModelOptimization|"
 msgid "The number of trees to be used."
-msgstr ""
+msgstr "使用する木の数です。"
 
-#, fuzzy
 msgctxt "NodePurity|"
 msgid "Total increase in node purity"
 msgstr "トータルでのノード純度の向上"
@@ -1594,73 +1549,70 @@ msgctxt "NodePurity|"
 msgid ""
 "Displays a figure with total increase in node purity per feature in the "
 "model."
-msgstr ""
+msgstr "モデルの特徴量ごとのノード純度の増加の合計を示す図を表示します。"
 
-#, fuzzy
 msgctxt "Oob|"
 msgid "Out-of-bag error"
 msgstr "アウトオブバッグエラー"
 
-#, fuzzy
 msgctxt "Oob|"
 msgid "Out-of-bag accuracy"
-msgstr "アウトオブバッグの精度"
+msgstr "アウトオブバッグ正解率"
 
 msgctxt "Oob|"
 msgid ""
 "Plots the number of trees against the out-of-bag mean squared error "
 "(regression) or accuracy (classification) of the model."
 msgstr ""
+"木の数に対する、モデルのアウトオブバッグの平均二乗誤差(回帰)または正解率(分"
+"類)をプロットします。"
 
-#, fuzzy
 msgctxt "CoefficientTable|"
 msgid "Coefficients"
 msgstr "係数"
 
 msgctxt "CoefficientTable|"
 msgid "Shows a table containing the regression coefficients."
-msgstr ""
+msgstr "回帰係数を含む表を表示します。"
 
 msgctxt "CoefficientTable|"
 msgid "Confidence interval"
-msgstr ""
+msgstr "信頼区間"
 
 msgctxt "CoefficientTable|"
 msgid "Display confidence intervals around estimated regression coefficients."
-msgstr ""
+msgstr "推定された回帰係数のまわりの信頼区間を表示します。"
 
 msgctxt "CoefficientTable|"
 msgid "The confidence level for the interval."
-msgstr ""
+msgstr "区間の信頼水準です。"
 
 msgctxt "CoefficientTable|"
 msgid "Display equation"
-msgstr ""
+msgstr "式を表示"
 
 msgctxt "CoefficientTable|"
 msgid ""
 "Display the regression equation with the estimated values of the "
 "coefficients."
-msgstr ""
+msgstr "係数の推定値を入れた回帰式を表示します。"
 
 msgctxt "Intercept|"
 msgid "Include intercept"
-msgstr ""
+msgstr "切片を含める"
 
 msgctxt "Intercept|"
 msgid "Whether to include an intercept in the regression formula."
-msgstr ""
+msgstr "回帰式に切片を含めるかどうかを指定します。"
 
-#, fuzzy
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "Target"
 msgstr "ターゲット"
 
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "In this box, the variable that needs to be predicted should be entered."
-msgstr ""
+msgstr "このボックスに、予測したい変数を入れます。"
 
-#, fuzzy
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "Features"
 msgstr "特徴量"
@@ -1669,86 +1621,87 @@ msgctxt "VariablesFormRegularizedRegression|"
 msgid ""
 "In this box, the variables that provide information about the target "
 "variable should be entered."
-msgstr ""
+msgstr "このボックスに、ターゲット変数についての情報を与える変数を入れます。"
 
 msgctxt "VariablesFormRegularizedRegression|"
 msgid "Weights"
-msgstr ""
+msgstr "重み"
 
 msgctxt "VariablesFormRegularizedRegression|"
 msgid ""
 "In this box, an optional variable containing case weights can be entered."
-msgstr ""
+msgstr "このボックスに、ケースの重みが入った変数を任意で入れられます。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Radial"
-msgstr ""
+msgstr "動径基底"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Polynomial"
-msgstr ""
+msgstr "多項式"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Sigmoid"
-msgstr ""
+msgstr "シグモイド"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
 "The kernel used in training and predicting. Possible kernels are 'linear', "
 "'radial', 'polynomial', and 'sigmoid'."
 msgstr ""
+"学習と予測に使うカーネルです。'linear'、'radial'、'polynomial'、'sigmoid' を"
+"選べます。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Degree"
-msgstr ""
+msgstr "次数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The degree of polynomial used."
-msgstr ""
+msgstr "使用する多項式の次数です。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Gamma parameter"
-msgstr ""
+msgstr "ガンマのパラメータ"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The gamma parameter used."
-msgstr ""
+msgstr "使用するガンマのパラメータです。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "r parameter"
-msgstr ""
+msgstr "rのパラメータ"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The complexity parameter used."
-msgstr ""
+msgstr "使用する複雑さのパラメータです。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Tolerance of termination criterion"
-msgstr ""
+msgstr "終了基準の許容誤差"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The tolerance of termination criterion."
-msgstr ""
+msgstr "終了基準の許容誤差です。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Epsilon"
-msgstr ""
+msgstr "イプシロン"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The epsilon parameter in the insensitive-loss function."
-msgstr ""
+msgstr "不感損失関数のイプシロンのパラメータです。"
 
 msgctxt "SupportVectors|"
 msgid "Support vectors"
-msgstr ""
+msgstr "サポートベクター"
 
 msgctxt "SupportVectors|"
 msgid ""
 "Shows a table containing the data (points) indicated as support vectors by "
 "the algorithm."
-msgstr ""
+msgstr "アルゴリズムがサポートベクターとみなしたデータ(点)を含む表を表示します。"
 
-#, fuzzy
 msgctxt "AndrewsCurve|"
 msgid "Andrews curves"
 msgstr "アンドリュース曲線"
@@ -1758,8 +1711,9 @@ msgid ""
 "Is a way to visualize structure in high-dimensional data. Lines that cluster "
 "are observations that are more alike."
 msgstr ""
+"高次元のデータの構造を可視化する方法です。まとまった線は、互いに似た観測を表"
+"します。"
 
-#, fuzzy
 msgctxt "ClusterDensity|"
 msgid "Cluster densities"
 msgstr "クラスター密度"
@@ -1768,28 +1722,28 @@ msgctxt "ClusterDensity|"
 msgid ""
 "For each feature variable, generates a plot showing the overlapping "
 "densities for the clusters."
-msgstr ""
+msgstr "特徴量ごとに、クラスタの密度を重ねたプロットを作ります。"
 
-#, fuzzy
 msgctxt "ClusterDensity|"
 msgid "Group into one figure"
 msgstr "1つの図にグループ化"
 
 msgctxt "ClusterDensity|"
 msgid "Group the density plots per feature into a single figure."
-msgstr ""
+msgstr "特徴量ごとの密度プロットを1つの図にまとめます。"
 
 msgctxt "ClusterMatrix|"
 msgid "Cluster matrix plot"
-msgstr ""
+msgstr "クラスタ行列のプロット"
 
 msgctxt "ClusterMatrix|"
 msgid ""
 "Creates a *n* x *n* plot that visualizes to which cluster every observation "
 "belongs according to the current model."
 msgstr ""
+"現在のモデルによって各観測がどのクラスタに属するかを可視化する、*n* × *n* の"
+"プロットを作ります。"
 
-#, fuzzy
 msgctxt "ClusterMeans|"
 msgid "Cluster means"
 msgstr "クラスター平均"
@@ -1798,27 +1752,24 @@ msgctxt "ClusterMeans|"
 msgid ""
 "Creates a plot that visualizes and compares the mean of the feature "
 "variables in each cluster."
-msgstr ""
+msgstr "各クラスタにおける特徴量の平均を可視化し、比較するプロットを作ります。"
 
-#, fuzzy
 msgctxt "ClusterMeans|"
 msgid "Display barplot"
 msgstr "バープロットを表示する"
 
 msgctxt "ClusterMeans|"
 msgid "Transform the cluster mean figure into a barplot."
-msgstr ""
+msgstr "クラスタ平均の図を棒グラフにします。"
 
-#, fuzzy
 msgctxt "ClusterMeans|"
 msgid "Group into one figure"
 msgstr "1つの図にグループ化"
 
 msgctxt "ClusterMeans|"
 msgid "Group the plots per feature into a single figure."
-msgstr ""
+msgstr "特徴量ごとのプロットを1つの図にまとめます。"
 
-#, fuzzy
 msgctxt "DataSplit|"
 msgid "Data split"
 msgstr "データの分割"
@@ -1826,9 +1777,8 @@ msgstr "データの分割"
 msgctxt "DataSplit|"
 msgid ""
 "Shows how the data is split into training (and validation), and test set."
-msgstr ""
+msgstr "データが訓練セット(と検証セット)、テストセットにどう分割されるかを示します。"
 
-#, fuzzy
 msgctxt "DecisionBoundary|"
 msgid "Decision boundary matrix"
 msgstr "決定境界行列"
@@ -1839,25 +1789,26 @@ msgid ""
 "classified if predicted through the current model. Boundaries between "
 "classes are visualized. Can only be made for numeric features."
 msgstr ""
+"現在のモデルで予測した場合に各観測がどう分類されるかを可視化する、*n* × *n* "
+"のプロットを作ります。クラス間の境界が描かれます。数値の特徴量に対してのみ作"
+"れます。"
 
-#, fuzzy
 msgctxt "DecisionBoundary|"
 msgid "Legend"
 msgstr "凡例"
 
 msgctxt "DecisionBoundary|"
 msgid "Show a legend next to the figure."
-msgstr ""
+msgstr "図の横に凡例を表示します。"
 
 msgctxt "DecisionBoundary|"
 msgid "Add data points"
-msgstr ""
+msgstr "データ点を追加"
 
 msgctxt "DecisionBoundary|"
 msgid "Show the observations in the data set as points in the plot."
-msgstr ""
+msgstr "データセットの観測を点としてプロットに表示します。"
 
-#, fuzzy
 msgctxt "ElbowMethod|"
 msgid "Elbow method"
 msgstr "エルボー法"
@@ -1869,8 +1820,10 @@ msgid ""
 "optimal number of clusters. The plot shows three curves using AIC, BIC, and "
 "'elbow method' optimization."
 msgstr ""
+"y軸にクラスタ内平方和の合計、x軸にクラスタ数をとったプロットを作ります。この"
+"プロットは最適なクラスタ数を決めるのに使えます。AIC、BIC、エルボー法による最"
+"適化の3本の曲線が描かれます。"
 
-#, fuzzy
 msgctxt "PredictivePerformance|"
 msgid "Predictive performance"
 msgstr "予測性能"
@@ -1879,18 +1832,16 @@ msgctxt "PredictivePerformance|"
 msgid ""
 "Plots the true values of the observations in the test set against their "
 "predicted values."
-msgstr ""
+msgstr "テストセットの観測の真の値を、その予測値に対してプロットします。"
 
-#, fuzzy
 msgctxt "RocCurve|"
 msgid "ROC curves"
 msgstr "ROC曲線"
 
 msgctxt "RocCurve|"
 msgid "Displays ROC curves for each class predicted against all other classes."
-msgstr ""
+msgstr "各クラスをそれ以外のすべてのクラスと対比したROC曲線を表示します。"
 
-#, fuzzy
 msgctxt "Tsne|"
 msgid "t-SNE cluster plot"
 msgstr "t-SNEクラスタープロット"
@@ -1906,27 +1857,31 @@ msgid ""
 "across several clustering analyses you can set their seed to the same value, "
 "as the t-SNE algorithm uses random starting values."
 msgstr ""
+"クラスタリングの出力のt-SNEプロットを作ります。t-SNEプロットは、高次元の"
+"データを2次元の低次元空間で可視化し、データの観測どうしの相対的な距離を示すた"
+"めに使われます。t-SNEの2次元空間では軸は解釈できません。t-SNEプロットは、観測"
+"やクラスタどうしの相対的な距離の印象を与えることを目指したものです。複数の"
+"クラスタリング分析で同じt-SNEプロットを再現するには、シードを同じ値に設定して"
+"ください。t-SNEアルゴリズムは無作為な初期値を使うためです。"
 
-#, fuzzy
 msgctxt "Tsne|"
 msgid "Legend"
 msgstr "凡例"
 
 msgctxt "Tsne|"
 msgid "Show a legend next to the figure."
-msgstr ""
+msgstr "図の横に凡例を表示します。"
 
 msgctxt "Tsne|"
 msgid "Add data labels"
-msgstr ""
+msgstr "データのラベルを追加"
 
 msgctxt "Tsne|"
 msgid ""
 "Add the row numbers of the observations in the data set as labels to the "
 "plot."
-msgstr ""
+msgstr "データセットの観測の行番号をラベルとしてプロットに追加します。"
 
-#, fuzzy
 msgctxt "ClassProportions|"
 msgid "Class proportions"
 msgstr "クラスの比率"
@@ -1936,8 +1891,9 @@ msgid ""
 "Displays a table that shows the proportions of each class in the data set, "
 "training (and validaton), and test set."
 msgstr ""
+"データセット、訓練セット(と検証セット)、テストセットにおける各クラスの割合を"
+"示す表を表示します。"
 
-#, fuzzy
 msgctxt "ClusterInfo|"
 msgid "Cluster information"
 msgstr "クラスター情報"
@@ -1949,8 +1905,10 @@ msgid ""
 "divided by its total over the various clusters. These outputs are shown by "
 "default."
 msgstr ""
+"各クラスタの大きさと、クラスタ内の異質性の説明された割合を表示します。後者は"
+"、そのクラスタの内部平方和を、すべてのクラスタにわたる合計で割ったものです。"
+"これらの出力は既定で表示されます。"
 
-#, fuzzy
 msgctxt "ClusterInfo|"
 msgid "Within sum of squares"
 msgstr "群内平方和"
@@ -1959,28 +1917,28 @@ msgctxt "ClusterInfo|"
 msgid ""
 "Adds a row with the within sum of squares of each cluster to the table. This "
 "option is selected by default."
-msgstr ""
+msgstr "各クラスタの内部平方和の行を表に加えます。既定で選択されています。"
 
-#, fuzzy
 msgctxt "ClusterInfo|"
 msgid "Silhouette score"
 msgstr "シルエットスコア"
 
 msgctxt "ClusterInfo|"
 msgid "Adds a row with the silhouette score of each cluster to the table."
-msgstr ""
+msgstr "各クラスタのシルエット係数の行を表に加えます。"
 
 msgctxt "ClusterInfo|"
 msgid "Centers"
-msgstr ""
+msgstr "中心"
 
 msgctxt "ClusterInfo|"
 msgid ""
 "Adds a row with the center per feature of each cluster to the table. The "
 "center can be the mean, median or mode depending on the clustering algorithm."
 msgstr ""
+"各クラスタの特徴量ごとの中心の行を表に加えます。中心は、クラスタリングの"
+"アルゴリズムに応じて平均・中央値・最頻値のいずれかになります。"
 
-#, fuzzy
 msgctxt "ClusterInfo|"
 msgid "Between sum of squares"
 msgstr "群間平方和"
@@ -1989,9 +1947,8 @@ msgctxt "ClusterInfo|"
 msgid ""
 "Adds a note with the between sum of squares of the cluster model to the "
 "table."
-msgstr ""
+msgstr "クラスタモデルのクラスタ間平方和の注を表に加えます。"
 
-#, fuzzy
 msgctxt "ClusterInfo|"
 msgid "Total sum of squares"
 msgstr "総平方和"
@@ -1999,13 +1956,12 @@ msgstr "総平方和"
 msgctxt "ClusterInfo|"
 msgid ""
 "Adds a note with the total sum of squares of the cluster model to the table."
-msgstr ""
+msgstr "クラスタモデルの全平方和の注を表に加えます。"
 
 msgctxt "ClusterMeans|"
 msgid "Shows a table containing the cluster means for each feature variable."
-msgstr ""
+msgstr "特徴量ごとのクラスタ平均を含む表を表示します。"
 
-#, fuzzy
 msgctxt "ConfusionMatrix|"
 msgid "Confusion matrix"
 msgstr "混同行列"
@@ -2015,59 +1971,57 @@ msgid ""
 "Displays a table that shows the observed classes against the predicted "
 "classes. Used to assess model accuracy."
 msgstr ""
+"観測されたクラスと予測されたクラスを対比した表を表示します。モデルの正解率を"
+"評価するのに使います。"
 
-#, fuzzy
 msgctxt "ConfusionMatrix|"
 msgid "Display proportions"
 msgstr "比率を表示する"
 
 msgctxt "ConfusionMatrix|"
 msgid "Displays proportions in the confusion matrix instead of counts."
-msgstr ""
+msgstr "混同行列に度数ではなく割合を表示します。"
 
 msgctxt "ExplainPredictions|"
 msgid "Explain predictions"
-msgstr ""
+msgstr "予測を説明する"
 
 msgctxt "ExplainPredictions|"
 msgid "Cases"
-msgstr ""
+msgstr "ケース"
 
 msgctxt "ExplainPredictions|"
 msgid "The test set index of the first row to be displayed in the table."
-msgstr ""
+msgstr "表に表示する最初の行の、テストセットにおける番号です。"
 
-#, fuzzy
 msgctxt "ExplainPredictions|"
 msgid "to"
 msgstr "次まで"
 
 msgctxt "ExplainPredictions|"
 msgid "The test set index of the last row to be displayed in the table."
-msgstr ""
+msgstr "表に表示する最後の行の、テストセットにおける番号です。"
 
 msgctxt "FeatureImportance|"
 msgid "Feature importance"
-msgstr ""
+msgstr "特徴量の重要度"
 
 msgctxt "FeatureImportance|"
 msgid "Shows the available feature importance metrics for the fitted model."
-msgstr ""
+msgstr "あてはめたモデルについて、利用できる特徴量の重要度の指標を表示します。"
 
 msgctxt "ModelPerformance|"
 msgid "Model performance"
-msgstr ""
+msgstr "モデルの性能"
 
-#, fuzzy
 msgctxt "ClusterDetermination|"
 msgid "Cluster Determination"
 msgstr "クラスターの決定"
 
 msgctxt "ClusterDetermination|"
 msgid "Choose how to determine the number of clusters in the model."
-msgstr ""
+msgstr "モデルのクラスタ数の決め方を選びます。"
 
-#, fuzzy
 msgctxt "ClusterDetermination|"
 msgid "Fixed"
 msgstr "固定"
@@ -2077,17 +2031,17 @@ msgid ""
 "Enables you to generate a fixed amount of clusters. This allows you to "
 "generate your own specified number of clusters, and thus, optimize manually."
 msgstr ""
+"決まった数のクラスタを作れるようにします。これにより、自分で指定した数の"
+"クラスタを作って手動で最適化できます。"
 
-#, fuzzy
 msgctxt "ClusterDetermination|"
 msgid "Clusters"
 msgstr "クラスター数"
 
 msgctxt "ClusterDetermination|"
 msgid "The number of clusters to be fitted."
-msgstr ""
+msgstr "あてはめるクラスタの数です。"
 
-#, fuzzy
 msgctxt "ClusterDetermination|"
 msgid "Optimized according to"
 msgstr "次に従って最適化します"
@@ -2096,7 +2050,7 @@ msgctxt "ClusterDetermination|"
 msgid ""
 "Enables you to choose an optimization method. BIC optimization is set as "
 "default."
-msgstr ""
+msgstr "最適化の方法を選べるようにします。既定はBICによる最適化です。"
 
 msgctxt "ClusterDetermination|"
 msgid ""
@@ -2109,8 +2063,12 @@ msgid ""
 "uses the similarity of observations within a cluster and their dissimilarity "
 "to other clusters for optimizing the clustering output."
 msgstr ""
+"最適化の方法です。AIC、BIC、シルエットから選べます。AICはクラスタ内平方和"
+"(クラスタ内の変動)、作られたクラスタ数、次元数を使ってクラスタリングの出力を"
+"最適化します。BICはクラスタ内平方和、クラスタ数、次元数、サンプルサイズを使い"
+"ます。シルエット値は、クラスタ内の観測の類似度と、ほかのクラスタとの非類似度"
+"を使って最適化します。"
 
-#, fuzzy
 msgctxt "ClusterDetermination|"
 msgid "Max. clusters"
 msgstr "最大クラスター数"
@@ -2119,11 +2077,11 @@ msgctxt "ClusterDetermination|"
 msgid ""
 "Sets the maximum number of possible clusters to be generated. At default, "
 "this is set to 10."
-msgstr ""
+msgstr "作れるクラスタ数の上限を設定します。既定では10です。"
 
 msgctxt "DataSplit|"
 msgid "Choose how to create the test set."
-msgstr ""
+msgstr "テストセットの作り方を選びます。"
 
 msgctxt "DataSplit|"
 msgid ""
@@ -2131,49 +2089,53 @@ msgid ""
 "error. Generates an internal indicator variable that indicates whether the "
 "observation is included (1) or excluded (0) from the test set."
 msgstr ""
+"予測誤差を求めるために、データから無作為に抽出する割合を選びます。観測が"
+"テストセットに含まれる(1)か含まれない(0)かを示す内部の指標変数が作られます。"
 
 msgctxt "DataSplit|"
 msgid "The percentage of observations to use for the test set."
-msgstr ""
+msgstr "テストセットに使う観測の割合です。"
 
 msgctxt "DataSplit|"
 msgid ""
 "Add the generated test set indicator from the option above to your data set."
-msgstr ""
+msgstr "上のオプションで作られたテストセットの指標を、データセットに追加します。"
 
 msgctxt "DataSplit|"
 msgid "The column name for the generated test set indicator."
-msgstr ""
+msgstr "作られたテストセットの指標の列名です。"
 
 msgctxt "DataSplit|"
 msgid "The variable in the data set that is used as the test set indicator."
-msgstr ""
+msgstr "テストセットの指標として使う、データセット内の変数です。"
 
 msgctxt "DataSplit|"
 msgid "Choose how to create the validation set."
-msgstr ""
+msgstr "検証セットの作り方を選びます。"
 
 msgctxt "DataSplit|"
 msgid ""
 "Randomly sample a percentage from the remaining training data (after "
 "selecting the test set)."
 msgstr ""
+"残りの訓練データ(テストセットを選んだ後)から、無作為に一定の割合を抽出します"
+"。"
 
 msgctxt "DataSplit|"
 msgid "The percentage of observations to use for the validation set."
-msgstr ""
+msgstr "検証セットに使う観測の割合です。"
 
 msgctxt "DataSplit|"
 msgid "Partition the remaining data in *k* parts."
-msgstr ""
+msgstr "残りのデータを *k* 個に分割します。"
 
 msgctxt "DataSplit|"
 msgid "The number of folds to be used."
-msgstr ""
+msgstr "使用する分割数です。"
 
 msgctxt "DataSplit|"
 msgid "Partition the remaining data in *n* parts."
-msgstr ""
+msgstr "残りのデータを *n* 個に分割します。"
 
 msgctxt "ExportResults|"
 msgid ""
@@ -2181,22 +2143,24 @@ msgid ""
 "result. This gives you the option to inspect, cluster, or predict the "
 "generated values."
 msgstr ""
+"回帰の結果の値を持つ新しい列をデータセットに作ります。これにより、作られた値"
+"を確認したり、クラスタリングや予測に使ったりできます。"
 
 msgctxt "ExportResults|"
 msgid "The column name for the predicted values."
-msgstr ""
+msgstr "予測値の列名です。"
 
 msgctxt "ExportResults|"
 msgid "The file path for the saved model."
-msgstr ""
+msgstr "モデルを保存するファイルのパスです。"
 
 msgctxt "ExportResults|"
 msgid "When clicked, the model is exported to the specified file path."
-msgstr ""
+msgstr "クリックすると、指定したファイルのパスにモデルが書き出されます。"
 
 msgctxt "ScaleVariables|"
 msgid "Scale features"
-msgstr ""
+msgstr "特徴量をスケーリング"
 
 msgctxt "ScaleVariables|"
 msgid ""
@@ -2206,11 +2170,14 @@ msgid ""
 "the Z-score standardization of a mean of 0 and a standard deviation of 1. "
 "This option is selected by default."
 msgstr ""
+"データセットの連続な特徴量を標準化します。標準化により、異なるスケールの特徴"
+"量の値が同じようなスケールに収まります。その結果、数値的な安定性が得られます"
+"。JASPは平均0、標準偏差1のZ得点による標準化を使います。既定で選択されています"
+"。"
 
-#, fuzzy
 msgctxt "SetSeed|"
 msgid "Set seed"
-msgstr "seedの設定"
+msgstr "シードを設定"
 
 msgctxt "SetSeed|"
 msgid ""
@@ -2218,21 +2185,22 @@ msgid ""
 "exclude random processes influencing an analysis. For example, setting a "
 "seed makes it possible to re-run analyses with the same data splits."
 msgstr ""
+"分析にシードを設定できるようにします。シードを設定すると、無作為な過程が分析"
+"に影響しなくなります。たとえばシードを設定すれば、同じデータ分割で分析をやり"
+"直せます。"
 
 msgctxt "SetSeed|"
 msgid "The value of the seed."
-msgstr ""
+msgstr "シードの値です。"
 
-#, fuzzy
 msgctxt "VariablesFormClassification|"
 msgid "Target"
 msgstr "ターゲット"
 
 msgctxt "VariablesFormClassification|"
 msgid "In this box, the variable that needs to be predicted should be entered."
-msgstr ""
+msgstr "このボックスに、予測したい変数を入れます。"
 
-#, fuzzy
 msgctxt "VariablesFormClassification|"
 msgid "Features"
 msgstr "特徴量"
@@ -2241,9 +2209,8 @@ msgctxt "VariablesFormClassification|"
 msgid ""
 "In this box, the variables that provide information about the target "
 "variable should be entered."
-msgstr ""
+msgstr "このボックスに、ターゲット変数についての情報を与える変数を入れます。"
 
-#, fuzzy
 msgctxt "VariablesFormClustering|"
 msgid "Features"
 msgstr "特徴量"
@@ -2252,18 +2219,16 @@ msgctxt "VariablesFormClustering|"
 msgid ""
 "In this box, the variables are need to be considered by the clustering "
 "algorithm should be entered."
-msgstr ""
+msgstr "このボックスに、クラスタリングのアルゴリズムで考慮したい変数を入れます。"
 
-#, fuzzy
 msgctxt "VariablesFormRegression|"
 msgid "Target"
 msgstr "ターゲット"
 
 msgctxt "VariablesFormRegression|"
 msgid "In this box, the variable that needs to be predicted should be entered."
-msgstr ""
+msgstr "このボックスに、予測したい変数を入れます。"
 
-#, fuzzy
 msgctxt "VariablesFormRegression|"
 msgid "Features"
 msgstr "特徴量"
@@ -2272,7 +2237,7 @@ msgctxt "VariablesFormRegression|"
 msgid ""
 "In this box, the variables that provide information about the target "
 "variable should be entered."
-msgstr ""
+msgstr "このボックスに、ターゲット変数についての情報を与える変数を入れます。"
 
 msgctxt "mlClassificationBoosting|"
 msgid ""
@@ -2285,6 +2250,13 @@ msgid ""
 "- The target variable is a nominal or ordinal variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"ブースティングは、決定木のアンサンブルに特徴量を順次追加し、それぞれが直前の"
+"ものを補正していく方法です。ただし、反復ごとに誤分類された観測の重みを変える"
+"のではなく、直前の特徴量が残した残差誤差に新しい特徴量をあてはめようとします"
+"。\n"
+"### 仮定\n"
+"- ターゲット変数は名義変数または順序変数です。\n"
+"- 特徴量は連続変数、名義変数、順序変数のいずれかです。"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid ""
@@ -2296,6 +2268,12 @@ msgid ""
 "- The target is a nominal or ordinal variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"決定木は教師あり学習のアルゴリズムで、決定木を予測モデルとして使い、対象につ"
+"いての観測(木の根で表されます)から対象のターゲット値についての結論(木の末端で"
+"表されます)へと至ります。\n"
+"### 仮定\n"
+"- ターゲットは名義変数または順序変数です。\n"
+"- 特徴量は連続変数、名義変数、順序変数のいずれかです。"
 
 msgctxt "mlClassificationKnn|"
 msgid ""
@@ -2308,6 +2286,12 @@ msgid ""
 "- The target is a nominal or ordinal variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"k近傍法は、新しい観測に最も似た *k* 個の特徴量の観測を見て、そのクラスへの割"
+"り当てを予測する分類の方法です。近傍の数はモデルの複雑さと本質的に結びついて"
+"おり、数が小さいほどモデルは柔軟になります。\n"
+"### 仮定\n"
+"- ターゲットは名義変数または順序変数です。\n"
+"- 特徴量は連続変数、名義変数、順序変数のいずれかです。"
 
 msgctxt "mlClassificationLda|"
 msgid ""
@@ -2326,10 +2310,20 @@ msgid ""
 "- Multicollinearity: The classes should not correlate within each other, can "
 "be checked with the corresponding table."
 msgstr ""
+"線形判別分析(LDA)は、ターゲット変数のクラスを最もよく判別する *p - 1* 個の成"
+"分を見つけることを目指す分類の方法です。LDAは線形の分類器で、クラス間の決定境"
+"界は線形になります。\n"
+"### 仮定\n"
+"- ターゲット変数は名義変数または順序変数です。\n"
+"- 特徴量は連続変数、名義変数、順序変数のいずれかです。\n"
+"- クラス平均の等質性: クラスの平均は等しいはずで、対応する表で確認できます"
+"。\n"
+"- 共分散行列の等質性: 共分散行列は等しいはずで、対応する表で確認できます。\n"
+"- 多重共線性: クラス内で相関があってはならず、対応する表で確認できます。"
 
 msgctxt "mlClassificationLda|"
 msgid "Multivariate normality"
-msgstr ""
+msgstr "多変量正規性"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid ""
@@ -2344,6 +2338,15 @@ msgid ""
 "- The target is a nominal or ordinal variable.\n"
 "- The feature variables consist of continuous variables."
 msgstr ""
+"フィードフォワード型のニューラルネットワークは、脳を構成する生物学的な神経回"
+"路網に着想を得た予測アルゴリズムです。信号を受け取ったニューロン(ノード)はそ"
+"れを処理し、つながっているニューロンへ信号を送ります。ノードにおける信号は実"
+"数で、各ノードの出力は信号を活性化関数に通して計算されます。ネットワークの層"
+"とノードの数はモデルの複雑さと本質的に結びついており、数が多いほどモデルは柔"
+"軟になります。\n"
+"### 仮定\n"
+"- ターゲットは名義変数または順序変数です。\n"
+"- 特徴量は連続変数です。"
 
 msgctxt "mlClassificationRandomForest|"
 msgid ""
@@ -2356,6 +2359,12 @@ msgid ""
 "- The target variable is a nominal or ordinal variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"ランダムフォレストは、多数の個々の木からなる決定木の集合を作り、それらを"
+"アンサンブルとして働かせる分類の方法です。ランダムフォレストの個々の木が"
+"クラスの予測を返し、最も多くの票を得たクラスがモデルの予測になります。\n"
+"### 仮定\n"
+"- ターゲット変数は名義変数または順序変数です。\n"
+"- 特徴量は連続変数、名義変数、順序変数のいずれかです。"
 
 msgctxt "mlClassificationSvm|"
 msgid ""
@@ -2368,6 +2377,13 @@ msgid ""
 "- The target is a nominal or ordinal variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"サポートベクターマシンは教師あり学習のアルゴリズムで、訓練事例を空間上の点に"
+"対応づけ、2つのカテゴリの間の隙間の幅が最大になるようにします。新しい事例も同"
+"じ空間に対応づけられ、隙間のどちら側に落ちるかによってどのカテゴリに属するか"
+"が予測されます。\n"
+"### 仮定\n"
+"- ターゲットは名義変数または順序変数です。\n"
+"- 特徴量は連続変数、名義変数、順序変数のいずれかです。"
 
 msgctxt "mlClusteringDensityBased|"
 msgid ""
@@ -2385,6 +2401,16 @@ msgid ""
 "- The data consists of continuous variables.\n"
 "- (Normally distributed data aids the clustering process)."
 msgstr ""
+"密度に基づいたクラスタリングはソフトクラスタリングの方法で、密度がある閾値を"
+"超える点とつながった点の最大の集合としてクラスタを作ります。密度は、クラスタ"
+"内の各点について、与えられた半径の近傍に最低限の数の点が含まれていなければな"
+"らないという考え方から生まれ、その結果その近傍の密度が一定の閾値を超えます。"
+"密度に基づいたクラスタとは、クラスタの外の点より密度が高い点によって認識され"
+"るものです。高密度の点すべての集合を密度水準と呼びます。密度水準を超えない点"
+"は外れ値とみなされます。密度水準は作られるクラスタの数に影響します。\n"
+"### 仮定\n"
+"- データは連続変数からなります。\n"
+"- (データが正規分布に従っているとクラスタリングが進めやすくなります)。"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid ""
@@ -2398,6 +2424,13 @@ msgid ""
 "- The data consists of continuous variables.\n"
 "- (Normally distributed data aids the clustering process)."
 msgstr ""
+"ファジーc平均クラスタリングはソフトな分割の方法で、各観測が各クラスタにどの程"
+"度結びついているかを出力します。これにより、データの観測を複数のクラスタに部"
+"分的に割り当て、クラスタ所属の確信度を与えられます。ファジーc平均の考え方は、"
+"ソフトなアプローチである点を除けばk平均クラスタリングとよく似ています。\n"
+"### 仮定\n"
+"- データは連続変数からなります。\n"
+"- (データが正規分布に従っているとクラスタリングが進めやすくなります)。"
 
 msgctxt "mlClusteringHierarchical|"
 msgid ""
@@ -2410,6 +2443,12 @@ msgid ""
 "- The data consists of continuous variables.\n"
 "- (Normally distributed data aids the clustering process)."
 msgstr ""
+"階層的クラスタリングはハードな分割のアルゴリズムで、データをいくつかの"
+"クラスタに分け、各観測は1つの群だけに属します。同じ群に属する2つのデータの観"
+"測の類似度が最大に、そうでなければ最小になるようにデータが分けられます。\n"
+"### 仮定\n"
+"- データは連続変数からなります。\n"
+"- (データが正規分布に従っているとクラスタリングが進めやすくなります)。"
 
 msgctxt "mlClusteringKMeans|"
 msgid ""
@@ -2422,6 +2461,13 @@ msgid ""
 "- The data consists of continuous variables.\n"
 "- (Normally distributed data aids the clustering process)."
 msgstr ""
+"近傍に基づいたクラスタリングはハードな分割のアルゴリズムの一群で、データをい"
+"くつかのクラスタに分け、各観測は1つの群だけに属します。同じ群に属する2つの"
+"データの観測の類似度が最大に、そうでなければ最小になるようにデータが分けられ"
+"ます。\n"
+"### 仮定\n"
+"- データは連続変数からなります。\n"
+"- (データが正規分布に従っているとクラスタリングが進めやすくなります)。"
 
 msgctxt "mlClusteringRandomForest|"
 msgid ""
@@ -2436,18 +2482,26 @@ msgid ""
 "- The data consists of continuous variables.\n"
 "- (Normally distributed data aids the clustering process)."
 msgstr ""
+"ランダムフォレストクラスタリングはハードな分割のアルゴリズムで、データをいく"
+"つかのクラスタに分け、各観測は1つの群だけに属します。この方法では、アウトカム"
+"変数 'y' をNULLとして、ランダムフォレストのアルゴリズムを教師なしで使います。"
+"ランダムフォレストのアルゴリズムは、観測が同じ葉ノードに落ちる頻度に基づいて"
+"観測間の距離を推定する近接度行列を生成します。\n"
+"### 仮定\n"
+"- データは連続変数からなります。\n"
+"- (データが正規分布に従っているとクラスタリングが進めやすくなります)。"
 
 msgctxt "mlPrediction|"
 msgid "Cases"
-msgstr ""
+msgstr "ケース"
 
 msgctxt "mlPrediction|"
 msgid "Add features"
-msgstr ""
+msgstr "特徴量を追加"
 
 msgctxt "mlPrediction|"
 msgid "Explain predictions"
-msgstr ""
+msgstr "予測を説明する"
 
 msgctxt "mlRegressionBoosting|"
 msgid ""
@@ -2458,10 +2512,16 @@ msgid ""
 "- The target variable is a continuous variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"ブースティングは、決定木のアンサンブルに特徴量を順次追加し、それぞれが直前の"
+"ものを補正していく方法です。ブースティングは、直前の特徴量が残した残差誤差に"
+"新しい特徴量をあてはめようとします。\n"
+"### 仮定\n"
+"- ターゲット変数は連続変数です。\n"
+"- 特徴量は連続変数、名義変数、順序変数のいずれかです。"
 
 msgctxt "mlRegressionBoosting|"
 msgid "The loss function used."
-msgstr ""
+msgstr "使用する損失関数です。"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid ""
@@ -2473,6 +2533,12 @@ msgid ""
 "- The target variable is a continuous variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"決定木は教師あり学習のアルゴリズムで、決定木を予測モデルとして使い、対象につ"
+"いての観測(木の根で表されます)から対象のターゲット値についての結論(木の末端で"
+"表されます)へと至ります。\n"
+"### 仮定\n"
+"- ターゲット変数は連続変数です。\n"
+"- 特徴量は連続変数、名義変数、順序変数のいずれかです。"
 
 msgctxt "mlRegressionKnn|"
 msgid ""
@@ -2485,29 +2551,33 @@ msgid ""
 "- The target variable is a continuous variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"k近傍法は、新しい観測に最も似た *k* 個の特徴量の観測を見て、その値を予測する"
+"回帰の方法です。近傍の数はモデルの複雑さと本質的に結びついており、数が小さい"
+"ほどモデルは柔軟になります。\n"
+"### 仮定\n"
+"- ターゲット変数は連続変数です。\n"
+"- 特徴量は連続変数、名義変数、順序変数のいずれかです。"
 
 msgctxt "mlRegressionLinear|"
 msgid ""
 "Linear regression allows the user to model a linear relationship between one "
 "or more features (predictors) and a continuous dependent (target) variable."
 msgstr ""
+"線形回帰では、1つ以上の特徴量(予測変数)と連続な従属変数(ターゲット)との線形の"
+"関係をモデル化できます。"
 
-#, fuzzy
 msgctxt "mlRegressionLinear|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlRegressionLinear|"
 msgid "Plots"
 msgstr "プロット"
 
-#, fuzzy
 msgctxt "mlRegressionLinear|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
-#, fuzzy
 msgctxt "mlRegressionLinear|"
 msgid "Algorithmic Settings"
 msgstr "アルゴリズムの設定"
@@ -2525,6 +2595,15 @@ msgid ""
 "- The target variable is a continuous variable.\n"
 "- The feature variables consist of continuous."
 msgstr ""
+"フィードフォワード型のニューラルネットワークは、脳を構成する生物学的な神経回"
+"路網に着想を得た予測アルゴリズムです。信号を受け取ったニューロン(ノード)はそ"
+"れを処理し、つながっているニューロンへ信号を送ります。ノードにおける信号は実"
+"数で、各ノードの出力は信号を活性化関数に通して計算されます。ネットワークの層"
+"とノードの数はモデルの複雑さと本質的に結びついており、数が多いほどモデルは柔"
+"軟になります。\n"
+"### 仮定\n"
+"- ターゲット変数は連続変数です。\n"
+"- 特徴量は連続変数です。"
 
 msgctxt "mlRegressionRandomForest|"
 msgid ""
@@ -2535,6 +2614,11 @@ msgid ""
 "- The target variable is a continuous variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"ランダムフォレストは、多数の個々の木からなる決定木の集合を作り、それらを"
+"アンサンブルとして働かせる回帰の方法です。\n"
+"### 仮定\n"
+"- ターゲット変数は連続変数です。\n"
+"- 特徴量は連続変数、名義変数、順序変数のいずれかです。"
 
 msgctxt "mlRegressionRegularized|"
 msgid ""
@@ -2546,6 +2630,12 @@ msgid ""
 "- The target variable is a continuous variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variables."
 msgstr ""
+"正則化線形回帰は線形回帰を拡張したもので、係数を0の方へ縮小します。これは罰則"
+"(リッジ、ラッソ、エラスティックネットなど)を適用することで行われます。"
+"パラメータλがパラメータをどれだけ縮小するかを制御します。\n"
+"### 仮定\n"
+"- ターゲット変数は連続変数です。\n"
+"- 特徴量は連続変数、名義変数、順序変数のいずれかです。"
 
 msgctxt "mlRegressionSvm|"
 msgid ""
@@ -2558,48 +2648,59 @@ msgid ""
 "- The target variable is a continuous variable.\n"
 "- The feature variables consist of continuous, nominal, or ordinal variable"
 msgstr ""
+"サポートベクターマシンは教師あり学習のアルゴリズムで、訓練事例を空間上の点に"
+"対応づけ、2つのカテゴリの間の隙間の幅が最大になるようにします。新しい事例も同"
+"じ空間に対応づけられ、隙間のどちら側に落ちるかによってどのカテゴリに属するか"
+"が予測されます。\n"
+"### 仮定\n"
+"- ターゲット変数は連続変数です。\n"
+"- 特徴量は連続変数、名義変数、順序変数のいずれかです"
 
 msgctxt "Description|"
 msgid "Naive Bayes"
-msgstr ""
+msgstr "単純ベイズ"
 
 msgctxt "Description|"
 msgid "Naive Bayes Classification"
-msgstr ""
+msgstr "単純ベイズ分類"
 
 msgctxt "ModelOptimization|"
 msgid "Tree Complexity"
-msgstr ""
+msgstr "木の複雑さ"
 
 msgctxt "ModelOptimization|"
 msgid "Enables you to use a user-specified complexity penalty."
-msgstr ""
+msgstr "複雑さの罰則をユーザが指定できるようにします。"
 
 msgctxt "ModelOptimization|"
 msgid "Complexity penalty"
-msgstr ""
+msgstr "複雑さの罰則"
 
 msgctxt "ModelOptimization|"
 msgid ""
 "The complexity penalty to be used. Any split that does not decrease the "
 "overall lack of fit by a factor of this parameter is not attempted."
 msgstr ""
+"使用する複雑さの罰則です。この値を factor として、全体のあてはまりの悪さをこ"
+"の分だけ減らさない分割は試みられません。"
 
 msgctxt "ModelOptimization|"
 msgid ""
 "Enables you to optimize the prediction error on a validation data set with "
 "respect to the complexity penalty."
 msgstr ""
+"検証データセットでの予測誤差を、複雑さの罰則について最適化できるようにします"
+"。"
 
 msgctxt "ModelOptimization|"
 msgid "Max. complexity penalty"
-msgstr ""
+msgstr "複雑さの罰則の最大値"
 
 msgctxt "ModelOptimization|"
 msgid ""
 "Sets the maximum value of the complexity penalty to be considered. At "
 "default, this is set to 1."
-msgstr ""
+msgstr "考慮する複雑さの罰則の最大値を設定します。既定では1です。"
 
 msgctxt "OptimPlot|"
 msgid ""
@@ -2609,34 +2710,39 @@ msgid ""
 "accuracy of the model. Accuracy is assessed for the training (and "
 "validation) set."
 msgstr ""
+"回帰の場合、複雑さの罰則に対するモデルのMSEをプロットします。精度は訓練セット"
+"(と検証セット)で評価されます。分類の場合、複雑さの罰則に対するモデルの分類正"
+"解率をプロットします。正解率は訓練セット(と検証セット)で評価されます。"
 
 msgctxt "ModelOptimization|"
 msgid "Costs of Contraints Violation"
-msgstr ""
+msgstr "制約違反のコスト"
 
 msgctxt "ModelOptimization|"
 msgid "Enables you to use a user-specified cost of constraints violation."
-msgstr ""
+msgstr "制約違反のコストをユーザが指定できるようにします。"
 
 msgctxt "ModelOptimization|"
 msgid "Violation cost"
-msgstr ""
+msgstr "違反のコスト"
 
 msgctxt "ModelOptimization|"
 msgid ""
 "Enables you to optimize the prediction error on a validation data set with "
 "respect to the cost of constraints violation."
 msgstr ""
+"検証データセットでの予測誤差を、制約違反のコストについて最適化できるようにし"
+"ます。"
 
 msgctxt "ModelOptimization|"
 msgid "Max. violation cost"
-msgstr ""
+msgstr "違反のコストの最大値"
 
 msgctxt "ModelOptimization|"
 msgid ""
 "Sets the maximum value of the cost of constraints violation to be "
 "considered. At default, this is set to 5."
-msgstr ""
+msgstr "考慮する制約違反のコストの最大値を設定します。既定では5です。"
 
 msgctxt "OptimPlot|"
 msgid ""
@@ -2646,6 +2752,10 @@ msgid ""
 "classification accuracy of the model. Accuracy is assessed for the training "
 "(and validation) set."
 msgstr ""
+"回帰の場合、制約違反のコストに対するモデルのMSEをプロットします。精度は訓練"
+"セット(と検証セット)で評価されます。分類の場合、制約違反のコストに対する"
+"モデルの分類正解率をプロットします。正解率は訓練セット(と検証セット)で評価さ"
+"れます。"
 
 msgctxt "mlClassificationNaiveBayes|"
 msgid ""
@@ -2657,15 +2767,20 @@ msgid ""
 "- The features are independent.\n"
 "- The features are normally distributed given the target class."
 msgstr ""
+"単純ベイズは、独立な予測変数が与えられたもとで、カテゴリカルなクラス変数の条"
+"件つき事後確率をベイズの規則で計算します。\n"
+"### 仮定\n"
+"- ターゲット変数は名義変数または順序変数です。\n"
+"- 特徴量は互いに独立です。\n"
+"- ターゲットのクラスが与えられたもとで、特徴量は正規分布に従います。"
 
-#, fuzzy
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Tables"
 msgstr "表"
 
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Posterior statistics"
-msgstr ""
+msgstr "事後の統計量"
 
 msgctxt "mlClassificationNaiveBayes|"
 msgid ""
@@ -2674,52 +2789,54 @@ msgid ""
 "class. For categorical features, the table displays the conditional "
 "probabilities given the target class."
 msgstr ""
+"事後の統計量の表を表示します。数値の特徴量については、ターゲットのクラスが与"
+"えられたもとでの特徴量の平均と標準偏差が表に入ります。カテゴリカルな特徴量に"
+"ついては、ターゲットのクラスが与えられたもとでの条件つき確率が表示されます。"
 
-#, fuzzy
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Plots"
 msgstr "プロット"
 
-#, fuzzy
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
-#, fuzzy
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Algorithmic Settings"
 msgstr "アルゴリズムの設定"
 
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Smoothing parameter"
-msgstr ""
+msgstr "平滑化のパラメータ"
 
 msgctxt "mlClassificationNaiveBayes|"
 msgid ""
 "A positive double controlling the amount of Laplace smoothing applied. The "
 "default (0) disables Laplace smoothing alltogether."
 msgstr ""
+"適用するラプラス平滑化の量を制御する正の実数です。既定の0にすると、ラプラス平"
+"滑化は行われません。"
 
 msgctxt "FeatureImportance|"
 msgid "Permutations"
-msgstr ""
+msgstr "並べ替え回数"
 
 msgctxt "FeatureImportance|"
 msgid ""
 "Sets the number of permutations on which the mean dropout loss is based."
-msgstr ""
+msgstr "平均ドロップアウト損失の計算に使う並べ替えの回数を設定します。"
 
 msgctxt "Description|"
 msgid "Model-Based"
-msgstr ""
+msgstr "モデルに基づく"
 
 msgctxt "Description|"
 msgid "Model-Based Clustering"
-msgstr ""
+msgstr "モデルに基づくクラスタリング"
 
 msgctxt "ClusterMatrix|"
 msgid "Display components"
-msgstr ""
+msgstr "成分を表示"
 
 msgctxt "mlClusteringModelBased|"
 msgid ""
@@ -2727,122 +2844,119 @@ msgid ""
 "models. The models are estimated by EM algorithm initialized by hierarchical "
 "model-based agglomerative clustering."
 msgstr ""
+"モデルに基づくクラスタリングは、パラメータ化された有限ガウス混合モデルに基づ"
+"きます。モデルは、階層的なモデルに基づく凝集型クラスタリングで初期化したEM"
+"アルゴリズムで推定されます。"
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Tables"
 msgstr "表"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Parameter estimates"
-msgstr ""
+msgstr "パラメータ推定値"
 
 msgctxt "mlClusteringModelBased|"
 msgid ""
 "Shows tables containing the model parameters for each cluster and feature "
 "variable."
-msgstr ""
+msgstr "クラスタと特徴量ごとのモデルのパラメータを含む表を表示します。"
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Plots"
 msgstr "プロット"
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Algorithmic Settings"
 msgstr "アルゴリズムの設定"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Model"
-msgstr ""
+msgstr "モデル"
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Auto"
 msgstr "自動"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EII"
-msgstr ""
+msgstr "EII"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VII"
-msgstr ""
+msgstr "VII"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EEI"
-msgstr ""
+msgstr "EEI"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VEI"
-msgstr ""
+msgstr "VEI"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EVI"
-msgstr ""
+msgstr "EVI"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EEE"
-msgstr ""
+msgstr "EEE"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VEE"
-msgstr ""
+msgstr "VEE"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EVE"
-msgstr ""
+msgstr "EVE"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VVE"
-msgstr ""
+msgstr "VVE"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EEV"
-msgstr ""
+msgstr "EEV"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VEV"
-msgstr ""
+msgstr "VEV"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EVV"
-msgstr ""
+msgstr "EVV"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VVV"
-msgstr ""
+msgstr "VVV"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Choose the model to be fitted in the EM step of the clustering."
-msgstr ""
+msgstr "クラスタリングのEMステップであてはめるモデルを選びます。"
 
-#, fuzzy
 msgctxt "mlClusteringModelBased|"
 msgid "Max. iterations"
 msgstr "最大反復回数"
 
 msgctxt "mlClusteringModelBased|"
 msgid "The maximum number of iterations for the M-step in the algorithm."
-msgstr ""
+msgstr "アルゴリズムのMステップの最大反復回数です。"
 
 msgctxt "mlPrediction|"
 msgid "Predictions for new data"
-msgstr ""
+msgstr "新しいデータに対する予測"
 
 msgctxt "ConfusionMatrix|"
 msgid "Transpose matrix"
-msgstr ""
+msgstr "行列を転置"
 
 msgctxt "ConfusionMatrix|"
 msgid "Transposes the confusion matrix."
-msgstr ""
+msgstr "混同行列を転置します。"
 
 msgctxt "ExplainPredictions|"
 msgid ""
@@ -2851,18 +2965,21 @@ msgid ""
 "breakdown algoritm from the `ibreakdown` R package. For more details about "
 "this method, see Gosiewska and Biecek (2019)."
 msgstr ""
+"モデルの予測を、個々の特徴量に帰属できる寄与へと分解して表示します。この機能"
+"は `ibreakdown` Rパッケージのbreakdownアルゴリズムを使っています。この方法の"
+"詳細は Gosiewska and Biecek (2019) を参照してください。"
 
 msgctxt "DataSplit|"
 msgid "e.g., testSet"
-msgstr ""
+msgstr "例: testSet"
 
 msgctxt "Description|"
 msgid "Logistic / Multinomial"
-msgstr ""
+msgstr "ロジスティック / 多項"
 
 msgctxt "Description|"
 msgid "Logistic / Multinomial Regression Classification"
-msgstr ""
+msgstr "ロジスティック / 多項回帰による分類"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid ""
@@ -2875,50 +2992,52 @@ msgid ""
 "binary outcomes, multinomial regression is used for scenarios where the "
 "target variable has three or more unordered categories."
 msgstr ""
+"ロジスティック回帰は、2値のターゲット変数(とりうる結果が2つ)と1つ以上の特徴量"
+"との関係をモデル化する統計的な方法です。ロジスティック関数を使って特定の結果"
+"が起こる確率を予測し、予測確率が0から1の間に収まるようにします。多項回帰は"
+"ロジスティック回帰を拡張し、3つ以上のカテゴリを持つターゲット変数を扱えるよう"
+"にしたものです。2値の結果を予測するのではなく、ターゲット変数が順序のない3つ"
+"以上のカテゴリを持つ場合に使います。"
 
-#, fuzzy
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Tables"
 msgstr "表"
 
-#, fuzzy
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Plots"
 msgstr "プロット"
 
-#, fuzzy
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Training Parameters"
-msgstr "トレーニングパラメータ"
+msgstr "訓練パラメータ"
 
-#, fuzzy
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Algorithmic Settings"
 msgstr "アルゴリズムの設定"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Link function (for binary classification)"
-msgstr ""
+msgstr "リンク関数(2値分類の場合)"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Logit"
-msgstr ""
+msgstr "ロジット"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Probit"
-msgstr ""
+msgstr "プロビット"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Cauchit"
-msgstr ""
+msgstr "カウチット"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Complimentary log-log"
-msgstr ""
+msgstr "補対数対数"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Log"
-msgstr ""
+msgstr "対数"
 
 msgctxt "mlPrediction|"
 msgid ""
@@ -2926,6 +3045,9 @@ msgid ""
 "and apply it to new data. It is important that the features in the new "
 "dataset have the same names as in the original dataset used for training."
 msgstr ""
+"予測の分析では、学習済みの機械学習モデルを読み込んで新しいデータに適用できま"
+"す。新しいデータセットの特徴量の名前が、学習に使った元のデータセットと同じで"
+"あることが重要です。"
 
 msgctxt "DataSplit|"
 msgid ""
@@ -2935,10 +3057,14 @@ msgid ""
 "then be split into a training (and validation if requested) set (0), and a "
 "test set (1) according to your indicator."
 msgstr ""
+"テストセットのデータを選ぶために指標変数を使います。この指標は、0"
+"(テストセットから除外)と1(テストセットに含める)のみからなる、尺度型の列である"
+"必要があります。この指標に従って、データは訓練セット(必要なら検証セットも)(0)"
+"とテストセット(1)に分割されます。"
 
 msgctxt "ExportResults|"
 msgid "Add probabilities (classification only)"
-msgstr ""
+msgstr "確率を追加(分類のみ)"
 
 msgctxt "ExportResults|"
 msgid ""
@@ -2946,14 +3072,16 @@ msgid ""
 "class to the data. For neural networks, this option provides the output of "
 "the final layer."
 msgstr ""
+"分類の分析で、各クラスの予測確率をデータに追加します。ニューラルネットワーク"
+"の場合、このオプションは最終層の出力を与えます。"
 
 msgctxt "Description|"
 msgid "Supervised Learning"
-msgstr ""
+msgstr "教師あり学習"
 
 msgctxt "Description|"
 msgid "Unsupervised Learning"
-msgstr ""
+msgstr "教師なし学習"
 
 msgctxt "ModelPerformance|"
 msgid ""
@@ -2963,3 +3091,7 @@ msgid ""
 "the F1-score, support, AUC (area under the ROC curve) and more. For "
 "clustering, these metrics include entropy, Dunn index and more."
 msgstr ""
+"利用できるモデルの性能の指標を表示します。回帰では、平均二乗誤差(MSE)、二乗平"
+"均平方根誤差(RMSE)、R<sup>2</sup> などが含まれます。分類では、適合率、再現率"
+"、F1スコア、サポート、AUC(ROC曲線下面積)などが含まれます。クラスタリングでは"
+"、エントロピー、ダン指数などが含まれます。"
