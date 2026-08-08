@@ -1116,12 +1116,15 @@
 }
 
 .calcAUCScore.randomForestClassification <- function(AUCformula, train, test, typeData, levelVar, options, noOfTrees, noOfPredictors, ...) {
-  typeData <- typeData[, -which(colnames(typeData) == "levelVar")]
+  predictors <- unlist(options[["predictors"]])
+  predictors <- predictors[predictors != ""]
+  typeData <- typeData[, predictors, drop = FALSE]
+  testPred <- test[, predictors, drop = FALSE]
   fit <- randomForest::randomForest(
     x = typeData, y = factor(levelVar), ntree = noOfTrees, mtry = noOfPredictors,
     sampsize = ceiling(options[["baggingFraction"]] * nrow(train)), importance = TRUE, keep.forest = TRUE
   )
-  score <- predict(fit, test, type = "prob")[, "TRUE"]
+  score <- predict(fit, testPred, type = "prob")[, "TRUE"]
   return(score)
 }
 
