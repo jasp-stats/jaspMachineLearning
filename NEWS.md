@@ -14,28 +14,9 @@
 
 ---
 
-# jaspMachineLearning (development version)
-
-
-
----
-
-# jaspModuleTemplate 0.2.0
+# jaspMachineLearning 0.96.5
 ## Added
-* Added NEWS.md
-* Added workflow to remind users to update their `NEWS.md`.
-* Added workflow to auto-bump version when user does not do so.
-
----
-
-# jaspModuleTemplate 0.1.0
-
-## Added
-* Initial examples to showcase JASP module development
+* Export soft membership and t-SNE coordinates
 
 ## Changed
-* Use best practices for checking input ([Issue #19](https://github.com/jasp-stats/jaspModuleTemplate/issues/19)).
-* The main results table now defaults to displaying 95% Confidence Intervals for effect sizes.
-
-## Fixed
-* Remove deprecated dependencies from qml files ([Issue #14](https://github.com/jasp-stats/jaspModuleTemplate/issues/14)).
+* `Export Results` moved into a separate section to better organize the GUI
