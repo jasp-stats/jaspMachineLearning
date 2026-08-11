@@ -473,7 +473,7 @@ msgstr "彈性網路"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Lambda (λ)"
-msgstr ""
+msgstr "Lambda（λ）"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Fixed"
@@ -982,27 +982,27 @@ msgstr "三角形的"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Epanechnikov"
-msgstr ""
+msgstr "Epanechnikov"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Biweight"
-msgstr ""
+msgstr "Biweight"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Triweight"
-msgstr ""
+msgstr "Triweight"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Cosine"
-msgstr ""
+msgstr "Cosine"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Inverse"
-msgstr ""
+msgstr "Inverse"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Gaussian"
-msgstr ""
+msgstr "Gaussian"
 
 #, fuzzy
 msgctxt "AlgorithmicSettings|"
@@ -1011,14 +1011,14 @@ msgstr "等級"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Optimal"
-msgstr ""
+msgstr "最佳"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
 "Sets the weighting scheme for the nearest neighbors. The default rectangular "
 "option results in standard knn, while the other options expand the algorithm "
 "by weighing the nearest neighbors. See also the kknn package."
-msgstr ""
+msgstr "設定最近鄰居的加權方式。預設的矩形選項即為標準的 knn，而其他選項則是透過對最近鄰居加權來擴展此演算法。另請參閱 kknn 套件。"
 
 #, fuzzy
 msgctxt "AlgorithmicSettings|"
@@ -1027,7 +1027,7 @@ msgstr "距離"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Euclidian"
-msgstr ""
+msgstr "Euclidian"
 
 #, fuzzy
 msgctxt "AlgorithmicSettings|"
@@ -1038,23 +1038,23 @@ msgctxt "AlgorithmicSettings|"
 msgid ""
 "The distance metric to be used when determining the similarity between "
 "nearest neighbors. Can be either Euclidean or Manhattan distance."
-msgstr ""
+msgstr "用於判斷最近鄰居之間相似程度的距離度量。可為歐幾里得距離或曼哈頓距離。"
 
 msgctxt "ModelOptimization|"
 msgid "Number of Nearest Neighbors"
-msgstr ""
+msgstr "最近鄰居數量"
 
 msgctxt "ModelOptimization|"
 msgid "Enables you to use a user-specified number of nearest neighbors."
-msgstr ""
+msgstr "讓您使用自訂的最近鄰居數量。"
 
 msgctxt "ModelOptimization|"
 msgid "Nearest neighbors"
-msgstr ""
+msgstr "最近鄰居"
 
 msgctxt "ModelOptimization|"
 msgid "The number of nearest neighbors to be used."
-msgstr ""
+msgstr "所使用的最近鄰居數量。"
 
 msgctxt "ModelOptimization|"
 msgid ""
@@ -1142,31 +1142,31 @@ msgstr "ReLU：整流線性單元"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Softplus"
-msgstr ""
+msgstr "Softplus"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Softsign"
-msgstr ""
+msgstr "Softsign"
 
 msgctxt "AlgorithmicSettings|"
 msgid "ELU"
-msgstr ""
+msgstr "ELU"
 
 msgctxt "AlgorithmicSettings|"
 msgid "LReLU"
-msgstr ""
+msgstr "LReLU"
 
 msgctxt "AlgorithmicSettings|"
 msgid "SiLU"
-msgstr ""
+msgstr "SiLU"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Mish"
-msgstr ""
+msgstr "Mish"
 
 msgctxt "AlgorithmicSettings|"
 msgid "GeLU"
-msgstr ""
+msgstr "GeLU"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
@@ -1189,6 +1189,23 @@ msgid ""
 "- Gaussian: *f(x) = e * (-x^2)*\n"
 "- GeLU: *f(x) = 0.5 * x * (1 + tanh(sqrt(2 / pi) * (x + 0.044715 * x^3)))*"
 msgstr ""
+"設定每個隱藏層中訊號的激活函數。可用的選項有：\n"
+"- linear（線性）：*f(x) = x*\n"
+"- Binary（二元）：*f(x) = 0 if x < 0, 1 if x > 0*\n"
+"- Logistic sigmoid（邏輯訊號）：*f(x) = 1 / (1 + e^(-x))*\n"
+"- Sine（正弦）：*f(x) = sin(x)*\n"
+"- Cosine（餘弦）：*f(x) = cos(x)*\n"
+"- Inverse tangent（反正切）：*f(x) = arctan(x)*\n"
+"- Hyperbolic tangent（雙曲正切）：*f(x) = tanh(x)*\n"
+"- ReLU：*f(x) =  0 if x < 0, x if x > 0*\n"
+"- Softplus：*f(x) = log(1 + e^x)*\n"
+"- Softsign：*f(x) = x / (abs(x) + 1)*\n"
+"- ELU：*f(x) = e^x - 1 if x <= 0, x if x > 0*\n"
+"- LReLU：*f(x) = 0.01 * x if x < 0, x if x > 0*\n"
+"- SiLU：*f(x) = x / (1 + e^(-x))*\n"
+"- Mish：*f(x) = x * tanh(log(1 + e^x))*\n"
+"- Gaussian（高斯）：*f(x) = e * (-x^2)*\n"
+"- GeLU：*f(x) = 0.5 * x * (1 + tanh(sqrt(2 / pi) * (x + 0.044715 * x^3)))*"
 
 #, fuzzy
 msgctxt "AlgorithmicSettings|"
@@ -1197,23 +1214,23 @@ msgstr "演算法"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Backpropagation"
-msgstr ""
+msgstr "反向傳播"
 
 msgctxt "AlgorithmicSettings|"
 msgid "rprop+"
-msgstr ""
+msgstr "rprop+"
 
 msgctxt "AlgorithmicSettings|"
 msgid "rprop-"
-msgstr ""
+msgstr "rprop-"
 
 msgctxt "AlgorithmicSettings|"
 msgid "grprop-sag"
-msgstr ""
+msgstr "grprop-sag"
 
 msgctxt "AlgorithmicSettings|"
 msgid "grprop-slr"
-msgstr ""
+msgstr "grprop-slr"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
@@ -1225,15 +1242,15 @@ msgid ""
 "smallest absolute gradient, or `gprop-slr` for the globally convergent "
 "algorithm that modifies the learning rate associated with the smallest "
 "learning rate itself."
-msgstr ""
+msgstr "設定網路訓練所使用的演算法。反向傳播選項是訓練類神經網路的標準方式，其他選項包括：`rprop+`（預設）為具回溯的彈性反向傳播，`rprop-` 為不具回溯的彈性反向傳播，`gprop-sag` 為全域收斂演算法，會修改與最小絕對梯度相關聯的學習率，而 `gprop-slr` 為全域收斂演算法，會修改與最小學習率本身相關聯的學習率。"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Learning rate"
-msgstr ""
+msgstr "學習率"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The learning rate used by the backpropagation algorithm."
-msgstr ""
+msgstr "反向傳播演算法所使用的學習率。"
 
 #, fuzzy
 msgctxt "AlgorithmicSettings|"
@@ -1246,7 +1263,7 @@ msgstr "離差平方和"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Cross-entropy"
-msgstr ""
+msgstr "交叉熵"
 
 msgctxt "AlgorithmicSettings|"
 msgid "The loss function used."
@@ -2807,55 +2824,55 @@ msgstr "自動"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EII"
-msgstr ""
+msgstr "EII"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VII"
-msgstr ""
+msgstr "VII"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EEI"
-msgstr ""
+msgstr "EEI"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VEI"
-msgstr ""
+msgstr "VEI"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EVI"
-msgstr ""
+msgstr "EVI"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EEE"
-msgstr ""
+msgstr "EEE"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VEE"
-msgstr ""
+msgstr "VEE"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EVE"
-msgstr ""
+msgstr "EVE"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VVE"
-msgstr ""
+msgstr "VVE"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EEV"
-msgstr ""
+msgstr "EEV"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VEV"
-msgstr ""
+msgstr "VEV"
 
 msgctxt "mlClusteringModelBased|"
 msgid "EVV"
-msgstr ""
+msgstr "EVV"
 
 msgctxt "mlClusteringModelBased|"
 msgid "VVV"
-msgstr ""
+msgstr "VVV"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Choose the model to be fitted in the EM step of the clustering."
@@ -2943,23 +2960,23 @@ msgstr "連結函數（用於二元分類）"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Logit"
-msgstr ""
+msgstr "Logit"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Probit"
-msgstr ""
+msgstr "Probit"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Cauchit"
-msgstr ""
+msgstr "Cauchit"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Complimentary log-log"
-msgstr ""
+msgstr "Complementary log-log"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Log"
-msgstr ""
+msgstr "Log"
 
 msgctxt "mlPrediction|"
 msgid ""
@@ -2977,18 +2994,18 @@ msgid ""
 "(excluded from the test set) and 1 (included in the test set). The data will "
 "then be split into a training (and validation if requested) set (0), and a "
 "test set (1) according to your indicator."
-msgstr ""
+msgstr "使用指標變數來選擇測試集的資料。此指標應為資料中類型為連續尺度的欄位，且僅由 0（排除於測試集外）與 1（納入測試集）組成。接著資料會根據您的指標被劃分為訓練（以及驗證，如要求）集（0）與測試集（1）。"
 
 msgctxt "ExportResults|"
 msgid "Add probabilities (classification only)"
-msgstr ""
+msgstr "新增機率（僅限分類）"
 
 msgctxt "ExportResults|"
 msgid ""
 "In classification analyses, append the predicted probabilities for each "
 "class to the data. For neural networks, this option provides the output of "
 "the final layer."
-msgstr ""
+msgstr "在分類分析中，將每個類別的預測機率附加至資料中。對於類神經網路，此選項提供最後一層的輸出。"
 
 msgctxt "Description|"
 msgid "Supervised Learning"

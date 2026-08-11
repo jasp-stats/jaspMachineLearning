@@ -160,7 +160,7 @@ msgid "MVE"
 msgstr "最小變異估計"
 
 msgid "t"
-msgstr ""
+msgstr "t"
 
 msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
 msgstr "該模型以<i>袋外準確率</i>為最佳化目標。"
@@ -329,16 +329,16 @@ msgid "Clusters"
 msgstr "集群"
 
 msgid "N"
-msgstr ""
+msgstr "N"
 
 msgid "R%s"
-msgstr ""
+msgstr "R%s"
 
 msgid "AIC"
-msgstr ""
+msgstr "AIC"
 
 msgid "BIC"
-msgstr ""
+msgstr "BIC"
 
 msgid "Silhouette"
 msgstr "輪廓係數"
@@ -629,126 +629,126 @@ msgid "OOB Error"
 msgstr "袋外 (OOB) 誤差"
 
 msgid "R%1$s"
-msgstr ""
+msgstr "R%1$s"
 
 msgid "Adjusted R%1$s"
-msgstr ""
+msgstr "調整後 R%1$s"
 
 msgid "Please provide a target variable and at least %d feature variable(s)."
-msgstr ""
+msgstr "請提供目標變數以及至少 %d 個特徵變數。"
 
 msgid ""
 "The model is optimized with respect to the <i>validation set mean squared "
 "error</i>."
-msgstr ""
+msgstr "模型係針對<i>驗證集均方誤差</i>進行最佳化。"
 
 msgid "When %s is set to 0 linear regression is performed."
-msgstr ""
+msgstr "當 %s 設定為 0 時，會進行線性迴歸。"
 
 msgid ""
 "The model is optimized with respect to the <i>out-of-bag mean squared error</"
 "i>."
-msgstr ""
+msgstr "模型係針對<i>袋外均方誤差</i>進行最佳化。"
 
 msgid "Gaussian"
-msgstr ""
+msgstr "高斯"
 
 msgid "Laplace"
-msgstr ""
+msgstr "拉普拉斯"
 
 msgid "MSE(scaled)"
-msgstr ""
+msgstr "MSE（縮放後）"
 
 msgid "Values"
-msgstr ""
+msgstr "數值"
 
 msgid "R%s cannot be computed due to lack of variance in the predictions.</i>"
-msgstr ""
+msgstr "由於預測值缺乏變異，無法計算 R%s。</i>"
 
 msgid "Predictive Performance Plot"
-msgstr ""
+msgstr "預測效能圖"
 
 msgid "Observed Test Values"
-msgstr ""
+msgstr "觀察到的測試值"
 
 msgid "Predicted Test Values"
-msgstr ""
+msgstr "預測的測試值"
 
 msgid "Data Split"
-msgstr ""
+msgstr "資料切割"
 
 msgid "Train: %d"
-msgstr ""
+msgstr "訓練：%d"
 
 msgid "Test: %d"
-msgstr ""
+msgstr "測試：%d"
 
 msgid "Total: %d"
-msgstr ""
+msgstr "總計：%d"
 
 msgid "Validation: %d"
-msgstr ""
+msgstr "驗證：%d"
 
 msgid "Train and validation: %d"
-msgstr ""
+msgstr "訓練與驗證：%d"
 
 msgid "Additive Explanations for Predictions of New Cases"
-msgstr ""
+msgstr "對新個案預測的加性解釋"
 
 msgid "Additive Explanations for Predictions of Test Set Cases"
-msgstr ""
+msgstr "對測試集個案預測的加性解釋"
 
 msgid "Case"
 msgstr "個案"
 
 msgid "Predicted (Prob.)"
-msgstr ""
+msgstr "預測（機率）"
 
 msgid "Base"
-msgstr ""
+msgstr "基線"
 
 msgid "An error occurred when computing the results for this table: %1$s"
-msgstr ""
+msgstr "計算此表格之結果時發生錯誤：%1$s"
 
 msgid ""
 "Displayed values represent feature contributions to the predicted value "
 "without features (column 'Base') for the test set."
-msgstr ""
+msgstr "顯示的數值代表測試集中各特徵對預測值（不含特徵之『基線』欄）之貢獻。"
 
 msgid ""
 "Displayed values represent feature contributions to the predicted class "
 "probability without features (column 'Base') for the test set."
-msgstr ""
+msgstr "顯示的數值代表測試集中各特徵對預測類別機率（不含特徵之『基線』欄）之貢獻。"
 
 msgid "Feature Importance Metrics"
-msgstr ""
+msgstr "特徵重要性指標"
 
 msgid "Mean dropout loss"
-msgstr ""
+msgstr "平均遺漏損失"
 
 msgid "root mean squared error (RMSE)"
 msgstr "均方根誤差（RMSE）"
 
 msgid "1 - area under curve (AUC)"
-msgstr ""
+msgstr "1 - 曲線下面積（AUC）"
 
 msgid "cross entropy"
-msgstr ""
+msgstr "交叉熵"
 
 msgid "Mean dropout loss (defined as %1$s) is based on %2$s permutations."
 msgstr "平均遺漏損失（定義為 %1$）係基於%2$置換。"
 
 msgid "The target variable should have at least 2 classes."
-msgstr ""
+msgstr "目標變數應至少有 2 個類別。"
 
 msgid "Linear Discriminant Coefficients"
-msgstr ""
+msgstr "線性區別係數"
 
 msgid "(Constant)"
-msgstr ""
+msgstr "（常數）"
 
 msgid "Prior and Posterior Class Probabilities"
-msgstr ""
+msgstr "先驗與後驗類別機率"
 
 msgid "Prior"
 msgstr "先驗"
@@ -775,24 +775,24 @@ msgid "df"
 msgstr "自由度"
 
 msgid "p"
-msgstr ""
+msgstr "p"
 
 msgid "The null hypothesis specifies equal covariance matrices."
-msgstr ""
+msgstr "虛無假設指定共變數矩陣相等。"
 
 msgid ""
 "There are one or more levels in the target variable with less than two "
 "observations."
-msgstr ""
+msgstr "目標變數中有一個或多個水準的觀測值少於兩個。"
 
 msgid "Box's M"
-msgstr ""
+msgstr "Box's M"
 
 msgid "Pooled Within-Class Matrices Correlations"
-msgstr ""
+msgstr "合併類內矩陣之相關"
 
 msgid "Tests for Multivariate Normality"
-msgstr ""
+msgstr "多變量常態性檢定"
 
 msgid "Statistic"
 msgstr "統計量"
@@ -821,10 +821,10 @@ msgid "Standard Error"
 msgstr "標準誤"
 
 msgid "z"
-msgstr ""
+msgstr "z"
 
 msgid "%1$s%% Confidence interval"
-msgstr ""
+msgstr "%1$s%% 信賴區間"
 
 msgid "Lower"
 msgstr "下界"
@@ -833,21 +833,21 @@ msgid "Upper"
 msgstr "上界"
 
 msgid "The regression coefficients for numeric features are standardized."
-msgstr ""
+msgstr "數值特徵之迴歸係數已標準化。"
 
 msgid "The regression coefficients are unstandardized."
-msgstr ""
+msgstr "迴歸係數未標準化。"
 
 msgid ""
 "<b>Regression equation:</b>\n"
 "%1$s"
-msgstr ""
+msgstr "<b>迴歸方程式：</b>\n%1$s"
 
 msgid "Posterior Statistics"
-msgstr ""
+msgstr "後驗統計量"
 
 msgid "Feature: %1$s"
-msgstr ""
+msgstr "特徵：%1$s"
 
 msgid "Mean"
 msgstr "平均數"
@@ -1046,40 +1046,40 @@ msgid "Multinomial"
 msgstr "多項式"
 
 msgid "Logit"
-msgstr ""
+msgstr "Logit"
 
 msgid "Predictions for New Data"
-msgstr ""
+msgstr "對新資料的預測"
 
 msgid "Relative Influence"
-msgstr ""
+msgstr "相對影響力"
 
 msgid "<i>Warning.</i>"
-msgstr ""
+msgstr "<i>警告。</i>"
 
 msgid "An error occurred when computing the mean dropout loss: %1$s"
-msgstr ""
+msgstr "計算平均遺漏損失時發生錯誤：%1$s"
 
 msgid "Out-of-bag Improvement Plot"
-msgstr ""
+msgstr "袋外改進圖"
 
 msgid "Training set"
-msgstr ""
+msgstr "訓練集"
 
 msgid ""
 "OOB Change in \n"
 " Multinomial Deviance"
-msgstr ""
+msgstr "OOB 在多項式離差的變化 \n多項式離差"
 
 msgid ""
 "OOB Change in \n"
 " Binomial Deviance"
-msgstr ""
+msgstr "OOB 在二項式離差的變化 \n二項式離差"
 
 msgid ""
 "OOB Change in \n"
 "%s Deviance"
-msgstr ""
+msgstr "OOB 在%s離差的變化 \n%s離差"
 
 msgid "Plotting not possible: The model is based on only a single tree."
 msgstr "無法繪圖：此模型僅基於單一決策樹。"
@@ -1178,25 +1178,25 @@ msgid "Epanechnikov"
 msgstr "Epanechnikov 核函數"
 
 msgid "Biweight"
-msgstr ""
+msgstr "Biweight"
 
 msgid "Triweight"
-msgstr ""
+msgstr "Triweight"
 
 msgid "Cosine"
-msgstr ""
+msgstr "Cosine"
 
 msgid "Inverse"
-msgstr ""
+msgstr "Inverse"
 
 msgid "Rank"
-msgstr ""
+msgstr "Rank"
 
 msgid "Optimal"
-msgstr ""
+msgstr "最佳"
 
 msgid "%1$s Weight Function"
-msgstr ""
+msgstr "%1$s 權重函數"
 
 msgid ""
 "Plotting not possible: The selected weighting scheme cannot be visualized "
@@ -1204,19 +1204,19 @@ msgid ""
 msgstr "無法繪圖：所選的加權方式無法與資料分開進行視覺化。"
 
 msgid "Proportion of Max. Distance"
-msgstr ""
+msgstr "最大距離之比例"
 
 msgid "Relative Weight"
-msgstr ""
+msgstr "相對權重"
 
 msgid "Network Weights"
-msgstr ""
+msgstr "網路權重"
 
 msgid "Node"
-msgstr ""
+msgstr "節點"
 
 msgid "Layer"
-msgstr ""
+msgstr "層"
 
 msgid "Weight"
 msgstr "權重"
@@ -1228,52 +1228,52 @@ msgid "binary step"
 msgstr "二元逐步"
 
 msgid "logistic sigmoid"
-msgstr ""
+msgstr "邏輯式 sigmoid"
 
 msgid "sine"
-msgstr ""
+msgstr "正弦"
 
 msgid "cosine"
-msgstr ""
+msgstr "餘弦"
 
 msgid "inverse tangent"
-msgstr ""
+msgstr "反正切"
 
 msgid "hyperbolic tangent"
-msgstr ""
+msgstr "雙曲正切"
 
 msgid "rectified linear unit (ReLU)"
-msgstr ""
+msgstr "整流線性單元（ReLU）"
 
 msgid "softplus"
-msgstr ""
+msgstr "softplus"
 
 msgid "softsign"
-msgstr ""
+msgstr "softsign"
 
 msgid "exponential linear unit (ELU)"
-msgstr ""
+msgstr "指數線性單元（ELU）"
 
 msgid "leaky rectified linear unit (Leaky ReLU)"
-msgstr ""
+msgstr "洩漏整流線性單元（Leaky ReLU）"
 
 msgid "sigmoid linear unit (SiLU)"
-msgstr ""
+msgstr "sigmoid 線性單元（SiLU）"
 
 msgid "mish"
-msgstr ""
+msgstr "mish"
 
 msgid "gaussian"
-msgstr ""
+msgstr "高斯"
 
 msgid "gaussian error linear unit (GeLU)"
-msgstr ""
+msgstr "高斯誤差線性單元（GeLU）"
 
 msgid "The weights are input for the %1$s activation function."
-msgstr ""
+msgstr "這些權重是 %1$s 激活函數的輸入。"
 
 msgid "Network Structure Plot"
-msgstr ""
+msgstr "網路結構圖"
 
 msgid "Intercept"
 msgstr "截距"
@@ -1288,43 +1288,43 @@ msgid "Hidden layer %1$s"
 msgstr "隱藏層 %1$s"
 
 msgid "Binary"
-msgstr ""
+msgstr "二元"
 
 msgid "Logistic Sigmoid"
-msgstr ""
+msgstr "邏輯式 Sigmoid"
 
 msgid "Sine"
-msgstr ""
+msgstr "正弦"
 
 msgid "Inverse Tangent"
-msgstr ""
+msgstr "反正切"
 
 msgid "Hyperbolic Tangent"
-msgstr ""
+msgstr "雙曲正切"
 
 msgid "ReLU"
-msgstr ""
+msgstr "ReLU"
 
 msgid "Softplus"
-msgstr ""
+msgstr "Softplus"
 
 msgid "Softsign"
-msgstr ""
+msgstr "Softsign"
 
 msgid "ELU"
-msgstr ""
+msgstr "ELU"
 
 msgid "Leaky ReLU"
-msgstr ""
+msgstr "Leaky ReLU"
 
 msgid "SiLU"
-msgstr ""
+msgstr "SiLU"
 
 msgid "Mish"
-msgstr ""
+msgstr "Mish"
 
 msgid "GeLU"
-msgstr ""
+msgstr "GeLU"
 
 msgid "%1$s Activation Function"
 msgstr "%1$s 激活函數"
@@ -1363,34 +1363,34 @@ msgid "Total Increase in Node Purity"
 msgstr "節點純度的總增量"
 
 msgid "L2 (Ridge)"
-msgstr ""
+msgstr "L2（Ridge）"
 
 msgid "L1 (Lasso)"
-msgstr ""
+msgstr "L1（Lasso）"
 
 msgid "Elastic Net"
-msgstr ""
+msgstr "彈性網路"
 
 msgid "Variable Trace Plot"
-msgstr ""
+msgstr "變數軌跡圖"
 
 msgid "Coefficients"
 msgstr "係數"
 
 msgid "Lambda Evaluation Plot"
-msgstr ""
+msgstr "Lambda 評估圖"
 
 msgid "Cross-Validated %sMean Squared Error"
-msgstr ""
+msgstr "交叉驗證 %s均方誤差"
 
 msgid "Min. CV MSE"
-msgstr ""
+msgstr "最小交叉驗證均方誤差"
 
 msgid "%s 1 SE"
-msgstr ""
+msgstr "%s 1 標準誤"
 
 msgid "Row"
 msgstr "列"
 
 msgid "Cost of Constraints Violation"
-msgstr ""
+msgstr "違反限制之成本"
