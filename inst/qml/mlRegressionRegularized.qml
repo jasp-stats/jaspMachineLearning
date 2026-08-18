@@ -85,6 +85,7 @@ Form
 		leaveOneOutVisible:						false
 		kFoldsVisible:							false
 		trainingValidationSplit:				!fixedModel.checked
+		balanceTargetClasses: 					false 
 	}
 
 	Section
