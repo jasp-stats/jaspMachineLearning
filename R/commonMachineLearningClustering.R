@@ -33,8 +33,9 @@
 .mlClusteringReadData <- function(dataset, options) {
   predictors <- unlist(options[["predictors"]])
   predictors <- predictors[predictors != ""]
+  dataset <- dataset[, predictors, drop = FALSE]
   dataset <- jaspBase::excludeNaListwise(dataset, predictors)
-  if (options[["scaleVariables"]] && length(unlist(options[["predictors"]])) > 0) {
+  if (options[["scaleVariables"]] && length(predictors) > 0) {
     dataset <- .scaleNumericData(dataset)
   }
   return(dataset)
@@ -104,11 +105,13 @@
 }
 
 .mlClusteringComputeResults <- function(dataset, options, jaspResults, ready, type) {
-  if (!is.null(jaspResults[["clusterResult"]])) {
+  clusterResult <- if (!is.null(jaspResults[["clusterResult"]])) jaspResults[["clusterResult"]]$object else NULL
+  needsSoftMemberships <- isTRUE(options[["addSoftMemberships"]]) && type %in% c("cmeans", "randomForest", "modelbased")
+  if (!is.null(clusterResult) && (!needsSoftMemberships || !is.null(clusterResult[["softMemberships"]]))) {
     return()
   }
-  .setSeedJASP(options) # Set the seed to make results reproducible
   if (ready) {
+    .setSeedJASP(options) # Set the seed to make results reproducible
     p <- try({
       clusterResult <- switch(type,
         "kmeans" = .kMeansClustering(dataset, options, jaspResults),
@@ -166,7 +169,6 @@
   if (!ready) {
     return()
   }
-  .mlClusteringComputeResults(dataset, options, jaspResults, ready, type = type)
   clusterResult <- jaspResults[["clusterResult"]]$object
   if (options[["modelOptimization"]] != "manual") {
     criterion <- switch(options[["modelOptimizationMethod"]],
@@ -338,30 +340,17 @@
     return()
   }
   clusterResult <- jaspResults[["clusterResult"]]$object
-  .setSeedJASP(options) # Set the seed to make results reproducible
-  startProgressbar(2)
-  progressbarTick()
-  duplicates <- which(duplicated(dataset))
-  if (length(duplicates) > 0) {
-    dataset <- dataset[-duplicates, ]
-  }
-  if (is.null(jaspResults[["tsneOutput"]])) {
-    tsne <- Rtsne::Rtsne(as.matrix(dataset), perplexity = nrow(dataset) / 4, check_duplicates = FALSE)
-    jaspResults[["tsneOutput"]] <- createJaspState(tsne)
-    jaspResults[["tsneOutput"]]$dependOn(options = c("predictors", "setSeed", "seed"))
-  } else {
-    tsne <- jaspResults[["tsneOutput"]]$object
-  }
+  tsneOutput <- .mlClusteringGetTsneOutput(dataset, options, jaspResults)
+  uniqueRows <- tsneOutput[["uniqueRows"]]
   predictions <- clusterResult[["pred.values"]]
   ncolors <- clusterResult[["clusters"]]
   if (type == "densitybased") {
     ncolors <- ncolors + 1
     predictions[predictions == 0] <- gettext("Noisepoint")
   }
-  if (length(duplicates) > 0) {
-    predictions <- predictions[-duplicates]
-  }
-  plotData <- data.frame(x = tsne$Y[, 1], y = tsne$Y[, 2], cluster = predictions)
+  predictions <- predictions[uniqueRows]
+  coordinates <- tsneOutput[["coordinates"]][uniqueRows, , drop = FALSE]
+  plotData <- data.frame(x = coordinates[, 1], y = coordinates[, 2], cluster = predictions)
   plotData$cluster <- factor(plotData$cluster)
   xBreaks <- jaspGraphs::getPrettyAxisBreaks(plotData$x)
   yBreaks <- jaspGraphs::getPrettyAxisBreaks(plotData$y)
@@ -376,10 +365,38 @@
                    axis.text.x = ggplot2::element_blank(),
                    axis.text.y = ggplot2::element_blank())
   if (options[["tsneClusterPlotLabels"]]) {
-    p <- p + ggrepel::geom_text_repel(ggplot2::aes(label = rownames(dataset), x = x, y = y), hjust = -1, vjust = 1, data = plotData, seed = 1)
+    p <- p + ggrepel::geom_text_repel(ggplot2::aes(label = rownames(dataset)[uniqueRows], x = x, y = y), hjust = -1, vjust = 1, data = plotData, seed = 1)
   }
-  progressbarTick()
   plot$plotObject <- p
+}
+
+.mlClusteringGetTsneOutput <- function(dataset, options, jaspResults) {
+  if (!is.null(jaspResults[["tsneOutput"]])) {
+    tsneOutput <- jaspResults[["tsneOutput"]]$object
+    if (!is.null(tsneOutput[["coordinates"]]) && !is.null(tsneOutput[["uniqueRows"]])) {
+      return(tsneOutput)
+    }
+  }
+  .setSeedJASP(options)
+  rows <- asplit(dataset, 1L)
+  uniqueRows <- unname(which(!duplicated(rows)))
+  if (length(uniqueRows) < 5L) {
+    jaspBase:::.quitAnalysis(gettext("t-SNE requires at least 5 unique rows in the predictor data."))
+  }
+  startProgressbar(1L)
+  coordinates <- Rtsne::Rtsne(
+    as.matrix(dataset[uniqueRows, , drop = FALSE]),
+    perplexity = length(uniqueRows) / 4,
+    check_duplicates = FALSE
+  )$Y
+  progressbarTick()
+  tsneOutput <- list(
+    coordinates = coordinates[match(rows, rows[uniqueRows]), , drop = FALSE],
+    uniqueRows = uniqueRows
+  )
+  jaspResults[["tsneOutput"]] <- createJaspState(tsneOutput)
+  jaspResults[["tsneOutput"]]$dependOn(options = c("predictors", "setSeed", "seed", "scaleVariables"))
+  return(tsneOutput)
 }
 
 .mlClusteringPlotElbow <- function(dataset, options, jaspResults, ready, position) {
@@ -429,11 +446,23 @@
   plot$plotObject <- p
 }
 
-.mlClusteringAddPredictionsToData <- function(dataset, options, jaspResults, ready) {
-  if (!ready || !options[["addPredictions"]] || options[["predictionsColumn"]] == "") {
+.mlClusteringExportResultsToData <- function(dataset, options, jaspResults, ready) {
+  if (!ready) {
+    return()
+  }
+  .mlClusteringAddClusterMembershipToData(dataset, options, jaspResults)
+  .mlClusteringAddSoftMembershipsToData(dataset, options, jaspResults)
+  .mlClusteringAddTsneCoordinatesToData(dataset, options, jaspResults)
+}
+
+.mlClusteringAddClusterMembershipToData <- function(dataset, options, jaspResults) {
+  if (!isTRUE(options[["addPredictions"]]) || is.null(options[["predictionsColumn"]]) || options[["predictionsColumn"]] == "") {
     return()
   }
   clusterResult <- jaspResults[["clusterResult"]]$object
+  if (is.null(clusterResult) || is.null(clusterResult[["pred.values"]])) {
+    return()
+  }
   if (is.null(jaspResults[["predictionsColumn"]])) {
     predictions <- clusterResult[["pred.values"]]
     predictionsColumn <- rep(NA, max(as.numeric(rownames(dataset))))
@@ -441,6 +470,67 @@
     jaspResults[["predictionsColumn"]] <- createJaspColumn(columnName = options[["predictionsColumn"]])
     jaspResults[["predictionsColumn"]]$dependOn(options = c("addPredictions", "predictionsColumn", .mlClusteringDependencies(options)))
     jaspResults[["predictionsColumn"]]$setNominal(predictionsColumn)
+  }
+}
+
+.mlClusteringAddSoftMembershipsToData <- function(dataset, options, jaspResults) {
+  if (!isTRUE(options[["addSoftMemberships"]]) || is.null(options[["softMembershipsColumn"]]) || options[["softMembershipsColumn"]] == "") {
+    return()
+  }
+  clusterResult <- jaspResults[["clusterResult"]]$object
+  .mlClusteringAddScaleColumnsToData(
+    dataset = dataset,
+    values = clusterResult[["softMemberships"]],
+    columnPrefix = options[["softMembershipsColumn"]],
+    resultPrefix = "softMembershipsColumn",
+    dependencies = c("addSoftMemberships", "softMembershipsColumn", .mlClusteringDependencies(options)),
+    jaspResults = jaspResults
+  )
+}
+
+.mlClusteringAddTsneCoordinatesToData <- function(dataset, options, jaspResults) {
+  if (!isTRUE(options[["addTsneCoordinates"]]) || is.null(options[["tsneCoordinatesColumn"]]) || options[["tsneCoordinatesColumn"]] == "") {
+    return()
+  }
+  if (!is.null(jaspResults[["tsneCoordinatesColumn1"]]) && !is.null(jaspResults[["tsneCoordinatesColumn2"]])) {
+    return()
+  }
+  tsneOutput <- .mlClusteringGetTsneOutput(dataset, options, jaspResults)
+  coordinates <- tsneOutput[["coordinates"]]
+  if (is.null(coordinates) || nrow(coordinates) != nrow(dataset)) {
+    return()
+  }
+  .mlClusteringAddScaleColumnsToData(
+    dataset = dataset,
+    values = coordinates,
+    columnPrefix = options[["tsneCoordinatesColumn"]],
+    resultPrefix = "tsneCoordinatesColumn",
+    dependencies = c("addTsneCoordinates", "tsneCoordinatesColumn", "setSeed", "seed", .mlClusteringDependencies(options)),
+    jaspResults = jaspResults
+  )
+}
+
+.mlClusteringAddScaleColumnsToData <- function(dataset, values, columnPrefix, resultPrefix, dependencies, jaspResults) {
+  if (is.null(values)) {
+    return()
+  }
+  values <- as.matrix(values)
+  if (nrow(values) != nrow(dataset) || ncol(values) == 0L) {
+    return()
+  }
+  rowIndices <- as.integer(rownames(dataset))
+  exportedValues <- matrix(NA_real_, nrow = max(rowIndices), ncol = ncol(values))
+  exportedValues[rowIndices, ] <- values
+  columnPrefix <- decodeColNames(columnPrefix)
+  for (i in seq_len(ncol(values))) {
+    resultName <- paste0(resultPrefix, i)
+    if (!is.null(jaspResults[[resultName]])) {
+      next
+    }
+    columnName <- paste0(columnPrefix, "_", i)
+    jaspResults[[resultName]] <- createJaspColumn(columnName = columnName)
+    jaspResults[[resultName]]$dependOn(options = dependencies)
+    jaspResults[[resultName]]$setScale(exportedValues[, i])
   }
 }
 
@@ -468,11 +558,11 @@
   clusterTitles <- gettextf("Cluster %s", clusterLevels)
   clusterMeans <- NULL
   for (i in clusterLevels) {
-    clusterSubset <- subset(dataset, clusters == i)
+    clusterSubset <- dataset[clusters == i, , drop = FALSE]
     clusterMeans <- rbind(clusterMeans, colMeans(clusterSubset))
   }
-  clusterMeans <- cbind(cluster = clusterTitles, data.frame(clusterMeans[, options[["predictors"]], drop = FALSE]))
-  colnames(clusterMeans) <- c("cluster", as.character(options[["predictors"]]))
+  clusterMeans <- cbind(cluster = clusterTitles, data.frame(clusterMeans))
+  colnames(clusterMeans) <- c("cluster", colnames(dataset))
   table$setData(clusterMeans)
 }
 

@@ -155,7 +155,7 @@ mlClassificationRandomForest <- function(jaspResults, dataset, options, ...) {
   result[["train"]] <- trainingSet
   result[["test"]] <- testSet
   result[["testIndicatorColumn"]] <- testIndicatorColumn
-  result[["classes"]] <- predict(testFit, newdata = dataset)
+  result[["classes"]] <- predict(testFit, newdata = dataset[, options[["predictors"]], drop = FALSE])
   result[["oobAccuracy"]] <- 1 - testFit[["err.rate"]][length(testFit[["err.rate"]])]
   result[["varImp"]] <- plyr::arrange(data.frame(
     Variable = as.factor(names(testFit[["importance"]][, 1])),
@@ -170,11 +170,11 @@ mlClassificationRandomForest <- function(jaspResults, dataset, options, ...) {
     result[["valid"]] <- validationSet
     result[["oobValidStore"]] <- oobAccuracy
   }
-  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "multiclass", data = result[["train"]], y = result[["train"]][, options[["target"]]] , predict_function = function(model, data) predict(model, newdata = data, type = "prob"))
+  result[["explainer"]] <- DALEX::explain(result[["model"]], type = "multiclass", data = result[["train"]][, options[["predictors"]], drop = FALSE], y = result[["train"]][, options[["target"]]] , predict_function = function(model, data) predict(model, newdata = data, type = "prob"))
   if (nlevels(result[["testReal"]]) == 2) {
-    result[["explainer_fi"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]], y = as.numeric(result[["train"]][, options[["target"]]]) - 1, predict_function = function(model, data) predict(model, newdata = data, type = "response"))
+    result[["explainer_fi"]] <- DALEX::explain(result[["model"]], type = "classification", data = result[["train"]][, options[["predictors"]], drop = FALSE], y = as.numeric(result[["train"]][, options[["target"]]]) - 1, predict_function = function(model, data) predict(model, newdata = data, type = "response"))
   } else {
-    result[["explainer_fi"]] <- DALEX::explain(result[["model"]], type = "multiclass", data = result[["train"]], y = result[["train"]][, options[["target"]]] , predict_function = function(model, data) predict(model, newdata = data, type = "prob"))
+    result[["explainer_fi"]] <- DALEX::explain(result[["model"]], type = "multiclass", data = result[["train"]][, options[["predictors"]], drop = FALSE], y = result[["train"]][, options[["target"]]] , predict_function = function(model, data) predict(model, newdata = data, type = "prob"))
   }
   return(result)
 }
