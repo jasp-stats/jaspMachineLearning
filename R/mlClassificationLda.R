@@ -110,7 +110,7 @@ mlClassificationLda <- function(jaspResults, dataset, options, ...) {
     # Sample a percentage of the total data set
     trainingIndex <- sample.int(nrow(dataset), size = ceiling((1 - options[["testDataManual"]]) * nrow(dataset)))
   }
-  trainingSet <- dataset[trainingIndex, ]
+  trainingSet <- .mlBalanceDataset(dataset[trainingIndex, ], options)
   testSet <- dataset[-trainingIndex, ]
   # Check for factor levels in the test set that are not in the training set
   .checkForNewFactorLevelsInPredictionSet(trainingSet, testSet, "test")
