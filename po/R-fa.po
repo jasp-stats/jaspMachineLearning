@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.96.4\n"
 "POT-Creation-Date: 2026-04-25 04:13\n"
-"PO-Revision-Date: 2026-09-14 02:33+0000\n"
+"PO-Revision-Date: 2026-09-15 04:03+0000\n"
 "Last-Translator: Sohrab Delshad <sdel4030@gmail.com>\n"
 "Language-Team: Persian <https://hosted.weblate.org/projects/jasp/"
 "jaspmachinelearning-r/fa/>\n"
@@ -167,10 +167,10 @@ msgid "Confusion Matrix"
 msgstr ""
 
 msgid "Observed"
-msgstr ""
+msgstr "مشاهده‌شده"
 
 msgid "Predicted"
-msgstr ""
+msgstr "پیش‌بینی‌شده"
 
 msgid "Decision Boundary Matrix"
 msgstr ""
@@ -185,10 +185,10 @@ msgid "ROC Curves Plot"
 msgstr ""
 
 msgid "False Positive Rate"
-msgstr ""
+msgstr "نرخ مثبت کاذب"
 
 msgid "True Positive Rate"
-msgstr ""
+msgstr "نرخ مثبت واقعی"
 
 msgid "Perfect separation"
 msgstr ""
@@ -206,10 +206,10 @@ msgid "Model Performance Metrics"
 msgstr ""
 
 msgid "Support"
-msgstr ""
+msgstr "پشتیبانی"
 
 msgid "Accuracy"
-msgstr ""
+msgstr "درستی"
 
 msgid "Precision (Positive Predictive Value)"
 msgstr ""
@@ -221,7 +221,7 @@ msgid "False Discovery Rate"
 msgstr "نرخ کشف نادرست"
 
 msgid "F1 Score"
-msgstr ""
+msgstr "نمره F1"
 
 msgid "Matthews Correlation Coefficient"
 msgstr ""
@@ -305,10 +305,10 @@ msgid "Clusters"
 msgstr ""
 
 msgid "N"
-msgstr "N (تعداد)"
+msgstr "N"
 
 msgid "R%s"
-msgstr ""
+msgstr "R%s"
 
 msgid "AIC"
 msgstr ""
@@ -431,7 +431,7 @@ msgid "Dunn index"
 msgstr ""
 
 msgid "Entropy"
-msgstr ""
+msgstr "آنتروپی"
 
 msgid "Calinski-Harabasz index"
 msgstr ""
@@ -683,10 +683,10 @@ msgid "Prior and Posterior Class Probabilities"
 msgstr ""
 
 msgid "Prior"
-msgstr ""
+msgstr "پیشین"
 
 msgid "Posterior"
-msgstr ""
+msgstr "پسین"
 
 msgid "Class Means in Training Data"
 msgstr ""
@@ -728,10 +728,10 @@ msgid "Statistic"
 msgstr "آماره"
 
 msgid "Skewness"
-msgstr ""
+msgstr "چولگی"
 
 msgid "Kurtosis"
-msgstr ""
+msgstr "کشیدگی"
 
 msgid "Both p-values of the skewness and kurtosis statistics should be > 0.05 to conclude multivariate normality."
 msgstr ""
@@ -746,13 +746,13 @@ msgid "Coefficient (%s)"
 msgstr ""
 
 msgid "Standard Error"
-msgstr ""
+msgstr "خطای معیار"
 
 msgid "z"
-msgstr ""
+msgstr "z"
 
 msgid "%1$s%% Confidence interval"
-msgstr ""
+msgstr "بازه اطمینان %1$s%%"
 
 msgid "Lower"
 msgstr "پایین"
@@ -779,7 +779,7 @@ msgid "Mean"
 msgstr "میانگین"
 
 msgid "Std. deviation"
-msgstr ""
+msgstr "انحراف معیار"
 
 msgid "The table displays the mean and standard deviation of the feature given the target class."
 msgstr ""
@@ -947,7 +947,7 @@ msgid "n(New)"
 msgstr ""
 
 msgid "Binomial"
-msgstr ""
+msgstr "دوجمله‌ای"
 
 msgid "Multinomial"
 msgstr ""
@@ -1265,7 +1265,7 @@ msgid "Variable Trace Plot"
 msgstr ""
 
 msgid "Coefficients"
-msgstr "ضرایب"
+msgstr "ضریب‌ها"
 
 msgid "Lambda Evaluation Plot"
 msgstr ""
@@ -1280,7 +1280,7 @@ msgid "%s 1 SE"
 msgstr ""
 
 msgid "Row"
-msgstr ""
+msgstr "ردیف"
 
 msgid "Cost of Constraints Violation"
 msgstr ""
