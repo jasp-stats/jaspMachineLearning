@@ -768,7 +768,7 @@
     },
     "ggrepel": {
       "Package": "ggrepel",
-      "Version": "0.9.6",
+      "Version": "0.9.8",
       "Source": "Repository",
       "Requirements": [
         "ggplot2",
@@ -776,6 +776,7 @@
         "R",
         "Rcpp",
         "rlang",
+        "S7",
         "scales",
         "withr"
       ]

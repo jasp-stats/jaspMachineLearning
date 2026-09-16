@@ -25,10 +25,11 @@ mlClusteringRandomForest <- function(jaspResults, dataset, options, ...) {
   ready <- .mlClusteringReady(options)
 
   # Compute results and create the model summary table
+  .mlClusteringComputeResults(dataset, options, jaspResults, ready, type = "randomForest")
   .mlClusteringTableSummary(dataset, options, jaspResults, ready, position = 1, type = "randomForest")
 
-  # If the user wants to add the clusters to the data set
-  .mlClusteringAddPredictionsToData(dataset, options, jaspResults, ready)
+  # Export selected results to the data set
+  .mlClusteringExportResultsToData(dataset, options, jaspResults, ready)
 
   # Create the cluster information table
   .mlClusteringTableInformation(options, jaspResults, ready, position = 2, type = "randomForest")
@@ -131,6 +132,18 @@ mlClusteringRandomForest <- function(jaspResults, dataset, options, ...) {
   result[["Silh_score"]] <- silhouettes[["avg.width"]]
   result[["silh_scores"]] <- silhouettes[["clus.avg.widths"]]
   result[["fit"]] <- fit
+  # Soft memberships from average proximity to members of each cluster
+  proximity <- fit[["proximity"]]
+  softMemberships <- matrix(0, nrow = nrow(proximity), ncol = clusters)
+  for (cluster in seq_len(clusters)) {
+    members <- which(predictions == cluster)
+    if (length(members) > 0) {
+      softMemberships[, cluster] <- rowMeans(proximity[, members, drop = FALSE])
+    }
+  }
+  rowTotals <- rowSums(softMemberships)
+  rowTotals[rowTotals == 0] <- 1
+  result[["softMemberships"]] <- softMemberships / rowTotals
   if (options[["modelOptimization"]] != "manual") {
     result[["silhStore"]] <- avgSilh
     result[["aicStore"]] <- aicStore

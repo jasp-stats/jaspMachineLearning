@@ -60,6 +60,8 @@ Form
 	{
 		enabled:					vars.predictorCount > 1
 		showSave:					false
+		showTsne:					true
+		showSoftMemberships:		true
 	}
 
 	Section

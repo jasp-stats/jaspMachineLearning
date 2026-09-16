@@ -25,10 +25,11 @@ mlClusteringModelBased <- function(jaspResults, dataset, options, ...) {
   ready <- .mlClusteringReady(options)
 
   # Compute results and create the model summary table
+  .mlClusteringComputeResults(dataset, options, jaspResults, ready, type = "modelbased")
   .mlClusteringTableSummary(dataset, options, jaspResults, ready, position = 1, type = "modelbased")
 
-  # If the user wants to add the clusters to the data set
-  .mlClusteringAddPredictionsToData(dataset, options, jaspResults, ready)
+  # Export selected results to the data set
+  .mlClusteringExportResultsToData(dataset, options, jaspResults, ready)
 
   # Create the cluster information table
   .mlClusteringTableInformation(options, jaspResults, ready, position = 2, type = "modelbased")
@@ -128,6 +129,7 @@ mclustBIC <- mclust::mclustBIC
   }
   result[["parameters"]] <- fit[["parameters"]]
   result[["modelName"]] <- fit[["modelName"]]
+  result[["softMemberships"]] <- fit[["z"]]
   return(result)
 }
 

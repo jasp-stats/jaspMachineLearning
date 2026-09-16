@@ -25,10 +25,11 @@ mlClusteringFuzzyCMeans <- function(jaspResults, dataset, options, ...) {
   ready <- .mlClusteringReady(options)
 
   # Compute results and create the model summary table
+  .mlClusteringComputeResults(dataset, options, jaspResults, ready, type = "cmeans")
   .mlClusteringTableSummary(dataset, options, jaspResults, ready, position = 1, type = "cmeans")
 
-  # If the user wants to add the clusters to the data set
-  .mlClusteringAddPredictionsToData(dataset, options, jaspResults, ready)
+  # Export selected results to the data set
+  .mlClusteringExportResultsToData(dataset, options, jaspResults, ready)
 
   # Create the cluster information table
   .mlClusteringTableInformation(options, jaspResults, ready, position = 2, type = "cmeans")
@@ -112,6 +113,7 @@ mlClusteringFuzzyCMeans <- function(jaspResults, dataset, options, ...) {
   result[["BIC"]] <- sumSquares[["tot.within.ss"]] + log(length(fit[["cluster"]])) * ncol(fit[["centers"]]) * nrow(fit[["centers"]])
   result[["Silh_score"]] <- silhouettes[["avg.width"]]
   result[["silh_scores"]] <- silhouettes[["clus.avg.widths"]]
+  result[["softMemberships"]] <- fit[["membership"]]
   if (options[["modelOptimization"]] != "manual") {
     result[["silhStore"]] <- avgSilh
     result[["aicStore"]] <- aicStore
