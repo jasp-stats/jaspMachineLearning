@@ -709,14 +709,14 @@
       ) # multiple cores breaks modules in JASP, see: INTERNAL-jasp#372
       score <- predict(fit, newdata = test, n.trees = classificationResult[["noOfTrees"]], type = "response")
     } else if (type == "randomForest") {
-      column <- which(colnames(typeData) == "levelVar")
-      typeData <- typeData[, -column, drop = FALSE]
+      typeData <- typeData[predictors]
+      testPred <- test[predictors]
       fit <- randomForest::randomForest(
         x = typeData, y = factor(levelVar),
         ntree = classificationResult[["noOfTrees"]], mtry = classificationResult[["predPerSplit"]],
         sampsize = classificationResult[["baggingFraction"]], importance = TRUE, keep.forest = TRUE
       )
-      score <- predict(fit, test, type = "prob")[, "TRUE"]
+      score <- predict(fit, testPred, type = "prob")[, "TRUE"]
     } else if (type == "neuralnet") {
       structure <- .getNeuralNetworkStructure(options)
       fit <- neuralnet::neuralnet(
@@ -1118,8 +1118,8 @@
 .calcAUCScore.randomForestClassification <- function(AUCformula, train, test, typeData, levelVar, options, noOfTrees, noOfPredictors, ...) {
   predictors <- unlist(options[["predictors"]])
   predictors <- predictors[predictors != ""]
-  typeData <- typeData[, predictors, drop = FALSE]
-  testPred <- test[, predictors, drop = FALSE]
+  typeData <- typeData[predictors]
+  testPred <- test[predictors]
   fit <- randomForest::randomForest(
     x = typeData, y = factor(levelVar), ntree = noOfTrees, mtry = noOfPredictors,
     sampsize = ceiling(options[["baggingFraction"]] * nrow(train)), importance = TRUE, keep.forest = TRUE

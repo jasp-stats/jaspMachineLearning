@@ -33,7 +33,7 @@
 .mlClusteringReadData <- function(dataset, options) {
   predictors <- unlist(options[["predictors"]])
   predictors <- predictors[predictors != ""]
-  dataset <- dataset[, predictors, drop = FALSE]
+  dataset <- dataset[predictors]
   dataset <- jaspBase::excludeNaListwise(dataset, predictors)
   if (options[["scaleVariables"]] && length(predictors) > 0) {
     dataset <- .scaleNumericData(dataset)
@@ -149,7 +149,7 @@
   tableTitle <- gettextf("Model Summary: %1$s", title)
   table <- createJaspTable(tableTitle)
   table$position <- position
-  table$dependOn(options = .mlClusteringDependencies(options))
+  table$dependOn(options = c(.mlClusteringDependencies(options), "addTsneCoordinates", "tsneCoordinatesColumn"))
   table$addColumnInfo(name = "clusters", title = gettext("Clusters"), type = "integer")
   table$addColumnInfo(name = "n", title = gettext("N"), type = "integer")
   table$addColumnInfo(name = "measure", title = gettextf("R%s", "\u00B2"), type = "number")
@@ -210,6 +210,12 @@
   }
   if (!options[["scaleVariables"]]) {
     table$addFootnote(gettext("The features in the model are <b>unstandardized</b>."))
+  }
+  if (isTRUE(options[["addTsneCoordinates"]]) && !is.null(options[["tsneCoordinatesColumn"]]) && options[["tsneCoordinatesColumn"]] != "") {
+    tsneOutput <- .mlClusteringGetTsneOutput(dataset, options, jaspResults)
+    if (!is.null(tsneOutput[["error"]])) {
+      table$addFootnote(gettextf("The t-SNE coordinates could not be added to the data: %1$s", tsneOutput[["error"]]))
+    }
   }
   row <- data.frame(
     clusters = clusterResult[["clusters"]], measure = clusterResult[["BSS"]] / clusterResult[["TSS"]], aic = round(clusterResult[["AIC"]], 2),
@@ -341,6 +347,10 @@
   }
   clusterResult <- jaspResults[["clusterResult"]]$object
   tsneOutput <- .mlClusteringGetTsneOutput(dataset, options, jaspResults)
+  if (!is.null(tsneOutput[["error"]])) {
+    plot$setError(tsneOutput[["error"]])
+    return()
+  }
   uniqueRows <- tsneOutput[["uniqueRows"]]
   predictions <- clusterResult[["pred.values"]]
   ncolors <- clusterResult[["clusters"]]
@@ -373,7 +383,7 @@
 .mlClusteringGetTsneOutput <- function(dataset, options, jaspResults) {
   if (!is.null(jaspResults[["tsneOutput"]])) {
     tsneOutput <- jaspResults[["tsneOutput"]]$object
-    if (!is.null(tsneOutput[["coordinates"]]) && !is.null(tsneOutput[["uniqueRows"]])) {
+    if (!is.null(tsneOutput[["error"]]) || (!is.null(tsneOutput[["coordinates"]]) && !is.null(tsneOutput[["uniqueRows"]]))) {
       return(tsneOutput)
     }
   }
@@ -381,19 +391,21 @@
   rows <- asplit(dataset, 1L)
   uniqueRows <- unname(which(!duplicated(rows)))
   if (length(uniqueRows) < 5L) {
-    jaspBase:::.quitAnalysis(gettext("t-SNE requires at least 5 unique rows in the predictor data."))
+    # Report the error on the plot / summary table instead of stopping the analysis
+    tsneOutput <- list(error = gettext("t-SNE requires at least 5 unique rows in the predictor data."))
+  } else {
+    startProgressbar(1L)
+    coordinates <- Rtsne::Rtsne(
+      as.matrix(dataset[uniqueRows, , drop = FALSE]),
+      perplexity = length(uniqueRows) / 4,
+      check_duplicates = FALSE
+    )$Y
+    progressbarTick()
+    tsneOutput <- list(
+      coordinates = coordinates[match(rows, rows[uniqueRows]), , drop = FALSE],
+      uniqueRows = uniqueRows
+    )
   }
-  startProgressbar(1L)
-  coordinates <- Rtsne::Rtsne(
-    as.matrix(dataset[uniqueRows, , drop = FALSE]),
-    perplexity = length(uniqueRows) / 4,
-    check_duplicates = FALSE
-  )$Y
-  progressbarTick()
-  tsneOutput <- list(
-    coordinates = coordinates[match(rows, rows[uniqueRows]), , drop = FALSE],
-    uniqueRows = uniqueRows
-  )
   jaspResults[["tsneOutput"]] <- createJaspState(tsneOutput)
   jaspResults[["tsneOutput"]]$dependOn(options = c("predictors", "setSeed", "seed", "scaleVariables"))
   return(tsneOutput)

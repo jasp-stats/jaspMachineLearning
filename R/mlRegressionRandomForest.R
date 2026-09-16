@@ -127,7 +127,7 @@ mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
     importance = TRUE, keep.forest = TRUE
   )
   # Use the specified model to make predictions for dataset
-  dataPredictions <- predict(testFit, newdata = dataset[, options[["predictors"]], drop = FALSE])
+  dataPredictions <- predict(testFit, newdata = dataset[options[["predictors"]]])
   # Create results object
   result <- list()
   result[["model"]] <- testFit
