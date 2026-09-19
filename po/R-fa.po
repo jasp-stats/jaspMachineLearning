@@ -2,14 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.96.4\n"
 "POT-Creation-Date: 2026-04-25 04:13\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-09-15 04:03+0000\n"
+"Last-Translator: Sohrab Delshad <sdel4030@gmail.com>\n"
+"Language-Team: Persian <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-r/fa/>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 msgid "An error occurred in the analysis: %s"
 msgstr ""
@@ -147,7 +149,7 @@ msgid "MVE"
 msgstr ""
 
 msgid "t"
-msgstr ""
+msgstr "t"
 
 msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
 msgstr ""
@@ -165,10 +167,10 @@ msgid "Confusion Matrix"
 msgstr ""
 
 msgid "Observed"
-msgstr ""
+msgstr "مشاهده‌شده"
 
 msgid "Predicted"
-msgstr ""
+msgstr "پیش‌بینی‌شده"
 
 msgid "Decision Boundary Matrix"
 msgstr ""
@@ -183,10 +185,10 @@ msgid "ROC Curves Plot"
 msgstr ""
 
 msgid "False Positive Rate"
-msgstr ""
+msgstr "نرخ مثبت کاذب"
 
 msgid "True Positive Rate"
-msgstr ""
+msgstr "نرخ مثبت واقعی"
 
 msgid "Perfect separation"
 msgstr ""
@@ -204,10 +206,10 @@ msgid "Model Performance Metrics"
 msgstr ""
 
 msgid "Support"
-msgstr ""
+msgstr "پشتیبانی"
 
 msgid "Accuracy"
-msgstr ""
+msgstr "درستی"
 
 msgid "Precision (Positive Predictive Value)"
 msgstr ""
@@ -216,10 +218,10 @@ msgid "Recall (True Positive Rate)"
 msgstr ""
 
 msgid "False Discovery Rate"
-msgstr ""
+msgstr "نرخ کشف نادرست"
 
 msgid "F1 Score"
-msgstr ""
+msgstr "نمره F1"
 
 msgid "Matthews Correlation Coefficient"
 msgstr ""
@@ -237,7 +239,7 @@ msgid "False Negative Rate"
 msgstr ""
 
 msgid "False Omission Rate"
-msgstr ""
+msgstr "نرخ حذف نادرست"
 
 msgid "Threat Score"
 msgstr ""
@@ -303,10 +305,10 @@ msgid "Clusters"
 msgstr ""
 
 msgid "N"
-msgstr ""
+msgstr "N"
 
 msgid "R%s"
-msgstr ""
+msgstr "R%s"
 
 msgid "AIC"
 msgstr ""
@@ -414,7 +416,7 @@ msgid "The Total Sum of Squares of the %1$s cluster model is %2$s"
 msgstr ""
 
 msgid "Value"
-msgstr ""
+msgstr "مقدار"
 
 msgid "Maximum diameter"
 msgstr ""
@@ -429,7 +431,7 @@ msgid "Dunn index"
 msgstr ""
 
 msgid "Entropy"
-msgstr ""
+msgstr "آنتروپی"
 
 msgid "Calinski-Harabasz index"
 msgstr ""
@@ -468,7 +470,7 @@ msgid "Cluster Density Plots"
 msgstr ""
 
 msgid "Density"
-msgstr ""
+msgstr "چگالی"
 
 msgid "Feature"
 msgstr ""
@@ -552,7 +554,7 @@ msgid "Linear Regression"
 msgstr ""
 
 msgid "Penalty"
-msgstr ""
+msgstr "جریمه"
 
 msgid "Loss function"
 msgstr ""
@@ -633,7 +635,7 @@ msgid "Additive Explanations for Predictions of Test Set Cases"
 msgstr ""
 
 msgid "Case"
-msgstr ""
+msgstr "مورد"
 
 msgid "Predicted (Prob.)"
 msgstr ""
@@ -681,10 +683,10 @@ msgid "Prior and Posterior Class Probabilities"
 msgstr ""
 
 msgid "Prior"
-msgstr ""
+msgstr "پیشین"
 
 msgid "Posterior"
-msgstr ""
+msgstr "پسین"
 
 msgid "Class Means in Training Data"
 msgstr ""
@@ -702,10 +704,10 @@ msgid "Tests of Equality of Covariance Matrices"
 msgstr ""
 
 msgid "df"
-msgstr ""
+msgstr "درجه آزادی"
 
 msgid "p"
-msgstr ""
+msgstr "p"
 
 msgid "The null hypothesis specifies equal covariance matrices."
 msgstr ""
@@ -723,13 +725,13 @@ msgid "Tests for Multivariate Normality"
 msgstr ""
 
 msgid "Statistic"
-msgstr ""
+msgstr "آماره"
 
 msgid "Skewness"
-msgstr ""
+msgstr "چولگی"
 
 msgid "Kurtosis"
-msgstr ""
+msgstr "کشیدگی"
 
 msgid "Both p-values of the skewness and kurtosis statistics should be > 0.05 to conclude multivariate normality."
 msgstr ""
@@ -744,19 +746,19 @@ msgid "Coefficient (%s)"
 msgstr ""
 
 msgid "Standard Error"
-msgstr ""
+msgstr "خطای معیار"
 
 msgid "z"
-msgstr ""
+msgstr "z"
 
 msgid "%1$s%% Confidence interval"
-msgstr ""
+msgstr "بازه اطمینان %1$s%%"
 
 msgid "Lower"
-msgstr ""
+msgstr "پایین"
 
 msgid "Upper"
-msgstr ""
+msgstr "بالا"
 
 msgid "The regression coefficients for numeric features are standardized."
 msgstr ""
@@ -774,10 +776,10 @@ msgid "Feature: %1$s"
 msgstr ""
 
 msgid "Mean"
-msgstr ""
+msgstr "میانگین"
 
 msgid "Std. deviation"
-msgstr ""
+msgstr "انحراف معیار"
 
 msgid "The table displays the mean and standard deviation of the feature given the target class."
 msgstr ""
@@ -945,7 +947,7 @@ msgid "n(New)"
 msgstr ""
 
 msgid "Binomial"
-msgstr ""
+msgstr "دوجمله‌ای"
 
 msgid "Multinomial"
 msgstr ""
@@ -1107,7 +1109,7 @@ msgid "Layer"
 msgstr ""
 
 msgid "Weight"
-msgstr ""
+msgstr "وزن"
 
 msgid "linear"
 msgstr ""
@@ -1164,7 +1166,7 @@ msgid "Network Structure Plot"
 msgstr ""
 
 msgid "Intercept"
-msgstr ""
+msgstr "عرض از مبدأ"
 
 msgid "Input layer"
 msgstr ""
@@ -1263,7 +1265,7 @@ msgid "Variable Trace Plot"
 msgstr ""
 
 msgid "Coefficients"
-msgstr ""
+msgstr "ضریب‌ها"
 
 msgid "Lambda Evaluation Plot"
 msgstr ""
@@ -1278,7 +1280,7 @@ msgid "%s 1 SE"
 msgstr ""
 
 msgid "Row"
-msgstr ""
+msgstr "ردیف"
 
 msgid "Cost of Constraints Violation"
 msgstr ""
