@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: R 3.6.1\n"
 "Report-Msgid-Bugs-To: github.com/jasp-stats/jasp-issues/issues\n"
-"POT-Creation-Date: 2025-06-28 03:36\n"
+"POT-Creation-Date: 2026-09-19 03:29\n"
 "PO-Revision-Date: 2025-06-30 10:01+0000\n"
 "Last-Translator: Koen Derks <koen-derks@hotmail.com>\n"
 "Language-Team: Dutch <https://hosted.weblate.org/projects/jasp/"
@@ -444,6 +444,9 @@ msgstr "Het model is %1$s."
 msgid "The features in the model are <b>unstandardized</b>."
 msgstr "De kenmerken in het model zijn <b>ongestandaardiseerd</b>."
 
+msgid "The t-SNE coordinates could not be added to the data: %1$s"
+msgstr ""
+
 msgid "Cluster Information"
 msgstr "Cluster Informatie"
 
@@ -507,6 +510,9 @@ msgstr "t-SNE Cluster Grafiek"
 
 msgid "Noisepoint"
 msgstr "Ruispunt"
+
+msgid "t-SNE requires at least 5 unique rows in the predictor data."
+msgstr ""
 
 msgid "Elbow Method Plot"
 msgstr "Elleboog Methode Grafiek"

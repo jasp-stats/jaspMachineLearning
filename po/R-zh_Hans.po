@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.2\n"
-"POT-Creation-Date: 2025-06-28 03:36\n"
+"POT-Creation-Date: 2026-09-19 03:29\n"
 "PO-Revision-Date: 2026-07-09 10:01+0000\n"
 "Last-Translator: 陳正昌 <chencc99@gmail.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
@@ -189,7 +189,8 @@ msgstr "决策边界矩阵"
 msgid ""
 "Cannot create plot: You need at least two (numeric) features to create the "
 "decision boundary matrix. You have currently included only one feature."
-msgstr "无法创建图形：需要至少两个（数值）特征来创建决策边界矩阵，目前只有一个特征。"
+msgstr ""
+"无法创建图形：需要至少两个（数值）特征来创建决策边界矩阵，目前只有一个特征。"
 
 msgid ""
 "Cannot create matrix: not enough numeric variables remain after removing "
@@ -419,6 +420,9 @@ msgstr "模型为%1$s。"
 msgid "The features in the model are <b>unstandardized</b>."
 msgstr "模型中的特征<b>未标准化</b>。"
 
+msgid "The t-SNE coordinates could not be added to the data: %1$s"
+msgstr ""
+
 msgid "Cluster Information"
 msgstr "簇信息"
 
@@ -481,6 +485,9 @@ msgstr "t-SNE聚类图"
 
 msgid "Noisepoint"
 msgstr "噪声点"
+
+msgid "t-SNE requires at least 5 unique rows in the predictor data."
+msgstr ""
 
 msgid "Elbow Method Plot"
 msgstr "肘部法图"

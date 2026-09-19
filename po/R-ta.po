@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.19.2\n"
-"POT-Creation-Date: 2025-06-28 03:36\n"
+"POT-Creation-Date: 2026-09-19 03:29\n"
 "PO-Revision-Date: 2026-01-01 19:01+0000\n"
 "Last-Translator: தமிழ்நேரம் <tamilneram247@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/jasp/"
@@ -195,8 +195,9 @@ msgid ""
 "Cannot create plot: You need at least two (numeric) features to create the "
 "decision boundary matrix. You have currently included only one feature."
 msgstr ""
-"புள்ளிவரைபடம் உருவாக்க முடியாது: முடிவு எல்லை மேட்ரிக்சை உருவாக்க உங்களுக்குக் குறைந்தது"
-" இரண்டு (எண்) நற்பண்புகள் தேவை. நீங்கள் தற்போது ஒரே ஒரு நற்பண்பை மட்டுமே சேர்த்துள்ளீர்கள்."
+"புள்ளிவரைபடம் உருவாக்க முடியாது: முடிவு எல்லை மேட்ரிக்சை உருவாக்க உங்களுக்குக் "
+"குறைந்தது இரண்டு (எண்) நற்பண்புகள் தேவை. நீங்கள் தற்போது ஒரே ஒரு நற்பண்பை மட்டுமே "
+"சேர்த்துள்ளீர்கள்."
 
 msgid ""
 "Cannot create matrix: not enough numeric variables remain after removing "
@@ -436,6 +437,9 @@ msgstr "மாதிரி %1$s."
 msgid "The features in the model are <b>unstandardized</b>."
 msgstr "மாதிரியில் உள்ள நற்பொருத்தங்கள் <b> தடையில்லா </b>."
 
+msgid "The t-SNE coordinates could not be added to the data: %1$s"
+msgstr ""
+
 msgid "Cluster Information"
 msgstr "கொத்து செய்தி"
 
@@ -498,6 +502,9 @@ msgstr "டி-எச்.என்.இ கிளச்டர் சூழ்ச�
 
 msgid "Noisepoint"
 msgstr "ஒலி"
+
+msgid "t-SNE requires at least 5 unique rows in the predictor data."
+msgstr ""
 
 msgid "Elbow Method Plot"
 msgstr "முழங்கை முறை சூழ்ச்சி"

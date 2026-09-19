@@ -2038,13 +2038,6 @@ msgid "Partition the remaining data in *n* parts."
 msgstr ""
 
 msgctxt "ExportResults|"
-msgid ""
-"Generates a new column in your dataset with the values of your regression "
-"result. This gives you the option to inspect, cluster, or predict the "
-"generated values."
-msgstr ""
-
-msgctxt "ExportResults|"
 msgid "The column name for the predicted values."
 msgstr ""
 
@@ -2800,4 +2793,53 @@ msgid ""
 "sup> and more. For classification, these metrics include precision, recall, "
 "the F1-score, support, AUC (area under the ROC curve) and more. For "
 "clustering, these metrics include entropy, Dunn index and more."
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid ""
+"Adds a column with the predicted cluster membership (clustering) or "
+"predicted values (regression/classification) to the dataset."
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "Add soft memberships / posteriors"
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid ""
+"Adds one column per cluster with the soft membership or posterior "
+"probability of each observation. The column name is used as a prefix (e.g., "
+"membership_1, membership_2)."
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "Column name prefix"
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "e.g., membership"
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid ""
+"Prefix for the soft membership columns. One column is created per cluster."
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "Add t-SNE coordinates"
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid ""
+"Adds the two-dimensional t-SNE embedding (dimension 1 and 2) for each "
+"observation. These are the same coordinates used in the t-SNE cluster plot. "
+"The column name is used as a prefix (e.g., tsne_1, tsne_2)."
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "e.g., tsne"
+msgstr ""
+
+msgctxt "ExportResults|"
+msgid "Prefix for the t-SNE coordinate columns (suffixes _1 and _2 are added)."
 msgstr ""

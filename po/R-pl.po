@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.0\n"
-"POT-Creation-Date: 2025-06-28 03:36\n"
+"POT-Creation-Date: 2026-09-19 03:29\n"
 "PO-Revision-Date: 2025-06-01 21:05+0000\n"
 "Last-Translator: Tomasz Misiuro <tomaszmisiuro@gmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/jasp/"
@@ -423,6 +423,9 @@ msgstr "Model jest %1$s."
 msgid "The features in the model are <b>unstandardized</b>."
 msgstr "Zmienne w modelu są <b>niestandaryzowane</b>."
 
+msgid "The t-SNE coordinates could not be added to the data: %1$s"
+msgstr ""
+
 msgid "Cluster Information"
 msgstr "Informacje o skupieniach"
 
@@ -485,6 +488,9 @@ msgid "t-SNE Cluster Plot"
 msgstr "Wykres t-SNE"
 
 msgid "Noisepoint"
+msgstr ""
+
+msgid "t-SNE requires at least 5 unique rows in the predictor data."
 msgstr ""
 
 msgid "Elbow Method Plot"
