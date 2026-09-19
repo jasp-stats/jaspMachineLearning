@@ -167,16 +167,9 @@
   if (!ready) {
     table$addFootnote(gettextf("Please provide a target variable and at least %i feature variable(s).", if (type == "knn" || type == "neuralnet" || type == "rpart" || type == "svm" || type == "logistic") 1L else 2L))
   }
-  if (options[["saveModel"]]) {
-    validNames <- (length(grep(" ", decodeColNames(colnames(dataset)))) == 0) && (length(grep("_", decodeColNames(colnames(dataset)))) == 0)
-    if (options[["savePath"]] != "" && validNames) {
-      table$addFootnote(gettextf("The trained model is saved as <i>%1$s</i>.", basename(options[["savePath"]])))
-    } else if (options[["savePath"]] != "" && !validNames) {
-      table$addFootnote(gettext("The trained model is <b>not</b> saved because the some of the variable names in the model contain spaces (i.e., ' ') or underscores (i.e., '_'). Please remove all such characters from the variable names and try saving the model again."))
-    } else {
-      table$addFootnote(gettext("The trained model is not saved until a file name is specified under 'Save as'."))
-    }
-  }
+
+  .mlAddSaveModelInfo(table, options)
+
   jaspResults[["classificationTable"]] <- table
   if (!ready) {
     return()
@@ -330,26 +323,11 @@
     )
     table$addRows(row)
   }
-  # Save the applied model if requested
-  if (options[["saveModel"]] && options[["savePath"]] != "") {
-    validNames <- (length(grep(" ", decodeColNames(colnames(dataset)))) == 0) && (length(grep("_", decodeColNames(colnames(dataset)))) == 0)
-    if (!validNames) {
-      return()
-    }
-    model <- classificationResult[["model"]]
-    model[["jaspVars"]] <- list()
-    model[["jaspVars"]]$decoded <- list(target = decodeColNames(options[["target"]]), predictors = decodeColNames(options[["predictors"]]))
-    model[["jaspVars"]]$encoded = list(target = options[["target"]], predictors = options[["predictors"]])
-    model[["jaspScaling"]] <- attr(dataset, "jaspScaling")
-    model[["jaspVersion"]] <- .baseCitation
-    model[["explainer"]] <- classificationResult[["explainer"]]
-    class(model) <- c(class(classificationResult[["model"]]), "jaspClassification", "jaspMachineLearning")
-    path <- options[["savePath"]]
-    if (!endsWith(path, ".jaspML")) {
-      path <- paste0(path, ".jaspML")
-    }
-    saveRDS(model, file = path)
-  }
+
+  # Save the model if requested
+  saveResult <- .mlSaveModelToDisk(options, classificationResult, dataset, class = "jaspClassification")
+  .mlPossiblyShowSaveResult(table, saveResult, options)
+
 }
 
 .mlClassificationTableConfusion <- function(dataset, options, jaspResults, ready, position) {
