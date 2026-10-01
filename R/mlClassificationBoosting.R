@@ -147,27 +147,32 @@ mlClassificationBoosting <- function(jaspResults, dataset, options, ...) {
   dataProbs <- gbm::predict.gbm(fit, newdata = dataset, n.trees = noOfTrees, type = "response")
   dataPredictions <- colnames(dataProbs)[apply(dataProbs, 1, which.max)]
   testPredictions <- dataPredictions[-trainingIndex]
+  targetLevels <- levels(dataset[, options[["target"]]])
+  testPredictions <- factor(testPredictions, levels = targetLevels)
+  testReal <- factor(testSet[, options[["target"]]], levels = targetLevels)
   # Create results object
   result <- list()
   result[["model"]] <- fit
   result[["formula"]] <- formula
   result[["noOfFolds"]] <- noOfFolds
   result[["noOfTrees"]] <- noOfTrees
-  result[["confTable"]] <- table("Pred" = testPredictions, "Real" = testSet[, options[["target"]]])
+  result[["confTable"]] <- table("Pred" = testPredictions, "Real" = testReal)
   result[["testAcc"]] <- sum(diag(prop.table(result[["confTable"]])))
   result[["relInf"]] <- summary(fit, plot = FALSE)
   result[["auc"]] <- .classificationCalcAUC(testSet, trainingSet, options, "boostingClassification", noOfFolds = noOfFolds, noOfTrees = noOfTrees)
   result[["ntrain"]] <- nrow(trainingSet)
   result[["ntest"]] <- nrow(testSet)
   result[["testPred"]] <- testPredictions
-  result[["testReal"]] <- testSet[, options[["target"]]]
+  result[["testReal"]] <- testReal
   result[["train"]] <- trainingSet
   result[["test"]] <- testSet
   result[["method"]] <- if (options[["modelValid"]] == "validationManual") "OOB" else ""
   result[["testIndicatorColumn"]] <- testIndicatorColumn
   result[["classes"]] <- dataPredictions
   if (options[["modelOptimization"]] != "manual") {
-    result[["validationConfTable"]] <- table("Pred" = validationPredictions, "Real" = validationSet[, options[["target"]]])
+    validationPredictions <- factor(validationPredictions, levels = targetLevels)
+    validationReal <- factor(validationSet[, options[["target"]]], levels = targetLevels)
+    result[["validationConfTable"]] <- table("Pred" = validationPredictions, "Real" = validationReal)
     result[["validAcc"]] <- sum(diag(prop.table(result[["validationConfTable"]])))
     result[["nvalid"]] <- nrow(validationSet)
     result[["valid"]] <- validationSet
