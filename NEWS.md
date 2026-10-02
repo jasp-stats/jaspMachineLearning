@@ -15,6 +15,10 @@
 ---
 
 # jaspMachineLearning 0.96.5
+
+## Fixes
+* Implemented a fix for https://github.com/jasp-stats/jasp-issues/issues/4517, where the calculation of the threat score was incorrect.
+
 ## Added
 * Export soft membership and t-SNE coordinates
 
