@@ -5,3 +5,4 @@
 ^tests/upgrades$
 ^\.positai$
 ^\.claude$
+^examples$
