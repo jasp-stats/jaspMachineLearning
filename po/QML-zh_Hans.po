@@ -6,6 +6,12 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Language: zh_Hans\n"
 "X-Qt-Contexts: true\n"
+"PO-Revision-Date: 2026-10-25 12:51+0000\n"
+"Last-Translator: Shun Wang <shuonwang@gmail.com>\n"
+"Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
+"projects/jasp/jaspmachinelearning-qml/zh_Hans/>\n"
+"Language: zh_Hans\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 
 msgctxt "Description|"
 msgid "Machine Learning"
@@ -19,15 +25,15 @@ msgstr "使用数据驱动的回归、分类和聚类方法探索变量之间的
 
 msgctxt "Description|"
 msgid "Regression"
-msgstr "回归"
+msgstr "回归分析"
 
 msgctxt "Description|"
 msgid "Boosting"
-msgstr "提升(Boosting)"
+msgstr "提升（Boosting）"
 
 msgctxt "Description|"
 msgid "Boosting Regression"
-msgstr "提升方法回归"
+msgstr "提升回归"
 
 msgctxt "Description|"
 msgid "K-Nearest Neighbors"
@@ -59,7 +65,7 @@ msgstr "分类"
 
 msgctxt "Description|"
 msgid "Boosting Classification"
-msgstr "提升方法分类"
+msgstr "提升分类"
 
 msgctxt "Description|"
 msgid "K-Nearest Neighbors Classification"
@@ -95,7 +101,7 @@ msgstr "模糊C均值"
 
 msgctxt "Description|"
 msgid "Fuzzy C-Means Clustering"
-msgstr "模糊C均值聚类"
+msgstr "模糊 C 均值聚类"
 
 msgctxt "Description|"
 msgid "Hierarchical"
@@ -986,7 +992,7 @@ msgstr "Epanechnikov核函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Biweight"
-msgstr "Biweight"
+msgstr "Biweight 核函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Triweight"
@@ -998,7 +1004,7 @@ msgstr "余弦函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Inverse"
-msgstr "取反"
+msgstr "Inverse 函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Gaussian"
@@ -1006,7 +1012,7 @@ msgstr "高斯"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Rank"
-msgstr "Rank函数"
+msgstr "Rank 函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Optimal"
@@ -1041,7 +1047,7 @@ msgstr "确定近邻之间相似性时使用的距离度量。可以是欧氏距
 
 msgctxt "ModelOptimization|"
 msgid "Number of Nearest Neighbors"
-msgstr "最近邻的数量"
+msgstr "最近邻数量"
 
 msgctxt "ModelOptimization|"
 msgid "Enables you to use a user-specified number of nearest neighbors."
@@ -1117,7 +1123,7 @@ msgstr "线性"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Binary"
-msgstr "二分类"
+msgstr "二元函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Logistic sigmoid"
@@ -1125,7 +1131,7 @@ msgstr "sigmoid"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Sine"
-msgstr "正弦"
+msgstr "正弦函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Inverse tangent"
@@ -1137,7 +1143,7 @@ msgstr "双曲正切函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "ReLU"
-msgstr "ReLU函数"
+msgstr "ReLU 函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Softplus"
@@ -1165,7 +1171,7 @@ msgstr "Mish 函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid "GeLU"
-msgstr "GeLU函数"
+msgstr "GeLU 函数"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
@@ -1505,7 +1511,7 @@ msgstr "自动"
 
 msgctxt "AlgorithmicSettings|"
 msgid "Manual"
-msgstr "手工"
+msgstr "手动"
 
 msgctxt "AlgorithmicSettings|"
 msgid ""
@@ -1523,7 +1529,7 @@ msgstr "树的数量。"
 
 msgctxt "NodePurity|"
 msgid "Total increase in node purity"
-msgstr "节点纯度的增长"
+msgstr "节点纯度的总增量"
 
 msgctxt "NodePurity|"
 msgid ""
@@ -2933,15 +2939,15 @@ msgstr "连接函数（用于二分类）"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Logit"
-msgstr "Logit 函数"
+msgstr "Logit"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Probit"
-msgstr "Probit模型"
+msgstr "Probit"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Cauchit"
-msgstr "Cauchit 函数"
+msgstr "Cauchit"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Complimentary log-log"
@@ -2949,7 +2955,7 @@ msgstr "cloglog"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Log"
-msgstr "对数函数"
+msgstr "对数"
 
 msgctxt "mlPrediction|"
 msgid ""
@@ -3009,11 +3015,11 @@ msgctxt "ExportResults|"
 msgid ""
 "Adds a column with the predicted cluster membership (clustering) or "
 "predicted values (regression/classification) to the dataset."
-msgstr ""
+msgstr "向数据集中添加一列，包含预测的聚类归属（聚类）或预测值（回归/分类）。"
 
 msgctxt "ExportResults|"
 msgid "Add soft memberships / posteriors"
-msgstr ""
+msgstr "添加软归属/后验概率"
 
 msgctxt "ExportResults|"
 msgid ""
@@ -3021,23 +3027,25 @@ msgid ""
 "probability of each observation. The column name is used as a prefix (e.g., "
 "membership_1, membership_2)."
 msgstr ""
+"为每个聚类添加一列，包含每个观测的软归属或后验概率。列名用作前缀（例如 "
+"membership_1、membership_2）。"
 
 msgctxt "ExportResults|"
 msgid "Column name prefix"
-msgstr ""
+msgstr "列名前缀"
 
 msgctxt "ExportResults|"
 msgid "e.g., membership"
-msgstr ""
+msgstr "例如 membership"
 
 msgctxt "ExportResults|"
 msgid ""
 "Prefix for the soft membership columns. One column is created per cluster."
-msgstr ""
+msgstr "软归属列的前缀。每个聚类创建一列。"
 
 msgctxt "ExportResults|"
 msgid "Add t-SNE coordinates"
-msgstr ""
+msgstr "添加 t-SNE 坐标"
 
 msgctxt "ExportResults|"
 msgid ""
@@ -3045,11 +3053,13 @@ msgid ""
 "observation. These are the same coordinates used in the t-SNE cluster plot. "
 "The column name is used as a prefix (e.g., tsne_1, tsne_2)."
 msgstr ""
+"为每个观测添加二维 t-SNE 嵌入（第 1 维和第 2 维）。这些坐标与 t-SNE 聚类图中"
+"使用的坐标相同。列名用作前缀（例如 tsne_1、tsne_2）。"
 
 msgctxt "ExportResults|"
 msgid "e.g., tsne"
-msgstr ""
+msgstr "例如 tsne"
 
 msgctxt "ExportResults|"
 msgid "Prefix for the t-SNE coordinate columns (suffixes _1 and _2 are added)."
-msgstr ""
+msgstr "t-SNE 坐标列的前缀（自动添加后缀 _1 和 _2）。"
