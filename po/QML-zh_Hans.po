@@ -6,7 +6,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Language: zh_Hans\n"
 "X-Qt-Contexts: true\n"
-"PO-Revision-Date: 2026-10-25 12:51+0000\n"
+"PO-Revision-Date: 2026-10-26 11:00+0000\n"
 "Last-Translator: Shun Wang <shuonwang@gmail.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
 "projects/jasp/jaspmachinelearning-qml/zh_Hans/>\n"
@@ -161,7 +161,7 @@ msgstr "留一法"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlClassificationBoosting|"
 msgid "Plots"
@@ -177,7 +177,7 @@ msgstr "算法设置"
 
 msgctxt "mlClassificationKnn|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlClassificationKnn|"
 msgid "Plots"
@@ -193,7 +193,7 @@ msgstr "算法设置"
 
 msgctxt "mlClassificationLda|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlClassificationLda|"
 msgid "Coefficients"
@@ -249,7 +249,7 @@ msgstr "算法设置"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlClassificationRandomForest|"
 msgid "Plots"
@@ -265,7 +265,7 @@ msgstr "算法设置"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlClusteringDensityBased|"
 msgid "Plots"
@@ -301,7 +301,7 @@ msgstr "固定"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlClusteringFuzzyCMeans|"
 msgid "Plots"
@@ -317,7 +317,7 @@ msgstr "算法设置"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlClusteringHierarchical|"
 msgid "Plots"
@@ -373,7 +373,7 @@ msgstr "McQuitty"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlClusteringKMeans|"
 msgid "Plots"
@@ -389,7 +389,7 @@ msgstr "算法设置"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlClusteringRandomForest|"
 msgid "Plots"
@@ -405,7 +405,7 @@ msgstr "算法设置"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlRegressionBoosting|"
 msgid "Plots"
@@ -421,7 +421,7 @@ msgstr "算法设置"
 
 msgctxt "mlRegressionKnn|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlRegressionKnn|"
 msgid "Plots"
@@ -437,7 +437,7 @@ msgstr "算法设置"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlRegressionRandomForest|"
 msgid "Plots"
@@ -453,7 +453,7 @@ msgstr "算法设置"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlRegressionRegularized|"
 msgid "Plots"
@@ -541,7 +541,7 @@ msgstr "保存训练模型"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlClassificationNeuralNetwork|"
 msgid "Plots"
@@ -557,7 +557,7 @@ msgstr "算法设置"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlRegressionNeuralNetwork|"
 msgid "Plots"
@@ -693,7 +693,7 @@ msgstr "基于邻域聚类"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlClassificationDecisionTree|"
 msgid "Plots"
@@ -709,7 +709,7 @@ msgstr "算法设置"
 
 msgctxt "mlClassificationSvm|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlClassificationSvm|"
 msgid "Plots"
@@ -741,7 +741,7 @@ msgstr "曼哈顿距离"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlRegressionDecisionTree|"
 msgid "Plots"
@@ -757,7 +757,7 @@ msgstr "算法设置"
 
 msgctxt "mlRegressionSvm|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlRegressionSvm|"
 msgid "Plots"
@@ -785,7 +785,7 @@ msgstr "特征"
 
 msgctxt "mlPrediction|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlPrediction|"
 msgid "to"
@@ -2504,7 +2504,7 @@ msgstr ""
 
 msgctxt "mlRegressionLinear|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlRegressionLinear|"
 msgid "Plots"
@@ -2702,7 +2702,7 @@ msgstr ""
 
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlClassificationNaiveBayes|"
 msgid "Posterior statistics"
@@ -2772,7 +2772,7 @@ msgstr ""
 
 msgctxt "mlClusteringModelBased|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlClusteringModelBased|"
 msgid "Parameter estimates"
@@ -2919,7 +2919,7 @@ msgstr ""
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Tables"
-msgstr "表"
+msgstr "表格"
 
 msgctxt "mlClassificationLogisticMultinomial|"
 msgid "Plots"
