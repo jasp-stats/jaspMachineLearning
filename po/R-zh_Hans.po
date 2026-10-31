@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.2\n"
 "POT-Creation-Date: 2026-09-19 03:29\n"
-"PO-Revision-Date: 2026-07-09 10:01+0000\n"
-"Last-Translator: 陳正昌 <chencc99@gmail.com>\n"
+"PO-Revision-Date: 2026-10-25 12:51+0000\n"
+"Last-Translator: Shun Wang <shuonwang@gmail.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
 "projects/jasp/jaspmachinelearning-r/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 
 msgid "An error occurred in the analysis: %s"
 msgstr "分析过程中发生了错误：%s"
@@ -20,13 +20,13 @@ msgid "K-Nearest Neighbors Classification"
 msgstr "K近邻分类"
 
 msgid "Linear Discriminant Classification"
-msgstr "线性判别分析"
+msgstr "线性判别分类"
 
 msgid "Random Forest Classification"
 msgstr "随机森林分类"
 
 msgid "Boosting Classification"
-msgstr "提升(Boosting)分类"
+msgstr "提升分类"
 
 msgid "Neural Network Classification"
 msgstr "神经网络分类"
@@ -38,7 +38,7 @@ msgid "Support Vector Machine Classification"
 msgstr "支持向量机分类"
 
 msgid "Naive Bayes Classification"
-msgstr "随机森林分类"
+msgstr "朴素贝叶斯分类"
 
 msgid "Logistic / Multinomial Regression Classification"
 msgstr "逻辑斯蒂回归"
@@ -92,10 +92,10 @@ msgid "Smoothing"
 msgstr "平滑"
 
 msgid "Family"
-msgstr "函数族"
+msgstr "分布族"
 
 msgid "Link"
-msgstr "链接"
+msgstr "链接函数"
 
 msgid "n(Train)"
 msgstr "n(训练)"
@@ -310,13 +310,13 @@ msgid "K-Medoids Clustering"
 msgstr "K中心点聚类"
 
 msgid "Fuzzy C-Means Clustering"
-msgstr "模糊C-均值聚类"
+msgstr "模糊 C 均值聚类"
 
 msgid "Hierarchical Clustering"
 msgstr "层次聚类"
 
 msgid "Density-Based Clustering"
-msgstr "密度聚类"
+msgstr "基于密度聚类"
 
 msgid "Random Forest Clustering"
 msgstr "随机森林聚类"
@@ -421,13 +421,13 @@ msgid "The features in the model are <b>unstandardized</b>."
 msgstr "模型中的特征<b>未标准化</b>。"
 
 msgid "The t-SNE coordinates could not be added to the data: %1$s"
-msgstr ""
+msgstr "无法将 t-SNE 坐标添加到数据：%1$s"
 
 msgid "Cluster Information"
 msgstr "簇信息"
 
 msgid "Cluster"
-msgstr "簇"
+msgstr "聚类"
 
 msgid "Size"
 msgstr "大小"
@@ -487,7 +487,7 @@ msgid "Noisepoint"
 msgstr "噪声点"
 
 msgid "t-SNE requires at least 5 unique rows in the predictor data."
-msgstr ""
+msgstr "t-SNE 需要预测变量数据中至少有 5 个唯一行。"
 
 msgid "Elbow Method Plot"
 msgstr "肘部法图"
@@ -665,7 +665,6 @@ msgstr "拉普拉斯"
 msgid "MSE(scaled)"
 msgstr "均方误差（缩放）"
 
-#, fuzzy
 msgid "Values"
 msgstr "值"
 
@@ -779,7 +778,7 @@ msgid "Tests of Equality of Covariance Matrices"
 msgstr "协方差矩阵相等性检验"
 
 msgid "df"
-msgstr "自由度"
+msgstr "df"
 
 msgid "p"
 msgstr "p"
@@ -834,10 +833,10 @@ msgid "%1$s%% Confidence interval"
 msgstr "%1$s%%置信区间"
 
 msgid "Lower"
-msgstr "下界"
+msgstr "下限"
 
 msgid "Upper"
-msgstr "上界"
+msgstr "上限"
 
 msgid "The regression coefficients for numeric features are standardized."
 msgstr "数值特征的回归系数已标准化。"
@@ -923,7 +922,7 @@ msgid "Cutoff point is beyond range. Returning NA."
 msgstr "截止点超出范围。返回 NA。"
 
 msgid "Dendrogram"
-msgstr "树图"
+msgstr "树状图"
 
 msgid ""
 "The %1$s-component %2$s model could not be fitted, try a different model or "
@@ -976,7 +975,7 @@ msgid "Linear"
 msgstr "线性"
 
 msgid "Boosting"
-msgstr "提升"
+msgstr "提升（Boosting）"
 
 msgid "Random forest"
 msgstr "随机森林"
@@ -1067,7 +1066,7 @@ msgid "<i>Warning.</i>"
 msgstr "<i>警告</i>"
 
 msgid "An error occurred when computing the mean dropout loss: %1$s"
-msgstr "分析过程中发生了错误：%s"
+msgstr "计算平均 dropout 损失时发生错误：%1$s"
 
 msgid "Out-of-bag Improvement Plot"
 msgstr "袋外提升图"
@@ -1183,7 +1182,7 @@ msgid "Training and validation set"
 msgstr "训练集和验证集"
 
 msgid "Rectangular"
-msgstr "矩阵"
+msgstr "矩形"
 
 msgid "Triangular"
 msgstr "三角形"
@@ -1192,22 +1191,22 @@ msgid "Epanechnikov"
 msgstr "Epanechnikov核函数"
 
 msgid "Biweight"
-msgstr "Biweight核函数"
+msgstr "Biweight 核函数"
 
 msgid "Triweight"
 msgstr "Triweight核函数"
 
 msgid "Cosine"
-msgstr "余弦"
+msgstr "余弦函数"
 
 msgid "Inverse"
-msgstr "Inverse函数"
+msgstr "Inverse 函数"
 
 msgid "Rank"
-msgstr "Rank"
+msgstr "Rank 函数"
 
 msgid "Optimal"
-msgstr "最优的"
+msgstr "最优"
 
 msgid "%1$s Weight Function"
 msgstr "%1$s权重函数"
@@ -1326,7 +1325,7 @@ msgid "Softsign"
 msgstr "Softsign 函数"
 
 msgid "ELU"
-msgstr "ELU"
+msgstr "ELU 函数"
 
 msgid "Leaky ReLU"
 msgstr "Leaky ReLU 函数"
@@ -1356,7 +1355,7 @@ msgid "Mean decrease in accuracy"
 msgstr "准确率平均下降率"
 
 msgid "Total increase in node purity"
-msgstr "节点纯度的总增长"
+msgstr "节点纯度的总增量"
 
 msgid "Out-of-bag Classification Accuracy Plot"
 msgstr "袋外分类准确率图"
