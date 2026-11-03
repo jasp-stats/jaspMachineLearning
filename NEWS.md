@@ -14,6 +14,12 @@
 
 ---
 
+# jaspMachineLearning (development version)
+## Fixed
+* Classification: the Threat Score in the evaluation metrics table was computed as TP / (FP + FN + FP) instead of TP / (TP + FN + FP), which gave values above 1 (or infinity) and wrong averages.
+
+---
+
 # jaspMachineLearning 0.96.5
 ## Added
 * Export soft membership and t-SNE coordinates
