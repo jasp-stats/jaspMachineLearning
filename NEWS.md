@@ -14,6 +14,12 @@
 
 ---
 
+# jaspMachineLearning (development version)
+## Fixed
+* Prediction: assigning predictors without loading a trained model crashed the analysis ("invalid subscript type 'list'"). The tables stay empty until a model is loaded.
+
+---
+
 # jaspMachineLearning 0.96.5
 ## Added
 * Export soft membership and t-SNE coordinates

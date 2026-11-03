@@ -280,7 +280,7 @@ is.jaspMachineLearning <- function(x) {
 }
 
 .mlPredictionReadData <- function(dataset, options, model) {
-  if (length(options[["predictors"]]) == 0) {
+  if (length(options[["predictors"]]) == 0 || is.null(model)) {
     dataset <- NULL
   } else {
     dataset <- jaspBase::excludeNaListwise(dataset, options[["predictors"]])
