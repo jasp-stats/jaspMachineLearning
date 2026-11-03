@@ -240,3 +240,42 @@ test_that("ROC Curves Plot matches", {
   testPlot <- results[["state"]][["figures"]][[plotName]][["obj"]]
   jaspTools::expect_equal_plots(testPlot, "roc-curves-plot-mac")
 })
+
+# Test saving the predictions and the test set indicator #######################
+# JASP adds the (empty) columns for the saved predictions and the test set indicator to the data of the analysis,
+# and they can come before the target and the predictors. jaspTools orders the columns by the order of the options.
+data <- iris
+data$predictions <- NA_real_
+data$testSet <- NA_real_
+options <- initMlOptions("mlClassificationBoosting")
+options$target <- "Species"
+options$target.types <- "nominal"
+options$predictors <- c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width")
+options$predictors.types <- rep("scale", 4)
+options$modelOptimization <- "manual"
+options$holdoutData <- "holdoutManual"
+options$modelValid <- "validationManual"
+options$addPredictions <- TRUE
+options$predictionsColumn <- "predictions"
+options$addIndicator <- TRUE
+options$testIndicatorColumn <- "testSet"
+options$testSetIndicatorVariable <- ""
+options$savePath <- ""
+options$dataSplitPlot <- FALSE
+options$confusionTable <- FALSE
+options$setSeed <- TRUE
+options <- c(options[c("predictionsColumn", "testIndicatorColumn", "predictors", "target")],
+             options[!names(options) %in% c("predictionsColumn", "testIndicatorColumn", "predictors", "target")])
+# jaspTools does not provide the column type helpers of JASP that are used to create the predictions column
+columnTypeHelpers <- list(.columnIsScale = function(...) FALSE, .columnIsOrdinal = function(...) FALSE, .columnIsNominal = function(...) TRUE)
+list2env(columnTypeHelpers, envir = globalenv())
+set.seed(1)
+results <- jaspTools::runAnalysis("mlClassificationBoosting", data, options)
+rm(list = names(columnTypeHelpers), envir = globalenv())
+
+test_that("Boosting Classification runs when the predictions and the test set indicator are added to the data", {
+  expect_equal(results[["status"]], "complete")
+  expect_equal(results[["results"]][["predictionsColumn"]][["columnName"]], "predictions")
+  expect_equal(results[["results"]][["testIndicatorColumn"]][["columnName"]], "testSet")
+  expect_length(results[["results"]][["classificationTable"]][["data"]], 1)
+})

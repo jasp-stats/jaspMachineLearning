@@ -14,6 +14,12 @@
 
 ---
 
+# jaspMachineLearning (development version)
+## Fixed
+* Boosting regression and classification: adding the predictions or the test set indicator to the data failed with "object '...' not found" because the model was fitted on the wrong columns of the data.
+
+---
+
 # jaspMachineLearning 0.96.5
 ## Added
 * Export soft membership and t-SNE coordinates
