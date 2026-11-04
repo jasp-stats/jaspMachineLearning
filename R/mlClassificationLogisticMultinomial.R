@@ -74,7 +74,9 @@ mlClassificationLogisticMultinomial <- function(jaspResults, dataset, options, .
     # Sample a percentage of the total data set
     trainingIndex <- sample.int(nrow(dataset), size = ceiling((1 - options[["testDataManual"]]) * nrow(dataset)))
   }
-  trainingSet <- dataset[trainingIndex, ]
+  # Create training set with optional balanced classes
+  trainingSet <- .mlBalanceDataset(dataset[trainingIndex, ], options)
+
   # Create the generated test set indicator
   testIndicatorColumn <- rep(1, nrow(dataset))
   testIndicatorColumn[trainingIndex] <- 0
