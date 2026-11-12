@@ -145,3 +145,37 @@ test_that("Feature Contributions to Predictions for Test Set Cases table results
 			 0, 0.0855713316980959, 0.0357214007858095, 0.351720295929325,
 			 0.0313047600892007, 5, 0.949482968154031))
 })
+
+# Test saving the predictions and the test set indicator #######################
+# JASP adds the (empty) columns for the saved predictions and the test set indicator to the data of the analysis,
+# and they can come before the target and the predictors. jaspTools orders the columns by the order of the options.
+data <- iris
+data$predictions <- NA_real_
+data$testSet <- NA_real_
+options <- initMlOptions("mlRegressionBoosting")
+options$target <- "Sepal.Length"
+options$target.types <- "scale"
+options$predictors <- c("Sepal.Width", "Petal.Length", "Petal.Width")
+options$predictors.types <- rep("scale", 3)
+options$modelOptimization <- "manual"
+options$holdoutData <- "holdoutManual"
+options$modelValid <- "validationManual"
+options$addPredictions <- TRUE
+options$predictionsColumn <- "predictions"
+options$addIndicator <- TRUE
+options$testIndicatorColumn <- "testSet"
+options$testSetIndicatorVariable <- ""
+options$savePath <- ""
+options$dataSplitPlot <- FALSE
+options$setSeed <- TRUE
+options <- c(options[c("predictionsColumn", "testIndicatorColumn", "predictors", "target")],
+             options[!names(options) %in% c("predictionsColumn", "testIndicatorColumn", "predictors", "target")])
+set.seed(1)
+results <- jaspTools::runAnalysis("mlRegressionBoosting", data, options)
+
+test_that("Boosting Regression runs when the predictions and the test set indicator are added to the data", {
+  expect_equal(results[["status"]], "complete")
+  expect_equal(results[["results"]][["predictionsColumn"]][["columnName"]], "predictions")
+  expect_equal(results[["results"]][["testIndicatorColumn"]][["columnName"]], "testSet")
+  expect_length(results[["results"]][["regressionTable"]][["data"]], 1)
+})
