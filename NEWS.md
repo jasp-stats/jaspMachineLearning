@@ -17,6 +17,7 @@
 # jaspMachineLearning (development version)
 ## Fixed
 * Boosting regression and classification: adding the predictions or the test set indicator to the data failed with "object '...' not found" because the model was fitted on the wrong columns of the data.
+* Classification: the Threat Score in the evaluation metrics table was computed as TP / (FP + FN + FP) instead of TP / (TP + FN + FP), which gave values above 1 (or infinity) and wrong averages.
 
 ---
 
