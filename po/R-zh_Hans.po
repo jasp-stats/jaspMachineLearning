@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: jaspMachineLearning 0.17.2\n"
 "POT-Creation-Date: 2026-09-19 03:29\n"
-"PO-Revision-Date: 2026-10-25 12:51+0000\n"
+"PO-Revision-Date: 2026-11-01 08:51+0000\n"
 "Last-Translator: Shun Wang <shuonwang@gmail.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
 "projects/jasp/jaspmachinelearning-r/zh_Hans/>\n"
@@ -178,7 +178,7 @@ msgid "Confusion Matrix"
 msgstr "混淆矩阵"
 
 msgid "Observed"
-msgstr "观测"
+msgstr "观测值"
 
 msgid "Predicted"
 msgstr "预测"
@@ -778,7 +778,7 @@ msgid "Tests of Equality of Covariance Matrices"
 msgstr "协方差矩阵相等性检验"
 
 msgid "df"
-msgstr "df"
+msgstr "自由度"
 
 msgid "p"
 msgstr "p"
@@ -836,7 +836,7 @@ msgid "Lower"
 msgstr "下限"
 
 msgid "Upper"
-msgstr "上限"
+msgstr "上界"
 
 msgid "The regression coefficients for numeric features are standardized."
 msgstr "数值特征的回归系数已标准化。"
@@ -951,7 +951,7 @@ msgid "Scale of the Covariance"
 msgstr "协方差标度"
 
 msgid "Scale"
-msgstr "标度"
+msgstr "缩放"
 
 msgid "Shape of the Covariance Matrix"
 msgstr "协方差矩阵的形状"
@@ -1203,7 +1203,7 @@ msgid "Inverse"
 msgstr "Inverse 函数"
 
 msgid "Rank"
-msgstr "Rank 函数"
+msgstr "Rank函数"
 
 msgid "Optimal"
 msgstr "最优"
