@@ -940,7 +940,7 @@
     fpr[i] <- FP / (FP + TN)
     fdr[i] <- FP / (FP + TP)
     foor[i] <- FN / (FN + TN)
-    ts[i] <- TP / (FP + FN + FP)
+    ts[i] <- TP / (TP + FN + FP)
     stp[i] <- (TP + FP) / (TP + FN + FP + TN)
   }
   support[length(support) + 1] <- sum(support, na.rm = TRUE)
