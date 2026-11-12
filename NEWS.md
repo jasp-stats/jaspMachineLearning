@@ -16,6 +16,7 @@
 
 # jaspMachineLearning (development version)
 ## Fixed
+* Prediction: assigning predictors without loading a trained model crashed the analysis ("invalid subscript type 'list'"). The tables stay empty until a model is loaded.
 * Classification: the Threat Score in the evaluation metrics table was computed as TP / (FP + FN + FP) instead of TP / (TP + FN + FP), which gave values above 1 (or infinity) and wrong averages.
 
 ---
