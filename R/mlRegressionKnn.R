@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-mlRegressionKnn <- function(jaspResults, dataset, options, state = NULL) {
+mlRegressionKnnInternal <- function(jaspResults, dataset, options, state = NULL) {
 
   # Preparatory work
   dataset <- .readDataRegressionAnalyses(dataset, options)

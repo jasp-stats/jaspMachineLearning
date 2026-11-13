@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-mlPrediction <- function(jaspResults, dataset, options, ...) {
+mlPredictionInternal <- function(jaspResults, dataset, options, ...) {
 
   # Preparatory work
   model <- .mlPredictionReadModel(options)

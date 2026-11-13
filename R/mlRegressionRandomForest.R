@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-mlRegressionRandomForest <- function(jaspResults, dataset, options, ...) {
+mlRegressionRandomForestInternal <- function(jaspResults, dataset, options, ...) {
 
   # Preparatory work
   dataset <- .readDataRegressionAnalyses(dataset, options)

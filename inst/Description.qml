@@ -6,7 +6,7 @@ Description
 	title:			qsTr("Machine Learning")
 	description:	qsTr("Explore the relation between variables using data-driven methods for regression, classification, and clustering")
 	icon:			"analysis-ml-ribbon.svg"
-	hasWrappers: 	false
+	hasWrappers: 	true
 	
 	GroupTitle
 	{

@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-mlClusteringKMeans <- function(jaspResults, dataset, options, ...) {
+mlClusteringKMeansInternal <- function(jaspResults, dataset, options, ...) {
 
   # Preparatory work
   dataset <- .mlClusteringReadData(dataset, options)
