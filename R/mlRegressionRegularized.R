@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-mlRegressionRegularized <- function(jaspResults, dataset, options, ...) {
+mlRegressionRegularizedInternal <- function(jaspResults, dataset, options, ...) {
 
   # Preparatory work
   dataset <- .readDataRegressionAnalyses(dataset, options, include_weights = TRUE)

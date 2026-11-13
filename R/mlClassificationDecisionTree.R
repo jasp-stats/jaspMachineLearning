@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-mlClassificationDecisionTree <- function(jaspResults, dataset, options, ...) {
+mlClassificationDecisionTreeInternal <- function(jaspResults, dataset, options, ...) {
 
   # Preparatory work
   dataset <- .mlClassificationReadData(dataset, options)

@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-mlRegressionDecisionTree <- function(jaspResults, dataset, options, state = NULL) {
+mlRegressionDecisionTreeInternal <- function(jaspResults, dataset, options, state = NULL) {
 
   # Preparatory work
   dataset <- .readDataRegressionAnalyses(dataset, options)

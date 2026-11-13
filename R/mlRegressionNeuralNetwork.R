@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-mlRegressionNeuralNetwork <- function(jaspResults, dataset, options, ...) {
+mlRegressionNeuralNetworkInternal <- function(jaspResults, dataset, options, ...) {
 
   # Preparatory work
   dataset <- .readDataRegressionAnalyses(dataset, options)

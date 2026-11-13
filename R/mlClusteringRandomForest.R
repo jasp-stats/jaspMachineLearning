@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-mlClusteringRandomForest <- function(jaspResults, dataset, options, ...) {
+mlClusteringRandomForestInternal <- function(jaspResults, dataset, options, ...) {
 
   # Preparatory work
   dataset <- .mlClusteringReadData(dataset, options)

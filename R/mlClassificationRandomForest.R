@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-mlClassificationRandomForest <- function(jaspResults, dataset, options, ...) {
+mlClassificationRandomForestInternal <- function(jaspResults, dataset, options, ...) {
 
   # Preparatory work
   dataset <- .mlClassificationReadData(dataset, options)

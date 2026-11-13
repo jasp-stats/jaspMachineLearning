@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-mlClusteringModelBased <- function(jaspResults, dataset, options, ...) {
+mlClusteringModelBasedInternal <- function(jaspResults, dataset, options, ...) {
   
   # Preparatory work
   dataset <- .mlClusteringReadData(dataset, options)
