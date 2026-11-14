@@ -1,0 +1,1361 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: jaspMachineLearning 0.96.5\n"
+"POT-Creation-Date: 2026-09-19 03:29\n"
+"PO-Revision-Date: 2026-11-12 10:27+0000\n"
+"Last-Translator: Fahad Mahfouz Al-Subhi "
+"<fahadalsubhi@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Arabic <https://hosted.weblate.org/projects/jasp/"
+"jaspmachinelearning-r/ar/>\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Weblate 2026.11.2.dev0\n"
+
+msgid "An error occurred in the analysis: %s"
+msgstr "حدث خطأ في التحليل: %s"
+
+msgid "K-Nearest Neighbors Classification"
+msgstr "التصنيف بأقرب الجيران K"
+
+msgid "Linear Discriminant Classification"
+msgstr "التصنيف بالتمييز الخطي"
+
+msgid "Random Forest Classification"
+msgstr "التصنيف بالغابة العشوائية"
+
+msgid "Boosting Classification"
+msgstr "التصنيف بالتعزيز"
+
+msgid "Neural Network Classification"
+msgstr "التصنيف بالشبكة العصبية"
+
+msgid "Decision Tree Classification"
+msgstr "التصنيف بشجرة القرار"
+
+msgid "Support Vector Machine Classification"
+msgstr "التصنيف بآلة متجهات الدعم"
+
+msgid "Naive Bayes Classification"
+msgstr "التصنيف ببايز الساذج"
+
+msgid "Logistic / Multinomial Regression Classification"
+msgstr "التصنيف بالانحدار اللوجستي / الانحدار متعدد الفئات"
+
+msgid "Model Summary: %1$s"
+msgstr "ملخص النموذج: %1$s"
+
+msgid "Nearest neighbors"
+msgstr "أقرب الجيران"
+
+msgid "Weights"
+msgstr "الأوزان"
+
+msgid "Distance"
+msgstr "المسافة"
+
+msgid "Linear Discriminants"
+msgstr "الدوال التمييزية الخطية"
+
+msgid "Method"
+msgstr "الطريقة"
+
+msgid "Trees"
+msgstr "الأشجار"
+
+msgid "Features per split"
+msgstr "عدد السمات عند كل تقسيم"
+
+msgid "Shrinkage"
+msgstr "الانكماش"
+
+msgid "Hidden Layers"
+msgstr "الطبقات المخفية"
+
+msgid "Nodes"
+msgstr "العقد"
+
+msgid "Complexity penalty"
+msgstr "عقوبة التعقيد"
+
+msgid "Splits"
+msgstr "الانقسامات"
+
+msgid "Violation cost"
+msgstr "كلفة الانتهاك"
+
+msgid "Support Vectors"
+msgstr "متجهات الدعم"
+
+msgid "Smoothing"
+msgstr "التنعيم"
+
+msgid "Family"
+msgstr "عائلة التوزيع"
+
+msgid "Link"
+msgstr "دالة الربط"
+
+msgid "n(Train)"
+msgstr "n(Train)"
+
+msgid "n(Validation)"
+msgstr "n(Validation)"
+
+msgid "n(Test)"
+msgstr "n(Test)"
+
+msgid "Validation Accuracy"
+msgstr "دقة التصنيف في التحقق"
+
+msgid "Test Accuracy"
+msgstr "دقة التصنيف في الاختبار"
+
+msgid "OOB Accuracy"
+msgstr "دقة التصنيف خارج الكيس (OOB)"
+
+msgid "Please provide a target variable and at least %i feature variable(s)."
+msgstr "يرجى تحديد متغير مستهدف وما لا يقل عن %i من متغيرات السمات."
+
+msgid "The trained model is saved as <i>%1$s</i>."
+msgstr "حُفظ النموذج المدرّب باسم <i>%1$s</i>."
+
+msgid "The trained model is <b>not</b> saved because the some of the variable names in the model contain spaces (i.e., ' ') or underscores (i.e., '_'). Please remove all such characters from the variable names and try saving the model again."
+msgstr ""
+"النموذج المدرَّب <b>غير</b> محفوظ، لأن بعض أسماء متغيراته تحتوي على مسافات (' "
+"') أو شرطات سفلية ('_'). احذف هذه المحارف جميعها من أسماء المتغيرات، ثم حاول "
+"حفظ النموذج مجددًا."
+
+msgid "The trained model is not saved until a file name is specified under 'Save as'."
+msgstr "لا يُحفظ النموذج المدرَّب إلا بعد تحديد اسم ملف ضمن 'حفظ باسم'."
+
+msgid "The model is optimized with respect to the <i>validation set accuracy</i>."
+msgstr "يُحسَّن النموذج بالنسبة إلى <i>دقة التصنيف في مجموعة التحقق</i>."
+
+msgid "The optimum number of nearest neighbors is the maximum number. You might want to adjust the range of optimization."
+msgstr ""
+"عدد أقرب الجيران الأمثل يساوي العدد الأقصى. قد تحتاج إلى تعديل نطاق التحسين."
+
+msgid "Manhattan"
+msgstr "مانهاتن"
+
+msgid "Euclidean"
+msgstr "إقليدية"
+
+msgid "Moment"
+msgstr "العزم"
+
+msgid "MLE"
+msgstr "MLE"
+
+msgid "MVE"
+msgstr "MVE"
+
+msgid "t"
+msgstr "t"
+
+msgid "The model is optimized with respect to the <i>out-of-bag accuracy</i>."
+msgstr "يُحسَّن النموذج بالنسبة إلى <i>دقة التصنيف خارج الكيس</i>."
+
+msgid "The model is optimized with respect to the <i>sum of squares</i>."
+msgstr "يُحسَّن النموذج بالنسبة إلى <i>مجموع المربعات</i>."
+
+msgid "Model Summary: Logistic Regression Classification"
+msgstr "ملخص النموذج: التصنيف بالانحدار اللوجستي"
+
+msgid "Model Summary: Multinomial Regression Classification"
+msgstr "ملخص النموذج: التصنيف بالانحدار متعدد الفئات"
+
+msgid "Confusion Matrix"
+msgstr "مصفوفة الالتباس"
+
+msgid "Observed"
+msgstr "المشاهد"
+
+msgid "Predicted"
+msgstr "متنبّأ به"
+
+msgid "Decision Boundary Matrix"
+msgstr "مصفوفة حدود القرار"
+
+msgid "Cannot create plot: You need at least two (numeric) features to create the decision boundary matrix. You have currently included only one feature."
+msgstr ""
+"تعذر إنشاء المخطط: يلزم سمتان عدديتان على الأقل لإنشاء مصفوفة حدود القرار. "
+"أدرجت حاليًا سمة واحدة فقط."
+
+msgid "Cannot create matrix: not enough numeric variables remain after removing factor variables. You need at least 2 numeric variables."
+msgstr ""
+"تعذّر إنشاء المصفوفة لأن عدد المتغيرات العددية بعد استبعاد المتغيرات الفئوية "
+"غير كافٍ. يلزم متغيران عدديان على الأقل."
+
+msgid "ROC Curves Plot"
+msgstr "رسم منحنيات ROC"
+
+msgid "False Positive Rate"
+msgstr "معدل الإيجابيات الكاذبة"
+
+msgid "True Positive Rate"
+msgstr "معدل الإيجابيات الحقيقية"
+
+msgid "Perfect separation"
+msgstr "الفصل الكامل"
+
+msgid "Andrews Curves Plot"
+msgstr "مخطط منحنيات أندروز"
+
+msgid "Andrews curves require a minimum of 2 feature variables."
+msgstr "تتطلب منحنيات أندروز ما لا يقل عن 2 من متغيرات السمات."
+
+msgid "Box's M-test for Homogeneity of Covariance Matrices"
+msgstr "اختبار M لبوكس لتجانس مصفوفات التغاير"
+
+msgid "Model Performance Metrics"
+msgstr "مقاييس أداء النموذج"
+
+msgid "Support"
+msgstr "عدد مشاهدات المجموعة"
+
+msgid "Accuracy"
+msgstr "الدقة"
+
+msgid "Precision (Positive Predictive Value)"
+msgstr "الإحكام (القيمة التنبؤية الموجبة)"
+
+msgid "Recall (True Positive Rate)"
+msgstr "الاستدعاء (معدل الإيجابيات الصحيحة)"
+
+msgid "False Discovery Rate"
+msgstr "معدل الاكتشافات الكاذبة"
+
+msgid "F1 Score"
+msgstr "درجة F1"
+
+msgid "Matthews Correlation Coefficient"
+msgstr "معامل ارتباط ماثيوز"
+
+msgid "Area Under Curve (AUC)"
+msgstr "المساحة تحت المنحنى (AUC)"
+
+msgid "Negative Predictive Value"
+msgstr "القيمة التنبؤية السالبة"
+
+msgid "True Negative Rate"
+msgstr "معدل السلبيات الصحيحة"
+
+msgid "False Negative Rate"
+msgstr "معدل السلبيات الكاذبة"
+
+msgid "False Omission Rate"
+msgstr "معدل الإغفال الكاذب"
+
+msgid "Threat Score"
+msgstr "درجة التهديد (TS)"
+
+msgid "Statistical Parity"
+msgstr "التكافؤ الإحصائي"
+
+msgid "All metrics are calculated for every class against all other classes."
+msgstr "كل المقاييس محسوبة لكل فئة مقابل كل الفئات الأخرى."
+
+msgid "Average / Total"
+msgstr "المتوسط / المجموع"
+
+msgid "Class Proportions"
+msgstr "نسب الفئات"
+
+msgid "Data Set"
+msgstr "مجموعة البيانات"
+
+msgid "Training Set"
+msgstr "مجموعة التدريب"
+
+msgid "Validation Set"
+msgstr "مجموعة التحقق"
+
+msgid "Training and Validation Set"
+msgstr "مجموعة التدريب والتحقق"
+
+msgid "Test Set"
+msgstr "مجموعة الاختبار"
+
+msgid "You have specified more clusters than distinct data points. Please choose a number lower than %s."
+msgstr "حددت عناقيد أكثر من نقاط البيانات المتميزة. يرجى اختيار عدد أقل من %s."
+
+msgid "R package error: The hclust clustering algorithm from the stats R package cannot handle data that has 65536 or more rows. We are working on a solution for this problem. Please try another algorithm in the meantime."
+msgstr ""
+"خطأ في حزمة R: لا تستطيع خوارزمية التجميع العنقودي hclust من حزمة stats "
+"معالجة بيانات تحتوي على 65536 صفًا أو أكثر. نعمل على حل هذه المشكلة. جرّب "
+"خوارزمية أخرى في الوقت الحالي."
+
+msgid "K-Means Clustering"
+msgstr "العنقدة بالمتوسطات K"
+
+msgid "K-Medians Clustering"
+msgstr "العنقدة بالوسائط K"
+
+msgid "K-Medoids Clustering"
+msgstr "العنقدة بالممثّلات K (K-Medoids)"
+
+msgid "Fuzzy C-Means Clustering"
+msgstr "العنقدة بالمتوسطات الضبابية C"
+
+msgid "Hierarchical Clustering"
+msgstr "التجميع العنقودي الهرمي"
+
+msgid "Density-Based Clustering"
+msgstr "العنقدة القائمة على الكثافة"
+
+msgid "Random Forest Clustering"
+msgstr "العنقدة بالغابة العشوائية"
+
+msgid "Model-Based Clustering"
+msgstr "العنقدة القائمة على النموذج"
+
+msgid "Clusters"
+msgstr "العناقيد"
+
+msgid "N"
+msgstr "N"
+
+msgid "R%s"
+msgstr "R%s"
+
+msgid "AIC"
+msgstr "AIC"
+
+msgid "BIC"
+msgstr "BIC"
+
+msgid "Silhouette"
+msgstr "معامل الظل (Silhouette)"
+
+msgid "Please provide at least 2 features."
+msgstr "يرجى تقديم ما لا يقل عن 2 من السمات."
+
+msgid "silhouette"
+msgstr "معامل الظل (Silhouette)"
+
+msgid "The model is optimized with respect to the <i>%s</i> value."
+msgstr "يُحسَّن النموذج بالنسبة إلى قيمة <i>%s</i>."
+
+msgid "The optimum number of clusters is the maximum number of clusters. You might want to adjust the range of optimization."
+msgstr ""
+"عدد العناقيد الأمثل يساوي العدد الأقصى للعناقيد. قد تحتاج إلى تعديل نطاق "
+"التحسين."
+
+msgid "The model contains 0 clusters and only Noisepoints, we advise to change 'Epsilon neighborhood size' and 'Min. core points' parameters under 'Training parameters'."
+msgstr ""
+"يحتوي النموذج على 0 عناقيد ونقاط ضوضاء فقط. نوصي بتغيير معلمتي «حجم جوار "
+"إبسيلون» و«الحد الأدنى للنقاط الأساسية» ضمن «معلمات التدريب»."
+
+msgid "The model contains 1 cluster and no Noisepoints. You may want to change 'Epsilon neighborhood size' and 'Min. core points' parameters under 'Training parameters'."
+msgstr ""
+"يحتوي النموذج على عنقود 1 دون نقاط ضوضاء. يمكنك تغيير معلمتي «حجم جوار "
+"إبسيلون» و«الحد الأدنى للنقاط الأساسية» ضمن «معلمات التدريب»."
+
+msgid "spherical with equal volume"
+msgstr "كروية بحجم متساوٍ"
+
+msgid "spherical with unequal volume"
+msgstr "كروية بحجم غير متساوٍ"
+
+msgid "diagonal with equal volume and shape"
+msgstr "قطرية بحجم وشكل متساويين"
+
+msgid "diagonal with varying volume and equal shape"
+msgstr "قطرية بحجم متغير وشكل متساوٍ"
+
+msgid "diagonal with equal volume and varying shape"
+msgstr "قطرية بحجم متساوٍ وشكل متغير"
+
+msgid "diagonal with varying volume and shape"
+msgstr "قطرية بحجم وشكل متغيرين"
+
+msgid "ellipsoidal with equal volume, shape, and orientation"
+msgstr "إهليلجية تتساوى في الحجم والشكل والاتجاه"
+
+msgid "ellipsoidal with equal shape and orientation"
+msgstr "إهليلجية بشكل واتجاه متساويين"
+
+msgid "ellipsoidal with equal volume and orientation"
+msgstr "إهليلجية بحجم واتجاه متساويين"
+
+msgid "ellipsoidal with equal orientation"
+msgstr "إهليلجية باتجاه متساوٍ"
+
+msgid "ellipsoidal with equal volume and equal shape"
+msgstr "إهليلجية بحجم وشكل متساويين"
+
+msgid "ellipsoidal with equal shape"
+msgstr "إهليلجية بشكل متساوٍ"
+
+msgid "ellipsoidal with equal volume"
+msgstr "إهليلجية بحجم متساوٍ"
+
+msgid "ellipsoidal with varying volume, shape, and orientation"
+msgstr "إهليلجية تختلف في الحجم والشكل والاتجاه"
+
+msgid "The model is %1$s."
+msgstr "النموذج هو %1$s."
+
+msgid "The features in the model are <b>unstandardized</b>."
+msgstr "سمات النموذج <b>غير موحّدة المقاييس</b>."
+
+msgid "The t-SNE coordinates could not be added to the data: %1$s"
+msgstr "تعذرت إضافة إحداثيات t-SNE إلى البيانات: %1$s"
+
+msgid "Cluster Information"
+msgstr "معلومات العناقيد"
+
+msgid "Cluster"
+msgstr "العنقود"
+
+msgid "Size"
+msgstr "الحجم"
+
+msgid "Explained proportion within-cluster heterogeneity"
+msgstr "حصة العنقود من مجموع مربعات التشتت داخل العناقيد"
+
+msgid "Within sum of squares"
+msgstr "مجموع المربعات داخل العناقيد"
+
+msgid "Silhouette score"
+msgstr "معامل الظل"
+
+msgid "Center %s"
+msgstr "مركز %s"
+
+msgid "Noisepoints"
+msgstr "نقاط الضوضاء"
+
+msgid "The Between Sum of Squares of the %1$s cluster model is %2$s"
+msgstr "مجموع المربعات بين العناقيد لنموذج العناقيد %1$s يساوي %2$s"
+
+msgid "The Total Sum of Squares of the %1$s cluster model is %2$s"
+msgstr "مجموع المربعات الكلي لنموذج العناقيد %1$s يساوي %2$s"
+
+msgid "Value"
+msgstr "القيمة"
+
+msgid "Maximum diameter"
+msgstr "القطر الأقصى"
+
+msgid "Minimum separation"
+msgstr "الحد الأدنى للفصل"
+
+msgid "Pearson's %s"
+msgstr "%s لبيرسون"
+
+msgid "Dunn index"
+msgstr "مؤشر دان"
+
+msgid "Entropy"
+msgstr "الإنتروبيا"
+
+msgid "Calinski-Harabasz index"
+msgstr "مؤشر كالينسكي–هاراباش"
+
+msgid "All metrics are based on the <i>euclidean</i> distance."
+msgstr "تستند جميع المقاييس إلى المسافة <i>الإقليدية</i>."
+
+msgid "Evaluation metrics cannot be computed when there is only 1 cluster."
+msgstr "يتعذّر حساب مقاييس التقييم عند وجود عنقود واحد فقط (1)."
+
+msgid "t-SNE Cluster Plot"
+msgstr "رسم عناقيد t-SNE"
+
+msgid "Noisepoint"
+msgstr "نقطة ضوضاء"
+
+msgid "t-SNE requires at least 5 unique rows in the predictor data."
+msgstr "يتطلب t-SNE خمسة صفوف فريدة على الأقل في بيانات المتغيرات المتنبئة."
+
+msgid "Elbow Method Plot"
+msgstr "رسم طريقة الكوع"
+
+msgid "WSS"
+msgstr "WSS"
+
+msgid "Number of Clusters"
+msgstr "عدد العناقيد"
+
+msgid "Lowest %s"
+msgstr "أدنى %s"
+
+msgid "Cluster Means"
+msgstr "متوسطات العناقيد"
+
+msgid "Cluster %s"
+msgstr "العنقود %s"
+
+msgid "Cluster Density Plots"
+msgstr "رسوم كثافة العناقيد"
+
+msgid "Density"
+msgstr "الكثافة"
+
+msgid "Feature"
+msgstr "السمة"
+
+msgid "All Features"
+msgstr "جميع السمات"
+
+msgid "Cluster Mean Plots"
+msgstr "رسوم متوسطات العناقيد"
+
+msgid "Cluster Mean"
+msgstr "متوسط العنقود"
+
+msgid "Insufficient RAM available to compute the distance matrix. The analysis tried to allocate %s Gb"
+msgstr ""
+"ذاكرة RAM المتاحة غير كافية لحساب مصفوفة المسافات. حاول التحليل تخصيص %s Gb"
+
+msgid "An error occurred in the analysis: %1$s"
+msgstr "حدث خطأ في التحليل: %1$s"
+
+msgid "Cluster Matrix Plot"
+msgstr "رسم مصفوفة العناقيد"
+
+msgid "The variable '%s' can't be both a feature and a test set indicator."
+msgstr ""
+"لا يمكن استخدام المتغير '%s' سمةً ومؤشرًا لمجموعة الاختبار في الوقت نفسه."
+
+msgid "Your test set indicator should be binary, containing only 1 (included in test set) and 0 (excluded from test set)."
+msgstr ""
+"ينبغي أن يكون مؤشر مجموعة الاختبار ثنائياً، يحتوي فقط على 1 (متضمناً في مجموعة "
+"الاختبار) و0 (مستبعداً من مجموعة الاختبار)."
+
+msgid "There is only one observation in each level of the factor %1$s, please remove this factor as a feature."
+msgstr ""
+"توجد مشاهدة واحدة فقط في كل مستوى من مستويات العامل %1$s. استبعد هذا العامل "
+"من السمات."
+
+msgid "There is only one observation in each level of the factors %1$s, please remove these factors as a feature."
+msgstr ""
+"توجد مشاهدة واحدة فقط في كل مستوى من مستويات العوامل %1$s. استبعد هذه "
+"العوامل من السمات."
+
+msgid "test set"
+msgstr "مجموعة الاختبار"
+
+msgid "validation set"
+msgstr "مجموعة التحقق"
+
+msgid "new dataset"
+msgstr "مجموعة بيانات جديدة"
+
+msgid "or use a different test set (e.g., automatically by setting a different seed or manually by specifying the test set indicator)"
+msgstr ""
+"أو استخدام مجموعة اختبار مختلفة (مثلاً، تلقائياً بوضع بذرة مختلفة أو يدوياً "
+"بتحديد مؤشر مجموعة الاختبار)"
+
+msgid "or use a different validation set by setting a different seed"
+msgstr "أو استخدم مجموعة تحقق أخرى بتحديد بذرة عشوائية مختلفة"
+
+msgid "Some factors in the %1$s have levels that do not appear in the training set. Please remove the rows with the following levels from the dataset%2$s.\n\n%3$s"
+msgstr ""
+"لبعض العوامل في %1$s مستويات لا تظهر في مجموعة التدريب. احذف الصفوف ذات "
+"المستويات الآتية من مجموعة البيانات%2$s.\n"
+"\n"
+"%3$s"
+
+msgid "You have specified more nearest neighbors than there are observations in the training set. Please choose a number lower than %d."
+msgstr ""
+"عدد أقرب الجيران الذي حددته يتجاوز عدد المشاهدات في مجموعة التدريب. اختر "
+"عددًا أقل من %d."
+
+msgid "You have specified more folds than there are observations in the training and validation set. Please choose a number lower than %d."
+msgstr ""
+"يتجاوز عدد طيات التحقق التي حددتها عدد المشاهدات في مجموعة التدريب والتحقق. "
+"اختر عددًا أقل من %d."
+
+msgid "K-Nearest Neighbors Regression"
+msgstr "الانحدار بأقرب الجيران K"
+
+msgid "Regularized Linear Regression"
+msgstr "انحدار خطي مع التنظيم"
+
+msgid "Random Forest Regression"
+msgstr "الانحدار بالغابة العشوائية"
+
+msgid "Boosting Regression"
+msgstr "الانحدار بالتعزيز"
+
+msgid "Neural Network Regression"
+msgstr "الانحدار بالشبكة العصبية"
+
+msgid "Decision Tree Regression"
+msgstr "الانحدار بشجرة القرار"
+
+msgid "Support Vector Machine Regression"
+msgstr "الانحدار بآلة متجهات الدعم"
+
+msgid "Linear Regression"
+msgstr "الانحدار الخطي"
+
+msgid "Penalty"
+msgstr "العقوبة"
+
+msgid "Loss function"
+msgstr "دالة الخسارة"
+
+msgid "Validation MSE"
+msgstr "متوسط مربع الخطأ في التحقق"
+
+msgid "Test MSE"
+msgstr "متوسط مربع الخطأ في الاختبار"
+
+msgid "OOB Error"
+msgstr "الخطأ خارج الكيس (OOB)"
+
+msgid "R%1$s"
+msgstr "R%1$s"
+
+msgid "Adjusted R%1$s"
+msgstr "R%1$s المعدل"
+
+msgid "Please provide a target variable and at least %d feature variable(s)."
+msgstr "يرجى تحديد متغير مستهدف وما لا يقل عن %d من متغيرات السمات."
+
+msgid "The model is optimized with respect to the <i>validation set mean squared error</i>."
+msgstr "يُحسَّن النموذج بالنسبة إلى <i>متوسط مربع الخطأ في مجموعة التحقق</i>."
+
+msgid "When %s is set to 0 linear regression is performed."
+msgstr "عند ضبط %s على 0، يُجرى انحدار خطي."
+
+msgid "The model is optimized with respect to the <i>out-of-bag mean squared error</i>."
+msgstr "يُحسَّن النموذج بالنسبة إلى <i>متوسط مربع الخطأ خارج الكيس</i>."
+
+msgid "Gaussian"
+msgstr "غاوسي"
+
+msgid "Laplace"
+msgstr "لابلاس"
+
+msgid "MSE(scaled)"
+msgstr "MSE بعد التوحيد المعياري"
+
+msgid "Values"
+msgstr "القيم"
+
+msgid "R%s cannot be computed due to lack of variance in the predictions.</i>"
+msgstr ""
+"تعذّر حساب R%s لأن معامل الارتباط بين القيم المشاهدة والمتنبأ بها غير معرّف."
+
+msgid "Predictive Performance Plot"
+msgstr "رسم الأداء التنبؤي"
+
+msgid "Observed Test Values"
+msgstr "قيم الاختبار المشاهدة"
+
+msgid "Predicted Test Values"
+msgstr "قيم الاختبار المتنبّأ بها"
+
+msgid "Data Split"
+msgstr "تقسيم البيانات"
+
+msgid "Train: %d"
+msgstr "التدريب: %d"
+
+msgid "Test: %d"
+msgstr "الاختبار: %d"
+
+msgid "Total: %d"
+msgstr "الإجمالي: %d"
+
+msgid "Validation: %d"
+msgstr "التحقق: %d"
+
+msgid "Train and validation: %d"
+msgstr "التدريب والتحقق: %d"
+
+msgid "Additive Explanations for Predictions of New Cases"
+msgstr "تفسيرات جمعيّة للتنبؤات بالحالات الجديدة"
+
+msgid "Additive Explanations for Predictions of Test Set Cases"
+msgstr "تفسيرات جمعيّة للتنبؤات بحالات مجموعة الاختبار"
+
+msgid "Case"
+msgstr "الحالة"
+
+msgid "Predicted (Prob.)"
+msgstr "متنبّأ به (الاحتمال)"
+
+msgid "Base"
+msgstr "الأساس"
+
+msgid "An error occurred when computing the results for this table: %1$s"
+msgstr "حدث خطأ عند حساب نتائج هذا الجدول: %1$s"
+
+msgid "Displayed values represent feature contributions to the predicted value without features (column 'Base') for the test set."
+msgstr ""
+"تمثل القيم المعروضة مساهمات السمات في التنبؤ لكل حالة في مجموعة الاختبار، "
+"انطلاقًا من التنبؤ الأساسي دون سمات (عمود 'الأساس')."
+
+msgid "Displayed values represent feature contributions to the predicted class probability without features (column 'Base') for the test set."
+msgstr ""
+"تمثل القيم المعروضة مساهمات السمات في احتمال الفئة المتنبأ بها لكل حالة في "
+"مجموعة الاختبار، انطلاقًا من الاحتمال الأساسي دون سمات (عمود 'الأساس')."
+
+msgid "Feature Importance Metrics"
+msgstr "مقاييس أهمية السمات"
+
+msgid "Mean dropout loss"
+msgstr "متوسط الخسارة عند تبديل قيم السمة"
+
+msgid "root mean squared error (RMSE)"
+msgstr "الجذر التربيعي لمتوسط مربعات الخطأ (RMSE)"
+
+msgid "1 - area under curve (AUC)"
+msgstr "1 - المساحة تحت المنحنى (AUC)"
+
+msgid "cross entropy"
+msgstr "الإنتروبيا المتقاطعة"
+
+msgid "Mean dropout loss (defined as %1$s) is based on %2$s permutations."
+msgstr ""
+"يستند متوسط الخسارة عند تبديل قيم السمة (المعرّف بأنه %1$s) إلى %2$s من "
+"التبديلات."
+
+msgid "The target variable should have at least 2 classes."
+msgstr "يجب أن يكون للمتغير المستهدف فئتان على الأقل."
+
+msgid "Linear Discriminant Coefficients"
+msgstr "معاملات التمييز الخطي"
+
+msgid "(Constant)"
+msgstr "(الثابت)"
+
+msgid "Prior and Posterior Class Probabilities"
+msgstr "احتمالات الفئات القبلية والبعدية"
+
+msgid "Prior"
+msgstr "قبلي"
+
+msgid "Posterior"
+msgstr "بعدي"
+
+msgid "Class Means in Training Data"
+msgstr "متوسطات الفئات في بيانات التدريب"
+
+msgid "Linear Discriminant Matrix"
+msgstr "مصفوفة التمييز الخطي"
+
+msgid "Tests of Equality of Class Means"
+msgstr "اختبارات تساوي متوسطات الفئات"
+
+msgid "The null hypothesis specifies equal class means."
+msgstr "تنص الفرضية الصفرية على تساوي متوسطات الفئات."
+
+msgid "Tests of Equality of Covariance Matrices"
+msgstr "اختبارات تساوي مصفوفات التغاير"
+
+msgid "df"
+msgstr "درجات الحرية"
+
+msgid "p"
+msgstr "p"
+
+msgid "The null hypothesis specifies equal covariance matrices."
+msgstr "تنص الفرضية الصفرية على تساوي مصفوفات التباين والتغاير."
+
+msgid "There are one or more levels in the target variable with less than two observations."
+msgstr ""
+"يتضمن المتغير المستهدف مستوى واحدًا أو أكثر يقل عدد مشاهداته عن مشاهدتين."
+
+msgid "Box's M"
+msgstr "إحصاء M لبوكس"
+
+msgid "Pooled Within-Class Matrices Correlations"
+msgstr "ارتباطات المصفوفات المجمّعة داخل الفئات"
+
+msgid "Tests for Multivariate Normality"
+msgstr "اختبارات الاعتدالية متعددة المتغيرات"
+
+msgid "Statistic"
+msgstr "الإحصاء"
+
+msgid "Skewness"
+msgstr "الالتواء"
+
+msgid "Kurtosis"
+msgstr "التفرطح"
+
+msgid "Both p-values of the skewness and kurtosis statistics should be > 0.05 to conclude multivariate normality."
+msgstr ""
+"إذا كانت قيمتا p لإحصائي الالتواء والتفرطح > 0.05، فلا يقدّم الاختباران دليلًا "
+"كافيًا على مخالفة الاعتدالية متعددة المتغيرات."
+
+msgid "An error occurred when creating this table: %s"
+msgstr "حدث خطأ عند إنشاء هذا الجدول: %s"
+
+msgid "Regression Coefficients"
+msgstr "معاملات الانحدار"
+
+msgid "Coefficient (%s)"
+msgstr "المعامل (%s)"
+
+msgid "Standard Error"
+msgstr "الخطأ المعياري"
+
+msgid "z"
+msgstr "z"
+
+msgid "%1$s%% Confidence interval"
+msgstr "فترة الثقة %1$s%%"
+
+msgid "Lower"
+msgstr "الحد الأدنى"
+
+msgid "Upper"
+msgstr "الحد الأعلى"
+
+msgid "The regression coefficients for numeric features are standardized."
+msgstr "معاملات الانحدار للسمات العددية معيارية."
+
+msgid "The regression coefficients are unstandardized."
+msgstr "معاملات الانحدار غير معيارية."
+
+msgid "<b>Regression equation:</b>\n%1$s"
+msgstr ""
+"<b>معادلة الانحدار:</b>\n"
+"%1$s"
+
+msgid "Posterior Statistics"
+msgstr "إحصاءات التوزيع البعدي"
+
+msgid "Feature: %1$s"
+msgstr "السمة: %1$s"
+
+msgid "Mean"
+msgstr "المتوسط"
+
+msgid "Std. deviation"
+msgstr "الانحراف المعياري"
+
+msgid "The table displays the mean and standard deviation of the feature given the target class."
+msgstr "يعرض الجدول متوسط السمة وانحرافها المعياري بالنظر إلى الفئة المستهدفة."
+
+msgid "The table displays the conditional probabilities given the target class."
+msgstr "يعرض الجدول الاحتمالات الشرطية بالنظر إلى الفئة المستهدفة."
+
+msgid "Analysis not possible: The algorithm did not converge within the maximum number of training repetitions (%1$s)."
+msgstr ""
+"لا يمكن إجراء التحليل: لم تتقارب الخوارزمية خلال الحد الأقصى لعدد تكرارات "
+"التدريب (%1$s)."
+
+msgid "Optimizing network topology"
+msgstr "تحسين طوبولوجيا الشبكة"
+
+msgid "K-Distance Plot"
+msgstr "رسم مسافة K"
+
+msgid "Points Sorted by Distance"
+msgstr "نقاط مرتّبة حسب المسافة"
+
+msgid "%s-Nearest Neighbors \nDistance"
+msgstr ""
+"أقرب %s من الجيران\n"
+"المسافة"
+
+msgid "Maximum curvature = %s"
+msgstr "الانحناء الأقصى = %s"
+
+msgid "End of recursion reached without converging"
+msgstr "وصلت العملية التكرارية إلى نهايتها دون تقارب"
+
+msgid "x and y must be numeric and finite. Missing values not allowed."
+msgstr "يجب أن تكون x وy عدديتين ومنتهيتين. لا يُسمح بقيم مفقودة."
+
+msgid "x and y must be of equal length."
+msgstr "يجب أن يتساوى x وy في الطول."
+
+msgid "Need more points to find cutoff."
+msgstr "يلزم المزيد من النقاط لتحديد نقطة القطع."
+
+msgid "Need to specify fraction of maximum slope."
+msgstr "يلزم تحديد الكسر المستخدم من الميل الأقصى."
+
+msgid "Fraction of maximum slope must be positive and be less than or equal to 1."
+msgstr "يجب أن يكون الكسر من الميل الأقصى موجبًا وأقل من أو يساوي 1."
+
+msgid "Method must be either 'first' or 'curvature'."
+msgstr "يجب أن تكون الطريقة إما 'first' أو 'curvature'."
+
+msgid "Cutoff point is beyond range. Returning NA."
+msgstr "نقطة القطع خارج النطاق. تُرجع القيمة NA."
+
+msgid "Dendrogram"
+msgstr "المخطط الشجري"
+
+msgid "The %1$s-component %2$s model could not be fitted, try a different model or a different number of clusters."
+msgstr ""
+"تعذرت ملاءمة نموذج %2$s ذي %1$s مكونًا؛ جرّب نموذجًا آخر أو عددًا مختلفًا من "
+"العناقيد."
+
+msgid "Estimated Model Parameters"
+msgstr "معلمات النموذج المقدّرة"
+
+msgid "Mixing Probabilities"
+msgstr "احتمالات المزج"
+
+msgid "Mixing probability"
+msgstr "احتمال المزج"
+
+msgid "Component %1$s"
+msgstr "المكوّن %1$s"
+
+msgid "Means"
+msgstr "المتوسطات"
+
+msgid "Covariance Matrix for Component %1$s"
+msgstr "مصفوفة التغاير للمكوّن %1$s"
+
+msgid "Scale of the Covariance"
+msgstr "مقياس التغاير"
+
+msgid "Scale"
+msgstr "المقياس"
+
+msgid "Shape of the Covariance Matrix"
+msgstr "شكل مصفوفة التغاير"
+
+msgid "Eigenvalues of the Covariance Matrix for Component %1$s"
+msgstr "القيم الذاتية لمصفوفة تغاير المكوّن %1$s"
+
+msgid "Feature Importance"
+msgstr "أهمية السمات"
+
+msgid "Mean decrease in Gini Index"
+msgstr "متوسط الانخفاض في مؤشر جيني"
+
+msgid "K-nearest neighbors"
+msgstr "أقرب الجيران K"
+
+msgid "Linear discriminant"
+msgstr "التمييز الخطي"
+
+msgid "Linear"
+msgstr "خطي"
+
+msgid "Boosting"
+msgstr "التعزيز"
+
+msgid "Random forest"
+msgstr "الغابة العشوائية"
+
+msgid "Regularized linear regression"
+msgstr "انحدار خطي مع التنظيم"
+
+msgid "Neural network"
+msgstr "الشبكة العصبية"
+
+msgid "Decision tree"
+msgstr "شجرة القرار"
+
+msgid "Support vector machine"
+msgstr "آلة متجهات الدعم"
+
+msgid "Naive Bayes"
+msgstr "بايز الساذج"
+
+msgid "Logistic regression"
+msgstr "الانحدار اللوجستي"
+
+msgid "Multinomial regression"
+msgstr "انحدار متعدد الفئات (Multinomial)"
+
+msgid "Error: The trained model is not created in JASP."
+msgstr "خطأ: النموذج المُدرَب غير مُنشأ في JASP."
+
+msgid "The trained model (type: %1$s) is currently not supported in JASP."
+msgstr "النموذج المدرَّب (النوع: %1$s) غير مدعوم حاليًا في JASP."
+
+msgid "Error: The trained model is created using a different version of JASP."
+msgstr "خطأ: أُنشئ النموذج المدرَّب بإصدار مختلف من JASP."
+
+msgid "Loaded Model"
+msgstr "النموذج المحمّل"
+
+msgid "Classification"
+msgstr "التصنيف"
+
+msgid "Regression"
+msgstr "الانحدار"
+
+msgid "Loaded Model: %1$s"
+msgstr "النموذج المحمّل: %1$s"
+
+msgid "The features in the new data are unscaled, consistent with the training set."
+msgstr "لم تُوحَّد مقاييس سمات البيانات الجديدة، اتساقًا مع مجموعة التدريب."
+
+msgid "The features in the new data are scaled the same as those in the training set."
+msgstr ""
+"تُوحَّد مقاييس سمات البيانات الجديدة بالطريقة نفسها المستخدمة في مجموعة التدريب."
+
+msgid "The trained model is not applied because the the following features are missing: <i>%1$s</i>."
+msgstr "لم يُطبَّق النموذج المدرَّب لغياب السمات الآتية: <i>%1$s</i>."
+
+msgid "The following features are unused because they are not a feature variable in the trained model: <i>%1$s</i>."
+msgstr ""
+"لم تُستخدم السمات الآتية لأنها ليست من مدخلات النموذج المدرَّب: <i>%1$s</i>."
+
+msgid "Nearest Neighbors"
+msgstr "أقرب الجيران"
+
+msgid "n(New)"
+msgstr "n(New)"
+
+msgid "Binomial"
+msgstr "ذو الحدين"
+
+msgid "Multinomial"
+msgstr "متعدد الحدود"
+
+msgid "Logit"
+msgstr "لوجيت"
+
+msgid "Predictions for New Data"
+msgstr "التنبؤات المتعلقة بالبيانات الجديدة"
+
+msgid "Relative Influence"
+msgstr "التأثير النسبي"
+
+msgid "<i>Warning.</i>"
+msgstr "<i>تحذير.</i>"
+
+msgid "An error occurred when computing the mean dropout loss: %1$s"
+msgstr "حدث خطأ عند حساب متوسط الخسارة عند تبديل قيم السمة: %1$s"
+
+msgid "Out-of-bag Improvement Plot"
+msgstr "رسم التحسن خارج الكيس"
+
+msgid "Training set"
+msgstr "مجموعة التدريب"
+
+msgid "OOB Change in \n Multinomial Deviance"
+msgstr ""
+"التغير خارج الكيس في \n"
+" انحراف التوزيع متعدد الحدود"
+
+msgid "OOB Change in \n Binomial Deviance"
+msgstr ""
+"التغير خارج الكيس في \n"
+" انحراف التوزيع ذي الحدين"
+
+msgid "OOB Change in \n%s Deviance"
+msgstr ""
+"التغير خارج الكيس في \n"
+" انحراف %s"
+
+msgid "Plotting not possible: The model is based on only a single tree."
+msgstr "لا يمكن الرسم: يستند النموذج إلى شجرة واحدة فقط."
+
+msgid "Number of Trees"
+msgstr "عدد الأشجار"
+
+msgid "Deviance Plot"
+msgstr "مخطط الانحراف"
+
+msgid "Multinomial Deviance"
+msgstr "انحراف التوزيع متعدد الحدود"
+
+msgid "Binomial Deviance"
+msgstr "انحراف نموذج ذي الحدين"
+
+msgid "%s Deviance"
+msgstr "انحراف %s"
+
+msgid "Relative Influence Plot"
+msgstr "رسم التأثير النسبي"
+
+msgid "The minimum number of observations per node is too large. Ensure that `2 * Min. observations in node (%1$i) + 1` < `Training data used per tree (%2$s) * available training data (%3$i)` (in this case the minimum can be %4$i at most)."
+msgstr ""
+"الحد الأدنى لعدد المشاهدات في العقدة كبير جدًا. تأكد من أن `2 * الحد الأدنى "
+"للمشاهدات في العقدة (%1$i) + 1` < `بيانات التدريب المستخدمة لكل شجرة (%2$s) "
+"* بيانات التدريب المتاحة (%3$i)` (في هذه الحالة، لا يجوز أن تتجاوز قيمة الحد "
+"الأدنى %4$i)."
+
+msgid "Relative Importance"
+msgstr "الأهمية النسبية"
+
+msgid "No splits were made in the tree."
+msgstr "لم يُجرَ أي تقسيم في الشجرة."
+
+msgid "Splits in Tree"
+msgstr "التقسيمات في الشجرة"
+
+msgid "Obs. in Split"
+msgstr "المشاهدات في التقسيم"
+
+msgid "Split Point"
+msgstr "نقطة التقسيم"
+
+msgid "Improvement"
+msgstr "التحسن"
+
+msgid "For each level of the tree, only the split with the highest improvement in deviance is shown."
+msgstr ""
+"يُعرض عند كل مستوى من الشجرة التقسيم الذي يحقق أكبر تحسّن في الانحراف فقط."
+
+msgid "Decision Tree Plot"
+msgstr "مخطط شجرة القرار"
+
+msgid "Plotting not possible: No splits were made in the tree."
+msgstr "لا يمكن الرسم لأن الشجرة لا تتضمن أي تقسيم."
+
+msgid "Plotting not possible: An error occurred while creating this plot: %s"
+msgstr "لا يمكن الرسم: حدث خطأ أثناء إنشاء هذا المخطط: %s"
+
+msgid "Classification Accuracy Plot"
+msgstr "رسم دقة التصنيف"
+
+msgid "Mean Squared Error Plot"
+msgstr "مخطط متوسط مربع الخطأ"
+
+msgid "Classification Accuracy"
+msgstr "دقة التصنيف"
+
+msgid "Mean Squared Error"
+msgstr "متوسط مربع الخطأ"
+
+msgid "Validation set"
+msgstr "مجموعة التحقق"
+
+msgid "Complexity Penalty"
+msgstr "عقوبة التعقيد"
+
+msgid "Number of Nearest Neighbors"
+msgstr "عدد أقرب الجيران"
+
+msgid "Training and validation set"
+msgstr "مجموعة التدريب والتحقق"
+
+msgid "Rectangular"
+msgstr "مستطيل"
+
+msgid "Triangular"
+msgstr "مثلثي"
+
+msgid "Epanechnikov"
+msgstr "إيبانيشنيكوف"
+
+msgid "Biweight"
+msgstr "ثنائي الوزن (Biweight)"
+
+msgid "Triweight"
+msgstr "ثلاثي الوزن (Triweight)"
+
+msgid "Cosine"
+msgstr "جيب التمام"
+
+msgid "Inverse"
+msgstr "المقلوب"
+
+msgid "Rank"
+msgstr "الرتبة"
+
+msgid "Optimal"
+msgstr "أمثل"
+
+msgid "%1$s Weight Function"
+msgstr "دالة الوزن %1$s"
+
+msgid "Plotting not possible: The selected weighting scheme cannot be visualized separately from the data."
+msgstr ""
+"لا يمكن الرسم: لا يمكن تمثيل نظام الترجيح المحدد بصريًا بمعزل عن البيانات."
+
+msgid "Proportion of Max. Distance"
+msgstr "النسبة من المسافة القصوى"
+
+msgid "Relative Weight"
+msgstr "الوزن النسبي"
+
+msgid "Network Weights"
+msgstr "أوزان الشبكة"
+
+msgid "Node"
+msgstr "عقدة"
+
+msgid "Layer"
+msgstr "طبقة"
+
+msgid "Weight"
+msgstr "الوزن"
+
+msgid "linear"
+msgstr "خطي"
+
+msgid "binary step"
+msgstr "دالة الخطوة الثنائية"
+
+msgid "logistic sigmoid"
+msgstr "الدالة السيغمويدية اللوجستية"
+
+msgid "sine"
+msgstr "الجيب"
+
+msgid "cosine"
+msgstr "جيب التمام"
+
+msgid "inverse tangent"
+msgstr "الظل العكسي"
+
+msgid "hyperbolic tangent"
+msgstr "الظل الزائدي"
+
+msgid "rectified linear unit (ReLU)"
+msgstr "الوحدة الخطية المصحّحة (ReLU)"
+
+msgid "softplus"
+msgstr "softplus"
+
+msgid "softsign"
+msgstr "softsign"
+
+msgid "exponential linear unit (ELU)"
+msgstr "الوحدة الخطية الأُسّية (ELU)"
+
+msgid "leaky rectified linear unit (Leaky ReLU)"
+msgstr "الوحدة الخطية المصححة المتسربة (Leaky ReLU)"
+
+msgid "sigmoid linear unit (SiLU)"
+msgstr "الوحدة الخطية السيغمويدية (SiLU)"
+
+msgid "mish"
+msgstr "mish"
+
+msgid "gaussian"
+msgstr "غاوسي"
+
+msgid "gaussian error linear unit (GeLU)"
+msgstr "الوحدة الخطية للخطأ الغاوسي (GeLU)"
+
+msgid "The weights are input for the %1$s activation function."
+msgstr "الأوزان هي مدخلات دالة التنشيط %1$s."
+
+msgid "Network Structure Plot"
+msgstr "رسم بنية الشبكة"
+
+msgid "Intercept"
+msgstr "الثابت"
+
+msgid "Input layer"
+msgstr "طبقة الإدخال"
+
+msgid "Output layer"
+msgstr "طبقة المخرجات"
+
+msgid "Hidden layer %1$s"
+msgstr "الطبقة المخفية %1$s"
+
+msgid "Binary"
+msgstr "ثنائي"
+
+msgid "Logistic Sigmoid"
+msgstr "الدالة السيغمويدية اللوجستية"
+
+msgid "Sine"
+msgstr "الجيب"
+
+msgid "Inverse Tangent"
+msgstr "الظل العكسي"
+
+msgid "Hyperbolic Tangent"
+msgstr "الظل الزائدي"
+
+msgid "ReLU"
+msgstr "ReLU"
+
+msgid "Softplus"
+msgstr "softplus"
+
+msgid "Softsign"
+msgstr "softsign"
+
+msgid "ELU"
+msgstr "ELU"
+
+msgid "Leaky ReLU"
+msgstr "الوحدة الخطية المصححة المتسربة (Leaky ReLU)"
+
+msgid "SiLU"
+msgstr "SiLU"
+
+msgid "Mish"
+msgstr "mish"
+
+msgid "GeLU"
+msgstr "GeLU"
+
+msgid "%1$s Activation Function"
+msgstr "دالة التنشيط %1$s"
+
+msgid "Input"
+msgstr "الإدخال"
+
+msgid "Output"
+msgstr "المخرجات"
+
+msgid "Generation"
+msgstr "الجيل"
+
+msgid "Mean decrease in accuracy"
+msgstr "متوسط الانخفاض في الدقة"
+
+msgid "Total increase in node purity"
+msgstr "الزيادة الإجمالية في نقاء العقد"
+
+msgid "Out-of-bag Classification Accuracy Plot"
+msgstr "رسم دقة التصنيف خارج الكيس"
+
+msgid "Out-of-bag Mean Squared Error Plot"
+msgstr "مخطط متوسط مربع الخطأ خارج الكيس"
+
+msgid "Out-of-bag %sClassification Accuracy"
+msgstr "دقة التصنيف%sخارج الكيس"
+
+msgid "Out-of-bag %sMean Squared Error"
+msgstr "متوسط مربع الخطأ%sخارج الكيس"
+
+msgid "Mean Decrease in Accuracy"
+msgstr "متوسط الانخفاض في الدقة"
+
+msgid "Total Increase in Node Purity"
+msgstr "الزيادة الإجمالية في نقاء العقد"
+
+msgid "L2 (Ridge)"
+msgstr "L2 (ريدج)"
+
+msgid "L1 (Lasso)"
+msgstr "L1 (لاسو)"
+
+msgid "Elastic Net"
+msgstr "الشبكة المرنة"
+
+msgid "Variable Trace Plot"
+msgstr "رسم تتبّع المتغير"
+
+msgid "Coefficients"
+msgstr "المعاملات"
+
+msgid "Lambda Evaluation Plot"
+msgstr "رسم تقييم لامدا"
+
+msgid "Cross-Validated %sMean Squared Error"
+msgstr "متوسط مربع الخطأ%sبالتحقق المتقاطع"
+
+msgid "Min. CV MSE"
+msgstr "أدنى متوسط لمربع الخطأ بالتحقق المتقاطع (CV MSE)"
+
+msgid "%s 1 SE"
+msgstr "%s 1 SE"
+
+msgid "Row"
+msgstr "الصف"
+
+msgid "Cost of Constraints Violation"
+msgstr "كلفة انتهاك القيود"
